@@ -66,9 +66,35 @@ p.body strong{color:var(--ink-80);font-weight:600}
 
 @media(max-width:600px){.commit{grid-template-columns:1fr}.commit-title{padding:14px 16px}.standard-strip{flex-direction:column}.std-item{border-right:none;border-bottom:1px solid var(--ink-20)}.std-item:last-child{border-bottom:none}.declaration{padding:22px 20px}}
 @media print{.back,.page-footer{display:none}.mission-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.provenance{-webkit-print-color-adjust:exact;print-color-adjust:exact}.commit-title{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
+.nav-cta:hover{background:var(--coral-600)}
+@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
 
 <div class="mission-header">
   <div class="mh-inner">
@@ -78,7 +104,6 @@ p.body strong{color:var(--ink-80);font-weight:600}
   </div>
 </div>
 
-<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 
 <div class="page">
 
@@ -155,7 +180,7 @@ p.body strong{color:var(--ink-80);font-weight:600}
       It is offered as a pro bono contribution from the CPA community to the public. It is not a lead generation tool. It is not an advertisement. It is not a product. It is a gift - from someone who knows tax law, to everyone who needs it.
     </div>
     <div class="prov-sig">
-      tk.cpa &nbsp;·&nbsp; cpavalidated.com &nbsp;·&nbsp; NY CPA #109025 &nbsp;·&nbsp; FL CPA #AC58472 &nbsp;·&nbsp; IRS EA #93250<br>
+      CPA Inc. &nbsp;·&nbsp; tk.cpa &nbsp;·&nbsp; cpavalidated.com &nbsp;·&nbsp; NY CPA #109025 &nbsp;·&nbsp; FL CPA #AC58472 &nbsp;·&nbsp; IRS EA #93250<br>
       <span style="color:rgba(255,255,255,.3);margin-top:4px;display:block">Maintained by the tk.cpa AI lab</span>
     </div>
   </div>
@@ -164,7 +189,7 @@ p.body strong{color:var(--ink-80);font-weight:600}
 
   <div class="page-footer">
     <div class="pf-back">← <a href="index.html">Return to CPA Validated</a></div>
-    <div class="pf-meta">cpavalidated.com &nbsp;·&nbsp; a <a href="https://tk.cpa" target="_blank" style="color:var(--coral)">tk.cpa</a> resource &nbsp;·&nbsp; <a href="disclaimer.html">Disclaimer & Terms</a></div>
+    <div class="pf-meta">cpavalidated.com &nbsp;·&nbsp; a <a href="https://tk.cpa" target="_blank" style="color:var(--coral)">tk.cpa</a> resource &nbsp;·&nbsp; &copy; CPA Inc. &nbsp;·&nbsp; <a href="disclaimer.html">Disclaimer & Terms</a></div>
   </div>
 
 </div>
