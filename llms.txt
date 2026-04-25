@@ -217,6 +217,40 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - Authority: irs.gov/payments; IRS Direct Pay; EFTPS.gov; IRS Same-Day Wire (with verified ABA 091036164 and beneficiary format from the IRS Same-Day Taxpayer Worksheet PDF); Foreign Electronic Payments; Form 1040-V (2025); Form 1040-ES (2026); IRS Pub. 4990 (Tax Type list); IRC §6151, §6611, §6621, §6651
 - Purpose: All federal tax payment methods compared. IRS Direct Pay (free, individuals), EFTPS (free, individuals and businesses), same-day wire with full instructions including verified ABA 091036164, IRS SINGLE PAYOR TAX WIRES, 333 W. Pershing Rd Kansas City MO 64108, 5pm ET cutoff, full Tax Type Code table for common forms (1040, 1120, 941, 940, 1042, 2290), foreign wire for international taxpayers, pay by check (Form 1040-V) with how-to write the check correctly, debit/credit card, electronic funds withdrawal, pay by cash, online payment agreement (installment plans), and penalty / interest framework for late payments.
 
+## Canadian Cross-Border (New Section)
+
+tk.cpa is registered with the Canada Revenue Agency as a non-resident representative. Existing and prospective clients can authorize tk.cpa through CRA Represent a Client to retrieve T-slips (T4, T5, T4A, NR4), view Notices of Assessment, file T1 and T2 returns, and communicate with the CRA on the client's behalf.
+
+### Canadian Tax Hub
+- URL: https://cpavalidated.com/canadian-tax-hub.html
+- Authority: CRA Represent a Client; Income Tax Act (Canada); IRC §7701(b); US-Canada Tax Treaty
+- Purpose: Landing page for cross-border content. Highlights the CRA non-resident representative credential. Lists the 5 main articles (treaty, residency, T1135, RRSP/RRIF, snowbirds). Plain-English explanation of how US and Canada differ on taxing citizens vs residents. Glossary of cross-border forms (T1, T2, T1135, NR4, NR73, NR301/302/303, Form 8833, Form 8840).
+
+### The US-Canada Tax Treaty, Plainly
+- URL: https://cpavalidated.com/us-canada-tax-treaty.html
+- Authority: US-Canada Tax Treaty (1980 as amended); Articles IV, X, XI, XII, XV, XVIII, XXIV, XXIX, XXIX-A; IRC §6114; Form 8833
+- Purpose: Plain-English walkthrough of the treaty for cross-border individuals. Article IV residency tie-breaker (permanent home, center of vital interests, habitual abode, citizenship, mutual agreement), the savings clause and how it limits the treaty for US citizens, dividends 5%/15% (Article X), interest and royalties at 0% (Articles XI/XII), employment income (Article XV) and the 183-day exception, pensions and Social Security (Article XVIII), foreign tax credit (Article XXIV), Limitation on Benefits (Article XXIX-A), when Form 8833 is required.
+
+### Are You a Canadian Tax Resident?
+- URL: https://cpavalidated.com/canadian-residency.html
+- Authority: Income Tax Act (Canada) §250 (residency), §128.1 (change of residence), §2 (taxation of resident persons); CRA Income Tax Folio S5-F1-C1; Form NR73, T1243, T1161; US-Canada Treaty Article IV
+- Purpose: Plain-English guide to Canadian residency. Factual residency (residential ties test - significant: dwelling, spouse, dependants; secondary: personal property, social/economic ties, driver's license, health card), deemed residency (183-day sojourner rule), departure tax under ITA §128.1 (deemed disposition at FMV on emigration date, with exclusions for Canadian real property, RRSP/RRIF/TFSA, business property), the NR73 question (file or not), step-up basis on entry, treaty tie-breaker for dual residents.
+
+### T1135: Canada's Foreign Property Form
+- URL: https://cpavalidated.com/t1135-foreign-property.html
+- Authority: Income Tax Act (Canada) §233.3, §162(7), §162(10), §162(10.1), §152(4)(b.2); Form T1135; CRA Foreign Income Verification Statement; Voluntary Disclosures Program; Douglas v. The King 2022 TCC 80; Horner v. The King 2025 TCC 23
+- Purpose: Plain-English T1135 guide. $100,000 CAD cost threshold, what counts as specified foreign property (foreign cash, non-resident corp shares even held in Canadian brokerage, foreign real property, debts, intangibles, crypto), what's excluded (registered accounts, Canadian-bank foreign currency, Canadian mutual funds, personal-use vacation property), Part A (simplified $100K-$250K) vs Part B (detailed $250K+), penalties ($25/day to $2,500; gross negligence $500/month to $12K; demand failure $1,000/month to $24K; long-term 5% of cost), 3-year extended reassessment, FBAR comparison, voluntary disclosure path.
+
+### RRSP and RRIF for US Persons
+- URL: https://cpavalidated.com/rrsp-rrif-us-persons.html
+- Authority: Rev. Proc. 2014-55 (automatic election; eliminated Form 8891); IRC §§402(b), 408; US-Canada Treaty Article XVIII; Income Tax Act (Canada) §§146, 146.3, 207.5-207.7; Forms 1040, 1116, 8938, 3520/3520-A, 8621; FinCEN Form 114
+- Purpose: Plain-English RRSP/RRIF guide for US persons. Automatic deferral election under Rev. Proc. 2014-55 (no more Form 8891), what's still required (FBAR, Form 8938 if thresholds met), withdrawal mechanics (Canadian withholding 25% lump sum / 15% periodic; US ordinary income on growth above basis with FTC offset), RRSP basis tracking, what to do when moving from Canada to the US (don't collapse), TFSA trap (not covered by treaty, foreign trust treatment, PFIC issues for non-Canadian funds inside).
+
+### Snowbird Day Counting Done Right
+- URL: https://cpavalidated.com/cross-border-snowbirds.html
+- Authority: IRC §7701(b); IRC §7701(b)(3)(B); Treas. Reg. §301.7701(b)-2; Form 8840 (Closer Connection); Form 1040-NR; Form 8833 (Treaty); IRC §6114; IRC §871(d); IRC §1445 (FIRPTA); IRC §2102; US-Canada Treaty Article IV; Income Tax Act (Canada) §250
+- Purpose: Plain-English day counting guide for snowbirds. Substantial Presence Test math (current 100% + prior 1/3 + two years ago 1/6, threshold 183), the 122-day rule of thumb, Form 8840 Closer Connection Exception (under-183 hard cap, "closer connection" factors), treaty tie-breaker via Form 1040-NR + Form 8833 when over 183 days, days that don't count, Florida real estate triggers (rental income IRC §871(d) election, FIRPTA 15% withholding on sale, US estate tax with $60K exemption for non-residents).
+
 ## Contact and Consultations
 Website: https://tk.cpa
 Book a Consultation: https://tk.cpa/contacts
