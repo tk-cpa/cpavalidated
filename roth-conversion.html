@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roth Conversion Optimizer 2026 | CPA Validated</title>
+<meta name="description" content="Model Roth IRA conversion amounts by bracket. Show tax cost today vs. tax-free growth benefit. Break-even analysis. Pro-rata rule. 5-year rule. IRMAA impact. CPA-validated. IRC 408A.">
+<link rel="canonical" href="https://cpavalidated.com/roth-conversion.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.hero3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.1);margin-bottom:14px}
+.h3{background:var(--ink);padding:16px;text-align:center}
+.h3l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.h3v{font-family:var(--font-display);font-size:24px;font-weight:500;color:#fff}
+.h3v.coral{color:var(--coral)}.h3v.green{color:#6de88e}.h3v.amber{color:#f5c264}
+.h3s{font-size:10px;color:rgba(255,255,255,.2);margin-top:3px}
+.bracket-bar{margin-bottom:16px}
+.bb-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:12px}
+.bb-label{width:120px;font-weight:600;flex-shrink:0}
+.bb-track{flex:1;height:20px;background:var(--ink-10);position:relative;overflow:hidden}
+.bb-fill{height:100%;transition:width .3s;display:flex;align-items:center;padding-left:6px;font-size:10px;font-weight:700;color:#fff}
+.bb-amount{width:90px;text-align:right;font-family:var(--font-mono);flex-shrink:0}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.hero3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &bull; a tk.cpa resource</div>
+  <h1>Roth Conversion Optimizer 2026</h1>
+  <div class="sub">Model conversion amounts by bracket. Tax cost today vs. projected tax-free growth. Break-even timeline. Bracket-filling strategy. IRMAA impact. Pro-rata rule warning.</div>
+  <div class="badges"><span class="badge">IRC 408A - Roth IRA</span><span class="badge">IRC 408(d)(2) - pro-rata rule</span><span class="badge">IRC 72(t) - 5-year rule</span><span class="badge">IRMAA - Medicare surtax</span></div>
+</div></div>
+<div class="back"><a href="index.html">back to cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Current Year Tax Situation</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Filing Status</label>
+        <select class="fc" id="fs" onchange="calc()">
+          <option value="single">Single</option>
+          <option value="mfj" selected>Married Filing Jointly</option>
+        </select>
+      </div>
+      <div class="f1"><label>Ordinary Income (Before Conversion) ($)</label>
+        <input type="number" class="fc" id="income" value="180000" oninput="calc()">
+        <div class="hint">Wages, business income, RMDs, other ordinary income this year. Conversion adds on top of this.</div>
+      </div>
+      <div class="f1"><label>Conversion Amount ($)</label>
+        <input type="number" class="fc" id="conversion" value="50000" oninput="calc()">
+        <div class="hint">Amount to convert from traditional IRA or pre-tax 401(k) to Roth. Fully taxable as ordinary income in year of conversion. IRC 408A(d)(3).</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Traditional IRA Balance ($)</label>
+        <input type="number" class="fc" id="iraBalance" value="500000" oninput="calc()">
+      </div>
+      <div class="f1"><label>Non-Deductible IRA Basis ($)</label>
+        <input type="number" class="fc" id="basis" value="0" oninput="calc()">
+        <div class="hint">After-tax (Form 8606) basis in all traditional IRAs. Pro-rata rule: basis ratio reduces taxable portion. IRC 408(d)(2).</div>
+      </div>
+      <div class="f1"><label>Current Age</label>
+        <input type="number" class="fc" id="age" value="55" min="18" max="80" oninput="calc()">
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Expected Future Tax Rate (in Retirement)</label>
+        <select class="fc" id="futureRate" onchange="calc()">
+          <option value="0.10">10% - very low income in retirement</option>
+          <option value="0.12">12%</option>
+          <option value="0.22" selected>22% - similar to current</option>
+          <option value="0.24">24%</option>
+          <option value="0.32">32% - higher in retirement (RMDs)</option>
+          <option value="0.37">37% - high RMD / estate planning</option>
+        </select>
+        <div class="hint">The rate at which you expect to pay tax on IRA withdrawals in retirement. Key driver of conversion benefit.</div>
+      </div>
+      <div class="f1"><label>Expected Annual Return</label>
+        <select class="fc" id="returnRate" onchange="calc()">
+          <option value="0.05">5% - conservative</option>
+          <option value="0.07" selected>7% - moderate</option>
+          <option value="0.10">10% - aggressive</option>
+        </select>
+      </div>
+      <div class="f1"><label>Years Until Withdrawal</label>
+        <input type="number" class="fc" id="years" value="20" min="5" max="40" oninput="calc()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="safe-harbor.html" class="rl">Estimated Tax Safe Harbor</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
+function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+const BRACKETS={
+  single:[[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+  mfj:   [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+};
+
+function marginalRate(income, fs){
+  let prev=0;
+  for(const [top,rate] of BRACKETS[fs]){
+    if(income<=top)return rate;
+    prev=top;
+  }
+  return 0.37;
+}
+
+function taxOnRange(from, to, fs){
+  let tax=0,prev=0;
+  for(const [top,rate] of BRACKETS[fs]){
+    if(to<=prev)break;
+    const lo=Math.max(from,prev),hi=Math.min(to,top===Infinity?to+1:top);
+    if(hi>lo)tax+=(hi-lo)*rate;
+    prev=top===Infinity?top:top;
+  }
+  return tax;
+}
+
+// IRMAA thresholds 2026 (approximate - MFJ)
+const IRMAA_MFJ=[[212000,0],[266000,816],[334000,2040],[400000,3264],[750000,3696],[Infinity,3984]];
+const IRMAA_SINGLE=[[106000,0],[133000,816],[167000,2040],[200000,3264],[500000,3696],[Infinity,3984]];
+
+function irmaaSurcharge(magi, fs){
+  const tiers=fs==='mfj'?IRMAA_MFJ:IRMAA_SINGLE;
+  let surcharge=0;
+  for(const [top,cost] of tiers){
+    if(magi<=top){surcharge=cost;break;}
+  }
+  return surcharge;
+}
+
+function calc(){
+  const fs=document.getElementById('fs').value;
+  const income=parseFloat(document.getElementById('income').value)||0;
+  const conversion=parseFloat(document.getElementById('conversion').value)||0;
+  const iraBalance=parseFloat(document.getElementById('iraBalance').value)||0;
+  const basis=parseFloat(document.getElementById('basis').value)||0;
+  const age=parseInt(document.getElementById('age').value)||55;
+  const futureRate=parseFloat(document.getElementById('futureRate').value)||0.22;
+  const returnRate=parseFloat(document.getElementById('returnRate').value)||0.07;
+  const years=parseInt(document.getElementById('years').value)||20;
+
+  // Pro-rata rule
+  const basisRatio=iraBalance>0?Math.min(1,basis/iraBalance):0;
+  const taxableConversion=conversion*(1-basisRatio);
+  const nontaxable=conversion*basisRatio;
+
+  // Tax cost of conversion
+  const taxWithout=taxOnRange(0,income,fs);
+  const taxWith=taxOnRange(0,income+taxableConversion,fs);
+  const conversionTax=taxWith-taxWithout;
+  const marginalRateOnConversion=taxableConversion>0?conversionTax/taxableConversion:0;
+
+  // What bracket the conversion hits
+  const preConvMarginal=marginalRate(income,fs);
+  const postConvMarginal=marginalRate(income+taxableConversion,fs);
+
+  // Room remaining in current bracket
+  const currentBracket=BRACKETS[fs].find(([top,r])=>income<top);
+  const roomInBracket=currentBracket?Math.max(0,currentBracket[0]-income):0;
+
+  // IRMAA impact
+  const irmaaBefore=irmaaSurcharge(income,fs);
+  const irmaaAfter=irmaaSurcharge(income+taxableConversion,fs);
+  const irmaaIncrease=irmaaAfter-irmaaBefore;
+
+  // Future value analysis
+  const fvConverted=conversion*Math.pow(1+returnRate,years);
+  const fvTaxFreeWithdrawal=fvConverted; // Roth - no tax
+  const fvTraditional=conversion*Math.pow(1+returnRate,years);
+  const fvTraditionalAfterTax=fvTraditional*(1-futureRate);
+  const netBenefit=fvTaxFreeWithdrawal-fvTraditionalAfterTax-conversionTax;
+
+  // Break-even years
+  let breakEven=0;
+  for(let y=1;y<=50;y++){
+    const fvR=conversion*Math.pow(1+returnRate,y);
+    const fvT=conversion*Math.pow(1+returnRate,y)*(1-futureRate);
+    if(fvR-fvT>conversionTax){breakEven=y;break;}
+  }
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  h+=`<div class="hero3">
+    <div class="h3"><div class="h3l">Tax Cost Today</div><div class="h3v coral">${fmt(conversionTax)}</div><div class="h3s">At ${Math.round(marginalRateOnConversion*100)}% marginal rate</div></div>
+    <div class="h3"><div class="h3l">Net Benefit (${years}yr)</div><div class="h3v ${netBenefit>0?'green':'amber'}">${fmt(netBenefit)}</div><div class="h3s">Roth growth vs. trad. after-tax</div></div>
+    <div class="h3"><div class="h3l">Break-Even</div><div class="h3v">${breakEven>0?breakEven+' yrs':'<5 yrs'}</div><div class="h3s">When Roth surpasses trad.</div></div>
+  </div>`;
+
+  // Bracket visualization
+  h+=`<div class="bracket-bar">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60);margin-bottom:8px">2026 Bracket Utilization</div>`;
+  let prev2=0;
+  for(const [top,rate] of BRACKETS[fs]){
+    const bracketSize=top===Infinity?200000:top-prev2;
+    const incomeInBracket=Math.max(0,Math.min(income,top===Infinity?income:top)-prev2);
+    const convInBracket=Math.max(0,Math.min(income+taxableConversion,top===Infinity?income+taxableConversion:top)-Math.max(income,prev2));
+    const totalInBracket=incomeInBracket+convInBracket;
+    if(totalInBracket>0||incomeInBracket>0){
+      const fillPct=Math.min(100,(incomeInBracket/bracketSize)*100);
+      const convPct=Math.min(100-fillPct,(convInBracket/bracketSize)*100);
+      const rateColors=['#4A7459','#5a8a6a','#8B6535','#a07040','#9B3D3D','#c05050','#8B1A1A'];
+      const ri=BRACKETS[fs].indexOf(BRACKETS[fs].find(b=>b[0]===top&&b[1]===rate));
+      h+=`<div class="bb-row">
+        <div class="bb-label" style="color:${rate>=0.32?'var(--red)':rate>=0.24?'var(--amber)':'var(--green)'}">${Math.round(rate*100)}% bracket</div>
+        <div class="bb-track">
+          <div class="bb-fill" style="width:${fillPct+convPct}%;background:${convInBracket>0?'var(--coral)':'var(--ink-60)'}">
+            ${convInBracket>0?Math.round(rate*100)+'%':''}
+          </div>
+        </div>
+        <div class="bb-amount">${incomeInBracket>0?fmt(incomeInBracket):''} ${convInBracket>0?'+ '+fmt(convInBracket):''}</div>
+      </div>`;
+    }
+    prev2=top===Infinity?prev2:top;
+    if(prev2>income+taxableConversion+50000)break;
+  }
+  h+='</div>';
+
+  h+=`<div class="sum-box"><div class="sum-title">Conversion Analysis</div>
+    <div class="srow"><span class="sl">Conversion amount</span><span class="sv">${fmt(conversion)}</span></div>
+    ${basisRatio>0?`<div class="srow"><span class="sl">Non-deductible basis ratio (${Math.round(basisRatio*100)}% of IRA)</span><span class="sv green">${fmt(nontaxable)} tax-free</span></div>`:''}
+    <div class="srow"><span class="sl">Taxable portion of conversion</span><span class="sv coral">${fmt(taxableConversion)}</span></div>
+    <div class="srow"><span class="sl">Marginal rate on conversion income</span><span class="sv">${Math.round(marginalRateOnConversion*100)}%</span></div>
+    <div class="srow"><span class="sl">Tax cost of conversion</span><span class="sv red">${fmt(conversionTax)}</span></div>
+    ${irmaaIncrease>0?`<div class="srow"><span class="sl">IRMAA Medicare surtax increase (2-year lookback)</span><span class="sv amber">${fmt(irmaaIncrease)}/yr</span></div>`:''}
+    <div class="srow"><span class="sl">Room remaining in ${Math.round(preConvMarginal*100)}% bracket</span><span class="sv ${roomInBracket>conversion?'green':'amber'}">${fmt(roomInBracket)}</span></div>
+    <div class="srow"><span class="sl">Converted ${fmt(conversion)} grows to (${years} yrs @ ${Math.round(returnRate*100)}%)</span><span class="sv green">${fmt(fvConverted)}</span></div>
+    <div class="srow"><span class="sl">Same in traditional IRA, after ${Math.round(futureRate*100)}% withdrawal tax</span><span class="sv">${fmt(fvTraditionalAfterTax)}</span></div>
+    <div class="srow"><span class="sl"><strong>Net benefit of conversion over ${years} years</strong></span><span class="sv ${netBenefit>0?'green':'red'}">${fmt(netBenefit)}</span></div>
+  </div>`;
+
+  if(roomInBracket>0&&conversion>roomInBracket){
+    h+=flag('amber','!',`<strong>Conversion pushes into the next bracket.</strong> ${fmt(roomInBracket)} fits in your current ${Math.round(preConvMarginal*100)}% bracket. The remaining ${fmt(taxableConversion-roomInBracket)} is taxed at ${Math.round(postConvMarginal*100)}%. Consider converting only ${fmt(roomInBracket)} to stay within the current bracket ("bracket filling" strategy).`);
+  }
+  if(roomInBracket>=taxableConversion&&netBenefit>0){
+    h+=flag('green','v',`<strong>Entire conversion fits within the ${Math.round(preConvMarginal*100)}% bracket.</strong> This is the optimal scenario - you pay ${Math.round(preConvMarginal*100)}% today on income you would otherwise pay ${Math.round(futureRate*100)}% on in retirement. Break-even in approximately ${breakEven} years.`);
+  }
+  if(futureRate>marginalRateOnConversion){
+    h+=flag('green','v',`<strong>Conversion is strongly favorable.</strong> Current marginal rate ${Math.round(marginalRateOnConversion*100)}% is lower than expected future rate ${Math.round(futureRate*100)}%. Converting now locks in a lower rate on this income permanently.`);
+  } else if(futureRate<marginalRateOnConversion){
+    h+=flag('amber','!',`<strong>Current rate exceeds expected future rate.</strong> Paying ${Math.round(marginalRateOnConversion*100)}% today vs. ${Math.round(futureRate*100)}% expected in retirement. Conversion may not be optimal unless your primary goal is estate planning, RMD reduction, or tax diversification.`);
+  }
+  if(basisRatio>0){
+    h+=flag('blue','i',`<strong>Pro-rata rule applies.</strong> You have $${basis.toLocaleString()} of non-deductible (Form 8606) basis in IRAs with total balance $${iraBalance.toLocaleString()}. Under IRC 408(d)(2), you cannot selectively convert only the basis. ${Math.round(basisRatio*100)}% of every dollar converted is tax-free (basis ratio). To avoid pro-rata: consider rolling pre-tax IRA balances into a current employer 401(k) before converting, leaving only basis for tax-free conversion.`);
+  }
+  if(irmaaIncrease>0){
+    h+=flag('amber','!',`<strong>IRMAA Medicare surtax triggered.</strong> The conversion increases your MAGI into an IRMAA tier, adding ${fmt(irmaaIncrease)}/year to Medicare Part B and D premiums for 2 years (IRMAA uses a 2-year lookback). This adds ${fmt(irmaaIncrease*2)} to the effective cost of this conversion. Consider whether the conversion amount can be reduced to stay under the IRMAA threshold.`);
+  }
+  if(age<59.5){
+    h+=flag('red','!','<strong>Under 59.5 - 5-year rule and penalty considerations.</strong> Each Roth conversion has its own 5-year clock. Withdrawals of converted amounts within 5 years of conversion (and before age 59.5) are subject to the 10% early withdrawal penalty under IRC 72(t). The 5-year rule for Roth earnings (tax-free qualified distributions) runs from January 1 of the first year a Roth IRA was funded. Pay conversion tax from outside the IRA, not from the converted funds.');
+  }
+
+  h+=`<div class="src">IRC 408A (Roth IRA - conversion rules, income inclusion, qualified distributions); IRC 408A(d)(3) (taxable conversion - included in gross income); IRC 408(d)(2) (pro-rata rule for distributions from IRAs with basis and pre-tax amounts); IRC 72(t) (10% early withdrawal penalty and 5-year rule); IRC 72(t)(2)(A)(iv) (5-year Roth conversion holding period); 42 U.S.C. 1395r (IRMAA Medicare premium surcharge - 2-year income lookback); Rev. Proc. 2024-40 (2025 bracket thresholds used as 2026 baseline).</div>`;
+  h+=`<div class="disc">Projections are illustrative. Actual tax rates, IRMAA thresholds, and investment returns will differ. Roth conversion strategy depends on estate planning goals, state taxes, Social Security timing, RMD planning, and other factors. Consult a CPA and financial planner. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+
+  rb.innerHTML=h;
+}
+calc();
+</script>
+</body>
+</html>
