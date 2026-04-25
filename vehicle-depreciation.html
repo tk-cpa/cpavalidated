@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Business Vehicle Depreciation Calculator 2026 | CPA Validated</title>
-<meta name="description" content="Calculate business vehicle depreciation for 2026. Section 179, bonus depreciation (40%), MACRS 5-year, luxury auto caps (Rev. Proc. 2025-24). Passenger autos, SUVs over 6,000 lbs, heavy trucks. Business use percentage. CPA-validated. IRC Section 168, 179, 280F.">
+<meta name="description" content="Calculate business vehicle depreciation for 2026. Section 179, 100% bonus depreciation (post-OBBBA permanent for property after 1/19/2025), MACRS 5-year, luxury auto caps (Rev. Proc. 2025-24). Passenger autos, SUVs over 6,000 lbs, heavy trucks. Business use percentage. CPA-validated. IRC Section 168, 179, 280F.">
 <link rel="canonical" href="https://cpavalidated.com/vehicle-depreciation.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -52,39 +52,13 @@ table.sched .current-year td{background:var(--coral-100)!important;font-weight:7
 .slider-row{display:flex;align-items:center;gap:12px}.slider-val{font-family:var(--font-mono);font-weight:700;font-size:16px;color:var(--coral);min-width:40px}
 @media(max-width:640px){.fg2,.fg3,.rh-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:400px){.rh-grid{grid-template-columns:1fr 1fr}}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
-.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
-.nav-links a:hover{color:var(--coral)}
-.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
-.nav-cta:hover{background:var(--coral-600)}
-@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
-</nav>
-
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>Business Vehicle Depreciation Calculator</h1>
-  <div class="sub">Section 179 &nbsp;&bull;&nbsp; Bonus Depreciation (40% in 2026) &nbsp;&bull;&nbsp; Luxury Auto Caps &nbsp;&bull;&nbsp; MACRS 5-Year</div>
+  <div class="sub">Section 179 &nbsp;&bull;&nbsp; 100% Bonus Depreciation Permanent &nbsp;&bull;&nbsp; Luxury Auto Caps &nbsp;&bull;&nbsp; MACRS 5-Year</div>
   <div class="badges">
     <span class="badge">IRC §168(k)</span>
     <span class="badge">IRC §179</span>
@@ -93,6 +67,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
     <span class="badge">OBBBA (P.L. 119-21)</span>
   </div>
 </div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="container">
 
 <!-- Step 1 -->
@@ -163,7 +138,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
       </div>
     </div>
     <div style="font-size:12px;color:var(--ink-60);padding:10px;background:var(--ink-10);border-left:3px solid var(--ink-20)">
-      §179 limit for passenger autos and SUVs is subject to §280F luxury auto caps regardless of the overall §179 limit ($1,220,000 for 2026). Heavy trucks and vans (non-SUV &gt;6,000 lbs) are not subject to the §280F caps and can use the full §179 amount.
+      §179 limit for passenger autos and SUVs is subject to §280F luxury auto caps regardless of the overall §179 limit ($2.5M post-OBBBA, indexed for inflation, with $4M phaseout). Heavy trucks and vans (non-SUV &gt;6,000 lbs) are not subject to the §280F caps and can use the full §179 amount.
     </div>
   </div>
 </div>
@@ -188,7 +163,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
         <div class="rh-item">
           <div class="rh-label">Bonus Depreciation</div>
           <div class="rh-val" id="rBonus">$0</div>
-          <div class="rh-sub" id="rBonusRate">40% (2026)</div>
+          <div class="rh-sub" id="rBonusRate">100% (post-OBBBA)</div>
         </div>
         <div class="rh-item">
           <div class="rh-label">MACRS Year 1</div>
@@ -226,9 +201,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
       </table>
     </div>
 
-    <div class="source-row">Authority: IRC §168(k) (bonus depreciation, 40% for 2026 per OBBBA P.L. 119-21); IRC §179 (§179 expensing, $1,220,000 limit for 2026); IRC §280F (luxury automobile limitations); Rev. Proc. 2025-24 (2025 §280F caps - 2026 caps not yet published; 2026 figures are projected based on prior-year adjustment pattern); MACRS 5-year recovery period per Rev. Proc. 87-57 Table A-1; IRC §168(d)(1) (half-year convention); IRC §168(d)(3) (mid-quarter convention). SUV §179 limit: IRC §179(b)(5) ($28,900 for 2026, inflation-adjusted).</div>
+    <div class="source-row">Authority: IRC §168(k) (bonus depreciation, 100% permanent post-OBBBA P.L. 119-21 for property acquired and placed in service after 1/19/2025); IRC §179 (§179 expensing, $2.5M / $4M indexed under OBBBA); IRC §280F (luxury automobile limitations); Rev. Proc. 2025-24 (2025 §280F caps - 2026 caps not yet published as of build date; 2026 figures are projected based on prior-year adjustment pattern); MACRS 5-year recovery period per Rev. Proc. 87-57 Table A-1; IRC §168(d)(1) (half-year convention); IRC §168(d)(3) (mid-quarter convention). SUV §179 limit: IRC §179(b)(5) (inflation-adjusted; verify current Rev. Proc.).</div>
     <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
-    <div class="disc">A pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
+    <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. 2026 §280F caps are projected - verify against IRS Rev. Proc. for 2026 when published. Consult a qualified tax professional. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
   </div>
 </div>
 
@@ -247,7 +222,11 @@ const CAPS = {
 // SUV §179 limit (IRC §179(b)(5)) - inflation adjusted
 const SUV_179_LIMIT = { 2025:28900, 2026:28900, 2027:29200 };
 // Bonus rates by year (OBBBA)
-const BONUS_RATE = { 2025:0.40, 2026:0.40, 2027:0.20, 2028:0 };
+// Post-OBBBA (P.L. 119-21): 100% bonus permanent for property acquired and placed in service after 1/19/2025.
+// Property under written binding contract before 1/20/2025 is locked into TCJA phase-down rates.
+const BONUS_RATE = { 2025:1.00, 2026:1.00, 2027:1.00, 2028:1.00 };
+// Pre-OBBBA TCJA phase-down (for binding contract before 1/20/2025): 2025=0.40, 2026=0.20, 2027=0
+const BONUS_RATE_PRE_OBBBA = { 2025:0.40, 2026:0.20, 2027:0 };
 // MACRS 5-year half-year convention rates (Rev. Proc. 87-57 Table A-1)
 const MACRS5_HALF = [0.20, 0.32, 0.192, 0.1152, 0.1152, 0.0576];
 // MACRS 5-year mid-quarter Q4 rates
@@ -331,7 +310,7 @@ function calc(){
   }
 
   if(bonusRate===0 && year>=2028){
-    flag('<strong>Bonus depreciation is 0% for this year.</strong> The OBBBA phase-down schedule eliminates bonus depreciation for property placed in service after December 31, 2027. Only §179 and MACRS available.', 'amber');
+    flag('<strong>Bonus depreciation is 0% for this year (elected out).</strong> Post-OBBBA, 100% bonus is automatic for property acquired and placed in service after 1/19/2025 unless the taxpayer elects out under IRC §168(k)(7). Without bonus, only §179 and MACRS are available.', 'amber');
   }
 
   if(bizPct < 1){
