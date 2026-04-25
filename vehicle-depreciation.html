@@ -180,7 +180,7 @@ table.sched .current-year td{background:var(--coral-100)!important;font-weight:7
       <div class="sum-row"><span class="sum-lbl">Vehicle cost</span><span class="sum-val" id="sCost">$0</span></div>
       <div class="sum-row"><span class="sum-lbl">Business use %</span><span class="sum-val" id="sBizPct">100%</span></div>
       <div class="sum-row"><span class="sum-lbl">Business-use basis</span><span class="sum-val" id="sBizBasis">$0</span></div>
-      <div class="sum-row"><span class="sum-lbl">§280F cap applies?</span><span class="sum-val" id="sCap">—</span></div>
+      <div class="sum-row"><span class="sum-lbl">§280F cap applies?</span><span class="sum-val" id="sCap"> - </span></div>
       <div class="sum-row"><span class="sum-lbl">§179 deduction</span><span class="sum-val" id="s179">$0</span></div>
       <div class="sum-row"><span class="sum-lbl">Bonus depreciation</span><span class="sum-val" id="sBonus">$0</span></div>
       <div class="sum-row"><span class="sum-lbl">MACRS Year 1</span><span class="sum-val" id="sMacrs">$0</span></div>
@@ -257,7 +257,7 @@ function calc(){
     document.getElementById('rYear1').textContent='Limited';
     document.getElementById('r179').textContent='$0';
     document.getElementById('rBonus').textContent='$0';
-    document.getElementById('rMacrs').textContent='—';
+    document.getElementById('rMacrs').textContent=' - ';
     return;
   }
 
@@ -341,7 +341,7 @@ function calc(){
   // Year 1
   const tr1 = document.createElement('tr');
   if(year===cy) tr1.className='current-year';
-  tr1.innerHTML=`<td>${year} ◄ Year 1</td><td>${fmt(total1)}</td><td>${fmt(cum)}</td><td>${isLuxury?fmt(cap.y1*(bizPct)):'—'}</td>`;
+  tr1.innerHTML=`<td>${year} ◄ Year 1</td><td>${fmt(total1)}</td><td>${fmt(cum)}</td><td>${isLuxury?fmt(cap.y1*(bizPct)):' - '}</td>`;
   tbody.appendChild(tr1);
 
   // Years 2-6 (MACRS 5-year has 6 tax years due to convention)
@@ -354,7 +354,7 @@ function calc(){
     rem -= depr;
     const tr = document.createElement('tr');
     if(ty===cy) tr.className='current-year';
-    tr.innerHTML=`<td>${ty}</td><td>${fmt(depr)}</td><td>${fmt(cum)}</td><td>${isLuxury?fmt(capY):'—'}</td>`;
+    tr.innerHTML=`<td>${ty}</td><td>${fmt(depr)}</td><td>${fmt(cum)}</td><td>${isLuxury?fmt(capY):' - '}</td>`;
     tbody.appendChild(tr);
   }
 }
