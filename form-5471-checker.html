@@ -49,35 +49,9 @@
 .prog{height:4px;background:var(--ink-10);margin-bottom:24px}
 .prog-fill{height:100%;background:var(--coral);transition:width .4s}
 .hidden{display:none}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
-.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
-.nav-links a:hover{color:var(--coral)}
-.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
-.nav-cta:hover{background:var(--coral-600)}
-@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
-</nav>
-
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>CFC / Form 5471 Obligation Checker</h1>
@@ -89,6 +63,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
     <span class="badge">IRC §318 / §958(b) (Attribution)</span>
   </div>
 </div></div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 <div class="container">
 <div class="prog"><div class="prog-fill" id="pf" style="width:0%"></div></div>
 
@@ -273,5 +248,6 @@ function resetAll(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
+<div style="background:var(--ink-10);border-top:2px solid var(--ink-20);padding:16px 24px;font-size:12px"><strong>Related:</strong> <a href="pfic-8621-checker.html" style="color:var(--coral)">PFIC / Form 8621 Checker</a> &nbsp;&middot;&nbsp; <a href="fbar-checker.html" style="color:var(--coral)">FBAR &amp; 8938 Checker</a> &nbsp;&middot;&nbsp; <a href="ftc-calculator.html" style="color:var(--coral)">Foreign Tax Credit Calculator</a></div>
 </body>
 </html>
