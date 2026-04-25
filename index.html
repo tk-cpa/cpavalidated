@@ -80,8 +80,6 @@ a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--coral);
 a:hover{color:var(--coral)}
 
 /* ── Ribbon ── */
-.ribbon{background:var(--ink);color:var(--paper);font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.14em;font-size:11px;padding:9px 24px;text-align:center}
-.ribbon a{color:var(--coral);text-decoration:none}
 
 /* ── Nav ── */
 nav{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:100}
@@ -235,11 +233,6 @@ footer{background:var(--ink);padding:48px 48px 32px}
 </head>
 <body>
 
-<!-- Ribbon -->
-<div class="ribbon">
-  CPA-Validated Tax Tools &nbsp;&bull;&nbsp; Every Result Cites IRC Authority &nbsp;&bull;&nbsp;
-  <a href="https://tk.cpa" target="_blank" style="text-transform:none">tk.cpa</a>
-</div>
 
 <!-- Nav -->
 <nav>
@@ -261,7 +254,7 @@ footer{background:var(--ink);padding:48px 48px 32px}
 <div class="hero">
   <div class="hero-copy">
     <h1 class="hero-title">Where tax law<br><em>gets validated.</em></h1>
-    <p class="lede">Free calculators, validators, and reference guides. Every position backed by a specific IRC section, Treasury regulation, or primary authority. No guesswork. No black boxes.</p>
+    <p class="lede">Free calculators, validators, and reference guides. Every position backed by a specific IRC section, Treasury regulation, or primary authority.</p>
     <div class="hero-ctas">
       <a href="#tools" class="btn-primary">Explore Resources</a>
       <a href="https://tk.cpa" target="_blank" class="btn-secondary">tk.cpa</a>
@@ -369,12 +362,14 @@ footer{background:var(--ink);padding:48px 48px 32px}
       <span class="tool-link">Open Calculator</span>
     </a>
 
-    <div class="tool-card coming">
-      <span class="tool-tag tt-reporting">Coming Soon</span>
+    <a href="form-5471-checker.html" class="tool-card">
+      <span class="tool-tag tt-planning">Validator</span>
+      <span class="updated-tag">Updated 2026</span>
       <div class="tool-name">CFC / Form 5471 Obligation Checker</div>
-      <div class="tool-desc">Determine Controlled Foreign Corporation status and Form 5471 filing category (1-5). Covers US Shareholder definition and attribution rules under Subpart F.</div>
-      <div class="tool-authority">IRC §957 &nbsp;·&nbsp; IRC §951 &nbsp;·&nbsp; Form 5471</div>
-    </div>
+      <div class="tool-desc">Determine CFC status and Form 5471 filing category (1-5). US Shareholder test, 50% control threshold, attribution rules, filing requirements, and $10,000 failure-to-file penalty.</div>
+      <div class="tool-authority">IRC §957 &nbsp;·&nbsp; IRC §951 &nbsp;·&nbsp; IRC §6038 &nbsp;·&nbsp; Form 5471</div>
+      <span class="tool-link">Open Validator</span>
+    </a>
 
     <div class="tool-card coming">
       <span class="tool-tag tt-planning">Coming Soon</span>
