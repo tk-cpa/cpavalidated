@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Backdoor Roth IRA Guide & Pro-Rata Calculator 2026 | CPA Validated</title>
+<meta name="description" content="Backdoor Roth IRA: step-by-step mechanics, pro-rata rule calculation, Form 8606. Mega backdoor Roth. Step transaction doctrine risk. 2026 income limits. CPA-validated. IRC 408A, 408(d)(2).">
+<link rel="canonical" href="https://cpavalidated.com/backdoor-roth.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:900px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 24px 0}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.step-box{background:var(--ink);padding:18px;border-bottom:3px solid var(--coral);position:relative}
+.step-num{font-family:var(--font-display);font-size:48px;font-weight:500;color:rgba(255,255,255,.1);position:absolute;top:8px;right:12px;line-height:1}
+.step-title{font-size:13px;font-weight:700;color:var(--coral);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;font-family:var(--font-mono)}
+.step-desc{font-size:12.5px;color:rgba(255,255,255,.7);line-height:1.6}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.result-banner{padding:16px 20px;margin-bottom:14px;border:2px solid}
+.result-banner.clean{background:var(--green-bg);border-color:var(--green-b)}
+.result-banner.taxable{background:var(--amber-bg);border-color:var(--amber-b)}
+.rb-title{font-family:var(--font-display);font-size:22px;font-weight:500;margin-bottom:4px}
+.result-banner.clean .rb-title{color:var(--green)}
+.result-banner.taxable .rb-title{color:var(--amber)}
+.rb-sub{font-size:13px;line-height:1.5}
+.result-banner.clean .rb-sub{color:var(--green)}
+.result-banner.taxable .rb-sub{color:var(--amber)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.step-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &bull; a tk.cpa resource</div>
+  <h1>Backdoor Roth IRA Guide & Pro-Rata Calculator 2026</h1>
+  <div class="sub">Complete mechanics of the backdoor Roth. Pro-rata rule calculation - the most commonly overlooked issue. Form 8606 requirements. Mega backdoor Roth. Step transaction doctrine risk. 2026 contribution limits.</div>
+  <div class="badges"><span class="badge">IRC 408A - Roth IRA</span><span class="badge">IRC 408(d)(2) - pro-rata rule</span><span class="badge">IRC 219 - IRA deduction</span><span class="badge">Form 8606</span><span class="badge">2026: $7,000 / $8,000 (50+)</span></div>
+</div></div>
+<div class="back"><a href="index.html">back to cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="step-grid">
+  <div class="step-box"><div class="step-num">1</div><div class="step-title">Non-Deductible Contribution</div><div class="step-desc">Contribute to traditional IRA (no income limit for contributions - only for deductibility). Mark as non-deductible. File Form 8606, Part I. Establishes basis.</div></div>
+  <div class="step-box"><div class="step-num">2</div><div class="step-num">2</div><div class="step-title">Convert to Roth</div><div class="step-desc">Convert the traditional IRA to Roth. Wait for the contribution to clear (typically a few days to avoid "step transaction" risk). Report on Form 8606, Part II.</div></div>
+  <div class="step-box"><div class="step-num">3</div><div class="step-title">Pro-Rata Calculation</div><div class="step-desc">If you have OTHER pre-tax IRA balances, the pro-rata rule taxes a portion of the conversion. This is the critical step most people overlook. IRC 408(d)(2).</div></div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Pro-Rata Rule Calculator &nbsp;&bull;&nbsp; IRC 408(d)(2)</h2></div>
+  <div class="cb">
+    <div style="background:var(--red-bg);border-left:4px solid var(--red-b);padding:12px 16px;margin-bottom:16px;font-size:13px;color:var(--red);line-height:1.6"><strong>The pro-rata rule aggregates ALL traditional IRA balances.</strong> You cannot selectively convert only the non-deductible (after-tax) portion. The IRS looks at ALL your IRAs - traditional, SEP, SIMPLE - as one pool. Each conversion is treated as a proportional mix of pre-tax and after-tax money. This makes the backdoor Roth less effective (or fully taxable) if you have existing pre-tax IRA balances.</div>
+    <div class="fg3">
+      <div class="f1"><label>Non-Deductible Contribution This Year ($)</label>
+        <input type="number" class="fc" id="contrib" value="7000" oninput="calc()">
+        <div class="hint">2026 limit: $7,000 ($8,000 if age 50+). IRC 219(b)(5)(A).</div>
+      </div>
+      <div class="f1"><label>Total Pre-Tax IRA Balance (all IRAs) ($)</label>
+        <input type="number" class="fc" id="preTaxBal" value="0" oninput="calc()">
+        <div class="hint">ALL pre-tax IRA balances as of December 31 of the year of conversion: traditional IRAs, SEP IRAs, SIMPLE IRAs. Rollover IRAs count. 401(k)s do NOT count. The critical number.</div>
+      </div>
+      <div class="f1"><label>Prior Non-Deductible Basis (Form 8606) ($)</label>
+        <input type="number" class="fc" id="priorBasis" value="0" oninput="calc()">
+        <div class="hint">Total non-deductible IRA contributions from prior years (cumulative Form 8606 Line 14). Add to this year's contribution for total basis.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Conversion Amount This Year ($)</label>
+        <input type="number" class="fc" id="convAmt" value="7000" oninput="calc()">
+        <div class="hint">Amount being converted to Roth this year. Typically equals the contribution.</div>
+      </div>
+      <div class="f1"><label>Marginal Tax Rate</label>
+        <select class="fc" id="taxRate" onchange="calc()">
+          <option value="0.22">22%</option>
+          <option value="0.24" selected>24%</option>
+          <option value="0.32">32%</option>
+          <option value="0.37">37%</option>
+        </select>
+      </div>
+    </div>
+    <div id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Mega Backdoor Roth & Additional Strategies</h2></div>
+  <div class="cb">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div style="border:1px solid var(--ink-20);padding:16px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--coral);margin-bottom:8px;font-family:var(--font-mono)">Mega Backdoor Roth</div>
+        <div style="font-size:13px;color:var(--ink-60);line-height:1.6">If your 401(k) plan allows after-tax contributions AND in-service withdrawals or in-plan conversions: contribute up to the 2026 total 415(c) limit ($70,000) minus employer contributions minus elective deferrals, then convert to Roth. <strong>2026 limits:</strong> 415(c) limit: $70,000. Elective deferral: $23,500 ($31,000 if 50+). After-tax space: up to $46,500. Plan must permit this - verify with plan administrator. IRC 402(g), IRC 415(c).</div>
+      </div>
+      <div style="border:1px solid var(--ink-20);padding:16px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--coral);margin-bottom:8px;font-family:var(--font-mono)">Eliminating the Pro-Rata Problem</div>
+        <div style="font-size:13px;color:var(--ink-60);line-height:1.6">If you have pre-tax IRA balances creating pro-rata exposure, consider: rolling your pre-tax IRA into your current employer 401(k) (if the plan accepts rollover contributions). This removes the pre-tax balance from the IRA pool and makes the backdoor Roth effectively tax-free. Must be done BEFORE December 31 of the conversion year. Verify your 401(k) plan accepts rollovers.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:900px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="roth-conversion.html" class="rl">Roth Conversion Optimizer</a>
+  <a href="tax-estimator.html" class="rl">Tax Estimator</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="safe-harbor.html" class="rl">Safe Harbor Calculator</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
+function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+function calc(){
+  const contrib     = parseFloat(document.getElementById('contrib').value)||0;
+  const preTaxBal   = parseFloat(document.getElementById('preTaxBal').value)||0;
+  const priorBasis  = parseFloat(document.getElementById('priorBasis').value)||0;
+  const convAmt     = parseFloat(document.getElementById('convAmt').value)||0;
+  const taxRate     = parseFloat(document.getElementById('taxRate').value)||0.24;
+
+  const totalBasis  = contrib + priorBasis;
+  // Pro-rata: total IRA balance = pre-tax bal + total basis
+  const totalIRABal = preTaxBal + totalBasis;
+  const basisRatio  = totalIRABal > 0 ? totalBasis / totalIRABal : 1;
+  const taxFreeConv = convAmt * basisRatio;
+  const taxableConv = convAmt * (1 - basisRatio);
+  const taxDue      = taxableConv * taxRate;
+  const isClean     = preTaxBal === 0;
+
+  const rb = document.getElementById('res');
+  let h = '';
+
+  if(isClean){
+    h += `<div class="result-banner clean"><div class="rb-title">Clean Backdoor Roth - No Pro-Rata Issue</div><div class="rb-sub">You have no pre-tax IRA balances. The entire ${fmt(convAmt)} conversion is tax-free (covered by your ${fmt(totalBasis)} basis). This is the optimal backdoor Roth scenario.</div></div>`;
+  } else {
+    h += `<div class="result-banner taxable"><div class="rb-title">Pro-Rata Rule Applies - Partial Taxation</div><div class="rb-sub">Pre-tax IRA balance of ${fmt(preTaxBal)} triggers the pro-rata rule. ${Math.round(basisRatio*100)}% of the conversion is tax-free; ${Math.round((1-basisRatio)*100)}% is taxable. Tax due: ${fmt(taxDue)}.</div></div>`;
+  }
+
+  h += `<div class="sum-box"><div class="sum-title">Pro-Rata Calculation - Form 8606 Part II</div>
+    <div class="srow"><span class="sl">Non-deductible contribution this year</span><span class="sv">${fmt(contrib)}</span></div>
+    <div class="srow"><span class="sl">Prior non-deductible basis (Form 8606 Line 14)</span><span class="sv">${fmt(priorBasis)}</span></div>
+    <div class="srow"><span class="sl">Total non-deductible basis</span><span class="sv">${fmt(totalBasis)}</span></div>
+    <div class="srow"><span class="sl">All pre-tax IRA balances (Dec 31)</span><span class="sv ${preTaxBal>0?'red':'green'}">${fmt(preTaxBal)}</span></div>
+    <div class="srow"><span class="sl">Total IRA pool (pre-tax + basis)</span><span class="sv">${fmt(totalIRABal)}</span></div>
+    <div class="srow"><span class="sl">Basis ratio (tax-free fraction)</span><span class="sv">${(basisRatio*100).toFixed(1)}%</span></div>
+    <div class="srow"><span class="sl">Tax-free portion of conversion</span><span class="sv green">${fmt(taxFreeConv)}</span></div>
+    <div class="srow"><span class="sl">Taxable portion of conversion</span><span class="sv ${taxableConv>0?'red':'green'}">${fmt(taxableConv)}</span></div>
+    <div class="srow"><span class="sl"><strong>Tax due on conversion (${Math.round(taxRate*100)}%)</strong></span><span class="sv ${taxDue>0?'amber':'green'}">${fmt(taxDue)}</span></div>
+  </div>`;
+
+  if(!isClean){
+    h += flag('red','!',`<strong>Consider rolling pre-tax IRA into your 401(k) first.</strong> If your employer 401(k) accepts rollover contributions, rolling the ${fmt(preTaxBal)} pre-tax IRA balance into the 401(k) before December 31 eliminates the pro-rata issue entirely. The backdoor Roth conversion would then be fully tax-free. Verify: (1) your plan accepts rollovers, (2) the rollover is completed by Dec 31 of the conversion year.`);
+  }
+  h += flag('blue','i','<strong>Form 8606 is required every year.</strong> File Form 8606, Part I with your tax return for every year you make a non-deductible IRA contribution, even if you owe no tax. Failure to file: $50 penalty per year (IRC 6693(b)(2)). The Form 8606 tracks your cumulative basis - losing this record means losing the tax benefit of your non-deductible contributions.');
+  h += flag('blue','i','<strong>Step transaction doctrine risk.</strong> Some practitioners recommend waiting between the contribution and conversion (a few days to a few weeks) to avoid the IRS applying the step transaction doctrine and recharacterizing the two steps as a single direct Roth contribution. The IRS has issued informal guidance that the backdoor Roth is permissible (see Notice 2014-54 for after-tax 401(k) amounts), but waiting is conservative best practice.');
+
+  h += `<div class="src">IRC 408A (Roth IRA rules); IRC 408A(c)(3) (Roth contribution income limits - MAGI phaseout); IRC 219(b)(5)(A) (2026 IRA contribution limit $7,000/$8,000 age 50+); IRC 408(d)(2) (pro-rata rule for IRA distributions with basis); IRC 72(e) (basis recovery rules); IRC 6693(b)(2) (Form 8606 failure to file penalty - $50); Form 8606 (Nondeductible IRAs - Parts I and II); Notice 2014-54 (after-tax 401(k) rollover rules); IRC 402(g) (401(k) elective deferral limits); IRC 415(c) (annual additions limit - $70,000 for 2026).</div>`;
+  h += `<div class="disc">2026 limits estimated pending IRS confirmation. The backdoor Roth has been discussed in Congressional reform proposals but remains legal as of 2026. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc. - <a href="disclaimer.html">disclaimer</a>.</div>`;
+  rb.innerHTML = h;
+}
+calc();
+</script>
+</body>
+</html>
