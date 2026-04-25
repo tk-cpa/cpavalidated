@@ -17,7 +17,7 @@
 .fc{padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px;color:var(--ink);background:var(--white);outline:none;border-radius:0;cursor:pointer;appearance:none}
 .fc:focus{border-color:var(--coral)}
 select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;min-width:180px}
-.search-fc{flex:1;min-width:200px}
+
 .cat-filters{display:flex;gap:8px;flex-wrap:wrap}
 .cat-btn{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border:1.5px solid var(--ink-20);background:var(--white);cursor:pointer;font-family:var(--font-mono);color:var(--ink-60);transition:all .15s}
 .cat-btn:hover,.cat-btn.active{border-color:var(--coral);color:var(--coral);background:var(--coral-100)}
@@ -50,35 +50,9 @@ table.ext-table tr:hover td{background:var(--ink-10)}
 .pbn{background:var(--coral);color:#fff;border:none;padding:9px 20px;font-family:var(--font-sans);font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.02em}.pbn:hover{background:var(--coral-600)}
 .src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:16px 0 0;border-top:1px solid var(--ink-20);margin-top:20px}
 @media(max-width:700px){.summary-strip{flex-wrap:wrap}.ss-item{min-width:50%}.controls{flex-direction:column}.search-fc{min-width:100%}}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
-.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
-.nav-links a:hover{color:var(--coral)}
-.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
-.nav-cta:hover{background:var(--coral-600)}
-@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
-</nav>
-
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>Corporate Tax Extension Reference (2026)</h1>
@@ -90,29 +64,44 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
     <span class="badge">59 Jurisdictions</span>
   </div>
 </div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="container">
 
 <div class="callout">
   <p><strong>Universal rule:</strong> An extension of time to FILE never extends the time to PAY. Tax owed is due by the original due date in all jurisdictions. Interest and failure-to-pay penalties accrue from the original due date on any unpaid balance. Federal Form 7004 provides an automatic 6-month extension for calendar-year C-Corps: April 15 → October 15.</p>
 </div>
 
-<div class="controls">
-  <input type="text" class="fc search-fc" id="searchBox" placeholder="Search jurisdiction or form..." oninput="filterTable()">
-  <select class="fc" id="typeFilter" onchange="filterTable()">
-    <option value="">All types</option>
-    <option value="State">States only</option>
-    <option value="Local">Local only</option>
-  </select>
-  <button class="pbn" onclick="window.print()">Print / PDF</button>
+<div style="margin-bottom:20px">
+  <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);display:block;margin-bottom:8px">Select Your Jurisdiction</label>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    <select class="fc" id="jumpSelect" onchange="showResult(this.value)" style="flex:1;min-width:260px;font-size:15px;padding:12px 14px">
+      <option value="">-- Choose a state or jurisdiction --</option>
+    </select>
+    <button class="pbn" onclick="window.print()">Print / PDF</button>
+  </div>
 </div>
 
-<div class="cat-filters">
-  <button class="cat-btn all active" onclick="setCat('ALL',this)">All</button>
-  <button class="cat-btn" onclick="setCat('AUTOMATIC',this)">Automatic</button>
-  <button class="cat-btn" onclick="setCat('ACCEPTS FEDERAL',this)">Accepts Federal</button>
-  <button class="cat-btn" onclick="setCat('SEPARATE FORM',this)">Separate Form</button>
-  <button class="cat-btn" onclick="setCat('CONDITIONAL',this)">Conditional</button>
-  <button class="cat-btn" onclick="setCat('NO CIT',this)">No CIT</button>
+<div id="resultCard" style="display:none;background:var(--ink);padding:20px;margin-bottom:20px;border-left:4px solid var(--coral)">
+  <div id="rc-content"></div>
+</div>
+
+<div style="margin-bottom:12px">
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:8px">Browse All Jurisdictions</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <div class="cat-filters" style="flex:1">
+      <button class="cat-btn all active" onclick="setCat('ALL',this)">All</button>
+      <button class="cat-btn" onclick="setCat('AUTOMATIC',this)">Automatic</button>
+      <button class="cat-btn" onclick="setCat('ACCEPTS FEDERAL',this)">Accepts Federal</button>
+      <button class="cat-btn" onclick="setCat('SEPARATE FORM',this)">Separate Form</button>
+      <button class="cat-btn" onclick="setCat('CONDITIONAL',this)">Conditional</button>
+      <button class="cat-btn" onclick="setCat('NO CIT',this)">No CIT</button>
+    </div>
+    <select class="fc" id="typeFilter" onchange="filterTable()" style="max-width:160px">
+      <option value="">All types</option>
+      <option value="State">States only</option>
+      <option value="Local">Local only</option>
+    </select>
+  </div>
 </div>
 
 <div class="summary-strip" style="margin-top:12px">
@@ -206,6 +195,72 @@ const DATA = [
   {j:'Portland / Multnomah Co. (BLT/MCBIT)',t:'Local',c:'ACCEPTS FEDERAL',f:'Form EXT (if no federal/OR ext)',l:'6 months',p:'Tax due by original date',cite:'Portland City Code 7.02; Multnomah County Code 12.400',n:'Federal or Oregon ext accepted - attach copy to Portland return. BLT 2.6%; MCBIT 2%.'},
   {j:'Ohio Municipalities (RITA)',t:'Local',c:'SEPARATE FORM',f:'RITA Form 20-EXT',l:'Same as federal',p:'Estimated tax due with extension',cite:'Ohio Rev. Code 718.05',n:'Must file RITA Form 20-EXT for net profit extension. Administers ~400 OH municipalities.'},
 ];
+
+// Populate dropdown
+window.addEventListener('DOMContentLoaded', () => {
+  const sel = document.getElementById('jumpSelect');
+  // States first, then local
+  const states = DATA.filter(d => d.t === 'State').sort((a,b) => a.j.localeCompare(b.j));
+  const locals = DATA.filter(d => d.t === 'Local').sort((a,b) => a.j.localeCompare(b.j));
+  const addGroup = (label, items) => {
+    const og = document.createElement('optgroup');
+    og.label = label;
+    items.forEach(d => {
+      const o = document.createElement('option');
+      o.value = d.j;
+      o.textContent = d.j;
+      og.appendChild(o);
+    });
+    sel.appendChild(og);
+  };
+  addGroup('States & DC', states);
+  addGroup('Local Jurisdictions', locals);
+  filterTable();
+});
+
+const catColors = {
+  'AUTOMATIC':'#6de88e','ACCEPTS FEDERAL':'#5ab4f5','SEPARATE FORM':'#ff8f8a','CONDITIONAL':'#f5c264','NO CIT':'#c8c8c8'
+};
+
+function showResult(jurisdiction) {
+  const card = document.getElementById('resultCard');
+  const rc = document.getElementById('rc-content');
+  if (!jurisdiction) { card.style.display = 'none'; return; }
+  const d = DATA.find(x => x.j === jurisdiction);
+  if (!d) { card.style.display = 'none'; return; }
+  const col = catColors[d.c] || '#fff';
+  rc.innerHTML = `
+    <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:6px">${d.t === 'Local' ? 'Local Jurisdiction' : 'State'}</div>
+        <div style="font-family:var(--font-display);font-size:28px;font-weight:500;color:#fff;margin-bottom:10px">${d.j}</div>
+        <div style="display:inline-block;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.06em;background:${col};color:#111;margin-bottom:14px">${d.c}</div>
+      </div>
+      <div style="flex:2;min-width:240px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Form Required</div>
+          <div style="font-size:13px;color:#fff;font-weight:600">${d.f}</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Extension Length</div>
+          <div style="font-size:13px;color:#fff;font-weight:600">${d.l}</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Payment Required</div>
+          <div style="font-size:13px;color:#fff;font-weight:600">${d.p}</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Primary Citation</div>
+          <div style="font-size:13px;color:var(--coral);font-weight:600">${d.cite}</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:5px">Practitioner Notes</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6">${d.n}</div>
+    </div>`;
+  card.style.display = 'block';
+}
 
 let currentCat = 'ALL';
 let sortCol = -1;
