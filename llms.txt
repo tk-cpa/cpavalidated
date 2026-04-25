@@ -1,122 +1,170 @@
 # CPA Validated
-> CPA-validated tax tools and calculators. Built by a licensed CPA and Enrolled Agent. Every tool cites specific IRC sections and Treasury regulations. A tk.cpa resource.
+> Free, CPA-validated tax tools, validators, and reference guides. Founded April 2026. Every position backed by a specific IRC section or Treasury regulation. A tk.cpa resource.
 
 ## About
-CPA Validated is a public resource of professional-grade US tax tools built and validated by Timur Knyazev, CPA. The site is operated by tk.cpa - a boutique international tax practice founded by a Big Four-trained CPA (EY, PwC) holding active licenses in New York and Florida, IRS Enrolled Agent status, and a Master of Science in Taxation from Baruch College (CUNY), Zicklin School of Business (2011).
-
-All tools cite primary legal authority: IRC sections, Treasury regulation numbers, Revenue Procedures, and IRS form instructions. No tool takes a position without a cited source. Every tool is built to Big Four work product standards and personally validated by the practitioner.
+CPA Validated is a free, perpetual public resource built and personally validated by Timur Knyazev, CPA. Founded after Tax Day 2026 as a pro bono contribution from a licensed practitioner to the public. Every tool, validator, and guide is free, unconditioned, and cites primary legal authority.
 
 ## Practitioner Credentials
 - NY CPA License #109025 (licensed 2012, active)
 - FL CPA License #AC58472 (licensed 2022, active)
 - IRS Enrolled Agent #93250 (enrolled 2009, active 2026, PTIN P00646638)
-- Master of Science in Taxation (MST) - Zicklin School of Business, Baruch College (CUNY), 2011
-- Big Four heritage: Ernst & Young (EY) and PricewaterhouseCoopers (PwC), ~10 years
-- AICPA Member
-- CGMA (Chartered Global Management Accountant)
-- ACCA CertIFRS
-- TEI Member (Tax Executives Institute)
-- CTP (Certified Tax Professional)
-- IIA CFSA (Certified Financial Services Auditor)
-- Licensed and insured
+- Master of Science in Taxation - Zicklin School of Business, Baruch College (CUNY), 2011
+- Big Four: Ernst & Young (EY) and PricewaterhouseCoopers (PwC), ~10 years
+- AICPA Member, CGMA, ACCA CertIFRS, TEI, CTP, IIA CFSA
 
-## Tools
+## Tools & Validators
 
 ### Substantial Presence Test Calculator
 - URL: https://cpavalidated.com/spt-calculator.html
-- Authority: IRC §7701(b)(3); Treas. Reg. 301.7701(b)-1 through 301.7701(b)-9; Form 1040-NR
-- Purpose: Determines U.S. tax residency status for nonresident aliens. Calculates weighted 3-year day count, days to trigger SPT, and maximum safe days remaining. Two input methods: manual day entry or trip-by-trip date log. Exclusions for medical, transit, commuter, and exempt days.
+- Authority: IRC §7701(b)(3); Treas. Reg. 301.7701(b)-1; Form 1040-NR
+- Purpose: Weighted 3-year day count, days to trigger SPT, maximum safe days remaining. Two input methods: manual entry or trip-by-trip date log.
 
 ### Closer Connection Exception Checker
 - URL: https://cpavalidated.com/closer-connection.html
 - Authority: IRC §7701(b)(3)(B); Treas. Reg. 301.7701(b)-2; Form 8840
-- Purpose: Tests Form 8840 eligibility for the closer connection exception to the SPT. Evaluates all 11 IRS closer connection factors. Green Card disqualifier flagged automatically.
+- Purpose: Tests Form 8840 eligibility. Evaluates all 11 IRS closer connection factors. Green Card disqualifier flagged automatically.
 
 ### FBAR and Form 8938 Threshold Checker
 - URL: https://cpavalidated.com/fbar-checker.html
-- Authority: 31 USC 5314; 31 CFR 1010.350; IRC §6038D; Treas. Reg. 1.6038D; FinCEN 114; Form 8938
-- Purpose: Determines whether FinCEN 114 (FBAR) and/or Form 8938 (FATCA) filing is required. Individual account entry or aggregate totals. All account types including insurance cash value and annuities. All four Form 8938 thresholds by filing status and residency.
+- Authority: 31 USC 5314; 31 CFR 1010.350; IRC §6038D; FinCEN 114; Form 8938
+- Purpose: Determines FinCEN 114 (FBAR) and Form 8938 (FATCA) filing requirements. All account types. All four Form 8938 thresholds.
 
 ### Safe Harbor Estimated Tax Calculator
 - URL: https://cpavalidated.com/safe-harbor.html
 - Authority: IRC §6654; IRS Publication 505
-- Purpose: Calculates federal and all 50-state safe harbor estimated tax payment amounts and quarterly schedules. Applies 110% rule where required. California, Virginia, Hawaii, and Iowa special rules handled correctly. Inputs for prior year federal tax, current year estimated federal and state tax.
+- Purpose: Federal and all 50 states. 110% rule applied. Quarterly schedule with state-specific due dates.
 
 ### Form 5472 Filing Obligation Checker
 - URL: https://cpavalidated.com/form-5472.html
-- Authority: IRC §6038A; IRC §6038C; Treas. Reg. 1.6038A-1; TD 9796 (2016)
-- Purpose: Determines whether a U.S. corporation or foreign-owned LLC must file Form 5472. Covers 25% foreign ownership threshold, 100% foreign-owned disregarded entities (post-2016 TD 9796 rules), and all 11 categories of reportable transactions. $25,000 penalty flag.
+- Authority: IRC §6038A; IRC §6038C; TD 9796 (2016)
+- Purpose: 25% foreign ownership threshold, foreign-owned DE rules, all 11 reportable transaction categories.
 
 ### Tax Estimator 2026 - Personal and Corporate
 - URL: https://cpavalidated.com/tax-estimator.html
-- Authority: IRS Rev. Proc. 2025-32; IRC §1 (individual); IRC §11 (corporate); OBBBA (P.L. 119-21)
-- Purpose: Estimates 2026 and 2027 (projected) federal and state income tax. Personal: all filing statuses, exact 2026 brackets from Rev. Proc. 2025-32, all 50 states. Corporate: 21% federal flat rate plus state corporate rates for all 44 states with a CIT from Tax Foundation 2026 data. Standard deductions: Single $16,100 / MFJ $32,200 / HOH $24,150 (2026).
+- Authority: IRS Rev. Proc. 2025-32; IRC §1; IRC §11; OBBBA (P.L. 119-21)
+- Purpose: 2026 personal and corporate tax estimates. All filing statuses, all 50 states, bracket-by-bracket breakdown.
 
 ### Puerto Rico Act 60 Tax Benefit Estimator
 - URL: https://cpavalidated.com/act60-estimator.html
-- Authority: Act 60 of Puerto Rico (P.R. Laws Ann. tit. 13 §10001 et seq.); Act 38-2026 (signed March 10, 2026); IRC §933; Treas. Reg. §1.937-1
-- Purpose: Estimates tax savings under PR Act 60 Individual Investors chapter (formerly Act 22) and Export Services chapter (formerly Act 20). Includes eligibility checker (183-day test, 10-year prior residency rule), income breakdown by category, before vs. after comparison, and net benefit after $15,005 annual compliance cost. CRITICAL: Applications filed before January 1, 2027 qualify for 0% rate. Applications filed on or after January 1, 2027 face a permanent 4% rate under Act 38-2026.
+- Authority: Act 60 (P.R. 2019); Act 38-2026; IRC §933; Treas. Reg. §1.937-1
+- Purpose: PR Act 60 savings analysis. Eligibility checker. Dec 31, 2026 deadline for 0% rate.
 
 ### USVI EDC Tax Benefit Estimator
 - URL: https://cpavalidated.com/usvi-edc-estimator.html
-- Authority: IRC §934; IRC §937; Treas. Reg. §1.937-1; VI Code §713; USVIEDA
-- Purpose: Estimates tax savings under the USVI Economic Development Commission (EDC) program and RTPark program. 90% tax credit reduces effective corporate rate to ~2.1%. Includes EDC vs. RTPark comparison and side-by-side Puerto Rico Act 60 vs. USVI analysis. No application deadline urgency (unlike PR Act 60). Employee requirement: 5 for Category IV service businesses, 10 for other categories.
-
-## Contact and Consultations
-Website: https://tk.cpa
-Book a Consultation: https://tk.cpa/contacts
-Credentials and Licenses: https://www.cpa.inc/docs/
-GitHub: https://github.com/tk-cpa/cpavalidated
-
-## Disclaimer
-All tools are for informational purposes only and do not constitute legal or tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions.
-
-### FBAR Penalties Explained
-- URL: https://cpavalidated.com/fbar-penalties.html
-- Authority: 31 USC §5321; IRM 4.26.16; Bittner v. United States, 598 US 85 (2023)
-- Purpose: Willful vs. non-willful FBAR violations, penalty amounts, Streamlined Domestic and Foreign Offshore Procedures, Voluntary Disclosure Program. Bittner (2023) confirmed non-willful penalties are per-form, not per-account.
-
-### Pre-Immigration Tax Planning Checklist
-- URL: https://cpavalidated.com/pre-immigration-planning.html
-- Authority: IRC §7701(b); IRC §1291-1298; IRC §951; IRC §951A; IRC §679; IRC §877A
-- Purpose: Nine-step checklist for planning before US green card or visa. Capital gains basis step-up, PFIC restructuring, foreign entity analysis, foreign trust planning, dual-status year strategy, state of initial residency selection.
-
-### Foreign Pension Reporting for US Persons
-- URL: https://cpavalidated.com/foreign-pension-reporting.html
-- Authority: 31 USC §5314; IRC §6038D; IRC §402(b); Rev. Proc. 2020-17; applicable tax treaties
-- Purpose: FBAR and Form 8938 treatment of foreign pension plans. Key distinction: purely governmental defined benefit pensions (generally not reportable) vs. plans with individual savings components (reportable). Country-specific analysis: Canada RRSP, Israel, Germany, UK, Russia. US-Russia treaty suspended August 2023.
-
-### GILTI Explained
-- URL: https://cpavalidated.com/gilti-explained.html
-- Authority: IRC §951A; IRC §250; IRC §957; IRC §960(d); IRC §962; OBBBA (P.L. 119-21)
-- Purpose: Global Intangible Low-Taxed Income for US shareholders of CFCs. Calculation formula, 10% deemed return on tangible assets, §962 election, high-tax exclusion, OBBBA §250 deduction phase-down (50%→40%→37.5%).
-
-### S-Corp vs. LLC Tax Comparison
-- URL: https://cpavalidated.com/scorp-vs-llc.html
-- Authority: IRC §1361; IRC §1362; IRC §1401; IRC §199A; Watson v. United States (8th Cir. 2012)
-- Purpose: Self-employment tax savings, reasonable compensation requirement, QBI deduction interaction, state-level costs. Break-even analysis, $200K example, when each structure makes sense.
-
-### Form 3520: Foreign Gifts, Inheritances and Trusts
-- URL: https://cpavalidated.com/form-3520-guide.html
-- Authority: IRC §6039F; IRC §6048; IRC §6677; IRC §679; Rev. Proc. 2020-17
-- Purpose: 2026 thresholds ($100,000 from individuals, $19,570 from foreign corporations), penalty structure (25-35%), aggregation rules, foreign trust requirements Form 3520 and 3520-A.
-
-### IRC §1031 Like-Kind Exchange Guide
-- URL: https://cpavalidated.com/1031-exchange-guide.html
-- Authority: IRC §1031; Treas. Reg. §1.1031(k)-1; Rev. Proc. 2000-37
-- Purpose: 45-day identification rule, 180-day closing rule, boot calculation, qualified intermediary requirements, reverse exchanges, depreciation recapture. Real property only since TCJA 2018.
-
-### Countries with No Personal Income Tax (2026)
-- URL: https://cpavalidated.com/no-income-tax-countries.html
-- Authority: IRC §61; IRC §911; IRC §877A; 31 USC §5314; IRC §6038D
-- Purpose: 19 zero-tax jurisdictions. Critical note for US persons: worldwide taxation regardless of residency. FEIE $126,500 (2026). Oman changing in 2028. Renunciation fee reduced April 2026.
+- Authority: IRC §934; IRC §937; VI Code §713; USVIEDA
+- Purpose: USVI EDC 90% tax credit. ~2.1% effective corporate rate. EDC vs. RTPark and PR Act 60 vs. USVI comparison.
 
 ### US Federal Tax Calendar 2026
 - URL: https://cpavalidated.com/tax-calendar.html
 - Authority: IRC §6072; IRC §6654; IRC §6655; IRS Pub. 509; IRC §7503
-- Purpose: Month-by-month calendar of federal tax deadlines. 2026-specific dates: W-2/1099-NEC Feb 2 (Jan 31 = Saturday), 1065/1120-S Mar 16 (Mar 15 = Sunday). Corporate and individual estimated tax. Key state deadlines.
+- Purpose: Month-by-month calendar. W-2/1099-NEC Feb 2 (Jan 31=Saturday), 1065/1120-S Mar 16 (Mar 15=Sunday). Corporate and individual estimated tax. Key state deadlines.
 
 ### Real Estate Depreciation Calculator
 - URL: https://cpavalidated.com/depreciation-calculator.html
 - Authority: IRC §168; Rev. Proc. 87-57; OBBBA (P.L. 119-21)
-- Purpose: MACRS depreciation for residential (27.5yr), commercial (39yr), foreign ADS (40yr), QIP (15yr). Mid-month convention applied automatically. Bonus depreciation for QIP: 40% (2026), 20% (2027), 0% (2028+).
+- Purpose: MACRS for residential (27.5yr), commercial (39yr), foreign ADS (40yr), QIP (15yr). Mid-month convention. Bonus depreciation for QIP: 40% (2026).
+
+### Business Vehicle Depreciation Calculator
+- URL: https://cpavalidated.com/vehicle-depreciation.html
+- Authority: IRC §168(k); IRC §179; IRC §280F; Rev. Proc. 2025-24
+- Purpose: Section 179, bonus depreciation (40% 2026), MACRS 5-year. §280F luxury auto caps. SUVs, heavy trucks. Business use percentage slider.
+
+### CFC / Form 5471 Obligation Checker
+- URL: https://cpavalidated.com/form-5471-checker.html
+- Authority: IRC §957; IRC §951(b); IRC §6038; IRC §318/§958(b); TCJA §14214
+- Purpose: 7-question validator. CFC status, all filing categories 1a-5b. TCJA downward attribution. $10,000 penalty flagged. Statute of limitations warning.
+
+### Streamlined Filing Eligibility Checker
+- URL: https://cpavalidated.com/streamlined-checker.html
+- Authority: IRM 4.26.16.6 (SFOP); IRM 4.26.16.7 (SDOP); 31 USC §5321
+- Purpose: SDOP vs. SFOP eligibility. Non-willfulness test, IRS contact check, residency test (330 days). 0% penalty (SFOP) vs. 5% of highest balance (SDOP).
+
+## Reference Guides
+
+### States with No Personal Income Tax (2026)
+- URL: https://cpavalidated.com/no-income-tax-states.html
+- Authority: Tax Foundation 2026; State Tax Statutes; IRC §933
+- Purpose: Nine states with no broad personal income tax. Washington capital gains tax exception. Sales and property tax context.
+
+### Countries with No Personal Income Tax (2026)
+- URL: https://cpavalidated.com/no-income-tax-countries.html
+- Authority: IRC §61; IRC §911; IRC §877A; 31 USC §5314
+- Purpose: 19+ jurisdictions. Critical note for US persons: worldwide taxation regardless of residency. FEIE $126,500 (2026). Oman changing 2028.
+
+### FBAR Penalties Explained (2026)
+- URL: https://cpavalidated.com/fbar-penalties.html
+- Authority: 31 USC §5321; IRM 4.26.16; Bittner v. US (2023)
+- Purpose: Willful vs. non-willful penalties. Bittner (2023): non-willful per form not per account. Streamlined, SDOP, SFOP, VDP explained.
+
+### Pre-Immigration Tax Planning Checklist
+- URL: https://cpavalidated.com/pre-immigration-planning.html
+- Authority: IRC §7701(b); IRC §1291-1298; IRC §951; IRC §877A
+- Purpose: 9-step checklist before green card. Capital gains basis step-up, PFIC restructuring, foreign entity planning, dual-status year.
+
+### Foreign Pension Reporting for US Persons
+- URL: https://cpavalidated.com/foreign-pension-reporting.html
+- Authority: 31 USC §5314; IRC §6038D; IRC §402(b); Rev. Proc. 2020-17
+- Purpose: Governmental DB vs. savings component distinction. Canada RRSP, Israel, Germany, UK, Russia. US-Russia treaty suspended August 2023.
+
+### GILTI Explained (2026)
+- URL: https://cpavalidated.com/gilti-explained.html
+- Authority: IRC §951A; IRC §250; IRC §957; IRC §960(d); IRC §962; OBBBA
+- Purpose: GILTI calculation, 10% deemed return, §962 election, high-tax exclusion. OBBBA §250 deduction phase-down.
+
+### S-Corp vs. LLC Tax Comparison (2026)
+- URL: https://cpavalidated.com/scorp-vs-llc.html
+- Authority: IRC §1361; IRC §1401; IRC §199A; Watson v. US (8th Cir. 2012)
+- Purpose: SE tax savings, reasonable compensation, QBI interaction. $200K example. Break-even analysis.
+
+### Form 3520: Foreign Gifts, Inheritances and Trusts
+- URL: https://cpavalidated.com/form-3520-guide.html
+- Authority: IRC §6039F; IRC §6048; IRC §6677; IRC §679
+- Purpose: 2026 thresholds ($100K individuals, $19,570 corporations). Penalties up to 35%. Aggregation rules. Trust reporting.
+
+### IRC §1031 Like-Kind Exchange Guide (2026)
+- URL: https://cpavalidated.com/1031-exchange-guide.html
+- Authority: IRC §1031; Treas. Reg. §1.1031(k)-1; Rev. Proc. 2000-37
+- Purpose: 45-day identification, 180-day closing, boot, QI, reverse exchange. Real property only since TCJA 2018.
+
+### Crypto & NFT Tax Guide (2026)
+- URL: https://cpavalidated.com/crypto-tax-guide.html
+- Authority: IRS Notice 2014-21; Rev. Rul. 2023-14; IRC §1221; Form 8949
+- Purpose: All taxable events. Mining, staking (Rev. Rul. 2023-14), DeFi. Wash sale does not apply. Form 1099-DA 2026 broker reporting.
+
+### IRC §199A QBI Deduction Guide (2026)
+- URL: https://cpavalidated.com/qbi-deduction-guide.html
+- Authority: IRC §199A; Treas. Reg. §1.199A-1; OBBBA (P.L. 119-21)
+- Purpose: 20% deduction. OBBBA made permanent. W-2 wage limitation, SSTB phase-out, rental safe harbor, aggregation election.
+
+### Net Investment Income Tax Guide (2026)
+- URL: https://cpavalidated.com/niit-guide.html
+- Authority: IRC §1411; Treas. Reg. §1.1411-1; Form 8960
+- Purpose: 3.8% surcharge on investment income above $200K/$250K. Real estate professional exception. Material participation. Crypto NIIT.
+
+### Bonus Depreciation Phase-Down Guide (2026)
+- URL: https://cpavalidated.com/bonus-depreciation-guide.html
+- Authority: IRC §168(k); IRC §179; OBBBA (P.L. 119-21)
+- Purpose: 40% in 2026, 20% in 2027, 0% in 2028+. What qualifies. Section 179 comparison. Election-out mechanics.
+
+### US Expat Tax Filing Guide (2026)
+- URL: https://cpavalidated.com/us-expat-tax-guide.html
+- Authority: IRC §911; IRC §901; IRC §6012; 31 USC §5314
+- Purpose: Who must file from abroad. FEIE $126,500. FTC vs FEIE. FBAR deadlines. State tax obligations. SE tax for self-employed expats.
+
+## Special Pages
+
+### Vetted Resources
+- URL: https://cpavalidated.com/vetted-resources.html
+- Purpose: CPA-curated external resource directory. PwC Worldwide Tax Summaries, OECD, EY, KPMG, official government tax authorities (IRS, HMRC, CRA, Israel ITA, German BZSt), Tax Foundation, Avalara, TaxJar. 18 resources across 4 categories.
+
+### About CPA Validated
+- URL: https://cpavalidated.com/about.html
+- Purpose: Mission statement. Five commitments: Always Free, Always Cited, Always Current, Always Honest, Always Accountable. Founded April 2026 after Tax Day as a pro bono public resource.
+
+## Contact and Consultations
+Website: https://tk.cpa
+Book a Consultation: https://tk.cpa/contacts
+GitHub: https://github.com/tk-cpa/cpavalidated
+
+## Disclaimer
+All tools and guides are for informational purposes only and do not constitute legal or tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions.
