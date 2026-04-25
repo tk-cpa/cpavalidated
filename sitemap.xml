@@ -3,12 +3,12 @@
   <url>
     <loc>https://cpavalidated.com/1031-exchange-guide.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/about.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/act60-estimator.html</loc>
@@ -24,6 +24,11 @@
     <loc>https://cpavalidated.com/closer-connection.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/corporate-extension.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/crypto-tax-guide.html</loc>
@@ -43,17 +48,17 @@
   <url>
     <loc>https://cpavalidated.com/fbar-penalties.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/foreign-pension-reporting.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/form-3520-guide.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/form-5471-checker.html</loc>
@@ -66,14 +71,24 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://cpavalidated.com/ftc-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://cpavalidated.com/gilti-explained.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/index.html</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/individual-extension.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/niit-guide.html</loc>
@@ -83,17 +98,22 @@
   <url>
     <loc>https://cpavalidated.com/no-income-tax-countries.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/no-income-tax-states.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/penalty-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/pre-immigration-planning.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/qbi-deduction-guide.html</loc>
@@ -108,7 +128,7 @@
   <url>
     <loc>https://cpavalidated.com/scorp-vs-llc.html</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cpavalidated.com/spt-calculator.html</loc>
@@ -131,6 +151,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://cpavalidated.com/tax-extension-guide.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://cpavalidated.com/us-expat-tax-guide.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
@@ -148,6 +173,11 @@
   <url>
     <loc>https://cpavalidated.com/vetted-resources.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/w4-optimizer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
