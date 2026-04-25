@@ -70,3 +70,53 @@ GitHub: https://github.com/tk-cpa/cpavalidated
 
 ## Disclaimer
 All tools are for informational purposes only and do not constitute legal or tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions.
+
+### FBAR Penalties Explained
+- URL: https://cpavalidated.com/fbar-penalties.html
+- Authority: 31 USC §5321; IRM 4.26.16; Bittner v. United States, 598 US 85 (2023)
+- Purpose: Willful vs. non-willful FBAR violations, penalty amounts, Streamlined Domestic and Foreign Offshore Procedures, Voluntary Disclosure Program. Bittner (2023) confirmed non-willful penalties are per-form, not per-account.
+
+### Pre-Immigration Tax Planning Checklist
+- URL: https://cpavalidated.com/pre-immigration-planning.html
+- Authority: IRC §7701(b); IRC §1291-1298; IRC §951; IRC §951A; IRC §679; IRC §877A
+- Purpose: Nine-step checklist for planning before US green card or visa. Capital gains basis step-up, PFIC restructuring, foreign entity analysis, foreign trust planning, dual-status year strategy, state of initial residency selection.
+
+### Foreign Pension Reporting for US Persons
+- URL: https://cpavalidated.com/foreign-pension-reporting.html
+- Authority: 31 USC §5314; IRC §6038D; IRC §402(b); Rev. Proc. 2020-17; applicable tax treaties
+- Purpose: FBAR and Form 8938 treatment of foreign pension plans. Key distinction: purely governmental defined benefit pensions (generally not reportable) vs. plans with individual savings components (reportable). Country-specific analysis: Canada RRSP, Israel, Germany, UK, Russia. US-Russia treaty suspended August 2023.
+
+### GILTI Explained
+- URL: https://cpavalidated.com/gilti-explained.html
+- Authority: IRC §951A; IRC §250; IRC §957; IRC §960(d); IRC §962; OBBBA (P.L. 119-21)
+- Purpose: Global Intangible Low-Taxed Income for US shareholders of CFCs. Calculation formula, 10% deemed return on tangible assets, §962 election, high-tax exclusion, OBBBA §250 deduction phase-down (50%→40%→37.5%).
+
+### S-Corp vs. LLC Tax Comparison
+- URL: https://cpavalidated.com/scorp-vs-llc.html
+- Authority: IRC §1361; IRC §1362; IRC §1401; IRC §199A; Watson v. United States (8th Cir. 2012)
+- Purpose: Self-employment tax savings, reasonable compensation requirement, QBI deduction interaction, state-level costs. Break-even analysis, $200K example, when each structure makes sense.
+
+### Form 3520: Foreign Gifts, Inheritances and Trusts
+- URL: https://cpavalidated.com/form-3520-guide.html
+- Authority: IRC §6039F; IRC §6048; IRC §6677; IRC §679; Rev. Proc. 2020-17
+- Purpose: 2026 thresholds ($100,000 from individuals, $19,570 from foreign corporations), penalty structure (25-35%), aggregation rules, foreign trust requirements Form 3520 and 3520-A.
+
+### IRC §1031 Like-Kind Exchange Guide
+- URL: https://cpavalidated.com/1031-exchange-guide.html
+- Authority: IRC §1031; Treas. Reg. §1.1031(k)-1; Rev. Proc. 2000-37
+- Purpose: 45-day identification rule, 180-day closing rule, boot calculation, qualified intermediary requirements, reverse exchanges, depreciation recapture. Real property only since TCJA 2018.
+
+### Countries with No Personal Income Tax (2026)
+- URL: https://cpavalidated.com/no-income-tax-countries.html
+- Authority: IRC §61; IRC §911; IRC §877A; 31 USC §5314; IRC §6038D
+- Purpose: 19 zero-tax jurisdictions. Critical note for US persons: worldwide taxation regardless of residency. FEIE $126,500 (2026). Oman changing in 2028. Renunciation fee reduced April 2026.
+
+### US Federal Tax Calendar 2026
+- URL: https://cpavalidated.com/tax-calendar.html
+- Authority: IRC §6072; IRC §6654; IRC §6655; IRS Pub. 509; IRC §7503
+- Purpose: Month-by-month calendar of federal tax deadlines. 2026-specific dates: W-2/1099-NEC Feb 2 (Jan 31 = Saturday), 1065/1120-S Mar 16 (Mar 15 = Sunday). Corporate and individual estimated tax. Key state deadlines.
+
+### Real Estate Depreciation Calculator
+- URL: https://cpavalidated.com/depreciation-calculator.html
+- Authority: IRC §168; Rev. Proc. 87-57; OBBBA (P.L. 119-21)
+- Purpose: MACRS depreciation for residential (27.5yr), commercial (39yr), foreign ADS (40yr), QIP (15yr). Mid-month convention applied automatically. Bonus depreciation for QIP: 40% (2026), 20% (2027), 0% (2028+).
