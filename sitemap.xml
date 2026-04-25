@@ -285,4 +285,19 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://cpavalidated.com/form-8854.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/section-1202-qsbs.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/state-residency-hnw.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
