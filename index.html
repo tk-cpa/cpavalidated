@@ -576,68 +576,74 @@ footer{background:var(--ink);padding:48px 48px 32px}
 </div>
 
 <!-- Credentials -->
-<section class="section creds-bg" id="credentials">
-  <div class="section-label">Verified Credentials</div>
-  <h2 class="section-title">Licensed, Certified &amp; Insured</h2>
-  <hr class="rule">
+<section class="section creds-bg" id="credentials" style="max-width:100%;padding:80px 0;background:var(--white)">
+  <div style="max-width:900px;margin:0 auto;padding:0 48px">
+    <div class="section-label">Verified Credentials</div>
+    <h2 class="section-title">Licensed, Certified &amp; Insured</h2>
+    <hr class="rule">
 
-  <!-- Primary Licenses - 4 across -->
-  <div class="creds-4col" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:24px">
+    <!-- Primary Licenses - 4 across, generous padding -->
+    <div class="creds-4col" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:20px">
 
-    <div style="background:var(--white);padding:20px 18px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);font-family:var(--font-mono);margin-bottom:10px">NY CPA</div>
-      <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:6px">#109025</div>
-      <div style="font-size:11.5px;color:var(--ink-60);line-height:1.5">NY State Education Dept<br>Licensed 2012 &nbsp;·&nbsp; <strong style="color:var(--green)">Active</strong></div>
+      <div style="background:var(--paper);padding:28px 24px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">NY CPA</div>
+        <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px">#109025</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.6">NY State Education Dept<br>Licensed 2012</div>
+        <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE</div>
+      </div>
+
+      <div style="background:var(--paper);padding:28px 24px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">FL CPA</div>
+        <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px">#AC58472</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.6">Florida DBPR<br>Licensed 2022</div>
+        <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE</div>
+      </div>
+
+      <div style="background:var(--paper);padding:28px 24px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">IRS EA</div>
+        <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px">#93250</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.6">Enrolled Agent<br>Enrolled 2009</div>
+        <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE 2026</div>
+      </div>
+
+      <div style="background:var(--paper);padding:28px 24px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">PTIN</div>
+        <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px">P00646638</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.6">IRS Preparer Tax ID<br>Registered practitioner</div>
+        <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE</div>
+      </div>
+
     </div>
 
-    <div style="background:var(--white);padding:20px 18px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);font-family:var(--font-mono);margin-bottom:10px">FL CPA</div>
-      <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:6px">#AC58472</div>
-      <div style="font-size:11.5px;color:var(--ink-60);line-height:1.5">Florida DBPR<br>Licensed 2022 &nbsp;·&nbsp; <strong style="color:var(--green)">Active</strong></div>
+    <!-- Education & Background - clean 2-col -->
+    <div class="creds-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:20px">
+
+      <div style="background:var(--ink-10);padding:22px 24px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);font-family:var(--font-mono);margin-bottom:10px">Education</div>
+        <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px">Master of Science in Taxation</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.6">Zicklin School of Business, Baruch College (CUNY) &nbsp;·&nbsp; 2011</div>
+      </div>
+
+      <div style="background:var(--ink-10);padding:22px 24px">
+        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);font-family:var(--font-mono);margin-bottom:10px">Experience</div>
+        <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px">Ernst &amp; Young &nbsp;&middot;&nbsp; PricewaterhouseCoopers</div>
+        <div style="font-size:12px;color:var(--ink-60);line-height:1.6">~10 years &nbsp;·&nbsp; Public company &amp; multinational enterprise tax</div>
+      </div>
+
     </div>
 
-    <div style="background:var(--white);padding:20px 18px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);font-family:var(--font-mono);margin-bottom:10px">IRS EA</div>
-      <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:6px">#93250</div>
-      <div style="font-size:11.5px;color:var(--ink-60);line-height:1.5">Enrolled Agent<br>Enrolled 2009 &nbsp;·&nbsp; <strong style="color:var(--green)">Active 2026</strong></div>
-    </div>
-
-    <div style="background:var(--white);padding:20px 18px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);font-family:var(--font-mono);margin-bottom:10px">PTIN</div>
-      <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:6px">P00646638</div>
-      <div style="font-size:11.5px;color:var(--ink-60);line-height:1.5">IRS Preparer Tax ID<br>Active &nbsp;·&nbsp; Registered practitioner</div>
+    <!-- Designations -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;padding:16px 0;border-top:1px solid var(--ink-20)">
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">AICPA</span>
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">CGMA</span>
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">ACCA CertIFRS</span>
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">TEI</span>
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">CTP</span>
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">IIA CFSA</span>
+      <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--green-bg);border:1px solid var(--green-b);color:var(--green)">&#10003; Licensed &amp; Insured</span>
     </div>
 
   </div>
-
-  <!-- Education & Background -->
-  <div class="creds-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:24px">
-
-    <div style="background:var(--ink-10);padding:16px 18px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);font-family:var(--font-mono);margin-bottom:6px">Education</div>
-      <div style="font-size:14px;font-weight:600;color:var(--ink)">Master of Science in Taxation</div>
-      <div style="font-size:12px;color:var(--ink-60);margin-top:3px">Zicklin School of Business, Baruch College (CUNY) &nbsp;·&nbsp; 2011</div>
-    </div>
-
-    <div style="background:var(--ink-10);padding:16px 18px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);font-family:var(--font-mono);margin-bottom:6px">Experience</div>
-      <div style="font-size:14px;font-weight:600;color:var(--ink)">Ernst &amp; Young &nbsp;·&nbsp; PricewaterhouseCoopers</div>
-      <div style="font-size:12px;color:var(--ink-60);margin-top:3px">~10 years &nbsp;·&nbsp; Public company &amp; multinational enterprise tax</div>
-    </div>
-
-  </div>
-
-  <!-- Designations strip -->
-  <div style="display:flex;gap:8px;flex-wrap:wrap;padding:14px 0;border-top:1px solid var(--ink-20)">
-    <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">AICPA</span>
-    <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">CGMA</span>
-    <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">ACCA CertIFRS</span>
-    <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">TEI</span>
-    <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">CTP</span>
-    <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">IIA CFSA</span>
-    <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:4px 10px;background:var(--green-bg);border:1px solid var(--green-b);color:var(--green)">&#10003; Licensed &amp; Insured</span>
-  </div>
-
 </section>
 
 <!-- About -->
