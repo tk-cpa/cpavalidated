@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Investment Income Tax (IRC §1411) Guide 2026 | CPA Validated</title>
+<meta name="description" content="The 3.8% Net Investment Income Tax on investment income above AGI thresholds. What is NIIT, what income it applies to, exceptions for active business income and real estate professionals, and planning strategies. CPA-validated. IRC Section 1411.">
+<link rel="canonical" href="https://cpavalidated.com/niit-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.niit-calc{background:var(--ink);padding:24px;margin:20px 0 28px}
+.nc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:14px}
+.nc-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px}
+.nc-row:last-child{border-bottom:none;padding-top:12px;font-weight:700;font-size:15px}
+.nc-label2{color:rgba(255,255,255,.55)}
+.nc-val{font-family:var(--font-mono);font-weight:600;color:#fff}
+.nc-val.coral{color:var(--coral)}
+.income-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.income-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.income-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.income-table tr:last-child td{border-bottom:none}
+.income-table tr:nth-child(even) td{background:var(--ink-10)}
+.income-table td:first-child{font-weight:600;color:var(--ink)}
+.yes-cell{color:var(--red);font-weight:700}
+.no-cell{color:var(--green);font-weight:700}
+.threshold-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0 28px}
+.ts-box{border:1px solid var(--ink-20);padding:14px;text-align:center}
+.ts-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:8px}
+.ts-amount{font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--coral)}
+.ts-note{font-size:11px;color:var(--ink-60);margin-top:5px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.threshold-strip,.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Net Investment Income Tax (IRC §1411) Guide 2026</h1>
+  <div class="sub">The 3.8% Surcharge &nbsp;&bull;&nbsp; What It Hits &nbsp;&bull;&nbsp; Exceptions &nbsp;&bull;&nbsp; Planning</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1411</span>
+    <span class="ph-meta-item">Treas. Reg. §1.1411-1</span>
+    <span class="ph-meta-item">Form 8960</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The 3.8% Net Investment Income Tax is a surcharge on investment income for higher-income taxpayers. Enacted as part of the Affordable Care Act (P.L. 111-148, 2010) and effective since 2013, it has been in place for over a decade but remains one of the most frequently overlooked taxes in planning conversations. It applies on top of regular income tax - it does not replace it.</p>
+
+<div class="callout">
+  <div class="callout-label">The Core Formula</div>
+  <p>NIIT = 3.8% × the lesser of: (a) net investment income, or (b) the excess of modified AGI over the applicable threshold.<br><br>
+  <strong>Translation:</strong> You pay 3.8% on whichever is smaller - your total investment income, or the amount by which your income exceeds the threshold. If your MAGI is only slightly above the threshold, you pay 3.8% only on the excess over the threshold, not on all your investment income.</p>
+</div>
+
+<h2>2026 Thresholds - Not Inflation-Adjusted</h2>
+
+<div class="threshold-strip">
+  <div class="ts-box">
+    <div class="ts-label">Single / MFS</div>
+    <div class="ts-amount">$200,000</div>
+    <div class="ts-note">Has not changed since 2013. Not indexed for inflation.</div>
+  </div>
+  <div class="ts-box">
+    <div class="ts-label">Married Filing Jointly</div>
+    <div class="ts-amount">$250,000</div>
+    <div class="ts-note">Has not changed since 2013. Not indexed for inflation.</div>
+  </div>
+  <div class="ts-box">
+    <div class="ts-label">Married Filing Separately</div>
+    <div class="ts-amount">$125,000</div>
+    <div class="ts-note">Lowest threshold. MFS is rarely advantageous for NIIT.</div>
+  </div>
+</div>
+
+<p>Because the thresholds are not inflation-adjusted, more taxpayers cross them each year. A couple with $250,000 of combined income in 2013 was comfortably at the threshold; with wage growth and appreciation, many more households are now above it than Congress originally intended.</p>
+
+<h2>What Income Is Subject to NIIT</h2>
+
+<table class="income-table">
+  <thead><tr><th>Income Type</th><th>NIIT Applies?</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Interest income</td><td class="yes-cell">Yes</td><td>Including savings accounts, CDs, bonds, money market funds</td></tr>
+    <tr><td>Dividends</td><td class="yes-cell">Yes</td><td>Qualified and non-qualified dividends</td></tr>
+    <tr><td>Capital gains</td><td class="yes-cell">Yes</td><td>Short and long-term. Crypto gains included. NFT gains included.</td></tr>
+    <tr><td>Rental income (passive)</td><td class="yes-cell">Yes</td><td>Rental income from passive activities. Real estate professionals may be exempt.</td></tr>
+    <tr><td>Annuities (non-qualified)</td><td class="yes-cell">Yes</td><td>The income portion of non-qualified annuity distributions</td></tr>
+    <tr><td>Passive activity income</td><td class="yes-cell">Yes</td><td>Income from businesses in which the taxpayer does not materially participate</td></tr>
+    <tr><td>Wages / salary</td><td class="no-cell">No</td><td>Employment income is not NII. Subject to regular income tax and FICA only.</td></tr>
+    <tr><td>Self-employment income</td><td class="no-cell">No</td><td>Active business income is not NII. Subject to SE tax instead.</td></tr>
+    <tr><td>Active business income (S-Corp, partnership)</td><td class="no-cell">No</td><td>Income from businesses in which taxpayer materially participates. Material participation tests under IRC §469 apply.</td></tr>
+    <tr><td>IRA / 401(k) distributions</td><td class="no-cell">No</td><td>Distributions from tax-deferred retirement accounts are not NII (but do increase MAGI, potentially pushing other income over the threshold)</td></tr>
+    <tr><td>Social Security benefits</td><td class="no-cell">No</td><td>Not NII, but taxable portion increases MAGI</td></tr>
+    <tr><td>Tax-exempt interest (municipal bonds)</td><td class="no-cell">No</td><td>Not included in NII. Does not increase MAGI.</td></tr>
+    <tr><td>Alimony (pre-2019 divorces)</td><td class="no-cell">No</td><td>Not NII, but increases MAGI</td></tr>
+  </tbody>
+</table>
+
+<h2>Example - Investor Couple</h2>
+
+<div class="niit-calc">
+  <div class="nc-label">Example - Married Filing Jointly, $320,000 MAGI</div>
+  <div class="nc-row"><span class="nc-label2">Modified AGI</span><span class="nc-val">$320,000</span></div>
+  <div class="nc-row"><span class="nc-label2">MAGI threshold (MFJ)</span><span class="nc-val">$250,000</span></div>
+  <div class="nc-row"><span class="nc-label2">Excess over threshold</span><span class="nc-val">$70,000</span></div>
+  <div class="nc-row"><span class="nc-label2">Net investment income (dividends + cap gains)</span><span class="nc-val">$90,000</span></div>
+  <div class="nc-row"><span class="nc-label2">Lesser of: $70,000 or $90,000</span><span class="nc-val">$70,000</span></div>
+  <div class="nc-row"><span class="nc-label2">NIIT (3.8% × $70,000)</span><span class="nc-val coral">$2,660</span></div>
+</div>
+
+<h2>The Real Estate Professional Exception</h2>
+
+<p>Rental income is generally subject to NIIT because it is passive income. However, a taxpayer who qualifies as a real estate professional under IRC §469(c)(7) and materially participates in their rental activities can exclude those rental activities from NIIT. Real estate professional status requires: (1) more than half of the taxpayer's personal services during the year are in real property trades or businesses in which the taxpayer materially participates, and (2) the taxpayer performs more than 750 hours of services in those activities. For a taxpayer with a W-2 job, qualifying as a real estate professional is essentially impossible unless the spouse also qualifies and files jointly.</p>
+
+<h2>Active vs. Passive - The Material Participation Tests</h2>
+
+<p>Income from S-Corps and partnerships is not subject to NIIT if the taxpayer materially participates in the activity. Material participation is satisfied if any one of seven tests under Treas. Reg. §1.469-5T is met, the most common being: participation for more than 500 hours during the year, or participation constituting substantially all participation in the activity. A limited partner or passive investor who does not materially participate pays NIIT on their share of pass-through income.</p>
+
+<div class="green-box"><strong>The most common NIIT planning strategies:</strong>
+(1) Municipal bonds - interest is exempt from both regular income tax and NIIT, making them relatively more attractive above the threshold. (2) Tax-deferred accounts - holding income-producing investments in IRAs and 401(k)s defers the income that would otherwise trigger NIIT. (3) Real estate professional election - eliminating rental income from NIIT can save thousands annually. (4) Maximizing active participation - ensuring pass-through income is characterized as active, not passive, through documented material participation. (5) Installment sales - spreading gain recognition over multiple years can keep MAGI below the threshold in each year.</div>
+
+<h2>NIIT and Crypto</h2>
+
+<p>Capital gains from cryptocurrency are net investment income subject to NIIT. A taxpayer who realizes $200,000 of Bitcoin gains and has other income above the threshold pays 3.8% on those gains in addition to the regular capital gains rate. At the top long-term rate, the effective maximum federal rate on crypto gains is 23.8% (20% + 3.8%). Short-term crypto gains face up to 40.8% (37% + 3.8%). This is one of the reasons the long-term holding period matters significantly for high-income crypto investors.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools & Articles</div>
+  <div class="related-links">
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Federal + state rates · IRC §1</span></a>
+    <a href="crypto-tax-guide.html" class="related-link">Crypto & NFT Tax Guide<span>Capital gains · NIIT on crypto · Form 8949</span></a>
+    <a href="depreciation-calculator.html" class="related-link">Real Estate Depreciation<span>Passive income planning · IRC §168</span></a>
+    <a href="qbi-deduction-guide.html" class="related-link">QBI Deduction Guide<span>Active income · §199A · SSTB</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §1411 (Net Investment Income Tax); Treas. Reg. §1.1411-1 through §1.1411-10; IRC §469 (passive activity rules); IRC §469(c)(7) (real estate professional); Treas. Reg. §1.469-5T (material participation tests); P.L. 111-148 §1402 (ACA enactment); Form 8960 (NIIT calculation); IRS Rev. Proc. 2025-32 (2026 income thresholds - note NIIT thresholds are statutory and not adjusted).</div>
+<div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional. A tk.cpa resource - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
+
+</div>
+</body>
+</html>

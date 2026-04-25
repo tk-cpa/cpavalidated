@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Vehicle Depreciation Calculator 2026 | CPA Validated</title>
+<meta name="description" content="Calculate business vehicle depreciation for 2026. Section 179, bonus depreciation (40%), MACRS 5-year, luxury auto caps (Rev. Proc. 2025-24). Passenger autos, SUVs over 6,000 lbs, heavy trucks. Business use percentage. CPA-validated. IRC Section 168, 179, 280F.">
+<link rel="canonical" href="https://cpavalidated.com/vehicle-depreciation.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:900px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.container{max-width:900px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px 20px 22px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px}.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s;appearance:none;border-radius:0}.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px;cursor:pointer}
+input[type="number"].fc,input[type="range"].fc{font-weight:600;color:var(--blue-acc);font-size:16px}
+.result-hero{background:var(--ink);padding:24px;margin-bottom:20px}
+.rh-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.1)}
+.rh-item{padding:14px 16px;background:rgba(255,255,255,.05);text-align:center}
+.rh-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:6px}
+.rh-val{font-family:var(--font-display);font-size:22px;font-weight:500;color:#fff}
+.rh-val.coral{color:var(--coral)}.rh-val.green{color:#6de88e}
+.rh-sub{font-size:10px;color:rgba(255,255,255,.35);margin-top:3px}
+.flag{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.flag-icon{font-size:13px;flex-shrink:0;margin-top:1px}.flag-text{font-size:12.5px;line-height:1.5}
+.flag.amber .flag-text{color:var(--amber)}.flag.green .flag-text{color:var(--green)}.flag.blue .flag-text{color:var(--blue-acc)}.flag.red .flag-text{color:var(--red)}
+.flag-text strong{font-weight:600}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:16px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:10px}
+.sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px}
+.sum-row:last-child{border-bottom:none}.sum-lbl{color:rgba(255,255,255,.55)}.sum-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px}
+.sched-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px}
+table.sched{width:100%;border-collapse:collapse;font-size:12.5px;min-width:400px}
+table.sched th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:8px 10px;background:var(--ink);color:#fff;text-align:right}
+table.sched th:first-child{text-align:left}
+table.sched td{padding:7px 10px;border-bottom:1px solid var(--ink-20);text-align:right;font-family:var(--font-mono);font-size:12px}
+table.sched td:first-child{text-align:left;font-family:var(--font-sans);font-weight:500;color:var(--ink-60)}
+table.sched tr:last-child td{border-bottom:none}
+table.sched tr:nth-child(even) td{background:var(--ink-10)}
+table.sched .current-year td{background:var(--coral-100)!important;font-weight:700}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:8px}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}.pbn:hover{background:var(--coral-600)}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.slider-row{display:flex;align-items:center;gap:12px}.slider-val{font-family:var(--font-mono);font-weight:700;font-size:16px;color:var(--coral);min-width:40px}
+@media(max-width:640px){.fg2,.fg3,.rh-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.rh-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Business Vehicle Depreciation Calculator</h1>
+  <div class="sub">Section 179 &nbsp;&bull;&nbsp; Bonus Depreciation (40% in 2026) &nbsp;&bull;&nbsp; Luxury Auto Caps &nbsp;&bull;&nbsp; MACRS 5-Year</div>
+  <div class="badges">
+    <span class="badge">IRC §168(k)</span>
+    <span class="badge">IRC §179</span>
+    <span class="badge">IRC §280F</span>
+    <span class="badge">Rev. Proc. 2025-24</span>
+    <span class="badge">OBBBA (P.L. 119-21)</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="container">
+
+<!-- Step 1 -->
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Vehicle Information</h2></div>
+  <div class="cb">
+    <div class="fg2" style="margin-bottom:14px">
+      <div class="f1">
+        <label>Vehicle Type</label>
+        <select id="vehType" class="fc" onchange="calc()">
+          <option value="auto">Passenger Automobile (≤6,000 lbs GVWR)</option>
+          <option value="suv">SUV / Crossover (6,001–14,000 lbs GVWR)</option>
+          <option value="heavy">Heavy Truck or Van (>6,000 lbs, not SUV)</option>
+          <option value="ev">Electric Vehicle / Plug-in Hybrid</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Year Placed in Service</label>
+        <select id="placedYear" class="fc" onchange="calc()">
+          <option value="2026" selected>2026</option>
+          <option value="2025">2025</option>
+          <option value="2027">2027 (projected)</option>
+        </select>
+      </div>
+    </div>
+    <div class="fg2" style="margin-bottom:14px">
+      <div class="f1">
+        <label>Vehicle Cost ($)</label>
+        <input type="number" id="vehCost" class="fc" value="50000" min="0" oninput="calc()">
+      </div>
+      <div class="f1">
+        <label>Business Use %</label>
+        <div class="slider-row">
+          <input type="range" id="bizPct" min="1" max="100" value="100" class="fc" style="padding:0;height:8px;cursor:pointer" oninput="document.getElementById('bizPctVal').textContent=this.value+'%';calc()">
+          <span class="slider-val" id="bizPctVal">100%</span>
+        </div>
+        <div style="font-size:11px;color:var(--ink-60);margin-top:4px">Under 50% → straight-line only, no bonus or §179. IRC §280F(d)(6).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 2 -->
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Depreciation Elections</h2></div>
+  <div class="cb">
+    <div class="fg3" style="margin-bottom:14px">
+      <div class="f1">
+        <label>Section 179 Election</label>
+        <select id="sec179" class="fc" onchange="calc()">
+          <option value="max">Elect §179 (up to vehicle limit)</option>
+          <option value="none">Do not elect §179</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Bonus Depreciation</label>
+        <select id="bonusElect" class="fc" onchange="calc()">
+          <option value="yes">Claim bonus depreciation</option>
+          <option value="no">Elect out of bonus</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Convention</label>
+        <select id="convention" class="fc" onchange="calc()">
+          <option value="half">Half-Year Convention</option>
+          <option value="mid4">Mid-Quarter (Q4 acquisition)</option>
+        </select>
+      </div>
+    </div>
+    <div style="font-size:12px;color:var(--ink-60);padding:10px;background:var(--ink-10);border-left:3px solid var(--ink-20)">
+      §179 limit for passenger autos and SUVs is subject to §280F luxury auto caps regardless of the overall §179 limit ($1,220,000 for 2026). Heavy trucks and vans (non-SUV &gt;6,000 lbs) are not subject to the §280F caps and can use the full §179 amount.
+    </div>
+  </div>
+</div>
+
+<!-- Results -->
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Depreciation Analysis</h2></div>
+  <div class="cb">
+
+    <div class="result-hero">
+      <div class="rh-grid">
+        <div class="rh-item">
+          <div class="rh-label">Year 1 Deduction</div>
+          <div class="rh-val coral" id="rYear1">$0</div>
+          <div class="rh-sub">After §280F cap & biz use %</div>
+        </div>
+        <div class="rh-item">
+          <div class="rh-label">§179 Claimed</div>
+          <div class="rh-val" id="r179">$0</div>
+          <div class="rh-sub">Expensed immediately</div>
+        </div>
+        <div class="rh-item">
+          <div class="rh-label">Bonus Depreciation</div>
+          <div class="rh-val" id="rBonus">$0</div>
+          <div class="rh-sub" id="rBonusRate">40% (2026)</div>
+        </div>
+        <div class="rh-item">
+          <div class="rh-label">MACRS Year 1</div>
+          <div class="rh-val" id="rMacrs">$0</div>
+          <div class="rh-sub">Remaining basis</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="flags"></div>
+
+    <div class="sum-box" id="sumBox">
+      <div class="sum-title">Calculation Summary</div>
+      <div class="sum-row"><span class="sum-lbl">Vehicle cost</span><span class="sum-val" id="sCost">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Business use %</span><span class="sum-val" id="sBizPct">100%</span></div>
+      <div class="sum-row"><span class="sum-lbl">Business-use basis</span><span class="sum-val" id="sBizBasis">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">§280F cap applies?</span><span class="sum-val" id="sCap">—</span></div>
+      <div class="sum-row"><span class="sum-lbl">§179 deduction</span><span class="sum-val" id="s179">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Bonus depreciation</span><span class="sum-val" id="sBonus">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">MACRS Year 1</span><span class="sum-val" id="sMacrs">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Total Year 1 deduction</span><span class="sum-val" id="sTotal">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Remaining basis (future years)</span><span class="sum-val" id="sRemaining">$0</span></div>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Full Depreciation Schedule</h3>
+    <div class="sched-wrap">
+      <table class="sched">
+        <thead><tr>
+          <th style="text-align:left">Tax Year</th>
+          <th>Deduction</th>
+          <th>Cumulative</th>
+          <th>Cap Applied</th>
+        </tr></thead>
+        <tbody id="schedBody"></tbody>
+      </table>
+    </div>
+
+    <div class="source-row">Authority: IRC §168(k) (bonus depreciation, 40% for 2026 per OBBBA P.L. 119-21); IRC §179 (§179 expensing, $1,220,000 limit for 2026); IRC §280F (luxury automobile limitations); Rev. Proc. 2025-24 (2025 §280F caps - 2026 caps not yet published; 2026 figures are projected based on prior-year adjustment pattern); MACRS 5-year recovery period per Rev. Proc. 87-57 Table A-1; IRC §168(d)(1) (half-year convention); IRC §168(d)(3) (mid-quarter convention). SUV §179 limit: IRC §179(b)(5) ($28,900 for 2026, inflation-adjusted).</div>
+    <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+    <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. 2026 §280F caps are projected - verify against IRS Rev. Proc. for 2026 when published. Consult a qualified tax professional. A tk.cpa resource - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ── §280F Luxury Auto Caps ──────────────────────────────────────────────────
+// Rev. Proc. 2025-24 (2025 actual); 2026 projected with ~3% inflation adjustment
+// Per IRC §280F, these caps apply to passenger autos (≤6,000 lbs GVWR)
+// Year 1 includes any bonus depreciation and §179 combined
+const CAPS = {
+  2025: { y1:12200, y2:19600, y3:11775, y4plus:6960 },
+  2026: { y1:12400, y2:20200, y3:12100, y4plus:7160 }, // projected
+  2027: { y1:12600, y2:20600, y3:12300, y4plus:7300 }, // projected
+};
+// SUV §179 limit (IRC §179(b)(5)) - inflation adjusted
+const SUV_179_LIMIT = { 2025:28900, 2026:28900, 2027:29200 };
+// Bonus rates by year (OBBBA)
+const BONUS_RATE = { 2025:0.40, 2026:0.40, 2027:0.20, 2028:0 };
+// MACRS 5-year half-year convention rates (Rev. Proc. 87-57 Table A-1)
+const MACRS5_HALF = [0.20, 0.32, 0.192, 0.1152, 0.1152, 0.0576];
+// MACRS 5-year mid-quarter Q4 rates
+const MACRS5_MQ4  = [0.05, 0.38, 0.228, 0.1368, 0.1368, 0.0684];
+
+function fmt(n){ return n===0?'$0':'$'+Math.round(n).toLocaleString('en-US') }
+function flag(text, type){ document.getElementById('flags').innerHTML += `<div class="flag ${type}"><div class="flag-icon">${type==='amber'?'!':type==='red'?'✗':type==='green'?'✓':'ℹ'}</div><div class="flag-text">${text}</div></div>` }
+
+function calc(){
+  const vtype   = document.getElementById('vehType').value;
+  const year    = parseInt(document.getElementById('placedYear').value);
+  const cost    = parseFloat(document.getElementById('vehCost').value)||0;
+  const bizPct  = parseInt(document.getElementById('bizPct').value)/100;
+  const do179   = document.getElementById('sec179').value==='max';
+  const doBonus = document.getElementById('bonusElect').value==='yes';
+  const conv    = document.getElementById('convention').value;
+  const rates   = conv==='half' ? MACRS5_HALF : MACRS5_MQ4;
+
+  const bizBasis = cost * bizPct;
+  const bonusRate = BONUS_RATE[year]||0;
+  const isLuxury  = vtype==='auto'||vtype==='ev';
+  const isSUV     = vtype==='suv';
+  const isHeavy   = vtype==='heavy';
+  const cap       = CAPS[year]||CAPS[2026];
+  const suv179max = SUV_179_LIMIT[year]||SUV_179_LIMIT[2026];
+
+  document.getElementById('flags').innerHTML='';
+
+  // Listed property under 50% business use - straight line only
+  if(bizPct < 0.50){
+    flag('<strong>Business use under 50%.</strong> Vehicle must be depreciated using straight-line ADS (5-year). Bonus depreciation and §179 are not available. IRC §280F(d)(6); IRC §179(d)(10).','red');
+    document.getElementById('rYear1').textContent='Limited';
+    document.getElementById('r179').textContent='$0';
+    document.getElementById('rBonus').textContent='$0';
+    document.getElementById('rMacrs').textContent='—';
+    return;
+  }
+
+  let sec179 = 0;
+  let bonus  = 0;
+  let macrs1 = 0;
+  let remaining = bizBasis;
+
+  // §179
+  if(do179){
+    if(isSUV) sec179 = Math.min(remaining, suv179max);
+    else if(isHeavy) sec179 = remaining; // no §280F cap on heavy trucks
+    else sec179 = remaining; // passenger auto - but §280F caps total Y1
+    remaining -= sec179;
+  }
+
+  // Bonus depreciation
+  if(doBonus && bonusRate>0){
+    bonus = remaining * bonusRate;
+    remaining -= bonus;
+  }
+
+  // MACRS Year 1 on remaining basis
+  macrs1 = remaining * rates[0];
+
+  // Total Year 1 before §280F cap
+  let total1 = sec179 + bonus + macrs1;
+
+  // Apply §280F cap for passenger autos and EVs
+  let capApplied = false;
+  if(isLuxury){
+    const maxY1 = cap.y1 * bizPct; // cap scales with business use
+    if(total1 > maxY1){
+      total1 = maxY1;
+      capApplied = true;
+    }
+    flag(`<strong>§280F luxury auto cap applies.</strong> Passenger autos are subject to annual depreciation caps under IRC §280F. Year 1 cap (projected 2026, at ${Math.round(bizPct*100)}% business use): ${fmt(cap.y1*bizPct)}. Uncapped amount: ${fmt(sec179+bonus+macrs1)}. <em>2026 caps are projected - verify Rev. Proc. for 2026 when published.</em>`, 'amber');
+  }
+
+  if(isSUV){
+    flag(`<strong>SUV §179 limit applies.</strong> SUVs with GVWR 6,001–14,000 lbs are subject to a §179 limitation of ${fmt(suv179max)} (2026, IRC §179(b)(5)). Full §280F caps do not apply to the MACRS portion. Bonus depreciation is not limited by §179(b)(5).`, 'blue');
+  }
+
+  if(isHeavy){
+    flag('<strong>Heavy truck or van exception.</strong> Vehicles with GVWR over 6,000 lbs that are not SUVs are not subject to §280F luxury auto caps. Full §179 and bonus depreciation available without per-vehicle dollar cap. Confirm GVWR with manufacturer specifications.', 'green');
+  }
+
+  if(bonusRate===0 && year>=2028){
+    flag('<strong>Bonus depreciation is 0% for this year.</strong> The OBBBA phase-down schedule eliminates bonus depreciation for property placed in service after December 31, 2027. Only §179 and MACRS available.', 'amber');
+  }
+
+  if(bizPct < 1){
+    flag(`<strong>Partial business use (${Math.round(bizPct*100)}%).</strong> All caps and deductions are applied to the business-use portion only. Personal use is not depreciable. If business use drops below 50% in a subsequent year, recapture may apply under IRC §280F(b).`, 'blue');
+  }
+
+  // Update hero
+  document.getElementById('rYear1').textContent = fmt(total1);
+  document.getElementById('r179').textContent   = fmt(Math.min(sec179, total1));
+  document.getElementById('rBonus').textContent  = fmt(bonus);
+  document.getElementById('rBonusRate').textContent = `${Math.round(bonusRate*100)}% (${year})`;
+  document.getElementById('rMacrs').textContent  = fmt(macrs1);
+
+  // Summary
+  document.getElementById('sCost').textContent    = fmt(cost);
+  document.getElementById('sBizPct').textContent  = Math.round(bizPct*100)+'%';
+  document.getElementById('sBizBasis').textContent = fmt(bizBasis);
+  document.getElementById('sCap').textContent     = isLuxury ? `Yes - ${fmt(cap.y1)} (projected 2026)` : 'No';
+  document.getElementById('s179').textContent     = fmt(sec179);
+  document.getElementById('sBonus').textContent   = fmt(bonus);
+  document.getElementById('sMacrs').textContent   = fmt(macrs1);
+  document.getElementById('sTotal').textContent   = fmt(total1);
+  document.getElementById('sRemaining').textContent = fmt(Math.max(0, bizBasis - total1));
+
+  // Schedule
+  const tbody = document.getElementById('schedBody');
+  tbody.innerHTML='';
+  const cy = new Date().getFullYear();
+  let cum = total1;
+  let rem = Math.max(0, bizBasis - total1);
+
+  // Year 1
+  const tr1 = document.createElement('tr');
+  if(year===cy) tr1.className='current-year';
+  tr1.innerHTML=`<td>${year} ◄ Year 1</td><td>${fmt(total1)}</td><td>${fmt(cum)}</td><td>${isLuxury?fmt(cap.y1*(bizPct)):'—'}</td>`;
+  tbody.appendChild(tr1);
+
+  // Years 2-6 (MACRS 5-year has 6 tax years due to convention)
+  for(let i=1;i<6;i++){
+    const ty = year+i;
+    let capY = isLuxury ? (i===1?cap.y2:i===2?cap.y3:cap.y4plus)*bizPct : Infinity;
+    let depr = Math.min(rem, rates[i]*bizBasis, capY);
+    if(depr<=0) break;
+    cum += depr;
+    rem -= depr;
+    const tr = document.createElement('tr');
+    if(ty===cy) tr.className='current-year';
+    tr.innerHTML=`<td>${ty}</td><td>${fmt(depr)}</td><td>${fmt(cum)}</td><td>${isLuxury?fmt(capY):'—'}</td>`;
+    tbody.appendChild(tr);
+  }
+}
+
+calc();
+</script>
+</body>
+</html>
