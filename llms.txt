@@ -81,6 +81,11 @@ CPA Validated is a free, perpetual public resource built and personally validate
 
 ## Reference Guides
 
+### One Big Beautiful Bill Act (OBBBA, P.L. 119-21) - The Biggest Provisions
+- URL: https://cpavalidated.com/obbba-guide.html
+- Authority: P.L. 119-21; IRC §§24, 168(k), 168(n), 174A, 199A, 250, 951A, 1202, 2010(c)(3); Rev. Proc. 2025-28; Notice 2025-72
+- Purpose: 18 verified provisions across individuals (SALT cap to $40K, $15M estate exemption, tip / overtime / senior / auto loan deductions, Trump Accounts), business (Section 174A R&E expensing, 100% bonus depreciation permanent, Section 168(n) qualified production property, Section 163(j) EBITDA, Section 199A QBI permanent, Section 1202 QSBS tiered exclusion, Section 179 expansion), and international (NCTI replaces GILTI, FDDEI replaces FDII, BEAT 10.5%). Effective dates and authority citations throughout.
+
 ### States with No Personal Income Tax (2026)
 - URL: https://cpavalidated.com/no-income-tax-states.html
 - Authority: Tax Foundation 2026; State Tax Statutes; IRC §933
@@ -106,10 +111,10 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - Authority: 31 USC §5314; IRC §6038D; IRC §402(b); Rev. Proc. 2020-17
 - Purpose: Governmental DB vs. savings component distinction. Canada RRSP, Israel, Germany, UK, Russia. US-Russia treaty suspended August 2023.
 
-### GILTI Explained (2026)
+### NCTI Explained (Formerly GILTI)
 - URL: https://cpavalidated.com/gilti-explained.html
-- Authority: IRC §951A; IRC §250; IRC §957; IRC §960(d); IRC §962; OBBBA
-- Purpose: GILTI calculation, 10% deemed return, §962 election, high-tax exclusion. OBBBA §250 deduction phase-down.
+- Authority: IRC §951A (NCTI, formerly GILTI); IRC §250; IRC §957; IRC §960(d); IRC §962; OBBBA P.L. 119-21
+- Purpose: NCTI - Net CFC Tested Income - is the post-OBBBA renaming of GILTI. Calculation, 12.6% effective corporate rate (40% Section 250 deduction), 90% foreign tax credit, elimination of QBAI shield, inclusion shareholder rule (any-day-during-year), §962 election, high-tax exclusion. Effective for tax years beginning after 12/31/2025.
 
 ### S-Corp vs. LLC Tax Comparison (2026)
 - URL: https://cpavalidated.com/scorp-vs-llc.html
