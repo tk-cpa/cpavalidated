@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Operating Loss (NOL) Tracker 2026 | CPA Validated</title>
+<meta name="description" content="Track NOL carryforwards under post-TCJA rules. 80% taxable income limitation. No carryback (except farming). State conformity varies. CPA-validated. IRC 172.">
+<link rel="canonical" href="https://cpavalidated.com/nol-tracker.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.nol-table{width:100%;border-collapse:collapse;margin-bottom:14px;font-size:13px}
+.nol-table th{background:var(--ink);color:#fff;padding:8px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em}
+.nol-table td{padding:8px 12px;border-bottom:1px solid var(--ink-10)}
+.nol-table tr:last-child td{border-bottom:none;font-weight:700;background:var(--ink-10)}
+.nol-table td.green{color:var(--green);font-weight:600}
+.nol-table td.red{color:var(--red);font-weight:600}
+.nol-table td.amber{color:var(--amber);font-weight:600}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &bull; a tk.cpa resource</div>
+  <h1>Net Operating Loss (NOL) Tracker 2026</h1>
+  <div class="sub">Post-TCJA NOL rules. Indefinite carryforward. 80% taxable income limitation. No carryback for most taxpayers. 5-year projection of NOL absorption. State non-conformity warning.</div>
+  <div class="badges"><span class="badge">IRC 172 - NOL deduction</span><span class="badge">IRC 172(a) - 80% limit</span><span class="badge">IRC 172(b)(1)(A) - indefinite carryforward</span><span class="badge">TCJA permanent (OBBBA)</span></div>
+</div></div>
+<div class="back"><a href="index.html">back to cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>NOL Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Existing NOL Carryforward ($)</label>
+        <input type="number" class="fc" id="priorNOL" value="250000" oninput="calc()">
+        <div class="hint">Total NOL carryforward from prior years. From Form 1045 or Schedule A of Form 1045. Pre-2018 NOLs have different rules (2-year carryback, 20-year carryforward, no 80% limit).</div>
+      </div>
+      <div class="f1"><label>NOL Year (Post-2017?)</label>
+        <select class="fc" id="nolVintage" onchange="calc()">
+          <option value="post" selected>Post-2017 NOL (TCJA rules - 80% limit, indefinite carryforward)</option>
+          <option value="pre">Pre-2018 NOL (old rules - 100% limit, 20-year carryforward)</option>
+          <option value="mixed">Mixed (both pre-2018 and post-2017 NOLs)</option>
+        </select>
+      </div>
+      <div class="f1"><label>New NOL This Year ($)</label>
+        <input type="number" class="fc" id="currentNOL" value="0" oninput="calc()">
+        <div class="hint">Additional NOL generated in the current tax year. Added to existing carryforward.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Current Year Taxable Income ($)</label>
+        <input type="number" class="fc" id="taxableIncome" value="180000" oninput="calc()">
+        <div class="hint">Taxable income before NOL deduction. NOL is applied against this amount (up to 80%).</div>
+      </div>
+      <div class="f1"><label>Expected Annual Income Growth (%)</label>
+        <input type="number" class="fc" id="incomeGrowth" value="5" min="0" max="30" oninput="calc()">
+        <div class="hint">Projected annual growth in taxable income for carryforward absorption schedule.</div>
+      </div>
+      <div class="f1"><label>Marginal Tax Rate</label>
+        <select class="fc" id="taxRate" onchange="calc()">
+          <option value="0.22">22%</option>
+          <option value="0.24" selected>24%</option>
+          <option value="0.32">32%</option>
+          <option value="0.35">35%</option>
+          <option value="0.37">37%</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>NOL Absorption Schedule</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="tax-estimator.html" class="rl">Tax Estimator</a>
+  <a href="scorp-compensation.html" class="rl">S-Corp Compensation</a>
+  <a href="bonus-depreciation-guide.html" class="rl">Bonus Depreciation Guide</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
+function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+function calc(){
+  const priorNOL=parseFloat(document.getElementById('priorNOL').value)||0;
+  const currentNOL=parseFloat(document.getElementById('currentNOL').value)||0;
+  const taxableIncome=parseFloat(document.getElementById('taxableIncome').value)||0;
+  const incomeGrowth=(parseFloat(document.getElementById('incomeGrowth').value)||5)/100;
+  const taxRate=parseFloat(document.getElementById('taxRate').value)||0.24;
+  const nolVintage=document.getElementById('nolVintage').value;
+  const limit=nolVintage==='pre'?1.0:0.80;
+
+  const totalNOL=priorNOL+currentNOL;
+  const maxDeduction=taxableIncome*limit;
+  const nolDeductionYear1=Math.min(totalNOL,maxDeduction);
+  const remainingAfterYear1=totalNOL-nolDeductionYear1;
+  const taxablAfterNOL=taxableIncome-nolDeductionYear1;
+  const taxSavingYear1=nolDeductionYear1*taxRate;
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  h+=`<div class="sum-box"><div class="sum-title">Current Year NOL Application</div>
+    <div class="srow"><span class="sl">Total NOL carryforward</span><span class="sv coral">${fmt(totalNOL)}</span></div>
+    <div class="srow"><span class="sl">Taxable income this year</span><span class="sv">${fmt(taxableIncome)}</span></div>
+    <div class="srow"><span class="sl">80% limitation (${Math.round(limit*100)}% of ${fmt(taxableIncome)})</span><span class="sv">${fmt(maxDeduction)}</span></div>
+    <div class="srow"><span class="sl">NOL deduction this year</span><span class="sv green">${fmt(nolDeductionYear1)}</span></div>
+    <div class="srow"><span class="sl">Taxable income after NOL</span><span class="sv">${fmt(taxablAfterNOL)}</span></div>
+    <div class="srow"><span class="sl">Estimated tax savings (${Math.round(taxRate*100)}%)</span><span class="sv green">${fmt(taxSavingYear1)}</span></div>
+    <div class="srow"><span class="sl">Remaining NOL to carryforward</span><span class="sv ${remainingAfterYear1>0?'amber':'green'}">${fmt(remainingAfterYear1)}</span></div>
+  </div>`;
+
+  // 5-year absorption schedule
+  h+=`<div style="margin-bottom:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)">5-Year Absorption Schedule</div>`;
+  h+=`<div style="overflow-x:auto"><table class="nol-table"><thead><tr>
+    <th>Year</th><th>Taxable Income</th><th>80% Limit</th><th>NOL Used</th><th>Tax Saved</th><th>Remaining NOL</th>
+  </tr></thead><tbody>`;
+
+  let remaining=totalNOL;
+  let income=taxableIncome;
+  let totalSaved=0;
+  for(let y=1;y<=8&&remaining>0;y++){
+    const lim=income*limit;
+    const used=Math.min(remaining,lim);
+    const saved=used*taxRate;
+    totalSaved+=saved;
+    remaining-=used;
+    h+=`<tr>
+      <td>Year ${y}</td>
+      <td>${fmt(income)}</td>
+      <td>${fmt(lim)}</td>
+      <td class="green">${fmt(used)}</td>
+      <td class="green">${fmt(saved)}</td>
+      <td class="${remaining>0?'amber':'green'}">${remaining>0?fmt(remaining):'Fully absorbed'}</td>
+    </tr>`;
+    income=income*(1+incomeGrowth);
+  }
+  if(remaining>0){
+    h+=`<tr><td colspan="5" style="color:var(--amber);font-style:italic">Remaining NOL after 8 years: ${fmt(remaining)} (indefinite carryforward)</td><td class="amber">${fmt(remaining)}</td></tr>`;
+  }
+  h+=`<tr><td><strong>Total</strong></td><td></td><td></td><td class="green"><strong>${fmt(totalNOL-remaining)}</strong></td><td class="green"><strong>${fmt(totalSaved)}</strong></td><td></td></tr>`;
+  h+='</tbody></table></div>';
+
+  if(nolVintage==='pre'){
+    h+=flag('amber','!','<strong>Pre-2018 NOL rules apply.</strong> NOLs generated before 2018 are subject to the old rules: 2-year carryback (to prior profitable years), 20-year carryforward limit, and 100% income offset (no 80% limitation). Pre-2018 NOLs are applied before post-2017 NOLs. If you have both, the ordering matters - track separately on Schedule A of Form 1045.');
+  }
+  if(nolVintage==='post'){
+    h+=flag('blue','i','<strong>Post-2017 TCJA rules.</strong> NOLs from tax years beginning after December 31, 2017 carry forward indefinitely (no expiration) but are limited to 80% of taxable income in the absorption year. No carryback is permitted (except for farming losses, IRC 172(b)(1)(B)). OBBBA (P.L. 119-21) made these rules permanent.');
+  }
+  h+=flag('red','!','<strong>State conformity varies significantly.</strong> Many states do not conform to federal NOL rules. New York, California, New Jersey, and others have different carryforward periods, carryback rules, and percentage limitations. A federal NOL does not automatically create a state NOL - and vice versa. Track federal and state NOLs separately and verify current-year state conformity before filing.');
+  if(totalNOL>500000){
+    h+=flag('amber','!','<strong>Large NOL - consider Section 382 if there was an ownership change.</strong> If the entity that generated the NOL had an ownership change (defined as more than 50% change in ownership over a 3-year period under IRC 382), the annual NOL utilization is limited to the Section 382 limitation amount. This applies to corporations. Verify no ownership change events occurred before relying on the full NOL carryforward.');
+  }
+
+  h+=`<div class="src">IRC 172 (net operating loss deduction); IRC 172(a) (80% of taxable income limitation for post-2017 NOLs); IRC 172(b)(1)(A) (indefinite carryforward for post-2017 NOLs); IRC 172(b)(1)(B) (2-year carryback for farming losses); IRC 172(b)(1)(A)(i) (20-year carryforward, 2-year carryback for pre-2018 NOLs); IRC 382 (Section 382 limitation on NOL use after ownership change); TCJA 13302 (TCJA NOL reform); OBBBA P.L. 119-21 (TCJA NOL rules made permanent).</div>`;
+  h+=`<div class="disc">Projections assume income growth rate is constant - actual results will differ. State NOL rules not modeled. Section 382 limitation analysis requires separate review. Consult a CPA for multi-year planning. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+
+  rb.innerHTML=h;
+}
+calc();
+</script>
+</body>
+</html>
