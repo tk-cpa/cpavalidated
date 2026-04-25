@@ -59,9 +59,35 @@ input[type=range]{flex:1;accent-color:var(--coral)}
 .pp-btn{font-size:11px;font-weight:700;padding:5px 12px;border:1.5px solid var(--ink-20);background:var(--white);cursor:pointer;font-family:var(--font-mono);color:var(--ink-60);transition:all .15s}
 .pp-btn.active,.pp-btn:hover{border-color:var(--coral);color:var(--coral);background:var(--coral-100)}
 @media(max-width:600px){.fg2,.fg3,.w4-grid,.result-strip{grid-template-columns:1fr 1fr}}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
+.nav-cta:hover{background:var(--coral-600)}
+@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>W-4 Withholding Optimizer 2026</h1>
@@ -73,7 +99,6 @@ input[type=range]{flex:1;accent-color:var(--coral)}
     <span class="badge">IRC §6654</span>
   </div>
 </div></div>
-<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="wrap">
 
 <div class="card">
@@ -248,7 +273,7 @@ function calc(){
     <div class="rs-item"><div class="rs-label">Est. Tax Liability</div><div class="rs-val">${fmt(netTax)}</div></div>
     <div class="rs-item"><div class="rs-label">Withholding Needed</div><div class="rs-val coral">${fmt(totalWithholdingNeeded)}</div></div>
     <div class="rs-item"><div class="rs-label">Target Outcome</div><div class="rs-val ${target>=0?'green':'amber'}">${target>=0?'+'+fmt(Math.abs(target)):fmt(target)}</div></div>
-    <div class="rs-item"><div class="rs-label">Effective Rate</div><div class="rs-val">${totalIncome>0?(netTax/totalIncome*100).toFixed(1)+'%':'—'}</div></div>
+    <div class="rs-item"><div class="rs-label">Effective Rate</div><div class="rs-val">${totalIncome>0?(netTax/totalIncome*100).toFixed(1)+'%':'-'}</div></div>
   </div>`;
 
   // W-4 entries
