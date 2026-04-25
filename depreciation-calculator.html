@@ -103,35 +103,9 @@ table.sched .total-row td{background:var(--ink-10);font-weight:700;border-top:2p
   .input-card{display:none!important}
   .sched-wrap{overflow:visible}
 }
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
-.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
-.nav-links a:hover{color:var(--coral)}
-.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
-.nav-cta:hover{background:var(--coral-600)}
-@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
-</nav>
-
 
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
@@ -146,6 +120,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
   </div>
 </div></div>
 
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="container">
 
 <!-- Step 1: Property -->
@@ -193,7 +168,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
   <div class="cb">
     <div class="flag blue">
       <div class="flag-icon">ℹ</div>
-      <div class="flag-text"><strong>QIP is eligible for bonus depreciation.</strong> Residential and commercial real property are NOT eligible for bonus depreciation - they use straight-line only. IRC §168(k)(2)(A)(i) specifically excludes property with MACRS recovery periods of 27.5 or 39 years. QIP (15-year property) is eligible. OBBBA (P.L. 119-21) bonus depreciation schedule: 2026 = 40%, 2027 = 20%, 2028+ = 0%.</div>
+      <div class="flag-text"><strong>QIP is eligible for bonus depreciation.</strong> Residential and commercial real property are NOT eligible for bonus depreciation - they use straight-line only. IRC §168(k)(2)(A)(i) specifically excludes property with MACRS recovery periods of 27.5 or 39 years. QIP (15-year property) is eligible. Post-OBBBA (P.L. 119-21): 100% bonus depreciation is permanent for property acquired and placed in service after January 19, 2025. Property under a written binding contract dated before 1/20/2025 remains under the TCJA phase-down (40% for 2025).</div>
     </div>
     <div class="fg2">
       <div class="f1">
@@ -204,11 +179,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
         </select>
       </div>
       <div class="f1">
-        <label>Bonus Depreciation Rate (2026)</label>
+        <label>Bonus Depreciation Rate</label>
         <select id="bonusRate" class="fc" onchange="calc()">
-          <option value="0.40" selected>40% (2026 - OBBBA phase-down)</option>
-          <option value="0.20">20% (2027 - projected)</option>
-          <option value="0">0% (2028+ - phased out)</option>
+          <option value="1.00" selected>100% (post-OBBBA, property after 1/19/2025)</option>
+          <option value="0.40">40% (TCJA phase-down: pre-1/20/2025 binding contract)</option>
+          <option value="0.60">60% (2024 - TCJA phase-down)</option>
+          <option value="0.80">80% (2023 - TCJA phase-down)</option>
+          <option value="0">0% (elected out)</option>
         </select>
       </div>
     </div>
@@ -276,10 +253,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
     </div>
     <button class="show-all-btn" id="showAllBtn" onclick="toggleAll()" style="display:none">Show Full Schedule</button>
 
-    <div class="source-row">Authority: IRC §168 (MACRS); IRC §167 (depreciation); Rev. Proc. 87-57 (MACRS percentage tables); IRC §168(c) (recovery periods); IRC §168(d)(2) (mid-month convention for real property); Treas. Reg. §1.168(d)-1; OBBBA P.L. 119-21 §§13101-13201 (bonus depreciation phase-down: 40% in 2026, 20% in 2027, 0% in 2028+). QIP recovery period: IRC §168(e)(6); CARES Act §2307 (2020 technical correction).</div>
+    <div class="source-row">Authority: IRC §168 (MACRS); IRC §167 (depreciation); Rev. Proc. 87-57 (MACRS percentage tables); IRC §168(c) (recovery periods); IRC §168(d)(2) (mid-month convention for real property); Treas. Reg. §1.168(d)-1; OBBBA P.L. 119-21 §70401 et seq. (100% bonus depreciation permanently restored for property acquired and placed in service after 1/19/2025; TCJA phase-down repealed prospectively); IRC §168(n) (qualified production property, new under OBBBA); QIP recovery period: IRC §168(e)(6); CARES Act §2307 (2020 technical correction).</div>
 
     <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
-    <div class="disc">A pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
+    <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional before making any filing or planning decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
   </div>
 </div>
 
@@ -392,7 +369,7 @@ function calc() {
   if (landValue >= totalCost && totalCost > 0) flag('<strong>Land value equals or exceeds total cost.</strong> Land is not depreciable. Verify your land/building allocation - typically supported by a property tax assessment, appraisal, or cost segregation study. IRC §168(a).', 'red');
   if (landValue === 0 && totalCost > 0) flag('<strong>No land value entered.</strong> Every real property purchase includes some non-depreciable land. Entering zero land will overstate your depreciable basis and depreciation deductions. Support your land allocation with an appraisal or tax assessment.', 'amber');
   if (propType === 'residential' || propType === 'commercial') flag('<strong>Bonus depreciation does not apply to residential or commercial real property.</strong> IRC §168(k)(2)(A)(i) explicitly excludes 27.5-year residential and 39-year nonresidential property from bonus depreciation. Straight-line MACRS is the only available method. Any software claiming bonus depreciation on these property types is incorrect.', 'blue');
-  if (propType === 'qip' && bonusElect === 'yes') flag(`<strong>Bonus depreciation elected: ${(bonusRate*100).toFixed(0)}%.</strong> QIP placed in service in 2026 qualifies for ${(bonusRate*100).toFixed(0)}% bonus depreciation under OBBBA (P.L. 119-21). Bonus amount: ${fmt(bonusAmount)}. Remaining basis of ${fmt(remainingBasis)} depreciated over 15 years straight-line. IRC §168(k); IRC §168(e)(6).`, 'green');
+  if (propType === 'qip' && bonusElect === 'yes') flag(`<strong>Bonus depreciation elected: ${(bonusRate*100).toFixed(0)}%.</strong> QIP placed in service after 1/19/2025 qualifies for 100% bonus depreciation under OBBBA (P.L. 119-21). Property under a written binding contract pre-1/20/2025 is locked into the TCJA phase-down (40%). Bonus amount: ${fmt(bonusAmount)}. Remaining basis of ${fmt(remainingBasis)} depreciated over 15 years straight-line. IRC §168(k); IRC §168(e)(6).`, 'green');
   if (propType === 'foreign') flag('<strong>Foreign real property uses ADS (40-year straight-line).</strong> U.S. persons who own foreign real property must use the Alternative Depreciation System (ADS) with a 40-year recovery period. GDS depreciation (27.5 or 39 years) is not available for foreign property. IRC §168(g)(1)(A); Treas. Reg. §1.168(g)-1.', 'blue');
   if (priorDepr > basis && basis > 0) flag('<strong>Prior depreciation exceeds depreciable basis.</strong> Verify your inputs. Accumulated depreciation cannot exceed the original depreciable basis.', 'red');
 
