@@ -49,9 +49,35 @@
 .prog{height:4px;background:var(--ink-10);margin-bottom:24px}
 .prog-fill{height:100%;background:var(--coral);transition:width .4s}
 .hidden{display:none}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
+.nav-cta:hover{background:var(--coral-600)}
+@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>CFC / Form 5471 Obligation Checker</h1>
@@ -63,7 +89,6 @@
     <span class="badge">IRC §318 / §958(b) (Attribution)</span>
   </div>
 </div></div>
-<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 <div class="container">
 <div class="prog"><div class="prog-fill" id="pf" style="width:0%"></div></div>
 
@@ -226,14 +251,14 @@ function result(type){
     } else {
       h=hdr('no','&#10003; No Obligation Based on Your Answers');
     }
-    if(isCFC) h+=flag('blue','i','<strong>Subpart F and NCTI (formerly GILTI).</strong> As a US shareholder of a CFC, Subpart F income (IRC &sect;951) and NCTI - Net CFC Tested Income, the post-OBBBA renaming of GILTI (IRC &sect;951A) - are included in your gross income in the year the CFC earns them, regardless of whether the CFC makes distributions. The &sect;962 election may be available to individual shareholders. Form 8992 reports NCTI.');
+    if(isCFC) h+=flag('blue','i','<strong>Subpart F and GILTI.</strong> As a US shareholder of a CFC, Subpart F income (IRC &sect;951) and GILTI (IRC &sect;951A) are included in your gross income in the year the CFC earns them, regardless of whether the CFC makes distributions. The &sect;962 election may be available to individual shareholders. Form 8992 reports GILTI.');
     h+=flag('amber','!','<strong>Penalty for failure to file: $10,000 per year per corporation.</strong> IRC &sect;6038(b). Additional penalties of up to $50,000 for continued non-compliance after IRS notification. Failure to file Form 5471 may keep the statute of limitations open on the entire return. IRC &sect;6501(c)(8).');
     h+=flag('amber','!','<strong>TCJA downward attribution (post-2017).</strong> The TCJA eliminated the exception that previously prevented attribution from foreign persons to US persons through domestic entities. This caused widespread unexpected CFC status in many structures that were previously non-CFC. Review all structures involving both US and foreign common ownership.');
-    h+='<div class="src">Authority: IRC &sect;957 (CFC definition); IRC &sect;951(b) (US shareholder, 10% threshold); IRC &sect;6038 (Form 5471 requirement); IRC &sect;6046 (Category 3); IRC &sect;6038(b) (penalties); IRC &sect;318 / &sect;958(b) (attribution); TCJA &sect;14214 (downward attribution); IRC &sect;951A (NCTI, formerly GILTI, post-OBBBA); IRC &sect;965(e)(1) (SFC); IRC &sect;6501(c)(8) (statute of limitations); Notice 2019-46 (downward attribution relief); OBBBA P.L. 119-21 (NCTI rebrand and inclusion shareholder rule).</div>';
+    h+='<div class="src">Authority: IRC &sect;957 (CFC definition); IRC &sect;951(b) (US shareholder, 10% threshold); IRC &sect;6038 (Form 5471 requirement); IRC &sect;6046 (Category 3); IRC &sect;6038(b) (penalties); IRC &sect;318 / &sect;958(b) (attribution); TCJA &sect;14214 (downward attribution); IRC &sect;951A (GILTI); IRC &sect;965(e)(1) (SFC); IRC &sect;6501(c)(8) (statute of limitations); Notice 2019-46 (downward attribution relief).</div>';
   }
   h+='<button class="pbn" onclick="window.print()">Print / Save as PDF</button>';
   h+='<button class="rbtn" onclick="resetAll()">Start Over</button>';
-  h+='<div class="disc">This tool is for informational purposes only. CFC and Form 5471 analysis is highly fact-specific. Attribution rules require careful analysis. Consult a qualified international tax CPA. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>';
+  h+='<div class="disc">A pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>';
   rb.innerHTML=h;
   show('cResult');
 }
