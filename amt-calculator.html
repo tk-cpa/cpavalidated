@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alternative Minimum Tax (AMT) Calculator 2026 | CPA Validated</title>
+<meta name="description" content="Calculate AMT exposure for 2026. AMTI, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. CPA-validated. IRC Sections 55-58. Form 6251.">
+<link rel="canonical" href="https://cpavalidated.com/amt-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.hero4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.1);margin-bottom:14px}
+.h4{background:var(--ink);padding:14px;text-align:center}
+.h4l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.h4v{font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff}
+.h4v.coral{color:var(--coral)}.h4v.red{color:#ff8f8a}.h4v.green{color:#6de88e}.h4v.amber{color:#f5c264}
+.h4s{font-size:10px;color:rgba(255,255,255,.25);margin-top:3px}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:16px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.hero4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &bull; a tk.cpa resource</div>
+  <h1>Alternative Minimum Tax (AMT) Calculator 2026</h1>
+  <div class="sub">AMTI computation, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. AMT vs. regular tax comparison. Form 6251.</div>
+  <div class="badges"><span class="badge">IRC 55</span><span class="badge">IRC 56 adjustments</span><span class="badge">IRC 57 preferences</span><span class="badge">IRC 58 exemption</span><span class="badge">Form 6251</span></div>
+</div></div>
+<div class="back"><a href="index.html">back to cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Filing Status &amp; Regular Tax</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Filing Status</label>
+        <select class="fc" id="fs" onchange="calc()">
+          <option value="single">Single / Head of Household</option>
+          <option value="mfj" selected>Married Filing Jointly</option>
+          <option value="mfs">Married Filing Separately</option>
+        </select>
+      </div>
+      <div class="f1"><label>Regular Taxable Income ($)</label>
+        <input type="number" class="fc" id="rti" value="400000" oninput="calc()">
+        <div class="hint">Form 1040 Line 15 - after all deductions</div>
+      </div>
+      <div class="f1"><label>Regular Income Tax ($)</label>
+        <input type="number" class="fc" id="regt" value="100000" oninput="calc()">
+        <div class="hint">Form 1040 Line 16 - before credits</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>AMT Adjustments &amp; Preference Items</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1"><label>SALT Deducted on Schedule A ($)</label>
+        <input type="number" class="fc" id="salt" value="10000" oninput="calc()">
+        <div class="hint">Added back for AMT. IRC 56(b)(1)(A)(ii). Capped at $10K under TCJA/OBBBA for regular tax but fully added back for AMT.</div>
+      </div>
+      <div class="f1"><label>ISO Exercise Spread ($)</label>
+        <input type="number" class="fc" id="iso" value="0" oninput="calc()">
+        <div class="hint">FMV minus exercise price on ISOs exercised but not sold. Largest single AMT trigger. IRC 56(b)(3).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Depreciation Adjustment ($)</label>
+        <input type="number" class="fc" id="dep" value="0" oninput="calc()">
+        <div class="hint">MACRS minus ADS depreciation on real property and personal property. IRC 56(a)(1).</div>
+      </div>
+      <div class="f1"><label>Other Preferences &amp; Adjustments ($)</label>
+        <input type="number" class="fc" id="other" value="0" oninput="calc()">
+        <div class="hint">Private activity bond interest, excess depletion, other IRC 57 items.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>LTCG / Qualified Dividends in AMTI ($)</label>
+        <input type="number" class="fc" id="ltcg" value="0" oninput="calc()">
+        <div class="hint">These retain preferential rates (0/15/20%) within AMT. Enter to preserve the lower rate calculation.</div>
+      </div>
+      <div class="f1"><label>Prior Year AMT Credit - Form 8801 ($)</label>
+        <input type="number" class="fc" id="cred" value="0" oninput="calc()">
+        <div class="hint">AMT paid in prior years on deferral items generates a credit usable in regular tax years.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="home-office-calculator.html" class="rl">Home Office Calculator</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
+function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+const P={single:{ex:88100,ps:618725},mfj:{ex:137000,ps:1237450},mfs:{ex:68500,ps:618725}};
+function calc(){
+  const fs=document.getElementById('fs').value;
+  const rti=parseFloat(document.getElementById('rti').value)||0;
+  const regt=parseFloat(document.getElementById('regt').value)||0;
+  const salt=parseFloat(document.getElementById('salt').value)||0;
+  const iso=parseFloat(document.getElementById('iso').value)||0;
+  const dep=parseFloat(document.getElementById('dep').value)||0;
+  const other=parseFloat(document.getElementById('other').value)||0;
+  const ltcg=parseFloat(document.getElementById('ltcg').value)||0;
+  const cred=parseFloat(document.getElementById('cred').value)||0;
+  const p=P[fs];
+  const totalAdj=salt+iso+dep+other;
+  const amti=rti+totalAdj;
+  let ex=p.ex;
+  if(amti>p.ps){ex=Math.max(0,ex-(amti-p.ps)*0.25);}
+  const amtiOE=Math.max(0,amti-ex);
+  const ordAMTI=Math.max(0,amtiOE-Math.min(ltcg,amtiOE));
+  let tmt=ordAMTI<=232600?ordAMTI*0.26:232600*0.26+(ordAMTI-232600)*0.28;
+  tmt+=Math.min(ltcg,amtiOE)*0.20;
+  const amtLiab=Math.max(0,tmt-regt);
+  const amtNet=Math.max(0,amtLiab-cred);
+  const total=regt+amtNet;
+  const inAMT=amtLiab>0;
+  const rb=document.getElementById('res');
+  let h='';
+  h+=`<div class="hero4">
+    <div class="h4"><div class="h4l">AMTI</div><div class="h4v coral">${fmt(amti)}</div><div class="h4s">Alt Min Tax Income</div></div>
+    <div class="h4"><div class="h4l">Tentative Min Tax</div><div class="h4v ${inAMT?'amber':'green'}">${fmt(tmt)}</div><div class="h4s">26%/28% rate</div></div>
+    <div class="h4"><div class="h4l">AMT Owed</div><div class="h4v ${amtNet>0?'red':'green'}">${fmt(amtNet)}</div><div class="h4s">${amtNet>0?'Additional tax':'No AMT'}</div></div>
+    <div class="h4"><div class="h4l">Total Tax</div><div class="h4v">${fmt(total)}</div><div class="h4s">Eff. rate ${rti>0?((total/rti)*100).toFixed(1):'0.0'}%</div></div>
+  </div>`;
+  h+=`<div class="sum-box"><div class="sum-title">AMT Computation - Form 6251</div>
+    <div class="srow"><span class="sl">Regular taxable income</span><span class="sv">${fmt(rti)}</span></div>
+    <div class="srow"><span class="sl">+ SALT add-back (IRC 56(b)(1)(A)(ii))</span><span class="sv ${salt>0?'amber':''}">${fmt(salt)}</span></div>
+    <div class="srow"><span class="sl">+ ISO exercise spread (IRC 56(b)(3))</span><span class="sv ${iso>0?'amber':''}">${fmt(iso)}</span></div>
+    <div class="srow"><span class="sl">+ Depreciation adj. (IRC 56(a)(1))</span><span class="sv">${fmt(dep)}</span></div>
+    <div class="srow"><span class="sl">+ Other preferences (IRC 57)</span><span class="sv">${fmt(other)}</span></div>
+    <div class="srow"><span class="sl">= AMTI</span><span class="sv coral">${fmt(amti)}</span></div>
+    <div class="srow"><span class="sl">- Exemption ($${p.ex.toLocaleString()} base${amti>p.ps?' - phaseout':''})</span><span class="sv">${fmt(ex)}</span></div>
+    <div class="srow"><span class="sl">= AMTI over exemption</span><span class="sv">${fmt(amtiOE)}</span></div>
+    <div class="srow"><span class="sl">Tentative min. tax (26% / 28%)</span><span class="sv">${fmt(tmt)}</span></div>
+    <div class="srow"><span class="sl">Less: regular tax</span><span class="sv">${fmt(regt)}</span></div>
+    <div class="srow"><span class="sl">AMT before credits</span><span class="sv ${amtLiab>0?'red':'green'}">${fmt(amtLiab)}</span></div>
+    ${cred>0?`<div class="srow"><span class="sl">Less: Form 8801 credit</span><span class="sv green">${fmt(cred)}</span></div>`:''}
+    <div class="srow"><span class="sl"><strong>AMT owed</strong></span><span class="sv ${amtNet>0?'red':'green'}">${fmt(amtNet)}</span></div>
+  </div>`;
+  if(!inAMT)h+=flag('green','v','<strong>No AMT.</strong> Regular tax exceeds tentative minimum tax. No additional AMT owed.');
+  else h+=flag('red','!',`<strong>AMT of ${fmt(amtNet)} applies.</strong> Tentative min. tax ${fmt(tmt)} exceeds regular tax ${fmt(regt)}. AMT paid on deferral items (ISO exercises) generates a Form 8801 credit usable in future years.`);
+  if(iso>0)h+=flag('amber','!','<strong>ISO exercise is the top AMT trigger.</strong> The ISO spread is fully includible in AMTI under IRC 56(b)(3) even though no regular income is recognized. Strategies: exercise ISOs across multiple years, sell in same year to trigger ordinary income instead, or model early exercise under 83(b).');
+  if(amti>p.ps){const reduced=p.ex-ex;h+=flag('amber','!',`<strong>Exemption phaseout applies.</strong> AMTI of ${fmt(amti)} exceeds phaseout threshold $${p.ps.toLocaleString()}. Exemption reduced by ${fmt(reduced)} (25 cents per dollar over threshold). Remaining exemption: ${fmt(ex)}.`);}
+  h+=flag('blue','i','<strong>2026 parameters.</strong> OBBBA (P.L. 119-21) made TCJA AMT provisions permanent. Figures used are based on 2025 IRS parameters (Rev. Proc. 2024-40) - 2026 will be adjusted for inflation. Verify exact 2026 exemption amounts against IRS Rev. Proc. 2025-32 before filing.');
+  h+=`<div class="src">IRC 55 (AMT imposed); IRC 56 (AMT adjustments); IRC 56(b)(1)(A)(ii) (SALT add-back); IRC 56(b)(3) (ISO add-back); IRC 57 (preference items); IRC 58 (exemption amount); IRC 53 (minimum tax credit); OBBBA P.L. 119-21 (TCJA AMT permanent); Form 6251; Rev. Proc. 2024-40 (2025 inflation amounts used as baseline).</div>`;
+  h+=`<div class="disc">Estimate only. Passive activity adjustments, depletion, foreign tax credit interaction, and other AMT items require full Form 6251. Consult a CPA. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+  rb.innerHTML=h;
+}
+calc();
+</script>
+</body>
+</html>
