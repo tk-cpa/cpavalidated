@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFC / Form 5471 Obligation Checker | CPA Validated</title>
+<meta name="description" content="Determine CFC status and Form 5471 filing category. US shareholder 10% test, 50% CFC control test, all filing categories 1a-5b. Attribution rules, TCJA downward attribution, penalties. CPA-validated. IRC Section 957, 6038.">
+<link rel="canonical" href="https://cpavalidated.com/form-5471-checker.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:"Oswald","Arial Narrow",sans-serif;--font-sans:"Inter",-apple-system,sans-serif;--font-mono:"Courier New",monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:860px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:860px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.container{max-width:860px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px 20px 22px}
+.q-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60);margin-bottom:6px}
+.q-text{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.4}
+.q-note{font-size:12px;color:var(--ink-60);line-height:1.5;margin-bottom:12px;padding:10px 12px;background:var(--ink-10);border-left:2px solid var(--ink-20)}
+.radio-group{display:flex;flex-direction:column;gap:8px}
+.radio-opt{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1.5px solid var(--ink-20);cursor:pointer;transition:border-color .15s;font-size:14px;color:var(--ink);line-height:1.4}
+.radio-opt:hover{border-color:var(--coral)}
+.radio-opt input{accent-color:var(--coral);width:16px;height:16px;flex-shrink:0;margin-top:2px}
+.radio-opt.selected{border-color:var(--coral);background:var(--coral-100)}
+.result-section{border:2px solid var(--ink-20);margin-bottom:16px;overflow:hidden}
+.rs-header{padding:16px 20px;font-family:var(--font-display);font-size:15px;font-weight:400;text-transform:uppercase;letter-spacing:.06em}
+.rs-header.yes{background:var(--red-bg);border-bottom:2px solid var(--red-b);color:var(--red)}
+.rs-header.no{background:var(--green-bg);border-bottom:2px solid var(--green-b);color:var(--green)}
+.rs-header.warn{background:var(--amber-bg);border-bottom:2px solid var(--amber-b);color:var(--amber)}
+.rs-body{padding:16px 20px}
+.cat-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--ink-20);align-items:flex-start}
+.cat-row:last-child{border-bottom:none}
+.cat-pill{font-family:var(--font-display);font-size:12px;font-weight:500;text-transform:uppercase;padding:4px 10px;background:var(--ink);color:#fff;flex-shrink:0;letter-spacing:.04em}
+.cat-info .cat-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.cat-info .cat-desc{font-size:12.5px;color:var(--ink-60);line-height:1.5}
+.cat-info .cat-auth{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-40);margin-top:4px}
+.flag{display:flex;gap:10px;padding:10px 13px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}
+.fi{font-size:12px;flex-shrink:0;margin-top:1px}
+.ft{font-size:12.5px;line-height:1.5}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.red .ft{color:var(--red)}.flag.green .ft{color:var(--green)}
+.ft strong{font-weight:600}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;margin-top:8px}.pbn:hover{background:var(--coral-600)}
+.rbtn{background:none;border:1.5px solid var(--ink-20);color:var(--ink-60);font-family:var(--font-sans);font-size:12px;font-weight:600;padding:9px 16px;cursor:pointer;margin-left:10px}.rbtn:hover{border-color:var(--coral);color:var(--coral)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.prog{height:4px;background:var(--ink-10);margin-bottom:24px}
+.prog-fill{height:100%;background:var(--coral);transition:width .4s}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>CFC / Form 5471 Obligation Checker</h1>
+  <div class="sub">Controlled Foreign Corporation Status &nbsp;&bull;&nbsp; All Filing Categories 1a through 5b &nbsp;&bull;&nbsp; Attribution Rules &nbsp;&bull;&nbsp; TCJA Changes</div>
+  <div class="badges">
+    <span class="badge">IRC §957 (CFC)</span>
+    <span class="badge">IRC §951(b) (US Shareholder)</span>
+    <span class="badge">IRC §6038 (Form 5471)</span>
+    <span class="badge">IRC §318 / §958(b) (Attribution)</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
+<div class="container">
+<div class="prog"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+
+<div class="card" id="c1">
+  <div class="ch"><div class="sb">1</div><h2>The Entity</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 1 of 7</div>
+    <div class="q-text">Is the entity a foreign corporation &mdash; incorporated or organized under the laws of a country other than the United States?</div>
+    <div class="q-note">A foreign corporation is any corporation not organized under US law. IRC &sect;7701(a)(5). Entities treated as partnerships or disregarded entities under check-the-box rules are not corporations and are not subject to Form 5471 (but may be subject to Form 8865). A foreign entity with a valid check-the-box election to be treated as a corporation IS a corporation for this purpose.</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q1','yes')"><input type="radio" name="q1" value="yes"> Yes &mdash; organized under foreign law as a corporation (or treated as one)</label>
+      <label class="radio-opt" onclick="sel(this,'q1','no')"><input type="radio" name="q1" value="no"> No &mdash; US entity, or foreign entity treated as partnership or disregarded entity</label>
+    </div>
+  </div>
+</div>
+
+<div class="card hidden" id="c2">
+  <div class="ch"><div class="sb">2</div><h2>Your Status</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 2 of 7</div>
+    <div class="q-text">Are you a US person? (US citizen, resident alien, domestic corporation, domestic partnership, domestic estate or trust)</div>
+    <div class="q-note">Nonresident alien individuals are generally not subject to Form 5471. US residency is determined under IRC &sect;7701(b) &mdash; green card holders and those meeting the Substantial Presence Test are US persons. Domestic corporations with foreign subsidiaries are US persons subject to Form 5471.</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q2','yes')"><input type="radio" name="q2" value="yes"> Yes &mdash; US citizen, green card holder, or meet the Substantial Presence Test</label>
+      <label class="radio-opt" onclick="sel(this,'q2','no')"><input type="radio" name="q2" value="no"> No &mdash; nonresident alien, no US person status</label>
+    </div>
+  </div>
+</div>
+
+<div class="card hidden" id="c3">
+  <div class="ch"><div class="sb">3</div><h2>Your Ownership</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 3 of 7</div>
+    <div class="q-text">What is your ownership percentage in the foreign corporation, directly, indirectly, AND constructively (including attribution)?</div>
+    <div class="q-note"><strong>Include constructive ownership under IRC &sect;318 as modified by &sect;958(b).</strong> You must attribute stock owned by: (1) your spouse, children, grandchildren, and parents; (2) partnerships, estates, trusts, or corporations in which you own 50%+; (3) if you own 50%+ of a partnership, the partnership&rsquo;s stock in the corporation. TCJA expanded downward attribution &mdash; if a foreign person owns stock, that stock may now be attributed down to you through a domestic entity. IRC &sect;951(b).</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q3','under10')"><input type="radio" name="q3" value="under10"> Under 10% by both vote and value (including all attribution)</label>
+      <label class="radio-opt" onclick="sel(this,'q3','10plus')"><input type="radio" name="q3" value="10plus"> 10% or more by vote OR value (I am a US shareholder)</label>
+      <label class="radio-opt" onclick="sel(this,'q3','50plus')"><input type="radio" name="q3" value="50plus"> More than 50% &mdash; I control the corporation</label>
+    </div>
+  </div>
+</div>
+
+<div class="card hidden" id="c4">
+  <div class="ch"><div class="sb">4</div><h2>CFC Status</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 4 of 7</div>
+    <div class="q-text">In aggregate, do US shareholders (each owning 10%+ by vote or value) collectively own more than 50% of the foreign corporation?</div>
+    <div class="q-note"><strong>This is the CFC test.</strong> If US shareholders in aggregate own &gt;50% of total voting power or total value on any day during the tax year, the corporation is a CFC. IRC &sect;957(a). You do not need to individually own 50%+. Identify every US person with 10%+ direct or constructive ownership and sum their interests. Include constructive ownership under modified &sect;318 rules.</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q4','yes')"><input type="radio" name="q4" value="yes"> Yes &mdash; US shareholders in aggregate own more than 50% (it IS a CFC)</label>
+      <label class="radio-opt" onclick="sel(this,'q4','no')"><input type="radio" name="q4" value="no"> No &mdash; US shareholders in aggregate own 50% or less (it is NOT a CFC)</label>
+      <label class="radio-opt" onclick="sel(this,'q4','unsure')"><input type="radio" name="q4" value="unsure"> Cannot confirm &mdash; need to identify all US shareholders</label>
+    </div>
+  </div>
+</div>
+
+<div class="card hidden" id="c5">
+  <div class="ch"><div class="sb">5</div><h2>Acquisition Event</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 5 of 7</div>
+    <div class="q-text">During the tax year, did you newly acquire stock bringing your ownership to 10% or more for the first time?</div>
+    <div class="q-note">Category 3 applies to US persons who acquire (directly or constructively) 10%+ stock in a foreign corporation for the first time, or who acquire additional stock. IRC &sect;6046. A Category 3 filing is required in the year of acquisition even if no CFC status exists.</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q5','yes')"><input type="radio" name="q5" value="yes"> Yes &mdash; I newly crossed the 10% threshold this year</label>
+      <label class="radio-opt" onclick="sel(this,'q5','no')"><input type="radio" name="q5" value="no"> No &mdash; my ownership was already at 10%+ or did not change</label>
+    </div>
+  </div>
+</div>
+
+<div class="card hidden" id="c6">
+  <div class="ch"><div class="sb">6</div><h2>Officer or Director</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 6 of 7</div>
+    <div class="q-text">Are you a US person who is an officer or director of this foreign corporation?</div>
+    <div class="q-note">Category 2 applies to US persons who are officers or directors when any US person acquires 10%+ stock during the year. This filing obligation applies even if you own no stock. IRC &sect;6038(a)(3).</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q6','yes')"><input type="radio" name="q6" value="yes"> Yes &mdash; I am an officer or director</label>
+      <label class="radio-opt" onclick="sel(this,'q6','no')"><input type="radio" name="q6" value="no"> No</label>
+    </div>
+  </div>
+</div>
+
+<div class="card hidden" id="c7">
+  <div class="ch"><div class="sb">7</div><h2>25% Threshold (SFC)</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 7 of 7</div>
+    <div class="q-text">Do US shareholders collectively own 25% or more of the vote or value? (Specified Foreign Corporation test)</div>
+    <div class="q-note">A Specified Foreign Corporation (SFC) is any foreign corporation owned 25%+ by US shareholders in aggregate. US shareholders of SFCs must file Form 5471 as Category 1 filers, even if the corporation is not a CFC. IRC &sect;965(e)(1).</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q7','yes')"><input type="radio" name="q7" value="yes"> Yes &mdash; US shareholders collectively own 25%+ (it is an SFC)</label>
+      <label class="radio-opt" onclick="sel(this,'q7','no')"><input type="radio" name="q7" value="no"> No &mdash; US shareholders collectively own less than 25%</label>
+    </div>
+  </div>
+</div>
+
+<div class="card hidden" id="cResult">
+  <div class="ch"><div class="sb">&#10003;</div><h2>Form 5471 Analysis</h2></div>
+  <div class="cb" id="resultBody"></div>
+</div>
+
+</div>
+<script>
+const A={};
+function sel(el,q,v){
+  document.querySelectorAll('[name="'+q+'"]').forEach(r=>r.closest('.radio-opt').classList.remove('selected'));
+  el.classList.add('selected');A[q]=v;
+  const pct=Math.round(Object.keys(A).length/7*100);
+  document.getElementById('pf').style.width=pct+'%';
+  setTimeout(()=>next(q),280);
+}
+function show(id){
+  const el=document.getElementById(id);
+  el.classList.remove('hidden');
+  setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),80);
+}
+function next(q){
+  if(q==='q1'){if(A.q1==='no'){result('notforeign');}else{show('c2');}}
+  else if(q==='q2'){if(A.q2==='no'){result('notus');}else{show('c3');}}
+  else if(q==='q3'){if(A.q3==='under10'){show('c6');}else{show('c4');}}
+  else if(q==='q4'){show('c5');}
+  else if(q==='q5'){show('c6');}
+  else if(q==='q6'){if(A.q3==='under10'&&A.q6==='no'){result('none');}else{show('c7');}}
+  else if(q==='q7'){result('full');}
+}
+function result(type){
+  document.getElementById('pf').style.width='100%';
+  const rb=document.getElementById('resultBody');
+  let h='';
+  if(type==='notforeign'){
+    h=hdr('no','&#10003; No Form 5471 Obligation')+'<p style="font-size:14px;color:var(--ink-60);line-height:1.7">Not a foreign corporation. Form 5471 applies only to foreign corporations. Consider whether Form 5472 (foreign-owned US corporations) or Form 8865 (foreign partnerships) applies instead.</p>';
+  } else if(type==='notus'){
+    h=hdr('no','&#10003; No Form 5471 Obligation')+'<p style="font-size:14px;color:var(--ink-60);line-height:1.7">Nonresident alien individuals are generally not subject to Form 5471 reporting. If you become a US person in a future year, all ownership positions must be reviewed.</p>';
+  } else if(type==='none'){
+    h=hdr('no','&#10003; No Filing Obligation Based on Your Answers');
+    h+=flag('amber','!','<strong>Verify constructive ownership.</strong> Attribution rules under IRC &sect;318 (modified by &sect;958(b)) can attribute stock held by family members and related entities to you. TCJA expanded downward attribution, creating unexpected filing obligations. Confirm your combined constructive ownership is below 10% before relying on this result.');
+  } else {
+    const isCFC=A.q4==='yes';
+    const isSFC=A.q7==='yes'||isCFC;
+    const u10=A.q3==='under10';
+    const owns50=A.q3==='50plus';
+    const newAcq=A.q5==='yes';
+    const isOff=A.q6==='yes';
+    const unsure=A.q4==='unsure';
+    const cats=[];
+    if(isSFC&&!isCFC&&!u10) cats.push({cat:'Category 1a',title:'US Shareholder of SFC (non-CFC)',desc:'The foreign corporation is a Specified Foreign Corporation (25%+ US-owned) but not a CFC. File Form 5471 with applicable schedules.',auth:'IRC &sect;965(e)(1); Treas. Reg. &sect;1.6038-2'});
+    if(isOff) cats.push({cat:'Category 2',title:'Officer or Director',desc:'US person serving as officer or director when any US person acquires 10%+ stock during the year. Required even if you own no stock.',auth:'IRC &sect;6038(a)(3)'});
+    if(newAcq&&!u10) cats.push({cat:'Category 3',title:'New Acquisition of 10%+',desc:'US person who newly acquires 10%+ stock (directly or constructively) during the tax year. Required in the year of acquisition.',auth:'IRC &sect;6046; Treas. Reg. &sect;1.6046-1'});
+    if(owns50) cats.push({cat:'Category 4',title:'Control (>50%)',desc:'US person who controls the foreign corporation for 30+ consecutive days and owns stock at year-end. Most comprehensive filing requirement.',auth:'IRC &sect;6038(a)(1); Treas. Reg. &sect;1.6038-2(a)'});
+    if(isCFC&&!u10) cats.push({cat:'Category 5a',title:'US Shareholder of CFC',desc:'US shareholder who directly or indirectly owns stock in a CFC. Requires most comprehensive set of schedules including Schedules C, E, F, G, H, I-1, J, M, P, Q, R as applicable.',auth:'IRC &sect;6038; IRC &sect;951(b); IRC &sect;957'});
+    if(isCFC&&u10) cats.push({cat:'Category 5b',title:'Constructive Ownership Only',desc:'US shareholder who owns CFC stock only constructively (by attribution) but not directly. Added post-TCJA due to expanded downward attribution rules. Filing still likely required.',auth:'IRC &sect;958(b); TCJA &sect;14214; Notice 2019-46'});
+    if(unsure){
+      h=hdr('warn','&#9888; CFC Status Cannot Be Confirmed');
+      h+=flag('amber','!','<strong>Identify all US shareholders before proceeding.</strong> Sum the ownership of every US person holding 10%+ directly or constructively. If the aggregate exceeds 50%, it is a CFC and Form 5471 is required for all US shareholders. Failure to identify co-shareholders is not a defense against the filing penalty.');
+    } else if(cats.length>0){
+      h=hdr('yes','&#9888; Form 5471 Required &mdash; '+cats.length+' Filing Categor'+(cats.length===1?'y':'ies')+' Appl'+(cats.length===1?'ies':'y'));
+      h+='<div style="margin:14px 0">';
+      cats.forEach(c=>{h+='<div class="cat-row"><div class="cat-pill">'+c.cat+'</div><div class="cat-info"><div class="cat-title">'+c.title+'</div><div class="cat-desc">'+c.desc+'</div><div class="cat-auth">'+c.auth+'</div></div></div>';});
+      h+='</div>';
+    } else {
+      h=hdr('no','&#10003; No Obligation Based on Your Answers');
+    }
+    if(isCFC) h+=flag('blue','i','<strong>Subpart F and GILTI.</strong> As a US shareholder of a CFC, Subpart F income (IRC &sect;951) and GILTI (IRC &sect;951A) are included in your gross income in the year the CFC earns them, regardless of whether the CFC makes distributions. The &sect;962 election may be available to individual shareholders. Form 8992 reports GILTI.');
+    h+=flag('amber','!','<strong>Penalty for failure to file: $10,000 per year per corporation.</strong> IRC &sect;6038(b). Additional penalties of up to $50,000 for continued non-compliance after IRS notification. Failure to file Form 5471 may keep the statute of limitations open on the entire return. IRC &sect;6501(c)(8).');
+    h+=flag('amber','!','<strong>TCJA downward attribution (post-2017).</strong> The TCJA eliminated the exception that previously prevented attribution from foreign persons to US persons through domestic entities. This caused widespread unexpected CFC status in many structures that were previously non-CFC. Review all structures involving both US and foreign common ownership.');
+    h+='<div class="src">Authority: IRC &sect;957 (CFC definition); IRC &sect;951(b) (US shareholder, 10% threshold); IRC &sect;6038 (Form 5471 requirement); IRC &sect;6046 (Category 3); IRC &sect;6038(b) (penalties); IRC &sect;318 / &sect;958(b) (attribution); TCJA &sect;14214 (downward attribution); IRC &sect;951A (GILTI); IRC &sect;965(e)(1) (SFC); IRC &sect;6501(c)(8) (statute of limitations); Notice 2019-46 (downward attribution relief).</div>';
+  }
+  h+='<button class="pbn" onclick="window.print()">Print / Save as PDF</button>';
+  h+='<button class="rbtn" onclick="resetAll()">Start Over</button>';
+  h+='<div class="disc">This tool is for informational purposes only. CFC and Form 5471 analysis is highly fact-specific. Attribution rules require careful analysis. Consult a qualified international tax CPA. A tk.cpa resource &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>';
+  rb.innerHTML=h;
+  show('cResult');
+}
+function hdr(cls,txt){return '<div class="result-section"><div class="rs-header '+cls+'">'+txt+'</div><div class="rs-body" id="rsBody">';}
+function flag(t,i,txt){return '<div class="flag '+t+'"><div class="fi">'+i+'</div><div class="ft">'+txt+'</div></div>';}
+function resetAll(){
+  Object.keys(A).forEach(k=>delete A[k]);
+  ['c2','c3','c4','c5','c6','c7','cResult'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+  document.querySelectorAll('.radio-opt').forEach(el=>el.classList.remove('selected'));
+  document.querySelectorAll('input[type=radio]').forEach(el=>el.checked=false);
+  document.getElementById('pf').style.width='0%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
