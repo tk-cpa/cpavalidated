@@ -161,6 +161,32 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - URL: https://cpavalidated.com/about.html
 - Purpose: Mission statement. Five commitments: Always Free, Always Cited, Always Current, Always Honest, Always Accountable. Founded April 2026 after Tax Day as a pro bono public resource.
 
+
+### IRS Penalty & Interest Calculator
+- URL: https://cpavalidated.com/penalty-calculator.html
+- Authority: IRC §6651(a)(1) (FTF 5%/month); IRC §6651(a)(2) (FTP 0.5%/month); IRC §6601 (interest 8% Q2 2026); IRC §6662(a) (accuracy 20%)
+- Purpose: Failure-to-file, failure-to-pay, accuracy-related penalty, underpayment interest. Concurrent FTF/FTP offset applied. Reasonable cause flag. Date-based calculation.
+
+### Foreign Tax Credit Calculator
+- URL: https://cpavalidated.com/ftc-calculator.html
+- Authority: IRC §901 (FTC); IRC §904 (limitation); IRC §911 (FEIE); Form 1116
+- Purpose: FEIE vs. FTC comparison. IRC §904 per-basket limitation. Carryforward. Shows which strategy produces lower US tax by country type.
+
+### W-4 Withholding Optimizer
+- URL: https://cpavalidated.com/w4-optimizer.html
+- Authority: IRC §3402; IRC §6654; IRS Rev. Proc. 2025-32; Form W-4 (2026)
+- Purpose: Target refund or balance due. Multiple jobs, spouse income, other income, credits. Produces exact W-4 Step 1-4 entries with per-period withholding amount.
+
+### Corporate Extension Reference (C-Corp)
+- URL: https://cpavalidated.com/corporate-extension.html
+- Authority: IRC §6081; Form 7004; Treas. Reg. §1.6081-3; 59 state and local jurisdictions
+- Purpose: Searchable/sortable C-Corp extension rules. Automatic vs. accepts federal vs. separate form. Verified March 2026. Includes local jurisdictions (NYC, Detroit, Philadelphia, SF, LA, Portland, Ohio RITA).
+
+### Individual Extension Reference (Form 1040)
+- URL: https://cpavalidated.com/individual-extension.html
+- Authority: IRC §6081(a); Form 4868; Treas. Reg. §1.6081-4; 59 jurisdictions
+- Purpose: Form 1040 extension rules. Expat 2-month auto extension, Form 2350, FBAR auto-extension, military/combat zone. 9 no-PIT states identified.
+
 ## Contact and Consultations
 Website: https://tk.cpa
 Book a Consultation: https://tk.cpa/contacts
