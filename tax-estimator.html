@@ -319,7 +319,7 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
       <div class="source-row" id="pSourceNote"></div>
 
       <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
-      <div class="disc">A pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
+      <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional before making any filing or planning decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
     </div>
   </div>
 
@@ -415,7 +415,7 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
       <div class="source-row" id="cSourceNote"></div>
 
       <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
-      <div class="disc">A pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
+      <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional before making any filing or planning decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
     </div>
   </div>
 
@@ -829,7 +829,7 @@ function calcCorp() {
   if (stateCode === 'IL') addFlag('<strong>Illinois</strong> imposes 7% corporate income tax + 2.5% personal property replacement tax = 9.5% combined effective rate on most corporations.');
   if (!stateCode) addFlag('No state selected. If your corporation has nexus in one or more states, state corporate income tax may apply. Nexus can be created by sales, employees, property, or economic activity thresholds.');
   if (stateInfo && stateInfo.rate === 0 && ['NV','OH','TX','WA'].includes(stateCode)) addFlag(`<strong>${stateInfo.name}</strong> has no corporate income tax but imposes a gross receipts-based business tax (${stateCode==='TX'?'Franchise Tax on margin':stateCode==='OH'?'Commercial Activity Tax':stateCode==='WA'?'B&O Tax':'Commerce Tax'}). These taxes apply to revenue regardless of profitability and are not captured in this estimator.`);
-  if (income > 10000000) addFlag('<strong>Large corporation considerations:</strong> GILTI (IRC §951A), BEAT (IRC §59A), and other provisions of international tax law may apply to multinational corporations. Consult a qualified tax professional.');
+  if (income > 10000000) addFlag('<strong>Large corporation considerations:</strong> NCTI - Net CFC Tested Income, the post-OBBBA renaming of GILTI (IRC §951A) - BEAT (IRC §59A), and other provisions of international tax law may apply to multinational corporations. Consult a qualified tax professional.');
   if (apportion < 1) addFlag(`<strong>Apportionment:</strong> ${pct(apportion)} of income apportioned to ${stateInfo?.name || 'selected state'}. Multi-state apportionment formulas (single-sales-factor in most states) may differ from the percentage entered. Consult a state tax professional for accurate apportionment.`);
 
   document.getElementById('cSourceNote').textContent = `Federal rate: IRC §11(b); 21% flat, permanent under OBBBA (P.L. 119-21). State rates: Tax Foundation, "State Corporate Income Tax Rates and Brackets, 2026" (Jan. 2026).${yr==='2027'?' 2027 state rates projected; Nebraska scheduled reduction to 3.99% confirmed.':''}`;
