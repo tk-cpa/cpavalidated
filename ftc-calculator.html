@@ -117,7 +117,7 @@ select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
 <div class="card">
   <div class="ch"><div class="sb">2</div><h2>Foreign Taxes Paid</h2></div>
   <div class="cb">
-    <div class="fg3">
+    <div class="fg2">
       <div class="f1"><label>Foreign Taxes on Earned Income ($)</label>
         <input type="number" class="fc" id="foreignTaxEarned" value="45000" oninput="calc()">
         <div class="hint">Income tax paid on foreign wages</div>
@@ -126,14 +126,7 @@ select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
         <input type="number" class="fc" id="foreignTaxOther" value="0" oninput="calc()">
         <div class="hint">Tax on dividends, interest, etc.</div>
       </div>
-      <div class="f1"><label>Country / Jurisdiction</label>
-        <select class="fc" id="country" onchange="calc()">
-          <option value="high">High-tax (UK, Germany, France, Australia - 40-45%)</option>
-          <option value="medium">Medium-tax (Canada, Israel, Netherlands - 25-35%)</option>
-          <option value="low">Low-tax (Singapore, Hong Kong, UAE - 0-20%)</option>
-          <option value="none">No foreign tax (Cayman, BVI, Bahamas)</option>
-        </select>
-      </div>
+
     </div>
     <div class="fg2">
       <div class="f1"><label>Prior Year FTC Carryforward ($)</label>
@@ -189,6 +182,7 @@ function calcTax(taxable, status){
   return tax;
 }
 
+function pct(n){return (n*100).toFixed(1)+'%';}
 function fmt(n){
   if(n===0) return '$0';
   const abs = Math.abs(Math.round(n));
@@ -295,11 +289,15 @@ function calc(){
   </div>`;
 
   // Flags
-  const country = document.getElementById('country').value;
-  if(country === 'high'){
-    h += flag('green','✓','<strong>High-tax country advantage.</strong> In high-tax countries (UK, Germany, France, Australia with 40-45% rates), the FTC-only strategy often eliminates US tax entirely because foreign taxes paid exceed the US tax liability. Excess FTC can be carried back 1 year and forward 10 years under IRC §904(c).');
-  } else if(country === 'low'){
-    h += flag('blue','ℹ','<strong>Low-tax country - FEIE typically better.</strong> In low-tax countries (Singapore, Hong Kong, UAE) where little or no foreign tax is paid, the FEIE is usually superior because it directly excludes income rather than trying to credit taxes that were never paid.');
+  const effectiveForeignRate = foreignEarned > 0 ? (foreignTaxEarned / foreignEarned) : 0;
+  if(effectiveForeignRate >= 0.30){
+    h += flag('green','✓','<strong>High effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> At this rate, the FTC-only strategy often eliminates US tax entirely - foreign taxes paid may exceed the US tax liability on that income. Excess FTC carries back 1 year and forward 10 years under IRC §904(c).');
+  } else if(effectiveForeignRate > 0 && effectiveForeignRate < 0.15){
+    h += flag('blue','ℹ','<strong>Low effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> When foreign taxes paid are low, the FEIE typically produces a better result because it directly excludes income rather than crediting taxes that were barely paid. The comparison above shows which is better for your numbers.');
+  } else if(effectiveForeignRate === 0 && foreignEarned > 0){
+    h += flag('blue','ℹ','<strong>No foreign tax paid.</strong> With zero foreign taxes paid, the FTC produces no credit. The FEIE is the only meaningful strategy for reducing US tax on this income - subject to the $126,500 limit and the passive activity rules.');
+  } else if(effectiveForeignRate >= 0.15 && effectiveForeignRate < 0.30){
+    h += flag('blue','ℹ','<strong>Moderate effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> In this range, the better strategy depends on your specific income level and US bracket. The comparison above shows which produces a lower US tax bill for your numbers.');
   }
   if(totalForeignIncome > FEIE_LIMIT && foreignEarned > FEIE_LIMIT){
     h += flag('amber','!',`<strong>Income exceeds FEIE limit.</strong> Your foreign earned income of ${fmt(foreignEarned)} exceeds the 2026 FEIE limit of $126,500. The excess ${fmt(foreignEarned - FEIE_LIMIT)} is still subject to US tax under the FEIE strategy. The FTC strategy may be more effective for high earners in high-tax jurisdictions.`);
