@@ -214,7 +214,7 @@ table.sched .total-row td{background:var(--ink-10);font-weight:700;border-top:2p
         </div>
         <div class="rh-item">
           <div class="rh-label">Recovery Period</div>
-          <div class="rh-val" id="rPeriod">—</div>
+          <div class="rh-val" id="rPeriod"> - </div>
           <div class="rh-sub">MACRS years</div>
         </div>
       </div>
@@ -227,9 +227,9 @@ table.sched .total-row td{background:var(--ink-10);font-weight:700;border-top:2p
       <div class="sum-row"><span class="sum-lbl">Total acquisition cost</span><span class="sum-val" id="sTotalCost">$0</span></div>
       <div class="sum-row"><span class="sum-lbl">Land value (non-depreciable)</span><span class="sum-val" id="sLand">$0</span></div>
       <div class="sum-row"><span class="sum-lbl">Depreciable basis</span><span class="sum-val" id="sBasis">$0</span></div>
-      <div class="sum-row"><span class="sum-lbl">Method</span><span class="sum-val" id="sMethod">—</span></div>
-      <div class="sum-row"><span class="sum-lbl">Convention</span><span class="sum-val" id="sConvention">—</span></div>
-      <div class="sum-row"><span class="sum-lbl">Recovery period</span><span class="sum-val" id="sPeriod">—</span></div>
+      <div class="sum-row"><span class="sum-lbl">Method</span><span class="sum-val" id="sMethod"> - </span></div>
+      <div class="sum-row"><span class="sum-lbl">Convention</span><span class="sum-val" id="sConvention"> - </span></div>
+      <div class="sum-row"><span class="sum-lbl">Recovery period</span><span class="sum-val" id="sPeriod"> - </span></div>
       <div class="sum-row"><span class="sum-lbl">Annual depreciation (full year)</span><span class="sum-val" id="sAnnual">$0</span></div>
       <div class="sum-row"><span class="sum-lbl">Year 1 depreciation (partial)</span><span class="sum-val" id="sYear1">$0</span></div>
       <div class="sum-row"><span class="sum-lbl">Adjusted basis (current)</span><span class="sum-val" id="sAdjBasis">$0</span></div>
@@ -429,7 +429,7 @@ function calc() {
 
   if (!showAllYears && totalYears > 10) {
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td colspan="4" style="text-align:center;font-style:italic;color:var(--ink-40);font-size:11px;padding:10px">${totalYears - 10} more years not shown — click "Show Full Schedule" above</td>`;
+    tr.innerHTML = `<td colspan="4" style="text-align:center;font-style:italic;color:var(--ink-40);font-size:11px;padding:10px">${totalYears - 10} more years not shown  -  click "Show Full Schedule" above</td>`;
     schedBody.appendChild(tr);
   }
 
