@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1031 Exchange Calculator 2026 | CPA Validated</title>
+<meta name="description" content="Calculate 1031 like-kind exchange: boot recognition, realized vs recognized gain, new basis, timeline deadlines (45/180 days), depreciation recapture. CPA-validated. IRC Section 1031.">
+<link rel="canonical" href="https://cpavalidated.com/exchange-1031-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.deadline-strip{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.dl-box{padding:16px;border:2px solid}
+.dl-box.d45{border-color:var(--amber-b);background:var(--amber-bg)}
+.dl-box.d180{border-color:var(--red-b);background:var(--red-bg)}
+.dl-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-family:var(--font-mono);margin-bottom:4px}
+.dl-box.d45 .dl-label{color:var(--amber)}
+.dl-box.d180 .dl-label{color:var(--red)}
+.dl-days{font-family:var(--font-display);font-size:40px;font-weight:500;line-height:1;margin-bottom:4px}
+.dl-box.d45 .dl-days{color:var(--amber)}
+.dl-box.d180 .dl-days{color:var(--red)}
+.dl-desc{font-size:12px;line-height:1.5}
+.dl-box.d45 .dl-desc{color:var(--amber)}
+.dl-box.d180 .dl-desc{color:var(--red)}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.hero4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.1);margin-bottom:14px}
+.h4{background:var(--ink);padding:14px;text-align:center}
+.h4l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.h4v{font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff}
+.h4v.coral{color:var(--coral)}.h4v.green{color:#6de88e}.h4v.amber{color:#f5c264}.h4v.red{color:#ff8f8a}
+.h4s{font-size:10px;color:rgba(255,255,255,.2);margin-top:3px}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.deadline-strip,.hero4{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &bull; a tk.cpa resource</div>
+  <h1>1031 Like-Kind Exchange Calculator 2026</h1>
+  <div class="sub">Realized vs. recognized gain. Boot recognition. New replacement property basis. Depreciation recapture. 45-day identification / 180-day closing deadlines. Deferred tax savings.</div>
+  <div class="badges"><span class="badge">IRC 1031</span><span class="badge">IRC 1031(a)(3) - 45/180 day rules</span><span class="badge">IRC 1250 - depreciation recapture</span><span class="badge">Treas. Reg. 1.1031</span><span class="badge">Form 8824</span></div>
+</div></div>
+<div class="back"><a href="index.html">back to cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="deadline-strip">
+  <div class="dl-box d45">
+    <div class="dl-label">Identification Deadline</div>
+    <div class="dl-days">45</div>
+    <div class="dl-desc"><strong>days</strong> from closing of relinquished property to identify replacement properties in writing. No exceptions. IRC 1031(a)(3)(A). Miss this: no exchange.</div>
+  </div>
+  <div class="dl-box d180">
+    <div class="dl-label">Closing Deadline</div>
+    <div class="dl-days">180</div>
+    <div class="dl-desc"><strong>days</strong> from closing of relinquished property (or tax return due date if earlier) to close on replacement property. IRC 1031(a)(3)(B). These are calendar days, not business days.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Relinquished Property</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Sale Price ($)</label>
+        <input type="number" class="fc" id="salePrice" value="1500000" oninput="calc()">
+        <div class="hint">Gross sale price of the property being sold (relinquished)</div>
+      </div>
+      <div class="f1"><label>Adjusted Cost Basis ($)</label>
+        <input type="number" class="fc" id="adjBasis" value="400000" oninput="calc()">
+        <div class="hint">Original cost + improvements - accumulated depreciation. This is NOT the original purchase price if you have depreciated the property.</div>
+      </div>
+      <div class="f1"><label>Accumulated Depreciation ($)</label>
+        <input type="number" class="fc" id="depreciation" value="150000" oninput="calc()">
+        <div class="hint">Total depreciation taken over the holding period. Subject to 25% unrecaptured Section 1250 gain on sale (even in a successful 1031 exchange, this transfers to replacement property).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Selling Costs ($)</label>
+        <input type="number" class="fc" id="sellCosts" value="60000" oninput="calc()">
+        <div class="hint">Commissions, closing costs, legal fees, title insurance. Reduce the amount realized.</div>
+      </div>
+      <div class="f1"><label>Mortgage / Debt on Relinquished Property ($)</label>
+        <input type="number" class="fc" id="relDebt" value="600000" oninput="calc()">
+        <div class="hint">Outstanding mortgage balance. Debt relief = boot unless replaced with equal or greater debt on replacement property. IRC 1031(b).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Replacement Property</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Replacement Property Purchase Price ($)</label>
+        <input type="number" class="fc" id="repPrice" value="2000000" oninput="calc()">
+        <div class="hint">Price of replacement property. Must be equal or greater than net sale price to avoid boot.</div>
+      </div>
+      <div class="f1"><label>New Mortgage on Replacement Property ($)</label>
+        <input type="number" class="fc" id="repDebt" value="800000" oninput="calc()">
+        <div class="hint">New debt on replacement property. Offsets debt relief from relinquished property. If new debt is less than old debt, the difference is mortgage boot.</div>
+      </div>
+      <div class="f1"><label>Capital Gains Rate (incl. NIIT if applicable)</label>
+        <select class="fc" id="cgRate" onchange="calc()">
+          <option value="0.20">20% (top LTCG rate)</option>
+          <option value="0.238" selected>23.8% (20% + 3.8% NIIT)</option>
+          <option value="0.15">15% LTCG rate</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="depreciation-calculator.html" class="rl">Depreciation Calculator</a>
+  <a href="passive-activity-loss.html" class="rl">Passive Activity Loss</a>
+  <a href="qoz-guide.html" class="rl">QOZ Guide</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
+function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+function calc(){
+  const salePrice   = parseFloat(document.getElementById('salePrice').value)||0;
+  const adjBasis    = parseFloat(document.getElementById('adjBasis').value)||0;
+  const depreciation= parseFloat(document.getElementById('depreciation').value)||0;
+  const sellCosts   = parseFloat(document.getElementById('sellCosts').value)||0;
+  const relDebt     = parseFloat(document.getElementById('relDebt').value)||0;
+  const repPrice    = parseFloat(document.getElementById('repPrice').value)||0;
+  const repDebt     = parseFloat(document.getElementById('repDebt').value)||0;
+  const cgRate      = parseFloat(document.getElementById('cgRate').value)||0.238;
+
+  // Amount realized
+  const amtRealized = salePrice - sellCosts;
+  // Realized gain
+  const realizedGain = amtRealized - adjBasis;
+  // Boot calculation
+  const cashReceived = Math.max(0, (salePrice - sellCosts) - repPrice);
+  const mortgageBoot = Math.max(0, relDebt - repDebt);
+  const totalBoot = cashReceived + mortgageBoot;
+  // Recognized gain = lesser of realized gain or boot received
+  const recognizedGain = Math.min(realizedGain, totalBoot);
+  const deferredGain = realizedGain - recognizedGain;
+  // New basis = repPrice - deferredGain (or adjBasis + boot + new cash invested - gain recognized)
+  const newBasis = repPrice - deferredGain;
+  // Tax calculations
+  const recaptureGain = Math.min(depreciation, realizedGain);
+  const recaptureTax = recaptureGain * 0.25; // unrecaptured Section 1250 gain
+  const capitalGain = Math.max(0, recognizedGain - recaptureGain);
+  const capitalTax = capitalGain * cgRate;
+  const totalTaxIfNoExchange = (recaptureGain * 0.25) + (Math.max(0, realizedGain - recaptureGain) * cgRate);
+  const taxSaved = totalTaxIfNoExchange - (recaptureTax + capitalTax);
+  const equity = salePrice - sellCosts - relDebt;
+
+  const rb = document.getElementById('res');
+  let h = '';
+
+  h += `<div class="hero4">
+    <div class="h4"><div class="h4l">Realized Gain</div><div class="h4v coral">${fmt(realizedGain)}</div><div class="h4s">Before 1031</div></div>
+    <div class="h4"><div class="h4l">Boot (Recognized)</div><div class="h4v ${totalBoot>0?'red':'green'}">${fmt(totalBoot)}</div><div class="h4s">${totalBoot>0?'Taxable now':'No boot'}</div></div>
+    <div class="h4"><div class="h4l">Deferred Gain</div><div class="h4v green">${fmt(deferredGain)}</div><div class="h4s">Rolled into new basis</div></div>
+    <div class="h4"><div class="h4l">Tax Deferred</div><div class="h4v green">${fmt(taxSaved)}</div><div class="h4s">vs. straight sale</div></div>
+  </div>`;
+
+  h += `<div class="sum-box"><div class="sum-title">1031 Exchange Computation - Form 8824</div>
+    <div class="srow"><span class="sl">Sale price of relinquished property</span><span class="sv">${fmt(salePrice)}</span></div>
+    <div class="srow"><span class="sl">Less: selling costs</span><span class="sv">-${fmt(sellCosts)}</span></div>
+    <div class="srow"><span class="sl">Amount realized</span><span class="sv">${fmt(amtRealized)}</span></div>
+    <div class="srow"><span class="sl">Less: adjusted basis</span><span class="sv">-${fmt(adjBasis)}</span></div>
+    <div class="srow"><span class="sl">Realized gain</span><span class="sv coral">${fmt(realizedGain)}</span></div>
+    <div class="srow"><span class="sl">Cash boot received</span><span class="sv ${cashReceived>0?'red':'green'}">${fmt(cashReceived)}</span></div>
+    <div class="srow"><span class="sl">Mortgage boot (debt relief minus new debt)</span><span class="sv ${mortgageBoot>0?'red':'green'}">${fmt(mortgageBoot)}</span></div>
+    <div class="srow"><span class="sl">Total boot</span><span class="sv ${totalBoot>0?'red':'green'}">${fmt(totalBoot)}</span></div>
+    <div class="srow"><span class="sl">Recognized gain (lesser of realized gain or boot)</span><span class="sv ${recognizedGain>0?'amber':'green'}">${fmt(recognizedGain)}</span></div>
+    <div class="srow"><span class="sl">Deferred gain (rolled into replacement property)</span><span class="sv green">${fmt(deferredGain)}</span></div>
+    <div class="srow"><span class="sl">New basis in replacement property (${fmt(repPrice)} - ${fmt(deferredGain)})</span><span class="sv">${fmt(newBasis)}</span></div>
+  </div>`;
+
+  h += `<div class="sum-box"><div class="sum-title">Tax Impact</div>
+    <div class="srow"><span class="sl">Accumulated depreciation subject to recapture (25%)</span><span class="sv amber">${fmt(recaptureGain)}</span></div>
+    <div class="srow"><span class="sl">Depreciation recapture tax (25%)</span><span class="sv amber">${fmt(recaptureTax)}</span></div>
+    <div class="srow"><span class="sl">LTCG on recognized gain (${Math.round(cgRate*100)}%)</span><span class="sv amber">${fmt(capitalTax)}</span></div>
+    <div class="srow"><span class="sl">Total tax if sold outright (no 1031)</span><span class="sv red">${fmt(totalTaxIfNoExchange)}</span></div>
+    <div class="srow"><span class="sl"><strong>Tax deferred by 1031 exchange</strong></span><span class="sv green">${fmt(taxSaved)}</span></div>
+  </div>`;
+
+  if(totalBoot === 0 && realizedGain > 0) h += flag('green','v',`<strong>Fully deferred - no boot.</strong> The exchange is structured to avoid boot entirely. All ${fmt(realizedGain)} of realized gain is deferred into the replacement property's basis. The new basis of ${fmt(newBasis)} is lower than the purchase price, which means future depreciation deductions will be smaller and the deferred gain will eventually be recognized on a later sale.`);
+  if(mortgageBoot > 0) h += flag('amber','!',`<strong>Mortgage boot of ${fmt(mortgageBoot)} recognized.</strong> The relinquished property had more debt (${fmt(relDebt)}) than the replacement property (${fmt(repDebt)}). The excess debt relief of ${fmt(mortgageBoot)} is treated as boot and is taxable. To eliminate: take on additional debt on the replacement property, or make additional cash investment equal to the difference.`);
+  if(recognizedGain > 0 && totalBoot > 0) h += flag('amber','!',`<strong>${fmt(recognizedGain)} of gain recognized due to boot.</strong> Boot cannot be avoided without restructuring. To fully defer: (1) invest all cash proceeds in the replacement property, (2) take on equal or greater debt on the replacement property, (3) ensure replacement property value equals or exceeds net proceeds from relinquished property.`);
+  h += flag('blue','i','<strong>Depreciation recapture follows the property.</strong> The accumulated depreciation of ${fmt(depreciation)} transfers to the replacement property basis and reduces it further. When the replacement property is eventually sold (in a taxable transaction), all previously deferred depreciation recapture is recognized. A 1031 exchange defers but never permanently eliminates recapture.');
+  h += flag('blue','i','<strong>Qualified Intermediary required.</strong> The seller cannot receive the proceeds from the relinquished property - even briefly. A Qualified Intermediary (QI) must hold the proceeds between the closing of the relinquished property and the acquisition of the replacement property. Constructive receipt of the funds disqualifies the exchange. Treas. Reg. 1.1031(k)-1(g).');
+
+  h += `<div class="src">IRC 1031 (like-kind exchange - nonrecognition of gain); IRC 1031(a)(1) (property held for investment or productive use in trade or business); IRC 1031(a)(3) (45-day identification and 180-day closing deadlines); IRC 1031(b) (boot recognition - gain recognized to extent of money received); IRC 1031(d) (basis of replacement property); IRC 1250 (depreciation recapture on real property); IRC 1250(h) (unrecaptured Section 1250 gain - taxed at 25%); Treas. Reg. 1.1031(k)-1 (deferred exchange rules; qualified intermediary requirement); Form 8824 (Like-Kind Exchanges); IRS Publication 544 (Sales and Other Dispositions of Assets).</div>`;
+  h += `<div class="disc">This calculator models a single-property delayed exchange. Reverse exchanges, improvement exchanges, and multi-property exchanges are more complex. State tax treatment of 1031 exchanges varies - some states do not conform to federal 1031 rules. Consult a CPA and qualified intermediary before initiating any exchange. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc. - <a href="disclaimer.html">disclaimer</a>.</div>`;
+  rb.innerHTML = h;
+}
+calc();
+</script>
+</body>
+</html>
