@@ -198,14 +198,14 @@ function result(type){
   const hasIncome=A.q6==='yes';
 
   if(type==='irs_contact'){
-    h=box('ineligible','✗ Not Eligible — IRS Has Already Contacted You');
+    h=box('ineligible','✗ Not Eligible  -  IRS Has Already Contacted You');
     h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">The Streamlined programs are not available once the IRS has initiated contact about the non-compliant accounts or returns. You must address this through the IRS examination process or the Voluntary Disclosure Program (VDP). Consult a qualified tax attorney immediately.</p>';
     h+=flag('red','✗','<strong>Voluntary Disclosure Program (VDP)</strong> may still be available if you have not previously disclosed and the IRS contact was not about the specific accounts at issue. VDP is available for potentially willful violations and provides protection from criminal prosecution in most cases. IRM 9.5.11. Attorney involvement is essential.');
   } else if(type==='criminal'){
-    h=box('ineligible','✗ Not Eligible — Criminal Investigation Underway');
+    h=box('ineligible','✗ Not Eligible  -  Criminal Investigation Underway');
     h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">Streamlined procedures are unavailable to anyone under criminal investigation. Do not file any submissions without first consulting a criminal tax defense attorney. Any voluntary disclosure made while under criminal investigation may be used against you.</p>';
   } else if(type==='willful'){
-    h=box('vdp','! Streamlined Not Available — Conduct May Be Willful');
+    h=box('vdp','! Streamlined Not Available  -  Conduct May Be Willful');
     h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">If your FBAR failures were willful, you do not qualify for Streamlined. The IRS defines willful broadly - it includes "reckless disregard" of a known legal duty. Checking "No" on Schedule B (Form 1040) when you have foreign accounts has been treated as evidence of willfulness in court. 31 USC §5321(a)(5)(C).</p>';
     h+=flag('amber','!','<strong>Voluntary Disclosure Program (VDP)</strong> is available for potentially willful violations. VDP requires full cooperation, payment of all taxes, interest, and civil penalties. It does not guarantee immunity but substantially reduces criminal risk. IRM 9.5.11. <strong>Retain a qualified criminal tax defense attorney before any VDP submission.</strong>');
   } else if(type==='unsure_willful'){
@@ -218,9 +218,9 @@ function result(type){
   } else {
     // Eligible
     if(isForeign){
-      h=box('sfop','✓ Potentially Eligible — Streamlined Foreign Offshore Procedures (SFOP)');
+      h=box('sfop','✓ Potentially Eligible  -  Streamlined Foreign Offshore Procedures (SFOP)');
     } else {
-      h=box('sdop','✓ Potentially Eligible — Streamlined Domestic Offshore Procedures (SDOP)');
+      h=box('sdop','✓ Potentially Eligible  -  Streamlined Domestic Offshore Procedures (SDOP)');
     }
 
     h+='<div class="program-compare">';
