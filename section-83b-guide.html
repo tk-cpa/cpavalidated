@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 83(b) Election Guide & Calculator 2026 | CPA Validated</title>
+<meta name="description" content="Section 83(b) election: 30-day deadline, tax comparison with and without election, restricted stock vs options, startup equity. CPA-validated. IRC Section 83.">
+<link rel="canonical" href="https://cpavalidated.com/section-83b-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.deadline-banner{background:var(--red-bg);border:2px solid var(--red-b);padding:18px 22px;margin-bottom:20px;display:flex;align-items:center;gap:16px}
+.db-icon{font-size:32px;flex-shrink:0}.db-title{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--red)}.db-sub{font-size:13px;color:var(--red);margin-top:3px;line-height:1.5}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}
+.cbox{border:2px solid var(--ink-20);padding:18px}
+.cbox.winner{border-color:var(--green);background:var(--green-bg)}
+.cbox-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px;font-family:var(--font-mono)}
+.cbox-title{font-family:var(--font-display);font-size:17px;font-weight:500;margin-bottom:10px}
+.cbox-row{display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.cbox-row:last-child{border-bottom:none;font-weight:700;padding-top:8px}
+.cbox-net{font-family:var(--font-display);font-size:26px;font-weight:500;margin-top:8px}
+.cbox.winner .cbox-net{color:var(--green)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.checklist{list-style:none;margin:0}
+.checklist li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.checklist li:last-child{border-bottom:none}
+.cl-num{width:22px;height:22px;border-radius:50%;background:var(--coral);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.compare{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &bull; a tk.cpa resource</div>
+  <h1>Section 83(b) Election Guide & Tax Comparison</h1>
+  <div class="sub">The 30-day election that can save founders and employees hundreds of thousands in tax. How it works, when to file, what happens if you miss it, and a side-by-side tax comparison.</div>
+  <div class="badges"><span class="badge">IRC 83 - property transferred for services</span><span class="badge">IRC 83(b) - election</span><span class="badge">Treas. Reg. 1.83-2</span><span class="badge">IRC 1221 - capital asset</span></div>
+</div></div>
+<div class="back"><a href="index.html">back to cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="deadline-banner">
+  <div class="db-icon">!</div>
+  <div><div class="db-title">30-Day Deadline. No Extensions. No Exceptions.</div>
+  <div class="db-sub">The Section 83(b) election must be filed with the IRS within 30 days of the grant date. There is no way to make this election late. Once the deadline passes, it is gone. IRC 83(b)(2); Treas. Reg. 1.83-2(b).</div></div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Grant Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Grant Type</label>
+        <select class="fc" id="grantType" onchange="calc()">
+          <option value="restricted">Restricted Stock (RS) - 83(b) most common here</option>
+          <option value="founders">Founders Stock - subject to vesting / repurchase</option>
+          <option value="profits">Profits Interest in Partnership - 83(b) commonly elected</option>
+        </select>
+        <div class="hint">Section 83(b) applies to property transferred in connection with services that is subject to a "substantial risk of forfeiture" (e.g., vesting schedule). ISOs and NQSOs are NOT restricted property at grant - different rules apply.</div>
+      </div>
+      <div class="f1"><label>Shares Granted</label>
+        <input type="number" class="fc" id="shares" value="1000000" oninput="calc()">
+      </div>
+      <div class="f1"><label>FMV Per Share at Grant ($)</label>
+        <input type="number" class="fc" id="grantFMV" value="0.001" step="0.001" oninput="calc()">
+        <div class="hint">Fair market value at the date of grant. For early-stage founders stock, this is often the par value (e.g., $0.0001). A 409A valuation establishes FMV for employees.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Price Paid Per Share ($)</label>
+        <input type="number" class="fc" id="pricePaid" step="0.001" value="0.001" oninput="calc()">
+        <div class="hint">Amount paid for the shares. If purchased at FMV, the spread (and hence ordinary income) is zero. Many founders buy at par value = FMV.</div>
+      </div>
+      <div class="f1"><label>Expected FMV at Full Vesting ($)</label>
+        <input type="number" class="fc" id="vestFMV" value="5.00" step="0.01" oninput="calc()">
+        <div class="hint">Projected FMV per share when fully vested (typically 4 years). This drives the tax comparison.</div>
+      </div>
+      <div class="f1"><label>Your Marginal Ordinary Tax Rate</label>
+        <select class="fc" id="ordRate" onchange="calc()">
+          <option value="0.22">22%</option>
+          <option value="0.24">24%</option>
+          <option value="0.32">32%</option>
+          <option value="0.35">35%</option>
+          <option value="0.37" selected>37%</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Tax Comparison</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your grant details above.</div></div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>How to File the 83(b) Election - Checklist</h2></div>
+  <div class="cb">
+    <ul class="checklist">
+      <li><div class="cl-num">1</div><div><strong>Draft the election statement.</strong> The IRS does not have an official form. The election must include: your name, address, and SSN; description of the property; date of transfer; tax year; nature of restrictions; FMV at transfer; amount paid; and a statement that you are making the election under IRC 83(b). Treas. Reg. 1.83-2(e).</div></li>
+      <li><div class="cl-num">2</div><div><strong>File within 30 days of the grant date.</strong> Count carefully - the 30-day period begins on the transfer date, not the grant date in some agreements. If day 30 falls on a weekend or holiday, the next business day is the deadline. File as early as possible; do not wait.</div></li>
+      <li><div class="cl-num">3</div><div><strong>Send by certified mail, return receipt requested.</strong> Mail to the IRS service center where you file your individual return. Keep the certified mail receipt and a copy of the signed election permanently. The IRS may lose it - your proof of timely filing is the receipt.</div></li>
+      <li><div class="cl-num">4</div><div><strong>Attach a copy to your tax return.</strong> Attach a copy of the 83(b) election to your Form 1040 for the tax year in which the transfer occurred. Treas. Reg. 1.83-2(c). This is a reminder step - the election is valid upon filing with the IRS, not upon attaching to the return.</div></li>
+      <li><div class="cl-num">5</div><div><strong>Provide a copy to the company.</strong> Give a copy to the company (employer/partnership) as required by Treas. Reg. 1.83-2(d). The company needs it for its own compensation records and W-2 reporting obligations.</div></li>
+      <li><div class="cl-num">6</div><div><strong>Keep all copies permanently.</strong> The statute of limitations on the election itself does not expire cleanly - especially if the shares are sold many years later. Keep the election, the certified mail receipt, and your grant agreement indefinitely.</div></li>
+    </ul>
+    <div class="src" style="margin-top:14px">Authority: IRC 83(b) (election to include in gross income in year of transfer); IRC 83(b)(2) (must be filed no later than 30 days after transfer); Treas. Reg. 1.83-2 (election requirements, content, filing procedure); Rev. Proc. 2012-29 (IRS guidance on 83(b) election content requirements).</div>
+  </div>
+</div>
+
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="amt-calculator.html" class="rl">AMT Calculator</a>
+  <a href="scorp-compensation.html" class="rl">S-Corp Compensation</a>
+  <a href="tax-estimator.html" class="rl">Tax Estimator</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
+function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function fmtD(n){return n.toFixed(4);}
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+function calc(){
+  const shares=parseFloat(document.getElementById('shares').value)||0;
+  const grantFMV=parseFloat(document.getElementById('grantFMV').value)||0;
+  const pricePaid=parseFloat(document.getElementById('pricePaid').value)||0;
+  const vestFMV=parseFloat(document.getElementById('vestFMV').value)||0;
+  const ordRate=parseFloat(document.getElementById('ordRate').value)||0.37;
+  const ltcgRate=0.20;
+  const niitRate=0.038;
+
+  const spreadAtGrant=Math.max(0,grantFMV-pricePaid);
+  const spreadAtVest=Math.max(0,vestFMV-pricePaid);
+  const totalGrant=shares*grantFMV;
+  const totalVest=shares*vestFMV;
+  const totalPaid=shares*pricePaid;
+
+  // WITH 83(b)
+  const ordinaryIncome83b=shares*spreadAtGrant;
+  const taxAt83b=ordinaryIncome83b*ordRate;
+  const basis83b=totalPaid+ordinaryIncome83b;
+  const ltcgOn83b=Math.max(0,totalVest-basis83b);
+  const ltcgTax83b=ltcgOn83b*(ltcgRate+niitRate);
+  const total83b=taxAt83b+ltcgTax83b;
+  const netAfter83b=totalVest-total83b;
+
+  // WITHOUT 83(b) - taxed as ordinary income at vesting on spread
+  const ordinaryIncomeNoElect=shares*spreadAtVest;
+  const taxNoElect=ordinaryIncomeNoElect*ordRate;
+  const basisNoElect=totalVest;
+  const ltcgNoElect=0; // immediately at vest = short term or hold for LTCG
+  const totalNoElect=taxNoElect;
+  const netAfterNoElect=totalVest-totalNoElect;
+
+  const saving=netAfter83b-netAfterNoElect;
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  h+=`<div class="compare">
+    <div class="cbox winner">
+      <div class="cbox-label">WITH Section 83(b) Election</div>
+      <div class="cbox-title">Filed within 30 days of grant</div>
+      <div class="cbox-row"><span>Ordinary income at grant</span><span>${fmt(ordinaryIncome83b)}</span></div>
+      <div class="cbox-row"><span>Tax at grant (${Math.round(ordRate*100)}% ordinary rate)</span><span>${fmt(taxAt83b)}</span></div>
+      <div class="cbox-row"><span>Basis established</span><span>${fmt(basis83b)}</span></div>
+      <div class="cbox-row"><span>Value at vesting</span><span>${fmt(totalVest)}</span></div>
+      <div class="cbox-row"><span>LTCG at exit (${Math.round((ltcgRate+niitRate)*100)}%)</span><span>${fmt(ltcgTax83b)}</span></div>
+      <div class="cbox-row"><span><strong>Total tax burden</strong></span><span><strong>${fmt(total83b)}</strong></span></div>
+      <div class="cbox-net">${fmt(netAfter83b)}</div>
+      <div style="font-size:11px;color:var(--green)">Net after-tax value at exit</div>
+    </div>
+    <div class="cbox">
+      <div class="cbox-label">WITHOUT 83(b) Election</div>
+      <div class="cbox-title">No election filed</div>
+      <div class="cbox-row"><span>Ordinary income at grant</span><span>$0</span></div>
+      <div class="cbox-row"><span>Ordinary income at vesting</span><span>${fmt(ordinaryIncomeNoElect)}</span></div>
+      <div class="cbox-row"><span>Tax at vesting (${Math.round(ordRate*100)}% ordinary rate)</span><span>${fmt(taxNoElect)}</span></div>
+      <div class="cbox-row"><span>Basis at vesting</span><span>${fmt(basisNoElect)}</span></div>
+      <div class="cbox-row"><span>Additional LTCG (if held post-vest)</span><span>Separate</span></div>
+      <div class="cbox-row"><span><strong>Total tax at vesting</strong></span><span><strong>${fmt(totalNoElect)}</strong></span></div>
+      <div class="cbox-net" style="color:var(--red)">${fmt(netAfterNoElect)}</div>
+      <div style="font-size:11px;color:var(--ink-60)">Net after vesting-day tax</div>
+    </div>
+  </div>`;
+
+  h+=`<div style="background:var(--ink);padding:16px 20px;margin-bottom:14px;display:flex;align-items:center;gap:16px">
+    <div><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral)">Tax Saved by Making the 83(b) Election</div>
+    <div style="font-family:var(--font-display);font-size:36px;font-weight:500;color:#fff">${fmt(saving)}</div>
+    <div style="font-size:12px;color:rgba(255,255,255,.4)">On ${shares.toLocaleString()} shares from $${grantFMV} to $${vestFMV}/share</div></div>
+  </div>`;
+
+  if(spreadAtGrant===0){
+    h+=flag('green','v','<strong>Zero spread at grant - minimal tax cost to elect.</strong> Since FMV equals price paid at the time of grant, the ordinary income inclusion from the 83(b) election is $0 (or near zero). This is the optimal scenario: you make the election, pay essentially no tax today, and all future appreciation is long-term capital gain if you hold for 12+ months from the grant date. File immediately.');
+  }
+  if(spreadAtGrant>0&&spreadAtGrant<1){
+    h+=flag('blue','i',`<strong>Small spread of $${spreadAtGrant.toFixed(4)}/share.</strong> Even with a small spread, the 83(b) election is almost always worth making for early-stage equity. The ordinary income today is ${fmt(ordinaryIncome83b)} - a manageable amount compared to the potential LTCG treatment on all future appreciation.`);
+  }
+  h+=flag('red','!','<strong>If the shares are forfeited after making the 83(b) election, the tax paid is not refunded.</strong> This is the downside risk. If you make the election, pay tax on the spread, and then leave the company before vesting (and forfeit the shares), you cannot recover the tax paid. You do get a capital loss for the amount paid for the shares (but not the tax). IRC 83(b)(1). Factor forfeiture risk into the decision to elect.');
+  h+=flag('amber','!','<strong>ISOs and NQSOs are NOT restricted property at grant - different rules.</strong> Section 83(b) applies to restricted stock and profits interests. It generally does not apply to stock options at grant because options are not "property" for IRC 83 purposes until exercised. Early exercise of unvested NQSOs (if permitted by the plan) does create restricted property and can support an 83(b) election. ISOs have their own rules under IRC 422.');
+  h+=`<div class="src">IRC 83 (property transferred in connection with services - timing of income inclusion); IRC 83(a) (general rule - include at time of vesting when no longer subject to substantial risk of forfeiture); IRC 83(b) (election to include in gross income in year of transfer); IRC 83(b)(2) (30-day filing deadline - no extension); IRC 83(c)(1) (substantial risk of forfeiture definition); Treas. Reg. 1.83-2 (election requirements and filing procedure); Rev. Proc. 2012-29 (83(b) election content); IRC 1221 (capital asset - appreciation after 83(b) election taxed as capital gain if held 12+ months).</div>`;
+  h+=`<div class="disc">This analysis is illustrative. Actual tax depends on your specific facts, AMT exposure (ISO spreads), state taxes, and whether shares appreciate as projected. The 83(b) election is irrevocable once filed. Consult a tax professional before grant date - not after. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+  rb.innerHTML=h;
+}
+calc();
+</script>
+</body>
+</html>
