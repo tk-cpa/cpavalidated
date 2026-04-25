@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1099 Form Rules & Thresholds 2026 | CPA Validated</title>
+<meta name="description" content="Complete 1099 reporting rules and thresholds for 2026. 1099-NEC, 1099-MISC (royalties $10), 1099-K new $2,500 threshold, 1099-INT, 1099-DIV, 1099-B, 1099-R, backup withholding. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/form-1099-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:1000px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:1000px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 24px 0}
+.section-head{display:flex;align-items:baseline;gap:12px;margin:24px 0 12px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.sh-title{font-family:var(--font-display);font-size:22px;font-weight:500}
+.sh-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);font-family:var(--font-mono)}
+.form-card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:12px;overflow:hidden}
+.fc-header{display:grid;grid-template-columns:140px 1fr auto;gap:16px;align-items:start;padding:16px 18px;cursor:pointer;transition:background .15s}
+.fc-header:hover{background:var(--ink-10)}
+.fc-form{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--coral)}
+.fc-name{font-weight:600;font-size:14px;margin-bottom:2px}
+.fc-desc{font-size:12px;color:var(--ink-60);line-height:1.4}
+.fc-threshold{text-align:right;flex-shrink:0}
+.fc-thresh-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60);font-family:var(--font-mono)}
+.fc-thresh-val{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink)}
+.fc-body{padding:0 18px;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
+.fc-body.open{max-height:600px;padding:0 18px 16px}
+.fc-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px}
+.fc-detail{background:var(--ink-10);padding:10px 12px}
+.fc-detail-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60);margin-bottom:4px;font-family:var(--font-mono)}
+.fc-detail-val{font-size:13px;font-weight:600;line-height:1.4}
+.tag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:2px;display:inline-block;margin-left:8px}
+.tag.new{background:var(--coral-100);color:var(--coral);border:1px solid rgba(246,95,90,.3)}
+.tag.changed{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b)}
+.tag.unchanged{background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
+.callout-k{background:var(--amber-bg);border:2px solid var(--amber-b);padding:16px 20px;margin-bottom:18px}
+.ck-title{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--amber);margin-bottom:8px}
+.ck-body{font-size:13px;color:var(--amber);line-height:1.6}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.deadline-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:13px}
+.deadline-table th{background:var(--ink);color:#fff;padding:8px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.deadline-table td{padding:8px 12px;border-bottom:1px solid var(--ink-10)}
+.deadline-table tr:last-child td{border-bottom:none}
+.deadline-table td:first-child{font-family:var(--font-mono);font-weight:700;color:var(--coral)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:600px){.fc-header{grid-template-columns:1fr}.fc-detail-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &bull; a tk.cpa resource</div>
+  <h1>1099 Form Rules, Thresholds & Deadlines 2026</h1>
+  <div class="sub">Complete reference: 1099-NEC, 1099-MISC, 1099-K (new $2,500 threshold), 1099-INT, 1099-DIV, 1099-B, 1099-R, 1099-S, W-2G. Royalty reporting ($10 threshold). Backup withholding. Penalties for late/missing 1099s. Click any form for full detail.</div>
+  <div class="badges"><span class="badge">IRC 6041 - information returns</span><span class="badge">IRC 3406 - backup withholding 24%</span><span class="badge">1099-K: $2,500 for 2026</span><span class="badge">Royalties: $10 threshold</span></div>
+</div></div>
+<div class="back"><a href="index.html">back to cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="callout-k">
+  <div class="ck-title">1099-K Threshold Changes - Critical Update</div>
+  <div class="ck-body">The 1099-K reporting threshold has been repeatedly changed and delayed. Timeline: $20,000/200 transactions (through 2022) - $600 threshold enacted by ARP (P.L. 117-2) - IRS delayed to $20,000 (2022, Notice 2022-53) - IRS delayed again to $5,000 (2023, Notice 2023-74) - $5,000 applied for 2024 (Notice 2024-85) - <strong>$2,500 for calendar year 2025 reporting (issued in 2026)</strong> - $600 scheduled for 2026 and beyond unless further delayed. The $600 threshold is law under ARP; each year's delay is discretionary IRS enforcement relief. Platforms like Venmo, PayPal, Etsy, eBay, Airbnb, and StubHub are required to issue 1099-Ks under these rules. Income is taxable regardless of whether a 1099-K is issued.</div>
+</div>
+
+<div class="section-head"><div class="sh-title">Payor-Filed Information Returns</div><div class="sh-tag">Click any form to expand</div></div>
+
+<div id="formList"></div>
+
+<div class="section-head"><div class="sh-title">Filing Deadlines 2026</div></div>
+<table class="deadline-table">
+<thead><tr><th>Form</th><th>Recipient Copy Deadline</th><th>IRS Paper Deadline</th><th>IRS E-File Deadline</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>1099-NEC</td><td>Jan 31, 2026</td><td>Jan 31, 2026</td><td>Jan 31, 2026</td><td>Same date for recipient and IRS. No automatic extension for recipient copy. IRC 6071(c).</td></tr>
+<tr><td>1099-MISC</td><td>Jan 31, 2026</td><td>Feb 28, 2026</td><td>Mar 31, 2026</td><td>If Box 7 is used (direct sales), recipient deadline is also Jan 31.</td></tr>
+<tr><td>1099-K</td><td>Jan 31, 2026</td><td>Feb 28, 2026</td><td>Mar 31, 2026</td><td>Third-party settlement organizations (PayPal, Stripe, etc.).</td></tr>
+<tr><td>1099-INT / 1099-DIV</td><td>Jan 31, 2026</td><td>Feb 28, 2026</td><td>Mar 31, 2026</td><td>Brokerage accounts: combined statement due Feb 15, 2026 (corrected by Mar 15).</td></tr>
+<tr><td>1099-B</td><td>Feb 15, 2026</td><td>Feb 28, 2026</td><td>Mar 31, 2026</td><td>Extended recipient deadline for brokerage accounts. Reg. 1.6045-1.</td></tr>
+<tr><td>1099-R</td><td>Jan 31, 2026</td><td>Feb 28, 2026</td><td>Mar 31, 2026</td><td>Retirement plan distributions, IRA distributions, pensions.</td></tr>
+<tr><td>1099-S</td><td>Feb 15, 2026</td><td>Feb 28, 2026</td><td>Mar 31, 2026</td><td>Real estate proceeds. Often filed by settlement agent. IRC 6045(e).</td></tr>
+<tr><td>W-2G</td><td>Jan 31, 2026</td><td>Feb 28, 2026</td><td>Mar 31, 2026</td><td>Gambling winnings. Withholding required if winnings over $5,000 (sweepstakes/poker) or regular gambling.</td></tr>
+</tbody>
+</table>
+
+<div class="flag blue"><div class="fi">i</div><div class="ft"><strong>E-file required at 10+ forms.</strong> Payors filing 10 or more information returns of any type must file electronically via the IRS FIRE system. This threshold was reduced from 250 to 10 by the Taxpayer First Act of 2019, effective for returns filed after December 31, 2021. Treas. Reg. 301.6011-2.</div></div>
+
+<div class="flag red"><div class="fi">!</div><div class="ft"><strong>Backup withholding at 24%.</strong> If a payee fails to provide a correct TIN (or has been notified by IRS of underreporting), the payor must withhold 24% of payments subject to information reporting. Applies to 1099-MISC, 1099-NEC, 1099-INT, 1099-DIV, 1099-B, 1099-K. The payor is liable for the unwithheld amount plus penalties if they fail to withhold when required. IRC 3406. W-9 collection is the payor's protection.</div></div>
+
+<div class="flag amber"><div class="fi">!</div><div class="ft"><strong>Penalties for late or missing 1099s (2026 rates).</strong> Per-return penalties apply to payors. Under IRC 6721-6722: $60/return if filed within 30 days of due date; $130/return if filed after 30 days but by August 1; $330/return if filed after August 1 or not filed; $660/return for intentional disregard. Annual caps apply per payor. Small-business reduced caps available. The penalties are assessed separately for failure to file with IRS AND failure to furnish to recipient.</div></div>
+
+<div class="src">IRC 6041 (requirement to file information returns - $600 general threshold); IRC 6041(a) (exceptions: corporations generally exempt as payees); IRC 6041A (returns for compensation for services and direct sales); IRC 6045 (returns of brokers - 1099-B); IRC 6045(e) (real estate reporting - 1099-S); IRC 6049 (returns for interest - 1099-INT); IRC 6042 (returns for dividends - 1099-DIV); IRC 6047 (returns for retirement plan distributions - 1099-R); IRC 6050W (returns relating to payment card and third-party network transactions - 1099-K); ARP P.L. 117-2 §9674 (1099-K $600 threshold change); IRS Notice 2022-53, Notice 2023-74, Notice 2024-85 (1099-K threshold delay guidance); IRC 3406 (backup withholding at 24%); IRC 6721-6722 (penalties for failure to file correct information returns and furnish payee statements); Treas. Reg. 301.6011-2 (e-file requirement at 10+ returns).</div>
+<div class="disc">Thresholds and deadlines current as of April 2026. The 1099-K threshold is subject to further IRS guidance. Verify deadlines if weekends or federal holidays fall on the deadline date (next business day rule). A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>
+
+</div>
+
+<div class="related"><div style="max-width:1000px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="scorp-compensation.html" class="rl">S-Corp Compensation</a>
+  <a href="tax-estimator.html" class="rl">Tax Estimator</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="tax-calendar.html" class="rl">Tax Calendar</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
+const FORMS = [
+  {
+    form:'1099-NEC', tag:'unchanged', threshold:'$600',
+    name:'Nonemployee Compensation',
+    desc:'Payments to independent contractors, freelancers, and vendors for services.',
+    who:'Businesses paying $600+ to non-corporate service providers in the course of a trade or business.',
+    boxes:'Box 1: Nonemployee compensation. Box 4: Federal income tax withheld (backup withholding).',
+    corp:'Corporations generally exempt as payees. Attorneys always receive regardless of entity type. LLC taxed as corp: provide W-9, then exempt.',
+    notes:'Most important 1099 for self-employed individuals. Also used for directors fees, golden parachute payments, fishing boat proceeds, and Medicare/Medicaid payments to physicians. IRC 6041A.',
+    authority:'IRC 6041; IRC 6041A; Treas. Reg. 1.6041-1; Rev. Rul. 2000-12.'
+  },
+  {
+    form:'1099-MISC', tag:'unchanged', threshold:'$600 (rents, prizes) / $10 (royalties)',
+    name:'Miscellaneous Information',
+    desc:'Rents, royalties, prizes and awards, medical payments, crop insurance, fishing boat proceeds.',
+    who:'Businesses paying $600+ for rents, prizes, medical payments; $10+ for royalties and broker payments in lieu of dividends.',
+    boxes:'Box 1: Rents. Box 2: Royalties ($10 threshold). Box 3: Other income. Box 6: Medical/health payments. Box 7: Direct sales ($5,000+ of consumer products to a buyer for resale).',
+    corp:'Corp exemption applies to most items except: attorneys (Box 10), medical/healthcare payments (Box 6), crop insurance (Box 9), fish purchases (Box 11).',
+    notes:'ROYALTIES: The $10 threshold for Box 2 is critical and often overlooked. Any royalty payment of $10 or more requires a 1099-MISC. This applies to oil/gas royalties, mineral royalties, intellectual property royalties, and book/music royalties.',
+    authority:'IRC 6041; IRC 6050N (royalties); Treas. Reg. 1.6041-1(a)(1)(i); Rev. Rul. 69-595.'
+  },
+  {
+    form:'1099-K', tag:'changed', threshold:'$2,500 (for 2025 tax year / filed 2026)',
+    name:'Payment Card & Third-Party Network Transactions',
+    desc:'Payments received through payment cards (credit/debit) or third-party payment networks (PayPal, Venmo, Stripe, Cash App, Etsy, eBay, Airbnb, StubHub, etc.).',
+    who:'Payment settlement entities (PSEs) and third-party settlement organizations (TPSOs) issue to payees. Credit card processors issue for ALL merchants regardless of amount.',
+    boxes:'Box 1a: Gross amount of payment card/third-party network transactions. Box 1b: Card not present transactions. State reporting in Boxes 5-8.',
+    corp:'Corporations NOT exempt - all entities receive 1099-K from payment processors.',
+    notes:'THRESHOLD HISTORY: $20,000/200 transactions (pre-2023) - delayed to $5,000 for 2023 (Notice 2023-74) - delayed to $5,000 for 2024 (Notice 2024-85) - $2,500 for 2025 tax year (reported 2026) - $600 scheduled for 2026+. Income is taxable regardless of whether a 1099-K is issued. Personal transfers (splitting dinner, repaying friends) are not income - document carefully. Business expenses offset gross receipts on Schedule C.',
+    authority:'IRC 6050W; ARP P.L. 117-2 §9674; Notice 2022-53; Notice 2023-74; Notice 2024-85.'
+  },
+  {
+    form:'1099-INT', tag:'unchanged', threshold:'$10',
+    name:'Interest Income',
+    desc:'Interest paid by banks, savings institutions, financial institutions. Also OID, market discount, bond premium.',
+    who:'Any person paying $10+ of interest in the course of a trade or business, or $600+ of interest on deposits.',
+    boxes:'Box 1: Interest income. Box 2: Early withdrawal penalty. Box 3: Interest on US Savings Bonds/Treasury obligations. Box 8: Tax-exempt interest. Box 13: Bond premium.',
+    corp:'Financial institutions issue regardless of payee entity type.',
+    notes:'Foreign accounts: US persons with accounts at foreign financial institutions generally do not receive 1099-INTs. They must self-report on Schedule B and comply with FBAR/FATCA. The absence of a 1099-INT does not relieve the reporting obligation.',
+    authority:'IRC 6049; Treas. Reg. 1.6049-1.'
+  },
+  {
+    form:'1099-DIV', tag:'unchanged', threshold:'$10',
+    name:'Dividends and Distributions',
+    desc:'Dividends, capital gain distributions, and nontaxable return-of-capital distributions from mutual funds, ETFs, corporations.',
+    who:'Corporations and mutual funds paying $10+ of dividends; $600+ if liquidating distributions.',
+    boxes:'Box 1a: Total ordinary dividends. Box 1b: Qualified dividends. Box 2a: Total capital gain distributions. Box 2b: Unrecaptured Section 1250 gain. Box 3: Nondividend distributions (return of capital).',
+    corp:'Issued by corporations to all shareholders regardless of entity type.',
+    notes:'Qualified dividends in Box 1b must meet holding period requirements (60 days for common stock, 90 days for preferred) and come from qualified domestic or foreign corporations. Qualified dividends are taxed at 0%/15%/20% rates. Ordinary dividends (Box 1a minus Box 1b) taxed at ordinary income rates.',
+    authority:'IRC 6042; IRC 1(h)(11) (qualified dividend rates); Treas. Reg. 1.6042-1.'
+  },
+  {
+    form:'1099-B', tag:'unchanged', threshold:'All proceeds reported',
+    name:'Proceeds from Broker and Barter Exchange Transactions',
+    desc:'Stock sales, bond sales, option exercises, mutual fund redemptions, crypto (beginning 2025), commodity transactions.',
+    who:'Brokers and barter exchanges report all proceeds from covered and non-covered securities.',
+    boxes:'Box 1a: Description. Box 1b: CUSIP. Box 1c: Quantity. Box 1d: Proceeds. Box 1e: Cost or basis. Box 1f: Accrued market discount. Box 2: Short-term/long-term. Box 4: Federal tax withheld. Box 6: Reported to IRS.',
+    corp:'All accounts regardless of entity type.',
+    notes:'CRYPTO: For 2025 tax year (filed 2026), brokers must report crypto transactions on 1099-DA (new digital asset form). 1099-B for crypto from prior years and non-broker crypto remains self-reported. Cost basis reporting: covered securities (acquired 2011+) include basis; non-covered securities report proceeds only. Taxpayer must supply basis for non-covered securities on Form 8949.',
+    authority:'IRC 6045; Treas. Reg. 1.6045-1; IRC 6045(g) (digital assets - effective 2025).'
+  },
+  {
+    form:'1099-R', tag:'unchanged', threshold:'All distributions reported',
+    name:'Distributions from Pensions, Annuities, Retirement Plans, IRAs',
+    desc:'Distributions from IRAs (traditional, Roth, SEP, SIMPLE), 401(k)s, 403(b)s, pensions, annuities, profit-sharing plans.',
+    who:'Financial institutions, plan administrators, and insurance companies.',
+    boxes:'Box 1: Gross distribution. Box 2a: Taxable amount. Box 4: Federal income tax withheld. Box 5: Employee contributions/basis. Box 7: Distribution code (critical: 1=early, 2=early exception, 7=normal, Q=Roth qualified, etc.).',
+    corp:'All participants regardless of entity type.',
+    notes:'Distribution code Box 7 is critical for determining tax treatment. Code 1 triggers the 10% early withdrawal penalty (IRC 72(t)) unless an exception applies. Roth IRA qualified distributions (code Q) are tax-free. The 60-day rollover rule and once-per-year IRA rollover limit apply. Direct rollovers (code G) are not taxable. In-plan Roth conversions (code G + code 2) are taxable.',
+    authority:'IRC 6047; IRC 408(d)(3) (IRA rollover); IRC 72(t) (early distribution penalty); Treas. Reg. 1.408-4.'
+  },
+  {
+    form:'1099-S', tag:'unchanged', threshold:'Real estate proceeds',
+    name:'Proceeds from Real Estate Transactions',
+    desc:'Gross proceeds from sales or exchanges of real estate. Usually filed by the settlement agent (closing attorney or title company).',
+    who:'The settlement agent, mortgage lender, or seller\'s broker (whichever is applicable person under Temp. Reg. 1.6045-4).',
+    boxes:'Box 2: Gross proceeds. Box 3: Address of property. Box 4: Transferor received or will receive property or services. Box 5: Transferor is a foreign person (FIRPTA).',
+    corp:'Filed for individuals and most entities. Exempt: sales to corporations (in some cases) and certain regulated transactions.',
+    notes:'Primary residence exclusion (IRC 121) does not exempt from 1099-S reporting. Even if the gain is excluded, the 1099-S is issued. Sellers may certify eligibility for full IRC 121 exclusion to avoid 1099-S issuance. FIRPTA: if seller is a foreign person, the buyer must withhold 15% of gross sales price under IRC 1445 - separate from 1099-S.',
+    authority:'IRC 6045(e); Temp. Reg. 1.6045-4; IRC 121 (principal residence exclusion); IRC 1445 (FIRPTA withholding).'
+  },
+  {
+    form:'W-2G', tag:'unchanged', threshold:'$1,200 (bingo/slots) / $1,500 (keno) / $5,000 (poker)',
+    name:'Certain Gambling Winnings',
+    desc:'Reportable gambling winnings from casinos, lotteries, horse racing, bingo, slot machines.',
+    who:'Casinos, card rooms, lottery organizations, horse racing tracks.',
+    boxes:'Box 1: Gross winnings. Box 2: Federal income tax withheld (24%). Box 3: Type of wager. Box 4: Date won. Box 14: State winnings.',
+    corp:'Issued to individuals regardless.',
+    notes:'Withholding thresholds: 24% mandatory withholding on winnings over $5,000 net of wager (poker, lottery, sweepstakes). Regular gambling: withholding if winnings over $5,000 AND at least 300x the wager. Bingo/slots/keno: withholding if winnings exceed $1,200 or $1,500 net. Gambling losses are deductible only to the extent of gambling winnings and only if you itemize (Schedule A). Professional gamblers: Schedule C.',
+    authority:'IRC 3402(q) (mandatory withholding on gambling winnings); IRC 165(d) (gambling loss deduction limited to winnings); Treas. Reg. 31.3402(q)-1.'
+  },
+];
+
+function toggle(i){
+  const body=document.getElementById('body-'+i);
+  body.classList.toggle('open');
+}
+
+window.addEventListener('DOMContentLoaded',()=>{
+  const list=document.getElementById('formList');
+  FORMS.forEach((f,i)=>{
+    const tagColors={new:'new',changed:'changed',unchanged:'unchanged'};
+    const div=document.createElement('div');
+    div.className='form-card';
+    div.innerHTML=`
+      <div class="fc-header" onclick="toggle(${i})">
+        <div><div class="fc-form">${f.form}<span class="tag ${tagColors[f.tag]}">${f.tag==='new'?'NEW 2026':f.tag==='changed'?'CHANGED 2026':'Unchanged'}</span></div></div>
+        <div><div class="fc-name">${f.name}</div><div class="fc-desc">${f.desc}</div></div>
+        <div class="fc-threshold"><div class="fc-thresh-label">Threshold</div><div class="fc-thresh-val">${f.threshold.split('(')[0].trim()}</div>${f.threshold.includes('(')?'<div style="font-size:10px;color:var(--ink-60)">'+f.threshold.match(/\(([^)]+)\)/)?.[1]+'</div>':''}</div>
+      </div>
+      <div class="fc-body" id="body-${i}">
+        <div class="fc-detail-grid">
+          <div class="fc-detail"><div class="fc-detail-label">Who Must File</div><div class="fc-detail-val">${f.who}</div></div>
+          <div class="fc-detail"><div class="fc-detail-label">Key Boxes</div><div class="fc-detail-val">${f.boxes}</div></div>
+          <div class="fc-detail"><div class="fc-detail-label">Corporation Exemption</div><div class="fc-detail-val">${f.corp}</div></div>
+          <div class="fc-detail"><div class="fc-detail-label">Practitioner Notes</div><div class="fc-detail-val">${f.notes}</div></div>
+        </div>
+        <div style="font-size:11px;color:var(--ink-60);font-style:italic">Authority: ${f.authority}</div>
+      </div>`;
+    list.appendChild(div);
+  });
+});
+</script>
+</body>
+</html>
