@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 5472 Filing Obligation Checker | CPA Validated</title>
+<meta name="description" content="Determine whether your U.S. corporation or foreign-owned LLC must file Form 5472. Covers 25% foreign ownership, 100% foreign-owned disregarded entities, and all 11 categories of reportable transactions. CPA-validated. IRC Section 6038A/6038C.">
+<link rel="canonical" href="https://cpavalidated.com/form-5472.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --navy:#071563; --navy-100:#E2E4F0;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+  --ease:cubic-bezier(0.2,0.8,0.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+::selection{background:var(--coral);color:#fff}
+a{color:var(--coral);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:860px;margin:0 auto;padding:0 24px}
+.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,5vw,48px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);letter-spacing:.02em}
+.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;border-radius:2px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+
+/* Back link */
+.back{max-width:860px;margin:0 auto;padding:16px 24px 0}
+.back a{font-size:12px;color:var(--ink-60);font-weight:500;letter-spacing:.02em}
+.back a:hover{color:var(--coral)}
+
+/* Container */
+.container{max-width:860px;margin:0 auto;padding:28px 24px 0}
+
+/* Card */
+.card{background:var(--white);border-radius:0;border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
+.step-num{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-sans)}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px 20px 22px}
+
+/* Form elements */
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);border-radius:0;font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px;cursor:pointer}
+
+/* Yes/No toggle */
+.yn{display:flex;border:1.5px solid var(--ink-20);overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;text-align:center;background:var(--ink-10);color:var(--ink-60);border-right:1px solid var(--ink-20)}
+.yn-btn:last-child{border-right:none}
+.yn-btn.yes-sel{background:var(--green-bg);color:var(--green);font-weight:700;border-color:var(--green-b)}
+.yn-btn.no-sel{background:var(--red-bg);color:var(--red);font-weight:700;border-color:var(--red-b)}
+.yn-btn:hover:not(.yes-sel):not(.no-sel){background:var(--ink-20)}
+
+/* Ownership slider */
+.ownership-section{margin-top:14px}
+.ownership-val{font-family:var(--font-display);font-size:48px;font-weight:500;color:var(--coral);line-height:1;margin-bottom:8px;text-align:center}
+.ownership-val span{font-size:24px}
+input[type="range"].slider{width:100%;-webkit-appearance:none;appearance:none;height:4px;background:var(--ink-20);outline:none;border-radius:2px;cursor:pointer;margin:8px 0}
+input[type="range"].slider::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--coral);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+input[type="range"].slider::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--coral);cursor:pointer;border:2px solid #fff}
+.ownership-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-60);font-family:var(--font-mono)}
+.ownership-flags{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.oflag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:2px;transition:all .2s}
+.oflag.active-25{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b)}
+.oflag.active-100{background:var(--coral-100);color:var(--coral-600);border:1px solid var(--coral)}
+.oflag.inactive{background:var(--ink-10);color:var(--ink-40);border:1px solid var(--ink-20)}
+
+/* Reportable transactions */
+.tx-grid{display:flex;flex-direction:column;gap:0;border:1px solid var(--ink-20)}
+.tx-item{display:grid;grid-template-columns:1fr auto;align-items:center;gap:16px;padding:12px 14px;border-bottom:1px solid var(--ink-20);background:var(--white);transition:background .15s}
+.tx-item:last-child{border-bottom:none}
+.tx-item:hover{background:var(--paper)}
+.tx-item.disabled{opacity:.4;pointer-events:none;background:var(--ink-10)}
+.tx-left{}
+.tx-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.tx-desc{font-size:11.5px;color:var(--ink-60);line-height:1.4}
+.tx-auth{font-family:var(--font-mono);font-size:10px;color:var(--ink-40);margin-top:3px}
+.tx-ctrl{min-width:120px}
+
+/* Result */
+.result-main{border-left:4px solid var(--coral);padding:20px 20px 20px 22px;margin-bottom:20px;background:var(--white);border:1px solid var(--ink-20);border-left:4px solid var(--coral)}
+.result-main.req{border-left-color:var(--coral)}
+.result-main.not-req{border-left-color:var(--green)}
+.result-main.na{border-left-color:var(--ink-40)}
+.result-icon{font-size:28px;margin-bottom:10px}
+.result-status{font-family:var(--font-display);font-size:28px;font-weight:500;letter-spacing:-.01em;margin-bottom:8px}
+.result-main.req .result-status{color:var(--coral)}
+.result-main.not-req .result-status{color:var(--green)}
+.result-main.na .result-status{color:var(--ink-60)}
+.result-detail{font-size:13.5px;color:var(--ink-60);line-height:1.6}
+
+/* Condition list */
+.cond-list{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.cond-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid var(--ink-20);background:var(--white)}
+.cond-item.pass{border-left:3px solid var(--green);background:var(--green-bg)}
+.cond-item.fail{border-left:3px solid var(--red);background:var(--red-bg)}
+.cond-item.warn{border-left:3px solid var(--amber);background:var(--amber-bg)}
+.cond-item.unknown{border-left:3px solid var(--ink-40)}
+.cond-dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.pass .cond-dot{background:var(--green);color:#fff}
+.fail .cond-dot{background:var(--red);color:#fff}
+.warn .cond-dot{background:var(--amber);color:#fff}
+.unknown .cond-dot{background:var(--ink-40);color:#fff}
+.cond-body{}
+.cond-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.cond-text{font-size:12px;color:var(--ink-60);line-height:1.5}
+
+/* Summary box */
+.sum-box{background:var(--ink);padding:18px 20px;margin-bottom:20px}
+.sum-title{font-family:var(--font-sans);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.sum-row{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px}
+.sum-row:last-child{border-bottom:none}
+.sum-lbl{color:rgba(255,255,255,.55)}
+.sum-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px}
+.sum-val.highlight{color:var(--coral)}
+
+/* Filing info */
+.fi-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.fi-card{border:1px solid var(--ink-20);padding:16px;background:var(--white)}
+.fi-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.fi-row{font-size:12px;color:var(--ink-60);margin-bottom:6px;line-height:1.5;display:flex;gap:6px}
+.fi-row strong{color:var(--ink);font-weight:600;min-width:72px;flex-shrink:0}
+
+/* Notes */
+.note{background:var(--amber-bg);border-left:3px solid var(--amber);padding:10px 14px;font-size:12.5px;color:var(--amber);line-height:1.6;margin-bottom:16px}
+.note strong{font-weight:600}
+.inf{background:var(--paper);border-left:3px solid var(--ink-20);padding:9px 13px;font-size:12px;color:var(--ink-60);line-height:1.5;margin-top:12px}
+
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}
+.pbn:hover{background:var(--coral-600)}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:14px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+
+@media(max-width:600px){.fg2,.fi-grid{grid-template-columns:1fr}.ownership-val{font-size:36px}}
+@media print {
+  /* ── Page setup ── */
+  @page { margin: 18mm 16mm; }
+  body { background: white !important; font-size: 11pt; }
+
+  /* ── Hide everything interactive ── */
+  .back, .mode-selector, .deadline-banner, .pbn,
+  .mode-tab, .acct-table-wrap::-webkit-scrollbar,
+  input, select, button:not(.pbn), .atb, .add-btn,
+  .mode-toggle, .state-controls { display: none !important; }
+
+  /* ── Keep header, force colors ── */
+  .ph { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 0 14px; }
+  .ph h1 { font-size: 20pt; }
+  .ph .badges { display: none; }
+  .ph-eyebrow { font-size: 8pt; }
+  .ph .sub { font-size: 9pt; }
+
+  /* ── Card headers ── */
+  .ch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* ── Hide input-only cards ── */
+  .input-card { display: none !important; }
+
+  /* ── Result hero / summary boxes ── */
+  .result-hero, .savings-hero, .sum-box, .summary-box,
+  .result-main, .rbn {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Tables ── */
+  table { width: 100% !important; font-size: 9pt; }
+  th, td { padding: 5px 7px !important; }
+  .acct-table-wrap { overflow: visible !important; }
+  table.st, table.at, table.tt { min-width: 0 !important; }
+
+  /* ── Grids: force single column on narrow items ── */
+  .rh-grid, .sh-top { grid-template-columns: 1fr 1fr 1fr !important; }
+  .fi-grid, .filing-info, .state-result-grid,
+  .costs-grid, .result-grid, .fed-grid { grid-template-columns: 1fr 1fr !important; }
+  .fg2, .fg3, .fg4 { display: none !important; }
+
+  /* ── Rate compare ── */
+  .rate-compare { grid-template-columns: 1fr auto 1fr !important; }
+  .rc-arrow { padding: 0 8px !important; }
+
+  /* ── Flags: keep but compact ── */
+  .flag { font-size: 9pt; padding: 7px 10px; margin-bottom: 6px; }
+
+  /* ── Source note / disclaimer ── */
+  .source-row, .disc { font-size: 8pt; }
+
+  /* ── Eligibility list ── */
+  .elig-item { break-inside: avoid; }
+
+  /* ── Page break hints ── */
+  .card { break-inside: avoid; margin-bottom: 10px; }
+
+  /* ── Print footer on every page ── */
+  .ph::after {
+    content: "cpavalidated.com  ·  a tk.cpa resource  ·  Built with AI. Validated by a CPA.";
+    display: block;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+
+  /* ── State table: hide filter controls, show table ── */
+  .state-table-wrap { overflow: visible !important; }
+}.pbn{display:none}.ph,.sum-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Form 5472 Filing Obligation Checker</h1>
+  <div class="sub">25% Foreign Ownership &nbsp;&bull;&nbsp; Disregarded Entities &nbsp;&bull;&nbsp; Reportable Transactions</div>
+  <div class="badges"><span class="badge">IRC §6038A</span><span class="badge">IRC §6038C</span><span class="badge">Treas. Reg. 1.6038A-1</span><span class="badge">Form 5472</span><span class="badge">TD 9796</span></div>
+</div></div>
+</div>
+
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+
+<div class="container">
+
+<!-- Step 1: Entity -->
+<div class="card input-card">
+  <div class="ch"><div class="step-num">1</div><h2>Entity Type & Tax Classification</h2></div>
+  <div class="cb">
+    <div class="fg2" style="margin-bottom:16px">
+      <div class="f1">
+        <label>Tax Year</label>
+        <select id="taxYear" class="fc" onchange="recalc()">
+          <option>2022</option><option>2023</option><option>2024</option>
+          <option value="2025" selected>2025</option><option>2026</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Entity Type</label>
+        <select id="entityType" class="fc" onchange="recalc()">
+          <option value="">-- Select --</option>
+          <option value="corp_domestic">U.S. Corporation (C-Corp, taxed as corporation)</option>
+          <option value="corp_foreign">Foreign Corporation with U.S. trade or business</option>
+          <option value="de_foreign">Foreign-Owned U.S. Disregarded Entity (e.g., single-member LLC)</option>
+          <option value="partnership">U.S. Partnership</option>
+          <option value="individual">Individual / Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="inf">
+      Form 5472 applies to: (1) U.S. corporations that are 25% foreign-owned - IRC §6038A; (2) foreign corporations engaged in a U.S. trade or business - IRC §6038C; (3) foreign-owned U.S. disregarded entities treated as corporations for reporting purposes - Treas. Reg. 1.6038A-1(c), as amended by TD 9796 (effective 2017 tax year).
+    </div>
+  </div>
+</div>
+
+<!-- Step 2: Ownership -->
+<div class="card" id="ownershipCard">
+  <div class="ch"><div class="step-num">2</div><h2>Foreign Ownership Structure</h2></div>
+  <div class="cb">
+
+    <div class="note">
+      <strong>25% Foreign Ownership Test:</strong> A U.S. corporation is a "reporting corporation" if at any time during the tax year a foreign person owned, directly or indirectly, at least 25% of its stock (by vote or by value). - IRC §6038A(a); Treas. Reg. 1.6038A-1(a).
+    </div>
+
+    <div class="f1" style="margin-bottom:20px">
+      <label>Is the 25% foreign owner a single person, or is ownership spread across multiple foreign persons?</label>
+      <select id="ownerConcentration" class="fc" onchange="recalc()">
+        <option value="">-- Select --</option>
+        <option value="single">Single foreign person owns 25%+</option>
+        <option value="multiple">Multiple foreign persons, no single one at 25%+</option>
+        <option value="de_owned">Entity is 100% owned by a foreign person (disregarded entity)</option>
+        <option value="unknown">Not sure / need to calculate</option>
+      </select>
+    </div>
+
+    <div id="sliderSection" class="ownership-section" style="display:none">
+      <label class="f1" style="margin-bottom:8px"><span style="font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase">Largest Single Foreign Owner's Percentage</span></label>
+      <div class="ownership-val" id="ownerPctDisplay">0<span>%</span></div>
+      <input type="range" id="ownerPct" class="slider" min="0" max="100" value="0" oninput="updateSlider()">
+      <div class="ownership-labels"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div>
+      <div class="ownership-flags" id="ownerFlags">
+        <span class="oflag inactive" id="flag25">25% Threshold</span>
+        <span class="oflag inactive" id="flag100">100% (DE Rules Apply)</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px">
+      <div class="f1">
+        <label>Does any foreign owner own the entity through a chain of ownership involving U.S. entities?</label>
+        <div class="yn" style="max-width:300px;margin-top:6px">
+          <button class="yn-btn" id="chainYes" onclick="setYN('chain','yes')">Yes</button>
+          <button class="yn-btn" id="chainNo" onclick="setYN('chain','no')">No</button>
+          <button class="yn-btn" id="chainNA" onclick="setYN('chain','na')" style="flex:.7">N/A</button>
+        </div>
+        <div style="font-size:11px;color:var(--ink-60);margin-top:5px;line-height:1.4">Constructive ownership and attribution rules apply under IRC §318 as modified by Treas. Reg. 1.6038A-1(d).</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Step 3: Reportable Transactions -->
+<div class="card" id="txCard">
+  <div class="ch"><div class="step-num">3</div><h2>Reportable Transactions with Related Parties</h2></div>
+  <div class="cb">
+    <p style="font-size:13px;color:var(--ink-60);line-height:1.6;margin-bottom:16px">
+      A "reportable transaction" is any transaction between the reporting corporation and a foreign related party. Select all that occurred during the tax year. - Treas. Reg. 1.6038A-2(b)(3).
+    </p>
+    <div class="tx-grid" id="txGrid"></div>
+    <div class="inf" style="margin-top:14px">
+      <strong>Related party</strong> means any 25% foreign shareholder, any person related to a 25% foreign shareholder under IRC §267(b) or §707(b)(1), or any person related to the reporting corporation under those same sections. - IRC §6038A(d)(2); Treas. Reg. 1.6038A-1(f).
+    </div>
+  </div>
+</div>
+
+<!-- Step 4: DE-Specific Questions -->
+<div class="card" id="deCard" style="display:none">
+  <div class="ch"><div class="step-num">3B</div><h2>Foreign-Owned Disregarded Entity - Additional Questions</h2></div>
+  <div class="cb">
+    <div class="note">
+      <strong>Post-2016 Rule (TD 9796):</strong> A foreign-owned domestic disregarded entity is treated as a domestic corporation separate from its owner for purposes of IRC §6038A. It must file Form 5472 even if no reportable transactions occurred - the formation, dissolution, and existence of the entity itself constitute reportable transactions. Effective for tax years beginning after December 31, 2016.
+    </div>
+
+    <div class="f1" style="margin-bottom:16px">
+      <label>Was the LLC/DE formed, dissolved, or had any change in ownership during the year?</label>
+      <div class="yn" style="max-width:280px;margin-top:6px">
+        <button class="yn-btn" id="deChangeYes" onclick="setYN('deChange','yes')">Yes</button>
+        <button class="yn-btn" id="deChangeNo" onclick="setYN('deChange','no')">No</button>
+      </div>
+    </div>
+
+    <div class="f1">
+      <label>Did the DE have any monetary transactions with its foreign owner during the year? (loans, contributions, distributions, payments)</label>
+      <div class="yn" style="max-width:280px;margin-top:6px">
+        <button class="yn-btn" id="deTxYes" onclick="setYN('deTx','yes')">Yes</button>
+        <button class="yn-btn" id="deTxNo" onclick="setYN('deTx','no')">No</button>
+      </div>
+      <div style="font-size:11px;color:var(--ink-60);margin-top:5px">For foreign-owned DEs, ALL transactions with the foreign owner - including capital contributions and distributions - are reportable transactions. Treas. Reg. 1.6038A-2(b)(3)(ix)-(x).</div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 5: Results -->
+<div class="card">
+  <div class="ch"><div class="step-num" id="resultStepNum">4</div><h2>Filing Obligation Analysis</h2></div>
+  <div class="cb">
+
+    <div class="sum-box">
+      <div class="sum-title">Analysis Summary</div>
+      <div class="sum-row"><span class="sum-lbl">Entity type</span><span class="sum-val" id="sumEntity">-</span></div>
+      <div class="sum-row"><span class="sum-lbl">25% foreign ownership</span><span class="sum-val" id="sumOwnership">-</span></div>
+      <div class="sum-row"><span class="sum-lbl">Reportable transactions identified</span><span class="sum-val highlight" id="sumTxCount">-</span></div>
+      <div class="sum-row"><span class="sum-lbl">Applicable rule</span><span class="sum-val" id="sumRule">-</span></div>
+    </div>
+
+    <div id="resultMain" class="result-main na">
+      <div class="result-icon" id="resultIcon">?</div>
+      <div class="result-status" id="resultStatus">Complete the steps above</div>
+      <div class="result-detail" id="resultDetail">Answer all questions to receive your Form 5472 filing obligation analysis.</div>
+    </div>
+
+    <div class="cond-list" id="condList"></div>
+
+    <div class="fi-grid">
+      <div class="fi-card">
+        <div class="fi-title">Form 5472 - Key Facts</div>
+        <div class="fi-row"><strong>Authority:</strong> IRC §6038A (domestic corps); IRC §6038C (foreign corps); Treas. Reg. 1.6038A; TD 9796 (DEs)</div>
+        <div class="fi-row"><strong>Filed With:</strong> Corporate income tax return (Form 1120 or 1120-F); DEs file a pro-forma Form 1120 with Form 5472 attached</div>
+        <div class="fi-row"><strong>Due Date:</strong> Same as Form 1120 - April 15 for calendar-year filers; extendable to October 15</div>
+        <div class="fi-row"><strong>Penalty:</strong> $25,000 per Form 5472 per year for failure to file or maintain records; additional $25,000 per 90-day period after IRS notice - IRC §6038A(d)</div>
+        <div class="fi-row"><strong>Multiple Forms:</strong> A separate Form 5472 is required for each related party with whom reportable transactions occurred</div>
+      </div>
+      <div class="fi-card">
+        <div class="fi-title">Foreign-Owned DE - Special Rules</div>
+        <div class="fi-row"><strong>Effective:</strong> Tax years beginning after December 31, 2016 (TD 9796)</div>
+        <div class="fi-row"><strong>Filing:</strong> Foreign-owned domestic DEs file a pro-forma Form 1120 (with EIN) plus Form 5472 - even if the LLC had no income or no transactions</div>
+        <div class="fi-row"><strong>EIN Required:</strong> The DE must obtain its own EIN - it cannot use the owner's tax ID</div>
+        <div class="fi-row"><strong>Transactions:</strong> Formation, capitalization, distributions, loans, and all payments between the DE and its foreign owner are reportable - Treas. Reg. 1.6038A-2(b)(3)</div>
+        <div class="fi-row"><strong>Penalty:</strong> Same $25,000 per-form penalty applies - no exception for DEs with no activity</div>
+      </div>
+    </div>
+
+    <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+
+    <div class="disc">
+      This tool is for informational purposes only and does not constitute legal or tax advice. Form 5472 filing obligations are fact-specific and depend on ownership attribution, treaty provisions, and the nature of transactions not fully captured here. Multiple Forms 5472 may be required where multiple related parties are involved. Authority: IRC §§6038A, 6038C; Treas. Reg. 1.6038A-1 through 1.6038A-7; TD 9796 (81 FR 89849, Dec. 13, 2016). Consult a qualified tax professional before filing or making any disclosure decisions. A tk.cpa resource - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ── Reportable transaction categories ────────────────────────────────────────
+const TX_CATEGORIES = [
+  { id:'t1',  name:'Sales of inventory or other property',          desc:'Sales or purchases of tangible property between the reporting corporation and a related party',                          auth:'Treas. Reg. 1.6038A-2(b)(3)(i)' },
+  { id:'t2',  name:'Rents and royalties',                           desc:'Payments or receipts of rent, royalties, or licensing fees for use of intangible or tangible property',                  auth:'Treas. Reg. 1.6038A-2(b)(3)(ii)' },
+  { id:'t3',  name:'Services',                                      desc:'Performance of services - management, administrative, technical, financial, or any other services',                       auth:'Treas. Reg. 1.6038A-2(b)(3)(iii)' },
+  { id:'t4',  name:'Commissions',                                   desc:'Payments or receipts of commissions in connection with the purchase or sale of property',                                 auth:'Treas. Reg. 1.6038A-2(b)(3)(iv)' },
+  { id:'t5',  name:'Amounts borrowed or loaned',                    desc:'Any loan, advance, line of credit, or debt obligation between related parties - including intercompany loans',            auth:'Treas. Reg. 1.6038A-2(b)(3)(v)' },
+  { id:'t6',  name:'Amounts paid/received as consideration for use of intangibles', desc:'IP licensing, technology transfers, trademarks, patents, trade secrets, know-how', auth:'Treas. Reg. 1.6038A-2(b)(3)(vi)' },
+  { id:'t7',  name:'Insurance or reinsurance premiums',             desc:'Premiums paid to or received from a related party that is an insurance or reinsurance company',                          auth:'Treas. Reg. 1.6038A-2(b)(3)(vii)' },
+  { id:'t8',  name:'Amounts paid/received in settlement of claims', desc:'Payments arising from legal claims, contractual disputes, or indemnification arrangements with related parties',         auth:'Treas. Reg. 1.6038A-2(b)(3)(viii)' },
+  { id:'t9',  name:'Capital contributions received',               desc:'Contributions of cash or property by a foreign related party to the reporting corporation',                               auth:'Treas. Reg. 1.6038A-2(b)(3)(ix)' },
+  { id:'t10', name:'Distributions paid',                            desc:'Dividends, distributions, or return-of-capital payments to a foreign related party',                                     auth:'Treas. Reg. 1.6038A-2(b)(3)(x)' },
+  { id:'t11', name:'Other transactions',                            desc:'Any other transaction with a foreign related party not otherwise categorized above',                                     auth:'Treas. Reg. 1.6038A-2(b)(3)(xi)' },
+];
+
+const txVals = {};
+TX_CATEGORIES.forEach(t => txVals[t.id] = null);
+
+const state = { chain: null, deChange: null, deTx: null };
+
+// ── Build transaction grid ────────────────────────────────────────────────────
+function buildTxGrid() {
+  const grid = document.getElementById('txGrid');
+  grid.innerHTML = '';
+  TX_CATEGORIES.forEach(t => {
+    const div = document.createElement('div');
+    div.className = 'tx-item';
+    div.id = `txrow-${t.id}`;
+    div.innerHTML =
+      `<div class="tx-left">
+        <div class="tx-name">${t.name}</div>
+        <div class="tx-desc">${t.desc}</div>
+        <div class="tx-auth">${t.auth}</div>
+      </div>
+      <div class="tx-ctrl">
+        <div class="yn" style="min-width:110px">
+          <button class="yn-btn" id="${t.id}_yes" onclick="setTx('${t.id}','yes')">Yes</button>
+          <button class="yn-btn" id="${t.id}_no"  onclick="setTx('${t.id}','no')">No</button>
+        </div>
+      </div>`;
+    grid.appendChild(div);
+  });
+}
+
+// ── Setters ───────────────────────────────────────────────────────────────────
+function setYN(key, val) {
+  state[key] = val;
+  const ids = {
+    chain:    ['chainYes','chainNo','chainNA'],
+    deChange: ['deChangeYes','deChangeNo'],
+    deTx:     ['deTxYes','deTxNo'],
+  };
+  if (ids[key]) {
+    ids[key].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.className = 'yn-btn';
+      if ((id.includes('Yes') && val==='yes') || (id.includes('No') && val==='no') || (id.includes('NA') && val==='na')) {
+        el.className = val==='yes' ? 'yn-btn yes-sel' : val==='no' ? 'yn-btn no-sel' : 'yn-btn yes-sel';
+      }
+    });
+  }
+  recalc();
+}
+
+function setTx(id, val) {
+  txVals[id] = val;
+  const yes = document.getElementById(`${id}_yes`);
+  const no  = document.getElementById(`${id}_no`);
+  if (yes) yes.className = val==='yes' ? 'yn-btn yes-sel' : 'yn-btn';
+  if (no)  no.className  = val==='no'  ? 'yn-btn no-sel'  : 'yn-btn';
+  recalc();
+}
+
+function updateSlider() {
+  const val = parseInt(document.getElementById('ownerPct').value);
+  document.getElementById('ownerPctDisplay').innerHTML = `${val}<span>%</span>`;
+  const f25  = document.getElementById('flag25');
+  const f100 = document.getElementById('flag100');
+  if (val >= 100) {
+    f25.className  = 'oflag inactive';
+    f100.className = 'oflag active-100';
+  } else if (val >= 25) {
+    f25.className  = 'oflag active-25';
+    f100.className = 'oflag inactive';
+  } else {
+    f25.className  = 'oflag inactive';
+    f100.className = 'oflag inactive';
+  }
+  recalc();
+}
+
+// ── Main calculation ──────────────────────────────────────────────────────────
+function recalc() {
+  const yr         = document.getElementById('taxYear').value;
+  const entityType = document.getElementById('entityType').value;
+  const ownerConc  = document.getElementById('ownerConcentration').value;
+  const ownerPct   = parseInt(document.getElementById('ownerPct').value) || 0;
+
+  // Show/hide slider
+  const showSlider = ownerConc === 'single' || ownerConc === 'unknown';
+  document.getElementById('sliderSection').style.display = showSlider ? '' : 'none';
+
+  // Show/hide DE card
+  const isDE = entityType === 'de_foreign' || ownerConc === 'de_owned';
+  document.getElementById('deCard').style.display = isDE ? '' : 'none';
+  document.getElementById('resultStepNum').textContent = isDE ? '5' : '4';
+
+  // Determine 25% ownership
+  let is25 = false;
+  let is100 = false;
+  if (ownerConc === 'single')    { is25 = ownerPct >= 25; is100 = ownerPct >= 100; }
+  if (ownerConc === 'de_owned')  { is25 = true; is100 = true; }
+  if (ownerConc === 'multiple')  { is25 = false; }
+
+  // Count reportable transactions
+  const txYes = TX_CATEGORIES.filter(t => txVals[t.id] === 'yes').map(t => t.name);
+  const txAnswered = TX_CATEGORIES.filter(t => txVals[t.id] !== null).length;
+
+  // Determine filing obligation
+  let obligation = 'unknown';
+  let rule = '-';
+
+  if (entityType === 'corp_domestic' || entityType === 'corp_foreign') {
+    if (entityType === 'corp_foreign') {
+      obligation = txYes.length > 0 ? 'required' : (txAnswered === TX_CATEGORIES.length ? 'not_required' : 'unknown');
+      rule = 'IRC §6038C - Foreign Corporation with U.S. Trade or Business';
+    } else if (is25) {
+      obligation = txYes.length > 0 ? 'required' : (txAnswered === TX_CATEGORIES.length ? 'check_needed' : 'unknown');
+      rule = 'IRC §6038A - 25%+ Foreign-Owned U.S. Corporation';
+    } else if (ownerConc === 'multiple') {
+      obligation = 'not_required_ownership';
+      rule = 'No single foreign person at 25% threshold';
+    } else if (ownerConc) {
+      obligation = 'unknown';
+    }
+  } else if (isDE) {
+    obligation = 'required_de';
+    rule = 'Treas. Reg. 1.6038A-1(c) as amended by TD 9796 - Foreign-Owned DE';
+  } else if (entityType === 'partnership' || entityType === 'individual') {
+    obligation = 'not_applicable';
+    rule = 'Form 5472 does not apply to partnerships or individuals';
+  }
+
+  // Update summary
+  const entityLabels = {
+    corp_domestic: 'U.S. Corporation',
+    corp_foreign:  'Foreign Corporation (U.S. trade or business)',
+    de_foreign:    'Foreign-Owned U.S. Disregarded Entity',
+    partnership:   'Partnership',
+    individual:    'Individual',
+    '':            '-'
+  };
+  document.getElementById('sumEntity').textContent    = entityLabels[entityType] || '-';
+  document.getElementById('sumOwnership').textContent = ownerConc === 'de_owned' ? '100% (DE)' : ownerConc === 'multiple' ? 'No single owner at 25%+' : ownerConc === 'single' ? `${ownerPct}% (largest single owner)` : '-';
+  document.getElementById('sumTxCount').textContent   = txYes.length > 0 ? `${txYes.length} identified` : txAnswered === TX_CATEGORIES.length ? 'None' : `${txAnswered} of ${TX_CATEGORIES.length} answered`;
+  document.getElementById('sumRule').textContent      = rule;
+
+  // Result banner
+  const rm    = document.getElementById('resultMain');
+  const ri    = document.getElementById('resultIcon');
+  const rs    = document.getElementById('resultStatus');
+  const rd    = document.getElementById('resultDetail');
+
+  if (obligation === 'required' || obligation === 'required_de') {
+    rm.className = 'result-main req';
+    ri.textContent = '!';
+    rs.textContent = 'Form 5472 Required';
+    if (obligation === 'required_de') {
+      rd.textContent = `As a foreign-owned domestic disregarded entity, this LLC is treated as a corporation for Form 5472 purposes and must file Form 5472 (with a pro-forma Form 1120) for ${yr}. This requirement applies regardless of whether the entity had income or business activity during the year. TD 9796; Treas. Reg. 1.6038A-1(c).`;
+    } else {
+      rd.textContent = `Form 5472 is required for ${yr}. ${txYes.length} reportable transaction${txYes.length > 1 ? 's were' : ' was'} identified with foreign related parties. A separate Form 5472 must be filed for each related party with whom reportable transactions occurred. Penalty for failure to file: $25,000 per form. IRC §6038A(d).`;
+    }
+  } else if (obligation === 'not_required' || obligation === 'not_required_ownership') {
+    rm.className = 'result-main not-req';
+    ri.textContent = '✓';
+    rs.textContent = 'Form 5472 Not Required';
+    rd.textContent = obligation === 'not_required_ownership'
+      ? 'No single foreign person owns 25% or more of the corporation. The 25% foreign ownership threshold under IRC §6038A(a) is not met. Form 5472 is not required based on current ownership information.'
+      : `No reportable transactions with foreign related parties were identified for ${yr}. While the 25% ownership threshold is met, Form 5472 is only required when reportable transactions exist. Maintain documentation to support this conclusion. Treas. Reg. 1.6038A-2(a).`;
+  } else if (obligation === 'check_needed') {
+    rm.className = 'result-main req';
+    ri.textContent = '~';
+    rs.textContent = 'Review Required - Possible Filing Obligation';
+    rd.textContent = 'The 25% foreign ownership threshold is met. No reportable transactions were identified in the categories above, but verify whether any other transactions occurred with foreign related parties. If none, Form 5472 may not be required - but document this conclusion.';
+  } else if (obligation === 'not_applicable') {
+    rm.className = 'result-main na';
+    ri.textContent = '—';
+    rs.textContent = 'Form 5472 Not Applicable';
+    rd.textContent = 'Form 5472 applies to U.S. corporations, foreign corporations with a U.S. trade or business, and foreign-owned domestic disregarded entities. It does not apply to partnerships or individuals directly. Different reporting requirements may apply (e.g., Form 8865 for partnerships with foreign partners).';
+  } else {
+    rm.className = 'result-main na';
+    ri.textContent = '?';
+    rs.textContent = 'Complete the Steps Above';
+    rd.textContent = 'Answer all questions to receive your Form 5472 filing obligation analysis.';
+  }
+
+  // Condition checklist
+  const cl = document.getElementById('condList');
+  cl.innerHTML = '';
+  if (!entityType) return;
+
+  const conds = [];
+
+  if (entityType === 'corp_domestic') {
+    conds.push({
+      status: is25 ? 'pass' : ownerConc === 'multiple' ? 'fail' : 'unknown',
+      title: 'Condition 1: 25% Foreign Ownership Threshold',
+      text: is25 ? `Met - foreign person owns ${ownerPct >= 100 ? '100' : ownerPct}% (>= 25%). IRC §6038A(a).`
+        : ownerConc === 'multiple' ? 'Not met - no single foreign person owns 25%+ of the corporation. IRC §6038A(a).'
+        : 'Not yet determined - enter ownership percentage above.',
+    });
+    conds.push({
+      status: txYes.length > 0 ? 'pass' : txAnswered === TX_CATEGORIES.length ? 'fail' : 'unknown',
+      title: 'Condition 2: Reportable Transaction with Foreign Related Party',
+      text: txYes.length > 0 ? `Met - ${txYes.length} reportable transaction${txYes.length > 1 ? 's' : ''} identified. Form 5472 required. Treas. Reg. 1.6038A-2(b)(3).`
+        : txAnswered === TX_CATEGORIES.length ? 'Not met - no reportable transactions identified. Form 5472 may not be required. Maintain documentation. Treas. Reg. 1.6038A-2(a).'
+        : `Partially answered - ${txAnswered} of ${TX_CATEGORIES.length} transaction categories reviewed.`,
+    });
+  } else if (entityType === 'corp_foreign') {
+    conds.push({
+      status: 'pass',
+      title: 'Condition: Foreign Corporation with U.S. Trade or Business',
+      text: 'IRC §6038C applies to foreign corporations engaged in a U.S. trade or business. Reportable transaction requirement same as IRC §6038A.',
+    });
+    conds.push({
+      status: txYes.length > 0 ? 'pass' : txAnswered === TX_CATEGORIES.length ? 'fail' : 'unknown',
+      title: 'Reportable Transactions with Related Foreign Corporations',
+      text: txYes.length > 0 ? `${txYes.length} reportable transaction${txYes.length > 1 ? 's' : ''} identified. Form 5472 required under IRC §6038C.`
+        : txAnswered === TX_CATEGORIES.length ? 'No reportable transactions identified.' : `${txAnswered} of ${TX_CATEGORIES.length} categories reviewed.`,
+    });
+  } else if (isDE) {
+    conds.push({
+      status: 'pass',
+      title: 'Condition: Foreign-Owned Domestic Disregarded Entity',
+      text: 'Effective for tax years after December 31, 2016, foreign-owned DEs are treated as corporations for Form 5472 purposes. TD 9796; Treas. Reg. 1.6038A-1(c). No 25% threshold needed - 100% foreign ownership is the trigger.',
+    });
+    conds.push({
+      status: 'warn',
+      title: 'Pro-Forma Form 1120 Required',
+      text: 'The DE must file a pro-forma Form 1120 (income tax return) solely for the purpose of attaching Form 5472. The DE must also obtain its own EIN if it does not already have one.',
+    });
+    if (state.deChange === 'yes' || state.deTx === 'yes') {
+      conds.push({
+        status: 'pass',
+        title: 'Reportable Events Confirmed',
+        text: 'Formation, dissolution, ownership changes, and all monetary transactions between the DE and its foreign owner are reportable transactions. Treas. Reg. 1.6038A-2(b)(3)(ix)-(x).',
+      });
+    }
+    conds.push({
+      status: 'warn',
+      title: 'Penalty Exposure: $25,000 Minimum',
+      text: 'Failure to file Form 5472 (or the pro-forma 1120) subjects the DE to a $25,000 penalty per form per year. This penalty has been actively enforced by the IRS since 2017. IRC §6038A(d).',
+    });
+  }
+
+  conds.forEach(c => {
+    const div = document.createElement('div');
+    div.className = `cond-item ${c.status}`;
+    const icons = { pass:'✓', fail:'✗', warn:'!', unknown:'?' };
+    div.innerHTML = `<div class="cond-dot">${icons[c.status]||'?'}</div><div class="cond-body"><div class="cond-title">${c.title}</div><div class="cond-text">${c.text}</div></div>`;
+    cl.appendChild(div);
+  });
+}
+
+function updateOwnerConc() {
+  const val = document.getElementById('ownerConcentration').value;
+  const showSlider = val === 'single' || val === 'unknown';
+  document.getElementById('sliderSection').style.display = showSlider ? '' : 'none';
+  recalc();
+}
+
+document.getElementById('ownerConcentration').addEventListener('change', updateOwnerConc);
+
+buildTxGrid();
+recalc();
+</script>
+</body>
+</html>

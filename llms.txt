@@ -1,0 +1,72 @@
+# CPA Validated
+> CPA-validated tax tools and calculators. Built by a licensed CPA and Enrolled Agent. Every tool cites specific IRC sections and Treasury regulations. A tk.cpa resource.
+
+## About
+CPA Validated is a public resource of professional-grade US tax tools built and validated by Timur Knyazev, CPA. The site is operated by tk.cpa - a boutique international tax practice founded by a Big Four-trained CPA (EY, PwC) holding active licenses in New York and Florida, IRS Enrolled Agent status, and a Master of Science in Taxation from Baruch College (CUNY), Zicklin School of Business (2011).
+
+All tools cite primary legal authority: IRC sections, Treasury regulation numbers, Revenue Procedures, and IRS form instructions. No tool takes a position without a cited source. Every tool is built to Big Four work product standards and personally validated by the practitioner.
+
+## Practitioner Credentials
+- NY CPA License #109025 (licensed 2012, active)
+- FL CPA License #AC58472 (licensed 2022, active)
+- IRS Enrolled Agent #93250 (enrolled 2009, active 2026, PTIN P00646638)
+- Master of Science in Taxation (MST) - Zicklin School of Business, Baruch College (CUNY), 2011
+- Big Four heritage: Ernst & Young (EY) and PricewaterhouseCoopers (PwC), ~10 years
+- AICPA Member
+- CGMA (Chartered Global Management Accountant)
+- ACCA CertIFRS
+- TEI Member (Tax Executives Institute)
+- CTP (Certified Tax Professional)
+- IIA CFSA (Certified Financial Services Auditor)
+- Licensed and insured
+
+## Tools
+
+### Substantial Presence Test Calculator
+- URL: https://cpavalidated.com/spt-calculator.html
+- Authority: IRC §7701(b)(3); Treas. Reg. 301.7701(b)-1 through 301.7701(b)-9; Form 1040-NR
+- Purpose: Determines U.S. tax residency status for nonresident aliens. Calculates weighted 3-year day count, days to trigger SPT, and maximum safe days remaining. Two input methods: manual day entry or trip-by-trip date log. Exclusions for medical, transit, commuter, and exempt days.
+
+### Closer Connection Exception Checker
+- URL: https://cpavalidated.com/closer-connection.html
+- Authority: IRC §7701(b)(3)(B); Treas. Reg. 301.7701(b)-2; Form 8840
+- Purpose: Tests Form 8840 eligibility for the closer connection exception to the SPT. Evaluates all 11 IRS closer connection factors. Green Card disqualifier flagged automatically.
+
+### FBAR and Form 8938 Threshold Checker
+- URL: https://cpavalidated.com/fbar-checker.html
+- Authority: 31 USC 5314; 31 CFR 1010.350; IRC §6038D; Treas. Reg. 1.6038D; FinCEN 114; Form 8938
+- Purpose: Determines whether FinCEN 114 (FBAR) and/or Form 8938 (FATCA) filing is required. Individual account entry or aggregate totals. All account types including insurance cash value and annuities. All four Form 8938 thresholds by filing status and residency.
+
+### Safe Harbor Estimated Tax Calculator
+- URL: https://cpavalidated.com/safe-harbor.html
+- Authority: IRC §6654; IRS Publication 505
+- Purpose: Calculates federal and all 50-state safe harbor estimated tax payment amounts and quarterly schedules. Applies 110% rule where required. California, Virginia, Hawaii, and Iowa special rules handled correctly. Inputs for prior year federal tax, current year estimated federal and state tax.
+
+### Form 5472 Filing Obligation Checker
+- URL: https://cpavalidated.com/form-5472.html
+- Authority: IRC §6038A; IRC §6038C; Treas. Reg. 1.6038A-1; TD 9796 (2016)
+- Purpose: Determines whether a U.S. corporation or foreign-owned LLC must file Form 5472. Covers 25% foreign ownership threshold, 100% foreign-owned disregarded entities (post-2016 TD 9796 rules), and all 11 categories of reportable transactions. $25,000 penalty flag.
+
+### Tax Estimator 2026 - Personal and Corporate
+- URL: https://cpavalidated.com/tax-estimator.html
+- Authority: IRS Rev. Proc. 2025-32; IRC §1 (individual); IRC §11 (corporate); OBBBA (P.L. 119-21)
+- Purpose: Estimates 2026 and 2027 (projected) federal and state income tax. Personal: all filing statuses, exact 2026 brackets from Rev. Proc. 2025-32, all 50 states. Corporate: 21% federal flat rate plus state corporate rates for all 44 states with a CIT from Tax Foundation 2026 data. Standard deductions: Single $16,100 / MFJ $32,200 / HOH $24,150 (2026).
+
+### Puerto Rico Act 60 Tax Benefit Estimator
+- URL: https://cpavalidated.com/act60-estimator.html
+- Authority: Act 60 of Puerto Rico (P.R. Laws Ann. tit. 13 §10001 et seq.); Act 38-2026 (signed March 10, 2026); IRC §933; Treas. Reg. §1.937-1
+- Purpose: Estimates tax savings under PR Act 60 Individual Investors chapter (formerly Act 22) and Export Services chapter (formerly Act 20). Includes eligibility checker (183-day test, 10-year prior residency rule), income breakdown by category, before vs. after comparison, and net benefit after $15,005 annual compliance cost. CRITICAL: Applications filed before January 1, 2027 qualify for 0% rate. Applications filed on or after January 1, 2027 face a permanent 4% rate under Act 38-2026.
+
+### USVI EDC Tax Benefit Estimator
+- URL: https://cpavalidated.com/usvi-edc-estimator.html
+- Authority: IRC §934; IRC §937; Treas. Reg. §1.937-1; VI Code §713; USVIEDA
+- Purpose: Estimates tax savings under the USVI Economic Development Commission (EDC) program and RTPark program. 90% tax credit reduces effective corporate rate to ~2.1%. Includes EDC vs. RTPark comparison and side-by-side Puerto Rico Act 60 vs. USVI analysis. No application deadline urgency (unlike PR Act 60). Employee requirement: 5 for Category IV service businesses, 10 for other categories.
+
+## Contact and Consultations
+Website: https://tk.cpa
+Book a Consultation: https://tk.cpa/contacts
+Credentials and Licenses: https://www.cpa.inc/docs/
+GitHub: https://github.com/tk-cpa/cpavalidated
+
+## Disclaimer
+All tools are for informational purposes only and do not constitute legal or tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions.

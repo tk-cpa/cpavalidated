@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safe Harbor Estimated Tax Calculator - Federal & All 50 States | CPA Validated</title>
+<meta name="description" content="Calculate federal and all 50-state safe harbor estimated tax payments. Quarterly schedule. California, Virginia, Hawaii, Iowa special rules. CPA-validated. IRC Section 6654.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --navy:#071563; --navy-100:#E2E4F0;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --purple:#6b3fa0; --purple-bg:#f4eefb;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+::selection{background:var(--coral);color:#fff}
+a{color:var(--coral);text-decoration:none}
+a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}
+.back a{font-size:12px;color:var(--ink-60);font-weight:500}
+.back a:hover{color:var(--coral)}
+.container{max-width:900px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
+.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px 20px 22px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.fg4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s;appearance:none;border-radius:0}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px;cursor:pointer}
+input[type="number"].fc{font-weight:600;color:var(--ink-80);text-align:center}
+.yn-group,.mode-toggle{display:flex;border:1.5px solid var(--ink-20);overflow:hidden}
+.yn-btn,.mode-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;text-align:center;background:var(--ink-10);color:var(--ink-60);border-right:1px solid var(--ink-20)}
+.yn-btn:last-child,.mode-btn:last-child{border-right:none}
+.yn-btn.sel-yes,.mode-btn.active{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
+.mode-btn.active{background:var(--ink);color:#fff;font-weight:600}
+.yn-btn.unsel:hover,.mode-btn:hover:not(.active){background:var(--ink-20)}
+.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid var(--ink-20)}
+.q-row:last-child{border-bottom:none}
+.q-text{font-size:13.5px;color:var(--ink);line-height:1.5}
+.q-sub{font-size:11.5px;color:var(--ink-60);margin-top:4px;line-height:1.4}
+.q-authority{display:inline-block;font-size:10.5px;font-weight:600;background:var(--ink);color:rgba(255,255,255,.8);padding:2px 7px;margin-top:5px;font-family:var(--font-mono)}
+.q-ctrl{min-width:120px;flex-shrink:0}
+.factor-table{width:100%;border-collapse:collapse}
+.factor-table th{font-size:10.5px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.04em;padding:8px 10px;background:var(--ink-10);border-bottom:2px solid var(--ink-20)}
+.factor-table th:first-child{text-align:left}
+.factor-table th:not(:first-child){text-align:center;width:90px}
+.factor-table td{padding:10px;border-bottom:1px solid var(--ink-20);vertical-align:middle}
+.factor-table tr:last-child td{border-bottom:none}
+.factor-table td:first-child{font-weight:500;line-height:1.4}
+.factor-table td:not(:first-child){text-align:center}
+.factor-note{font-size:11px;color:var(--ink-60);font-weight:400;display:block;margin-top:2px}
+.progress-tracker{display:flex;gap:0;margin-bottom:20px;border:1px solid var(--ink-20);overflow:hidden}
+.pt-item{flex:1;padding:10px 8px;text-align:center;font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;border-right:1px solid var(--ink-20);transition:all .2s}
+.pt-item:last-child{border-right:none}
+.pt-pass{background:var(--green-bg);color:var(--green)}
+.pt-fail{background:var(--red-bg);color:var(--red)}
+.pt-pending{background:var(--ink-10);color:var(--ink-40)}
+.pt-current{background:var(--amber-bg);color:var(--amber)}
+.result-main{border-left:4px solid var(--coral);padding:20px;margin-bottom:20px;background:var(--white);border:1px solid var(--ink-20)}
+.rm-eligible{background:var(--green-bg);border-left-color:var(--green)}
+.rm-not-eligible{background:var(--red-bg);border-left-color:var(--red)}
+.rm-partial{background:var(--amber-bg);border-left-color:var(--amber)}
+.rm-icon{font-size:26px;margin-bottom:8px}
+.rm-body h3{font-family:var(--font-display);font-size:22px;font-weight:500;margin-bottom:6px;letter-spacing:-.01em}
+.rm-eligible .rm-body h3{color:var(--green)}
+.rm-not-eligible .rm-body h3{color:var(--red)}
+.rm-partial .rm-body h3{color:var(--amber)}
+.rm-body p{font-size:13px;color:var(--ink-60);line-height:1.5}
+.cond-list{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.cond-item{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;border:1px solid var(--ink-20);background:var(--white)}
+.cond-pass{background:var(--green-bg);border-left:3px solid var(--green)}
+.cond-fail{background:var(--red-bg);border-left:3px solid var(--red)}
+.cond-unknown{border-left:3px solid var(--ink-40)}
+.cond-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px}
+.cond-pass .cond-icon{background:var(--green-b);color:var(--green)}
+.cond-fail .cond-icon{background:var(--red-b);color:var(--red)}
+.cond-unknown .cond-icon{background:var(--ink-20);color:var(--ink-60)}
+.cond-text{font-size:13px;line-height:1.5}
+.cond-text strong{display:block;font-weight:600;margin-bottom:2px;font-size:13.5px}
+.cond-pass .cond-text strong{color:var(--green)}
+.cond-fail .cond-text strong{color:var(--red)}
+.cond-unknown .cond-text strong{color:var(--ink-60)}
+.cond-text span{color:var(--ink-60);font-size:12.5px}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:10px 14px;font-size:12.5px;color:var(--amber);line-height:1.6;margin-bottom:16px}
+.note-box strong{font-weight:600}
+.sum-box{background:var(--ink);padding:18px 20px;margin-bottom:18px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px}
+.sum-row:last-child{border-bottom:none}
+.sum-lbl{color:rgba(255,255,255,.55)}
+.sum-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px}
+.fi-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.fi-card{border:1px solid var(--ink-20);padding:14px;background:var(--white)}
+.fi-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--ink-20)}
+.fi-row{font-size:12px;color:var(--ink-60);margin-bottom:5px;line-height:1.5;display:flex;gap:6px}
+.fi-row strong{color:var(--ink);font-weight:600;min-width:72px;flex-shrink:0}
+.mode-toggle{margin-bottom:20px}
+.acct-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.at{width:100%;border-collapse:collapse;font-size:12.5px;min-width:650px}
+table.at th{font-size:10.5px;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.04em;padding:8px 7px;background:var(--ink);text-align:center;border-bottom:2px solid var(--ink-20);white-space:nowrap}
+table.at td{padding:6px 5px;border-bottom:1px solid var(--ink-20);vertical-align:middle}
+table.at tr:last-child td{border-bottom:none}
+table.at input.fc{padding:6px 8px;font-size:12.5px}
+table.at select.fc{padding:6px 26px 6px 8px;font-size:12px}
+.rb{background:none;border:none;color:var(--ink-40);cursor:pointer;font-size:15px;padding:4px 6px;transition:color .15s;line-height:1}
+.rb:hover{color:var(--red)}
+.add-btn{margin-top:12px;background:var(--paper);border:1.5px dashed var(--ink-20);color:var(--ink);font-family:var(--font-sans);font-size:13px;font-weight:500;padding:9px 18px;cursor:pointer;transition:all .15s;width:100%}
+.add-btn:hover{border-color:var(--coral);color:var(--coral)}
+.ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ref-item{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;border:1px solid var(--ink-20);font-size:12px}
+.ref-item.both{background:var(--blue-bg)}
+.ref-item.g38only{background:var(--purple-bg)}
+.ref-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.ref-dot.both{background:var(--blue-acc)}
+.ref-dot.g38only{background:var(--purple)}
+.ref-item-text strong{display:block;font-weight:600;color:var(--ink)}
+.ref-item-text span{color:var(--ink-60)}
+.ref-legend{display:flex;gap:16px;margin-top:10px;flex-wrap:wrap}
+.ref-leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-60)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.result-card{padding:18px;text-align:center;border:2px solid var(--ink-20);background:var(--ink-10)}
+.rc-required{background:var(--red-bg);border-color:var(--red-b)}
+.rc-not-required{background:var(--green-bg);border-color:var(--green-b)}
+.rc-na{background:var(--ink-10);border-color:var(--ink-20)}
+.rc-icon{font-size:24px;margin-bottom:6px}
+.rc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.rc-required .rc-label{color:var(--red)}
+.rc-not-required .rc-label{color:var(--green)}
+.rc-status{font-family:var(--font-display);font-size:18px;font-weight:500;margin-bottom:5px}
+.rc-required .rc-status{color:var(--red)}
+.rc-not-required .rc-status{color:var(--green)}
+.rc-detail{font-size:11.5px;color:var(--ink-60);line-height:1.4}
+.thr-table{width:100%;border-collapse:collapse;margin-bottom:18px;font-size:12.5px}
+.thr-table th{font-size:10.5px;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.04em;padding:8px 10px;background:var(--ink);text-align:center;border-bottom:2px solid var(--ink-20)}
+.thr-table td{padding:9px 10px;border-bottom:1px solid var(--ink-20);text-align:center}
+.thr-table tr:last-child td{border-bottom:none}
+.thr-table td:first-child{text-align:left;font-weight:500}
+.thr-table .highlight-row td{background:var(--ink-10);font-weight:600;color:var(--ink)}
+.thr-table .highlight-row td:first-child::before{content:"▶ ";font-size:9px;color:var(--coral)}
+.summary-box{background:var(--ink);padding:16px 20px;margin-bottom:18px}
+.sb-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--coral);margin-bottom:10px}
+.sb-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px}
+.sb-row:last-child{border-bottom:none}
+.sb-lbl{color:rgba(255,255,255,.65)}
+.sb-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px}
+.filing-info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
+.sc-search{flex:1;min-width:200px;padding:8px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px;outline:none;background:var(--paper);color:var(--ink)}
+.sc-search:focus{border-color:var(--coral)}
+.sc-btn{padding:8px 14px;border:1.5px solid var(--ink-20);background:var(--ink-10);color:var(--ink-60);font-family:var(--font-sans);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;white-space:nowrap}
+.sc-btn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sc-btn:hover:not(.active){background:var(--ink-20)}
+table.st{width:100%;border-collapse:collapse;font-size:13px;min-width:700px}
+table.st th{font-size:10.5px;font-weight:700;color:#fff;text-transform:uppercase;letter-spacing:.04em;padding:9px 10px;background:var(--ink);cursor:pointer;white-space:nowrap}
+table.st th:hover{background:var(--ink-80)}
+table.st td{padding:9px 10px;border-bottom:1px solid var(--ink-20);vertical-align:middle}
+table.st tr:last-child td{border-bottom:none}
+table.st tr:hover td{background:var(--paper)}
+table.st td:first-child{font-weight:600;color:var(--ink)}
+.pill{display:inline-block;font-size:10px;font-weight:600;padding:2px 7px;white-space:nowrap;font-family:var(--font-mono)}
+.pill-no{background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
+.pill-yes{background:var(--blue-bg);color:var(--ink-80);border:1px solid var(--blue-b)}
+.pill-na{background:var(--ink-10);color:var(--ink-40);border:1px solid var(--ink-20)}
+.pill-ca{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b)}
+.amt-cell{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--ink);text-align:right}
+.amt-zero{color:var(--ink-40);font-style:italic;font-size:12px;font-family:var(--font-sans);text-align:right}
+.state-controls{display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.fed-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.fed-box{padding:16px;border:1px solid var(--ink-20);background:var(--ink-10)}
+.fed-box.highlight{background:var(--ink);border-color:var(--ink)}
+.fed-box .fb-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60);margin-bottom:6px}
+.fed-box.highlight .fb-label{color:var(--coral)}
+.fed-box .fb-val{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink)}
+.fed-box.highlight .fb-val{color:#fff}
+.fed-box .fb-sub{font-size:12px;color:var(--ink-60);margin-top:4px}
+.fed-box.highlight .fb-sub{color:rgba(255,255,255,.5)}
+.q-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.q-box{padding:14px;text-align:center;background:var(--blue-bg);border:1px solid var(--blue-b)}
+.q-box .q-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-80);margin-bottom:6px}
+.q-box .q-due{font-size:11.5px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.q-box .q-amt{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink-80)}
+.q-box .q-note{font-size:10.5px;color:var(--ink-60);margin-top:3px}
+.q-box.special{background:var(--amber-bg);border-color:var(--amber-b)}
+.q-box.special .q-num,.q-box.special .q-amt{color:var(--amber)}
+.fx-note{background:var(--amber-bg);border-left:3px solid var(--amber);padding:10px 14px;font-size:12px;color:var(--amber);margin-bottom:18px;line-height:1.5}
+.fx-note strong{font-weight:600}
+.inf{background:var(--paper);border-left:3px solid var(--coral);padding:9px 13px;font-size:12px;color:var(--ink-60);line-height:1.5;margin-top:12px}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}
+.pbn:hover{background:var(--coral-600)}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:640px){.fg2,.fg3,.fg4,.fi-grid,.fi-card,.fed-grid,.result-grid,.filing-info,.ref-grid,.q-grid{grid-template-columns:1fr}.acct-table-wrap,.state-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}}
+@media print {
+  /* ── Page setup ── */
+  @page { margin: 18mm 16mm; }
+  body { background: white !important; font-size: 11pt; }
+
+  /* ── Hide everything interactive ── */
+  .back, .mode-selector, .deadline-banner, .pbn,
+  .mode-tab, .acct-table-wrap::-webkit-scrollbar,
+  input, select, button:not(.pbn), .atb, .add-btn,
+  .mode-toggle, .state-controls { display: none !important; }
+
+  /* ── Keep header, force colors ── */
+  .ph { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 0 14px; }
+  .ph h1 { font-size: 20pt; }
+  .ph .badges { display: none; }
+  .ph-eyebrow { font-size: 8pt; }
+  .ph .sub { font-size: 9pt; }
+
+  /* ── Card headers ── */
+  .ch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* ── Hide input-only cards ── */
+  .input-card { display: none !important; }
+
+  /* ── Result hero / summary boxes ── */
+  .result-hero, .savings-hero, .sum-box, .summary-box,
+  .result-main, .rbn {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Tables ── */
+  table { width: 100% !important; font-size: 9pt; }
+  th, td { padding: 5px 7px !important; }
+  .acct-table-wrap { overflow: visible !important; }
+  table.st, table.at, table.tt { min-width: 0 !important; }
+
+  /* ── Grids: force single column on narrow items ── */
+  .rh-grid, .sh-top { grid-template-columns: 1fr 1fr 1fr !important; }
+  .fi-grid, .filing-info, .state-result-grid,
+  .costs-grid, .result-grid, .fed-grid { grid-template-columns: 1fr 1fr !important; }
+  .fg2, .fg3, .fg4 { display: none !important; }
+
+  /* ── Rate compare ── */
+  .rate-compare { grid-template-columns: 1fr auto 1fr !important; }
+  .rc-arrow { padding: 0 8px !important; }
+
+  /* ── Flags: keep but compact ── */
+  .flag { font-size: 9pt; padding: 7px 10px; margin-bottom: 6px; }
+
+  /* ── Source note / disclaimer ── */
+  .source-row, .disc { font-size: 8pt; }
+
+  /* ── Eligibility list ── */
+  .elig-item { break-inside: avoid; }
+
+  /* ── Page break hints ── */
+  .card { break-inside: avoid; margin-bottom: 10px; }
+
+  /* ── Print footer on every page ── */
+  .ph::after {
+    content: "cpavalidated.com  ·  a tk.cpa resource  ·  Built with AI. Validated by a CPA.";
+    display: block;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+
+  /* ── State table: hide filter controls, show table ── */
+  .state-table-wrap { overflow: visible !important; }
+}.pbn{display:none}.ph,.sum-box,.summary-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}table.st th{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Safe Harbor Estimated Tax Calculator</h1>
+  <div class="sub">Federal &nbsp;&bull;&nbsp; All 50 States &nbsp;&bull;&nbsp; Quarterly Payment Schedule</div>
+  <div class="badges"><span class="badge">IRC §6654</span><span class="badge">IRS Pub. 505</span><span class="badge">Federal + All 50 States + DC</span><span class="badge">2025 - 2026</span></div>
+</div></div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="container">
+<div class="badges">
+    <span class="badge">IRC Sec. 6654</span>
+    <span class="badge badge-b">Federal + All 50 States</span>
+    <span class="badge badge-b">2025 / 2026</span>
+  </div>
+</div></div>
+
+<div class="container">
+
+<!-- Step 1 -->
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Tax Information</h2></div>
+  <div class="cb">
+    <div class="fg4" style="margin-bottom:14px">
+      <div class="f1">
+        <label>Current Tax Year</label>
+        <select id="taxYear" class="fc" onchange="recalc()">
+          <option value="2025">2025</option>
+          <option value="2026" selected>2026</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Filing Status</label>
+        <select id="filingStatus" class="fc" onchange="recalc()">
+          <option value="single">Single</option>
+          <option value="mfj">Married Filing Jointly</option>
+          <option value="mfs">Married Filing Separately</option>
+          <option value="hoh">Head of Household</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Prior Year Federal AGI ($)</label>
+        <input type="number" id="pyAGI" class="fc" value="0" min="0" placeholder="0" oninput="recalc()">
+      </div>
+      <div class="f1">
+        <label>Prior Year Federal Tax Liability ($)</label>
+        <input type="number" id="pyFedTax" class="fc" value="0" min="0" placeholder="0" oninput="recalc()">
+      </div>
+    </div>
+    <div class="fg4">
+      <div class="f1">
+        <label>Estimated Current Year Federal Tax ($)</label>
+        <input type="number" id="cyFedTax" class="fc" value="0" min="0" placeholder="0" oninput="recalc()">
+      </div>
+      <div class="f1">
+        <label>Estimated Current Year State Tax ($)</label>
+        <input type="number" id="cyStateTax" class="fc" value="0" min="0" placeholder="0" oninput="recalc()">
+      </div>
+      <div class="f1">
+        <label>Prior Year State Tax Paid ($)</label>
+        <input type="number" id="pyStateTax" class="fc" value="0" min="0" placeholder="0" oninput="recalc()">
+      </div>
+      <div class="f1">
+        <label>Primary State of Residence</label>
+        <select id="primaryState" class="fc" onchange="recalc()">
+          <option value="">-- Select State --</option>
+        </select>
+      </div>
+    </div>
+    <div class="inf">
+      Safe harbor amounts are based on prior year tax liability (100% rule) or current year estimated tax (90% rule). The 110% rule applies federally when prior year AGI exceeds $150,000 ($75,000 MFS). State rules vary - see the state table below for jurisdiction-specific rules and thresholds.
+    </div>
+  </div>
+</div>
+
+<!-- Step 2: Federal Result -->
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Federal Safe Harbor Analysis</h2></div>
+  <div class="cb">
+
+    <div class="sum-box">
+      <div class="sum-title">Federal Inputs</div>
+      <div class="sum-row"><span class="sum-lbl">Prior year federal tax liability</span><span class="sum-val" id="s-pyFed">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Prior year AGI</span><span class="sum-val" id="s-pyAGI">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">110% rule applies (AGI > $150,000)?</span><span class="sum-val" id="s-110">No</span></div>
+      <div class="sum-row"><span class="sum-lbl">90% of current year estimated tax</span><span class="sum-val" id="s-90pct">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">100% / 110% of prior year tax</span><span class="sum-val" id="s-pyPct">$0</span></div>
+    </div>
+
+    <div class="fed-grid">
+      <div class="fed-box">
+        <div class="fb-label">Safe Harbor Amount (90% Rule)</div>
+        <div class="fb-val" id="fed90">$0</div>
+        <div class="fb-sub">90% of current year estimated tax - IRC Sec. 6654(d)(1)(B)(i)</div>
+      </div>
+      <div class="fed-box">
+        <div class="fb-label">Safe Harbor Amount (Prior Year Rule)</div>
+        <div class="fb-val" id="fedPY">$0</div>
+        <div class="fb-sub" id="fedPYsub">100% of prior year tax - IRC Sec. 6654(d)(1)(B)(ii)</div>
+      </div>
+      <div class="fed-box highlight">
+        <div class="fb-label">Use This Safe Harbor Amount</div>
+        <div class="fb-val" id="fedSH">$0</div>
+        <div class="fb-sub">Lower of the two amounts (pay this to avoid underpayment penalty)</div>
+      </div>
+      <div class="fed-box">
+        <div class="fb-label">Per Quarter Payment</div>
+        <div class="fb-val" id="fedQ">$0</div>
+        <div class="fb-sub">Annual safe harbor / 4 equal installments</div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <strong>110% Rule:</strong> If your prior year federal AGI exceeded $150,000 ($75,000 if MFS), the prior year safe harbor increases from 100% to 110% of prior year tax. This is the most commonly missed federal estimated tax rule. - IRC Sec. 6654(d)(1)(B)(ii).
+    </div>
+
+    <!-- Federal quarterly schedule -->
+    <h3 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--g600);margin-bottom:12px">Federal Quarterly Payment Schedule</h3>
+    <div class="q-grid" id="fedQGrid"></div>
+
+    <div class="inf">
+      Federal estimated tax payments are due April 15, June 15, September 15, and January 15 of the following year. If the due date falls on a weekend or holiday, it shifts to the next business day. Payments are made via IRS Direct Pay, EFTPS, or with Form 1040-ES. - IRC Sec. 6654(c).
+    </div>
+  </div>
+</div>
+
+<!-- Step 3: State Table -->
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>All 50 States - Safe Harbor Reference</h2></div>
+  <div class="cb">
+
+    <div class="state-controls">
+      <input type="text" class="sc-search" id="stateSearch" placeholder="Search state..." oninput="filterStates()">
+      <button class="sc-btn active" id="btnAll" onclick="filterCategory('all',this)">All States</button>
+      <button class="sc-btn" id="btnNoTax" onclick="filterCategory('notax',this)">No Income Tax</button>
+      <button class="sc-btn" id="btnCA" onclick="filterCategory('special',this)">Special Rules</button>
+      <span class="tag-count" id="stateCount"></span>
+    </div>
+
+    <div class="state-table-wrap">
+      <table class="st">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">State</th>
+            <th onclick="sortTable(1)">Income Tax</th>
+            <th onclick="sortTable(2)">Safe Harbor Rule</th>
+            <th onclick="sortTable(3)" style="text-align:right">Annual Safe Harbor</th>
+            <th onclick="sortTable(4)" style="text-align:right">Per Quarter</th>
+            <th>Q1 Due</th>
+            <th>Q2 Due</th>
+            <th>Q3 Due</th>
+            <th>Q4 Due</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="stateBody"></tbody>
+      </table>
+    </div>
+    <div class="inf" style="margin-top:14px">
+      State safe harbor amounts are estimated based on the prior year state tax entered above, adjusted by the applicable state percentage. Actual state amounts may vary based on state-specific AGI thresholds, filing status adjustments, and other factors. Verify with your state's department of revenue before filing. "Special" due dates differ from the standard federal schedule.
+    </div>
+  </div>
+</div>
+
+<!-- Step 4: Your State Detail -->
+<div class="card" id="primaryStateCard" style="display:none">
+  <div class="ch"><div class="sb">4</div><h2 id="primaryStateTitle">Your State - Detailed Schedule</h2></div>
+  <div class="cb">
+    <div id="primaryStateDetail"></div>
+  </div>
+</div>
+
+<!-- Print -->
+<div class="card">
+  <div class="cb" style="padding:16px 20px">
+    <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+    <div class="disc">
+      This calculator provides estimated safe harbor payment amounts for informational purposes only and does not constitute legal or tax advice. State tax rules change frequently; verify all state-specific rules with the applicable state department of revenue before making payments. Federal rules per IRC Section 6654 and IRS Publication 505. Underpayment penalty rules may vary based on income type, withholding, and other factors not reflected here. Consult a qualified tax professional for your specific situation.
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// ── State data ────────────────────────────────────────────────────────────────
+// Fields: abbr, name, hasTax, shPct (safe harbor %), pyPct (prior year %),
+// agThreshold (110% equivalent threshold, 0=none), q1,q2,q3,q4 (due dates),
+// special (boolean), notes
+const STATES = [
+  {abbr:'AL',name:'Alabama',         hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'AK',name:'Alaska',          hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No state income tax'},
+  {abbr:'AZ',name:'Arizona',         hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule applies if prior year AZ AGI > $150,000'},
+  {abbr:'AR',name:'Arkansas',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'CA',name:'California',      hasTax:true,  shPct:90, pyPct:100, agThr:1000000,q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:true,  notes:'SPECIAL: Q1=30%, Q2=40% (no separate June payment for some); 110% rule at $1M AGI. FTB Form 540-ES.'},
+  {abbr:'CO',name:'Colorado',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'CT',name:'Connecticut',     hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if CT AGI > $150,000 (MFJ); $75,000 (others)'},
+  {abbr:'DE',name:'Delaware',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'FL',name:'Florida',         hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No state income tax'},
+  {abbr:'GA',name:'Georgia',         hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if GA AGI > $150,000'},
+  {abbr:'HI',name:'Hawaii',          hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/20',q2:'6/20',q3:'9/20',q4:'1/20', special:true,  notes:'SPECIAL: Due dates are 20th of month, not 15th'},
+  {abbr:'ID',name:'Idaho',           hasTax:true,  shPct:80, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'Lower threshold: 80% of current year or 100% of prior year'},
+  {abbr:'IL',name:'Illinois',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'Flat rate 4.95%; 100% of prior year or 90% current'},
+  {abbr:'IN',name:'Indiana',         hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'Flat rate 3.15%; 100% prior year or 90% current'},
+  {abbr:'IA',name:'Iowa',            hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/30',q2:'6/30',q3:'9/30',q4:'1/31', special:true,  notes:'SPECIAL: Due dates are end of month (April 30, June 30, Sept 30, Jan 31)'},
+  {abbr:'KS',name:'Kansas',          hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'KY',name:'Kentucky',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'Flat rate 4.5%; 100% prior year or 90% current'},
+  {abbr:'LA',name:'Louisiana',       hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'ME',name:'Maine',           hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if ME income > $150,000'},
+  {abbr:'MD',name:'Maryland',        hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if MD AGI > $150,000'},
+  {abbr:'MA',name:'Massachusetts',   hasTax:true,  shPct:80, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'80% of current year or 100% of prior year (lower threshold than federal)'},
+  {abbr:'MI',name:'Michigan',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'Flat rate 4.25%; 100% prior year or 90% current'},
+  {abbr:'MN',name:'Minnesota',       hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if MN AGI > $150,000 (MFJ); $75,000 single'},
+  {abbr:'MS',name:'Mississippi',     hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'MO',name:'Missouri',        hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if MO AGI > $150,000'},
+  {abbr:'MT',name:'Montana',         hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'NE',name:'Nebraska',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'NV',name:'Nevada',          hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No state income tax'},
+  {abbr:'NH',name:'New Hampshire',   hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No broad income tax (interest/dividends tax phased out 2025)'},
+  {abbr:'NJ',name:'New Jersey',      hasTax:true,  shPct:80, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'80% of current year or 100% of prior year'},
+  {abbr:'NM',name:'New Mexico',      hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if NM income > $150,000'},
+  {abbr:'NY',name:'New York',        hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if NY AGI > $150,000 (MFJ); $75,000 single/MFS'},
+  {abbr:'NC',name:'North Carolina',  hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year; flat 4.75%'},
+  {abbr:'ND',name:'North Dakota',    hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'OH',name:'Ohio',            hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'OK',name:'Oklahoma',        hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'OR',name:'Oregon',          hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if OR income > $150,000 (MFJ); $75,000 single'},
+  {abbr:'PA',name:'Pennsylvania',    hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'Flat rate 3.07%; 100% prior year or 90% current'},
+  {abbr:'RI',name:'Rhode Island',    hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'SC',name:'South Carolina',  hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'SD',name:'South Dakota',    hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No state income tax'},
+  {abbr:'TN',name:'Tennessee',       hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No broad income tax (Hall Income Tax on dividends/interest eliminated 2021)'},
+  {abbr:'TX',name:'Texas',           hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No state income tax'},
+  {abbr:'UT',name:'Utah',            hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'Flat rate 4.65%; 100% prior year or 90% current'},
+  {abbr:'VT',name:'Vermont',         hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if VT income > $150,000'},
+  {abbr:'VA',name:'Virginia',        hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'5/1', q2:'6/15',q3:'9/15',q4:'1/15', special:true,  notes:'SPECIAL: Q1 due May 1 (not April 15); 110% rule if VA AGI > $150,000'},
+  {abbr:'WA',name:'Washington',      hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No broad income tax (capital gains tax applies above $262,000 for 2024)'},
+  {abbr:'WV',name:'West Virginia',   hasTax:true,  shPct:90, pyPct:100, agThr:0,      q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'100% of prior year or 90% of current year'},
+  {abbr:'WI',name:'Wisconsin',       hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if WI AGI > $150,000 (MFJ); $75,000 single'},
+  {abbr:'WY',name:'Wyoming',         hasTax:false, shPct:0,  pyPct:0,   agThr:0,      q1:'N/A', q2:'N/A', q3:'N/A', q4:'N/A',  special:false, notes:'No state income tax'},
+  {abbr:'DC',name:'Washington D.C.', hasTax:true,  shPct:90, pyPct:100, agThr:150000, q1:'4/15',q2:'6/15',q3:'9/15',q4:'1/15', special:false, notes:'110% rule if DC AGI > $150,000'},
+];
+
+// Federal quarterly due dates by year
+const FED_DATES = {
+  2025: ['April 15, 2025','June 16, 2025','September 15, 2025','January 15, 2026'],
+  2026: ['April 15, 2026','June 15, 2026','September 15, 2026','January 15, 2027'],
+};
+
+let sortCol = 0, sortDir = 1, filterCat = 'all';
+
+// ── Populate state dropdown ───────────────────────────────────────────────────
+function populateStateDropdown() {
+  const sel = document.getElementById('primaryState');
+  STATES.sort((a,b) => a.name.localeCompare(b.name)).forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s.abbr;
+    opt.textContent = s.name;
+    sel.appendChild(opt);
+  });
+}
+
+// ── Format currency ───────────────────────────────────────────────────────────
+function fmt(n, decimals=0) {
+  if (!n || n === 0) return '$0';
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits:decimals, maximumFractionDigits:decimals});
+}
+
+// ── Main calculation ──────────────────────────────────────────────────────────
+function recalc() {
+  const yr       = parseInt(document.getElementById('taxYear').value);
+  const status   = document.getElementById('filingStatus').value;
+  const pyAGI    = parseFloat(document.getElementById('pyAGI').value) || 0;
+  const pyFed    = parseFloat(document.getElementById('pyFedTax').value) || 0;
+  const cyFed    = parseFloat(document.getElementById('cyFedTax').value) || 0;
+  const cyState  = parseFloat(document.getElementById('cyStateTax').value) || 0;
+  const pyState  = parseFloat(document.getElementById('pyStateTax').value) || 0;
+  const primState= document.getElementById('primaryState').value;
+
+  // Federal 110% threshold
+  const fedThreshold = status === 'mfs' ? 75000 : 150000;
+  const applies110   = pyAGI > fedThreshold;
+  const pyPct        = applies110 ? 1.10 : 1.00;
+
+  const fed90pct = cyFed * 0.90;
+  const fedPYamt = pyFed * pyPct;
+  const fedSH    = Math.min(fed90pct, fedPYamt);
+  const fedQ     = fedSH / 4;
+
+  // Update summary
+  document.getElementById('s-pyFed').textContent  = fmt(pyFed);
+  document.getElementById('s-pyAGI').textContent   = fmt(pyAGI);
+  document.getElementById('s-110').textContent     = applies110 ? `Yes (${applies110?'110%':'100%'} rule)` : 'No (100% rule)';
+  document.getElementById('s-90pct').textContent   = fmt(fed90pct);
+  document.getElementById('s-pyPct').textContent   = fmt(fedPYamt) + (applies110?' (110%)':' (100%)');
+
+  document.getElementById('fed90').textContent  = fmt(fed90pct);
+  document.getElementById('fedPY').textContent  = fmt(fedPYamt);
+  document.getElementById('fedPYsub').textContent = (applies110?'110%':'100%') + ' of prior year tax - IRC Sec. 6654(d)(1)(B)(ii)';
+  document.getElementById('fedSH').textContent  = fmt(fedSH);
+  document.getElementById('fedQ').textContent   = fmt(fedQ);
+
+  // Federal quarterly grid
+  const fedDates = FED_DATES[yr] || FED_DATES[2026];
+  const fedQGrid = document.getElementById('fedQGrid');
+  fedQGrid.innerHTML = '';
+  ['Q1','Q2','Q3','Q4'].forEach((q,i) => {
+    const div = document.createElement('div');
+    div.className = 'q-box';
+    div.innerHTML = `<div class="q-num">${q} Payment</div><div class="q-due">${fedDates[i]}</div><div class="q-amt">${fmt(fedQ)}</div><div class="q-note">Equal installment</div>`;
+    fedQGrid.appendChild(div);
+  });
+
+  // Render state table
+  renderStateTable(pyState, pyAGI, cyFed, status);
+
+  // Primary state detail
+  if (primState) {
+    const s = STATES.find(x => x.abbr === primState);
+    if (s) renderPrimaryState(s, pyState, pyAGI, cyFed, status, yr);
+  } else {
+    document.getElementById('primaryStateCard').style.display = 'none';
+  }
+}
+
+function calcStateSH(s, pyState, pyAGI, cyFed, status) {
+  if (!s.hasTax) return { sh90: 0, shPY: 0, shAmt: 0, shQ: 0, rule: 'N/A' };
+
+  // Determine if state 110% rule applies
+  const stateThreshold = status === 'mfs' ? 75000 : (s.agThr || 0);
+  const applies110 = stateThreshold > 0 && pyAGI > stateThreshold;
+
+  // 90% rule: use actual current year estimated state tax input
+  const cyState = parseFloat(document.getElementById('cyStateTax')?.value) || 0;
+  const sh90 = (s.shPct / 100) * (cyState > 0 ? cyState : pyState);
+  const pyMult = applies110 ? 1.10 : (s.pyPct / 100);
+  const shPY = pyState * pyMult;
+  const shAmt = Math.min(sh90, shPY);
+  const shQ = shAmt / 4;
+
+  return { sh90, shPY, shAmt, shQ, applies110, pyMult };
+}
+
+function renderStateTable(pyState, pyAGI, cyFed, status) {
+  const search = document.getElementById('stateSearch').value.toLowerCase();
+  let rows = STATES.filter(s => {
+    const matchSearch = s.name.toLowerCase().includes(search) || s.abbr.toLowerCase().includes(search);
+    if (!matchSearch) return false;
+    if (filterCat === 'notax') return !s.hasTax;
+    if (filterCat === 'special') return s.special;
+    return true;
+  });
+
+  // Sort
+  rows.sort((a,b) => {
+    let va, vb;
+    switch(sortCol) {
+      case 0: va=a.name; vb=b.name; break;
+      case 1: va=a.hasTax?1:0; vb=b.hasTax?1:0; break;
+      case 2: va=a.shPct; vb=b.shPct; break;
+      case 3: va=calcStateSH(a,pyState,pyAGI,cyFed,status).shAmt; vb=calcStateSH(b,pyState,pyAGI,cyFed,status).shAmt; break;
+      case 4: va=calcStateSH(a,pyState,pyAGI,cyFed,status).shQ;   vb=calcStateSH(b,pyState,pyAGI,cyFed,status).shQ;   break;
+      default: va=a.name; vb=b.name;
+    }
+    if (typeof va === 'string') return sortDir * va.localeCompare(vb);
+    return sortDir * (va - vb);
+  });
+
+  document.getElementById('stateCount').textContent = `${rows.length} states`;
+
+  const tbody = document.getElementById('stateBody');
+  tbody.innerHTML = '';
+  rows.forEach(s => {
+    const calc = calcStateSH(s, pyState, pyAGI, cyFed, status);
+    const tr = document.createElement('tr');
+
+    const ruleText = !s.hasTax ? '-'
+      : s.special ? `${s.shPct}% / ${calc.applies110?'110':'100'}%*`
+      : `${s.shPct}% / ${calc.applies110?'110':'100'}%`;
+
+    tr.innerHTML =
+      `<td>${s.name} <span style="color:var(--g400);font-weight:400;font-size:11px">${s.abbr}</span></td>` +
+      `<td>${s.hasTax ? '<span class="pill pill-yes">Yes</span>' : '<span class="pill pill-no">None</span>'}</td>` +
+      `<td>${s.hasTax ? (s.special ? `<span class="pill pill-ca">Special</span>` : `<span class="pill pill-yes">${ruleText}</span>`) : '<span class="pill pill-na">N/A</span>'}</td>` +
+      (s.hasTax && pyState > 0
+        ? `<td class="amt-cell">${fmt(calc.shAmt)}</td><td class="amt-cell">${fmt(calc.shQ)}</td>`
+        : `<td class="amt-zero">N/A</td><td class="amt-zero">N/A</td>`) +
+      `<td style="font-size:12px;color:var(--g600)">${s.q1}</td>` +
+      `<td style="font-size:12px;color:var(--g600)">${s.q2}</td>` +
+      `<td style="font-size:12px;color:var(--g600)">${s.q3}</td>` +
+      `<td style="font-size:12px;color:var(--g600)">${s.q4}</td>` +
+      `<td style="font-size:11.5px;color:var(--g600);max-width:180px;line-height:1.4">${s.notes}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderPrimaryState(s, pyState, pyAGI, cyFed, status, yr) {
+  const card = document.getElementById('primaryStateCard');
+  const title = document.getElementById('primaryStateTitle');
+  const detail = document.getElementById('primaryStateDetail');
+  card.style.display = '';
+  title.textContent = `${s.name} - Detailed Estimated Tax Schedule`;
+
+  if (!s.hasTax) {
+    detail.innerHTML = `<div class="note-box">${s.name} has no broad state income tax. No state estimated tax payments are required for individual income. ${s.notes}</div>`;
+    return;
+  }
+
+  const calc = calcStateSH(s, pyState, pyAGI, cyFed, status);
+
+  // California special installment schedule
+  let qAmts = [calc.shQ, calc.shQ, calc.shQ, calc.shQ];
+  if (s.abbr === 'CA') {
+    qAmts = [calc.shAmt * 0.30, calc.shAmt * 0.40, 0, calc.shAmt * 0.30];
+  }
+
+  const dates = [s.q1, s.q2, s.q3, s.q4];
+  const labels = ['Q1','Q2','Q3','Q4'];
+
+  let html = `
+    <div class="sum-box" style="margin-bottom:16px">
+      <div class="sum-title">${s.name} Safe Harbor Summary</div>
+      <div class="sum-row"><span class="sum-lbl">Prior year state tax paid</span><span class="sum-val">${fmt(pyState)}</span></div>
+      <div class="sum-row"><span class="sum-lbl">90% current year threshold</span><span class="sum-val">${fmt(calc.sh90)}</span></div>
+      <div class="sum-row"><span class="sum-lbl">${calc.applies110?'110':'100'}% prior year amount</span><span class="sum-val">${fmt(calc.shPY)}</span></div>
+      <div class="sum-row"><span class="sum-lbl">Annual safe harbor (lower of two)</span><span class="sum-val">${fmt(calc.shAmt)}</span></div>
+    </div>
+    <div class="q-grid">`;
+
+  labels.forEach((lbl, i) => {
+    const isSpecial = s.special;
+    const noPayment = qAmts[i] === 0;
+    html += `<div class="q-box${isSpecial?' special':''}">
+      <div class="q-num">${lbl} Payment</div>
+      <div class="q-due">Due: ${dates[i]}</div>
+      <div class="q-amt">${noPayment ? 'None' : fmt(qAmts[i])}</div>
+      <div class="q-note">${s.abbr==='CA' && i===0 ? '30% of annual' : s.abbr==='CA' && i===1 ? '40% of annual' : s.abbr==='CA' && i===2 ? 'No Q3 for CA' : s.abbr==='CA' && i===3 ? '30% of annual' : 'Equal installment'}</div>
+    </div>`;
+  });
+
+  html += `</div><div class="inf" style="margin-top:14px">${s.notes}</div>`;
+  detail.innerHTML = html;
+}
+
+// ── Controls ──────────────────────────────────────────────────────────────────
+function filterStates() { recalc(); }
+
+function filterCategory(cat, btn) {
+  filterCat = cat;
+  document.querySelectorAll('.sc-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  recalc();
+}
+
+function sortTable(col) {
+  if (sortCol === col) sortDir *= -1;
+  else { sortCol = col; sortDir = 1; }
+  recalc();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+populateStateDropdown();
+recalc();
+</script>
+<div style="font-size:11px;color:var(--ink-60,#5E6166);font-style:italic;line-height:1.6;padding:14px 0;border-top:1px solid var(--ink-20,#D9DBDE);margin-top:8px;font-family:var(--font-sans,Inter,sans-serif)">This tool is for informational purposes only and does not constitute tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions. A tk.cpa resource - <a href="https://tk.cpa" target="_blank" style="color:var(--coral,#F65F5A)">tk.cpa</a>.</div>
+</div>
+</body>
+</html>

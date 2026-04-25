@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cpavalidated.com/sitemap.xml
+
+# CPA Validated - cpavalidated.com
+# A tk.cpa resource
+# Built by a licensed CPA and Enrolled Agent

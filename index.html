@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPA Validated - Professional Tax Tools & Calculators | tk.cpa</title>
+<meta name="description" content="CPA-validated tax tools and calculators. Built by a Big 4-trained licensed CPA and Enrolled Agent with Big Four and multinational enterprise experience. Every tool cites specific IRC sections and Treasury regulations. A tk.cpa resource.">
+<meta name="author" content="tk.cpa">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CPA Validated - Professional Tax Tools">
+<meta property="og:description" content="CPA-validated tax tools built by a licensed CPA and Enrolled Agent. Substantial Presence Test, FBAR/8938, Safe Harbor, and more. Every result cited.">
+<meta property="og:url" content="https://cpavalidated.com">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://cpavalidated.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "CPA Validated",
+  "url": "https://cpavalidated.com",
+  "description": "CPA-validated US tax tools and calculators. Every tool cites specific IRC sections and Treasury regulations. Built by a licensed CPA and Enrolled Agent. A tk.cpa resource.",
+  "author": {
+    "@type": "Person",
+    "name": "Timur Knyazev, CPA",
+    "url": "https://tk.cpa",
+    "hasCredential": [
+      {"@type":"EducationalOccupationalCredential","name":"Certified Public Accountant - New York #109025","credentialCategory":"Professional License"},
+      {"@type":"EducationalOccupationalCredential","name":"Certified Public Accountant - Florida #AC58472","credentialCategory":"Professional License"},
+      {"@type":"EducationalOccupationalCredential","name":"IRS Enrolled Agent #93250","credentialCategory":"Professional License"},
+      {"@type":"EducationalOccupationalCredential","name":"Master of Science in Taxation - Baruch College (CUNY) 2011","credentialCategory":"Degree"},
+      {"@type":"EducationalOccupationalCredential","name":"CGMA - Chartered Global Management Accountant","credentialCategory":"Professional Designation"},
+      {"@type":"EducationalOccupationalCredential","name":"ACCA CertIFRS","credentialCategory":"Professional Designation"}
+    ]
+  },
+  "hasPart": [
+    {"@type":"WebApplication","name":"Substantial Presence Test Calculator","url":"https://cpavalidated.com/spt-calculator.html","description":"Determines U.S. tax residency under IRC Section 7701(b)(3)."},
+    {"@type":"WebApplication","name":"Closer Connection Exception Checker","url":"https://cpavalidated.com/closer-connection.html","description":"Tests Form 8840 eligibility under IRC Section 7701(b)(3)(B)."},
+    {"@type":"WebApplication","name":"FBAR and Form 8938 Threshold Checker","url":"https://cpavalidated.com/fbar-checker.html","description":"Determines FinCEN 114 and Form 8938 filing requirements under 31 USC 5314 and IRC Section 6038D."},
+    {"@type":"WebApplication","name":"Safe Harbor Estimated Tax Calculator","url":"https://cpavalidated.com/safe-harbor.html","description":"Federal and all 50-state safe harbor estimated tax under IRC Section 6654."},
+    {"@type":"WebApplication","name":"Form 5472 Filing Obligation Checker","url":"https://cpavalidated.com/form-5472.html","description":"Determines Form 5472 filing obligation under IRC Sections 6038A and 6038C."},
+    {"@type":"WebApplication","name":"Tax Estimator 2026","url":"https://cpavalidated.com/tax-estimator.html","description":"Personal and corporate income tax estimator for 2026 using IRS Rev. Proc. 2025-32 brackets."},
+    {"@type":"WebApplication","name":"Puerto Rico Act 60 Tax Benefit Estimator","url":"https://cpavalidated.com/act60-estimator.html","description":"Estimates tax savings under Puerto Rico Act 60 Individual Investors and Export Services chapters. December 31, 2026 deadline for 0% rate."},
+    {"@type":"WebApplication","name":"USVI EDC Tax Benefit Estimator","url":"https://cpavalidated.com/usvi-edc-estimator.html","description":"Estimates tax savings under the USVI Economic Development Commission 90% tax credit program."}
+  ]
+}
+</script>
+
+<style>
+/* ── TK CPA Design Tokens ── */
+:root {
+  --ink:        #111111;
+  --ink-80:     #343A40;
+  --ink-60:     #5E6166;
+  --ink-40:     #9BA0A6;
+  --ink-20:     #D9DBDE;
+  --ink-10:     #EDEEF0;
+  --paper:      #FAFAF7;
+  --paper-white:#FFFFFF;
+  --coral:      #F65F5A;
+  --coral-600:  #E04A45;
+  --coral-100:  #FCE3E2;
+  --navy:       #071563;
+  --navy-100:   #E2E4F0;
+  --gold:       #E9A81C;
+  --success:    #4A7459;
+  --font-display:'Oswald','Helvetica Neue Condensed','Arial Narrow',sans-serif;
+  --font-sans:  'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-mono:  'Cousine','SF Mono','Menlo',monospace;
+  --ease-out:   cubic-bezier(0.2,0.8,0.2,1);
+  --t-base:     200ms;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--coral);color:var(--paper-white)}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:1px;text-underline-offset:3px;transition:color var(--t-base) var(--ease-out)}
+a:hover{color:var(--coral)}
+
+/* ── Ribbon ── */
+.ribbon{background:var(--ink);color:var(--paper);font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.14em;font-size:11px;padding:9px 24px;text-align:center}
+.ribbon a{color:var(--coral);text-decoration:none}
+
+/* ── Nav ── */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 48px;border-bottom:1px solid var(--ink);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:18px;letter-spacing:.04em;text-transform:uppercase;line-height:1}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--ink-60);letter-spacing:.14em;margin-top:4px;text-transform:none}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-links{display:flex;gap:22px;list-style:none;padding:0}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:all 200ms var(--ease-out)}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff;padding:9px 18px;border-radius:4px;font-weight:600;font-size:13px;text-decoration:none;letter-spacing:.02em;transition:background var(--t-base)}
+.nav-cta:hover{background:var(--coral-600);color:#fff}
+
+/* ── Hero ── */
+.hero{padding:96px 48px 80px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-copy{}
+.tagline{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.22em;font-size:13px;color:var(--ink);margin-bottom:20px}
+.tagline span{color:var(--coral)}
+.eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:16px}
+h1.hero-title{font-family:var(--font-display);font-weight:500;font-size:clamp(42px,5.5vw,72px);line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-bottom:24px}
+h1.hero-title em{color:var(--coral);font-style:normal}
+.lede{font-size:18px;line-height:1.55;color:var(--ink-60);margin-bottom:36px;max-width:54ch}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-primary{background:var(--coral);color:#fff;padding:13px 24px;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.02em;transition:background var(--t-base);display:inline-flex;align-items:center;gap:8px;border:1px solid var(--coral)}
+.btn-primary:hover{background:var(--coral-600);color:#fff}
+.btn-secondary{background:transparent;color:var(--ink);padding:13px 24px;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--ink);transition:all var(--t-base)}
+.btn-secondary:hover{background:var(--ink);color:var(--paper)}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap}
+.hb{background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60);font-size:11px;font-weight:500;padding:4px 10px;border-radius:2px;font-family:var(--font-mono);letter-spacing:.02em}
+.hero-stat-col{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--coral);padding-left:32px}
+.hero-stat{padding:20px 0;border-bottom:1px solid var(--ink-20)}
+.hero-stat:last-child{border-bottom:none}
+.hs-num{font-family:var(--font-display);font-weight:500;font-size:52px;line-height:.9;letter-spacing:-.02em;color:var(--ink);margin-bottom:8px}
+.hs-num span{color:var(--coral);font-size:32px}
+.hs-label{font-size:13px;color:var(--ink-60);line-height:1.4}
+
+/* ── Values bar ── */
+.values-bar{background:var(--ink);padding:16px 48px}
+.values-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.val{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.22em;font-size:13px;color:var(--paper)}
+.val-dot{width:4px;height:4px;border-radius:50%;background:var(--coral);flex-shrink:0}
+
+/* ── Section base ── */
+.section{padding:80px 48px;max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.section-title{font-family:var(--font-display);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px}
+.section-sub{font-size:16px;color:var(--ink-60);max-width:58ch;line-height:1.65;margin-bottom:48px}
+hr.rule{border:0;border-top:1px solid var(--ink);margin:0 0 48px}
+
+/* ── Tools grid ── */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--ink-20);border:1px solid var(--ink-20)}
+.tool-card{background:var(--paper-white);padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:14px;transition:background var(--t-base)}
+.tool-card:hover{background:var(--coral-100)}
+.tool-card.coming{opacity:.55;cursor:default;background:var(--ink-10)}
+.tool-card:hover.coming{background:var(--ink-10)}
+.tool-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid currentColor;width:fit-content;border-radius:2px}
+.tt-resident{color:var(--navy)}
+.tt-reporting{color:#6b3fa0}
+.tt-compliance{color:var(--success)}
+.tt-planning{color:var(--ink-60)}
+.tool-name{font-family:var(--font-display);font-weight:500;font-size:20px;line-height:1.1;color:var(--ink);letter-spacing:-.01em}
+.tool-desc{font-size:13px;color:var(--ink-60);line-height:1.55;flex:1}
+.tool-authority{font-family:var(--font-mono);font-size:11px;color:var(--ink-40);letter-spacing:.02em}
+.tool-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--coral);text-decoration:none;margin-top:4px}
+.tool-link::after{content:'→';transition:transform var(--t-base)}
+.tool-card:hover .tool-link::after{transform:translateX(4px)}
+
+/* ── Attribution section ── */
+.attribution{background:var(--ink);padding:56px 48px}
+.attr-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.attr-text{}
+.attr-label{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:10px}
+.attr-headline{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,4vw,42px);color:var(--paper);line-height:1.05;letter-spacing:-.01em;margin-bottom:12px}
+.attr-sub{font-size:14px;color:rgba(250,250,247,.5);line-height:1.6;max-width:56ch}
+.attr-link-row{display:flex;gap:16px;align-items:center;margin-top:20px;flex-wrap:wrap}
+.attr-link{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;padding:11px 22px;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;transition:background var(--t-base)}
+.attr-link:hover{background:var(--coral-600);color:#fff}
+.attr-link-secondary{color:rgba(250,250,247,.6);font-size:13px;text-decoration:underline;text-decoration-color:rgba(246,95,90,.4)}
+.attr-link-secondary:hover{color:var(--coral)}
+.attr-creds{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
+.attr-cred-item{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;color:rgba(250,250,247,.5)}
+.attr-cred-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0}
+
+/* ── Credentials section ── */
+.creds-bg{background:var(--paper-white)}
+.creds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:32px}
+.cred-item{background:var(--paper-white);padding:20px 22px;display:flex;align-items:flex-start;gap:14px}
+.cred-bullet{width:3px;flex-shrink:0;background:var(--coral);margin-top:4px;align-self:stretch;min-height:36px}
+.cred-body{}
+.cred-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.3}
+.cred-detail{font-family:var(--font-mono);font-size:11px;color:var(--ink-60);line-height:1.4}
+.insurance-strip{display:flex;gap:12px;flex-wrap:wrap;padding:20px 0;border-top:1px solid var(--ink-20);border-bottom:1px solid var(--ink-20);margin-bottom:24px}
+.ins-pill{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--success);font-family:var(--font-mono);letter-spacing:.02em}
+.ins-pill::before{content:'✓';color:var(--success)}
+.verify-row{text-align:center;margin-top:8px}
+.verify-row a{font-size:13px;color:var(--ink-60);font-weight:500}
+
+/* ── About / methodology ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about-body p{font-size:15px;color:var(--ink-60);line-height:1.7;margin-bottom:18px}
+.about-body p strong{color:var(--ink);font-weight:600}
+.about-body p:last-child{margin-bottom:0}
+.pillars{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ink)}
+.pillar{padding:24px 0;border-bottom:1px solid var(--ink-20);display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start}
+.pillar-label{font-family:var(--font-display);font-weight:500;font-size:22px;letter-spacing:-.01em;color:var(--ink)}
+.pillar-body{font-size:14px;color:var(--ink-60);line-height:1.6}
+
+/* ── LLM section ── */
+.llm-section{background:var(--ink-10);padding:48px 48px;border-top:1px solid var(--ink-20)}
+.llm-inner{max-width:1200px;margin:0 auto}
+.llm-header{display:flex;align-items:baseline;gap:20px;margin-bottom:16px;flex-wrap:wrap}
+.llm-header h2{font-family:var(--font-display);font-weight:500;font-size:26px;letter-spacing:-.01em;color:var(--ink)}
+.llm-header p{font-size:14px;color:var(--ink-60)}
+.llm-tags{display:flex;gap:8px;flex-wrap:wrap}
+.llm-tag{background:var(--paper-white);border:1px solid var(--ink-20);color:var(--ink-60);font-size:11px;font-weight:400;padding:4px 10px;border-radius:2px;font-family:var(--font-mono)}
+
+/* ── Footer ── */
+footer{background:var(--ink);padding:48px 48px 32px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-bottom:32px;border-bottom:1px solid rgba(250,250,247,.1);margin-bottom:24px}
+.footer-brand .wm{color:var(--paper);font-size:20px}
+.footer-brand .wm small{color:rgba(250,250,247,.4)}
+.footer-brand p{font-size:12px;color:rgba(250,250,247,.4);margin-top:12px;line-height:1.6}
+.footer-col h4{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(250,250,247,.4);margin-bottom:12px}
+.footer-col a{display:block;font-size:13px;color:rgba(250,250,247,.6);text-decoration:none;margin-bottom:6px;transition:color var(--t-base)}
+.footer-col a:hover{color:var(--coral)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:11px;color:rgba(250,250,247,.3);line-height:1.6;max-width:600px}
+.footer-lic{font-family:var(--font-mono);font-size:10px;color:rgba(250,250,247,.25);letter-spacing:.04em}
+
+@media(max-width:900px){
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:64px 24px 48px;gap:40px}
+  .hero-stat-col{padding-left:20px}
+  .section{padding:60px 24px}
+  .values-bar{padding:14px 24px}
+  .values-inner{gap:24px}
+  .about-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .attribution{padding:48px 24px}
+  .attr-inner{flex-direction:column}
+  .llm-section{padding:40px 24px}
+  .footer-inner{padding:0}
+  footer{padding:40px 24px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- Ribbon -->
+<div class="ribbon">
+  CPA-Validated Tax Tools &nbsp;&bull;&nbsp; Every Result Cites IRC Authority &nbsp;&bull;&nbsp;
+  <a href="https://tk.cpa" target="_blank" style="text-transform:none">tk.cpa</a>
+</div>
+
+<!-- Nav -->
+<nav>
+  <a href="/" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important;font-variant:normal">a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://tk.cpa" target="_blank">tk.cpa</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-copy">
+    <div class="tagline">Trust &nbsp;<span>•</span>&nbsp; Quality &nbsp;<span>•</span>&nbsp; Results</div>
+    <div class="eyebrow">CPA-Validated &nbsp;&bull;&nbsp; IRC-Cited &nbsp;&bull;&nbsp; Free to Use</div>
+    <h1 class="hero-title">Professional Tax Tools.<br><em>Every Result Cited.</em></h1>
+    <p class="lede">Built to the same standard as Big Four work product. Every calculation traces to a specific IRC section, Treasury regulation, or form instruction. No black boxes.</p>
+    <div class="hero-ctas">
+      <a href="#tools" class="btn-primary">Explore the Tools</a>
+      <a href="#credentials" class="btn-secondary">View Credentials</a>
+    </div>
+    <div class="hero-badges">
+      <span class="hb">IRC §§ Cited</span>
+      <span class="hb">Treas. Reg. Referenced</span>
+      <span class="hb">NY &amp; FL CPA</span>
+      <span class="hb">IRS EA #93250</span>
+      <span class="hb">MST Degree</span>
+      <span class="hb">Licensed &amp; Insured</span>
+    </div>
+  </div>
+  <div class="hero-stat-col">
+    <div class="hero-stat">
+      <div class="hs-num">4<span>+</span></div>
+      <div class="hs-label">Free CPA-validated calculators and testers, each with full IRC authority citations</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-num">50<span>+</span></div>
+      <div class="hs-label">Jurisdictions covered in the Safe Harbor Estimated Tax Calculator - federal plus all 50 states</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-num">0<span>%</span></div>
+      <div class="hs-label">Positions taken without a cited IRC section, Treasury regulation, or form instruction</div>
+    </div>
+  </div>
+</div>
+
+<!-- Values bar -->
+<div class="values-bar">
+  <div class="values-inner">
+    <span class="val">Trust</span>
+    <div class="val-dot"></div>
+    <span class="val">Quality</span>
+    <div class="val-dot"></div>
+    <span class="val">Results</span>
+  </div>
+</div>
+
+<!-- Tools -->
+<section class="section" id="tools">
+  <div class="section-label">Free Tax Tools</div>
+  <h2 class="section-title">CPA-Validated Calculators &amp; Testers</h2>
+  <p class="section-sub">Each tool is built to professional practice standards - the same standard applied at Big Four firms and multinational tax departments. No tool takes a position without a cited source.</p>
+  <hr class="rule">
+  <div class="tools-grid">
+
+    <a href="spt-calculator.html" class="tool-card">
+      <span class="tool-tag tt-resident">Residency</span>
+      <div class="tool-name">Substantial Presence Test Calculator</div>
+      <div class="tool-desc">Determine U.S. tax residency for nonresident aliens under the mechanical SPT. Manual day entry or trip-by-trip date log. Shows weighted 3-year total, days to trigger, and maximum safe days remaining.</div>
+      <div class="tool-authority">IRC Sec. 7701(b)(3) &nbsp;·&nbsp; Treas. Reg. 301.7701(b) &nbsp;·&nbsp; Form 1040-NR</div>
+      <span class="tool-link">Open Calculator</span>
+    </a>
+
+    <a href="closer-connection.html" class="tool-card">
+      <span class="tool-tag tt-resident">Residency</span>
+      <div class="tool-name">Closer Connection Exception Checker</div>
+      <div class="tool-desc">Test Form 8840 eligibility. Evaluates all 11 IRS closer connection factors with color-coded scoring and condition-by-condition analysis. Green Card disqualifier flagged automatically.</div>
+      <div class="tool-authority">IRC Sec. 7701(b)(3)(B) &nbsp;·&nbsp; Treas. Reg. 301.7701(b)-2 &nbsp;·&nbsp; Form 8840</div>
+      <span class="tool-link">Open Checker</span>
+    </a>
+
+    <a href="fbar-checker.html" class="tool-card">
+      <span class="tool-tag tt-reporting">Reporting</span>
+      <div class="tool-name">FBAR &amp; Form 8938 Threshold Checker</div>
+      <div class="tool-desc">Determine FinCEN 114 and Form 8938 filing requirements. Enter accounts individually or as aggregate totals. Covers all account types including life insurance cash value and annuity contracts.</div>
+      <div class="tool-authority">31 USC 5314 &nbsp;·&nbsp; IRC Sec. 6038D &nbsp;·&nbsp; FinCEN 114 &nbsp;·&nbsp; Form 8938</div>
+      <span class="tool-link">Open Checker</span>
+    </a>
+
+    <a href="safe-harbor.html" class="tool-card">
+      <span class="tool-tag tt-compliance">Compliance</span>
+      <div class="tool-name">Safe Harbor Estimated Tax Calculator</div>
+      <div class="tool-desc">Federal and all 50 states plus D.C. Applies the 110% rule where required. Generates quarterly payment schedule with California, Virginia, Hawaii, and Iowa special due dates handled correctly.</div>
+      <div class="tool-authority">IRC Sec. 6654 &nbsp;·&nbsp; IRS Publication 505 &nbsp;·&nbsp; All 50 States + DC</div>
+      <span class="tool-link">Open Calculator</span>
+    </a>
+
+    <a href="tax-estimator.html" class="tool-card">
+      <span class="tool-tag tt-planning">Planning</span>
+      <div class="tool-name">Tax Estimator 2026 - Personal &amp; Corporate</div>
+      <div class="tool-desc">Estimate federal and state income tax for 2026 and 2027. Personal: all filing statuses, all 50 states, bracket breakdown. Corporate: 21% federal flat rate plus state corporate rates for all 44 states with a CIT.</div>
+      <div class="tool-authority">IRS Rev. Proc. 2025-32 &nbsp;·&nbsp; IRC §1 &nbsp;·&nbsp; IRC §11 &nbsp;·&nbsp; OBBBA (P.L. 119-21)</div>
+      <span class="tool-link">Open Estimator</span>
+    </a>
+
+    <a href="act60-estimator.html" class="tool-card">
+      <span class="tool-tag tt-planning">Planning</span>
+      <div class="tool-name">Puerto Rico Act 60 Tax Benefit Estimator</div>
+      <div class="tool-desc">Estimate your tax savings under PR Act 60. Eligibility checker, income breakdown by category, before vs. after comparison, and net benefit after compliance costs. December 31, 2026 deadline for 0% rate.</div>
+      <div class="tool-authority">Act 60 (P.R. 2019) &nbsp;·&nbsp; Act 38-2026 &nbsp;·&nbsp; IRC §933 &nbsp;·&nbsp; Treas. Reg. §1.937-1</div>
+      <span class="tool-link">Open Estimator</span>
+    </a>
+
+    <a href="usvi-edc-estimator.html" class="tool-card">
+      <span class="tool-tag tt-planning">Planning</span>
+      <div class="tool-name">USVI EDC Tax Benefit Estimator</div>
+      <div class="tool-desc">Estimate tax savings under the USVI Economic Development Commission program. 90% tax credit, ~2.1% effective corporate rate. Includes EDC vs. RTPark comparison and side-by-side PR Act 60 vs. USVI analysis.</div>
+      <div class="tool-authority">IRC §934 &nbsp;·&nbsp; IRC §937 &nbsp;·&nbsp; VI Code §713 &nbsp;·&nbsp; USVIEDA</div>
+      <span class="tool-link">Open Estimator</span>
+    </a>
+
+    <a href="form-5472.html" class="tool-card">
+      <span class="tool-tag tt-reporting">Compliance</span>
+      <div class="tool-name">Form 5472 Filing Obligation Checker</div>
+      <div class="tool-desc">Determine whether your U.S. corporation or foreign-owned LLC must file Form 5472. Covers 25% foreign ownership, 100% foreign-owned disregarded entities (TD 9796), and all 11 categories of reportable transactions.</div>
+      <div class="tool-authority">IRC §6038A &nbsp;·&nbsp; IRC §6038C &nbsp;·&nbsp; TD 9796 &nbsp;·&nbsp; Form 5472</div>
+      <span class="tool-link">Open Checker</span>
+    </a>
+
+    <div class="tool-card coming">
+      <span class="tool-tag tt-reporting">Coming Soon</span>
+      <div class="tool-name">CFC / Form 5471 Obligation Checker</div>
+      <div class="tool-desc">Determine Controlled Foreign Corporation status and Form 5471 filing category (1-5). Covers US Shareholder definition and attribution rules under Subpart F.</div>
+      <div class="tool-authority">IRC §957 &nbsp;·&nbsp; IRC §951 &nbsp;·&nbsp; Form 5471</div>
+    </div>
+
+    <div class="tool-card coming">
+      <span class="tool-tag tt-planning">Coming Soon</span>
+      <div class="tool-name">PFIC Tester &amp; Regime Selector</div>
+      <div class="tool-desc">Identify Passive Foreign Investment Company status and select the optimal tax treatment regime - QEF election, mark-to-market, or excess distribution method.</div>
+      <div class="tool-authority">IRC §1291-1298 &nbsp;·&nbsp; Form 8621</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Attribution -->
+<div class="attribution">
+  <div class="attr-inner">
+    <div class="attr-text">
+      <div class="attr-label">The Source</div>
+      <div class="attr-headline">Brought to you by tk.cpa.<br>Validated by tk.cpa.</div>
+      <div class="attr-sub">tk.cpa is a boutique international tax practice founded by a Big Four-trained CPA with experience across public companies, private multinationals, and high-net-worth individuals. Every tool on this site is built and personally validated by the same practitioner who signs off on client returns.</div>
+      <div class="attr-link-row">
+        <a href="https://tk.cpa" target="_blank" class="attr-link">Visit tk.cpa &rarr;</a>
+        <a href="https://tk.cpa" target="_blank" class="attr-link-secondary">tk.cpa →</a>
+      </div>
+    </div>
+    <div class="attr-creds">
+      <div class="attr-cred-item">NY CPA #109025 &nbsp;·&nbsp; Active</div>
+      <div class="attr-cred-item">FL CPA #AC58472 &nbsp;·&nbsp; Active</div>
+      <div class="attr-cred-item">IRS EA #93250 &nbsp;·&nbsp; Active 2026</div>
+      <div class="attr-cred-item">PTIN P00646638</div>
+      <div class="attr-cred-item">MST &nbsp;·&nbsp; Master of Science in Taxation</div>
+      <div class="attr-cred-item">Big Four: EY &nbsp;·&nbsp; PwC</div>
+      <div class="attr-cred-item">AICPA &nbsp;·&nbsp; CGMA &nbsp;·&nbsp; TEI &nbsp;·&nbsp; CTP</div>
+    </div>
+  </div>
+</div>
+
+<!-- Credentials -->
+<section class="section creds-bg" id="credentials">
+  <div class="section-label">Verified Credentials</div>
+  <h2 class="section-title">Licensed, Certified &amp; Insured</h2>
+  <p class="section-sub">The practitioner behind CPA Validated holds active licenses, professional designations, and insurance across multiple jurisdictions. All credentials are verifiable through primary sources.</p>
+  <hr class="rule">
+
+  <div class="creds-grid">
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">New York CPA License</div>
+        <div class="cred-detail">License #109025 &nbsp;·&nbsp; NY State Education Dept &nbsp;·&nbsp; Licensed 2012 &nbsp;·&nbsp; Active</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">Florida CPA License</div>
+        <div class="cred-detail">License #AC58472 &nbsp;·&nbsp; FL DBPR &nbsp;·&nbsp; Licensed 2022 &nbsp;·&nbsp; Active</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">IRS Enrolled Agent</div>
+        <div class="cred-detail">EA #93250 &nbsp;·&nbsp; Enrolled 2009 &nbsp;·&nbsp; PTIN P00646638 &nbsp;·&nbsp; Active 2026</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">Master of Science in Taxation</div>
+        <div class="cred-detail">MS in Taxation &nbsp;·&nbsp; Zicklin School of Business, Baruch College (CUNY) &nbsp;·&nbsp; 2011</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">Big Four Background</div>
+        <div class="cred-detail">Ernst &amp; Young (EY) &nbsp;·&nbsp; PricewaterhouseCoopers (PwC) &nbsp;·&nbsp; ~10 years Big Four experience &nbsp;·&nbsp; Public company and multinational enterprise</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">AICPA Member</div>
+        <div class="cred-detail">American Institute of CPAs &nbsp;·&nbsp; Active membership</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">CGMA</div>
+        <div class="cred-detail">Chartered Global Management Accountant &nbsp;·&nbsp; AICPA / CIMA &nbsp;·&nbsp; Active</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">ACCA CertIFRS</div>
+        <div class="cred-detail">Certificate in International Financial Reporting Standards &nbsp;·&nbsp; ACCA</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">TEI Member</div>
+        <div class="cred-detail">Tax Executives Institute &nbsp;·&nbsp; Active membership</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">CTP - Certified Tax Professional</div>
+        <div class="cred-detail">CTP Certification &nbsp;·&nbsp; Active</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">IIA CFSA</div>
+        <div class="cred-detail">Certified Financial Services Auditor &nbsp;·&nbsp; Institute of Internal Auditors</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-bullet"></div>
+      <div class="cred-body">
+        <div class="cred-name">CPA Inc. - Licensed Firm</div>
+        <div class="cred-detail">Registered in Delaware &amp; Florida &nbsp;·&nbsp; Active status &nbsp;·&nbsp; Business Tax Receipts issued</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:16px 0;border-top:1px solid var(--ink-20);border-bottom:1px solid var(--ink-20);margin-bottom:24px">
+    <span style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--green)">&#10003; Licensed &amp; Insured</span>
+  </div>
+
+  <div class="verify-row">
+    <a href="https://www.cpa.inc/docs/" target="_blank">View all licenses, certificates, and insurance documentation &rarr;</a>
+  </div>
+</section>
+
+<!-- About -->
+<section class="section" id="about" style="background:var(--ink-10);max-width:100%;padding:80px 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 48px">
+    <div class="section-label">The Standard</div>
+    <h2 class="section-title">What CPA Validated Means</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>Every tool on this site traces every result back to primary source authority - the specific IRC section, Treasury regulation, or form instruction that justifies the output. No black boxes. No positions without citations.</p>
+        <p>Built by a practitioner with Big Four experience at EY and PwC, active CPA licenses in New York and Florida, IRS Enrolled Agent status, and a Master of Science in Taxation. <strong>Brought to you by tk.cpa. Validated by tk.cpa.</strong></p>
+      </div>
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-label">Trust</div>
+          <div class="pillar-body">Every position cites a specific IRC section or Treasury regulation by number. No fabricated citations. No guesswork.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">Quality</div>
+          <div class="pillar-body">Built to Big Four work product standards. Authority checked, math verified, edge cases tested.</div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-label">Results</div>
+          <div class="pillar-body">Actionable outputs - days to SPT trigger, whether FBAR is required, which safe harbor to use. Concrete answers before you file.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="wm">CPA Validated<small style="text-transform:none!important;font-variant:normal">a tk.cpa resource</small></div>
+        <p>Professional tax tools built and validated by a Big Four-trained, licensed CPA and Enrolled Agent. Every result cited. Every tool free.</p>
+        <p style="margin-top:8px;font-size:11px;color:rgba(250,250,247,.3);font-style:italic">Built with AI. Validated by a CPA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="spt-calculator.html">Substantial Presence Test</a>
+        <a href="closer-connection.html">Closer Connection Exception</a>
+        <a href="fbar-checker.html">FBAR &amp; Form 8938</a>
+        <a href="safe-harbor.html">Safe Harbor Calculator</a>
+        <a href="form-5472.html">Form 5472 Checker</a>
+        <a href="tax-estimator.html">Tax Estimator 2026</a>
+        <a href="act60-estimator.html">Puerto Rico Act 60</a>
+        <a href="usvi-edc-estimator.html">USVI EDC</a>
+      </div>
+      <div class="footer-col">
+        <h4>tk.cpa</h4>
+        <a href="https://tk.cpa" target="_blank">tk.cpa</a>
+        <a href="https://www.cpa.inc/docs/" target="_blank">Verify Credentials</a>
+        <a href="https://github.com/tk-cpa/cpavalidated" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>All tools are provided for informational purposes only and do not constitute legal or tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions. CPA Inc. is a licensed CPA firm registered in Delaware and Florida. Licensed and insured.</p>
+      <div class="footer-lic">NY #109025 &nbsp;·&nbsp; FL #AC58472 &nbsp;·&nbsp; EA #93250</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

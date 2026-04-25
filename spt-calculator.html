@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Substantial Presence Test Calculator | CPA Validated</title>
+<meta name="description" content="Calculate U.S. tax residency under the Substantial Presence Test. Two input methods, weighted 3-year calculation, days to trigger SPT, maximum safe days. CPA-validated. IRC Section 7701(b)(3).">
+<link rel="canonical" href="https://cpavalidated.com/spt-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --navy:#071563; --navy-100:#E2E4F0;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+::selection{background:var(--coral);color:#fff}
+a{color:var(--coral);text-decoration:none}
+a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:860px;margin:0 auto;padding:0 24px}
+.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,5vw,48px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);letter-spacing:.02em}
+.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;border-radius:2px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:860px;margin:0 auto;padding:16px 24px 0}
+.back a{font-size:12px;color:var(--ink-60);font-weight:500;letter-spacing:.02em}
+.back a:hover{color:var(--coral)}
+.container{max-width:860px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
+.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-sans)}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px 20px 22px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s;appearance:none;border-radius:0}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px;cursor:pointer}
+input[type="number"].fc{font-weight:600;color:var(--ink-80);text-align:center}
+input[type="date"].fc{cursor:pointer}
+.mode-toggle{display:flex;border:1.5px solid var(--ink-20);overflow:hidden;margin-bottom:20px}
+.mode-btn{flex:1;padding:9px 14px;border:none;background:var(--ink-10);color:var(--ink-60);font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;text-align:center;border-right:1px solid var(--ink-20)}
+.mode-btn:last-child{border-right:none}
+.mode-btn.active{background:var(--ink);color:#fff;font-weight:600}
+.mode-btn:hover:not(.active){background:var(--ink-20)}
+.ms{display:none}
+.ms.vis{display:block}
+.fd{background:var(--ink-10);border:1px solid var(--ink-20);padding:12px 16px;margin-bottom:20px;font-size:13px;color:var(--ink-60);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.fd .fi{color:var(--coral);font-size:15px;font-style:italic}
+.fd .ft{font-weight:500;color:var(--ink);font-size:13px;font-family:var(--font-mono)}
+table.dt{width:100%;border-collapse:collapse}
+table.dt th{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.04em;padding:8px 10px;background:var(--ink-10);text-align:center;border-bottom:2px solid var(--ink-20)}
+table.dt th:first-child{text-align:left}
+table.dt td{padding:10px;border-bottom:1px solid var(--ink-20);vertical-align:middle}
+table.dt tr:last-child td{border-bottom:none}
+.yl{font-size:13px;font-weight:600;color:var(--ink)}
+.ys{font-size:11px;color:var(--ink-40);font-weight:400}
+.wb{display:inline-block;background:var(--ink);color:rgba(255,255,255,.8);font-size:11px;font-weight:600;padding:2px 8px;border-radius:2px}
+table.tt{width:100%;border-collapse:collapse;font-size:13px}
+table.tt th{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.04em;padding:8px 6px;background:var(--ink-10);text-align:center;border-bottom:2px solid var(--ink-20)}
+table.tt td{padding:7px 6px;border-bottom:1px solid var(--ink-20);vertical-align:middle}
+table.tt tr:last-child td{border-bottom:none}
+table.tt input.fc{padding:6px 8px;font-size:13px;text-align:center}
+table.tt input[type="text"].fc{text-align:left;font-weight:400;color:var(--ink)}
+.cc{text-align:center;font-weight:600;font-size:13px;color:var(--ink);min-width:50px}
+.yc{text-align:center;font-size:12px;color:var(--ink-60);font-weight:500}
+.rb{background:none;border:none;color:var(--ink-40);cursor:pointer;font-size:16px;padding:4px 6px;transition:color .15s;line-height:1}
+.rb:hover{color:var(--red)}
+.atb{margin-top:12px;background:var(--paper);border:1.5px dashed var(--ink-20);color:var(--ink);font-family:var(--font-sans);font-size:13px;font-weight:500;padding:9px 18px;cursor:pointer;transition:all .15s;width:100%}
+.atb:hover{border-color:var(--coral);color:var(--coral)}
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ei{display:flex;flex-direction:column;gap:5px}
+.ei label{font-size:11.5px;font-weight:500;color:var(--ink-60);line-height:1.3}
+.ei input{width:100%;padding:8px 10px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--ink-80);text-align:center;background:var(--paper);outline:none;transition:border-color .15s;border-radius:0}
+.ei input:focus{border-color:var(--coral)}
+.rbn{padding:20px 20px 20px 24px;display:flex;align-items:center;gap:16px;margin-bottom:22px;transition:all .3s;border:1px solid var(--ink-20);border-left:4px solid var(--coral)}
+.rbn.nm{background:var(--blue-bg);border-left-color:var(--ink-80)}
+.rbn.m{background:var(--green-bg);border-left-color:var(--green)}
+.ri{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.nm .ri{background:var(--blue-b);color:var(--ink-80)}
+.m .ri{background:var(--green-b);color:var(--green)}
+.rt h3{font-family:var(--font-display);font-size:20px;font-weight:500;margin-bottom:4px;letter-spacing:-.01em}
+.nm .rt h3{color:var(--ink-80)}
+.m .rt h3{color:var(--green)}
+.rt p{font-size:13px;color:var(--ink-60)}
+.sr{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+.stb{background:var(--ink-10);padding:14px 16px;text-align:center;border:1px solid var(--ink-20)}
+.stb .sv{font-family:var(--font-display);font-size:30px;font-weight:500;color:var(--ink);line-height:1;margin-bottom:5px}
+.stb .sl{font-size:11px;font-weight:500;color:var(--ink-60);text-transform:uppercase;letter-spacing:.04em}
+.pw{margin-bottom:22px}
+.ph2{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;font-size:12px;font-weight:500;color:var(--ink-60)}
+.pt{height:8px;background:var(--ink-20);overflow:hidden}
+.pb{height:100%;transition:width .5s cubic-bezier(.4,0,.2,1),background .3s;background:var(--blue-acc)}
+.pb.met{background:var(--green)}
+.pb.dng{background:var(--amber)}
+table.bt{width:100%;border-collapse:collapse;margin-bottom:20px}
+table.bt th{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.04em;padding:8px 12px;background:var(--ink-10);text-align:right;border-bottom:2px solid var(--ink-20)}
+table.bt th:first-child{text-align:left}
+table.bt td{padding:10px 12px;border-bottom:1px solid var(--ink-20);font-size:13px;text-align:right}
+table.bt tr:last-child td{border-bottom:none}
+table.bt td:first-child{text-align:left;font-weight:500}
+table.bt .tr td{font-weight:700;color:var(--ink);background:var(--ink-10);border-top:2px solid var(--ink-20);font-size:14px}
+.ar{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.ab{padding:16px 18px;text-align:center;border:1px solid var(--ink-20)}
+.ab.trig{background:var(--amber-bg);border-color:var(--amber-b)}
+.ab.safe{background:var(--green-bg);border-color:var(--green-b)}
+.ab .bv{font-family:var(--font-display);font-size:34px;font-weight:500;margin-bottom:5px}
+.ab.trig .bv{color:var(--amber)}
+.ab.safe .bv{color:var(--green)}
+.ab .bl{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.ab .bn{font-size:11px;color:var(--ink-40)}
+.inf{background:var(--paper);border-left:3px solid var(--coral);padding:9px 13px;font-size:12px;color:var(--ink-60);line-height:1.5;margin-top:12px}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}
+.pbn:hover{background:var(--coral-600)}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:640px){.fg2,.fg3,.sr,.ar,.eg{grid-template-columns:1fr}table.tt{min-width:520px}.acct-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}}
+@media print {
+  /* ── Page setup ── */
+  @page { margin: 18mm 16mm; }
+  body { background: white !important; font-size: 11pt; }
+
+  /* ── Hide everything interactive ── */
+  .back, .mode-selector, .deadline-banner, .pbn,
+  .mode-tab, .acct-table-wrap::-webkit-scrollbar,
+  input, select, button:not(.pbn), .atb, .add-btn,
+  .mode-toggle, .state-controls { display: none !important; }
+
+  /* ── Keep header, force colors ── */
+  .ph { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 0 14px; }
+  .ph h1 { font-size: 20pt; }
+  .ph .badges { display: none; }
+  .ph-eyebrow { font-size: 8pt; }
+  .ph .sub { font-size: 9pt; }
+
+  /* ── Card headers ── */
+  .ch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* ── Hide input-only cards ── */
+  .input-card { display: none !important; }
+
+  /* ── Result hero / summary boxes ── */
+  .result-hero, .savings-hero, .sum-box, .summary-box,
+  .result-main, .rbn {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Tables ── */
+  table { width: 100% !important; font-size: 9pt; }
+  th, td { padding: 5px 7px !important; }
+  .acct-table-wrap { overflow: visible !important; }
+  table.st, table.at, table.tt { min-width: 0 !important; }
+
+  /* ── Grids: force single column on narrow items ── */
+  .rh-grid, .sh-top { grid-template-columns: 1fr 1fr 1fr !important; }
+  .fi-grid, .filing-info, .state-result-grid,
+  .costs-grid, .result-grid, .fed-grid { grid-template-columns: 1fr 1fr !important; }
+  .fg2, .fg3, .fg4 { display: none !important; }
+
+  /* ── Rate compare ── */
+  .rate-compare { grid-template-columns: 1fr auto 1fr !important; }
+  .rc-arrow { padding: 0 8px !important; }
+
+  /* ── Flags: keep but compact ── */
+  .flag { font-size: 9pt; padding: 7px 10px; margin-bottom: 6px; }
+
+  /* ── Source note / disclaimer ── */
+  .source-row, .disc { font-size: 8pt; }
+
+  /* ── Eligibility list ── */
+  .elig-item { break-inside: avoid; }
+
+  /* ── Page break hints ── */
+  .card { break-inside: avoid; margin-bottom: 10px; }
+
+  /* ── Print footer on every page ── */
+  .ph::after {
+    content: "cpavalidated.com  ·  a tk.cpa resource  ·  Built with AI. Validated by a CPA.";
+    display: block;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+
+  /* ── State table: hide filter controls, show table ── */
+  .state-table-wrap { overflow: visible !important; }
+}.pbn{display:none}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Substantial Presence Test Calculator</h1>
+  <div class="sub">IRC Section 7701(b)(3) &nbsp;&bull;&nbsp; U.S. Tax Residency Analysis</div>
+  <div class="badges"><span class="badge">IRC §7701(b)(3)</span><span class="badge">Treas. Reg. 301.7701(b)</span><span class="badge">Form 1040-NR</span><span class="badge">2019 - 2026</span></div>
+</div></div></div>
+
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+
+<div class="container">
+
+<div class="card input-card">
+  <div class="ch"><div class="sb">1</div><h2>Settings</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1">
+        <label>Test Year</label>
+        <select id="testYear" class="fc" onchange="onYearChange()">
+          <option>2019</option><option>2020</option><option>2021</option><option>2022</option>
+          <option>2023</option><option>2024</option><option value="2025" selected>2025</option><option>2026</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Input Method</label>
+        <select id="inputMethod" class="fc" onchange="switchMethod()">
+          <option value="A">Method A - Enter Total Days</option>
+          <option value="B">Method B - Enter Trip Dates</option>
+        </select>
+      </div>
+    </div>
+  </di<div class="card input-card">ass="card">
+  <div class="ch"><div class="sb">2</div><h2 id="s2title">Enter U.S. Days</h2></div>
+  <div class="cb">
+    <div class="fd"><span class="fi">f</span><span class="ft">(Current Year &times; 1) + (Prior Year &times; 1/3) + (Two Years Prior &times; 1/6) &ge; 183 weighted days</span></div>
+    <div id="mA" class="ms vis">
+      <table class="dt">
+        <thead><tr><th>Year</th><th>Weight</th><th style="width:140px">Days in U.S.</th></tr></thead>
+        <tbody id="mAbody"></tbody>
+      </table>
+      <div class="inf">Enter the total number of days physically present in the United States for each year, including days of arrival and departure.</div>
+    </div>
+    <div id="mB" class="ms">
+      <div class="acct-table-wrap">
+      <table class="tt">
+        <thead><tr>
+          <th style="text-align:left;min-width:110px">Description</th>
+          <th style="width:128px">Arrival</th>
+          <th style="width:128px">Departure</th>
+          <th style="width:58px">Days</th>
+          <th style="width:56px">Year</th>
+          <th style="width:54px">Excl.</th>
+          <th style="width:34px"></th>
+        </tr></thead>
+        <tbody id="tripBody"></tbody>
+      </table>
+      </div>
+      <button class="atb" onclick="addTrip()">+ Add Trip</button>
+      <div class="inf">Enter each trip to the U.S. Days are counted inclusive of arrival and departure. Split trips that span year-end into two entries.</div>
+    </<div class="card input-card">v>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Exclusion Adjustments (Optional - Current Year Only)</h2></div>
+  <div class="cb">
+    <div class="eg">
+      <div class="ei">
+        <label>Medical / Illness Days - IRC Sec. 7701(b)(3)(D)(ii)</label>
+        <input type="number" id="xMed" value="0" min="0" oninput="recalc()">
+      </div>
+      <div class="ei">
+        <label>Transit Days (&lt;24 hrs) - IRC Sec. 7701(b)(7)(C)</label>
+        <input type="number" id="xTrans" value="0" min="0" oninput="recalc()">
+      </div>
+      <div class="ei">
+        <label>Canada / Mexico Commuter Days - IRC Sec. 7701(b)(7)(B)</label>
+        <input type="number" id="xComm" value="0" min="0" oninput="recalc()">
+      </div>
+      <div class="ei">
+        <label>Exempt Individual Days - IRC Sec. 7701(b)(5)</label>
+        <input type="number" id="xExempt" value="0" min="0" oninput="recalc()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">4</div><h2>Result</h2></div>
+  <div class="cb">
+    <div id="rbn" class="rbn nm">
+      <div class="ri" id="ricon">&#9651;</div>
+      <div class="rt"><h3 id="rtitle">SPT Not Met - Nonresident Alien</h3><p id="rsub">Enter your U.S. presence data above to calculate.</p></div>
+    </div>
+    <div class="sr">
+      <div class="stb"><div class="sv" id="sW">0.00</div><div class="sl">Weighted Total</div></div>
+      <div class="stb"><div class="sv" id="sCur">0</div><div class="sl">Current Year Days</div></div>
+      <div class="stb"><div class="sv" id="sThr">183</div><div class="sl">Days to Threshold</div></div>
+    </div>
+    <div class="pw">
+      <div class="ph2"><span>Weighted Day Count</span><span id="plbl">0 / 183 days</span></div>
+      <div class="pt"><div class="pb" id="pbar" style="width:0%"></div></div>
+    </div>
+    <table class="bt">
+      <thead><tr><th>Year</th><th>Days in U.S.</th><th>Multiplier</th><th>Weighted Days</th></tr></thead>
+      <tbody id="btbody"></tbody>
+      <tfoot><tr class="tr"><td>Total</td><td id="bRaw">-</td><td>-</td><td id="bWt">0.00</td></tr></tfoot>
+    </table>
+    <div class="ar">
+      <div class="ab trig"><div class="bl">Days to Trigger SPT</div><div class="bv" id="dTrig">-</div><div class="bn">additional current-year days needed</div></div>
+      <div class="ab safe"><div class="bl">Maximum Safe Days</div><div class="bv" id="dSafe">-</div><div class="bn">max current-year days without triggering</div></div>
+    </div>
+    <div id="adjNote" style="display:none" class="inf">
+      <strong>Adjusted current-year days (after exclusions): <span id="adjDays">0</span></strong> - use this adjusted count if exclusions apply.
+    </div>
+    <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+    <div class="disc">This tool is for informational purposes only and does not constitute tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions. Authority: IRC Section 7701(b); Treas. Reg. Section 301.7701(b)-1 through 301.7701(b)-9. A tk.cpa resource - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
+  </div>
+</div>
+
+</div>
+<script>
+let trips=[], tid=0;
+
+function init(){buildA();addTrip();addTrip();recalc()}
+
+function onYearChange(){buildA();recalc()}
+
+function switchMethod(){
+  const m=document.getElementById('inputMethod').value;
+  document.getElementById('mA').classList.toggle('vis',m==='A');
+  document.getElementById('mB').classList.toggle('vis',m==='B');
+  document.getElementById('s2title').textContent=m==='A'?'Enter U.S. Days  (Method A)':'Enter U.S. Trips  (Method B)';
+  recalc();
+}
+
+function buildA(){
+  const yr=parseInt(document.getElementById('testYear').value);
+  const tb=document.getElementById('mAbody');
+  const vals=[
+    parseInt(tb.querySelector('#dA0')?.value)||0,
+    parseInt(tb.querySelector('#dA1')?.value)||0,
+    parseInt(tb.querySelector('#dA2')?.value)||0
+  ];
+  tb.innerHTML='';
+  [['Current Year','x 1'],[`Prior Year`,'x 1/3'],['Two Years Prior','x 1/6']].forEach(([lbl,wt],i)=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><div class="yl">${yr-i}</div><div class="ys">${lbl}</div></td>`+
+      `<td style="text-align:center"><span class="wb">${wt}</span></td>`+
+      `<td><input type="number" id="dA${i}" class="fc" value="${vals[i]}" min="0" oninput="recalc()"></td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function addTrip(){
+  const id=++tid;
+  trips.push({id});
+  renderTrips();
+}
+
+function removeTrip(id){
+  trips=trips.filter(t=>t.id!==id);
+  renderTrips();recalc();
+}
+
+function renderTrips(){
+  const tb=document.getElementById('tripBody');
+  // Save values before re-render
+  const vals={};
+  trips.forEach(t=>{
+    vals[t.id]={
+      desc:document.getElementById(`td-${t.id}`)?.value||'',
+      arr:document.getElementById(`ta-${t.id}`)?.value||'',
+      dep:document.getElementById(`td2-${t.id}`)?.value||'',
+      excl:document.getElementById(`te-${t.id}`)?.value||''
+    };
+  });
+  tb.innerHTML='';
+  trips.forEach(t=>{
+    const v=vals[t.id]||{};
+    const tr=document.createElement('tr');
+    tr.id=`trip-${t.id}`;
+    tr.innerHTML=
+      `<td><input type="text" class="fc" id="td-${t.id}" placeholder="Description" value="${v.desc||''}" oninput="recalc()"></td>`+
+      `<td><input type="date" class="fc" id="ta-${t.id}" value="${v.arr||''}" oninput="rtCalc(${t.id})"></td>`+
+      `<td><input type="date" class="fc" id="td2-${t.id}" value="${v.dep||''}" oninput="rtCalc(${t.id})"></td>`+
+      `<td class="cc" id="tdays-${t.id}">-</td>`+
+      `<td class="yc" id="tyr-${t.id}">-</td>`+
+      `<td><input type="number" class="fc" id="te-${t.id}" value="${v.excl||''}" min="0" placeholder="0" oninput="recalc()" style="width:50px;padding:6px 4px;font-size:12px;text-align:center;font-weight:500"></td>`+
+      `<td><button class="rb" onclick="removeTrip(${t.id})" title="Remove">&#215;</button></td>`;
+    tb.appendChild(tr);
+  });
+  recalc();
+}
+
+function rtCalc(id){
+  const a=document.getElementById(`ta-${id}`)?.value;
+  const d=document.getElementById(`td2-${id}`)?.value;
+  const de=document.getElementById(`tdays-${id}`);
+  const ye=document.getElementById(`tyr-${id}`);
+  if(a&&d){
+    const d1=new Date(a+'T00:00:00'),d2=new Date(d+'T00:00:00');
+    const diff=Math.round((d2-d1)/86400000)+1;
+    if(de)de.textContent=diff>0?diff:'-';
+    if(ye)ye.textContent=d1.getFullYear();
+  } else {
+    if(de)de.textContent='-';
+    if(ye)ye.textContent='-';
+  }
+  recalc();
+}
+
+function recalc(){
+  const yr=parseInt(document.getElementById('testYear').value);
+  const method=document.getElementById('inputMethod').value;
+  let d=[0,0,0];
+
+  if(method==='A'){
+    for(let i=0;i<3;i++){
+      const el=document.getElementById(`dA${i}`);
+      d[i]=el?(parseInt(el.value)||0):0;
+    }
+  } else {
+    const td={};
+    trips.forEach(t=>{
+      const a=document.getElementById(`ta-${t.id}`)?.value;
+      const dp=document.getElementById(`td2-${t.id}`)?.value;
+      const ex=parseInt(document.getElementById(`te-${t.id}`)?.value)||0;
+      if(!a||!dp)return;
+      const d1=new Date(a+'T00:00:00'),d2=new Date(dp+'T00:00:00');
+      const total=Math.round((d2-d1)/86400000)+1;
+      if(total<1)return;
+      const net=Math.max(0,total-ex);
+      const ty=d1.getFullYear();
+      td[ty]=(td[ty]||0)+net;
+      const de=document.getElementById(`tdays-${t.id}`);
+      const ye=document.getElementById(`tyr-${t.id}`);
+      if(de)de.textContent=total;
+      if(ye)ye.textContent=ty;
+    });
+    d[0]=td[yr]||0;d[1]=td[yr-1]||0;d[2]=td[yr-2]||0;
+  }
+
+  const xTotal=['xMed','xTrans','xComm','xExempt'].reduce((s,id)=>s+(parseInt(document.getElementById(id).value)||0),0);
+
+  const w=[d[0]*1, d[1]/3, d[2]/6];
+  const wT=w[0]+w[1]+w[2];
+  const cond1=d[0]>=31, cond2=wT>=183, met=cond1&&cond2;
+
+  const prW=w[1]+w[2];
+  const minT=Math.max(31,Math.ceil(183-prW));
+  const dTrig=Math.max(0,minT-d[0]);
+  const dSafe=Math.max(0,minT-1-d[0]);
+
+  // Banner
+  const bn=document.getElementById('rbn');
+  const ic=document.getElementById('ricon');
+  const ti=document.getElementById('rtitle');
+  const su=document.getElementById('rsub');
+  if(met){
+    bn.className='rbn m';ic.textContent='✓';
+    ti.textContent='SPT Met - U.S. Resident Alien';
+    su.textContent=`Both conditions satisfied for ${yr}. Condition 1: ${d[0]} days (>= 31). Condition 2: ${wT.toFixed(2)} weighted days (>= 183).`;
+  } else {
+    bn.className='rbn nm';ic.textContent='◯';
+    ti.textContent='SPT Not Met - Nonresident Alien';
+    if(!cond1&&!cond2) su.textContent=`Both conditions unmet. Need >= 31 current-year days and >= 183 weighted days. Current: ${d[0]} days, ${wT.toFixed(2)} weighted.`;
+    else if(!cond1) su.textContent=`Condition 1 not met: ${d[0]} current-year days (need >= 31).`;
+    else su.textContent=`Condition 2 not met: ${wT.toFixed(2)} weighted days (need >= 183). ${dTrig} more current-year days would trigger SPT.`;
+  }
+
+  document.getElementById('sW').textContent=wT.toFixed(2);
+  document.getElementById('sCur').textContent=d[0];
+  document.getElementById('sThr').textContent=met?'183+':Math.max(0,183-wT).toFixed(2);
+
+  const pct=Math.min(100,(wT/183)*100);
+  const pb=document.getElementById('pbar');
+  pb.style.width=pct+'%';
+  pb.className='pb'+(met?' met':(pct>=85?' dng':''));
+  document.getElementById('plbl').textContent=`${wT.toFixed(2)} / 183 days`;
+
+  // Breakdown
+  const bb=document.getElementById('btbody');
+  bb.innerHTML='';
+  [[yr,d[0],'&times; 1',w[0].toFixed(2)],[yr-1,d[1],'&times; 1/3',w[1].toFixed(2)],[yr-2,d[2],'&times; 1/6',w[2].toFixed(2)]].forEach(([y,r,m,wt])=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${y}</td><td>${r}</td><td>${m}</td><td>${wt}</td>`;
+    bb.appendChild(tr);
+  });
+  document.getElementById('bRaw').textContent=d[0]+d[1]+d[2];
+  document.getElementById('bWt').textContent=wT.toFixed(2);
+
+  document.getElementById('dTrig').textContent=met?'Met':dTrig;
+  document.getElementById('dSafe').textContent=met?'0':dSafe;
+
+  const adj=d[0]-xTotal;
+  if(xTotal>0){
+    document.getElementById('adjNote').style.display='block';
+    document.getElementById('adjDays').textContent=adj;
+  } else {
+    document.getElementById('adjNote').style.display='none';
+  }
+}
+
+document.getElementById('testYear').addEventListener('change',onYearChange);
+init();
+</script>
+</body>
+</html>
