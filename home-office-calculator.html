@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Office Deduction Calculator 2026 | CPA Validated</title>
+<meta name="description" content="Calculate home office deduction using simplified method ($5/sq ft) or actual expense method. Gross income limitation, Schedule A interaction, depreciation, carryforward. Self-employed only post-TCJA. CPA-validated. IRC Section 280A.">
+<link rel="canonical" href="https://cpavalidated.com/home-office-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:900px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,4vw,42px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}.back a:hover{color:var(--coral)}
+.wrap{max-width:900px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;border-radius:0;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.method-toggle{display:flex;gap:0;border:1.5px solid var(--ink-20);overflow:hidden;margin-bottom:16px}
+.mt-btn{flex:1;padding:11px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;border:none;background:var(--white);color:var(--ink-60);font-family:var(--font-sans);border-right:1px solid var(--ink-20);transition:all .15s}
+.mt-btn:last-child{border-right:none}
+.mt-btn.active{background:var(--ink);color:#fff}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.cg-box{border:1px solid var(--ink-20);padding:16px}
+.cg-box.winner{border:2px solid var(--coral);background:var(--coral-100)}
+.cg-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60);margin-bottom:8px;font-family:var(--font-mono)}
+.cg-amount{font-family:var(--font-display);font-size:32px;font-weight:500;margin-bottom:6px}
+.cg-amount.coral{color:var(--coral)}
+.cg-desc{font-size:12px;color:var(--ink-60);line-height:1.5}
+.winner-tag{font-size:9px;font-weight:700;background:var(--coral);color:#fff;padding:2px 8px;display:inline-block;margin-top:6px}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px}
+.sum-row:last-child{border-bottom:none;font-weight:700}
+.sum-lbl{color:rgba(255,255,255,.55)}.sum-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px}
+.sum-val.green{color:#6de88e}.sum-val.amber{color:#f5c264}.sum-val.red{color:#ff8f8a}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.5}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.pct-display{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--coral);text-align:center;margin:8px 0}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;margin-top:6px}.pbn:hover{background:var(--coral-600)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.hidden{display:none}
+@media(max-width:600px){.fg2,.fg3,.compare-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Home Office Deduction Calculator</h1>
+  <div class="sub">Simplified Method vs. Actual Expense Method &nbsp;&bull;&nbsp; Gross Income Limit &nbsp;&bull;&nbsp; Schedule A Interaction &nbsp;&bull;&nbsp; 2026</div>
+  <div class="badges">
+    <span class="badge">IRC §280A</span>
+    <span class="badge">Rev. Proc. 2013-13</span>
+    <span class="badge">Schedule C / F</span>
+    <span class="badge">TCJA (employees ineligible)</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Basic Information</h2></div>
+  <div class="cb">
+    <div class="flag red"><div class="fi">✗</div><div class="ft"><strong>Employees cannot deduct home office expenses after TCJA (2018-2025, now permanent under OBBBA).</strong> The home office deduction for W-2 employees was eliminated by the Tax Cuts and Jobs Act as a miscellaneous itemized deduction. Only self-employed individuals, sole proprietors (Schedule C), farmers (Schedule F), and partners with unreimbursed partnership expenses may claim this deduction. If you are a W-2 employee, this calculator does not apply to you. IRC §67(g).</div></div>
+    <div class="fg3">
+      <div class="f1"><label>Home Office Square Footage</label>
+        <input type="number" class="fc" id="officeSqft" value="200" min="1" oninput="calc()">
+        <div class="hint">Must be used exclusively and regularly for business. IRC §280A(c)(1).</div>
+      </div>
+      <div class="f1"><label>Total Home Square Footage</label>
+        <input type="number" class="fc" id="homeSqft" value="2000" min="1" oninput="calc()">
+        <div class="hint">Total area of your home (all floors)</div>
+      </div>
+      <div class="f1"><label>Gross Business Income ($)</label>
+        <input type="number" class="fc" id="grossIncome" value="80000" oninput="calc()">
+        <div class="hint">Schedule C or F net income before home office deduction</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Prior Year Carryforward ($)</label>
+        <input type="number" class="fc" id="carryforward" value="0" oninput="calc()">
+        <div class="hint">Disallowed deductions carried from prior years (actual method only)</div>
+      </div>
+      <div class="f1"><label>Home Ownership</label>
+        <select class="fc" id="ownership" onchange="calc()">
+          <option value="own">Own home (mortgage)</option>
+          <option value="rent">Rent</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="actualCard">
+  <div class="ch"><div class="sb">2</div><h2>Actual Expenses (for Actual Method)</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Annual Mortgage Interest ($)</label>
+        <input type="number" class="fc" id="mortgageInt" value="18000" oninput="calc()">
+        <div class="hint">From Form 1098. Or annual rent if renting.</div>
+      </div>
+      <div class="f1"><label>Real Estate Taxes ($)</label>
+        <input type="number" class="fc" id="reTax" value="6000" oninput="calc()">
+        <div class="hint">Annual property taxes paid</div>
+      </div>
+      <div class="f1"><label>Home Insurance ($)</label>
+        <input type="number" class="fc" id="insurance" value="2400" oninput="calc()">
+        <div class="hint">Annual homeowner's or renter's insurance</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Utilities ($)</label>
+        <input type="number" class="fc" id="utilities" value="3600" oninput="calc()">
+        <div class="hint">Electric, gas, water, internet (annual)</div>
+      </div>
+      <div class="f1"><label>Home Repairs & Maintenance ($)</label>
+        <input type="number" class="fc" id="repairs" value="1200" oninput="calc()">
+        <div class="hint">General home maintenance (indirect). Direct office repairs = 100%.</div>
+      </div>
+      <div class="f1"><label>Home FMV (for Depreciation)</label>
+        <input type="number" class="fc" id="homeFMV" value="500000" oninput="calc()">
+        <div class="hint">Fair market value (or cost basis if lower). Land value excluded. IRC §168.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Direct Office Expenses ($)</label>
+        <input type="number" class="fc" id="directExp" value="500" oninput="calc()">
+        <div class="hint">Expenses solely for the office space: paint, shelving, office cleaning. 100% deductible.</div>
+      </div>
+      <div class="f1"><label>Land Value ($)</label>
+        <input type="number" class="fc" id="landValue" value="75000" oninput="calc()">
+        <div class="hint">Excluded from depreciation. Estimate: typically 10-30% of property value.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Results</h2></div>
+  <div class="cb" id="resultBody">
+    <div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function fmt(n){
+  if(!n||n<=0) return '$0';
+  return '$'+Math.round(n).toLocaleString('en-US');
+}
+function pct(n){return (n*100).toFixed(1)+'%';}
+function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
+
+function calc(){
+  const officeSqft = parseFloat(document.getElementById('officeSqft').value)||0;
+  const homeSqft   = parseFloat(document.getElementById('homeSqft').value)||1;
+  const grossIncome= parseFloat(document.getElementById('grossIncome').value)||0;
+  const carryforward = parseFloat(document.getElementById('carryforward').value)||0;
+  const ownership  = document.getElementById('ownership').value;
+  const mortgageInt= parseFloat(document.getElementById('mortgageInt').value)||0;
+  const reTax      = parseFloat(document.getElementById('reTax').value)||0;
+  const insurance  = parseFloat(document.getElementById('insurance').value)||0;
+  const utilities  = parseFloat(document.getElementById('utilities').value)||0;
+  const repairs    = parseFloat(document.getElementById('repairs').value)||0;
+  const homeFMV    = parseFloat(document.getElementById('homeFMV').value)||0;
+  const landValue  = parseFloat(document.getElementById('landValue').value)||0;
+  const directExp  = parseFloat(document.getElementById('directExp').value)||0;
+
+  const busRatio = Math.min(officeSqft / homeSqft, 1);
+  const sqftValid = officeSqft <= homeSqft;
+
+  // ── SIMPLIFIED METHOD (Rev. Proc. 2013-13) ──
+  const simplifiedRate = 5; // $5 per sq ft
+  const simplifiedMax  = 300; // max 300 sq ft
+  const simplifiedSqft = Math.min(officeSqft, simplifiedMax);
+  const simplifiedRaw  = simplifiedSqft * simplifiedRate;
+  const simplifiedDeduction = Math.min(simplifiedRaw, grossIncome); // can't exceed gross income
+  const simplifiedLimited   = simplifiedRaw > grossIncome;
+
+  // ── ACTUAL METHOD ──
+  // Indirect expenses × business ratio
+  const depreciableBasis = Math.max(0, homeFMV - landValue);
+  const annualDeprec = depreciableBasis > 0 ? (depreciableBasis * 0.02564 * busRatio) : 0; // 39yr non-res for home office (per IRS)
+  // Note: Actually residential rental property is 27.5yr but home office uses 39yr per IRS Publication 587
+  
+  const indirectExpenses = (ownership === 'rent' ? mortgageInt : mortgageInt) + reTax + insurance + utilities + repairs;
+  const indirectAllocated = indirectExpenses * busRatio;
+  const totalBeforeLimit = directExp + indirectAllocated + annualDeprec + carryforward;
+  
+  // Gross income limitation: IRC §280A(c)(5)
+  // Order: direct expenses → allocated indirect expenses (mortgage int, RE taxes first) → other indirect → depreciation
+  const actualDeduction = Math.min(totalBeforeLimit, grossIncome);
+  const actualLimited   = totalBeforeLimit > grossIncome;
+  const actualCarryforward = actualLimited ? totalBeforeLimit - grossIncome : 0;
+
+  // Schedule A interaction
+  // Mortgage interest and property taxes that go to home office shift from Schedule A to Schedule C
+  // The PERSONAL portion remains on Schedule A (subject to SALT cap etc.)
+  const schedAMortgagePersonal = mortgageInt * (1 - busRatio);
+  const schedAPropertyPersonal = reTax * (1 - busRatio);
+  const schedAMortgageBusiness = mortgageInt * busRatio; // goes to Schedule C instead
+  const schedAPropertyBusiness = reTax * busRatio;      // goes to Schedule C instead
+
+  const betterMethod = actualDeduction >= simplifiedDeduction ? 'actual' : 'simplified';
+
+  const rb = document.getElementById('resultBody');
+  let h = '';
+
+  // Side-by-side comparison
+  h += `<div class="compare-grid">
+    <div class="cg-box ${betterMethod==='simplified'?'winner':''}">
+      <div class="cg-label">Simplified Method &nbsp;·&nbsp; Rev. Proc. 2013-13</div>
+      <div class="cg-amount ${betterMethod==='simplified'?'coral':''}">${fmt(simplifiedDeduction)}</div>
+      <div class="cg-desc">$5 × ${simplifiedSqft} sq ft${simplifiedSqft < officeSqft?' (capped at 300 sq ft max)':''}${simplifiedLimited?' - limited by gross income':''}<br>No depreciation recapture on sale. No carryforward allowed.</div>
+      ${betterMethod==='simplified'?'<div class="winner-tag">HIGHER DEDUCTION</div>':''}
+    </div>
+    <div class="cg-box ${betterMethod==='actual'?'winner':''}">
+      <div class="cg-label">Actual Expense Method &nbsp;·&nbsp; IRC §280A</div>
+      <div class="cg-amount ${betterMethod==='actual'?'coral':''}">${fmt(actualDeduction)}</div>
+      <div class="cg-desc">Business ratio: ${pct(busRatio)} (${officeSqft}/${homeSqft} sq ft)${actualLimited?`<br>Carryforward to 2027: ${fmt(actualCarryforward)}`:''}${annualDeprec>0?`<br>Includes depreciation: ${fmt(annualDeprec)}`:''}. Depreciation subject to recapture on home sale.</div>
+      ${betterMethod==='actual'?'<div class="winner-tag">HIGHER DEDUCTION</div>':''}
+    </div>
+  </div>`;
+
+  // Actual method detail
+  h += `<div class="sum-box"><div class="sum-title">Actual Method Breakdown</div>
+    <div class="sum-row"><span class="sum-lbl">Business use ratio</span><span class="sum-val">${pct(busRatio)} (${officeSqft} ÷ ${homeSqft} sq ft)</span></div>
+    <div class="sum-row"><span class="sum-lbl">Direct expenses (100% deductible)</span><span class="sum-val green">${fmt(directExp)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Mortgage interest / rent (${pct(busRatio)} of ${fmt(mortgageInt)})</span><span class="sum-val">${fmt(mortgageInt * busRatio)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Real estate taxes (${pct(busRatio)} of ${fmt(reTax)})</span><span class="sum-val">${fmt(reTax * busRatio)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Insurance (${pct(busRatio)} of ${fmt(insurance)})</span><span class="sum-val">${fmt(insurance * busRatio)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Utilities (${pct(busRatio)} of ${fmt(utilities)})</span><span class="sum-val">${fmt(utilities * busRatio)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Repairs & maintenance (${pct(busRatio)} of ${fmt(repairs)})</span><span class="sum-val">${fmt(repairs * busRatio)}</span></div>
+    ${annualDeprec>0?`<div class="sum-row"><span class="sum-lbl">Depreciation (${fmt(depreciableBasis)} basis × 2.564% × ${pct(busRatio)})</span><span class="sum-val">${fmt(annualDeprec)}</span></div>`:''}
+    ${carryforward>0?`<div class="sum-row"><span class="sum-lbl">Prior year carryforward</span><span class="sum-val">${fmt(carryforward)}</span></div>`:''}
+    <div class="sum-row"><span class="sum-lbl">Total before gross income limit</span><span class="sum-val">${fmt(totalBeforeLimit)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Gross income limitation (IRC §280A(c)(5))</span><span class="sum-val ${actualLimited?'amber':'green'}">${actualLimited?'Applied: '+fmt(grossIncome):'Not triggered'}</span></div>
+    <div class="sum-row"><span class="sum-lbl"><strong>Actual method deduction</strong></span><span class="sum-val">${fmt(actualDeduction)}</span></div>
+    ${actualCarryforward>0?`<div class="sum-row"><span class="sum-lbl">Carryforward to next year</span><span class="sum-val amber">${fmt(actualCarryforward)}</span></div>`:''}
+  </div>`;
+
+  // Schedule A interaction
+  if(ownership === 'own' && (mortgageInt > 0 || reTax > 0)){
+    h += `<div class="sum-box"><div class="sum-title">Schedule A Interaction (Itemized Deductions)</div>
+      <div class="sum-row"><span class="sum-lbl">Mortgage interest - business portion (→ Schedule C)</span><span class="sum-val amber">${fmt(schedAMortgageBusiness)}</span></div>
+      <div class="sum-row"><span class="sum-lbl">Mortgage interest - personal portion (→ Schedule A)</span><span class="sum-val green">${fmt(schedAMortgagePersonal)}</span></div>
+      <div class="sum-row"><span class="sum-lbl">Property taxes - business portion (→ Schedule C)</span><span class="sum-val amber">${fmt(schedAPropertyBusiness)}</span></div>
+      <div class="sum-row"><span class="sum-lbl">Property taxes - personal portion (→ Schedule A, subject to $10K SALT cap)</span><span class="sum-val green">${fmt(schedAPropertyPersonal)}</span></div>
+    </div>`;
+    h += flag('blue','ℹ',`<strong>Schedule A shift.</strong> The business portion of mortgage interest (${fmt(schedAMortgageBusiness)}) and property taxes (${fmt(schedAPropertyBusiness)}) moves from Schedule A to Schedule C. If you do not itemize deductions, the home office deduction still captures this value on Schedule C. If you do itemize, your Schedule A itemized deductions decrease by ${fmt(schedAMortgageBusiness + schedAPropertyBusiness)} - but the Schedule C deduction replaces it with the added benefit that it also reduces self-employment tax.`);
+  }
+
+  // SE tax benefit
+  const seRate = 0.9235 * 0.153; // SE tax effective rate
+  const betterDed = Math.max(simplifiedDeduction, actualDeduction);
+  const seTaxSaving = betterDed * seRate * 0.5; // approximately
+  h += flag('green','✓',`<strong>Self-employment tax savings.</strong> Unlike Schedule A deductions which only reduce income tax, the home office deduction on Schedule C reduces both income tax AND self-employment tax. Approximate SE tax savings: ${fmt(seTaxSaving)} (in addition to income tax savings).`);
+
+  if(annualDeprec > 0 && betterMethod === 'actual'){
+    h += flag('amber','!',`<strong>Depreciation recapture on sale.</strong> The depreciation deductions taken for the home office (${fmt(annualDeprec)}/year) must be recaptured as ordinary income (Section 1250 unrecaptured gain, taxed at up to 25%) when you sell the home, even if you use the Section 121 principal residence exclusion. The simplified method avoids this issue. Keep records of all depreciation taken.`);
+  }
+
+  if(!sqftValid){
+    h += flag('red','✗','<strong>Office square footage cannot exceed total home square footage.</strong> Verify your inputs.');
+  }
+
+  h += `<div class="src">Authority: IRC §280A (home office deduction); IRC §280A(c)(1) (exclusive and regular use requirement); IRC §280A(c)(5) (gross income limitation and carryforward); IRC §67(g) (employee miscellaneous deductions eliminated, TCJA, made permanent by OBBBA); Rev. Proc. 2013-13 (simplified method, $5/sq ft, 300 sq ft max); IRC §168 (depreciation of home office, 39-year non-residential using IRS Pub. 587 methodology); IRS Publication 587 (Business Use of Your Home, 2025 edition).</div>`;
+  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += `<div class="disc">Estimate only. Actual deduction depends on specific facts. Depreciation recapture rules require careful tracking. Consult a qualified tax professional. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>`;
+
+  rb.innerHTML = h;
+}
+calc();
+</script>
+</body>
+</html>
