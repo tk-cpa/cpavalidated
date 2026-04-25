@@ -222,35 +222,9 @@ input[type="range"].slider::-moz-range-thumb{width:20px;height:20px;border-radiu
   /* ── State table: hide filter controls, show table ── */
   .state-table-wrap { overflow: visible !important; }
 }.pbn{display:none}.ph,.sum-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
-.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
-.nav-links a:hover{color:var(--coral)}
-.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
-.nav-cta:hover{background:var(--coral-600)}
-@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
-</nav>
-
 
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
@@ -260,6 +234,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 </div></div>
 </div>
 
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 
 <div class="container">
 
@@ -613,7 +588,7 @@ function recalc() {
     rd.textContent = 'The 25% foreign ownership threshold is met. No reportable transactions were identified in the categories above, but verify whether any other transactions occurred with foreign related parties. If none, Form 5472 may not be required - but document this conclusion.';
   } else if (obligation === 'not_applicable') {
     rm.className = 'result-main na';
-    ri.textContent = '-';
+    ri.textContent = ' - ';
     rs.textContent = 'Form 5472 Not Applicable';
     rd.textContent = 'Form 5472 applies to U.S. corporations, foreign corporations with a U.S. trade or business, and foreign-owned domestic disregarded entities. It does not apply to partnerships or individuals directly. Different reporting requirements may apply (e.g., Form 8865 for partnerships with foreign partners).';
   } else {
