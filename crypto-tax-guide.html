@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto & NFT Tax Guide (2026) | CPA Validated</title>
+<meta name="description" content="How cryptocurrency and NFTs are taxed in 2026. Capital gains, mining income, staking rewards (Rev. Rul. 2023-14), DeFi, NFTs as collectibles (IRS Notice 2023-27), Form 8949 reporting, FBAR for foreign crypto exchanges, and 2026 broker reporting rules. CPA-validated. IRC Section 1221.">
+<link rel="canonical" href="https://cpavalidated.com/crypto-tax-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.event-grid{display:flex;flex-direction:column;gap:0;border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.ev{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:0;border-bottom:1px solid var(--ink-20);min-height:52px}
+.ev:last-child{border-bottom:none}
+.ev-type{background:var(--ink-10);padding:10px 14px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;border-right:1px solid var(--ink-20);min-width:130px;color:var(--ink-60)}
+.ev-desc{padding:10px 14px;font-size:13px;color:var(--ink)}
+.ev-tax{padding:10px 14px;font-size:12px;font-weight:700;font-family:var(--font-mono);text-align:right;min-width:110px}
+.ev-tax.taxable{color:var(--red)}
+.ev-tax.income{color:var(--amber)}
+.ev-tax.nonevent{color:var(--green)}
+.rate-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.rate-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.rate-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.rate-table tr:last-child td{border-bottom:none}
+.rate-table tr:nth-child(even) td{background:var(--ink-10)}
+.rate-table td:first-child{font-weight:600;color:var(--ink)}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.ev{grid-template-columns:1fr;min-height:auto}.ev-type{border-right:none;border-bottom:1px solid var(--ink-20)}.ev-tax{text-align:left}.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Crypto & NFT Tax Guide (2026)</h1>
+  <div class="sub">Capital Gains &nbsp;&bull;&nbsp; Mining &nbsp;&bull;&nbsp; Staking &nbsp;&bull;&nbsp; NFTs &nbsp;&bull;&nbsp; DeFi &nbsp;&bull;&nbsp; 2026 Broker Reporting Rules</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRS Notice 2014-21</span>
+    <span class="ph-meta-item">Rev. Rul. 2023-14</span>
+    <span class="ph-meta-item">IRC §1221 · §1222</span>
+    <span class="ph-meta-item">Form 8949</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The IRS treats cryptocurrency as property, not currency. Every sale, exchange, or disposal of crypto is a taxable event that must be reported on Form 8949. This has been the law since IRS Notice 2014-21 and has not changed. What has changed significantly in 2026 is reporting: new broker reporting rules now require exchanges to issue 1099-DAs, making crypto transactions visible to the IRS in the same way stock sales have been for decades.</p>
+
+<div class="callout">
+  <div class="callout-label">Fundamental Rule - Crypto is Property</div>
+  <p><strong>IRS Notice 2014-21 established that cryptocurrency is property for federal tax purposes.</strong> This means: every time you sell, exchange, spend, or otherwise dispose of cryptocurrency, you have a taxable event. You must calculate your gain or loss on each transaction. Crypto-to-crypto trades are taxable (trading Bitcoin for Ethereum is a sale of Bitcoin). Buying crypto with dollars and holding it is not a taxable event. Paying for goods or services with crypto is a taxable event at the fair market value on the date of payment.</p>
+</div>
+
+<h2>What Is and Isn't a Taxable Event</h2>
+
+<div class="event-grid">
+  <div class="ev">
+    <div class="ev-type">Selling crypto for USD</div>
+    <div class="ev-desc">Selling any cryptocurrency for fiat currency. Gain or loss = proceeds minus adjusted basis.</div>
+    <div class="ev-tax taxable">Taxable - Cap Gain/Loss</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Crypto-to-crypto trade</div>
+    <div class="ev-desc">Trading Bitcoin for Ethereum, or any crypto for any other crypto. The exchanged coin is treated as sold at FMV on the date of trade.</div>
+    <div class="ev-tax taxable">Taxable - Cap Gain/Loss</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Spending crypto on goods/services</div>
+    <div class="ev-desc">Using crypto to pay for anything. Treated as a sale at FMV on the date of payment.</div>
+    <div class="ev-tax taxable">Taxable - Cap Gain/Loss</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Mining rewards received</div>
+    <div class="ev-desc">New coins received as mining rewards are ordinary income at FMV on the date received. The FMV becomes your basis for future gain/loss calculations.</div>
+    <div class="ev-tax income">Ordinary Income</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Staking rewards received</div>
+    <div class="ev-desc">Rev. Rul. 2023-14 confirmed: staking rewards are ordinary income when received, valued at FMV on date of receipt. Jarrett v. United States did not create an exception.</div>
+    <div class="ev-tax income">Ordinary Income</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Airdrops received</div>
+    <div class="ev-desc">Cryptocurrency received through an airdrop is ordinary income at FMV when you have dominion and control over the tokens. Rev. Rul. 2019-24.</div>
+    <div class="ev-tax income">Ordinary Income</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Hard fork creating new coins</div>
+    <div class="ev-desc">New cryptocurrency received in a hard fork is ordinary income at FMV when received. If you don't receive new coins (soft fork), no taxable event. Rev. Rul. 2019-24.</div>
+    <div class="ev-tax income">Ordinary Income</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Buying crypto with USD</div>
+    <div class="ev-desc">Purchasing cryptocurrency with dollars. No taxable event - establishes your cost basis.</div>
+    <div class="ev-tax nonevent">Not Taxable</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Transferring between your own wallets</div>
+    <div class="ev-desc">Moving crypto between wallets you own. No taxable event - maintain records of original basis.</div>
+    <div class="ev-tax nonevent">Not Taxable</div>
+  </div>
+  <div class="ev">
+    <div class="ev-type">Gifting crypto</div>
+    <div class="ev-desc">Gifting crypto is not a taxable event for the donor (no gain/loss recognized at time of gift). Recipient takes donor's basis. Annual gift tax exclusion: $19,000 (2026).</div>
+    <div class="ev-tax nonevent">Not Taxable (donor)</div>
+  </div>
+</div>
+
+<h2>Capital Gains Rates on Crypto (2026)</h2>
+
+<table class="rate-table">
+  <thead><tr><th>Holding Period</th><th>Rate</th><th>Single Filer Income</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Short-term (&lt;1 year)</td><td>Up to 37%</td><td>Taxed as ordinary income</td><td>Same brackets as wages. No preferential rate. Most active traders pay this rate on most trades.</td></tr>
+    <tr><td>Long-term (1+ year)</td><td>0% / 15% / 20%</td><td>0%: up to $47,025 · 15%: up to $518,900 · 20%: above $518,900 (single, 2026 approx.)</td><td>Hold for at least 366 days to qualify. Significantly lower rates - the primary planning tool available.</td></tr>
+    <tr><td>NIIT surcharge</td><td>+3.8%</td><td>AGI above $200,000 (single) / $250,000 (MFJ)</td><td>Net Investment Income Tax applies to crypto capital gains. IRC §1411. Effective top rate on long-term gains: 23.8%.</td></tr>
+    <tr><td>NFTs as collectibles</td><td>Up to 28%</td><td>If IRS Notice 2023-27 applies</td><td>Certain NFTs may be taxed as collectibles at the 28% maximum rate. See NFT section below.</td></tr>
+  </tbody>
+</table>
+
+<h2>Cost Basis Methods</h2>
+
+<p>Your gain or loss equals proceeds minus adjusted basis. Basis is what you paid for the crypto (plus any income recognized on receipt, for mined/staked coins). When you sell part of a position, the cost basis method determines which coins are considered sold.</p>
+
+<table class="key-table">
+  <thead><tr><th>Method</th><th>How It Works</th><th>Best When</th></tr></thead>
+  <tbody>
+    <tr><td>FIFO (First In, First Out)</td><td>Oldest coins sold first. IRS default if no method elected.</td><td>You've held crypto a long time and want automatic long-term treatment on earliest purchases.</td></tr>
+    <tr><td>Specific Identification</td><td>You designate which specific coins are sold at the time of sale. Must document contemporaneously.</td><td>You want to maximize losses for tax-loss harvesting, or selectively sell high-basis lots.</td></tr>
+    <tr><td>HIFO (Highest In, First Out)</td><td>Highest-cost coins sold first, minimizing current gain. IRS has not explicitly approved this method for crypto - use specific identification instead to achieve the same result.</td><td>Minimizing taxable gain when you have various lots at different prices.</td></tr>
+  </tbody>
+</table>
+
+<div class="note-box"><strong>Record-keeping is critical.</strong> You must maintain records of: date of acquisition, cost basis for each lot, date of sale or disposition, proceeds received, and any income recognized on receipt (mining/staking). Many taxpayers use crypto tax software (Koinly, CoinTracker, TaxBit) to aggregate this data across multiple wallets and exchanges. The IRS can audit crypto transactions going back 6 years for substantial understatements, and indefinitely for fraud.</div>
+
+<h2>The Wash Sale Rule - Does NOT Apply to Crypto (Yet)</h2>
+
+<p>The wash sale rule (IRC §1091) disallows a loss if you sell a security at a loss and repurchase the same or substantially identical security within 30 days before or after the sale. The wash sale rule currently applies only to "securities" - and cryptocurrency is not a security for this purpose. This means you can sell Bitcoin at a loss, immediately repurchase Bitcoin, and still claim the loss. This is one of the few remaining tax advantages of crypto's property classification. Proposed legislation has repeatedly attempted to extend wash sale rules to crypto - monitor for changes. IRC §1091.</p>
+
+<div class="green-box"><strong>Tax-loss harvesting with crypto is a legitimate and powerful strategy</strong> precisely because the wash sale rule does not apply. Selling depreciated positions to realize losses, then immediately repurchasing, locks in a tax loss without losing your market position. The losses can offset capital gains dollar-for-dollar, and up to $3,000 of net capital losses can offset ordinary income annually. IRC §1211(b).</div>
+
+<h2>Mining Income</h2>
+
+<p>Cryptocurrency received as mining rewards is ordinary income at FMV on the date the coins are received. If you mine as a business (with the profit motive and regularity of a trade or business), mining income is subject to self-employment tax (IRC §1401) in addition to income tax. Mining expenses (electricity, hardware, hosting fees) are deductible against mining income for business miners. The coins' FMV when received becomes your cost basis for future capital gain/loss calculations when you sell them.</p>
+
+<h2>Staking Rewards - Rev. Rul. 2023-14</h2>
+
+<p>Revenue Ruling 2023-14 resolved the treatment of staking rewards: they are ordinary income in the year received, valued at FMV on the date of receipt. The Jarrett v. United States case (M.D. Tenn. 2022) briefly suggested staking rewards might be treated as newly created property (not taxable until sold), but the IRS mooted that case by issuing a refund and then issued Rev. Rul. 2023-14 to establish its position. Staking rewards are taxable income when received, not when sold. The FMV on receipt becomes your basis.</p>
+
+<h2>NFTs - Tax Treatment in 2026</h2>
+
+<p>NFTs are taxed as property under the same framework as other crypto. Buying and selling NFTs generates capital gains and losses reportable on Form 8949. The significant open question is whether certain NFTs qualify as "collectibles" under IRC §408(m), which would subject long-term gains to a maximum 28% rate rather than the standard 20% long-term capital gains rate.</p>
+
+<p>IRS Notice 2023-27 announced that the IRS is studying the issue and will issue guidance on when NFTs are collectibles. Until final guidance is issued, the IRS indicated it will apply a "look-through" analysis - if an NFT's underlying asset would be a collectible (art, gems, antiques, certain coins), the NFT may also be treated as a collectible. Traders who hold NFTs as inventory (dealers) are subject to ordinary income rates regardless.</p>
+
+<div class="note-box"><strong>NFT creators:</strong> Income from selling an NFT you created is ordinary income - it is the sale of your own work product, not a capital asset you held for investment. Gas fees paid to mint NFTs are generally deductible as a cost of sale. Secondary royalties received after the initial sale are ordinary income in the year received.</div>
+
+<h2>DeFi - Decentralized Finance</h2>
+
+<p>DeFi transactions present the most complex crypto tax situations. The IRS has not issued comprehensive DeFi guidance, but general property tax principles apply:</p>
+
+<p><strong>Liquidity pool deposits:</strong> Adding tokens to a liquidity pool in exchange for LP tokens may be a taxable exchange if the LP tokens are treated as different property from the deposited tokens. Most practitioners treat this as a taxable event, recognizing gain or loss on the deposited tokens. IRS has not issued definitive guidance.</p>
+
+<p><strong>Yield farming / liquidity mining rewards:</strong> Tokens received as rewards for providing liquidity are ordinary income at FMV when received, consistent with the treatment of staking rewards under Rev. Rul. 2023-14.</p>
+
+<p><strong>Wrapped tokens:</strong> Wrapping ETH into wETH may or may not be a taxable event depending on whether the wrapped token is treated as the same asset. No definitive IRS guidance exists.</p>
+
+<p><strong>Lending protocols:</strong> Depositing crypto as collateral for a loan is not a taxable event. The loan proceeds are not income. However, if the collateral is liquidated to repay the loan, that liquidation is a taxable sale of the collateral.</p>
+
+<h2>2026 Broker Reporting - Form 1099-DA</h2>
+
+<p>Beginning with 2025 transactions (reported in early 2026), centralized cryptocurrency exchanges that qualify as "brokers" under the Infrastructure Investment and Jobs Act (P.L. 117-58, 2021) are required to issue Form 1099-DA to customers and the IRS. This is the crypto equivalent of a 1099-B for stock sales. 1099-DA reports gross proceeds from crypto disposals.</p>
+
+<p>This significantly changes the enforcement landscape. The IRS now has third-party information returns for centralized exchange activity, making under-reporting of crypto gains much more detectable. Decentralized exchanges (DEX) face delayed and contested implementation of the broker reporting rules - final regulations are being litigated and revised as of 2026.</p>
+
+<h2>FBAR and Form 8938 for Foreign Crypto Exchanges</h2>
+
+<p>Cryptocurrency held on foreign exchanges may trigger FBAR and Form 8938 reporting obligations, but the rules are not fully settled. FinCEN proposed rulemaking in 2020 would require FBAR reporting for foreign crypto accounts, but final rules have not been issued as of 2026. Some practitioners recommend conservative reporting - treating foreign exchange accounts similarly to foreign bank accounts when the aggregate value exceeds $10,000. Form 8938 filing thresholds for specified foreign financial assets may apply if the IRS ultimately treats crypto on foreign exchanges as reportable. Monitor for developments and consult a qualified international tax CPA.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools & Articles</div>
+  <div class="related-links">
+    <a href="fbar-checker.html" class="related-link">FBAR & Form 8938 Checker<span>Foreign account thresholds · 31 USC 5314</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Capital gains rates · Federal + state</span></a>
+    <a href="fbar-penalties.html" class="related-link">FBAR Penalties Explained<span>Willful vs. non-willful · 31 USC §5321</span></a>
+    <a href="no-income-tax-countries.html" class="related-link">Countries with No Income Tax<span>Zero-tax jurisdictions · IRC §61</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRS Notice 2014-21 (cryptocurrency as property); Rev. Rul. 2019-24 (hard forks and airdrops); Rev. Rul. 2023-14 (staking rewards as ordinary income); IRS Notice 2023-27 (NFTs and collectibles - pending guidance); IRC §1221 (capital asset definition); IRC §1222 (capital gain/loss); IRC §1091 (wash sale rule - not applicable to crypto); IRC §408(m) (collectibles); IRC §1401 (self-employment tax on mining); IRC §1411 (Net Investment Income Tax); P.L. 117-58 §80603 (Infrastructure Act broker reporting); Form 1099-DA (broker reporting - effective 2025 transactions); Form 8949 (sales and dispositions of capital assets); Jarrett v. United States, No. 3:21-cv-00419 (M.D. Tenn. 2022).</div>
+<div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Cryptocurrency tax law is evolving rapidly. Consult a qualified tax professional for your specific situation. A tk.cpa resource - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
+
+</div>
+</body>
+</html>
