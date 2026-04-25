@@ -41,9 +41,35 @@
 .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
 @media(max-width:600px){.timeline,.related-links{grid-template-columns:1fr}}
 @media print{body{background:white}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}.ci-num,.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
+.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
+.nav-cta:hover{background:var(--coral-600)}
+@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
 </style>
 </head>
 <body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>Pre-Immigration Tax Planning Checklist</h1>
@@ -54,7 +80,6 @@
     <span class="ph-meta-item">IRC §1291-1298</span>
   </div>
 </div></div>
-<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="article">
 
 <p class="lead">The day you become a US tax resident, the clock starts. Assets that could have been restructured, elections that could have been made, and income that could have been recognized at foreign rates - all of these opportunities close the moment US residency begins. Pre-immigration tax planning is not optional for high-net-worth individuals. It is essential.</p>
@@ -90,7 +115,7 @@
     <div class="ci-body">
       <span class="ci-urgency urgency-critical">Critical - Do Before Entry</span>
       <div class="ci-title">Restructure Foreign Business Entities</div>
-      <div class="ci-desc">Foreign corporations owned by incoming US persons may become Controlled Foreign Corporations (CFCs) subject to Subpart F income, NCTI - Net CFC Tested Income, the post-OBBBA renaming of GILTI (IRC §951A) - and annual Form 5471 reporting. Before immigration: evaluate whether the foreign entity should be restructured, sold, or reorganized. Consider whether a check-the-box election (treating the foreign entity as a disregarded entity or partnership) would be advantageous. Timing matters - certain reorganizations must occur before the taxpayer becomes a US person.</div>
+      <div class="ci-desc">Foreign corporations owned by incoming US persons may become Controlled Foreign Corporations (CFCs) subject to Subpart F income, GILTI (IRC §951A), and annual Form 5471 reporting. Before immigration: evaluate whether the foreign entity should be restructured, sold, or reorganized. Consider whether a check-the-box election (treating the foreign entity as a disregarded entity or partnership) would be advantageous. Timing matters - certain reorganizations must occur before the taxpayer becomes a US person.</div>
       <div class="ci-auth">IRC §951; IRC §951A; IRC §957; Form 5471; Treas. Reg. §301.7701-3</div>
     </div>
   </div>
@@ -199,8 +224,8 @@
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §7701(b) (US resident definition); IRC §1291-1298 (PFIC); IRC §951; IRC §951A (NCTI, formerly GILTI); IRC §957 (CFC); IRC §679 (foreign trusts); IRC §6048; Form 3520; Form 3520-A; IRC §6038; Form 5471; 31 USC §5314; IRC §6038D; IRC §877A (exit tax); Treas. Reg. §301.7701-3 (check-the-box); Treas. Reg. §1.6012-1(b)(2) (dual-status); IRS Publication 519 (US Tax Guide for Aliens); OBBBA P.L. 119-21 (NCTI / FDDEI rebrand).</div>
-<div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Pre-immigration tax planning is highly fact-specific and requires analysis of your personal circumstances by a qualified international tax attorney and CPA. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
+<div class="source-row">Authority: IRC §7701(b) (US resident definition); IRC §1291-1298 (PFIC); IRC §951; IRC §951A (GILTI); IRC §957 (CFC); IRC §679 (foreign trusts); IRC §6048; Form 3520; Form 3520-A; IRC §6038; Form 5471; 31 USC §5314; IRC §6038D; IRC §877A (exit tax); Treas. Reg. §301.7701-3 (check-the-box); Treas. Reg. §1.6012-1(b)(2) (dual-status); IRS Publication 519 (US Tax Guide for Aliens).</div>
+<div class="disc">A pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
 
 </div>
 </body>
