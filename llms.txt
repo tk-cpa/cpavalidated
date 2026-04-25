@@ -146,10 +146,25 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - Authority: IRC §1411; Treas. Reg. §1.1411-1; Form 8960
 - Purpose: 3.8% surcharge on investment income above $200K/$250K. Real estate professional exception. Material participation. Crypto NIIT.
 
-### Bonus Depreciation Phase-Down Guide (2026)
+### Bonus Depreciation Guide (2026)
 - URL: https://cpavalidated.com/bonus-depreciation-guide.html
-- Authority: IRC §168(k); IRC §179; OBBBA (P.L. 119-21)
-- Purpose: 40% in 2026, 20% in 2027, 0% in 2028+. What qualifies. Section 179 comparison. Election-out mechanics.
+- Authority: IRC §168(k); IRC §168(n); IRC §179; IRC §163(j); IRC §199A; Treas. Reg. §1.168(k)-2; OBBBA (P.L. 119-21)
+- Purpose: 100% bonus depreciation permanently restored under OBBBA for property acquired AND placed in service after 1/19/2025. Property under written binding contract before 1/20/2025 stays on TCJA phase-down (40% in 2025, 20% in 2026, 0% in 2027). Section 168(n) qualified production property (new under OBBBA, construction post-1/19/2025 to pre-1/1/2029, placed in service pre-1/1/2031). Section 179 expanded to $2.5M / $4M phaseout. Section 163(j) EBITDA permanent. State conformity (CA decoupled, NY decoupled).
+
+### Meals &amp; Entertainment Deduction Guide (2026)
+- URL: https://cpavalidated.com/meals-and-entertainment-guide.html
+- Authority: IRC §274; IRC §274(o); IRC §274(n)(1); IRC §274(e); Treas. Reg. §1.274-11; Treas. Reg. §1.274-12; Notice 2018-76; Notice 2021-25; T.D. 9925; OBBBA (P.L. 119-21)
+- Purpose: 50% standard meal rule (§274(n)(1)). 0% entertainment disallowance (TCJA, permanent). NEW §274(o) effective 1/1/2026 disallowing 100% of convenience-of-employer meals (§119) and employer-operated eating facility expenses (§132(e)(2)) - OBBBA retained the sunset, did NOT delay or repeal. OBBBA added narrow exceptions: restaurants feeding own staff, fishing/fish-processing vessels under §274(n)(2)(C). Six 100% exceptions under §274(e). Documents expired §274(n)(2)(D) restaurant 100% (2021-2022, Notice 2021-25). Substantiation under §274(d). Chart-of-accounts recommendations.
+
+### Charitable Contribution Deduction Guide (2026)
+- URL: https://cpavalidated.com/charitable-deduction-guide.html
+- Authority: IRC §170; IRC §170(b)(1)(I) (new under OBBBA); IRC §170(b)(2)(A) (amended under OBBBA); IRC §170(p) (new under OBBBA); IRC §170(d)(1)(C); IRC §408(d)(8); OBBBA (P.L. 119-21)
+- Purpose: OBBBA changes effective 1/1/2026. New 0.5% AGI floor for individual itemizers. New 1% taxable income floor for corporations. 60% AGI cash limit to public charities made permanent. 35% benefit cap on itemized deductions for top-bracket (37%) taxpayers. New $1,000 single / $2,000 joint above-the-line deduction for non-itemizers (DAFs and private non-operating foundations excluded). Pre-2026 carryforwards NOT subject to floor. Ordering rules under §170(d)(1)(C). AGI percentage limit table by donee/property type. Bunching strategy worked example. QCDs (up to $108K 2026 indexed) bypass the 0.5% floor.
+
+### IRA &amp; Retirement Plan Contribution Limits (2026)
+- URL: https://cpavalidated.com/ira-basics-guide.html
+- Authority: IRS Notice 2025-67; IRC §219; IRC §401(k); IRC §403(b); IRC §457(b); IRC §408 (IRA); IRC §408A (Roth IRA); IRC §408(p) (SIMPLE); IRC §415(b), §415(c); IRC §414(v) (catch-up); IRC §414(v)(7) (mandatory Roth catch-up, SECURE 2.0); IRC §223 (HSA); IRC §408(d)(8) (QCD); SECURE 2.0 Act of 2022; Treasury final regulations on SECURE 2.0 catch-up rules (issued September 16, 2025)
+- Purpose: 2026 limits per IRS Notice 2025-67. 401(k)/403(b)/457(b) elective deferral $24,500. Standard catch-up age 50+ $8,000 (total $32,500). Super catch-up ages 60-63 $11,250 (total $35,750, REPLACES standard catch-up). IRA $7,500. IRA catch-up $1,100 (total $8,600). SIMPLE $17,000/$18,100. SEP up to $72,000 §415(c). HSA self-only $4,400, family $8,750, 55+ catch-up $1,000. §415(b) DB plan $290,000. Mandatory Roth catch-up effective 2026 for participants whose prior-year FICA wages exceeded $150K from sponsoring employer. IRA deductibility phase-outs (single covered $81-91K, joint covered $129-149K). Roth phase-outs (single $153-168K, MFJ $242-252K). Backdoor Roth pro-rata warning (Form 8606). RMD age 73 (75 in 2033). QCD (up to $108K 2026, indexed) bypasses OBBBA 0.5% AGI floor.
 
 ### US Expat Tax Filing Guide (2026)
 - URL: https://cpavalidated.com/us-expat-tax-guide.html
