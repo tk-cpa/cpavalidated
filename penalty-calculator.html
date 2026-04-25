@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRS Penalty & Interest Calculator 2026 | CPA Validated</title>
+<meta name="description" content="Calculate IRS failure-to-file penalty, failure-to-pay penalty, accuracy-related penalty, and underpayment interest. CPA-validated. IRC Sections 6651, 6654, 6601.">
+<link rel="canonical" href="https://cpavalidated.com/penalty-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:860px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,4vw,42px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:860px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.wrap{max-width:860px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;border-radius:0;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.result-hero{background:var(--ink);padding:20px;margin-bottom:14px}
+.rh-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.1)}
+.rh-item{padding:14px;background:rgba(255,255,255,.05);text-align:center}
+.rh-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.4);margin-bottom:6px}
+.rh-val{font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff}
+.rh-val.coral{color:var(--coral)}.rh-val.red{color:#ff8f8a}.rh-val.amber{color:#f5c264}.rh-val.green{color:#6de88e}
+.rh-sub{font-size:10px;color:rgba(255,255,255,.3);margin-top:3px}
+.pen-breakdown{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.pb-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px}
+.pb-item{display:flex;justify-content:space-between;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.pb-item:last-child{border-bottom:none;padding-top:14px}
+.pb-left{flex:1}
+.pb-name{font-size:13px;color:#fff;font-weight:600;margin-bottom:3px}
+.pb-detail{font-size:11.5px;color:rgba(255,255,255,.45);line-height:1.5}
+.pb-amount{font-family:var(--font-display);font-size:18px;font-weight:500;flex-shrink:0;margin-left:16px}
+.pb-amount.zero{color:rgba(255,255,255,.25)}.pb-amount.amber{color:#f5c264}.pb-amount.red{color:#ff8f8a}.pb-amount.total{color:var(--coral);font-size:22px}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.5}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.rate-strip{display:flex;gap:0;border:1px solid var(--ink-20);margin-bottom:14px;overflow:hidden}
+.rs-box{flex:1;padding:12px 14px;border-right:1px solid var(--ink-20);text-align:center}
+.rs-box:last-child{border-right:none}
+.rs-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60);margin-bottom:5px}
+.rs-val{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--ink)}
+.rs-sub{font-size:11px;color:var(--ink-60);margin-top:3px}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;margin-top:6px}.pbn:hover{background:var(--coral-600)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.fg2,.fg3,.rh-grid{grid-template-columns:1fr 1fr}.rate-strip{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>IRS Penalty & Interest Calculator</h1>
+  <div class="sub">Failure-to-File &nbsp;&bull;&nbsp; Failure-to-Pay &nbsp;&bull;&nbsp; Accuracy Penalty &nbsp;&bull;&nbsp; Underpayment Interest &nbsp;&bull;&nbsp; 2026</div>
+  <div class="badges">
+    <span class="badge">IRC §6651 (FTF/FTP)</span>
+    <span class="badge">IRC §6654 (Underpayment)</span>
+    <span class="badge">IRC §6601 (Interest)</span>
+    <span class="badge">IRC §6662 (Accuracy)</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Tax & Payment Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Tax Year</label>
+        <select class="fc" id="taxYear" onchange="calc()">
+          <option value="2025" selected>2025 (filed 2026)</option>
+          <option value="2024">2024 (filed 2025)</option>
+          <option value="2023">2023 (filed 2024)</option>
+        </select>
+      </div>
+      <div class="f1"><label>Return Type</label>
+        <select class="fc" id="returnType" onchange="calc()">
+          <option value="1040">Form 1040 (Individual)</option>
+          <option value="1120s">Form 1120-S / 1065 (Pass-through)</option>
+          <option value="1120">Form 1120 (C-Corp)</option>
+        </select>
+      </div>
+      <div class="f1"><label>Total Tax Owed ($)</label>
+        <input type="number" class="fc" id="taxOwed" value="25000" min="0" oninput="calc()">
+        <div class="hint">Tax on return before withholding/payments</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Withholding & Estimated Payments ($)</label>
+        <input type="number" class="fc" id="payments" value="10000" min="0" oninput="calc()">
+        <div class="hint">Total pre-payments made before filing</div>
+      </div>
+      <div class="f1"><label>Original Due Date</label>
+        <input type="date" class="fc" id="dueDate" value="2026-04-15" oninput="calc()">
+      </div>
+      <div class="f1"><label>Date Return Filed (or Today)</label>
+        <input type="date" class="fc" id="filedDate" oninput="calc()">
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Was an Extension Filed?</label>
+        <select class="fc" id="extension" onchange="calc()">
+          <option value="no">No extension filed</option>
+          <option value="yes">Yes - timely extension filed</option>
+        </select>
+        <div class="hint">Timely extension eliminates failure-to-file penalty</div>
+      </div>
+      <div class="f1"><label>Additional Tax After Audit / CP2000 ($)</label>
+        <input type="number" class="fc" id="auditTax" value="0" min="0" oninput="calc()">
+        <div class="hint">Accuracy-related penalty applies to any additional tax</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Current IRS Rates (2026)</h2></div>
+  <div class="cb">
+    <div class="rate-strip">
+      <div class="rs-box"><div class="rs-label">FTF Penalty Rate</div><div class="rs-val">5%</div><div class="rs-sub">Per month, max 25% - IRC §6651(a)(1)</div></div>
+      <div class="rs-box"><div class="rs-label">FTP Penalty Rate</div><div class="rs-val">0.5%</div><div class="rs-sub">Per month, max 25% - IRC §6651(a)(2)</div></div>
+      <div class="rs-box"><div class="rs-label">Underpayment Interest</div><div class="rs-val">8%</div><div class="rs-sub">Federal short-term rate + 3% - IRC §6601</div></div>
+      <div class="rs-box"><div class="rs-label">Accuracy Penalty</div><div class="rs-val">20%</div><div class="rs-sub">Of underpayment - IRC §6662(a)</div></div>
+    </div>
+    <div style="font-size:12px;color:var(--ink-60);padding:10px;background:var(--ink-10);border-left:2px solid var(--ink-20);line-height:1.6">
+      IRS underpayment interest rate = Federal short-term rate + 3 percentage points. Set quarterly by IRS Notice. Current rate used: <strong>8% (Q2 2026)</strong>. Verify current quarter rate at <a href="https://www.irs.gov/newsroom/interest-rates-remain-the-same-for-the-second-quarter-of-2026" target="_blank">IRS.gov</a> as rates change quarterly.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Penalty & Interest Analysis</h2></div>
+  <div class="cb" id="resultBody">
+    <div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above to calculate.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// Set today's date as default
+document.getElementById('filedDate').value = new Date().toISOString().split('T')[0];
+
+function fmt(n){
+  if(n<=0) return '$0';
+  return '$'+Math.round(n).toLocaleString('en-US');
+}
+function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
+
+function daysBetween(d1, d2){
+  return Math.max(0, Math.round((new Date(d2)-new Date(d1))/(1000*60*60*24)));
+}
+function monthsBetween(d1, d2){
+  // IRS counts each month or fraction thereof
+  const days = daysBetween(d1, d2);
+  return Math.ceil(days / 30);
+}
+
+function calc(){
+  const taxOwed = parseFloat(document.getElementById('taxOwed').value)||0;
+  const payments = parseFloat(document.getElementById('payments').value)||0;
+  const dueDate = document.getElementById('dueDate').value;
+  const filedDate = document.getElementById('filedDate').value;
+  const extFiled = document.getElementById('extension').value === 'yes';
+  const auditTax = parseFloat(document.getElementById('auditTax').value)||0;
+  const returnType = document.getElementById('returnType').value;
+
+  if(!dueDate || !filedDate){
+    document.getElementById('resultBody').innerHTML = '<div style="text-align:center;color:var(--ink-60);padding:20px">Enter all dates to calculate.</div>';
+    return;
+  }
+
+  // Determine extension date
+  let extensionDate = dueDate;
+  if(extFiled){
+    const due = new Date(dueDate);
+    if(returnType === '1120s'){
+      due.setMonth(due.getMonth() + 6);
+    } else {
+      due.setMonth(due.getMonth() + 6);
+    }
+    extensionDate = due.toISOString().split('T')[0];
+  }
+
+  const unpaidTax = Math.max(0, taxOwed - payments);
+  const filed = filedDate > extensionDate ? filedDate : (filedDate > dueDate ? filedDate : dueDate);
+
+  // ── FAILURE TO FILE PENALTY (IRC §6651(a)(1)) ──
+  // 5% per month or fraction, max 25%
+  // Applies to UNPAID TAX, runs from original due date to filing date
+  // Eliminated if timely extension filed AND filing occurs before extended due date
+  let ftfMonths = 0;
+  let ftfPenalty = 0;
+  const effectiveFTFStart = dueDate;
+  const effectiveFTFEnd = filedDate > dueDate ? filedDate : dueDate;
+
+  if(!extFiled || filedDate > extensionDate){
+    const startDate = extFiled ? extensionDate : dueDate;
+    ftfMonths = Math.min(Math.ceil(daysBetween(startDate, filedDate > startDate ? filedDate : startDate) / 30), 5);
+    ftfPenalty = Math.min(unpaidTax * 0.05 * ftfMonths, unpaidTax * 0.25);
+  }
+
+  // ── FAILURE TO PAY PENALTY (IRC §6651(a)(2)) ──
+  // 0.5% per month, max 25%
+  // Starts on original due date, runs until tax is paid (we assume paid on filing date)
+  // Reduced to 0.25% per month during installment agreement
+  const ftpMonths = Math.min(Math.ceil(daysBetween(dueDate, filedDate > dueDate ? filedDate : dueDate) / 30), 50);
+  const ftpPenalty = Math.min(unpaidTax * 0.005 * ftpMonths, unpaidTax * 0.25);
+
+  // ── CONCURRENT FTF/FTP OFFSET ──
+  // When both apply, FTF is reduced by FTP amount for same month (IRC §6651(c)(1))
+  const ftfAdjusted = Math.max(0, ftfPenalty - ftpPenalty);
+  const totalFTF = ftfAdjusted;
+
+  // ── UNDERPAYMENT INTEREST (IRC §6601) ──
+  // 8% annual (approximate 2026 rate) on unpaid balance
+  // Compounds daily from original due date to payment date
+  const days = daysBetween(dueDate, filedDate > dueDate ? filedDate : dueDate);
+  const dailyRate = 0.08 / 365;
+  const interest = unpaidTax * (Math.pow(1 + dailyRate, days) - 1);
+
+  // ── ACCURACY PENALTY (IRC §6662(a)) ──
+  // 20% of underpayment attributable to substantial understatement or negligence
+  // Substantial understatement: understated tax > greater of 10% of correct tax or $5,000
+  const accuracyPenalty = auditTax > 0 ? auditTax * 0.20 : 0;
+  const grossValuationMisstatement = auditTax > 0 && auditTax > taxOwed * 0.25 ? auditTax * 0.20 : 0; // 40% for gross misstatement
+
+  const totalPenalties = totalFTF + ftpPenalty + accuracyPenalty;
+  const totalDue = unpaidTax + totalPenalties + interest;
+
+  const rb = document.getElementById('resultBody');
+  let h = '';
+
+  // Hero
+  h += `<div class="result-hero"><div class="rh-grid">
+    <div class="rh-item"><div class="rh-label">Unpaid Tax</div><div class="rh-val">${fmt(unpaidTax)}</div><div class="rh-sub">Before penalties</div></div>
+    <div class="rh-item"><div class="rh-label">Total Penalties</div><div class="rh-val red">${fmt(totalPenalties)}</div><div class="rh-sub">All penalties combined</div></div>
+    <div class="rh-item"><div class="rh-label">Interest</div><div class="rh-val amber">${fmt(interest)}</div><div class="rh-sub">${days} days @ 8%</div></div>
+    <div class="rh-item"><div class="rh-label">Total Due IRS</div><div class="rh-val coral">${fmt(totalDue)}</div><div class="rh-sub">Tax + penalties + interest</div></div>
+  </div></div>`;
+
+  // Breakdown
+  h += `<div class="pen-breakdown"><div class="pb-title">Penalty Breakdown</div>
+    <div class="pb-item">
+      <div class="pb-left">
+        <div class="pb-name">Failure-to-File Penalty (IRC §6651(a)(1))</div>
+        <div class="pb-detail">${extFiled && filedDate <= extensionDate ? 'Eliminated - timely extension filed and return filed by extended due date' : `5% × ${fmt(unpaidTax)} × ${ftfMonths} month(s) = ${fmt(ftfPenalty)}${ftfPenalty !== totalFTF?' - offset by FTP penalty = '+fmt(totalFTF):''}`}</div>
+      </div>
+      <div class="pb-amount ${totalFTF===0?'zero':'red'}">${fmt(totalFTF)}</div>
+    </div>
+    <div class="pb-item">
+      <div class="pb-left">
+        <div class="pb-name">Failure-to-Pay Penalty (IRC §6651(a)(2))</div>
+        <div class="pb-detail">${unpaidTax===0?'No unpaid tax - no FTP penalty':`0.5% × ${fmt(unpaidTax)} × ${ftpMonths} month(s). Runs from ${dueDate} until tax paid.`}</div>
+      </div>
+      <div class="pb-amount ${ftpPenalty===0?'zero':'amber'}">${fmt(ftpPenalty)}</div>
+    </div>
+    ${auditTax>0?`<div class="pb-item">
+      <div class="pb-left">
+        <div class="pb-name">Accuracy-Related Penalty (IRC §6662(a))</div>
+        <div class="pb-detail">20% × ${fmt(auditTax)} additional tax. Applies to substantial understatement (&gt;10% of correct tax or $5,000) or negligence/disregard of rules.</div>
+      </div>
+      <div class="pb-amount red">${fmt(accuracyPenalty)}</div>
+    </div>`:''}
+    <div class="pb-item">
+      <div class="pb-left">
+        <div class="pb-name">Underpayment Interest (IRC §6601)</div>
+        <div class="pb-detail">8% annual rate (Q2 2026), compounded daily. ${days} days on ${fmt(unpaidTax)}. Verify current rate - changes quarterly.</div>
+      </div>
+      <div class="pb-amount amber">${fmt(interest)}</div>
+    </div>
+    <div class="pb-item" style="border-top:1px solid rgba(255,255,255,.15);margin-top:4px">
+      <div class="pb-left"><div class="pb-name" style="font-size:15px">TOTAL DUE</div><div class="pb-detail">Unpaid tax ${fmt(unpaidTax)} + penalties ${fmt(totalPenalties)} + interest ${fmt(interest)}</div></div>
+      <div class="pb-amount total">${fmt(totalDue)}</div>
+    </div>
+  </div>`;
+
+  // Key flags
+  if(unpaidTax === 0){
+    h += flag('green','✓','<strong>No unpaid tax.</strong> Failure-to-pay penalties and interest accrue only on unpaid tax. If tax is fully paid through withholding and estimated payments, the only remaining issue is the failure-to-file penalty if the return was late without an extension.');
+  }
+  if(!extFiled && filedDate > dueDate){
+    h += flag('red','✗',`<strong>No extension filed.</strong> Filing a timely Form 4868 by April 15 would have eliminated the failure-to-file penalty entirely. The FTF penalty (5%/month, max 25%) is much larger than the FTP penalty (0.5%/month). Even with unpaid tax, always file or extend on time. IRC §6651(a)(1).`);
+  }
+  if(ftfPenalty > 0 || ftpPenalty > 0){
+    h += flag('blue','ℹ','<strong>Reasonable cause exception.</strong> Penalties may be abated if the taxpayer can demonstrate reasonable cause and the absence of willful neglect. IRC §6651(a). First-time penalty abatement (FTA) is also available administratively if the taxpayer has a clean compliance history for the prior 3 years. Request abatement in writing to the IRS Service Center. This calculator does not determine eligibility for abatement.');
+  }
+  if(auditTax > taxOwed * 0.25){
+    h += flag('red','✗','<strong>Potential 40% gross valuation misstatement penalty.</strong> If the additional tax after audit exceeds 25% of correct tax, the accuracy-related penalty may be increased to 40% (gross valuation misstatement) under IRC §6662(h). Consult a tax professional immediately.');
+  }
+
+  h += `<div class="src">Authority: IRC §6651(a)(1) (failure-to-file, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay, 0.5%/month max 25%); IRC §6651(c)(1) (FTF reduced by FTP when both apply); IRC §6601 (underpayment interest, fed short-term rate +3); IRC §6662(a) (accuracy-related penalty, 20%); IRC §6662(h) (40% gross valuation misstatement); IRS Notice 2025-89 (Q2 2026 interest rate 8% - verify current quarter). Interest rate changes quarterly per IRC §6621.</div>`;
+  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += `<div class="disc">Estimate only. Interest rates change quarterly. Actual IRS amounts may differ based on specific facts, payment history, and IRS computation methods. Does not determine eligibility for penalty abatement. Consult a qualified tax professional. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. &mdash; <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>`;
+
+  rb.innerHTML = h;
+}
+
+calc();
+</script>
+</body>
+</html>
