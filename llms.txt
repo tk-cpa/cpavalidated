@@ -207,6 +207,16 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - Authority: IRC §6081(a); Form 4868; Treas. Reg. §1.6081-4; 59 jurisdictions
 - Purpose: Form 1040 extension rules. Expat 2-month auto extension, Form 2350, FBAR auto-extension, military/combat zone. 9 no-PIT states identified.
 
+### IRS Online Accounts Guide
+- URL: https://cpavalidated.com/irs-accounts-guide.html
+- Authority: IRS.gov; ID.me; Form 2848 (Power of Attorney); Form 8821 (Tax Information Authorization); IRS Pub. 5367 (IP PIN); IRS Newsroom IR-2026-21
+- Purpose: The three IRS online account types - Individual Online Account (sa.www4.irs.gov/ola), Business Tax Account (sa.www4.irs.gov/bola), and Tax Pro Account (sa.www4.irs.gov/taxpro). Direct sign-in URLs, what each does, who can register, ID.me identity verification, common error codes (EC 6000, 6001, 6101), e-Services, IRIS, EFTPS, Login.gov differences. Practical recommendations for individuals, businesses, and practitioners.
+
+### IRS Payments Guide
+- URL: https://cpavalidated.com/irs-payments-guide.html
+- Authority: irs.gov/payments; IRS Direct Pay; EFTPS.gov; IRS Same-Day Wire (with verified ABA 091036164 and beneficiary format from the IRS Same-Day Taxpayer Worksheet PDF); Foreign Electronic Payments; Form 1040-V (2025); Form 1040-ES (2026); IRS Pub. 4990 (Tax Type list); IRC §6151, §6611, §6621, §6651
+- Purpose: All federal tax payment methods compared. IRS Direct Pay (free, individuals), EFTPS (free, individuals and businesses), same-day wire with full instructions including verified ABA 091036164, IRS SINGLE PAYOR TAX WIRES, 333 W. Pershing Rd Kansas City MO 64108, 5pm ET cutoff, full Tax Type Code table for common forms (1040, 1120, 941, 940, 1042, 2290), foreign wire for international taxpayers, pay by check (Form 1040-V) with how-to write the check correctly, debit/credit card, electronic funds withdrawal, pay by cash, online payment agreement (installment plans), and penalty / interest framework for late payments.
+
 ## Contact and Consultations
 Website: https://tk.cpa
 Book a Consultation: https://tk.cpa/contacts
