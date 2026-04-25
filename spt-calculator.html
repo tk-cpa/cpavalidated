@@ -127,7 +127,64 @@ table.bt .tr td{font-weight:700;color:var(--ink);background:var(--ink-10);border
 .pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}
 .pbn:hover{background:var(--coral-600)}
 .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
-@media(max-width:640px){.fg2,.fg3,.sr,.ar,.eg{grid-template-columns:1fr}table.tt{min-width:520px}.acct-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}}
+@media(max-width:640px){
+  /* Grids collapse to single column */
+  .fg2,.fg3,.sr,.ar,.eg{grid-template-columns:1fr}
+
+  /* Stats row - 3 up on mobile */
+  .sr{grid-template-columns:1fr 1fr 1fr}
+  .stb .sv{font-size:22px}
+  .stb .sl{font-size:10px}
+  .stb{padding:10px 8px}
+
+  /* Trip table - horizontal scroll */
+  .acct-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--ink-20)}
+  table.tt{min-width:480px;font-size:11px}
+  table.tt th,table.tt td{padding:5px 4px}
+
+  /* Method A day table - compact */
+  table.dt th,table.dt td{padding:8px 8px;font-size:13px}
+
+  /* Results bracket table */
+  table.bt{font-size:11px}
+  table.bt th,table.bt td{padding:6px 8px}
+
+  /* Action boxes */
+  .ab .bv{font-size:26px}
+  .ab{padding:12px}
+
+  /* Progress bar label */
+  .ph2{font-size:11px}
+
+  /* Input fields - larger touch target */
+  .fc{padding:11px 12px;font-size:16px}
+  input[type="number"].fc{font-size:16px}
+  input[type="date"].fc{font-size:15px}
+
+  /* Method toggle */
+  .mode-btn{font-size:11px;padding:10px 6px}
+
+  /* Exclusion inputs */
+  .ei input{font-size:16px;padding:10px 8px}
+  .ei label{font-size:11px}
+
+  /* Result banner */
+  .rbn{flex-direction:column;gap:10px}
+  .ri{align-self:flex-start}
+
+  /* Header adjustments */
+  .phi{padding:0 16px}
+  .container{padding:16px 16px 0}
+  .cb{padding:16px 14px 18px}
+  .back{padding:12px 16px 0}
+}
+
+/* Extra small screens */
+@media(max-width:380px){
+  .sr{grid-template-columns:1fr 1fr}
+  .stb .sv{font-size:20px}
+  table.tt{min-width:440px}
+}
 @media print {
   /* ── Page setup ── */
   @page { margin: 18mm 16mm; }
@@ -252,20 +309,20 @@ table.bt .tr td{font-weight:700;color:var(--ink);background:var(--ink-10);border
       <div class="acct-table-wrap">
       <table class="tt">
         <thead><tr>
-          <th style="text-align:left;min-width:110px">Description</th>
-          <th style="width:128px">Arrival</th>
-          <th style="width:128px">Departure</th>
-          <th style="width:58px">Days</th>
-          <th style="width:56px">Year</th>
-          <th style="width:54px">Excl.</th>
-          <th style="width:34px"></th>
+          <th style="text-align:left;min-width:90px">Description</th>
+          <th style="width:100px">Arrival</th>
+          <th style="width:100px">Departure</th>
+          <th style="width:44px">Days</th>
+          <th style="width:44px">Year</th>
+          <th style="width:44px">Excl.</th>
+          <th style="width:30px"></th>
         </tr></thead>
         <tbody id="tripBody"></tbody>
       </table>
       </div>
       <button class="atb" onclick="addTrip()">+ Add Trip</button>
-      <div class="inf">Enter each trip to the U.S. Days are counted inclusive of arrival and departure. Split trips that span year-end into two entries.</div>
-    </<div class="card input-card">v>
+      <div class="inf">Enter each trip to the U.S. Days counted inclusive of arrival and departure. Split trips spanning year-end into two entries.</div>
+    </div>
 
 <div class="card">
   <div class="ch"><div class="sb">3</div><h2>Exclusion Adjustments (Optional - Current Year Only)</h2></div>
@@ -320,6 +377,17 @@ table.bt .tr td{font-weight:700;color:var(--ink);background:var(--ink-10);border
       <strong>Adjusted current-year days (after exclusions): <span id="adjDays">0</span></strong> - use this adjusted count if exclusions apply.
     </div>
     <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+
+    <div style="background:var(--white);border:1px solid var(--ink-20);padding:18px;margin-top:20px">
+      <div style="font-family:var(--font-display);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)">Related Tools</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <a href="closer-connection.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">Closer Connection Exception<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">Form 8840 · IRC §7701(b)(3)(B)</span></a>
+        <a href="fbar-checker.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">FBAR & Form 8938<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">31 USC 5314 · IRC §6038D</span></a>
+        <a href="pre-immigration-planning.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">Pre-Immigration Planning<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">Before your green card · IRC §7701(b)</span></a>
+        <a href="tax-estimator.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">Tax Estimator 2026<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">Federal + all 50 states · IRC §1</span></a>
+      </div>
+    </div>
+
     <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional before making any filing or planning decisions. A tk.cpa resource - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
   </div>
 </div>
@@ -328,7 +396,15 @@ table.bt .tr td{font-weight:700;color:var(--ink);background:var(--ink-10);border
 <script>
 let trips=[], tid=0;
 
-function init(){buildA();addTrip();addTrip();recalc()}
+// Show scroll hint on mobile for trip table
+function checkScrollHint() {
+  const hint = document.getElementById('scrollHint');
+  if (hint && window.innerWidth < 640) {
+    hint.style.display = 'block';
+  }
+}
+window.addEventListener('resize', checkScrollHint);
+checkScrollHint();
 
 function onYearChange(){buildA();recalc()}
 
