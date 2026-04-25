@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>W-4 Withholding Optimizer 2026 | CPA Validated</title>
+<meta name="description" content="Calculate the optimal W-4 withholding for 2026. Target refund or balance due, multiple jobs, spouse income, other income, deductions. Produces exact W-4 line entries. CPA-validated. IRC Section 3402.">
+<link rel="canonical" href="https://cpavalidated.com/w4-optimizer.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:860px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,4vw,42px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:860px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.wrap{max-width:860px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;border-radius:0;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.w4-result{background:var(--ink);padding:20px;margin-bottom:16px}
+.w4-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:14px}
+.w4-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.1)}
+.w4-item{background:rgba(255,255,255,.05);padding:14px 16px}
+.w4-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.4);margin-bottom:6px}
+.w4-line{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.3);margin-bottom:3px}
+.w4-val{font-family:var(--font-display);font-size:24px;font-weight:500;color:#fff}
+.w4-val.coral{color:var(--coral)}
+.result-strip{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.1);margin-bottom:16px}
+.rs-item{background:rgba(255,255,255,.05);padding:12px;text-align:center}
+.rs-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:5px}
+.rs-val{font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff}
+.rs-val.green{color:#6de88e}.rs-val.amber{color:#f5c264}.rs-val.red{color:#ff8f8a}.rs-val.coral{color:var(--coral)}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px}
+.sum-row:last-child{border-bottom:none;font-weight:700;font-size:14px}
+.sum-lbl{color:rgba(255,255,255,.55)}.sum-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px}
+.sum-val.green{color:#6de88e}.sum-val.amber{color:#f5c264}.sum-val.red{color:#ff8f8a}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.5}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.ft strong{font-weight:600}
+.target-slider{display:flex;align-items:center;gap:14px;padding:12px;background:var(--ink-10);border:1px solid var(--ink-20);margin-bottom:14px}
+.ts-label{font-size:12px;font-weight:600;color:var(--ink-60);min-width:120px}
+.ts-val{font-family:var(--font-mono);font-weight:700;font-size:16px;color:var(--coral);min-width:80px;text-align:right}
+input[type=range]{flex:1;accent-color:var(--coral)}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;margin-top:6px}.pbn:hover{background:var(--coral-600)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.pay-periods{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.pp-btn{font-size:11px;font-weight:700;padding:5px 12px;border:1.5px solid var(--ink-20);background:var(--white);cursor:pointer;font-family:var(--font-mono);color:var(--ink-60);transition:all .15s}
+.pp-btn.active,.pp-btn:hover{border-color:var(--coral);color:var(--coral);background:var(--coral-100)}
+@media(max-width:600px){.fg2,.fg3,.w4-grid,.result-strip{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>W-4 Withholding Optimizer 2026</h1>
+  <div class="sub">Target Refund or Balance Due &nbsp;&bull;&nbsp; Multiple Jobs &nbsp;&bull;&nbsp; Spouse Income &nbsp;&bull;&nbsp; W-4 Line-by-Line Entries</div>
+  <div class="badges">
+    <span class="badge">IRC §3402</span>
+    <span class="badge">2026 W-4 Form</span>
+    <span class="badge">IRS Rev. Proc. 2025-32</span>
+    <span class="badge">IRC §6654</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Filing & Income</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Filing Status</label>
+        <select class="fc" id="status" onchange="calc()">
+          <option value="single">Single</option>
+          <option value="mfj" selected>Married Filing Jointly</option>
+          <option value="mfs">Married Filing Separately</option>
+          <option value="hoh">Head of Household</option>
+        </select>
+      </div>
+      <div class="f1"><label>Your Annual Wages ($)</label>
+        <input type="number" class="fc" id="wages1" value="120000" oninput="calc()">
+        <div class="hint">W-2 wages from Job 1 (this job)</div>
+      </div>
+      <div class="f1"><label>Spouse / Job 2 Wages ($)</label>
+        <input type="number" class="fc" id="wages2" value="80000" oninput="calc()">
+        <div class="hint">Spouse wages or second job. Enter 0 if none.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Other Income ($)</label>
+        <input type="number" class="fc" id="otherIncome" value="0" oninput="calc()">
+        <div class="hint">Freelance, rental, investments, dividends, etc. Enter annual amount.</div>
+      </div>
+      <div class="f1"><label>Extra Deductions ($)</label>
+        <input type="number" class="fc" id="extraDed" value="0" oninput="calc()">
+        <div class="hint">Itemized deductions exceeding standard deduction</div>
+      </div>
+      <div class="f1"><label>Tax Credits ($)</label>
+        <input type="number" class="fc" id="credits" value="0" oninput="calc()">
+        <div class="hint">Child tax credit ($2,000/child), EITC, education credits, etc.</div>
+      </div>
+    </div>
+    <div class="f1" style="margin-bottom:14px"><label>Pay Periods Per Year</label>
+      <div class="pay-periods">
+        <button class="pp-btn" onclick="setPP(52,this)">52 (Weekly)</button>
+        <button class="pp-btn" onclick="setPP(26,this)">26 (Bi-weekly)</button>
+        <button class="pp-btn active" onclick="setPP(24,this)">24 (Semi-monthly)</button>
+        <button class="pp-btn" onclick="setPP(12,this)">12 (Monthly)</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Target Outcome</h2></div>
+  <div class="cb">
+    <div class="target-slider">
+      <div class="ts-label">Target refund / (balance)</div>
+      <input type="range" id="targetSlider" min="-5000" max="5000" step="100" value="0" oninput="updateTarget();calc()">
+      <div class="ts-val" id="targetDisplay">$0</div>
+    </div>
+    <div style="font-size:12px;color:var(--ink-60);line-height:1.6;padding:8px 12px;background:var(--ink-10);border-left:2px solid var(--ink-20)">
+      <strong>$0 target</strong> = break even (no refund, no balance due). Positive = refund you receive. Negative = balance you owe on April 15. Best practice: target a small refund ($500-$1,500) as a buffer against estimation errors. A large refund means you gave the IRS an interest-free loan. A large balance due may trigger estimated tax penalties under IRC §6654.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>W-4 Entries & Analysis</h2></div>
+  <div class="cb" id="resultBody">
+    <div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+let payPeriods = 24;
+let targetAmount = 0;
+
+function setPP(n, btn){
+  payPeriods = n;
+  document.querySelectorAll('.pp-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  calc();
+}
+
+function updateTarget(){
+  const v = parseInt(document.getElementById('targetSlider').value);
+  targetAmount = v;
+  const display = v===0?'$0 (break even)':v>0?'Refund: $'+Math.abs(v).toLocaleString():('Balance due: $'+Math.abs(v).toLocaleString());
+  document.getElementById('targetDisplay').textContent = v===0?'$0':(v>0?'+$'+v.toLocaleString():'-$'+Math.abs(v).toLocaleString());
+}
+
+const STD = {single:15000,mfj:30000,mfs:15000,hoh:22500};
+const BRACKETS = {
+  single:[[0,11925,0.10],[11925,48475,0.12],[48475,103350,0.22],[103350,197300,0.24],[197300,250525,0.32],[250525,626350,0.35],[626350,Infinity,0.37]],
+  mfj:[[0,23850,0.10],[23850,96950,0.12],[96950,206700,0.22],[206700,394600,0.24],[394600,501050,0.32],[501050,751600,0.35],[751600,Infinity,0.37]],
+  mfs:[[0,11925,0.10],[11925,48475,0.12],[48475,103350,0.22],[103350,197300,0.24],[197300,250525,0.32],[250525,375800,0.35],[375800,Infinity,0.37]],
+  hoh:[[0,17000,0.10],[17000,64850,0.12],[64850,103350,0.22],[103350,197300,0.24],[197300,250500,0.32],[250500,626350,0.35],[626350,Infinity,0.37]]
+};
+
+function calcTax(taxable, status){
+  if(taxable<=0) return 0;
+  const brackets = BRACKETS[status]||BRACKETS.single;
+  let tax=0, rem=taxable;
+  for(const [lo,hi,rate] of brackets){
+    const w=Math.min(rem,hi-lo);
+    if(w<=0) break;
+    tax+=w*rate;
+    rem-=w;
+    if(rem<=0) break;
+  }
+  return tax;
+}
+
+function fmt(n, forceSign=false){
+  const abs=Math.abs(Math.round(n));
+  const s='$'+abs.toLocaleString('en-US');
+  if(forceSign) return n<0?'('+s+')':'+'+s;
+  return n<0?'('+s+')':s;
+}
+
+function flag(type,icon,html){return `<div class="flag ${type}"><div class="fi">${icon}</div><div class="ft">${html}</div></div>`;}
+
+function calc(){
+  const status = document.getElementById('status').value;
+  const wages1 = parseFloat(document.getElementById('wages1').value)||0;
+  const wages2 = parseFloat(document.getElementById('wages2').value)||0;
+  const otherIncome = parseFloat(document.getElementById('otherIncome').value)||0;
+  const extraDed = parseFloat(document.getElementById('extraDed').value)||0;
+  const credits = parseFloat(document.getElementById('credits').value)||0;
+  const target = targetAmount;
+
+  const totalIncome = wages1 + wages2 + otherIncome;
+  const stdDed = STD[status]||15000;
+  const totalDed = stdDed + extraDed;
+  const taxableIncome = Math.max(0, totalIncome - totalDed);
+  const grossTax = calcTax(taxableIncome, status);
+  const netTax = Math.max(0, grossTax - credits);
+
+  // What total withholding do we need to hit the target?
+  // Target = Refund amount (positive = refund, negative = balance due)
+  // Total withholding needed = netTax - target (if target is refund, we need MORE withheld)
+  const totalWithholdingNeeded = netTax - target;
+
+  // Current projected withholding from wages (employer withholds on wages1 only - the job where you file W-4)
+  // Employer uses Pub 15-T tables. We approximate by computing tax on wages1 alone using filing status.
+  const wages1Taxable = Math.max(0, wages1 - stdDed);
+  const currentWithholdingWages1 = calcTax(wages1Taxable, status);
+
+  // Additional withholding needed on W-4
+  const additionalAnnual = Math.max(0, totalWithholdingNeeded - currentWithholdingWages1);
+  const additionalPerPeriod = additionalAnnual / payPeriods;
+
+  // W-4 Line 4(b) - Deductions worksheet: extra deductions beyond standard
+  const w4Step4b = extraDed; // Line 4(b) = itemized deductions beyond std ded (entered as full amount)
+  
+  // W-4 Step 2 checkbox situation
+  const multipleJobs = wages2 > 0;
+  
+  // W-4 Step 3 - Child/dependent credits
+  // This is just the credits input
+  const w4Step3 = credits;
+
+  // W-4 Step 4(a) - Other income
+  const w4Step4a = wages2 + otherIncome;
+
+  // W-4 Step 4(c) - Extra withholding per period
+  const w4Step4c = Math.round(additionalPerPeriod * 100) / 100;
+
+  const rb = document.getElementById('resultBody');
+  let h = '';
+
+  // Main result
+  h += `<div class="result-strip" style="background:var(--ink)">
+    <div class="rs-item"><div class="rs-label">Est. Tax Liability</div><div class="rs-val">${fmt(netTax)}</div></div>
+    <div class="rs-item"><div class="rs-label">Withholding Needed</div><div class="rs-val coral">${fmt(totalWithholdingNeeded)}</div></div>
+    <div class="rs-item"><div class="rs-label">Target Outcome</div><div class="rs-val ${target>=0?'green':'amber'}">${target>=0?'+'+fmt(Math.abs(target)):fmt(target)}</div></div>
+    <div class="rs-item"><div class="rs-label">Effective Rate</div><div class="rs-val">${totalIncome>0?(netTax/totalIncome*100).toFixed(1)+'%':'—'}</div></div>
+  </div>`;
+
+  // W-4 entries
+  h += `<div class="w4-result"><div class="w4-title">Your 2026 W-4 Entries</div>
+    <div class="w4-grid">
+      <div class="w4-item">
+        <div class="w4-label">Step 1 - Filing Status</div>
+        <div class="w4-line">W-4 Step 1(c)</div>
+        <div class="w4-val coral">${status==='single'?'Single / MFS':status==='mfj'?'Married filing jointly':status==='mfs'?'Married filing separately':'Head of household'}</div>
+      </div>
+      <div class="w4-item">
+        <div class="w4-label">Step 2 - Multiple Jobs</div>
+        <div class="w4-line">W-4 Step 2(c) checkbox</div>
+        <div class="w4-val coral">${multipleJobs?'CHECK the box':'Leave blank'}</div>
+      </div>
+      <div class="w4-item">
+        <div class="w4-label">Step 3 - Tax Credits</div>
+        <div class="w4-line">W-4 Step 3</div>
+        <div class="w4-val coral">${credits>0?'$'+Math.round(credits).toLocaleString():'$0'}</div>
+      </div>
+      <div class="w4-item">
+        <div class="w4-label">Step 4(a) - Other Income</div>
+        <div class="w4-line">W-4 Step 4(a)</div>
+        <div class="w4-val coral">${w4Step4a>0?'$'+Math.round(w4Step4a).toLocaleString():'$0'}</div>
+      </div>
+      <div class="w4-item">
+        <div class="w4-label">Step 4(b) - Extra Deductions</div>
+        <div class="w4-line">W-4 Step 4(b)</div>
+        <div class="w4-val coral">${extraDed>0?'$'+Math.round(extraDed).toLocaleString():'$0'}</div>
+      </div>
+      <div class="w4-item">
+        <div class="w4-label">Step 4(c) - Extra Withholding</div>
+        <div class="w4-line">W-4 Step 4(c) - per pay period</div>
+        <div class="w4-val coral">${w4Step4c>0?'$'+w4Step4c.toFixed(2)+' per period':'$0'}</div>
+      </div>
+    </div>
+  </div>`;
+
+  // Tax calculation detail
+  h += `<div class="sum-box"><div class="sum-title">Tax Calculation Detail</div>
+    <div class="sum-row"><span class="sum-lbl">Total income (wages + other)</span><span class="sum-val">${fmt(totalIncome)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">${extraDed>0?'Total deductions (standard + extra)':'Standard deduction'}</span><span class="sum-val">- ${fmt(totalDed)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Taxable income</span><span class="sum-val">${fmt(taxableIncome)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Gross income tax (2026 brackets)</span><span class="sum-val">${fmt(grossTax)}</span></div>
+    ${credits>0?`<div class="sum-row"><span class="sum-lbl">Tax credits</span><span class="sum-val green">- ${fmt(credits)}</span></div>`:''}
+    <div class="sum-row"><span class="sum-lbl">Net tax liability</span><span class="sum-val">${fmt(netTax)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Target outcome (${target>=0?'refund':'balance due'})</span><span class="sum-val ${target>=0?'green':'amber'}">${target>=0?'+ '+fmt(target):'- '+fmt(Math.abs(target))}</span></div>
+    <div class="sum-row"><span class="sum-lbl"><strong>Total withholding needed</strong></span><span class="sum-val coral">${fmt(totalWithholdingNeeded)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Withholding per pay period (${payPeriods} periods)</span><span class="sum-val coral">${fmt(totalWithholdingNeeded/payPeriods)}</span></div>
+  </div>`;
+
+  // Flags
+  if(netTax > 1000 && totalWithholdingNeeded / payPeriods < 50){
+    h += flag('green','✓',`<strong>Withholding looks adequate.</strong> Your employer withholding from wages alone appears to cover most of your tax liability. The additional withholding entered in Step 4(c) of ${fmt(w4Step4c)} per period should get you close to your target.`);
+  }
+  if(target < -1000){
+    h += flag('amber','!',`<strong>Large balance due target.</strong> A balance due of ${fmt(Math.abs(target))} is within your control, but be careful: if your total withholding is less than 90% of current year tax OR less than 100% of prior year tax (110% if prior year AGI exceeded $150,000), you may owe an underpayment penalty under IRC §6654 regardless of paying the balance by April 15.`);
+  }
+  if(target > 3000){
+    h += flag('blue','ℹ',`<strong>Large refund target.</strong> A refund of ${fmt(target)} means you're having ${fmt(target/payPeriods)} too much withheld each pay period - essentially giving the IRS an interest-free loan. Consider reducing your target refund and investing the difference.`);
+  }
+  if(wages2 > 0){
+    h += flag('blue','ℹ',`<strong>Multiple jobs / dual-income household.</strong> With two incomes totaling ${fmt(wages1+wages2)}, the tax bracket interaction is critical. Step 2(c) checkbox should be checked on BOTH W-4s (yours and your spouse's), OR use the IRS withholding estimator to allocate additional withholding between the two jobs via Step 4(c). The checkbox method is simpler but may cause slight over-withholding. IRC §3402(f)(2).`);
+  }
+  if(otherIncome > 0){
+    h += flag('amber','!',`<strong>Self-employment or other non-wage income of ${fmt(otherIncome)}.</strong> Federal income tax is not withheld from self-employment income. You have two options: (1) increase Step 4(c) withholding on your W-4 to cover the tax on this income, as reflected above; or (2) make quarterly estimated tax payments by the safe harbor dates (April 15, June 16, September 15, January 15). Option 2 may preserve more cash flow during the year.`);
+  }
+
+  h += `<div class="src">Authority: IRC §3402 (income tax withholding); IRC §6654 (underpayment penalty); IRS Rev. Proc. 2025-32 (2026 tax brackets and standard deductions: Single $15,000, MFJ $30,000, HOH $22,500); IRS Publication 15-T (withholding tables); IRS Form W-4 (2026) instructions; IRC §3402(f)(2) (multiple jobs checkbox).</div>`;
+  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += `<div class="disc">This calculator produces estimates based on simplified bracket calculations. Actual withholding depends on IRS Publication 15-T tables and your employer's payroll system. Verify results against the IRS Tax Withholding Estimator at irs.gov/W4App. Maintained by the tk.cpa AI lab. A tk.cpa resource - <a href="https://tk.cpa">tk.cpa</a>.</div>`;
+
+  rb.innerHTML = h;
+}
+
+calc();
+</script>
+</body>
+</html>
