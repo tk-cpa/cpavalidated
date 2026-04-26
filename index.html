@@ -173,6 +173,18 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 .cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
 @media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
 /* === end canonical nav === */
+
+/* === domain sections === */
+#tools{max-width:1200px;margin:0 auto;padding:60px 24px 40px}
+.domain-section{margin-bottom:52px}
+.domain-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--ink-20)}
+.domain-label{font-family:var(--font-display);font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
+.domain-count{font-size:11px;color:var(--ink-40);margin-left:10px;font-family:var(--font-mono)}
+.domain-browse{font-size:12px;font-weight:600;color:var(--coral);text-decoration:none;letter-spacing:.03em;white-space:nowrap}
+.domain-browse:hover{text-decoration:underline}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+@media(max-width:600px){.tool-grid{grid-template-columns:1fr}}
+/* === end domain sections === */
 </style>
 </head>
 <body> <!-- Nav -->
@@ -199,14 +211,354 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <div style="background:var(--ink);border-top:1px solid rgba(255,255,255,.08)"> <div style="max-width:1200px;margin:0 auto;padding:20px 48px;display:flex;gap:40px;flex-wrap:wrap;align-items:center"> <div style="flex:1;min-width:200px;border-right:1px solid rgba(255,255,255,.1);padding-right:40px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:6px">Every tool</div> <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.5">Cites the specific IRC section or Treasury regulation behind every result. No black boxes.</div> </div> <div style="flex:1;min-width:200px;border-right:1px solid rgba(255,255,255,.1);padding-right:40px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:6px">Built by</div> <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.5">A licensed CPA and Enrolled Agent. NY #109025 &middot; FL #AC58472 &middot; EA #93250. Big Four background.</div> </div> <div style="flex:1;min-width:200px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:6px">Always</div> <div style="font-size:13px;color:rgba(255,255,255,.65);line-height:1.5">Free. No account. No paywall. No advertising. A pro bono contribution by tk.cpa.</div> </div> </div>
 </div> <!-- Tools -->
 <section style="background:var(--ink);padding:20px 0;border-bottom:3px solid var(--coral)"> <div style="max-width:1200px;margin:0 auto;padding:0 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap"> <div> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);font-family:var(--font-mono);margin-bottom:4px">Curated External Links</div> <div style="font-family:var(--font-display);font-size:18px;font-weight:500;color:#fff;letter-spacing:.02em">Vetted Resources</div> <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:3px">IRS tools &middot; Primary law &middot; State authorities &middot; International tax &middot; Big Four reference databases</div> </div> <a href="vetted-resources.html" style="display:inline-block;background:var(--coral);color:#fff;padding:10px 22px;font-weight:600;font-size:13px;text-decoration:none;white-space:nowrap;flex-shrink:0">View All Resources &rarr;</a> </div>
-</section> <section class="section" id="tools"> <div class="section-label">Tools</div> <h2 class="section-title">Calculators &amp; Validators</h2> <hr class="rule"> <div class="tools-grid"> <div style="grid-column:1/-1;background:var(--ink);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:2px"> <div style="font-family:var(--font-display);font-size:13px;font-weight:400;color:#fff;text-transform:uppercase;letter-spacing:.1em">International Reporting & Compliance</div> <div style="font-size:11px;color:rgba(255,255,255,.35);font-family:var(--font-mono)">FBAR · FATCA · CFCs · Streamlined</div> </div>
-<a href="spt-calculator.html" class="tool-card"> <span class="tool-tag tt-resident">Residency</span> <div class="tool-name">Substantial Presence Test Calculator</div> <div class="tool-desc">Weighted 3-year day count, days to trigger, and maximum safe days - manual entry or trip-by-trip date log.</div> <div class="tool-authority">IRC Sec. 7701(b)(3) &nbsp;·&nbsp; Treas. Reg. 301.7701(b) &nbsp;·&nbsp; Form 1040-NR</div> <span class="tool-link">Open Calculator</span> </a><a href="closer-connection.html" class="tool-card"> <span class="tool-tag tt-resident">Residency</span> <div class="tool-name">Closer Connection Exception Checker</div> <div class="tool-desc">Form 8840 eligibility. All 11 IRS closer connection factors scored. Green Card disqualifier flagged.</div> <div class="tool-authority">IRC Sec. 7701(b)(3)(B) &nbsp;·&nbsp; Treas. Reg. 301.7701(b)-2 &nbsp;·&nbsp; Form 8840</div> <span class="tool-link">Open Validator</span> </a><a href="fbar-checker.html" class="tool-card"> <span class="tool-tag tt-reporting">Reporting</span> <div class="tool-name">FBAR &amp; Form 8938 Threshold Checker</div> <div class="tool-desc">FinCEN 114 and Form 8938 thresholds. All account types. All four Form 8938 filing status thresholds.</div> <div class="tool-authority">31 USC 5314 &nbsp;·&nbsp; IRC Sec. 6038D &nbsp;·&nbsp; FinCEN 114 &nbsp;·&nbsp; Form 8938</div> <span class="tool-link">Open Validator</span> </a><a href="form-5471-checker.html" class="tool-card"> <span class="tool-tag tt-planning">Validator</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">CFC / Form 5471 Obligation Checker</div> <div class="tool-desc">Determine CFC status and Form 5471 filing category (1-5). US Shareholder test, 50% control threshold, attribution rules, filing requirements, and $10,000 failure-to-file penalty.</div> <div class="tool-authority">IRC §957 &nbsp;·&nbsp; IRC §951 &nbsp;·&nbsp; IRC §6038 &nbsp;·&nbsp; Form 5471</div> <span class="tool-link">Open Validator</span> </a><a href="form-5472.html" class="tool-card"> <span class="tool-tag tt-reporting">Validator</span> <div class="tool-name">Form 5472 Filing Obligation Checker</div> <div class="tool-desc">25% foreign ownership threshold, foreign-owned DE rules (TD 9796), and all 11 reportable transaction categories.</div> <div class="tool-authority">IRC §6038A &nbsp;·&nbsp; IRC §6038C &nbsp;·&nbsp; TD 9796 &nbsp;·&nbsp; Form 5472</div> <span class="tool-link">Open Validator</span> </a><a href="streamlined-checker.html" class="tool-card"> <span class="tool-tag tt-planning">Validator</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Streamlined Filing Eligibility Checker</div> <div class="tool-desc">SDOP vs. SFOP. Non-willfulness test, IRS contact check, residency test. 0% penalty (SFOP) vs. 5% of highest balance (SDOP). Side-by-side comparison vs. regular FBAR penalties.</div> <div class="tool-authority">IRM 4.26.16.6 &nbsp;·&nbsp; IRM 4.26.16.7 &nbsp;·&nbsp; 31 USC §5321</div> <span class="tool-link">Open Validator</span> </a><a href="ftc-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Foreign Tax Credit Calculator</div> <div class="tool-desc">Form 1116 FTC limitation. FEIE vs. FTC comparison - shows which strategy produces lower US tax for expats. Per-basket limitation, carryforward. 2026 brackets applied.</div> <div class="tool-authority">IRC §901 &nbsp;·&nbsp; IRC §904 &nbsp;·&nbsp; IRC §911 &nbsp;·&nbsp; Form 1116</div> <span class="tool-link">Open Calculator</span> </a> <a href="pfic-8621-checker.html" class="tool-card" style="opacity:.7"> <span class="tool-tag tt-intl">Checker</span> <span class="updated-tag" style="background:var(--coral);color:#fff">New</span> <div class="tool-name">PFIC / Form 8621 Checker</div> <div class="tool-desc">Identify Passive Foreign Investment Company status. Excess distribution method, QEF election, MTM election comparison. Form 8621 filing triggers. Coming shortly.</div> <div class="tool-authority">IRC §1291 &nbsp;&middot;&nbsp; IRC §1293 &nbsp;&middot;&nbsp; IRC §1296 &nbsp;&middot;&nbsp; IRC §1298(f)</div> <span class="tool-link">Open Checker</span> </a> <div style="grid-column:1/-1;background:var(--ink);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:2px"> <div style="font-family:var(--font-display);font-size:13px;font-weight:400;color:#fff;text-transform:uppercase;letter-spacing:.1em">Individual Income Tax</div> <div style="font-size:11px;color:rgba(255,255,255,.35);font-family:var(--font-mono)">Estimators · Withholding · Penalties</div> </div>
-<a href="tax-estimator.html" class="tool-card"> <span class="tool-tag tt-planning">Planning</span> <div class="tool-name">Tax Estimator 2026 - Personal &amp; Corporate</div> <div class="tool-desc">2026 and 2027 personal and corporate tax estimates. All filing statuses, all 50 states, bracket-by-bracket breakdown.</div> <div class="tool-authority">IRS Rev. Proc. 2025-32 &nbsp;·&nbsp; IRC §1 &nbsp;·&nbsp; IRC §11 &nbsp;·&nbsp; OBBBA (P.L. 119-21)</div> <span class="tool-link">Open Estimator</span> </a> <a href="passive-activity-loss.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Passive Activity Loss (PAL) Calculator</div> <div class="tool-desc">Material participation 7-test reference. Real estate professional status (IRC 469(c)(7)). $25,000 rental allowance with AGI phaseout. PAL carryforward schedule. Full disposition trigger. Form 8582 computation.</div> <div class="tool-authority">IRC &sect;469 &nbsp;&middot;&nbsp; Temp. Reg. 1.469-5T &nbsp;&middot;&nbsp; IRC &sect;469(i) &nbsp;&middot;&nbsp; Form 8582</div> <span class="tool-link">Open Calculator</span> </a> <a href="augusta-rule.html" class="tool-card"> <span class="tool-tag tt-planning">Guide + Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Augusta Rule (IRC 280A(g)) - 14-Day Home Rental</div> <div class="tool-desc">Rent your home to your own business tax-free for up to 14 days per year. Tax-free exclusion at owner level, deductible at business level. Fair rental value documentation. IRS scrutiny warnings. S-corp vs. sole prop analysis. Requirements checklist.</div> <div class="tool-authority">IRC &sect;280A(g) &nbsp;&middot;&nbsp; IRC &sect;162 &nbsp;&middot;&nbsp; Weightman v. Commissioner</div> <span class="tool-link">Open Guide</span> </a> <a href="form-1099-guide.html" class="tool-card"> <span class="tool-tag tt-planning">Reference Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">1099 Rules, Thresholds & Deadlines 2026</div> <div class="tool-desc">Complete 1099 reference: 1099-NEC ($600), 1099-MISC royalties ($10 threshold), 1099-K new $2,500 threshold for 2025 tax year, 1099-B, 1099-R, W-2G. Backup withholding 24%. Late filing penalties. E-file at 10+ returns. All deadlines.</div> <div class="tool-authority">IRC &sect;6041 &nbsp;&middot;&nbsp; IRC &sect;6050W &nbsp;&middot;&nbsp; IRC &sect;3406 (backup withholding)</div> <span class="tool-link">Open Reference</span> </a> <a href="social-security-tax.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Social Security Benefits Tax Calculator</div> <div class="tool-desc">Combined income test: AGI + tax-exempt interest + 50% of SS benefits. 0%, 50%, or 85% inclusion tiers. Thresholds never indexed for inflation since 1984. Tax-exempt muni bond trap. Roth conversion interaction. Form 1040 Line 6b.</div> <div class="tool-authority">IRC &sect;86 &nbsp;&middot;&nbsp; IRC &sect;86(b)(2) (combined income) &nbsp;&middot;&nbsp; Form 1040 Line 6b</div> <span class="tool-link">Open Calculator</span> </a> <a href="qoz-guide.html" class="tool-card"> <span class="tool-tag tt-planning">Guide + Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Qualified Opportunity Zone (QOZ) Guide 2026</div> <div class="tool-desc">Capital gain deferral, 10% basis step-up, permanent exclusion of appreciation after 10-year hold. December 31, 2026 deferred gain recognition deadline. 180-day reinvestment window. Form 8997. Side-by-side QOZ vs. direct investment tax comparison.</div> <div class="tool-authority">IRC &sect;1400Z-2 &nbsp;&middot;&nbsp; Treas. Reg. 1.1400Z2 &nbsp;&middot;&nbsp; Form 8997</div> <span class="tool-link">Open Guide</span> </a> <a href="safe-harbor.html" class="tool-card"> <span class="tool-tag tt-compliance">Validator</span> <div class="tool-name">Safe Harbor Estimated Tax Calculator</div> <div class="tool-desc">Federal and all 50 states. 110% rule applied where required. Quarterly schedule with state-specific due dates.</div> <div class="tool-authority">IRC Sec. 6654 &nbsp;·&nbsp; IRS Publication 505 &nbsp;·&nbsp; All 50 States + DC</div> <span class="tool-link">Open Calculator</span> </a><a href="w4-optimizer.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">W-4 Withholding Optimizer</div> <div class="tool-desc">Target any refund or balance due. Multiple jobs, spouse income, other income, extra deductions. Produces exact W-4 Step 1-4 entries. Per-period withholding amount.</div> <div class="tool-authority">IRC §3402 &nbsp;·&nbsp; IRC §6654 &nbsp;·&nbsp; IRS Rev. Proc. 2025-32 &nbsp;·&nbsp; Form W-4</div> <span class="tool-link">Open Calculator</span> </a><a href="penalty-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">IRS Penalty & Interest Calculator</div> <div class="tool-desc">Failure-to-file (5%/mo), failure-to-pay (0.5%/mo), accuracy-related (20%), underpayment interest (8% Q2 2026). Concurrent FTF/FTP offset applied. Reasonable cause flag.</div> <div class="tool-authority">IRC §6651 &nbsp;·&nbsp; IRC §6601 &nbsp;·&nbsp; IRC §6662 &nbsp;·&nbsp; IRC §6654</div> <span class="tool-link">Open Calculator</span> </a> <a href="amt-calculator.html" class="tool-card" style="opacity:.7"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag" style="background:var(--coral);color:#fff">New</span> <div class="tool-name">Alternative Minimum Tax (AMT) Calculator</div> <div class="tool-desc">AMTI, exemption phaseout, 26%/28% brackets. ISO exercise impact, 2026 parameters post-OBBBA. See whether you owe AMT and by how much before it surprises you.</div> <div class="tool-authority">IRC §55 &nbsp;&middot;&nbsp; IRC §56 &nbsp;&middot;&nbsp; OBBBA (P.L. 119-21)</div> <span class="tool-link">Open Calculator</span> </a> <a href="capital-gains-calculator.html" class="tool-card" style="opacity:.7"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag" style="background:var(--coral);color:#fff">New</span> <div class="tool-name">Capital Gains & NIIT Calculator</div> <div class="tool-desc">Long-term vs. short-term rates. 0%/15%/20% stacking with ordinary income. 3.8% NIIT on net investment income. 2026 thresholds. Federal + NIIT combined rate on every dollar.</div> <div class="tool-authority">IRC §1(h) &nbsp;&middot;&nbsp; IRC §1411 &nbsp;&middot;&nbsp; Rev. Proc. 2025-32</div> <span class="tool-link">Open Calculator</span> </a> <a href="roth-conversion.html" class="tool-card" style="opacity:.7"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag" style="background:var(--coral);color:#fff">New</span> <div class="tool-name">Roth Conversion Optimizer</div> <div class="tool-desc">How much to convert, at what bracket cost, with what break-even horizon. Shows tax now vs. tax-free compounding later. No RMD advantage modeled separately.</div> <div class="tool-authority">IRC §408A &nbsp;&middot;&nbsp; IRC §72(t) &nbsp;&middot;&nbsp; Rev. Proc. 2025-32</div> <span class="tool-link">Open Calculator</span> </a> <div style="grid-column:1/-1;background:var(--ink);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:2px"> <div style="font-family:var(--font-display);font-size:13px;font-weight:400;color:#fff;text-transform:uppercase;letter-spacing:.1em">Deductions & Credits</div> <div style="font-size:11px;color:rgba(255,255,255,.35);font-family:var(--font-mono)">Home · Mortgage · Interest · Depreciation</div> </div>
-<a href="home-office-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <div class="tool-name">Home Office Deduction Calculator</div> <div class="tool-desc">Simplified method ($5/sq ft, 300 sq ft max) vs. actual expense method side by side. Gross income limitation, carryforward, Schedule A interaction, depreciation recapture warning. Self-employed only post-TCJA.</div> <div class="tool-authority">IRC §280A &nbsp;&middot;&nbsp; Rev. Proc. 2013-13 &nbsp;&middot;&nbsp; IRC §67(g)</div> <span class="tool-link">Open Calculator</span> </a><a href="mortgage-interest-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <div class="tool-name">Mortgage Interest Deduction Limit</div> <div class="tool-desc">$750K TCJA cap vs. $1M grandfathered limit. Enter origination date, balance, and interest paid - see exactly what is deductible. Home equity debt rules, SALT cap interaction, multiple loans.</div> <div class="tool-authority">IRC §163(h)(3) &nbsp;&middot;&nbsp; TCJA §11043 &nbsp;&middot;&nbsp; IRS Notice 2018-32</div> <span class="tool-link">Open Calculator</span> </a><a href="interest-deductibility.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <div class="tool-name">Vehicle & Investment Interest Deductibility</div> <div class="tool-desc">Vehicle loan interest: deductible only to business use % (slider). W-2 employees ineligible post-TCJA. Investment interest: IRC §163(d) NII limitation, qualified dividend election, indefinite carryforward.</div> <div class="tool-authority">IRC §163(h) &nbsp;&middot;&nbsp; IRC §163(d) &nbsp;&middot;&nbsp; Form 4952</div> <span class="tool-link">Open Calculator</span> </a><a href="depreciation-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <div class="tool-name">Real Estate Depreciation Calculator</div> <div class="tool-desc">MACRS for residential (27.5 yr), commercial (39 yr), foreign ADS (40 yr), QIP (15 yr). Mid-month convention. Bonus depreciation for QIP. Full schedule.</div> <div class="tool-authority">IRC §168 &nbsp;·&nbsp; Rev. Proc. 87-57 &nbsp;·&nbsp; OBBBA (P.L. 119-21)</div> <span class="tool-link">Open Calculator</span> </a><a href="vehicle-depreciation.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Business Vehicle Depreciation Calculator</div> <div class="tool-desc">Section 179, bonus depreciation (40% in 2026), MACRS 5-year. Passenger autos, SUVs over 6,000 lbs, heavy trucks. §280F luxury auto caps applied automatically. Business use percentage.</div> <div class="tool-authority">IRC §168(k) &nbsp;·&nbsp; IRC §179 &nbsp;·&nbsp; IRC §280F &nbsp;·&nbsp; Rev. Proc. 2025-24</div> <span class="tool-link">Open Calculator</span> </a> <div style="grid-column:1/-1;background:var(--ink);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:2px"> <div style="font-family:var(--font-display);font-size:13px;font-weight:400;color:#fff;text-transform:uppercase;letter-spacing:.1em">Business & Entity</div> <div style="font-size:11px;color:rgba(255,255,255,.35);font-family:var(--font-mono)">S-Corp · Extensions · Entity Planning</div> </div> <a href="scorp-compensation.html" class="tool-card" style="opacity:.7"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag" style="background:var(--coral);color:#fff">New</span> <div class="tool-name">S-Corp Reasonable Compensation Analyzer</div> <div class="tool-desc">W-2 salary vs. S-corp distributions. SE tax savings, payroll cost, net benefit. IRS audit risk factors. Find the optimal split that maximizes savings without triggering IRS scrutiny.</div> <div class="tool-authority">IRC §3121 &nbsp;&middot;&nbsp; Rev. Rul. 74-44 &nbsp;&middot;&nbsp; IRS Job Aid (2014)</div> <span class="tool-link">Open Calculator</span> </a>
-<a href="corporate-extension.html" class="tool-card"> <span class="tool-tag tt-planning">Reference</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Corporate Extension Reference (C-Corp)</div> <div class="tool-desc">C-Corp Form 1120 extension rules for all 50 states, DC, and major local jurisdictions. Searchable, sortable. Automatic vs. separate form vs. accepts federal. Verified March 2026.</div> <div class="tool-authority">IRC §6081 &nbsp;·&nbsp; Form 7004 &nbsp;·&nbsp; 59 jurisdictions &nbsp;·&nbsp; Primary citations</div> <span class="tool-link">Open Reference</span> </a><a href="individual-extension.html" class="tool-card"> <span class="tool-tag tt-planning">Reference</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Individual Extension Reference (Form 1040)</div> <div class="tool-desc">Form 4868 extension rules for all 50 states, DC, and local jurisdictions. Expat 2-month extension, Form 2350, FBAR auto-extension, military/combat zone. Verified March 2026.</div> <div class="tool-authority">IRC §6081 &nbsp;·&nbsp; Form 4868 &nbsp;·&nbsp; Treas. Reg. §1.6081-4 &nbsp;·&nbsp; 59 jurisdictions</div> <span class="tool-link">Open Reference</span> </a><a href="tax-calendar.html" class="tool-card"> <span class="tool-tag tt-planning">Calendar</span> <div class="tool-name">US Federal Tax Calendar 2026</div> <div class="tool-desc">Corporate and personal deadlines month by month. 1099s, W-2, 1065, 1120-S, 1120, estimated tax, FBAR. Filterable. Key state deadlines included.</div> <div class="tool-authority">IRC §6072 &nbsp;·&nbsp; IRC §6654 &nbsp;·&nbsp; IRC §6655 &nbsp;·&nbsp; IRS Pub. 509</div> <span class="tool-link">Open Calendar</span> </a> <div style="grid-column:1/-1;background:var(--ink);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;margin-top:2px"> <div style="font-family:var(--font-display);font-size:13px;font-weight:400;color:#fff;text-transform:uppercase;letter-spacing:.1em">Special Jurisdictions</div> <div style="font-size:11px;color:rgba(255,255,255,.35);font-family:var(--font-mono)">Puerto Rico · USVI · Act 60</div> </div>
-<a href="act60-estimator.html" class="tool-card"> <span class="tool-tag tt-planning">Planning</span> <div class="tool-name">Puerto Rico Act 60 Tax Benefit Estimator</div> <div class="tool-desc">PR Act 60 savings analysis. Eligibility checker, before vs. after comparison, net benefit after compliance costs. Dec 31, 2026 deadline for 0% rate.</div> <div class="tool-authority">Act 60 (P.R. 2019) &nbsp;·&nbsp; Act 38-2026 &nbsp;·&nbsp; IRC §933 &nbsp;·&nbsp; Treas. Reg. §1.937-1</div> <span class="tool-link">Open Estimator</span> </a><a href="usvi-edc-estimator.html" class="tool-card"> <span class="tool-tag tt-planning">Planning</span> <div class="tool-name">USVI EDC Tax Benefit Estimator</div> <div class="tool-desc">USVI EDC 90% tax credit. ~2.1% effective corporate rate. EDC vs. RTPark and PR Act 60 vs. USVI comparison.</div> <div class="tool-authority">IRC §934 &nbsp;·&nbsp; IRC §937 &nbsp;·&nbsp; VI Code §713 &nbsp;·&nbsp; USVIEDA</div> <span class="tool-link">Open Estimator</span> </a> <a href="pfic-8621-checker.html" class="tool-card"> <span class="tool-tag tt-international">Checker</span> <span class="updated-tag">New 2026</span> <div class="tool-name">PFIC / Form 8621 Checker & Regime Analyzer</div> <div class="tool-desc">Determine PFIC status via income test (75%) and asset test (50%). Side-by-side comparison of all three regimes: Excess Distribution (IRC &sect;1291 interest charge), QEF Election (&sect;1293), and Mark-to-Market (&sect;1296). Form 8621 filing triggers. Foreign mutual funds, ETFs, holding companies.</div> <div class="tool-authority">IRC &sect;1291 &nbsp;&middot;&nbsp; IRC &sect;1293-1296 &nbsp;&middot;&nbsp; IRC &sect;1297 &nbsp;&middot;&nbsp; Form 8621</div> <span class="tool-link">Open Checker</span> </a> <a href="nol-tracker.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">NOL Carryforward Tracker</div> <div class="tool-desc">Post-TCJA NOL rules: indefinite carryforward, 80% income limitation. Multi-year absorption schedule with income growth projection. Pre-2018 vs. post-2017 rules compared. Section 382 ownership change warning. State non-conformity alert.</div> <div class="tool-authority">IRC &sect;172 &nbsp;&middot;&nbsp; IRC &sect;172(a) (80% limit) &nbsp;&middot;&nbsp; IRC &sect;382 &nbsp;&middot;&nbsp; OBBBA</div> <span class="tool-link">Open Calculator</span> </a> <a href="social-security-tax.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Social Security Benefit Taxation</div> <div class="tool-desc">How much of your SS benefit is taxable? Combined income formula: 0%, 50%, or 85% inclusion. Impact of IRA withdrawals, Roth conversions, and tax-exempt muni interest on SS taxation. MFS trap. Thresholds not inflation-adjusted since 1984. IRC 86.</div> <div class="tool-authority">IRC §86 &nbsp;&middot;&nbsp; Combined income formula &nbsp;&middot;&nbsp; SSA-1099</div> <span class="tool-link">Open Calculator</span> </a> <a href="qbi-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">QBI Deduction Calculator 2026</div> <div class="tool-desc">Section 199A deduction: 20% of qualified business income. W-2 wage limitation (50% of wages or 25%+2.5% UBIA). SSTB phaseout for high-income service businesses. Made permanent by OBBBA. Form 8995-A. Full computation with all limitations modeled.</div> <div class="tool-authority">IRC §199A &nbsp;&middot;&nbsp; OBBBA P.L. 119-21 &nbsp;&middot;&nbsp; Form 8995-A</div> <span class="tool-link">Open Calculator</span> </a> <a href="treaty-navigator.html" class="tool-card"> <span class="tool-tag tt-international">Reference</span> <span class="updated-tag">New 2026</span> <div class="tool-name">US Tax Treaty Navigator</div> <div class="tool-desc">Key provisions for 20 US treaties. Dividend, interest, royalty withholding rates. Pension articles. Tie-breaker. Savings clause. US-Russia treaty SUSPENDED Aug 2023. Practitioner notes on RRSP, ISA, SIPP, CPF, keren hishtalmut. Click any country for full detail.</div> <div class="tool-authority">IRC §894 &nbsp;&middot;&nbsp; IRS Pub. 901 &nbsp;&middot;&nbsp; Full treaty texts via IRS.gov</div> <span class="tool-link">Open Navigator</span> </a> <a href="section-83b-guide.html" class="tool-card"> <span class="tool-tag tt-planning">Guide + Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Section 83(b) Election Guide & Calculator</div> <div class="tool-desc">30-day deadline with no exceptions. Side-by-side tax comparison with and without the election. Restricted stock, founders equity, profits interests. Filing checklist. What happens if you miss it. Forfeiture risk analysis.</div> <div class="tool-authority">IRC &sect;83(b) &nbsp;&middot;&nbsp; Treas. Reg. 1.83-2 &nbsp;&middot;&nbsp; Rev. Proc. 2012-29</div> <span class="tool-link">Open Guide</span> </a> <a href="estate-tax-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Estate & Gift Tax Calculator 2026</div> <div class="tool-desc">Federal estate tax with OBBBA permanent $15M exemption (IRC 2010, P.L. 119-21). Marital deduction, charitable deduction, portability (DSUE). Annual exclusion gifting ($19K/donee). State estate tax for 12 jurisdictions. 40% rate on excess. Anti-clawback rule.</div> <div class="tool-authority">IRC &sect;2001 &nbsp;&middot;&nbsp; IRC &sect;2010 &nbsp;&middot;&nbsp; IRC &sect;2503 &nbsp;&middot;&nbsp; OBBBA P.L. 119-21</div> <span class="tool-link">Open Calculator</span> </a> <a href="social-security-tax.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">Social Security Benefit Taxation</div> <div class="tool-desc">How much of your SS benefit is taxable? Combined income formula: 0%, 50%, or 85% inclusion. Impact of IRA withdrawals, Roth conversions, and tax-exempt muni interest on SS taxation. MFS trap. Thresholds not inflation-adjusted since 1984. IRC 86.</div> <div class="tool-authority">IRC §86 &nbsp;&middot;&nbsp; Combined income formula &nbsp;&middot;&nbsp; SSA-1099</div> <span class="tool-link">Open Calculator</span> </a> <a href="qbi-calculator.html" class="tool-card"> <span class="tool-tag tt-planning">Calculator</span> <span class="updated-tag">New 2026</span> <div class="tool-name">QBI Deduction Calculator 2026</div> <div class="tool-desc">Section 199A deduction: 20% of qualified business income. W-2 wage limitation (50% of wages or 25%+2.5% UBIA). SSTB phaseout for high-income service businesses. Made permanent by OBBBA. Form 8995-A. Full computation with all limitations modeled.</div> <div class="tool-authority">IRC §199A &nbsp;&middot;&nbsp; OBBBA P.L. 119-21 &nbsp;&middot;&nbsp; Form 8995-A</div> <span class="tool-link">Open Calculator</span> </a> <a href="treaty-navigator.html" class="tool-card"> <span class="tool-tag tt-international">Reference</span> <span class="updated-tag">New 2026</span> <div class="tool-name">US Tax Treaty Navigator</div> <div class="tool-desc">Key provisions for 20 US treaties. Dividend, interest, and royalty withholding rates. Pension articles. Tie-breaker. Savings clause. US-Russia treaty SUSPENDED Aug 2023. Practitioner notes on RRSP, ISA, CPF, SIPP, keren hishtalmut, and more.</div> <div class="tool-authority">IRC &sect;894 &nbsp;&middot;&nbsp; IRS Pub. 901 &nbsp;&middot;&nbsp; Full treaty texts via IRS.gov</div> <span class="tool-link">Open Navigator</span> </a> </div> </div>
+</section> <section class="section" id="tools">
+  <div style="max-width:1200px;margin:0 auto;padding:52px 24px 8px">
+    <div style="font-family:var(--font-display);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:8px">139 Resources</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(22px,3vw,32px);font-weight:400;color:var(--ink);margin-bottom:6px">Browse by Topic</h2>
+    <p style="font-size:14px;color:var(--ink-60);margin-bottom:0">Every guide and tool traced to primary authority. Select a domain below.</p>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">Individual Tax</span>
+        <span class="domain-count">25+ resources</span>
+      </div>
+      <a href="individual-tax.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="spt-calculator.html" class="tool-card">
+        <span class="tool-tag tt-reside">Calculator</span>
+        <div class="tool-name">Substantial Presence Test</div>
+        <div class="tool-desc">183-day residency analysis with all exclusions. IRC §7701(b)(3).</div>
+        <div class="tool-authority">IRC §7701(b)(3) &middot; Treas. Reg. 301.7701(b)</div>
+        <span class="tool-link">Open Calculator</span>
+      </a><a href="amt-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Alternative Minimum Tax (AMT)</div>
+        <div class="tool-desc">AMTI computation, ISO exercise trap, exemptions, §53 credit.</div>
+        <div class="tool-authority">IRC §55-59 &middot; Form 6251</div>
+        <span class="tool-link"></span>
+      </a><a href="social-security-taxation-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Social Security Taxation</div>
+        <div class="tool-desc">Provisional income, 85% inclusion, torpedo zone, reduction strategies.</div>
+        <div class="tool-authority">IRC §86 &middot; Provisional Income</div>
+        <span class="tool-link"></span>
+      </a><a href="net-operating-loss-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Net Operating Loss</div>
+        <div class="tool-desc">§172, 80% limit, §461(l) excess business loss, OBBBA permanent rules.</div>
+        <div class="tool-authority">IRC §172 &middot; IRC §461(l)</div>
+        <span class="tool-link"></span>
+      </a><a href="hobby-loss-rules-guide.html" class="tool-card">
+        <span class="tool-tag tt-compliance">Guide</span>
+        <div class="tool-name">Hobby Loss Rules</div>
+        <div class="tool-desc">IRC §183, nine-factor test, 3-of-5 presumption. Post-TCJA: expenses fully disallowed.</div>
+        <div class="tool-authority">IRC §183 &middot; Treas. Reg. §1.183-2</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">International Tax</span>
+        <span class="domain-count">40+ resources</span>
+      </div>
+      <a href="international-tax.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="fbar-checker.html" class="tool-card">
+        <span class="tool-tag tt-international">Tool</span>
+        <div class="tool-name">FBAR & Form 8938 Checker</div>
+        <div class="tool-desc">Determine FBAR and FATCA filing requirements. FinCEN 114 vs. Form 8938 thresholds.</div>
+        <div class="tool-authority">31 USC §5314 &middot; IRC §6038D</div>
+        <span class="tool-link">Open Tool</span>
+      </a><a href="spt-calculator.html" class="tool-card">
+        <span class="tool-tag tt-international">Calculator</span>
+        <div class="tool-name">Substantial Presence Test</div>
+        <div class="tool-desc">IRC §7701(b)(3) residency analysis with all statutory exclusions.</div>
+        <div class="tool-authority">IRC §7701(b)(3)</div>
+        <span class="tool-link">Open Calculator</span>
+      </a><a href="pre-immigration-planning.html" class="tool-card">
+        <span class="tool-tag tt-international">Guide</span>
+        <div class="tool-name">Pre-Immigration Tax Planning</div>
+        <div class="tool-desc">Planning before the green card date. Covered expatriate rules, §877A.</div>
+        <div class="tool-authority">IRC §877A &middot; IRC §7701(b)</div>
+        <span class="tool-link"></span>
+      </a><a href="gilti-explained.html" class="tool-card">
+        <span class="tool-tag tt-international">Guide</span>
+        <div class="tool-name">GILTI / NCTI Explained</div>
+        <div class="tool-desc">§951A, §250 deduction, high-tax exclusion. OBBBA permanent parameters.</div>
+        <div class="tool-authority">IRC §951A &middot; IRC §250</div>
+        <span class="tool-link"></span>
+      </a><a href="foreign-tax-credit-guide.html" class="tool-card">
+        <span class="tool-tag tt-international">Guide</span>
+        <div class="tool-name">Foreign Tax Credit</div>
+        <div class="tool-desc">Form 1116, income baskets, FTC limitation formula, deemed paid §960.</div>
+        <div class="tool-authority">IRC §901 &middot; IRC §904</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">Business & Entity</span>
+        <span class="domain-count">25+ resources</span>
+      </div>
+      <a href="business-entity.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="business-entity-comparison.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Business Entity Comparison</div>
+        <div class="tool-desc">Full 12-factor comparison: sole prop, LLC, S-corp, C-corp, partnership.</div>
+        <div class="tool-authority">IRC §199A &middot; IRC §1202 QSBS</div>
+        <span class="tool-link"></span>
+      </a><a href="payroll-tax-guide.html" class="tool-card">
+        <span class="tool-tag tt-compliance">Guide</span>
+        <div class="tool-name">Payroll Tax & Trust Fund Penalty</div>
+        <div class="tool-desc">§6672 TFRP 100% personal liability, worker classification, §530 safe harbor.</div>
+        <div class="tool-authority">IRC §6672 &middot; Rev. Rul. 87-41</div>
+        <span class="tool-link"></span>
+      </a><a href="section-199a-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">QBI Deduction (§199A)</div>
+        <div class="tool-desc">20% deduction, W-2 wage limits, SSTB classification. Permanent under OBBBA.</div>
+        <div class="tool-authority">IRC §199A &middot; OBBBA P.L. 119-21</div>
+        <span class="tool-link"></span>
+      </a><a href="obbba-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">OBBBA Tax Changes 2025</div>
+        <div class="tool-desc">All major tax changes from the One Big Beautiful Bill Act - permanent TCJA provisions.</div>
+        <div class="tool-authority">OBBBA P.L. 119-21</div>
+        <span class="tool-link"></span>
+      </a><a href="executive-compensation-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Executive Compensation</div>
+        <div class="tool-desc">ISOs, NSOs, RSUs, §83(b) election, §409A deferred compensation.</div>
+        <div class="tool-authority">IRC §422 &middot; IRC §83(b) &middot; IRC §409A</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">Real Estate</span>
+        <span class="domain-count">20+ resources</span>
+      </div>
+      <a href="real-estate-tax.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="real-estate-tax-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Real Estate Tax Guide</div>
+        <div class="tool-desc">§1231, §1250 recapture, dealer vs. investor, passive activity, cost segregation.</div>
+        <div class="tool-authority">IRC §1231 &middot; IRC §1250 &middot; IRC §469</div>
+        <span class="tool-link"></span>
+      </a><a href="like-kind-exchange-deep.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">1031 Exchange Deep Dive</div>
+        <div class="tool-desc">Boot calculation, 45/180-day rules, reverse exchanges, related party rules.</div>
+        <div class="tool-authority">IRC §1031 &middot; Rev. Proc. 2000-37</div>
+        <span class="tool-link"></span>
+      </a><a href="depreciation-recapture-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Depreciation Recapture</div>
+        <div class="tool-desc">§1245 full recapture, §1250 at 25%, bonus depreciation recapture, §751 hot assets.</div>
+        <div class="tool-authority">IRC §1245 &middot; IRC §1250</div>
+        <span class="tool-link"></span>
+      </a><a href="section-121-exclusion.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">§121 Home Sale Exclusion</div>
+        <div class="tool-desc">$250K/$500K exclusion, ownership/use tests, partial exclusion, non-qualified use.</div>
+        <div class="tool-authority">IRC §121</div>
+        <span class="tool-link"></span>
+      </a><a href="passive-activity-loss.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Passive Activity Loss</div>
+        <div class="tool-desc">$25K offset, real estate professional election §469(c)(7), suspended losses.</div>
+        <div class="tool-authority">IRC §469</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">Retirement & Savings</span>
+        <span class="domain-count">10+ resources</span>
+      </div>
+      <a href="retirement-savings.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="ira-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">IRA: Traditional vs. Roth</div>
+        <div class="tool-desc">Contribution limits, deductibility, RMD age 73, 10-year rule, backdoor Roth.</div>
+        <div class="tool-authority">IRC §408 &middot; IRC §408A &middot; SECURE 2.0</div>
+        <span class="tool-link"></span>
+      </a><a href="social-security-taxation-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Social Security Taxation</div>
+        <div class="tool-desc">Provisional income, 85% inclusion, torpedo zone, QCD strategies.</div>
+        <div class="tool-authority">IRC §86 &middot; IRMAA</div>
+        <span class="tool-link"></span>
+      </a><a href="roth-conversion.html" class="tool-card">
+        <span class="tool-tag tt-planning">Calculator</span>
+        <div class="tool-name">Roth Conversion Calculator</div>
+        <div class="tool-desc">Model the tax cost and long-term benefit of converting.</div>
+        <div class="tool-authority">IRC §408A</div>
+        <span class="tool-link">Open Calculator</span>
+      </a><a href="backdoor-roth.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Backdoor Roth IRA</div>
+        <div class="tool-desc">Pro-rata rule, Form 8606, step transaction doctrine, high-income strategy.</div>
+        <div class="tool-authority">IRC §408 &middot; Form 8606</div>
+        <span class="tool-link"></span>
+      </a><a href="ira-basics-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">IRA Basics</div>
+        <div class="tool-desc">Fundamentals: contribution rules, deductibility, early distributions, exceptions.</div>
+        <div class="tool-authority">IRC §408 &middot; IRC §72(t)</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">Investments & Capital</span>
+        <span class="domain-count">10+ resources</span>
+      </div>
+      <a href="investments-capital.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="capital-gains-calculator.html" class="tool-card">
+        <span class="tool-tag tt-planning">Calculator</span>
+        <div class="tool-name">Capital Gains Calculator</div>
+        <div class="tool-desc">Federal rates with NIIT and all 50 states. Short vs. long-term modeling.</div>
+        <div class="tool-authority">IRC §1(h) &middot; IRC §1411</div>
+        <span class="tool-link">Open Calculator</span>
+      </a><a href="tax-loss-harvesting-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Tax Loss Harvesting</div>
+        <div class="tool-desc">Wash sale rule §1091, netting mechanics, $3K offset, crypto exception.</div>
+        <div class="tool-authority">IRC §1091 &middot; IRC §1211</div>
+        <span class="tool-link"></span>
+      </a><a href="cryptocurrency-tax-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Cryptocurrency Tax Guide</div>
+        <div class="tool-desc">HIFO/FIFO, staking Rev. Rul. 2023-14, Form 1099-DA, wash sale exception.</div>
+        <div class="tool-authority">Rev. Rul. 2023-14 &middot; IRC §1001</div>
+        <span class="tool-link"></span>
+      </a><a href="section-1202-qsbs.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">QSBS: §1202 Exclusion</div>
+        <div class="tool-desc">100% gain exclusion on qualifying C-corp stock. C-corp requirement, 5-year hold.</div>
+        <div class="tool-authority">IRC §1202</div>
+        <span class="tool-link"></span>
+      </a><a href="charitable-giving-strategies.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Charitable Giving Strategies</div>
+        <div class="tool-desc">DAF, CRT, CLT, QCD $108K, appreciated property, bunching vs. standard deduction.</div>
+        <div class="tool-authority">IRC §170 &middot; IRC §664 &middot; IRC §408(d)(8)</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">Estate & Gifts</span>
+        <span class="domain-count">8+ resources</span>
+      </div>
+      <a href="estate-gifts.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="estate-planning-basics.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Estate Planning Basics</div>
+        <div class="tool-desc">$15M exemption (OBBBA), §1014 step-up, wills vs. trusts, portability.</div>
+        <div class="tool-authority">IRC §1014 &middot; IRC §2010 &middot; OBBBA</div>
+        <span class="tool-link"></span>
+      </a><a href="gift-estate-tax-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Gift & Estate Tax</div>
+        <div class="tool-desc">$15M unified exemption, annual exclusion $19K, GST, portability.</div>
+        <div class="tool-authority">IRC §2010 &middot; IRC §2503</div>
+        <span class="tool-link"></span>
+      </a><a href="trust-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">Trust Tax Guide</div>
+        <div class="tool-desc">Revocable vs. irrevocable, SLAT, GRAT, IDGT, grantor trust rules.</div>
+        <div class="tool-authority">IRC §671-679</div>
+        <span class="tool-link"></span>
+      </a><a href="hnw-planning-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">HNW Planning Guide</div>
+        <div class="tool-desc">Pre-exit strategies, concentrated positions, charitable planning, §1202.</div>
+        <div class="tool-authority">IRC §1202 &middot; IRC §170</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="domain-section">
+    <div class="domain-head">
+      <div>
+        <span class="domain-label">State Tax & Compliance</span>
+        <span class="domain-count">15+ resources</span>
+      </div>
+      <a href="state-compliance.html" class="domain-browse">Browse all &rarr;</a>
+    </div>
+    <div class="tool-grid">
+      <a href="state-income-tax-nexus.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">State Income Tax Nexus</div>
+        <div class="tool-desc">183-day rule, NY convenience rule, domicile vs. statutory residency.</div>
+        <div class="tool-authority">NY Tax Law §605 &middot; State Law</div>
+        <span class="tool-link"></span>
+      </a><a href="irs-audit-guide.html" class="tool-card">
+        <span class="tool-tag tt-compliance">Guide</span>
+        <div class="tool-name">IRS Audit Guide</div>
+        <div class="tool-desc">DIF scoring, audit types, SOL §6501, 90-day letter, Appeals, OIC.</div>
+        <div class="tool-authority">IRC §6501 &middot; IRM 4.10</div>
+        <span class="tool-link"></span>
+      </a><a href="salt-planning-guide.html" class="tool-card">
+        <span class="tool-tag tt-planning">Guide</span>
+        <div class="tool-name">SALT Planning Guide</div>
+        <div class="tool-desc">$40K cap (OBBBA permanent), PTET elections, planning strategies.</div>
+        <div class="tool-authority">IRC §164(b)(6) &middot; OBBBA</div>
+        <span class="tool-link"></span>
+      </a><a href="penalty-calculator.html" class="tool-card">
+        <span class="tool-tag tt-compliance">Calculator</span>
+        <div class="tool-name">Penalty & Interest Calculator</div>
+        <div class="tool-desc">Failure to file, failure to pay, underpayment, first-time abatement.</div>
+        <div class="tool-authority">IRC §6651 &middot; IRC §6654</div>
+        <span class="tool-link">Open Calculator</span>
+      </a><a href="tax-calendar.html" class="tool-card">
+        <span class="tool-tag tt-compliance">Guide</span>
+        <div class="tool-name">Tax Calendar 2026</div>
+        <div class="tool-desc">All federal filing deadlines for individuals, businesses, trusts, and extensions.</div>
+        <div class="tool-authority">IRS Pub. 509</div>
+        <span class="tool-link"></span>
+      </a>
+    </div>
+  </div>
+
 </section> <!-- Articles -->
-<section class="section" id="articles" style="background:var(--ink-10);max-width:100%;padding:60px 0"> <div style="max-width:1200px;margin:0 auto;padding:0 48px"> <div class="section-label">Guides</div> <h2 class="section-title">Reference &amp; Thought Leadership</h2> <hr class="rule"> <div class="tools-grid"> <a href="florida-property-tax.html" class="tool-card" style="border-left:3px solid var(--coral)"> <span class="tool-tag tt-reporting" style="background:var(--red-bg);color:var(--red);border-color:var(--red-b)">Hot Topic</span> <span class="updated-tag" style="background:var(--red-bg);color:var(--red);border-color:var(--red-b)">April 2026</span> <div class="tool-name">Florida Property Tax Elimination: What's Real</div> <div class="tool-desc">HJR 203 passed the House 80-30. Died in the Senate. No amendment on the 2026 ballot. What it would actually eliminate (not all taxes), what it wouldn't, and what it means for homeowners vs. investors vs. landlords.</div> <div class="tool-authority">HJR 203 (2026) &nbsp;·&nbsp; Fla. Const. Art. VII §6 &nbsp;·&nbsp; Updated April 25, 2026</div> <span class="tool-link">Read Article</span> </a> <a href="no-income-tax-states.html" class="tool-card"> <span class="tool-tag tt-planning">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">States with No Personal Income Tax (2026)</div> <div class="tool-desc">Nine states currently impose no broad personal income tax. Updated for 2026 with state-by-state notes, sales and property tax context, and residency planning considerations.</div> <div class="tool-authority">Tax Foundation 2026 &nbsp;·&nbsp; State Tax Statutes &nbsp;·&nbsp; IRC §933</div> <span class="tool-link">Read Article</span> </a> <a href="no-income-tax-countries.html" class="tool-card"> <span class="tool-tag tt-planning">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Countries with No Personal Income Tax (2026)</div> <div class="tool-desc">18+ jurisdictions with zero personal income tax. UAE, Qatar, Monaco, Cayman Islands, Bahamas and more. Critical note for US persons: IRC §61 taxes worldwide income regardless of residency.</div> <div class="tool-authority">IRC §61 &nbsp;·&nbsp; IRC §911 &nbsp;·&nbsp; IRC §877A &nbsp;·&nbsp; IRC §6038D</div> <span class="tool-link">Read Article</span> </a> <a href="fbar-penalties.html" class="tool-card"> <span class="tool-tag tt-reporting">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">FBAR Penalties Explained (2026)</div> <div class="tool-desc">Willful vs. non-willful violations, Bittner v. US (2023), Streamlined Domestic and Foreign Procedures, Voluntary Disclosure Program. Up to $100,000 or 50% of account per year for willful violations.</div> <div class="tool-authority">31 USC §5321 &nbsp;·&nbsp; IRM 4.26.16 &nbsp;·&nbsp; Bittner v. US (2023)</div> <span class="tool-link">Read Article</span> </a> <a href="pre-immigration-planning.html" class="tool-card"> <span class="tool-tag tt-planning">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Pre-Immigration Tax Planning Checklist</div> <div class="tool-desc">Nine-step checklist for what to do before getting a US green card or visa. Capital gains harvesting, PFIC restructuring, foreign entity planning, pension analysis, dual-status year strategy.</div> <div class="tool-authority">IRC §7701(b) &nbsp;·&nbsp; IRC §1291-1298 &nbsp;·&nbsp; IRC §951 &nbsp;·&nbsp; IRC §877A</div> <span class="tool-link">Read Article</span> </a> <a href="foreign-pension-reporting.html" class="tool-card"> <span class="tool-tag tt-reporting">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Foreign Pension Reporting for US Persons</div> <div class="tool-desc">FBAR and Form 8938 treatment of foreign pensions. The key distinction: purely governmental defined benefit vs. plans with individual savings components. Canadian RRSP, Israeli, German, UK, and Russian pension analysis.</div> <div class="tool-authority">31 USC §5314 &nbsp;·&nbsp; IRC §6038D &nbsp;·&nbsp; IRC §402(b) &nbsp;·&nbsp; Tax Treaties</div> <span class="tool-link">Read Article</span> </a> <a href="subpart-f-cfc-basics.html" class="tool-card"> <span class="tool-tag tt-reporting">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Subpart F & CFC Basics: What US Shareholders Must Know</div> <div class="tool-desc">Controlled Foreign Corporation definition, Subpart F income categories (FPHCI, FBCSI, FBCSvI), IRC §951 inclusion mechanics, PTI accounts, TCJA downward attribution change, and OBBBA's replacement of GILTI with NCTI.</div> <div class="tool-authority">IRC §951-965 &nbsp;&middot;&nbsp; IRC §957 &nbsp;&middot;&nbsp; IRC §958 &nbsp;&middot;&nbsp; Form 5471</div> <span class="tool-link">Read Article</span> </a> <a href="salt-planning-guide.html" class="tool-card">
+
+  <section class="section" id="articles" style="background:var(--ink-10);max-width:100%;padding:60px 0"> <div style="max-width:1200px;margin:0 auto;padding:0 48px"> <div class="section-label">Guides</div> <h2 class="section-title">Reference &amp; Thought Leadership</h2> <hr class="rule"> <div class="tools-grid"> <a href="florida-property-tax.html" class="tool-card" style="border-left:3px solid var(--coral)"> <span class="tool-tag tt-reporting" style="background:var(--red-bg);color:var(--red);border-color:var(--red-b)">Hot Topic</span> <span class="updated-tag" style="background:var(--red-bg);color:var(--red);border-color:var(--red-b)">April 2026</span> <div class="tool-name">Florida Property Tax Elimination: What's Real</div> <div class="tool-desc">HJR 203 passed the House 80-30. Died in the Senate. No amendment on the 2026 ballot. What it would actually eliminate (not all taxes), what it wouldn't, and what it means for homeowners vs. investors vs. landlords.</div> <div class="tool-authority">HJR 203 (2026) &nbsp;·&nbsp; Fla. Const. Art. VII §6 &nbsp;·&nbsp; Updated April 25, 2026</div> <span class="tool-link">Read Article</span> </a> <a href="no-income-tax-states.html" class="tool-card"> <span class="tool-tag tt-planning">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">States with No Personal Income Tax (2026)</div> <div class="tool-desc">Nine states currently impose no broad personal income tax. Updated for 2026 with state-by-state notes, sales and property tax context, and residency planning considerations.</div> <div class="tool-authority">Tax Foundation 2026 &nbsp;·&nbsp; State Tax Statutes &nbsp;·&nbsp; IRC §933</div> <span class="tool-link">Read Article</span> </a> <a href="no-income-tax-countries.html" class="tool-card"> <span class="tool-tag tt-planning">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Countries with No Personal Income Tax (2026)</div> <div class="tool-desc">18+ jurisdictions with zero personal income tax. UAE, Qatar, Monaco, Cayman Islands, Bahamas and more. Critical note for US persons: IRC §61 taxes worldwide income regardless of residency.</div> <div class="tool-authority">IRC §61 &nbsp;·&nbsp; IRC §911 &nbsp;·&nbsp; IRC §877A &nbsp;·&nbsp; IRC §6038D</div> <span class="tool-link">Read Article</span> </a> <a href="fbar-penalties.html" class="tool-card"> <span class="tool-tag tt-reporting">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">FBAR Penalties Explained (2026)</div> <div class="tool-desc">Willful vs. non-willful violations, Bittner v. US (2023), Streamlined Domestic and Foreign Procedures, Voluntary Disclosure Program. Up to $100,000 or 50% of account per year for willful violations.</div> <div class="tool-authority">31 USC §5321 &nbsp;·&nbsp; IRM 4.26.16 &nbsp;·&nbsp; Bittner v. US (2023)</div> <span class="tool-link">Read Article</span> </a> <a href="pre-immigration-planning.html" class="tool-card"> <span class="tool-tag tt-planning">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Pre-Immigration Tax Planning Checklist</div> <div class="tool-desc">Nine-step checklist for what to do before getting a US green card or visa. Capital gains harvesting, PFIC restructuring, foreign entity planning, pension analysis, dual-status year strategy.</div> <div class="tool-authority">IRC §7701(b) &nbsp;·&nbsp; IRC §1291-1298 &nbsp;·&nbsp; IRC §951 &nbsp;·&nbsp; IRC §877A</div> <span class="tool-link">Read Article</span> </a> <a href="foreign-pension-reporting.html" class="tool-card"> <span class="tool-tag tt-reporting">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Foreign Pension Reporting for US Persons</div> <div class="tool-desc">FBAR and Form 8938 treatment of foreign pensions. The key distinction: purely governmental defined benefit vs. plans with individual savings components. Canadian RRSP, Israeli, German, UK, and Russian pension analysis.</div> <div class="tool-authority">31 USC §5314 &nbsp;·&nbsp; IRC §6038D &nbsp;·&nbsp; IRC §402(b) &nbsp;·&nbsp; Tax Treaties</div> <span class="tool-link">Read Article</span> </a> <a href="subpart-f-cfc-basics.html" class="tool-card"> <span class="tool-tag tt-reporting">Guide</span> <span class="updated-tag">Updated 2026</span> <div class="tool-name">Subpart F & CFC Basics: What US Shareholders Must Know</div> <div class="tool-desc">Controlled Foreign Corporation definition, Subpart F income categories (FPHCI, FBCSI, FBCSvI), IRC §951 inclusion mechanics, PTI accounts, TCJA downward attribution change, and OBBBA's replacement of GILTI with NCTI.</div> <div class="tool-authority">IRC §951-965 &nbsp;&middot;&nbsp; IRC §957 &nbsp;&middot;&nbsp; IRC §958 &nbsp;&middot;&nbsp; Form 5471</div> <span class="tool-link">Read Article</span> </a> <a href="salt-planning-guide.html" class="tool-card">
         <span class="tool-tag tt-planning">Guide</span>
         <span class="updated-tag">New 2026</span>
         <div class="tool-name">SALT Deduction Planning: $40K Cap & PTET Elections</div>
