@@ -10,13 +10,21 @@
 <style>
 :root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
-.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
-.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
-.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
-.nav-cta{background:var(--coral);color:#fff!important;padding:9px 20px;font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
-.nav-cta:hover{opacity:.88}
-@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
 .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
 .back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
 .article{max-width:800px;margin:0 auto;padding:40px 24px 0}
@@ -47,6 +55,15 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 .source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
 .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
 @media(max-width:600px){.compare-grid{grid-template-columns:1fr}.related-links{grid-template-columns:1fr}}
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
 </style>
 </head>
 <body>
