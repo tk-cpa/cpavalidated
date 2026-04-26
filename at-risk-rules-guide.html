@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>At-Risk Rules Guide: IRC §465, Recourse vs. Nonrecourse & Passive Activity (2026) | CPA Validated</title>
+<meta name="description" content="At-risk rules under IRC §465: what amounts are at-risk, recourse vs. nonrecourse debt, qualified nonrecourse financing exception for real estate, the ordering of at-risk vs. passive activity limitations, and recapture when at-risk amount drops below zero. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/at-risk-rules-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="ph"><div class="phi">
+  <h1>At-Risk Rules: IRC §465, Recourse Debt & the Passive Activity Ordering</h1>
+  <div class="sub">What Is At-Risk &nbsp;&bull;&nbsp; Recourse vs. Nonrecourse &nbsp;&bull;&nbsp; Real Estate Exception &nbsp;&bull;&nbsp; Recapture &nbsp;&bull;&nbsp; Ordering with §469</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §465</span>
+    <span class="ph-meta-item">Qualified Nonrecourse Financing</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The at-risk rules under IRC §465 limit loss deductions from an activity to the amount the taxpayer has economically at risk in that activity. The rules exist to prevent taxpayers from deducting losses that exceed their actual economic exposure - particularly where nonrecourse financing means the lender, not the taxpayer, bears the downside. At-risk is a separate limitation from passive activity - a loss must clear both hurdles before it is deductible, and the ordering matters.</p>
+
+<h2>What Amounts Are At-Risk: IRC §465(b)</h2>
+
+<p>A taxpayer is considered at-risk in an activity to the extent of:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Cash contributed</strong> to the activity and the adjusted basis of property contributed</li>
+  <li><strong>Amounts borrowed for use in the activity</strong> where the taxpayer is personally liable for repayment (recourse debt) - the lender can pursue the taxpayer's other assets if the activity fails</li>
+  <li><strong>Qualified nonrecourse financing</strong> for real property activities (discussed below)</li>
+  <li><strong>The taxpayer's share of stop-loss agreements</strong> do not count - arrangements that limit downside are excluded from at-risk amounts</li>
+</ul>
+
+<p>Amounts are <em>not</em> at-risk when: the taxpayer is protected against loss by guarantees, stop-loss agreements, or nonrecourse financing (other than qualified nonrecourse financing); or when the borrowed funds come from a person who has an interest in the activity other than as a creditor.</p>
+
+<div class="callout">
+  <div class="callout-label">The Core Principle</div>
+  <p>If the activity fails completely - zero value recovered - how much does the taxpayer actually lose out of pocket? That is the at-risk amount. If a nonrecourse lender provided $1M of financing and the taxpayer put in $100K of equity, the taxpayer loses at most $100K. The $1M nonrecourse debt is the lender's risk, not the taxpayer's. Therefore losses are limited to $100K regardless of how large the paper losses are.</p>
+</div>
+
+<h2>Recourse vs. Nonrecourse Debt</h2>
+
+<p><strong>Recourse debt</strong> increases the taxpayer's at-risk amount because the taxpayer is personally liable. If the activity's assets do not cover the debt, the lender can pursue the taxpayer's other assets - wages, savings, other property. The taxpayer has real economic exposure equal to the full recourse debt.</p>
+
+<p><strong>Nonrecourse debt</strong> generally does not increase at-risk amounts. The lender's only remedy on default is the collateral - the activity's assets. The taxpayer can walk away from the activity, hand over the collateral, and owe nothing more. Since the taxpayer bears no personal risk beyond the collateral, nonrecourse debt does not count as at-risk.</p>
+
+<h3>Qualified Nonrecourse Financing: The Real Estate Exception</h3>
+<p>IRC §465(b)(6) provides an important exception: qualified nonrecourse financing used in a real property activity counts as at-risk, even though it is nonrecourse. Qualified nonrecourse financing must be: (a) borrowed from a qualified person (a bank, insurance company, pension fund, or other person in the business of lending money who is not related to the taxpayer or a seller/promoter), (b) secured by real property used in the activity, and (c) not convertible debt and not seller financing from a related party.</p>
+
+<div class="green-box"><strong>This exception is why real estate partnerships work.</strong> Most commercial real estate is financed with nonrecourse mortgage debt. Without the qualified nonrecourse financing exception, investors in real estate partnerships could only deduct losses up to their equity investment - the mortgage would not count as at-risk. With the exception, investors can include their share of the nonrecourse mortgage in their at-risk amount, allowing depreciation deductions in excess of equity invested (subject to passive activity rules).</div>
+
+<h2>Computing the At-Risk Amount</h2>
+
+<p>The at-risk amount is computed separately for each activity and is adjusted annually. It increases by: income from the activity, additional cash contributions, and net increases in qualified borrowings. It decreases by: losses deducted from the activity, distributions received from the activity, and net decreases in qualified borrowings (repayments or reclassification of recourse to nonrecourse debt).</p>
+
+<h3>Suspended Losses</h3>
+<p>Losses in excess of the at-risk amount are suspended - not lost permanently. They carry forward indefinitely and become deductible when the at-risk amount increases sufficiently (through additional contributions, income, or qualified borrowings) or when the activity is disposed of in a fully taxable transaction.</p>
+
+<h2>Recapture: When the At-Risk Amount Goes Below Zero</h2>
+
+<p>If an at-risk amount that was previously positive drops below zero - because of distributions, loss of recourse protection, or debt being converted from recourse to nonrecourse - the taxpayer must recapture previously deducted losses as income. The recapture amount equals the lesser of the prior deducted losses or the amount by which the at-risk balance went negative.</p>
+
+<div class="red-box"><strong>Common recapture trigger: debt refinancing.</strong> When a partner's recourse loan is refinanced with nonrecourse debt, the recourse component that previously counted as at-risk is removed. If the partner had deducted losses based on that recourse debt, the conversion triggers recapture of those losses as ordinary income. Debt restructuring in real estate partnerships frequently creates unexpected recapture.</div>
+
+<h2>Ordering: At-Risk Before Passive Activity</h2>
+
+<p>The three major loss limitation rules apply in a specific order: (1) basis limitations (IRC §704(d) for partnerships, §1366 for S-corps), (2) at-risk limitations (IRC §465), (3) passive activity limitations (IRC §469). A loss must survive each limitation in sequence to be deductible.</p>
+
+<table class="key-table">
+  <tr><th>Step</th><th>Limitation</th><th>Governing Code</th><th>Effect if Exceeded</th></tr>
+  <tr><td>1</td><td>Basis limitation</td><td>IRC §704(d) / §1366</td><td>Loss suspended until basis restored by contributions or income</td></tr>
+  <tr><td>2</td><td>At-risk limitation</td><td>IRC §465</td><td>Loss suspended until at-risk amount increases or activity disposed of</td></tr>
+  <tr><td>3</td><td>Passive activity limitation</td><td>IRC §469</td><td>Loss suspended until passive income exists or activity disposed of</td></tr>
+</table>
+
+<div class="note-box"><strong>A loss that fails the at-risk test never reaches the passive activity test.</strong> Practitioners sometimes focus exclusively on passive activity rules and miss the at-risk analysis entirely. For leveraged investments - real estate, oil and gas, equipment leasing - the at-risk amount must be computed first. A taxpayer can have passive income to absorb a passive loss but still be unable to use it if the at-risk amount is exhausted.</div>
+
+<h2>Activities Subject to At-Risk Rules</h2>
+
+<p>IRC §465 applies to most business and investment activities, with the key exception being C-corporations that are not closely held. For individuals, S-corporation shareholders, and partners in partnerships, at-risk rules apply to: trade or business activities, rental activities, equipment leasing, farming, oil and gas, and most other for-profit activities. Each activity is tracked separately - at-risk in one activity cannot shelter losses from another.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="passive-activity-loss.html" class="related-link">Passive Activity Loss Guide<span>IRC §469 &middot; Ordering with at-risk</span></a>
+    <a href="real-estate-tax-guide.html" class="related-link">Real Estate Tax Guide<span>Qualified nonrecourse financing in practice</span></a>
+    <a href="partnership-tax-basics.html" class="related-link">Partnership Tax Basics<span>Partner basis &middot; At-risk ordering</span></a>
+    <a href="s-corporation-basics.html" class="related-link">S-Corp Basics<span>Shareholder basis &middot; Debt basis</span></a>
+    <a href="rental-activity.html" class="related-link">Rental Activity Guide<span>Real estate at-risk &middot; §469 interaction</span></a>
+    <a href="depreciation-recapture-guide.html" class="related-link">Depreciation Recapture<span>At-risk recapture on debt conversion</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §465 (at-risk limitations - applies to individuals, S-corp shareholders, and partners in partnerships with respect to each activity); IRC §465(a) (deduction limited to amount at-risk at end of tax year); IRC §465(b) (amounts considered at-risk - cash, adjusted basis of contributed property, recourse debt, qualified nonrecourse financing); IRC §465(b)(1) (cash and property at-risk); IRC §465(b)(2) (borrowed amounts at-risk - personal liability requirement); IRC §465(b)(4) (amounts protected against loss not at-risk - stop-loss agreements, guarantees); IRC §465(b)(6) (qualified nonrecourse financing exception for real property - borrowed from qualified person, secured by real property); IRC §465(c) (activities to which §465 applies - trade or business, rental, equipment leasing, oil and gas, farming); IRC §465(e) (recapture - income recognition when at-risk amount goes below zero); Treas. Reg. §1.465-1 through 1.465-27 (at-risk regulations - activity definitions, computation rules, recapture); IRC §704(d) (partner's distributive share limited to basis - applies before §465); IRC §1366(d) (S-corp shareholder's loss limited to basis - applies before §465); IRC §469 (passive activity loss rules - applies after §465).</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
