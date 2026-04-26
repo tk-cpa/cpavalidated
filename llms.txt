@@ -96,3 +96,4 @@
 - vehicle-depreciation.html: Business vehicle depreciation calculator - Section 179, 100% bonus depreciation OBBBA, MACRS, IRC 280F luxury auto caps.
 - vetted-resources.html: Curated external tax resources - IRS tools, primary law, Big Four databases, state and international authorities.
 - w4-optimizer.html: W-4 withholding optimizer - filing status, multiple jobs, credits, deductions, IRC 3402.
+- transfer-pricing-guide.html: Transfer pricing guide - IRC §482 arm's length standard, five OECD methods (CUP RPM cost-plus TNMM profit split), §6662(e)/(h) penalties, contemporaneous documentation, intercompany services safe harbor, CbCR, APA.
