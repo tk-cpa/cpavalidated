@@ -116,6 +116,12 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - Authority: IRC §951A (NCTI, formerly GILTI); IRC §250; IRC §957; IRC §960(d); IRC §962; OBBBA P.L. 119-21
 - Purpose: NCTI - Net CFC Tested Income - is the post-OBBBA renaming of GILTI. Calculation, 12.6% effective corporate rate (40% Section 250 deduction), 90% foreign tax credit, elimination of QBAI shield, inclusion shareholder rule (any-day-during-year), §962 election, high-tax exclusion. Effective for tax years beginning after 12/31/2025.
 
+### Subpart F & CFC Basics (2026)
+- URL: https://cpavalidated.com/subpart-f-cfc-basics.html
+- Authority: IRC §951 (Subpart F inclusion); IRC §951A (NCTI/GILTI, OBBBA); IRC §952 (Subpart F income); IRC §953 (insurance income); IRC §954 (FPHCI/FBCSI/FBCSvI); IRC §957 (CFC definition); IRC §958 (attribution, TCJA downward attribution); IRC §959 (PTI exclusion); IRC §960 (deemed-paid FTC); IRC §961 (basis adjustments); IRC §965 (transition tax); IRC §250 (40% deduction, OBBBA); IRC §6038/6038(b) (Form 5471, $10K penalty); IRC §6501(c)(8) (unlimited SOL); Treas. Reg. §301.7701-3 (check-the-box)
+- Purpose: CFC definition and Subpart F mechanics. CFC test: more than 50% of voting power or value owned by US shareholders (each owning 10%+, IRC §951(b)); TCJA expanded via downward attribution under §958(b). Subpart F income categories: FPHCI (dividends, interest, rents, royalties - IRC §954(c)), FBCSI (buy/sell from related party, off-shore manufacturing - §954(d)), FBCSvI (services for related party outside home country - §954(e)), insurance income (§953). De minimis rule (5%/$1M threshold); full-inclusion rule (70% threshold); high-tax exclusion (18.9%). IRC §951 inclusion mechanics: ordinary income, pro-rata share, computed on last CFC day. PTI accounts under §959 - tracks previously taxed amounts, excludes from distribution income, basis adjustments under §961. Deemed-paid FTC under §960 with §78 gross-up and §904 basket limitation. TCJA additions: §965 transition tax (mostly complete) and GILTI (§951A). OBBBA replacement: GILTI renamed NCTI, QBAI exemption eliminated, §250 deduction reduced to 40%, 20% FTC haircut eliminated, individual §250 deduction proposed. Form 5471 penalties ($10K + continuation) and unlimited SOL trap under §6501(c)(8). Check-the-box election via Form 8832 as CFC elimination tool.
+
+
 ### S-Corp vs. LLC Tax Comparison (2026)
 - URL: https://cpavalidated.com/scorp-vs-llc.html
 - Authority: IRC §1361; IRC §1401; IRC §199A; Watson v. US (8th Cir. 2012)
