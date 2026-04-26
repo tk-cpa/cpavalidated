@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Loss Harvesting Guide: Capital Loss Mechanics & Wash Sale Rule (2026) | CPA Validated</title>
+<meta name="description" content="Tax loss harvesting: how capital loss netting works, the $3,000 ordinary income offset, the wash sale rule (IRC §1091) and its 30-day window, year-end harvesting strategies, loss harvesting in appreciated portfolios, and the crypto exception. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/tax-loss-harvesting-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral);color:#fff!important;padding:9px 20px;font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="ph"><div class="phi">
+  <h1>Tax Loss Harvesting: Capital Loss Mechanics & Wash Sale Rule</h1>
+  <div class="sub">Capital Loss Netting &nbsp;&bull;&nbsp; $3,000 Ordinary Offset &nbsp;&bull;&nbsp; Wash Sale Rule §1091 &nbsp;&bull;&nbsp; Year-End Strategies &nbsp;&bull;&nbsp; Crypto Exception &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1211</span>
+    <span class="ph-meta-item">IRC §1212</span>
+    <span class="ph-meta-item">IRC §1091</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Tax loss harvesting is the deliberate realization of capital losses to offset capital gains and reduce tax liability. It does not eliminate the tax - it defers it by resetting the cost basis of the sold position to a lower number. Done correctly, the tax savings compound over time because the deferred tax is an interest-free loan from the government. Done incorrectly - by repurchasing the same or substantially identical security within 30 days - the loss is disallowed entirely under the wash sale rule.</p>
+
+<h2>Capital Loss Netting: How the Rules Work</h2>
+
+<p>Capital gains and losses are first categorized as short-term (held 12 months or less) or long-term (held more than 12 months). They are then netted within each category, and the resulting net short-term and net long-term amounts are combined under the capital gain and loss netting rules of IRC §1222.</p>
+
+<table class="key-table">
+  <tr><th>Netting Result</th><th>Tax Treatment</th></tr>
+  <tr><td>Net long-term gain + net short-term gain</td><td>LTCG taxed at 0%/15%/20% rates; STCG taxed as ordinary income</td></tr>
+  <tr><td>Net long-term gain + net short-term loss</td><td>Short-term loss offsets long-term gain; net is LTCG at preferential rates</td></tr>
+  <tr><td>Net long-term loss + net short-term gain</td><td>Long-term loss offsets short-term gain; net is STCG at ordinary rates (unfavorable)</td></tr>
+  <tr><td>Net capital loss (both categories)</td><td>Up to $3,000 deductible against ordinary income per year; excess carries forward indefinitely</td></tr>
+</table>
+
+<div class="note-box"><strong>Loss character matters on the way out.</strong> When net long-term losses offset net short-term gains, the taxpayer is using low-rate losses (worth 20% x rate differential) to offset high-rate gains (worth 37% rate). This is unfavorable ordering. Where possible, harvesting short-term losses to offset short-term gains - and long-term losses to offset long-term gains - maximizes the value of each loss. In practice, specific identification of which lots to sell can control this.</note-box>
+
+<h2>The $3,000 Annual Ordinary Income Offset</h2>
+
+<p>Net capital losses in excess of capital gains can offset up to $3,000 of ordinary income per year ($1,500 for married filing separately). This limit has not been adjusted for inflation since 1978 and is not indexed - $3,000 in 2026 is worth far less in purchasing power than it was when the limit was set. Unused capital losses carry forward indefinitely to future years and retain their short-term or long-term character.</p>
+
+<div class="green-box"><strong>Large loss carryforwards are valuable but require planning.</strong> A taxpayer with $500,000 of capital loss carryforward can offset $500,000 of capital gains in future years - but only $3,000 per year against ordinary income. Strategic realization of capital gains in years where large carryforwards exist - particularly long-term gains that would otherwise be taxed at 23.8% - is high-value planning. A financial planner or CPA can model the optimal pace of gain realization against the carryforward.</div>
+
+<h2>The Wash Sale Rule: IRC §1091</h2>
+
+<p>The wash sale rule disallows a capital loss if the taxpayer sells a security at a loss and, within 30 days before or after the sale, purchases the same or substantially identical security. The 61-day window (30 days before through 30 days after the sale date) is the key timing constraint.</p>
+
+<div class="callout">
+  <div class="callout-label">What the Wash Sale Rule Does and Doesn't Do</div>
+  <p>The wash sale rule does not permanently disallow the loss - it defers it. The disallowed loss is added to the basis of the replacement security purchased within the wash sale window. When the replacement security is eventually sold without triggering another wash sale, the deferred loss is recovered. The wash sale rule also <strong>extends the holding period</strong> of the replacement security by the holding period of the sold security.</p>
+  <p>Example: Sell 100 shares of XYZ at $5,000 loss (held 8 months). Buy 100 shares of XYZ 15 days later at $45. Wash sale: loss is disallowed. New basis = $45 + $50 loss per share = $95. New holding period: 8 months + counting from repurchase.</p>
+</div>
+
+<h3>What Is "Substantially Identical"?</h3>
+<p>The IRS defines substantially identical broadly. Securities from the same issuer are identical. Stocks and convertible bonds or convertible preferred of the same company can be substantially identical. However:</p>
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>Stocks of different companies are not substantially identical even if similar (selling Ford and buying GM avoids the wash sale rule)</li>
+  <li>Different mutual funds in the same asset class are generally not substantially identical (selling one S&P 500 fund and buying a different one may be acceptable)</li>
+  <li>ETFs tracking the same index from different providers are a gray area - the IRS has not ruled definitively on whether selling SPY and buying VOO (both tracking the S&P 500) constitutes a wash sale. Most practitioners treat this as low risk given different providers, but it is not a settled question</li>
+  <li>Options on a security can be substantially identical to the underlying stock</li>
+</ul>
+
+<h3>Wash Sale Across Accounts and Spouses</h3>
+<p>The wash sale rule applies across all accounts owned by the same taxpayer - including IRAs. Selling a stock in a taxable account at a loss and buying the same stock in an IRA within 30 days triggers the wash sale rule, and the loss is permanently disallowed (not deferred - because the replacement purchase is in a tax-advantaged account where the basis adjustment is not tracked). Spouses filing jointly are treated as one taxpayer for wash sale purposes - a loss sale by one spouse is washed by a repurchase by the other.</p>
+
+<div class="red-box"><strong>IRA wash sales produce permanent loss disallowance.</strong> Unlike taxable account wash sales where the loss is deferred via a basis adjustment, a wash sale where the replacement purchase is in an IRA loses the loss permanently. The IRA has no tax basis tracking that can absorb the disallowed loss. This is one of the most common and costly wash sale errors.</div>
+
+<h2>Year-End Harvesting Strategies</h2>
+
+<p><strong>Offset realized gains before year-end.</strong> If you have already realized capital gains during the year, harvesting losses before December 31 directly reduces the tax owed. Short-term losses should be matched against short-term gains first for maximum benefit.</p>
+
+<p><strong>Harvest without repurchasing.</strong> To avoid the wash sale rule, wait 31 days before repurchasing the sold security. During the 31-day window, hold cash or purchase a similar-but-not-substantially-identical security to maintain market exposure.</p>
+
+<p><strong>Accelerate gains in 0% years.</strong> Taxpayers in the 0% long-term capital gains bracket (income below approximately $94,050 MFJ in 2026) should consider deliberately realizing gains rather than harvesting losses. Selling appreciated positions and immediately repurchasing steps up the basis at zero tax cost - eliminating the embedded gain for future years when rates will be higher.</p>
+
+<p><strong>Crypto loss harvesting is available year-round.</strong> Because the wash sale rule does not apply to cryptocurrency (property, not securities), crypto positions can be sold at a loss and immediately repurchased without triggering the wash sale rule. This allows continuous loss harvesting on volatile crypto positions without the 31-day waiting requirement.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>Model gains, losses, and netting</span></a>
+    <a href="cryptocurrency-tax-guide.html" class="related-link">Crypto Tax Guide<span>No wash sale rule &middot; Cost basis methods</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>3.8% on net investment income &middot; Loss offset</span></a>
+    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>Concentrated positions &middot; Loss harvest planning</span></a>
+    <a href="charitable-giving-strategies.html" class="related-link">Charitable Giving Strategies<span>DAF + appreciated securities - better than harvesting</span></a>
+    <a href="roth-conversion.html" class="related-link">Roth Conversion Calculator<span>Use harvested losses to offset Roth conversion gain</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §1211 (limitation on capital losses - $3,000 annual offset against ordinary income); IRC §1212 (capital loss carryovers - indefinite carryforward retaining short-term or long-term character); IRC §1222 (other terms relating to capital gains and losses - netting rules); IRC §1091 (loss from wash sales of stock or securities - 61-day window: 30 days before through 30 days after sale); IRC §1091(b) (basis adjustment for disallowed loss - added to cost of replacement shares); IRC §1091(d) (holding period adjustment for wash sale replacement shares); IRC §1091(e) (IRA wash sale - disallowance applies when replacement purchase is in IRA); IRC §1(h) (preferential tax rates on long-term capital gains - 0%, 15%, 20%); Rev. Rul. 2008-5 (IRA wash sale rule - loss permanently disallowed when replacement security purchased in IRA); IRS Notice 2014-21 (crypto as property - wash sale rule does not apply); Treas. Reg. §1.1091-1 (wash sale regulations - definition of substantially identical); Rev. Proc. 2024-28 (specific identification of crypto assets).</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
