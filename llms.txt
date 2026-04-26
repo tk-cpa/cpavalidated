@@ -127,6 +127,11 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - Authority: IRC §1361; IRC §1401; IRC §199A; Watson v. US (8th Cir. 2012)
 - Purpose: SE tax savings, reasonable compensation, QBI interaction. $200K example. Break-even analysis.
 
+### Foreign Trusts & US Tax: Forms 3520 and 3520-A (2026)
+- URL: https://cpavalidated.com/form-3520-foreign-trusts.html
+- Authority: IRC §671-679 (grantor trust rules); IRC §679 (US person as grantor - US beneficiary test); IRC §643(i) (loans treated as distributions); IRC §661-662 (DNI rules); IRC §665-668 (throwback rules, UNI, interest charge); IRC §6048(a)(b)(c) (Form 3520/3520-A filing obligations); IRC §6677 (35% of transfer / 5% of trust assets penalties, $10K minimum); Treas. Reg. §1.679-1 through 1.679-5; Treas. Reg. §301.6677-1 (reasonable cause)
+- Purpose: Foreign trust compliance for US grantors and US beneficiaries. Two-form system: Form 3520 (US person's annual report - transfers, distributions, loans) due April 15; Form 3520-A (trust annual report - full financials, owner/beneficiary statements) due March 15. IRC §679 trap: any US person who transfers to a foreign trust with US beneficiaries is treated as grantor - taxed on all trust income regardless of distributions. US beneficiary definition broad - any potential benefit, including contingent interests. Grantor trust income: US grantor pays tax on all trust income at ordinary rates; Form 3520-A provides Owner Statement with income breakdown. Throwback rules for foreign non-grantor trusts: current-year DNI distributions taxed as ordinary income; accumulation distributions throwback to prior years at 37% + §668 interest charge (non-deductible). Deemed loan distribution rule - §643(i). Penalty structure: 35% of transfer amount (Form 3520); 5% of gross trust assets per year (Form 3520-A); $10K minimum; continuation penalties. Reasonable cause abatement available. Streamlined procedures for prior non-compliance (SDOP/SFOP).
+
 ### Form 3520: Foreign Gifts, Inheritances and Trusts
 - URL: https://cpavalidated.com/form-3520-guide.html
 - Authority: IRC §6039F; IRC §6048; IRC §6677; IRC §679
