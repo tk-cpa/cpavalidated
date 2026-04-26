@@ -138,3 +138,7 @@
 - investments-capital.html: Category hub page - curated index of all investments capital guides and tools on CPA Validated.
 - estate-gifts.html: Category hub page - curated index of all estate gifts guides and tools on CPA Validated.
 - state-compliance.html: Category hub page - curated index of all state compliance guides and tools on CPA Validated.
+- asc-740-tax-provision.html: ASC 740 tax provision - current vs deferred tax, temporary differences, valuation allowances, uncertain tax positions two-step model, ETR reconciliation, OBBBA impact on deferred taxes.
+- rmd-guide.html: RMD calculation guide - Uniform Lifetime Table by age, SECURE 2.0 age 73, April 1 first-year election, multiple IRA aggregation, inherited IRA annual RMDs years 1-9 under 10-year rule, QCDs.
+- form-5472-guide.html: Form 5472 guide - 25%-foreign-owned US corporations, foreign-owned SMLLC disregarded entities pro forma 1120, $25,000 per-failure penalty, reportable transactions, related party definition.
+- section-163j-guide.html: Section 163(j) business interest limitation - 30% ATI cap, OBBBA EBITDA restoration permanent for tax years after 2024, small business exemption $31M, RPTB irrevocable election, EBIE/ETI partnership rules.
