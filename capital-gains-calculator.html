@@ -241,7 +241,7 @@ function calc(){
   if(marginalCGRate>=0.238)h+=flag('red','!',`<strong>Marginal rate on LTCG is ${(marginalCGRate*100).toFixed(1)}%</strong> (20% + 3.8% NIIT). At this level, consider: qualified opportunity zone investments (IRC 1400Z-2), installment sales (IRC 453), charitable remainder trusts, or timing of gain recognition across tax years.`);
   h+=flag('blue','i','<strong>2026 brackets are approximate.</strong> LTCG thresholds used are estimated for 2026 based on 2025 IRS amounts (Rev. Proc. 2024-40) with inflation adjustment. NIIT thresholds are fixed by statute at $200K/$250K and are not inflation-adjusted. Verify 2026 LTCG thresholds against IRS Rev. Proc. 2025-32.');
   h+=`<div class="src">IRC 1(h) (preferential rates on LTCG and qualified dividends - 0/15/20%); IRC 1(h)(11) (qualified dividend definition); IRC 1411 (3.8% Net Investment Income Tax); IRC 1411(c) (NII definition - dividends, interest, rents, royalties, LTCG, passive income); IRC 1222 (LTCG definition - assets held over 12 months); Rev. Proc. 2024-40 (2025 inflation-adjusted amounts used as baseline); Schedule D (capital gains and losses); Form 8960 (NIIT computation); OBBBA P.L. 119-21 (LTCG rates made permanent; NIIT not changed).</div>`;
-  h+=`<div class="disc">Ordinary income tax is estimated from bracket tables; your actual liability depends on credits, AMT, and other items. Consult a CPA for your specific situation. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+  h+=``;
   rb.innerHTML=h;
 }
 calc();
