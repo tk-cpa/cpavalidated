@@ -61,24 +61,251 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 .nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
 .nav-cta:hover{background:var(--coral-600)}
 @media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
-.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
+</style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <div class="nav-right"> <ul class="nav-links"> <li><a href="index.html#tools">Tools</a></li> <li><a href="index.html#articles">Guides</a></li> <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li> <li><a href="about.html">About</a></li> </ul> <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a> </div>
-</nav> <div class="ph"><div class="phi"> <h1>Mortgage Interest Deduction Limit Calculator</h1> <div class="sub">$750K TCJA Cap &nbsp;&bull;&nbsp; $1M Grandfathered Loans &nbsp;&bull;&nbsp; Home Equity Rules &nbsp;&bull;&nbsp; Multiple Properties</div> <div class="badges"> <span class="badge">IRC §163(h)(3)</span> <span class="badge">TCJA §11043 (Dec 15, 2017)</span> <span class="badge">IRS Notice 2018-32</span> <span class="badge">Schedule A, Line 8</span> </div>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
+<div class="ph"><div class="phi">
+  <h1>Mortgage Interest Deduction Limit Calculator</h1>
+  <div class="sub">$750K TCJA Cap &nbsp;&bull;&nbsp; $1M Grandfathered Loans &nbsp;&bull;&nbsp; Home Equity Rules &nbsp;&bull;&nbsp; Multiple Properties</div>
+  <div class="badges">
+    <span class="badge">IRC §163(h)(3)</span>
+    <span class="badge">TCJA §11043 (Dec 15, 2017)</span>
+    <span class="badge">IRS Notice 2018-32</span>
+    <span class="badge">Schedule A, Line 8</span>
+  </div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Primary Mortgage</h2></div> <div class="cb"> <div class="loan-label">Loan 1 - Primary Residence (or first mortgage)</div> <div class="fg3"> <div class="f1"><label>Loan Origination Date</label> <select class="fc" id="loan1Date" onchange="calc()"> <option value="pre">Before December 16, 2017 (grandfathered - $1M limit)</option> <option value="post" selected>December 16, 2017 or later ($750K limit)</option> </select> </div> <div class="f1"><label>Average Outstanding Balance ($)</label> <input type="number" class="fc" id="loan1Bal" value="900000" oninput="calc()"> <div class="hint">Average of beginning + ending balance for the year. From Form 1098 Box 2.</div> </div> <div class="f1"><label>Interest Paid ($)</label> <input type="number" class="fc" id="loan1Int" value="38000" oninput="calc()"> <div class="hint">From Form 1098 Box 1.</div> </div> </div> <div class="fg2"> <div class="f1"><label>Loan Purpose</label> <select class="fc" id="loan1Purpose" onchange="calc()"> <option value="acquire">Acquire, build, or substantially improve the home</option> <option value="other">Other (refi cash-out for non-home purpose, debt consolidation)</option> </select> <div class="hint">Only acquisition debt qualifies under TCJA. Cash-out for non-home purposes is treated as home equity debt - generally not deductible. IRC §163(h)(3)(B).</div> </div> <div class="f1"><label>Property Type</label> <select class="fc" id="loan1Type" onchange="calc()"> <option value="primary">Primary residence</option> <option value="secondary">Second home (vacation home, etc.)</option> </select> </div> </div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Second Mortgage / Home Equity (Optional)</h2></div> <div class="cb"> <div class="loan-label">Loan 2 - Second Mortgage or HELOC</div> <div class="fg3"> <div class="f1"><label>Origination Date</label> <select class="fc" id="loan2Date" onchange="calc()"> <option value="none" selected>No second mortgage</option> <option value="pre">Before December 16, 2017</option> <option value="post">December 16, 2017 or later</option> </select> </div> <div class="f1"><label>Average Outstanding Balance ($)</label> <input type="number" class="fc" id="loan2Bal" value="0" oninput="calc()"> </div> <div class="f1"><label>Interest Paid ($)</label> <input type="number" class="fc" id="loan2Int" value="0" oninput="calc()"> </div> </div> <div class="f1" style="max-width:400px"><label>Loan 2 Purpose</label> <select class="fc" id="loan2Purpose" onchange="calc()"> <option value="acquire">Buy, build, or substantially improve the home</option> <option value="other">Other (debt consolidation, personal expenses, etc.)</option> </select> <div class="hint">Under TCJA, home equity debt used for purposes other than buying, building, or improving the home is not deductible, regardless of the loan origination date. IRS Notice 2018-32.</div> </div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">3</div><h2>Deduction Analysis</h2></div> <div class="cb" id="resultBody"> <div style="text-align:center;color:var(--ink-60);padding:20px">Enter your mortgage information above.</div> </div>
-</div> </div> <script>
-function fmt(n){ if(!n||n<=0) return '$0'; return '$'+Math.round(n).toLocaleString('en-US');
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Primary Mortgage</h2></div>
+  <div class="cb">
+    <div class="loan-label">Loan 1 - Primary Residence (or first mortgage)</div>
+    <div class="fg3">
+      <div class="f1"><label>Loan Origination Date</label>
+        <select class="fc" id="loan1Date" onchange="calc()">
+          <option value="pre">Before December 16, 2017 (grandfathered - $1M limit)</option>
+          <option value="post" selected>December 16, 2017 or later ($750K limit)</option>
+        </select>
+      </div>
+      <div class="f1"><label>Average Outstanding Balance ($)</label>
+        <input type="number" class="fc" id="loan1Bal" value="900000" oninput="calc()">
+        <div class="hint">Average of beginning + ending balance for the year. From Form 1098 Box 2.</div>
+      </div>
+      <div class="f1"><label>Interest Paid ($)</label>
+        <input type="number" class="fc" id="loan1Int" value="38000" oninput="calc()">
+        <div class="hint">From Form 1098 Box 1.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Loan Purpose</label>
+        <select class="fc" id="loan1Purpose" onchange="calc()">
+          <option value="acquire">Acquire, build, or substantially improve the home</option>
+          <option value="other">Other (refi cash-out for non-home purpose, debt consolidation)</option>
+        </select>
+        <div class="hint">Only acquisition debt qualifies under TCJA. Cash-out for non-home purposes is treated as home equity debt - generally not deductible. IRC §163(h)(3)(B).</div>
+      </div>
+      <div class="f1"><label>Property Type</label>
+        <select class="fc" id="loan1Type" onchange="calc()">
+          <option value="primary">Primary residence</option>
+          <option value="secondary">Second home (vacation home, etc.)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Second Mortgage / Home Equity (Optional)</h2></div>
+  <div class="cb">
+    <div class="loan-label">Loan 2 - Second Mortgage or HELOC</div>
+    <div class="fg3">
+      <div class="f1"><label>Origination Date</label>
+        <select class="fc" id="loan2Date" onchange="calc()">
+          <option value="none" selected>No second mortgage</option>
+          <option value="pre">Before December 16, 2017</option>
+          <option value="post">December 16, 2017 or later</option>
+        </select>
+      </div>
+      <div class="f1"><label>Average Outstanding Balance ($)</label>
+        <input type="number" class="fc" id="loan2Bal" value="0" oninput="calc()">
+      </div>
+      <div class="f1"><label>Interest Paid ($)</label>
+        <input type="number" class="fc" id="loan2Int" value="0" oninput="calc()">
+      </div>
+    </div>
+    <div class="f1" style="max-width:400px"><label>Loan 2 Purpose</label>
+      <select class="fc" id="loan2Purpose" onchange="calc()">
+        <option value="acquire">Buy, build, or substantially improve the home</option>
+        <option value="other">Other (debt consolidation, personal expenses, etc.)</option>
+      </select>
+      <div class="hint">Under TCJA, home equity debt used for purposes other than buying, building, or improving the home is not deductible, regardless of the loan origination date. IRS Notice 2018-32.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Deduction Analysis</h2></div>
+  <div class="cb" id="resultBody">
+    <div style="text-align:center;color:var(--ink-60);padding:20px">Enter your mortgage information above.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function fmt(n){
+  if(!n||n<=0) return '$0';
+  return '$'+Math.round(n).toLocaleString('en-US');
 }
 function pct(n){return (n*100).toFixed(1)+'%';}
-function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;} function calc(){ const loan1Date = document.getElementById('loan1Date').value; const loan1Bal = parseFloat(document.getElementById('loan1Bal').value)||0; const loan1Int = parseFloat(document.getElementById('loan1Int').value)||0; const loan1Purpose = document.getElementById('loan1Purpose').value; const loan1Type = document.getElementById('loan1Type').value; const loan2Date = document.getElementById('loan2Date').value; const loan2Bal = loan2Date === 'none' ? 0 : (parseFloat(document.getElementById('loan2Bal').value)||0); const loan2Int = loan2Date === 'none' ? 0 : (parseFloat(document.getElementById('loan2Int').value)||0); const loan2Purpose = document.getElementById('loan2Purpose').value; // Determine applicable limit // Pre-Dec 16, 2017 loans: $1,000,000 limit (grandfathered) // Post-Dec 15, 2017 loans: $750,000 limit // Mixed: complex - IRS Notice 2018-32 provides the average balance method // Simplification: if loan1 is pre-TCJA, use $1M limit for loan1; if post, use $750K const limit1 = loan1Date === 'pre' ? 1000000 : 750000; const limit2 = loan2Date === 'pre' ? 1000000 : (loan2Date === 'post' ? 750000 : 0); // Loan 1 analysis let loan1QualifyingBal = 0; let loan1Deductible = 0; let loan1NonDeductible = 0; if(loan1Purpose === 'acquire'){ loan1QualifyingBal = Math.min(loan1Bal, limit1); const loan1Ratio = loan1Bal > 0 ? loan1QualifyingBal / loan1Bal : 0; loan1Deductible = loan1Int * loan1Ratio; loan1NonDeductible = loan1Int * (1 - loan1Ratio); } else { // Other purpose = not acquisition debt under TCJA loan1Deductible = 0; loan1NonDeductible = loan1Int; } // Loan 2 analysis - also subject to combined limit with loan1 let loan2QualifyingBal = 0; let loan2Deductible = 0; let loan2NonDeductible = 0; if(loan2Date !== 'none' && loan2Purpose === 'acquire'){ // Combined balance must not exceed the applicable limit // If both loans exist, the combined qualifying balance is capped const combinedLimit = Math.max(limit1, limit2); // simplified - use the higher applicable limit const remainingLimit = Math.max(0, combinedLimit - loan1QualifyingBal); loan2QualifyingBal = Math.min(loan2Bal, remainingLimit); const loan2Ratio = loan2Bal > 0 ? loan2QualifyingBal / loan2Bal : 0; loan2Deductible = loan2Int * loan2Ratio; loan2NonDeductible = loan2Int * (1 - loan2Ratio); } else if(loan2Date !== 'none'){ loan2Deductible = 0; loan2NonDeductible = loan2Int; } const totalInt = loan1Int + loan2Int; const totalDeductible = loan1Deductible + loan2Deductible; const totalNonDeductible = loan1NonDeductible + loan2NonDeductible; const deductiblePct = totalInt > 0 ? totalDeductible / totalInt : 0; const totalBal = loan1Bal + loan2Bal; const capUsed = loan1QualifyingBal + loan2QualifyingBal; const rb = document.getElementById('resultBody'); let h = ''; // Hero h += `<div class="result-hero"><div class="rh-grid"> <div class="rh-item"><div class="rh-label">Total Interest Paid</div><div class="rh-val">${fmt(totalInt)}</div><div class="rh-sub">From Form 1098</div></div> <div class="rh-item"><div class="rh-label">Deductible Interest</div><div class="rh-val coral">${fmt(totalDeductible)}</div><div class="rh-sub">Schedule A, Line 8a</div></div> <div class="rh-item"><div class="rh-label">Non-Deductible</div><div class="rh-val ${totalNonDeductible>0?'red':'green'}">${fmt(totalNonDeductible)}</div><div class="rh-sub">${totalNonDeductible>0?'Exceeds cap or non-qualifying':'Fully deductible'}</div></div> <div class="rh-item"><div class="rh-label">Deductible %</div><div class="rh-val ${deductiblePct<1?'amber':'green'}">${pct(deductiblePct)}</div><div class="rh-sub">Of total interest paid</div></div> </div></div>`; // Visual bar if(totalInt > 0){ const dedWidth = Math.round(deductiblePct * 100); const nonDedWidth = 100 - dedWidth; h += `<div class="limit-visual"> <div class="lv-deductible" style="width:${dedWidth}%">${dedWidth > 10 ? fmt(totalDeductible) : ''}</div> ${nonDedWidth > 0 ? `<div class="lv-nondeductible" style="width:${nonDedWidth}%">${nonDedWidth > 10 ? 'Not deductible: '+fmt(totalNonDeductible) : ''}</div>` : ''} </div>`; } // Calculation detail h += `<div class="sum-box"><div class="sum-title">Calculation Detail</div> <div class="sum-row"><span class="sum-lbl">Loan 1 origination</span><span class="sum-val">${loan1Date === 'pre' ? 'Pre-Dec 16, 2017 (grandfathered $1M limit)' : 'Post-Dec 15, 2017 ($750K TCJA limit)'}</span></div> <div class="sum-row"><span class="sum-lbl">Loan 1 average balance</span><span class="sum-val">${fmt(loan1Bal)}</span></div> <div class="sum-row"><span class="sum-lbl">Loan 1 qualifying balance (capped at ${fmt(limit1)})</span><span class="sum-val">${fmt(loan1QualifyingBal)}</span></div> <div class="sum-row"><span class="sum-lbl">Loan 1 interest paid</span><span class="sum-val">${fmt(loan1Int)}</span></div> <div class="sum-row"><span class="sum-lbl">Loan 1 deductible interest</span><span class="sum-val green">${fmt(loan1Deductible)}</span></div> ${loan2Date !== 'none' ? ` <div class="sum-row"><span class="sum-lbl">Loan 2 average balance</span><span class="sum-val">${fmt(loan2Bal)}</span></div> <div class="sum-row"><span class="sum-lbl">Loan 2 qualifying balance</span><span class="sum-val">${fmt(loan2QualifyingBal)}</span></div> <div class="sum-row"><span class="sum-lbl">Loan 2 deductible interest</span><span class="sum-val green">${fmt(loan2Deductible)}</span></div> ` : ''} <div class="sum-row"><span class="sum-lbl">Total deductible interest (Schedule A, Line 8a)</span><span class="sum-val">${fmt(totalDeductible)}</span></div> ${totalNonDeductible > 0 ? `<div class="sum-row"><span class="sum-lbl">Non-deductible personal interest (IRC §163(h))</span><span class="sum-val red">${fmt(totalNonDeductible)}</span></div>` : ''} </div>`; // Flags const excessBal = totalBal - capUsed; if(excessBal > 0){ h += flag('amber','!',`<strong>Loan balance exceeds the applicable cap by ${fmt(excessBal)}.</strong> The interest attributable to the ${fmt(excessBal)} in excess balance is treated as personal interest under IRC §163(h) and is not deductible. The non-deductible interest of ${fmt(totalNonDeductible)} represents the interest on this excess amount.`); } if(loan1Purpose === 'other' || loan2Purpose === 'other'){ h += flag('red','✗',`<strong>Home equity debt used for non-home purposes is not deductible under TCJA.</strong> Under IRS Notice 2018-32 and IRC §163(h)(3)(C) as amended by TCJA, interest on home equity loans and HELOCs is only deductible if the proceeds are used to buy, build, or substantially improve the taxpayer's home that secures the loan. Using home equity proceeds to pay off credit cards, buy a car, fund investments, or other non-home purposes renders the interest nondeductible personal interest - regardless of when the loan was originated. This rule was made permanent by OBBBA.`); } if(loan1Date === 'pre' && loan1Bal <= 1000000 && loan2Date === 'none'){ h += flag('green','✓',`<strong>Grandfathered loan - full $1,000,000 limit applies.</strong> This loan was originated before December 16, 2017 and is grandfathered under the pre-TCJA $1,000,000 acquisition debt limit. As long as the balance does not exceed $1,000,000 and the proceeds were used to acquire, build, or substantially improve the home, the interest is fully deductible. Refinancing a grandfathered loan generally preserves the grandfathered status up to the outstanding balance at the time of refinancing. Treas. Reg. §1.163-10T.`); } if(loan1Date === 'post' && totalDeductible < totalInt){ h += flag('blue','ℹ',`<strong>Refinancing strategy.</strong> If you refinanced a pre-Dec 15, 2017 mortgage into this post-Dec 15, 2017 loan and took no additional cash out, a portion of the new loan may be treated as grandfathered at the prior loan's outstanding balance at the time of refinance. If this applies to you, consult a tax professional - the deductible interest may be higher than this calculator shows.`); } h += flag('blue','ℹ','<strong>SALT cap interaction.</strong> The $10,000 annual cap on state and local tax deductions (including property taxes) under IRC §164(b)(6) applies on Schedule A at the same place as mortgage interest. If your property taxes are already filling the $10,000 SALT cap, the property tax deduction provides no additional benefit - but mortgage interest has no dollar cap separate from the acquisition debt limit, and remains fully deductible up to the $750K/$1M ceiling.'); h += `<div class="src">Authority: IRC §163(h)(3)(A)-(B) (acquisition indebtedness definition); IRC §163(h)(3)(D) (TCJA $750,000 limit, loans after Dec 15, 2017); IRC §163(h)(3)(E) (pre-TCJA $1,000,000 grandfathered limit); IRS Notice 2018-32 (home equity debt - only deductible if used to buy/build/improve); Treas. Reg. §1.163-10T (allocation of interest); TCJA §11043 (P.L. 115-97); OBBBA (P.L. 119-21) (TCJA mortgage interest provisions made permanent); IRC §164(b)(6) (SALT $10,000 cap, also made permanent by OBBBA); Schedule A, Line 8a (deductible mortgage interest).</div>`; h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`; h += `<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>`; rb.innerHTML = h;
+function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
+
+function calc(){
+  const loan1Date    = document.getElementById('loan1Date').value;
+  const loan1Bal     = parseFloat(document.getElementById('loan1Bal').value)||0;
+  const loan1Int     = parseFloat(document.getElementById('loan1Int').value)||0;
+  const loan1Purpose = document.getElementById('loan1Purpose').value;
+  const loan1Type    = document.getElementById('loan1Type').value;
+  const loan2Date    = document.getElementById('loan2Date').value;
+  const loan2Bal     = loan2Date === 'none' ? 0 : (parseFloat(document.getElementById('loan2Bal').value)||0);
+  const loan2Int     = loan2Date === 'none' ? 0 : (parseFloat(document.getElementById('loan2Int').value)||0);
+  const loan2Purpose = document.getElementById('loan2Purpose').value;
+
+  // Determine applicable limit
+  // Pre-Dec 16, 2017 loans: $1,000,000 limit (grandfathered)
+  // Post-Dec 15, 2017 loans: $750,000 limit
+  // Mixed: complex - IRS Notice 2018-32 provides the average balance method
+  // Simplification: if loan1 is pre-TCJA, use $1M limit for loan1; if post, use $750K
+
+  const limit1 = loan1Date === 'pre' ? 1000000 : 750000;
+  const limit2 = loan2Date === 'pre' ? 1000000 : (loan2Date === 'post' ? 750000 : 0);
+
+  // Loan 1 analysis
+  let loan1QualifyingBal = 0;
+  let loan1Deductible = 0;
+  let loan1NonDeductible = 0;
+
+  if(loan1Purpose === 'acquire'){
+    loan1QualifyingBal = Math.min(loan1Bal, limit1);
+    const loan1Ratio = loan1Bal > 0 ? loan1QualifyingBal / loan1Bal : 0;
+    loan1Deductible = loan1Int * loan1Ratio;
+    loan1NonDeductible = loan1Int * (1 - loan1Ratio);
+  } else {
+    // Other purpose = not acquisition debt under TCJA
+    loan1Deductible = 0;
+    loan1NonDeductible = loan1Int;
+  }
+
+  // Loan 2 analysis - also subject to combined limit with loan1
+  let loan2QualifyingBal = 0;
+  let loan2Deductible = 0;
+  let loan2NonDeductible = 0;
+
+  if(loan2Date !== 'none' && loan2Purpose === 'acquire'){
+    // Combined balance must not exceed the applicable limit
+    // If both loans exist, the combined qualifying balance is capped
+    const combinedLimit = Math.max(limit1, limit2); // simplified - use the higher applicable limit
+    const remainingLimit = Math.max(0, combinedLimit - loan1QualifyingBal);
+    loan2QualifyingBal = Math.min(loan2Bal, remainingLimit);
+    const loan2Ratio = loan2Bal > 0 ? loan2QualifyingBal / loan2Bal : 0;
+    loan2Deductible = loan2Int * loan2Ratio;
+    loan2NonDeductible = loan2Int * (1 - loan2Ratio);
+  } else if(loan2Date !== 'none'){
+    loan2Deductible = 0;
+    loan2NonDeductible = loan2Int;
+  }
+
+  const totalInt = loan1Int + loan2Int;
+  const totalDeductible = loan1Deductible + loan2Deductible;
+  const totalNonDeductible = loan1NonDeductible + loan2NonDeductible;
+  const deductiblePct = totalInt > 0 ? totalDeductible / totalInt : 0;
+  const totalBal = loan1Bal + loan2Bal;
+  const capUsed = loan1QualifyingBal + loan2QualifyingBal;
+
+  const rb = document.getElementById('resultBody');
+  let h = '';
+
+  // Hero
+  h += `<div class="result-hero"><div class="rh-grid">
+    <div class="rh-item"><div class="rh-label">Total Interest Paid</div><div class="rh-val">${fmt(totalInt)}</div><div class="rh-sub">From Form 1098</div></div>
+    <div class="rh-item"><div class="rh-label">Deductible Interest</div><div class="rh-val coral">${fmt(totalDeductible)}</div><div class="rh-sub">Schedule A, Line 8a</div></div>
+    <div class="rh-item"><div class="rh-label">Non-Deductible</div><div class="rh-val ${totalNonDeductible>0?'red':'green'}">${fmt(totalNonDeductible)}</div><div class="rh-sub">${totalNonDeductible>0?'Exceeds cap or non-qualifying':'Fully deductible'}</div></div>
+    <div class="rh-item"><div class="rh-label">Deductible %</div><div class="rh-val ${deductiblePct<1?'amber':'green'}">${pct(deductiblePct)}</div><div class="rh-sub">Of total interest paid</div></div>
+  </div></div>`;
+
+  // Visual bar
+  if(totalInt > 0){
+    const dedWidth = Math.round(deductiblePct * 100);
+    const nonDedWidth = 100 - dedWidth;
+    h += `<div class="limit-visual">
+      <div class="lv-deductible" style="width:${dedWidth}%">${dedWidth > 10 ? fmt(totalDeductible) : ''}</div>
+      ${nonDedWidth > 0 ? `<div class="lv-nondeductible" style="width:${nonDedWidth}%">${nonDedWidth > 10 ? 'Not deductible: '+fmt(totalNonDeductible) : ''}</div>` : ''}
+    </div>`;
+  }
+
+  // Calculation detail
+  h += `<div class="sum-box"><div class="sum-title">Calculation Detail</div>
+    <div class="sum-row"><span class="sum-lbl">Loan 1 origination</span><span class="sum-val">${loan1Date === 'pre' ? 'Pre-Dec 16, 2017 (grandfathered $1M limit)' : 'Post-Dec 15, 2017 ($750K TCJA limit)'}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Loan 1 average balance</span><span class="sum-val">${fmt(loan1Bal)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Loan 1 qualifying balance (capped at ${fmt(limit1)})</span><span class="sum-val">${fmt(loan1QualifyingBal)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Loan 1 interest paid</span><span class="sum-val">${fmt(loan1Int)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Loan 1 deductible interest</span><span class="sum-val green">${fmt(loan1Deductible)}</span></div>
+    ${loan2Date !== 'none' ? `
+    <div class="sum-row"><span class="sum-lbl">Loan 2 average balance</span><span class="sum-val">${fmt(loan2Bal)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Loan 2 qualifying balance</span><span class="sum-val">${fmt(loan2QualifyingBal)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Loan 2 deductible interest</span><span class="sum-val green">${fmt(loan2Deductible)}</span></div>
+    ` : ''}
+    <div class="sum-row"><span class="sum-lbl">Total deductible interest (Schedule A, Line 8a)</span><span class="sum-val">${fmt(totalDeductible)}</span></div>
+    ${totalNonDeductible > 0 ? `<div class="sum-row"><span class="sum-lbl">Non-deductible personal interest (IRC §163(h))</span><span class="sum-val red">${fmt(totalNonDeductible)}</span></div>` : ''}
+  </div>`;
+
+  // Flags
+  const excessBal = totalBal - capUsed;
+  if(excessBal > 0){
+    h += flag('amber','!',`<strong>Loan balance exceeds the applicable cap by ${fmt(excessBal)}.</strong> The interest attributable to the ${fmt(excessBal)} in excess balance is treated as personal interest under IRC §163(h) and is not deductible. The non-deductible interest of ${fmt(totalNonDeductible)} represents the interest on this excess amount.`);
+  }
+  if(loan1Purpose === 'other' || loan2Purpose === 'other'){
+    h += flag('red','✗',`<strong>Home equity debt used for non-home purposes is not deductible under TCJA.</strong> Under IRS Notice 2018-32 and IRC §163(h)(3)(C) as amended by TCJA, interest on home equity loans and HELOCs is only deductible if the proceeds are used to buy, build, or substantially improve the taxpayer's home that secures the loan. Using home equity proceeds to pay off credit cards, buy a car, fund investments, or other non-home purposes renders the interest nondeductible personal interest - regardless of when the loan was originated. This rule was made permanent by OBBBA.`);
+  }
+  if(loan1Date === 'pre' && loan1Bal <= 1000000 && loan2Date === 'none'){
+    h += flag('green','✓',`<strong>Grandfathered loan - full $1,000,000 limit applies.</strong> This loan was originated before December 16, 2017 and is grandfathered under the pre-TCJA $1,000,000 acquisition debt limit. As long as the balance does not exceed $1,000,000 and the proceeds were used to acquire, build, or substantially improve the home, the interest is fully deductible. Refinancing a grandfathered loan generally preserves the grandfathered status up to the outstanding balance at the time of refinancing. Treas. Reg. §1.163-10T.`);
+  }
+  if(loan1Date === 'post' && totalDeductible < totalInt){
+    h += flag('blue','ℹ',`<strong>Refinancing strategy.</strong> If you refinanced a pre-Dec 15, 2017 mortgage into this post-Dec 15, 2017 loan and took no additional cash out, a portion of the new loan may be treated as grandfathered at the prior loan's outstanding balance at the time of refinance. If this applies to you, consult a tax professional - the deductible interest may be higher than this calculator shows.`);
+  }
+  h += flag('blue','ℹ','<strong>SALT cap interaction.</strong> The $10,000 annual cap on state and local tax deductions (including property taxes) under IRC §164(b)(6) applies on Schedule A at the same place as mortgage interest. If your property taxes are already filling the $10,000 SALT cap, the property tax deduction provides no additional benefit - but mortgage interest has no dollar cap separate from the acquisition debt limit, and remains fully deductible up to the $750K/$1M ceiling.');
+
+  h += `<div class="src">Authority: IRC §163(h)(3)(A)-(B) (acquisition indebtedness definition); IRC §163(h)(3)(D) (TCJA $750,000 limit, loans after Dec 15, 2017); IRC §163(h)(3)(E) (pre-TCJA $1,000,000 grandfathered limit); IRS Notice 2018-32 (home equity debt - only deductible if used to buy/build/improve); Treas. Reg. §1.163-10T (allocation of interest); TCJA §11043 (P.L. 115-97); OBBBA (P.L. 119-21) (TCJA mortgage interest provisions made permanent); IRC §164(b)(6) (SALT $10,000 cap, also made permanent by OBBBA); Schedule A, Line 8a (deductible mortgage interest).</div>`;
+  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += `<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>`;
+
+  rb.innerHTML = h;
 }
 calc();
-</script> 
-<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="home-office-calculator.html" class="rl">Home Office Calculator</a><a href="capital-gains-calculator.html" class="rl">Capital Gains Calculator</a><a href="florida-property-tax.html" class="rl">Florida Property Tax</a><a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a><a href="depreciation-calculator.html" class="rl">Depreciation Calculator</a></div></div>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
 </body>
 </html>
