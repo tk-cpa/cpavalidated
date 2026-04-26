@@ -57,204 +57,24 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
-  </a>
-  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi">
-  <h1>Estate & Gift Tax Calculator 2026</h1>
-  <div class="sub">Federal estate tax with OBBBA permanent high exemption. Annual gift exclusion. Portability (DSUE). Marital deduction. State estate tax exposure. 40% rate on amounts above exemption.</div>
-  <div class="badges"><span class="badge">IRC 2001 - estate tax</span><span class="badge">IRC 2010 - unified credit</span><span class="badge">IRC 2503 - annual exclusion</span><span class="badge">IRC 2056 - marital deduction</span><span class="badge">OBBBA P.L. 119-21</span></div>
+<div class="ph"><div class="phi"> <h1>Estate & Gift Tax Calculator 2026</h1> <div class="sub">Federal estate tax with OBBBA permanent high exemption. Annual gift exclusion. Portability (DSUE). Marital deduction. State estate tax exposure. 40% rate on amounts above exemption.</div> <div class="badges"><span class="badge">IRC 2001 - estate tax</span><span class="badge">IRC 2010 - unified credit</span><span class="badge">IRC 2503 - annual exclusion</span><span class="badge">IRC 2056 - marital deduction</span><span class="badge">OBBBA P.L. 119-21</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap">
-
-<div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Estate & Gift Information</h2></div>
-  <div class="cb">
-    <div class="fg3">
-      <div class="f1"><label>Gross Estate Value ($)</label>
-        <input type="number" class="fc" id="grossEstate" value="20000000" oninput="calc()">
-        <div class="hint">Total fair market value of all assets at death: real estate, investments, business interests, retirement accounts (IRAs/401(k)s), life insurance (if in estate), personal property.</div>
-      </div>
-      <div class="f1"><label>Debts & Expenses ($)</label>
-        <input type="number" class="fc" id="debts" value="500000" oninput="calc()">
-        <div class="hint">Mortgages, other debts, funeral expenses, estate administration costs. Deductible from gross estate. IRC 2053.</div>
-      </div>
-      <div class="f1"><label>Bequest to Spouse ($)</label>
-        <input type="number" class="fc" id="maritalDeduction" value="0" oninput="calc()">
-        <div class="hint">Assets passing to US citizen spouse. Unlimited marital deduction - fully deducted from taxable estate. IRC 2056. Defers but does not eliminate estate tax.</div>
-      </div>
-    </div>
-    <div class="fg3">
-      <div class="f1"><label>Charitable Bequests ($)</label>
-        <input type="number" class="fc" id="charitable" value="0" oninput="calc()">
-        <div class="hint">Amounts passing to qualifying charities. Unlimited charitable deduction. IRC 2055.</div>
-      </div>
-      <div class="f1"><label>Prior Taxable Gifts (Post-1976) ($)</label>
-        <input type="number" class="fc" id="priorGifts" value="0" oninput="calc()">
-        <div class="hint">Cumulative taxable gifts made during lifetime (above annual exclusions). Added back to estate to determine tax rate bracket. IRC 2001(b).</div>
-      </div>
-      <div class="f1"><label>Deceased Spouse Unused Exemption (DSUE) ($)</label>
-        <input type="number" class="fc" id="dsue" value="0" oninput="calc()">
-        <div class="hint">Portability: unused exemption of a deceased spouse, elected on Form 706 within 5 years of death (Rev. Proc. 2022-32 extended deadline). IRC 2010(c)(4).</div>
-      </div>
-    </div>
-    <div class="fg2">
-      <div class="f1"><label>State of Domicile</label>
-        <select class="fc" id="state" onchange="calc()">
-          <option value="none">No state estate tax (FL, TX, CA, NV, and most states)</option>
-          <option value="ny">New York - $7.16M exemption (2026 est.), 16% max rate</option>
-          <option value="ma">Massachusetts - $2M exemption, 16% max rate</option>
-          <option value="or">Oregon - $1M exemption, 16% max rate</option>
-          <option value="wa">Washington - $2.193M exemption (2026 est.), 20% max rate</option>
-          <option value="il">Illinois - $4M exemption, 16% max rate</option>
-          <option value="mn">Minnesota - $3M exemption (est.), 16% max rate</option>
-          <option value="md">Maryland - $5M exemption, 16% max rate</option>
-          <option value="ct">Connecticut - $13.61M exemption (2026 est.), 12% rate</option>
-          <option value="ri">Rhode Island - $1.77M exemption (2026 est.), 16% max rate</option>
-          <option value="vt">Vermont - $5M exemption, 16% max rate</option>
-          <option value="me">Maine - $6.8M exemption (2026 est.), 12% max rate</option>
-          <option value="hi">Hawaii - $5.49M exemption (2026 est.), 20% max rate</option>
-        </select>
-      </div>
-      <div class="f1"><label>Number of Donees for Annual Exclusion Gifts</label>
-        <input type="number" class="fc" id="donees" value="4" min="0" max="100" oninput="calc()">
-        <div class="hint">Number of individuals receiving annual exclusion gifts. 2026 annual exclusion: $19,000 per donee (estimated; 2025 was $19,000). IRC 2503(b).</div>
-      </div>
-    </div>
-  </div>
+<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Estate & Gift Information</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Gross Estate Value ($)</label> <input type="number" class="fc" id="grossEstate" value="20000000" oninput="calc()"> <div class="hint">Total fair market value of all assets at death: real estate, investments, business interests, retirement accounts (IRAs/401(k)s), life insurance (if in estate), personal property.</div> </div> <div class="f1"><label>Debts & Expenses ($)</label> <input type="number" class="fc" id="debts" value="500000" oninput="calc()"> <div class="hint">Mortgages, other debts, funeral expenses, estate administration costs. Deductible from gross estate. IRC 2053.</div> </div> <div class="f1"><label>Bequest to Spouse ($)</label> <input type="number" class="fc" id="maritalDeduction" value="0" oninput="calc()"> <div class="hint">Assets passing to US citizen spouse. Unlimited marital deduction - fully deducted from taxable estate. IRC 2056. Defers but does not eliminate estate tax.</div> </div> </div> <div class="fg3"> <div class="f1"><label>Charitable Bequests ($)</label> <input type="number" class="fc" id="charitable" value="0" oninput="calc()"> <div class="hint">Amounts passing to qualifying charities. Unlimited charitable deduction. IRC 2055.</div> </div> <div class="f1"><label>Prior Taxable Gifts (Post-1976) ($)</label> <input type="number" class="fc" id="priorGifts" value="0" oninput="calc()"> <div class="hint">Cumulative taxable gifts made during lifetime (above annual exclusions). Added back to estate to determine tax rate bracket. IRC 2001(b).</div> </div> <div class="f1"><label>Deceased Spouse Unused Exemption (DSUE) ($)</label> <input type="number" class="fc" id="dsue" value="0" oninput="calc()"> <div class="hint">Portability: unused exemption of a deceased spouse, elected on Form 706 within 5 years of death (Rev. Proc. 2022-32 extended deadline). IRC 2010(c)(4).</div> </div> </div> <div class="fg2"> <div class="f1"><label>State of Domicile</label> <select class="fc" id="state" onchange="calc()"> <option value="none">No state estate tax (FL, TX, CA, NV, and most states)</option> <option value="ny">New York - $7.16M exemption (2026 est.), 16% max rate</option> <option value="ma">Massachusetts - $2M exemption, 16% max rate</option> <option value="or">Oregon - $1M exemption, 16% max rate</option> <option value="wa">Washington - $2.193M exemption (2026 est.), 20% max rate</option> <option value="il">Illinois - $4M exemption, 16% max rate</option> <option value="mn">Minnesota - $3M exemption (est.), 16% max rate</option> <option value="md">Maryland - $5M exemption, 16% max rate</option> <option value="ct">Connecticut - $13.61M exemption (2026 est.), 12% rate</option> <option value="ri">Rhode Island - $1.77M exemption (2026 est.), 16% max rate</option> <option value="vt">Vermont - $5M exemption, 16% max rate</option> <option value="me">Maine - $6.8M exemption (2026 est.), 12% max rate</option> <option value="hi">Hawaii - $5.49M exemption (2026 est.), 20% max rate</option> </select> </div> <div class="f1"><label>Number of Donees for Annual Exclusion Gifts</label> <input type="number" class="fc" id="donees" value="4" min="0" max="100" oninput="calc()"> <div class="hint">Number of individuals receiving annual exclusion gifts. 2026 annual exclusion: $19,000 per donee (estimated; 2025 was $19,000). IRC 2503(b).</div> </div> </div> </div>
+</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Results</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter estate information above.</div></div>
 </div>
-
-<div class="card">
-  <div class="ch"><div class="sb">2</div><h2>Results</h2></div>
-  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter estate information above.</div></div>
-</div>
-</div>
-
-<div class="related"><div style="max-width:920px;margin:0 auto">
-  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
-  <a href="pre-immigration-planning.html" class="rl">Pre-Immigration Planning</a>
-  <a href="roth-conversion.html" class="rl">Roth Conversion</a>
-  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
-  <a href="expatriation-tax-guide.html" class="rl">Expatriation Tax Guide</a>
-  <a href="index.html" class="rl">All Tools</a>
-</div></div>
-
-<script>
+</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="pre-immigration-planning.html" class="rl">Pre-Immigration Planning</a> <a href="roth-conversion.html" class="rl">Roth Conversion</a> <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a> <a href="expatriation-tax-guide.html" class="rl">Expatriation Tax Guide</a> <a href="index.html" class="rl">All Tools</a>
+</div></div> <script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
-
-// 2026 federal exemption - OBBBA made TCJA permanent, inflation-adjusted
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} // 2026 federal exemption - OBBBA made TCJA permanent, inflation-adjusted
 // OBBBA P.L. 119-21 set the 2026 federal exemption at exactly $15,000,000 (IRC 2010(c)(3)); indexed from 2027
 const FED_EXEMPTION_2026 = 15000000;
 const ANNUAL_EXCLUSION_2026 = 19000;
-const ESTATE_TAX_RATE = 0.40;
-
-const STATE_PARAMS = {
-  none:{ex:Infinity,rate:0,name:'No state estate tax'},
-  ny:{ex:7160000,rate:0.16,name:'New York'},
-  ma:{ex:2000000,rate:0.16,name:'Massachusetts'},
-  or:{ex:1000000,rate:0.16,name:'Oregon'},
-  wa:{ex:2193000,rate:0.20,name:'Washington'},
-  il:{ex:4000000,rate:0.16,name:'Illinois'},
-  mn:{ex:3000000,rate:0.16,name:'Minnesota'},
-  md:{ex:5000000,rate:0.16,name:'Maryland'},
-  ct:{ex:13610000,rate:0.12,name:'Connecticut'},
-  ri:{ex:1770000,rate:0.16,name:'Rhode Island'},
-  vt:{ex:5000000,rate:0.16,name:'Vermont'},
-  me:{ex:6800000,rate:0.12,name:'Maine'},
-  hi:{ex:5490000,rate:0.20,name:'Hawaii'},
-};
-
-function calc(){
-  const grossEstate=parseFloat(document.getElementById('grossEstate').value)||0;
-  const debts=parseFloat(document.getElementById('debts').value)||0;
-  const marital=parseFloat(document.getElementById('maritalDeduction').value)||0;
-  const charitable=parseFloat(document.getElementById('charitable').value)||0;
-  const priorGifts=parseFloat(document.getElementById('priorGifts').value)||0;
-  const dsue=parseFloat(document.getElementById('dsue').value)||0;
-  const state=document.getElementById('state').value;
-  const donees=parseInt(document.getElementById('donees').value)||0;
-
-  const sp=STATE_PARAMS[state];
-  const totalExemption=FED_EXEMPTION_2026+dsue;
-  const annualExclusionTotal=donees*ANNUAL_EXCLUSION_2026;
-
-  const adjustedGross=grossEstate-debts;
-  const taxableEstate=Math.max(0,adjustedGross-marital-charitable);
-  const tentativeTaxBase=taxableEstate+priorGifts;
-  const exemptionUsed=Math.min(totalExemption,tentativeTaxBase);
-  const taxableAboveExemption=Math.max(0,tentativeTaxBase-totalExemption);
-  const tentativeTax=taxableAboveExemption*ESTATE_TAX_RATE;
-  const giftTaxOnPrior=priorGifts>totalExemption?Math.max(0,priorGifts-totalExemption)*ESTATE_TAX_RATE:0;
-  const federalEstateTax=Math.max(0,tentativeTax-giftTaxOnPrior);
-
-  // State
-  let stateTax=0;
-  if(sp.ex<Infinity){
-    const stateTaxable=Math.max(0,taxableEstate-sp.ex);
-    stateTax=stateTaxable*sp.rate;
-  }
-  const totalTax=federalEstateTax+stateTax;
-  const netToHeirs=Math.max(0,adjustedGross-marital-charitable-totalTax);
-  const effectiveRate=adjustedGross>0?totalTax/adjustedGross:0;
-  const remainingExemption=Math.max(0,totalExemption-taxableEstate);
-
-  const rb=document.getElementById('res');
-  let h='';
-
-  h+=`<div class="hero4">
-    <div class="h4"><div class="h4l">Taxable Estate</div><div class="h4v coral">${fmt(taxableEstate)}</div><div class="h4s">After deductions</div></div>
-    <div class="h4"><div class="h4l">Federal Estate Tax</div><div class="h4v ${federalEstateTax>0?'red':'green'}">${fmt(federalEstateTax)}</div><div class="h4s">40% on excess</div></div>
-    <div class="h4"><div class="h4l">State Estate Tax</div><div class="h4v ${stateTax>0?'amber':'green'}">${fmt(stateTax)}</div><div class="h4s">${sp.name}</div></div>
-    <div class="h4"><div class="h4l">Net to Heirs</div><div class="h4v green">${fmt(netToHeirs)}</div><div class="h4s">Eff. tax rate ${(effectiveRate*100).toFixed(1)}%</div></div>
-  </div>`;
-
-  h+=`<div class="sum-box"><div class="sum-title">Federal Estate Tax Computation - Form 706</div>
-    <div class="srow"><span class="sl">Gross estate</span><span class="sv">${fmt(grossEstate)}</span></div>
-    <div class="srow"><span class="sl">Less: debts and expenses (IRC 2053)</span><span class="sv">-${fmt(debts)}</span></div>
-    <div class="srow"><span class="sl">Adjusted gross estate</span><span class="sv">${fmt(adjustedGross)}</span></div>
-    ${marital>0?`<div class="srow"><span class="sl">Less: marital deduction (IRC 2056)</span><span class="sv green">-${fmt(marital)}</span></div>`:''}
-    ${charitable>0?`<div class="srow"><span class="sl">Less: charitable deduction (IRC 2055)</span><span class="sv green">-${fmt(charitable)}</span></div>`:''}
-    <div class="srow"><span class="sl">Taxable estate</span><span class="sv coral">${fmt(taxableEstate)}</span></div>
-    ${priorGifts>0?`<div class="srow"><span class="sl">+ Prior taxable gifts (IRC 2001(b))</span><span class="sv">${fmt(priorGifts)}</span></div>`:''}
-    <div class="srow"><span class="sl">Tentative tax base</span><span class="sv">${fmt(tentativeTaxBase)}</span></div>
-    <div class="srow"><span class="sl">Unified credit (2026 exemption: ${fmt(FED_EXEMPTION_2026)}${dsue>0?' + DSUE '+fmt(dsue):''})</span><span class="sv green">${fmt(totalExemption)}</span></div>
-    <div class="srow"><span class="sl">Amount subject to 40% tax</span><span class="sv ${taxableAboveExemption>0?'red':'green'}">${fmt(taxableAboveExemption)}</span></div>
-    <div class="srow"><span class="sl"><strong>Federal estate tax (40%)</strong></span><span class="sv ${federalEstateTax>0?'red':'green'}">${fmt(federalEstateTax)}</span></div>
-    ${stateTax>0?`<div class="srow"><span class="sl">State estate tax (${sp.name})</span><span class="sv amber">${fmt(stateTax)}</span></div>`:''}
-    <div class="srow"><span class="sl"><strong>Total estate tax</strong></span><span class="sv ${totalTax>0?'red':'green'}">${fmt(totalTax)}</span></div>
-    <div class="srow"><span class="sl">Remaining exemption (unused)</span><span class="sv ${remainingExemption>0?'green':'amber'}">${fmt(remainingExemption)}</span></div>
-  </div>`;
-
-  // Annual exclusion gifting
-  if(donees>0){
-    h+=`<div style="background:var(--green-bg);border:1px solid var(--green-b);padding:14px 18px;margin-bottom:14px;font-size:13px">
-      <strong style="color:var(--green)">Annual exclusion gifting potential:</strong> <span style="color:var(--green)">${donees} donees x $${ANNUAL_EXCLUSION_2026.toLocaleString()} = ${fmt(annualExclusionTotal)}/year removed from estate tax-free.</span> Over 10 years: ${fmt(annualExclusionTotal*10)} removed without using any lifetime exemption. IRC 2503(b).
-    </div>`;
-  }
-
-  if(federalEstateTax===0&&stateTax===0){
-    h+=flag('green','v',`<strong>No estate tax at current values.</strong> The taxable estate of ${fmt(taxableEstate)} is below the ${fmt(totalExemption)} federal exemption${dsue>0?' (including DSUE)':''}. ${remainingExemption>0?`Unused exemption: ${fmt(remainingExemption)}. Consider gifting strategies to use the exemption before death (gifts out of estate reduce the gross estate directly).`:''}`);
-  }
-  if(marital>0){
-    h+=flag('amber','!',`<strong>Marital deduction defers but does not eliminate estate tax.</strong> The ${fmt(marital)} passing to your spouse is deducted now, but will be included in your spouse's estate at death. Ensure your spouse's estate plan maximizes their own exemption (now ${fmt(FED_EXEMPTION_2026)}) and considers portability election (DSUE) if you die first. IRC 2056.`);
-  }
-  if(stateTax>0){
-    h+=flag('amber','!',`<strong>State estate tax of ${fmt(stateTax)} applies in ${sp.name}.</strong> State estate taxes are separate from federal, not deductible federally, and often have lower exemptions. The ${sp.name} exemption is significantly below the federal ${fmt(FED_EXEMPTION_2026)} exemption. Domicile planning (changing state of residence before death) is a legitimate and frequently used strategy.`);
-  }
-  h+=flag('blue','i',`<strong>OBBBA made the $15M exemption permanent.</strong> The Tax Cuts and Jobs Act temporarily doubled the estate tax exemption. OBBBA (P.L. 119-21) made this permanent and set the 2026 exemption at exactly $15,000,000 per individual (IRC 2010(c)(3)). The exemption is indexed for inflation beginning in 2027. Gifts made to use the higher exemption during the TCJA window are not clawed back under the anti-clawback regulations (Treas. Reg. 20.2010-1(c)).`);
-  h+=flag('blue','i','<strong>Portability (DSUE) must be elected on Form 706.</strong> A surviving spouse can use the deceased spouse\'s unused exemption (DSUE) only if a timely Form 706 was filed for the first spouse to die, even if no estate tax is owed. Rev. Proc. 2022-32 allows a simplified late portability election within 5 years of death for estates that otherwise would not be required to file. Do not miss this election.');
-
-  h+=`<div class="src">IRC 2001 (estate tax imposed - 40% rate); IRC 2010 (unified credit - applicable exclusion amount, 2026 exemption); IRC 2010(c)(4) (portability - DSUE); IRC 2503(b) (annual gift exclusion, inflation-adjusted); IRC 2053 (deduction for debts and expenses); IRC 2055 (charitable deduction); IRC 2056 (unlimited marital deduction - US citizen spouse); Treas. Reg. 20.2010-1(c) (anti-clawback - gifts during high-exemption period not clawed back); Rev. Proc. 2022-32 (late portability election, 5-year window); OBBBA P.L. 119-21 (TCJA estate tax provisions made permanent).</div>`;
-  h+=`<div class="disc">2026 exemption and annual exclusion are estimated pending final IRS inflation adjustment. State estate tax parameters are approximate. This is a high-level illustration only - estate planning involves valuation discounts, GRATs, SLATs, ILITs, and many other strategies not modeled here. Consult an estate planning attorney and CPA. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
-  rb.innerHTML=h;
+const ESTATE_TAX_RATE = 0.40; const STATE_PARAMS = { none:{ex:Infinity,rate:0,name:'No state estate tax'}, ny:{ex:7160000,rate:0.16,name:'New York'}, ma:{ex:2000000,rate:0.16,name:'Massachusetts'}, or:{ex:1000000,rate:0.16,name:'Oregon'}, wa:{ex:2193000,rate:0.20,name:'Washington'}, il:{ex:4000000,rate:0.16,name:'Illinois'}, mn:{ex:3000000,rate:0.16,name:'Minnesota'}, md:{ex:5000000,rate:0.16,name:'Maryland'}, ct:{ex:13610000,rate:0.12,name:'Connecticut'}, ri:{ex:1770000,rate:0.16,name:'Rhode Island'}, vt:{ex:5000000,rate:0.16,name:'Vermont'}, me:{ex:6800000,rate:0.12,name:'Maine'}, hi:{ex:5490000,rate:0.20,name:'Hawaii'},
+}; function calc(){ const grossEstate=parseFloat(document.getElementById('grossEstate').value)||0; const debts=parseFloat(document.getElementById('debts').value)||0; const marital=parseFloat(document.getElementById('maritalDeduction').value)||0; const charitable=parseFloat(document.getElementById('charitable').value)||0; const priorGifts=parseFloat(document.getElementById('priorGifts').value)||0; const dsue=parseFloat(document.getElementById('dsue').value)||0; const state=document.getElementById('state').value; const donees=parseInt(document.getElementById('donees').value)||0; const sp=STATE_PARAMS[state]; const totalExemption=FED_EXEMPTION_2026+dsue; const annualExclusionTotal=donees*ANNUAL_EXCLUSION_2026; const adjustedGross=grossEstate-debts; const taxableEstate=Math.max(0,adjustedGross-marital-charitable); const tentativeTaxBase=taxableEstate+priorGifts; const exemptionUsed=Math.min(totalExemption,tentativeTaxBase); const taxableAboveExemption=Math.max(0,tentativeTaxBase-totalExemption); const tentativeTax=taxableAboveExemption*ESTATE_TAX_RATE; const giftTaxOnPrior=priorGifts>totalExemption?Math.max(0,priorGifts-totalExemption)*ESTATE_TAX_RATE:0; const federalEstateTax=Math.max(0,tentativeTax-giftTaxOnPrior); // State let stateTax=0; if(sp.ex<Infinity){ const stateTaxable=Math.max(0,taxableEstate-sp.ex); stateTax=stateTaxable*sp.rate; } const totalTax=federalEstateTax+stateTax; const netToHeirs=Math.max(0,adjustedGross-marital-charitable-totalTax); const effectiveRate=adjustedGross>0?totalTax/adjustedGross:0; const remainingExemption=Math.max(0,totalExemption-taxableEstate); const rb=document.getElementById('res'); let h=''; h+=`<div class="hero4"> <div class="h4"><div class="h4l">Taxable Estate</div><div class="h4v coral">${fmt(taxableEstate)}</div><div class="h4s">After deductions</div></div> <div class="h4"><div class="h4l">Federal Estate Tax</div><div class="h4v ${federalEstateTax>0?'red':'green'}">${fmt(federalEstateTax)}</div><div class="h4s">40% on excess</div></div> <div class="h4"><div class="h4l">State Estate Tax</div><div class="h4v ${stateTax>0?'amber':'green'}">${fmt(stateTax)}</div><div class="h4s">${sp.name}</div></div> <div class="h4"><div class="h4l">Net to Heirs</div><div class="h4v green">${fmt(netToHeirs)}</div><div class="h4s">Eff. tax rate ${(effectiveRate*100).toFixed(1)}%</div></div> </div>`; h+=`<div class="sum-box"><div class="sum-title">Federal Estate Tax Computation - Form 706</div> <div class="srow"><span class="sl">Gross estate</span><span class="sv">${fmt(grossEstate)}</span></div> <div class="srow"><span class="sl">Less: debts and expenses (IRC 2053)</span><span class="sv">-${fmt(debts)}</span></div> <div class="srow"><span class="sl">Adjusted gross estate</span><span class="sv">${fmt(adjustedGross)}</span></div> ${marital>0?`<div class="srow"><span class="sl">Less: marital deduction (IRC 2056)</span><span class="sv green">-${fmt(marital)}</span></div>`:''} ${charitable>0?`<div class="srow"><span class="sl">Less: charitable deduction (IRC 2055)</span><span class="sv green">-${fmt(charitable)}</span></div>`:''} <div class="srow"><span class="sl">Taxable estate</span><span class="sv coral">${fmt(taxableEstate)}</span></div> ${priorGifts>0?`<div class="srow"><span class="sl">+ Prior taxable gifts (IRC 2001(b))</span><span class="sv">${fmt(priorGifts)}</span></div>`:''} <div class="srow"><span class="sl">Tentative tax base</span><span class="sv">${fmt(tentativeTaxBase)}</span></div> <div class="srow"><span class="sl">Unified credit (2026 exemption: ${fmt(FED_EXEMPTION_2026)}${dsue>0?' + DSUE '+fmt(dsue):''})</span><span class="sv green">${fmt(totalExemption)}</span></div> <div class="srow"><span class="sl">Amount subject to 40% tax</span><span class="sv ${taxableAboveExemption>0?'red':'green'}">${fmt(taxableAboveExemption)}</span></div> <div class="srow"><span class="sl"><strong>Federal estate tax (40%)</strong></span><span class="sv ${federalEstateTax>0?'red':'green'}">${fmt(federalEstateTax)}</span></div> ${stateTax>0?`<div class="srow"><span class="sl">State estate tax (${sp.name})</span><span class="sv amber">${fmt(stateTax)}</span></div>`:''} <div class="srow"><span class="sl"><strong>Total estate tax</strong></span><span class="sv ${totalTax>0?'red':'green'}">${fmt(totalTax)}</span></div> <div class="srow"><span class="sl">Remaining exemption (unused)</span><span class="sv ${remainingExemption>0?'green':'amber'}">${fmt(remainingExemption)}</span></div> </div>`; // Annual exclusion gifting if(donees>0){ h+=`<div style="background:var(--green-bg);border:1px solid var(--green-b);padding:14px 18px;margin-bottom:14px;font-size:13px"> <strong style="color:var(--green)">Annual exclusion gifting potential:</strong> <span style="color:var(--green)">${donees} donees x $${ANNUAL_EXCLUSION_2026.toLocaleString()} = ${fmt(annualExclusionTotal)}/year removed from estate tax-free.</span> Over 10 years: ${fmt(annualExclusionTotal*10)} removed without using any lifetime exemption. IRC 2503(b). </div>`; } if(federalEstateTax===0&&stateTax===0){ h+=flag('green','v',`<strong>No estate tax at current values.</strong> The taxable estate of ${fmt(taxableEstate)} is below the ${fmt(totalExemption)} federal exemption${dsue>0?' (including DSUE)':''}. ${remainingExemption>0?`Unused exemption: ${fmt(remainingExemption)}. Consider gifting strategies to use the exemption before death (gifts out of estate reduce the gross estate directly).`:''}`); } if(marital>0){ h+=flag('amber','!',`<strong>Marital deduction defers but does not eliminate estate tax.</strong> The ${fmt(marital)} passing to your spouse is deducted now, but will be included in your spouse's estate at death. Ensure your spouse's estate plan maximizes their own exemption (now ${fmt(FED_EXEMPTION_2026)}) and considers portability election (DSUE) if you die first. IRC 2056.`); } if(stateTax>0){ h+=flag('amber','!',`<strong>State estate tax of ${fmt(stateTax)} applies in ${sp.name}.</strong> State estate taxes are separate from federal, not deductible federally, and often have lower exemptions. The ${sp.name} exemption is significantly below the federal ${fmt(FED_EXEMPTION_2026)} exemption. Domicile planning (changing state of residence before death) is a legitimate and frequently used strategy.`); } h+=flag('blue','i',`<strong>OBBBA made the $15M exemption permanent.</strong> The Tax Cuts and Jobs Act temporarily doubled the estate tax exemption. OBBBA (P.L. 119-21) made this permanent and set the 2026 exemption at exactly $15,000,000 per individual (IRC 2010(c)(3)). The exemption is indexed for inflation beginning in 2027. Gifts made to use the higher exemption during the TCJA window are not clawed back under the anti-clawback regulations (Treas. Reg. 20.2010-1(c)).`); h+=flag('blue','i','<strong>Portability (DSUE) must be elected on Form 706.</strong> A surviving spouse can use the deceased spouse\'s unused exemption (DSUE) only if a timely Form 706 was filed for the first spouse to die, even if no estate tax is owed. Rev. Proc. 2022-32 allows a simplified late portability election within 5 years of death for estates that otherwise would not be required to file. Do not miss this election.'); h+=`<div class="src">IRC 2001 (estate tax imposed - 40% rate); IRC 2010 (unified credit - applicable exclusion amount, 2026 exemption); IRC 2010(c)(4) (portability - DSUE); IRC 2503(b) (annual gift exclusion, inflation-adjusted); IRC 2053 (deduction for debts and expenses); IRC 2055 (charitable deduction); IRC 2056 (unlimited marital deduction - US citizen spouse); Treas. Reg. 20.2010-1(c) (anti-clawback - gifts during high-exemption period not clawed back); Rev. Proc. 2022-32 (late portability election, 5-year window); OBBBA P.L. 119-21 (TCJA estate tax provisions made permanent).</div>`; h+=`<div class="disc">2026 exemption and annual exclusion are estimated pending final IRS inflation adjustment. State estate tax parameters are approximate. This is a high-level illustration only - estate planning involves valuation discounts, GRATs, SLATs, ILITs, and many other strategies not modeled here. Consult an estate planning attorney and CPA.</div>`; rb.innerHTML=h;
 }
 calc();
-</script>
-
-</body>
+</script> </body>
 </html>
