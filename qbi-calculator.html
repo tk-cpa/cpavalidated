@@ -236,7 +236,7 @@ function calc(){
   if(!aboveThreshold) h += flag('green','v',`<strong>Below the income threshold - full 20% deduction available.</strong> Taxable income of ${fmt(taxIncome)} is below the ${fmt(t.lo)} threshold for ${fs==='mfj'?'MFJ':'Single'} filers. The W-2 wage limitation and SSTB rules do not apply. The full 20% of QBI of ${fmt(twentyPctQBI)} is deductible (subject to the overall taxable income cap).`);
   h += flag('blue','i','<strong>OBBBA made the QBI deduction permanent.</strong> The Section 199A deduction was originally set to expire after 2025. OBBBA (P.L. 119-21) made it permanent. Income thresholds continue to be inflation-adjusted annually. The 2026 thresholds of approximately $202,500 (single) and $405,000 (MFJ) are estimates - verify against IRS Rev. Proc. 2025-32.');
   h += `<div class="src">IRC 199A (qualified business income deduction - 20%); IRC 199A(a) (overall 20% of taxable income cap); IRC 199A(b)(2) (W-2 wage limitation); IRC 199A(b)(2)(B) (50% of W-2 wages; alternative 25% W-2 + 2.5% UBIA); IRC 199A(c) (QBI definition - excludes capital gains, dividends, reasonable compensation); IRC 199A(d)(1)(A) (SSTB definition); IRC 199A(e)(2) (threshold amounts, inflation-adjusted); Treas. Reg. 1.199A-1 through 1.199A-6; OBBBA P.L. 119-21 (199A made permanent); Form 8995-A (QBI deduction computation).</div>`;
-  h += `<div class="disc">2026 income thresholds are estimated. Multiple-business aggregation elections, loss carryforward rules, and patron reduction rules not modeled. Consult a CPA for complex situations. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+  h += ``;
   rb.innerHTML = h;
 }
 calc();
