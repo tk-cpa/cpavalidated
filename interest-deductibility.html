@@ -52,165 +52,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
-</nav>
-
-<div class="ph"><div class="phi">
-  <h1>Vehicle & Investment Interest Deductibility</h1>
-  <div class="sub">Vehicle Loan Interest by Business Use % &nbsp;&bull;&nbsp; Investment Interest vs. Net Investment Income</div>
-  <div class="badges">
-    <span class="badge">IRC §163(h) (personal interest)</span>
-    <span class="badge">IRC §163(d) (investment interest)</span>
-    <span class="badge">Form 4952</span>
-    <span class="badge">Schedule A</span>
-  </div>
+<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <div class="nav-right"> <ul class="nav-links"> <li><a href="index.html#tools">Tools</a></li> <li><a href="index.html#articles">Guides</a></li> <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li> <li><a href="about.html">About</a></li> </ul> <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a> </div>
+</nav> <div class="ph"><div class="phi"> <h1>Vehicle & Investment Interest Deductibility</h1> <div class="sub">Vehicle Loan Interest by Business Use % &nbsp;&bull;&nbsp; Investment Interest vs. Net Investment Income</div> <div class="badges"> <span class="badge">IRC §163(h) (personal interest)</span> <span class="badge">IRC §163(d) (investment interest)</span> <span class="badge">Form 4952</span> <span class="badge">Schedule A</span> </div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap">
-
-<div class="two-col">
-
-<!-- Left: Vehicle Interest -->
+<div class="wrap"> <div class="two-col"> <!-- Left: Vehicle Interest -->
 <div>
-<div class="card">
-  <div class="ch"><div class="sb">A</div><h2>Vehicle Loan Interest</h2></div>
-  <div class="cb">
-    <div class="f1"><label>Annual Vehicle Loan Interest ($)</label>
-      <input type="number" class="fc" id="vehInt" value="3600" oninput="calcVeh()">
-      <div class="hint">Total interest paid on auto loan this year</div>
-    </div>
-    <div class="f1"><label>Business Use %</label>
-      <div class="slider-row">
-        <input type="range" id="bizPct" min="0" max="100" value="60" oninput="document.getElementById('bizPctVal').textContent=this.value+'%';calcVeh()">
-        <span class="slider-val" id="bizPctVal">60%</span>
-      </div>
-      <div class="hint">Documented business miles ÷ total miles. Must maintain mileage log. IRC §274(d).</div>
-    </div>
-    <div class="f1"><label>Who Uses the Vehicle</label>
-      <select class="fc" id="vehUser" onchange="calcVeh()">
-        <option value="selfemployed">Self-employed (Schedule C) - interest on Schedule C</option>
-        <option value="employee">W-2 Employee - business interest not deductible post-TCJA</option>
-        <option value="partner">Partner / S-Corp shareholder (unreimbursed)</option>
-      </select>
-    </div>
-    <div id="vehResult"></div>
-    <div class="src" style="font-size:11px">IRC §163(h) (personal interest nondeductible); IRC §274(d) (substantiation requirement for listed property including vehicles); TCJA §11045 (employee business expenses eliminated); Rev. Proc. 2010-51 (mileage log requirements).</div>
-  </div>
+<div class="card"> <div class="ch"><div class="sb">A</div><h2>Vehicle Loan Interest</h2></div> <div class="cb"> <div class="f1"><label>Annual Vehicle Loan Interest ($)</label> <input type="number" class="fc" id="vehInt" value="3600" oninput="calcVeh()"> <div class="hint">Total interest paid on auto loan this year</div> </div> <div class="f1"><label>Business Use %</label> <div class="slider-row"> <input type="range" id="bizPct" min="0" max="100" value="60" oninput="document.getElementById('bizPctVal').textContent=this.value+'%';calcVeh()"> <span class="slider-val" id="bizPctVal">60%</span> </div> <div class="hint">Documented business miles ÷ total miles. Must maintain mileage log. IRC §274(d).</div> </div> <div class="f1"><label>Who Uses the Vehicle</label> <select class="fc" id="vehUser" onchange="calcVeh()"> <option value="selfemployed">Self-employed (Schedule C) - interest on Schedule C</option> <option value="employee">W-2 Employee - business interest not deductible post-TCJA</option> <option value="partner">Partner / S-Corp shareholder (unreimbursed)</option> </select> </div> <div id="vehResult"></div> <div class="src" style="font-size:11px">IRC §163(h) (personal interest nondeductible); IRC §274(d) (substantiation requirement for listed property including vehicles); TCJA §11045 (employee business expenses eliminated); Rev. Proc. 2010-51 (mileage log requirements).</div> </div>
 </div>
-</div>
-
-<!-- Right: Investment Interest -->
+</div> <!-- Right: Investment Interest -->
 <div>
-<div class="card">
-  <div class="ch"><div class="sb">B</div><h2>Investment Interest Expense</h2></div>
-  <div class="cb">
-    <div class="f1"><label>Investment Interest Paid ($)</label>
-      <input type="number" class="fc" id="invInt" value="12000" oninput="calcInv()">
-      <div class="hint">Margin account interest, investment loan interest. Form 4952, Line 1.</div>
-    </div>
-    <div class="f1"><label>Gross Investment Income ($)</label>
-      <input type="number" class="fc" id="invIncome" value="8000" oninput="calcInv()">
-      <div class="hint">Dividends, interest, short-term capital gains. EXCLUDES qualified dividends and long-term gains (unless elected).</div>
-    </div>
-    <div class="f1"><label>Net Investment Income Elected ($)</label>
-      <input type="number" class="fc" id="qualDivElect" value="0" oninput="calcInv()">
-      <div class="hint">Qualified dividends / LTCG you elect to include in NII (at cost of losing preferential rate). IRC §163(d)(4)(B).</div>
-    </div>
-    <div class="f1"><label>Prior Year Investment Interest Carryforward ($)</label>
-      <input type="number" class="fc" id="invCarry" value="0" oninput="calcInv()">
-      <div class="hint">From prior Form 4952</div>
-    </div>
-    <div id="invResult"></div>
-    <div class="src" style="font-size:11px">IRC §163(d) (investment interest limitation); IRC §163(d)(4) (net investment income definition); IRC §163(d)(4)(B) (election to include qualified dividends at cost of ordinary rate); Form 4952 instructions; Schedule A, Line 9.</div>
-  </div>
+<div class="card"> <div class="ch"><div class="sb">B</div><h2>Investment Interest Expense</h2></div> <div class="cb"> <div class="f1"><label>Investment Interest Paid ($)</label> <input type="number" class="fc" id="invInt" value="12000" oninput="calcInv()"> <div class="hint">Margin account interest, investment loan interest. Form 4952, Line 1.</div> </div> <div class="f1"><label>Gross Investment Income ($)</label> <input type="number" class="fc" id="invIncome" value="8000" oninput="calcInv()"> <div class="hint">Dividends, interest, short-term capital gains. EXCLUDES qualified dividends and long-term gains (unless elected).</div> </div> <div class="f1"><label>Net Investment Income Elected ($)</label> <input type="number" class="fc" id="qualDivElect" value="0" oninput="calcInv()"> <div class="hint">Qualified dividends / LTCG you elect to include in NII (at cost of losing preferential rate). IRC §163(d)(4)(B).</div> </div> <div class="f1"><label>Prior Year Investment Interest Carryforward ($)</label> <input type="number" class="fc" id="invCarry" value="0" oninput="calcInv()"> <div class="hint">From prior Form 4952</div> </div> <div id="invResult"></div> <div class="src" style="font-size:11px">IRC §163(d) (investment interest limitation); IRC §163(d)(4) (net investment income definition); IRC §163(d)(4)(B) (election to include qualified dividends at cost of ordinary rate); Form 4952 instructions; Schedule A, Line 9.</div> </div>
 </div>
-</div>
-
-</div>
-
-<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
-
-</div>
-
-<script>
+</div> </div> <div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div> </div> <script>
 function fmt(n){if(!n||n<=0) return '$0'; return '$'+Math.round(Math.abs(n)).toLocaleString('en-US');}
-function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
-
-function calcVeh(){
-  const vehInt = parseFloat(document.getElementById('vehInt').value)||0;
-  const bizPct = parseInt(document.getElementById('bizPct').value)/100;
-  const user   = document.getElementById('vehUser').value;
-  
-  const busInterest  = vehInt * bizPct;
-  const persInterest = vehInt * (1 - bizPct);
-  
-  let h = `<div class="result-box"><div class="rb-label">Vehicle Interest Analysis</div>
-    <div class="rb-row"><span class="rb-lbl">Total interest paid</span><span class="rb-val">${fmt(vehInt)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Business use (${Math.round(bizPct*100)}%)</span><span class="rb-val">${fmt(busInterest)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Personal use (${Math.round((1-bizPct)*100)}%) - nondeductible</span><span class="rb-val red">${fmt(persInterest)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Deductible interest</span><span class="rb-val coral">${user==='employee'?'$0':fmt(busInterest)}</span></div>
-  </div>`;
-
-  if(user === 'employee'){
-    h += flag('red','✗','<strong>W-2 employees: vehicle interest is not deductible after TCJA.</strong> Employee business expenses including unreimbursed vehicle costs were eliminated as a miscellaneous itemized deduction by TCJA §11045, now permanent. The personal interest on a vehicle loan has never been deductible under IRC §163(h). Request reimbursement from your employer under an accountable plan (IRC §62(a)(2)(A)) instead.');
-  } else if(bizPct < 0.50){
-    h += flag('amber','!','<strong>Under 50% business use - additional restrictions apply.</strong> Vehicles used 50% or less for business must use ADS straight-line depreciation (no bonus, no Section 179) and are subject to additional listed property rules under IRC §280F(d)(6). The interest deduction is still based on business use %, but depreciation is significantly limited.');
-  } else if(bizPct > 0){
-    h += flag('green','✓',`<strong>Self-employed deduction: ${fmt(busInterest)} on Schedule C.</strong> Business-use portion of vehicle loan interest is deductible on Schedule C (line 16a/b). Maintain a contemporaneous mileage log with: date, destination, business purpose, and miles. Required by IRC §274(d). Logs reconstructed after the fact are routinely disallowed on audit.`);
-  }
-
-  document.getElementById('vehResult').innerHTML = h;
-}
-
-function calcInv(){
-  const invInt    = parseFloat(document.getElementById('invInt').value)||0;
-  const invIncome = parseFloat(document.getElementById('invIncome').value)||0;
-  const electAmt  = parseFloat(document.getElementById('qualDivElect').value)||0;
-  const carryIn   = parseFloat(document.getElementById('invCarry').value)||0;
-
-  const nii = invIncome + electAmt;
-  const totalAvailable = invInt + carryIn;
-  const deductible = Math.min(totalAvailable, nii);
-  const carryOut   = Math.max(0, totalAvailable - nii);
-  const taxSaving  = deductible * 0.37; // approx at top rate
-
-  let h = `<div class="result-box"><div class="rb-label">Investment Interest Analysis</div>
-    <div class="rb-row"><span class="rb-lbl">Investment interest paid</span><span class="rb-val">${fmt(invInt)}</span></div>
-    ${carryIn>0?`<div class="rb-row"><span class="rb-lbl">Prior year carryforward</span><span class="rb-val">${fmt(carryIn)}</span></div>`:''}
-    <div class="rb-row"><span class="rb-lbl">Net investment income (NII)</span><span class="rb-val">${fmt(nii)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">IRC §163(d) limitation</span><span class="rb-val ${deductible<totalAvailable?'amber':'green'}">${deductible<totalAvailable?'Applied':'Not triggered'}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Deductible this year (Schedule A, Line 9)</span><span class="rb-val coral">${fmt(deductible)}</span></div>
-    ${carryOut>0?`<div class="rb-row"><span class="rb-lbl">Carryforward to next year (indefinite)</span><span class="rb-val amber">${fmt(carryOut)}</span></div>`:''}
-  </div>`;
-
-  if(carryOut > 0){
-    h += flag('amber','!',`<strong>Investment interest carryforward of ${fmt(carryOut)}.</strong> Investment interest expense that exceeds net investment income carries forward indefinitely to future years when NII is sufficient to absorb it. IRC §163(d)(2). Track this carefully - it can build up over years of low-income years.`);
-  }
-  if(electAmt === 0 && invInt > invIncome){
-    h += flag('blue','ℹ','<strong>Consider electing to include qualified dividends in NII.</strong> Under IRC §163(d)(4)(B), you can elect to treat qualified dividends and long-term capital gains as ordinary NII to expand the investment interest deduction. The cost: that income is taxed at ordinary rates (up to 37%) instead of preferential rates (0%/15%/20%). Only worthwhile if your marginal rate on the additional income would be lower than the benefit from the expanded deduction.');
-  }
-  if(nii > 0 && deductible > 0){
-    h += flag('green','✓',`<strong>Estimated tax savings: ~${fmt(taxSaving)} at 37% rate.</strong> The actual tax savings depends on your marginal rate. At 37% on the deduction of ${fmt(deductible)}, approximate savings are ${fmt(taxSaving)}.`);
-  }
-
-  document.getElementById('invResult').innerHTML = h;
-}
-
-calcVeh();
+function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;} function calcVeh(){ const vehInt = parseFloat(document.getElementById('vehInt').value)||0; const bizPct = parseInt(document.getElementById('bizPct').value)/100; const user = document.getElementById('vehUser').value; const busInterest = vehInt * bizPct; const persInterest = vehInt * (1 - bizPct); let h = `<div class="result-box"><div class="rb-label">Vehicle Interest Analysis</div> <div class="rb-row"><span class="rb-lbl">Total interest paid</span><span class="rb-val">${fmt(vehInt)}</span></div> <div class="rb-row"><span class="rb-lbl">Business use (${Math.round(bizPct*100)}%)</span><span class="rb-val">${fmt(busInterest)}</span></div> <div class="rb-row"><span class="rb-lbl">Personal use (${Math.round((1-bizPct)*100)}%) - nondeductible</span><span class="rb-val red">${fmt(persInterest)}</span></div> <div class="rb-row"><span class="rb-lbl">Deductible interest</span><span class="rb-val coral">${user==='employee'?'$0':fmt(busInterest)}</span></div> </div>`; if(user === 'employee'){ h += flag('red','✗','<strong>W-2 employees: vehicle interest is not deductible after TCJA.</strong> Employee business expenses including unreimbursed vehicle costs were eliminated as a miscellaneous itemized deduction by TCJA §11045, now permanent. The personal interest on a vehicle loan has never been deductible under IRC §163(h). Request reimbursement from your employer under an accountable plan (IRC §62(a)(2)(A)) instead.'); } else if(bizPct < 0.50){ h += flag('amber','!','<strong>Under 50% business use - additional restrictions apply.</strong> Vehicles used 50% or less for business must use ADS straight-line depreciation (no bonus, no Section 179) and are subject to additional listed property rules under IRC §280F(d)(6). The interest deduction is still based on business use %, but depreciation is significantly limited.'); } else if(bizPct > 0){ h += flag('green','✓',`<strong>Self-employed deduction: ${fmt(busInterest)} on Schedule C.</strong> Business-use portion of vehicle loan interest is deductible on Schedule C (line 16a/b). Maintain a contemporaneous mileage log with: date, destination, business purpose, and miles. Required by IRC §274(d). Logs reconstructed after the fact are routinely disallowed on audit.`); } document.getElementById('vehResult').innerHTML = h;
+} function calcInv(){ const invInt = parseFloat(document.getElementById('invInt').value)||0; const invIncome = parseFloat(document.getElementById('invIncome').value)||0; const electAmt = parseFloat(document.getElementById('qualDivElect').value)||0; const carryIn = parseFloat(document.getElementById('invCarry').value)||0; const nii = invIncome + electAmt; const totalAvailable = invInt + carryIn; const deductible = Math.min(totalAvailable, nii); const carryOut = Math.max(0, totalAvailable - nii); const taxSaving = deductible * 0.37; // approx at top rate let h = `<div class="result-box"><div class="rb-label">Investment Interest Analysis</div> <div class="rb-row"><span class="rb-lbl">Investment interest paid</span><span class="rb-val">${fmt(invInt)}</span></div> ${carryIn>0?`<div class="rb-row"><span class="rb-lbl">Prior year carryforward</span><span class="rb-val">${fmt(carryIn)}</span></div>`:''} <div class="rb-row"><span class="rb-lbl">Net investment income (NII)</span><span class="rb-val">${fmt(nii)}</span></div> <div class="rb-row"><span class="rb-lbl">IRC §163(d) limitation</span><span class="rb-val ${deductible<totalAvailable?'amber':'green'}">${deductible<totalAvailable?'Applied':'Not triggered'}</span></div> <div class="rb-row"><span class="rb-lbl">Deductible this year (Schedule A, Line 9)</span><span class="rb-val coral">${fmt(deductible)}</span></div> ${carryOut>0?`<div class="rb-row"><span class="rb-lbl">Carryforward to next year (indefinite)</span><span class="rb-val amber">${fmt(carryOut)}</span></div>`:''} </div>`; if(carryOut > 0){ h += flag('amber','!',`<strong>Investment interest carryforward of ${fmt(carryOut)}.</strong> Investment interest expense that exceeds net investment income carries forward indefinitely to future years when NII is sufficient to absorb it. IRC §163(d)(2). Track this carefully - it can build up over years of low-income years.`); } if(electAmt === 0 && invInt > invIncome){ h += flag('blue','ℹ','<strong>Consider electing to include qualified dividends in NII.</strong> Under IRC §163(d)(4)(B), you can elect to treat qualified dividends and long-term capital gains as ordinary NII to expand the investment interest deduction. The cost: that income is taxed at ordinary rates (up to 37%) instead of preferential rates (0%/15%/20%). Only worthwhile if your marginal rate on the additional income would be lower than the benefit from the expanded deduction.'); } if(nii > 0 && deductible > 0){ h += flag('green','✓',`<strong>Estimated tax savings: ~${fmt(taxSaving)} at 37% rate.</strong> The actual tax savings depends on your marginal rate. At 37% on the deduction of ${fmt(deductible)}, approximate savings are ${fmt(taxSaving)}.`); } document.getElementById('invResult').innerHTML = h;
+} calcVeh();
 calcInv();
-</script>
-
-</body>
+</script> </body>
 </html>
