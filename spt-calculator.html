@@ -261,8 +261,8 @@ table.bt .tr td{font-weight:700;color:var(--ink);background:var(--ink-10);border
 }.pbn{display:none}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
-.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1}
-.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:uppercase;font-family:var(--font-sans)}
+.wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1text-transform:uppercase;}
+.wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:none;font-family:var(--font-sans)}
 .nav-right{display:flex;align-items:center;gap:24px}
 .nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
 .nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
@@ -275,7 +275,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 <body>
 <nav>
   <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small>a tk.cpa resource</small></div>
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
   </a>
   <div class="nav-right">
     <ul class="nav-links">
@@ -287,15 +287,14 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
     <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
   </div>
 </nav>
-
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
 
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>Substantial Presence Test Calculator</h1>
   <div class="sub">IRC Section 7701(b)(3) &nbsp;&bull;&nbsp; U.S. Tax Residency Analysis</div>
   <div class="badges"><span class="badge">IRC §7701(b)(3)</span><span class="badge">Treas. Reg. 301.7701(b)</span><span class="badge">Form 1040-NR</span><span class="badge">2019 - 2026</span></div>
-</div></div></div>
-
+</div></div>
 
 <div class="container">
 
