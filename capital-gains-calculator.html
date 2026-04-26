@@ -60,24 +60,199 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Capital Gains & NIIT Calculator 2026</h1> <div class="sub">0% / 15% / 20% long-term capital gains stacked on ordinary income. 3.8% NIIT on net investment income. Qualified dividends. MAGI threshold. Schedule D interaction.</div> <div class="badges"><span class="badge">IRC 1(h) - LTCG rates</span><span class="badge">IRC 1411 - NIIT 3.8%</span><span class="badge">Schedule D</span><span class="badge">Form 8960</span></div>
+<div class="ph"><div class="phi">
+  <h1>Capital Gains & NIIT Calculator 2026</h1>
+  <div class="sub">0% / 15% / 20% long-term capital gains stacked on ordinary income. 3.8% NIIT on net investment income. Qualified dividends. MAGI threshold. Schedule D interaction.</div>
+  <div class="badges"><span class="badge">IRC 1(h) - LTCG rates</span><span class="badge">IRC 1411 - NIIT 3.8%</span><span class="badge">Schedule D</span><span class="badge">Form 8960</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Income Information</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Filing Status</label> <select class="fc" id="fs" onchange="calc()"> <option value="single">Single</option> <option value="mfj" selected>Married Filing Jointly</option> <option value="hoh">Head of Household</option> <option value="mfs">Married Filing Separately</option> </select> </div> <div class="f1"><label>Ordinary Income (Taxable) ($)</label> <input type="number" class="fc" id="ordinary" value="200000" oninput="calc()"> <div class="hint">Wages, self-employment, ordinary dividends, short-term gains, etc. after deductions. This fills the brackets first.</div> </div> <div class="f1"><label>Long-Term Capital Gains ($)</label> <input type="number" class="fc" id="ltcg" value="150000" oninput="calc()"> <div class="hint">Net LTCG from Schedule D. Gains on assets held over 12 months. IRC 1222.</div> </div> </div> <div class="fg3"> <div class="f1"><label>Qualified Dividends ($)</label> <input type="number" class="fc" id="qdiv" value="20000" oninput="calc()"> <div class="hint">Taxed same as LTCG. IRC 1(h)(11). Must be from qualifying corporations and meet holding period.</div> </div> <div class="f1"><label>Other Net Investment Income ($)</label> <input type="number" class="fc" id="otherNII" value="5000" oninput="calc()"> <div class="hint">Passive rental income, partnership passive income, interest income subject to NIIT. IRC 1411(c).</div> </div> <div class="f1"><label>Above-the-Line Adjustments to MAGI ($)</label> <input type="number" class="fc" id="magiAdj" value="0" oninput="calc()"> <div class="hint">Foreign earned income exclusion, other additions that increase MAGI for NIIT purposes. MAGI = AGI + FEIE + similar.</div> </div> </div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Results</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Income Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Filing Status</label>
+        <select class="fc" id="fs" onchange="calc()">
+          <option value="single">Single</option>
+          <option value="mfj" selected>Married Filing Jointly</option>
+          <option value="hoh">Head of Household</option>
+          <option value="mfs">Married Filing Separately</option>
+        </select>
+      </div>
+      <div class="f1"><label>Ordinary Income (Taxable) ($)</label>
+        <input type="number" class="fc" id="ordinary" value="200000" oninput="calc()">
+        <div class="hint">Wages, self-employment, ordinary dividends, short-term gains, etc. after deductions. This fills the brackets first.</div>
+      </div>
+      <div class="f1"><label>Long-Term Capital Gains ($)</label>
+        <input type="number" class="fc" id="ltcg" value="150000" oninput="calc()">
+        <div class="hint">Net LTCG from Schedule D. Gains on assets held over 12 months. IRC 1222.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Qualified Dividends ($)</label>
+        <input type="number" class="fc" id="qdiv" value="20000" oninput="calc()">
+        <div class="hint">Taxed same as LTCG. IRC 1(h)(11). Must be from qualifying corporations and meet holding period.</div>
+      </div>
+      <div class="f1"><label>Other Net Investment Income ($)</label>
+        <input type="number" class="fc" id="otherNII" value="5000" oninput="calc()">
+        <div class="hint">Passive rental income, partnership passive income, interest income subject to NIIT. IRC 1411(c).</div>
+      </div>
+      <div class="f1"><label>Above-the-Line Adjustments to MAGI ($)</label>
+        <input type="number" class="fc" id="magiAdj" value="0" oninput="calc()">
+        <div class="hint">Foreign earned income exclusion, other additions that increase MAGI for NIIT purposes. MAGI = AGI + FEIE + similar.</div>
+      </div>
+    </div>
+  </div>
 </div>
-</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a> <a href="amt-calculator.html" class="rl">AMT Calculator</a> <a href="niit-guide.html" class="rl">NIIT Guide</a> <a href="safe-harbor.html" class="rl">Safe Harbor Calculator</a> <a href="index.html" class="rl">All Tools</a>
-</div></div> <script>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a>
+  <a href="amt-calculator.html" class="rl">AMT Calculator</a>
+  <a href="niit-guide.html" class="rl">NIIT Guide</a>
+  <a href="safe-harbor.html" class="rl">Safe Harbor Calculator</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} // 2026 LTCG thresholds (2025 confirmed + ~2.8% inflation est for 2026)
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+// 2026 LTCG thresholds (2025 confirmed + ~2.8% inflation est for 2026)
 // Source: Rev. Proc. 2024-40 for 2025; 2026 approximate
-const LTCG={ single: {r0:48350, r15:533400}, mfj: {r0:96700, r15:600050}, hoh: {r0:64750, r15:566700}, mfs: {r0:48350, r15:300000},
+const LTCG={
+  single:   {r0:48350,  r15:533400},
+  mfj:      {r0:96700,  r15:600050},
+  hoh:      {r0:64750,  r15:566700},
+  mfs:      {r0:48350,  r15:300000},
 };
 // NIIT MAGI thresholds (NOT inflation-adjusted per statute - fixed)
-const NIIT={single:200000,mfj:250000,hoh:200000,mfs:125000}; function calc(){ const fs=document.getElementById('fs').value; const ordinary=parseFloat(document.getElementById('ordinary').value)||0; const ltcg=parseFloat(document.getElementById('ltcg').value)||0; const qdiv=parseFloat(document.getElementById('qdiv').value)||0; const otherNII=parseFloat(document.getElementById('otherNII').value)||0; const magiAdj=parseFloat(document.getElementById('magiAdj').value)||0; const t=LTCG[fs]; const niitThresh=NIIT[fs]; const prefIncome=ltcg+qdiv; const totalTaxable=ordinary+prefIncome; const magi=totalTaxable+magiAdj; // LTCG stacking: preferred income sits on top of ordinary income // The rate applied to each LTCG/QD dollar depends on where it falls in the stacked bracket const ordBracketUsed=ordinary; let at0=0,at15=0,at20=0; let remaining=prefIncome; // Room in 0% bracket above ordinary income const room0=Math.max(0,t.r0-ordBracketUsed); at0=Math.min(remaining,room0); remaining-=at0; // Room in 15% bracket const room15=Math.max(0,t.r15-Math.max(ordBracketUsed,t.r0)); at15=Math.min(remaining,room15); remaining-=at15; at20=Math.max(0,remaining); const cgTax=at0*0+at15*0.15+at20*0.20; // NIIT - 3.8% on lesser of NII or MAGI over threshold const nii=ltcg+qdiv+otherNII; const magiOverThresh=Math.max(0,magi-niitThresh); const niitBase=Math.min(nii,magiOverThresh); const niitTax=niitBase*0.038; // Ordinary income tax (simplified bracket - user inputs regular tax or we estimate) // Estimate ordinary tax using 2026 approximate brackets const ordRates={ single:[[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]], mfj:[[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]], hoh:[[17000,0.10],[64850,0.12],[103350,0.22],[197300,0.24],[250500,0.32],[626350,0.35],[Infinity,0.37]], mfs:[[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[375800,0.35],[Infinity,0.37]], }; let ordTax=0,rem=ordinary,prevBracket=0; for(const [top,rate] of ordRates[fs]){ const bracketSize=top===Infinity?rem:Math.max(0,Math.min(rem,top-prevBracket)); ordTax+=bracketSize*rate; rem-=bracketSize; prevBracket=top===Infinity?prevBracket:top; if(rem<=0)break; } const totalTax=ordTax+cgTax+niitTax; const effRate=totalTaxable>0?totalTax/totalTaxable:0; const marginalCGRate=(at20>0?0.20:at15>0?0.15:0)+(niitBase>0?0.038:0); const rb=document.getElementById('res'); let h=''; h+=`<div class="rate-grid"> <div class="rg"><div class="rgl">Ordinary Income Tax</div><div class="rgv coral">${fmt(ordTax)}</div><div class="rgs">Est. from brackets</div></div> <div class="rg"><div class="rgl">Cap. Gains Tax</div><div class="rgv coral">${fmt(cgTax)}</div><div class="rgs">0/15/20%</div></div> <div class="rg"><div class="rgl">NIIT (3.8%)</div><div class="rgv ${niitTax>0?'amber':'green'}">${fmt(niitTax)}</div><div class="rgs">IRC 1411</div></div> <div class="rg"><div class="rgl">Total Tax</div><div class="rgv">${fmt(totalTax)}</div><div class="rgs">Eff. ${(effRate*100).toFixed(1)}%</div></div> <div class="rg"><div class="rgl">Marginal CG Rate</div><div class="rgv ${marginalCGRate>=0.238?'red':marginalCGRate>=0.15?'amber':'green'}">${(marginalCGRate*100).toFixed(1)}%</div><div class="rgs">Incl. NIIT</div></div> </div>`; // Stacking visual h+=`<div class="stack-visual"> <div class="sv-row" style="background:var(--ink-10);border:1px solid var(--ink-20)"> <div class="sv-label">Ordinary taxable income</div> <div class="sv-rate" style="color:var(--ink-60)">Various</div> <div class="sv-amount">${fmt(ordinary)}</div> </div> ${at0>0?`<div class="sv-row" style="background:var(--green-bg);border:1px solid var(--green-b)"><div class="sv-label">LTCG/QD at 0% rate</div><div class="sv-rate" style="color:var(--green)">0%</div><div class="sv-amount">${fmt(at0)}</div></div>`:''} ${at15>0?`<div class="sv-row" style="background:var(--amber-bg);border:1px solid var(--amber-b)"><div class="sv-label">LTCG/QD at 15% rate</div><div class="sv-rate" style="color:var(--amber)">15%</div><div class="sv-amount">${fmt(at15)}</div></div>`:''} ${at20>0?`<div class="sv-row" style="background:var(--red-bg);border:1px solid var(--red-b)"><div class="sv-label">LTCG/QD at 20% rate</div><div class="sv-rate" style="color:var(--red)">20%</div><div class="sv-amount">${fmt(at20)}</div></div>`:''} ${niitBase>0?`<div class="sv-row" style="background:#f0e6f0;border:1px solid #c9a4c9"><div class="sv-label">NIIT base (3.8% on ${fmt(niitBase)})</div><div class="sv-rate" style="color:#7b4d7b">3.8%</div><div class="sv-amount">${fmt(niitTax)}</div></div>`:''} </div>`; h+=`<div class="sum-box"><div class="sum-title">Detail</div> <div class="srow"><span class="sl">Ordinary income (taxable)</span><span class="sv2">${fmt(ordinary)}</span></div> <div class="srow"><span class="sl">LTCG + qualified dividends</span><span class="sv2">${fmt(prefIncome)}</span></div> <div class="srow"><span class="sl">0% rate bracket ceiling (${fs==='mfj'?'MFJ':fs})</span><span class="sv2">$${t.r0.toLocaleString()}</span></div> <div class="srow"><span class="sl">15% rate bracket ceiling</span><span class="sv2">$${t.r15.toLocaleString()}</span></div> <div class="srow"><span class="sl">LTCG/QD taxed at 0%</span><span class="sv2 green">${fmt(at0)}</span></div> <div class="srow"><span class="sl">LTCG/QD taxed at 15%</span><span class="sv2 ${at15>0?'amber':'green'}">${fmt(at15)}</span></div> <div class="srow"><span class="sl">LTCG/QD taxed at 20%</span><span class="sv2 ${at20>0?'red':'green'}">${fmt(at20)}</span></div> <div class="srow"><span class="sl">Net Investment Income (NIIT base)</span><span class="sv2">${fmt(nii)}</span></div> <div class="srow"><span class="sl">MAGI</span><span class="sv2">${fmt(magi)}</span></div> <div class="srow"><span class="sl">NIIT threshold (${fs==='mfj'?'MFJ $250K':'Single $200K'} - not inflation-adj.)</span><span class="sv2">$${niitThresh.toLocaleString()}</span></div> <div class="srow"><span class="sl">NIIT base (lesser of NII or MAGI over threshold)</span><span class="sv2 ${niitBase>0?'amber':'green'}">${fmt(niitBase)}</span></div> <div class="srow"><span class="sl">NIIT (3.8% x ${fmt(niitBase)})</span><span class="sv2 ${niitTax>0?'amber':'green'}">${fmt(niitTax)}</span></div> <div class="srow"><span class="sl"><strong>Combined capital gains + NIIT</strong></span><span class="sv2 coral">${fmt(cgTax+niitTax)}</span></div> </div>`; if(at0>0)h+=flag('green','v',`<strong>${fmt(at0)} of your LTCG/QD falls in the 0% bracket.</strong> This portion is completely tax-free federally. Consider harvesting additional long-term gains up to the 0% ceiling ($${t.r0.toLocaleString()} total income for ${fs==='mfj'?'MFJ':'your filing status'}) to reset basis at no tax cost. IRC 1(h).`); if(niitTax>0)h+=flag('amber','!',`<strong>NIIT of ${fmt(niitTax)} applies.</strong> Your MAGI of ${fmt(magi)} exceeds the $${niitThresh.toLocaleString()} NIIT threshold. The 3.8% NIIT under IRC 1411 stacks on top of the 15% or 20% capital gains rate, bringing your marginal rate on LTCG to ${(marginalCGRate*100).toFixed(1)}%. The NIIT threshold is NOT inflation-adjusted - it has been $200K/$250K since 2013. OBBBA did not change NIIT.`); if(marginalCGRate>=0.238)h+=flag('red','!',`<strong>Marginal rate on LTCG is ${(marginalCGRate*100).toFixed(1)}%</strong> (20% + 3.8% NIIT). At this level, consider: qualified opportunity zone investments (IRC 1400Z-2), installment sales (IRC 453), charitable remainder trusts, or timing of gain recognition across tax years.`); h+=flag('blue','i','<strong>2026 brackets are approximate.</strong> LTCG thresholds used are estimated for 2026 based on 2025 IRS amounts (Rev. Proc. 2024-40) with inflation adjustment. NIIT thresholds are fixed by statute at $200K/$250K and are not inflation-adjusted. Verify 2026 LTCG thresholds against IRS Rev. Proc. 2025-32.'); h+=`<div class="src">IRC 1(h) (preferential rates on LTCG and qualified dividends - 0/15/20%); IRC 1(h)(11) (qualified dividend definition); IRC 1411 (3.8% Net Investment Income Tax); IRC 1411(c) (NII definition - dividends, interest, rents, royalties, LTCG, passive income); IRC 1222 (LTCG definition - assets held over 12 months); Rev. Proc. 2024-40 (2025 inflation-adjusted amounts used as baseline); Schedule D (capital gains and losses); Form 8960 (NIIT computation); OBBBA P.L. 119-21 (LTCG rates made permanent; NIIT not changed).</div>`; h+=`<div class="disc">Ordinary income tax is estimated from bracket tables; your actual liability depends on credits, AMT, and other items. Consult a CPA for your specific situation.</div>`; rb.innerHTML=h;
+const NIIT={single:200000,mfj:250000,hoh:200000,mfs:125000};
+
+function calc(){
+  const fs=document.getElementById('fs').value;
+  const ordinary=parseFloat(document.getElementById('ordinary').value)||0;
+  const ltcg=parseFloat(document.getElementById('ltcg').value)||0;
+  const qdiv=parseFloat(document.getElementById('qdiv').value)||0;
+  const otherNII=parseFloat(document.getElementById('otherNII').value)||0;
+  const magiAdj=parseFloat(document.getElementById('magiAdj').value)||0;
+  const t=LTCG[fs];
+  const niitThresh=NIIT[fs];
+  const prefIncome=ltcg+qdiv;
+  const totalTaxable=ordinary+prefIncome;
+  const magi=totalTaxable+magiAdj;
+
+  // LTCG stacking: preferred income sits on top of ordinary income
+  // The rate applied to each LTCG/QD dollar depends on where it falls in the stacked bracket
+  const ordBracketUsed=ordinary;
+  let at0=0,at15=0,at20=0;
+  let remaining=prefIncome;
+  // Room in 0% bracket above ordinary income
+  const room0=Math.max(0,t.r0-ordBracketUsed);
+  at0=Math.min(remaining,room0); remaining-=at0;
+  // Room in 15% bracket
+  const room15=Math.max(0,t.r15-Math.max(ordBracketUsed,t.r0));
+  at15=Math.min(remaining,room15); remaining-=at15;
+  at20=Math.max(0,remaining);
+
+  const cgTax=at0*0+at15*0.15+at20*0.20;
+
+  // NIIT - 3.8% on lesser of NII or MAGI over threshold
+  const nii=ltcg+qdiv+otherNII;
+  const magiOverThresh=Math.max(0,magi-niitThresh);
+  const niitBase=Math.min(nii,magiOverThresh);
+  const niitTax=niitBase*0.038;
+
+  // Ordinary income tax (simplified bracket - user inputs regular tax or we estimate)
+  // Estimate ordinary tax using 2026 approximate brackets
+  const ordRates={
+    single:[[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+    mfj:[[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+    hoh:[[17000,0.10],[64850,0.12],[103350,0.22],[197300,0.24],[250500,0.32],[626350,0.35],[Infinity,0.37]],
+    mfs:[[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[375800,0.35],[Infinity,0.37]],
+  };
+  let ordTax=0,rem=ordinary,prevBracket=0;
+  for(const [top,rate] of ordRates[fs]){
+    const bracketSize=top===Infinity?rem:Math.max(0,Math.min(rem,top-prevBracket));
+    ordTax+=bracketSize*rate;
+    rem-=bracketSize;
+    prevBracket=top===Infinity?prevBracket:top;
+    if(rem<=0)break;
+  }
+  const totalTax=ordTax+cgTax+niitTax;
+  const effRate=totalTaxable>0?totalTax/totalTaxable:0;
+  const marginalCGRate=(at20>0?0.20:at15>0?0.15:0)+(niitBase>0?0.038:0);
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  h+=`<div class="rate-grid">
+    <div class="rg"><div class="rgl">Ordinary Income Tax</div><div class="rgv coral">${fmt(ordTax)}</div><div class="rgs">Est. from brackets</div></div>
+    <div class="rg"><div class="rgl">Cap. Gains Tax</div><div class="rgv coral">${fmt(cgTax)}</div><div class="rgs">0/15/20%</div></div>
+    <div class="rg"><div class="rgl">NIIT (3.8%)</div><div class="rgv ${niitTax>0?'amber':'green'}">${fmt(niitTax)}</div><div class="rgs">IRC 1411</div></div>
+    <div class="rg"><div class="rgl">Total Tax</div><div class="rgv">${fmt(totalTax)}</div><div class="rgs">Eff. ${(effRate*100).toFixed(1)}%</div></div>
+    <div class="rg"><div class="rgl">Marginal CG Rate</div><div class="rgv ${marginalCGRate>=0.238?'red':marginalCGRate>=0.15?'amber':'green'}">${(marginalCGRate*100).toFixed(1)}%</div><div class="rgs">Incl. NIIT</div></div>
+  </div>`;
+
+  // Stacking visual
+  h+=`<div class="stack-visual">
+    <div class="sv-row" style="background:var(--ink-10);border:1px solid var(--ink-20)">
+      <div class="sv-label">Ordinary taxable income</div>
+      <div class="sv-rate" style="color:var(--ink-60)">Various</div>
+      <div class="sv-amount">${fmt(ordinary)}</div>
+    </div>
+    ${at0>0?`<div class="sv-row" style="background:var(--green-bg);border:1px solid var(--green-b)"><div class="sv-label">LTCG/QD at 0% rate</div><div class="sv-rate" style="color:var(--green)">0%</div><div class="sv-amount">${fmt(at0)}</div></div>`:''}
+    ${at15>0?`<div class="sv-row" style="background:var(--amber-bg);border:1px solid var(--amber-b)"><div class="sv-label">LTCG/QD at 15% rate</div><div class="sv-rate" style="color:var(--amber)">15%</div><div class="sv-amount">${fmt(at15)}</div></div>`:''}
+    ${at20>0?`<div class="sv-row" style="background:var(--red-bg);border:1px solid var(--red-b)"><div class="sv-label">LTCG/QD at 20% rate</div><div class="sv-rate" style="color:var(--red)">20%</div><div class="sv-amount">${fmt(at20)}</div></div>`:''}
+    ${niitBase>0?`<div class="sv-row" style="background:#f0e6f0;border:1px solid #c9a4c9"><div class="sv-label">NIIT base (3.8% on ${fmt(niitBase)})</div><div class="sv-rate" style="color:#7b4d7b">3.8%</div><div class="sv-amount">${fmt(niitTax)}</div></div>`:''}
+  </div>`;
+
+  h+=`<div class="sum-box"><div class="sum-title">Detail</div>
+    <div class="srow"><span class="sl">Ordinary income (taxable)</span><span class="sv2">${fmt(ordinary)}</span></div>
+    <div class="srow"><span class="sl">LTCG + qualified dividends</span><span class="sv2">${fmt(prefIncome)}</span></div>
+    <div class="srow"><span class="sl">0% rate bracket ceiling (${fs==='mfj'?'MFJ':fs})</span><span class="sv2">$${t.r0.toLocaleString()}</span></div>
+    <div class="srow"><span class="sl">15% rate bracket ceiling</span><span class="sv2">$${t.r15.toLocaleString()}</span></div>
+    <div class="srow"><span class="sl">LTCG/QD taxed at 0%</span><span class="sv2 green">${fmt(at0)}</span></div>
+    <div class="srow"><span class="sl">LTCG/QD taxed at 15%</span><span class="sv2 ${at15>0?'amber':'green'}">${fmt(at15)}</span></div>
+    <div class="srow"><span class="sl">LTCG/QD taxed at 20%</span><span class="sv2 ${at20>0?'red':'green'}">${fmt(at20)}</span></div>
+    <div class="srow"><span class="sl">Net Investment Income (NIIT base)</span><span class="sv2">${fmt(nii)}</span></div>
+    <div class="srow"><span class="sl">MAGI</span><span class="sv2">${fmt(magi)}</span></div>
+    <div class="srow"><span class="sl">NIIT threshold (${fs==='mfj'?'MFJ $250K':'Single $200K'} - not inflation-adj.)</span><span class="sv2">$${niitThresh.toLocaleString()}</span></div>
+    <div class="srow"><span class="sl">NIIT base (lesser of NII or MAGI over threshold)</span><span class="sv2 ${niitBase>0?'amber':'green'}">${fmt(niitBase)}</span></div>
+    <div class="srow"><span class="sl">NIIT (3.8% x ${fmt(niitBase)})</span><span class="sv2 ${niitTax>0?'amber':'green'}">${fmt(niitTax)}</span></div>
+    <div class="srow"><span class="sl"><strong>Combined capital gains + NIIT</strong></span><span class="sv2 coral">${fmt(cgTax+niitTax)}</span></div>
+  </div>`;
+
+  if(at0>0)h+=flag('green','v',`<strong>${fmt(at0)} of your LTCG/QD falls in the 0% bracket.</strong> This portion is completely tax-free federally. Consider harvesting additional long-term gains up to the 0% ceiling ($${t.r0.toLocaleString()} total income for ${fs==='mfj'?'MFJ':'your filing status'}) to reset basis at no tax cost. IRC 1(h).`);
+  if(niitTax>0)h+=flag('amber','!',`<strong>NIIT of ${fmt(niitTax)} applies.</strong> Your MAGI of ${fmt(magi)} exceeds the $${niitThresh.toLocaleString()} NIIT threshold. The 3.8% NIIT under IRC 1411 stacks on top of the 15% or 20% capital gains rate, bringing your marginal rate on LTCG to ${(marginalCGRate*100).toFixed(1)}%. The NIIT threshold is NOT inflation-adjusted - it has been $200K/$250K since 2013. OBBBA did not change NIIT.`);
+  if(marginalCGRate>=0.238)h+=flag('red','!',`<strong>Marginal rate on LTCG is ${(marginalCGRate*100).toFixed(1)}%</strong> (20% + 3.8% NIIT). At this level, consider: qualified opportunity zone investments (IRC 1400Z-2), installment sales (IRC 453), charitable remainder trusts, or timing of gain recognition across tax years.`);
+  h+=flag('blue','i','<strong>2026 brackets are approximate.</strong> LTCG thresholds used are estimated for 2026 based on 2025 IRS amounts (Rev. Proc. 2024-40) with inflation adjustment. NIIT thresholds are fixed by statute at $200K/$250K and are not inflation-adjusted. Verify 2026 LTCG thresholds against IRS Rev. Proc. 2025-32.');
+  h+=`<div class="src">IRC 1(h) (preferential rates on LTCG and qualified dividends - 0/15/20%); IRC 1(h)(11) (qualified dividend definition); IRC 1411 (3.8% Net Investment Income Tax); IRC 1411(c) (NII definition - dividends, interest, rents, royalties, LTCG, passive income); IRC 1222 (LTCG definition - assets held over 12 months); Rev. Proc. 2024-40 (2025 inflation-adjusted amounts used as baseline); Schedule D (capital gains and losses); Form 8960 (NIIT computation); OBBBA P.L. 119-21 (LTCG rates made permanent; NIIT not changed).</div>`;
+  h+=`<div class="disc">Ordinary income tax is estimated from bracket tables; your actual liability depends on credits, AMT, and other items. Consult a CPA for your specific situation. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+  rb.innerHTML=h;
 }
 calc();
-</script> </body>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
