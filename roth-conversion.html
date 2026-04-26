@@ -63,25 +63,269 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Roth Conversion Optimizer 2026</h1> <div class="sub">Model conversion amounts by bracket. Tax cost today vs. projected tax-free growth. Break-even timeline. Bracket-filling strategy. IRMAA impact. Pro-rata rule warning.</div> <div class="badges"><span class="badge">IRC 408A - Roth IRA</span><span class="badge">IRC 408(d)(2) - pro-rata rule</span><span class="badge">IRC 72(t) - 5-year rule</span><span class="badge">IRMAA - Medicare surtax</span></div>
+<div class="ph"><div class="phi">
+  <h1>Roth Conversion Optimizer 2026</h1>
+  <div class="sub">Model conversion amounts by bracket. Tax cost today vs. projected tax-free growth. Break-even timeline. Bracket-filling strategy. IRMAA impact. Pro-rata rule warning.</div>
+  <div class="badges"><span class="badge">IRC 408A - Roth IRA</span><span class="badge">IRC 408(d)(2) - pro-rata rule</span><span class="badge">IRC 72(t) - 5-year rule</span><span class="badge">IRMAA - Medicare surtax</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Current Year Tax Situation</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Filing Status</label> <select class="fc" id="fs" onchange="calc()"> <option value="single">Single</option> <option value="mfj" selected>Married Filing Jointly</option> </select> </div> <div class="f1"><label>Ordinary Income (Before Conversion) ($)</label> <input type="number" class="fc" id="income" value="180000" oninput="calc()"> <div class="hint">Wages, business income, RMDs, other ordinary income this year. Conversion adds on top of this.</div> </div> <div class="f1"><label>Conversion Amount ($)</label> <input type="number" class="fc" id="conversion" value="50000" oninput="calc()"> <div class="hint">Amount to convert from traditional IRA or pre-tax 401(k) to Roth. Fully taxable as ordinary income in year of conversion. IRC 408A(d)(3).</div> </div> </div> <div class="fg3"> <div class="f1"><label>Traditional IRA Balance ($)</label> <input type="number" class="fc" id="iraBalance" value="500000" oninput="calc()"> </div> <div class="f1"><label>Non-Deductible IRA Basis ($)</label> <input type="number" class="fc" id="basis" value="0" oninput="calc()"> <div class="hint">After-tax (Form 8606) basis in all traditional IRAs. Pro-rata rule: basis ratio reduces taxable portion. IRC 408(d)(2).</div> </div> <div class="f1"><label>Current Age</label> <input type="number" class="fc" id="age" value="55" min="18" max="80" oninput="calc()"> </div> </div> <div class="fg3"> <div class="f1"><label>Expected Future Tax Rate (in Retirement)</label> <select class="fc" id="futureRate" onchange="calc()"> <option value="0.10">10% - very low income in retirement</option> <option value="0.12">12%</option> <option value="0.22" selected>22% - similar to current</option> <option value="0.24">24%</option> <option value="0.32">32% - higher in retirement (RMDs)</option> <option value="0.37">37% - high RMD / estate planning</option> </select> <div class="hint">The rate at which you expect to pay tax on IRA withdrawals in retirement. Key driver of conversion benefit.</div> </div> <div class="f1"><label>Expected Annual Return</label> <select class="fc" id="returnRate" onchange="calc()"> <option value="0.05">5% - conservative</option> <option value="0.07" selected>7% - moderate</option> <option value="0.10">10% - aggressive</option> </select> </div> <div class="f1"><label>Years Until Withdrawal</label> <input type="number" class="fc" id="years" value="20" min="5" max="40" oninput="calc()"> </div> </div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Results</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Current Year Tax Situation</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Filing Status</label>
+        <select class="fc" id="fs" onchange="calc()">
+          <option value="single">Single</option>
+          <option value="mfj" selected>Married Filing Jointly</option>
+        </select>
+      </div>
+      <div class="f1"><label>Ordinary Income (Before Conversion) ($)</label>
+        <input type="number" class="fc" id="income" value="180000" oninput="calc()">
+        <div class="hint">Wages, business income, RMDs, other ordinary income this year. Conversion adds on top of this.</div>
+      </div>
+      <div class="f1"><label>Conversion Amount ($)</label>
+        <input type="number" class="fc" id="conversion" value="50000" oninput="calc()">
+        <div class="hint">Amount to convert from traditional IRA or pre-tax 401(k) to Roth. Fully taxable as ordinary income in year of conversion. IRC 408A(d)(3).</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Traditional IRA Balance ($)</label>
+        <input type="number" class="fc" id="iraBalance" value="500000" oninput="calc()">
+      </div>
+      <div class="f1"><label>Non-Deductible IRA Basis ($)</label>
+        <input type="number" class="fc" id="basis" value="0" oninput="calc()">
+        <div class="hint">After-tax (Form 8606) basis in all traditional IRAs. Pro-rata rule: basis ratio reduces taxable portion. IRC 408(d)(2).</div>
+      </div>
+      <div class="f1"><label>Current Age</label>
+        <input type="number" class="fc" id="age" value="55" min="18" max="80" oninput="calc()">
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Expected Future Tax Rate (in Retirement)</label>
+        <select class="fc" id="futureRate" onchange="calc()">
+          <option value="0.10">10% - very low income in retirement</option>
+          <option value="0.12">12%</option>
+          <option value="0.22" selected>22% - similar to current</option>
+          <option value="0.24">24%</option>
+          <option value="0.32">32% - higher in retirement (RMDs)</option>
+          <option value="0.37">37% - high RMD / estate planning</option>
+        </select>
+        <div class="hint">The rate at which you expect to pay tax on IRA withdrawals in retirement. Key driver of conversion benefit.</div>
+      </div>
+      <div class="f1"><label>Expected Annual Return</label>
+        <select class="fc" id="returnRate" onchange="calc()">
+          <option value="0.05">5% - conservative</option>
+          <option value="0.07" selected>7% - moderate</option>
+          <option value="0.10">10% - aggressive</option>
+        </select>
+      </div>
+      <div class="f1"><label>Years Until Withdrawal</label>
+        <input type="number" class="fc" id="years" value="20" min="5" max="40" oninput="calc()">
+      </div>
+    </div>
+  </div>
 </div>
-</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a> <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a> <a href="safe-harbor.html" class="rl">Estimated Tax Safe Harbor</a> <a href="index.html" class="rl">All Tools</a>
-</div></div> <script>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="safe-harbor.html" class="rl">Estimated Tax Safe Harbor</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} const BRACKETS={ single:[[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]], mfj: [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
-}; function marginalRate(income, fs){ let prev=0; for(const [top,rate] of BRACKETS[fs]){ if(income<=top)return rate; prev=top; } return 0.37;
-} function taxOnRange(from, to, fs){ let tax=0,prev=0; for(const [top,rate] of BRACKETS[fs]){ if(to<=prev)break; const lo=Math.max(from,prev),hi=Math.min(to,top===Infinity?to+1:top); if(hi>lo)tax+=(hi-lo)*rate; prev=top===Infinity?top:top; } return tax;
-} // IRMAA thresholds 2026 (approximate - MFJ)
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+const BRACKETS={
+  single:[[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+  mfj:   [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+};
+
+function marginalRate(income, fs){
+  let prev=0;
+  for(const [top,rate] of BRACKETS[fs]){
+    if(income<=top)return rate;
+    prev=top;
+  }
+  return 0.37;
+}
+
+function taxOnRange(from, to, fs){
+  let tax=0,prev=0;
+  for(const [top,rate] of BRACKETS[fs]){
+    if(to<=prev)break;
+    const lo=Math.max(from,prev),hi=Math.min(to,top===Infinity?to+1:top);
+    if(hi>lo)tax+=(hi-lo)*rate;
+    prev=top===Infinity?top:top;
+  }
+  return tax;
+}
+
+// IRMAA thresholds 2026 (approximate - MFJ)
 const IRMAA_MFJ=[[212000,0],[266000,816],[334000,2040],[400000,3264],[750000,3696],[Infinity,3984]];
-const IRMAA_SINGLE=[[106000,0],[133000,816],[167000,2040],[200000,3264],[500000,3696],[Infinity,3984]]; function irmaaSurcharge(magi, fs){ const tiers=fs==='mfj'?IRMAA_MFJ:IRMAA_SINGLE; let surcharge=0; for(const [top,cost] of tiers){ if(magi<=top){surcharge=cost;break;} } return surcharge;
-} function calc(){ const fs=document.getElementById('fs').value; const income=parseFloat(document.getElementById('income').value)||0; const conversion=parseFloat(document.getElementById('conversion').value)||0; const iraBalance=parseFloat(document.getElementById('iraBalance').value)||0; const basis=parseFloat(document.getElementById('basis').value)||0; const age=parseInt(document.getElementById('age').value)||55; const futureRate=parseFloat(document.getElementById('futureRate').value)||0.22; const returnRate=parseFloat(document.getElementById('returnRate').value)||0.07; const years=parseInt(document.getElementById('years').value)||20; // Pro-rata rule const basisRatio=iraBalance>0?Math.min(1,basis/iraBalance):0; const taxableConversion=conversion*(1-basisRatio); const nontaxable=conversion*basisRatio; // Tax cost of conversion const taxWithout=taxOnRange(0,income,fs); const taxWith=taxOnRange(0,income+taxableConversion,fs); const conversionTax=taxWith-taxWithout; const marginalRateOnConversion=taxableConversion>0?conversionTax/taxableConversion:0; // What bracket the conversion hits const preConvMarginal=marginalRate(income,fs); const postConvMarginal=marginalRate(income+taxableConversion,fs); // Room remaining in current bracket const currentBracket=BRACKETS[fs].find(([top,r])=>income<top); const roomInBracket=currentBracket?Math.max(0,currentBracket[0]-income):0; // IRMAA impact const irmaaBefore=irmaaSurcharge(income,fs); const irmaaAfter=irmaaSurcharge(income+taxableConversion,fs); const irmaaIncrease=irmaaAfter-irmaaBefore; // Future value analysis const fvConverted=conversion*Math.pow(1+returnRate,years); const fvTaxFreeWithdrawal=fvConverted; // Roth - no tax const fvTraditional=conversion*Math.pow(1+returnRate,years); const fvTraditionalAfterTax=fvTraditional*(1-futureRate); const netBenefit=fvTaxFreeWithdrawal-fvTraditionalAfterTax-conversionTax; // Break-even years let breakEven=0; for(let y=1;y<=50;y++){ const fvR=conversion*Math.pow(1+returnRate,y); const fvT=conversion*Math.pow(1+returnRate,y)*(1-futureRate); if(fvR-fvT>conversionTax){breakEven=y;break;} } const rb=document.getElementById('res'); let h=''; h+=`<div class="hero3"> <div class="h3"><div class="h3l">Tax Cost Today</div><div class="h3v coral">${fmt(conversionTax)}</div><div class="h3s">At ${Math.round(marginalRateOnConversion*100)}% marginal rate</div></div> <div class="h3"><div class="h3l">Net Benefit (${years}yr)</div><div class="h3v ${netBenefit>0?'green':'amber'}">${fmt(netBenefit)}</div><div class="h3s">Roth growth vs. trad. after-tax</div></div> <div class="h3"><div class="h3l">Break-Even</div><div class="h3v">${breakEven>0?breakEven+' yrs':'<5 yrs'}</div><div class="h3s">When Roth surpasses trad.</div></div> </div>`; // Bracket visualization h+=`<div class="bracket-bar"> <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60);margin-bottom:8px">2026 Bracket Utilization</div>`; let prev2=0; for(const [top,rate] of BRACKETS[fs]){ const bracketSize=top===Infinity?200000:top-prev2; const incomeInBracket=Math.max(0,Math.min(income,top===Infinity?income:top)-prev2); const convInBracket=Math.max(0,Math.min(income+taxableConversion,top===Infinity?income+taxableConversion:top)-Math.max(income,prev2)); const totalInBracket=incomeInBracket+convInBracket; if(totalInBracket>0||incomeInBracket>0){ const fillPct=Math.min(100,(incomeInBracket/bracketSize)*100); const convPct=Math.min(100-fillPct,(convInBracket/bracketSize)*100); const rateColors=['#4A7459','#5a8a6a','#8B6535','#a07040','#9B3D3D','#c05050','#8B1A1A']; const ri=BRACKETS[fs].indexOf(BRACKETS[fs].find(b=>b[0]===top&&b[1]===rate)); h+=`<div class="bb-row"> <div class="bb-label" style="color:${rate>=0.32?'var(--red)':rate>=0.24?'var(--amber)':'var(--green)'}">${Math.round(rate*100)}% bracket</div> <div class="bb-track"> <div class="bb-fill" style="width:${fillPct+convPct}%;background:${convInBracket>0?'var(--coral)':'var(--ink-60)'}"> ${convInBracket>0?Math.round(rate*100)+'%':''} </div> </div> <div class="bb-amount">${incomeInBracket>0?fmt(incomeInBracket):''} ${convInBracket>0?'+ '+fmt(convInBracket):''}</div> </div>`; } prev2=top===Infinity?prev2:top; if(prev2>income+taxableConversion+50000)break; } h+='</div>'; h+=`<div class="sum-box"><div class="sum-title">Conversion Analysis</div> <div class="srow"><span class="sl">Conversion amount</span><span class="sv">${fmt(conversion)}</span></div> ${basisRatio>0?`<div class="srow"><span class="sl">Non-deductible basis ratio (${Math.round(basisRatio*100)}% of IRA)</span><span class="sv green">${fmt(nontaxable)} tax-free</span></div>`:''} <div class="srow"><span class="sl">Taxable portion of conversion</span><span class="sv coral">${fmt(taxableConversion)}</span></div> <div class="srow"><span class="sl">Marginal rate on conversion income</span><span class="sv">${Math.round(marginalRateOnConversion*100)}%</span></div> <div class="srow"><span class="sl">Tax cost of conversion</span><span class="sv red">${fmt(conversionTax)}</span></div> ${irmaaIncrease>0?`<div class="srow"><span class="sl">IRMAA Medicare surtax increase (2-year lookback)</span><span class="sv amber">${fmt(irmaaIncrease)}/yr</span></div>`:''} <div class="srow"><span class="sl">Room remaining in ${Math.round(preConvMarginal*100)}% bracket</span><span class="sv ${roomInBracket>conversion?'green':'amber'}">${fmt(roomInBracket)}</span></div> <div class="srow"><span class="sl">Converted ${fmt(conversion)} grows to (${years} yrs @ ${Math.round(returnRate*100)}%)</span><span class="sv green">${fmt(fvConverted)}</span></div> <div class="srow"><span class="sl">Same in traditional IRA, after ${Math.round(futureRate*100)}% withdrawal tax</span><span class="sv">${fmt(fvTraditionalAfterTax)}</span></div> <div class="srow"><span class="sl"><strong>Net benefit of conversion over ${years} years</strong></span><span class="sv ${netBenefit>0?'green':'red'}">${fmt(netBenefit)}</span></div> </div>`; if(roomInBracket>0&&conversion>roomInBracket){ h+=flag('amber','!',`<strong>Conversion pushes into the next bracket.</strong> ${fmt(roomInBracket)} fits in your current ${Math.round(preConvMarginal*100)}% bracket. The remaining ${fmt(taxableConversion-roomInBracket)} is taxed at ${Math.round(postConvMarginal*100)}%. Consider converting only ${fmt(roomInBracket)} to stay within the current bracket ("bracket filling" strategy).`); } if(roomInBracket>=taxableConversion&&netBenefit>0){ h+=flag('green','v',`<strong>Entire conversion fits within the ${Math.round(preConvMarginal*100)}% bracket.</strong> This is the optimal scenario - you pay ${Math.round(preConvMarginal*100)}% today on income you would otherwise pay ${Math.round(futureRate*100)}% on in retirement. Break-even in approximately ${breakEven} years.`); } if(futureRate>marginalRateOnConversion){ h+=flag('green','v',`<strong>Conversion is strongly favorable.</strong> Current marginal rate ${Math.round(marginalRateOnConversion*100)}% is lower than expected future rate ${Math.round(futureRate*100)}%. Converting now locks in a lower rate on this income permanently.`); } else if(futureRate<marginalRateOnConversion){ h+=flag('amber','!',`<strong>Current rate exceeds expected future rate.</strong> Paying ${Math.round(marginalRateOnConversion*100)}% today vs. ${Math.round(futureRate*100)}% expected in retirement. Conversion may not be optimal unless your primary goal is estate planning, RMD reduction, or tax diversification.`); } if(basisRatio>0){ h+=flag('blue','i',`<strong>Pro-rata rule applies.</strong> You have $${basis.toLocaleString()} of non-deductible (Form 8606) basis in IRAs with total balance $${iraBalance.toLocaleString()}. Under IRC 408(d)(2), you cannot selectively convert only the basis. ${Math.round(basisRatio*100)}% of every dollar converted is tax-free (basis ratio). To avoid pro-rata: consider rolling pre-tax IRA balances into a current employer 401(k) before converting, leaving only basis for tax-free conversion.`); } if(irmaaIncrease>0){ h+=flag('amber','!',`<strong>IRMAA Medicare surtax triggered.</strong> The conversion increases your MAGI into an IRMAA tier, adding ${fmt(irmaaIncrease)}/year to Medicare Part B and D premiums for 2 years (IRMAA uses a 2-year lookback). This adds ${fmt(irmaaIncrease*2)} to the effective cost of this conversion. Consider whether the conversion amount can be reduced to stay under the IRMAA threshold.`); } if(age<59.5){ h+=flag('red','!','<strong>Under 59.5 - 5-year rule and penalty considerations.</strong> Each Roth conversion has its own 5-year clock. Withdrawals of converted amounts within 5 years of conversion (and before age 59.5) are subject to the 10% early withdrawal penalty under IRC 72(t). The 5-year rule for Roth earnings (tax-free qualified distributions) runs from January 1 of the first year a Roth IRA was funded. Pay conversion tax from outside the IRA, not from the converted funds.'); } h+=`<div class="src">IRC 408A (Roth IRA - conversion rules, income inclusion, qualified distributions); IRC 408A(d)(3) (taxable conversion - included in gross income); IRC 408(d)(2) (pro-rata rule for distributions from IRAs with basis and pre-tax amounts); IRC 72(t) (10% early withdrawal penalty and 5-year rule); IRC 72(t)(2)(A)(iv) (5-year Roth conversion holding period); 42 U.S.C. 1395r (IRMAA Medicare premium surcharge - 2-year income lookback); Rev. Proc. 2024-40 (2025 bracket thresholds used as 2026 baseline).</div>`; h+=`<div class="disc">Projections are illustrative. Actual tax rates, IRMAA thresholds, and investment returns will differ. Roth conversion strategy depends on estate planning goals, state taxes, Social Security timing, RMD planning, and other factors. Consult a CPA and financial planner.</div>`; rb.innerHTML=h;
+const IRMAA_SINGLE=[[106000,0],[133000,816],[167000,2040],[200000,3264],[500000,3696],[Infinity,3984]];
+
+function irmaaSurcharge(magi, fs){
+  const tiers=fs==='mfj'?IRMAA_MFJ:IRMAA_SINGLE;
+  let surcharge=0;
+  for(const [top,cost] of tiers){
+    if(magi<=top){surcharge=cost;break;}
+  }
+  return surcharge;
+}
+
+function calc(){
+  const fs=document.getElementById('fs').value;
+  const income=parseFloat(document.getElementById('income').value)||0;
+  const conversion=parseFloat(document.getElementById('conversion').value)||0;
+  const iraBalance=parseFloat(document.getElementById('iraBalance').value)||0;
+  const basis=parseFloat(document.getElementById('basis').value)||0;
+  const age=parseInt(document.getElementById('age').value)||55;
+  const futureRate=parseFloat(document.getElementById('futureRate').value)||0.22;
+  const returnRate=parseFloat(document.getElementById('returnRate').value)||0.07;
+  const years=parseInt(document.getElementById('years').value)||20;
+
+  // Pro-rata rule
+  const basisRatio=iraBalance>0?Math.min(1,basis/iraBalance):0;
+  const taxableConversion=conversion*(1-basisRatio);
+  const nontaxable=conversion*basisRatio;
+
+  // Tax cost of conversion
+  const taxWithout=taxOnRange(0,income,fs);
+  const taxWith=taxOnRange(0,income+taxableConversion,fs);
+  const conversionTax=taxWith-taxWithout;
+  const marginalRateOnConversion=taxableConversion>0?conversionTax/taxableConversion:0;
+
+  // What bracket the conversion hits
+  const preConvMarginal=marginalRate(income,fs);
+  const postConvMarginal=marginalRate(income+taxableConversion,fs);
+
+  // Room remaining in current bracket
+  const currentBracket=BRACKETS[fs].find(([top,r])=>income<top);
+  const roomInBracket=currentBracket?Math.max(0,currentBracket[0]-income):0;
+
+  // IRMAA impact
+  const irmaaBefore=irmaaSurcharge(income,fs);
+  const irmaaAfter=irmaaSurcharge(income+taxableConversion,fs);
+  const irmaaIncrease=irmaaAfter-irmaaBefore;
+
+  // Future value analysis
+  const fvConverted=conversion*Math.pow(1+returnRate,years);
+  const fvTaxFreeWithdrawal=fvConverted; // Roth - no tax
+  const fvTraditional=conversion*Math.pow(1+returnRate,years);
+  const fvTraditionalAfterTax=fvTraditional*(1-futureRate);
+  const netBenefit=fvTaxFreeWithdrawal-fvTraditionalAfterTax-conversionTax;
+
+  // Break-even years
+  let breakEven=0;
+  for(let y=1;y<=50;y++){
+    const fvR=conversion*Math.pow(1+returnRate,y);
+    const fvT=conversion*Math.pow(1+returnRate,y)*(1-futureRate);
+    if(fvR-fvT>conversionTax){breakEven=y;break;}
+  }
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  h+=`<div class="hero3">
+    <div class="h3"><div class="h3l">Tax Cost Today</div><div class="h3v coral">${fmt(conversionTax)}</div><div class="h3s">At ${Math.round(marginalRateOnConversion*100)}% marginal rate</div></div>
+    <div class="h3"><div class="h3l">Net Benefit (${years}yr)</div><div class="h3v ${netBenefit>0?'green':'amber'}">${fmt(netBenefit)}</div><div class="h3s">Roth growth vs. trad. after-tax</div></div>
+    <div class="h3"><div class="h3l">Break-Even</div><div class="h3v">${breakEven>0?breakEven+' yrs':'<5 yrs'}</div><div class="h3s">When Roth surpasses trad.</div></div>
+  </div>`;
+
+  // Bracket visualization
+  h+=`<div class="bracket-bar">
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60);margin-bottom:8px">2026 Bracket Utilization</div>`;
+  let prev2=0;
+  for(const [top,rate] of BRACKETS[fs]){
+    const bracketSize=top===Infinity?200000:top-prev2;
+    const incomeInBracket=Math.max(0,Math.min(income,top===Infinity?income:top)-prev2);
+    const convInBracket=Math.max(0,Math.min(income+taxableConversion,top===Infinity?income+taxableConversion:top)-Math.max(income,prev2));
+    const totalInBracket=incomeInBracket+convInBracket;
+    if(totalInBracket>0||incomeInBracket>0){
+      const fillPct=Math.min(100,(incomeInBracket/bracketSize)*100);
+      const convPct=Math.min(100-fillPct,(convInBracket/bracketSize)*100);
+      const rateColors=['#4A7459','#5a8a6a','#8B6535','#a07040','#9B3D3D','#c05050','#8B1A1A'];
+      const ri=BRACKETS[fs].indexOf(BRACKETS[fs].find(b=>b[0]===top&&b[1]===rate));
+      h+=`<div class="bb-row">
+        <div class="bb-label" style="color:${rate>=0.32?'var(--red)':rate>=0.24?'var(--amber)':'var(--green)'}">${Math.round(rate*100)}% bracket</div>
+        <div class="bb-track">
+          <div class="bb-fill" style="width:${fillPct+convPct}%;background:${convInBracket>0?'var(--coral)':'var(--ink-60)'}">
+            ${convInBracket>0?Math.round(rate*100)+'%':''}
+          </div>
+        </div>
+        <div class="bb-amount">${incomeInBracket>0?fmt(incomeInBracket):''} ${convInBracket>0?'+ '+fmt(convInBracket):''}</div>
+      </div>`;
+    }
+    prev2=top===Infinity?prev2:top;
+    if(prev2>income+taxableConversion+50000)break;
+  }
+  h+='</div>';
+
+  h+=`<div class="sum-box"><div class="sum-title">Conversion Analysis</div>
+    <div class="srow"><span class="sl">Conversion amount</span><span class="sv">${fmt(conversion)}</span></div>
+    ${basisRatio>0?`<div class="srow"><span class="sl">Non-deductible basis ratio (${Math.round(basisRatio*100)}% of IRA)</span><span class="sv green">${fmt(nontaxable)} tax-free</span></div>`:''}
+    <div class="srow"><span class="sl">Taxable portion of conversion</span><span class="sv coral">${fmt(taxableConversion)}</span></div>
+    <div class="srow"><span class="sl">Marginal rate on conversion income</span><span class="sv">${Math.round(marginalRateOnConversion*100)}%</span></div>
+    <div class="srow"><span class="sl">Tax cost of conversion</span><span class="sv red">${fmt(conversionTax)}</span></div>
+    ${irmaaIncrease>0?`<div class="srow"><span class="sl">IRMAA Medicare surtax increase (2-year lookback)</span><span class="sv amber">${fmt(irmaaIncrease)}/yr</span></div>`:''}
+    <div class="srow"><span class="sl">Room remaining in ${Math.round(preConvMarginal*100)}% bracket</span><span class="sv ${roomInBracket>conversion?'green':'amber'}">${fmt(roomInBracket)}</span></div>
+    <div class="srow"><span class="sl">Converted ${fmt(conversion)} grows to (${years} yrs @ ${Math.round(returnRate*100)}%)</span><span class="sv green">${fmt(fvConverted)}</span></div>
+    <div class="srow"><span class="sl">Same in traditional IRA, after ${Math.round(futureRate*100)}% withdrawal tax</span><span class="sv">${fmt(fvTraditionalAfterTax)}</span></div>
+    <div class="srow"><span class="sl"><strong>Net benefit of conversion over ${years} years</strong></span><span class="sv ${netBenefit>0?'green':'red'}">${fmt(netBenefit)}</span></div>
+  </div>`;
+
+  if(roomInBracket>0&&conversion>roomInBracket){
+    h+=flag('amber','!',`<strong>Conversion pushes into the next bracket.</strong> ${fmt(roomInBracket)} fits in your current ${Math.round(preConvMarginal*100)}% bracket. The remaining ${fmt(taxableConversion-roomInBracket)} is taxed at ${Math.round(postConvMarginal*100)}%. Consider converting only ${fmt(roomInBracket)} to stay within the current bracket ("bracket filling" strategy).`);
+  }
+  if(roomInBracket>=taxableConversion&&netBenefit>0){
+    h+=flag('green','v',`<strong>Entire conversion fits within the ${Math.round(preConvMarginal*100)}% bracket.</strong> This is the optimal scenario - you pay ${Math.round(preConvMarginal*100)}% today on income you would otherwise pay ${Math.round(futureRate*100)}% on in retirement. Break-even in approximately ${breakEven} years.`);
+  }
+  if(futureRate>marginalRateOnConversion){
+    h+=flag('green','v',`<strong>Conversion is strongly favorable.</strong> Current marginal rate ${Math.round(marginalRateOnConversion*100)}% is lower than expected future rate ${Math.round(futureRate*100)}%. Converting now locks in a lower rate on this income permanently.`);
+  } else if(futureRate<marginalRateOnConversion){
+    h+=flag('amber','!',`<strong>Current rate exceeds expected future rate.</strong> Paying ${Math.round(marginalRateOnConversion*100)}% today vs. ${Math.round(futureRate*100)}% expected in retirement. Conversion may not be optimal unless your primary goal is estate planning, RMD reduction, or tax diversification.`);
+  }
+  if(basisRatio>0){
+    h+=flag('blue','i',`<strong>Pro-rata rule applies.</strong> You have $${basis.toLocaleString()} of non-deductible (Form 8606) basis in IRAs with total balance $${iraBalance.toLocaleString()}. Under IRC 408(d)(2), you cannot selectively convert only the basis. ${Math.round(basisRatio*100)}% of every dollar converted is tax-free (basis ratio). To avoid pro-rata: consider rolling pre-tax IRA balances into a current employer 401(k) before converting, leaving only basis for tax-free conversion.`);
+  }
+  if(irmaaIncrease>0){
+    h+=flag('amber','!',`<strong>IRMAA Medicare surtax triggered.</strong> The conversion increases your MAGI into an IRMAA tier, adding ${fmt(irmaaIncrease)}/year to Medicare Part B and D premiums for 2 years (IRMAA uses a 2-year lookback). This adds ${fmt(irmaaIncrease*2)} to the effective cost of this conversion. Consider whether the conversion amount can be reduced to stay under the IRMAA threshold.`);
+  }
+  if(age<59.5){
+    h+=flag('red','!','<strong>Under 59.5 - 5-year rule and penalty considerations.</strong> Each Roth conversion has its own 5-year clock. Withdrawals of converted amounts within 5 years of conversion (and before age 59.5) are subject to the 10% early withdrawal penalty under IRC 72(t). The 5-year rule for Roth earnings (tax-free qualified distributions) runs from January 1 of the first year a Roth IRA was funded. Pay conversion tax from outside the IRA, not from the converted funds.');
+  }
+
+  h+=`<div class="src">IRC 408A (Roth IRA - conversion rules, income inclusion, qualified distributions); IRC 408A(d)(3) (taxable conversion - included in gross income); IRC 408(d)(2) (pro-rata rule for distributions from IRAs with basis and pre-tax amounts); IRC 72(t) (10% early withdrawal penalty and 5-year rule); IRC 72(t)(2)(A)(iv) (5-year Roth conversion holding period); 42 U.S.C. 1395r (IRMAA Medicare premium surcharge - 2-year income lookback); Rev. Proc. 2024-40 (2025 bracket thresholds used as 2026 baseline).</div>`;
+  h+=`<div class="disc">Projections are illustrative. Actual tax rates, IRMAA thresholds, and investment returns will differ. Roth conversion strategy depends on estate planning goals, state taxes, Social Security timing, RMD planning, and other factors. Consult a CPA and financial planner. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+
+  rb.innerHTML=h;
 }
 calc();
-</script> </body>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
