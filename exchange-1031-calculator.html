@@ -61,178 +61,21 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
-  </a>
-  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi">
-  <h1>1031 Like-Kind Exchange Calculator 2026</h1>
-  <div class="sub">Boot recognition, deferred gain, new basis computation. Cash boot, mortgage relief boot, personal property boot. 45-day identification / 180-day closing deadlines. Depreciation recapture on replacement. Form 8824.</div>
-  <div class="badges"><span class="badge">IRC 1031 - like-kind exchange</span><span class="badge">IRC 1031(b) - boot recognition</span><span class="badge">IRC 1250 - depreciation recapture</span><span class="badge">45/180-day deadlines</span><span class="badge">Form 8824</span></div>
+<div class="ph"><div class="phi"> <h1>1031 Like-Kind Exchange Calculator 2026</h1> <div class="sub">Boot recognition, deferred gain, new basis computation. Cash boot, mortgage relief boot, personal property boot. 45-day identification / 180-day closing deadlines. Depreciation recapture on replacement. Form 8824.</div> <div class="badges"><span class="badge">IRC 1031 - like-kind exchange</span><span class="badge">IRC 1031(b) - boot recognition</span><span class="badge">IRC 1250 - depreciation recapture</span><span class="badge">45/180-day deadlines</span><span class="badge">Form 8824</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap">
-
-<div class="deadline-strip">
-  <div class="dl-box"><div class="dl-label">Identification Deadline</div><div class="dl-days">45 Days</div><div class="dl-desc">From closing on relinquished property. Identify replacement property in writing. IRC 1031(a)(3)(A). No extensions regardless of circumstances.</div></div>
-  <div class="dl-box"><div class="dl-label">Exchange Deadline</div><div class="dl-days">180 Days</div><div class="dl-desc">From closing on relinquished property (or tax return due date if earlier). Must close on replacement property. IRC 1031(a)(3)(B). Both deadlines run simultaneously.</div></div>
+<div class="wrap"> <div class="deadline-strip"> <div class="dl-box"><div class="dl-label">Identification Deadline</div><div class="dl-days">45 Days</div><div class="dl-desc">From closing on relinquished property. Identify replacement property in writing. IRC 1031(a)(3)(A). No extensions regardless of circumstances.</div></div> <div class="dl-box"><div class="dl-label">Exchange Deadline</div><div class="dl-days">180 Days</div><div class="dl-desc">From closing on relinquished property (or tax return due date if earlier). Must close on replacement property. IRC 1031(a)(3)(B). Both deadlines run simultaneously.</div></div>
+</div> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Relinquished Property (Property Being Sold)</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Sale Price ($)</label> <input type="number" class="fc" id="salePrice" value="2000000" oninput="calc()"> </div> <div class="f1"><label>Adjusted Basis ($)</label> <input type="number" class="fc" id="adjBasis" value="500000" oninput="calc()"> <div class="hint">Original cost minus accumulated depreciation. The lower the basis, the larger the deferred gain.</div> </div> <div class="f1"><label>Accumulated Depreciation ($)</label> <input type="number" class="fc" id="deprec" value="200000" oninput="calc()"> <div class="hint">Total depreciation taken since acquisition. Subject to 1250 unrecaptured gain at 25% rate upon eventual disposition.</div> </div> </div> <div class="fg2"> <div class="f1"><label>Selling Costs ($)</label> <input type="number" class="fc" id="sellingCosts" value="60000" oninput="calc()"> <div class="hint">Broker commissions, closing costs, QI fees, legal fees. Reduce amount realized.</div> </div> <div class="f1"><label>Mortgage on Relinquished Property ($)</label> <input type="number" class="fc" id="relMortgage" value="600000" oninput="calc()"> <div class="hint">Debt relieved. Mortgage relief is boot unless offset by new mortgage on replacement property. IRC 1031(b).</div> </div> </div> </div>
+</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Replacement Property (Property Being Acquired)</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Replacement Property Purchase Price ($)</label> <input type="number" class="fc" id="repPrice" value="2200000" oninput="calc()"> <div class="hint">To fully defer all gain: replacement value must be >= net sale price (after costs) AND debt assumed must be >= debt relieved.</div> </div> <div class="f1"><label>New Mortgage on Replacement ($)</label> <input type="number" class="fc" id="repMortgage" value="700000" oninput="calc()"> <div class="hint">Debt assumed on replacement property. Offsets mortgage relief boot from relinquished property debt.</div> </div> <div class="f1"><label>Cash Paid Out of Pocket ($)</label> <input type="number" class="fc" id="cashOut" value="0" oninput="calc()"> <div class="hint">Additional cash you pay toward the replacement property above exchange proceeds. Adds to replacement property basis but is not boot.</div> </div> </div> </div>
+</div> <div class="card"> <div class="ch"><div class="sb">3</div><h2>Exchange Results &nbsp;·&nbsp; Form 8824</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter property details above.</div></div>
 </div>
-
-<div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Relinquished Property (Property Being Sold)</h2></div>
-  <div class="cb">
-    <div class="fg3">
-      <div class="f1"><label>Sale Price ($)</label>
-        <input type="number" class="fc" id="salePrice" value="2000000" oninput="calc()">
-      </div>
-      <div class="f1"><label>Adjusted Basis ($)</label>
-        <input type="number" class="fc" id="adjBasis" value="500000" oninput="calc()">
-        <div class="hint">Original cost minus accumulated depreciation. The lower the basis, the larger the deferred gain.</div>
-      </div>
-      <div class="f1"><label>Accumulated Depreciation ($)</label>
-        <input type="number" class="fc" id="deprec" value="200000" oninput="calc()">
-        <div class="hint">Total depreciation taken since acquisition. Subject to 1250 unrecaptured gain at 25% rate upon eventual disposition.</div>
-      </div>
-    </div>
-    <div class="fg2">
-      <div class="f1"><label>Selling Costs ($)</label>
-        <input type="number" class="fc" id="sellingCosts" value="60000" oninput="calc()">
-        <div class="hint">Broker commissions, closing costs, QI fees, legal fees. Reduce amount realized.</div>
-      </div>
-      <div class="f1"><label>Mortgage on Relinquished Property ($)</label>
-        <input type="number" class="fc" id="relMortgage" value="600000" oninput="calc()">
-        <div class="hint">Debt relieved. Mortgage relief is boot unless offset by new mortgage on replacement property. IRC 1031(b).</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="ch"><div class="sb">2</div><h2>Replacement Property (Property Being Acquired)</h2></div>
-  <div class="cb">
-    <div class="fg3">
-      <div class="f1"><label>Replacement Property Purchase Price ($)</label>
-        <input type="number" class="fc" id="repPrice" value="2200000" oninput="calc()">
-        <div class="hint">To fully defer all gain: replacement value must be >= net sale price (after costs) AND debt assumed must be >= debt relieved.</div>
-      </div>
-      <div class="f1"><label>New Mortgage on Replacement ($)</label>
-        <input type="number" class="fc" id="repMortgage" value="700000" oninput="calc()">
-        <div class="hint">Debt assumed on replacement property. Offsets mortgage relief boot from relinquished property debt.</div>
-      </div>
-      <div class="f1"><label>Cash Paid Out of Pocket ($)</label>
-        <input type="number" class="fc" id="cashOut" value="0" oninput="calc()">
-        <div class="hint">Additional cash you pay toward the replacement property above exchange proceeds. Adds to replacement property basis but is not boot.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="ch"><div class="sb">3</div><h2>Exchange Results &nbsp;·&nbsp; Form 8824</h2></div>
-  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter property details above.</div></div>
-</div>
-</div>
-
-<div class="related"><div style="max-width:920px;margin:0 auto">
-  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
-  <a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a>
-  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
-  <a href="depreciation-calculator.html" class="rl">Depreciation Calculator</a>
-  <a href="qoz-guide.html" class="rl">QOZ Alternative</a>
-  <a href="passive-activity-loss.html" class="rl">PAL Calculator</a>
-  <a href="index.html" class="rl">All Tools</a>
-</div></div>
-
-<script>
+</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a> <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a> <a href="depreciation-calculator.html" class="rl">Depreciation Calculator</a> <a href="qoz-guide.html" class="rl">QOZ Alternative</a> <a href="passive-activity-loss.html" class="rl">PAL Calculator</a> <a href="index.html" class="rl">All Tools</a>
+</div></div> <script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
-
-function calc(){
-  const salePrice    = parseFloat(document.getElementById('salePrice').value)||0;
-  const adjBasis     = parseFloat(document.getElementById('adjBasis').value)||0;
-  const deprec       = parseFloat(document.getElementById('deprec').value)||0;
-  const sellingCosts = parseFloat(document.getElementById('sellingCosts').value)||0;
-  const relMortgage  = parseFloat(document.getElementById('relMortgage').value)||0;
-  const repPrice     = parseFloat(document.getElementById('repPrice').value)||0;
-  const repMortgage  = parseFloat(document.getElementById('repMortgage').value)||0;
-  const cashOut      = parseFloat(document.getElementById('cashOut').value)||0;
-
-  // Realized gain
-  const amtRealized = salePrice - sellingCosts;
-  const realizedGain = amtRealized - adjBasis;
-
-  // Boot calculation
-  const netMortgageBoot = Math.max(0, relMortgage - repMortgage);
-  const exchangeProceeds = amtRealized - relMortgage; // cash released from exchange
-  const totalPaidForRep = exchangeProceeds + repMortgage + cashOut;
-  const cashBootReceived = Math.max(0, amtRealized - repPrice - netMortgageBoot);
-  const totalBoot = netMortgageBoot + cashBootReceived;
-
-  // Recognized gain = lesser of realized gain or total boot
-  const recognizedGain = Math.min(realizedGain, Math.max(0, totalBoot));
-  const deferredGain = Math.max(0, realizedGain - recognizedGain);
-
-  // Depreciation recapture (IRC 1250 unrecaptured gain) - taxed at 25%
-  // Recognized gain allocated to 1250 recapture first
-  const recaptureRecognized = Math.min(recognizedGain, deprec);
-  const capitalGainRecognized = Math.max(0, recognizedGain - recaptureRecognized);
-
-  // New basis of replacement property
-  // Basis = FMV of replacement - deferred gain + recognized gain adj
-  // Simplified: Basis = basis of relinquished + boot paid - boot received + gain recognized
-  const newBasis = adjBasis + cashOut - totalBoot + recognizedGain;
-  const impliedBasisCheck = repPrice - deferredGain;
-
-  const rb = document.getElementById('res');
-  let h = '';
-
-  h += `<div class="hero5">
-    <div class="h5"><div class="h5l">Realized Gain</div><div class="h5v coral">${fmt(realizedGain)}</div><div class="h5s">Total gain available</div></div>
-    <div class="h5"><div class="h5l">Boot Received</div><div class="h5v ${totalBoot>0?'red':'green'}">${fmt(totalBoot)}</div><div class="h5s">${totalBoot>0?'Triggers tax':'No boot'}</div></div>
-    <div class="h5"><div class="h5l">Recognized (Taxable)</div><div class="h5v ${recognizedGain>0?'red':'green'}">${fmt(recognizedGain)}</div><div class="h5s">Current year tax</div></div>
-    <div class="h5"><div class="h5l">Deferred Gain</div><div class="h5v green">${fmt(deferredGain)}</div><div class="h5s">Carried into replacement</div></div>
-    <div class="h5"><div class="h5l">New Basis</div><div class="h5v">${fmt(newBasis)}</div><div class="h5s">In replacement property</div></div>
-  </div>`;
-
-  h += `<div class="sum-box"><div class="sum-title">1031 Exchange Computation - Form 8824</div>
-    <div class="srow"><span class="sl">Sale price (amount realized from relinquished)</span><span class="sv">${fmt(salePrice)}</span></div>
-    <div class="srow"><span class="sl">Less: selling costs</span><span class="sv">-${fmt(sellingCosts)}</span></div>
-    <div class="srow"><span class="sl">Net amount realized</span><span class="sv">${fmt(amtRealized)}</span></div>
-    <div class="srow"><span class="sl">Adjusted basis of relinquished property</span><span class="sv">-${fmt(adjBasis)}</span></div>
-    <div class="srow"><span class="sl">Total realized gain</span><span class="sv coral">${fmt(realizedGain)}</span></div>
-    <div class="srow"><span class="sl">Net mortgage relief boot (${fmt(relMortgage)} - ${fmt(repMortgage)})</span><span class="sv ${netMortgageBoot>0?'red':'green'}">${fmt(netMortgageBoot)}</span></div>
-    <div class="srow"><span class="sl">Cash boot received</span><span class="sv ${cashBootReceived>0?'red':'green'}">${fmt(cashBootReceived)}</span></div>
-    <div class="srow"><span class="sl">Total boot received</span><span class="sv ${totalBoot>0?'red':'green'}">${fmt(totalBoot)}</span></div>
-    <div class="srow"><span class="sl">Recognized gain (lesser of realized gain or boot)</span><span class="sv ${recognizedGain>0?'red':'green'}">${fmt(recognizedGain)}</span></div>
-    ${recaptureRecognized>0?`<div class="srow"><span class="sl">  Of which: Sec. 1250 unrecaptured (25% rate)</span><span class="sv amber">${fmt(recaptureRecognized)}</span></div>`:''}
-    ${capitalGainRecognized>0?`<div class="srow"><span class="sl">  Of which: Long-term capital gain</span><span class="sv">${fmt(capitalGainRecognized)}</span></div>`:''}
-    <div class="srow"><span class="sl">Deferred gain</span><span class="sv green">${fmt(deferredGain)}</span></div>
-    <div class="srow"><span class="sl">Basis of replacement property</span><span class="sv">${fmt(newBasis)}</span></div>
-    <div class="srow"><span class="sl">Accumulated depreciation carried into replacement</span><span class="sv amber">${fmt(deprec)}</span></div>
-  </div>`;
-
-  if(recognizedGain === 0){
-    h += flag('green','v',`<strong>Full deferral achieved.</strong> No boot received means no recognized gain. The entire ${fmt(realizedGain)} of realized gain is deferred and carried into the replacement property's basis of ${fmt(newBasis)}. Tax is deferred until the replacement property is sold in a taxable transaction. Note: the ${fmt(deprec)} of accumulated depreciation follows the replacement property and will be subject to 1250 recapture at 25% on eventual taxable sale.`);
-  }
-  if(netMortgageBoot > 0){
-    h += flag('amber','!',`<strong>Mortgage relief boot of ${fmt(netMortgageBoot)}.</strong> You relieved ${fmt(relMortgage)} of debt but only took on ${fmt(repMortgage)} of new debt. The ${fmt(netMortgageBoot)} difference is treated as cash boot received under IRC 1031(b). To eliminate this boot, take on at least ${fmt(relMortgage)} of new mortgage on the replacement property, or offset with additional cash invested.`);
-  }
-  if(deprec > 0){
-    h += flag('amber','!',`<strong>${fmt(deprec)} of depreciation recapture deferred into replacement property.</strong> The accumulated depreciation on the relinquished property carries over to the replacement property. When you eventually sell the replacement in a taxable transaction, this recapture amount is taxed at up to 25% (Section 1250 unrecaptured gain rate) before the remaining gain is taxed at LTCG rates. This is a significant embedded tax liability in the replacement property.`);
-  }
-  if(repPrice < amtRealized){
-    h += flag('red','!',`<strong>Trading down - boot likely.</strong> The replacement property price (${fmt(repPrice)}) is less than the net proceeds from the relinquished property (${fmt(amtRealized)}). Trading down almost always creates recognized boot. To fully defer, the replacement value must equal or exceed the relinquished property's net proceeds.`);
-  }
-
-  h += `<div class="src">IRC 1031 (like-kind exchange - deferral of gain or loss); IRC 1031(a) (no gain or loss recognized on exchange of like-kind real property); IRC 1031(a)(3) (identification within 45 days, exchange within 180 days); IRC 1031(b) (gain recognized if boot received); IRC 1031(d) (basis of property acquired in exchange); IRC 1245 (depreciation recapture - personal property); IRC 1250 (depreciation recapture - real property, taxed at up to 25%); Treas. Reg. 1.1031(a)-1 (definition of like-kind property); Treas. Reg. 1.1031(k)-1 (deferred exchanges - QI, 45/180-day rules); Form 8824 (Like-Kind Exchanges); Rev. Proc. 2000-37 (reverse exchange safe harbor).</div>`;
-  h += `<div class="disc">This is a simplified calculation. Actual 1031 exchanges involve qualified intermediary requirements, simultaneous exchange rules, reverse exchange structures, improvement exchanges, and complex basis allocations. Always work with a qualified intermediary and CPA from before the sale closes. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
-
-  rb.innerHTML = h;
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} function calc(){ const salePrice = parseFloat(document.getElementById('salePrice').value)||0; const adjBasis = parseFloat(document.getElementById('adjBasis').value)||0; const deprec = parseFloat(document.getElementById('deprec').value)||0; const sellingCosts = parseFloat(document.getElementById('sellingCosts').value)||0; const relMortgage = parseFloat(document.getElementById('relMortgage').value)||0; const repPrice = parseFloat(document.getElementById('repPrice').value)||0; const repMortgage = parseFloat(document.getElementById('repMortgage').value)||0; const cashOut = parseFloat(document.getElementById('cashOut').value)||0; // Realized gain const amtRealized = salePrice - sellingCosts; const realizedGain = amtRealized - adjBasis; // Boot calculation const netMortgageBoot = Math.max(0, relMortgage - repMortgage); const exchangeProceeds = amtRealized - relMortgage; // cash released from exchange const totalPaidForRep = exchangeProceeds + repMortgage + cashOut; const cashBootReceived = Math.max(0, amtRealized - repPrice - netMortgageBoot); const totalBoot = netMortgageBoot + cashBootReceived; // Recognized gain = lesser of realized gain or total boot const recognizedGain = Math.min(realizedGain, Math.max(0, totalBoot)); const deferredGain = Math.max(0, realizedGain - recognizedGain); // Depreciation recapture (IRC 1250 unrecaptured gain) - taxed at 25% // Recognized gain allocated to 1250 recapture first const recaptureRecognized = Math.min(recognizedGain, deprec); const capitalGainRecognized = Math.max(0, recognizedGain - recaptureRecognized); // New basis of replacement property // Basis = FMV of replacement - deferred gain + recognized gain adj // Simplified: Basis = basis of relinquished + boot paid - boot received + gain recognized const newBasis = adjBasis + cashOut - totalBoot + recognizedGain; const impliedBasisCheck = repPrice - deferredGain; const rb = document.getElementById('res'); let h = ''; h += `<div class="hero5"> <div class="h5"><div class="h5l">Realized Gain</div><div class="h5v coral">${fmt(realizedGain)}</div><div class="h5s">Total gain available</div></div> <div class="h5"><div class="h5l">Boot Received</div><div class="h5v ${totalBoot>0?'red':'green'}">${fmt(totalBoot)}</div><div class="h5s">${totalBoot>0?'Triggers tax':'No boot'}</div></div> <div class="h5"><div class="h5l">Recognized (Taxable)</div><div class="h5v ${recognizedGain>0?'red':'green'}">${fmt(recognizedGain)}</div><div class="h5s">Current year tax</div></div> <div class="h5"><div class="h5l">Deferred Gain</div><div class="h5v green">${fmt(deferredGain)}</div><div class="h5s">Carried into replacement</div></div> <div class="h5"><div class="h5l">New Basis</div><div class="h5v">${fmt(newBasis)}</div><div class="h5s">In replacement property</div></div> </div>`; h += `<div class="sum-box"><div class="sum-title">1031 Exchange Computation - Form 8824</div> <div class="srow"><span class="sl">Sale price (amount realized from relinquished)</span><span class="sv">${fmt(salePrice)}</span></div> <div class="srow"><span class="sl">Less: selling costs</span><span class="sv">-${fmt(sellingCosts)}</span></div> <div class="srow"><span class="sl">Net amount realized</span><span class="sv">${fmt(amtRealized)}</span></div> <div class="srow"><span class="sl">Adjusted basis of relinquished property</span><span class="sv">-${fmt(adjBasis)}</span></div> <div class="srow"><span class="sl">Total realized gain</span><span class="sv coral">${fmt(realizedGain)}</span></div> <div class="srow"><span class="sl">Net mortgage relief boot (${fmt(relMortgage)} - ${fmt(repMortgage)})</span><span class="sv ${netMortgageBoot>0?'red':'green'}">${fmt(netMortgageBoot)}</span></div> <div class="srow"><span class="sl">Cash boot received</span><span class="sv ${cashBootReceived>0?'red':'green'}">${fmt(cashBootReceived)}</span></div> <div class="srow"><span class="sl">Total boot received</span><span class="sv ${totalBoot>0?'red':'green'}">${fmt(totalBoot)}</span></div> <div class="srow"><span class="sl">Recognized gain (lesser of realized gain or boot)</span><span class="sv ${recognizedGain>0?'red':'green'}">${fmt(recognizedGain)}</span></div> ${recaptureRecognized>0?`<div class="srow"><span class="sl"> Of which: Sec. 1250 unrecaptured (25% rate)</span><span class="sv amber">${fmt(recaptureRecognized)}</span></div>`:''} ${capitalGainRecognized>0?`<div class="srow"><span class="sl"> Of which: Long-term capital gain</span><span class="sv">${fmt(capitalGainRecognized)}</span></div>`:''} <div class="srow"><span class="sl">Deferred gain</span><span class="sv green">${fmt(deferredGain)}</span></div> <div class="srow"><span class="sl">Basis of replacement property</span><span class="sv">${fmt(newBasis)}</span></div> <div class="srow"><span class="sl">Accumulated depreciation carried into replacement</span><span class="sv amber">${fmt(deprec)}</span></div> </div>`; if(recognizedGain === 0){ h += flag('green','v',`<strong>Full deferral achieved.</strong> No boot received means no recognized gain. The entire ${fmt(realizedGain)} of realized gain is deferred and carried into the replacement property's basis of ${fmt(newBasis)}. Tax is deferred until the replacement property is sold in a taxable transaction. Note: the ${fmt(deprec)} of accumulated depreciation follows the replacement property and will be subject to 1250 recapture at 25% on eventual taxable sale.`); } if(netMortgageBoot > 0){ h += flag('amber','!',`<strong>Mortgage relief boot of ${fmt(netMortgageBoot)}.</strong> You relieved ${fmt(relMortgage)} of debt but only took on ${fmt(repMortgage)} of new debt. The ${fmt(netMortgageBoot)} difference is treated as cash boot received under IRC 1031(b). To eliminate this boot, take on at least ${fmt(relMortgage)} of new mortgage on the replacement property, or offset with additional cash invested.`); } if(deprec > 0){ h += flag('amber','!',`<strong>${fmt(deprec)} of depreciation recapture deferred into replacement property.</strong> The accumulated depreciation on the relinquished property carries over to the replacement property. When you eventually sell the replacement in a taxable transaction, this recapture amount is taxed at up to 25% (Section 1250 unrecaptured gain rate) before the remaining gain is taxed at LTCG rates. This is a significant embedded tax liability in the replacement property.`); } if(repPrice < amtRealized){ h += flag('red','!',`<strong>Trading down - boot likely.</strong> The replacement property price (${fmt(repPrice)}) is less than the net proceeds from the relinquished property (${fmt(amtRealized)}). Trading down almost always creates recognized boot. To fully defer, the replacement value must equal or exceed the relinquished property's net proceeds.`); } h += `<div class="src">IRC 1031 (like-kind exchange - deferral of gain or loss); IRC 1031(a) (no gain or loss recognized on exchange of like-kind real property); IRC 1031(a)(3) (identification within 45 days, exchange within 180 days); IRC 1031(b) (gain recognized if boot received); IRC 1031(d) (basis of property acquired in exchange); IRC 1245 (depreciation recapture - personal property); IRC 1250 (depreciation recapture - real property, taxed at up to 25%); Treas. Reg. 1.1031(a)-1 (definition of like-kind property); Treas. Reg. 1.1031(k)-1 (deferred exchanges - QI, 45/180-day rules); Form 8824 (Like-Kind Exchanges); Rev. Proc. 2000-37 (reverse exchange safe harbor).</div>`; h += `<div class="disc">This is a simplified calculation. Actual 1031 exchanges involve qualified intermediary requirements, simultaneous exchange rules, reverse exchange structures, improvement exchanges, and complex basis allocations. Always work with a qualified intermediary and CPA from before the sale closes.</div>`; rb.innerHTML = h;
 }
 calc();
-</script>
-
-</body>
+</script> </body>
 </html>
