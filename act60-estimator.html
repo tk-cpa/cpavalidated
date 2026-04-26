@@ -8,62 +8,39 @@
 <link rel="canonical" href="https://cpavalidated.com/act60-estimator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
-  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
-  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
-  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
-  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
-  --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC;
-  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
-  --pr-blue:#0074D9; --pr-red:#CE1126;
-  --font-display:'Oswald','Arial Narrow',sans-serif;
-  --font-sans:'Inter',-apple-system,sans-serif;
-  --font-mono:'Courier New',monospace;
+:root { --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6; --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF; --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2; --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA; --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878; --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC; --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4; --pr-blue:#0074D9; --pr-red:#CE1126; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
 ::selection{background:var(--coral);color:#fff}
 a{color:var(--coral);text-decoration:none}
-a:hover{text-decoration:underline}
-
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+a:hover{text-decoration:underline} .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:900px;margin:0 auto;padding:0 24px}
 .ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
 .ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
 .ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
 .ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
-.badge.urgent{background:rgba(206,17,38,.3);color:#ff8a8a;border-color:rgba(206,17,38,.5)}
-
-.back{max-width:900px;margin:0 auto;padding:16px 24px 0}
+.badge.urgent{background:rgba(206,17,38,.3);color:#ff8a8a;border-color:rgba(206,17,38,.5)} .back{max-width:900px;margin:0 auto;padding:16px 24px 0}
 .back a{font-size:12px;color:var(--ink-60);font-weight:500}
 .back a:hover{color:var(--coral)}
-.container{max-width:900px;margin:0 auto;padding:28px 24px 0}
-
-/* Deadline banner */
+.container{max-width:900px;margin:0 auto;padding:28px 24px 0} /* Deadline banner */
 .deadline-banner{background:var(--pr-red);color:#fff;padding:14px 20px;margin-bottom:24px;display:flex;align-items:center;gap:12px}
 .db-icon{font-size:20px;flex-shrink:0}
 .db-text{font-size:13px;line-height:1.5}
-.db-text strong{font-weight:700}
-
-.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.db-text strong{font-weight:700} .card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
 .ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
 .sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
-.cb{padding:20px 20px 22px}
-
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cb{padding:20px 20px 22px} .fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
 .f1{display:flex;flex-direction:column;gap:5px}
 .f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
 .fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s;appearance:none;border-radius:0}
 .fc:focus{border-color:var(--coral)}
 select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px;cursor:pointer}
-input[type="number"].fc{font-weight:600;color:var(--ink-80)}
-
-/* Eligibility checklist */
+input[type="number"].fc{font-weight:600;color:var(--ink-80)} /* Eligibility checklist */
 .elig-list{display:flex;flex-direction:column;gap:8px}
 .elig-item{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:12px;padding:12px 14px;border:1px solid var(--ink-20)}
 .elig-item.pass{background:var(--green-bg);border-left:3px solid var(--green)}
@@ -79,9 +56,7 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
 .elig-badge.pass{background:var(--green);color:#fff}
 .elig-badge.fail{background:var(--red);color:#fff}
 .elig-badge.warn{background:var(--amber);color:#fff}
-.elig-badge.pending{background:var(--ink-40);color:#fff}
-
-/* Rate comparison */
+.elig-badge.pending{background:var(--ink-40);color:#fff} /* Rate comparison */
 .rate-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin-bottom:20px;align-items:stretch}
 .rc-before{background:var(--red-bg);border:2px solid var(--red-b);padding:20px}
 .rc-arrow{display:flex;align-items:center;justify-content:center;padding:0 12px;font-size:22px;color:var(--green);font-weight:700}
@@ -94,9 +69,7 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
 .rc-income-type{color:var(--ink-60)}
 .rc-rate{font-family:var(--font-mono);font-weight:700}
 .rc-before .rc-rate{color:var(--red)}
-.rc-after .rc-rate{color:var(--green)}
-
-/* Results */
+.rc-after .rc-rate{color:var(--green)} /* Results */
 .savings-hero{background:var(--ink);padding:28px 24px;margin-bottom:20px}
 .sh-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.1)}
 .sh-item{padding:18px;background:rgba(255,255,255,.05);text-align:center}
@@ -105,9 +78,7 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
 .sh-val.coral{color:var(--coral)}
 .sh-val.green{color:#6de88e}
 .sh-val.red{color:#ff8a8a}
-.sh-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px}
-
-/* Before/After comparison table */
+.sh-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px} /* Before/After comparison table */
 .ba-table{width:100%;border-collapse:collapse;margin-bottom:20px}
 .ba-table th{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;text-align:right;border-bottom:2px solid var(--ink-20)}
 .ba-table th:first-child{text-align:left}
@@ -116,9 +87,7 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
 .ba-table tr:last-child td{border-bottom:none}
 .ba-table .total-row td{font-weight:700;background:var(--ink-10);border-top:2px solid var(--ink-20);font-family:var(--font-sans);color:var(--ink);font-size:14px}
 .tax-saved{color:var(--green);font-weight:700}
-.tax-same{color:var(--ink-60)}
-
-/* Costs section */
+.tax-same{color:var(--ink-60)} /* Costs section */
 .costs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
 .cost-item{border:1px solid var(--ink-20);padding:14px}
 .cost-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60);margin-bottom:6px}
@@ -127,9 +96,7 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
 .cost-item.net-positive{background:var(--green-bg);border-color:var(--green-b)}
 .cost-item.net-positive .cost-val{color:var(--green)}
 .cost-item.net-negative{background:var(--red-bg);border-color:var(--red-b)}
-.cost-item.net-negative .cost-val{color:var(--red)}
-
-.flag{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;margin-bottom:10px;border:1px solid}
+.cost-item.net-negative .cost-val{color:var(--red)} .flag{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;margin-bottom:10px;border:1px solid}
 .flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}
 .flag.red{background:var(--red-bg);border-color:var(--red-b)}
 .flag.green{background:var(--green-bg);border-color:var(--green-b)}
@@ -140,88 +107,12 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)}
 .flag.red .flag-text{color:var(--red)}
 .flag.green .flag-text{color:var(--green)}
 .flag.blue .flag-text{color:var(--ink-80)}
-.flag-text strong{font-weight:600}
-
-.inf{background:var(--paper);border-left:3px solid var(--coral);padding:9px 13px;font-size:12px;color:var(--ink-60);line-height:1.5;margin-top:12px}
+.flag-text strong{font-weight:600} .inf{background:var(--paper);border-left:3px solid var(--coral);padding:9px 13px;font-size:12px;color:var(--ink-60);line-height:1.5;margin-top:12px}
 .source-row{font-size:11px;color:var(--ink-60);font-style:italic;margin-top:8px;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px}
 .pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}
 .pbn:hover{background:var(--coral-600)}
-.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
-
-@media(max-width:640px){.fg2,.fg3,.rate-compare,.sh-top,.costs-grid{grid-template-columns:1fr}.rc-arrow{padding:8px 0;transform:rotate(90deg)}}
-@media print {
-  /* ── Page setup ── */
-  @page { margin: 18mm 16mm; }
-  body { background: white !important; font-size: 11pt; }
-
-  /* ── Hide everything interactive ── */
-  .back, .mode-selector, .deadline-banner, .pbn,
-  .mode-tab, .acct-table-wrap::-webkit-scrollbar,
-  input, select, button:not(.pbn), .atb, .add-btn,
-  .mode-toggle, .state-controls { display: none !important; }
-
-  /* ── Keep header, force colors ── */
-  .ph { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 0 14px; }
-  .ph h1 { font-size: 20pt; }
-  .ph .badges { display: none; }
-  .ph-eyebrow { font-size: 8pt; }
-  .ph .sub { font-size: 9pt; }
-
-  /* ── Card headers ── */
-  .ch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-  /* ── Hide input-only cards ── */
-  .input-card { display: none !important; }
-
-  /* ── Result hero / summary boxes ── */
-  .result-hero, .savings-hero, .sum-box, .summary-box,
-  .result-main, .rbn {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
-
-  /* ── Tables ── */
-  table { width: 100% !important; font-size: 9pt; }
-  th, td { padding: 5px 7px !important; }
-  .acct-table-wrap { overflow: visible !important; }
-  table.st, table.at, table.tt { min-width: 0 !important; }
-
-  /* ── Grids: force single column on narrow items ── */
-  .rh-grid, .sh-top { grid-template-columns: 1fr 1fr 1fr !important; }
-  .fi-grid, .filing-info, .state-result-grid,
-  .costs-grid, .result-grid, .fed-grid { grid-template-columns: 1fr 1fr !important; }
-  .fg2, .fg3, .fg4 { display: none !important; }
-
-  /* ── Rate compare ── */
-  .rate-compare { grid-template-columns: 1fr auto 1fr !important; }
-  .rc-arrow { padding: 0 8px !important; }
-
-  /* ── Flags: keep but compact ── */
-  .flag { font-size: 9pt; padding: 7px 10px; margin-bottom: 6px; }
-
-  /* ── Source note / disclaimer ── */
-  .source-row, .disc { font-size: 8pt; }
-
-  /* ── Eligibility list ── */
-  .elig-item { break-inside: avoid; }
-
-  /* ── Page break hints ── */
-  .card { break-inside: avoid; margin-bottom: 10px; }
-
-  /* ── Print footer on every page ── */
-  .ph::after {
-    content: "cpavalidated.com  ·  a tk.cpa resource  ·  Built with AI. Validated by a CPA.";
-    display: block;
-    font-size: 7.5pt;
-    color: rgba(255,255,255,0.45);
-    margin-top: 8px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    letter-spacing: .04em;
-  }
-
-  /* ── State table: hide filter controls, show table ── */
-  .state-table-wrap { overflow: visible !important; }
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px} @media(max-width:640px){.fg2,.fg3,.rate-compare,.sh-top,.costs-grid{grid-template-columns:1fr}.rc-arrow{padding:8px 0;transform:rotate(90deg)}}
+@media print { /* ── Page setup ── */ @page { margin: 18mm 16mm; } body { background: white !important; font-size: 11pt; } /* ── Hide everything interactive ── */ .back, .mode-selector, .deadline-banner, .pbn, .mode-tab, .acct-table-wrap::-webkit-scrollbar, input, select, button:not(.pbn), .atb, .add-btn, .mode-toggle, .state-controls { display: none !important; } /* ── Keep header, force colors ── */ .ph { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 0 14px; } .ph h1 { font-size: 20pt; } .ph .badges { display: none; } .ph-eyebrow { font-size: 8pt; } .ph .sub { font-size: 9pt; } /* ── Card headers ── */ .ch { -webkit-print-color-adjust: exact; print-color-adjust: exact; } /* ── Hide input-only cards ── */ .input-card { display: none !important; } /* ── Result hero / summary boxes ── */ .result-hero, .savings-hero, .sum-box, .summary-box, .result-main, .rbn { -webkit-print-color-adjust: exact; print-color-adjust: exact; } /* ── Tables ── */ table { width: 100% !important; font-size: 9pt; } th, td { padding: 5px 7px !important; } .acct-table-wrap { overflow: visible !important; } table.st, table.at, table.tt { min-width: 0 !important; } /* ── Grids: force single column on narrow items ── */ .rh-grid, .sh-top { grid-template-columns: 1fr 1fr 1fr !important; } .fi-grid, .filing-info, .state-result-grid, .costs-grid, .result-grid, .fed-grid { grid-template-columns: 1fr 1fr !important; } .fg2, .fg3, .fg4 { display: none !important; } /* ── Rate compare ── */ .rate-compare { grid-template-columns: 1fr auto 1fr !important; } .rc-arrow { padding: 0 8px !important; } /* ── Flags: keep but compact ── */ .flag { font-size: 9pt; padding: 7px 10px; margin-bottom: 6px; } /* ── Source note / disclaimer ── */ .source-row, .disc { font-size: 8pt; } /* ── Eligibility list ── */ .elig-item { break-inside: avoid; } /* ── Page break hints ── */ .card { break-inside: avoid; margin-bottom: 10px; } /* ── Print footer on every page ── */ .ph::after { content: "cpavalidated.com · a tk.cpa resource · Built with AI. Validated by a CPA."; display: block; font-size: 7.5pt; color: rgba(255,255,255,0.45); margin-top: 8px; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: .04em; } /* ── State table: hide filter controls, show table ── */ .state-table-wrap { overflow: visible !important; }
 }.pbn,.deadline-banner{display:none}.ph,.savings-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
@@ -237,543 +128,33 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
-  </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
+<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <div class="nav-right"> <ul class="nav-links"> <li><a href="index.html#tools">Tools</a></li> <li><a href="index.html#articles">Guides</a></li> <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li> <li><a href="about.html">About</a></li> </ul> <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a> </div>
 </nav>
-<div class="back"><a href="index.html">← cpavalidated.com</a></div>
-
-<div class="ph"><div class="phi">
-  <h1>Puerto Rico Act 60 Tax Benefit Estimator</h1>
-  <div class="sub">Individual Investors Chapter &nbsp;&bull;&nbsp; Export Services Chapter &nbsp;&bull;&nbsp; Federal vs. PR Tax Comparison</div>
-  <div class="badges">
-    <span class="badge">Act 60 of Puerto Rico (2019)</span>
-    <span class="badge">Act 38-2026 (signed Mar 10, 2026)</span>
-    <span class="badge">IRC §933</span>
-    <span class="badge">Treas. Reg. §1.937-1</span>
-    <span class="badge urgent">⚠ Dec 31, 2026 Deadline</span>
-  </div>
-</div></div>
-
-
-<div class="container">
-
-<!-- Deadline Banner -->
-<div class="deadline-banner">
-  <div class="db-icon">⏰</div>
-  <div class="db-text"><strong>Act 38-2026 Deadline: December 31, 2026.</strong> Applications filed before January 1, 2027 qualify for 0% PR tax on post-move capital gains, dividends, and interest. Applications filed on or after January 1, 2027 will be subject to a 4% rate under Act 38-2026 (signed March 10, 2026). This is a permanent rate change - not a temporary reduction.</div>
-</div>
-
-<!-- Step 1: Eligibility -->
-<div class="card input-card">
-  <div class="ch"><div class="sb">1</div><h2>Eligibility Assessment</h2></div>
-  <div class="cb">
-    <div class="fg2" style="margin-bottom:16px">
-      <div class="f1">
-        <label>Days in Puerto Rico (This Year)</label>
-        <input type="number" id="daysInPR" class="fc" value="0" min="0" max="366" placeholder="0" oninput="calc()">
-        <div style="font-size:11px;color:var(--ink-60);margin-top:4px">183+ days required for bona fide residency presumption. Treas. Reg. §1.937-1(b).</div>
-      </div>
-      <div class="f1">
-        <label>Application Timing</label>
-        <select id="appTiming" class="fc" onchange="calc()">
-          <option value="before2027">Apply before December 31, 2026 (0% rate)</option>
-          <option value="after2026">Apply on or after January 1, 2027 (4% rate)</option>
-        </select>
-      </div>
-    </div>
-    <div class="fg3" style="margin-bottom:16px">
-      <div class="f1">
-        <label>Prior PR Residency (Past 10 Years)?</label>
-        <select id="priorResident" class="fc" onchange="calc()">
-          <option value="no">No - not a PR resident in past 10 years</option>
-          <option value="yes">Yes - was a PR resident in past 10 years</option>
-          <option value="unsure">Not sure</option>
-        </select>
-      </div>
-      <div class="f1">
-        <label>Closer Connection to Any U.S. State?</label>
-        <select id="closerConn" class="fc" onchange="calc()">
-          <option value="no">No - PR will be my primary home</option>
-          <option value="partial">Partial - spending time in both</option>
-          <option value="yes">Yes - still closer to a U.S. state</option>
-        </select>
-      </div>
-      <div class="f1">
-        <label>Purchase PR Real Estate Within 2 Years?</label>
-        <select id="prRealty" class="fc" onchange="calc()">
-          <option value="yes">Yes - will purchase primary residence</option>
-          <option value="no">No - will rent only</option>
-          <option value="unsure">Not decided yet</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Eligibility checklist -->
-    <div class="elig-list" id="eligList"></div>
-  </div>
-</div>
-
-</div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div> <div class="ph"><div class="phi"> <h1>Puerto Rico Act 60 Tax Benefit Estimator</h1> <div class="sub">Individual Investors Chapter &nbsp;&bull;&nbsp; Export Services Chapter &nbsp;&bull;&nbsp; Federal vs. PR Tax Comparison</div> <div class="badges"> <span class="badge">Act 60 of Puerto Rico (2019)</span> <span class="badge">Act 38-2026 (signed Mar 10, 2026)</span> <span class="badge">IRC §933</span> <span class="badge">Treas. Reg. §1.937-1</span> <span class="badge urgent">⚠ Dec 31, 2026 Deadline</span> </div>
+</div></div> <div class="container"> <!-- Deadline Banner -->
+<div class="deadline-banner"> <div class="db-icon">⏰</div> <div class="db-text"><strong>Act 38-2026 Deadline: December 31, 2026.</strong> Applications filed before January 1, 2027 qualify for 0% PR tax on post-move capital gains, dividends, and interest. Applications filed on or after January 1, 2027 will be subject to a 4% rate under Act 38-2026 (signed March 10, 2026). This is a permanent rate change - not a temporary reduction.</div>
+</div> <!-- Step 1: Eligibility -->
+<div class="card input-card"> <div class="ch"><div class="sb">1</div><h2>Eligibility Assessment</h2></div> <div class="cb"> <div class="fg2" style="margin-bottom:16px"> <div class="f1"> <label>Days in Puerto Rico (This Year)</label> <input type="number" id="daysInPR" class="fc" value="0" min="0" max="366" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:4px">183+ days required for bona fide residency presumption. Treas. Reg. §1.937-1(b).</div> </div> <div class="f1"> <label>Application Timing</label> <select id="appTiming" class="fc" onchange="calc()"> <option value="before2027">Apply before December 31, 2026 (0% rate)</option> <option value="after2026">Apply on or after January 1, 2027 (4% rate)</option> </select> </div> </div> <div class="fg3" style="margin-bottom:16px"> <div class="f1"> <label>Prior PR Residency (Past 10 Years)?</label> <select id="priorResident" class="fc" onchange="calc()"> <option value="no">No - not a PR resident in past 10 years</option> <option value="yes">Yes - was a PR resident in past 10 years</option> <option value="unsure">Not sure</option> </select> </div> <div class="f1"> <label>Closer Connection to Any U.S. State?</label> <select id="closerConn" class="fc" onchange="calc()"> <option value="no">No - PR will be my primary home</option> <option value="partial">Partial - spending time in both</option> <option value="yes">Yes - still closer to a U.S. state</option> </select> </div> <div class="f1"> <label>Purchase PR Real Estate Within 2 Years?</label> <select id="prRealty" class="fc" onchange="calc()"> <option value="yes">Yes - will purchase primary residence</option> <option value="no">No - will rent only</option> <option value="unsure">Not decided yet</option> </select> </div> </div> <!-- Eligibility checklist --> <div class="elig-list" id="eligList"></div> </div>
+</div> </div>
 <!-- Step 2: Income Profile -->
-<div class="card input-card">
-  <div class="ch"><div class="sb">2</div><h2>Annual Income Profile</h2></div>
-  <div class="cb">
-    
-
-    <!-- Passive income -->
-    <div style="font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--ink-20)">Passive Income (Act 60 Chapter 2 - Individual Investors)</div>
-    <div class="fg3" style="margin-bottom:20px">
-      <div class="f1">
-        <label>Post-Move Capital Gains ($)</label>
-        <input type="number" id="capGains" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
-        <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Gains on assets acquired after becoming PR resident. 0% PR tax (4% if post-2026 applicant). IRC §933.</div>
-      </div>
-      <div class="f1">
-        <label>Dividends ($)</label>
-        <input type="number" id="dividends" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
-        <div style="font-size:11px;color:var(--ink-60);margin-top:3px">All dividends (PR, US, and foreign source). 0% PR tax (4% post-2026). IRC §933.</div>
-      </div>
-      <div class="f1">
-        <label>Interest Income ($)</label>
-        <input type="number" id="interest" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
-        <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Interest from PR sources. 0% PR tax (4% post-2026). Act 60 Ch. 2.</div>
-      </div>
-    </div>
-
-    <!-- Pre-move built-in gains -->
-    <div style="font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--ink-20)">Pre-Move Appreciation (Built-In Gains - Still Taxable by IRS)</div>
-    <div class="fg2" style="margin-bottom:20px">
-      <div class="f1">
-        <label>Built-In Gain on Marketable Securities ($)</label>
-        <input type="number" id="builtInGain" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
-        <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Unrealized appreciation on assets owned before PR move. US federal capital gains tax applies when sold. Allocated by IRS residency days ratio.</div>
-      </div>
-      <div class="f1">
-        <label>Years of PR Residency Before Sale</label>
-        <select id="prYears" class="fc" onchange="calc()">
-          <option value="0">Selling within first year of residency</option>
-          <option value="5">1-9 years of PR residency (5% PR rate applies)</option>
-          <option value="10" selected>10+ years of PR residency (most favorable)</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Business income -->
-    <div style="font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--ink-20)">Business / Service Income (Act 60 Chapter 3 - Export Services)</div>
-    <div class="fg3" style="margin-bottom:20px">
-      <div class="f1">
-        <label>Export Services Income ($)</label>
-        <input type="number" id="exportIncome" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
-        <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Income from qualifying services provided to non-PR clients (consulting, tech, finance, etc.). 4% PR corporate tax rate. Act 60 Ch. 3.</div>
-      </div>
-      <div class="f1">
-        <label>U.S.-Source Earned Income ($)</label>
-        <input type="number" id="earnedUS" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
-        <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Wages, salary, or self-employment income from U.S. sources. NOT exempt under Act 60. Subject to US federal income tax. IRC §933(1).</div>
-      </div>
-      <div class="f1">
-        <label>Prior U.S. State of Residence</label>
-        <select id="homeState" class="fc" onchange="calc()">
-          <option value="">-- Select State --</option>
-          <option value="CA">California (13.3%)</option>
-          <option value="NY">New York (10.9%)</option>
-          <option value="NJ">New Jersey (10.75%)</option>
-          <option value="OR">Oregon (9.9%)</option>
-          <option value="MN">Minnesota (9.85%)</option>
-          <option value="DC">Washington D.C. (10.75%)</option>
-          <option value="VT">Vermont (8.75%)</option>
-          <option value="WI">Wisconsin (7.65%)</option>
-          <option value="ME">Maine (7.5%)</option>
-          <option value="CT">Connecticut (7%)</option>
-          <option value="RI">Rhode Island (5.99%)</option>
-          <option value="MA">Massachusetts (5%)</option>
-          <option value="VA">Virginia (5.75%)</option>
-          <option value="NC">North Carolina (3.99%)</option>
-          <option value="TX">Texas (0% - no income tax)</option>
-          <option value="FL">Florida (0% - no income tax)</option>
-          <option value="NV">Nevada (0% - no income tax)</option>
-          <option value="WA">Washington (0% - no income tax)</option>
-          <option value="other">Other state</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="inf">
-      <strong>Federal rule (IRC §933):</strong> A bona fide Puerto Rico resident excludes Puerto Rico-source income from federal gross income. U.S.-source income is still taxable to the US federal government. Bona fide residency is determined under Treasury Reg. §1.937-1 - presence test (183+ days), tax home test, and closer connection test all apply.
-    </div>
-  </div>
-</div>
-
-<!-- Step 3: Rate Comparison -->
-<div class="card">
-  <div class="ch"><div class="sb">3</div><h2>Rate Comparison</h2></div>
-  <div class="cb">
-    <div class="rate-compare" id="rateCompare">
-      <div class="rc-before">
-        <div class="rc-label">Without Act 60 (U.S. Mainland)</div>
-        <div class="rc-row"><span class="rc-income-type">Long-term capital gains</span><span class="rc-rate">20%</span></div>
-        <div class="rc-row"><span class="rc-income-type">Qualified dividends</span><span class="rc-rate">20%</span></div>
-        <div class="rc-row"><span class="rc-income-type">Interest income</span><span class="rc-rate">Up to 37%</span></div>
-        <div class="rc-row"><span class="rc-income-type">NIIT surcharge (if AGI>&thresh;)</span><span class="rc-rate">+3.8%</span></div>
-        <div class="rc-row"><span class="rc-income-type">Business / export services</span><span class="rc-rate">Up to 37%</span></div>
-        <div class="rc-row"><span class="rc-income-type">State tax (varies)</span><span class="rc-rate">0-13.3%</span></div>
-      </div>
-      <div class="rc-arrow">→</div>
-      <div class="rc-after" id="rcAfter">
-        <div class="rc-label" id="rcAfterLabel">With Act 60 (PR Resident, Pre-2027 App)</div>
-        <div class="rc-row"><span class="rc-income-type">Post-move capital gains (PR)</span><span class="rc-rate" id="rcCG">0% PR + 0% Fed</span></div>
-        <div class="rc-row"><span class="rc-income-type">Dividends (PR-source)</span><span class="rc-rate" id="rcDiv">0% PR + 0% Fed</span></div>
-        <div class="rc-row"><span class="rc-income-type">Interest (PR-source)</span><span class="rc-rate" id="rcInt">0% PR + 0% Fed</span></div>
-        <div class="rc-row"><span class="rc-income-type">NIIT on exempt PR income</span><span class="rc-rate">0%</span></div>
-        <div class="rc-row"><span class="rc-income-type">Export services (PR entity)</span><span class="rc-rate">4% PR corp tax</span></div>
-        <div class="rc-row"><span class="rc-income-type">State tax on PR income</span><span class="rc-rate">0% (none)</span></div>
-      </div>
-    </div>
-    <div class="inf">
-      <strong>Pre-move built-in gains:</strong> Capital appreciation that accrued BEFORE establishing PR residency remains taxable by the IRS when sold (allocated by days-of-ownership method). After 10 years of continuous PR residency, all remaining gains are treated as Puerto Rico-source and receive preferential treatment. Act 60 §2023.01.
-    </div>
-  </div>
-</div>
-
-<!-- Step 4: Results -->
-<div class="card">
-  <div class="ch"><div class="sb">4</div><h2>Estimated Tax Savings Analysis</h2></div>
-  <div class="cb">
-
-    <div class="savings-hero">
-      <div class="sh-top">
-        <div class="sh-item">
-          <div class="sh-label">Tax Without Act 60</div>
-          <div class="sh-val red" id="taxBefore">$0</div>
-          <div class="sh-sub">US federal + state</div>
-        </div>
-        <div class="sh-item">
-          <div class="sh-label">Tax With Act 60</div>
-          <div class="sh-val" id="taxAfter">$0</div>
-          <div class="sh-sub">Federal on US-source only</div>
-        </div>
-        <div class="sh-item">
-          <div class="sh-label">Estimated Annual Savings</div>
-          <div class="sh-val green" id="taxSavings">$0</div>
-          <div class="sh-sub">Before compliance costs</div>
-        </div>
-      </div>
-    </div>
-
-    <div id="flags"></div>
-
-    <!-- Before/After table -->
-    <h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px">Detailed Tax Comparison</h3>
-    <table class="ba-table">
-      <thead>
-        <tr>
-          <th style="text-align:left">Income Category</th>
-          <th>Amount</th>
-          <th>Tax Without Act 60</th>
-          <th>Tax With Act 60</th>
-          <th>Annual Savings</th>
-        </tr>
-      </thead>
-      <tbody id="baBody"></tbody>
-      <tfoot>
-        <tr class="total-row">
-          <td>Total</td>
-          <td id="baTotal">$0</td>
-          <td id="baTotalBefore">$0</td>
-          <td id="baTotalAfter">$0</td>
-          <td class="tax-saved" id="baTotalSavings">$0</td>
-        </tr>
-      </tfoot>
-    </table>
-
-    <!-- Compliance costs -->
-    <h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px;margin-top:20px">Annual Compliance Costs (Act 60)</h3>
-    <div class="costs-grid">
-      <div class="cost-item">
-        <div class="cost-label">Annual Charitable Contribution</div>
-        <div class="cost-val">$10,000</div>
-        <div class="cost-note">Required donation to two qualifying Puerto Rico nonprofits. Act 60 §2023.01(b)(3).</div>
-      </div>
-      <div class="cost-item">
-        <div class="cost-label">Annual Compliance Filing Fee</div>
-        <div class="cost-val">$5,005</div>
-        <div class="cost-note">Annual fee to maintain Act 60 decree in good standing. DDEC (Puerto Rico Department of Economic Development).</div>
-      </div>
-      <div class="cost-item" id="netBenefitBox">
-        <div class="cost-label">Total Annual Compliance Cost</div>
-        <div class="cost-val">$15,005</div>
-        <div class="cost-note">Minimum annual cost. Does not include CPA, attorney, or relocation expenses.</div>
-      </div>
-      <div class="cost-item net-positive" id="netBenefitResult">
-        <div class="cost-label">Net Annual Benefit (After Costs)</div>
-        <div class="cost-val" id="netBenefitVal">$0</div>
-        <div class="cost-note" id="netBenefitNote">Enter income above to calculate.</div>
-      </div>
-    </div>
-
-    <!-- Application costs -->
-    <div class="flag blue">
-      <div class="flag-icon">ℹ</div>
-      <div class="flag-text"><strong>One-Time Application Costs:</strong> Application fee $5,005 + acceptance fee $105 = $5,110 one-time. Legal/CPA fees for decree preparation typically add $5,000-$20,000. Real estate acquisition required within 2 years of decree (no minimum price specified, but must be your principal residence).</div>
-    </div>
-
-    <div class="source-row" id="sourceNote">Source: Act 60 of Puerto Rico (P.R. Laws Ann. tit. 13, §10001 et seq.); Act 38-2026 (signed March 10, 2026); IRC §933 (exclusion of PR-source income for bona fide PR residents); Treas. Reg. §1.937-1 (bona fide residency); Act 60 Ch. 2 (Individual Investors); Act 60 Ch. 3 (Export Services).</div>
-
-    <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
-    <div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
-  </div>
-</div>
-
-</div>
-
-<script>
+<div class="card input-card"> <div class="ch"><div class="sb">2</div><h2>Annual Income Profile</h2></div> <div class="cb"> <!-- Passive income --> <div style="font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--ink-20)">Passive Income (Act 60 Chapter 2 - Individual Investors)</div> <div class="fg3" style="margin-bottom:20px"> <div class="f1"> <label>Post-Move Capital Gains ($)</label> <input type="number" id="capGains" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Gains on assets acquired after becoming PR resident. 0% PR tax (4% if post-2026 applicant). IRC §933.</div> </div> <div class="f1"> <label>Dividends ($)</label> <input type="number" id="dividends" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:3px">All dividends (PR, US, and foreign source). 0% PR tax (4% post-2026). IRC §933.</div> </div> <div class="f1"> <label>Interest Income ($)</label> <input type="number" id="interest" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Interest from PR sources. 0% PR tax (4% post-2026). Act 60 Ch. 2.</div> </div> </div> <!-- Pre-move built-in gains --> <div style="font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--ink-20)">Pre-Move Appreciation (Built-In Gains - Still Taxable by IRS)</div> <div class="fg2" style="margin-bottom:20px"> <div class="f1"> <label>Built-In Gain on Marketable Securities ($)</label> <input type="number" id="builtInGain" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Unrealized appreciation on assets owned before PR move. US federal capital gains tax applies when sold. Allocated by IRS residency days ratio.</div> </div> <div class="f1"> <label>Years of PR Residency Before Sale</label> <select id="prYears" class="fc" onchange="calc()"> <option value="0">Selling within first year of residency</option> <option value="5">1-9 years of PR residency (5% PR rate applies)</option> <option value="10" selected>10+ years of PR residency (most favorable)</option> </select> </div> </div> <!-- Business income --> <div style="font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--ink-20)">Business / Service Income (Act 60 Chapter 3 - Export Services)</div> <div class="fg3" style="margin-bottom:20px"> <div class="f1"> <label>Export Services Income ($)</label> <input type="number" id="exportIncome" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Income from qualifying services provided to non-PR clients (consulting, tech, finance, etc.). 4% PR corporate tax rate. Act 60 Ch. 3.</div> </div> <div class="f1"> <label>U.S.-Source Earned Income ($)</label> <input type="number" id="earnedUS" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:3px">Wages, salary, or self-employment income from U.S. sources. NOT exempt under Act 60. Subject to US federal income tax. IRC §933(1).</div> </div> <div class="f1"> <label>Prior U.S. State of Residence</label> <select id="homeState" class="fc" onchange="calc()"> <option value="">-- Select State --</option> <option value="CA">California (13.3%)</option> <option value="NY">New York (10.9%)</option> <option value="NJ">New Jersey (10.75%)</option> <option value="OR">Oregon (9.9%)</option> <option value="MN">Minnesota (9.85%)</option> <option value="DC">Washington D.C. (10.75%)</option> <option value="VT">Vermont (8.75%)</option> <option value="WI">Wisconsin (7.65%)</option> <option value="ME">Maine (7.5%)</option> <option value="CT">Connecticut (7%)</option> <option value="RI">Rhode Island (5.99%)</option> <option value="MA">Massachusetts (5%)</option> <option value="VA">Virginia (5.75%)</option> <option value="NC">North Carolina (3.99%)</option> <option value="TX">Texas (0% - no income tax)</option> <option value="FL">Florida (0% - no income tax)</option> <option value="NV">Nevada (0% - no income tax)</option> <option value="WA">Washington (0% - no income tax)</option> <option value="other">Other state</option> </select> </div> </div> <div class="inf"> <strong>Federal rule (IRC §933):</strong> A bona fide Puerto Rico resident excludes Puerto Rico-source income from federal gross income. U.S.-source income is still taxable to the US federal government. Bona fide residency is determined under Treasury Reg. §1.937-1 - presence test (183+ days), tax home test, and closer connection test all apply. </div> </div>
+</div> <!-- Step 3: Rate Comparison -->
+<div class="card"> <div class="ch"><div class="sb">3</div><h2>Rate Comparison</h2></div> <div class="cb"> <div class="rate-compare" id="rateCompare"> <div class="rc-before"> <div class="rc-label">Without Act 60 (U.S. Mainland)</div> <div class="rc-row"><span class="rc-income-type">Long-term capital gains</span><span class="rc-rate">20%</span></div> <div class="rc-row"><span class="rc-income-type">Qualified dividends</span><span class="rc-rate">20%</span></div> <div class="rc-row"><span class="rc-income-type">Interest income</span><span class="rc-rate">Up to 37%</span></div> <div class="rc-row"><span class="rc-income-type">NIIT surcharge (if AGI>&thresh;)</span><span class="rc-rate">+3.8%</span></div> <div class="rc-row"><span class="rc-income-type">Business / export services</span><span class="rc-rate">Up to 37%</span></div> <div class="rc-row"><span class="rc-income-type">State tax (varies)</span><span class="rc-rate">0-13.3%</span></div> </div> <div class="rc-arrow">→</div> <div class="rc-after" id="rcAfter"> <div class="rc-label" id="rcAfterLabel">With Act 60 (PR Resident, Pre-2027 App)</div> <div class="rc-row"><span class="rc-income-type">Post-move capital gains (PR)</span><span class="rc-rate" id="rcCG">0% PR + 0% Fed</span></div> <div class="rc-row"><span class="rc-income-type">Dividends (PR-source)</span><span class="rc-rate" id="rcDiv">0% PR + 0% Fed</span></div> <div class="rc-row"><span class="rc-income-type">Interest (PR-source)</span><span class="rc-rate" id="rcInt">0% PR + 0% Fed</span></div> <div class="rc-row"><span class="rc-income-type">NIIT on exempt PR income</span><span class="rc-rate">0%</span></div> <div class="rc-row"><span class="rc-income-type">Export services (PR entity)</span><span class="rc-rate">4% PR corp tax</span></div> <div class="rc-row"><span class="rc-income-type">State tax on PR income</span><span class="rc-rate">0% (none)</span></div> </div> </div> <div class="inf"> <strong>Pre-move built-in gains:</strong> Capital appreciation that accrued BEFORE establishing PR residency remains taxable by the IRS when sold (allocated by days-of-ownership method). After 10 years of continuous PR residency, all remaining gains are treated as Puerto Rico-source and receive preferential treatment. Act 60 §2023.01. </div> </div>
+</div> <!-- Step 4: Results -->
+<div class="card"> <div class="ch"><div class="sb">4</div><h2>Estimated Tax Savings Analysis</h2></div> <div class="cb"> <div class="savings-hero"> <div class="sh-top"> <div class="sh-item"> <div class="sh-label">Tax Without Act 60</div> <div class="sh-val red" id="taxBefore">$0</div> <div class="sh-sub">US federal + state</div> </div> <div class="sh-item"> <div class="sh-label">Tax With Act 60</div> <div class="sh-val" id="taxAfter">$0</div> <div class="sh-sub">Federal on US-source only</div> </div> <div class="sh-item"> <div class="sh-label">Estimated Annual Savings</div> <div class="sh-val green" id="taxSavings">$0</div> <div class="sh-sub">Before compliance costs</div> </div> </div> </div> <div id="flags"></div> <!-- Before/After table --> <h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px">Detailed Tax Comparison</h3> <table class="ba-table"> <thead> <tr> <th style="text-align:left">Income Category</th> <th>Amount</th> <th>Tax Without Act 60</th> <th>Tax With Act 60</th> <th>Annual Savings</th> </tr> </thead> <tbody id="baBody"></tbody> <tfoot> <tr class="total-row"> <td>Total</td> <td id="baTotal">$0</td> <td id="baTotalBefore">$0</td> <td id="baTotalAfter">$0</td> <td class="tax-saved" id="baTotalSavings">$0</td> </tr> </tfoot> </table> <!-- Compliance costs --> <h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px;margin-top:20px">Annual Compliance Costs (Act 60)</h3> <div class="costs-grid"> <div class="cost-item"> <div class="cost-label">Annual Charitable Contribution</div> <div class="cost-val">$10,000</div> <div class="cost-note">Required donation to two qualifying Puerto Rico nonprofits. Act 60 §2023.01(b)(3).</div> </div> <div class="cost-item"> <div class="cost-label">Annual Compliance Filing Fee</div> <div class="cost-val">$5,005</div> <div class="cost-note">Annual fee to maintain Act 60 decree in good standing. DDEC (Puerto Rico Department of Economic Development).</div> </div> <div class="cost-item" id="netBenefitBox"> <div class="cost-label">Total Annual Compliance Cost</div> <div class="cost-val">$15,005</div> <div class="cost-note">Minimum annual cost. Does not include CPA, attorney, or relocation expenses.</div> </div> <div class="cost-item net-positive" id="netBenefitResult"> <div class="cost-label">Net Annual Benefit (After Costs)</div> <div class="cost-val" id="netBenefitVal">$0</div> <div class="cost-note" id="netBenefitNote">Enter income above to calculate.</div> </div> </div> <!-- Application costs --> <div class="flag blue"> <div class="flag-icon">ℹ</div> <div class="flag-text"><strong>One-Time Application Costs:</strong> Application fee $5,005 + acceptance fee $105 = $5,110 one-time. Legal/CPA fees for decree preparation typically add $5,000-$20,000. Real estate acquisition required within 2 years of decree (no minimum price specified, but must be your principal residence).</div> </div> <div class="source-row" id="sourceNote">Source: Act 60 of Puerto Rico (P.R. Laws Ann. tit. 13, §10001 et seq.); Act 38-2026 (signed March 10, 2026); IRC §933 (exclusion of PR-source income for bona fide PR residents); Treas. Reg. §1.937-1 (bona fide residency); Act 60 Ch. 2 (Individual Investors); Act 60 Ch. 3 (Export Services).</div> <button class="pbn" onclick="window.print()">Print / Save as PDF</button> <div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div> </div>
+</div> </div> <script>
 // ── Tax rate constants ──────────────────────────────────────────────────────
 // Federal capital gains rates 2026 (long-term, IRC §1(h))
-const FED_LTCG_RATES = [
-  { max: 47025,  rate: 0.00 },   // 0% for single filers up to $47,025 (approx 2026)
-  { max: 518900, rate: 0.15 },   // 15% up to $518,900 single
-  { max: Infinity, rate: 0.20 }, // 20% above
-];
-
-// State income tax top rates (for comparison)
-const STATE_RATES = {
-  CA:0.133, NY:0.109, NJ:0.1075, OR:0.099, MN:0.0985, DC:0.1075,
-  VT:0.0875, WI:0.0765, ME:0.075, CT:0.070, RI:0.0599,
-  MA:0.050, VA:0.0575, NC:0.0399, TX:0, FL:0, NV:0, WA:0,
-};
-
-function fmt(n) {
-  if (n === 0 || !n) return '$0';
-  const abs = Math.abs(Math.round(n));
-  const str = '$' + abs.toLocaleString('en-US');
-  return n < 0 ? '-' + str : str;
+const FED_LTCG_RATES = [ { max: 47025, rate: 0.00 }, // 0% for single filers up to $47,025 (approx 2026) { max: 518900, rate: 0.15 }, // 15% up to $518,900 single { max: Infinity, rate: 0.20 }, // 20% above
+]; // State income tax top rates (for comparison)
+const STATE_RATES = { CA:0.133, NY:0.109, NJ:0.1075, OR:0.099, MN:0.0985, DC:0.1075, VT:0.0875, WI:0.0765, ME:0.075, CT:0.070, RI:0.0599, MA:0.050, VA:0.0575, NC:0.0399, TX:0, FL:0, NV:0, WA:0,
+}; function fmt(n) { if (n === 0 || !n) return '$0'; const abs = Math.abs(Math.round(n)); const str = '$' + abs.toLocaleString('en-US'); return n < 0 ? '-' + str : str;
 }
-function pct(n) { return (n * 100).toFixed(1) + '%'; }
-
-// ── Eligibility assessment ─────────────────────────────────────────────────
-function assessEligibility() {
-  const days        = parseInt(document.getElementById('daysInPR').value) || 0;
-  const timing      = document.getElementById('appTiming').value;
-  const priorRes    = document.getElementById('priorResident').value;
-  const closerConn  = document.getElementById('closerConn').value;
-  const realty      = document.getElementById('prRealty').value;
-
-  const items = [];
-
-  // 1. 183-day presence test
-  items.push({
-    status: days >= 183 ? 'pass' : days >= 120 ? 'warn' : days > 0 ? 'fail' : 'pending',
-    title: '183-Day Presence Test',
-    desc: days >= 183
-      ? `${days} days in PR. Bona fide residency presumption established. Treas. Reg. §1.937-1(b).`
-      : days > 0
-      ? `${days} days - need ${183 - days} more days to reach the 183-day threshold. Without 183+ days, bona fide residency is not presumed.`
-      : 'Enter your days in Puerto Rico above.',
-    auth: 'Treas. Reg. §1.937-1(b)(1); Act 60 §2023.01',
-  });
-
-  // 2. Prior residency
-  items.push({
-    status: priorRes === 'no' ? 'pass' : priorRes === 'yes' ? 'fail' : 'warn',
-    title: 'Prior Puerto Rico Residency (10-Year Rule)',
-    desc: priorRes === 'no'
-      ? 'Eligible - not a PR resident in the prior 10 years. For post-2026 applicants, the rule is 6 years (Act 38-2026).'
-      : priorRes === 'yes'
-      ? 'Potential disqualification - you must not have been a PR resident during the 10-year period before the Act\'s effective date. Consult an attorney to evaluate your specific facts.'
-      : 'Verify your prior PR residency history with a qualified attorney.',
-    auth: 'Act 60 §2023.01(a); Act 38-2026 (6-year rule for post-2026 applicants)',
-  });
-
-  // 3. Application timing
-  items.push({
-    status: timing === 'before2027' ? 'pass' : 'warn',
-    title: timing === 'before2027' ? '0% Rate - Application Before December 31, 2026' : '4% Rate - Application After December 31, 2026',
-    desc: timing === 'before2027'
-      ? 'Applying before January 1, 2027 qualifies for 0% PR tax on post-move capital gains, dividends, and interest. Decree valid through December 31, 2035 with extension option to 2055.'
-      : 'Under Act 38-2026 (signed March 10, 2026), applications filed on or after January 1, 2027 receive a 4% preferential rate on qualifying income - still beneficial vs. US mainland rates but less favorable than 0%.',
-    auth: 'Act 38-2026 (signed March 10, 2026); Act 60 §2023.01',
-  });
-
-  // 4. Closer connection
-  items.push({
-    status: closerConn === 'no' ? 'pass' : closerConn === 'partial' ? 'warn' : 'fail',
-    title: 'Closer Connection to Puerto Rico (Not to Any U.S. State)',
-    desc: closerConn === 'no'
-      ? 'Puerto Rico will be your primary home. Closer connection test should be satisfied. Maintain documentation: driver\'s license, vehicle registration, bank accounts, social activities in PR.'
-      : closerConn === 'partial'
-      ? 'CAUTION: If you maintain a closer connection to a U.S. state than to PR, the IRS may challenge your bona fide residency. The IRS has an active audit campaign targeting Act 60 participants. Consult an attorney before proceeding.'
-      : 'Closer connection to a U.S. state disqualifies bona fide PR residency. You must sever connections to your prior state and establish Puerto Rico as your tax home. IRC §7701(b); Treas. Reg. §1.937-1.',
-    auth: 'Treas. Reg. §1.937-1(b)(3); IRC §7701(b)',
-  });
-
-  // 5. Real estate
-  items.push({
-    status: realty === 'yes' ? 'pass' : realty === 'no' ? 'warn' : 'warn',
-    title: 'Puerto Rico Principal Residence (2-Year Requirement)',
-    desc: realty === 'yes'
-      ? 'Required. Must purchase PR real estate and establish it as your primary residence within 2 years of obtaining your decree. For post-2026 applicants, must be registered in PR Property Registry.'
-      : realty === 'no'
-      ? 'Renting only does not satisfy the Act 60 property ownership requirement. You must purchase a principal residence in Puerto Rico within 2 years of your decree.'
-      : 'Required: must purchase and occupy a principal residence in Puerto Rico within 2 years of your decree date. Act 60 Ch. 2.',
-    auth: 'Act 60 §2023.01(b)(2); Act 38-2026 (property registry requirement for post-2026 applicants)',
-  });
-
-  // Render
-  const list = document.getElementById('eligList');
-  list.innerHTML = '';
-  items.forEach(item => {
-    const icons = { pass:'✓', fail:'✗', warn:'!', pending:'?' };
-    const labels = { pass:'ELIGIBLE', fail:'INELIGIBLE', warn:'REVIEW', pending:'ENTER DATA' };
-    list.innerHTML += `
-      <div class="elig-item ${item.status}">
-        <div class="elig-icon">${icons[item.status]}</div>
-        <div class="elig-body">
-          <div class="elig-title">${item.title}</div>
-          <div class="elig-desc">${item.desc}</div>
-          <div class="elig-auth">${item.auth}</div>
-        </div>
-        <span class="elig-badge ${item.status}">${labels[item.status]}</span>
-      </div>`;
-  });
-}
-
-// ── Tax calculations ────────────────────────────────────────────────────────
-function calc() {
-  assessEligibility();
-
-  const timing      = document.getElementById('appTiming').value;
-  const act60Rate   = timing === 'before2027' ? 0 : 0.04;
-  const homeState   = document.getElementById('homeState').value;
-  const stateRate   = homeState ? (STATE_RATES[homeState] || 0.055) : 0;
-
-  const capGains    = parseFloat(document.getElementById('capGains').value) || 0;
-  const dividends   = parseFloat(document.getElementById('dividends').value) || 0;
-  const interest    = parseFloat(document.getElementById('interest').value) || 0;
-  const builtIn     = parseFloat(document.getElementById('builtInGain').value) || 0;
-  const prYears     = document.getElementById('prYears').value;
-  const exportInc   = parseFloat(document.getElementById('exportIncome').value) || 0;
-  const earnedUS    = parseFloat(document.getElementById('earnedUS').value) || 0;
-
-  const totalIncome = capGains + dividends + interest + builtIn + exportInc + earnedUS;
-
-  // Update rate comparison panel
-  const rateLabel = timing === 'before2027' ? 'With Act 60 (PR Resident, Pre-2027 Application)' : 'With Act 60 (PR Resident, 2027+ Application)';
-  document.getElementById('rcAfterLabel').textContent = rateLabel;
-  const rateStr = timing === 'before2027' ? '0% PR + 0% Fed' : '4% PR + 0% Fed';
-  document.getElementById('rcCG').textContent = rateStr;
-  document.getElementById('rcDiv').textContent = rateStr;
-  document.getElementById('rcInt').textContent = rateStr;
-
-  // ── Without Act 60 ──
-  // Capital gains: federal 20% LTCG + state
-  const cgTaxBefore    = capGains * (0.20 + stateRate);
-  // Dividends: federal 20% qualified + state
-  const divTaxBefore   = dividends * (0.20 + stateRate);
-  // Interest: federal 37% ordinary (using top rate for conservative estimate) + state
-  const intTaxBefore   = interest * (0.37 + stateRate);
-  // Built-in gains: federal 20% + state
-  const builtInTaxBefore = builtIn * (0.20 + stateRate);
-  // Export income: treated as ordinary income - federal top rate 37% + state
-  const exportTaxBefore = exportInc * (0.37 + stateRate);
-  // Earned US income: federal top rate 37% + state
-  const earnedTaxBefore = earnedUS * (0.37 + stateRate);
-
-  const totalBefore = cgTaxBefore + divTaxBefore + intTaxBefore + builtInTaxBefore + exportTaxBefore + earnedTaxBefore;
-
-  // ── With Act 60 ──
-  // Post-move capital gains: act60Rate PR (0% or 4%) + 0% federal (IRC §933)
-  const cgTaxAfter     = capGains * act60Rate;
-  // Dividends: act60Rate PR + 0% federal
-  const divTaxAfter    = dividends * act60Rate;
-  // Interest: act60Rate PR + 0% federal
-  const intTaxAfter    = interest * act60Rate;
-  // Built-in gains: allocated by days method, still fed taxable; PR has 5% after 10 yrs
-  let builtInPRRate = 0.05;
-  let builtInFedRate = 0.20;
-  if (prYears === '0') { builtInPRRate = 0.10; builtInFedRate = 0.20; }
-  if (prYears === '10') { builtInPRRate = 0; builtInFedRate = 0; } // After 10 yrs, all PR-source
-  const builtInTaxAfter = builtIn * (builtInPRRate + builtInFedRate);
-  // Export income: 4% PR corporate tax (Act 60 Ch. 3) + 0% federal if properly structured
-  const exportTaxAfter  = exportInc * 0.04;
-  // US-source earned income: NO exemption - still full federal + no state if left state
-  const earnedTaxAfter  = earnedUS * 0.37; // no state assumed after moving
-
-  const totalAfter = cgTaxAfter + divTaxAfter + intTaxAfter + builtInTaxAfter + exportTaxAfter + earnedTaxAfter;
-  const savings = totalBefore - totalAfter;
-  const netBenefit = savings - 15005;
-
-  // Update hero
-  document.getElementById('taxBefore').textContent  = fmt(totalBefore);
-  document.getElementById('taxAfter').textContent   = fmt(totalAfter);
-  document.getElementById('taxSavings').textContent = fmt(savings);
-
-  // Build comparison table
-  const rows = [
-    { label:'Post-Move Capital Gains',    amt:capGains,  before:cgTaxBefore,    after:cgTaxAfter    },
-    { label:'Dividends',                  amt:dividends, before:divTaxBefore,   after:divTaxAfter   },
-    { label:'Interest Income',            amt:interest,  before:intTaxBefore,   after:intTaxAfter   },
-    { label:'Pre-Move Built-In Gains',    amt:builtIn,   before:builtInTaxBefore, after:builtInTaxAfter },
-    { label:'Export Services Income',     amt:exportInc, before:exportTaxBefore, after:exportTaxAfter },
-    { label:'U.S.-Source Earned Income',  amt:earnedUS,  before:earnedTaxBefore, after:earnedTaxAfter  },
-  ];
-
-  const tbody = document.getElementById('baBody');
-  tbody.innerHTML = '';
-  let totalAmt = 0;
-  rows.forEach(r => {
-    if (r.amt === 0) return;
-    totalAmt += r.amt;
-    const saved = r.before - r.after;
-    tbody.innerHTML += `<tr>
-      <td>${r.label}</td>
-      <td>${fmt(r.amt)}</td>
-      <td>${fmt(r.before)} (${pct(r.amt > 0 ? r.before/r.amt : 0)})</td>
-      <td>${fmt(r.after)} (${pct(r.amt > 0 ? r.after/r.amt : 0)})</td>
-      <td class="${saved > 0 ? 'tax-saved' : 'tax-same'}">${fmt(saved)}</td>
-    </tr>`;
-  });
-  document.getElementById('baTotal').textContent        = fmt(totalAmt);
-  document.getElementById('baTotalBefore').textContent  = fmt(totalBefore);
-  document.getElementById('baTotalAfter').textContent   = fmt(totalAfter);
-  document.getElementById('baTotalSavings').textContent = fmt(savings);
-
-  // Net benefit
-  const nbBox = document.getElementById('netBenefitResult');
-  document.getElementById('netBenefitVal').textContent = fmt(netBenefit);
-  nbBox.className = 'cost-item ' + (netBenefit > 0 ? 'net-positive' : 'net-negative');
-  document.getElementById('netBenefitNote').textContent = netBenefit > 0
-    ? `Act 60 appears financially beneficial after the $15,005 annual compliance cost. ${timing === 'before2027' ? 'Apply before December 31, 2026 to lock in the 0% rate.' : 'Applying after 2026 still yields net savings at the 4% rate.'}`
-    : savings > 0
-    ? `Gross savings ($${Math.round(savings).toLocaleString()}) are positive but less than the $15,005 annual compliance cost. Consider whether increased income or larger positions would improve the case.`
-    : 'Enter income figures above to calculate net benefit.';
-
-  // Flags
-  const flagDiv = document.getElementById('flags');
-  flagDiv.innerHTML = '';
-  const flag = (text, type) => { flagDiv.innerHTML += `<div class="flag ${type}"><div class="flag-icon">${type==='amber'?'!':type==='red'?'✗':type==='green'?'✓':'ℹ'}</div><div class="flag-text">${text}</div></div>`; };
-
-  if (timing === 'before2027') flag('<strong>December 31, 2026 deadline is real and imminent.</strong> Act 38-2026 was signed by the PR Governor on March 10, 2026. Applications filed on or after January 1, 2027 will receive a permanent 4% rate instead of 0%. The submission date - not the decree approval date - determines your rate.', 'amber');
-  if (netBenefit > 100000) flag(`<strong>Strong financial case for Act 60.</strong> Estimated net annual benefit of ${fmt(netBenefit)} after compliance costs. Over 10 years, that is approximately ${fmt(netBenefit * 10)} in potential tax savings.`, 'green');
-  if (earnedUS > 0) flag('<strong>U.S.-source earned income is NOT exempt under Act 60.</strong> IRC §933(1) only excludes Puerto Rico-source income. If your employer is a U.S. company paying for services performed in the U.S., that income remains fully taxable to the federal government. PR bona fide residency does not eliminate US federal tax on US-source income.', 'blue');
-  if (exportInc > 0) flag('<strong>Export Services Chapter (Act 60 Ch. 3) requires a qualifying PR business entity.</strong> The 4% corporate rate applies to income earned through a PR entity providing qualifying services to non-PR clients. Simply moving to PR does not trigger Ch. 3 benefits - you must apply for and obtain a separate Export Services decree and establish a bona fide PR office.', 'amber');
-  if (builtIn > 0 && prYears !== '10') flag('<strong>Pre-move built-in gains remain taxable by the IRS</strong> on assets owned before establishing PR residency. Gain is allocated using the days-of-ownership method. After 10 years of continuous bona fide PR residency, all remaining gain becomes PR-source. Consider your holding period strategy carefully.', 'amber');
-  flag('<strong>IRS Enforcement:</strong> The IRS has an active audit campaign specifically targeting Act 60 participants and bona fide PR residency claims. Documentation requirements are extensive: boarding passes, utility bills, bank statements, driver\'s license, vehicle registration, and day-count logs. Work with a qualified attorney and CPA who specialize in this area.', 'red');
-}
-
-// Init
+function pct(n) { return (n * 100).toFixed(1) + '%'; } // ── Eligibility assessment ─────────────────────────────────────────────────
+function assessEligibility() { const days = parseInt(document.getElementById('daysInPR').value) || 0; const timing = document.getElementById('appTiming').value; const priorRes = document.getElementById('priorResident').value; const closerConn = document.getElementById('closerConn').value; const realty = document.getElementById('prRealty').value; const items = []; // 1. 183-day presence test items.push({ status: days >= 183 ? 'pass' : days >= 120 ? 'warn' : days > 0 ? 'fail' : 'pending', title: '183-Day Presence Test', desc: days >= 183 ? `${days} days in PR. Bona fide residency presumption established. Treas. Reg. §1.937-1(b).` : days > 0 ? `${days} days - need ${183 - days} more days to reach the 183-day threshold. Without 183+ days, bona fide residency is not presumed.` : 'Enter your days in Puerto Rico above.', auth: 'Treas. Reg. §1.937-1(b)(1); Act 60 §2023.01', }); // 2. Prior residency items.push({ status: priorRes === 'no' ? 'pass' : priorRes === 'yes' ? 'fail' : 'warn', title: 'Prior Puerto Rico Residency (10-Year Rule)', desc: priorRes === 'no' ? 'Eligible - not a PR resident in the prior 10 years. For post-2026 applicants, the rule is 6 years (Act 38-2026).' : priorRes === 'yes' ? 'Potential disqualification - you must not have been a PR resident during the 10-year period before the Act\'s effective date. Consult an attorney to evaluate your specific facts.' : 'Verify your prior PR residency history with a qualified attorney.', auth: 'Act 60 §2023.01(a); Act 38-2026 (6-year rule for post-2026 applicants)', }); // 3. Application timing items.push({ status: timing === 'before2027' ? 'pass' : 'warn', title: timing === 'before2027' ? '0% Rate - Application Before December 31, 2026' : '4% Rate - Application After December 31, 2026', desc: timing === 'before2027' ? 'Applying before January 1, 2027 qualifies for 0% PR tax on post-move capital gains, dividends, and interest. Decree valid through December 31, 2035 with extension option to 2055.' : 'Under Act 38-2026 (signed March 10, 2026), applications filed on or after January 1, 2027 receive a 4% preferential rate on qualifying income - still beneficial vs. US mainland rates but less favorable than 0%.', auth: 'Act 38-2026 (signed March 10, 2026); Act 60 §2023.01', }); // 4. Closer connection items.push({ status: closerConn === 'no' ? 'pass' : closerConn === 'partial' ? 'warn' : 'fail', title: 'Closer Connection to Puerto Rico (Not to Any U.S. State)', desc: closerConn === 'no' ? 'Puerto Rico will be your primary home. Closer connection test should be satisfied. Maintain documentation: driver\'s license, vehicle registration, bank accounts, social activities in PR.' : closerConn === 'partial' ? 'CAUTION: If you maintain a closer connection to a U.S. state than to PR, the IRS may challenge your bona fide residency. The IRS has an active audit campaign targeting Act 60 participants. Consult an attorney before proceeding.' : 'Closer connection to a U.S. state disqualifies bona fide PR residency. You must sever connections to your prior state and establish Puerto Rico as your tax home. IRC §7701(b); Treas. Reg. §1.937-1.', auth: 'Treas. Reg. §1.937-1(b)(3); IRC §7701(b)', }); // 5. Real estate items.push({ status: realty === 'yes' ? 'pass' : realty === 'no' ? 'warn' : 'warn', title: 'Puerto Rico Principal Residence (2-Year Requirement)', desc: realty === 'yes' ? 'Required. Must purchase PR real estate and establish it as your primary residence within 2 years of obtaining your decree. For post-2026 applicants, must be registered in PR Property Registry.' : realty === 'no' ? 'Renting only does not satisfy the Act 60 property ownership requirement. You must purchase a principal residence in Puerto Rico within 2 years of your decree.' : 'Required: must purchase and occupy a principal residence in Puerto Rico within 2 years of your decree date. Act 60 Ch. 2.', auth: 'Act 60 §2023.01(b)(2); Act 38-2026 (property registry requirement for post-2026 applicants)', }); // Render const list = document.getElementById('eligList'); list.innerHTML = ''; items.forEach(item => { const icons = { pass:'✓', fail:'✗', warn:'!', pending:'?' }; const labels = { pass:'ELIGIBLE', fail:'INELIGIBLE', warn:'REVIEW', pending:'ENTER DATA' }; list.innerHTML += ` <div class="elig-item ${item.status}"> <div class="elig-icon">${icons[item.status]}</div> <div class="elig-body"> <div class="elig-title">${item.title}</div> <div class="elig-desc">${item.desc}</div> <div class="elig-auth">${item.auth}</div> </div> <span class="elig-badge ${item.status}">${labels[item.status]}</span> </div>`; });
+} // ── Tax calculations ────────────────────────────────────────────────────────
+function calc() { assessEligibility(); const timing = document.getElementById('appTiming').value; const act60Rate = timing === 'before2027' ? 0 : 0.04; const homeState = document.getElementById('homeState').value; const stateRate = homeState ? (STATE_RATES[homeState] || 0.055) : 0; const capGains = parseFloat(document.getElementById('capGains').value) || 0; const dividends = parseFloat(document.getElementById('dividends').value) || 0; const interest = parseFloat(document.getElementById('interest').value) || 0; const builtIn = parseFloat(document.getElementById('builtInGain').value) || 0; const prYears = document.getElementById('prYears').value; const exportInc = parseFloat(document.getElementById('exportIncome').value) || 0; const earnedUS = parseFloat(document.getElementById('earnedUS').value) || 0; const totalIncome = capGains + dividends + interest + builtIn + exportInc + earnedUS; // Update rate comparison panel const rateLabel = timing === 'before2027' ? 'With Act 60 (PR Resident, Pre-2027 Application)' : 'With Act 60 (PR Resident, 2027+ Application)'; document.getElementById('rcAfterLabel').textContent = rateLabel; const rateStr = timing === 'before2027' ? '0% PR + 0% Fed' : '4% PR + 0% Fed'; document.getElementById('rcCG').textContent = rateStr; document.getElementById('rcDiv').textContent = rateStr; document.getElementById('rcInt').textContent = rateStr; // ── Without Act 60 ── // Capital gains: federal 20% LTCG + state const cgTaxBefore = capGains * (0.20 + stateRate); // Dividends: federal 20% qualified + state const divTaxBefore = dividends * (0.20 + stateRate); // Interest: federal 37% ordinary (using top rate for conservative estimate) + state const intTaxBefore = interest * (0.37 + stateRate); // Built-in gains: federal 20% + state const builtInTaxBefore = builtIn * (0.20 + stateRate); // Export income: treated as ordinary income - federal top rate 37% + state const exportTaxBefore = exportInc * (0.37 + stateRate); // Earned US income: federal top rate 37% + state const earnedTaxBefore = earnedUS * (0.37 + stateRate); const totalBefore = cgTaxBefore + divTaxBefore + intTaxBefore + builtInTaxBefore + exportTaxBefore + earnedTaxBefore; // ── With Act 60 ── // Post-move capital gains: act60Rate PR (0% or 4%) + 0% federal (IRC §933) const cgTaxAfter = capGains * act60Rate; // Dividends: act60Rate PR + 0% federal const divTaxAfter = dividends * act60Rate; // Interest: act60Rate PR + 0% federal const intTaxAfter = interest * act60Rate; // Built-in gains: allocated by days method, still fed taxable; PR has 5% after 10 yrs let builtInPRRate = 0.05; let builtInFedRate = 0.20; if (prYears === '0') { builtInPRRate = 0.10; builtInFedRate = 0.20; } if (prYears === '10') { builtInPRRate = 0; builtInFedRate = 0; } // After 10 yrs, all PR-source const builtInTaxAfter = builtIn * (builtInPRRate + builtInFedRate); // Export income: 4% PR corporate tax (Act 60 Ch. 3) + 0% federal if properly structured const exportTaxAfter = exportInc * 0.04; // US-source earned income: NO exemption - still full federal + no state if left state const earnedTaxAfter = earnedUS * 0.37; // no state assumed after moving const totalAfter = cgTaxAfter + divTaxAfter + intTaxAfter + builtInTaxAfter + exportTaxAfter + earnedTaxAfter; const savings = totalBefore - totalAfter; const netBenefit = savings - 15005; // Update hero document.getElementById('taxBefore').textContent = fmt(totalBefore); document.getElementById('taxAfter').textContent = fmt(totalAfter); document.getElementById('taxSavings').textContent = fmt(savings); // Build comparison table const rows = [ { label:'Post-Move Capital Gains', amt:capGains, before:cgTaxBefore, after:cgTaxAfter }, { label:'Dividends', amt:dividends, before:divTaxBefore, after:divTaxAfter }, { label:'Interest Income', amt:interest, before:intTaxBefore, after:intTaxAfter }, { label:'Pre-Move Built-In Gains', amt:builtIn, before:builtInTaxBefore, after:builtInTaxAfter }, { label:'Export Services Income', amt:exportInc, before:exportTaxBefore, after:exportTaxAfter }, { label:'U.S.-Source Earned Income', amt:earnedUS, before:earnedTaxBefore, after:earnedTaxAfter }, ]; const tbody = document.getElementById('baBody'); tbody.innerHTML = ''; let totalAmt = 0; rows.forEach(r => { if (r.amt === 0) return; totalAmt += r.amt; const saved = r.before - r.after; tbody.innerHTML += `<tr> <td>${r.label}</td> <td>${fmt(r.amt)}</td> <td>${fmt(r.before)} (${pct(r.amt > 0 ? r.before/r.amt : 0)})</td> <td>${fmt(r.after)} (${pct(r.amt > 0 ? r.after/r.amt : 0)})</td> <td class="${saved > 0 ? 'tax-saved' : 'tax-same'}">${fmt(saved)}</td> </tr>`; }); document.getElementById('baTotal').textContent = fmt(totalAmt); document.getElementById('baTotalBefore').textContent = fmt(totalBefore); document.getElementById('baTotalAfter').textContent = fmt(totalAfter); document.getElementById('baTotalSavings').textContent = fmt(savings); // Net benefit const nbBox = document.getElementById('netBenefitResult'); document.getElementById('netBenefitVal').textContent = fmt(netBenefit); nbBox.className = 'cost-item ' + (netBenefit > 0 ? 'net-positive' : 'net-negative'); document.getElementById('netBenefitNote').textContent = netBenefit > 0 ? `Act 60 appears financially beneficial after the $15,005 annual compliance cost. ${timing === 'before2027' ? 'Apply before December 31, 2026 to lock in the 0% rate.' : 'Applying after 2026 still yields net savings at the 4% rate.'}` : savings > 0 ? `Gross savings ($${Math.round(savings).toLocaleString()}) are positive but less than the $15,005 annual compliance cost. Consider whether increased income or larger positions would improve the case.` : 'Enter income figures above to calculate net benefit.'; // Flags const flagDiv = document.getElementById('flags'); flagDiv.innerHTML = ''; const flag = (text, type) => { flagDiv.innerHTML += `<div class="flag ${type}"><div class="flag-icon">${type==='amber'?'!':type==='red'?'✗':type==='green'?'✓':'ℹ'}</div><div class="flag-text">${text}</div></div>`; }; if (timing === 'before2027') flag('<strong>December 31, 2026 deadline is real and imminent.</strong> Act 38-2026 was signed by the PR Governor on March 10, 2026. Applications filed on or after January 1, 2027 will receive a permanent 4% rate instead of 0%. The submission date - not the decree approval date - determines your rate.', 'amber'); if (netBenefit > 100000) flag(`<strong>Strong financial case for Act 60.</strong> Estimated net annual benefit of ${fmt(netBenefit)} after compliance costs. Over 10 years, that is approximately ${fmt(netBenefit * 10)} in potential tax savings.`, 'green'); if (earnedUS > 0) flag('<strong>U.S.-source earned income is NOT exempt under Act 60.</strong> IRC §933(1) only excludes Puerto Rico-source income. If your employer is a U.S. company paying for services performed in the U.S., that income remains fully taxable to the federal government. PR bona fide residency does not eliminate US federal tax on US-source income.', 'blue'); if (exportInc > 0) flag('<strong>Export Services Chapter (Act 60 Ch. 3) requires a qualifying PR business entity.</strong> The 4% corporate rate applies to income earned through a PR entity providing qualifying services to non-PR clients. Simply moving to PR does not trigger Ch. 3 benefits - you must apply for and obtain a separate Export Services decree and establish a bona fide PR office.', 'amber'); if (builtIn > 0 && prYears !== '10') flag('<strong>Pre-move built-in gains remain taxable by the IRS</strong> on assets owned before establishing PR residency. Gain is allocated using the days-of-ownership method. After 10 years of continuous bona fide PR residency, all remaining gain becomes PR-source. Consider your holding period strategy carefully.', 'amber'); flag('<strong>IRS Enforcement:</strong> The IRS has an active audit campaign specifically targeting Act 60 participants and bona fide PR residency claims. Documentation requirements are extensive: boarding passes, utility bills, bank statements, driver\'s license, vehicle registration, and day-count logs. Work with a qualified attorney and CPA who specialize in this area.', 'red');
+} // Init
 calc();
-</script>
-
-</body>
+</script> </body>
 </html>
