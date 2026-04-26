@@ -97,24 +97,368 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>PFIC / Form 8621 Checker & Regime Analyzer</h1> <div class="sub">Determine PFIC status using the income and asset tests. Compare all three tax regimes: Excess Distribution (§1291), QEF Election (§1293), and Mark-to-Market (§1296). Form 8621 filing requirements. 2026.</div> <div class="badges"> <span class="badge">IRC §1291 (Excess Distribution)</span> <span class="badge">IRC §1293-1295 (QEF)</span> <span class="badge">IRC §1296 (Mark-to-Market)</span> <span class="badge">IRC §1297-1298 (PFIC Definition)</span> <span class="badge">Form 8621</span> </div>
+<div class="ph"><div class="phi">
+  <h1>PFIC / Form 8621 Checker & Regime Analyzer</h1>
+  <div class="sub">Determine PFIC status using the income and asset tests. Compare all three tax regimes: Excess Distribution (§1291), QEF Election (§1293), and Mark-to-Market (§1296). Form 8621 filing requirements. 2026.</div>
+  <div class="badges">
+    <span class="badge">IRC §1291 (Excess Distribution)</span>
+    <span class="badge">IRC §1293-1295 (QEF)</span>
+    <span class="badge">IRC §1296 (Mark-to-Market)</span>
+    <span class="badge">IRC §1297-1298 (PFIC Definition)</span>
+    <span class="badge">Form 8621</span>
+  </div>
 </div></div>
-<div class="back"><a href="index.html">← cpavalidated.com</a></div> <div class="wrap"> <div class="callout"><strong>What is a PFIC?</strong> A Passive Foreign Investment Company is any foreign corporation that meets either: (1) the Income Test - 75%+ of gross income is passive income (dividends, interest, rents, royalties, gains), or (2) the Asset Test - 50%+ of assets by value produce or are held to produce passive income. IRC §1297(a). Common examples: foreign mutual funds, foreign ETFs, foreign holding companies with passive investments. Canadian TFSAs and certain Israeli Keren Hishtalmut accounts may also trigger PFIC rules. The tax consequences of PFIC ownership without proper elections are severe.</div> <!-- Step 1: Entity -->
-<div class="card"> <div class="ch"><div class="sb">1</div><h2>Foreign Entity Information</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Entity Type</label> <select class="fc" id="entityType" onchange="calc()"> <option value="fund">Foreign mutual fund / investment fund</option> <option value="etf">Foreign ETF (exchange-listed)</option> <option value="holdco">Foreign holding company</option> <option value="bank">Foreign bank or insurance company</option> <option value="operating">Foreign operating company</option> <option value="other">Other foreign corporation</option> </select> <div class="hint">Foreign mutual funds and ETFs are almost always PFICs. Foreign operating companies depend on the income and asset tests.</div> </div> <div class="f1"><label>Country of Incorporation</label> <select class="fc" id="country" onchange="calc()"> <option value="canada">Canada</option> <option value="ireland">Ireland / Luxembourg (EU fund domicile)</option> <option value="israel">Israel</option> <option value="uk">United Kingdom</option> <option value="germany">Germany</option> <option value="cayman">Cayman Islands / BVI</option> <option value="cyprus">Cyprus</option> <option value="switzerland">Switzerland</option> <option value="russia">Russia</option> <option value="other">Other</option> </select> </div> <div class="f1"><label>Is this also a CFC?</label> <select class="fc" id="isCFC" onchange="calc()"> <option value="no">No - not a Controlled Foreign Corporation</option> <option value="yes">Yes - US persons own >50% (vote or value)</option> <option value="unsure">Unsure</option> </select> <div class="hint">If CFC, the PFIC overlap rule under IRC §1297(d) may prevent the §1291 excess distribution regime from applying to US shareholders subject to Subpart F.</div> </div> </div> <div class="fg2"> <div class="f1"><label>Is Stock Traded on a Recognized Exchange?</label> <select class="fc" id="marketable" onchange="calc()"> <option value="yes">Yes - listed on NYSE, NASDAQ, LSE, TSX, or recognized exchange</option> <option value="no">No - private fund, private company, or OTC only</option> </select> <div class="hint">Marketability is required for the Mark-to-Market (MTM) election under IRC §1296. Non-marketable PFICs cannot elect MTM.</div> </div> <div class="f1"><label>Is a PFIC Annual Statement Available?</label> <select class="fc" id="annualStatement" onchange="calc()"> <option value="yes">Yes - fund provides annual PFIC statement (ordinary income + net capital gain per share)</option> <option value="no">No - fund does not provide a PFIC statement</option> </select> <div class="hint">QEF election under IRC §1295 requires the fund to furnish an annual PFIC statement. Most foreign funds do not provide this.</div> </div> </div> </div>
-</div> <!-- Step 2: PFIC Tests -->
-<div class="card"> <div class="ch"><div class="sb">2</div><h2>PFIC Status Tests &nbsp;&bull;&nbsp; IRC §1297(a)</h2></div> <div class="cb"> <div class="fg2"> <div class="f1"> <label>Income Test: % of Gross Income That Is Passive</label> <div class="slider-row"> <input type="range" id="incomeTest" min="0" max="100" value="80" oninput="document.getElementById('incomeTestVal').textContent=this.value+'%';calc()"> <span class="slider-val" id="incomeTestVal">80%</span> </div> <div class="hint">Passive income = dividends, interest, rents, royalties, annuities, net gain from passive property. IRC §1297(b). PFIC threshold: 75%+.</div> </div> <div class="f1"> <label>Asset Test: % of Assets That Are Passive (by FMV)</label> <div class="slider-row"> <input type="range" id="assetTest" min="0" max="100" value="70" oninput="document.getElementById('assetTestVal').textContent=this.value+'%';calc()"> <span class="slider-val" id="assetTestVal">70%</span> </div> <div class="hint">Passive assets = assets that produce or are held to produce passive income. PFIC threshold: 50%+. IRC §1297(a)(2).</div> </div> </div> <div id="testResults"></div> </div>
-</div> <!-- Step 3: Investment Details -->
-<div class="card"> <div class="ch"><div class="sb">3</div><h2>Investment Details</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Cost Basis (Total Investment) ($)</label> <input type="number" class="fc" id="basis" value="50000" oninput="calc()"> <div class="hint">Total amount paid for the PFIC shares (USD)</div> </div> <div class="f1"><label>Current Fair Market Value ($)</label> <input type="number" class="fc" id="fmv" value="75000" oninput="calc()"> <div class="hint">Current FMV of your PFIC holding (USD)</div> </div> <div class="f1"><label>Years Held</label> <input type="number" class="fc" id="years" value="5" min="1" max="40" oninput="calc()"> <div class="hint">Number of tax years held (including current year)</div> </div> </div> <div class="fg3"> <div class="f1"><label>Distributions Received This Year ($)</label> <input type="number" class="fc" id="distributions" value="3000" oninput="calc()"> <div class="hint">Total distributions (dividends, returns of capital) received in the current tax year</div> </div> <div class="f1"><label>Prior 3-Year Average Annual Distribution ($)</label> <input type="number" class="fc" id="priorAvgDist" value="2000" oninput="calc()"> <div class="hint">Average of distributions received in the 3 prior tax years. Used to calculate excess distributions. IRC §1291(b)(2).</div> </div> <div class="f1"><label>Current Tax Year (for interest calculation)</label> <select class="fc" id="taxYear" onchange="calc()"> <option value="2026">2026</option> <option value="2025">2025</option> <option value="2024">2024</option> </select> </div> </div> </div>
-</div> <!-- Step 4: Results -->
-<div class="card"> <div class="ch"><div class="sb">4</div><h2>Results & Regime Comparison</h2></div> <div class="cb" id="results"> <div style="text-align:center;color:var(--ink-60);padding:20px">Complete the fields above to see your analysis.</div> </div>
-</div> </div> <!-- Related tools -->
-<div class="related"> <div style="max-width:960px;margin:0 auto"> <div class="related-label">Related Tools & Guides on CPA Validated</div> <div class="related-links"> <a href="form-5471-checker.html" class="rl">CFC / Form 5471 Checker</a> <a href="fbar-checker.html" class="rl">FBAR & Form 8938 Checker</a> <a href="form-5472.html" class="rl">Form 5472 Analyzer</a> <a href="ftc-calculator.html" class="rl">Foreign Tax Credit Calculator</a> <a href="pre-immigration-planning.html" class="rl">Pre-Immigration Planning Guide</a> <a href="gilti-explained.html" class="rl">GILTI Explained</a> <a href="streamlined-checker.html" class="rl">Streamlined Procedures Checker</a> <a href="foreign-pension-reporting.html" class="rl">Foreign Pension Reporting</a> <a href="vetted-resources.html" class="rl">Vetted Resources</a> </div> </div>
-</div> <script>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+
+<div class="wrap">
+
+<div class="callout"><strong>What is a PFIC?</strong> A Passive Foreign Investment Company is any foreign corporation that meets either: (1) the Income Test - 75%+ of gross income is passive income (dividends, interest, rents, royalties, gains), or (2) the Asset Test - 50%+ of assets by value produce or are held to produce passive income. IRC §1297(a). Common examples: foreign mutual funds, foreign ETFs, foreign holding companies with passive investments. Canadian TFSAs and certain Israeli Keren Hishtalmut accounts may also trigger PFIC rules. The tax consequences of PFIC ownership without proper elections are severe.</div>
+
+<!-- Step 1: Entity -->
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Foreign Entity Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Entity Type</label>
+        <select class="fc" id="entityType" onchange="calc()">
+          <option value="fund">Foreign mutual fund / investment fund</option>
+          <option value="etf">Foreign ETF (exchange-listed)</option>
+          <option value="holdco">Foreign holding company</option>
+          <option value="bank">Foreign bank or insurance company</option>
+          <option value="operating">Foreign operating company</option>
+          <option value="other">Other foreign corporation</option>
+        </select>
+        <div class="hint">Foreign mutual funds and ETFs are almost always PFICs. Foreign operating companies depend on the income and asset tests.</div>
+      </div>
+      <div class="f1"><label>Country of Incorporation</label>
+        <select class="fc" id="country" onchange="calc()">
+          <option value="canada">Canada</option>
+          <option value="ireland">Ireland / Luxembourg (EU fund domicile)</option>
+          <option value="israel">Israel</option>
+          <option value="uk">United Kingdom</option>
+          <option value="germany">Germany</option>
+          <option value="cayman">Cayman Islands / BVI</option>
+          <option value="cyprus">Cyprus</option>
+          <option value="switzerland">Switzerland</option>
+          <option value="russia">Russia</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="f1"><label>Is this also a CFC?</label>
+        <select class="fc" id="isCFC" onchange="calc()">
+          <option value="no">No - not a Controlled Foreign Corporation</option>
+          <option value="yes">Yes - US persons own >50% (vote or value)</option>
+          <option value="unsure">Unsure</option>
+        </select>
+        <div class="hint">If CFC, the PFIC overlap rule under IRC §1297(d) may prevent the §1291 excess distribution regime from applying to US shareholders subject to Subpart F.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Is Stock Traded on a Recognized Exchange?</label>
+        <select class="fc" id="marketable" onchange="calc()">
+          <option value="yes">Yes - listed on NYSE, NASDAQ, LSE, TSX, or recognized exchange</option>
+          <option value="no">No - private fund, private company, or OTC only</option>
+        </select>
+        <div class="hint">Marketability is required for the Mark-to-Market (MTM) election under IRC §1296. Non-marketable PFICs cannot elect MTM.</div>
+      </div>
+      <div class="f1"><label>Is a PFIC Annual Statement Available?</label>
+        <select class="fc" id="annualStatement" onchange="calc()">
+          <option value="yes">Yes - fund provides annual PFIC statement (ordinary income + net capital gain per share)</option>
+          <option value="no">No - fund does not provide a PFIC statement</option>
+        </select>
+        <div class="hint">QEF election under IRC §1295 requires the fund to furnish an annual PFIC statement. Most foreign funds do not provide this.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 2: PFIC Tests -->
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>PFIC Status Tests &nbsp;&bull;&nbsp; IRC §1297(a)</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1">
+        <label>Income Test: % of Gross Income That Is Passive</label>
+        <div class="slider-row">
+          <input type="range" id="incomeTest" min="0" max="100" value="80" oninput="document.getElementById('incomeTestVal').textContent=this.value+'%';calc()">
+          <span class="slider-val" id="incomeTestVal">80%</span>
+        </div>
+        <div class="hint">Passive income = dividends, interest, rents, royalties, annuities, net gain from passive property. IRC §1297(b). PFIC threshold: 75%+.</div>
+      </div>
+      <div class="f1">
+        <label>Asset Test: % of Assets That Are Passive (by FMV)</label>
+        <div class="slider-row">
+          <input type="range" id="assetTest" min="0" max="100" value="70" oninput="document.getElementById('assetTestVal').textContent=this.value+'%';calc()">
+          <span class="slider-val" id="assetTestVal">70%</span>
+        </div>
+        <div class="hint">Passive assets = assets that produce or are held to produce passive income. PFIC threshold: 50%+. IRC §1297(a)(2).</div>
+      </div>
+    </div>
+    <div id="testResults"></div>
+  </div>
+</div>
+
+<!-- Step 3: Investment Details -->
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Investment Details</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Cost Basis (Total Investment) ($)</label>
+        <input type="number" class="fc" id="basis" value="50000" oninput="calc()">
+        <div class="hint">Total amount paid for the PFIC shares (USD)</div>
+      </div>
+      <div class="f1"><label>Current Fair Market Value ($)</label>
+        <input type="number" class="fc" id="fmv" value="75000" oninput="calc()">
+        <div class="hint">Current FMV of your PFIC holding (USD)</div>
+      </div>
+      <div class="f1"><label>Years Held</label>
+        <input type="number" class="fc" id="years" value="5" min="1" max="40" oninput="calc()">
+        <div class="hint">Number of tax years held (including current year)</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Distributions Received This Year ($)</label>
+        <input type="number" class="fc" id="distributions" value="3000" oninput="calc()">
+        <div class="hint">Total distributions (dividends, returns of capital) received in the current tax year</div>
+      </div>
+      <div class="f1"><label>Prior 3-Year Average Annual Distribution ($)</label>
+        <input type="number" class="fc" id="priorAvgDist" value="2000" oninput="calc()">
+        <div class="hint">Average of distributions received in the 3 prior tax years. Used to calculate excess distributions. IRC §1291(b)(2).</div>
+      </div>
+      <div class="f1"><label>Current Tax Year (for interest calculation)</label>
+        <select class="fc" id="taxYear" onchange="calc()">
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024">2024</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 4: Results -->
+<div class="card">
+  <div class="ch"><div class="sb">4</div><h2>Results & Regime Comparison</h2></div>
+  <div class="cb" id="results">
+    <div style="text-align:center;color:var(--ink-60);padding:20px">Complete the fields above to see your analysis.</div>
+  </div>
+</div>
+
+</div>
+
+<!-- Related tools -->
+<div class="related">
+  <div style="max-width:960px;margin:0 auto">
+    <div class="related-label">Related Tools & Guides on CPA Validated</div>
+    <div class="related-links">
+      <a href="form-5471-checker.html" class="rl">CFC / Form 5471 Checker</a>
+      <a href="fbar-checker.html" class="rl">FBAR & Form 8938 Checker</a>
+      <a href="form-5472.html" class="rl">Form 5472 Analyzer</a>
+      <a href="ftc-calculator.html" class="rl">Foreign Tax Credit Calculator</a>
+      <a href="pre-immigration-planning.html" class="rl">Pre-Immigration Planning Guide</a>
+      <a href="gilti-explained.html" class="rl">GILTI Explained</a>
+      <a href="streamlined-checker.html" class="rl">Streamlined Procedures Checker</a>
+      <a href="foreign-pension-reporting.html" class="rl">Foreign Pension Reporting</a>
+      <a href="vetted-resources.html" class="rl">Vetted Resources</a>
+    </div>
+  </div>
+</div>
+
+<script>
 function fmt(n){if(n===undefined||n===null) return '$0'; const abs=Math.abs(Math.round(n)); return (n<0?'-':'')+'$'+abs.toLocaleString('en-US');}
 function pct(n){return (n*100).toFixed(1)+'%';}
-function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;} function calc(){ const entityType = document.getElementById('entityType').value; const country = document.getElementById('country').value; const isCFC = document.getElementById('isCFC').value; const marketable = document.getElementById('marketable').value; const annualStmt = document.getElementById('annualStatement').value; const incomeTest = parseInt(document.getElementById('incomeTest').value); const assetTest = parseInt(document.getElementById('assetTest').value); const basis = parseFloat(document.getElementById('basis').value)||0; const fmv = parseFloat(document.getElementById('fmv').value)||0; const years = parseInt(document.getElementById('years').value)||1; const distributions = parseFloat(document.getElementById('distributions').value)||0; const priorAvgDist = parseFloat(document.getElementById('priorAvgDist').value)||0; const gain = Math.max(0, fmv - basis); const incomePass = incomeTest >= 75; const assetPass = assetTest >= 50; const isPFIC = incomePass || assetPass; // Test result boxes const testHTML = `<div class="test-grid"> <div class="test-box ${incomeTest>=75?'fail':'pass'}"> <div class="test-label">Income Test &nbsp;·&nbsp; IRC §1297(a)(1)</div> <div class="test-val">${incomeTest}%</div> <div class="test-verdict">${incomeTest>=75?'PFIC - Threshold Exceeded (75%+)':'Below PFIC Threshold (under 75%)'}</div> <div style="font-size:11px;color:var(--ink-60);margin-top:6px">Threshold: 75% of gross income must be passive</div> </div> <div class="test-box ${assetTest>=50?'fail':'pass'}"> <div class="test-label">Asset Test &nbsp;·&nbsp; IRC §1297(a)(2)</div> <div class="test-val">${assetTest}%</div> <div class="test-verdict">${assetTest>=50?'PFIC - Threshold Exceeded (50%+)':'Below PFIC Threshold (under 50%)'}</div> <div style="font-size:11px;color:var(--ink-60);margin-top:6px">Threshold: 50% of assets must be passive by FMV</div> </div> </div>`; document.getElementById('testResults').innerHTML = testHTML; if(!isPFIC){ document.getElementById('results').innerHTML = ` <div class="verdict-banner not-pfic"><div class="vb-icon">✓</div><div><div class="vb-title">Not a PFIC - Under Both Thresholds</div><div class="vb-sub">Neither the income test (${incomeTest}% vs. 75% threshold) nor the asset test (${assetTest}% vs. 50% threshold) is met. No PFIC regime applies. However, verify annually - PFIC status is re-tested each tax year and can change if the entity's income or asset composition changes. IRC §1297(a).</div></div></div> ${flag('blue','ℹ','<strong>Monitor annually.</strong> PFIC status is re-determined each tax year. A corporation that was not a PFIC in year 1 can become a PFIC in year 2. If an entity becomes a PFIC after a US person has already held stock, the shareholder is subject to the look-back rules of IRC §1291 on any gain attributable to years when it was a PFIC. IRC §1298(b)(1).')} ${flag('blue','ℹ','<strong>Form 8621 may still be required.</strong> Even if the entity is not currently a PFIC, Form 8621 may be required if the shareholder received distributions, sold shares, or held stock in a prior-year PFIC. Confirm with the full Form 8621 instructions.')} <div class="src">IRC §1297(a) (PFIC income and asset tests); IRC §1298(b)(1) (once-a-PFIC-always-a-PFIC rule); Form 8621 Instructions (2025).</div>`; return; } // PFIC - calculate all three regimes // ─── §1291 Excess Distribution ─── const excessDist = Math.max(0, distributions - (1.25 * priorAvgDist)); const regularDist = distributions - excessDist; const excessDistTaxRate = 0.37; // highest ordinary rate const interestRateApprox = 0.08; // approximate §6621 rate // Spread excess over holding period, apply tax + interest const excessPerYear = excessDist / years; let sect1291TaxTotal = 0; for(let y = years; y >= 1; y--){ const yearTax = excessPerYear * excessDistTaxRate; const yearsAgo = years - y; const interest = yearTax * interestRateApprox * yearsAgo; sect1291TaxTotal += yearTax + interest; } // Also handle gain on disposition using same method const gainPerYear = gain / years; let sect1291GainTax = 0; for(let y = years; y >= 1; y--){ const yearGainTax = gainPerYear * excessDistTaxRate; const yearsAgo = years - y; const interest = yearGainTax * interestRateApprox * yearsAgo; sect1291GainTax += yearGainTax + interest; } const regularDistTax = regularDist * 0.20; // qualified rate (simplified) const sect1291Total = sect1291TaxTotal + sect1291GainTax + regularDistTax; const sect1291Available = true; // ─── QEF Election §1293-1295 ─── const qefAvailable = annualStmt === 'yes'; // QEF: include ordinary income + net cap gain annually, taxed at regular rates // Simplified: if gain exists, assume proportional ordinary/cap gain split const qefOrdinaryRate = 0.37; const qefCapGainRate = 0.20; // Without knowing actual QEF statements, estimate total inclusion similar to current gain + distributions const qefEstIncome = distributions + (gain / years); // rough annual inclusion const qefTax = qefAvailable ? (qefEstIncome * 0.28) : null; // blended estimate const qefTotalEst = qefAvailable ? (qefEstIncome * 0.28 * years * 0.6) : null; // rough total // ─── Mark-to-Market §1296 ─── const mtmAvailable = marketable === 'yes'; // MTM: annual mark to FMV, gain = ordinary income, loss = ordinary to extent of prior gains const annualAppreciation = gain / years; // simplified linear appreciation const mtmRate = 0.37; // ordinary income rate const mtmAnnualTax = annualAppreciation * mtmRate; const mtmTotalEst = mtmAvailable ? (mtmAnnualTax * years) : null; // Determine best regime (lowest estimated tax) const regimeData = [ { id:'1291', name:'Excess Distribution', irc:'IRC §1291', available:true, tax:sect1291Total, desc:'Default regime. Punitive interest charge. Gain on sale treated as excess distribution spread over holding period.', caveat:'No election required - automatic if no other election made.' }, { id:'qef', name:'QEF Election', irc:'IRC §1293-1295', available:qefAvailable, tax:qefTotalEst, desc:'Include pro-rata share of PFIC ordinary income and capital gain annually. Clean exit - no §1291 on later disposition if QEF from start.', caveat:qefAvailable?'Requires annual PFIC statement from fund.':'Not available - fund does not provide annual PFIC statement.' }, { id:'mtm', name:'Mark-to-Market', irc:'IRC §1296', available:mtmAvailable, tax:mtmTotalEst, desc:'Annual mark to FMV. All gain treated as ordinary income. No §1291 interest charge. Only for marketable stock.', caveat:mtmAvailable?'Only available for marketable PFIC stock (listed on recognized exchange).':'Not available - stock is not traded on a recognized exchange.' }, ]; const availableRegimes = regimeData.filter(r => r.available && r.tax !== null); const bestRegime = availableRegimes.length > 0 ? availableRegimes.reduce((a,b) => a.tax < b.tax ? a : b) : null; let h = ''; // Verdict h += `<div class="verdict-banner pfic"><div class="vb-icon">!</div><div><div class="vb-title">PFIC Status Confirmed</div><div class="vb-sub">${incomePass?`Income test: ${incomeTest}% - exceeds 75% threshold. `:''}${assetPass?`Asset test: ${assetTest}% - exceeds 50% threshold.`:''} IRC §1297(a). Form 8621 filing required. Tax regime election may be available and can significantly reduce tax liability.</div></div></div>`; // Regime comparison h += `<div style="margin-bottom:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)">Tax Regime Comparison (Estimated)</div>`; h += `<div class="regime-grid">`; for(const r of regimeData){ const isBest = bestRegime && r.id === bestRegime.id; h += `<div class="regime-box ${isBest?'best':''}"> ${isBest?'<div class="best-tag">LOWEST ESTIMATED TAX</div>':''} <div class="regime-label">${r.irc}</div> <div class="regime-name">${r.name}</div> ${r.available && r.tax!==null ? `<div class="regime-tax">${fmt(r.tax)}</div>` : `<div style="font-size:14px;font-weight:600;color:var(--ink-40);margin-bottom:4px">Not Available</div>`} <div class="regime-desc">${r.desc}</div> <div style="font-size:10px;color:var(--ink-60);margin-top:8px;font-style:italic">${r.caveat}</div> </div>`; } h += `</div>`; // §1291 detail h += `<div class="sum-box"><div class="sum-title">Section 1291 Excess Distribution Detail</div> <div class="sum-row"><span class="sum-lbl">Total distributions this year</span><span class="sum-val">${fmt(distributions)}</span></div> <div class="sum-row"><span class="sum-lbl">125% of prior 3-year average (${fmt(priorAvgDist)} × 1.25)</span><span class="sum-val">${fmt(priorAvgDist*1.25)}</span></div> <div class="sum-row"><span class="sum-lbl">Excess distribution (taxed at 37% + interest)</span><span class="sum-val red">${fmt(excessDist)}</span></div> <div class="sum-row"><span class="sum-lbl">Regular distribution (taxed at preferential rates)</span><span class="sum-val">${fmt(regularDist)}</span></div> <div class="sum-row"><span class="sum-lbl">Unrealized gain (if disposed this year)</span><span class="sum-val">${fmt(gain)}</span></div> <div class="sum-row"><span class="sum-lbl">Holding period</span><span class="sum-val">${years} year${years>1?'s':''}</span></div> <div class="sum-row"><span class="sum-lbl">Approx. §6621 interest rate used</span><span class="sum-val">8.0% (estimated)</span></div> <div class="sum-row"><span class="sum-lbl"><strong>Estimated total §1291 tax + interest charge</strong></span><span class="sum-val red">${fmt(sect1291Total)}</span></div> </div>`; // Form 8621 filing requirements h += `<div class="form-req"><div class="fr-title">Form 8621 Filing Requirements</div>`; const triggers = [ 'Receives a distribution from a PFIC', 'Recognizes gain on a direct or indirect disposition of PFIC stock', 'Makes an election applicable to a PFIC (QEF, MTM, §1294 election)', 'Receives an excess distribution', 'Is a shareholder of a PFIC that is a CFC (overlap rule)', distributions > 0 ? 'You received distributions this year - Form 8621 required' : null, gain > 0 ? 'Unrealized gain exists - Form 8621 required on disposition' : null, ].filter(Boolean); triggers.forEach(t => { h += `<div class="fr-item"><span class="fr-check">&#9679;</span><span>${t}</span></div>`; }); h += `</div>`; // Flags if(isCFC === 'yes'){ h += flag('amber','!','<strong>CFC / PFIC overlap rule applies (IRC §1297(d)).</strong> If a foreign corporation is both a PFIC and a CFC, US shareholders subject to Subpart F generally cannot use the §1291 excess distribution regime for the years the corporation qualifies as a CFC. The QEF or MTM election may still be made. The interaction of Subpart F and PFIC rules is complex and fact-specific. Verify with qualified counsel.'); } if(country === 'canada'){ h += flag('amber','!','<strong>Canadian TFSAs and some Canadian funds.</strong> Canadian Tax-Free Savings Accounts (TFSAs) holding foreign securities, and many Canadian mutual funds, are PFICs under US law. The TFSA wrapper provides no US tax benefit - the US-Canada treaty does not protect TFSAs. This is one of the most common PFIC traps for US persons living in or connected to Canada.'); } if(country === 'israel'){ h += flag('blue','ℹ','<strong>Israeli Keren Hishtalmut.</strong> Some Israeli training funds (Keren Hishtalmut) may be PFICs depending on how they are invested. The US-Israel tax treaty does not resolve PFIC treatment. Analyze the underlying investments in the fund using the income and asset tests.'); } if(!qefAvailable){ h += flag('blue','ℹ','<strong>No PFIC annual statement available - QEF election not available.</strong> Most foreign funds do not provide annual PFIC statements as required by Treas. Reg. §1.1295-1(g). Without the statement, the QEF election cannot be made and the taxpayer is generally stuck with the §1291 excess distribution regime (or MTM if the fund is marketable). When selecting foreign funds, availability of a PFIC annual statement is a key due diligence item.'); } if(years > 5){ h += flag('red','!',`<strong>Long holding period magnifies §1291 interest charges.</strong> With ${years} years of holding, the §6621 interest charge on back-year taxes significantly increases the total tax cost under §1291. The longer the holding period, the more punitive the default regime becomes relative to QEF or MTM. If a QEF or MTM election is still available (including a retroactive "purging election"), the total cost comparison may justify the election even with associated recognition events.`); } h += flag('amber','!','<strong>Purging election (§1298(b)(1)).</strong> A shareholder who held PFIC stock before making a QEF or MTM election may make a "purging election" - recognizing gain on the deemed sale of all PFIC stock, paying tax and interest on that gain under §1291, and starting fresh with a clean QEF or MTM basis. This is often worth analyzing when transitioning from the default §1291 regime.'); h += `<div class="src">Authority: IRC §1291 (excess distribution tax and interest charge); IRC §1291(b)(2) (excess distribution definition: amount exceeding 125% of prior 3-year average); IRC §1293 (QEF inclusion of ordinary income and net capital gain); IRC §1295 (QEF election and annual PFIC statement requirement); Treas. Reg. §1.1295-1(g) (annual statement requirements for QEF); IRC §1296 (mark-to-market election for marketable PFIC stock); IRC §1297(a) (PFIC income and asset tests - 75% and 50% thresholds); IRC §1297(b) (passive income definition); IRC §1297(d) (CFC/PFIC overlap rule); IRC §1298(b)(1) (once-a-PFIC-always-a-PFIC rule); IRC §1298(b)(2) (start-up exception); Form 8621 Instructions (2025 edition); Treas. Reg. §1.1291-1 through §1.1298-4.</div>`; h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`; h += `<div class="disc">Estimates only. The §1291 interest charge uses an approximated §6621 rate; actual calculation requires the exact underpayment rate for each year in the holding period. The QEF and MTM estimates are simplified. PFIC analysis is highly fact-specific and complex. Consult a qualified international tax professional before making any election.</div>`; document.getElementById('results').innerHTML = h;
-} calc();
-</script> </body>
+function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
+
+function calc(){
+  const entityType = document.getElementById('entityType').value;
+  const country    = document.getElementById('country').value;
+  const isCFC      = document.getElementById('isCFC').value;
+  const marketable = document.getElementById('marketable').value;
+  const annualStmt = document.getElementById('annualStatement').value;
+  const incomeTest = parseInt(document.getElementById('incomeTest').value);
+  const assetTest  = parseInt(document.getElementById('assetTest').value);
+  const basis      = parseFloat(document.getElementById('basis').value)||0;
+  const fmv        = parseFloat(document.getElementById('fmv').value)||0;
+  const years      = parseInt(document.getElementById('years').value)||1;
+  const distributions = parseFloat(document.getElementById('distributions').value)||0;
+  const priorAvgDist  = parseFloat(document.getElementById('priorAvgDist').value)||0;
+
+  const gain = Math.max(0, fmv - basis);
+  const incomePass = incomeTest >= 75;
+  const assetPass  = assetTest >= 50;
+  const isPFIC     = incomePass || assetPass;
+
+  // Test result boxes
+  const testHTML = `<div class="test-grid">
+    <div class="test-box ${incomeTest>=75?'fail':'pass'}">
+      <div class="test-label">Income Test &nbsp;·&nbsp; IRC §1297(a)(1)</div>
+      <div class="test-val">${incomeTest}%</div>
+      <div class="test-verdict">${incomeTest>=75?'PFIC - Threshold Exceeded (75%+)':'Below PFIC Threshold (under 75%)'}</div>
+      <div style="font-size:11px;color:var(--ink-60);margin-top:6px">Threshold: 75% of gross income must be passive</div>
+    </div>
+    <div class="test-box ${assetTest>=50?'fail':'pass'}">
+      <div class="test-label">Asset Test &nbsp;·&nbsp; IRC §1297(a)(2)</div>
+      <div class="test-val">${assetTest}%</div>
+      <div class="test-verdict">${assetTest>=50?'PFIC - Threshold Exceeded (50%+)':'Below PFIC Threshold (under 50%)'}</div>
+      <div style="font-size:11px;color:var(--ink-60);margin-top:6px">Threshold: 50% of assets must be passive by FMV</div>
+    </div>
+  </div>`;
+  document.getElementById('testResults').innerHTML = testHTML;
+
+  if(!isPFIC){
+    document.getElementById('results').innerHTML = `
+      <div class="verdict-banner not-pfic"><div class="vb-icon">✓</div><div><div class="vb-title">Not a PFIC - Under Both Thresholds</div><div class="vb-sub">Neither the income test (${incomeTest}% vs. 75% threshold) nor the asset test (${assetTest}% vs. 50% threshold) is met. No PFIC regime applies. However, verify annually - PFIC status is re-tested each tax year and can change if the entity's income or asset composition changes. IRC §1297(a).</div></div></div>
+      ${flag('blue','ℹ','<strong>Monitor annually.</strong> PFIC status is re-determined each tax year. A corporation that was not a PFIC in year 1 can become a PFIC in year 2. If an entity becomes a PFIC after a US person has already held stock, the shareholder is subject to the look-back rules of IRC §1291 on any gain attributable to years when it was a PFIC. IRC §1298(b)(1).')}
+      ${flag('blue','ℹ','<strong>Form 8621 may still be required.</strong> Even if the entity is not currently a PFIC, Form 8621 may be required if the shareholder received distributions, sold shares, or held stock in a prior-year PFIC. Confirm with the full Form 8621 instructions.')}
+      <div class="src">IRC §1297(a) (PFIC income and asset tests); IRC §1298(b)(1) (once-a-PFIC-always-a-PFIC rule); Form 8621 Instructions (2025).</div>`;
+    return;
+  }
+
+  // PFIC - calculate all three regimes
+  // ─── §1291 Excess Distribution ───
+  const excessDist = Math.max(0, distributions - (1.25 * priorAvgDist));
+  const regularDist = distributions - excessDist;
+  const excessDistTaxRate = 0.37; // highest ordinary rate
+  const interestRateApprox = 0.08; // approximate §6621 rate
+  // Spread excess over holding period, apply tax + interest
+  const excessPerYear = excessDist / years;
+  let sect1291TaxTotal = 0;
+  for(let y = years; y >= 1; y--){
+    const yearTax = excessPerYear * excessDistTaxRate;
+    const yearsAgo = years - y;
+    const interest = yearTax * interestRateApprox * yearsAgo;
+    sect1291TaxTotal += yearTax + interest;
+  }
+  // Also handle gain on disposition using same method
+  const gainPerYear = gain / years;
+  let sect1291GainTax = 0;
+  for(let y = years; y >= 1; y--){
+    const yearGainTax = gainPerYear * excessDistTaxRate;
+    const yearsAgo = years - y;
+    const interest = yearGainTax * interestRateApprox * yearsAgo;
+    sect1291GainTax += yearGainTax + interest;
+  }
+  const regularDistTax = regularDist * 0.20; // qualified rate (simplified)
+  const sect1291Total = sect1291TaxTotal + sect1291GainTax + regularDistTax;
+  const sect1291Available = true;
+
+  // ─── QEF Election §1293-1295 ───
+  const qefAvailable = annualStmt === 'yes';
+  // QEF: include ordinary income + net cap gain annually, taxed at regular rates
+  // Simplified: if gain exists, assume proportional ordinary/cap gain split
+  const qefOrdinaryRate = 0.37;
+  const qefCapGainRate = 0.20;
+  // Without knowing actual QEF statements, estimate total inclusion similar to current gain + distributions
+  const qefEstIncome = distributions + (gain / years); // rough annual inclusion
+  const qefTax = qefAvailable ? (qefEstIncome * 0.28) : null; // blended estimate
+  const qefTotalEst = qefAvailable ? (qefEstIncome * 0.28 * years * 0.6) : null; // rough total
+
+  // ─── Mark-to-Market §1296 ───
+  const mtmAvailable = marketable === 'yes';
+  // MTM: annual mark to FMV, gain = ordinary income, loss = ordinary to extent of prior gains
+  const annualAppreciation = gain / years; // simplified linear appreciation
+  const mtmRate = 0.37; // ordinary income rate
+  const mtmAnnualTax = annualAppreciation * mtmRate;
+  const mtmTotalEst = mtmAvailable ? (mtmAnnualTax * years) : null;
+
+  // Determine best regime (lowest estimated tax)
+  const regimeData = [
+    { id:'1291', name:'Excess Distribution', irc:'IRC §1291', available:true, tax:sect1291Total, desc:'Default regime. Punitive interest charge. Gain on sale treated as excess distribution spread over holding period.', caveat:'No election required - automatic if no other election made.' },
+    { id:'qef',  name:'QEF Election', irc:'IRC §1293-1295', available:qefAvailable, tax:qefTotalEst, desc:'Include pro-rata share of PFIC ordinary income and capital gain annually. Clean exit - no §1291 on later disposition if QEF from start.', caveat:qefAvailable?'Requires annual PFIC statement from fund.':'Not available - fund does not provide annual PFIC statement.' },
+    { id:'mtm',  name:'Mark-to-Market', irc:'IRC §1296', available:mtmAvailable, tax:mtmTotalEst, desc:'Annual mark to FMV. All gain treated as ordinary income. No §1291 interest charge. Only for marketable stock.', caveat:mtmAvailable?'Only available for marketable PFIC stock (listed on recognized exchange).':'Not available - stock is not traded on a recognized exchange.' },
+  ];
+
+  const availableRegimes = regimeData.filter(r => r.available && r.tax !== null);
+  const bestRegime = availableRegimes.length > 0 ? availableRegimes.reduce((a,b) => a.tax < b.tax ? a : b) : null;
+
+  let h = '';
+
+  // Verdict
+  h += `<div class="verdict-banner pfic"><div class="vb-icon">!</div><div><div class="vb-title">PFIC Status Confirmed</div><div class="vb-sub">${incomePass?`Income test: ${incomeTest}% - exceeds 75% threshold. `:''}${assetPass?`Asset test: ${assetTest}% - exceeds 50% threshold.`:''} IRC §1297(a). Form 8621 filing required. Tax regime election may be available and can significantly reduce tax liability.</div></div></div>`;
+
+  // Regime comparison
+  h += `<div style="margin-bottom:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)">Tax Regime Comparison (Estimated)</div>`;
+  h += `<div class="regime-grid">`;
+  for(const r of regimeData){
+    const isBest = bestRegime && r.id === bestRegime.id;
+    h += `<div class="regime-box ${isBest?'best':''}">
+      ${isBest?'<div class="best-tag">LOWEST ESTIMATED TAX</div>':''}
+      <div class="regime-label">${r.irc}</div>
+      <div class="regime-name">${r.name}</div>
+      ${r.available && r.tax!==null ? `<div class="regime-tax">${fmt(r.tax)}</div>` : `<div style="font-size:14px;font-weight:600;color:var(--ink-40);margin-bottom:4px">Not Available</div>`}
+      <div class="regime-desc">${r.desc}</div>
+      <div style="font-size:10px;color:var(--ink-60);margin-top:8px;font-style:italic">${r.caveat}</div>
+    </div>`;
+  }
+  h += `</div>`;
+
+  // §1291 detail
+  h += `<div class="sum-box"><div class="sum-title">Section 1291 Excess Distribution Detail</div>
+    <div class="sum-row"><span class="sum-lbl">Total distributions this year</span><span class="sum-val">${fmt(distributions)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">125% of prior 3-year average (${fmt(priorAvgDist)} × 1.25)</span><span class="sum-val">${fmt(priorAvgDist*1.25)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Excess distribution (taxed at 37% + interest)</span><span class="sum-val red">${fmt(excessDist)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Regular distribution (taxed at preferential rates)</span><span class="sum-val">${fmt(regularDist)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Unrealized gain (if disposed this year)</span><span class="sum-val">${fmt(gain)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Holding period</span><span class="sum-val">${years} year${years>1?'s':''}</span></div>
+    <div class="sum-row"><span class="sum-lbl">Approx. §6621 interest rate used</span><span class="sum-val">8.0% (estimated)</span></div>
+    <div class="sum-row"><span class="sum-lbl"><strong>Estimated total §1291 tax + interest charge</strong></span><span class="sum-val red">${fmt(sect1291Total)}</span></div>
+  </div>`;
+
+  // Form 8621 filing requirements
+  h += `<div class="form-req"><div class="fr-title">Form 8621 Filing Requirements</div>`;
+  const triggers = [
+    'Receives a distribution from a PFIC',
+    'Recognizes gain on a direct or indirect disposition of PFIC stock',
+    'Makes an election applicable to a PFIC (QEF, MTM, §1294 election)',
+    'Receives an excess distribution',
+    'Is a shareholder of a PFIC that is a CFC (overlap rule)',
+    distributions > 0 ? 'You received distributions this year - Form 8621 required' : null,
+    gain > 0 ? 'Unrealized gain exists - Form 8621 required on disposition' : null,
+  ].filter(Boolean);
+  triggers.forEach(t => { h += `<div class="fr-item"><span class="fr-check">&#9679;</span><span>${t}</span></div>`; });
+  h += `</div>`;
+
+  // Flags
+  if(isCFC === 'yes'){
+    h += flag('amber','!','<strong>CFC / PFIC overlap rule applies (IRC §1297(d)).</strong> If a foreign corporation is both a PFIC and a CFC, US shareholders subject to Subpart F generally cannot use the §1291 excess distribution regime for the years the corporation qualifies as a CFC. The QEF or MTM election may still be made. The interaction of Subpart F and PFIC rules is complex and fact-specific. Verify with qualified counsel.');
+  }
+  if(country === 'canada'){
+    h += flag('amber','!','<strong>Canadian TFSAs and some Canadian funds.</strong> Canadian Tax-Free Savings Accounts (TFSAs) holding foreign securities, and many Canadian mutual funds, are PFICs under US law. The TFSA wrapper provides no US tax benefit - the US-Canada treaty does not protect TFSAs. This is one of the most common PFIC traps for US persons living in or connected to Canada.');
+  }
+  if(country === 'israel'){
+    h += flag('blue','ℹ','<strong>Israeli Keren Hishtalmut.</strong> Some Israeli training funds (Keren Hishtalmut) may be PFICs depending on how they are invested. The US-Israel tax treaty does not resolve PFIC treatment. Analyze the underlying investments in the fund using the income and asset tests.');
+  }
+  if(!qefAvailable){
+    h += flag('blue','ℹ','<strong>No PFIC annual statement available - QEF election not available.</strong> Most foreign funds do not provide annual PFIC statements as required by Treas. Reg. §1.1295-1(g). Without the statement, the QEF election cannot be made and the taxpayer is generally stuck with the §1291 excess distribution regime (or MTM if the fund is marketable). When selecting foreign funds, availability of a PFIC annual statement is a key due diligence item.');
+  }
+  if(years > 5){
+    h += flag('red','!',`<strong>Long holding period magnifies §1291 interest charges.</strong> With ${years} years of holding, the §6621 interest charge on back-year taxes significantly increases the total tax cost under §1291. The longer the holding period, the more punitive the default regime becomes relative to QEF or MTM. If a QEF or MTM election is still available (including a retroactive "purging election"), the total cost comparison may justify the election even with associated recognition events.`);
+  }
+
+  h += flag('amber','!','<strong>Purging election (§1298(b)(1)).</strong> A shareholder who held PFIC stock before making a QEF or MTM election may make a "purging election" - recognizing gain on the deemed sale of all PFIC stock, paying tax and interest on that gain under §1291, and starting fresh with a clean QEF or MTM basis. This is often worth analyzing when transitioning from the default §1291 regime.');
+
+  h += `<div class="src">Authority: IRC §1291 (excess distribution tax and interest charge); IRC §1291(b)(2) (excess distribution definition: amount exceeding 125% of prior 3-year average); IRC §1293 (QEF inclusion of ordinary income and net capital gain); IRC §1295 (QEF election and annual PFIC statement requirement); Treas. Reg. §1.1295-1(g) (annual statement requirements for QEF); IRC §1296 (mark-to-market election for marketable PFIC stock); IRC §1297(a) (PFIC income and asset tests - 75% and 50% thresholds); IRC §1297(b) (passive income definition); IRC §1297(d) (CFC/PFIC overlap rule); IRC §1298(b)(1) (once-a-PFIC-always-a-PFIC rule); IRC §1298(b)(2) (start-up exception); Form 8621 Instructions (2025 edition); Treas. Reg. §1.1291-1 through §1.1298-4.</div>`;
+  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += `<div class="disc">Estimates only. The §1291 interest charge uses an approximated §6621 rate; actual calculation requires the exact underpayment rate for each year in the holding period. The QEF and MTM estimates are simplified. PFIC analysis is highly fact-specific and complex. Consult a qualified international tax professional before making any election. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>`;
+
+  document.getElementById('results').innerHTML = h;
+}
+
+calc();
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
