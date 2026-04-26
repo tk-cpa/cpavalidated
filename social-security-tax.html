@@ -59,22 +59,186 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Social Security Benefit Taxation Calculator 2026</h1> <div class="sub">How much of your Social Security benefit is taxable? Combined income formula, 0/50/85% inclusion tiers, impact of IRA withdrawals and Roth conversions on SS taxation.</div> <div class="badges"><span class="badge">IRC 86 - SS benefit taxation</span><span class="badge">Combined income formula</span><span class="badge">Not inflation-adjusted since 1984</span></div>
+<div class="ph"><div class="phi">
+  <h1>Social Security Benefit Taxation Calculator 2026</h1>
+  <div class="sub">How much of your Social Security benefit is taxable? Combined income formula, 0/50/85% inclusion tiers, impact of IRA withdrawals and Roth conversions on SS taxation.</div>
+  <div class="badges"><span class="badge">IRC 86 - SS benefit taxation</span><span class="badge">Combined income formula</span><span class="badge">Not inflation-adjusted since 1984</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Income Information</h2></div> <div class="cb"> <div class="fg2"> <div class="f1"><label>Filing Status</label> <select class="fc" id="fs" onchange="calc()"> <option value="single">Single / Head of Household / Qualifying Widow(er)</option> <option value="mfj" selected>Married Filing Jointly</option> <option value="mfs">Married Filing Separately (lived with spouse)</option> </select> </div> <div class="f1"><label>Annual Social Security Benefits ($)</label> <input type="number" class="fc" id="ssBenefit" value="30000" oninput="calc()"> <div class="hint">Total SS benefits received this year (before any Medicare premium deductions). From SSA-1099 Box 5.</div> </div> </div> <div class="fg3"> <div class="f1"><label>Wages & Self-Employment Income ($)</label> <input type="number" class="fc" id="wages" value="0" oninput="calc()"> </div> <div class="f1"><label>IRA / 401(k) Distributions ($)</label> <input type="number" class="fc" id="iraDistrib" value="40000" oninput="calc()"> <div class="hint">Taxable traditional IRA, 401(k), pension distributions. Roth distributions are NOT included - they do not count toward combined income.</div> </div> <div class="f1"><label>Investment Income (Interest, Dividends, LTCG) ($)</label> <input type="number" class="fc" id="investIncome" value="15000" oninput="calc()"> <div class="hint">Taxable interest, dividends, capital gains. Tax-exempt municipal bond interest IS included in combined income even though it is not otherwise taxable. IRC 86(b)(2).</div> </div> </div> <div class="fg2"> <div class="f1"><label>Tax-Exempt Interest (Municipal Bonds) ($)</label> <input type="number" class="fc" id="taxExemptInt" value="0" oninput="calc()"> <div class="hint">Tax-exempt interest is added back for combined income purposes only. This is a trap many retirees miss - munis increase SS taxation even though the interest itself is not taxed. IRC 86(b)(2)(A).</div> </div> <div class="f1"><label>Other Income ($)</label> <input type="number" class="fc" id="otherIncome" value="0" oninput="calc()"> <div class="hint">Rental income, alimony (pre-2019 divorces), other ordinary income.</div> </div> </div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Results</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Income Information</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1"><label>Filing Status</label>
+        <select class="fc" id="fs" onchange="calc()">
+          <option value="single">Single / Head of Household / Qualifying Widow(er)</option>
+          <option value="mfj" selected>Married Filing Jointly</option>
+          <option value="mfs">Married Filing Separately (lived with spouse)</option>
+        </select>
+      </div>
+      <div class="f1"><label>Annual Social Security Benefits ($)</label>
+        <input type="number" class="fc" id="ssBenefit" value="30000" oninput="calc()">
+        <div class="hint">Total SS benefits received this year (before any Medicare premium deductions). From SSA-1099 Box 5.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Wages & Self-Employment Income ($)</label>
+        <input type="number" class="fc" id="wages" value="0" oninput="calc()">
+      </div>
+      <div class="f1"><label>IRA / 401(k) Distributions ($)</label>
+        <input type="number" class="fc" id="iraDistrib" value="40000" oninput="calc()">
+        <div class="hint">Taxable traditional IRA, 401(k), pension distributions. Roth distributions are NOT included - they do not count toward combined income.</div>
+      </div>
+      <div class="f1"><label>Investment Income (Interest, Dividends, LTCG) ($)</label>
+        <input type="number" class="fc" id="investIncome" value="15000" oninput="calc()">
+        <div class="hint">Taxable interest, dividends, capital gains. Tax-exempt municipal bond interest IS included in combined income even though it is not otherwise taxable. IRC 86(b)(2).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Tax-Exempt Interest (Municipal Bonds) ($)</label>
+        <input type="number" class="fc" id="taxExemptInt" value="0" oninput="calc()">
+        <div class="hint">Tax-exempt interest is added back for combined income purposes only. This is a trap many retirees miss - munis increase SS taxation even though the interest itself is not taxed. IRC 86(b)(2)(A).</div>
+      </div>
+      <div class="f1"><label>Other Income ($)</label>
+        <input type="number" class="fc" id="otherIncome" value="0" oninput="calc()">
+        <div class="hint">Rental income, alimony (pre-2019 divorces), other ordinary income.</div>
+      </div>
+    </div>
+  </div>
 </div>
-</div> <div class="related"><div style="max-width:860px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="roth-conversion.html" class="rl">Roth Conversion Optimizer</a> <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a> <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a> <a href="nol-tracker.html" class="rl">NOL Tracker</a> <a href="index.html" class="rl">All Tools</a>
-</div></div> <script>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:860px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="roth-conversion.html" class="rl">Roth Conversion Optimizer</a>
+  <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="nol-tracker.html" class="rl">NOL Tracker</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
 function pct(n){return Math.round(n*100)+'%';}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} // Thresholds - NOT inflation-adjusted since enacted in 1983/1993
-const T = { single: {t1lo:25000, t1hi:34000}, mfj: {t1lo:32000, t1hi:44000}, mfs: {t1lo:0, t1hi:0}, // MFS who lived with spouse: ALL benefits taxable at 85%
-}; function calc(){ const fs = document.getElementById('fs').value; const ss = parseFloat(document.getElementById('ssBenefit').value)||0; const wages = parseFloat(document.getElementById('wages').value)||0; const ira = parseFloat(document.getElementById('iraDistrib').value)||0; const invest = parseFloat(document.getElementById('investIncome').value)||0; const muni = parseFloat(document.getElementById('taxExemptInt').value)||0; const other = parseFloat(document.getElementById('otherIncome').value)||0; const agi = wages + ira + invest + other; // before SS const combinedIncome = agi + muni + (ss * 0.5); let taxableSS = 0; let tier = 0; let inclusionRate = 0; if(fs === 'mfs'){ // MFS who lived with spouse: 85% always (no base tier) taxableSS = Math.min(ss * 0.85, ss); tier = 3; inclusionRate = 0.85; } else { const {t1lo, t1hi} = T[fs]; if(combinedIncome <= t1lo){ taxableSS = 0; tier = 1; inclusionRate = 0; } else if(combinedIncome <= t1hi){ // 50% tier: 50 cents of SS taxable per dollar of combined income over T1Lo taxableSS = Math.min(ss * 0.50, (combinedIncome - t1lo) * 0.50); tier = 2; inclusionRate = taxableSS / ss; } else { // 85% tier const tier1Amount = Math.min(ss * 0.50, (t1hi - t1lo) * 0.50); const tier2Amount = Math.min(ss * 0.85 - tier1Amount, (combinedIncome - t1hi) * 0.85); taxableSS = Math.min(ss * 0.85, tier1Amount + tier2Amount); tier = 3; inclusionRate = taxableSS / ss; } } const taxFreeSSS = ss - taxableSS; const totalTaxableIncome = agi + taxableSS; const rb = document.getElementById('res'); let h = ''; // Tier visual h += `<div class="tier-visual"> <div class="tier ${tier===1?'active':''}"> <div class="tier-pct">0%</div> <div class="tier-label">Benefits not taxable</div> <div class="tier-range">${fs==='mfj'?'Combined income under $32,000':'Combined income under $25,000'}</div> </div> <div class="tier ${tier===2?'active':''}"> <div class="tier-pct">50%</div> <div class="tier-label">Up to 50% taxable</div> <div class="tier-range">${fs==='mfj'?'$32,000 - $44,000':'$25,000 - $34,000'}</div> </div> <div class="tier ${tier===3?'active':''}"> <div class="tier-pct">85%</div> <div class="tier-label">Up to 85% taxable</div> <div class="tier-range">${fs==='mfj'?'Over $44,000':'Over $34,000'}</div> </div> </div>`; h += `<div class="sum-box"><div class="sum-title">Combined Income Formula - IRC 86</div> <div class="srow"><span class="sl">Wages + self-employment income</span><span class="sv">${fmt(wages)}</span></div> <div class="srow"><span class="sl">IRA / 401(k) / pension distributions</span><span class="sv">${fmt(ira)}</span></div> <div class="srow"><span class="sl">Investment income (taxable)</span><span class="sv">${fmt(invest)}</span></div> <div class="srow"><span class="sl">Other income</span><span class="sv">${fmt(other)}</span></div> <div class="srow"><span class="sl">= Adjusted gross income (before SS)</span><span class="sv">${fmt(agi)}</span></div> <div class="srow"><span class="sl">+ Tax-exempt (municipal) interest - added back</span><span class="sv ${muni>0?'amber':''}">${fmt(muni)}</span></div> <div class="srow"><span class="sl">+ 50% of Social Security benefit (${fmt(ss)} x 50%)</span><span class="sv">${fmt(ss*0.5)}</span></div> <div class="srow"><span class="sl">= Combined income (IRC 86 test)</span><span class="sv coral">${fmt(combinedIncome)}</span></div> <div class="srow"><span class="sl">Threshold for ${fs==='mfj'?'MFJ':fs==='mfs'?'MFS':fs==='single'?'Single':''} filers</span><span class="sv">${fs==='mfs'?'N/A - 85% automatic':fmt(T[fs]?.t1lo||0)+' / '+fmt(T[fs]?.t1hi||0)}</span></div> <div class="srow"><span class="sl">Taxable Social Security (${pct(inclusionRate)} inclusion)</span><span class="sv ${taxableSS>0?'amber':'green'}">${fmt(taxableSS)}</span></div> <div class="srow"><span class="sl">Tax-free Social Security</span><span class="sv green">${fmt(taxFreeSSS)}</span></div> <div class="srow"><span class="sl">Total taxable income (AGI + taxable SS)</span><span class="sv">${fmt(totalTaxableIncome)}</span></div> </div>`; if(tier === 1) h += flag('green','v',`<strong>No Social Security benefits are taxable.</strong> Combined income of ${fmt(combinedIncome)} is below the ${fmt(T[fs].t1lo)} threshold. All ${fmt(ss)} of SS benefits are tax-free. Monitor income carefully - one additional dollar of IRA withdrawal can trigger SS taxation.`); if(tier === 2) h += flag('amber','!',`<strong>${pct(inclusionRate)} of SS benefits are taxable.</strong> Combined income of ${fmt(combinedIncome)} falls in the 50% inclusion tier. Each additional $1 of income increases taxable SS by $0.50 - creating an effective marginal rate increase on new income.`); if(tier === 3) h += flag('red','!',`<strong>85% of SS benefits are taxable</strong> (the maximum). Combined income of ${fmt(combinedIncome)} exceeds the upper threshold. In this tier, each additional $1.00 of income adds $0.85 to taxable SS - the effective marginal rate on new income is your regular rate multiplied by 1.85.`); if(muni > 0) h += flag('amber','!',`<strong>Municipal bond interest of ${fmt(muni)} increases Social Security taxation.</strong> Although muni interest is itself tax-exempt, it is added to combined income under IRC 86(b)(2)(A) and can push you into a higher SS taxation tier. This is one of the most counterintuitive tax rules for retirees - munis are not truly "tax-free" if you receive Social Security.`); if(ira > 0 && tier >= 2) h += flag('blue','i',`<strong>Roth conversion strategy.</strong> Traditional IRA distributions of ${fmt(ira)} are increasing your combined income and SS taxation. Consider converting traditional IRA funds to Roth before claiming SS benefits. Roth distributions do NOT count toward combined income - they are invisible to the SS taxation formula. This is a primary planning opportunity for pre-SS retirees.`); if(fs === 'mfs') h += flag('red','!','<strong>Married Filing Separately (lived with spouse) - 85% automatic.</strong> If you are MFS and lived with your spouse at any point during the year, 85% of Social Security benefits are taxable with NO threshold. There is no base amount. IRC 86(c)(2). This is one of the harshest MFS penalties in the Code.'); h += flag('blue','i','<strong>Thresholds have never been inflation-adjusted.</strong> The $25,000 / $32,000 and $34,000 / $44,000 thresholds were set in 1983 and 1993 respectively and have never been adjusted for inflation. As a result, a growing percentage of retirees pay tax on SS benefits each year. Congress has periodically discussed indexing these thresholds but has not done so as of 2026.'); h += `<div class="src">IRC 86 (Social Security and Railroad Retirement benefits - taxation); IRC 86(a) (gross income inclusion - 50% and 85% tiers); IRC 86(b) (combined income formula - modified AGI + 50% of SS + tax-exempt interest); IRC 86(b)(2)(A) (tax-exempt interest added to combined income); IRC 86(c)(2) (MFS who lived with spouse - automatic 85% inclusion); Social Security Act of 1983 (Pub. L. 98-21, original 50% inclusion); OBRA 1993 (85% tier added for higher-income beneficiaries).</div>`; h += `<div class="disc">Estimate only. State taxation of Social Security varies - some states exempt SS entirely, others follow federal rules. Consult a CPA.</div>`; rb.innerHTML = h;
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+// Thresholds - NOT inflation-adjusted since enacted in 1983/1993
+const T = {
+  single: {t1lo:25000, t1hi:34000},
+  mfj:    {t1lo:32000, t1hi:44000},
+  mfs:    {t1lo:0,     t1hi:0},     // MFS who lived with spouse: ALL benefits taxable at 85%
+};
+
+function calc(){
+  const fs = document.getElementById('fs').value;
+  const ss = parseFloat(document.getElementById('ssBenefit').value)||0;
+  const wages = parseFloat(document.getElementById('wages').value)||0;
+  const ira = parseFloat(document.getElementById('iraDistrib').value)||0;
+  const invest = parseFloat(document.getElementById('investIncome').value)||0;
+  const muni = parseFloat(document.getElementById('taxExemptInt').value)||0;
+  const other = parseFloat(document.getElementById('otherIncome').value)||0;
+
+  const agi = wages + ira + invest + other; // before SS
+  const combinedIncome = agi + muni + (ss * 0.5);
+
+  let taxableSS = 0;
+  let tier = 0;
+  let inclusionRate = 0;
+
+  if(fs === 'mfs'){
+    // MFS who lived with spouse: 85% always (no base tier)
+    taxableSS = Math.min(ss * 0.85, ss);
+    tier = 3; inclusionRate = 0.85;
+  } else {
+    const {t1lo, t1hi} = T[fs];
+    if(combinedIncome <= t1lo){
+      taxableSS = 0; tier = 1; inclusionRate = 0;
+    } else if(combinedIncome <= t1hi){
+      // 50% tier: 50 cents of SS taxable per dollar of combined income over T1Lo
+      taxableSS = Math.min(ss * 0.50, (combinedIncome - t1lo) * 0.50);
+      tier = 2; inclusionRate = taxableSS / ss;
+    } else {
+      // 85% tier
+      const tier1Amount = Math.min(ss * 0.50, (t1hi - t1lo) * 0.50);
+      const tier2Amount = Math.min(ss * 0.85 - tier1Amount, (combinedIncome - t1hi) * 0.85);
+      taxableSS = Math.min(ss * 0.85, tier1Amount + tier2Amount);
+      tier = 3; inclusionRate = taxableSS / ss;
+    }
+  }
+
+  const taxFreeSSS = ss - taxableSS;
+  const totalTaxableIncome = agi + taxableSS;
+
+  const rb = document.getElementById('res');
+  let h = '';
+
+  // Tier visual
+  h += `<div class="tier-visual">
+    <div class="tier ${tier===1?'active':''}">
+      <div class="tier-pct">0%</div>
+      <div class="tier-label">Benefits not taxable</div>
+      <div class="tier-range">${fs==='mfj'?'Combined income under $32,000':'Combined income under $25,000'}</div>
+    </div>
+    <div class="tier ${tier===2?'active':''}">
+      <div class="tier-pct">50%</div>
+      <div class="tier-label">Up to 50% taxable</div>
+      <div class="tier-range">${fs==='mfj'?'$32,000 - $44,000':'$25,000 - $34,000'}</div>
+    </div>
+    <div class="tier ${tier===3?'active':''}">
+      <div class="tier-pct">85%</div>
+      <div class="tier-label">Up to 85% taxable</div>
+      <div class="tier-range">${fs==='mfj'?'Over $44,000':'Over $34,000'}</div>
+    </div>
+  </div>`;
+
+  h += `<div class="sum-box"><div class="sum-title">Combined Income Formula - IRC 86</div>
+    <div class="srow"><span class="sl">Wages + self-employment income</span><span class="sv">${fmt(wages)}</span></div>
+    <div class="srow"><span class="sl">IRA / 401(k) / pension distributions</span><span class="sv">${fmt(ira)}</span></div>
+    <div class="srow"><span class="sl">Investment income (taxable)</span><span class="sv">${fmt(invest)}</span></div>
+    <div class="srow"><span class="sl">Other income</span><span class="sv">${fmt(other)}</span></div>
+    <div class="srow"><span class="sl">= Adjusted gross income (before SS)</span><span class="sv">${fmt(agi)}</span></div>
+    <div class="srow"><span class="sl">+ Tax-exempt (municipal) interest - added back</span><span class="sv ${muni>0?'amber':''}">${fmt(muni)}</span></div>
+    <div class="srow"><span class="sl">+ 50% of Social Security benefit (${fmt(ss)} x 50%)</span><span class="sv">${fmt(ss*0.5)}</span></div>
+    <div class="srow"><span class="sl">= Combined income (IRC 86 test)</span><span class="sv coral">${fmt(combinedIncome)}</span></div>
+    <div class="srow"><span class="sl">Threshold for ${fs==='mfj'?'MFJ':fs==='mfs'?'MFS':fs==='single'?'Single':''} filers</span><span class="sv">${fs==='mfs'?'N/A - 85% automatic':fmt(T[fs]?.t1lo||0)+' / '+fmt(T[fs]?.t1hi||0)}</span></div>
+    <div class="srow"><span class="sl">Taxable Social Security (${pct(inclusionRate)} inclusion)</span><span class="sv ${taxableSS>0?'amber':'green'}">${fmt(taxableSS)}</span></div>
+    <div class="srow"><span class="sl">Tax-free Social Security</span><span class="sv green">${fmt(taxFreeSSS)}</span></div>
+    <div class="srow"><span class="sl">Total taxable income (AGI + taxable SS)</span><span class="sv">${fmt(totalTaxableIncome)}</span></div>
+  </div>`;
+
+  if(tier === 1) h += flag('green','v',`<strong>No Social Security benefits are taxable.</strong> Combined income of ${fmt(combinedIncome)} is below the ${fmt(T[fs].t1lo)} threshold. All ${fmt(ss)} of SS benefits are tax-free. Monitor income carefully - one additional dollar of IRA withdrawal can trigger SS taxation.`);
+  if(tier === 2) h += flag('amber','!',`<strong>${pct(inclusionRate)} of SS benefits are taxable.</strong> Combined income of ${fmt(combinedIncome)} falls in the 50% inclusion tier. Each additional $1 of income increases taxable SS by $0.50 - creating an effective marginal rate increase on new income.`);
+  if(tier === 3) h += flag('red','!',`<strong>85% of SS benefits are taxable</strong> (the maximum). Combined income of ${fmt(combinedIncome)} exceeds the upper threshold. In this tier, each additional $1.00 of income adds $0.85 to taxable SS - the effective marginal rate on new income is your regular rate multiplied by 1.85.`);
+  if(muni > 0) h += flag('amber','!',`<strong>Municipal bond interest of ${fmt(muni)} increases Social Security taxation.</strong> Although muni interest is itself tax-exempt, it is added to combined income under IRC 86(b)(2)(A) and can push you into a higher SS taxation tier. This is one of the most counterintuitive tax rules for retirees - munis are not truly "tax-free" if you receive Social Security.`);
+  if(ira > 0 && tier >= 2) h += flag('blue','i',`<strong>Roth conversion strategy.</strong> Traditional IRA distributions of ${fmt(ira)} are increasing your combined income and SS taxation. Consider converting traditional IRA funds to Roth before claiming SS benefits. Roth distributions do NOT count toward combined income - they are invisible to the SS taxation formula. This is a primary planning opportunity for pre-SS retirees.`);
+  if(fs === 'mfs') h += flag('red','!','<strong>Married Filing Separately (lived with spouse) - 85% automatic.</strong> If you are MFS and lived with your spouse at any point during the year, 85% of Social Security benefits are taxable with NO threshold. There is no base amount. IRC 86(c)(2). This is one of the harshest MFS penalties in the Code.');
+  h += flag('blue','i','<strong>Thresholds have never been inflation-adjusted.</strong> The $25,000 / $32,000 and $34,000 / $44,000 thresholds were set in 1983 and 1993 respectively and have never been adjusted for inflation. As a result, a growing percentage of retirees pay tax on SS benefits each year. Congress has periodically discussed indexing these thresholds but has not done so as of 2026.');
+  h += `<div class="src">IRC 86 (Social Security and Railroad Retirement benefits - taxation); IRC 86(a) (gross income inclusion - 50% and 85% tiers); IRC 86(b) (combined income formula - modified AGI + 50% of SS + tax-exempt interest); IRC 86(b)(2)(A) (tax-exempt interest added to combined income); IRC 86(c)(2) (MFS who lived with spouse - automatic 85% inclusion); Social Security Act of 1983 (Pub. L. 98-21, original 50% inclusion); OBRA 1993 (85% tier added for higher-income beneficiaries).</div>`;
+  h += `<div class="disc">Estimate only. State taxation of Social Security varies - some states exempt SS entirely, others follow federal rules. Consult a CPA. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+  rb.innerHTML = h;
 }
 calc();
-</script> </body>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
