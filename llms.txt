@@ -1,3 +1,4 @@
+- asc-740-guide.html: ASC 740 income tax accounting - current vs deferred tax, temporary differences, valuation allowances, uncertain tax positions FIN 48, rate reconciliation, OBBBA §174A §168(k) impact.
 # CPA Validated - AI-Readable Site Index
 # cpavalidated.com | A tk.cpa resource | Timur Knyazev, CPA, EA
 # Updated: 2026-04-26
