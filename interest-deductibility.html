@@ -42,13 +42,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
 .wm{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;line-height:1.1;text-transform:uppercase;}
 .wm small{display:block;font-size:10px;font-weight:400;color:var(--coral);letter-spacing:.08em;text-transform:none;font-family:var(--font-sans)}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0}
-.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent;padding:2px 0;transition:color .15s}
-.nav-links a:hover{color:var(--coral)}
+
+
+
+
 .nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
 .nav-cta:hover{background:var(--coral-600)}
-@media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
+@media(max-width:640px){nav{padding:12px 18px}}
 </style>
 </head>
 <body>
@@ -56,15 +56,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
   <a href="index.html" class="brand">
     <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
   </a>
-  <div class="nav-right">
-    <ul class="nav-links">
-      <li><a href="index.html#tools">Tools</a></li>
-      <li><a href="index.html#articles">Guides</a></li>
-      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
-  </div>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
 
 <div class="ph"><div class="phi">
