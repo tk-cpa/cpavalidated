@@ -126,6 +126,11 @@ CPA Validated is a free, perpetual public resource built and personally validate
 - Authority: IRC §6039F; IRC §6048; IRC §6677; IRC §679
 - Purpose: 2026 thresholds ($100K individuals, $19,570 corporations). Penalties up to 35%. Aggregation rules. Trust reporting.
 
+### US Trust Guide: Revocable vs. Irrevocable, Foreign vs. Domestic, Tax Planning Truth (2026)
+- URL: https://cpavalidated.com/trust-guide.html
+- Authority: IRC §671-679 (grantor trust rules); IRC §676 (power to revoke); IRC §2036 (retained interests); IRC §2038 (revocable transfers); IRC §7701(a)(30)-(31) (domestic vs. foreign trust - court test + control test); IRC §679 (US transferors to foreign trusts - broad grantor trust attribution); IRC §665-668 (throwback rules, accumulation distributions); IRC §6048 (Form 3520/3520-A filing obligations); IRC §6677 (penalties); IRC §2702 (GRATs, QPRTs); IRC §664 (CRTs); IRC §2010(c)(3) ($15M OBBBA exemption); Treas. Reg. §301.7701-7 (court and control tests); Treas. Reg. §25.2702-3 (GRATs); Treas. Reg. §1.664-1 (CRTs)
+- Purpose: Comprehensive trust guide covering: (1) revocable vs. irrevocable - grantor trust rules, estate inclusion under §2036/2038, what irrevocable actually requires, IDGT concept; (2) foreign vs. domestic - IRC §7701 two-part test (court + control), foreign grantor trust treatment, §679 trap for US persons who transfer to foreign trusts with US beneficiaries, throwback rules for foreign non-grantor trusts, Form 3520/3520-A overlay, pre-immigration trust trap; (3) truth about trust-based tax planning - what trusts do (probate avoidance, estate tax reduction above $15M, incapacity planning, GST planning) and don't do (income tax savings under grantor trust rules, automatic estate removal, offshore tax shelter); advanced strategies (SLAT, GRAT, IDGT, CRT, QPRT) with honest assessments; $15M OBBBA exemption reality check; trust mill / promoter warning.
+
 ### IRC §1031 Like-Kind Exchange Guide (2026)
 - URL: https://cpavalidated.com/1031-exchange-guide.html
 - Authority: IRC §1031; Treas. Reg. §1.1031(k)-1; Rev. Proc. 2000-37
