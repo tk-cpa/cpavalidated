@@ -67,43 +67,263 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 .nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
 .nav-cta:hover{background:var(--coral-600)}
 @media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
-.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
+</style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <div class="nav-right"> <ul class="nav-links"> <li><a href="index.html#tools">Tools</a></li> <li><a href="index.html#articles">Guides</a></li> <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li> <li><a href="about.html">About</a></li> </ul> <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a> </div>
-</nav> <div class="ph"><div class="phi"> <h1>Streamlined Filing Eligibility Checker</h1> <div class="sub">SDOP vs. SFOP &nbsp;&bull;&nbsp; Non-Willfulness Test &nbsp;&bull;&nbsp; Residency Test &nbsp;&bull;&nbsp; 5% vs. 0% Penalty &nbsp;&bull;&nbsp; FBAR / FATCA Compliance</div> <div class="badges"> <span class="badge">IRM 4.26.16.6 (SFOP)</span> <span class="badge">IRM 4.26.16.7 (SDOP)</span> <span class="badge">31 USC 5314 (FBAR)</span> <span class="badge">IRC §6038D (Form 8938)</span> </div>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
+<div class="ph"><div class="phi">
+  <h1>Streamlined Filing Eligibility Checker</h1>
+  <div class="sub">SDOP vs. SFOP &nbsp;&bull;&nbsp; Non-Willfulness Test &nbsp;&bull;&nbsp; Residency Test &nbsp;&bull;&nbsp; 5% vs. 0% Penalty &nbsp;&bull;&nbsp; FBAR / FATCA Compliance</div>
+  <div class="badges">
+    <span class="badge">IRM 4.26.16.6 (SFOP)</span>
+    <span class="badge">IRM 4.26.16.7 (SDOP)</span>
+    <span class="badge">31 USC 5314 (FBAR)</span>
+    <span class="badge">IRC §6038D (Form 8938)</span>
+  </div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="container"> <div class="prog"><div class="prog-fill" id="pf" style="width:0%"></div></div> <!-- Q1 -->
-<div class="card" id="c1"> <div class="ch"><div class="sb">1</div><h2>Prior Disclosure</h2></div> <div class="cb"> <div class="q-label">Question 1 of 6</div> <div class="q-text">Has the IRS already contacted you about the unfiled FBARs or unreported foreign income - through an audit, examination, or direct correspondence?</div> <div class="q-note">Streamlined procedures are only available to taxpayers who have not been contacted by the IRS regarding the noncompliance being corrected. If you have received an IRS audit notice, civil examination notice, or criminal investigation notification relating to your foreign accounts or income, the Streamlined programs are not available. IRM 4.26.16.4.</div> <div class="radio-group"> <label class="radio-opt" onclick="sel(this,'q1','yes')"><input type="radio" name="q1" value="yes"> Yes - I have received IRS contact about my foreign accounts or foreign income</label> <label class="radio-opt" onclick="sel(this,'q1','no')"><input type="radio" name="q1" value="no"> No - I have not been contacted by the IRS about these issues</label> </div> </div>
-</div> <!-- Q2 -->
-<div class="card hidden" id="c2"> <div class="ch"><div class="sb">2</div><h2>Criminal Investigation</h2></div> <div class="cb"> <div class="q-label">Question 2 of 6</div> <div class="q-text">Are you currently under criminal investigation by any US government agency?</div> <div class="q-note">Streamlined procedures are unavailable to taxpayers under criminal investigation by the IRS Criminal Investigation division or any other US government agency. If you believe you may be under investigation, consult a criminal tax defense attorney before taking any action. IRM 4.26.16.4(3).</div> <div class="radio-group"> <label class="radio-opt" onclick="sel(this,'q2','yes')"><input type="radio" name="q2" value="yes"> Yes - I am or may be under criminal investigation</label> <label class="radio-opt" onclick="sel(this,'q2','no')"><input type="radio" name="q2" value="no"> No - I am not under criminal investigation</label> </div> </div>
-</div> <!-- Q3 -->
-<div class="card hidden" id="c3"> <div class="ch"><div class="sb">3</div><h2>Non-Willfulness</h2></div> <div class="cb"> <div class="q-label">Question 3 of 6</div> <div class="q-text">Can you truthfully certify that your failure to report foreign financial accounts and/or income was non-willful - resulting from negligence, inadvertence, mistake, or misunderstanding of the law?</div> <div class="q-note"><strong>This is the most critical requirement.</strong> "Non-willful" means you did not knowingly or intentionally fail to comply. Common non-willful situations: you were unaware of the FBAR requirement, you relied on incorrect professional advice, you inherited foreign accounts and did not know they had to be reported, or you simply misunderstood the rules. <strong>Willful violations do not qualify for Streamlined.</strong> Making a false non-willfulness certification exposes you to criminal liability. If you are uncertain whether your conduct was willful, consult a qualified tax attorney before certifying. IRM 4.26.16.4(2).</div> <div class="radio-group"> <label class="radio-opt" onclick="sel(this,'q3','yes')"><input type="radio" name="q3" value="yes"> Yes - I can truthfully certify my failure was non-willful</label> <label class="radio-opt" onclick="sel(this,'q3','possibly')"><input type="radio" name="q3" value="possibly"> Unsure - I am not certain whether my conduct qualifies as non-willful</label> <label class="radio-opt" onclick="sel(this,'q3','no')"><input type="radio" name="q3" value="no"> No - my conduct may have been willful</label> </div> </div>
-</div> <!-- Q4 -->
-<div class="card hidden" id="c4"> <div class="ch"><div class="sb">4</div><h2>Residency Test</h2></div> <div class="cb"> <div class="q-label">Question 4 of 6</div> <div class="q-text">In any of the three years covered by your delinquent returns, did you meet the non-residency requirement for the Streamlined Foreign program?</div> <div class="q-note">The Streamlined <em>Foreign</em> Offshore Procedures (SFOP) require that in at least one of the three years covered by the amended/delinquent returns, you had: (a) no US abode, AND (b) were physically outside the United States for at least 330 full days. If you cannot meet this test for any of the three years, you may only qualify for the Streamlined <em>Domestic</em> program (SDOP). IRM 4.26.16.6(2).</div> <div class="radio-group"> <label class="radio-opt" onclick="sel(this,'q4','yes')"><input type="radio" name="q4" value="yes"> Yes - in at least one covered year, I had no US abode and was outside the US for 330+ days</label> <label class="radio-opt" onclick="sel(this,'q4','no')"><input type="radio" name="q4" value="no"> No - I was US-based in all three covered years (or cannot meet the 330-day test)</label> </div> </div>
-</div> <!-- Q5 -->
-<div class="card hidden" id="c5"> <div class="ch"><div class="sb">5</div><h2>Tax Compliance</h2></div> <div class="cb"> <div class="q-label">Question 5 of 6</div> <div class="q-text">Are you current on all US tax filings and payments for years not covered by the Streamlined submission?</div> <div class="q-note">You must be current on all other US tax obligations to use Streamlined procedures. This means all returns that were due (including extensions) have been filed, and all taxes owed have been paid. If you have unfiled returns beyond the three-year Streamlined period, those must be addressed separately. IRM 4.26.16.5.</div> <div class="radio-group"> <label class="radio-opt" onclick="sel(this,'q5','yes')"><input type="radio" name="q5" value="yes"> Yes - I am current on all other US tax filings and payments</label> <label class="radio-opt" onclick="sel(this,'q5','no')"><input type="radio" name="q5" value="no"> No - I have other unfiled returns or unpaid taxes</label> </div> </div>
-</div> <!-- Q6 -->
-<div class="card hidden" id="c6"> <div class="ch"><div class="sb">6</div><h2>Unreported Income</h2></div> <div class="cb"> <div class="q-label">Question 6 of 6</div> <div class="q-text">Did the foreign accounts generate unreported income (interest, dividends, capital gains) during the years you failed to file FBARs?</div> <div class="q-note">If foreign accounts had no income (zero balance or no earnings), the Streamlined submission may still be required to correct the FBAR failures, but the tax impact may be minimal. If there was unreported income, it must be reported on amended returns filed as part of the Streamlined submission, with tax and interest paid. This does not affect eligibility - it affects the cost of the program.</div> <div class="radio-group"> <label class="radio-opt" onclick="sel(this,'q6','yes')"><input type="radio" name="q6" value="yes"> Yes - accounts had unreported interest, dividends, or other income</label> <label class="radio-opt" onclick="sel(this,'q6','no')"><input type="radio" name="q6" value="no"> No - accounts had no taxable income, or income was de minimis</label> </div> </div>
-</div> <!-- Result -->
-<div class="card hidden" id="cResult"> <div class="ch"><div class="sb">✓</div><h2>Streamlined Eligibility Analysis</h2></div> <div class="cb" id="resultBody"></div>
-</div> </div> <script>
+<div class="container">
+
+<div class="prog"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+
+<!-- Q1 -->
+<div class="card" id="c1">
+  <div class="ch"><div class="sb">1</div><h2>Prior Disclosure</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 1 of 6</div>
+    <div class="q-text">Has the IRS already contacted you about the unfiled FBARs or unreported foreign income - through an audit, examination, or direct correspondence?</div>
+    <div class="q-note">Streamlined procedures are only available to taxpayers who have not been contacted by the IRS regarding the noncompliance being corrected. If you have received an IRS audit notice, civil examination notice, or criminal investigation notification relating to your foreign accounts or income, the Streamlined programs are not available. IRM 4.26.16.4.</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q1','yes')"><input type="radio" name="q1" value="yes"> Yes - I have received IRS contact about my foreign accounts or foreign income</label>
+      <label class="radio-opt" onclick="sel(this,'q1','no')"><input type="radio" name="q1" value="no"> No - I have not been contacted by the IRS about these issues</label>
+    </div>
+  </div>
+</div>
+
+<!-- Q2 -->
+<div class="card hidden" id="c2">
+  <div class="ch"><div class="sb">2</div><h2>Criminal Investigation</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 2 of 6</div>
+    <div class="q-text">Are you currently under criminal investigation by any US government agency?</div>
+    <div class="q-note">Streamlined procedures are unavailable to taxpayers under criminal investigation by the IRS Criminal Investigation division or any other US government agency. If you believe you may be under investigation, consult a criminal tax defense attorney before taking any action. IRM 4.26.16.4(3).</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q2','yes')"><input type="radio" name="q2" value="yes"> Yes - I am or may be under criminal investigation</label>
+      <label class="radio-opt" onclick="sel(this,'q2','no')"><input type="radio" name="q2" value="no"> No - I am not under criminal investigation</label>
+    </div>
+  </div>
+</div>
+
+<!-- Q3 -->
+<div class="card hidden" id="c3">
+  <div class="ch"><div class="sb">3</div><h2>Non-Willfulness</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 3 of 6</div>
+    <div class="q-text">Can you truthfully certify that your failure to report foreign financial accounts and/or income was non-willful - resulting from negligence, inadvertence, mistake, or misunderstanding of the law?</div>
+    <div class="q-note"><strong>This is the most critical requirement.</strong> "Non-willful" means you did not knowingly or intentionally fail to comply. Common non-willful situations: you were unaware of the FBAR requirement, you relied on incorrect professional advice, you inherited foreign accounts and did not know they had to be reported, or you simply misunderstood the rules. <strong>Willful violations do not qualify for Streamlined.</strong> Making a false non-willfulness certification exposes you to criminal liability. If you are uncertain whether your conduct was willful, consult a qualified tax attorney before certifying. IRM 4.26.16.4(2).</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q3','yes')"><input type="radio" name="q3" value="yes"> Yes - I can truthfully certify my failure was non-willful</label>
+      <label class="radio-opt" onclick="sel(this,'q3','possibly')"><input type="radio" name="q3" value="possibly"> Unsure - I am not certain whether my conduct qualifies as non-willful</label>
+      <label class="radio-opt" onclick="sel(this,'q3','no')"><input type="radio" name="q3" value="no"> No - my conduct may have been willful</label>
+    </div>
+  </div>
+</div>
+
+<!-- Q4 -->
+<div class="card hidden" id="c4">
+  <div class="ch"><div class="sb">4</div><h2>Residency Test</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 4 of 6</div>
+    <div class="q-text">In any of the three years covered by your delinquent returns, did you meet the non-residency requirement for the Streamlined Foreign program?</div>
+    <div class="q-note">The Streamlined <em>Foreign</em> Offshore Procedures (SFOP) require that in at least one of the three years covered by the amended/delinquent returns, you had: (a) no US abode, AND (b) were physically outside the United States for at least 330 full days. If you cannot meet this test for any of the three years, you may only qualify for the Streamlined <em>Domestic</em> program (SDOP). IRM 4.26.16.6(2).</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q4','yes')"><input type="radio" name="q4" value="yes"> Yes - in at least one covered year, I had no US abode and was outside the US for 330+ days</label>
+      <label class="radio-opt" onclick="sel(this,'q4','no')"><input type="radio" name="q4" value="no"> No - I was US-based in all three covered years (or cannot meet the 330-day test)</label>
+    </div>
+  </div>
+</div>
+
+<!-- Q5 -->
+<div class="card hidden" id="c5">
+  <div class="ch"><div class="sb">5</div><h2>Tax Compliance</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 5 of 6</div>
+    <div class="q-text">Are you current on all US tax filings and payments for years not covered by the Streamlined submission?</div>
+    <div class="q-note">You must be current on all other US tax obligations to use Streamlined procedures. This means all returns that were due (including extensions) have been filed, and all taxes owed have been paid. If you have unfiled returns beyond the three-year Streamlined period, those must be addressed separately. IRM 4.26.16.5.</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q5','yes')"><input type="radio" name="q5" value="yes"> Yes - I am current on all other US tax filings and payments</label>
+      <label class="radio-opt" onclick="sel(this,'q5','no')"><input type="radio" name="q5" value="no"> No - I have other unfiled returns or unpaid taxes</label>
+    </div>
+  </div>
+</div>
+
+<!-- Q6 -->
+<div class="card hidden" id="c6">
+  <div class="ch"><div class="sb">6</div><h2>Unreported Income</h2></div>
+  <div class="cb">
+    <div class="q-label">Question 6 of 6</div>
+    <div class="q-text">Did the foreign accounts generate unreported income (interest, dividends, capital gains) during the years you failed to file FBARs?</div>
+    <div class="q-note">If foreign accounts had no income (zero balance or no earnings), the Streamlined submission may still be required to correct the FBAR failures, but the tax impact may be minimal. If there was unreported income, it must be reported on amended returns filed as part of the Streamlined submission, with tax and interest paid. This does not affect eligibility - it affects the cost of the program.</div>
+    <div class="radio-group">
+      <label class="radio-opt" onclick="sel(this,'q6','yes')"><input type="radio" name="q6" value="yes"> Yes - accounts had unreported interest, dividends, or other income</label>
+      <label class="radio-opt" onclick="sel(this,'q6','no')"><input type="radio" name="q6" value="no"> No - accounts had no taxable income, or income was de minimis</label>
+    </div>
+  </div>
+</div>
+
+<!-- Result -->
+<div class="card hidden" id="cResult">
+  <div class="ch"><div class="sb">✓</div><h2>Streamlined Eligibility Analysis</h2></div>
+  <div class="cb" id="resultBody"></div>
+</div>
+
+</div>
+
+<script>
 const A={};
 const total=6;
-function sel(el,q,v){ document.querySelectorAll('[name="'+q+'"]').forEach(r=>r.closest('.radio-opt').classList.remove('selected')); el.classList.add('selected');A[q]=v; document.getElementById('pf').style.width=(Object.keys(A).length/total*100)+'%'; setTimeout(()=>next(q),280);
+function sel(el,q,v){
+  document.querySelectorAll('[name="'+q+'"]').forEach(r=>r.closest('.radio-opt').classList.remove('selected'));
+  el.classList.add('selected');A[q]=v;
+  document.getElementById('pf').style.width=(Object.keys(A).length/total*100)+'%';
+  setTimeout(()=>next(q),280);
 }
-function show(id){ const el=document.getElementById(id); el.classList.remove('hidden'); setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),80);
+function show(id){
+  const el=document.getElementById(id);
+  el.classList.remove('hidden');
+  setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),80);
 }
-function next(q){ if(q==='q1'){A.q1==='yes'?result('irs_contact'):show('c2');} else if(q==='q2'){A.q2==='yes'?result('criminal'):show('c3');} else if(q==='q3'){A.q3==='no'?result('willful'):A.q3==='possibly'?result('unsure_willful'):show('c4');} else if(q==='q4'){show('c5');} else if(q==='q5'){A.q5==='no'?result('not_current'):show('c6');} else if(q==='q6'){result('eligible');}
+function next(q){
+  if(q==='q1'){A.q1==='yes'?result('irs_contact'):show('c2');}
+  else if(q==='q2'){A.q2==='yes'?result('criminal'):show('c3');}
+  else if(q==='q3'){A.q3==='no'?result('willful'):A.q3==='possibly'?result('unsure_willful'):show('c4');}
+  else if(q==='q4'){show('c5');}
+  else if(q==='q5'){A.q5==='no'?result('not_current'):show('c6');}
+  else if(q==='q6'){result('eligible');}
 }
-function result(type){ document.getElementById('pf').style.width='100%'; const rb=document.getElementById('resultBody'); let h=''; const isForeign=A.q4==='yes'; const hasIncome=A.q6==='yes'; if(type==='irs_contact'){ h=box('ineligible','✗ Not Eligible - IRS Has Already Contacted You'); h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">The Streamlined programs are not available once the IRS has initiated contact about the non-compliant accounts or returns. You must address this through the IRS examination process or the Voluntary Disclosure Program (VDP). Consult a qualified tax attorney immediately.</p>'; h+=flag('red','✗','<strong>Voluntary Disclosure Program (VDP)</strong> may still be available if you have not previously disclosed and the IRS contact was not about the specific accounts at issue. VDP is available for potentially willful violations and provides protection from criminal prosecution in most cases. IRM 9.5.11. Attorney involvement is essential.'); } else if(type==='criminal'){ h=box('ineligible','✗ Not Eligible - Criminal Investigation Underway'); h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">Streamlined procedures are unavailable to anyone under criminal investigation. Do not file any submissions without first consulting a criminal tax defense attorney. Any voluntary disclosure made while under criminal investigation may be used against you.</p>'; } else if(type==='willful'){ h=box('vdp','! Streamlined Not Available - Conduct May Be Willful'); h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">If your FBAR failures were willful, you do not qualify for Streamlined. The IRS defines willful broadly - it includes "reckless disregard" of a known legal duty. Checking "No" on Schedule B (Form 1040) when you have foreign accounts has been treated as evidence of willfulness in court. 31 USC §5321(a)(5)(C).</p>'; h+=flag('amber','!','<strong>Voluntary Disclosure Program (VDP)</strong> is available for potentially willful violations. VDP requires full cooperation, payment of all taxes, interest, and civil penalties. It does not guarantee immunity but substantially reduces criminal risk. IRM 9.5.11. <strong>Retain a qualified criminal tax defense attorney before any VDP submission.</strong>'); } else if(type==='unsure_willful'){ h=box('vdp','! Willfulness Determination Required Before Proceeding'); h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">Whether conduct is willful or non-willful is a legal determination that must be made carefully. A false non-willfulness certification on a Streamlined submission is itself a crime. Consult a qualified international tax attorney who can evaluate your specific facts before you certify anything.</p>'; h+=flag('amber','!','The distinction between willful and non-willful often turns on: whether you were aware of the FBAR requirement, what you checked on Schedule B of your 1040, whether you had professional advice, the size and complexity of the accounts, and the pattern of non-filing across years. These are fact-specific determinations.'); } else if(type==='not_current'){ h=box('vdp','! Must Become Current Before Filing Streamlined'); h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">Streamlined requires that you be current on all other US tax obligations. File any delinquent returns and pay any outstanding taxes before submitting Streamlined. Consider whether a quiet disclosure, delinquent FBAR submission procedure, or other approach is appropriate for the years outside the Streamlined period.</p>'; } else { // Eligible if(isForeign){ h=box('sfop','✓ Potentially Eligible - Streamlined Foreign Offshore Procedures (SFOP)'); } else { h=box('sdop','✓ Potentially Eligible - Streamlined Domestic Offshore Procedures (SDOP)'); } h+='<div class="program-compare">'; if(isForeign){ h+=`<div class="pc-box" style="border:2px solid var(--blue-b)"> <div class="pc-head" style="color:var(--blue-acc)">Streamlined Foreign (SFOP)</div> <div class="pc-row"><span class="pc-label">Miscellaneous penalty</span><span class="pc-val green">0%</span></div> <div class="pc-row"><span class="pc-label">Amended returns</span><span class="pc-val">3 years</span></div> <div class="pc-row"><span class="pc-label">FBARs filed</span><span class="pc-val">6 years</span></div> <div class="pc-row"><span class="pc-label">Tax + interest</span><span class="pc-val amber">Owed on unreported income</span></div> <div class="pc-row"><span class="pc-label">Residency required</span><span class="pc-val">330+ days abroad, 1 of 3 years</span></div> </div>`; } else { h+=`<div class="pc-box" style="border:2px solid var(--green-b)"> <div class="pc-head" style="color:var(--green)">Streamlined Domestic (SDOP)</div> <div class="pc-row"><span class="pc-label">Miscellaneous penalty</span><span class="pc-val amber">5% of highest aggregate balance</span></div> <div class="pc-row"><span class="pc-label">Amended returns</span><span class="pc-val">3 years</span></div> <div class="pc-row"><span class="pc-label">FBARs filed</span><span class="pc-val">6 years</span></div> <div class="pc-row"><span class="pc-label">Tax + interest</span><span class="pc-val amber">Owed on unreported income</span></div> <div class="pc-row"><span class="pc-label">Accuracy-related penalties</span><span class="pc-val green">Waived</span></div> </div>`; } h+=`<div class="pc-box"> <div class="pc-head">Non-Willful FBAR Penalty (No Streamlined)</div> <div class="pc-row"><span class="pc-label">Penalty per year</span><span class="pc-val red">Up to ~$16,117/year</span></div> <div class="pc-row"><span class="pc-label">Willful penalty</span><span class="pc-val red">50% of account/year</span></div> <div class="pc-row"><span class="pc-label">Criminal exposure</span><span class="pc-val red">Up to 5 yrs prison</span></div> <div class="pc-row"><span class="pc-label">Accuracy penalties</span><span class="pc-val red">20-75% of tax</span></div> </div>`; h+='</div>'; h+='<h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 10px">Required Steps</h3>'; h+='<div class="steps">'; const steps = isForeign ? [ ['1','File amended or original tax returns for the 3 most recent tax years for which the return due date has passed (including extensions). Report all previously unreported foreign income.'], ['2','File delinquent FBARs (FinCEN Form 114) for the 6 most recent tax years for which the FBAR due date has passed. File through the BSA E-Filing System.'], ['3','Pay all tax and statutory interest due on the amended returns.'], ['4','Submit a non-willfulness certification statement with the SFOP submission explaining the reasons for the non-compliance.'], ['5','No miscellaneous offshore penalty under SFOP (0%). This is the primary benefit over SDOP for eligible taxpayers.'] ] : [ ['1','File amended or original tax returns for the 3 most recent tax years for which the return due date has passed. Report all previously unreported foreign income.'], ['2','File delinquent FBARs (FinCEN Form 114) for the 6 most recent tax years for which the FBAR due date has passed.'], ['3','Pay all tax and statutory interest due on the amended returns.'], ['4','Calculate the 5% miscellaneous offshore penalty on the highest aggregate balance of all unreported foreign financial accounts at the end of any calendar year during the 6 FBAR years.'], ['5','Submit a non-willfulness certification and pay the 5% penalty with the SDOP submission.'] ]; steps.forEach(([n,t])=>{h+=`<div class="step"><div class="step-num">${n}</div><div class="step-body">${t}</div></div>`;}); h+='</div>'; if(!hasIncome) h+=flag('green','✓','<strong>No unreported income.</strong> Even with no unreported income, the Streamlined submission is still typically required to correct the FBAR failures. Tax due may be zero. The miscellaneous penalty (SDOP) is calculated on account balances, not income, so a penalty may still apply under SDOP even with no unreported income.'); h+=flag('amber','!','<strong>This tool determines potential eligibility only.</strong> The Streamlined programs require a truthful non-willfulness certification signed under penalties of perjury. A false certification can result in criminal prosecution. Consult a qualified international tax CPA or tax attorney before submitting any Streamlined filing.'); } h+=`<div class="src">Authority: IRM 4.26.16.4 (Streamlined eligibility); IRM 4.26.16.6 (SFOP - Streamlined Foreign); IRM 4.26.16.7 (SDOP - Streamlined Domestic); 31 USC §5314 (FBAR requirement); 31 USC §5321 (FBAR penalties); IRC §6038D (Form 8938); IRM 9.5.11 (Voluntary Disclosure Program); Bittner v. United States, 598 US 85 (2023) (non-willful penalty per form, not per account).</div>`; h+=`<button class="pbn" onclick="window.print()">Print / Save as PDF</button><button class="rbtn" onclick="resetAll()">Start Over</button>`; h+=`<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>`; rb.innerHTML=h; show('cResult');
+function result(type){
+  document.getElementById('pf').style.width='100%';
+  const rb=document.getElementById('resultBody');
+  let h='';
+  const isForeign=A.q4==='yes';
+  const hasIncome=A.q6==='yes';
+
+  if(type==='irs_contact'){
+    h=box('ineligible','✗ Not Eligible  -  IRS Has Already Contacted You');
+    h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">The Streamlined programs are not available once the IRS has initiated contact about the non-compliant accounts or returns. You must address this through the IRS examination process or the Voluntary Disclosure Program (VDP). Consult a qualified tax attorney immediately.</p>';
+    h+=flag('red','✗','<strong>Voluntary Disclosure Program (VDP)</strong> may still be available if you have not previously disclosed and the IRS contact was not about the specific accounts at issue. VDP is available for potentially willful violations and provides protection from criminal prosecution in most cases. IRM 9.5.11. Attorney involvement is essential.');
+  } else if(type==='criminal'){
+    h=box('ineligible','✗ Not Eligible  -  Criminal Investigation Underway');
+    h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">Streamlined procedures are unavailable to anyone under criminal investigation. Do not file any submissions without first consulting a criminal tax defense attorney. Any voluntary disclosure made while under criminal investigation may be used against you.</p>';
+  } else if(type==='willful'){
+    h=box('vdp','! Streamlined Not Available  -  Conduct May Be Willful');
+    h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">If your FBAR failures were willful, you do not qualify for Streamlined. The IRS defines willful broadly - it includes "reckless disregard" of a known legal duty. Checking "No" on Schedule B (Form 1040) when you have foreign accounts has been treated as evidence of willfulness in court. 31 USC §5321(a)(5)(C).</p>';
+    h+=flag('amber','!','<strong>Voluntary Disclosure Program (VDP)</strong> is available for potentially willful violations. VDP requires full cooperation, payment of all taxes, interest, and civil penalties. It does not guarantee immunity but substantially reduces criminal risk. IRM 9.5.11. <strong>Retain a qualified criminal tax defense attorney before any VDP submission.</strong>');
+  } else if(type==='unsure_willful'){
+    h=box('vdp','! Willfulness Determination Required Before Proceeding');
+    h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">Whether conduct is willful or non-willful is a legal determination that must be made carefully. A false non-willfulness certification on a Streamlined submission is itself a crime. Consult a qualified international tax attorney who can evaluate your specific facts before you certify anything.</p>';
+    h+=flag('amber','!','The distinction between willful and non-willful often turns on: whether you were aware of the FBAR requirement, what you checked on Schedule B of your 1040, whether you had professional advice, the size and complexity of the accounts, and the pattern of non-filing across years. These are fact-specific determinations.');
+  } else if(type==='not_current'){
+    h=box('vdp','! Must Become Current Before Filing Streamlined');
+    h+='<p style="font-size:14px;color:var(--ink-60);line-height:1.7;margin-bottom:14px">Streamlined requires that you be current on all other US tax obligations. File any delinquent returns and pay any outstanding taxes before submitting Streamlined. Consider whether a quiet disclosure, delinquent FBAR submission procedure, or other approach is appropriate for the years outside the Streamlined period.</p>';
+  } else {
+    // Eligible
+    if(isForeign){
+      h=box('sfop','✓ Potentially Eligible  -  Streamlined Foreign Offshore Procedures (SFOP)');
+    } else {
+      h=box('sdop','✓ Potentially Eligible  -  Streamlined Domestic Offshore Procedures (SDOP)');
+    }
+
+    h+='<div class="program-compare">';
+    if(isForeign){
+      h+=`<div class="pc-box" style="border:2px solid var(--blue-b)">
+        <div class="pc-head" style="color:var(--blue-acc)">Streamlined Foreign (SFOP)</div>
+        <div class="pc-row"><span class="pc-label">Miscellaneous penalty</span><span class="pc-val green">0%</span></div>
+        <div class="pc-row"><span class="pc-label">Amended returns</span><span class="pc-val">3 years</span></div>
+        <div class="pc-row"><span class="pc-label">FBARs filed</span><span class="pc-val">6 years</span></div>
+        <div class="pc-row"><span class="pc-label">Tax + interest</span><span class="pc-val amber">Owed on unreported income</span></div>
+        <div class="pc-row"><span class="pc-label">Residency required</span><span class="pc-val">330+ days abroad, 1 of 3 years</span></div>
+      </div>`;
+    } else {
+      h+=`<div class="pc-box" style="border:2px solid var(--green-b)">
+        <div class="pc-head" style="color:var(--green)">Streamlined Domestic (SDOP)</div>
+        <div class="pc-row"><span class="pc-label">Miscellaneous penalty</span><span class="pc-val amber">5% of highest aggregate balance</span></div>
+        <div class="pc-row"><span class="pc-label">Amended returns</span><span class="pc-val">3 years</span></div>
+        <div class="pc-row"><span class="pc-label">FBARs filed</span><span class="pc-val">6 years</span></div>
+        <div class="pc-row"><span class="pc-label">Tax + interest</span><span class="pc-val amber">Owed on unreported income</span></div>
+        <div class="pc-row"><span class="pc-label">Accuracy-related penalties</span><span class="pc-val green">Waived</span></div>
+      </div>`;
+    }
+    h+=`<div class="pc-box">
+      <div class="pc-head">Non-Willful FBAR Penalty (No Streamlined)</div>
+      <div class="pc-row"><span class="pc-label">Penalty per year</span><span class="pc-val red">Up to ~$16,117/year</span></div>
+      <div class="pc-row"><span class="pc-label">Willful penalty</span><span class="pc-val red">50% of account/year</span></div>
+      <div class="pc-row"><span class="pc-label">Criminal exposure</span><span class="pc-val red">Up to 5 yrs prison</span></div>
+      <div class="pc-row"><span class="pc-label">Accuracy penalties</span><span class="pc-val red">20-75% of tax</span></div>
+    </div>`;
+    h+='</div>';
+
+    h+='<h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin:18px 0 10px">Required Steps</h3>';
+    h+='<div class="steps">';
+    const steps = isForeign ? [
+      ['1','File amended or original tax returns for the 3 most recent tax years for which the return due date has passed (including extensions). Report all previously unreported foreign income.'],
+      ['2','File delinquent FBARs (FinCEN Form 114) for the 6 most recent tax years for which the FBAR due date has passed. File through the BSA E-Filing System.'],
+      ['3','Pay all tax and statutory interest due on the amended returns.'],
+      ['4','Submit a non-willfulness certification statement with the SFOP submission explaining the reasons for the non-compliance.'],
+      ['5','No miscellaneous offshore penalty under SFOP (0%). This is the primary benefit over SDOP for eligible taxpayers.']
+    ] : [
+      ['1','File amended or original tax returns for the 3 most recent tax years for which the return due date has passed. Report all previously unreported foreign income.'],
+      ['2','File delinquent FBARs (FinCEN Form 114) for the 6 most recent tax years for which the FBAR due date has passed.'],
+      ['3','Pay all tax and statutory interest due on the amended returns.'],
+      ['4','Calculate the 5% miscellaneous offshore penalty on the highest aggregate balance of all unreported foreign financial accounts at the end of any calendar year during the 6 FBAR years.'],
+      ['5','Submit a non-willfulness certification and pay the 5% penalty with the SDOP submission.']
+    ];
+    steps.forEach(([n,t])=>{h+=`<div class="step"><div class="step-num">${n}</div><div class="step-body">${t}</div></div>`;});
+    h+='</div>';
+
+    if(!hasIncome) h+=flag('green','✓','<strong>No unreported income.</strong> Even with no unreported income, the Streamlined submission is still typically required to correct the FBAR failures. Tax due may be zero. The miscellaneous penalty (SDOP) is calculated on account balances, not income, so a penalty may still apply under SDOP even with no unreported income.');
+    h+=flag('amber','!','<strong>This tool determines potential eligibility only.</strong> The Streamlined programs require a truthful non-willfulness certification signed under penalties of perjury. A false certification can result in criminal prosecution. Consult a qualified international tax CPA or tax attorney before submitting any Streamlined filing.');
+  }
+
+  h+=`<div class="src">Authority: IRM 4.26.16.4 (Streamlined eligibility); IRM 4.26.16.6 (SFOP - Streamlined Foreign); IRM 4.26.16.7 (SDOP - Streamlined Domestic); 31 USC §5314 (FBAR requirement); 31 USC §5321 (FBAR penalties); IRC §6038D (Form 8938); IRM 9.5.11 (Voluntary Disclosure Program); Bittner v. United States, 598 US 85 (2023) (non-willful penalty per form, not per account).</div>`;
+  h+=`<button class="pbn" onclick="window.print()">Print / Save as PDF</button><button class="rbtn" onclick="resetAll()">Start Over</button>`;
+  h+=`<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>`;
+
+  rb.innerHTML=h;
+  show('cResult');
 }
 function box(cls,txt){return `<div class="result-box" style="border-color:var(--ink-20)"><div class="rb-head ${cls}">${txt}</div><div class="rb-body-inner" style="padding:0">`;}
 function flag(t,i,txt){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${txt}</div></div>`;}
-function resetAll(){ Object.keys(A).forEach(k=>delete A[k]); ['c2','c3','c4','c5','c6','cResult'].forEach(id=>document.getElementById(id).classList.add('hidden')); document.querySelectorAll('.radio-opt').forEach(el=>el.classList.remove('selected')); document.querySelectorAll('input[type=radio]').forEach(el=>el.checked=false); document.getElementById('pf').style.width='0%'; window.scrollTo({top:0,behavior:'smooth'});
+function resetAll(){
+  Object.keys(A).forEach(k=>delete A[k]);
+  ['c2','c3','c4','c5','c6','cResult'].forEach(id=>document.getElementById(id).classList.add('hidden'));
+  document.querySelectorAll('.radio-opt').forEach(el=>el.classList.remove('selected'));
+  document.querySelectorAll('input[type=radio]').forEach(el=>el.checked=false);
+  document.getElementById('pf').style.width='0%';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-</script> 
-<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="fbar-checker.html" class="rl">FBAR & Form 8938 Checker</a><a href="fbar-penalties.html" class="rl">FBAR Penalty Guide</a><a href="fbar-penalty-estimator.html" class="rl">FBAR Penalty Estimator</a><a href="expatriation-tax-guide.html" class="rl">Expatriation Tax Guide</a><a href="pre-immigration-planning.html" class="rl">Pre-Immigration Planning</a></div></div>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
 </body>
 </html>
