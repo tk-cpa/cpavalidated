@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Executive Compensation Tax Guide: ISOs, NSOs, RSUs, §83(b) & §409A (2026) | CPA Validated</title>
+<meta name="description" content="Equity compensation tax guide: ISO vs. NSO comparison, RSU taxation at vesting, the §83(b) election for restricted stock, §409A deferred compensation rules and penalties, AMT on ISO exercise, and planning strategies for tech employees. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/executive-compensation-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral);color:#fff!important;padding:9px 20px;font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.cg-head{background:var(--ink);color:#fff;padding:10px 14px;font-family:var(--font-display);font-size:13px;font-weight:400;text-transform:uppercase;letter-spacing:.05em}
+.cg-cell{background:var(--white);padding:14px;font-size:13px;line-height:1.65;color:var(--ink-80)}
+.cg-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-40);margin-bottom:5px;font-family:var(--font-mono)}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.compare-grid,.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="ph"><div class="phi">
+  <h1>Executive Compensation Tax Guide: ISOs, NSOs, RSUs, §83(b) & §409A</h1>
+  <div class="sub">Option Taxation &nbsp;&bull;&nbsp; RSU Vesting &nbsp;&bull;&nbsp; §83(b) Election &nbsp;&bull;&nbsp; AMT on ISOs &nbsp;&bull;&nbsp; §409A Deferred Comp &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §421-424 (ISOs)</span>
+    <span class="ph-meta-item">IRC §83</span>
+    <span class="ph-meta-item">IRC §409A</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Equity compensation is often the largest component of compensation for startup employees, executives, and key personnel. The tax treatment varies dramatically by type: ISOs can produce capital gains treatment on all appreciation if the holding period rules are met, but trigger AMT on exercise. NSOs produce ordinary income on exercise. RSUs are taxed as ordinary income at vesting with no choice. Restricted stock can be converted to capital gains treatment with a timely §83(b) election. Getting these decisions right - or wrong - can produce six-figure tax differences on the same underlying grant.</p>
+
+<h2>Incentive Stock Options (ISOs): IRC §§421-424</h2>
+
+<p>ISOs are stock options that meet specific statutory requirements and qualify for preferential tax treatment. The key feature: no ordinary income is recognized at grant or exercise (for regular tax purposes). The entire gain from exercise price to sale price is potentially taxed as long-term capital gain if holding period requirements are met.</p>
+
+<h3>ISO Requirements</h3>
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>Must be granted pursuant to a plan approved by shareholders</li>
+  <li>Exercise price must equal or exceed FMV on grant date (no discount options)</li>
+  <li>Must be exercised within 10 years of grant (or 5 years for 10%+ shareholders)</li>
+  <li>$100,000 annual limit on ISOs that become exercisable in any year (measured at grant date FMV)</li>
+  <li>Employee must remain employed from grant until 3 months before exercise (12 months for disability)</li>
+</ul>
+
+<h3>ISO Tax Events</h3>
+<table class="key-table">
+  <tr><th>Event</th><th>Regular Tax</th><th>AMT</th></tr>
+  <tr><td><strong>Grant</strong></td><td>No tax</td><td>No AMT adjustment</td></tr>
+  <tr><td><strong>Exercise</strong></td><td>No regular income if ISO requirements met</td><td>Spread (FMV - exercise price) is an AMT preference item under IRC §56(b)(3)</td></tr>
+  <tr><td><strong>Sale - qualifying disposition</strong><br>(held 2+ years from grant, 1+ year from exercise)</td><td>Entire gain (sale price - exercise price) is long-term capital gain</td><td>Gain is capital gain for AMT purposes; AMT credit may be available</td></tr>
+  <tr><td><strong>Sale - disqualifying disposition</strong><br>(sold before holding period met)</td><td>Ordinary income on spread at exercise (FMV at exercise - exercise price); capital gain on additional appreciation</td><td>No additional AMT adjustment since ordinary income already recognized</td></tr>
+</table>
+
+<div class="red-box"><strong>The ISO AMT trap.</strong> Exercising ISOs triggers AMT preference income equal to the spread (FMV minus exercise price) even though no regular income is recognized. In a high-appreciation stock, exercising a large ISO grant can trigger AMT in the hundreds of thousands of dollars - tax owed without cash proceeds unless the stock is sold. This has bankrupted employees who exercised at peak values, held for the qualifying disposition period, and then saw the stock collapse before the AMT bill came due. Model the AMT exposure before exercising large ISO grants, especially in concentrated positions.</div>
+
+<h2>Non-Qualified Stock Options (NSOs): IRC §83</h2>
+
+<p>NSOs (also called NQSOs) are stock options that do not qualify as ISOs - either because they fail to meet ISO requirements or because they are granted to non-employees (consultants, directors, advisors). NSOs produce ordinary income at exercise equal to the spread (FMV at exercise minus exercise price). This income is subject to withholding (for employees) and FICA taxes.</p>
+
+<div class="compare-grid">
+  <div class="cg-head">ISO</div>
+  <div class="cg-head">NSO</div>
+  <div class="cg-cell">
+    <div class="cg-label">At exercise</div>
+    No regular income. AMT preference = spread. Hold stock with basis = exercise price.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">At exercise</div>
+    Ordinary income = spread. Employer withholds FICA and income tax. Basis = FMV at exercise.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">At sale (qualifying)</div>
+    All appreciation from exercise price = long-term capital gain. Most favorable outcome.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">At sale</div>
+    Capital gain on appreciation from FMV at exercise to sale price. Long or short-term depending on holding period after exercise.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Who gets them</div>
+    Employees only. Non-employees cannot receive ISOs.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Who gets them</div>
+    Employees, directors, consultants, advisors. More flexible.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Planning note</div>
+    Best when stock is expected to appreciate significantly. AMT planning critical.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Planning note</div>
+    Simpler tax treatment. No AMT. Higher immediate tax cost but no holding period risk.
+  </div>
+</div>
+
+<h2>Restricted Stock Units (RSUs): Taxed at Vesting</h2>
+
+<p>RSUs are promises to deliver shares at a future date once vesting conditions are met. Unlike options, RSUs always have value unless the underlying stock goes to zero. RSUs are taxed as ordinary income at the time of vesting - the FMV of shares delivered at vesting is W-2 income subject to full withholding. The employee's basis in the shares equals the FMV at vesting, and subsequent appreciation is capital gain.</p>
+
+<p>Most public company employers withhold shares to cover taxes at vesting ("sell-to-cover" or "net settlement"). The withheld shares are treated as sold at FMV on the vesting date and the proceeds are remitted to the IRS. Employees who prefer to hold all shares must arrange separate cash withholding through payroll.</p>
+
+<div class="note-box"><strong>RSUs cannot benefit from the §83(b) election.</strong> The §83(b) election applies to property transferred subject to a substantial risk of forfeiture - not to promises to transfer property in the future. Since RSUs are unfunded promises (not actual property transfers), no §83(b) election is available. The employee must recognize income when shares are actually delivered. This is a key distinction from restricted stock.</div>
+
+<h2>The §83(b) Election: Converting Restricted Stock to Capital Gains</h2>
+
+<p>When an employee receives actual restricted stock (not RSUs) subject to a vesting schedule, IRC §83 normally taxes the stock as it vests. A §83(b) election allows the employee to elect to be taxed immediately at grant - based on the FMV at grant date - and start the capital gains holding period from grant rather than from vesting.</p>
+
+<div class="callout">
+  <div class="callout-label">The §83(b) Math - Why Early-Stage Employees Make This Election</div>
+  <p>Startup employee receives 100,000 shares of restricted stock with 4-year vesting. At grant, shares are worth $0.01 each ($1,000 total). Without §83(b): income is recognized as shares vest - when 25,000 shares vest in year 1 and the company is worth $5/share, the employee has $125,000 of ordinary income. With §83(b): employee elects to be taxed on $1,000 at grant. <strong>All future appreciation is long-term capital gain</strong> if held more than 1 year from grant. If the company IPOs at $20/share, the difference between ordinary income and capital gains treatment on $2M of appreciation is potentially $340,000+ in tax savings at the 37% vs. 23.8% rate differential.</p>
+</div>
+
+<h3>§83(b) Election Requirements</h3>
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>Must be filed within 30 days of the transfer of property - this deadline is absolute, no extensions</li>
+  <li>Filed with the IRS Service Center where the taxpayer files their return</li>
+  <li>A copy must be attached to the taxpayer's income tax return for the year of transfer</li>
+  <li>A copy must be provided to the employer</li>
+  <li>If the company fails (forfeiture): no loss deduction is available for the tax paid on the §83(b) income - the election cannot be revoked</li>
+</ul>
+
+<h2>§409A: Nonqualified Deferred Compensation</h2>
+
+<p>IRC §409A governs the timing of deferral and distribution of nonqualified deferred compensation (NQDC) - any arrangement where compensation earned in one year is paid in a later year. Violation of §409A is catastrophic: the deferred amount becomes immediately taxable, plus a 20% additional penalty tax, plus interest at the underpayment rate plus 1%.</p>
+
+<p>§409A requires that deferral elections be made before the beginning of the year in which services are performed (or within 30 days of becoming eligible for a new plan). Distributions can only be made on six permissible trigger events: separation from service, disability, death, a change in control, an unforeseeable emergency, or a fixed date specified in advance.</p>
+
+<div class="red-box"><strong>Common §409A traps.</strong> Discounted stock options (exercise price below FMV on grant date) are treated as NQDC and violate §409A unless structured as a deferral with compliant payment timing. Any modification of an existing stock option plan may also trigger §409A analysis. Separation pay arrangements that exceed safe harbor limits, employment contracts with discretionary payment timing, and bonus plans without fixed payment dates are all common §409A problem areas.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="section-83b-guide.html" class="related-link">§83(b) Election Guide<span>Restricted stock &middot; 30-day deadline &middot; Filing</span></a>
+    <a href="amt-calculator.html" class="related-link">AMT Calculator<span>ISO exercise impact &middot; 2026 parameters</span></a>
+    <a href="section-1202-qsbs.html" class="related-link">QSBS Guide<span>IRC §1202 &middot; 100% gain exclusion &middot; Startups</span></a>
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>ISO sale proceeds &middot; Rate modeling</span></a>
+    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>Pre-exit planning &middot; Liquidity events</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>3.8% on investment income from option gains</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §421 (general rules for statutory options); IRC §422 (incentive stock options - requirements and qualifying disposition holding period); IRC §423 (employee stock purchase plans); IRC §424 (definitions for statutory options); IRC §56(b)(3) (ISO spread as AMT preference item); IRC §55 and §56 (alternative minimum tax); IRC §83 (property transferred in connection with performance of services - taxation at vesting); IRC §83(b) (election to include in income in year of transfer - 30-day deadline); Treas. Reg. §1.83-2 (§83(b) election requirements and procedures); IRC §409A (inclusion in gross income of deferred compensation under nonqualified deferred compensation plans); IRC §409A(a)(1) (permissible distribution events - separation, disability, death, change in control, unforeseeable emergency, fixed date); IRC §409A(b) (funding prohibited - offshore and restricted assets); Treas. Reg. §1.409A-1 through §1.409A-6 (comprehensive §409A regulations - definitions, permissible timing, corrections); IRS Notice 2005-1 (Q&A guidance on §409A); Treas. Reg. §1.422-2 (ISO requirements in detail); Form 3921 (ISO exercise reporting by employer); Form 3922 (ESPP transfer reporting).</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
