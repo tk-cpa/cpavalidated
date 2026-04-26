@@ -8,14 +8,27 @@
 <link rel="canonical" href="https://cpavalidated.com/tax-estimator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6; --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF; --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2; --navy:#071563; --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA; --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878; --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC; --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --navy:#071563;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
 ::selection{background:var(--coral);color:#fff}
 a{color:var(--coral);text-decoration:none}
-a:hover{text-decoration:underline} .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+a:hover{text-decoration:underline}
+
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:900px;margin:0 auto;padding:0 24px}
 .ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
 .ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
@@ -25,23 +38,31 @@ a:hover{text-decoration:underline} .ph{background:var(--ink);padding:36px 0 28px
 .back{max-width:900px;margin:0 auto;padding:16px 24px 0}
 .back a{font-size:12px;color:var(--ink-60);font-weight:500}
 .back a:hover{color:var(--coral)}
-.container{max-width:900px;margin:0 auto;padding:28px 24px 0} /* Mode selector */
+.container{max-width:900px;margin:0 auto;padding:28px 24px 0}
+
+/* Mode selector */
 .mode-selector{display:flex;gap:0;border:2px solid var(--ink);overflow:hidden;margin-bottom:28px}
 .mode-tab{flex:1;padding:14px 20px;border:none;font-family:var(--font-display);font-size:16px;font-weight:400;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;transition:all .15s;text-align:center;background:var(--paper);color:var(--ink-60);border-right:2px solid var(--ink)}
 .mode-tab:last-child{border-right:none}
 .mode-tab.active{background:var(--ink);color:#fff}
-.mode-tab:hover:not(.active){background:var(--ink-10)} .card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.mode-tab:hover:not(.active){background:var(--ink-10)}
+
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
 .ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
 .sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
-.cb{padding:20px 20px 22px} .fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cb{padding:20px 20px 22px}
+
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
 .f1{display:flex;flex-direction:column;gap:5px}
 .f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
 .fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s;appearance:none;border-radius:0}
 .fc:focus{border-color:var(--coral)}
 select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px;cursor:pointer}
-input[type="number"].fc{font-weight:600;color:var(--ink-80)} /* Result box */
+input[type="number"].fc{font-weight:600;color:var(--ink-80)}
+
+/* Result box */
 .result-hero{background:var(--ink);padding:28px 24px;margin-bottom:20px}
 .rh-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:8px}
 .rh-total{font-family:var(--font-display);font-size:52px;font-weight:500;color:#fff;line-height:1;margin-bottom:6px;letter-spacing:-.02em}
@@ -50,7 +71,9 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)} /* Result box */
 .rh-item{padding:14px 16px;background:rgba(255,255,255,.05)}
 .rh-item-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:6px}
 .rh-item-val{font-family:var(--font-display);font-size:22px;font-weight:500;color:#fff}
-.rh-item-val.coral{color:var(--coral)} /* Bracket breakdown */
+.rh-item-val.coral{color:var(--coral)}
+
+/* Bracket breakdown */
 .bracket-table{width:100%;border-collapse:collapse;margin-bottom:16px}
 .bracket-table th{font-size:10.5px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.06em;padding:8px 10px;background:var(--ink-10);text-align:right;border-bottom:2px solid var(--ink-20)}
 .bracket-table th:first-child,.bracket-table th:nth-child(2){text-align:left}
@@ -59,28 +82,110 @@ input[type="number"].fc{font-weight:600;color:var(--ink-80)} /* Result box */
 .bracket-table td:nth-child(2){text-align:left;font-family:var(--font-sans);color:var(--ink-60)}
 .bracket-table tr:last-child td{border-bottom:none}
 .bracket-table .total-row td{font-weight:700;background:var(--ink-10);border-top:2px solid var(--ink-20);color:var(--ink)}
-.bracket-fill{display:inline-block;height:6px;background:var(--coral);min-width:2px;transition:width .3s} /* State breakdown */
+.bracket-fill{display:inline-block;height:6px;background:var(--coral);min-width:2px;transition:width .3s}
+
+/* State breakdown */
 .state-result-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
 .sbox{border:1px solid var(--ink-20);padding:16px}
 .sbox-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px}
 .sbox-val{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink)}
 .sbox-sub{font-size:11.5px;color:var(--ink-60);margin-top:4px}
 .sbox.highlight{background:var(--coral-100);border-color:var(--coral)}
-.sbox.highlight .sbox-val{color:var(--coral-600)} /* Flags */
+.sbox.highlight .sbox-val{color:var(--coral-600)}
+
+/* Flags */
 .flag{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border:1px solid var(--amber-b);background:var(--amber-bg);margin-bottom:10px}
 .flag-icon{font-size:14px;flex-shrink:0;margin-top:1px}
 .flag-text{font-size:12.5px;color:var(--amber);line-height:1.5}
 .flag-text strong{font-weight:600}
 .flag.green{background:var(--green-bg);border-color:var(--green-b)}
-.flag.green .flag-text{color:var(--green)} /* Source note */
-.source-row{font-size:11px;color:var(--ink-60);font-style:italic;margin-top:8px;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px} .inf{background:var(--paper);border-left:3px solid var(--coral);padding:9px 13px;font-size:12px;color:var(--ink-60);line-height:1.5;margin-top:12px}
+.flag.green .flag-text{color:var(--green)}
+
+/* Source note */
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;margin-top:8px;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px}
+
+.inf{background:var(--paper);border-left:3px solid var(--coral);padding:9px 13px;font-size:12px;color:var(--ink-60);line-height:1.5;margin-top:12px}
 .pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}
 .pbn:hover{background:var(--coral-600)}
-.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px} .hidden{display:none}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+
+.hidden{display:none}
 @media(max-width:640px){.fg2,.fg3,.rh-grid,.state-result-grid{grid-template-columns:1fr}.rh-total{font-size:38px}}
-@media print { /* ── Page setup ── */ @page { margin: 18mm 16mm; } body { background: white !important; font-size: 11pt; } /* ── Hide everything interactive ── */ .back, .mode-selector, .deadline-banner, .pbn, .mode-tab, .acct-table-wrap::-webkit-scrollbar, input, select, button:not(.pbn), .atb, .add-btn, .mode-toggle, .state-controls { display: none !important; } /* ── Keep header, force colors ── */ .ph { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 0 14px; } .ph h1 { font-size: 20pt; } .ph .badges { display: none; } .ph-eyebrow { font-size: 8pt; } .ph .sub { font-size: 9pt; } /* ── Card headers ── */ .ch { -webkit-print-color-adjust: exact; print-color-adjust: exact; } /* ── Hide input-only cards ── */ .input-card { display: none !important; } /* ── Result hero / summary boxes ── */ .result-hero, .savings-hero, .sum-box, .summary-box, .result-main, .rbn { -webkit-print-color-adjust: exact; print-color-adjust: exact; } /* ── Tables ── */ table { width: 100% !important; font-size: 9pt; } th, td { padding: 5px 7px !important; } .acct-table-wrap { overflow: visible !important; } table.st, table.at, table.tt { min-width: 0 !important; } /* ── Grids: force single column on narrow items ── */ .rh-grid, .sh-top { grid-template-columns: 1fr 1fr 1fr !important; } .fi-grid, .filing-info, .state-result-grid, .costs-grid, .result-grid, .fed-grid { grid-template-columns: 1fr 1fr !important; } .fg2, .fg3, .fg4 { display: none !important; } /* ── Rate compare ── */ .rate-compare { grid-template-columns: 1fr auto 1fr !important; } .rc-arrow { padding: 0 8px !important; } /* ── Flags: keep but compact ── */ .flag { font-size: 9pt; padding: 7px 10px; margin-bottom: 6px; } /* ── Source note / disclaimer ── */ .source-row, .disc { font-size: 8pt; } /* ── Eligibility list ── */ .elig-item { break-inside: avoid; } /* ── Page break hints ── */ .card { break-inside: avoid; margin-bottom: 10px; } /* ── Print footer on every page ── */ .ph::after { content: "cpavalidated.com · a tk.cpa resource · Built with AI. Validated by a CPA."; display: block; font-size: 7.5pt; color: rgba(255,255,255,0.45); margin-top: 8px; font-family: 'Inter', sans-serif; font-weight: 400; letter-spacing: .04em; } /* ── State table: hide filter controls, show table ── */ .state-table-wrap { overflow: visible !important; }
+@media print {
+  /* ── Page setup ── */
+  @page { margin: 18mm 16mm; }
+  body { background: white !important; font-size: 11pt; }
+
+  /* ── Hide everything interactive ── */
+  .back, .mode-selector, .deadline-banner, .pbn,
+  .mode-tab, .acct-table-wrap::-webkit-scrollbar,
+  input, select, button:not(.pbn), .atb, .add-btn,
+  .mode-toggle, .state-controls { display: none !important; }
+
+  /* ── Keep header, force colors ── */
+  .ph { -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 18px 0 14px; }
+  .ph h1 { font-size: 20pt; }
+  .ph .badges { display: none; }
+  .ph-eyebrow { font-size: 8pt; }
+  .ph .sub { font-size: 9pt; }
+
+  /* ── Card headers ── */
+  .ch { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* ── Hide input-only cards ── */
+  .input-card { display: none !important; }
+
+  /* ── Result hero / summary boxes ── */
+  .result-hero, .savings-hero, .sum-box, .summary-box,
+  .result-main, .rbn {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Tables ── */
+  table { width: 100% !important; font-size: 9pt; }
+  th, td { padding: 5px 7px !important; }
+  .acct-table-wrap { overflow: visible !important; }
+  table.st, table.at, table.tt { min-width: 0 !important; }
+
+  /* ── Grids: force single column on narrow items ── */
+  .rh-grid, .sh-top { grid-template-columns: 1fr 1fr 1fr !important; }
+  .fi-grid, .filing-info, .state-result-grid,
+  .costs-grid, .result-grid, .fed-grid { grid-template-columns: 1fr 1fr !important; }
+  .fg2, .fg3, .fg4 { display: none !important; }
+
+  /* ── Rate compare ── */
+  .rate-compare { grid-template-columns: 1fr auto 1fr !important; }
+  .rc-arrow { padding: 0 8px !important; }
+
+  /* ── Flags: keep but compact ── */
+  .flag { font-size: 9pt; padding: 7px 10px; margin-bottom: 6px; }
+
+  /* ── Source note / disclaimer ── */
+  .source-row, .disc { font-size: 8pt; }
+
+  /* ── Eligibility list ── */
+  .elig-item { break-inside: avoid; }
+
+  /* ── Page break hints ── */
+  .card { break-inside: avoid; margin-bottom: 10px; }
+
+  /* ── Print footer on every page ── */
+  .ph::after {
+    content: "cpavalidated.com  ·  a tk.cpa resource  ·  Built with AI. Validated by a CPA.";
+    display: block;
+    font-size: 7.5pt;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    letter-spacing: .04em;
+  }
+
+  /* ── State table: hide filter controls, show table ── */
+  .state-table-wrap { overflow: visible !important; }
 }.pbn{display:none}.ph,.result-hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
+</style>
 <style>
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
@@ -92,54 +197,673 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Tax Estimator 2026</h1> <div class="sub">Personal Income Tax &nbsp;&bull;&nbsp; Corporate Tax &nbsp;&bull;&nbsp; Federal + State</div> <div class="badges"> <span class="badge">IRS Rev. Proc. 2025-32</span> <span class="badge">IRC §1 (Individual)</span> <span class="badge">IRC §11 (Corporate)</span> <span class="badge">Tax Foundation 2026</span> <span class="badge">OBBBA (P.L. 119-21)</span> </div>
-</div></div> <div class="back"><a href="index.html">← cpavalidated.com</a></div> <div class="container"> <!-- Mode selector -->
-<div class="mode-selector"> <button class="mode-tab active" id="tabPersonal" onclick="setMode('personal')">Personal Income Tax</button> <button class="mode-tab" id="tabCorp" onclick="setMode('corporate')">Corporate Tax</button>
-</div> <!-- ═══════════════════════════════════════════════════ PERSONAL TAX ESTIMATOR
+<div class="ph"><div class="phi">
+  <h1>Tax Estimator 2026</h1>
+  <div class="sub">Personal Income Tax &nbsp;&bull;&nbsp; Corporate Tax &nbsp;&bull;&nbsp; Federal + State</div>
+  <div class="badges">
+    <span class="badge">IRS Rev. Proc. 2025-32</span>
+    <span class="badge">IRC §1 (Individual)</span>
+    <span class="badge">IRC §11 (Corporate)</span>
+    <span class="badge">Tax Foundation 2026</span>
+    <span class="badge">OBBBA (P.L. 119-21)</span>
+  </div>
+</div></div>
+
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+
+<div class="container">
+
+<!-- Mode selector -->
+<div class="mode-selector">
+  <button class="mode-tab active" id="tabPersonal" onclick="setMode('personal')">Personal Income Tax</button>
+  <button class="mode-tab" id="tabCorp" onclick="setMode('corporate')">Corporate Tax</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     PERSONAL TAX ESTIMATOR
 ═══════════════════════════════════════════════════ -->
-<div id="personalMode"> <div class="card input-card"> <div class="ch"><div class="sb">1</div><h2>Income & Filing Information</h2></div> <div class="cb"> <div class="fg3" style="margin-bottom:14px"> <div class="f1"> <label>Tax Year</label> <select id="pYear" class="fc" onchange="calcPersonal()"> <option value="2026" selected>2026</option> <option value="2027">2027 (projected)</option> </select> </div> <div class="f1"> <label>Filing Status</label> <select id="pStatus" class="fc" onchange="calcPersonal()"> <option value="single">Single</option> <option value="mfj">Married Filing Jointly (MFJ)</option> <option value="mfs">Married Filing Separately (MFS)</option> <option value="hoh">Head of Household (HOH)</option> </select> </div> <div class="f1"> <label>State</label> <select id="pState" class="fc" onchange="calcPersonal()"> <option value="">-- No State / Not Applicable --</option> </select> </div> </div> <div class="fg2" style="margin-bottom:14px"> <div class="f1"> <label>Gross Income ($)</label> <input type="number" id="pGrossIncome" class="fc" value="0" min="0" placeholder="0" oninput="calcPersonal()"> </div> <div class="f1"> <label>Above-the-Line Deductions ($)</label> <input type="number" id="pAboveLine" class="fc" value="0" min="0" placeholder="e.g. IRA, SE deduction" oninput="calcPersonal()"> </div> </div> <div class="fg2"> <div class="f1"> <label>Deduction Method</label> <select id="pDeductionType" class="fc" onchange="calcPersonal()"> <option value="standard">Standard Deduction</option> <option value="itemized">Itemized Deductions</option> </select> </div> <div class="f1" id="itemizedRow" style="display:none"> <label>Itemized Deduction Amount ($)</label> <input type="number" id="pItemized" class="fc" value="0" min="0" placeholder="0" oninput="calcPersonal()"> </div> </div> <div class="inf" style="margin-top:14px"> This is a simplified estimator for planning purposes. It does not account for credits, AMT, self-employment tax, Net Investment Income Tax (IRC §1411), or state-specific deductions. Use this estimate to complete the Safe Harbor calculator. Consult a qualified tax professional for your actual liability. </div> </div> </div> <!-- Personal Result --> <div class="card"> <div class="ch"><div class="sb">2</div><h2 id="pResultTitle">Federal Tax Result - 2026</h2></div> <div class="cb"> <div class="result-hero"> <div class="rh-label">Estimated Total Tax (Federal + State)</div> <div class="rh-total" id="pTotalTax">$0</div> <div class="rh-sub" id="pTotalSub">Enter income above to calculate</div> <div class="rh-grid"> <div class="rh-item"> <div class="rh-item-label">Federal Tax</div> <div class="rh-item-val" id="pFedTax">$0</div> </div> <div class="rh-item"> <div class="rh-item-label">State Tax (est.)</div> <div class="rh-item-val" id="pStateTax">$0</div> </div> <div class="rh-item"> <div class="rh-item-label">Effective Rate</div> <div class="rh-item-val coral" id="pEffRate">0.0%</div> </div> </div> </div> <div id="pFlags"></div> <h3 style="font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px">Federal Bracket Breakdown</h3> <table class="bracket-table"> <thead> <tr> <th>Bracket</th> <th>Income in Bracket</th> <th>Tax</th> <th>Cumulative Tax</th> </tr> </thead> <tbody id="pBracketBody"></tbody> </table> <div class="state-result-grid" id="pStateDetail" style="display:none"> </div> <div class="source-row" id="pSourceNote"></div> <button class="pbn" onclick="window.print()">Print / Save as PDF</button> <div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div> </div> </div> </div><!-- /personalMode --> <!-- ═══════════════════════════════════════════════════ CORPORATE TAX ESTIMATOR
+<div id="personalMode">
+
+  <div class="card input-card">
+    <div class="ch"><div class="sb">1</div><h2>Income & Filing Information</h2></div>
+    <div class="cb">
+      <div class="fg3" style="margin-bottom:14px">
+        <div class="f1">
+          <label>Tax Year</label>
+          <select id="pYear" class="fc" onchange="calcPersonal()">
+            <option value="2026" selected>2026</option>
+            <option value="2027">2027 (projected)</option>
+          </select>
+        </div>
+        <div class="f1">
+          <label>Filing Status</label>
+          <select id="pStatus" class="fc" onchange="calcPersonal()">
+            <option value="single">Single</option>
+            <option value="mfj">Married Filing Jointly (MFJ)</option>
+            <option value="mfs">Married Filing Separately (MFS)</option>
+            <option value="hoh">Head of Household (HOH)</option>
+          </select>
+        </div>
+        <div class="f1">
+          <label>State</label>
+          <select id="pState" class="fc" onchange="calcPersonal()">
+            <option value="">-- No State / Not Applicable --</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg2" style="margin-bottom:14px">
+        <div class="f1">
+          <label>Gross Income ($)</label>
+          <input type="number" id="pGrossIncome" class="fc" value="0" min="0" placeholder="0" oninput="calcPersonal()">
+        </div>
+        <div class="f1">
+          <label>Above-the-Line Deductions ($)</label>
+          <input type="number" id="pAboveLine" class="fc" value="0" min="0" placeholder="e.g. IRA, SE deduction" oninput="calcPersonal()">
+        </div>
+      </div>
+      <div class="fg2">
+        <div class="f1">
+          <label>Deduction Method</label>
+          <select id="pDeductionType" class="fc" onchange="calcPersonal()">
+            <option value="standard">Standard Deduction</option>
+            <option value="itemized">Itemized Deductions</option>
+          </select>
+        </div>
+        <div class="f1" id="itemizedRow" style="display:none">
+          <label>Itemized Deduction Amount ($)</label>
+          <input type="number" id="pItemized" class="fc" value="0" min="0" placeholder="0" oninput="calcPersonal()">
+        </div>
+      </div>
+      <div class="inf" style="margin-top:14px">
+        This is a simplified estimator for planning purposes. It does not account for credits, AMT, self-employment tax, Net Investment Income Tax (IRC §1411), or state-specific deductions. Use this estimate to complete the Safe Harbor calculator. Consult a qualified tax professional for your actual liability.
+      </div>
+    </div>
+  </div>
+
+  <!-- Personal Result -->
+  <div class="card">
+    <div class="ch"><div class="sb">2</div><h2 id="pResultTitle">Federal Tax Result - 2026</h2></div>
+    <div class="cb">
+
+      <div class="result-hero">
+        <div class="rh-label">Estimated Total Tax (Federal + State)</div>
+        <div class="rh-total" id="pTotalTax">$0</div>
+        <div class="rh-sub" id="pTotalSub">Enter income above to calculate</div>
+        <div class="rh-grid">
+          <div class="rh-item">
+            <div class="rh-item-label">Federal Tax</div>
+            <div class="rh-item-val" id="pFedTax">$0</div>
+          </div>
+          <div class="rh-item">
+            <div class="rh-item-label">State Tax (est.)</div>
+            <div class="rh-item-val" id="pStateTax">$0</div>
+          </div>
+          <div class="rh-item">
+            <div class="rh-item-label">Effective Rate</div>
+            <div class="rh-item-val coral" id="pEffRate">0.0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pFlags"></div>
+
+      <h3 style="font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px">Federal Bracket Breakdown</h3>
+      <table class="bracket-table">
+        <thead>
+          <tr>
+            <th>Bracket</th>
+            <th>Income in Bracket</th>
+            <th>Tax</th>
+            <th>Cumulative Tax</th>
+          </tr>
+        </thead>
+        <tbody id="pBracketBody"></tbody>
+      </table>
+
+      <div class="state-result-grid" id="pStateDetail" style="display:none">
+      </div>
+
+      <div class="source-row" id="pSourceNote"></div>
+
+      <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+      <div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
+    </div>
+  </div>
+
+</div><!-- /personalMode -->
+
+<!-- ═══════════════════════════════════════════════════
+     CORPORATE TAX ESTIMATOR
 ═══════════════════════════════════════════════════ -->
 <div id="corporateMode" class="hidden">
-<div class="card input-card"> <div class="ch"><div class="sb">1</div><h2>Corporate Tax Information</h2></div> <div class="cb"> <div class="fg3" style="margin-bottom:14px"> <div class="f1"> <label>Tax Year</label> <select id="cYear" class="fc" onchange="calcCorp()"> <option value="2026" selected>2026</option> <option value="2027">2027 (projected)</option> </select> </div> <div class="f1"> <label>Entity Type</label> <select id="cEntityType" class="fc" onchange="calcCorp()"> <option value="ccorp">C-Corporation (taxed as corporation)</option> <option value="scorp">S-Corporation (pass-through)</option> <option value="llc_corp">LLC taxed as C-Corp</option> </select> </div> <div class="f1"> <label>State of Incorporation / Operations</label> <select id="cState" class="fc" onchange="calcCorp()"> <option value="">-- No State / Not Applicable --</option> </select> </div> </div> <div class="fg2"> <div class="f1"> <label>Federal Taxable Income ($)</label> <input type="number" id="cTaxableIncome" class="fc" value="0" min="0" placeholder="After all deductions" oninput="calcCorp()"> </div> <div class="f1"> <label>State Apportionment Factor (%)</label> <input type="number" id="cApportion" class="fc" value="100" min="0" max="100" placeholder="100" oninput="calcCorp()"> <div style="font-size:11px;color:var(--ink-60);margin-top:4px">% of income apportioned to the selected state. Use 100% if operating only in that state.</div> </div> </div> <div class="inf" style="margin-top:14px"> S-Corporations and pass-through entities do not pay federal corporate income tax at the entity level. Income passes through to shareholders and is taxed at individual rates. This estimator calculates the federal corporate tax for C-Corporations only. For S-Corps, use the Personal Tax Estimator tab. - IRC §1363(a). </div> </div> </div> <!-- Corporate Result --> <div class="card"> <div class="ch"><div class="sb">2</div><h2 id="cResultTitle">Corporate Tax Result - 2026</h2></div> <div class="cb"> <div class="result-hero" id="cResultHero"> <div class="rh-label">Estimated Corporate Tax (Federal + State)</div> <div class="rh-total" id="cTotalTax">$0</div> <div class="rh-sub" id="cTotalSub">Enter taxable income above to calculate</div> <div class="rh-grid"> <div class="rh-item"> <div class="rh-item-label">Federal Tax (21%)</div> <div class="rh-item-val" id="cFedTax">$0</div> </div> <div class="rh-item"> <div class="rh-item-label">State Corporate Tax</div> <div class="rh-item-val" id="cStateTax">$0</div> </div> <div class="rh-item"> <div class="rh-item-label">Combined Eff. Rate</div> <div class="rh-item-val coral" id="cEffRate">0.0%</div> </div> </div> </div> <div id="cFlags"></div> <div class="state-result-grid"> <div class="sbox"> <div class="sbox-label">Federal Corporate Tax</div> <div class="sbox-val" id="cFedDetail">$0</div> <div class="sbox-sub">21% flat rate on all taxable income - IRC §11(b). Rate made permanent by OBBBA (P.L. 119-21).</div> </div> <div class="sbox highlight" id="cStateBox"> <div class="sbox-label">State Corporate Tax</div> <div class="sbox-val" id="cStateDetail">$0</div> <div class="sbox-sub" id="cStateSub">Select a state above.</div> </div> </div> <div class="source-row" id="cSourceNote"></div> <button class="pbn" onclick="window.print()">Print / Save as PDF</button> <div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div> </div> </div> </div><!-- /corporateMode --> </div><!-- /container --> <script>
+<div class="card input-card">
+    <div class="ch"><div class="sb">1</div><h2>Corporate Tax Information</h2></div>
+    <div class="cb">
+      <div class="fg3" style="margin-bottom:14px">
+        <div class="f1">
+          <label>Tax Year</label>
+          <select id="cYear" class="fc" onchange="calcCorp()">
+            <option value="2026" selected>2026</option>
+            <option value="2027">2027 (projected)</option>
+          </select>
+        </div>
+        <div class="f1">
+          <label>Entity Type</label>
+          <select id="cEntityType" class="fc" onchange="calcCorp()">
+            <option value="ccorp">C-Corporation (taxed as corporation)</option>
+            <option value="scorp">S-Corporation (pass-through)</option>
+            <option value="llc_corp">LLC taxed as C-Corp</option>
+          </select>
+        </div>
+        <div class="f1">
+          <label>State of Incorporation / Operations</label>
+          <select id="cState" class="fc" onchange="calcCorp()">
+            <option value="">-- No State / Not Applicable --</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg2">
+        <div class="f1">
+          <label>Federal Taxable Income ($)</label>
+          <input type="number" id="cTaxableIncome" class="fc" value="0" min="0" placeholder="After all deductions" oninput="calcCorp()">
+        </div>
+        <div class="f1">
+          <label>State Apportionment Factor (%)</label>
+          <input type="number" id="cApportion" class="fc" value="100" min="0" max="100" placeholder="100" oninput="calcCorp()">
+          <div style="font-size:11px;color:var(--ink-60);margin-top:4px">% of income apportioned to the selected state. Use 100% if operating only in that state.</div>
+        </div>
+      </div>
+      <div class="inf" style="margin-top:14px">
+        S-Corporations and pass-through entities do not pay federal corporate income tax at the entity level. Income passes through to shareholders and is taxed at individual rates. This estimator calculates the federal corporate tax for C-Corporations only. For S-Corps, use the Personal Tax Estimator tab. - IRC §1363(a).
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Result -->
+  <div class="card">
+    <div class="ch"><div class="sb">2</div><h2 id="cResultTitle">Corporate Tax Result - 2026</h2></div>
+    <div class="cb">
+
+      <div class="result-hero" id="cResultHero">
+        <div class="rh-label">Estimated Corporate Tax (Federal + State)</div>
+        <div class="rh-total" id="cTotalTax">$0</div>
+        <div class="rh-sub" id="cTotalSub">Enter taxable income above to calculate</div>
+        <div class="rh-grid">
+          <div class="rh-item">
+            <div class="rh-item-label">Federal Tax (21%)</div>
+            <div class="rh-item-val" id="cFedTax">$0</div>
+          </div>
+          <div class="rh-item">
+            <div class="rh-item-label">State Corporate Tax</div>
+            <div class="rh-item-val" id="cStateTax">$0</div>
+          </div>
+          <div class="rh-item">
+            <div class="rh-item-label">Combined Eff. Rate</div>
+            <div class="rh-item-val coral" id="cEffRate">0.0%</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="cFlags"></div>
+
+      <div class="state-result-grid">
+        <div class="sbox">
+          <div class="sbox-label">Federal Corporate Tax</div>
+          <div class="sbox-val" id="cFedDetail">$0</div>
+          <div class="sbox-sub">21% flat rate on all taxable income - IRC §11(b). Rate made permanent by OBBBA (P.L. 119-21).</div>
+        </div>
+        <div class="sbox highlight" id="cStateBox">
+          <div class="sbox-label">State Corporate Tax</div>
+          <div class="sbox-val" id="cStateDetail">$0</div>
+          <div class="sbox-sub" id="cStateSub">Select a state above.</div>
+        </div>
+      </div>
+
+      <div class="source-row" id="cSourceNote"></div>
+
+      <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+      <div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
+    </div>
+  </div>
+
+</div><!-- /corporateMode -->
+
+</div><!-- /container -->
+
+<script>
 // ── 2026 Federal Individual Brackets (IRS Rev. Proc. 2025-32) ──────────────
 // Source: IRS.gov, "IRS releases tax inflation adjustments for tax year 2026"
 // OBBBA (P.L. 119-21) made TCJA rates permanent.
 // Each entry: [rate, min_income_single, min_income_mfj, min_income_mfs, min_income_hoh]
-// Note: MFS uses same thresholds as Single. HOH brackets from Rev. Proc. 2025-32. const BRACKETS_2026 = { single: [ { rate:0.10, min:0, max:12400 }, { rate:0.12, min:12400, max:50400 }, { rate:0.22, min:50400, max:105700 }, { rate:0.24, min:105700, max:201775 }, { rate:0.32, min:201775, max:256225 }, { rate:0.35, min:256225, max:640600 }, { rate:0.37, min:640600, max:Infinity }, ], mfj: [ { rate:0.10, min:0, max:24800 }, { rate:0.12, min:24800, max:100800 }, { rate:0.22, min:100800, max:211400 }, { rate:0.24, min:211400, max:403550 }, { rate:0.32, min:403550, max:512450 }, { rate:0.35, min:512450, max:768700 }, { rate:0.37, min:768700, max:Infinity }, ], mfs: [ { rate:0.10, min:0, max:12400 }, { rate:0.12, min:12400, max:50400 }, { rate:0.22, min:50400, max:105700 }, { rate:0.24, min:105700, max:201775 }, { rate:0.32, min:201775, max:256225 }, { rate:0.35, min:256225, max:384350 }, { rate:0.37, min:384350, max:Infinity }, ], hoh: [ { rate:0.10, min:0, max:17700 }, { rate:0.12, min:17700, max:50400 }, { rate:0.22, min:50400, max:107650 }, { rate:0.24, min:107650, max:201775 }, { rate:0.32, min:201775, max:256225 }, { rate:0.35, min:256225, max:672700 }, { rate:0.37, min:672700, max:Infinity }, ],
-}; // 2027 projected: apply ~2.5% inflation adjustment to all thresholds (OBBBA indexed, C-CPI estimated)
-function inflate2027(brackets) { return brackets.map(b => ({ rate: b.rate, min: b.min === 0 ? 0 : Math.round(b.min * 1.025 / 100) * 100, max: b.max === Infinity ? Infinity : Math.round(b.max * 1.025 / 100) * 100, }));
-} const BRACKETS_2027 = { single: inflate2027(BRACKETS_2026.single), mfj: inflate2027(BRACKETS_2026.mfj), mfs: inflate2027(BRACKETS_2026.mfs), hoh: inflate2027(BRACKETS_2026.hoh),
-}; // Standard deductions
-const STD_DED = { 2026: { single:16100, mfj:32200, mfs:16100, hoh:24150 }, 2027: { single:16500, mfj:33000, mfs:16500, hoh:24750 }, // projected ~2.5%
-}; // NIIT threshold (IRC §1411) - for flagging only
-const NIIT_THRESHOLD = { single:200000, mfj:250000, mfs:125000, hoh:200000 }; // ── State individual income tax top rates 2026 (Tax Foundation) ─────────────
+// Note: MFS uses same thresholds as Single. HOH brackets from Rev. Proc. 2025-32.
+
+const BRACKETS_2026 = {
+  single: [
+    { rate:0.10, min:0,       max:12400 },
+    { rate:0.12, min:12400,   max:50400 },
+    { rate:0.22, min:50400,   max:105700 },
+    { rate:0.24, min:105700,  max:201775 },
+    { rate:0.32, min:201775,  max:256225 },
+    { rate:0.35, min:256225,  max:640600 },
+    { rate:0.37, min:640600,  max:Infinity },
+  ],
+  mfj: [
+    { rate:0.10, min:0,       max:24800 },
+    { rate:0.12, min:24800,   max:100800 },
+    { rate:0.22, min:100800,  max:211400 },
+    { rate:0.24, min:211400,  max:403550 },
+    { rate:0.32, min:403550,  max:512450 },
+    { rate:0.35, min:512450,  max:768700 },
+    { rate:0.37, min:768700,  max:Infinity },
+  ],
+  mfs: [
+    { rate:0.10, min:0,       max:12400 },
+    { rate:0.12, min:12400,   max:50400 },
+    { rate:0.22, min:50400,   max:105700 },
+    { rate:0.24, min:105700,  max:201775 },
+    { rate:0.32, min:201775,  max:256225 },
+    { rate:0.35, min:256225,  max:384350 },
+    { rate:0.37, min:384350,  max:Infinity },
+  ],
+  hoh: [
+    { rate:0.10, min:0,       max:17700 },
+    { rate:0.12, min:17700,   max:50400 },
+    { rate:0.22, min:50400,   max:107650 },
+    { rate:0.24, min:107650,  max:201775 },
+    { rate:0.32, min:201775,  max:256225 },
+    { rate:0.35, min:256225,  max:672700 },
+    { rate:0.37, min:672700,  max:Infinity },
+  ],
+};
+
+// 2027 projected: apply ~2.5% inflation adjustment to all thresholds (OBBBA indexed, C-CPI estimated)
+function inflate2027(brackets) {
+  return brackets.map(b => ({
+    rate: b.rate,
+    min: b.min === 0 ? 0 : Math.round(b.min * 1.025 / 100) * 100,
+    max: b.max === Infinity ? Infinity : Math.round(b.max * 1.025 / 100) * 100,
+  }));
+}
+
+const BRACKETS_2027 = {
+  single: inflate2027(BRACKETS_2026.single),
+  mfj:    inflate2027(BRACKETS_2026.mfj),
+  mfs:    inflate2027(BRACKETS_2026.mfs),
+  hoh:    inflate2027(BRACKETS_2026.hoh),
+};
+
+// Standard deductions
+const STD_DED = {
+  2026: { single:16100, mfj:32200, mfs:16100, hoh:24150 },
+  2027: { single:16500, mfj:33000, mfs:16500, hoh:24750 }, // projected ~2.5%
+};
+
+// NIIT threshold (IRC §1411) - for flagging only
+const NIIT_THRESHOLD = { single:200000, mfj:250000, mfs:125000, hoh:200000 };
+
+// ── State individual income tax top rates 2026 (Tax Foundation) ─────────────
 // Source: Tax Foundation, "2026 State Income Tax Rates and Brackets" (Feb 2026)
 // Using top marginal rate as a simplified approximation for planning purposes
-const STATE_IND_RATES = { AL:{ name:'Alabama', rate:0.050, note:'Top rate 5%' }, AK:{ name:'Alaska', rate:0, note:'No state income tax' }, AZ:{ name:'Arizona', rate:0.025, note:'Flat 2.5%' }, AR:{ name:'Arkansas', rate:0.044, note:'Top rate 4.4%' }, CA:{ name:'California', rate:0.133, note:'Top rate 13.3% (incl. 1% mental health surcharge on income >$1M)' }, CO:{ name:'Colorado', rate:0.044, note:'Flat 4.4%' }, CT:{ name:'Connecticut', rate:0.070, note:'Top rate 7%' }, DE:{ name:'Delaware', rate:0.066, note:'Top rate 6.6%' }, FL:{ name:'Florida', rate:0, note:'No state income tax' }, GA:{ name:'Georgia', rate:0.0519,note:'Flat 5.19% (phasing down)' }, HI:{ name:'Hawaii', rate:0.110, note:'Top rate 11%' }, ID:{ name:'Idaho', rate:0.058, note:'Flat 5.8%' }, IL:{ name:'Illinois', rate:0.0495,note:'Flat 4.95%' }, IN:{ name:'Indiana', rate:0.030, note:'Flat 3.0% (reduced 2026)' }, IA:{ name:'Iowa', rate:0.038, note:'Flat 3.8%' }, KS:{ name:'Kansas', rate:0.057, note:'Top rate 5.7%' }, KY:{ name:'Kentucky', rate:0.045, note:'Flat 4.5% (reduced 2026)' }, LA:{ name:'Louisiana', rate:0.030, note:'Flat 3%' }, ME:{ name:'Maine', rate:0.075, note:'Top rate 7.5%' }, MD:{ name:'Maryland', rate:0.065, note:'Top rate 6.5% (increased 2025)' }, MA:{ name:'Massachusetts', rate:0.050, note:'Flat 5% (9% on income >$1M under "Fair Share" amendment)' }, MI:{ name:'Michigan', rate:0.0425,note:'Flat 4.25%' }, MN:{ name:'Minnesota', rate:0.0985,note:'Top rate 9.85%' }, MS:{ name:'Mississippi', rate:0.044, note:'Flat 4.4% (phasing down)' }, MO:{ name:'Missouri', rate:0.049, note:'Top rate 4.9%' }, MT:{ name:'Montana', rate:0.059, note:'Top rate 5.9% (reduced 2026)' }, NE:{ name:'Nebraska', rate:0.052, note:'Top rate 5.2% (reduced 2026)' }, NV:{ name:'Nevada', rate:0, note:'No state income tax' }, NH:{ name:'New Hampshire', rate:0, note:'No broad income tax (interest/dividends tax repealed 2025)' }, NJ:{ name:'New Jersey', rate:0.1075,note:'Top rate 10.75%' }, NM:{ name:'New Mexico', rate:0.059, note:'Top rate 5.9%' }, NY:{ name:'New York', rate:0.109, note:'Top rate 10.9% (NYC residents add up to 3.876%)' }, NC:{ name:'North Carolina', rate:0.0399,note:'Flat 3.99% (phasing down)' }, ND:{ name:'North Dakota', rate:0.025, note:'Top rate 2.5%' }, OH:{ name:'Ohio', rate:0.035, note:'Flat 3.5% (transitioned to flat 2026)' }, OK:{ name:'Oklahoma', rate:0.045, note:'Top rate 4.5% (brackets consolidated 2026)' }, OR:{ name:'Oregon', rate:0.099, note:'Top rate 9.9%' }, PA:{ name:'Pennsylvania', rate:0.0307,note:'Flat 3.07%' }, RI:{ name:'Rhode Island', rate:0.0599,note:'Top rate 5.99%' }, SC:{ name:'South Carolina', rate:0.060, note:'Top rate 6% (temporary reduction through June 2026)' }, SD:{ name:'South Dakota', rate:0, note:'No state income tax' }, TN:{ name:'Tennessee', rate:0, note:'No broad income tax' }, TX:{ name:'Texas', rate:0, note:'No state income tax' }, UT:{ name:'Utah', rate:0.045, note:'Flat 4.5% (reduced 2025, retroactive)' }, VT:{ name:'Vermont', rate:0.0875,note:'Top rate 8.75%' }, VA:{ name:'Virginia', rate:0.0575,note:'Top rate 5.75%' }, WA:{ name:'Washington', rate:0, note:'No state income tax (capital gains tax on gains >$262K)' }, WV:{ name:'West Virginia', rate:0.065, note:'Top rate 6.5%' }, WI:{ name:'Wisconsin', rate:0.0765,note:'Top rate 7.65%' }, WY:{ name:'Wyoming', rate:0, note:'No state income tax' }, DC:{ name:'Washington D.C.', rate:0.1075,note:'Top rate 10.75%' },
-}; // ── State corporate income tax rates 2026 (Tax Foundation) ──────────────────
+const STATE_IND_RATES = {
+  AL:{ name:'Alabama',         rate:0.050, note:'Top rate 5%' },
+  AK:{ name:'Alaska',          rate:0,     note:'No state income tax' },
+  AZ:{ name:'Arizona',         rate:0.025, note:'Flat 2.5%' },
+  AR:{ name:'Arkansas',        rate:0.044, note:'Top rate 4.4%' },
+  CA:{ name:'California',      rate:0.133, note:'Top rate 13.3% (incl. 1% mental health surcharge on income >$1M)' },
+  CO:{ name:'Colorado',        rate:0.044, note:'Flat 4.4%' },
+  CT:{ name:'Connecticut',     rate:0.070, note:'Top rate 7%' },
+  DE:{ name:'Delaware',        rate:0.066, note:'Top rate 6.6%' },
+  FL:{ name:'Florida',         rate:0,     note:'No state income tax' },
+  GA:{ name:'Georgia',         rate:0.0519,note:'Flat 5.19% (phasing down)' },
+  HI:{ name:'Hawaii',          rate:0.110, note:'Top rate 11%' },
+  ID:{ name:'Idaho',           rate:0.058, note:'Flat 5.8%' },
+  IL:{ name:'Illinois',        rate:0.0495,note:'Flat 4.95%' },
+  IN:{ name:'Indiana',         rate:0.030, note:'Flat 3.0% (reduced 2026)' },
+  IA:{ name:'Iowa',            rate:0.038, note:'Flat 3.8%' },
+  KS:{ name:'Kansas',          rate:0.057, note:'Top rate 5.7%' },
+  KY:{ name:'Kentucky',        rate:0.045, note:'Flat 4.5% (reduced 2026)' },
+  LA:{ name:'Louisiana',       rate:0.030, note:'Flat 3%' },
+  ME:{ name:'Maine',           rate:0.075, note:'Top rate 7.5%' },
+  MD:{ name:'Maryland',        rate:0.065, note:'Top rate 6.5% (increased 2025)' },
+  MA:{ name:'Massachusetts',   rate:0.050, note:'Flat 5% (9% on income >$1M under "Fair Share" amendment)' },
+  MI:{ name:'Michigan',        rate:0.0425,note:'Flat 4.25%' },
+  MN:{ name:'Minnesota',       rate:0.0985,note:'Top rate 9.85%' },
+  MS:{ name:'Mississippi',     rate:0.044, note:'Flat 4.4% (phasing down)' },
+  MO:{ name:'Missouri',        rate:0.049, note:'Top rate 4.9%' },
+  MT:{ name:'Montana',         rate:0.059, note:'Top rate 5.9% (reduced 2026)' },
+  NE:{ name:'Nebraska',        rate:0.052, note:'Top rate 5.2% (reduced 2026)' },
+  NV:{ name:'Nevada',          rate:0,     note:'No state income tax' },
+  NH:{ name:'New Hampshire',   rate:0,     note:'No broad income tax (interest/dividends tax repealed 2025)' },
+  NJ:{ name:'New Jersey',      rate:0.1075,note:'Top rate 10.75%' },
+  NM:{ name:'New Mexico',      rate:0.059, note:'Top rate 5.9%' },
+  NY:{ name:'New York',        rate:0.109, note:'Top rate 10.9% (NYC residents add up to 3.876%)' },
+  NC:{ name:'North Carolina',  rate:0.0399,note:'Flat 3.99% (phasing down)' },
+  ND:{ name:'North Dakota',    rate:0.025, note:'Top rate 2.5%' },
+  OH:{ name:'Ohio',            rate:0.035, note:'Flat 3.5% (transitioned to flat 2026)' },
+  OK:{ name:'Oklahoma',        rate:0.045, note:'Top rate 4.5% (brackets consolidated 2026)' },
+  OR:{ name:'Oregon',          rate:0.099, note:'Top rate 9.9%' },
+  PA:{ name:'Pennsylvania',    rate:0.0307,note:'Flat 3.07%' },
+  RI:{ name:'Rhode Island',    rate:0.0599,note:'Top rate 5.99%' },
+  SC:{ name:'South Carolina',  rate:0.060, note:'Top rate 6% (temporary reduction through June 2026)' },
+  SD:{ name:'South Dakota',    rate:0,     note:'No state income tax' },
+  TN:{ name:'Tennessee',       rate:0,     note:'No broad income tax' },
+  TX:{ name:'Texas',           rate:0,     note:'No state income tax' },
+  UT:{ name:'Utah',            rate:0.045, note:'Flat 4.5% (reduced 2025, retroactive)' },
+  VT:{ name:'Vermont',         rate:0.0875,note:'Top rate 8.75%' },
+  VA:{ name:'Virginia',        rate:0.0575,note:'Top rate 5.75%' },
+  WA:{ name:'Washington',      rate:0,     note:'No state income tax (capital gains tax on gains >$262K)' },
+  WV:{ name:'West Virginia',   rate:0.065, note:'Top rate 6.5%' },
+  WI:{ name:'Wisconsin',       rate:0.0765,note:'Top rate 7.65%' },
+  WY:{ name:'Wyoming',         rate:0,     note:'No state income tax' },
+  DC:{ name:'Washington D.C.', rate:0.1075,note:'Top rate 10.75%' },
+};
+
+// ── State corporate income tax rates 2026 (Tax Foundation) ──────────────────
 // Source: Tax Foundation, "State Corporate Income Tax Rates and Brackets, 2026" (Jan 2026)
-const STATE_CORP_RATES = { AL:{ name:'Alabama', rate:0.065, note:'6.5% flat rate' }, AK:{ name:'Alaska', rate:0.094, note:'Graduated; top rate 9.4%' }, AZ:{ name:'Arizona', rate:0.049, note:'4.9% flat rate' }, AR:{ name:'Arkansas', rate:0.053, note:'Top rate 5.3%' }, CA:{ name:'California', rate:0.0884, note:'8.84% flat rate (minimum $800 franchise tax)' }, CO:{ name:'Colorado', rate:0.0455, note:'4.55% flat rate' }, CT:{ name:'Connecticut', rate:0.075, note:'7.5% flat rate' }, DE:{ name:'Delaware', rate:0.087, note:'8.7% flat rate' }, FL:{ name:'Florida', rate:0.04458,note:'4.458% flat rate' }, GA:{ name:'Georgia', rate:0.0519, note:'5.19% flat rate (phasing down; trigger not met for 2026)' }, HI:{ name:'Hawaii', rate:0.064, note:'Graduated; top rate 6.4%' }, ID:{ name:'Idaho', rate:0.05695,note:'5.695% flat rate' }, IL:{ name:'Illinois', rate:0.095, note:'9.5% (7% corporate + 2.5% replacement tax)' }, IN:{ name:'Indiana', rate:0.049, note:'4.9% flat rate' }, IA:{ name:'Iowa', rate:0.055, note:'5.5% flat rate (transitioning 2026)' }, KS:{ name:'Kansas', rate:0.040, note:'4% flat rate' }, KY:{ name:'Kentucky', rate:0.050, note:'5% flat rate' }, LA:{ name:'Louisiana', rate:0.055, note:'5.5% flat rate' }, ME:{ name:'Maine', rate:0.0893, note:'Graduated; top rate 8.93%' }, MD:{ name:'Maryland', rate:0.0825, note:'8.25% flat rate' }, MA:{ name:'Massachusetts', rate:0.080, note:'8% flat rate' }, MI:{ name:'Michigan', rate:0.060, note:'6% flat rate' }, MN:{ name:'Minnesota', rate:0.098, note:'9.8% flat rate' }, MS:{ name:'Mississippi', rate:0.050, note:'5% flat rate' }, MO:{ name:'Missouri', rate:0.040, note:'4% flat rate' }, MT:{ name:'Montana', rate:0.0675, note:'6.75% flat rate' }, NE:{ name:'Nebraska', rate:0.0455, note:'4.55% flat rate (reduced from 5.2%; further reduction to 3.99% in 2027)' }, NV:{ name:'Nevada', rate:0, note:'No corporate income tax (Commerce Tax on gross receipts may apply)' }, NH:{ name:'New Hampshire', rate:0.075, note:'7.5% Business Profits Tax' }, NJ:{ name:'New Jersey', rate:0.115, note:'11.5% (highest in nation); surtax may apply' }, NM:{ name:'New Mexico', rate:0.059, note:'Graduated; top rate 5.9%' }, NY:{ name:'New York', rate:0.0725, note:'7.25% flat rate (6.5% for smaller corps with income <$5M)' }, NC:{ name:'North Carolina', rate:0.020, note:'2% flat rate (reduced from 2.25%; lowest CIT in nation)' }, ND:{ name:'North Dakota', rate:0.0431, note:'4.31% flat rate' }, OH:{ name:'Ohio', rate:0, note:'No corporate income tax (Commercial Activity Tax on gross receipts)' }, OK:{ name:'Oklahoma', rate:0.040, note:'4% flat rate' }, OR:{ name:'Oregon', rate:0.076, note:'Graduated; top rate 7.6%' }, PA:{ name:'Pennsylvania', rate:0.0849, note:'8.49% flat rate (reduced from 8.99%; phasedown to 4.99% by 2031)' }, RI:{ name:'Rhode Island', rate:0.070, note:'7% flat rate' }, SC:{ name:'South Carolina', rate:0.050, note:'5% flat rate' }, SD:{ name:'South Dakota', rate:0, note:'No corporate income tax' }, TN:{ name:'Tennessee', rate:0.065, note:'6.5% Excise Tax on net income' }, TX:{ name:'Texas', rate:0, note:'No corporate income tax (Franchise Tax on margin may apply)' }, UT:{ name:'Utah', rate:0.0495, note:'4.95% flat rate' }, VT:{ name:'Vermont', rate:0.085, note:'Graduated; top rate 8.5%' }, VA:{ name:'Virginia', rate:0.060, note:'6% flat rate' }, WA:{ name:'Washington', rate:0, note:'No corporate income tax (B&O Tax on gross receipts applies)' }, WV:{ name:'West Virginia', rate:0.065, note:'6.5% flat rate' }, WI:{ name:'Wisconsin', rate:0.079, note:'7.9% flat rate' }, WY:{ name:'Wyoming', rate:0, note:'No corporate income tax' }, DC:{ name:'Washington D.C.', rate:0.0825, note:'8.25% flat rate' },
-}; // ── Populate state dropdowns ───────────────────────────────────────────────
-function populateStates() { const states = Object.entries(STATE_IND_RATES).sort((a,b) => a[1].name.localeCompare(b[1].name)); ['pState','cState'].forEach(id => { const sel = document.getElementById(id); const isCorp = id === 'cState'; const rates = isCorp ? STATE_CORP_RATES : STATE_IND_RATES; states.forEach(([code]) => { const s = rates[code]; if (!s) return; const opt = document.createElement('option'); opt.value = code; opt.textContent = s.name + (s.rate === 0 ? ' (no tax)' : ''); sel.appendChild(opt); }); });
-} // ── Mode switching ─────────────────────────────────────────────────────────
-function setMode(mode) { document.getElementById('personalMode').classList.toggle('hidden', mode !== 'personal'); document.getElementById('corporateMode').classList.toggle('hidden', mode !== 'corporate'); document.getElementById('tabPersonal').classList.toggle('active', mode === 'personal'); document.getElementById('tabCorp').classList.toggle('active', mode === 'corporate');
-} // ── Format ─────────────────────────────────────────────────────────────────
-function fmt(n) { if (!n || n === 0) return '$0'; return '$' + Math.round(n).toLocaleString('en-US');
+const STATE_CORP_RATES = {
+  AL:{ name:'Alabama',         rate:0.065,  note:'6.5% flat rate' },
+  AK:{ name:'Alaska',          rate:0.094,  note:'Graduated; top rate 9.4%' },
+  AZ:{ name:'Arizona',         rate:0.049,  note:'4.9% flat rate' },
+  AR:{ name:'Arkansas',        rate:0.053,  note:'Top rate 5.3%' },
+  CA:{ name:'California',      rate:0.0884, note:'8.84% flat rate (minimum $800 franchise tax)' },
+  CO:{ name:'Colorado',        rate:0.0455, note:'4.55% flat rate' },
+  CT:{ name:'Connecticut',     rate:0.075,  note:'7.5% flat rate' },
+  DE:{ name:'Delaware',        rate:0.087,  note:'8.7% flat rate' },
+  FL:{ name:'Florida',         rate:0.04458,note:'4.458% flat rate' },
+  GA:{ name:'Georgia',         rate:0.0519, note:'5.19% flat rate (phasing down; trigger not met for 2026)' },
+  HI:{ name:'Hawaii',          rate:0.064,  note:'Graduated; top rate 6.4%' },
+  ID:{ name:'Idaho',           rate:0.05695,note:'5.695% flat rate' },
+  IL:{ name:'Illinois',        rate:0.095,  note:'9.5% (7% corporate + 2.5% replacement tax)' },
+  IN:{ name:'Indiana',         rate:0.049,  note:'4.9% flat rate' },
+  IA:{ name:'Iowa',            rate:0.055,  note:'5.5% flat rate (transitioning 2026)' },
+  KS:{ name:'Kansas',          rate:0.040,  note:'4% flat rate' },
+  KY:{ name:'Kentucky',        rate:0.050,  note:'5% flat rate' },
+  LA:{ name:'Louisiana',       rate:0.055,  note:'5.5% flat rate' },
+  ME:{ name:'Maine',           rate:0.0893, note:'Graduated; top rate 8.93%' },
+  MD:{ name:'Maryland',        rate:0.0825, note:'8.25% flat rate' },
+  MA:{ name:'Massachusetts',   rate:0.080,  note:'8% flat rate' },
+  MI:{ name:'Michigan',        rate:0.060,  note:'6% flat rate' },
+  MN:{ name:'Minnesota',       rate:0.098,  note:'9.8% flat rate' },
+  MS:{ name:'Mississippi',     rate:0.050,  note:'5% flat rate' },
+  MO:{ name:'Missouri',        rate:0.040,  note:'4% flat rate' },
+  MT:{ name:'Montana',         rate:0.0675, note:'6.75% flat rate' },
+  NE:{ name:'Nebraska',        rate:0.0455, note:'4.55% flat rate (reduced from 5.2%; further reduction to 3.99% in 2027)' },
+  NV:{ name:'Nevada',          rate:0,      note:'No corporate income tax (Commerce Tax on gross receipts may apply)' },
+  NH:{ name:'New Hampshire',   rate:0.075,  note:'7.5% Business Profits Tax' },
+  NJ:{ name:'New Jersey',      rate:0.115,  note:'11.5% (highest in nation); surtax may apply' },
+  NM:{ name:'New Mexico',      rate:0.059,  note:'Graduated; top rate 5.9%' },
+  NY:{ name:'New York',        rate:0.0725, note:'7.25% flat rate (6.5% for smaller corps with income <$5M)' },
+  NC:{ name:'North Carolina',  rate:0.020,  note:'2% flat rate (reduced from 2.25%; lowest CIT in nation)' },
+  ND:{ name:'North Dakota',    rate:0.0431, note:'4.31% flat rate' },
+  OH:{ name:'Ohio',            rate:0,      note:'No corporate income tax (Commercial Activity Tax on gross receipts)' },
+  OK:{ name:'Oklahoma',        rate:0.040,  note:'4% flat rate' },
+  OR:{ name:'Oregon',          rate:0.076,  note:'Graduated; top rate 7.6%' },
+  PA:{ name:'Pennsylvania',    rate:0.0849, note:'8.49% flat rate (reduced from 8.99%; phasedown to 4.99% by 2031)' },
+  RI:{ name:'Rhode Island',    rate:0.070,  note:'7% flat rate' },
+  SC:{ name:'South Carolina',  rate:0.050,  note:'5% flat rate' },
+  SD:{ name:'South Dakota',    rate:0,      note:'No corporate income tax' },
+  TN:{ name:'Tennessee',       rate:0.065,  note:'6.5% Excise Tax on net income' },
+  TX:{ name:'Texas',           rate:0,      note:'No corporate income tax (Franchise Tax on margin may apply)' },
+  UT:{ name:'Utah',            rate:0.0495, note:'4.95% flat rate' },
+  VT:{ name:'Vermont',         rate:0.085,  note:'Graduated; top rate 8.5%' },
+  VA:{ name:'Virginia',        rate:0.060,  note:'6% flat rate' },
+  WA:{ name:'Washington',      rate:0,      note:'No corporate income tax (B&O Tax on gross receipts applies)' },
+  WV:{ name:'West Virginia',   rate:0.065,  note:'6.5% flat rate' },
+  WI:{ name:'Wisconsin',       rate:0.079,  note:'7.9% flat rate' },
+  WY:{ name:'Wyoming',         rate:0,      note:'No corporate income tax' },
+  DC:{ name:'Washington D.C.', rate:0.0825, note:'8.25% flat rate' },
+};
+
+// ── Populate state dropdowns ───────────────────────────────────────────────
+function populateStates() {
+  const states = Object.entries(STATE_IND_RATES).sort((a,b) => a[1].name.localeCompare(b[1].name));
+  ['pState','cState'].forEach(id => {
+    const sel = document.getElementById(id);
+    const isCorp = id === 'cState';
+    const rates = isCorp ? STATE_CORP_RATES : STATE_IND_RATES;
+    states.forEach(([code]) => {
+      const s = rates[code];
+      if (!s) return;
+      const opt = document.createElement('option');
+      opt.value = code;
+      opt.textContent = s.name + (s.rate === 0 ? ' (no tax)' : '');
+      sel.appendChild(opt);
+    });
+  });
 }
-function pct(n) { return (n * 100).toFixed(1) + '%'; } // ── Calculate tax from brackets ────────────────────────────────────────────
-function calcTaxFromBrackets(taxable, brackets) { let tax = 0; const detail = []; if (taxable <= 0) return { tax:0, detail:[] }; for (const b of brackets) { if (taxable <= b.min) break; const inBracket = Math.min(taxable, b.max === Infinity ? taxable : b.max) - b.min; if (inBracket <= 0) continue; const bracketTax = inBracket * b.rate; tax += bracketTax; detail.push({ rate:b.rate, min:b.min, max:b.max, inBracket, bracketTax, cumulative:tax }); } return { tax, detail };
-} // ── Personal tax calculation ───────────────────────────────────────────────
-function calcPersonal() { const yr = document.getElementById('pYear').value; const status = document.getElementById('pStatus').value; const stateCode = document.getElementById('pState').value; const gross = parseFloat(document.getElementById('pGrossIncome').value) || 0; const above = parseFloat(document.getElementById('pAboveLine').value) || 0; const dedType = document.getElementById('pDeductionType').value; const itemized= parseFloat(document.getElementById('pItemized').value) || 0; // Show/hide itemized input document.getElementById('itemizedRow').style.display = dedType === 'itemized' ? '' : 'none'; const brackets = yr === '2026' ? BRACKETS_2026[status] : BRACKETS_2027[status]; const stdDed = STD_DED[yr][status]; const agi = Math.max(0, gross - above); const ded = dedType === 'standard' ? stdDed : Math.max(stdDed, itemized); const taxable = Math.max(0, agi - ded); const { tax: fedTax, detail } = calcTaxFromBrackets(taxable, brackets); // State tax estimate (simplified - top rate on taxable income as rough approximation) let stateTax = 0; let stateInfo = null; if (stateCode && STATE_IND_RATES[stateCode]) { stateInfo = STATE_IND_RATES[stateCode]; // Rough: apply top rate to taxable income - this is a conservative overestimate // In practice state taxable income differs from federal stateTax = taxable * stateInfo.rate; } const totalTax = fedTax + stateTax; const effRate = gross > 0 ? totalTax / gross : 0; // Update result hero document.getElementById('pResultTitle').textContent = `Personal Tax Result - ${yr}${yr==='2027'?' (Projected)':''}`; document.getElementById('pTotalTax').textContent = fmt(totalTax); document.getElementById('pTotalSub').textContent = `AGI: ${fmt(agi)} · Taxable Income: ${fmt(taxable)} · Deduction: ${fmt(ded)} (${dedType === 'standard' ? 'standard' : 'itemized'})`; document.getElementById('pFedTax').textContent = fmt(fedTax); document.getElementById('pStateTax').textContent = fmt(stateTax); document.getElementById('pEffRate').textContent = pct(effRate); // Bracket breakdown table const tbody = document.getElementById('pBracketBody'); tbody.innerHTML = ''; if (detail.length === 0) { const tr = document.createElement('tr'); tr.innerHTML = '<td colspan="4" style="color:var(--ink-60);font-style:italic;text-align:center">Enter income above to see bracket breakdown</td>'; tbody.appendChild(tr); } else { const maxBracketTax = Math.max(...detail.map(d => d.bracketTax)); detail.forEach(d => { const tr = document.createElement('tr'); const barWidth = maxBracketTax > 0 ? Math.round((d.bracketTax / maxBracketTax) * 80) : 0; tr.innerHTML = `<td>${(d.rate*100).toFixed(0)}%</td>` + `<td style="color:var(--ink-60)">${fmt(d.inBracket)} of income</td>` + `<td>${fmt(d.bracketTax)} <span class="bracket-fill" style="width:${barWidth}px"></span></td>` + `<td>${fmt(d.cumulative)}</td>`; tbody.appendChild(tr); }); const tr = document.createElement('tr'); tr.className = 'total-row'; tr.innerHTML = `<td colspan="2">Federal Total · Marginal Rate: ${(brackets.find(b => taxable > b.min && (taxable <= b.max || b.max === Infinity))?.rate*100 || 0).toFixed(0)}%</td><td>${fmt(fedTax)}</td><td>${pct(gross > 0 ? fedTax/gross : 0)} eff.</td>`; tbody.appendChild(tr); } // State detail const stateDetailDiv = document.getElementById('pStateDetail'); if (stateInfo) { stateDetailDiv.style.display = 'grid'; stateDetailDiv.innerHTML = ` <div class="sbox"> <div class="sbox-label">State: ${stateInfo.name}</div> <div class="sbox-val">${fmt(stateTax)}</div> <div class="sbox-sub">Estimated using top rate of ${pct(stateInfo.rate)} on federal taxable income. Actual state tax will differ based on state-specific rules. ${stateInfo.note}</div> </div> <div class="sbox highlight"> <div class="sbox-label">Combined Federal + State</div> <div class="sbox-val">${fmt(totalTax)}</div> <div class="sbox-sub">Effective combined rate: ${pct(effRate)} on gross income of ${fmt(gross)}</div> </div>`; } else { stateDetailDiv.style.display = 'none'; } // Flags const flagDiv = document.getElementById('pFlags'); flagDiv.innerHTML = ''; const addFlag = (text, type='amber') => { flagDiv.innerHTML += `<div class="flag ${type==='green'?'green':''}"><div class="flag-icon">${type==='green'?'✓':'!'}</div><div class="flag-text">${text}</div></div>`; }; if (yr === '2027') addFlag('<strong>2027 is projected.</strong> Brackets estimated with ~2.5% inflation adjustment per C-CPI trend. Actual brackets will be published by IRS in fall 2026 per Rev. Proc. 2026-XX.'); if (gross > NIIT_THRESHOLD[status]) addFlag('<strong>Net Investment Income Tax (NIIT) may apply.</strong> IRC §1411 imposes an additional 3.8% tax on investment income if MAGI exceeds $' + (NIIT_THRESHOLD[status]/1000).toFixed(0) + 'K (' + status + '). Not included in this estimate.'); if (stateCode === 'CA' && gross > 1000000) addFlag('<strong>California 1% mental health surcharge</strong> applies on income over $1 million. Not fully reflected in the top-rate estimate above.'); if (stateCode === 'NY') addFlag('<strong>New York City residents</strong> pay an additional NYC income tax (up to 3.876%) on top of the NY state rate shown.'); if (stateCode === 'MA' && gross > 1000000) addFlag('<strong>Massachusetts "Fair Share" amendment (Question 1)</strong> imposes 9% rate on income over $1M, not the standard 5% flat rate. Estimate above uses 5% and understates MA tax for high-income filers.'); if (gross > 600000 && status === 'single') addFlag('<strong>37% marginal rate applies</strong> on income above $640,600. Consider tax planning strategies: deferred compensation, retirement contributions, qualified opportunity zone investments.'); if (dedType === 'standard') { const stdAmt = STD_DED[yr][status]; if (agi > stdAmt * 3) addFlag('You may have significant itemized deductions (mortgage interest, state taxes, charitable contributions). If itemized deductions exceed $' + fmt(stdAmt) + ', consider switching to itemized above.', 'amber'); } // Source note document.getElementById('pSourceNote').textContent = `Source: IRS Rev. Proc. 2025-32; OBBBA (P.L. 119-21); IRC §1. Standard deduction: Single $16,100 / MFJ $32,200 / MFS $16,100 / HOH $24,150 (2026). State rates: Tax Foundation, "2026 State Income Tax Rates and Brackets" (Feb. 2026).${yr==='2027'?' 2027 brackets: projected ~2.5% C-CPI inflation adjustment; not yet officially published.':''}`;
-} // ── Corporate tax calculation ──────────────────────────────────────────────
-function calcCorp() { const yr = document.getElementById('cYear').value; const entityType = document.getElementById('cEntityType').value; const stateCode = document.getElementById('cState').value; const income = parseFloat(document.getElementById('cTaxableIncome').value) || 0; const apportion = (parseFloat(document.getElementById('cApportion').value) || 100) / 100; document.getElementById('cResultTitle').textContent = `Corporate Tax Result - ${yr}${yr==='2027'?' (Projected)':''}`; const flagDiv = document.getElementById('cFlags'); flagDiv.innerHTML = ''; const addFlag = (text, type='amber') => { flagDiv.innerHTML += `<div class="flag ${type==='green'?'green':''}"><div class="flag-icon">${type==='green'?'✓':'!'}</div><div class="flag-text">${text}</div></div>`; }; if (entityType === 'scorp') { document.getElementById('cTotalTax').textContent = 'N/A'; document.getElementById('cFedTax').textContent = '$0'; document.getElementById('cStateTax').textContent = '$0'; document.getElementById('cEffRate').textContent = ' - '; document.getElementById('cFedDetail').textContent= '$0'; document.getElementById('cStateDetail').textContent = '$0'; document.getElementById('cStateSub').textContent = 'S-Corps are pass-through entities.'; document.getElementById('cTotalSub').textContent = 'S-Corporation income passes through to shareholders.'; addFlag('<strong>S-Corporation:</strong> No corporate-level federal income tax. IRC §1363(a). Income is passed through to shareholders and taxed at individual rates. Use the Personal Income Tax tab to estimate shareholder-level tax. Note: some states impose a minimum tax or entity-level tax on S-Corps.'); document.getElementById('cSourceNote').textContent = 'IRC §1363(a); OBBBA (P.L. 119-21).'; return; } // Federal: 21% flat - IRC §11(b) const fedTax = income * 0.21; // State corporate tax let stateTax = 0; let stateInfo = null; if (stateCode && STATE_CORP_RATES[stateCode]) { stateInfo = STATE_CORP_RATES[stateCode]; const stateIncome = income * apportion; stateTax = stateIncome * stateInfo.rate; } const totalTax = fedTax + stateTax; const effRate = income > 0 ? totalTax / income : 0; document.getElementById('cTotalTax').textContent = fmt(totalTax); document.getElementById('cTotalSub').textContent = `Federal taxable income: ${fmt(income)}${stateCode ? ' · State income (apportioned): ' + fmt(income * apportion) : ''}`; document.getElementById('cFedTax').textContent = fmt(fedTax); document.getElementById('cStateTax').textContent = fmt(stateTax); document.getElementById('cEffRate').textContent = pct(effRate); document.getElementById('cFedDetail').textContent= fmt(fedTax); document.getElementById('cStateDetail').textContent = fmt(stateTax); if (stateInfo) { document.getElementById('cStateSub').textContent = `${stateInfo.name}: ${pct(stateInfo.rate)} applied to ${pct(apportion)} of income (${fmt(income * apportion)}). ${stateInfo.note}`; } else { document.getElementById('cStateSub').textContent = 'Select a state above.'; } // Flags if (yr === '2027') addFlag('<strong>2027 is projected.</strong> Federal corporate rate remains 21% (permanent under OBBBA). State rate for 2027 shown may not reflect enacted changes. Nebraska corporate rate scheduled to reduce to 3.99% in 2027.'); if (stateCode === 'NJ') addFlag('<strong>New Jersey</strong> has the highest corporate income tax in the nation at 11.5%. A temporary surtax may apply to income over $1M. Verify current NJ surcharge status before planning.'); if (stateCode === 'IL') addFlag('<strong>Illinois</strong> imposes 7% corporate income tax + 2.5% personal property replacement tax = 9.5% combined effective rate on most corporations.'); if (!stateCode) addFlag('No state selected. If your corporation has nexus in one or more states, state corporate income tax may apply. Nexus can be created by sales, employees, property, or economic activity thresholds.'); if (stateInfo && stateInfo.rate === 0 && ['NV','OH','TX','WA'].includes(stateCode)) addFlag(`<strong>${stateInfo.name}</strong> has no corporate income tax but imposes a gross receipts-based business tax (${stateCode==='TX'?'Franchise Tax on margin':stateCode==='OH'?'Commercial Activity Tax':stateCode==='WA'?'B&O Tax':'Commerce Tax'}). These taxes apply to revenue regardless of profitability and are not captured in this estimator.`); if (income > 10000000) addFlag('<strong>Large corporation considerations:</strong> GILTI (IRC §951A), BEAT (IRC §59A), and other provisions of international tax law may apply to multinational corporations. Consult a qualified tax professional.'); if (apportion < 1) addFlag(`<strong>Apportionment:</strong> ${pct(apportion)} of income apportioned to ${stateInfo?.name || 'selected state'}. Multi-state apportionment formulas (single-sales-factor in most states) may differ from the percentage entered. Consult a state tax professional for accurate apportionment.`); document.getElementById('cSourceNote').textContent = `Federal rate: IRC §11(b); 21% flat, permanent under OBBBA (P.L. 119-21). State rates: Tax Foundation, "State Corporate Income Tax Rates and Brackets, 2026" (Jan. 2026).${yr==='2027'?' 2027 state rates projected; Nebraska scheduled reduction to 3.99% confirmed.':''}`;
-} // ── Init ──────────────────────────────────────────────────────────────────
-document.getElementById('pDeductionType').addEventListener('change', function() { document.getElementById('itemizedRow').style.display = this.value === 'itemized' ? '' : 'none';
-}); populateStates();
+
+// ── Mode switching ─────────────────────────────────────────────────────────
+function setMode(mode) {
+  document.getElementById('personalMode').classList.toggle('hidden', mode !== 'personal');
+  document.getElementById('corporateMode').classList.toggle('hidden', mode !== 'corporate');
+  document.getElementById('tabPersonal').classList.toggle('active', mode === 'personal');
+  document.getElementById('tabCorp').classList.toggle('active', mode === 'corporate');
+}
+
+// ── Format ─────────────────────────────────────────────────────────────────
+function fmt(n) {
+  if (!n || n === 0) return '$0';
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+function pct(n) { return (n * 100).toFixed(1) + '%'; }
+
+// ── Calculate tax from brackets ────────────────────────────────────────────
+function calcTaxFromBrackets(taxable, brackets) {
+  let tax = 0;
+  const detail = [];
+  if (taxable <= 0) return { tax:0, detail:[] };
+  for (const b of brackets) {
+    if (taxable <= b.min) break;
+    const inBracket = Math.min(taxable, b.max === Infinity ? taxable : b.max) - b.min;
+    if (inBracket <= 0) continue;
+    const bracketTax = inBracket * b.rate;
+    tax += bracketTax;
+    detail.push({ rate:b.rate, min:b.min, max:b.max, inBracket, bracketTax, cumulative:tax });
+  }
+  return { tax, detail };
+}
+
+// ── Personal tax calculation ───────────────────────────────────────────────
+function calcPersonal() {
+  const yr      = document.getElementById('pYear').value;
+  const status  = document.getElementById('pStatus').value;
+  const stateCode = document.getElementById('pState').value;
+  const gross   = parseFloat(document.getElementById('pGrossIncome').value) || 0;
+  const above   = parseFloat(document.getElementById('pAboveLine').value) || 0;
+  const dedType = document.getElementById('pDeductionType').value;
+  const itemized= parseFloat(document.getElementById('pItemized').value) || 0;
+
+  // Show/hide itemized input
+  document.getElementById('itemizedRow').style.display = dedType === 'itemized' ? '' : 'none';
+
+  const brackets = yr === '2026' ? BRACKETS_2026[status] : BRACKETS_2027[status];
+  const stdDed   = STD_DED[yr][status];
+  const agi      = Math.max(0, gross - above);
+  const ded      = dedType === 'standard' ? stdDed : Math.max(stdDed, itemized);
+  const taxable  = Math.max(0, agi - ded);
+
+  const { tax: fedTax, detail } = calcTaxFromBrackets(taxable, brackets);
+
+  // State tax estimate (simplified - top rate on taxable income as rough approximation)
+  let stateTax = 0;
+  let stateInfo = null;
+  if (stateCode && STATE_IND_RATES[stateCode]) {
+    stateInfo = STATE_IND_RATES[stateCode];
+    // Rough: apply top rate to taxable income - this is a conservative overestimate
+    // In practice state taxable income differs from federal
+    stateTax = taxable * stateInfo.rate;
+  }
+
+  const totalTax = fedTax + stateTax;
+  const effRate  = gross > 0 ? totalTax / gross : 0;
+
+  // Update result hero
+  document.getElementById('pResultTitle').textContent = `Personal Tax Result - ${yr}${yr==='2027'?' (Projected)':''}`;
+  document.getElementById('pTotalTax').textContent = fmt(totalTax);
+  document.getElementById('pTotalSub').textContent = `AGI: ${fmt(agi)} · Taxable Income: ${fmt(taxable)} · Deduction: ${fmt(ded)} (${dedType === 'standard' ? 'standard' : 'itemized'})`;
+  document.getElementById('pFedTax').textContent   = fmt(fedTax);
+  document.getElementById('pStateTax').textContent = fmt(stateTax);
+  document.getElementById('pEffRate').textContent  = pct(effRate);
+
+  // Bracket breakdown table
+  const tbody = document.getElementById('pBracketBody');
+  tbody.innerHTML = '';
+  if (detail.length === 0) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td colspan="4" style="color:var(--ink-60);font-style:italic;text-align:center">Enter income above to see bracket breakdown</td>';
+    tbody.appendChild(tr);
+  } else {
+    const maxBracketTax = Math.max(...detail.map(d => d.bracketTax));
+    detail.forEach(d => {
+      const tr = document.createElement('tr');
+      const barWidth = maxBracketTax > 0 ? Math.round((d.bracketTax / maxBracketTax) * 80) : 0;
+      tr.innerHTML =
+        `<td>${(d.rate*100).toFixed(0)}%</td>` +
+        `<td style="color:var(--ink-60)">${fmt(d.inBracket)} of income</td>` +
+        `<td>${fmt(d.bracketTax)} <span class="bracket-fill" style="width:${barWidth}px"></span></td>` +
+        `<td>${fmt(d.cumulative)}</td>`;
+      tbody.appendChild(tr);
+    });
+    const tr = document.createElement('tr');
+    tr.className = 'total-row';
+    tr.innerHTML = `<td colspan="2">Federal Total · Marginal Rate: ${(brackets.find(b => taxable > b.min && (taxable <= b.max || b.max === Infinity))?.rate*100 || 0).toFixed(0)}%</td><td>${fmt(fedTax)}</td><td>${pct(gross > 0 ? fedTax/gross : 0)} eff.</td>`;
+    tbody.appendChild(tr);
+  }
+
+  // State detail
+  const stateDetailDiv = document.getElementById('pStateDetail');
+  if (stateInfo) {
+    stateDetailDiv.style.display = 'grid';
+    stateDetailDiv.innerHTML = `
+      <div class="sbox">
+        <div class="sbox-label">State: ${stateInfo.name}</div>
+        <div class="sbox-val">${fmt(stateTax)}</div>
+        <div class="sbox-sub">Estimated using top rate of ${pct(stateInfo.rate)} on federal taxable income. Actual state tax will differ based on state-specific rules. ${stateInfo.note}</div>
+      </div>
+      <div class="sbox highlight">
+        <div class="sbox-label">Combined Federal + State</div>
+        <div class="sbox-val">${fmt(totalTax)}</div>
+        <div class="sbox-sub">Effective combined rate: ${pct(effRate)} on gross income of ${fmt(gross)}</div>
+      </div>`;
+  } else {
+    stateDetailDiv.style.display = 'none';
+  }
+
+  // Flags
+  const flagDiv = document.getElementById('pFlags');
+  flagDiv.innerHTML = '';
+  const addFlag = (text, type='amber') => {
+    flagDiv.innerHTML += `<div class="flag ${type==='green'?'green':''}"><div class="flag-icon">${type==='green'?'✓':'!'}</div><div class="flag-text">${text}</div></div>`;
+  };
+
+  if (yr === '2027') addFlag('<strong>2027 is projected.</strong> Brackets estimated with ~2.5% inflation adjustment per C-CPI trend. Actual brackets will be published by IRS in fall 2026 per Rev. Proc. 2026-XX.');
+  if (gross > NIIT_THRESHOLD[status]) addFlag('<strong>Net Investment Income Tax (NIIT) may apply.</strong> IRC §1411 imposes an additional 3.8% tax on investment income if MAGI exceeds $' + (NIIT_THRESHOLD[status]/1000).toFixed(0) + 'K (' + status + '). Not included in this estimate.');
+  if (stateCode === 'CA' && gross > 1000000) addFlag('<strong>California 1% mental health surcharge</strong> applies on income over $1 million. Not fully reflected in the top-rate estimate above.');
+  if (stateCode === 'NY') addFlag('<strong>New York City residents</strong> pay an additional NYC income tax (up to 3.876%) on top of the NY state rate shown.');
+  if (stateCode === 'MA' && gross > 1000000) addFlag('<strong>Massachusetts "Fair Share" amendment (Question 1)</strong> imposes 9% rate on income over $1M, not the standard 5% flat rate. Estimate above uses 5% and understates MA tax for high-income filers.');
+  if (gross > 600000 && status === 'single') addFlag('<strong>37% marginal rate applies</strong> on income above $640,600. Consider tax planning strategies: deferred compensation, retirement contributions, qualified opportunity zone investments.');
+  if (dedType === 'standard') {
+    const stdAmt = STD_DED[yr][status];
+    if (agi > stdAmt * 3) addFlag('You may have significant itemized deductions (mortgage interest, state taxes, charitable contributions). If itemized deductions exceed $' + fmt(stdAmt) + ', consider switching to itemized above.', 'amber');
+  }
+
+  // Source note
+  document.getElementById('pSourceNote').textContent = `Source: IRS Rev. Proc. 2025-32; OBBBA (P.L. 119-21); IRC §1. Standard deduction: Single $16,100 / MFJ $32,200 / MFS $16,100 / HOH $24,150 (2026). State rates: Tax Foundation, "2026 State Income Tax Rates and Brackets" (Feb. 2026).${yr==='2027'?' 2027 brackets: projected ~2.5% C-CPI inflation adjustment; not yet officially published.':''}`;
+}
+
+// ── Corporate tax calculation ──────────────────────────────────────────────
+function calcCorp() {
+  const yr          = document.getElementById('cYear').value;
+  const entityType  = document.getElementById('cEntityType').value;
+  const stateCode   = document.getElementById('cState').value;
+  const income      = parseFloat(document.getElementById('cTaxableIncome').value) || 0;
+  const apportion   = (parseFloat(document.getElementById('cApportion').value) || 100) / 100;
+
+  document.getElementById('cResultTitle').textContent = `Corporate Tax Result - ${yr}${yr==='2027'?' (Projected)':''}`;
+
+  const flagDiv = document.getElementById('cFlags');
+  flagDiv.innerHTML = '';
+  const addFlag = (text, type='amber') => {
+    flagDiv.innerHTML += `<div class="flag ${type==='green'?'green':''}"><div class="flag-icon">${type==='green'?'✓':'!'}</div><div class="flag-text">${text}</div></div>`;
+  };
+
+  if (entityType === 'scorp') {
+    document.getElementById('cTotalTax').textContent = 'N/A';
+    document.getElementById('cFedTax').textContent   = '$0';
+    document.getElementById('cStateTax').textContent = '$0';
+    document.getElementById('cEffRate').textContent  = ' - ';
+    document.getElementById('cFedDetail').textContent= '$0';
+    document.getElementById('cStateDetail').textContent = '$0';
+    document.getElementById('cStateSub').textContent = 'S-Corps are pass-through entities.';
+    document.getElementById('cTotalSub').textContent = 'S-Corporation income passes through to shareholders.';
+    addFlag('<strong>S-Corporation:</strong> No corporate-level federal income tax. IRC §1363(a). Income is passed through to shareholders and taxed at individual rates. Use the Personal Income Tax tab to estimate shareholder-level tax. Note: some states impose a minimum tax or entity-level tax on S-Corps.');
+    document.getElementById('cSourceNote').textContent = 'IRC §1363(a); OBBBA (P.L. 119-21).';
+    return;
+  }
+
+  // Federal: 21% flat - IRC §11(b)
+  const fedTax = income * 0.21;
+
+  // State corporate tax
+  let stateTax = 0;
+  let stateInfo = null;
+  if (stateCode && STATE_CORP_RATES[stateCode]) {
+    stateInfo = STATE_CORP_RATES[stateCode];
+    const stateIncome = income * apportion;
+    stateTax = stateIncome * stateInfo.rate;
+  }
+
+  const totalTax = fedTax + stateTax;
+  const effRate  = income > 0 ? totalTax / income : 0;
+
+  document.getElementById('cTotalTax').textContent = fmt(totalTax);
+  document.getElementById('cTotalSub').textContent = `Federal taxable income: ${fmt(income)}${stateCode ? ' · State income (apportioned): ' + fmt(income * apportion) : ''}`;
+  document.getElementById('cFedTax').textContent   = fmt(fedTax);
+  document.getElementById('cStateTax').textContent = fmt(stateTax);
+  document.getElementById('cEffRate').textContent  = pct(effRate);
+  document.getElementById('cFedDetail').textContent= fmt(fedTax);
+  document.getElementById('cStateDetail').textContent = fmt(stateTax);
+
+  if (stateInfo) {
+    document.getElementById('cStateSub').textContent = `${stateInfo.name}: ${pct(stateInfo.rate)} applied to ${pct(apportion)} of income (${fmt(income * apportion)}). ${stateInfo.note}`;
+  } else {
+    document.getElementById('cStateSub').textContent = 'Select a state above.';
+  }
+
+  // Flags
+  if (yr === '2027') addFlag('<strong>2027 is projected.</strong> Federal corporate rate remains 21% (permanent under OBBBA). State rate for 2027 shown may not reflect enacted changes. Nebraska corporate rate scheduled to reduce to 3.99% in 2027.');
+  if (stateCode === 'NJ') addFlag('<strong>New Jersey</strong> has the highest corporate income tax in the nation at 11.5%. A temporary surtax may apply to income over $1M. Verify current NJ surcharge status before planning.');
+  if (stateCode === 'IL') addFlag('<strong>Illinois</strong> imposes 7% corporate income tax + 2.5% personal property replacement tax = 9.5% combined effective rate on most corporations.');
+  if (!stateCode) addFlag('No state selected. If your corporation has nexus in one or more states, state corporate income tax may apply. Nexus can be created by sales, employees, property, or economic activity thresholds.');
+  if (stateInfo && stateInfo.rate === 0 && ['NV','OH','TX','WA'].includes(stateCode)) addFlag(`<strong>${stateInfo.name}</strong> has no corporate income tax but imposes a gross receipts-based business tax (${stateCode==='TX'?'Franchise Tax on margin':stateCode==='OH'?'Commercial Activity Tax':stateCode==='WA'?'B&O Tax':'Commerce Tax'}). These taxes apply to revenue regardless of profitability and are not captured in this estimator.`);
+  if (income > 10000000) addFlag('<strong>Large corporation considerations:</strong> GILTI (IRC §951A), BEAT (IRC §59A), and other provisions of international tax law may apply to multinational corporations. Consult a qualified tax professional.');
+  if (apportion < 1) addFlag(`<strong>Apportionment:</strong> ${pct(apportion)} of income apportioned to ${stateInfo?.name || 'selected state'}. Multi-state apportionment formulas (single-sales-factor in most states) may differ from the percentage entered. Consult a state tax professional for accurate apportionment.`);
+
+  document.getElementById('cSourceNote').textContent = `Federal rate: IRC §11(b); 21% flat, permanent under OBBBA (P.L. 119-21). State rates: Tax Foundation, "State Corporate Income Tax Rates and Brackets, 2026" (Jan. 2026).${yr==='2027'?' 2027 state rates projected; Nebraska scheduled reduction to 3.99% confirmed.':''}`;
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────
+document.getElementById('pDeductionType').addEventListener('change', function() {
+  document.getElementById('itemizedRow').style.display = this.value === 'itemized' ? '' : 'none';
+});
+
+populateStates();
 calcPersonal();
 calcCorp();
-</script> 
-<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="qbi-calculator.html" class="rl">QBI Deduction Calculator</a><a href="amt-calculator.html" class="rl">AMT Calculator</a><a href="capital-gains-calculator.html" class="rl">Capital Gains Calculator</a><a href="safe-harbor.html" class="rl">Estimated Tax Calculator</a><a href="roth-conversion.html" class="rl">Roth Conversion Calculator</a></div></div>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
 </body>
 </html>
