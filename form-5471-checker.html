@@ -49,7 +49,7 @@
 .prog{height:4px;background:var(--ink-10);margin-bottom:24px}
 .prog-fill{height:100%;background:var(--coral);transition:width .4s}
 .hidden{display:none}
-</style>
+.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
 <style>
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
@@ -91,5 +91,7 @@ function flag(t,i,txt){return '<div class="flag '+t+'"><div class="fi">'+i+'</di
 function resetAll(){ Object.keys(A).forEach(k=>delete A[k]); ['c2','c3','c4','c5','c6','c7','cResult'].forEach(id=>document.getElementById(id).classList.add('hidden')); document.querySelectorAll('.radio-opt').forEach(el=>el.classList.remove('selected')); document.querySelectorAll('input[type=radio]').forEach(el=>el.checked=false); document.getElementById('pf').style.width='0%'; window.scrollTo({top:0,behavior:'smooth'});
 }
 </script>
-<div style="background:var(--ink-10);border-top:2px solid var(--ink-20);padding:16px 24px;font-size:12px"><strong>Related:</strong> <a href="pfic-8621-checker.html" style="color:var(--coral)">PFIC / Form 8621 Checker</a> &nbsp;&middot;&nbsp; <a href="fbar-checker.html" style="color:var(--coral)">FBAR &amp; 8938 Checker</a> &nbsp;&middot;&nbsp; <a href="ftc-calculator.html" style="color:var(--coral)">Foreign Tax Credit Calculator</a></div> </body>
+<div style="background:var(--ink-10);border-top:2px solid var(--ink-20);padding:16px 24px;font-size:12px"><strong>Related:</strong> <a href="pfic-8621-checker.html" style="color:var(--coral)">PFIC / Form 8621 Checker</a> &nbsp;&middot;&nbsp; <a href="fbar-checker.html" style="color:var(--coral)">FBAR &amp; 8938 Checker</a> &nbsp;&middot;&nbsp; <a href="ftc-calculator.html" style="color:var(--coral)">Foreign Tax Credit Calculator</a></div> 
+<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="form-5472.html" class="rl">Form 5472 Guide</a><a href="gilti-explained.html" class="rl">GILTI / NCTI Guide</a><a href="subpart-f-cfc-basics.html" class="rl">Subpart F Basics</a><a href="pre-immigration-planning.html" class="rl">Pre-Immigration Planning</a><a href="ftc-calculator.html" class="rl">Foreign Tax Credit Calculator</a></div></div>
+</body>
 </html>
