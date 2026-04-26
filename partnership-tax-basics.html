@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partnership Tax Basics: IRC 704, 752, and 754 Elections Explained | CPA Validated</title>
+<meta name="description" content="Partnership taxation explained: IRC §704(b) substantial economic effect, §704(c) built-in gain allocations, §752 liability allocation, §754 elections and §743(b)/§734(b) adjustments, and the basics of outside vs. inside basis. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/partnership-tax-basics.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral);color:#fff!important;padding:9px 20px;font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.example-box{border:2px solid var(--coral);padding:20px;margin:24px 0}
+.example-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:14px;font-family:var(--font-mono)}
+.ex-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--ink-10);font-size:13px;color:var(--ink-80)}
+.ex-row:last-child{border-bottom:none;font-weight:700;color:var(--ink);padding-top:8px;margin-top:4px}
+.ex-row .val{font-family:var(--font-mono);font-size:12.5px}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="ph"><div class="phi">
+  <h1>Partnership Tax Basics: IRC 704, 752 & 754 Elections</h1>
+  <div class="sub">Outside vs. Inside Basis &nbsp;&bull;&nbsp; §704(b) Substantial Economic Effect &nbsp;&bull;&nbsp; §704(c) Built-In Gain &nbsp;&bull;&nbsp; §752 Liabilities &nbsp;&bull;&nbsp; §754 Step-Up Election</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §704</span>
+    <span class="ph-meta-item">IRC §752</span>
+    <span class="ph-meta-item">IRC §754</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Partnership taxation is the most flexible - and most complex - area of US tax law. A partnership can allocate income, gain, loss, deduction, and credit in almost any way the partners agree, subject to the economic effect rules of IRC §704(b). Liabilities allocated under §752 affect each partner's basis and determine when distributions are taxable. The §754 election can eliminate the tax cost of buying into an appreciated partnership. Understanding these three provisions is the foundation of partnership tax practice.</p>
+
+<h2>The Two Bases: Outside vs. Inside</h2>
+
+<p>Every partnership tax analysis starts with two distinct concepts of basis that must be tracked separately and do not always move together.</p>
+
+<div class="callout">
+  <div class="callout-label">The Fundamental Distinction</div>
+  <p><strong>Outside basis</strong> is each partner's basis in their partnership interest - what the partner paid (or is deemed to have paid) for the interest. It goes up when the partner contributes cash or property, when income is allocated to the partner, or when the partner's share of liabilities increases. It goes down for distributions, losses allocated to the partner, or decreases in the partner's share of liabilities. A partner cannot deduct losses beyond their outside basis.</p>
+  <p><strong>Inside basis</strong> is the partnership's aggregate basis in its assets. A new partner buying an existing interest at a premium over inside basis creates a permanent mismatch - the buyer has a high outside basis but the partnership assets have a low (or zero) inside basis. The §754 election closes this gap.</p>
+</div>
+
+<h2>IRC §704(b): Allocations Must Have Substantial Economic Effect</h2>
+
+<p>Partners can agree to allocate partnership items however they choose - 90/10, 50/50, with special allocations of specific items - but only if the allocations have "substantial economic effect" under IRC §704(b) and the regulations thereunder. Without economic effect, the IRS reallocates items according to each partner's interest in the partnership (a facts-and-circumstances determination).</p>
+
+<h3>The Three-Part Economic Effect Test</h3>
+
+<p>Under Treas. Reg. §1.704-1(b)(2), an allocation has economic effect if the partnership agreement provides for:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Capital account maintenance:</strong> The partnership must maintain capital accounts in accordance with the regulations - contributions increase capital accounts, distributions decrease them, and allocated income and losses adjust them.</li>
+  <li><strong>Liquidation in accordance with capital accounts:</strong> On liquidation of the partnership (or a partner's interest), proceeds must be distributed in accordance with positive capital account balances.</li>
+  <li><strong>Deficit restoration obligation (DRO) or qualified income offset (QIO):</strong> Partners with negative capital accounts must either be obligated to restore the deficit (DRO) or the agreement must contain a qualified income offset that allocates future income to the deficit partner before other partners receive income.</li>
+</ul>
+
+<p>Substantiality is a separate requirement - an allocation is not substantial if it shifts tax consequences among partners without meaningfully affecting their economic positions. The "shifting" and "transitory" allocation tests under the regulations catch attempts to game tax benefits without genuine economic consequences.</p>
+
+<h2>IRC §704(c): Built-In Gain and Loss Property</h2>
+
+<p>When a partner contributes property with a built-in gain or loss (fair market value differs from adjusted tax basis at contribution), IRC §704(c) requires the partnership to allocate that pre-contribution gain or loss to the contributing partner. The other partners should not be taxed on appreciation that existed before they joined.</p>
+
+<div class="example-box">
+  <div class="example-label">§704(c) Built-In Gain Allocation - Illustrative</div>
+  <div class="ex-row"><span>Partner A contributes land: FMV</span><span class="val">$1,000,000</span></div>
+  <div class="ex-row"><span>Partner A's tax basis in the land at contribution</span><span class="val">$200,000</span></div>
+  <div class="ex-row"><span>Built-in gain at contribution date</span><span class="val">$800,000</span></div>
+  <div class="ex-row"><span>Partnership sells land later for $1,200,000; total gain</span><span class="val">$1,000,000</span></div>
+  <div class="ex-row"><span>§704(c) requires: first $800K of gain allocated to Partner A</span><span class="val">$800,000 to A</span></div>
+  <div class="ex-row"><span>Remaining $200K gain allocated per economic arrangement (e.g., 50/50)</span><span class="val">$100K each</span></div>
+</div>
+
+<h3>Three Permissible §704(c) Methods</h3>
+<table class="key-table">
+  <tr><th>Method</th><th>How It Works</th><th>Best For</th></tr>
+  <tr><td><strong>Traditional Method</strong></td><td>Allocate tax items first to eliminate the book-tax difference; cannot exceed the ceiling rule (cannot allocate more tax gain to contributing partner than total partnership tax gain)</td><td>Simple structures; when ceiling rule is not a problem</td></tr>
+  <tr><td><strong>Traditional with Curative Allocations</strong></td><td>Same as traditional, but uses curative allocations of other tax items (e.g., depreciation) to correct ceiling rule distortions</td><td>When ceiling rule would otherwise disadvantage non-contributing partners</td></tr>
+  <tr><td><strong>Remedial Method</strong></td><td>Creates notional tax items to eliminate ceiling rule limitations entirely; most accurate but also most complex</td><td>Large built-in gain contributions where ceiling rule is significant</td></tr>
+</table>
+
+<h2>IRC §752: How Partnership Liabilities Affect Basis</h2>
+
+<p>A partner's outside basis includes their share of partnership liabilities. When a partnership borrows money, each partner's outside basis increases by their share of that liability - allowing them to deduct their share of losses funded by the debt. When liabilities decrease (debt is repaid or a partner's share decreases), the partner's basis decreases and they may be treated as receiving a cash distribution.</p>
+
+<h3>Recourse vs. Nonrecourse Liabilities</h3>
+
+<table class="key-table">
+  <tr><th>Type</th><th>Allocated To</th><th>Why It Matters</th></tr>
+  <tr><td><strong>Recourse liabilities</strong></td><td>Partners who bear the economic risk of loss - typically the general partner or partners who have guaranteed the debt</td><td>General partners in a partnership with a general partner typically get all recourse debt basis; increases their loss deductibility</td></tr>
+  <tr><td><strong>Nonrecourse liabilities</strong></td><td>All partners in accordance with their share of partnership profits (and more complex tier rules under Treas. Reg. §1.752-3)</td><td>Nonrecourse debt (typical real estate mortgages) creates basis for all partners - key to real estate partnership loss planning</td></tr>
+  <tr><td><strong>Qualified nonrecourse financing</strong></td><td>All partners in proportion to their at-risk amounts under §465</td><td>Specifically for real estate; treated as at-risk even though partners have no personal liability</td></tr>
+</table>
+
+<div class="note-box"><strong>The distribution trap.</strong> When a partner's share of partnership liabilities decreases - because the partnership repays debt, refinances to a smaller amount, or the partner's economic interest changes - the decrease is treated as a cash distribution under §752(b). If the deemed distribution exceeds the partner's outside basis, the excess is immediately taxable as gain. This is the most common unexpected taxable event in partnership transactions.</div>
+
+<h2>IRC §754: The Step-Up Election</h2>
+
+<p>The §754 election is one of the most valuable tools in partnership tax. When a partner sells their partnership interest or when a partner dies, there is often a mismatch between the buyer's outside basis (what they paid) and the partnership's inside basis in its assets (which may be much lower). Without a §754 election, the new partner is stuck paying tax again on appreciation that the selling partner already recognized.</p>
+
+<p>A §754 election, once made, is in effect for all future years unless revoked with IRS consent. It triggers two different types of adjustments:</p>
+
+<h3>§743(b): Transfer of a Partnership Interest</h3>
+
+<p>When a partnership interest is sold or inherited, §743(b) allows the partnership to adjust the basis of its assets (up or down) for the transferee partner only. The adjustment equals the difference between the transferee's outside basis and their share of the partnership's inside basis in its assets.</p>
+
+<div class="example-box">
+  <div class="example-label">§743(b) Step-Up - Illustrative</div>
+  <div class="ex-row"><span>Buyer pays for 50% partnership interest</span><span class="val">$500,000</span></div>
+  <div class="ex-row"><span>Buyer's 50% share of partnership's inside basis in assets</span><span class="val">$100,000</span></div>
+  <div class="ex-row"><span>§743(b) adjustment (step-up for the buyer only)</span><span class="val">$400,000</span></div>
+  <div class="ex-row"><span>Result: buyer gets $400K of additional depreciation/amortization on their share of partnership assets, eliminating the double-tax cost of buying in at a premium</span><span class="val">Significant benefit</span></div>
+</div>
+
+<h3>§734(b): Distribution of Partnership Property</h3>
+
+<p>When a partnership distributes property to a partner in a current or liquidating distribution, §734(b) adjusts the partnership's basis in remaining assets to prevent distortions. A gain-recognition distribution (where distributable property basis exceeds the distributee partner's outside basis) triggers a downward adjustment to remaining assets; a loss-recognition distribution triggers an upward adjustment.</p>
+
+<div class="green-box"><strong>When to make the §754 election.</strong> The election is most valuable when: (a) a partner buys in at a significant premium to inside basis (common in buyouts of appreciated real estate or business partnerships); (b) a partner dies and the estate gets a stepped-up basis for estate tax purposes that now exceeds inside basis; or (c) the partnership has significant depreciable assets where the buyer can benefit from additional cost recovery. The election can also produce downward adjustments in the right circumstances - which is generally unfavorable and is a reason some partnerships avoid it.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="scorp-vs-llc.html" class="related-link">S-Corp vs. LLC Guide<span>Entity choice &middot; SE tax &middot; basis rules</span></a>
+    <a href="qbi-deduction-guide.html" class="related-link">QBI Deduction Guide<span>IRC §199A &middot; Pass-through income</span></a>
+    <a href="passive-activity-loss.html" class="related-link">Passive Activity Loss<span>IRC §469 &middot; At-risk rules &middot; Real estate</span></a>
+    <a href="salt-planning-guide.html" class="related-link">SALT Planning Guide<span>PTET elections &middot; $40K cap &middot; OBBBA</span></a>
+    <a href="1031-exchange-guide.html" class="related-link">1031 Exchange Guide<span>Real estate partnerships &middot; Like-kind exchanges</span></a>
+    <a href="asc-740-guide.html" class="related-link">ASC 740 Guide<span>Tax accounting for partnership investments</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §702 (partner's distributive share); IRC §704 (partner's distributive share - special allocations); IRC §704(b) (substantial economic effect requirement); IRC §704(c) (built-in gain and loss property contributed to partnership); Treas. Reg. §1.704-1(b) (economic effect - capital account maintenance, liquidation in accordance with capital accounts, DRO/QIO requirements); Treas. Reg. §1.704-3 (§704(c) methods - traditional, curative, remedial); IRC §705 (determination of basis of partner's interest); IRC §722 (basis of contributing partner's interest); IRC §723 (basis of property contributed to partnership); IRC §731 (extent of recognition of gain or loss on distribution); IRC §732 (basis of distributed property); IRC §734 (optional adjustment to basis of undistributed partnership property - §734(b)); IRC §743 (optional adjustment to basis of partnership property - §743(b)); IRC §751 (unrealized receivables and inventory items - hot assets); IRC §752 (treatment of certain liabilities); IRC §754 (manner of electing optional adjustment to basis); Treas. Reg. §1.752-1 through 1.752-7 (liability allocation rules - recourse, nonrecourse, qualified nonrecourse); Treas. Reg. §1.743-1 (optional adjustments to basis of partnership property - computation and allocation); IRC §465 (at-risk limitations).</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
+
+</div>
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
