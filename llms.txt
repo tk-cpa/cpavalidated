@@ -102,3 +102,7 @@
 - partnership-tax-basics.html: Partnership tax basics - outside vs. inside basis, §704(b) substantial economic effect, §704(c) built-in gain methods, §752 liability allocation, §754 step-up election §743(b) §734(b).
 - rd-tax-credit-guide.html: R&D tax credit guide - IRC §41 four-part test, QREs wages supplies contract research, regular credit, ASC method, payroll tax offset $500K OBBBA, §280C election, documentation.
 - hnw-planning-guide.html: High net worth tax planning guide - $15M estate exemption OBBBA, SLAT GRAT IDGT, NIIT reduction, SALT PTET, DAF CRT QCD, QSBS §1202, pre-exit planning, international compliance.
+- pfic-guide-deep.html: PFIC deep dive - §1291 excess distribution regime, QEF election, MTM election, Form 8621 annual filing, purging elections, look-through attribution, foreign mutual fund trap.
+- section-199a-guide.html: QBI deduction deep dive - IRC §199A W-2 wage limitation, UBIA, 50% test, 25%+2.5% test, SSTB phaseout, aggregation elections, permanent under OBBBA.
+- business-sale-planning.html: Business sale planning - §338(h)(10) deemed asset election, §336(e), asset vs. stock comparison, §1060 price allocation 7 classes, §453 installment sales, earnout tax treatment.
+- international-information-returns.html: International information returns map - Forms 5471 5472 8865 8858 3520 3520-A 8938 FinCEN 114 8621, who files, thresholds, penalties, statute of limitations suspension.
