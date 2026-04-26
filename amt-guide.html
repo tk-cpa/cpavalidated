@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alternative Minimum Tax (AMT) Guide: AMTI, Exemptions & ISO Trap (2026) | CPA Validated</title>
+<meta name="description" content="AMT mechanics: AMTI computation, 2026 exemption amounts, preferences and adjustments, the ISO exercise AMT trap, Form 6251, AMT credit carryforward, and who actually owes AMT after TCJA. CPA-validated. Updated 2026.">
+<link rel="canonical" href="https://cpavalidated.com/amt-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px;font-family:var(--font-mono)}
+.formula-line{font-size:14px;color:#fff;line-height:2.2;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px;font-family:var(--font-mono)}
+.formula-line .var{color:var(--coral);font-family:var(--font-mono)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="ph"><div class="phi">
+  <h1>Alternative Minimum Tax (AMT): AMTI, Exemptions & ISO Trap</h1>
+  <div class="sub">Who Owes AMT in 2026 &nbsp;&bull;&nbsp; AMTI Computation &nbsp;&bull;&nbsp; Preferences &amp; Adjustments &nbsp;&bull;&nbsp; ISO Exercise Danger &nbsp;&bull;&nbsp; AMT Credit</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §55-59</span>
+    <span class="ph-meta-item">Form 6251</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The alternative minimum tax is a parallel tax system that adds back certain deductions and preferences to income, computes tax at a flat rate, and requires the taxpayer to pay whichever is higher - regular tax or AMT. TCJA dramatically reduced AMT exposure for most taxpayers by raising the exemption and phaseout thresholds significantly. In 2026, relatively few individuals owe AMT - but those who exercise incentive stock options, have large miscellaneous itemized deductions, or have certain preferences remain at real risk.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 AMT Key Numbers</div>
+  <p><strong>Exemption:</strong> $137,000 (MFJ) / $88,100 (single) - inflation-adjusted annually</p>
+  <p><strong>Exemption phaseout:</strong> Begins at $1,237,450 (MFJ) / $618,725 (single) - exemption reduced $0.25 per dollar above threshold</p>
+  <p><strong>AMT rates:</strong> 26% on AMTI up to $232,600 / 28% above $232,600</p>
+  <p><strong>AMT credit:</strong> Excess AMT paid over regular tax generates a minimum tax credit (MTC) under IRC §53, usable in future years when regular tax exceeds AMT</p>
+</div>
+
+<h2>Who Actually Owes AMT in 2026</h2>
+
+<p>Before TCJA (2017), millions of middle-income taxpayers owed AMT each year - primarily because the exemption was not indexed for inflation. TCJA roughly doubled the exemption and indexed it going forward. OBBBA made those parameters permanent. As a result, the AMT in 2026 primarily affects:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>ISO exercisers</strong> - the spread on ISO exercise is the largest single AMT preference item for individuals; a large ISO exercise can trigger significant AMT even for otherwise below-threshold taxpayers</li>
+  <li><strong>Very high income taxpayers</strong> above the phaseout threshold - above ~$1.24M (MFJ), the exemption phases out entirely, eliminating the AMT shield</li>
+  <li><strong>Taxpayers with large preference items</strong> - accelerated depreciation on personal property (§1250 adjustments), percentage depletion in excess of cost, private activity bond interest</li>
+  <li><strong>Certain C-corporations</strong> - the corporate AMT (15% book minimum tax on corporations with average annual adjusted financial statement income exceeding $1 billion) was enacted by the Inflation Reduction Act; different from the individual AMT</li>
+</ul>
+
+<h2>Computing AMTI: The Step-by-Step Process</h2>
+
+<div class="formula-box">
+  <div class="formula-label">AMTI Computation - Form 6251</div>
+  <div class="formula-line"><span class="op">Start:</span><span class="var">Regular taxable income</span><span class="def">From Form 1040 before the standard or itemized deduction adjustment</span></div>
+  <div class="formula-line"><span class="op">+/-</span><span class="var">AMT adjustments</span><span class="def">Add back certain deductions allowed for regular tax but disallowed for AMT</span></div>
+  <div class="formula-line"><span class="op">+</span><span class="var">AMT preferences</span><span class="def">Add specified preference items that are excluded or reduced for regular tax</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">AMTI before exemption</span></div>
+  <div class="formula-line"><span class="op">-</span><span class="var">AMT exemption</span><span class="def">$137,000 MFJ / $88,100 single (2026), reduced above phaseout threshold</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Taxable excess</span></div>
+  <div class="formula-line"><span class="op">x</span><span class="var">26% / 28%</span><span class="def">26% on first $232,600; 28% above</span></div>
+  <div class="formula-line"><span class="op">-</span><span class="var">AMT foreign tax credit</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Tentative minimum tax (TMT)</span></div>
+  <div class="formula-line"><span class="op">AMT owed</span><span class="var">= TMT minus regular tax (if positive)</span></div>
+</div>
+
+<h2>Key AMT Adjustments and Preferences</h2>
+
+<table class="key-table">
+  <tr><th>Item</th><th>AMT Treatment</th><th>Regular Tax Treatment</th></tr>
+  <tr><td><strong>SALT deduction</strong></td><td>Not deductible for AMT (added back entirely)</td><td>Deductible up to $40,000 cap (OBBBA)</td></tr>
+  <tr><td><strong>Standard deduction</strong></td><td>Not deductible for AMT</td><td>$30,000 MFJ / $15,000 single (2026)</td></tr>
+  <tr><td><strong>Miscellaneous itemized deductions</strong></td><td>Not deductible for AMT</td><td>Eliminated for regular tax by TCJA (so no longer a difference for most)</td></tr>
+  <tr><td><strong>ISO exercise spread</strong></td><td>Preference item - full spread added to AMTI</td><td>No income recognized at exercise</td></tr>
+  <tr><td><strong>Accelerated depreciation (personal property)</strong></td><td>Must use ADS (slower) depreciation; difference is an adjustment</td><td>MACRS or 100% bonus depreciation</td></tr>
+  <tr><td><strong>Percentage depletion</strong></td><td>Limited to cost depletion</td><td>Percentage depletion in excess of cost basis allowed</td></tr>
+  <tr><td><strong>Private activity bond interest</strong></td><td>Included in AMTI</td><td>Excluded from regular income</td></tr>
+  <tr><td><strong>Qualified dividends and LTCG</strong></td><td>Still taxed at preferential rates (0%/15%/20%) for AMT</td><td>Same preferential rates</td></tr>
+</table>
+
+<div class="note-box"><strong>SALT and standard deduction are the biggest changes post-TCJA.</strong> Before TCJA, taxpayers who itemized and deducted large state taxes faced AMT because SALT was an AMT adjustment. Now, SALT is already capped at $40,000 for regular tax purposes, and most people who might have faced AMT from SALT no longer do - the regular tax cap essentially pre-limits the deduction. The standard deduction is still an AMT adjustment but the high exemption means few people owe AMT because of it.</div>
+
+<h2>The ISO Exercise AMT Trap</h2>
+
+<p>The most dangerous AMT situation for individuals involves incentive stock options. When an employee exercises an ISO, no regular income tax is owed at exercise - but the entire spread (fair market value minus exercise price) is an AMT preference item added to AMTI. For employees at startups or high-growth companies with large ISO grants, exercising in a year when the stock is highly valued can generate hundreds of thousands of dollars of AMT preference income.</p>
+
+<div class="red-box"><strong>The trap: AMT owed without cash to pay it.</strong> An employee who exercises $2M of ISO spread in December owns stock that cannot immediately be sold (lockup, illiquidity, holding period requirements). AMT is due in April on the $2M preference. If the stock subsequently declines before the employee can sell - as happened during the 2000 and 2008 downturns - the AMT bill may exceed the value of the stock. The AMT credit helps long-term but does not solve the immediate cash flow problem. Model the AMT exposure before exercising large ISO grants, especially in concentrated, illiquid positions.</div>
+
+<h3>The AMT Credit: Getting the Money Back</h3>
+<p>AMT paid because of timing differences (like ISO exercise) generates a minimum tax credit (MTC) under IRC §53. The MTC can be used in future years when regular tax exceeds AMT - effectively recovering the AMT paid when the underlying stock is sold and the income is recognized for regular tax purposes. The MTC carries forward indefinitely. For ISO exercisers who hold and sell in a qualifying disposition, the AMT paid in the exercise year is generally recovered via the MTC in the sale year.</p>
+
+<h2>AMT for Corporations</h2>
+
+<p>TCJA eliminated the corporate AMT (which had been 20% on AMTI). The Inflation Reduction Act of 2022 (IRA) replaced it with a 15% Corporate Alternative Minimum Tax (CAMT) on Applicable Financial Statement Income (AFSI) - essentially adjusted book income - for corporations averaging more than $1 billion in AFSI over 3 years. This is a separate regime from the individual AMT and is reported on Form 4626.</p>
+
+<p>For most businesses - S-corporations, partnerships, and C-corporations below the $1 billion threshold - the corporate AMT is not relevant. The individual AMT remains the concern for owners of pass-through entities with preference items flowing through to their returns.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="amt-calculator.html" class="related-link">AMT Calculator<span>Estimate your 2026 AMT exposure</span></a>
+    <a href="executive-compensation-guide.html" class="related-link">Executive Compensation Guide<span>ISO AMT trap &middot; §83(b) &middot; NSOs</span></a>
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>Model AMT on ISO qualifying dispositions</span></a>
+    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>AMT interaction with estate planning</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Full federal tax including AMT</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>3.8% stacks on top of AMT in some cases</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §55 (imposition of AMT - taxpayers pay the greater of regular tax or tentative minimum tax); IRC §55(b) (AMT rates - 26% on first $232,600 of taxable excess, 28% above); IRC §55(d) (exemption amounts - $137,000 MFJ, $88,100 single for 2026, indexed annually); IRC §55(d)(3) (exemption phaseout - $0.25 reduction per dollar above threshold); IRC §56 (AMT adjustments - SALT, standard deduction, accelerated depreciation, miscellaneous deductions); IRC §56(b)(1)(A)(ii) (SALT not deductible for AMT); IRC §57 (AMT preference items - ISO spread §57(a)(3), percentage depletion §57(a)(1), private activity bond interest §57(a)(5)); IRC §58 (denial of certain losses for AMT); IRC §59 (other definitions and special rules); IRC §53 (minimum tax credit - carryforward of AMT attributable to timing differences); IRC §422 (ISO exercise - §57(a)(3) cross-reference for AMT preference); Form 6251 (Alternative Minimum Tax - Individuals); TCJA P.L. 115-97 (2017) (doubled AMT exemption, raised phaseout thresholds, indexed going forward); OBBBA P.L. 119-21 (made TCJA AMT parameters permanent); IRA P.L. 117-169 (Corporate AMT - 15% on AFSI above $1B - Form 4626).</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
