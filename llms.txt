@@ -130,3 +130,11 @@
 - net-operating-loss-guide.html: Net Operating Loss (NOL): §172, 80% Limit & OBBBA Rules - Post-TCJA/OBBBA permanent rules: indefinite carryforward, no general carryback, 80% taxable income limitation. Farming 2-year carryback exce
 - like-kind-exchange-deep.html: 1031 Exchange Deep Dive: Boot, Identification Rules & Reverse Exchanges - Boot calculation (cash + net debt relief + non-like-kind property), 45-day identification and 3-property/200%/95% rules, 180-day exchange pe
 - business-entity-comparison.html: Business Entity Comparison: Sole Prop, LLC, S-Corp, C-Corp & Partnership - Full 2026 comparison across 12 factors: SE/FICA tax, income tax rates, QBI deduction availability, health insurance and retirement plan trea
+- individual-tax.html: Category hub page - curated index of all individual tax guides and tools on CPA Validated.
+- business-entity.html: Category hub page - curated index of all business entity guides and tools on CPA Validated.
+- real-estate-tax.html: Category hub page - curated index of all real estate tax guides and tools on CPA Validated.
+- international-tax.html: Category hub page - curated index of all international tax guides and tools on CPA Validated.
+- retirement-savings.html: Category hub page - curated index of all retirement savings guides and tools on CPA Validated.
+- investments-capital.html: Category hub page - curated index of all investments capital guides and tools on CPA Validated.
+- estate-gifts.html: Category hub page - curated index of all estate gifts guides and tools on CPA Validated.
+- state-compliance.html: Category hub page - curated index of all state compliance guides and tools on CPA Validated.
