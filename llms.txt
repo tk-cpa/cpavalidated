@@ -97,3 +97,8 @@
 - vetted-resources.html: Curated external tax resources - IRS tools, primary law, Big Four databases, state and international authorities.
 - w4-optimizer.html: W-4 withholding optimizer - filing status, multiple jobs, credits, deductions, IRC 3402.
 - transfer-pricing-guide.html: Transfer pricing guide - IRC §482 arm's length standard, five OECD methods (CUP RPM cost-plus TNMM profit split), §6662(e)/(h) penalties, contemporaneous documentation, intercompany services safe harbor, CbCR, APA.
+- salt-planning-guide.html: SALT planning guide - permanent $40K cap, phaseout above $500K AGI, PTET election mechanics, IRS Notice 2020-75, state-by-state PTET comparison.
+- form-3115-guide.html: Form 3115 accounting method change guide - §481(a) adjustment, automatic vs. non-automatic, 4-year spread, §174A OBBBA R&E change DCN 280, Rev. Proc. 2015-13.
+- partnership-tax-basics.html: Partnership tax basics - outside vs. inside basis, §704(b) substantial economic effect, §704(c) built-in gain methods, §752 liability allocation, §754 step-up election §743(b) §734(b).
+- rd-tax-credit-guide.html: R&D tax credit guide - IRC §41 four-part test, QREs wages supplies contract research, regular credit, ASC method, payroll tax offset $500K OBBBA, §280C election, documentation.
+- hnw-planning-guide.html: High net worth tax planning guide - $15M estate exemption OBBBA, SLAT GRAT IDGT, NIIT reduction, SALT PTET, DAF CRT QCD, QSBS §1202, pre-exit planning, international compliance.
