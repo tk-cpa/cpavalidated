@@ -114,3 +114,7 @@
 - irs-audit-guide.html: IRS audit guide - DIF scoring, AUR matching, audit types, SOL §6501, 30-day and 90-day letters, IRS Appeals, OIC §7122, first-time penalty abatement.
 - charitable-giving-strategies.html: Charitable giving strategies - DAF bunching appreciated stock, QCD $108K age 70.5, CRT CRAT CRUT income stream, CLT estate planning, AGI limits 60%/30%/20%, 5-year carryforward.
 - s-corporation-basics.html: S-corporation basics - §1362 election eligibility, stock basis debt basis ordering, AAA AE&P distributions, §1374 BIG tax 5-year period, §1375 excess passive income termination risk.
+- foreign-tax-credit-guide.html: Foreign Tax Credit: Form 1116, Baskets & FTC Limitation - IRC §901 credit vs. deduction election, FTC limitation formula per basket (general, passive, NCTI/GILTI, foreign branch)
+- self-employment-tax-guide.html: Self-Employment Tax: SE Tax, S-Corp Election & Health Insurance - 15.3% SE tax computation (92.35% base), deduction for half of SE tax, S-corp election to split salary and distributions,
+- tax-loss-harvesting-guide.html: Tax Loss Harvesting: Capital Loss Mechanics & Wash Sale Rule - Capital loss netting rules, $3,000 ordinary income offset, indefinite carryforward, wash sale rule (IRC §1091) 61-day wi
+- section-121-exclusion.html: Section 121 Home Sale Exclusion: $250K / $500K Explained - Ownership and use tests (2 of 5 years), $250K/$500K exclusion, partial exclusion for unforeseen circumstances (proportio
