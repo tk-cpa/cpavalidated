@@ -10,41 +10,61 @@
 <style>
 :root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:100px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
-.back{max-width:760px;margin:0 auto;padding:24px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)} /* Mission header - full bleed ink */
+.back{max-width:760px;margin:0 auto;padding:24px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+
+/* Mission header - full bleed ink */
 .mission-header{background:var(--ink);padding:80px 24px 72px;text-align:center;border-bottom:4px solid var(--coral)}
 .mh-inner{max-width:640px;margin:0 auto}
 .mh-label{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--coral);margin-bottom:28px}
 .mh-title{font-family:var(--font-display);font-size:clamp(36px,6vw,68px);font-weight:300;color:#fff;line-height:1.0;letter-spacing:-.01em;margin-bottom:28px}
 .mh-title em{color:var(--coral);font-style:normal;font-weight:500}
-.mh-sub{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:480px;margin:0 auto} /* Body */
-.page{max-width:760px;margin:0 auto;padding:64px 24px 0} /* The declaration */
+.mh-sub{font-size:15px;color:rgba(255,255,255,.55);line-height:1.7;max-width:480px;margin:0 auto}
+
+/* Body */
+.page{max-width:760px;margin:0 auto;padding:64px 24px 0}
+
+/* The declaration */
 .declaration{border-left:4px solid var(--coral);padding:32px 36px;margin-bottom:56px;background:var(--white)}
 .declaration p{font-size:18px;line-height:1.8;color:var(--ink-80);margin-bottom:20px;font-weight:400}
 .declaration p:last-child{margin-bottom:0}
-.declaration p strong{color:var(--ink)} /* Section headings */
-h2{font-family:var(--font-display);font-size:22px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin:52px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink)} /* Body text */
+.declaration p strong{color:var(--ink)}
+
+/* Section headings */
+h2{font-family:var(--font-display);font-size:22px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin:52px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+
+/* Body text */
 p.body{font-size:15px;line-height:1.85;color:var(--ink-60);margin-bottom:20px}
-p.body strong{color:var(--ink-80);font-weight:600} /* The commitments */
+p.body strong{color:var(--ink-80);font-weight:600}
+
+/* The commitments */
 .commitments{display:flex;flex-direction:column;gap:0;margin:24px 0 40px;border:1px solid var(--ink-20)}
 .commit{display:grid;grid-template-columns:180px 1fr;gap:0;border-bottom:1px solid var(--ink-20)}
 .commit:last-child{border-bottom:none}
 .commit-title{background:var(--ink);padding:20px 18px;font-family:var(--font-display);font-size:16px;font-weight:400;text-transform:uppercase;letter-spacing:.04em;color:#fff;display:flex;align-items:flex-start}
 .commit-body{padding:18px 20px;font-size:14px;color:var(--ink-60);line-height:1.7}
-.commit-body strong{color:var(--ink);font-weight:600} /* The provenance statement */
+.commit-body strong{color:var(--ink);font-weight:600}
+
+/* The provenance statement */
 .provenance{background:var(--ink);padding:28px 32px;margin:40px 0}
 .prov-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:14px}
 .prov-text{font-size:14px;color:rgba(255,255,255,.7);line-height:1.8}
 .prov-text strong{color:#fff}
-.prov-sig{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-family:var(--font-mono);font-size:11.5px;color:rgba(255,255,255,.45)} /* The standard */
+.prov-sig{margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-family:var(--font-mono);font-size:11.5px;color:rgba(255,255,255,.45)}
+
+/* The standard */
 .standard-strip{display:flex;gap:0;border:1px solid var(--ink-20);margin:24px 0 40px;overflow:hidden}
 .std-item{flex:1;padding:20px 18px;border-right:1px solid var(--ink-20)}
 .std-item:last-child{border-right:none}
 .std-label{font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-bottom:8px}
-.std-body{font-size:12.5px;color:var(--ink-60);line-height:1.6} /* Footer nav */
+.std-body{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+
+/* Footer nav */
 .page-footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--ink-20);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .pf-back{font-size:13px;color:var(--ink-60)}
 .pf-back a{color:var(--coral);font-weight:600}
-.pf-meta{font-family:var(--font-mono);font-size:11px;color:var(--ink-40)} @media(max-width:600px){.commit{grid-template-columns:1fr}.commit-title{padding:14px 16px}.standard-strip{flex-direction:column}.std-item{border-right:none;border-bottom:1px solid var(--ink-20)}.std-item:last-child{border-bottom:none}.declaration{padding:22px 20px}}
+.pf-meta{font-family:var(--font-mono);font-size:11px;color:var(--ink-40)}
+
+@media(max-width:600px){.commit{grid-template-columns:1fr}.commit-title{padding:14px 16px}.standard-strip{flex-direction:column}.std-item{border-right:none;border-bottom:1px solid var(--ink-20)}.std-item:last-child{border-bottom:none}.declaration{padding:22px 20px}}
 @media print{.back,.page-footer{display:none}.mission-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}.provenance{-webkit-print-color-adjust:exact;print-color-adjust:exact}.commit-title{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
@@ -60,8 +80,118 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <div class="nav-right"> <ul class="nav-links"> <li><a href="index.html#tools">Tools</a></li> <li><a href="index.html#articles">Guides</a></li> <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li> <li><a href="about.html">About</a></li> </ul> <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a> </div>
-</nav> <div class="mission-header"> <div class="mh-inner"> <div class="mh-label">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div> <h1 class="mh-title">A public good.<br><em>For as long as it takes.</em></h1> <p class="mh-sub">Free. Perpetual. Validated to primary authority. A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:var(--coral)">tk.cpa</a>.</p> </div>
-</div> <div class="page"> <!-- The Declaration --> <div class="declaration"> <p>Tax law belongs to everyone. The Internal Revenue Code is public. Treasury regulations are public. Court decisions are public. The law is not behind a paywall - but understanding it has always required either money, access, or luck.</p> <p><strong>CPA Validated exists to change that equation.</strong> Every tool, every guide, every resource on this site is free. No subscription. No account. No advertising. No conditions. The only requirement is that you use it well.</p> <p>This is a pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the public. A gift from a professional practice that believes tax law belongs to everyone - built to the same standards applied to paying clients, offered without charge, and committed to accuracy that would hold up under professional scrutiny.</p> </div> <h2>Why This Exists</h2> <p class="body">Tax resources exist on a spectrum. At one end: IRS.gov and the US Code - authoritative, but dense and difficult to navigate without training. At the other: blog posts, YouTube videos, Reddit threads - accessible, but often wrong, always uncited, never accountable.</p> <p class="body">In between, there is almost nothing. Professional research platforms cost thousands of dollars per year. Tax attorneys and CPAs charge hundreds per hour. The people who most need clear, accurate, cited tax information are often the least positioned to access it.</p> <p class="body"><strong>CPA Validated occupies that gap.</strong> Every result here traces to a specific IRC section, Treasury regulation, Revenue Ruling, or primary authority. Not because it is legally required - it is not - but because that is the only standard that holds up when the answer is challenged. It is the standard applied at Big Four firms and in serious tax practice. It is the only standard worth applying.</p> <h2>The Commitments</h2> <div class="commitments"> <div class="commit"> <div class="commit-title">Always Free</div> <div class="commit-body">Every tool and guide on this site will remain free, without account requirements, without advertising, and without paywalls. This is a commitment, not a pricing strategy. CPA Validated is a community resource - a pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. <strong>There is no version of this that costs you anything. Ever.</strong></div> </div> <div class="commit"> <div class="commit-title">Always Cited</div> <div class="commit-body">No position will be taken without a cited source. Every tool result, every article paragraph, every threshold and rate will cite the specific IRC section, Treasury regulation, Revenue Procedure, or court case that supports it. <strong>If we cannot cite it, we will not state it.</strong></div> </div> <div class="commit"> <div class="commit-title">Always Current</div> <div class="commit-body">Inflation-adjusted thresholds are updated every January when the IRS publishes new figures. When legislation passes that affects these tools, the affected pages are updated. <strong>This site is actively maintained by tk.cpa. The commitment to keep it current is indefinite - not contingent on any subscription, platform, or revenue.</strong></div> </div> <div class="commit"> <div class="commit-title">Always Honest</div> <div class="commit-body">Where the law is unsettled, we say so. Where a position is aggressive, we label it. Where a tool's results require professional review before action, we say that too. <strong>This site will never overstate certainty to appear more authoritative than it is.</strong></div> </div> <div class="commit"> <div class="commit-title">Always Accountable</div> <div class="commit-body">A named, licensed practitioner stands behind every resource on this site. NY CPA #109025. FL CPA #AC58472. IRS EA #93250. These are real licenses issued by real regulatory bodies. They are verifiable through primary sources. <strong>Anonymity is not part of this project.</strong></div> </div> </div> <h2>The Standard</h2> <div class="standard-strip"> <div class="std-item"> <div class="std-label">Primary Authority</div> <div class="std-body">Every position cites the IRC section, Treasury regulation, Revenue Ruling, or court case that supports it. Not a summary of it - the actual source.</div> </div> <div class="std-item"> <div class="std-label">Practitioner Grade</div> <div class="std-body">Built to the same standard applied at Big Four firms. The same standard used on returns that get signed and filed with the IRS.</div> </div> <div class="std-item"> <div class="std-label">No Black Boxes</div> <div class="std-body">Every calculation is transparent. Every determination is explained. You can verify the result independently - that is the point.</div> </div> </div> <h2>The Architecture</h2> <p class="body">This site is built on static HTML hosted on GitHub Pages. There is no database, no server, no framework to maintain, no subscription to pay. The files are open to inspect. The hosting is free. The domain is prepaid for years.</p> <p class="body">This is a deliberate architecture for permanence. Most web resources disappear within years - databases go offline, SaaS companies fold, APIs change. Static HTML on GitHub does not. The files that exist today will still render correctly in a decade, on any device, in any browser, without maintenance cost.</p> <p class="body"><strong>The goal is for this to outlast its creator.</strong> A resource that continues to serve after the practitioner who built it has retired - still cited, still accurate, still free.</p> <!-- Provenance --> <div class="provenance"> <div class="prov-label">Provenance</div> <div class="prov-text"> CPA Validated is a resource of <strong>tk.cpa</strong>, a boutique international tax practice. It was founded in April 2026 - after Tax Day - as a commitment to make professional-grade tax resources permanently free to the public.<br><br> It is offered as a pro bono contribution by tk.cpa to the public. It is not a lead generation tool. It is not an advertisement. It is not a product. It is a gift - from someone who knows tax law, to everyone who needs it. </div> <div class="prov-sig"> CPA Inc. &nbsp;·&nbsp; tk.cpa &nbsp;·&nbsp; cpavalidated.com &nbsp;·&nbsp; NY CPA #109025 &nbsp;·&nbsp; FL CPA #AC58472 &nbsp;·&nbsp; IRS EA #93250<br> <span style="color:rgba(255,255,255,.3);margin-top:4px;display:block"></span> </div> </div> <p class="body" style="font-size:14px;color:var(--ink-60)">Questions, corrections, or suggestions: <a href="https://tk.cpa/contacts" target="_blank">tk.cpa/contacts</a>. If you find an error, report it. Every correction makes this more useful for everyone who comes after you.</p> <div class="page-footer"> <div class="pf-back">← <a href="index.html">Return to CPA Validated</a></div> <div class="pf-meta">cpavalidated.com &nbsp;·&nbsp; a <a href="https://tk.cpa" target="_blank" style="color:var(--coral)">tk.cpa</a> resource &nbsp;·&nbsp; &copy; CPA Inc. &nbsp;·&nbsp; <a href="disclaimer.html">Disclaimer & Terms</a></div> </div> </div>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
+
+<div class="mission-header">
+  <div class="mh-inner">
+    <div class="mh-label">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+    <h1 class="mh-title">A public good.<br><em>For as long as it takes.</em></h1>
+    <p class="mh-sub">Free. Perpetual. Validated to primary authority. A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:var(--coral)">tk.cpa</a>.</p>
+  </div>
+</div>
+
+
+<div class="page">
+
+  <!-- The Declaration -->
+  <div class="declaration">
+    <p>Tax law belongs to everyone. The Internal Revenue Code is public. Treasury regulations are public. Court decisions are public. The law is not behind a paywall - but understanding it has always required either money, access, or luck.</p>
+    <p><strong>CPA Validated exists to change that equation.</strong> Every tool, every guide, every resource on this site is free. No subscription. No account. No advertising. No conditions. The only requirement is that you use it well.</p>
+    <p>This is a pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the public. A gift from a professional practice that believes tax law belongs to everyone - built to the same standards applied to paying clients, offered without charge, and committed to accuracy that would hold up under professional scrutiny.</p>
+  </div>
+
+  <h2>Why This Exists</h2>
+
+  <p class="body">Tax resources exist on a spectrum. At one end: IRS.gov and the US Code - authoritative, but dense and difficult to navigate without training. At the other: blog posts, YouTube videos, Reddit threads - accessible, but often wrong, always uncited, never accountable.</p>
+
+  <p class="body">In between, there is almost nothing. Professional research platforms cost thousands of dollars per year. Tax attorneys and CPAs charge hundreds per hour. The people who most need clear, accurate, cited tax information are often the least positioned to access it.</p>
+
+  <p class="body"><strong>CPA Validated occupies that gap.</strong> Every result here traces to a specific IRC section, Treasury regulation, Revenue Ruling, or primary authority. Not because it is legally required - it is not - but because that is the only standard that holds up when the answer is challenged. It is the standard applied at Big Four firms and in serious tax practice. It is the only standard worth applying.</p>
+
+  <h2>The Commitments</h2>
+
+  <div class="commitments">
+    <div class="commit">
+      <div class="commit-title">Always Free</div>
+      <div class="commit-body">Every tool and guide on this site will remain free, without account requirements, without advertising, and without paywalls. This is a commitment, not a pricing strategy. CPA Validated is a community resource - a pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. <strong>There is no version of this that costs you anything. Ever.</strong></div>
+    </div>
+    <div class="commit">
+      <div class="commit-title">Always Cited</div>
+      <div class="commit-body">No position will be taken without a cited source. Every tool result, every article paragraph, every threshold and rate will cite the specific IRC section, Treasury regulation, Revenue Procedure, or court case that supports it. <strong>If we cannot cite it, we will not state it.</strong></div>
+    </div>
+    <div class="commit">
+      <div class="commit-title">Always Current</div>
+      <div class="commit-body">Inflation-adjusted thresholds are updated every January when the IRS publishes new figures. When legislation passes that affects these tools, the affected pages are updated. <strong>This site is actively maintained by the tk.cpa AI lab. The commitment to keep it current is indefinite - not contingent on any subscription, platform, or revenue.</strong></div>
+    </div>
+    <div class="commit">
+      <div class="commit-title">Always Honest</div>
+      <div class="commit-body">Where the law is unsettled, we say so. Where a position is aggressive, we label it. Where a tool's results require professional review before action, we say that too. <strong>This site will never overstate certainty to appear more authoritative than it is.</strong></div>
+    </div>
+    <div class="commit">
+      <div class="commit-title">Always Accountable</div>
+      <div class="commit-body">A named, licensed practitioner stands behind every resource on this site. NY CPA #109025. FL CPA #AC58472. IRS EA #93250. These are real licenses issued by real regulatory bodies. They are verifiable through primary sources. <strong>Anonymity is not part of this project.</strong></div>
+    </div>
+  </div>
+
+  <h2>The Standard</h2>
+
+  <div class="standard-strip">
+    <div class="std-item">
+      <div class="std-label">Primary Authority</div>
+      <div class="std-body">Every position cites the IRC section, Treasury regulation, Revenue Ruling, or court case that supports it. Not a summary of it - the actual source.</div>
+    </div>
+    <div class="std-item">
+      <div class="std-label">Practitioner Grade</div>
+      <div class="std-body">Built to the same standard applied at Big Four firms. The same standard used on returns that get signed and filed with the IRS.</div>
+    </div>
+    <div class="std-item">
+      <div class="std-label">No Black Boxes</div>
+      <div class="std-body">Every calculation is transparent. Every determination is explained. You can verify the result independently - that is the point.</div>
+    </div>
+  </div>
+
+  <h2>The Architecture</h2>
+
+  <p class="body">This site is built on static HTML hosted on GitHub Pages. There is no database, no server, no framework to maintain, no subscription to pay. The files are open to inspect. The hosting is free. The domain is prepaid for years.</p>
+
+  <p class="body">This is a deliberate architecture for permanence. Most web resources disappear within years - databases go offline, SaaS companies fold, APIs change. Static HTML on GitHub does not. The files that exist today will still render correctly in a decade, on any device, in any browser, without maintenance cost.</p>
+
+  <p class="body"><strong>The goal is for this to outlast its creator.</strong> A resource that continues to serve after the practitioner who built it has retired - still cited, still accurate, still free.</p>
+
+  <!-- Provenance -->
+  <div class="provenance">
+    <div class="prov-label">Provenance</div>
+    <div class="prov-text">
+      CPA Validated is a resource of <strong>tk.cpa</strong>, a boutique international tax practice. It was founded in April 2026 - after Tax Day - as a commitment to make professional-grade tax resources permanently free to the public.<br><br>
+      It is offered as a pro bono contribution by tk.cpa to the public. It is not a lead generation tool. It is not an advertisement. It is not a product. It is a gift - from someone who knows tax law, to everyone who needs it.
+    </div>
+    <div class="prov-sig">
+      CPA Inc. &nbsp;·&nbsp; tk.cpa &nbsp;·&nbsp; cpavalidated.com &nbsp;·&nbsp; NY CPA #109025 &nbsp;·&nbsp; FL CPA #AC58472 &nbsp;·&nbsp; IRS EA #93250<br>
+      <span style="color:rgba(255,255,255,.3);margin-top:4px;display:block">Maintained by the tk.cpa AI lab</span>
+    </div>
+  </div>
+
+  <p class="body" style="font-size:14px;color:var(--ink-60)">Questions, corrections, or suggestions: <a href="https://tk.cpa/contacts" target="_blank">tk.cpa/contacts</a>. If you find an error, report it. Every correction makes this more useful for everyone who comes after you.</p>
+
+  <div class="page-footer">
+    <div class="pf-back">← <a href="index.html">Return to CPA Validated</a></div>
+    <div class="pf-meta">cpavalidated.com &nbsp;·&nbsp; a <a href="https://tk.cpa" target="_blank" style="color:var(--coral)">tk.cpa</a> resource &nbsp;·&nbsp; &copy; CPA Inc. &nbsp;·&nbsp; <a href="disclaimer.html">Disclaimer & Terms</a></div>
+  </div>
+
+</div>
 </body>
 </html>
