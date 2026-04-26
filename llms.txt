@@ -1,356 +1,97 @@
-# CPA Validated
-> Free, CPA-validated tax tools, validators, and reference guides. Founded April 2026. Every position backed by a specific IRC section or Treasury regulation. A tk.cpa resource.
-
-## About
-CPA Validated is a free, perpetual public resource built and personally validated by Timur Knyazev, CPA. Founded after Tax Day 2026 as a pro bono contribution from a licensed practitioner to the public. Every tool, validator, and guide is free, unconditioned, and cites primary legal authority.
-
-## Practitioner Credentials
-- NY CPA License #109025 (licensed 2012, active)
-- FL CPA License #AC58472 (licensed 2022, active)
-- IRS Enrolled Agent #93250 (enrolled 2009, active 2026, PTIN P00646638)
-- Master of Science in Taxation - Zicklin School of Business, Baruch College (CUNY), 2011
-- Big Four: Ernst & Young (EY) and PricewaterhouseCoopers (PwC), ~10 years
-- AICPA Member, CGMA, ACCA CertIFRS, TEI, CTP, IIA CFSA
-
-## Tools & Validators
-
-### Substantial Presence Test Calculator
-- URL: https://cpavalidated.com/spt-calculator.html
-- Authority: IRC §7701(b)(3); Treas. Reg. 301.7701(b)-1; Form 1040-NR
-- Purpose: Weighted 3-year day count, days to trigger SPT, maximum safe days remaining. Two input methods: manual entry or trip-by-trip date log.
-
-### Closer Connection Exception Checker
-- URL: https://cpavalidated.com/closer-connection.html
-- Authority: IRC §7701(b)(3)(B); Treas. Reg. 301.7701(b)-2; Form 8840
-- Purpose: Tests Form 8840 eligibility. Evaluates all 11 IRS closer connection factors. Green Card disqualifier flagged automatically.
-
-### FBAR and Form 8938 Threshold Checker
-- URL: https://cpavalidated.com/fbar-checker.html
-- Authority: 31 USC 5314; 31 CFR 1010.350; IRC §6038D; FinCEN 114; Form 8938
-- Purpose: Determines FinCEN 114 (FBAR) and Form 8938 (FATCA) filing requirements. All account types. All four Form 8938 thresholds.
-
-### Safe Harbor Estimated Tax Calculator
-- URL: https://cpavalidated.com/safe-harbor.html
-- Authority: IRC §6654; IRS Publication 505
-- Purpose: Federal and all 50 states. 110% rule applied. Quarterly schedule with state-specific due dates.
-
-### Form 5472 Filing Obligation Checker
-- URL: https://cpavalidated.com/form-5472.html
-- Authority: IRC §6038A; IRC §6038C; TD 9796 (2016)
-- Purpose: 25% foreign ownership threshold, foreign-owned DE rules, all 11 reportable transaction categories.
-
-### Tax Estimator 2026 - Personal and Corporate
-- URL: https://cpavalidated.com/tax-estimator.html
-- Authority: IRS Rev. Proc. 2025-32; IRC §1; IRC §11; OBBBA (P.L. 119-21)
-- Purpose: 2026 personal and corporate tax estimates. All filing statuses, all 50 states, bracket-by-bracket breakdown.
-
-### Puerto Rico Act 60 Tax Benefit Estimator
-- URL: https://cpavalidated.com/act60-estimator.html
-- Authority: Act 60 (P.R. 2019); Act 38-2026; IRC §933; Treas. Reg. §1.937-1
-- Purpose: PR Act 60 savings analysis. Eligibility checker. Dec 31, 2026 deadline for 0% rate.
-
-### USVI EDC Tax Benefit Estimator
-- URL: https://cpavalidated.com/usvi-edc-estimator.html
-- Authority: IRC §934; IRC §937; VI Code §713; USVIEDA
-- Purpose: USVI EDC 90% tax credit. ~2.1% effective corporate rate. EDC vs. RTPark and PR Act 60 vs. USVI comparison.
-
-### US Federal Tax Calendar 2026
-- URL: https://cpavalidated.com/tax-calendar.html
-- Authority: IRC §6072; IRC §6654; IRC §6655; IRS Pub. 509; IRC §7503
-- Purpose: Month-by-month calendar. W-2/1099-NEC Feb 2 (Jan 31=Saturday), 1065/1120-S Mar 16 (Mar 15=Sunday). Corporate and individual estimated tax. Key state deadlines.
-
-### Real Estate Depreciation Calculator
-- URL: https://cpavalidated.com/depreciation-calculator.html
-- Authority: IRC §168; Rev. Proc. 87-57; OBBBA (P.L. 119-21)
-- Purpose: MACRS for residential (27.5yr), commercial (39yr), foreign ADS (40yr), QIP (15yr). Mid-month convention. Bonus depreciation for QIP: 40% (2026).
-
-### Business Vehicle Depreciation Calculator
-- URL: https://cpavalidated.com/vehicle-depreciation.html
-- Authority: IRC §168(k); IRC §179; IRC §280F; Rev. Proc. 2025-24
-- Purpose: Section 179, bonus depreciation (40% 2026), MACRS 5-year. §280F luxury auto caps. SUVs, heavy trucks. Business use percentage slider.
-
-### CFC / Form 5471 Obligation Checker
-- URL: https://cpavalidated.com/form-5471-checker.html
-- Authority: IRC §957; IRC §951(b); IRC §6038; IRC §318/§958(b); TCJA §14214
-- Purpose: 7-question validator. CFC status, all filing categories 1a-5b. TCJA downward attribution. $10,000 penalty flagged. Statute of limitations warning.
-
-### Streamlined Filing Eligibility Checker
-- URL: https://cpavalidated.com/streamlined-checker.html
-- Authority: IRM 4.26.16.6 (SFOP); IRM 4.26.16.7 (SDOP); 31 USC §5321
-- Purpose: SDOP vs. SFOP eligibility. Non-willfulness test, IRS contact check, residency test (330 days). 0% penalty (SFOP) vs. 5% of highest balance (SDOP).
-
-## Reference Guides
-
-### One Big Beautiful Bill Act (OBBBA, P.L. 119-21) - The Biggest Provisions
-- URL: https://cpavalidated.com/obbba-guide.html
-- Authority: P.L. 119-21; IRC §§24, 168(k), 168(n), 174A, 199A, 250, 951A, 1202, 2010(c)(3); Rev. Proc. 2025-28; Notice 2025-72
-- Purpose: 18 verified provisions across individuals (SALT cap to $40K, $15M estate exemption, tip / overtime / senior / auto loan deductions, Trump Accounts), business (Section 174A R&E expensing, 100% bonus depreciation permanent, Section 168(n) qualified production property, Section 163(j) EBITDA, Section 199A QBI permanent, Section 1202 QSBS tiered exclusion, Section 179 expansion), and international (NCTI replaces GILTI, FDDEI replaces FDII, BEAT 10.5%). Effective dates and authority citations throughout.
-
-### States with No Personal Income Tax (2026)
-- URL: https://cpavalidated.com/no-income-tax-states.html
-- Authority: Tax Foundation 2026; State Tax Statutes; IRC §933
-- Purpose: Nine states with no broad personal income tax. Washington capital gains tax exception. Sales and property tax context.
-
-### Countries with No Personal Income Tax (2026)
-- URL: https://cpavalidated.com/no-income-tax-countries.html
-- Authority: IRC §61; IRC §911; IRC §877A; 31 USC §5314
-- Purpose: 19+ jurisdictions. Critical note for US persons: worldwide taxation regardless of residency. FEIE $126,500 (2026). Oman changing 2028.
-
-### FBAR Penalties Explained (2026)
-- URL: https://cpavalidated.com/fbar-penalties.html
-- Authority: 31 USC §5321; IRM 4.26.16; Bittner v. US (2023)
-- Purpose: Willful vs. non-willful penalties. Bittner (2023): non-willful per form not per account. Streamlined, SDOP, SFOP, VDP explained.
-
-### Pre-Immigration Tax Planning Checklist
-- URL: https://cpavalidated.com/pre-immigration-planning.html
-- Authority: IRC §7701(b); IRC §1291-1298; IRC §951; IRC §877A
-- Purpose: 9-step checklist before green card. Capital gains basis step-up, PFIC restructuring, foreign entity planning, dual-status year.
-
-### Foreign Pension Reporting for US Persons
-- URL: https://cpavalidated.com/foreign-pension-reporting.html
-- Authority: 31 USC §5314; IRC §6038D; IRC §402(b); Rev. Proc. 2020-17
-- Purpose: Governmental DB vs. savings component distinction. Canada RRSP, Israel, Germany, UK, Russia. US-Russia treaty suspended August 2023.
-
-### NCTI Explained (Formerly GILTI)
-- URL: https://cpavalidated.com/gilti-explained.html
-- Authority: IRC §951A (NCTI, formerly GILTI); IRC §250; IRC §957; IRC §960(d); IRC §962; OBBBA P.L. 119-21
-- Purpose: NCTI - Net CFC Tested Income - is the post-OBBBA renaming of GILTI. Calculation, 12.6% effective corporate rate (40% Section 250 deduction), 90% foreign tax credit, elimination of QBAI shield, inclusion shareholder rule (any-day-during-year), §962 election, high-tax exclusion. Effective for tax years beginning after 12/31/2025.
-
-### Subpart F & CFC Basics (2026)
-- URL: https://cpavalidated.com/subpart-f-cfc-basics.html
-- Authority: IRC §951 (Subpart F inclusion); IRC §951A (NCTI/GILTI, OBBBA); IRC §952 (Subpart F income); IRC §953 (insurance income); IRC §954 (FPHCI/FBCSI/FBCSvI); IRC §957 (CFC definition); IRC §958 (attribution, TCJA downward attribution); IRC §959 (PTI exclusion); IRC §960 (deemed-paid FTC); IRC §961 (basis adjustments); IRC §965 (transition tax); IRC §250 (40% deduction, OBBBA); IRC §6038/6038(b) (Form 5471, $10K penalty); IRC §6501(c)(8) (unlimited SOL); Treas. Reg. §301.7701-3 (check-the-box)
-- Purpose: CFC definition and Subpart F mechanics. CFC test: more than 50% of voting power or value owned by US shareholders (each owning 10%+, IRC §951(b)); TCJA expanded via downward attribution under §958(b). Subpart F income categories: FPHCI (dividends, interest, rents, royalties - IRC §954(c)), FBCSI (buy/sell from related party, off-shore manufacturing - §954(d)), FBCSvI (services for related party outside home country - §954(e)), insurance income (§953). De minimis rule (5%/$1M threshold); full-inclusion rule (70% threshold); high-tax exclusion (18.9%). IRC §951 inclusion mechanics: ordinary income, pro-rata share, computed on last CFC day. PTI accounts under §959 - tracks previously taxed amounts, excludes from distribution income, basis adjustments under §961. Deemed-paid FTC under §960 with §78 gross-up and §904 basket limitation. TCJA additions: §965 transition tax (mostly complete) and GILTI (§951A). OBBBA replacement: GILTI renamed NCTI, QBAI exemption eliminated, §250 deduction reduced to 40%, 20% FTC haircut eliminated, individual §250 deduction proposed. Form 5471 penalties ($10K + continuation) and unlimited SOL trap under §6501(c)(8). Check-the-box election via Form 8832 as CFC elimination tool.
-
-
-### S-Corp vs. LLC Tax Comparison (2026)
-- URL: https://cpavalidated.com/scorp-vs-llc.html
-- Authority: IRC §1361; IRC §1401; IRC §199A; Watson v. US (8th Cir. 2012)
-- Purpose: SE tax savings, reasonable compensation, QBI interaction. $200K example. Break-even analysis.
-
-### Foreign Trusts & US Tax: Forms 3520 and 3520-A (2026)
-- URL: https://cpavalidated.com/form-3520-foreign-trusts.html
-- Authority: IRC §671-679 (grantor trust rules); IRC §679 (US person as grantor - US beneficiary test); IRC §643(i) (loans treated as distributions); IRC §661-662 (DNI rules); IRC §665-668 (throwback rules, UNI, interest charge); IRC §6048(a)(b)(c) (Form 3520/3520-A filing obligations); IRC §6677 (35% of transfer / 5% of trust assets penalties, $10K minimum); Treas. Reg. §1.679-1 through 1.679-5; Treas. Reg. §301.6677-1 (reasonable cause)
-- Purpose: Foreign trust compliance for US grantors and US beneficiaries. Two-form system: Form 3520 (US person's annual report - transfers, distributions, loans) due April 15; Form 3520-A (trust annual report - full financials, owner/beneficiary statements) due March 15. IRC §679 trap: any US person who transfers to a foreign trust with US beneficiaries is treated as grantor - taxed on all trust income regardless of distributions. US beneficiary definition broad - any potential benefit, including contingent interests. Grantor trust income: US grantor pays tax on all trust income at ordinary rates; Form 3520-A provides Owner Statement with income breakdown. Throwback rules for foreign non-grantor trusts: current-year DNI distributions taxed as ordinary income; accumulation distributions throwback to prior years at 37% + §668 interest charge (non-deductible). Deemed loan distribution rule - §643(i). Penalty structure: 35% of transfer amount (Form 3520); 5% of gross trust assets per year (Form 3520-A); $10K minimum; continuation penalties. Reasonable cause abatement available. Streamlined procedures for prior non-compliance (SDOP/SFOP).
-
-### Form 3520: Foreign Gifts, Inheritances and Trusts
-- URL: https://cpavalidated.com/form-3520-guide.html
-- Authority: IRC §6039F; IRC §6048; IRC §6677; IRC §679
-- Purpose: 2026 thresholds ($100K individuals, $19,570 corporations). Penalties up to 35%. Aggregation rules. Trust reporting.
-
-### US Trust Guide: Revocable vs. Irrevocable, Foreign vs. Domestic, Tax Planning Truth (2026)
-- URL: https://cpavalidated.com/trust-guide.html
-- Authority: IRC §671-679 (grantor trust rules); IRC §676 (power to revoke); IRC §2036 (retained interests); IRC §2038 (revocable transfers); IRC §7701(a)(30)-(31) (domestic vs. foreign trust - court test + control test); IRC §679 (US transferors to foreign trusts - broad grantor trust attribution); IRC §665-668 (throwback rules, accumulation distributions); IRC §6048 (Form 3520/3520-A filing obligations); IRC §6677 (penalties); IRC §2702 (GRATs, QPRTs); IRC §664 (CRTs); IRC §2010(c)(3) ($15M OBBBA exemption); Treas. Reg. §301.7701-7 (court and control tests); Treas. Reg. §25.2702-3 (GRATs); Treas. Reg. §1.664-1 (CRTs)
-- Purpose: Comprehensive trust guide covering: (1) revocable vs. irrevocable - grantor trust rules, estate inclusion under §2036/2038, what irrevocable actually requires, IDGT concept; (2) foreign vs. domestic - IRC §7701 two-part test (court + control), foreign grantor trust treatment, §679 trap for US persons who transfer to foreign trusts with US beneficiaries, throwback rules for foreign non-grantor trusts, Form 3520/3520-A overlay, pre-immigration trust trap; (3) truth about trust-based tax planning - what trusts do (probate avoidance, estate tax reduction above $15M, incapacity planning, GST planning) and don't do (income tax savings under grantor trust rules, automatic estate removal, offshore tax shelter); advanced strategies (SLAT, GRAT, IDGT, CRT, QPRT) with honest assessments; $15M OBBBA exemption reality check; trust mill / promoter warning.
-
-### Gift & Estate Tax Guide 2026: The Unified Transfer Tax System
-- URL: https://cpavalidated.com/gift-estate-tax-guide.html
-- Authority: IRC §2001 (estate tax rates); IRC §2010(c)(3) ($15M exemption, OBBBA P.L. 119-21); IRC §2031 (gross estate); IRC §2032 (alternate valuation); IRC §2036 (retained interests); IRC §2053 (debts/expenses); IRC §2055 (charitable deduction); IRC §2056 (marital deduction); IRC §2056A (QDOT); IRC §2058 (state death tax deduction); IRC §2501 (gift tax); IRC §2503(b) ($19K annual exclusion 2026); IRC §2503(e) (tuition/medical exclusions - unlimited); IRC §2513 (gift splitting); IRC §2522 (charitable deduction gifts); IRC §2523 (marital deduction gifts); IRC §2601-2663 (GST tax); IRC §2631 ($15M GST exemption); IRC §529(c)(2) (529 superfunding - 5-year election); IRC §1014 (step-up in basis at death); IRC §1015 (carryover basis on gifts); Rev. Proc. 2022-32 (late portability - 5-year window); Rev. Proc. 2025-38 (2026 inflation adjustments); Treas. Reg. §20.2010-1(c) (anti-clawback)
-- Purpose: Complete gift and estate tax guide. Unified transfer tax system mechanics - one exemption shared between lifetime gifts and estate at death. $15M per-person exemption (2026, OBBBA permanent, indexed from 2027). $19K annual exclusion per donee; unlimited tuition/medical exclusions under §2503(e); 529 superfunding; gift splitting for married couples (Form 709). Marital deduction - unlimited for US citizen spouse, QDOT required for non-citizen spouse ($190K annual exclusion 2026). Portability (DSUE) - must elect on Form 706, Rev. Proc. 2022-32 late election window. Estate tax computation - gross estate, deductions, graduated rates (18%-40%), 40% effective rate on amounts above exemption. GST tax - 40% on transfers to skip persons, $15M GST exemption, dynasty trust planning. State estate taxes - 13 jurisdictions with exemptions from $1M (Oregon) to $13.6M (Connecticut), top rates up to 20% (Hawaii, Washington); NY cliff effect. Step-up in basis at death vs. carryover basis on gifts - the core planning trade-off. Who actually owes federal estate tax (fewer than 0.1% of estates at $15M threshold).
-
-### US-Russia Tax Treaty Suspension (Aug 2023)
-- URL: https://cpavalidated.com/russia-treaty-suspension.html
-- Authority: Russian Presidential Decree No. 585 (Aug 8, 2023 - suspended Articles 1-21); IRS Notice 2023-63; IRC §901 (FTC); IRC §904 (FTC limitation); IRC §871(h) (portfolio interest exemption); IRC §1441 (NRA withholding); 31 USC §5314 (FBAR); IRC §6038D (Form 8938)
-- Purpose: Russia suspended Articles 1-21 of the 1992 US-Russia income tax treaty. What changed: withholding rates on dividends (10%/5% treaty -> 30% statutory), interest, royalties, pensions. What did not change: Article 26 exchange of information, FBAR/Form 8938 obligations, US worldwide taxation of US persons. Foreign tax credit planning without treaty relief. Student exemption suspension. Tie-breaker rules unavailable for dual residents. Guidance still developing as of 2026.
-
-### NRA Estate Tax - Form 706-NA (2026)
-- URL: https://cpavalidated.com/nra-estate-tax.html
-- Authority: IRC §2101-2108 (NRA estate tax); IRC §2102(b) ($60,000 exemption); IRC §2104 (US-situs - domestic corporate stock, real property); IRC §2105 (excluded property - bank deposits, insurance, Treasury obligations, foreign stock); IRC §2501(a)(2) (NRA gift tax - intangibles excluded); IRC §2056(d) (QDOT for non-citizen spouse); IRC §897 (FIRPTA); Treas. Reg. §20.0-1(b)(1) (domicile)
-- Purpose: Non-resident aliens with US assets face estate tax with $60,000 exemption (not $15M). US-situs rules: US corporate stock is always included (IRC §2104(b)) regardless of where held; bank deposits and Treasury obligations excluded; foreign real estate excluded; foreign corporate stock excluded. Green card domicile trap. Foreign corporation planning - removes US assets from NRA estate but creates FIRPTA and corporate tax issues. Treaty proration benefit for treaty-country residents. NRA gift tax asymmetry: gifts of intangibles (US stocks) are exempt from US gift tax but included in US estate - gifting during life eliminates both. Form 706-NA: 9-month deadline, 6-month extension available.
-
-### Subpart F Income & CFC Basics (2026)
-- URL: https://cpavalidated.com/subpart-f-cfc-basics.html
-- Authority: IRC §951 (Subpart F inclusions); IRC §951A (NCTI - OBBBA rename of GILTI); IRC §952 (Subpart F income); IRC §953 (insurance income); IRC §954 (FPHCI §954(c), FBCSI §954(d), FBCSvI §954(e)); IRC §954(b)(3) (de minimis/full-inclusion); IRC §954(b)(4) (high-tax exclusion >18.9%); IRC §957 (CFC - >50% US shareholders); IRC §951(b) (US shareholder - 10% threshold); IRC §958 (downward attribution); IRC §959 (PTEP); IRC §960 (deemed-paid FTC); IRC §6038 (Form 5471 - $10K penalty); OBBBA P.L. 119-21
-- Purpose: Controlled Foreign Corporation and Subpart F mechanics. CFC definition: >50% owned by US shareholders (10%+ each). Subpart F categories: FPHCI (passive income - dividends, interest, rents, royalties from related parties), FBCSI (sales income through base company structure), FBCSvI (services for related parties outside CFC country), insurance income. De minimis rule (<5% gross income or $1M = zero Subpart F). Full-inclusion rule (>70% gross income = all income is Subpart F). High-tax exclusion (>18.9% effective rate excluded). PTEP tracking - no double tax on later distributions. TCJA downward attribution problem and OBBBA fix. Form 5471: $10K per CFC per year penalty; unlimited SOL until filed. Individual shareholders face 37% on inclusions vs. 21% for corporations - see §962 election.
-
-### Section 962 Election for Individual CFC Shareholders (2026)
-- URL: https://cpavalidated.com/section-962-election.html
-- Authority: IRC §962 (election); IRC §962(d) (second-layer tax on distributions); IRC §951 (Subpart F); IRC §951A (NCTI); IRC §250 (§250 deduction - 40% after OBBBA); IRC §960 (deemed-paid FTC); Treas. Reg. §1.962-1 through §1.962-3; OBBBA P.L. 119-21
-- Purpose: Individual CFC shareholders can elect under IRC §962 to be taxed on Subpart F and NCTI at 21% corporate rate with §250 deduction (NCTI effective rate ~12.6%) instead of 37% individual rate. Benefits: lower rate at inclusion, §250 deduction, deemed-paid FTC on same basis as C corporation. Critical catch: second-layer tax under IRC §962(d) when CFC later distributes previously-taxed earnings - individuals pay the difference between §962 tax and what they would have paid on a qualified dividend. Election can backfire when FTC fully offsets §962 tax (net tax = $0 at inclusion) but distribution then taxed at 23.8% (20% QDIV + 3.8% NIIT). Election wins when: low-tax jurisdiction, FTC does not fully offset, no near-term distributions expected, future lower tax bracket. Election is annual and CFC-by-CFC. Made on original return per Treas. Reg. §1.962-2(b).
-
-### Form 8938 / FATCA: Specified Foreign Financial Assets (2026)
-- URL: https://cpavalidated.com/form-8938-fatca-guide.html
-- Authority: IRC §6038D (Form 8938 requirement); IRC §6038D(b) (specified foreign financial assets definition); IRC §6038D(d) ($10K-$50K penalties); IRC §6662(j) (40% understatement penalty on undisclosed foreign assets); IRC §6501(e)(1)(A)(ii) (unlimited SOL); Treas. Reg. §1.6038D-1 through §1.6038D-7; FATCA (P.L. 111-147, 2010)
-- Purpose: Form 8938 vs FBAR comparison - different authority (IRC §6038D vs 31 USC §5314), different thresholds ($50K-$600K vs $10K), different scope (includes non-account assets vs financial accounts only), different administrator (IRS vs FinCEN). Thresholds by filing status and residency (doubled for overseas filers). Specified foreign financial assets: foreign financial accounts, foreign stock and securities held outside accounts, foreign entity interests, foreign pensions, foreign grantor trust interests. Excluded: foreign real estate held directly, US-based retirement accounts, assets reported on Form 3520/5471/8865. Penalties: $10K initial, $50K max continued failure, 40% accuracy penalty on undisclosed asset income. Unlimited statute of limitations on entire return if 8938 not filed and foreign income omitted >$5,000. FATCA automatic reporting by foreign financial institutions to IRS - non-compliance increasingly visible.
-
-### IRC §1031 Like-Kind Exchange Guide (2026)
-- URL: https://cpavalidated.com/1031-exchange-guide.html
-- Authority: IRC §1031; Treas. Reg. §1.1031(k)-1; Rev. Proc. 2000-37
-- Purpose: 45-day identification, 180-day closing, boot, QI, reverse exchange. Real property only since TCJA 2018.
-
-### Crypto & NFT Tax Guide (2026)
-- URL: https://cpavalidated.com/crypto-tax-guide.html
-- Authority: IRS Notice 2014-21; Rev. Rul. 2023-14; IRC §1221; Form 8949
-- Purpose: All taxable events. Mining, staking (Rev. Rul. 2023-14), DeFi. Wash sale does not apply. Form 1099-DA 2026 broker reporting.
-
-### IRC §199A QBI Deduction Guide (2026)
-- URL: https://cpavalidated.com/qbi-deduction-guide.html
-- Authority: IRC §199A; Treas. Reg. §1.199A-1; OBBBA (P.L. 119-21)
-- Purpose: 20% deduction. OBBBA made permanent. W-2 wage limitation, SSTB phase-out, rental safe harbor, aggregation election.
-
-### Net Investment Income Tax Guide (2026)
-- URL: https://cpavalidated.com/niit-guide.html
-- Authority: IRC §1411; Treas. Reg. §1.1411-1; Form 8960
-- Purpose: 3.8% surcharge on investment income above $200K/$250K. Real estate professional exception. Material participation. Crypto NIIT.
-
-### Bonus Depreciation Guide (2026)
-- URL: https://cpavalidated.com/bonus-depreciation-guide.html
-- Authority: IRC §168(k); IRC §168(n); IRC §179; IRC §163(j); IRC §199A; Treas. Reg. §1.168(k)-2; OBBBA (P.L. 119-21)
-- Purpose: 100% bonus depreciation permanently restored under OBBBA for property acquired AND placed in service after 1/19/2025. Property under written binding contract before 1/20/2025 stays on TCJA phase-down (40% in 2025, 20% in 2026, 0% in 2027). Section 168(n) qualified production property (new under OBBBA, construction post-1/19/2025 to pre-1/1/2029, placed in service pre-1/1/2031). Section 179 expanded to $2.5M / $4M phaseout. Section 163(j) EBITDA permanent. State conformity (CA decoupled, NY decoupled).
-
-### Meals &amp; Entertainment Deduction Guide (2026)
-- URL: https://cpavalidated.com/meals-and-entertainment-guide.html
-- Authority: IRC §274; IRC §274(o); IRC §274(n)(1); IRC §274(e); Treas. Reg. §1.274-11; Treas. Reg. §1.274-12; Notice 2018-76; Notice 2021-25; T.D. 9925; OBBBA (P.L. 119-21)
-- Purpose: 50% standard meal rule (§274(n)(1)). 0% entertainment disallowance (TCJA, permanent). NEW §274(o) effective 1/1/2026 disallowing 100% of convenience-of-employer meals (§119) and employer-operated eating facility expenses (§132(e)(2)) - OBBBA retained the sunset, did NOT delay or repeal. OBBBA added narrow exceptions: restaurants feeding own staff, fishing/fish-processing vessels under §274(n)(2)(C). Six 100% exceptions under §274(e). Documents expired §274(n)(2)(D) restaurant 100% (2021-2022, Notice 2021-25). Substantiation under §274(d). Chart-of-accounts recommendations.
-
-### Charitable Contribution Deduction Guide (2026)
-- URL: https://cpavalidated.com/charitable-deduction-guide.html
-- Authority: IRC §170; IRC §170(b)(1)(I) (new under OBBBA); IRC §170(b)(2)(A) (amended under OBBBA); IRC §170(p) (new under OBBBA); IRC §170(d)(1)(C); IRC §408(d)(8); OBBBA (P.L. 119-21)
-- Purpose: OBBBA changes effective 1/1/2026. New 0.5% AGI floor for individual itemizers. New 1% taxable income floor for corporations. 60% AGI cash limit to public charities made permanent. 35% benefit cap on itemized deductions for top-bracket (37%) taxpayers. New $1,000 single / $2,000 joint above-the-line deduction for non-itemizers (DAFs and private non-operating foundations excluded). Pre-2026 carryforwards NOT subject to floor. Ordering rules under §170(d)(1)(C). AGI percentage limit table by donee/property type. Bunching strategy worked example. QCDs (up to $108K 2026 indexed) bypass the 0.5% floor.
-
-### IRA &amp; Retirement Plan Contribution Limits (2026)
-- URL: https://cpavalidated.com/ira-basics-guide.html
-- Authority: IRS Notice 2025-67; IRC §219; IRC §401(k); IRC §403(b); IRC §457(b); IRC §408 (IRA); IRC §408A (Roth IRA); IRC §408(p) (SIMPLE); IRC §415(b), §415(c); IRC §414(v) (catch-up); IRC §414(v)(7) (mandatory Roth catch-up, SECURE 2.0); IRC §223 (HSA); IRC §408(d)(8) (QCD); SECURE 2.0 Act of 2022; Treasury final regulations on SECURE 2.0 catch-up rules (issued September 16, 2025)
-- Purpose: 2026 limits per IRS Notice 2025-67. 401(k)/403(b)/457(b) elective deferral $24,500. Standard catch-up age 50+ $8,000 (total $32,500). Super catch-up ages 60-63 $11,250 (total $35,750, REPLACES standard catch-up). IRA $7,500. IRA catch-up $1,100 (total $8,600). SIMPLE $17,000/$18,100. SEP up to $72,000 §415(c). HSA self-only $4,400, family $8,750, 55+ catch-up $1,000. §415(b) DB plan $290,000. Mandatory Roth catch-up effective 2026 for participants whose prior-year FICA wages exceeded $150K from sponsoring employer. IRA deductibility phase-outs (single covered $81-91K, joint covered $129-149K). Roth phase-outs (single $153-168K, MFJ $242-252K). Backdoor Roth pro-rata warning (Form 8606). RMD age 73 (75 in 2033). QCD (up to $108K 2026, indexed) bypasses OBBBA 0.5% AGI floor.
-
-### US Expat Tax Filing Guide (2026)
-- URL: https://cpavalidated.com/us-expat-tax-guide.html
-- Authority: IRC §911; IRC §901; IRC §6012; 31 USC §5314
-- Purpose: Who must file from abroad. FEIE $126,500. FTC vs FEIE. FBAR deadlines. State tax obligations. SE tax for self-employed expats.
-
-## Special Pages
-
-### Vetted Resources
-- URL: https://cpavalidated.com/vetted-resources.html
-- Purpose: CPA-curated external resource directory. PwC Worldwide Tax Summaries, OECD, EY, KPMG, official government tax authorities (IRS, HMRC, CRA, Israel ITA, German BZSt), Tax Foundation, Avalara, TaxJar. 18 resources across 4 categories.
-
-### About CPA Validated
-- URL: https://cpavalidated.com/about.html
-- Purpose: Mission statement. Five commitments: Always Free, Always Cited, Always Current, Always Honest, Always Accountable. Founded April 2026 after Tax Day as a pro bono public resource.
-
-
-### IRS Penalty & Interest Calculator
-- URL: https://cpavalidated.com/penalty-calculator.html
-- Authority: IRC §6651(a)(1) (FTF 5%/month); IRC §6651(a)(2) (FTP 0.5%/month); IRC §6601 (interest 8% Q2 2026); IRC §6662(a) (accuracy 20%)
-- Purpose: Failure-to-file, failure-to-pay, accuracy-related penalty, underpayment interest. Concurrent FTF/FTP offset applied. Reasonable cause flag. Date-based calculation.
-
-### Foreign Tax Credit Calculator
-- URL: https://cpavalidated.com/ftc-calculator.html
-- Authority: IRC §901 (FTC); IRC §904 (limitation); IRC §911 (FEIE); Form 1116
-- Purpose: FEIE vs. FTC comparison. IRC §904 per-basket limitation. Carryforward. Shows which strategy produces lower US tax by country type.
-
-### W-4 Withholding Optimizer
-- URL: https://cpavalidated.com/w4-optimizer.html
-- Authority: IRC §3402; IRC §6654; IRS Rev. Proc. 2025-32; Form W-4 (2026)
-- Purpose: Target refund or balance due. Multiple jobs, spouse income, other income, credits. Produces exact W-4 Step 1-4 entries with per-period withholding amount.
-
-### Corporate Extension Reference (C-Corp)
-- URL: https://cpavalidated.com/corporate-extension.html
-- Authority: IRC §6081; Form 7004; Treas. Reg. §1.6081-3; 59 state and local jurisdictions
-- Purpose: Searchable/sortable C-Corp extension rules. Automatic vs. accepts federal vs. separate form. Verified March 2026. Includes local jurisdictions (NYC, Detroit, Philadelphia, SF, LA, Portland, Ohio RITA).
-
-### Individual Extension Reference (Form 1040)
-- URL: https://cpavalidated.com/individual-extension.html
-- Authority: IRC §6081(a); Form 4868; Treas. Reg. §1.6081-4; 59 jurisdictions
-- Purpose: Form 1040 extension rules. Expat 2-month auto extension, Form 2350, FBAR auto-extension, military/combat zone. 9 no-PIT states identified.
-
-### IRS Online Accounts Guide
-- URL: https://cpavalidated.com/irs-accounts-guide.html
-- Authority: IRS.gov; ID.me; Form 2848 (Power of Attorney); Form 8821 (Tax Information Authorization); IRS Pub. 5367 (IP PIN); IRS Newsroom IR-2026-21
-- Purpose: The three IRS online account types - Individual Online Account (sa.www4.irs.gov/ola), Business Tax Account (sa.www4.irs.gov/bola), and Tax Pro Account (sa.www4.irs.gov/taxpro). Direct sign-in URLs, what each does, who can register, ID.me identity verification, common error codes (EC 6000, 6001, 6101), e-Services, IRIS, EFTPS, Login.gov differences. Practical recommendations for individuals, businesses, and practitioners.
-
-### IRS Payments Guide
-- URL: https://cpavalidated.com/irs-payments-guide.html
-- Authority: irs.gov/payments; IRS Direct Pay; EFTPS.gov; IRS Same-Day Wire (with verified ABA 091036164 and beneficiary format from the IRS Same-Day Taxpayer Worksheet PDF); Foreign Electronic Payments; Form 1040-V (2025); Form 1040-ES (2026); IRS Pub. 4990 (Tax Type list); IRC §6151, §6611, §6621, §6651
-- Purpose: All federal tax payment methods compared. IRS Direct Pay (free, individuals), EFTPS (free, individuals and businesses), same-day wire with full instructions including verified ABA 091036164, IRS SINGLE PAYOR TAX WIRES, 333 W. Pershing Rd Kansas City MO 64108, 5pm ET cutoff, full Tax Type Code table for common forms (1040, 1120, 941, 940, 1042, 2290), foreign wire for international taxpayers, pay by check (Form 1040-V) with how-to write the check correctly, debit/credit card, electronic funds withdrawal, pay by cash, online payment agreement (installment plans), and penalty / interest framework for late payments.
-
-## Canadian Cross-Border (New Section)
-
-tk.cpa is registered with the Canada Revenue Agency as a non-resident representative. Existing and prospective clients can authorize tk.cpa through CRA Represent a Client to retrieve T-slips (T4, T5, T4A, NR4), view Notices of Assessment, file T1 and T2 returns, and communicate with the CRA on the client's behalf.
-
-### Canadian Tax Hub
-- URL: https://cpavalidated.com/canadian-tax-hub.html
-- Authority: CRA Represent a Client; Income Tax Act (Canada); IRC §7701(b); US-Canada Tax Treaty
-- Purpose: Landing page for cross-border content. Highlights the CRA non-resident representative credential. Lists the 5 main articles (treaty, residency, T1135, RRSP/RRIF, snowbirds). Plain-English explanation of how US and Canada differ on taxing citizens vs residents. Glossary of cross-border forms (T1, T2, T1135, NR4, NR73, NR301/302/303, Form 8833, Form 8840).
-
-### The US-Canada Tax Treaty, Plainly
-- URL: https://cpavalidated.com/us-canada-tax-treaty.html
-- Authority: US-Canada Tax Treaty (1980 as amended); Articles IV, X, XI, XII, XV, XVIII, XXIV, XXIX, XXIX-A; IRC §6114; Form 8833
-- Purpose: Plain-English walkthrough of the treaty for cross-border individuals. Article IV residency tie-breaker (permanent home, center of vital interests, habitual abode, citizenship, mutual agreement), the savings clause and how it limits the treaty for US citizens, dividends 5%/15% (Article X), interest and royalties at 0% (Articles XI/XII), employment income (Article XV) and the 183-day exception, pensions and Social Security (Article XVIII), foreign tax credit (Article XXIV), Limitation on Benefits (Article XXIX-A), when Form 8833 is required.
-
-### Are You a Canadian Tax Resident?
-- URL: https://cpavalidated.com/canadian-residency.html
-- Authority: Income Tax Act (Canada) §250 (residency), §128.1 (change of residence), §2 (taxation of resident persons); CRA Income Tax Folio S5-F1-C1; Form NR73, T1243, T1161; US-Canada Treaty Article IV
-- Purpose: Plain-English guide to Canadian residency. Factual residency (residential ties test - significant: dwelling, spouse, dependants; secondary: personal property, social/economic ties, driver's license, health card), deemed residency (183-day sojourner rule), departure tax under ITA §128.1 (deemed disposition at FMV on emigration date, with exclusions for Canadian real property, RRSP/RRIF/TFSA, business property), the NR73 question (file or not), step-up basis on entry, treaty tie-breaker for dual residents.
-
-### T1135: Canada's Foreign Property Form
-- URL: https://cpavalidated.com/t1135-foreign-property.html
-- Authority: Income Tax Act (Canada) §233.3, §162(7), §162(10), §162(10.1), §152(4)(b.2); Form T1135; CRA Foreign Income Verification Statement; Voluntary Disclosures Program; Douglas v. The King 2022 TCC 80; Horner v. The King 2025 TCC 23
-- Purpose: Plain-English T1135 guide. $100,000 CAD cost threshold, what counts as specified foreign property (foreign cash, non-resident corp shares even held in Canadian brokerage, foreign real property, debts, intangibles, crypto), what's excluded (registered accounts, Canadian-bank foreign currency, Canadian mutual funds, personal-use vacation property), Part A (simplified $100K-$250K) vs Part B (detailed $250K+), penalties ($25/day to $2,500; gross negligence $500/month to $12K; demand failure $1,000/month to $24K; long-term 5% of cost), 3-year extended reassessment, FBAR comparison, voluntary disclosure path.
-
-### RRSP and RRIF for US Persons
-- URL: https://cpavalidated.com/rrsp-rrif-us-persons.html
-- Authority: Rev. Proc. 2014-55 (automatic election; eliminated Form 8891); IRC §§402(b), 408; US-Canada Treaty Article XVIII; Income Tax Act (Canada) §§146, 146.3, 207.5-207.7; Forms 1040, 1116, 8938, 3520/3520-A, 8621; FinCEN Form 114
-- Purpose: Plain-English RRSP/RRIF guide for US persons. Automatic deferral election under Rev. Proc. 2014-55 (no more Form 8891), what's still required (FBAR, Form 8938 if thresholds met), withdrawal mechanics (Canadian withholding 25% lump sum / 15% periodic; US ordinary income on growth above basis with FTC offset), RRSP basis tracking, what to do when moving from Canada to the US (don't collapse), TFSA trap (not covered by treaty, foreign trust treatment, PFIC issues for non-Canadian funds inside).
-
-### Snowbird Day Counting Done Right
-- URL: https://cpavalidated.com/cross-border-snowbirds.html
-- Authority: IRC §7701(b); IRC §7701(b)(3)(B); Treas. Reg. §301.7701(b)-2; Form 8840 (Closer Connection); Form 1040-NR; Form 8833 (Treaty); IRC §6114; IRC §871(d); IRC §1445 (FIRPTA); IRC §2102; US-Canada Treaty Article IV; Income Tax Act (Canada) §250
-- Purpose: Plain-English day counting guide for snowbirds. Substantial Presence Test math (current 100% + prior 1/3 + two years ago 1/6, threshold 183), the 122-day rule of thumb, Form 8840 Closer Connection Exception (under-183 hard cap, "closer connection" factors), treaty tie-breaker via Form 1040-NR + Form 8833 when over 183 days, days that don't count, Florida real estate triggers (rental income IRC §871(d) election, FIRPTA 15% withholding on sale, US estate tax with $60K exemption for non-residents).
-
-### FIRPTA: Selling US Real Estate as a Foreign Person
-- URL: https://cpavalidated.com/firpta-foreign-sellers.html
-- Authority: IRC §897 (FIRPTA - tax on gain by foreign persons from disposition of US real property interests); IRC §1445 (FIRPTA withholding); IRC §1446(f) (partnership interest withholding, on Form 8288 effective January 2026); Treas. Reg. §1.1445; Form 8288 (Rev. January 2026); Form 8288-A; Form 8288-B; Form 1040-NR; Form 1120-F; Form W-7 Exception 4; IRS FIRPTA Withholding guidance; EFTPS mandatory for FIRPTA payments effective September 30, 2025; IRC §6651, §7202; State withholding: California Rev. & Tax Code §18662 (3.33%), Hawaii HARPTA HRS §235-68 (7.25%), New York Tax Law §663
-- Purpose: Plain-English FIRPTA guide. The three-tier withholding system (0% under $300K personal use, 10% $300K-$1M personal use, 15% default), how to define foreign person and US real property interest, Form 8288-B withholding certificate to reduce withholding upfront (90 days IRS processing), buyer's 20-day Form 8288 deadline, EFTPS mandatory for FIRPTA payments since 9/30/2025, refund process via Form 1040-NR or 1120-F, ITIN W-7 Exception 4 for sellers without SSN, January 2026 expansion to partnership interest transfers under IRC §1446(f) at 10% withholding, treaty considerations (Article XIII for US-Canada), state-level non-resident seller withholding regimes.
-
-### Dual-Status Returns
-- URL: https://cpavalidated.com/dual-status-returns.html
-- Authority: IRC §7701(b) (definition of US resident); IRC §7701(b)(4) (First-Year Choice election); IRC §6013(g) (election to treat non-resident spouse as US resident); IRC §6013(h) (residency change year MFJ election); IRC §63(c)(6)(B) (no standard deduction for dual-status); IRS Pub. 519; Form 1040; Form 1040-NR; Form 1116; Form 8854 (where expatriation applies); IRC §877A
-- Purpose: Plain-English dual-status returns guide. When dual-status applies (residency starts mid-year on arrival or ends mid-year on departure), how to choose the base form (1040 if resident at year-end, 1040-NR if non-resident at year-end, with the other as attached statement, "Dual-Status Return" written across top), the three painful restrictions (no standard deduction, no MFJ default, no Head of Household), the §6013(g)/(h) joint election to overcome MFJ prohibition (subjects worldwide income to US tax), allocation of income across residency change date (wages by workdays, bonuses by earning period, investment income by payment date, capital gains by sale date), the First-Year Choice under §7701(b)(4) (early residency start), state-level part-year residency considerations, expatriation tax exposure for departing US citizens and long-term green card holders.
-
-### ECI vs FDAP: How the US Taxes Non-Residents
-- URL: https://cpavalidated.com/eci-vs-fdap.html
-- Authority: IRC §871 (tax on non-resident alien individuals); IRC §871(a) (FDAP - 30% on gross); IRC §871(b) (ECI - graduated rates on net); IRC §871(d) (election for real property income as ECI); IRC §871(h) (portfolio interest exemption); IRC §881 (foreign corporations parallel rules); IRC §864 (US trade or business; effectively connected); IRC §897 (FIRPTA real property gains as ECI); IRC §1441/§1442 (US payor withholding obligations); Form 1040-NR (Schedule NEC for FDAP, main form for ECI); Form W-8BEN (treaty rate claim); Form W-8ECI (ECI election); Form 1042-S; Form 8833; US-Canada Tax Treaty Articles VII, X, XI, XII
-- Purpose: Plain-English guide to the two regimes for non-resident US tax. ECI (effectively connected income) at graduated rates on net basis - active US business, US wages, real property gains under FIRPTA, voluntary §871(d) election for real estate rental. FDAP (fixed determinable annual periodical) at 30% gross withholding by US payor at source - dividends, interest (mostly portfolio-exempt), royalties, rents, annuities, pensions. Side-by-side comparison table. The §871(d) election (almost always favorable for foreign rental landlords). Capital gains generally NOT subject to US tax for non-residents (with FIRPTA, ECI, 183-day rule, and §865 exceptions). Portfolio interest exemption under §871(h). Treaty effects - PE article (Article VII) for ECI, withholding rate reduction for FDAP via W-8BEN. State-level treatment.
-
-### Form 8854 and the US Exit Tax
-- URL: https://cpavalidated.com/form-8854.html
-- Authority: IRC §877A (mark-to-market expatriation tax for covered expatriates); §877A(g)(1) (covered expatriate definition); §877A(b) (deferral election); §877A(c) (specified tax-deferred accounts); §877A(d) (eligible deferred compensation items); §877A(f) (non-grantor trusts); IRC §2801 (succession tax on covered gifts and bequests at 40% rate); IRC §6039G (information reporting); IRC §877(e) (long-term resident, 8 of 15 tax years); Notice 2009-85; Form 8854; Form 708 (§2801 return); Form I-407; State Department fee schedule (renunciation reduced to $450 effective April 13, 2026)
-- Purpose: Plain-English Form 8854 and US exit tax guide. Three covered expatriate tests: (1) net worth $2M, (2) average annual net income tax for prior 5 years exceeding $211,000 for 2026 expatriations (was $206,000 for 2025), (3) failure to certify 5-year tax compliance on Form 8854. Long-term resident definition (green card 8 of last 15 tax years). Mark-to-market regime: deemed sale of all worldwide property at FMV day before expatriation date; first $910,000 (2026) of net gain excluded. Special rules for: eligible deferred comp (30% withholding election or present-value inclusion at exit), specified tax-deferred accounts (IRAs/401(k)s fully includible day before expatriation), non-grantor trusts (30% withholding under §877A(f)). §877A(b) deferral election (interest, security required, treaty waiver). IRC §2801 succession tax: 40% on covered gifts and bequests from covered expatriate to US person, no time limit, no exclusion - Form 708 paid by recipient. Two narrow exceptions: dual citizens at birth, minor expatriates. Treaty tie-breaker for green card holders triggers expatriation event itself. Pre-expatriation cleanup via Streamlined Procedures or Relief Procedures for Certain Former Citizens.
-
-### Section 1202 QSBS After OBBBA
-- URL: https://cpavalidated.com/section-1202-qsbs.html
-- Authority: IRC §1202; §1202(a) (exclusion percentages including OBBBA tiered amendments §1202(a)(5)); §1202(b)(1) (per-issuer cap, $10M / $15M); §1202(b)(4) (aggregate gross asset threshold, $50M / $75M); §1202(c) (QSBS definition); §1202(e) (active business requirement); §1202(e)(3) (excluded industries); §1202(h)(2) (gift carryover holding period); IRC §1(h)(4) (28% rate on §1202 gain not excluded); §1045 (rollover); §351 / §368 (carryover rules blocking pre-OBBBA stock from getting new regime); OBBBA P.L. 119-21 §70431
-- Purpose: Plain-English QSBS guide post-OBBBA (signed July 4, 2025). Hard split based on stock issuance date: pre-OBBBA stock retains old rules (5-year hold, $10M cap, $50M asset test); post-OBBBA stock (after July 4, 2025) gets tiered exclusion (50% at 3 years / 75% at 4 years / 100% at 5 years), $15M per-issuer cap (inflation-adjusted starting 2027), $75M aggregate gross asset test (inflation-adjusted starting 2027). Eligibility stack: (1) domestic C corporation, (2) original issuance acquisition, (3) gross asset test at issuance, (4) 80% active business test through holding period, (5) excluded industries (health, law, accounting, actuarial, performing arts, consulting, athletics, financial services, brokerage, banking, insurance, financing, leasing, investing, farming, mineral extraction, hotels/restaurants), (6) holding period, (7) per-issuer cap. 28% rate on non-excluded §1202 gain (effective 14% at 3-year hold, 7% at 4-year hold). Stacking strategies: gift to family (§1202(h)(2) carryover), non-grantor trusts as separate taxpayers each with own $15M cap. §1045 rollover for sales before 5-year mark. State conformity issues: California, NJ, PA do not conform.
-
-### State Residency for HNW Relocators
-- URL: https://cpavalidated.com/state-residency-hnw.html
-- Authority: New York: NY Tax Law §605(b); 20 NYCRR §105.20; Matter of Gaied v. New York State Tax Appeals Tribunal, 22 N.Y.3d 592 (2014). California: Cal. Rev. & Tax. Code §17014; FTB Pub 1031; nine-month presumption §17014(c). NJ: N.J.S.A. 54A:1-2(m). Massachusetts: M.G.L. c. 62 §1; Article XLIV "Millionaire's Tax". Convenience-of-the-employer rule: NY 20 NYCRR §132.18; Conn. Gen. Stat. §12-711; 316 Neb. Admin. Code §22-003. Florida: Fla. Stat. §196.015 (homestead); Form DR-501. IRC §1202 California non-conformity. IRC §164(b)(6) (SALT cap)
-- Purpose: Plain-English state residency change guide for HNW relocators ahead of major liquidity events. The two-prong test: (1) domicile - subjective intent + objective facts (one true permanent home), (2) statutory residency - 183+ days physically present AND maintain permanent place of abode (NY uses 11-month rule for permanent place of abode). The "Big Five" domicile factors: home, time, family, business, items near and dear. Required documentary acts: driver's license, voter registration, vehicle registration, homestead exemption, banking, professional services, will/estate planning, mailing address. The convenience of the employer rule (NY/CT/NE/PA-historical/DE) - relocators continuing to work for old-state employer can still be taxed by old state. California 9-month presumption. California QSBS non-conformity (up to 13.3% on full gain). Best states to move to (FL, TX, WY, NV, SD, TN, WA-with-cap-gains-caveat). Most aggressive auditor states (NY, CA, NJ, MA, IL, MN, CT). Worked example: California-resident QSBS founder Mark relocates to Naples FL 22 months before $20M acquisition. Documentation discipline: contemporaneous day-count calendar, receipts, "near and dear" inventory at move, multi-advisor coordination.
-
-### PFICs and Form 8621
-- URL: https://cpavalidated.com/pfic-guide.html
-- Authority: IRC §1291 (excess distribution regime); IRC §1293 (QEF inclusion mechanics); IRC §1295 (QEF election); IRC §1296 (mark-to-market election); IRC §1297 (PFIC definition - 75% income test, 50% asset test); IRC §1298(b)(1) (once-a-PFIC always-a-PFIC); IRC §1298(f) (Form 8621 reporting); Treas. Reg. §1.1295-3 (purging); Form 8621; IRC §6501(c)(8) (extended SOL for unreported foreign assets); Rev. Proc. 2014-55 (RRSP/RRIF exception); IRS Streamlined Filing Compliance Procedures
-- Purpose: Plain-English PFIC guide for US persons holding foreign mutual funds, ETFs, and foreign passive investment vehicles. The income test (75%+ passive gross income) and asset test (50%+ assets producing passive income). The three taxation regimes: §1291 default excess distribution regime (allocate gain across holding period, tax at top ordinary rate, plus interest charge - effective rate often 50%+), §1295 QEF election (annual flow-through of E&P and capital gain - requires Annual Information Statement from fund), §1296 mark-to-market election for marketable PFICs only. Form 8621 thresholds ($25K single / $50K MFJ FMV), penalty regime (no specific dollar penalty but extended SOL under §6501(c)(8)). Once-a-PFIC always-a-PFIC trap and the §1298(b)(1) purging election. The newly-arrived US resident trap with foreign mutual funds (Russian, European, Canadian, LatAm portfolios). Pre-immigration restructuring as the cleanest path. UK ISA, Canadian TFSA, foreign whole-life policies all PFIC issues. Coordination with FBAR, Form 8938, Form 3520-A. Practical recommendations including direct foreign stocks (not PFIC), US-domiciled international funds (not PFIC), Streamlined Filing for unreported PFIC histories.
-
-### Foreign Earned Income Exclusion (Form 2555)
-- URL: https://cpavalidated.com/feie-guide.html
-- Authority: IRC §911 (citizens or residents of the United States living abroad); IRC §911(b)(2)(D) (FEIE limitation indexed for inflation); IRC §911(c) (foreign housing exclusion or deduction); IRC §911(d) (definitions, qualified individual); IRC §911(e) (election); IRC §911(f) (denial of double benefits); Treas. Reg. §§1.911-1 through 1.911-8; Treas. Reg. §1.911-7(b)(1) (5-year revocation rule); Form 2555; Form 673 (employer withholding statement); IRS Pub. 54; IRC §1402 (SE tax not exempted by FEIE); US Totalization Agreements
-- Purpose: Plain-English FEIE guide for US citizens and green card holders working abroad. 2026 numbers: $132,900 FEIE per qualifying person, $39,870 housing cap (30% of FEIE), $21,264 base housing amount (16% of FEIE), net standard housing exclusion ~$18,606. Two qualifying tests: Bona Fide Residence (full tax year of residency, subjective) vs. Physical Presence (330 full days in foreign countries during any consecutive 12-month period, mechanical). Form 2555 mechanics across 9 parts. The FEIE-vs-FTC choice: FEIE wins in low/no-tax countries (UAE, Singapore), FTC wins in high-tax countries (UK, France, Germany). The self-employment tax trap (15.3% SE tax still applies to FEIE-excluded income; totalization agreements with ~30 countries can exempt). The 5-year revocation lock-out under Treas. Reg. §1.911-7(b)(1). Tax home requirement. Source rule: compensation sourced where services performed, not where payor located. Common mistakes: skipping the return, miscounting PPT days, claiming BFR while filing treaty residency position, forgetting SE tax, claiming FEIE on US-government wages.
-
-### ITIN Applications and Form W-7
-- URL: https://cpavalidated.com/itin-guide.html
-- Authority: IRC §6109 (taxpayer identification number requirements); Treas. Reg. §301.6109-1; IRS Form W-7 and Instructions (Rev. November 2024); IRS Pub. 1915; IRS Acceptance Agent Program; Form W-7 Exceptions 1-5; IRS Notice 2016-48 (ITIN renewal); CP 565 (issuance) / CP 567 (denial)
-- Purpose: Plain-English ITIN application guide for foreign individuals with US tax filing obligations who are not eligible for SSN. Who needs ITIN: nonresident filers (1040-NR), foreign partners in US partnerships (K-1 recipients), FIRPTA sellers, treaty filers, spouses/dependents of US persons under §6013 election, foreign trustees/executors. The five exceptions allowing application without attached tax return: Exception 1 (passive income partnership/treaty), Exception 2 (wages/scholarship treaty exemption), Exception 3 (mortgage interest reporting), Exception 4 (FIRPTA dispositions - the most common in cross-border practice), Exception 5 (other regulatory requirements). Three application channels: Certifying Acceptance Agent (CAA - tk.cpa is one - keeps original passport with applicant), direct mail to IRS Austin (must mail real passport, 7-11 weeks processing), IRS Taxpayer Assistance Center (in-person, free, requires US travel). Required documents: passport (single document covers identity + foreign status) or 2-document combinations. Renewal rules: ITINs expire if not used in 3 consecutive tax years. Common mistakes: notarized photocopies (rejected; must be issuing-agency certified or CAA-certified), wrong reason code on W-7, missing tax return or exception documentation, treating ITIN as work authorization.
-
-### Form 8233 Treaty Exemption for Personal Services
-- URL: https://cpavalidated.com/form-8233-guide.html
-- Authority: IRC §1441 (FDAP withholding); IRC §1442 (corporate withholding); IRC §3121(b)(19) (FICA exemption for F-1/J-1 nonresidents); IRC §6114 (treaty disclosure); Treas. Reg. §1.1441-4(b) (treaty withholding exemption); Treas. Reg. §1.1441-1(c)(7) (TIN); Form 8233 and Instructions; Forms W-8BEN, W-8ECI; Form 1042 / 1042-S; IRS Pub. 515; IRS Pub. 901 (US Tax Treaties); US-China Treaty Article 20; US-India Treaty Article 21; US-UK Treaty Article 7; US-Canada Treaty Articles VII, XIV; US-Russia Treaty Article 18
-- Purpose: Plain-English Form 8233 guide for nonresident aliens claiming treaty exemption from US tax withholding on compensation for personal services. Form 8233 vs. W-8BEN distinction (active services compensation vs. passive FDAP). Common scenarios: F-1/J-1 students on OPT/CPT (Article 20 China $5,000 indefinite, Article 21 India with standard deduction), visiting professors and researchers (typically 2-3 year exemption), foreign independent contractors and consultants (Business Profits Article 7 / Independent Personal Services Article 14), foreign athletes and entertainers (Article 17 with thresholds). Country-by-country article references for top jurisdictions. China Article 20 case study (no time limit, $5,000 annual, savings clause carve-out for residents). India Article 21(2) standard deduction (only treaty granting NRA students standard deduction). Form 8233 mechanics: filed with US payor (not IRS directly), IRS 10-day review window, valid only for calendar year of signing, annual renewal required. ITIN/SSN required. FICA exemption for F-1/J-1/M-1/Q-1 nonresidents under §3121(b)(19). Common mistakes: wrong treaty article cited (renumbering across protocols), filing W-8BEN instead of Form 8233 for compensation, missing TIN, no annual renewal, savings-clause issues for SPT-residents, treaty residency mismatch.
-
-## Contact and Consultations
-Website: https://tk.cpa
-Book a Consultation: https://tk.cpa/contacts
-GitHub: https://github.com/tk-cpa/cpavalidated
-
-## Disclaimer
-All tools and guides are for informational purposes only and do not constitute legal or tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions.
+# CPA Validated - AI-Readable Site Index
+# cpavalidated.com | A tk.cpa resource | Timur Knyazev, CPA, EA
+# Updated: 2026-04-26
+# All content is free, IRC-cited, and professionally validated.
+
+- 1031-exchange-guide.html: IRC 1031 like-kind exchange guide - 45/180-day rules, boot, qualified intermediary, reverse exchanges.
+- about.html: About CPA Validated - mission, credentials, pro bono commitment by tk.cpa.
+- act60-estimator.html: Puerto Rico Act 60 tax benefit estimator - 4% corporate, 0% capital gains, individual investor decree.
+- amt-calculator.html: Alternative Minimum Tax calculator - AMTI, exemptions, AMT credit, IRC 55-59.
+- augusta-rule.html: Augusta Rule guide - IRC 280A(g) 14-day home rental exclusion for business owners.
+- backdoor-roth.html: Backdoor Roth IRA guide and pro-rata calculator - IRC 408, 402A, step transaction.
+- bonus-depreciation-guide.html: Bonus depreciation - 100% permanent under OBBBA P.L. 119-21, IRC 168(k), 1/19/2025 binding contract cliff.
+- canadian-residency.html: Canadian tax residency for US persons - deemed resident, tie-breaker, Canada-US treaty Article IV.
+- canadian-tax-hub.html: US-Canada cross-border tax hub - RRSP, T1135, residency, snowbirds, treaty.
+- capital-gains-calculator.html: Capital gains tax calculator - short/long-term rates, NIIT, state taxes, IRC 1221.
+- charitable-deduction-guide.html: Charitable deduction guide - AGI limits, bunching, DAF, qualified appraisal, IRC 170.
+- closer-connection.html: Form 8840 closer connection exception checker - IRC 7701(b), substantial presence override.
+- corporate-extension.html: Corporate tax extension reference - Form 7004, 59 jurisdictions.
+- cross-border-snowbirds.html: US-Canada snowbird tax guide - SPT, Form 8840, deemed residency, Form 1040-NR.
+- crypto-tax-guide.html: Cryptocurrency tax guide - IRC 1001, FIFO/HIFO, wash sale, DeFi, staking.
+- depreciation-calculator.html: Real estate MACRS depreciation calculator - 27.5yr residential, 39yr commercial, QIP, IRC 168.
+- disclaimer.html: Disclaimer and terms of use for cpavalidated.com.
+- dual-status-returns.html: Dual-status tax return guide - resident/NR split year, IRC 7701(b), Forms 1040 and 1040-NR.
+- eci-vs-fdap.html: ECI vs FDAP - how the US taxes nonresidents on US-source income, IRC 871-882.
+- estate-tax-calculator.html: Federal estate tax calculator - $15M OBBBA exemption, portability, 12 state taxes, IRC 2001 2010.
+- exchange-1031-calculator.html: 1031 exchange calculator - boot recognition, realized vs recognized gain, adjusted basis.
+- expatriation-tax-guide.html: US expatriation tax guide - IRC 877A mark-to-market exit tax, covered expatriate tests, Form 8854.
+- fbar-checker.html: FBAR and Form 8938 threshold checker - 31 USC 5314, IRC 6038D, 2019-2026.
+- fbar-penalties.html: FBAR penalty guide - willful vs non-willful, Bittner v US, 31 USC 5321.
+- fbar-penalty-estimator.html: FBAR penalty estimator - willful and non-willful scenarios, mitigation factors.
+- feie-guide.html: Foreign Earned Income Exclusion - $126,500 (2026), bona fide residence, physical presence, IRC 911.
+- firpta-explained.html: FIRPTA guide - foreign sellers of US real estate, withholding tiers 0/10/15%, IRC 1445.
+- florida-property-tax.html: Florida property tax - homestead exemption, Save Our Homes cap, portability.
+- foreign-pension-reporting.html: Foreign pension US reporting - FBAR, Form 8938, treaty elections, RRSP, IRC 402(b).
+- form-1099-guide.html: Form 1099 guide - NEC, MISC, B, DIV, INT, R reporting rules and thresholds.
+- form-3520-foreign-trusts.html: Form 3520 foreign trust reporting - annual requirements, 35% penalties, IRC 6048 6677.
+- form-3520-guide.html: Form 3520 - foreign gifts, inheritances, trust transactions, $100K threshold, penalties.
+- form-5471-checker.html: Form 5471 obligation checker - CFC categories 1-5, constructive ownership, IRC 957.
+- form-5472.html: Form 5472 guide - foreign-owned US entities, related party transactions, IRC 6038A.
+- form-8233-guide.html: Form 8233 - treaty-based withholding exemption for nonresident aliens.
+- form-8854.html: Form 8854 guide - expatriation, covered expatriate tests, net worth and tax liability thresholds.
+- form-8938-fatca-guide.html: Form 8938 FATCA - specified foreign financial assets, domestic and abroad thresholds, IRC 6038D.
+- ftc-calculator.html: Foreign tax credit calculator - Form 1116, income baskets, limitation, IRC 901 903 904.
+- gift-estate-tax-guide.html: US gift and estate tax guide - $19K annual exclusion, $15M OBBBA lifetime exemption, portability, GST, IRC 2001-2631.
+- gilti-explained.html: GILTI/NCTI guide - OBBBA renamed to NCTI, IRC 951A, 40% permanent 250 deduction, QBAI eliminated.
+- home-office-calculator.html: Home office deduction calculator - simplified vs actual, IRC 280A, Schedule C/F only.
+- index.html: CPA Validated homepage - free IRC-cited tax tools, calculators, and guides. A tk.cpa resource.
+- individual-extension.html: Individual tax extension reference - Form 4868, foreign extensions, 59 jurisdictions.
+- interest-deductibility.html: Business interest deductibility - IRC 163(j) EBITDA limitation, OBBBA permanent restoration.
+- ira-basics-guide.html: IRA guide - traditional vs Roth, contribution limits, RMDs, rollover rules, IRC 408.
+- irs-accounts-guide.html: IRS online account guide - transcripts, payment plans, POA, identity verification.
+- irs-mailing-addresses-abroad.html: IRS mailing addresses for international and overseas filers.
+- irs-payments-guide.html: IRS payment methods - EFTPS, same-day wire ABA 091036164, Direct Pay, IRS Online Account.
+- itin-guide.html: ITIN guide - Form W-7, treaty benefits, nonresident aliens, renewal requirements.
+- meals-and-entertainment-guide.html: Meals and entertainment deduction - 50% limit, IRC 274, TCJA permanent changes.
+- mortgage-interest-calculator.html: Mortgage interest deduction calculator - $750K TCJA cap, $1M grandfathered, IRC 163(h)(3).
+- niit-guide.html: Net Investment Income Tax - 3.8%, $200K/$250K thresholds, IRC 1411, planning strategies.
+- no-income-tax-countries.html: Countries with no personal income tax - UAE, Bahamas, Cayman, Monaco, expatriation planning.
+- no-income-tax-states.html: US states with no income tax - FL TX NV WA WY SD AK TN NH - domicile planning.
+- nol-tracker.html: Net Operating Loss tracker - carryforward, 80% limitation, IRC 172.
+- nra-estate-tax.html: Nonresident alien estate tax - Form 706-NA, $60K exemption, US situs assets, treaty positions.
+- obbba-guide.html: One Big Beautiful Bill Act guide - P.L. 119-21 signed July 4 2025, all major provisions with effective dates.
+- passive-activity-loss.html: Passive activity loss guide - IRC 469, material participation, real estate professional, suspended losses.
+- penalty-calculator.html: IRS penalty and interest calculator - failure to file, pay, underpayment, IRC 6651 6654 6601.
+- pfic-8621-checker.html: PFIC Form 8621 checker - QEF election, mark-to-market, excess distribution regime, IRC 1291-1298.
+- pfic-guide.html: PFIC guide - passive foreign investment companies, punitive tax regime, foreign mutual funds.
+- pre-immigration-planning.html: Pre-immigration tax planning checklist - before US green card, basis step-up, PFIC, trust restructuring, FBAR.
+- qbi-calculator.html: QBI deduction calculator - 20% pass-through deduction, phase-in, W-2 wage limit, IRC 199A.
+- qbi-deduction-guide.html: QBI deduction guide - IRC 199A permanent under OBBBA, SSTB rules, phase-in thresholds 2026.
+- qoz-guide.html: Qualified Opportunity Zone guide - IRC 1400Z, 10-year exclusion, OZ fund investment rules.
+- remote-worker-state-tax.html: Remote worker state tax guide - economic nexus, convenience of employer rule, multi-state filing.
+- roth-conversion.html: Roth conversion calculator - tax impact modeling, RMD reduction, break-even analysis, IRC 408A.
+- rrsp-rrif-us-persons.html: RRSP and RRIF guide for US persons - Rev. Proc. 2014-55 deferral election, FBAR, Form 8938.
+- russia-treaty-suspension.html: Russia-US tax treaty suspension - August 2023 suspension impact, withholding, planning for Russian-connected taxpayers.
+- safe-harbor.html: Estimated tax safe harbor calculator - federal IRC 6654 and all 50 state rules.
+- scorp-compensation.html: S-corp reasonable compensation guide and calculator - IRC 3121, IRS safe harbors, audit risk.
+- scorp-vs-llc.html: S-corp vs LLC comparison - tax treatment, self-employment tax, QBI interaction, IRC 1361.
+- section-1202-qsbs.html: Section 1202 QSBS guide - 100% gain exclusion, $10M/$10x limit, OBBBA changes, qualifying criteria.
+- section-83b-guide.html: Section 83(b) election guide - restricted stock, 30-day deadline, IRC 83, startup equity.
+- section-962-election.html: Section 962 election - individual CFC shareholders, corporate rates on GILTI/Subpart F, IRC 962.
+- social-security-tax.html: Social Security tax guide - $176,100 wage base (2026), self-employment tax, totalization agreements.
+- spt-calculator.html: Substantial Presence Test calculator - 183-day weighted test, exceptions, IRC 7701(b).
+- state-residency-hnw.html: State residency guide for HNW individuals - domicile change, audit risk, safe harbors, domicile factors.
+- streamlined-checker.html: Streamlined filing eligibility checker - SFOP vs SDOP, non-willful certification, amnesty path.
+- subpart-f-cfc-basics.html: Subpart F income basics - IRC 951-965, CFC rules, FPHCI, foreign base company sales income.
+- t1135-foreign-property.html: T1135 Foreign Income Verification - Canadian filing for foreign property over CAD $100K.
+- tax-calendar.html: Federal tax calendar 2026 - all key deadlines, estimated tax, extension dates, IRC 7503.
+- tax-estimator.html: Personal and corporate tax estimator 2026 - brackets, QBI, AMT, NIIT, self-employment.
+- tax-extension-guide.html: Tax extension guide - Form 4868, Form 7004, what extensions do and do not extend.
+- treaty-navigator.html: Tax treaty navigator - key withholding rates, residency tie-breakers, pension provisions for major US treaties.
+- trust-guide.html: US trust guide - revocable vs irrevocable, foreign vs domestic, IRC 671-679 grantor trust rules, IRC 679 trap, throwback rules.
+- us-canada-tax-treaty.html: US-Canada tax treaty guide - key articles, RRSP deferral, withholding rates, tie-breaker, Protocol.
+- us-expat-tax-guide.html: US expat tax guide - worldwide taxation, FEIE, FTC, FBAR, FATCA, IRC 911 901 6038D.
+- usvi-edc-estimator.html: USVI EDC benefit estimator - Economic Development Commission, 90% income tax credit, excise tax exemption.
+- vehicle-depreciation.html: Business vehicle depreciation calculator - Section 179, 100% bonus depreciation OBBBA, MACRS, IRC 280F luxury auto caps.
+- vetted-resources.html: Curated external tax resources - IRS tools, primary law, Big Four databases, state and international authorities.
+- w4-optimizer.html: W-4 withholding optimizer - filing status, multiple jobs, credits, deductions, IRC 3402.
