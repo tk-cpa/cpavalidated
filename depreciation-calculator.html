@@ -87,7 +87,7 @@ table.sched .total-row td{background:var(--ink-10);font-weight:700;border-top:2p
 @media(max-width:400px){.rh-grid{grid-template-columns:1fr 1fr}}
 @media print{ body{background:white} .ph{-webkit-print-color-adjust:exact;print-color-adjust:exact} .result-hero,.sum-box{-webkit-print-color-adjust:exact;print-color-adjust:exact} .back,.pbn,.show-all-btn{display:none} .input-card{display:none!important} .sched-wrap{overflow:visible}
 }
-</style>
+.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
 <style>
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
@@ -122,5 +122,7 @@ const MID_MONTH = { 1:11.5/12, 2:10.5/12, 3:9.5/12, 4:8.5/12, 5:7.5/12, 6:6.5/12
 } // Set default date to today
 document.getElementById('placedDate').value = new Date().toISOString().split('T')[0];
 calc();
-</script> </body>
+</script> 
+<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="vehicle-depreciation.html" class="rl">Vehicle Depreciation Calculator</a><a href="bonus-depreciation-guide.html" class="rl">Bonus Depreciation Guide</a><a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a><a href="exchange-1031-calculator.html" class="rl">1031 Exchange Calculator</a><a href="interest-deductibility.html" class="rl">Interest Deductibility</a></div></div>
+</body>
 </html>
