@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PFIC Rules Explained: Excess Distribution, QEF & Mark-to-Market Elections | CPA Validated</title>
-<meta name="description" content="PFIC taxation: the §1291 excess distribution regime, QEF election, mark-to-market election, asset and income tests, Form 8621 annual reporting, purging elections, and why foreign mutual funds trigger PFIC status. CPA-validated. IRC §1291-1298.">
+<title>PFIC Deep Dive: Excess Distribution, QEF & Mark-to-Market Elections | CPA Validated</title>
+<meta name="description" content="PFIC taxation explained: §1291 excess distribution regime with interest charge, QEF election, mark-to-market election, the income and asset tests, Form 8621, purging elections, and the once-a-PFIC-always-a-PFIC rule. CPA-validated.">
 <link rel="canonical" href="https://cpavalidated.com/pfic-guide-deep.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -33,16 +33,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 .key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
 .key-table tr:last-child td{border-bottom:none}
 .key-table tr:nth-child(even) td{background:var(--ink-10)}
-.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px}
-.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px;font-family:var(--font-mono)}
-.formula-line{font-size:14px;color:#fff;line-height:2.2;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.formula-line .op{color:rgba(255,255,255,.4);min-width:20px;font-family:var(--font-mono)}
-.formula-line .var{color:var(--coral);font-family:var(--font-mono)}
-.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45)}
 .compare-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
 .cg-head{background:var(--ink);color:#fff;padding:10px 14px;font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.05em}
-.cg-cell{background:var(--white);padding:13px 14px;font-size:13px;line-height:1.65;color:var(--ink-80)}
+.cg-cell{background:var(--white);padding:12px 14px;font-size:12.5px;line-height:1.6;color:var(--ink-80)}
 .cg-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-40);margin-bottom:5px;font-family:var(--font-mono)}
+.example-box{border:2px solid var(--coral);padding:20px;margin:24px 0}
+.example-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:14px;font-family:var(--font-mono)}
+.ex-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--ink-10);font-size:13px;color:var(--ink-80)}
+.ex-row:last-child{border-bottom:none;font-weight:700;color:var(--ink);padding-top:8px;margin-top:4px}
+.ex-row .val{font-family:var(--font-mono);font-size:12.5px}
+.ex-row .val.red{color:var(--red)}.ex-row .val.green{color:var(--green)}
 .related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
 .source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
 .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
@@ -57,153 +57,122 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
 <div class="ph"><div class="phi">
-  <h1>PFIC Rules: Excess Distribution, QEF & Mark-to-Market</h1>
-  <div class="sub">IRC §1291-1298 &nbsp;&bull;&nbsp; Three Tax Regimes &nbsp;&bull;&nbsp; Form 8621 &nbsp;&bull;&nbsp; Foreign Mutual Fund Trap &nbsp;&bull;&nbsp; Updated 2026</div>
+  <h1>PFIC Deep Dive: Excess Distribution, QEF & Mark-to-Market</h1>
+  <div class="sub">IRC §1291 Regime &nbsp;&bull;&nbsp; QEF Election &nbsp;&bull;&nbsp; Mark-to-Market Election &nbsp;&bull;&nbsp; Form 8621 &nbsp;&bull;&nbsp; Purging Elections &nbsp;&bull;&nbsp; Updated 2026</div>
   <div class="meta">
-    <span class="ph-meta-item">IRC §1291</span>
-    <span class="ph-meta-item">IRC §1295 (QEF)</span>
-    <span class="ph-meta-item">IRC §1296 (MTM)</span>
+    <span class="ph-meta-item">IRC §1291-1298</span>
     <span class="ph-meta-item">Form 8621</span>
+    <span class="ph-meta-item">Updated 2026</span>
   </div>
 </div></div>
 <div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
 <div class="article">
 
-<p class="lead">The passive foreign investment company rules are among the harshest anti-deferral regimes in the US tax code. A US person who holds stock in a PFIC without making a timely election faces the §1291 excess distribution regime - which taxes gains and distributions at the highest ordinary income rate plus an interest charge going back to the year of acquisition, eliminating any benefit of long-term capital gains rates. Foreign mutual funds, ETFs, and many foreign holding companies are PFICs. Most owners don't know it until it is too late.</p>
+<p class="lead">A passive foreign investment company - PFIC - is the most punitive tax classification in the US international tax code. The default tax regime imposes ordinary income rates plus an interest charge on gains and distributions, regardless of how long you held the investment. Foreign mutual funds, ETFs, and many foreign holding companies are PFICs. Most US persons who own them don't know it until the damage is done.</p>
 
 <div class="callout">
-  <div class="callout-label">The Core Problem</div>
-  <p>A US investor who holds a foreign mutual fund for 10 years and sells at a gain does not pay 20% capital gains tax. Under the §1291 default regime, the gain is allocated ratably over the holding period, taxed at the <strong>highest ordinary income rate for each prior year</strong> (currently 37%), and then subject to an <strong>interest charge</strong> as if the taxes had been owed and unpaid since each prior year. The effective combined rate routinely exceeds 50% and can approach 60% or more after interest. This is not a planning failure - it is the default rule.</p>
+  <div class="callout-label">What Is a PFIC - IRC §1297(a)</div>
+  <p>A foreign corporation is a PFIC if it meets either of two tests for any taxable year: <strong>(1) Income test:</strong> 75% or more of its gross income is passive income. <strong>(2) Asset test:</strong> 50% or more of its assets produce or are held to produce passive income (measured by average fair market value, or adjusted basis for non-publicly traded companies).</p>
+  <p>Passive income includes dividends, interest, rents, royalties, annuities, and net gains from disposition of property. A foreign mutual fund investing in stocks and bonds almost certainly meets both tests. So does a foreign holding company that holds investment assets rather than operating businesses.</p>
 </div>
 
-<h2>What Is a PFIC? The Two Tests</h2>
+<h2>The Three Tax Regimes</h2>
 
-<p>A foreign corporation is a PFIC for a tax year if it meets either of two tests under IRC §1297:</p>
-
-<div class="compare-grid" style="grid-template-columns:1fr 1fr">
-  <div class="cg-head">Income Test</div>
-  <div class="cg-head">Asset Test</div>
-  <div class="cg-cell">
-    <div class="cg-label">IRC §1297(a)(1)</div>
-    75% or more of the corporation's gross income for the tax year is passive income (dividends, interest, rents, royalties, annuities, and gains from sale of passive assets)
-  </div>
-  <div class="cg-cell">
-    <div class="cg-label">IRC §1297(a)(2)</div>
-    50% or more of the average value of the corporation's assets (determined quarterly) produce or are held for production of passive income
-  </div>
-</div>
-
-<p>Either test alone is sufficient. A company that passes one test is a PFIC even if it fails the other. The tests are applied at the corporate level each year - a company can be a PFIC in some years and not others. A US shareholder who held stock during any PFIC year retains "PFIC taint" on those shares even if the company later ceases to be a PFIC.</p>
-
-<div class="red-box"><strong>The foreign mutual fund trap.</strong> Virtually every foreign-registered mutual fund, UCITS fund, ETF, and unit trust is a PFIC. These funds hold stocks, bonds, and cash - all passive assets - and generate dividends, interest, and capital gains - all passive income. A US person holding a British ISA, a Canadian mutual fund, an Irish UCITS ETF, or an Israeli provident fund almost certainly holds PFIC shares. The fact that the investment is labeled a "retirement account" or "pension" does not change the PFIC analysis unless a specific treaty provision or exclusion applies.</div>
-
-<h2>The Three PFIC Tax Regimes</h2>
-
-<p>A US shareholder of PFIC stock is subject to one of three tax regimes, depending on elections made:</p>
-
-<h3>1. Default Regime: IRC §1291 Excess Distribution</h3>
-
-<p>If no election is made, the §1291 regime applies automatically. It taxes two types of events: excess distributions received during the year, and gain recognized on disposition of PFIC stock.</p>
-
-<p>An <strong>excess distribution</strong> is the amount by which actual distributions from the PFIC exceed 125% of the average distributions received over the prior 3 years (or the shareholder's holding period if shorter). The non-excess portion is taxed normally; the excess portion is subject to the harsh §1291 computation.</p>
-
-<div class="formula-box">
-  <div class="formula-label">§1291 Tax Computation - Gain or Excess Distribution</div>
-  <div class="formula-line"><span class="op">1.</span><span class="var">Allocate amount ratably</span><span class="def">over each year of the taxpayer's holding period in the PFIC</span></div>
-  <div class="formula-line"><span class="op">2.</span><span class="var">Tax each year's portion</span><span class="def">at the highest ordinary rate in effect for that year (37% for recent years)</span></div>
-  <div class="formula-line"><span class="op">3.</span><span class="var">Add interest charge</span><span class="def">on each prior year's tax at the IRS underpayment rate, compounded from the due date of that year's return</span></div>
-  <div class="formula-line"><span class="op">4.</span><span class="var">No deduction for the interest charge</span><span class="def">IRC §1291(c)(4) - the interest is non-deductible, adding insult to injury</span></div>
-</div>
-
-<div class="note-box"><strong>No capital gains rates under §1291.</strong> Even if the PFIC stock was held for decades and would otherwise qualify for the 0% or 20% long-term capital gains rate, the §1291 regime taxes the gain at ordinary rates. The preferential capital gains rates of IRC §1(h) do not apply to PFIC gain taxed under §1291. This is the primary punitive feature of the regime.</div>
-
-<h3>2. QEF Election: IRC §1295</h3>
-
-<p>A US shareholder can elect to treat a PFIC as a Qualified Electing Fund (QEF) by filing Form 8621 with the return for the first year of ownership (or for the first year the entity becomes a PFIC). Under the QEF election, the shareholder includes their pro-rata share of the PFIC's ordinary earnings and net capital gains in gross income each year - regardless of whether distributions are actually made.</p>
-
-<p>The QEF election converts PFIC taxation to a pass-through-like regime: ordinary earnings are taxed as ordinary income, net capital gains are taxed at preferential capital gains rates. When actual distributions are made or stock is sold, previously included amounts are recovered tax-free (basis step-up). The QEF election is significantly more favorable than the §1291 default - but requires the PFIC to provide an annual information statement (PFIC Annual Information Statement) with the shareholder's share of ordinary earnings and net capital gains. Most publicly traded foreign funds do not provide this statement, making the QEF election practically unavailable.</p>
-
-<h3>3. Mark-to-Market Election: IRC §1296</h3>
-
-<p>For PFIC stock that is "marketable" (traded on a qualified exchange or national market system), a US shareholder can elect to mark the stock to market annually. Each year, the shareholder recognizes gain equal to the increase in value (ordinary income) or loss equal to the decrease in value (ordinary loss, limited to prior inclusions). On ultimate disposition, any remaining gain is ordinary income.</p>
-
-<p>The MTM election eliminates the §1291 interest charge problem by treating gains as ordinary income each year rather than deferring them. The downside: all gains are ordinary income rather than capital gains, even if held long-term. For stock that appreciates steadily, the MTM election avoids the §1291 regime's interest charges at the cost of losing capital gains treatment.</p>
+<p>Once a company is classified as a PFIC, the US shareholder must choose how to be taxed. There are three regimes - and the default (§1291) is the worst.</p>
 
 <div class="compare-grid">
-  <div class="cg-head">§1291 Default</div>
-  <div class="cg-head">QEF Election</div>
-  <div class="cg-head">MTM Election</div>
+  <div class="cg-head">§1291 Default (Worst)</div>
+  <div class="cg-head">QEF Election (Best)</div>
+  <div class="cg-head">Mark-to-Market (Middle)</div>
   <div class="cg-cell">
-    <div class="cg-label">Rate on gain</div>
-    Highest ordinary rate + interest charge going back to acquisition year. No capital gains rates.
+    <div class="cg-label">How it works</div>
+    Excess distributions and gain on sale are allocated pro-rata to each year held. Each year's portion is taxed at the highest ordinary rate for that year plus an interest charge. No preferential capital gains rates. Ever.
   </div>
   <div class="cg-cell">
-    <div class="cg-label">Rate on gain</div>
-    Ordinary rates on ordinary earnings; capital gains rates on net capital gains. Most favorable regime.
+    <div class="cg-label">How it works</div>
+    Shareholder includes their pro-rata share of the PFIC's ordinary income and net capital gain each year, whether distributed or not. Current inclusion means no deferred gain to punish later. Capital gains rates preserved.
   </div>
   <div class="cg-cell">
-    <div class="cg-label">Rate on gain</div>
-    All ordinary income - no capital gains rates. Annual mark eliminates interest charge.
+    <div class="cg-label">How it works</div>
+    Shareholder marks the PFIC stock to market each year. Gains are ordinary income; losses are ordinary losses (limited to prior MTM gains). Available only for marketable stock (listed on a qualified exchange).
   </div>
   <div class="cg-cell">
-    <div class="cg-label">Election timing</div>
-    No election needed - this is the default. Applies retroactively to all PFIC years.
+    <div class="cg-label">Election required?</div>
+    No - this is the automatic default if no election is made
   </div>
   <div class="cg-cell">
-    <div class="cg-label">Election timing</div>
-    Must be made for the first PFIC year. Late QEF elections require a purging election or §1291 applies to pre-election years.
+    <div class="cg-label">Election required?</div>
+    Yes - must elect on Form 8621 for the first year the company is a PFIC. PFIC must provide an annual PFIC statement (Treas. Reg. §1.1295-1(g))
   </div>
   <div class="cg-cell">
-    <div class="cg-label">Election timing</div>
-    Can be made for any year in which stock is marketable. Prior years under §1291 require a purging election.
-  </div>
-  <div class="cg-cell">
-    <div class="cg-label">When to use</div>
-    Never voluntarily - this is the penalty regime. Apply when elections were missed.
-  </div>
-  <div class="cg-cell">
-    <div class="cg-label">When to use</div>
-    Preferred when PFIC provides Annual Information Statement and fund has capital gains character.
-  </div>
-  <div class="cg-cell">
-    <div class="cg-label">When to use</div>
-    When QEF is unavailable (no information statement) and stock is marketable (traded on exchange).
+    <div class="cg-label">Election required?</div>
+    Yes - elect on Form 8621; available only for stock of marketable PFICs (listed on a national securities exchange or equivalent)
   </div>
 </div>
 
-<h2>Form 8621: Annual Reporting Requirement</h2>
+<h2>The §1291 Excess Distribution Regime: How Bad Is It?</h2>
 
-<p>Every US person who holds stock in a PFIC must file Form 8621 (Information Return by a Shareholder of a Passive Foreign Investment Company or Qualified Electing Fund) for each PFIC each year. The form must be filed even if no distribution was received and no election is being made - in that case, the shareholder checks the box indicating they are reporting as a §1291 fund.</p>
+<p>The §1291 regime is designed to eliminate any tax deferral benefit from holding a PFIC. It works by treating every "excess distribution" and all gain on disposition as if it had been earned ratably over the entire holding period, then charging ordinary tax rates plus interest on each prior year's allocation.</p>
 
-<p>The annual reporting requirement has no dollar threshold - a $500 foreign mutual fund and a $50 million PFIC portfolio both require Form 8621. The failure to file Form 8621 suspends the statute of limitations on the entire return for the year - not just the PFIC item. This is a significant compliance risk for taxpayers who have unknowingly held PFIC shares for years.</p>
+<p>An <strong>excess distribution</strong> is any distribution that exceeds 125% of the average distributions received in the prior 3 years (or a shorter period if held less than 3 years). If a PFIC distributes $10,000 in a year when the 3-year average was $5,000, the excess is $3,750 ($10,000 - 125% x $5,000). The first $6,250 (the non-excess portion) is taxed normally; the excess $3,750 goes through the §1291 allocation.</p>
 
-<div class="note-box"><strong>Statute of limitations suspension.</strong> IRC §1298(f) and the regulations require annual Form 8621 filing. If a required Form 8621 is not filed, the statute of limitations on assessment for that year's entire return remains open indefinitely - the IRS can assess additional tax at any time. This applies even if the PFIC item itself would otherwise be minor.</div>
+<div class="example-box">
+  <div class="example-label">§1291 Excess Distribution - Illustrative (Held 5 Years, Sold for $50,000 Gain)</div>
+  <div class="ex-row"><span>Total gain on sale subject to §1291</span><span class="val">$50,000</span></div>
+  <div class="ex-row"><span>Allocated equally to each of 5 years: $10,000/year</span><span class="val">$10,000 per year</span></div>
+  <div class="ex-row"><span>Year 1-5: Each $10,000 taxed at highest ordinary rate for that year (37%)</span><span class="val red">$3,700 tax per year</span></div>
+  <div class="ex-row"><span>Plus IRS interest charge from due date of each prior year return</span><span class="val red">Significant interest added</span></div>
+  <div class="ex-row"><span>No long-term capital gains rate. No step-up. No preferential treatment.</span><span class="val red">Worst possible outcome</span></div>
+  <div class="ex-row"><span>Compare: non-PFIC held 5 years, 23.8% LTCG + NIIT rate</span><span class="val green">$11,900 total tax</span></div>
+</div>
 
-<h2>Purging Elections: Fixing Prior-Year PFIC Taint</h2>
+<h2>QEF Election: The Right Answer When Available</h2>
 
-<p>A taxpayer who has held PFIC stock for several years without making an election can make a "purging election" to clear the prior §1291 taint and begin prospectively under QEF or MTM. The purging election treats the PFIC shares as sold at fair market value on the first day of the QEF or MTM election year. The deemed gain is taxed under §1291 (ordinary rates plus interest charge) - but this clears the taint so future appreciation is taxed more favorably.</p>
+<p>The Qualified Electing Fund election under IRC §1293 is the preferred treatment. The shareholder elects to include their pro-rata share of the PFIC's ordinary earnings and net capital gain each year - even if nothing is distributed. This current inclusion eliminates the deferred gain that §1291 punishes. When the PFIC later distributes previously-taxed amounts, or when the shareholder sells, those amounts are tax-free (previously taxed income, or PTI).</p>
 
-<p>The purging election is painful because it accelerates recognition of built-in gain under the worst possible regime. But for holdings expected to appreciate significantly, paying the §1291 tax now to start fresh under QEF or MTM is often the right decision.</p>
+<p>The tradeoff: you pay tax every year on your share of the PFIC's income whether or not you receive cash. For a PFIC that retains most of its earnings (like a growing foreign fund), this creates a cash flow problem - tax due on phantom income. The QEF election also requires the PFIC to provide an annual PFIC statement under Treas. Reg. §1.1295-1(g) - many foreign funds will not provide this, making the QEF election impossible as a practical matter.</p>
 
-<h2>The Indirect PFIC Problem: Look-Through Rules</h2>
+<div class="green-box"><strong>The QEF election must be made in the first year the corporation is a PFIC.</strong> If a US person holds a foreign fund for several years under the default §1291 regime and then tries to elect QEF, they cannot simply switch - they must first execute a "purging election" to clean up the §1291 taint on their existing shares. The purging election is itself a taxable event. This is why early identification of PFICs is critical.</div>
 
-<p>PFIC status can also arise indirectly. Under IRC §1298(a), if a US person owns stock in a foreign corporation that itself owns 25% or more of another foreign corporation that is a PFIC, the US person is treated as owning a proportionate share of the PFIC's assets and income. This look-through rule means a foreign holding company that is not itself a PFIC can still expose its US shareholders to PFIC rules if it owns PFIC subsidiaries.</p>
+<h2>Mark-to-Market Election: The Practical Alternative</h2>
 
-<p>For pre-immigration planning, this rule is particularly important. A non-US person who owns shares in a foreign fund through a foreign holding company should restructure before becoming a US tax resident - once the substantial presence test or green card test is triggered, the PFIC rules apply retroactively to the holding period, not just from the date of US residency.</p>
+<p>For PFICs whose stock is marketable (listed on a national securities exchange or a foreign exchange meeting IRS standards), the mark-to-market election under IRC §1296 is often the most practical solution. Each year, the shareholder recognizes ordinary income or loss equal to the change in fair market value of the PFIC stock.</p>
+
+<p>MTM gains are ordinary income - no preferential capital gains rates. MTM losses are ordinary losses, but only to the extent of prior MTM gains recognized (preventing the creation of net losses from PFIC investments). The MTM election eliminates the §1291 interest charge by ensuring there is no deferred gain to punish.</p>
+
+<p>The MTM election is available for most shares of publicly traded foreign funds and ETFs held in brokerage accounts. It is not available for non-marketable PFICs (private foreign funds, foreign holding companies with no market for their shares).</p>
+
+<h2>The Once-a-PFIC-Always-a-PFIC Rule</h2>
+
+<p>IRC §1298(b)(1) provides that once a foreign corporation qualifies as a PFIC for any taxable year, it remains a PFIC with respect to a shareholder's shares even if it subsequently fails the income or asset tests in later years. The taint attaches to the shares, not just to the years of PFIC status.</p>
+
+<p>This rule has significant implications for US persons who buy shares in a company that was a PFIC in its early years (common for startups that have passive income before generating operating revenue) but subsequently grows into an active business. The §1291 taint on the original shares persists unless the shareholder makes a purging election.</p>
+
+<div class="note-box"><strong>Start-up exception IRC §1298(b)(2).</strong> A foreign corporation is not treated as a PFIC for its first tax year if it is not a PFIC under a reasonable start-up exception and it is reasonably expected to not be a PFIC going forward. This exception is narrow and must be applied carefully with documentation.</div>
+
+<h2>The CFC/PFIC Overlap</h2>
+
+<p>A US shareholder who owns more than 50% of a controlled foreign corporation (CFC) is generally subject to Subpart F and NCTI inclusion rules rather than the PFIC rules. IRC §1297(d) provides that a foreign corporation is not treated as a PFIC with respect to a US person who is a CFC shareholder subject to Subpart F inclusions for the year. This overlap rule prevents double-counting, but it requires careful analysis when ownership thresholds change.</p>
+
+<h2>Form 8621: Filing Requirements</h2>
+
+<p>Form 8621 (Information Return by a Shareholder of a Passive Foreign Investment Company or Qualified Electing Fund) must be filed annually for each PFIC in which a US person has a direct or indirect interest. Filing is required even if there is no income or distribution in the year, though a simplified filing is available in certain circumstances.</p>
+
+<p>Failure to file Form 8621 tolls the statute of limitations on the entire tax return - the IRS has unlimited time to assess additional tax for any year a required Form 8621 is not filed. This makes PFIC compliance non-optional even when the economic amounts are small.</p>
 
 <div class="related">
   <div class="related-title">Related Tools &amp; Articles</div>
   <div class="related-links">
-    <a href="pfic-8621-checker.html" class="related-link">PFIC / Form 8621 Checker<span>Quick PFIC status assessment tool</span></a>
-    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>Restructure before US residency &middot; IRC §7701(b)</span></a>
-    <a href="form-8938-fatca-guide.html" class="related-link">FATCA / Form 8938 Guide<span>Foreign asset reporting &middot; Thresholds</span></a>
-    <a href="fbar-checker.html" class="related-link">FBAR & Form 8938 Checker<span>31 USC §5314 &middot; Threshold calculator</span></a>
-    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Guide<span>CFC anti-deferral &middot; IRC §951A</span></a>
-    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>International tax planning overview</span></a>
+    <a href="pfic-8621-checker.html" class="related-link">PFIC / Form 8621 Checker<span>Test whether your foreign investment is a PFIC</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>PFIC restructuring before US residency</span></a>
+    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Guide<span>IRC §951A &middot; CFC overlap with PFIC rules</span></a>
+    <a href="subpart-f-cfc-basics.html" class="related-link">Subpart F Basics<span>CFC rules &middot; §1297(d) PFIC/CFC overlap</span></a>
+    <a href="form-5471-checker.html" class="related-link">Form 5471 Checker<span>CFC filing obligations</span></a>
+    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>International asset planning</span></a>
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §1291 (excess distribution regime - tax and interest charge computation); IRC §1291(c)(4) (interest charge non-deductible); IRC §1295 (QEF election - qualified electing fund); IRC §1296 (mark-to-market election - marketable PFIC stock); IRC §1297 (PFIC definition - income test 75%, asset test 50%); IRC §1297(a) (either test sufficient); IRC §1298 (special PFIC rules); IRC §1298(a) (look-through attribution - 25% ownership of PFIC); IRC §1298(f) (annual reporting requirement - Form 8621); Treas. Reg. §1.1291-1 through 1.1291-9 (§1291 regime computation rules); Treas. Reg. §1.1295-1 (QEF election procedures and PFIC Annual Information Statement requirement); Treas. Reg. §1.1296-1 (MTM election - computation and definitions); Treas. Reg. §1.1297-1 through 1.1297-3 (PFIC definition and look-through rules); Form 8621 instructions (2025 revision); Notice 88-22 (early PFIC guidance); Rev. Proc. 2022-19 (late QEF and MTM election relief procedures).</div>
+<div class="source-row">Authority: IRC §1291 (excess distribution tax and interest charge); IRC §1291(b)(2) (excess distribution definition - 125% of prior 3-year average); IRC §1293 (QEF inclusion of ordinary income and net capital gain); IRC §1295 (QEF election and annual PFIC statement requirement); Treas. Reg. §1.1295-1(g) (annual statement requirements for QEF); IRC §1296 (mark-to-market election for marketable PFIC stock); IRC §1297(a) (PFIC income and asset tests - 75% and 50% thresholds); IRC §1297(b) (passive income definition); IRC §1297(d) (CFC/PFIC overlap rule); IRC §1298(b)(1) (once-a-PFIC-always-a-PFIC rule); IRC §1298(b)(2) (start-up exception); Form 8621 Instructions (2025 edition); Treas. Reg. §1.1291-1 through §1.1298-4.</div>
 
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
