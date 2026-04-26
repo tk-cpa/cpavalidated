@@ -8,7 +8,17 @@
 <link rel="canonical" href="https://cpavalidated.com/depreciation-calculator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6; --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF; --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2; --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA; --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878; --blue-acc:#4A6070; --blue-bg:#DDE4E8; --blue-b:#94AFBC; --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --blue-acc:#4A6070; --blue-bg:#DDE4E8; --blue-b:#94AFBC;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
@@ -85,9 +95,15 @@ table.sched .total-row td{background:var(--ink-10);font-weight:700;border-top:2p
 .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
 @media(max-width:640px){.fg2,.fg3,.rh-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:400px){.rh-grid{grid-template-columns:1fr 1fr}}
-@media print{ body{background:white} .ph{-webkit-print-color-adjust:exact;print-color-adjust:exact} .result-hero,.sum-box{-webkit-print-color-adjust:exact;print-color-adjust:exact} .back,.pbn,.show-all-btn{display:none} .input-card{display:none!important} .sched-wrap{overflow:visible}
+@media print{
+  body{background:white}
+  .ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .result-hero,.sum-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .back,.pbn,.show-all-btn{display:none}
+  .input-card{display:none!important}
+  .sched-wrap{overflow:visible}
 }
-.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
+</style>
 <style>
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
@@ -99,30 +115,357 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Real Estate Depreciation Calculator</h1> <div class="sub">MACRS &nbsp;&bull;&nbsp; Residential / Commercial / Foreign / QIP &nbsp;&bull;&nbsp; Mid-Month Convention &nbsp;&bull;&nbsp; Full Schedule</div> <div class="badges"> <span class="badge">IRC §168</span> <span class="badge">IRC §167</span> <span class="badge">Rev. Proc. 87-57</span> <span class="badge">MACRS GDS / ADS</span> <span class="badge">OBBBA (P.L. 119-21)</span> </div>
-</div></div> <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="container"> <!-- Step 1: Property -->
-<div class="card input-card"> <div class="ch"><div class="sb">1</div><h2>Property Information</h2></div> <div class="cb"> <div class="fg2" style="margin-bottom:14px"> <div class="f1"> <label>Property Type</label> <select id="propType" class="fc" onchange="calc()"> <option value="residential">Residential Rental Property (27.5 years)</option> <option value="commercial">Nonresidential / Commercial Property (39 years)</option> <option value="foreign">Foreign Real Property - ADS (40 years)</option> <option value="qip">Qualified Improvement Property - QIP (15 years)</option> </select> </div> <div class="f1"> <label>Placed in Service Date</label> <input type="date" id="placedDate" class="fc" onchange="calc()"> </div> </div> <div class="fg3"> <div class="f1"> <label>Total Acquisition Cost ($)</label> <input type="number" id="totalCost" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:4px">Purchase price + closing costs + improvements. IRC §1012.</div> </div> <div class="f1"> <label>Land Value ($)</label> <input type="number" id="landValue" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:4px">Land is not depreciable. IRC §168(a). Use appraisal or assessed value ratio.</div> </div> <div class="f1"> <label>Prior Depreciation Taken ($)</label> <input type="number" id="priorDepr" class="fc" value="0" min="0" placeholder="0" oninput="calc()"> <div style="font-size:11px;color:var(--ink-60);margin-top:4px">Cumulative depreciation already claimed. Adjusted basis = cost - accumulated depreciation.</div> </div> </div> </div>
-</div> <!-- Step 2: QIP Bonus -->
-<div class="card input-card" id="bonusCard" style="display:none"> <div class="ch"><div class="sb">2</div><h2>Bonus Depreciation - QIP Only</h2></div> <div class="cb"> <div class="flag blue"> <div class="flag-icon">ℹ</div> <div class="flag-text"><strong>QIP is eligible for bonus depreciation.</strong> Residential and commercial real property are NOT eligible for bonus depreciation - they use straight-line only. IRC §168(k)(2)(A)(i) specifically excludes property with MACRS recovery periods of 27.5 or 39 years. QIP (15-year property) is eligible. Post-OBBBA (P.L. 119-21): 100% bonus depreciation is permanent for property acquired and placed in service after January 19, 2025. Property under a written binding contract dated before 1/20/2025 remains under the TCJA phase-down (40% for 2025).</div> </div> <div class="fg2"> <div class="f1"> <label>Elect Bonus Depreciation?</label> <select id="bonusElect" class="fc" onchange="calc()"> <option value="yes">Yes - claim bonus depreciation in year placed in service</option> <option value="no">No - use straight-line MACRS over 15 years</option> </select> </div> <div class="f1"> <label>Bonus Depreciation Rate</label> <select id="bonusRate" class="fc" onchange="calc()"> <option value="1.00" selected>100% (post-OBBBA, property after 1/19/2025)</option> <option value="0.40">40% (TCJA phase-down: pre-1/20/2025 binding contract)</option> <option value="0.60">60% (2024 - TCJA phase-down)</option> <option value="0.80">80% (2023 - TCJA phase-down)</option> <option value="0">0% (elected out)</option> </select> </div> </div> </div>
-</div> <!-- Step 3: Results -->
-<div class="card"> <div class="ch"><div class="sb" id="resultStep">2</div><h2>Depreciation Analysis</h2></div> <div class="cb"> <div class="result-hero"> <div class="rh-grid"> <div class="rh-item"> <div class="rh-label">Depreciable Basis</div> <div class="rh-val" id="rBasis">$0</div> <div class="rh-sub">Cost minus land</div> </div> <div class="rh-item"> <div class="rh-label">Annual Depreciation</div> <div class="rh-val coral" id="rAnnual">$0</div> <div class="rh-sub">Full year amount</div> </div> <div class="rh-item"> <div class="rh-label">Year 1 Deduction</div> <div class="rh-val green" id="rYear1">$0</div> <div class="rh-sub">Mid-month convention</div> </div> <div class="rh-item"> <div class="rh-label">Recovery Period</div> <div class="rh-val" id="rPeriod"> - </div> <div class="rh-sub">MACRS years</div> </div> </div> </div> <div id="flags"></div> <div class="sum-box" id="sumBox" style="display:none"> <div class="sum-title">Depreciation Summary</div> <div class="sum-row"><span class="sum-lbl">Total acquisition cost</span><span class="sum-val" id="sTotalCost">$0</span></div> <div class="sum-row"><span class="sum-lbl">Land value (non-depreciable)</span><span class="sum-val" id="sLand">$0</span></div> <div class="sum-row"><span class="sum-lbl">Depreciable basis</span><span class="sum-val" id="sBasis">$0</span></div> <div class="sum-row"><span class="sum-lbl">Method</span><span class="sum-val" id="sMethod"> - </span></div> <div class="sum-row"><span class="sum-lbl">Convention</span><span class="sum-val" id="sConvention"> - </span></div> <div class="sum-row"><span class="sum-lbl">Recovery period</span><span class="sum-val" id="sPeriod"> - </span></div> <div class="sum-row"><span class="sum-lbl">Annual depreciation (full year)</span><span class="sum-val" id="sAnnual">$0</span></div> <div class="sum-row"><span class="sum-lbl">Year 1 depreciation (partial)</span><span class="sum-val" id="sYear1">$0</span></div> <div class="sum-row"><span class="sum-lbl">Adjusted basis (current)</span><span class="sum-val" id="sAdjBasis">$0</span></div> </div> <h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Depreciation Schedule</h3> <div class="sched-wrap"> <table class="sched"> <thead> <tr> <th style="text-align:left">Year</th> <th>Depreciation</th> <th>Cumulative</th> <th>Remaining Basis</th> </tr> </thead> <tbody id="schedBody"></tbody> </table> </div> <button class="show-all-btn" id="showAllBtn" onclick="toggleAll()" style="display:none">Show Full Schedule</button> <div class="source-row">Authority: IRC §168 (MACRS); IRC §167 (depreciation); Rev. Proc. 87-57 (MACRS percentage tables); IRC §168(c) (recovery periods); IRC §168(d)(2) (mid-month convention for real property); Treas. Reg. §1.168(d)-1; OBBBA P.L. 119-21 §70401 et seq. (100% bonus depreciation permanently restored for property acquired and placed in service after 1/19/2025; TCJA phase-down repealed prospectively); IRC §168(n) (qualified production property, new under OBBBA); QIP recovery period: IRC §168(e)(6); CARES Act §2307 (2020 technical correction).</div> <button class="pbn" onclick="window.print()">Print / Save as PDF</button> <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional before making any filing or planning decisions.</div> </div>
-</div> </div> <script>
+<div class="ph"><div class="phi">
+  <h1>Real Estate Depreciation Calculator</h1>
+  <div class="sub">MACRS &nbsp;&bull;&nbsp; Residential / Commercial / Foreign / QIP &nbsp;&bull;&nbsp; Mid-Month Convention &nbsp;&bull;&nbsp; Full Schedule</div>
+  <div class="badges">
+    <span class="badge">IRC §168</span>
+    <span class="badge">IRC §167</span>
+    <span class="badge">Rev. Proc. 87-57</span>
+    <span class="badge">MACRS GDS / ADS</span>
+    <span class="badge">OBBBA (P.L. 119-21)</span>
+  </div>
+</div></div>
+
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="container">
+
+<!-- Step 1: Property -->
+<div class="card input-card">
+  <div class="ch"><div class="sb">1</div><h2>Property Information</h2></div>
+  <div class="cb">
+    <div class="fg2" style="margin-bottom:14px">
+      <div class="f1">
+        <label>Property Type</label>
+        <select id="propType" class="fc" onchange="calc()">
+          <option value="residential">Residential Rental Property (27.5 years)</option>
+          <option value="commercial">Nonresidential / Commercial Property (39 years)</option>
+          <option value="foreign">Foreign Real Property - ADS (40 years)</option>
+          <option value="qip">Qualified Improvement Property - QIP (15 years)</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Placed in Service Date</label>
+        <input type="date" id="placedDate" class="fc" onchange="calc()">
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1">
+        <label>Total Acquisition Cost ($)</label>
+        <input type="number" id="totalCost" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
+        <div style="font-size:11px;color:var(--ink-60);margin-top:4px">Purchase price + closing costs + improvements. IRC §1012.</div>
+      </div>
+      <div class="f1">
+        <label>Land Value ($)</label>
+        <input type="number" id="landValue" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
+        <div style="font-size:11px;color:var(--ink-60);margin-top:4px">Land is not depreciable. IRC §168(a). Use appraisal or assessed value ratio.</div>
+      </div>
+      <div class="f1">
+        <label>Prior Depreciation Taken ($)</label>
+        <input type="number" id="priorDepr" class="fc" value="0" min="0" placeholder="0" oninput="calc()">
+        <div style="font-size:11px;color:var(--ink-60);margin-top:4px">Cumulative depreciation already claimed. Adjusted basis = cost - accumulated depreciation.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 2: QIP Bonus -->
+<div class="card input-card" id="bonusCard" style="display:none">
+  <div class="ch"><div class="sb">2</div><h2>Bonus Depreciation - QIP Only</h2></div>
+  <div class="cb">
+    <div class="flag blue">
+      <div class="flag-icon">ℹ</div>
+      <div class="flag-text"><strong>QIP is eligible for bonus depreciation.</strong> Residential and commercial real property are NOT eligible for bonus depreciation - they use straight-line only. IRC §168(k)(2)(A)(i) specifically excludes property with MACRS recovery periods of 27.5 or 39 years. QIP (15-year property) is eligible. Post-OBBBA (P.L. 119-21): 100% bonus depreciation is permanent for property acquired and placed in service after January 19, 2025. Property under a written binding contract dated before 1/20/2025 remains under the TCJA phase-down (40% for 2025).</div>
+    </div>
+    <div class="fg2">
+      <div class="f1">
+        <label>Elect Bonus Depreciation?</label>
+        <select id="bonusElect" class="fc" onchange="calc()">
+          <option value="yes">Yes - claim bonus depreciation in year placed in service</option>
+          <option value="no">No - use straight-line MACRS over 15 years</option>
+        </select>
+      </div>
+      <div class="f1">
+        <label>Bonus Depreciation Rate</label>
+        <select id="bonusRate" class="fc" onchange="calc()">
+          <option value="1.00" selected>100% (post-OBBBA, property after 1/19/2025)</option>
+          <option value="0.40">40% (TCJA phase-down: pre-1/20/2025 binding contract)</option>
+          <option value="0.60">60% (2024 - TCJA phase-down)</option>
+          <option value="0.80">80% (2023 - TCJA phase-down)</option>
+          <option value="0">0% (elected out)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step 3: Results -->
+<div class="card">
+  <div class="ch"><div class="sb" id="resultStep">2</div><h2>Depreciation Analysis</h2></div>
+  <div class="cb">
+
+    <div class="result-hero">
+      <div class="rh-grid">
+        <div class="rh-item">
+          <div class="rh-label">Depreciable Basis</div>
+          <div class="rh-val" id="rBasis">$0</div>
+          <div class="rh-sub">Cost minus land</div>
+        </div>
+        <div class="rh-item">
+          <div class="rh-label">Annual Depreciation</div>
+          <div class="rh-val coral" id="rAnnual">$0</div>
+          <div class="rh-sub">Full year amount</div>
+        </div>
+        <div class="rh-item">
+          <div class="rh-label">Year 1 Deduction</div>
+          <div class="rh-val green" id="rYear1">$0</div>
+          <div class="rh-sub">Mid-month convention</div>
+        </div>
+        <div class="rh-item">
+          <div class="rh-label">Recovery Period</div>
+          <div class="rh-val" id="rPeriod"> - </div>
+          <div class="rh-sub">MACRS years</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="flags"></div>
+
+    <div class="sum-box" id="sumBox" style="display:none">
+      <div class="sum-title">Depreciation Summary</div>
+      <div class="sum-row"><span class="sum-lbl">Total acquisition cost</span><span class="sum-val" id="sTotalCost">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Land value (non-depreciable)</span><span class="sum-val" id="sLand">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Depreciable basis</span><span class="sum-val" id="sBasis">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Method</span><span class="sum-val" id="sMethod"> - </span></div>
+      <div class="sum-row"><span class="sum-lbl">Convention</span><span class="sum-val" id="sConvention"> - </span></div>
+      <div class="sum-row"><span class="sum-lbl">Recovery period</span><span class="sum-val" id="sPeriod"> - </span></div>
+      <div class="sum-row"><span class="sum-lbl">Annual depreciation (full year)</span><span class="sum-val" id="sAnnual">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Year 1 depreciation (partial)</span><span class="sum-val" id="sYear1">$0</span></div>
+      <div class="sum-row"><span class="sum-lbl">Adjusted basis (current)</span><span class="sum-val" id="sAdjBasis">$0</span></div>
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Depreciation Schedule</h3>
+    <div class="sched-wrap">
+      <table class="sched">
+        <thead>
+          <tr>
+            <th style="text-align:left">Year</th>
+            <th>Depreciation</th>
+            <th>Cumulative</th>
+            <th>Remaining Basis</th>
+          </tr>
+        </thead>
+        <tbody id="schedBody"></tbody>
+      </table>
+    </div>
+    <button class="show-all-btn" id="showAllBtn" onclick="toggleAll()" style="display:none">Show Full Schedule</button>
+
+    <div class="source-row">Authority: IRC §168 (MACRS); IRC §167 (depreciation); Rev. Proc. 87-57 (MACRS percentage tables); IRC §168(c) (recovery periods); IRC §168(d)(2) (mid-month convention for real property); Treas. Reg. §1.168(d)-1; OBBBA P.L. 119-21 §70401 et seq. (100% bonus depreciation permanently restored for property acquired and placed in service after 1/19/2025; TCJA phase-down repealed prospectively); IRC §168(n) (qualified production property, new under OBBBA); QIP recovery period: IRC §168(e)(6); CARES Act §2307 (2020 technical correction).</div>
+
+    <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+    <div class="disc">This tool is for informational purposes only and does not constitute legal or tax advice. Consult a qualified tax professional before making any filing or planning decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
 // ── Recovery periods and methods ──────────────────────────────────────────
-const PROP_CONFIG = { residential: { years:27.5, method:'SL', system:'GDS', label:'Residential Rental (MACRS GDS)', bonusEligible:false }, commercial: { years:39, method:'SL', system:'GDS', label:'Nonresidential / Commercial (MACRS GDS)', bonusEligible:false }, foreign: { years:40, method:'SL', system:'ADS', label:'Foreign Real Property (MACRS ADS)', bonusEligible:false }, qip: { years:15, method:'SL', system:'GDS', label:'Qualified Improvement Property (MACRS GDS)', bonusEligible:true },
-}; // Mid-month convention fractions by month placed in service
+const PROP_CONFIG = {
+  residential: { years:27.5, method:'SL', system:'GDS', label:'Residential Rental (MACRS GDS)', bonusEligible:false },
+  commercial:  { years:39,   method:'SL', system:'GDS', label:'Nonresidential / Commercial (MACRS GDS)', bonusEligible:false },
+  foreign:     { years:40,   method:'SL', system:'ADS', label:'Foreign Real Property (MACRS ADS)', bonusEligible:false },
+  qip:         { years:15,   method:'SL', system:'GDS', label:'Qualified Improvement Property (MACRS GDS)', bonusEligible:true },
+};
+
+// Mid-month convention fractions by month placed in service
 // Formula: (12 - month + 0.5) / 12
 // IRC §168(d)(2); Rev. Proc. 87-57 Table A-7a
-const MID_MONTH = { 1:11.5/12, 2:10.5/12, 3:9.5/12, 4:8.5/12, 5:7.5/12, 6:6.5/12, 7:5.5/12, 8:4.5/12, 9:3.5/12, 10:2.5/12, 11:1.5/12, 12:0.5/12,
-}; function fmt(n) { if (!n || n === 0) return '$0'; return '$' + Math.round(n).toLocaleString('en-US');
-} let showAllYears = false; function toggleAll() { showAllYears = !showAllYears; document.getElementById('showAllBtn').textContent = showAllYears ? 'Show Summary Only' : 'Show Full Schedule'; calc();
-} function calc() { const propType = document.getElementById('propType').value; const placedStr = document.getElementById('placedDate').value; const totalCost = parseFloat(document.getElementById('totalCost').value) || 0; const landValue = parseFloat(document.getElementById('landValue').value) || 0; const priorDepr = parseFloat(document.getElementById('priorDepr').value) || 0; const config = PROP_CONFIG[propType]; // Show/hide bonus card and result step const bonusCard = document.getElementById('bonusCard'); bonusCard.style.display = config.bonusEligible ? '' : 'none'; document.getElementById('resultStep').textContent = config.bonusEligible ? '3' : '2'; const bonusElect = config.bonusEligible ? document.getElementById('bonusElect').value : 'no'; const bonusRate = config.bonusEligible && bonusElect === 'yes' ? parseFloat(document.getElementById('bonusRate').value) : 0; // Basis const basis = Math.max(0, totalCost - landValue); const adjBasis = Math.max(0, basis - priorDepr); // Placed in service let placedMonth = null, placedYear = null; if (placedStr) { const d = new Date(placedStr + 'T12:00:00'); placedMonth = d.getMonth() + 1; placedYear = d.getFullYear(); } const annualDepr = config.years > 0 ? basis / config.years : 0; const mmFraction = placedMonth ? MID_MONTH[placedMonth] : 0.5; const year1Depr = annualDepr * mmFraction; // Bonus depreciation for QIP let bonusAmount = 0; let remainingBasis = basis; if (bonusElect === 'yes' && bonusRate > 0) { bonusAmount = basis * bonusRate; remainingBasis = basis - bonusAmount; } const regularAnnual = config.years > 0 ? remainingBasis / config.years : 0; const regularYear1 = regularAnnual * mmFraction; const totalYear1 = bonusAmount + regularYear1; // Update hero document.getElementById('rBasis').textContent = fmt(basis); document.getElementById('rAnnual').textContent = fmt(bonusElect === 'yes' ? regularAnnual : annualDepr); document.getElementById('rYear1').textContent = fmt(bonusElect === 'yes' ? totalYear1 : year1Depr); document.getElementById('rPeriod').textContent = config.years + ' yrs'; // Summary box const sumBox = document.getElementById('sumBox'); if (basis > 0) { sumBox.style.display = ''; document.getElementById('sTotalCost').textContent = fmt(totalCost); document.getElementById('sLand').textContent = fmt(landValue); document.getElementById('sBasis').textContent = fmt(basis); document.getElementById('sMethod').textContent = 'Straight-Line (SL)'; document.getElementById('sConvention').textContent = 'Mid-Month (real property)'; document.getElementById('sPeriod').textContent = config.years + ' years - ' + config.label; document.getElementById('sAnnual').textContent = fmt(bonusElect === 'yes' ? regularAnnual : annualDepr); document.getElementById('sYear1').textContent = fmt(bonusElect === 'yes' ? totalYear1 : year1Depr); document.getElementById('sAdjBasis').textContent = fmt(adjBasis); } else { sumBox.style.display = 'none'; } // Flags const flagDiv = document.getElementById('flags'); flagDiv.innerHTML = ''; const flag = (text, type) => { flagDiv.innerHTML += `<div class="flag ${type}"><div class="flag-icon">${type==='amber'?'!':type==='red'?'✗':type==='green'?'✓':'ℹ'}</div><div class="flag-text">${text}</div></div>`; }; if (landValue >= totalCost && totalCost > 0) flag('<strong>Land value equals or exceeds total cost.</strong> Land is not depreciable. Verify your land/building allocation - typically supported by a property tax assessment, appraisal, or cost segregation study. IRC §168(a).', 'red'); if (landValue === 0 && totalCost > 0) flag('<strong>No land value entered.</strong> Every real property purchase includes some non-depreciable land. Entering zero land will overstate your depreciable basis and depreciation deductions. Support your land allocation with an appraisal or tax assessment.', 'amber'); if (propType === 'residential' || propType === 'commercial') flag('<strong>Bonus depreciation does not apply to residential or commercial real property.</strong> IRC §168(k)(2)(A)(i) explicitly excludes 27.5-year residential and 39-year nonresidential property from bonus depreciation. Straight-line MACRS is the only available method. Any software claiming bonus depreciation on these property types is incorrect.', 'blue'); if (propType === 'qip' && bonusElect === 'yes') flag(`<strong>Bonus depreciation elected: ${(bonusRate*100).toFixed(0)}%.</strong> QIP placed in service after 1/19/2025 qualifies for 100% bonus depreciation under OBBBA (P.L. 119-21). Property under a written binding contract pre-1/20/2025 is locked into the TCJA phase-down (40%). Bonus amount: ${fmt(bonusAmount)}. Remaining basis of ${fmt(remainingBasis)} depreciated over 15 years straight-line. IRC §168(k); IRC §168(e)(6).`, 'green'); if (propType === 'foreign') flag('<strong>Foreign real property uses ADS (40-year straight-line).</strong> U.S. persons who own foreign real property must use the Alternative Depreciation System (ADS) with a 40-year recovery period. GDS depreciation (27.5 or 39 years) is not available for foreign property. IRC §168(g)(1)(A); Treas. Reg. §1.168(g)-1.', 'blue'); if (priorDepr > basis && basis > 0) flag('<strong>Prior depreciation exceeds depreciable basis.</strong> Verify your inputs. Accumulated depreciation cannot exceed the original depreciable basis.', 'red'); // Schedule const schedBody = document.getElementById('schedBody'); schedBody.innerHTML = ''; const showAllBtn = document.getElementById('showAllBtn'); if (basis <= 0 || !placedMonth) { schedBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--ink-40);font-style:italic;padding:16px">Enter property cost, land value, and placed-in-service date above.</td></tr>'; showAllBtn.style.display = 'none'; return; } const totalYears = Math.ceil(config.years) + 1; // +1 for partial last year const currentYear = new Date().getFullYear(); const displayYears = showAllYears ? totalYears : Math.min(10, totalYears); showAllBtn.style.display = totalYears > 10 ? '' : 'none'; if (totalYears > 10) showAllBtn.textContent = showAllYears ? 'Show Summary Only (10 years)' : `Show Full Schedule (${totalYears} years)`; let cumulative = 0; for (let i = 0; i < displayYears; i++) { const taxYear = placedYear + i; let depr = 0; if (bonusElect === 'yes' && bonusRate > 0) { // Year 1: bonus + partial regular if (i === 0) depr = bonusAmount + regularYear1; else if (i < config.years) depr = regularAnnual; else { // Last year: remaining fraction const lastFrac = 1 - mmFraction; depr = regularAnnual * lastFrac; } } else { if (i === 0) depr = year1Depr; else if (i < config.years) depr = annualDepr; else { const lastFrac = 1 - mmFraction; depr = annualDepr * lastFrac; } } // Cap at remaining basis depr = Math.min(depr, basis - cumulative); if (depr <= 0) break; cumulative += depr; const remaining = Math.max(0, basis - cumulative); const tr = document.createElement('tr'); if (taxYear === currentYear) tr.className = 'current-year'; tr.innerHTML = ` <td>${taxYear}${taxYear === currentYear ? ' ◄ Current' : ''}</td> <td>${fmt(depr)}</td> <td>${fmt(cumulative)}</td> <td>${fmt(remaining)}</td>`; schedBody.appendChild(tr); } if (!showAllYears && totalYears > 10) { const tr = document.createElement('tr'); tr.innerHTML = `<td colspan="4" style="text-align:center;font-style:italic;color:var(--ink-40);font-size:11px;padding:10px">${totalYears - 10} more years not shown - click "Show Full Schedule" above</td>`; schedBody.appendChild(tr); } // Total row const trTotal = document.createElement('tr'); trTotal.className = 'total-row'; trTotal.innerHTML = `<td>Total</td><td>${fmt(basis)}</td><td>${fmt(basis)}</td><td>$0</td>`; schedBody.appendChild(trTotal);
-} // Set default date to today
+const MID_MONTH = {
+  1:11.5/12, 2:10.5/12, 3:9.5/12, 4:8.5/12,
+  5:7.5/12, 6:6.5/12, 7:5.5/12, 8:4.5/12,
+  9:3.5/12, 10:2.5/12, 11:1.5/12, 12:0.5/12,
+};
+
+function fmt(n) {
+  if (!n || n === 0) return '$0';
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+
+let showAllYears = false;
+
+function toggleAll() {
+  showAllYears = !showAllYears;
+  document.getElementById('showAllBtn').textContent = showAllYears ? 'Show Summary Only' : 'Show Full Schedule';
+  calc();
+}
+
+function calc() {
+  const propType   = document.getElementById('propType').value;
+  const placedStr  = document.getElementById('placedDate').value;
+  const totalCost  = parseFloat(document.getElementById('totalCost').value) || 0;
+  const landValue  = parseFloat(document.getElementById('landValue').value) || 0;
+  const priorDepr  = parseFloat(document.getElementById('priorDepr').value) || 0;
+  const config     = PROP_CONFIG[propType];
+
+  // Show/hide bonus card and result step
+  const bonusCard = document.getElementById('bonusCard');
+  bonusCard.style.display = config.bonusEligible ? '' : 'none';
+  document.getElementById('resultStep').textContent = config.bonusEligible ? '3' : '2';
+
+  const bonusElect = config.bonusEligible ? document.getElementById('bonusElect').value : 'no';
+  const bonusRate  = config.bonusEligible && bonusElect === 'yes' ? parseFloat(document.getElementById('bonusRate').value) : 0;
+
+  // Basis
+  const basis = Math.max(0, totalCost - landValue);
+  const adjBasis = Math.max(0, basis - priorDepr);
+
+  // Placed in service
+  let placedMonth = null, placedYear = null;
+  if (placedStr) {
+    const d = new Date(placedStr + 'T12:00:00');
+    placedMonth = d.getMonth() + 1;
+    placedYear  = d.getFullYear();
+  }
+
+  const annualDepr = config.years > 0 ? basis / config.years : 0;
+  const mmFraction = placedMonth ? MID_MONTH[placedMonth] : 0.5;
+  const year1Depr  = annualDepr * mmFraction;
+
+  // Bonus depreciation for QIP
+  let bonusAmount = 0;
+  let remainingBasis = basis;
+  if (bonusElect === 'yes' && bonusRate > 0) {
+    bonusAmount = basis * bonusRate;
+    remainingBasis = basis - bonusAmount;
+  }
+  const regularAnnual = config.years > 0 ? remainingBasis / config.years : 0;
+  const regularYear1  = regularAnnual * mmFraction;
+  const totalYear1    = bonusAmount + regularYear1;
+
+  // Update hero
+  document.getElementById('rBasis').textContent   = fmt(basis);
+  document.getElementById('rAnnual').textContent  = fmt(bonusElect === 'yes' ? regularAnnual : annualDepr);
+  document.getElementById('rYear1').textContent   = fmt(bonusElect === 'yes' ? totalYear1 : year1Depr);
+  document.getElementById('rPeriod').textContent  = config.years + ' yrs';
+
+  // Summary box
+  const sumBox = document.getElementById('sumBox');
+  if (basis > 0) {
+    sumBox.style.display = '';
+    document.getElementById('sTotalCost').textContent  = fmt(totalCost);
+    document.getElementById('sLand').textContent       = fmt(landValue);
+    document.getElementById('sBasis').textContent      = fmt(basis);
+    document.getElementById('sMethod').textContent     = 'Straight-Line (SL)';
+    document.getElementById('sConvention').textContent = 'Mid-Month (real property)';
+    document.getElementById('sPeriod').textContent     = config.years + ' years - ' + config.label;
+    document.getElementById('sAnnual').textContent     = fmt(bonusElect === 'yes' ? regularAnnual : annualDepr);
+    document.getElementById('sYear1').textContent      = fmt(bonusElect === 'yes' ? totalYear1 : year1Depr);
+    document.getElementById('sAdjBasis').textContent   = fmt(adjBasis);
+  } else {
+    sumBox.style.display = 'none';
+  }
+
+  // Flags
+  const flagDiv = document.getElementById('flags');
+  flagDiv.innerHTML = '';
+  const flag = (text, type) => {
+    flagDiv.innerHTML += `<div class="flag ${type}"><div class="flag-icon">${type==='amber'?'!':type==='red'?'✗':type==='green'?'✓':'ℹ'}</div><div class="flag-text">${text}</div></div>`;
+  };
+
+  if (landValue >= totalCost && totalCost > 0) flag('<strong>Land value equals or exceeds total cost.</strong> Land is not depreciable. Verify your land/building allocation - typically supported by a property tax assessment, appraisal, or cost segregation study. IRC §168(a).', 'red');
+  if (landValue === 0 && totalCost > 0) flag('<strong>No land value entered.</strong> Every real property purchase includes some non-depreciable land. Entering zero land will overstate your depreciable basis and depreciation deductions. Support your land allocation with an appraisal or tax assessment.', 'amber');
+  if (propType === 'residential' || propType === 'commercial') flag('<strong>Bonus depreciation does not apply to residential or commercial real property.</strong> IRC §168(k)(2)(A)(i) explicitly excludes 27.5-year residential and 39-year nonresidential property from bonus depreciation. Straight-line MACRS is the only available method. Any software claiming bonus depreciation on these property types is incorrect.', 'blue');
+  if (propType === 'qip' && bonusElect === 'yes') flag(`<strong>Bonus depreciation elected: ${(bonusRate*100).toFixed(0)}%.</strong> QIP placed in service after 1/19/2025 qualifies for 100% bonus depreciation under OBBBA (P.L. 119-21). Property under a written binding contract pre-1/20/2025 is locked into the TCJA phase-down (40%). Bonus amount: ${fmt(bonusAmount)}. Remaining basis of ${fmt(remainingBasis)} depreciated over 15 years straight-line. IRC §168(k); IRC §168(e)(6).`, 'green');
+  if (propType === 'foreign') flag('<strong>Foreign real property uses ADS (40-year straight-line).</strong> U.S. persons who own foreign real property must use the Alternative Depreciation System (ADS) with a 40-year recovery period. GDS depreciation (27.5 or 39 years) is not available for foreign property. IRC §168(g)(1)(A); Treas. Reg. §1.168(g)-1.', 'blue');
+  if (priorDepr > basis && basis > 0) flag('<strong>Prior depreciation exceeds depreciable basis.</strong> Verify your inputs. Accumulated depreciation cannot exceed the original depreciable basis.', 'red');
+
+  // Schedule
+  const schedBody = document.getElementById('schedBody');
+  schedBody.innerHTML = '';
+  const showAllBtn = document.getElementById('showAllBtn');
+
+  if (basis <= 0 || !placedMonth) {
+    schedBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--ink-40);font-style:italic;padding:16px">Enter property cost, land value, and placed-in-service date above.</td></tr>';
+    showAllBtn.style.display = 'none';
+    return;
+  }
+
+  const totalYears = Math.ceil(config.years) + 1; // +1 for partial last year
+  const currentYear = new Date().getFullYear();
+  const displayYears = showAllYears ? totalYears : Math.min(10, totalYears);
+  showAllBtn.style.display = totalYears > 10 ? '' : 'none';
+  if (totalYears > 10) showAllBtn.textContent = showAllYears ? 'Show Summary Only (10 years)' : `Show Full Schedule (${totalYears} years)`;
+
+  let cumulative = 0;
+  for (let i = 0; i < displayYears; i++) {
+    const taxYear = placedYear + i;
+    let depr = 0;
+
+    if (bonusElect === 'yes' && bonusRate > 0) {
+      // Year 1: bonus + partial regular
+      if (i === 0) depr = bonusAmount + regularYear1;
+      else if (i < config.years) depr = regularAnnual;
+      else {
+        // Last year: remaining fraction
+        const lastFrac = 1 - mmFraction;
+        depr = regularAnnual * lastFrac;
+      }
+    } else {
+      if (i === 0) depr = year1Depr;
+      else if (i < config.years) depr = annualDepr;
+      else {
+        const lastFrac = 1 - mmFraction;
+        depr = annualDepr * lastFrac;
+      }
+    }
+
+    // Cap at remaining basis
+    depr = Math.min(depr, basis - cumulative);
+    if (depr <= 0) break;
+    cumulative += depr;
+
+    const remaining = Math.max(0, basis - cumulative);
+    const tr = document.createElement('tr');
+    if (taxYear === currentYear) tr.className = 'current-year';
+    tr.innerHTML = `
+      <td>${taxYear}${taxYear === currentYear ? ' ◄ Current' : ''}</td>
+      <td>${fmt(depr)}</td>
+      <td>${fmt(cumulative)}</td>
+      <td>${fmt(remaining)}</td>`;
+    schedBody.appendChild(tr);
+  }
+
+  if (!showAllYears && totalYears > 10) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td colspan="4" style="text-align:center;font-style:italic;color:var(--ink-40);font-size:11px;padding:10px">${totalYears - 10} more years not shown  -  click "Show Full Schedule" above</td>`;
+    schedBody.appendChild(tr);
+  }
+
+  // Total row
+  const trTotal = document.createElement('tr');
+  trTotal.className = 'total-row';
+  trTotal.innerHTML = `<td>Total</td><td>${fmt(basis)}</td><td>${fmt(basis)}</td><td>$0</td>`;
+  schedBody.appendChild(trTotal);
+}
+
+// Set default date to today
 document.getElementById('placedDate').value = new Date().toISOString().split('T')[0];
 calc();
-</script> 
-<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="vehicle-depreciation.html" class="rl">Vehicle Depreciation Calculator</a><a href="bonus-depreciation-guide.html" class="rl">Bonus Depreciation Guide</a><a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a><a href="exchange-1031-calculator.html" class="rl">1031 Exchange Calculator</a><a href="interest-deductibility.html" class="rl">Interest Deductibility</a></div></div>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
 </body>
 </html>
