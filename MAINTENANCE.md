@@ -74,15 +74,14 @@ Run this when the IRS publishes the new Rev. Proc. (typically October/November e
 | Form 8938 thresholds (domestic) | $50K/$75K (statutory) | No change needed |
 | Form 8938 thresholds (abroad) | $200K/$300K (statutory) | No change needed |
 
-### Step 2 - Update bonus depreciation rate:
+### Step 2 - Bonus depreciation rate (OBBBA - permanent 100%):
 
-| Year | Rate | File(s) |
-|------|------|---------|
-| 2026 | 40% | `vehicle-depreciation.html`, `bonus-depreciation-guide.html`, `depreciation-calculator.html` |
-| 2027 | 20% | Update all three in January 2027 |
-| 2028+ | 0% | Update all three in January 2028 |
+OBBBA (P.L. 119-21, signed 7/4/2025) permanently restored 100% bonus depreciation for property placed in service after January 19, 2025. The TCJA phase-down schedule (40%/20%/0%) is repealed for qualifying property. **Do not update bonus depreciation rates annually** - 100% is permanent under current law. The only exception is property subject to a written binding contract entered into before January 20, 2025 (locked into the TCJA phase-down rate of 40% for 2025 placed-in-service).
 
-(Per OBBBA P.L. 119-21 schedule. If Congress extends, update accordingly.)
+If Congress later changes the rate, update:
+- `vehicle-depreciation.html` (JS constant `BONUS_RATE`)
+- `bonus-depreciation-guide.html` (comparison table and narrative)
+- `depreciation-calculator.html` (bonus rate logic)
 
 ### Step 3 - Update "Updated 2026" tags:
 
