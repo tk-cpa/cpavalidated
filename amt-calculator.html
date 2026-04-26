@@ -200,7 +200,7 @@ function calc(){
   if(amti>p.ps){const reduced=p.ex-ex;h+=flag('amber','!',`<strong>Exemption phaseout applies.</strong> AMTI of ${fmt(amti)} exceeds phaseout threshold $${p.ps.toLocaleString()}. Exemption reduced by ${fmt(reduced)} (25 cents per dollar over threshold). Remaining exemption: ${fmt(ex)}.`);}
   h+=flag('blue','i','<strong>2026 parameters.</strong> OBBBA (P.L. 119-21) made TCJA AMT provisions permanent. Figures used are based on 2025 IRS parameters (Rev. Proc. 2024-40) - 2026 will be adjusted for inflation. Verify exact 2026 exemption amounts against IRS Rev. Proc. 2025-32 before filing.');
   h+=`<div class="src">IRC 55 (AMT imposed); IRC 56 (AMT adjustments); IRC 56(b)(1)(A)(ii) (SALT add-back); IRC 56(b)(3) (ISO add-back); IRC 57 (preference items); IRC 58 (exemption amount); IRC 53 (minimum tax credit); OBBBA P.L. 119-21 (TCJA AMT permanent); Form 6251; Rev. Proc. 2024-40 (2025 inflation amounts used as baseline).</div>`;
-  h+=`<div class="disc">Estimate only. Passive activity adjustments, depletion, foreign tax credit interaction, and other AMT items require full Form 6251. Consult a CPA. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+  h+=``;
   rb.innerHTML=h;
 }
 calc();
