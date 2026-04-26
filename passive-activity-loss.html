@@ -64,21 +64,207 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Passive Activity Loss (PAL) Calculator 2026</h1> <div class="sub">Material participation tests, real estate professional status, $25,000 rental allowance phase-out, PAL carryforward. Determines how much of your rental or passive loss is currently deductible.</div> <div class="badges"><span class="badge">IRC 469 - PAL rules</span><span class="badge">IRC 469(c)(7) - RE professional</span><span class="badge">IRC 469(i) - $25K allowance</span><span class="badge">Temp. Reg. 1.469-5T</span></div>
+<div class="ph"><div class="phi">
+  <h1>Passive Activity Loss (PAL) Calculator 2026</h1>
+  <div class="sub">Material participation tests, real estate professional status, $25,000 rental allowance phase-out, PAL carryforward. Determines how much of your rental or passive loss is currently deductible.</div>
+  <div class="badges"><span class="badge">IRC 469 - PAL rules</span><span class="badge">IRC 469(c)(7) - RE professional</span><span class="badge">IRC 469(i) - $25K allowance</span><span class="badge">Temp. Reg. 1.469-5T</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Activity Type & Losses</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Activity Type</label> <select class="fc" id="actType" onchange="calc()"> <option value="rental">Rental Real Estate</option> <option value="passive">Other Passive Activity (partnership, S-corp, etc.)</option> <option value="business">Business (determining material participation)</option> </select> </div> <div class="f1"><label>Passive Loss This Year ($)</label> <input type="number" class="fc" id="paloss" value="35000" oninput="calc()"> <div class="hint">Net loss from the passive activity before IRC 469 limitation</div> </div> <div class="f1"><label>Prior Year PAL Carryforward ($)</label> <input type="number" class="fc" id="carryforward" value="20000" oninput="calc()"> <div class="hint">Suspended losses from prior years carried forward under IRC 469(b)</div> </div> </div> <div class="fg3"> <div class="f1"><label>Passive Income This Year ($)</label> <input type="number" class="fc" id="palincome" value="5000" oninput="calc()"> <div class="hint">Income from other passive activities. Passive losses offset passive income first. IRC 469(d).</div> </div> <div class="f1"><label>Modified AGI ($)</label> <input type="number" class="fc" id="magi" value="95000" oninput="calc()"> <div class="hint">MAGI for IRC 469(i) $25K allowance phaseout. Starts phasing out at $100K, gone at $150K. MFJ only.</div> </div> <div class="f1"><label>Filing Status</label> <select class="fc" id="fs" onchange="calc()"> <option value="mfj" selected>Married Filing Jointly / Single</option> <option value="mfs">Married Filing Separately (no $25K allowance)</option> </select> </div> </div> </div>
-</div> <div class="card" id="mpCard"> <div class="ch"><div class="sb">2</div><h2>Material Participation Tests &nbsp;&bull;&nbsp; Temp. Reg. 1.469-5T</h2></div> <div class="cb"> <p style="font-size:13px;color:var(--ink-60);margin-bottom:14px;line-height:1.6">Check ALL tests that apply. Meeting <strong>any one</strong> of the seven tests constitutes material participation - the activity is then non-passive and losses are deductible without limitation. Must be documented annually.</p> <div class="mp-grid"> <label class="mp-test" id="t1"><input type="checkbox" id="test1" onchange="updateTests()"><div><div class="mp-test-label">Test 1: 500+ hours in the activity this year</div><div class="mp-test-sub">Most commonly used test. Contemporaneous records required. Temp. Reg. 1.469-5T(a)(1).</div></div></label> <label class="mp-test" id="t2"><input type="checkbox" id="test2" onchange="updateTests()"><div><div class="mp-test-label">Test 2: Substantially all participation was by you (regardless of hours)</div><div class="mp-test-sub">Applies when few others participate. Temp. Reg. 1.469-5T(a)(2).</div></div></label> <label class="mp-test" id="t3"><input type="checkbox" id="test3" onchange="updateTests()"><div><div class="mp-test-label">Test 3: 100+ hours, and not less than any other individual</div><div class="mp-test-sub">You participated at least 100 hours AND more than any other person (including paid employees). Temp. Reg. 1.469-5T(a)(3).</div></div></label> <label class="mp-test" id="t4"><input type="checkbox" id="test4" onchange="updateTests()"><div><div class="mp-test-label">Test 4: Significant participation activity, total 500+ hours across all SPA activities</div><div class="mp-test-sub">100-499 hours each, but total across all significant participation activities exceeds 500 hours. Temp. Reg. 1.469-5T(a)(4).</div></div></label> <label class="mp-test" id="t5"><input type="checkbox" id="test5" onchange="updateTests()"><div><div class="mp-test-label">Test 5: Material participant in 5 of last 10 years (any method)</div><div class="mp-test-sub">Historical test. Protects long-term participants who reduce involvement. Temp. Reg. 1.469-5T(a)(5).</div></div></label> <label class="mp-test" id="t6"><input type="checkbox" id="test6" onchange="updateTests()"><div><div class="mp-test-label">Test 6: Personal service activity - material participant in any 3 prior years</div><div class="mp-test-sub">Applies to law, health, engineering, architecture, accounting, actuarial science, performing arts, consulting. Temp. Reg. 1.469-5T(a)(6).</div></div></label> <label class="mp-test" id="t7"><input type="checkbox" id="test7" onchange="updateTests()"><div><div class="mp-test-label">Test 7: Facts and circumstances - regular, continuous, and substantial (100+ hours)</div><div class="mp-test-sub">Catch-all. Must be 100+ hours. No single individual participated more. Temp. Reg. 1.469-5T(a)(7). Hardest to substantiate.</div></div></label> </div> <div id="mpResult" style="margin-top:10px"></div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">3</div><h2>Results</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Activity Type & Losses</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Activity Type</label>
+        <select class="fc" id="actType" onchange="calc()">
+          <option value="rental">Rental Real Estate</option>
+          <option value="passive">Other Passive Activity (partnership, S-corp, etc.)</option>
+          <option value="business">Business (determining material participation)</option>
+        </select>
+      </div>
+      <div class="f1"><label>Passive Loss This Year ($)</label>
+        <input type="number" class="fc" id="paloss" value="35000" oninput="calc()">
+        <div class="hint">Net loss from the passive activity before IRC 469 limitation</div>
+      </div>
+      <div class="f1"><label>Prior Year PAL Carryforward ($)</label>
+        <input type="number" class="fc" id="carryforward" value="20000" oninput="calc()">
+        <div class="hint">Suspended losses from prior years carried forward under IRC 469(b)</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Passive Income This Year ($)</label>
+        <input type="number" class="fc" id="palincome" value="5000" oninput="calc()">
+        <div class="hint">Income from other passive activities. Passive losses offset passive income first. IRC 469(d).</div>
+      </div>
+      <div class="f1"><label>Modified AGI ($)</label>
+        <input type="number" class="fc" id="magi" value="95000" oninput="calc()">
+        <div class="hint">MAGI for IRC 469(i) $25K allowance phaseout. Starts phasing out at $100K, gone at $150K. MFJ only.</div>
+      </div>
+      <div class="f1"><label>Filing Status</label>
+        <select class="fc" id="fs" onchange="calc()">
+          <option value="mfj" selected>Married Filing Jointly / Single</option>
+          <option value="mfs">Married Filing Separately (no $25K allowance)</option>
+        </select>
+      </div>
+    </div>
+  </div>
 </div>
-</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="nol-tracker.html" class="rl">NOL Carryforward Tracker</a> <a href="home-office-calculator.html" class="rl">Home Office Calculator</a> <a href="scorp-compensation.html" class="rl">S-Corp Compensation</a> <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a> <a href="tax-estimator.html" class="rl">Tax Estimator</a> <a href="index.html" class="rl">All Tools</a>
-</div></div> <script>
+
+<div class="card" id="mpCard">
+  <div class="ch"><div class="sb">2</div><h2>Material Participation Tests &nbsp;&bull;&nbsp; Temp. Reg. 1.469-5T</h2></div>
+  <div class="cb">
+    <p style="font-size:13px;color:var(--ink-60);margin-bottom:14px;line-height:1.6">Check ALL tests that apply. Meeting <strong>any one</strong> of the seven tests constitutes material participation - the activity is then non-passive and losses are deductible without limitation. Must be documented annually.</p>
+    <div class="mp-grid">
+      <label class="mp-test" id="t1"><input type="checkbox" id="test1" onchange="updateTests()"><div><div class="mp-test-label">Test 1: 500+ hours in the activity this year</div><div class="mp-test-sub">Most commonly used test. Contemporaneous records required. Temp. Reg. 1.469-5T(a)(1).</div></div></label>
+      <label class="mp-test" id="t2"><input type="checkbox" id="test2" onchange="updateTests()"><div><div class="mp-test-label">Test 2: Substantially all participation was by you (regardless of hours)</div><div class="mp-test-sub">Applies when few others participate. Temp. Reg. 1.469-5T(a)(2).</div></div></label>
+      <label class="mp-test" id="t3"><input type="checkbox" id="test3" onchange="updateTests()"><div><div class="mp-test-label">Test 3: 100+ hours, and not less than any other individual</div><div class="mp-test-sub">You participated at least 100 hours AND more than any other person (including paid employees). Temp. Reg. 1.469-5T(a)(3).</div></div></label>
+      <label class="mp-test" id="t4"><input type="checkbox" id="test4" onchange="updateTests()"><div><div class="mp-test-label">Test 4: Significant participation activity, total 500+ hours across all SPA activities</div><div class="mp-test-sub">100-499 hours each, but total across all significant participation activities exceeds 500 hours. Temp. Reg. 1.469-5T(a)(4).</div></div></label>
+      <label class="mp-test" id="t5"><input type="checkbox" id="test5" onchange="updateTests()"><div><div class="mp-test-label">Test 5: Material participant in 5 of last 10 years (any method)</div><div class="mp-test-sub">Historical test. Protects long-term participants who reduce involvement. Temp. Reg. 1.469-5T(a)(5).</div></div></label>
+      <label class="mp-test" id="t6"><input type="checkbox" id="test6" onchange="updateTests()"><div><div class="mp-test-label">Test 6: Personal service activity - material participant in any 3 prior years</div><div class="mp-test-sub">Applies to law, health, engineering, architecture, accounting, actuarial science, performing arts, consulting. Temp. Reg. 1.469-5T(a)(6).</div></div></label>
+      <label class="mp-test" id="t7"><input type="checkbox" id="test7" onchange="updateTests()"><div><div class="mp-test-label">Test 7: Facts and circumstances - regular, continuous, and substantial (100+ hours)</div><div class="mp-test-sub">Catch-all. Must be 100+ hours. No single individual participated more. Temp. Reg. 1.469-5T(a)(7). Hardest to substantiate.</div></div></label>
+    </div>
+    <div id="mpResult" style="margin-top:10px"></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="nol-tracker.html" class="rl">NOL Carryforward Tracker</a>
+  <a href="home-office-calculator.html" class="rl">Home Office Calculator</a>
+  <a href="scorp-compensation.html" class="rl">S-Corp Compensation</a>
+  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
+  <a href="tax-estimator.html" class="rl">Tax Estimator</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} function updateTests(){ const tests=['test1','test2','test3','test4','test5','test6','test7']; const tBoxes=['t1','t2','t3','t4','t5','t6','t7']; let anyMet=false; tests.forEach((id,i)=>{ const checked=document.getElementById(id).checked; document.getElementById(tBoxes[i]).className='mp-test'+(checked?' met':''); if(checked)anyMet=true; }); const r=document.getElementById('mpResult'); if(anyMet){ r.innerHTML=`<div class="flag green"><div class="fi">v</div><div class="ft"><strong>Material participation established.</strong> You meet at least one of the seven tests. The activity is treated as non-passive. Losses are not subject to the IRC 469 passive activity limitation and are deductible against ordinary income (subject to basis and at-risk rules under IRC 704(d) and IRC 465).</div></div>`; } else { r.innerHTML=`<div class="flag amber"><div class="fi">!</div><div class="ft"><strong>No material participation test met.</strong> The activity is passive. Losses are subject to IRC 469 limitation - deductible only against passive income unless an exception applies (such as the rental $25K allowance).</div></div>`; } calc();
-} function calc(){ const actType=document.getElementById('actType').value; const paloss=parseFloat(document.getElementById('paloss').value)||0; const carryforward=parseFloat(document.getElementById('carryforward').value)||0; const palincome=parseFloat(document.getElementById('palincome').value)||0; const magi=parseFloat(document.getElementById('magi').value)||0; const fs=document.getElementById('fs').value; const tests=['test1','test2','test3','test4','test5','test6','test7']; const materialParticipation=tests.some(id=>document.getElementById(id).checked); const totalLoss=paloss+carryforward; let deductibleNow=0; let suspended=0; let allowance=0; let method=''; if(materialParticipation){ deductibleNow=totalLoss; suspended=0; method='Material participant - non-passive, full deduction'; } else if(actType==='rental' && fs!=='mfs'){ // $25,000 rental allowance - IRC 469(i) // Active participation (lower standard than material participation) required // Phaseout: $100K-$150K MAGI const maxAllowance=25000; const phaseoutStart=100000; const phaseoutEnd=150000; if(magi<=phaseoutStart){ allowance=maxAllowance; } else if(magi>=phaseoutEnd){ allowance=0; } else { allowance=Math.max(0,maxAllowance-(magi-phaseoutStart)*0.50); } // Apply: losses first offset passive income, then up to $25K allowance const netLoss=Math.max(0,totalLoss-palincome); const allowanceUsed=Math.min(netLoss,allowance); deductibleNow=palincome+allowanceUsed; suspended=Math.max(0,totalLoss-deductibleNow); method=`Rental real estate $25,000 allowance (IRC 469(i))`; } else { // Passive - deductible only against passive income deductibleNow=Math.min(totalLoss,palincome); suspended=totalLoss-deductibleNow; method='Passive - deductible against passive income only'; } const rb=document.getElementById('res'); let h=''; h+=`<div class="hero3"> <div class="h3"><div class="h3l">Total Loss Available</div><div class="h3v coral">${fmt(totalLoss)}</div><div class="h3s">Current + carryforward</div></div> <div class="h3"><div class="h3l">Deductible This Year</div><div class="h3v ${deductibleNow>0?'green':'amber'}">${fmt(deductibleNow)}</div><div class="h3s">${method.split(' - ')[0]}</div></div> <div class="h3"><div class="h3l">Suspended to Next Year</div><div class="h3v ${suspended>0?'amber':'green'}">${fmt(suspended)}</div><div class="h3s">Carried forward IRC 469(b)</div></div> </div>`; h+=`<div class="sum-box"><div class="sum-title">PAL Computation - Form 8582</div> <div class="srow"><span class="sl">Current year passive loss</span><span class="sv">${fmt(paloss)}</span></div> <div class="srow"><span class="sl">Prior year PAL carryforward</span><span class="sv">${fmt(carryforward)}</span></div> <div class="srow"><span class="sl">Total loss available</span><span class="sv coral">${fmt(totalLoss)}</span></div> <div class="srow"><span class="sl">Passive income available to offset</span><span class="sv green">${fmt(palincome)}</span></div> ${actType==='rental'&&!materialParticipation&&fs!=='mfs'?`<div class="srow"><span class="sl">$25,000 rental allowance (IRC 469(i)) - MAGI $${magi.toLocaleString()}</span><span class="sv ${allowance>0?'green':'red'}">${fmt(allowance)}</span></div>`:''} <div class="srow"><span class="sl">Deductible this year</span><span class="sv ${deductibleNow>0?'green':'amber'}">${fmt(deductibleNow)}</span></div> <div class="srow"><span class="sl"><strong>Suspended loss - carried to next year</strong></span><span class="sv ${suspended>0?'amber':'green'}">${fmt(suspended)}</span></div> </div>`; if(materialParticipation){ h+=flag('green','v','<strong>Non-passive - full deduction allowed.</strong> Material participation established. The losses are fully deductible against ordinary income (wages, business income, etc.) subject to basis limitations (IRC 704(d) for partnerships, IRC 1366(d) for S-corps) and at-risk rules (IRC 465). Document your hours contemporaneously - logs created after the fact are routinely disallowed on audit.'); } if(actType==='rental'&&!materialParticipation&&magi>100000&&magi<150000){ h+=flag('amber','!',`<strong>$25,000 allowance partially phased out.</strong> Your MAGI of ${fmt(magi)} is in the $100K-$150K phaseout range. The $25,000 rental allowance is reduced by 50 cents for every dollar of MAGI above $100,000. Your remaining allowance: ${fmt(allowance)}. Above $150,000 MAGI, the allowance is completely eliminated. IRC 469(i)(3).`); } if(actType==='rental'&&!materialParticipation&&magi>=150000&&fs!=='mfs'){ h+=flag('red','!',`<strong>$25,000 allowance fully phased out.</strong> MAGI of ${fmt(magi)} exceeds $150,000. The rental real estate $25,000 allowance is completely eliminated. Rental losses are deductible only against passive income (${fmt(palincome)} this year). To deduct rental losses against ordinary income, you must qualify as a Real Estate Professional under IRC 469(c)(7): 750+ hours in real estate AND more than 50% of personal services in real estate activities.`); } if(suspended>0){ h+=flag('blue','i',`<strong>Suspended losses are released on disposition.</strong> The ${fmt(suspended)} in suspended passive losses carries forward indefinitely (IRC 469(b)). These losses are fully released - deductible against any income - when you dispose of the entire activity in a fully taxable transaction. IRC 469(g). This is a key planning point: on sale, all accumulated PAL carryforwards become deductible.`); } h+=flag('blue','i','<strong>Real Estate Professional test (IRC 469(c)(7)).</strong> To convert rental activities from passive to non-passive without the $25K limitation: (1) more than 750 hours of services in real property trades or businesses in which you materially participate, AND (2) more than 50% of your personal services in all trades/businesses are in real property activities. This is the spouse test too - only one spouse needs to qualify. Must document hours carefully.'); h+=`<div class="src">IRC 469 (passive activity loss rules - general); IRC 469(a) (passive activity losses disallowed); IRC 469(b) (PAL carryforward - indefinite); IRC 469(c) (passive activity definition); IRC 469(c)(2) (rental activities are per se passive); IRC 469(c)(7) (real estate professional exception - 750 hours, 50% test); IRC 469(d) (passive activity income defined); IRC 469(g) (disposition of entire interest - PAL released); IRC 469(i) ($25,000 rental allowance for active participants; MAGI phaseout $100K-$150K); Temp. Reg. 1.469-5T (material participation - seven tests); Form 8582 (Passive Activity Loss Limitations); IRC 465 (at-risk rules); IRC 704(d) (partnership basis limitation).</div>`; h+=`<div class="disc">This calculator applies only federal PAL rules. State conformity varies. At-risk limitations (IRC 465) and basis limitations (IRC 704(d), IRC 1366(d)) apply independently and may further limit deductions. PAL rules are among the most complex in the Code. Consult a CPA for multi-activity situations. - <a href="disclaimer.html">disclaimer</a>.</div>`; rb.innerHTML=h;
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+function updateTests(){
+  const tests=['test1','test2','test3','test4','test5','test6','test7'];
+  const tBoxes=['t1','t2','t3','t4','t5','t6','t7'];
+  let anyMet=false;
+  tests.forEach((id,i)=>{
+    const checked=document.getElementById(id).checked;
+    document.getElementById(tBoxes[i]).className='mp-test'+(checked?' met':'');
+    if(checked)anyMet=true;
+  });
+  const r=document.getElementById('mpResult');
+  if(anyMet){
+    r.innerHTML=`<div class="flag green"><div class="fi">v</div><div class="ft"><strong>Material participation established.</strong> You meet at least one of the seven tests. The activity is treated as non-passive. Losses are not subject to the IRC 469 passive activity limitation and are deductible against ordinary income (subject to basis and at-risk rules under IRC 704(d) and IRC 465).</div></div>`;
+  } else {
+    r.innerHTML=`<div class="flag amber"><div class="fi">!</div><div class="ft"><strong>No material participation test met.</strong> The activity is passive. Losses are subject to IRC 469 limitation - deductible only against passive income unless an exception applies (such as the rental $25K allowance).</div></div>`;
+  }
+  calc();
+}
+
+function calc(){
+  const actType=document.getElementById('actType').value;
+  const paloss=parseFloat(document.getElementById('paloss').value)||0;
+  const carryforward=parseFloat(document.getElementById('carryforward').value)||0;
+  const palincome=parseFloat(document.getElementById('palincome').value)||0;
+  const magi=parseFloat(document.getElementById('magi').value)||0;
+  const fs=document.getElementById('fs').value;
+  const tests=['test1','test2','test3','test4','test5','test6','test7'];
+  const materialParticipation=tests.some(id=>document.getElementById(id).checked);
+
+  const totalLoss=paloss+carryforward;
+  let deductibleNow=0;
+  let suspended=0;
+  let allowance=0;
+  let method='';
+
+  if(materialParticipation){
+    deductibleNow=totalLoss;
+    suspended=0;
+    method='Material participant - non-passive, full deduction';
+  } else if(actType==='rental' && fs!=='mfs'){
+    // $25,000 rental allowance - IRC 469(i)
+    // Active participation (lower standard than material participation) required
+    // Phaseout: $100K-$150K MAGI
+    const maxAllowance=25000;
+    const phaseoutStart=100000;
+    const phaseoutEnd=150000;
+    if(magi<=phaseoutStart){
+      allowance=maxAllowance;
+    } else if(magi>=phaseoutEnd){
+      allowance=0;
+    } else {
+      allowance=Math.max(0,maxAllowance-(magi-phaseoutStart)*0.50);
+    }
+    // Apply: losses first offset passive income, then up to $25K allowance
+    const netLoss=Math.max(0,totalLoss-palincome);
+    const allowanceUsed=Math.min(netLoss,allowance);
+    deductibleNow=palincome+allowanceUsed;
+    suspended=Math.max(0,totalLoss-deductibleNow);
+    method=`Rental real estate $25,000 allowance (IRC 469(i))`;
+  } else {
+    // Passive - deductible only against passive income
+    deductibleNow=Math.min(totalLoss,palincome);
+    suspended=totalLoss-deductibleNow;
+    method='Passive - deductible against passive income only';
+  }
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  h+=`<div class="hero3">
+    <div class="h3"><div class="h3l">Total Loss Available</div><div class="h3v coral">${fmt(totalLoss)}</div><div class="h3s">Current + carryforward</div></div>
+    <div class="h3"><div class="h3l">Deductible This Year</div><div class="h3v ${deductibleNow>0?'green':'amber'}">${fmt(deductibleNow)}</div><div class="h3s">${method.split(' - ')[0]}</div></div>
+    <div class="h3"><div class="h3l">Suspended to Next Year</div><div class="h3v ${suspended>0?'amber':'green'}">${fmt(suspended)}</div><div class="h3s">Carried forward IRC 469(b)</div></div>
+  </div>`;
+
+  h+=`<div class="sum-box"><div class="sum-title">PAL Computation - Form 8582</div>
+    <div class="srow"><span class="sl">Current year passive loss</span><span class="sv">${fmt(paloss)}</span></div>
+    <div class="srow"><span class="sl">Prior year PAL carryforward</span><span class="sv">${fmt(carryforward)}</span></div>
+    <div class="srow"><span class="sl">Total loss available</span><span class="sv coral">${fmt(totalLoss)}</span></div>
+    <div class="srow"><span class="sl">Passive income available to offset</span><span class="sv green">${fmt(palincome)}</span></div>
+    ${actType==='rental'&&!materialParticipation&&fs!=='mfs'?`<div class="srow"><span class="sl">$25,000 rental allowance (IRC 469(i)) - MAGI $${magi.toLocaleString()}</span><span class="sv ${allowance>0?'green':'red'}">${fmt(allowance)}</span></div>`:''}
+    <div class="srow"><span class="sl">Deductible this year</span><span class="sv ${deductibleNow>0?'green':'amber'}">${fmt(deductibleNow)}</span></div>
+    <div class="srow"><span class="sl"><strong>Suspended loss - carried to next year</strong></span><span class="sv ${suspended>0?'amber':'green'}">${fmt(suspended)}</span></div>
+  </div>`;
+
+  if(materialParticipation){
+    h+=flag('green','v','<strong>Non-passive - full deduction allowed.</strong> Material participation established. The losses are fully deductible against ordinary income (wages, business income, etc.) subject to basis limitations (IRC 704(d) for partnerships, IRC 1366(d) for S-corps) and at-risk rules (IRC 465). Document your hours contemporaneously - logs created after the fact are routinely disallowed on audit.');
+  }
+  if(actType==='rental'&&!materialParticipation&&magi>100000&&magi<150000){
+    h+=flag('amber','!',`<strong>$25,000 allowance partially phased out.</strong> Your MAGI of ${fmt(magi)} is in the $100K-$150K phaseout range. The $25,000 rental allowance is reduced by 50 cents for every dollar of MAGI above $100,000. Your remaining allowance: ${fmt(allowance)}. Above $150,000 MAGI, the allowance is completely eliminated. IRC 469(i)(3).`);
+  }
+  if(actType==='rental'&&!materialParticipation&&magi>=150000&&fs!=='mfs'){
+    h+=flag('red','!',`<strong>$25,000 allowance fully phased out.</strong> MAGI of ${fmt(magi)} exceeds $150,000. The rental real estate $25,000 allowance is completely eliminated. Rental losses are deductible only against passive income (${fmt(palincome)} this year). To deduct rental losses against ordinary income, you must qualify as a Real Estate Professional under IRC 469(c)(7): 750+ hours in real estate AND more than 50% of personal services in real estate activities.`);
+  }
+  if(suspended>0){
+    h+=flag('blue','i',`<strong>Suspended losses are released on disposition.</strong> The ${fmt(suspended)} in suspended passive losses carries forward indefinitely (IRC 469(b)). These losses are fully released - deductible against any income - when you dispose of the entire activity in a fully taxable transaction. IRC 469(g). This is a key planning point: on sale, all accumulated PAL carryforwards become deductible.`);
+  }
+  h+=flag('blue','i','<strong>Real Estate Professional test (IRC 469(c)(7)).</strong> To convert rental activities from passive to non-passive without the $25K limitation: (1) more than 750 hours of services in real property trades or businesses in which you materially participate, AND (2) more than 50% of your personal services in all trades/businesses are in real property activities. This is the spouse test too - only one spouse needs to qualify. Must document hours carefully.');
+
+  h+=`<div class="src">IRC 469 (passive activity loss rules - general); IRC 469(a) (passive activity losses disallowed); IRC 469(b) (PAL carryforward - indefinite); IRC 469(c) (passive activity definition); IRC 469(c)(2) (rental activities are per se passive); IRC 469(c)(7) (real estate professional exception - 750 hours, 50% test); IRC 469(d) (passive activity income defined); IRC 469(g) (disposition of entire interest - PAL released); IRC 469(i) ($25,000 rental allowance for active participants; MAGI phaseout $100K-$150K); Temp. Reg. 1.469-5T (material participation - seven tests); Form 8582 (Passive Activity Loss Limitations); IRC 465 (at-risk rules); IRC 704(d) (partnership basis limitation).</div>`;
+  h+=`<div class="disc">This calculator applies only federal PAL rules. State conformity varies. At-risk limitations (IRC 465) and basis limitations (IRC 704(d), IRC 1366(d)) apply independently and may further limit deductions. PAL rules are among the most complex in the Code. Consult a CPA for multi-activity situations. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc. - <a href="disclaimer.html">disclaimer</a>.</div>`;
+  rb.innerHTML=h;
 }
 updateTests();
-</script> </body>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
