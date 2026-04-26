@@ -58,19 +58,148 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>The Augusta Rule &nbsp;&bull;&nbsp; IRC 280A(g)</h1> <div class="sub">Rent your home to your own business tax-free for up to 14 days per year. The rental income is excluded from gross income. The business gets a deduction. Named after Augusta, Georgia, where homeowners rent to Masters Tournament attendees. Heavily scrutinized by the IRS - documentation is everything.</div> <div class="badges"><span class="badge">IRC 280A(g) - 14-day exclusion</span><span class="badge">IRC 162 - business deduction</span><span class="badge">Fair rental value required</span><span class="badge">High IRS scrutiny</span></div>
+<div class="ph"><div class="phi">
+  <h1>The Augusta Rule &nbsp;&bull;&nbsp; IRC 280A(g)</h1>
+  <div class="sub">Rent your home to your own business tax-free for up to 14 days per year. The rental income is excluded from gross income. The business gets a deduction. Named after Augusta, Georgia, where homeowners rent to Masters Tournament attendees. Heavily scrutinized by the IRS - documentation is everything.</div>
+  <div class="badges"><span class="badge">IRC 280A(g) - 14-day exclusion</span><span class="badge">IRC 162 - business deduction</span><span class="badge">Fair rental value required</span><span class="badge">High IRS scrutiny</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Calculate Your Tax-Free Rental</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Days You Plan to Rent to Business</label> <input type="number" class="fc" id="days" value="12" min="1" max="14" oninput="calc()"> <div class="hint">Maximum 14 days per year. At 15 days, ALL rental income becomes taxable and rental expense rules apply. IRC 280A(g). Do not exceed 14.</div> </div> <div class="f1"><label>Fair Rental Value Per Day ($)</label> <input type="number" class="fc" id="dayRate" value="1500" oninput="calc()"> <div class="hint">Must be arms-length fair market rental value. Obtain 2-3 written quotes from similar venues (hotel ballrooms, conference centers, event spaces). This is the most critical number for IRS scrutiny.</div> </div> <div class="f1"><label>Your Marginal Tax Rate</label> <select class="fc" id="taxRate" onchange="calc()"> <option value="0.24">24%</option> <option value="0.32" selected>32%</option> <option value="0.35">35%</option> <option value="0.37">37%</option> </select> </div> </div> <div class="fg2"> <div class="f1"><label>Business Entity Type</label> <select class="fc" id="entityType" onchange="calc()"> <option value="scorp">S-Corporation (most common Augusta Rule strategy)</option> <option value="ccorp">C-Corporation</option> <option value="partner">Partnership / Multi-member LLC</option> <option value="sole">Sole Proprietor / Schedule C (less tax benefit)</option> </select> <div class="hint">S-corps and C-corps create the cleanest separation: business deducts rent, owner excludes income. Sole proprietors: owner and business are the same person - the IRS looks skeptically at self-rentals on Schedule C.</div> </div> <div class="f1"><label>State Income Tax Rate</label> <input type="number" class="fc" id="stateRate" value="6" min="0" max="15" step="0.5" oninput="calc()"> <div class="hint">Combined state + local marginal rate. Exclusion is federal only - many states do not conform and may tax the rental income.</div> </div> </div> <div id="res"></div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Requirements & Documentation Checklist</h2></div> <div class="cb"> <ul class="req-list"> <li><div class="rl-num">1</div><div><strong>14 days maximum - counted per dwelling unit per year.</strong> If you rent for 15+ days, IRC 280A(g) does not apply and all rental income is taxable (and you enter the complex mixed-use rules of IRC 280A(c)-(e)). Count carefully. IRC 280A(g)(1).</div></li> <li><div class="rl-num">2</div><div><strong>Fair rental value - the most audited element.</strong> The rental rate must equal what an unrelated third party would pay for the same space on the same terms. Get at least 2-3 comparable venue quotes in writing before the meeting. A rate above FMV shifts what should be tax-free exclusion to compensation income.</div></li> <li><div class="rl-num">3</div><div><strong>Legitimate business purpose.</strong> The meeting must have a real business purpose: board meetings, corporate planning sessions, training, strategy sessions. Social gatherings, holiday parties with minimal business content, and personal events dressed up as business meetings do not qualify. Keep a detailed agenda, attendance list, and minutes.</div></li> <li><div class="rl-num">4</div><div><strong>Written rental agreement between you and the business.</strong> Treat this as an arm's-length transaction. Written lease or rental agreement signed by both parties. Specify: dates, rate, purpose, payment terms. The business should actually pay you via check or wire - not just a paper entry.</div></li> <li><div class="rl-num">5</div><div><strong>The business must actually deduct the expense.</strong> The deduction on the business side (IRC 162) must be taken. Without the business deduction, the structure loses its tax efficiency. Ensure the S-corp or C-corp books record the expense and it flows through on the return.</div></li> <li><div class="rl-num">6</div><div><strong>State conformity - verify your state.</strong> IRC 280A(g) is a federal exclusion. States including California and New York do not conform and may tax the rental income as ordinary income. Add state tax into your analysis.</div></li> <li><div class="rl-num">7</div><div><strong>No offsetting deductions on Schedule E.</strong> Under IRC 280A(g), no deductions are allowed for expenses allocable to the rental days (other than expenses allowable regardless of rental use, like mortgage interest and property taxes on Schedule A). The exclusion is clean - no depreciation, no prorated utilities.</div></li> </ul> <div class="src">IRC 280A(g) (14-day rental exclusion - rental income not included in gross income if rented fewer than 15 days); IRC 280A(g)(1) (gross income exclusion); IRC 280A(g)(2) (no deductions allowed for expenses related to excluded rental); IRC 162 (ordinary and necessary business expense - rental payment deductible by business); Weightman v. Commissioner, TC Memo 2011-81 (IRS successfully challenged inadequate documentation); IRS Audit Technique Guide - Business Use of Home (guidance on IRS examination approach).</div> <div class="disc">The Augusta Rule is a legitimate tax strategy when properly executed with arm's-length fair rental value, genuine business purpose, and thorough documentation. It is also one of the most aggressively marketed and improperly implemented strategies in tax planning. Improper implementation can result in income recharacterization, penalties, and interest. Consult a CPA before implementing.</div> </div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Calculate Your Tax-Free Rental</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Days You Plan to Rent to Business</label>
+        <input type="number" class="fc" id="days" value="12" min="1" max="14" oninput="calc()">
+        <div class="hint">Maximum 14 days per year. At 15 days, ALL rental income becomes taxable and rental expense rules apply. IRC 280A(g). Do not exceed 14.</div>
+      </div>
+      <div class="f1"><label>Fair Rental Value Per Day ($)</label>
+        <input type="number" class="fc" id="dayRate" value="1500" oninput="calc()">
+        <div class="hint">Must be arms-length fair market rental value. Obtain 2-3 written quotes from similar venues (hotel ballrooms, conference centers, event spaces). This is the most critical number for IRS scrutiny.</div>
+      </div>
+      <div class="f1"><label>Your Marginal Tax Rate</label>
+        <select class="fc" id="taxRate" onchange="calc()">
+          <option value="0.24">24%</option>
+          <option value="0.32" selected>32%</option>
+          <option value="0.35">35%</option>
+          <option value="0.37">37%</option>
+        </select>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Business Entity Type</label>
+        <select class="fc" id="entityType" onchange="calc()">
+          <option value="scorp">S-Corporation (most common Augusta Rule strategy)</option>
+          <option value="ccorp">C-Corporation</option>
+          <option value="partner">Partnership / Multi-member LLC</option>
+          <option value="sole">Sole Proprietor / Schedule C (less tax benefit)</option>
+        </select>
+        <div class="hint">S-corps and C-corps create the cleanest separation: business deducts rent, owner excludes income. Sole proprietors: owner and business are the same person - the IRS looks skeptically at self-rentals on Schedule C.</div>
+      </div>
+      <div class="f1"><label>State Income Tax Rate</label>
+        <input type="number" class="fc" id="stateRate" value="6" min="0" max="15" step="0.5" oninput="calc()">
+        <div class="hint">Combined state + local marginal rate. Exclusion is federal only - many states do not conform and may tax the rental income.</div>
+      </div>
+    </div>
+    <div id="res"></div>
+  </div>
 </div>
-</div> <div class="related"><div style="max-width:860px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="scorp-compensation.html" class="rl-link">S-Corp Compensation</a> <a href="home-office-calculator.html" class="rl-link">Home Office Calculator</a> <a href="passive-activity-loss.html" class="rl-link">PAL Calculator</a> <a href="tax-estimator.html" class="rl-link">Tax Estimator</a> <a href="index.html" class="rl-link">All Tools</a>
-</div></div> <script>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Requirements & Documentation Checklist</h2></div>
+  <div class="cb">
+    <ul class="req-list">
+      <li><div class="rl-num">1</div><div><strong>14 days maximum - counted per dwelling unit per year.</strong> If you rent for 15+ days, IRC 280A(g) does not apply and all rental income is taxable (and you enter the complex mixed-use rules of IRC 280A(c)-(e)). Count carefully. IRC 280A(g)(1).</div></li>
+      <li><div class="rl-num">2</div><div><strong>Fair rental value - the most audited element.</strong> The rental rate must equal what an unrelated third party would pay for the same space on the same terms. Get at least 2-3 comparable venue quotes in writing before the meeting. A rate above FMV shifts what should be tax-free exclusion to compensation income.</div></li>
+      <li><div class="rl-num">3</div><div><strong>Legitimate business purpose.</strong> The meeting must have a real business purpose: board meetings, corporate planning sessions, training, strategy sessions. Social gatherings, holiday parties with minimal business content, and personal events dressed up as business meetings do not qualify. Keep a detailed agenda, attendance list, and minutes.</div></li>
+      <li><div class="rl-num">4</div><div><strong>Written rental agreement between you and the business.</strong> Treat this as an arm's-length transaction. Written lease or rental agreement signed by both parties. Specify: dates, rate, purpose, payment terms. The business should actually pay you via check or wire - not just a paper entry.</div></li>
+      <li><div class="rl-num">5</div><div><strong>The business must actually deduct the expense.</strong> The deduction on the business side (IRC 162) must be taken. Without the business deduction, the structure loses its tax efficiency. Ensure the S-corp or C-corp books record the expense and it flows through on the return.</div></li>
+      <li><div class="rl-num">6</div><div><strong>State conformity - verify your state.</strong> IRC 280A(g) is a federal exclusion. States including California and New York do not conform and may tax the rental income as ordinary income. Add state tax into your analysis.</div></li>
+      <li><div class="rl-num">7</div><div><strong>No offsetting deductions on Schedule E.</strong> Under IRC 280A(g), no deductions are allowed for expenses allocable to the rental days (other than expenses allowable regardless of rental use, like mortgage interest and property taxes on Schedule A). The exclusion is clean - no depreciation, no prorated utilities.</div></li>
+    </ul>
+    <div class="src">IRC 280A(g) (14-day rental exclusion - rental income not included in gross income if rented fewer than 15 days); IRC 280A(g)(1) (gross income exclusion); IRC 280A(g)(2) (no deductions allowed for expenses related to excluded rental); IRC 162 (ordinary and necessary business expense - rental payment deductible by business); Weightman v. Commissioner, TC Memo 2011-81 (IRS successfully challenged inadequate documentation); IRS Audit Technique Guide - Business Use of Home (guidance on IRS examination approach).</div>
+    <div class="disc">The Augusta Rule is a legitimate tax strategy when properly executed with arm's-length fair rental value, genuine business purpose, and thorough documentation. It is also one of the most aggressively marketed and improperly implemented strategies in tax planning. Improper implementation can result in income recharacterization, penalties, and interest. Consult a CPA before implementing. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>
+  </div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:860px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="scorp-compensation.html" class="rl-link">S-Corp Compensation</a>
+  <a href="home-office-calculator.html" class="rl-link">Home Office Calculator</a>
+  <a href="passive-activity-loss.html" class="rl-link">PAL Calculator</a>
+  <a href="tax-estimator.html" class="rl-link">Tax Estimator</a>
+  <a href="index.html" class="rl-link">All Tools</a>
+</div></div>
+
+<script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} function calc(){ const days=Math.min(14,Math.max(1,parseInt(document.getElementById('days').value)||12)); const dayRate=parseFloat(document.getElementById('dayRate').value)||0; const taxRate=parseFloat(document.getElementById('taxRate').value)||0.32; const stateRate=(parseFloat(document.getElementById('stateRate').value)||0)/100; const entityType=document.getElementById('entityType').value; const totalRental=days*dayRate; const fedTaxSaved=totalRental*taxRate; const stateTaxNote=stateRate>0?` Note: ${(stateRate*100).toFixed(1)}% state tax may apply - verify conformity.`:''; const seTaxSaved=entityType==='sole'?0:totalRental*0.1413; // SE tax savings if shifted from active income const businessDeduction=totalRental; const netBenefit=fedTaxSaved; // conservative - just fed income tax const rb=document.getElementById('res'); let h=''; if(days>14){ h+=flag('red','!','<strong>STOP - 14-day limit exceeded.</strong> At 15+ days, IRC 280A(g) does not apply. All rental income becomes taxable and you enter the complex mixed-use rules. Reduce to 14 days maximum.'); document.getElementById('res').innerHTML=h; return; } h+=`<div class="result-banner"> <div class="rb-label">Federal Tax-Free Rental Income</div> <div class="rb-amount">${fmt(totalRental)}</div> <div class="rb-sub">${days} days x ${fmt(dayRate)}/day &nbsp;|&nbsp; Excluded from gross income under IRC 280A(g)&nbsp;|&nbsp; Approx. federal tax saved: ${fmt(fedTaxSaved)} at ${Math.round(taxRate*100)}%${stateTaxNote}</div> </div>`; h+=`<div class="sum-box"><div class="sum-title">Augusta Rule Analysis</div> <div class="srow"><span class="sl">Days rented to business</span><span class="sv">${days} (max 14)</span></div> <div class="srow"><span class="sl">Fair rental value per day</span><span class="sv">${fmt(dayRate)}</span></div> <div class="srow"><span class="sl">Total rental income (excluded from gross income)</span><span class="sv green">${fmt(totalRental)}</span></div> <div class="srow"><span class="sl">Business deduction (IRC 162)</span><span class="sv green">${fmt(businessDeduction)}</span></div> <div class="srow"><span class="sl">Federal income tax saved (owner level)</span><span class="sv green">${fmt(fedTaxSaved)}</span></div> ${stateRate>0?`<div class="srow"><span class="sl">State income tax exposure (verify conformity)</span><span class="sv amber">${fmt(totalRental*stateRate)}</span></div>`:''} <div class="srow"><span class="sl">Net federal tax benefit</span><span class="sv green">${fmt(fedTaxSaved-(stateRate>0?totalRental*stateRate:0))}</span></div> </div>`; if(entityType==='sole'){ h+=flag('amber','!','<strong>Sole proprietor Augusta Rule is the most scrutinized.</strong> When you and your business are the same person (Schedule C), the IRS and Tax Court have been skeptical of self-rental exclusions. The business deduction and owner exclusion effectively cancel each other - the net federal benefit is primarily the SE tax savings on the shifted income, not income tax. An entity (S-corp, C-corp) creates a cleaner structure.'); } if(entityType==='scorp'){ h+=flag('green','v',`<strong>S-corp is the optimal structure for the Augusta Rule.</strong> The S-corp deducts ${fmt(totalRental)} as a business expense (reducing W-2 income or distributions flowing to you). You exclude ${fmt(totalRental)} of rental income under IRC 280A(g). The net result: ${fmt(totalRental)} moves from potentially SE-taxable or subject to payroll taxes at the S-corp level to completely tax-free personal income.`); } h+=flag('red','!','<strong>IRS scrutiny is high and increasing.</strong> The Augusta Rule has been featured in practitioner marketing materials and is now on IRS radar. Recent IRS guidance and Tax Court cases (Weightman v. Commissioner) show the IRS will challenge: (1) rates above comparable venue FMV, (2) meetings without genuine business substance, (3) lack of contemporaneous documentation, and (4) sole proprietor self-rental structures. Maintain an iron-clad paper trail.'); h+=flag('amber','!',`<strong>Only ${14-days} days of annual allowance remaining.</strong> You are using ${days} of your 14-day maximum. The 14-day count is per dwelling unit, per year. If you use this home for other short-term rentals during the year, those days count toward the 14-day limit.`);
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+function calc(){
+  const days=Math.min(14,Math.max(1,parseInt(document.getElementById('days').value)||12));
+  const dayRate=parseFloat(document.getElementById('dayRate').value)||0;
+  const taxRate=parseFloat(document.getElementById('taxRate').value)||0.32;
+  const stateRate=(parseFloat(document.getElementById('stateRate').value)||0)/100;
+  const entityType=document.getElementById('entityType').value;
+
+  const totalRental=days*dayRate;
+  const fedTaxSaved=totalRental*taxRate;
+  const stateTaxNote=stateRate>0?` Note: ${(stateRate*100).toFixed(1)}% state tax may apply - verify conformity.`:'';
+  const seTaxSaved=entityType==='sole'?0:totalRental*0.1413; // SE tax savings if shifted from active income
+  const businessDeduction=totalRental;
+  const netBenefit=fedTaxSaved; // conservative - just fed income tax
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  if(days>14){
+    h+=flag('red','!','<strong>STOP - 14-day limit exceeded.</strong> At 15+ days, IRC 280A(g) does not apply. All rental income becomes taxable and you enter the complex mixed-use rules. Reduce to 14 days maximum.');
+    document.getElementById('res').innerHTML=h;
+    return;
+  }
+
+  h+=`<div class="result-banner">
+    <div class="rb-label">Federal Tax-Free Rental Income</div>
+    <div class="rb-amount">${fmt(totalRental)}</div>
+    <div class="rb-sub">${days} days x ${fmt(dayRate)}/day &nbsp;|&nbsp; Excluded from gross income under IRC 280A(g)&nbsp;|&nbsp; Approx. federal tax saved: ${fmt(fedTaxSaved)} at ${Math.round(taxRate*100)}%${stateTaxNote}</div>
+  </div>`;
+
+  h+=`<div class="sum-box"><div class="sum-title">Augusta Rule Analysis</div>
+    <div class="srow"><span class="sl">Days rented to business</span><span class="sv">${days} (max 14)</span></div>
+    <div class="srow"><span class="sl">Fair rental value per day</span><span class="sv">${fmt(dayRate)}</span></div>
+    <div class="srow"><span class="sl">Total rental income (excluded from gross income)</span><span class="sv green">${fmt(totalRental)}</span></div>
+    <div class="srow"><span class="sl">Business deduction (IRC 162)</span><span class="sv green">${fmt(businessDeduction)}</span></div>
+    <div class="srow"><span class="sl">Federal income tax saved (owner level)</span><span class="sv green">${fmt(fedTaxSaved)}</span></div>
+    ${stateRate>0?`<div class="srow"><span class="sl">State income tax exposure (verify conformity)</span><span class="sv amber">${fmt(totalRental*stateRate)}</span></div>`:''}
+    <div class="srow"><span class="sl">Net federal tax benefit</span><span class="sv green">${fmt(fedTaxSaved-(stateRate>0?totalRental*stateRate:0))}</span></div>
+  </div>`;
+
+  if(entityType==='sole'){
+    h+=flag('amber','!','<strong>Sole proprietor Augusta Rule is the most scrutinized.</strong> When you and your business are the same person (Schedule C), the IRS and Tax Court have been skeptical of self-rental exclusions. The business deduction and owner exclusion effectively cancel each other - the net federal benefit is primarily the SE tax savings on the shifted income, not income tax. An entity (S-corp, C-corp) creates a cleaner structure.');
+  }
+  if(entityType==='scorp'){
+    h+=flag('green','v',`<strong>S-corp is the optimal structure for the Augusta Rule.</strong> The S-corp deducts ${fmt(totalRental)} as a business expense (reducing W-2 income or distributions flowing to you). You exclude ${fmt(totalRental)} of rental income under IRC 280A(g). The net result: ${fmt(totalRental)} moves from potentially SE-taxable or subject to payroll taxes at the S-corp level to completely tax-free personal income.`);
+  }
+  h+=flag('red','!','<strong>IRS scrutiny is high and increasing.</strong> The Augusta Rule has been featured in practitioner marketing materials and is now on IRS radar. Recent IRS guidance and Tax Court cases (Weightman v. Commissioner) show the IRS will challenge: (1) rates above comparable venue FMV, (2) meetings without genuine business substance, (3) lack of contemporaneous documentation, and (4) sole proprietor self-rental structures. Maintain an iron-clad paper trail.');
+  h+=flag('amber','!',`<strong>Only ${14-days} days of annual allowance remaining.</strong> You are using ${days} of your 14-day maximum. The 14-day count is per dwelling unit, per year. If you use this home for other short-term rentals during the year, those days count toward the 14-day limit.`);
 }
 calc();
-</script> </body>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
