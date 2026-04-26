@@ -8,14 +8,36 @@
 <link rel="canonical" href="https://cpavalidated.com/tax-calendar.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6; --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF; --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2; --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA; --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878; --blue-acc:#4A6070; --blue-bg:#DDE4E8; --blue-b:#94AFBC; --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace; /* Category colors */ --cat-corp:#4A6070; --cat-corp-bg:#DDE4E8; --cat-personal:#4A7459; --cat-personal-bg:#E2EDE6; --cat-state:#8B6535; --cat-state-bg:#EDE8D8; --cat-info:#5E6166; --cat-info-bg:#EDEEF0;
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --blue-acc:#4A6070; --blue-bg:#DDE4E8; --blue-b:#94AFBC;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+
+  /* Category colors */
+  --cat-corp:#4A6070;
+  --cat-corp-bg:#DDE4E8;
+  --cat-personal:#4A7459;
+  --cat-personal-bg:#E2EDE6;
+  --cat-state:#8B6535;
+  --cat-state-bg:#EDE8D8;
+  --cat-info:#5E6166;
+  --cat-info-bg:#EDEEF0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
 ::selection{background:var(--coral);color:#fff}
 a{color:var(--coral);text-decoration:none}
-a:hover{text-decoration:underline} /* Header */
+a:hover{text-decoration:underline}
+
+/* Header */
 .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:960px;margin:0 auto;padding:0 24px}
 .ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
@@ -26,19 +48,25 @@ a:hover{text-decoration:underline} /* Header */
 .back{max-width:960px;margin:0 auto;padding:16px 24px 0}
 .back a{font-size:12px;color:var(--ink-60);font-weight:500}
 .back a:hover{color:var(--coral)}
-.container{max-width:960px;margin:0 auto;padding:28px 24px 0} /* Legend */
+.container{max-width:960px;margin:0 auto;padding:28px 24px 0}
+
+/* Legend */
 .legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;padding:14px 16px;background:var(--white);border:1px solid var(--ink-20)}
 .leg-item{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--ink-60)}
 .leg-dot{width:10px;height:10px;flex-shrink:0}
 .leg-dot.corp{background:var(--cat-corp)}
 .leg-dot.personal{background:var(--cat-personal)}
 .leg-dot.state{background:var(--cat-state)}
-.leg-dot.ext{background:var(--coral)} /* Filter bar */
+.leg-dot.ext{background:var(--coral)}
+
+/* Filter bar */
 .filter-bar{display:flex;gap:0;border:1.5px solid var(--ink-20);overflow:hidden;margin-bottom:24px}
 .filter-btn{flex:1;padding:9px 8px;border:none;font-family:var(--font-sans);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;background:var(--ink-10);color:var(--ink-60);border-right:1px solid var(--ink-20);letter-spacing:.02em;text-transform:uppercase}
 .filter-btn:last-child{border-right:none}
 .filter-btn.active{background:var(--ink);color:#fff}
-.filter-btn:hover:not(.active){background:var(--ink-20)} /* Month grid */
+.filter-btn:hover:not(.active){background:var(--ink-20)}
+
+/* Month grid */
 .months{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 .month-card{background:var(--white);border:1px solid var(--ink-20);overflow:hidden}
 .month-header{background:var(--ink);padding:10px 14px;display:flex;align-items:baseline;gap:8px}
@@ -59,7 +87,9 @@ a:hover{text-decoration:underline} /* Header */
 .tag.state{background:var(--cat-state-bg);color:var(--cat-state);border-color:var(--amber-b)}
 .tag.ext{background:var(--coral-100);color:var(--coral-600);border-color:var(--coral)}
 .tag.info{background:var(--ink-10);color:var(--ink-60);border-color:var(--ink-20)}
-.empty-month{padding:14px;font-size:12px;color:var(--ink-40);font-style:italic;text-align:center} /* Quick ref table */
+.empty-month{padding:14px;font-size:12px;color:var(--ink-40);font-style:italic;text-align:center}
+
+/* Quick ref table */
 .qr-table{width:100%;border-collapse:collapse;margin-bottom:20px;font-size:13px}
 .qr-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
 .qr-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
@@ -67,10 +97,25 @@ a:hover{text-decoration:underline} /* Header */
 .qr-table tr:nth-child(even) td{background:var(--ink-10)}
 .qr-table td:first-child{font-weight:600;white-space:nowrap;color:var(--ink)}
 .qr-table .date-cell{font-family:var(--font-mono);font-weight:700;color:var(--coral);white-space:nowrap}
-.qr-table .ext-cell{font-family:var(--font-mono);font-size:12px;color:var(--ink-60)} .section-head{font-family:var(--font-display);font-size:18px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)} .note{background:var(--amber-bg);border-left:3px solid var(--amber);padding:10px 14px;font-size:12.5px;color:var(--amber);line-height:1.6;margin-bottom:16px}
-.note strong{font-weight:600} .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:24px} @media(max-width:720px){.months{grid-template-columns:1fr 1fr}}
+.qr-table .ext-cell{font-family:var(--font-mono);font-size:12px;color:var(--ink-60)}
+
+.section-head{font-family:var(--font-display);font-size:18px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+
+.note{background:var(--amber-bg);border-left:3px solid var(--amber);padding:10px 14px;font-size:12.5px;color:var(--amber);line-height:1.6;margin-bottom:16px}
+.note strong{font-weight:600}
+
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:24px}
+
+@media(max-width:720px){.months{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.months{grid-template-columns:1fr}.filter-bar{flex-wrap:wrap}}
-@media print{ @page{margin:15mm} body{background:white} .ph{-webkit-print-color-adjust:exact;print-color-adjust:exact} .month-header{-webkit-print-color-adjust:exact;print-color-adjust:exact} .back,.filter-bar{display:none} .months{grid-template-columns:1fr 1fr 1fr} .month-card{break-inside:avoid}
+@media print{
+  @page{margin:15mm}
+  body{background:white}
+  .ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .month-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .back,.filter-bar{display:none}
+  .months{grid-template-columns:1fr 1fr 1fr}
+  .month-card{break-inside:avoid}
 }
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
@@ -83,32 +128,269 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 .nav-cta{background:var(--coral);color:#fff;padding:8px 16px;font-weight:600;font-size:13px;text-decoration:none;transition:background .15s}
 .nav-cta:hover{background:var(--coral-600)}
 @media(max-width:640px){nav{padding:12px 18px}.nav-links{display:none}}
-.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
+</style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <div class="nav-right"> <ul class="nav-links"> <li><a href="index.html#tools">Tools</a></li> <li><a href="index.html#articles">Guides</a></li> <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li> <li><a href="about.html">About</a></li> </ul> <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a> </div>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#tools">Tools</a></li>
+      <li><a href="index.html#articles">Guides</a></li>
+      <li><a href="vetted-resources.html" style="color:var(--coral)">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="https://tk.cpa" target="_blank" class="nav-cta">tk.cpa</a>
+  </div>
 </nav>
-<div class="back"><a href="index.html">← cpavalidated.com</a></div> <div class="ph"><div class="phi"> <h1>US Federal Tax Calendar 2026</h1> <div class="sub">Corporate &nbsp;&bull;&nbsp; Personal &nbsp;&bull;&nbsp; Key State Deadlines &nbsp;&bull;&nbsp; Extensions</div> <div class="badges"> <span class="badge">IRS Publication 509</span> <span class="badge">IRC §6072</span> <span class="badge">IRC §6655</span> <span class="badge">FinCEN 114</span> <span class="badge">Tax Year 2025 Returns</span> </div>
-</div></div> <div class="container"> <!-- Legend + Filter -->
-<div class="legend"> <div class="leg-item"><div class="leg-dot corp"></div>Corporate / Business</div> <div class="leg-item"><div class="leg-dot personal"></div>Personal / Individual</div> <div class="leg-item"><div class="leg-dot state"></div>State Specific</div> <div class="leg-item"><div class="leg-dot ext"></div>Extended Deadline</div>
-</div> <div class="filter-bar"> <button class="filter-btn active" onclick="filterCal('all')">All</button> <button class="filter-btn" onclick="filterCal('corp')">Corporate</button> <button class="filter-btn" onclick="filterCal('personal')">Personal</button> <button class="filter-btn" onclick="filterCal('state')">State</button> <button class="filter-btn" onclick="filterCal('ext')">Extensions</button>
-</div> <!-- Month Cards -->
-<div class="months" id="calGrid"></div> <!-- Quick Reference Tables -->
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+
+<div class="ph"><div class="phi">
+  <h1>US Federal Tax Calendar 2026</h1>
+  <div class="sub">Corporate &nbsp;&bull;&nbsp; Personal &nbsp;&bull;&nbsp; Key State Deadlines &nbsp;&bull;&nbsp; Extensions</div>
+  <div class="badges">
+    <span class="badge">IRS Publication 509</span>
+    <span class="badge">IRC §6072</span>
+    <span class="badge">IRC §6655</span>
+    <span class="badge">FinCEN 114</span>
+    <span class="badge">Tax Year 2025 Returns</span>
+  </div>
+</div></div>
+
+<div class="container">
+
+<!-- Legend + Filter -->
+<div class="legend">
+  <div class="leg-item"><div class="leg-dot corp"></div>Corporate / Business</div>
+  <div class="leg-item"><div class="leg-dot personal"></div>Personal / Individual</div>
+  <div class="leg-item"><div class="leg-dot state"></div>State Specific</div>
+  <div class="leg-item"><div class="leg-dot ext"></div>Extended Deadline</div>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCal('all')">All</button>
+  <button class="filter-btn" onclick="filterCal('corp')">Corporate</button>
+  <button class="filter-btn" onclick="filterCal('personal')">Personal</button>
+  <button class="filter-btn" onclick="filterCal('state')">State</button>
+  <button class="filter-btn" onclick="filterCal('ext')">Extensions</button>
+</div>
+
+<!-- Month Cards -->
+<div class="months" id="calGrid"></div>
+
+<!-- Quick Reference Tables -->
 <div class="section-head" style="margin-top:36px">Quick Reference - Corporate Returns</div>
-<table class="qr-table"> <thead><tr><th>Form</th><th>Entity</th><th>Original Due</th><th>Extended Due</th><th>Authority</th></tr></thead> <tbody> <tr><td>Form 1065</td><td>Partnership</td><td class="date-cell">Mar 16 <span style="font-weight:400;color:var(--ink-60)">(Mar 15 = Sun)</span></td><td class="ext-cell">Sep 15</td><td>IRC §6072(a); Rev. Proc. 87-32</td></tr> <tr><td>Form 1120-S</td><td>S-Corporation</td><td class="date-cell">Mar 16 <span style="font-weight:400;color:var(--ink-60)">(Mar 15 = Sun)</span></td><td class="ext-cell">Sep 15</td><td>IRC §6072(a)</td></tr> <tr><td>Form 1120</td><td>C-Corporation (calendar year)</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15</td><td>IRC §6072(b)</td></tr> <tr><td>Form 1099-NEC</td><td>Nonemployee Compensation</td><td class="date-cell">Feb 2 <span style="font-weight:400;color:var(--ink-60)">(Jan 31 = Sat)</span></td><td class="ext-cell"> - </td><td>IRC §6041A; Treas. Reg. 1.6041A-1</td></tr> <tr><td>Form 1099-MISC</td><td>Miscellaneous payments</td><td class="date-cell">Feb 28 (paper) / Mar 31 (e-file)</td><td class="ext-cell"> - </td><td>IRC §6041</td></tr> <tr><td>Form W-2</td><td>Wages (to SSA and employees)</td><td class="date-cell">Feb 2 <span style="font-weight:400;color:var(--ink-60)">(Jan 31 = Sat)</span></td><td class="ext-cell"> - </td><td>IRC §6051; SSA</td></tr> <tr><td>Form 941</td><td>Quarterly payroll tax</td><td class="date-cell">Apr 30 / Jul 31 / Oct 31 / Jan 31</td><td class="ext-cell"> - </td><td>IRC §3111; IRC §3402</td></tr> <tr><td>Form 940</td><td>Annual FUTA</td><td class="date-cell">Jan 31</td><td class="ext-cell">Feb 10 (if deposits current)</td><td>IRC §3301</td></tr> <tr><td>Form 5472</td><td>Foreign-owned US corps / DEs</td><td class="date-cell">With 1120</td><td class="ext-cell">With 1120 extension</td><td>IRC §6038A; TD 9796</td></tr> <tr><td>Form 3921</td><td>ISO stock option exercises</td><td class="date-cell">Jan 31 (to employees)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6039</td></tr> <tr><td>1099-INT / 1099-DIV</td><td>Interest ($10+) and dividends ($10+)</td><td class="date-cell">Jan 31 (to recipients)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6049; IRC §6042</td></tr> <tr><td>1099-B</td><td>Broker and barter exchange proceeds</td><td class="date-cell">Feb 15 (to recipients)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6045</td></tr> <tr><td>1099-K</td><td>Payment card / third-party networks ($600+ for 2026)</td><td class="date-cell">Jan 31</td><td class="ext-cell"> - </td><td>IRC §6050W</td></tr> <tr><td>Corp Q1 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Apr 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr> <tr><td>Corp Q2 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Jun 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr> <tr><td>Corp Q3 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Sep 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr> <tr><td>Corp Q4 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Dec 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr> <tr><td>FinCEN 114 (FBAR)</td><td>All US persons with foreign accounts</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15 (auto)</td><td>31 USC 5314; 31 CFR 1010.350</td></tr> </tbody>
-</table> <div class="section-head">Quick Reference - Individual Returns</div>
-<table class="qr-table"> <thead><tr><th>Form</th><th>Description</th><th>Original Due</th><th>Extended Due</th><th>Authority</th></tr></thead> <tbody> <tr><td>Form 1040</td><td>US Individual Income Tax Return</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15</td><td>IRC §6072(a)</td></tr> <tr><td>Form 1040-NR</td><td>Nonresident Alien Return</td><td class="date-cell">Apr 15 (with US wages) / Jun 15 (no US wages)</td><td class="ext-cell">Oct 15 / Dec 15</td><td>IRC §6072(c); Treas. Reg. 1.6072-1(c)</td></tr> <tr><td>Form 8938</td><td>FATCA - Foreign Financial Assets</td><td class="date-cell">With 1040</td><td class="ext-cell">With 1040 extension</td><td>IRC §6038D</td></tr> <tr><td>Form 3520</td><td>Foreign Trusts / Gifts</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15</td><td>IRC §6048</td></tr> <tr><td>Form 5471</td><td>CFC - Controlled Foreign Corp</td><td class="date-cell">With 1040 or 1120</td><td class="ext-cell">With parent return extension</td><td>IRC §6038</td></tr> <tr><td>Q1 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Apr 15</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr> <tr><td>Q2 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Jun 15</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr> <tr><td>Q3 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Sep 15</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr> <tr><td>Q4 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Jan 15, 2027</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr> </tbody>
-</table> <div class="section-head">Key State Deadlines</div>
+<table class="qr-table">
+  <thead><tr><th>Form</th><th>Entity</th><th>Original Due</th><th>Extended Due</th><th>Authority</th></tr></thead>
+  <tbody>
+    <tr><td>Form 1065</td><td>Partnership</td><td class="date-cell">Mar 16 <span style="font-weight:400;color:var(--ink-60)">(Mar 15 = Sun)</span></td><td class="ext-cell">Sep 15</td><td>IRC §6072(a); Rev. Proc. 87-32</td></tr>
+    <tr><td>Form 1120-S</td><td>S-Corporation</td><td class="date-cell">Mar 16 <span style="font-weight:400;color:var(--ink-60)">(Mar 15 = Sun)</span></td><td class="ext-cell">Sep 15</td><td>IRC §6072(a)</td></tr>
+    <tr><td>Form 1120</td><td>C-Corporation (calendar year)</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15</td><td>IRC §6072(b)</td></tr>
+    <tr><td>Form 1099-NEC</td><td>Nonemployee Compensation</td><td class="date-cell">Feb 2 <span style="font-weight:400;color:var(--ink-60)">(Jan 31 = Sat)</span></td><td class="ext-cell"> - </td><td>IRC §6041A; Treas. Reg. 1.6041A-1</td></tr>
+    <tr><td>Form 1099-MISC</td><td>Miscellaneous payments</td><td class="date-cell">Feb 28 (paper) / Mar 31 (e-file)</td><td class="ext-cell"> - </td><td>IRC §6041</td></tr>
+    <tr><td>Form W-2</td><td>Wages (to SSA and employees)</td><td class="date-cell">Feb 2 <span style="font-weight:400;color:var(--ink-60)">(Jan 31 = Sat)</span></td><td class="ext-cell"> - </td><td>IRC §6051; SSA</td></tr>
+    <tr><td>Form 941</td><td>Quarterly payroll tax</td><td class="date-cell">Apr 30 / Jul 31 / Oct 31 / Jan 31</td><td class="ext-cell"> - </td><td>IRC §3111; IRC §3402</td></tr>
+    <tr><td>Form 940</td><td>Annual FUTA</td><td class="date-cell">Jan 31</td><td class="ext-cell">Feb 10 (if deposits current)</td><td>IRC §3301</td></tr>
+    <tr><td>Form 5472</td><td>Foreign-owned US corps / DEs</td><td class="date-cell">With 1120</td><td class="ext-cell">With 1120 extension</td><td>IRC §6038A; TD 9796</td></tr>
+    <tr><td>Form 3921</td><td>ISO stock option exercises</td><td class="date-cell">Jan 31 (to employees)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6039</td></tr>
+    <tr><td>1099-INT / 1099-DIV</td><td>Interest ($10+) and dividends ($10+)</td><td class="date-cell">Jan 31 (to recipients)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6049; IRC §6042</td></tr>
+    <tr><td>1099-B</td><td>Broker and barter exchange proceeds</td><td class="date-cell">Feb 15 (to recipients)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6045</td></tr>
+    <tr><td>1099-K</td><td>Payment card / third-party networks ($600+ for 2026)</td><td class="date-cell">Jan 31</td><td class="ext-cell"> - </td><td>IRC §6050W</td></tr>
+    <tr><td>Corp Q1 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Apr 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr>
+    <tr><td>Corp Q2 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Jun 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr>
+    <tr><td>Corp Q3 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Sep 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr>
+    <tr><td>Corp Q4 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Dec 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr>
+    <tr><td>FinCEN 114 (FBAR)</td><td>All US persons with foreign accounts</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15 (auto)</td><td>31 USC 5314; 31 CFR 1010.350</td></tr>
+  </tbody>
+</table>
+
+<div class="section-head">Quick Reference - Individual Returns</div>
+<table class="qr-table">
+  <thead><tr><th>Form</th><th>Description</th><th>Original Due</th><th>Extended Due</th><th>Authority</th></tr></thead>
+  <tbody>
+    <tr><td>Form 1040</td><td>US Individual Income Tax Return</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15</td><td>IRC §6072(a)</td></tr>
+    <tr><td>Form 1040-NR</td><td>Nonresident Alien Return</td><td class="date-cell">Apr 15 (with US wages) / Jun 15 (no US wages)</td><td class="ext-cell">Oct 15 / Dec 15</td><td>IRC §6072(c); Treas. Reg. 1.6072-1(c)</td></tr>
+    <tr><td>Form 8938</td><td>FATCA - Foreign Financial Assets</td><td class="date-cell">With 1040</td><td class="ext-cell">With 1040 extension</td><td>IRC §6038D</td></tr>
+    <tr><td>Form 3520</td><td>Foreign Trusts / Gifts</td><td class="date-cell">Apr 15</td><td class="ext-cell">Oct 15</td><td>IRC §6048</td></tr>
+    <tr><td>Form 5471</td><td>CFC - Controlled Foreign Corp</td><td class="date-cell">With 1040 or 1120</td><td class="ext-cell">With parent return extension</td><td>IRC §6038</td></tr>
+    <tr><td>Q1 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Apr 15</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr>
+    <tr><td>Q2 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Jun 15</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr>
+    <tr><td>Q3 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Sep 15</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr>
+    <tr><td>Q4 Est. Tax</td><td>Federal estimated tax payment</td><td class="date-cell">Jan 15, 2027</td><td class="ext-cell"> - </td><td>IRC §6654</td></tr>
+  </tbody>
+</table>
+
+<div class="section-head">Key State Deadlines</div>
 <div class="note"><strong>Note:</strong> State deadlines often follow federal but have important exceptions. Always verify with the applicable state department of revenue. Penalties for missed state deadlines are assessed separately from federal penalties.</div>
-<table class="qr-table"> <thead><tr><th>State / Filing</th><th>Deadline</th><th>Notes</th></tr></thead> <tbody> <tr><td>Delaware Franchise Tax</td><td class="date-cell">Mar 1</td><td>Due March 1 for corporations incorporated in Delaware. Annual report filed simultaneously. Minimum tax $175 (authorized shares method); larger corps may owe significantly more. Late penalty: $200 + 1.5% monthly interest.</td></tr> <tr><td>Florida Annual Report</td><td class="date-cell">May 1</td><td>Due May 1 for all Florida corporations, LLCs, and partnerships. Filed with Florida Division of Corporations (sunbiz.org). $138.75 for profit corps. Late fee $400 if filed after May 1. Administrative dissolution after September 30.</td></tr> <tr><td>California Estimated Tax</td><td class="date-cell">Apr 15 / Jun 15 / Sep 15 / Jan 15</td><td>California follows federal quarterly schedule. Note: California has no Q3 payment - instead uses 30/40/0/30 split. First payment (30%) due Apr 15; second (40%) due Jun 15; no Sep payment; fourth (30%) due Jan 15.</td></tr> <tr><td>New York State / NYC</td><td class="date-cell">Follows federal</td><td>NY generally follows federal deadlines. NYC imposes its own Unincorporated Business Tax (UBT) and General Corporation Tax. NY S-Corp election must be filed separately from federal S-Corp election.</td></tr> <tr><td>Texas Franchise Tax</td><td class="date-cell">May 15</td><td>Texas Franchise Tax (margin tax) return due May 15. Applies to most entities with Texas nexus. No income tax but margin-based calculation. Annual report filed simultaneously.</td></tr> <tr><td>Virginia Estimated Tax</td><td class="date-cell">May 1 (Q1)</td><td>Virginia Q1 estimated tax due May 1 (not April 15 like federal). Q2: Jun 15. Q3: Sep 15. Q4: Jan 15. Non-conformity to federal Q1 due date is a common missed deadline.</td></tr> </tbody>
-</table> <div class="note" style="margin-top:20px"><strong>IRC §7503 - Weekend/Holiday Rule:</strong> When a deadline falls on a Saturday, Sunday, or legal holiday, it automatically moves to the next business day. Key 2026 shifts: Jan 31 → Feb 2 (Saturday); Mar 15 → Mar 16 (Sunday). Always verify actual dates for the specific tax year.</div>
-<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div> </div> <script>
+<table class="qr-table">
+  <thead><tr><th>State / Filing</th><th>Deadline</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Delaware Franchise Tax</td><td class="date-cell">Mar 1</td><td>Due March 1 for corporations incorporated in Delaware. Annual report filed simultaneously. Minimum tax $175 (authorized shares method); larger corps may owe significantly more. Late penalty: $200 + 1.5% monthly interest.</td></tr>
+    <tr><td>Florida Annual Report</td><td class="date-cell">May 1</td><td>Due May 1 for all Florida corporations, LLCs, and partnerships. Filed with Florida Division of Corporations (sunbiz.org). $138.75 for profit corps. Late fee $400 if filed after May 1. Administrative dissolution after September 30.</td></tr>
+    <tr><td>California Estimated Tax</td><td class="date-cell">Apr 15 / Jun 15 / Sep 15 / Jan 15</td><td>California follows federal quarterly schedule. Note: California has no Q3 payment - instead uses 30/40/0/30 split. First payment (30%) due Apr 15; second (40%) due Jun 15; no Sep payment; fourth (30%) due Jan 15.</td></tr>
+    <tr><td>New York State / NYC</td><td class="date-cell">Follows federal</td><td>NY generally follows federal deadlines. NYC imposes its own Unincorporated Business Tax (UBT) and General Corporation Tax. NY S-Corp election must be filed separately from federal S-Corp election.</td></tr>
+    <tr><td>Texas Franchise Tax</td><td class="date-cell">May 15</td><td>Texas Franchise Tax (margin tax) return due May 15. Applies to most entities with Texas nexus. No income tax but margin-based calculation. Annual report filed simultaneously.</td></tr>
+    <tr><td>Virginia Estimated Tax</td><td class="date-cell">May 1 (Q1)</td><td>Virginia Q1 estimated tax due May 1 (not April 15 like federal). Q2: Jun 15. Q3: Sep 15. Q4: Jan 15. Non-conformity to federal Q1 due date is a common missed deadline.</td></tr>
+  </tbody>
+</table>
+
+<div class="note" style="margin-top:20px"><strong>IRC §7503 - Weekend/Holiday Rule:</strong> When a deadline falls on a Saturday, Sunday, or legal holiday, it automatically moves to the next business day. Key 2026 shifts: Jan 31 → Feb 2 (Saturday); Mar 15 → Mar 16 (Sunday). Always verify actual dates for the specific tax year.</div>
+<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
+
+</div>
+
+<script>
 // ── Calendar data ──────────────────────────────────────────────────────────
-const DEADLINES = [ // JANUARY { month:1, day:15, cat:'personal', form:'Q4 2025 Est. Tax', desc:'Final 2025 estimated tax payment - individuals who did not pay via withholding. IRC §6654.', ext:null }, { month:2, day:2, cat:'corp', form:'W-2', desc:'W-2s to employees and SSA. Covers wages, tips, and other compensation. IRC §6051.', ext:null }, { month:2, day:2, cat:'corp', form:'1099-NEC', desc:'Nonemployee compensation $600+. To recipients and IRS. No extension available. IRC §6041A.', ext:null }, { month:2, day:2, cat:'corp', form:'1099-R', desc:'Retirement distributions, pensions, annuities, IRAs. To recipients and IRS. IRC §408.', ext:null }, { month:2, day:2, cat:'corp', form:'1099-K', desc:'Payment card and third-party network transactions. $600 threshold for 2026. IRC §6050W.', ext:null }, { month:2, day:2, cat:'corp', form:'Form 3921', desc:'ISO stock option exercises during 2025. To employees by Jan 31. IRC §6039.', ext:null }, { month:2, day:2, cat:'corp', form:'Form 940', desc:'Annual Federal Unemployment Tax (FUTA) return. Extended to Feb 10 if all deposits current. IRC §3301.', ext:'Feb 10 if deposits current' }, { month:2, day:2, cat:'corp', form:'Form 941 (Q4)', desc:'Q4 2025 quarterly payroll tax return. IRC §3111; IRC §3402.', ext:null }, // FEBRUARY { month:2, day:10, cat:'corp', form:'Form 940 (ext - if deposits current)', desc:'Extended deadline for Form 940 if all FUTA deposits made on time through December.', ext:null }, { month:2, day:28, cat:'corp', form:'1099-INT / 1099-DIV / 1099-B / 1099-MISC (paper)', desc:'Paper filing deadline for information returns: 1099-INT (interest $10+), 1099-DIV (dividends $10+), 1099-B (broker proceeds), 1099-MISC (rents, royalties, other). IRC §6049; §6042; §6045; §6041.', ext:null }, { month:2, day:28, cat:'corp', form:'Form 3921 (paper to IRS)', desc:'Paper Form 3921 to IRS for ISO exercises during 2025. E-file deadline March 31. IRC §6039.', ext:null }, // MARCH { month:3, day:1, cat:'state', form:'Delaware Franchise Tax', desc:'Annual franchise tax and report for Delaware corporations. Minimum $175.', ext:null }, { month:3, day:16, cat:'corp', form:'Form 1065 / 1120-S', desc:'Partnership and S-Corporation returns. 6-month extension available (Sep 15).', ext:'Sep 15' }, { month:3, day:31, cat:'corp', form:'1099-INT / 1099-DIV / 1099-B / 1099-MISC (e-file)', desc:'Electronic filing deadline for all information returns: 1099-INT, 1099-DIV, 1099-B, 1099-MISC, 1099-S, and other 1099 series. IRC §6049; §6042; §6045; §6041.', ext:null }, { month:3, day:31, cat:'corp', form:'Form 3921 (e-file to IRS)', desc:'Electronic Form 3921 to IRS for all ISO exercises during 2025. IRC §6039.', ext:null }, // APRIL { month:4, day:15, cat:'personal', form:'Form 1040', desc:'Individual income tax return. 6-month extension available (Oct 15).', ext:'Oct 15' }, { month:4, day:15, cat:'personal', form:'FinCEN 114 (FBAR)', desc:'Foreign Bank Account Report. Auto-extended to Oct 15 - no separate extension request needed.', ext:'Oct 15 (auto)' }, { month:4, day:15, cat:'personal', form:'Form 8938 (FATCA)', desc:'Filed with Form 1040. Extended with 1040 extension.', ext:'Oct 15' }, { month:4, day:15, cat:'personal', form:'Form 3520', desc:'Foreign trusts and gifts received from foreign persons', ext:'Oct 15' }, { month:4, day:15, cat:'corp', form:'Form 1120', desc:'C-Corporation income tax return (calendar year). Extension available (Oct 15).', ext:'Oct 15' }, { month:4, day:15, cat:'personal', form:'Q1 2026 Est. Tax (Individual)', desc:'First 2026 quarterly estimated tax payment - individuals. IRC §6654.', ext:null }, { month:4, day:15, cat:'state', form:'NY / NYC Mandatory First Installment (MFI)', desc:'New York State and New York City mandatory first installment of estimated tax due with the return or extension. Required for corporations with prior-year tax liability over $1,000. NY Tax Law §1085(d).', ext:null }, { month:4, day:15, cat:'corp', form:'Q1 2026 Est. Tax (Corporate)', desc:'First 2026 corporate estimated tax payment - C-Corporations. 25% of annual estimated tax. IRC §6655.', ext:null }, { month:4, day:30, cat:'corp', form:'Form 941 (Q1)', desc:'Q1 2026 payroll tax return', ext:null }, // MAY { month:5, day:1, cat:'state', form:'Florida Annual Report', desc:'All FL corporations, LLCs, partnerships. Filed at sunbiz.org. $138.75 for profit corps. Late fee $400.', ext:null }, { month:5, day:1, cat:'state', form:'Virginia Q1 Est. Tax', desc:'Virginia Q1 estimated tax due May 1 - does NOT follow federal April 15 date.', ext:null }, { month:5, day:15, cat:'state', form:'Texas Franchise Tax', desc:'Texas franchise tax (margin tax) return. Applies to most entities with Texas nexus.', ext:null }, { month:6, day:1, cat:'state', form:'Delaware LLC / LP / LLP Annual Tax', desc:'Flat $300 annual tax for Delaware LLCs, limited partnerships, and LLPs. Filed at icis.corp.delaware.gov. Late penalty applies. Separate from the Mar 1 corporation franchise tax.', ext:null }, // JUNE { month:6, day:15, cat:'personal', form:'Form 1040-NR (no US wages)', desc:'Nonresident aliens with no US-source wages or salary. Extended to Dec 15.', ext:'Dec 15' }, { month:6, day:15, cat:'personal', form:'Q2 2026 Est. Tax (Individual)', desc:'Second 2026 quarterly estimated tax payment - individuals. IRC §6654.', ext:null }, { month:6, day:15, cat:'corp', form:'Q2 2026 Est. Tax (Corporate)', desc:'Second 2026 corporate estimated tax payment - C-Corporations. 25% of annual estimated tax. IRC §6655.', ext:null }, { month:6, day:15, cat:'state', form:'California Q2 Est. Tax', desc:'CA second estimated tax payment (40% of annual). No Q3 payment for CA.', ext:null }, // Recurring / biennial { month:0, day:0, cat:'state', form:'NY Biennial Report', desc:'New York corporations and LLCs file a biennial report every two years on the anniversary of their formation month. $9 fee. Filed at filing.dos.ny.gov. Failure to file can result in dissolution.', ext:null }, // JULY { month:7, day:31, cat:'corp', form:'Form 941 (Q2)', desc:'Q2 2026 payroll tax return', ext:null }, // AUGUST - typically quiet // SEPTEMBER { month:9, day:15, cat:'corp', form:'Form 1065 / 1120-S (ext)', desc:'Extended deadline for partnership and S-Corp returns. Original due date Mar 16, 2026 (IRC §7503). IRC §6072(a).',, desc:'Extended deadline for partnership and S-Corp returns', ext:null }, { month:9, day:15, cat:'personal', form:'Q3 2026 Est. Tax (Individual)', desc:'Third 2026 quarterly estimated tax payment - individuals. IRC §6654.', ext:null }, { month:9, day:15, cat:'corp', form:'Q3 2026 Est. Tax (Corporate)', desc:'Third 2026 corporate estimated tax payment - C-Corporations. 25% of annual estimated tax. IRC §6655.', ext:null }, // OCTOBER { month:10, day:15, cat:'personal', form:'Form 1040 (ext)', desc:'Extended deadline for individual income tax return', ext:null }, { month:10, day:15, cat:'personal', form:'FinCEN 114 (ext)', desc:'Extended FBAR deadline - auto-granted, no filing required to obtain', ext:null }, { month:10, day:15, cat:'corp', form:'Form 1120 (ext)', desc:'Extended deadline for C-Corporation income tax return', ext:null }, { month:10, day:31, cat:'corp', form:'Form 941 (Q3)', desc:'Q3 2026 payroll tax return', ext:null }, // NOVEMBER - quiet // DECEMBER { month:12, day:15, cat:'corp', form:'Q4 2026 Est. Tax (Corporate)', desc:'Fourth and final 2026 corporate estimated tax payment - C-Corporations. Note: corporate Q4 is Dec 15, NOT January 15 like individuals. IRC §6655.', ext:null }, { month:12, day:15, cat:'personal', form:'Form 1040-NR (ext)', desc:'Extended deadline for nonresident aliens with no US wages', ext:null }, // JANUARY (next year) { month:13, day:15, cat:'personal', form:'Q4 2026 Est. Tax', desc:'Final 2026 quarterly estimated tax payment (due Jan 15, 2027)', ext:null }, { month:13, day:31, cat:'corp', form:'Form 941 (Q4 2026)', desc:'Q4 2026 payroll tax return (due Jan 31, 2027)', ext:null }, { month:13, day:31, cat:'corp', form:'W-2 / 1099-NEC (2026)', desc:'W-2s and 1099-NECs for tax year 2026 (due Jan 31, 2027)', ext:null },
-]; const MONTH_NAMES = ['','January','February','March','April','May','June','July','August','September','October','November','December','January 2027']; let activeFilter = 'all'; function filterCal(cat) { activeFilter = cat; document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); event.target.classList.add('active'); renderCal();
-} function renderCal() { const grid = document.getElementById('calGrid'); grid.innerHTML = ''; const today = new Date(); const todayMonth = today.getMonth() + 1; // 1-12 const todayDay = today.getDate(); const todayYear = today.getFullYear(); // Treat Jan 2027 deadlines as month 13 for comparison const currentMonthNum = todayYear >= 2027 ? 13 : todayMonth; // Group by month const months = {}; for (let m = 1; m <= 13; m++) months[m] = []; DEADLINES.forEach(d => { if (activeFilter === 'all' || d.cat === activeFilter || (activeFilter === 'ext' && d.ext)) { months[d.month].push(d); } }); for (let m = 1; m <= 13; m++) { // month 0 = recurring items shown separately const items = months[m]; const card = document.createElement('div'); card.className = 'month-card'; const hasItems = items.length > 0; const isPast = m < currentMonthNum; const isCurrent = m === currentMonthNum; card.style.opacity = isPast ? '0.55' : '1'; card.innerHTML = ` <div class="month-header" style="${isCurrent ? 'background:var(--coral)' : ''}"> <span class="month-name">${MONTH_NAMES[m]}</span> ${m === 13 ? '' : '<span class="month-year">2026</span>'} ${isCurrent ? '<span class="month-count" style="background:rgba(255,255,255,.25);color:#fff;padding:2px 7px">NOW</span>' : ''} ${hasItems && !isCurrent ? `<span class="month-count">${items.length}</span>` : ''} </div> <div class="month-body"> ${hasItems ? items.sort((a,b)=>a.day-b.day).map(d => ` <div class="deadline"> <div class="dl-date">${d.day}</div> <div class="dl-right"> <div><span class="tag ${d.cat}">${d.cat === 'corp' ? 'Corporate' : d.cat === 'personal' ? 'Personal' : d.cat === 'state' ? 'State' : 'Info'}</span></div> <div class="dl-form">${d.form}</div> <div class="dl-desc">${d.desc}</div> ${d.ext ? `<div class="dl-ext">Extended: ${d.ext}</div>` : ''} </div> </div>`).join('') : '<div class="empty-month">No major federal deadlines</div>'} </div>`; grid.appendChild(card); }
-} renderCal();
-</script> 
-<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="individual-extension.html" class="rl">Individual Extension</a><a href="corporate-extension.html" class="rl">Corporate Extension</a><a href="tax-extension-guide.html" class="rl">Tax Extension Guide</a><a href="penalty-calculator.html" class="rl">Penalty & Interest Calculator</a><a href="irs-payments-guide.html" class="rl">IRS Payment Methods</a></div></div>
+const DEADLINES = [
+  // JANUARY
+  { month:1, day:15, cat:'personal', form:'Q4 2025 Est. Tax', desc:'Final 2025 estimated tax payment - individuals who did not pay via withholding. IRC §6654.', ext:null },
+  { month:2, day:2, cat:'corp', form:'W-2', desc:'W-2s to employees and SSA. Covers wages, tips, and other compensation. IRC §6051.', ext:null },
+  { month:2, day:2, cat:'corp', form:'1099-NEC', desc:'Nonemployee compensation $600+. To recipients and IRS. No extension available. IRC §6041A.', ext:null },
+  { month:2, day:2, cat:'corp', form:'1099-R', desc:'Retirement distributions, pensions, annuities, IRAs. To recipients and IRS. IRC §408.', ext:null },
+  { month:2, day:2, cat:'corp', form:'1099-K', desc:'Payment card and third-party network transactions. $600 threshold for 2026. IRC §6050W.', ext:null },
+  { month:2, day:2, cat:'corp', form:'Form 3921', desc:'ISO stock option exercises during 2025. To employees by Jan 31. IRC §6039.', ext:null },
+  { month:2, day:2, cat:'corp', form:'Form 940', desc:'Annual Federal Unemployment Tax (FUTA) return. Extended to Feb 10 if all deposits current. IRC §3301.', ext:'Feb 10 if deposits current' },
+  { month:2, day:2, cat:'corp', form:'Form 941 (Q4)', desc:'Q4 2025 quarterly payroll tax return. IRC §3111; IRC §3402.', ext:null },
+
+  // FEBRUARY
+  { month:2, day:10, cat:'corp', form:'Form 940 (ext - if deposits current)', desc:'Extended deadline for Form 940 if all FUTA deposits made on time through December.', ext:null },
+  { month:2, day:28, cat:'corp', form:'1099-INT / 1099-DIV / 1099-B / 1099-MISC (paper)', desc:'Paper filing deadline for information returns: 1099-INT (interest $10+), 1099-DIV (dividends $10+), 1099-B (broker proceeds), 1099-MISC (rents, royalties, other). IRC §6049; §6042; §6045; §6041.', ext:null },
+  { month:2, day:28, cat:'corp', form:'Form 3921 (paper to IRS)', desc:'Paper Form 3921 to IRS for ISO exercises during 2025. E-file deadline March 31. IRC §6039.', ext:null },
+
+  // MARCH
+  { month:3, day:1, cat:'state', form:'Delaware Franchise Tax', desc:'Annual franchise tax and report for Delaware corporations. Minimum $175.', ext:null },
+  { month:3, day:16, cat:'corp', form:'Form 1065 / 1120-S', desc:'Partnership and S-Corporation returns. 6-month extension available (Sep 15).', ext:'Sep 15' },
+  { month:3, day:31, cat:'corp', form:'1099-INT / 1099-DIV / 1099-B / 1099-MISC (e-file)', desc:'Electronic filing deadline for all information returns: 1099-INT, 1099-DIV, 1099-B, 1099-MISC, 1099-S, and other 1099 series. IRC §6049; §6042; §6045; §6041.', ext:null },
+  { month:3, day:31, cat:'corp', form:'Form 3921 (e-file to IRS)', desc:'Electronic Form 3921 to IRS for all ISO exercises during 2025. IRC §6039.', ext:null },
+
+  // APRIL
+  { month:4, day:15, cat:'personal', form:'Form 1040', desc:'Individual income tax return. 6-month extension available (Oct 15).', ext:'Oct 15' },
+  { month:4, day:15, cat:'personal', form:'FinCEN 114 (FBAR)', desc:'Foreign Bank Account Report. Auto-extended to Oct 15 - no separate extension request needed.', ext:'Oct 15 (auto)' },
+  { month:4, day:15, cat:'personal', form:'Form 8938 (FATCA)', desc:'Filed with Form 1040. Extended with 1040 extension.', ext:'Oct 15' },
+  { month:4, day:15, cat:'personal', form:'Form 3520', desc:'Foreign trusts and gifts received from foreign persons', ext:'Oct 15' },
+  { month:4, day:15, cat:'corp', form:'Form 1120', desc:'C-Corporation income tax return (calendar year). Extension available (Oct 15).', ext:'Oct 15' },
+  { month:4, day:15, cat:'personal', form:'Q1 2026 Est. Tax (Individual)', desc:'First 2026 quarterly estimated tax payment - individuals. IRC §6654.', ext:null },
+  { month:4, day:15, cat:'state', form:'NY / NYC Mandatory First Installment (MFI)', desc:'New York State and New York City mandatory first installment of estimated tax due with the return or extension. Required for corporations with prior-year tax liability over $1,000. NY Tax Law §1085(d).', ext:null },
+  { month:4, day:15, cat:'corp', form:'Q1 2026 Est. Tax (Corporate)', desc:'First 2026 corporate estimated tax payment - C-Corporations. 25% of annual estimated tax. IRC §6655.', ext:null },
+  { month:4, day:30, cat:'corp', form:'Form 941 (Q1)', desc:'Q1 2026 payroll tax return', ext:null },
+
+  // MAY
+  { month:5, day:1, cat:'state', form:'Florida Annual Report', desc:'All FL corporations, LLCs, partnerships. Filed at sunbiz.org. $138.75 for profit corps. Late fee $400.', ext:null },
+  { month:5, day:1, cat:'state', form:'Virginia Q1 Est. Tax', desc:'Virginia Q1 estimated tax due May 1 - does NOT follow federal April 15 date.', ext:null },
+  { month:5, day:15, cat:'state', form:'Texas Franchise Tax', desc:'Texas franchise tax (margin tax) return. Applies to most entities with Texas nexus.', ext:null },
+
+  { month:6, day:1, cat:'state', form:'Delaware LLC / LP / LLP Annual Tax', desc:'Flat $300 annual tax for Delaware LLCs, limited partnerships, and LLPs. Filed at icis.corp.delaware.gov. Late penalty applies. Separate from the Mar 1 corporation franchise tax.', ext:null },
+
+  // JUNE
+  { month:6, day:15, cat:'personal', form:'Form 1040-NR (no US wages)', desc:'Nonresident aliens with no US-source wages or salary. Extended to Dec 15.', ext:'Dec 15' },
+  { month:6, day:15, cat:'personal', form:'Q2 2026 Est. Tax (Individual)', desc:'Second 2026 quarterly estimated tax payment - individuals. IRC §6654.', ext:null },
+  { month:6, day:15, cat:'corp', form:'Q2 2026 Est. Tax (Corporate)', desc:'Second 2026 corporate estimated tax payment - C-Corporations. 25% of annual estimated tax. IRC §6655.', ext:null },
+  { month:6, day:15, cat:'state', form:'California Q2 Est. Tax', desc:'CA second estimated tax payment (40% of annual). No Q3 payment for CA.', ext:null },
+
+  // Recurring / biennial
+  { month:0, day:0, cat:'state', form:'NY Biennial Report', desc:'New York corporations and LLCs file a biennial report every two years on the anniversary of their formation month. $9 fee. Filed at filing.dos.ny.gov. Failure to file can result in dissolution.', ext:null },
+
+  // JULY
+  { month:7, day:31, cat:'corp', form:'Form 941 (Q2)', desc:'Q2 2026 payroll tax return', ext:null },
+
+  // AUGUST - typically quiet
+  // SEPTEMBER
+  { month:9, day:15, cat:'corp', form:'Form 1065 / 1120-S (ext)', desc:'Extended deadline for partnership and S-Corp returns. Original due date Mar 16, 2026 (IRC §7503). IRC §6072(a).',, desc:'Extended deadline for partnership and S-Corp returns', ext:null },
+  { month:9, day:15, cat:'personal', form:'Q3 2026 Est. Tax (Individual)', desc:'Third 2026 quarterly estimated tax payment - individuals. IRC §6654.', ext:null },
+  { month:9, day:15, cat:'corp', form:'Q3 2026 Est. Tax (Corporate)', desc:'Third 2026 corporate estimated tax payment - C-Corporations. 25% of annual estimated tax. IRC §6655.', ext:null },
+
+  // OCTOBER
+  { month:10, day:15, cat:'personal', form:'Form 1040 (ext)', desc:'Extended deadline for individual income tax return', ext:null },
+  { month:10, day:15, cat:'personal', form:'FinCEN 114 (ext)', desc:'Extended FBAR deadline - auto-granted, no filing required to obtain', ext:null },
+  { month:10, day:15, cat:'corp', form:'Form 1120 (ext)', desc:'Extended deadline for C-Corporation income tax return', ext:null },
+  { month:10, day:31, cat:'corp', form:'Form 941 (Q3)', desc:'Q3 2026 payroll tax return', ext:null },
+
+  // NOVEMBER - quiet
+
+  // DECEMBER
+  { month:12, day:15, cat:'corp', form:'Q4 2026 Est. Tax (Corporate)', desc:'Fourth and final 2026 corporate estimated tax payment - C-Corporations. Note: corporate Q4 is Dec 15, NOT January 15 like individuals. IRC §6655.', ext:null },
+  { month:12, day:15, cat:'personal', form:'Form 1040-NR (ext)', desc:'Extended deadline for nonresident aliens with no US wages', ext:null },
+
+  // JANUARY (next year)
+  { month:13, day:15, cat:'personal', form:'Q4 2026 Est. Tax', desc:'Final 2026 quarterly estimated tax payment (due Jan 15, 2027)', ext:null },
+  { month:13, day:31, cat:'corp', form:'Form 941 (Q4 2026)', desc:'Q4 2026 payroll tax return (due Jan 31, 2027)', ext:null },
+  { month:13, day:31, cat:'corp', form:'W-2 / 1099-NEC (2026)', desc:'W-2s and 1099-NECs for tax year 2026 (due Jan 31, 2027)', ext:null },
+];
+
+const MONTH_NAMES = ['','January','February','March','April','May','June','July','August','September','October','November','December','January 2027'];
+
+let activeFilter = 'all';
+
+function filterCal(cat) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderCal();
+}
+
+function renderCal() {
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  const today = new Date();
+  const todayMonth = today.getMonth() + 1; // 1-12
+  const todayDay = today.getDate();
+  const todayYear = today.getFullYear();
+  // Treat Jan 2027 deadlines as month 13 for comparison
+  const currentMonthNum = todayYear >= 2027 ? 13 : todayMonth;
+
+  // Group by month
+  const months = {};
+  for (let m = 1; m <= 13; m++) months[m] = [];
+  DEADLINES.forEach(d => {
+    if (activeFilter === 'all' || d.cat === activeFilter ||
+        (activeFilter === 'ext' && d.ext)) {
+      months[d.month].push(d);
+    }
+  });
+
+  for (let m = 1; m <= 13; m++) { // month 0 = recurring items shown separately
+    const items = months[m];
+    const card = document.createElement('div');
+    card.className = 'month-card';
+
+    const hasItems = items.length > 0;
+    const isPast = m < currentMonthNum;
+    const isCurrent = m === currentMonthNum;
+    card.style.opacity = isPast ? '0.55' : '1';
+    card.innerHTML = `
+      <div class="month-header" style="${isCurrent ? 'background:var(--coral)' : ''}">
+        <span class="month-name">${MONTH_NAMES[m]}</span>
+        ${m === 13 ? '' : '<span class="month-year">2026</span>'}
+        ${isCurrent ? '<span class="month-count" style="background:rgba(255,255,255,.25);color:#fff;padding:2px 7px">NOW</span>' : ''}
+        ${hasItems && !isCurrent ? `<span class="month-count">${items.length}</span>` : ''}
+      </div>
+      <div class="month-body">
+        ${hasItems ? items.sort((a,b)=>a.day-b.day).map(d => `
+          <div class="deadline">
+            <div class="dl-date">${d.day}</div>
+            <div class="dl-right">
+              <div><span class="tag ${d.cat}">${d.cat === 'corp' ? 'Corporate' : d.cat === 'personal' ? 'Personal' : d.cat === 'state' ? 'State' : 'Info'}</span></div>
+              <div class="dl-form">${d.form}</div>
+              <div class="dl-desc">${d.desc}</div>
+              ${d.ext ? `<div class="dl-ext">Extended: ${d.ext}</div>` : ''}
+            </div>
+          </div>`).join('') : '<div class="empty-month">No major federal deadlines</div>'}
+      </div>`;
+    grid.appendChild(card);
+  }
+}
+
+renderCal();
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
 </body>
 </html>
