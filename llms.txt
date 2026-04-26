@@ -106,3 +106,4 @@
 - section-199a-guide.html: QBI deduction deep dive - IRC §199A W-2 wage limitation, UBIA, 50% test, 25%+2.5% test, SSTB phaseout, aggregation elections, permanent under OBBBA.
 - business-sale-planning.html: Business sale planning - §338(h)(10) deemed asset election, §336(e), asset vs. stock comparison, §1060 price allocation 7 classes, §453 installment sales, earnout tax treatment.
 - international-information-returns.html: International information returns map - Forms 5471 5472 8865 8858 3520 3520-A 8938 FinCEN 114 8621, who files, thresholds, penalties, statute of limitations suspension.
+- international-info-returns.html: International info returns compliance map - Forms 5471 5472 8865 8858 3520 3520-A 8938 8621, FBAR FinCEN 114, penalties, SOL trap.
