@@ -84,7 +84,6 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 4
 </nav>
 
 <div class="ph"><div class="phi">
-  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
   <h1>IRS Penalty & Interest Calculator</h1>
   <div class="sub">Failure-to-File &nbsp;&bull;&nbsp; Failure-to-Pay &nbsp;&bull;&nbsp; Accuracy Penalty &nbsp;&bull;&nbsp; Underpayment Interest &nbsp;&bull;&nbsp; 2026</div>
   <div class="badges">
@@ -326,7 +325,7 @@ function calc(){
 
   h += `<div class="src">Authority: IRC §6651(a)(1) (failure-to-file, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay, 0.5%/month max 25%); IRC §6651(c)(1) (FTF reduced by FTP when both apply); IRC §6601 (underpayment interest, fed short-term rate +3); IRC §6662(a) (accuracy-related penalty, 20%); IRC §6662(h) (40% gross valuation misstatement); IRS Notice 2025-89 (Q2 2026 interest rate 8% - verify current quarter). Interest rate changes quarterly per IRC §6621.</div>`;
   h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
-  h += `<div class="disc">A pro bono contribution from <a href="https://tk.cpa" target="_blank">tk.cpa</a> to the taxpaying public. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>`;
+  h += `<div class="disc">A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>`;
 
   rb.innerHTML = h;
 }
