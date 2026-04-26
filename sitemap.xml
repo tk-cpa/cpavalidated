@@ -810,4 +810,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://cpavalidated.com/asc-740-tax-provision.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/rmd-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/form-5472-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/section-163j-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
