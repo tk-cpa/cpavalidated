@@ -37,6 +37,15 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 .nav-cta:hover{opacity:.88!important}
 @media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
 /* === end canonical nav === */
+
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
 </style>
 <style>
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
@@ -66,6 +75,18 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </a>
   <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
+<div class="cat-nav" role="navigation" aria-label="Topic categories">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html" class="active">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
 <div class="ph"><div class="phi">
   <h1>The Section 962 Election: Accessing Corporate Tax Rates on CFC Income as an Individual</h1>
   <div class="sub">21% Rate on Subpart F &amp; NCTI &nbsp;&bull;&nbsp; §250 Deduction Access &nbsp;&bull;&nbsp; Foreign Tax Credit &nbsp;&bull;&nbsp; The Second-Layer Tax Trap</div>
