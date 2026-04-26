@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estate & Gift Tax Calculator 2026 | CPA Validated</title>
-<meta name="description" content="2026 estate and gift tax calculator. OBBBA permanent $13.99M+ exemption. Annual exclusion. Portability DSUE. 40% rate on excess. State estate taxes. CPA-validated. IRC 2001, 2010, 2503.">
+<meta name="description" content="2026 estate and gift tax calculator. OBBBA permanent $15M exemption (IRC 2010, P.L. 119-21). Annual exclusion. Portability DSUE. 40% rate on excess. State estate taxes. CPA-validated. IRC 2001, 2010, 2503.">
 <link rel="canonical" href="https://cpavalidated.com/estate-tax-calculator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -134,8 +134,8 @@ function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocal
 function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
 
 // 2026 federal exemption - OBBBA made TCJA permanent, inflation-adjusted
-// 2025 exemption was $13,990,000; 2026 estimated ~$14,380,000
-const FED_EXEMPTION_2026 = 14380000;
+// OBBBA P.L. 119-21 set the 2026 federal exemption at exactly $15,000,000 (IRC 2010(c)(3)); indexed from 2027
+const FED_EXEMPTION_2026 = 15000000;
 const ANNUAL_EXCLUSION_2026 = 19000;
 const ESTATE_TAX_RATE = 0.40;
 
@@ -232,7 +232,7 @@ function calc(){
   if(stateTax>0){
     h+=flag('amber','!',`<strong>State estate tax of ${fmt(stateTax)} applies in ${sp.name}.</strong> State estate taxes are separate from federal, not deductible federally, and often have lower exemptions. The ${sp.name} exemption is significantly below the federal ${fmt(FED_EXEMPTION_2026)} exemption. Domicile planning (changing state of residence before death) is a legitimate and frequently used strategy.`);
   }
-  h+=flag('blue','i',`<strong>OBBBA made the high exemption permanent.</strong> The Tax Cuts and Jobs Act temporarily doubled the estate tax exemption. OBBBA (P.L. 119-21) made this permanent - the exemption will not revert to pre-TCJA levels. The 2026 exemption of approximately ${fmt(FED_EXEMPTION_2026)} is inflation-adjusted annually. Gifts made to use the higher exemption during the TCJA window are not clawed back under the anti-clawback regulations (Treas. Reg. 20.2010-1(c)).`);
+  h+=flag('blue','i',`<strong>OBBBA made the $15M exemption permanent.</strong> The Tax Cuts and Jobs Act temporarily doubled the estate tax exemption. OBBBA (P.L. 119-21) made this permanent and set the 2026 exemption at exactly $15,000,000 per individual (IRC 2010(c)(3)). The exemption is indexed for inflation beginning in 2027. Gifts made to use the higher exemption during the TCJA window are not clawed back under the anti-clawback regulations (Treas. Reg. 20.2010-1(c)).`);
   h+=flag('blue','i','<strong>Portability (DSUE) must be elected on Form 706.</strong> A surviving spouse can use the deceased spouse\'s unused exemption (DSUE) only if a timely Form 706 was filed for the first spouse to die, even if no estate tax is owed. Rev. Proc. 2022-32 allows a simplified late portability election within 5 years of death for estates that otherwise would not be required to file. Do not miss this election.');
 
   h+=`<div class="src">IRC 2001 (estate tax imposed - 40% rate); IRC 2010 (unified credit - applicable exclusion amount, 2026 exemption); IRC 2010(c)(4) (portability - DSUE); IRC 2503(b) (annual gift exclusion, inflation-adjusted); IRC 2053 (deduction for debts and expenses); IRC 2055 (charitable deduction); IRC 2056 (unlimited marital deduction - US citizen spouse); Treas. Reg. 20.2010-1(c) (anti-clawback - gifts during high-exemption period not clawed back); Rev. Proc. 2022-32 (late portability election, 5-year window); OBBBA P.L. 119-21 (TCJA estate tax provisions made permanent).</div>`;
