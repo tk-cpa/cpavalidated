@@ -143,3 +143,7 @@
 - form-5472-guide.html: Form 5472 guide - 25%-foreign-owned US corporations, foreign-owned SMLLC disregarded entities pro forma 1120, $25,000 per-failure penalty, reportable transactions, related party definition.
 - section-163j-guide.html: Section 163(j) business interest limitation - 30% ATI cap, OBBBA EBITDA restoration permanent for tax years after 2024, small business exemption $31M, RPTB irrevocable election, EBIE/ETI partnership rules.
 - valuation-allowance-guide.html: ASC 740 valuation allowance - more-likely-than-not standard, positive and negative evidence, cumulative loss presumption, scheduling, reversals, audit defense.
+- hsa-guide.html: HSA guide - $4,400/$8,750 2026 limits, HDHP eligibility, triple tax benefit mechanics, Medicare coordination trap, HSA vs FSA vs HRA.
+- short-term-rental-guide.html: Short-term rental tax guide - 7-day average rule (Treas. Reg. 1.469-1T), active vs passive classification, material participation, SE tax exposure, 14-day personal use rule.
+- cancellation-of-debt-guide.html: COD income guide - IRC §108 six exclusions (insolvency, bankruptcy, QRPBI, farm debt), insolvency test computation, attribute reduction ordering, Form 1099-C, Form 982.
+- energy-credits-guide.html: Energy credits guide - §30D EV $7,500 new/$4,000 used, income limits, §25C home energy 30% with $3,200 annual cap, §25D residential solar 30%, §48 commercial ITC, §6418 transferability.
