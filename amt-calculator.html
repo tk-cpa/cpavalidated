@@ -57,154 +57,22 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
-  </a>
-  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi">
-  <h1>Alternative Minimum Tax (AMT) Calculator 2026</h1>
-  <div class="sub">AMTI computation, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. AMT vs. regular tax comparison. Form 6251.</div>
-  <div class="badges"><span class="badge">IRC 55</span><span class="badge">IRC 56 adjustments</span><span class="badge">IRC 57 preferences</span><span class="badge">IRC 58 exemption</span><span class="badge">Form 6251</span></div>
+<div class="ph"><div class="phi"> <h1>Alternative Minimum Tax (AMT) Calculator 2026</h1> <div class="sub">AMTI computation, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. AMT vs. regular tax comparison. Form 6251.</div> <div class="badges"><span class="badge">IRC 55</span><span class="badge">IRC 56 adjustments</span><span class="badge">IRC 57 preferences</span><span class="badge">IRC 58 exemption</span><span class="badge">Form 6251</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap">
-
-<div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Filing Status &amp; Regular Tax</h2></div>
-  <div class="cb">
-    <div class="fg3">
-      <div class="f1"><label>Filing Status</label>
-        <select class="fc" id="fs" onchange="calc()">
-          <option value="single">Single / Head of Household</option>
-          <option value="mfj" selected>Married Filing Jointly</option>
-          <option value="mfs">Married Filing Separately</option>
-        </select>
-      </div>
-      <div class="f1"><label>Regular Taxable Income ($)</label>
-        <input type="number" class="fc" id="rti" value="400000" oninput="calc()">
-        <div class="hint">Form 1040 Line 15 - after all deductions</div>
-      </div>
-      <div class="f1"><label>Regular Income Tax ($)</label>
-        <input type="number" class="fc" id="regt" value="100000" oninput="calc()">
-        <div class="hint">Form 1040 Line 16 - before credits</div>
-      </div>
-    </div>
-  </div>
+<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Filing Status &amp; Regular Tax</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Filing Status</label> <select class="fc" id="fs" onchange="calc()"> <option value="single">Single / Head of Household</option> <option value="mfj" selected>Married Filing Jointly</option> <option value="mfs">Married Filing Separately</option> </select> </div> <div class="f1"><label>Regular Taxable Income ($)</label> <input type="number" class="fc" id="rti" value="400000" oninput="calc()"> <div class="hint">Form 1040 Line 15 - after all deductions</div> </div> <div class="f1"><label>Regular Income Tax ($)</label> <input type="number" class="fc" id="regt" value="100000" oninput="calc()"> <div class="hint">Form 1040 Line 16 - before credits</div> </div> </div> </div>
+</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>AMT Adjustments &amp; Preference Items</h2></div> <div class="cb"> <div class="fg2"> <div class="f1"><label>SALT Deducted on Schedule A ($)</label> <input type="number" class="fc" id="salt" value="10000" oninput="calc()"> <div class="hint">Added back for AMT. IRC 56(b)(1)(A)(ii). Capped at $10K under TCJA/OBBBA for regular tax but fully added back for AMT.</div> </div> <div class="f1"><label>ISO Exercise Spread ($)</label> <input type="number" class="fc" id="iso" value="0" oninput="calc()"> <div class="hint">FMV minus exercise price on ISOs exercised but not sold. Largest single AMT trigger. IRC 56(b)(3).</div> </div> </div> <div class="fg2"> <div class="f1"><label>Depreciation Adjustment ($)</label> <input type="number" class="fc" id="dep" value="0" oninput="calc()"> <div class="hint">MACRS minus ADS depreciation on real property and personal property. IRC 56(a)(1).</div> </div> <div class="f1"><label>Other Preferences &amp; Adjustments ($)</label> <input type="number" class="fc" id="other" value="0" oninput="calc()"> <div class="hint">Private activity bond interest, excess depletion, other IRC 57 items.</div> </div> </div> <div class="fg2"> <div class="f1"><label>LTCG / Qualified Dividends in AMTI ($)</label> <input type="number" class="fc" id="ltcg" value="0" oninput="calc()"> <div class="hint">These retain preferential rates (0/15/20%) within AMT. Enter to preserve the lower rate calculation.</div> </div> <div class="f1"><label>Prior Year AMT Credit - Form 8801 ($)</label> <input type="number" class="fc" id="cred" value="0" oninput="calc()"> <div class="hint">AMT paid in prior years on deferral items generates a credit usable in regular tax years.</div> </div> </div> </div>
+</div> <div class="card"> <div class="ch"><div class="sb">3</div><h2>Results</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
 </div>
-
-<div class="card">
-  <div class="ch"><div class="sb">2</div><h2>AMT Adjustments &amp; Preference Items</h2></div>
-  <div class="cb">
-    <div class="fg2">
-      <div class="f1"><label>SALT Deducted on Schedule A ($)</label>
-        <input type="number" class="fc" id="salt" value="10000" oninput="calc()">
-        <div class="hint">Added back for AMT. IRC 56(b)(1)(A)(ii). Capped at $10K under TCJA/OBBBA for regular tax but fully added back for AMT.</div>
-      </div>
-      <div class="f1"><label>ISO Exercise Spread ($)</label>
-        <input type="number" class="fc" id="iso" value="0" oninput="calc()">
-        <div class="hint">FMV minus exercise price on ISOs exercised but not sold. Largest single AMT trigger. IRC 56(b)(3).</div>
-      </div>
-    </div>
-    <div class="fg2">
-      <div class="f1"><label>Depreciation Adjustment ($)</label>
-        <input type="number" class="fc" id="dep" value="0" oninput="calc()">
-        <div class="hint">MACRS minus ADS depreciation on real property and personal property. IRC 56(a)(1).</div>
-      </div>
-      <div class="f1"><label>Other Preferences &amp; Adjustments ($)</label>
-        <input type="number" class="fc" id="other" value="0" oninput="calc()">
-        <div class="hint">Private activity bond interest, excess depletion, other IRC 57 items.</div>
-      </div>
-    </div>
-    <div class="fg2">
-      <div class="f1"><label>LTCG / Qualified Dividends in AMTI ($)</label>
-        <input type="number" class="fc" id="ltcg" value="0" oninput="calc()">
-        <div class="hint">These retain preferential rates (0/15/20%) within AMT. Enter to preserve the lower rate calculation.</div>
-      </div>
-      <div class="f1"><label>Prior Year AMT Credit - Form 8801 ($)</label>
-        <input type="number" class="fc" id="cred" value="0" oninput="calc()">
-        <div class="hint">AMT paid in prior years on deferral items generates a credit usable in regular tax years.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="ch"><div class="sb">3</div><h2>Results</h2></div>
-  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
-</div>
-</div>
-
-<div class="related"><div style="max-width:920px;margin:0 auto">
-  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
-  <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a>
-  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
-  <a href="home-office-calculator.html" class="rl">Home Office Calculator</a>
-  <a href="index.html" class="rl">All Tools</a>
-</div></div>
-
-<script>
+</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a> <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a> <a href="home-office-calculator.html" class="rl">Home Office Calculator</a> <a href="index.html" class="rl">All Tools</a>
+</div></div> <script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
 function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
 const P={single:{ex:88100,ps:618725},mfj:{ex:137000,ps:1237450},mfs:{ex:68500,ps:618725}};
-function calc(){
-  const fs=document.getElementById('fs').value;
-  const rti=parseFloat(document.getElementById('rti').value)||0;
-  const regt=parseFloat(document.getElementById('regt').value)||0;
-  const salt=parseFloat(document.getElementById('salt').value)||0;
-  const iso=parseFloat(document.getElementById('iso').value)||0;
-  const dep=parseFloat(document.getElementById('dep').value)||0;
-  const other=parseFloat(document.getElementById('other').value)||0;
-  const ltcg=parseFloat(document.getElementById('ltcg').value)||0;
-  const cred=parseFloat(document.getElementById('cred').value)||0;
-  const p=P[fs];
-  const totalAdj=salt+iso+dep+other;
-  const amti=rti+totalAdj;
-  let ex=p.ex;
-  if(amti>p.ps){ex=Math.max(0,ex-(amti-p.ps)*0.25);}
-  const amtiOE=Math.max(0,amti-ex);
-  const ordAMTI=Math.max(0,amtiOE-Math.min(ltcg,amtiOE));
-  let tmt=ordAMTI<=232600?ordAMTI*0.26:232600*0.26+(ordAMTI-232600)*0.28;
-  tmt+=Math.min(ltcg,amtiOE)*0.20;
-  const amtLiab=Math.max(0,tmt-regt);
-  const amtNet=Math.max(0,amtLiab-cred);
-  const total=regt+amtNet;
-  const inAMT=amtLiab>0;
-  const rb=document.getElementById('res');
-  let h='';
-  h+=`<div class="hero4">
-    <div class="h4"><div class="h4l">AMTI</div><div class="h4v coral">${fmt(amti)}</div><div class="h4s">Alt Min Tax Income</div></div>
-    <div class="h4"><div class="h4l">Tentative Min Tax</div><div class="h4v ${inAMT?'amber':'green'}">${fmt(tmt)}</div><div class="h4s">26%/28% rate</div></div>
-    <div class="h4"><div class="h4l">AMT Owed</div><div class="h4v ${amtNet>0?'red':'green'}">${fmt(amtNet)}</div><div class="h4s">${amtNet>0?'Additional tax':'No AMT'}</div></div>
-    <div class="h4"><div class="h4l">Total Tax</div><div class="h4v">${fmt(total)}</div><div class="h4s">Eff. rate ${rti>0?((total/rti)*100).toFixed(1):'0.0'}%</div></div>
-  </div>`;
-  h+=`<div class="sum-box"><div class="sum-title">AMT Computation - Form 6251</div>
-    <div class="srow"><span class="sl">Regular taxable income</span><span class="sv">${fmt(rti)}</span></div>
-    <div class="srow"><span class="sl">+ SALT add-back (IRC 56(b)(1)(A)(ii))</span><span class="sv ${salt>0?'amber':''}">${fmt(salt)}</span></div>
-    <div class="srow"><span class="sl">+ ISO exercise spread (IRC 56(b)(3))</span><span class="sv ${iso>0?'amber':''}">${fmt(iso)}</span></div>
-    <div class="srow"><span class="sl">+ Depreciation adj. (IRC 56(a)(1))</span><span class="sv">${fmt(dep)}</span></div>
-    <div class="srow"><span class="sl">+ Other preferences (IRC 57)</span><span class="sv">${fmt(other)}</span></div>
-    <div class="srow"><span class="sl">= AMTI</span><span class="sv coral">${fmt(amti)}</span></div>
-    <div class="srow"><span class="sl">- Exemption ($${p.ex.toLocaleString()} base${amti>p.ps?' - phaseout':''})</span><span class="sv">${fmt(ex)}</span></div>
-    <div class="srow"><span class="sl">= AMTI over exemption</span><span class="sv">${fmt(amtiOE)}</span></div>
-    <div class="srow"><span class="sl">Tentative min. tax (26% / 28%)</span><span class="sv">${fmt(tmt)}</span></div>
-    <div class="srow"><span class="sl">Less: regular tax</span><span class="sv">${fmt(regt)}</span></div>
-    <div class="srow"><span class="sl">AMT before credits</span><span class="sv ${amtLiab>0?'red':'green'}">${fmt(amtLiab)}</span></div>
-    ${cred>0?`<div class="srow"><span class="sl">Less: Form 8801 credit</span><span class="sv green">${fmt(cred)}</span></div>`:''}
-    <div class="srow"><span class="sl"><strong>AMT owed</strong></span><span class="sv ${amtNet>0?'red':'green'}">${fmt(amtNet)}</span></div>
-  </div>`;
-  if(!inAMT)h+=flag('green','v','<strong>No AMT.</strong> Regular tax exceeds tentative minimum tax. No additional AMT owed.');
-  else h+=flag('red','!',`<strong>AMT of ${fmt(amtNet)} applies.</strong> Tentative min. tax ${fmt(tmt)} exceeds regular tax ${fmt(regt)}. AMT paid on deferral items (ISO exercises) generates a Form 8801 credit usable in future years.`);
-  if(iso>0)h+=flag('amber','!','<strong>ISO exercise is the top AMT trigger.</strong> The ISO spread is fully includible in AMTI under IRC 56(b)(3) even though no regular income is recognized. Strategies: exercise ISOs across multiple years, sell in same year to trigger ordinary income instead, or model early exercise under 83(b).');
-  if(amti>p.ps){const reduced=p.ex-ex;h+=flag('amber','!',`<strong>Exemption phaseout applies.</strong> AMTI of ${fmt(amti)} exceeds phaseout threshold $${p.ps.toLocaleString()}. Exemption reduced by ${fmt(reduced)} (25 cents per dollar over threshold). Remaining exemption: ${fmt(ex)}.`);}
-  h+=flag('blue','i','<strong>2026 parameters.</strong> OBBBA (P.L. 119-21) made TCJA AMT provisions permanent. Figures used are based on 2025 IRS parameters (Rev. Proc. 2024-40) - 2026 will be adjusted for inflation. Verify exact 2026 exemption amounts against IRS Rev. Proc. 2025-32 before filing.');
-  h+=`<div class="src">IRC 55 (AMT imposed); IRC 56 (AMT adjustments); IRC 56(b)(1)(A)(ii) (SALT add-back); IRC 56(b)(3) (ISO add-back); IRC 57 (preference items); IRC 58 (exemption amount); IRC 53 (minimum tax credit); OBBBA P.L. 119-21 (TCJA AMT permanent); Form 6251; Rev. Proc. 2024-40 (2025 inflation amounts used as baseline).</div>`;
-  h+=`<div class="disc">Estimate only. Passive activity adjustments, depletion, foreign tax credit interaction, and other AMT items require full Form 6251. Consult a CPA. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
-  rb.innerHTML=h;
+function calc(){ const fs=document.getElementById('fs').value; const rti=parseFloat(document.getElementById('rti').value)||0; const regt=parseFloat(document.getElementById('regt').value)||0; const salt=parseFloat(document.getElementById('salt').value)||0; const iso=parseFloat(document.getElementById('iso').value)||0; const dep=parseFloat(document.getElementById('dep').value)||0; const other=parseFloat(document.getElementById('other').value)||0; const ltcg=parseFloat(document.getElementById('ltcg').value)||0; const cred=parseFloat(document.getElementById('cred').value)||0; const p=P[fs]; const totalAdj=salt+iso+dep+other; const amti=rti+totalAdj; let ex=p.ex; if(amti>p.ps){ex=Math.max(0,ex-(amti-p.ps)*0.25);} const amtiOE=Math.max(0,amti-ex); const ordAMTI=Math.max(0,amtiOE-Math.min(ltcg,amtiOE)); let tmt=ordAMTI<=232600?ordAMTI*0.26:232600*0.26+(ordAMTI-232600)*0.28; tmt+=Math.min(ltcg,amtiOE)*0.20; const amtLiab=Math.max(0,tmt-regt); const amtNet=Math.max(0,amtLiab-cred); const total=regt+amtNet; const inAMT=amtLiab>0; const rb=document.getElementById('res'); let h=''; h+=`<div class="hero4"> <div class="h4"><div class="h4l">AMTI</div><div class="h4v coral">${fmt(amti)}</div><div class="h4s">Alt Min Tax Income</div></div> <div class="h4"><div class="h4l">Tentative Min Tax</div><div class="h4v ${inAMT?'amber':'green'}">${fmt(tmt)}</div><div class="h4s">26%/28% rate</div></div> <div class="h4"><div class="h4l">AMT Owed</div><div class="h4v ${amtNet>0?'red':'green'}">${fmt(amtNet)}</div><div class="h4s">${amtNet>0?'Additional tax':'No AMT'}</div></div> <div class="h4"><div class="h4l">Total Tax</div><div class="h4v">${fmt(total)}</div><div class="h4s">Eff. rate ${rti>0?((total/rti)*100).toFixed(1):'0.0'}%</div></div> </div>`; h+=`<div class="sum-box"><div class="sum-title">AMT Computation - Form 6251</div> <div class="srow"><span class="sl">Regular taxable income</span><span class="sv">${fmt(rti)}</span></div> <div class="srow"><span class="sl">+ SALT add-back (IRC 56(b)(1)(A)(ii))</span><span class="sv ${salt>0?'amber':''}">${fmt(salt)}</span></div> <div class="srow"><span class="sl">+ ISO exercise spread (IRC 56(b)(3))</span><span class="sv ${iso>0?'amber':''}">${fmt(iso)}</span></div> <div class="srow"><span class="sl">+ Depreciation adj. (IRC 56(a)(1))</span><span class="sv">${fmt(dep)}</span></div> <div class="srow"><span class="sl">+ Other preferences (IRC 57)</span><span class="sv">${fmt(other)}</span></div> <div class="srow"><span class="sl">= AMTI</span><span class="sv coral">${fmt(amti)}</span></div> <div class="srow"><span class="sl">- Exemption ($${p.ex.toLocaleString()} base${amti>p.ps?' - phaseout':''})</span><span class="sv">${fmt(ex)}</span></div> <div class="srow"><span class="sl">= AMTI over exemption</span><span class="sv">${fmt(amtiOE)}</span></div> <div class="srow"><span class="sl">Tentative min. tax (26% / 28%)</span><span class="sv">${fmt(tmt)}</span></div> <div class="srow"><span class="sl">Less: regular tax</span><span class="sv">${fmt(regt)}</span></div> <div class="srow"><span class="sl">AMT before credits</span><span class="sv ${amtLiab>0?'red':'green'}">${fmt(amtLiab)}</span></div> ${cred>0?`<div class="srow"><span class="sl">Less: Form 8801 credit</span><span class="sv green">${fmt(cred)}</span></div>`:''} <div class="srow"><span class="sl"><strong>AMT owed</strong></span><span class="sv ${amtNet>0?'red':'green'}">${fmt(amtNet)}</span></div> </div>`; if(!inAMT)h+=flag('green','v','<strong>No AMT.</strong> Regular tax exceeds tentative minimum tax. No additional AMT owed.'); else h+=flag('red','!',`<strong>AMT of ${fmt(amtNet)} applies.</strong> Tentative min. tax ${fmt(tmt)} exceeds regular tax ${fmt(regt)}. AMT paid on deferral items (ISO exercises) generates a Form 8801 credit usable in future years.`); if(iso>0)h+=flag('amber','!','<strong>ISO exercise is the top AMT trigger.</strong> The ISO spread is fully includible in AMTI under IRC 56(b)(3) even though no regular income is recognized. Strategies: exercise ISOs across multiple years, sell in same year to trigger ordinary income instead, or model early exercise under 83(b).'); if(amti>p.ps){const reduced=p.ex-ex;h+=flag('amber','!',`<strong>Exemption phaseout applies.</strong> AMTI of ${fmt(amti)} exceeds phaseout threshold $${p.ps.toLocaleString()}. Exemption reduced by ${fmt(reduced)} (25 cents per dollar over threshold). Remaining exemption: ${fmt(ex)}.`);} h+=flag('blue','i','<strong>2026 parameters.</strong> OBBBA (P.L. 119-21) made TCJA AMT provisions permanent. Figures used are based on 2025 IRS parameters (Rev. Proc. 2024-40) - 2026 will be adjusted for inflation. Verify exact 2026 exemption amounts against IRS Rev. Proc. 2025-32 before filing.'); h+=`<div class="src">IRC 55 (AMT imposed); IRC 56 (AMT adjustments); IRC 56(b)(1)(A)(ii) (SALT add-back); IRC 56(b)(3) (ISO add-back); IRC 57 (preference items); IRC 58 (exemption amount); IRC 53 (minimum tax credit); OBBBA P.L. 119-21 (TCJA AMT permanent); Form 6251; Rev. Proc. 2024-40 (2025 inflation amounts used as baseline).</div>`; h+=`<div class="disc">Estimate only. Passive activity adjustments, depletion, foreign tax credit interaction, and other AMT items require full Form 6251. Consult a CPA.</div>`; rb.innerHTML=h;
 }
 calc();
-</script>
-
-</body>
+</script> </body>
 </html>
