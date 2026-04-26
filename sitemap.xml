@@ -619,7 +619,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cpavalidated.com/international-info-returns.html</loc>
+    <loc>https://cpavalidated.com/us-canada-tax-planning.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/cryptocurrency-tax-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/executive-compensation-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/state-income-tax-nexus.html</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
