@@ -58,19 +58,165 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Net Operating Loss (NOL) Tracker 2026</h1> <div class="sub">Post-TCJA NOL rules. Indefinite carryforward. 80% taxable income limitation. No carryback for most taxpayers. 5-year projection of NOL absorption. State non-conformity warning.</div> <div class="badges"><span class="badge">IRC 172 - NOL deduction</span><span class="badge">IRC 172(a) - 80% limit</span><span class="badge">IRC 172(b)(1)(A) - indefinite carryforward</span><span class="badge">TCJA permanent (OBBBA)</span></div>
+<div class="ph"><div class="phi">
+  <h1>Net Operating Loss (NOL) Tracker 2026</h1>
+  <div class="sub">Post-TCJA NOL rules. Indefinite carryforward. 80% taxable income limitation. No carryback for most taxpayers. 5-year projection of NOL absorption. State non-conformity warning.</div>
+  <div class="badges"><span class="badge">IRC 172 - NOL deduction</span><span class="badge">IRC 172(a) - 80% limit</span><span class="badge">IRC 172(b)(1)(A) - indefinite carryforward</span><span class="badge">TCJA permanent (OBBBA)</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>NOL Information</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Existing NOL Carryforward ($)</label> <input type="number" class="fc" id="priorNOL" value="250000" oninput="calc()"> <div class="hint">Total NOL carryforward from prior years. From Form 1045 or Schedule A of Form 1045. Pre-2018 NOLs have different rules (2-year carryback, 20-year carryforward, no 80% limit).</div> </div> <div class="f1"><label>NOL Year (Post-2017?)</label> <select class="fc" id="nolVintage" onchange="calc()"> <option value="post" selected>Post-2017 NOL (TCJA rules - 80% limit, indefinite carryforward)</option> <option value="pre">Pre-2018 NOL (old rules - 100% limit, 20-year carryforward)</option> <option value="mixed">Mixed (both pre-2018 and post-2017 NOLs)</option> </select> </div> <div class="f1"><label>New NOL This Year ($)</label> <input type="number" class="fc" id="currentNOL" value="0" oninput="calc()"> <div class="hint">Additional NOL generated in the current tax year. Added to existing carryforward.</div> </div> </div> <div class="fg3"> <div class="f1"><label>Current Year Taxable Income ($)</label> <input type="number" class="fc" id="taxableIncome" value="180000" oninput="calc()"> <div class="hint">Taxable income before NOL deduction. NOL is applied against this amount (up to 80%).</div> </div> <div class="f1"><label>Expected Annual Income Growth (%)</label> <input type="number" class="fc" id="incomeGrowth" value="5" min="0" max="30" oninput="calc()"> <div class="hint">Projected annual growth in taxable income for carryforward absorption schedule.</div> </div> <div class="f1"><label>Marginal Tax Rate</label> <select class="fc" id="taxRate" onchange="calc()"> <option value="0.22">22%</option> <option value="0.24" selected>24%</option> <option value="0.32">32%</option> <option value="0.35">35%</option> <option value="0.37">37%</option> </select> </div> </div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>NOL Absorption Schedule</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>NOL Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Existing NOL Carryforward ($)</label>
+        <input type="number" class="fc" id="priorNOL" value="250000" oninput="calc()">
+        <div class="hint">Total NOL carryforward from prior years. From Form 1045 or Schedule A of Form 1045. Pre-2018 NOLs have different rules (2-year carryback, 20-year carryforward, no 80% limit).</div>
+      </div>
+      <div class="f1"><label>NOL Year (Post-2017?)</label>
+        <select class="fc" id="nolVintage" onchange="calc()">
+          <option value="post" selected>Post-2017 NOL (TCJA rules - 80% limit, indefinite carryforward)</option>
+          <option value="pre">Pre-2018 NOL (old rules - 100% limit, 20-year carryforward)</option>
+          <option value="mixed">Mixed (both pre-2018 and post-2017 NOLs)</option>
+        </select>
+      </div>
+      <div class="f1"><label>New NOL This Year ($)</label>
+        <input type="number" class="fc" id="currentNOL" value="0" oninput="calc()">
+        <div class="hint">Additional NOL generated in the current tax year. Added to existing carryforward.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label>Current Year Taxable Income ($)</label>
+        <input type="number" class="fc" id="taxableIncome" value="180000" oninput="calc()">
+        <div class="hint">Taxable income before NOL deduction. NOL is applied against this amount (up to 80%).</div>
+      </div>
+      <div class="f1"><label>Expected Annual Income Growth (%)</label>
+        <input type="number" class="fc" id="incomeGrowth" value="5" min="0" max="30" oninput="calc()">
+        <div class="hint">Projected annual growth in taxable income for carryforward absorption schedule.</div>
+      </div>
+      <div class="f1"><label>Marginal Tax Rate</label>
+        <select class="fc" id="taxRate" onchange="calc()">
+          <option value="0.22">22%</option>
+          <option value="0.24" selected>24%</option>
+          <option value="0.32">32%</option>
+          <option value="0.35">35%</option>
+          <option value="0.37">37%</option>
+        </select>
+      </div>
+    </div>
+  </div>
 </div>
-</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="tax-estimator.html" class="rl">Tax Estimator</a> <a href="scorp-compensation.html" class="rl">S-Corp Compensation</a> <a href="bonus-depreciation-guide.html" class="rl">Bonus Depreciation Guide</a> <a href="index.html" class="rl">All Tools</a>
-</div></div> <script>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>NOL Absorption Schedule</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="tax-estimator.html" class="rl">Tax Estimator</a>
+  <a href="scorp-compensation.html" class="rl">S-Corp Compensation</a>
+  <a href="bonus-depreciation-guide.html" class="rl">Bonus Depreciation Guide</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} function calc(){ const priorNOL=parseFloat(document.getElementById('priorNOL').value)||0; const currentNOL=parseFloat(document.getElementById('currentNOL').value)||0; const taxableIncome=parseFloat(document.getElementById('taxableIncome').value)||0; const incomeGrowth=(parseFloat(document.getElementById('incomeGrowth').value)||5)/100; const taxRate=parseFloat(document.getElementById('taxRate').value)||0.24; const nolVintage=document.getElementById('nolVintage').value; const limit=nolVintage==='pre'?1.0:0.80; const totalNOL=priorNOL+currentNOL; const maxDeduction=taxableIncome*limit; const nolDeductionYear1=Math.min(totalNOL,maxDeduction); const remainingAfterYear1=totalNOL-nolDeductionYear1; const taxablAfterNOL=taxableIncome-nolDeductionYear1; const taxSavingYear1=nolDeductionYear1*taxRate; const rb=document.getElementById('res'); let h=''; h+=`<div class="sum-box"><div class="sum-title">Current Year NOL Application</div> <div class="srow"><span class="sl">Total NOL carryforward</span><span class="sv coral">${fmt(totalNOL)}</span></div> <div class="srow"><span class="sl">Taxable income this year</span><span class="sv">${fmt(taxableIncome)}</span></div> <div class="srow"><span class="sl">80% limitation (${Math.round(limit*100)}% of ${fmt(taxableIncome)})</span><span class="sv">${fmt(maxDeduction)}</span></div> <div class="srow"><span class="sl">NOL deduction this year</span><span class="sv green">${fmt(nolDeductionYear1)}</span></div> <div class="srow"><span class="sl">Taxable income after NOL</span><span class="sv">${fmt(taxablAfterNOL)}</span></div> <div class="srow"><span class="sl">Estimated tax savings (${Math.round(taxRate*100)}%)</span><span class="sv green">${fmt(taxSavingYear1)}</span></div> <div class="srow"><span class="sl">Remaining NOL to carryforward</span><span class="sv ${remainingAfterYear1>0?'amber':'green'}">${fmt(remainingAfterYear1)}</span></div> </div>`; // 5-year absorption schedule h+=`<div style="margin-bottom:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)">5-Year Absorption Schedule</div>`; h+=`<div style="overflow-x:auto"><table class="nol-table"><thead><tr> <th>Year</th><th>Taxable Income</th><th>80% Limit</th><th>NOL Used</th><th>Tax Saved</th><th>Remaining NOL</th> </tr></thead><tbody>`; let remaining=totalNOL; let income=taxableIncome; let totalSaved=0; for(let y=1;y<=8&&remaining>0;y++){ const lim=income*limit; const used=Math.min(remaining,lim); const saved=used*taxRate; totalSaved+=saved; remaining-=used; h+=`<tr> <td>Year ${y}</td> <td>${fmt(income)}</td> <td>${fmt(lim)}</td> <td class="green">${fmt(used)}</td> <td class="green">${fmt(saved)}</td> <td class="${remaining>0?'amber':'green'}">${remaining>0?fmt(remaining):'Fully absorbed'}</td> </tr>`; income=income*(1+incomeGrowth); } if(remaining>0){ h+=`<tr><td colspan="5" style="color:var(--amber);font-style:italic">Remaining NOL after 8 years: ${fmt(remaining)} (indefinite carryforward)</td><td class="amber">${fmt(remaining)}</td></tr>`; } h+=`<tr><td><strong>Total</strong></td><td></td><td></td><td class="green"><strong>${fmt(totalNOL-remaining)}</strong></td><td class="green"><strong>${fmt(totalSaved)}</strong></td><td></td></tr>`; h+='</tbody></table></div>'; if(nolVintage==='pre'){ h+=flag('amber','!','<strong>Pre-2018 NOL rules apply.</strong> NOLs generated before 2018 are subject to the old rules: 2-year carryback (to prior profitable years), 20-year carryforward limit, and 100% income offset (no 80% limitation). Pre-2018 NOLs are applied before post-2017 NOLs. If you have both, the ordering matters - track separately on Schedule A of Form 1045.'); } if(nolVintage==='post'){ h+=flag('blue','i','<strong>Post-2017 TCJA rules.</strong> NOLs from tax years beginning after December 31, 2017 carry forward indefinitely (no expiration) but are limited to 80% of taxable income in the absorption year. No carryback is permitted (except for farming losses, IRC 172(b)(1)(B)). OBBBA (P.L. 119-21) made these rules permanent.'); } h+=flag('red','!','<strong>State conformity varies significantly.</strong> Many states do not conform to federal NOL rules. New York, California, New Jersey, and others have different carryforward periods, carryback rules, and percentage limitations. A federal NOL does not automatically create a state NOL - and vice versa. Track federal and state NOLs separately and verify current-year state conformity before filing.'); if(totalNOL>500000){ h+=flag('amber','!','<strong>Large NOL - consider Section 382 if there was an ownership change.</strong> If the entity that generated the NOL had an ownership change (defined as more than 50% change in ownership over a 3-year period under IRC 382), the annual NOL utilization is limited to the Section 382 limitation amount. This applies to corporations. Verify no ownership change events occurred before relying on the full NOL carryforward.'); } h+=`<div class="src">IRC 172 (net operating loss deduction); IRC 172(a) (80% of taxable income limitation for post-2017 NOLs); IRC 172(b)(1)(A) (indefinite carryforward for post-2017 NOLs); IRC 172(b)(1)(B) (2-year carryback for farming losses); IRC 172(b)(1)(A)(i) (20-year carryforward, 2-year carryback for pre-2018 NOLs); IRC 382 (Section 382 limitation on NOL use after ownership change); TCJA 13302 (TCJA NOL reform); OBBBA P.L. 119-21 (TCJA NOL rules made permanent).</div>`; h+=`<div class="disc">Projections assume income growth rate is constant - actual results will differ. State NOL rules not modeled. Section 382 limitation analysis requires separate review. Consult a CPA for multi-year planning.</div>`; rb.innerHTML=h;
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+function calc(){
+  const priorNOL=parseFloat(document.getElementById('priorNOL').value)||0;
+  const currentNOL=parseFloat(document.getElementById('currentNOL').value)||0;
+  const taxableIncome=parseFloat(document.getElementById('taxableIncome').value)||0;
+  const incomeGrowth=(parseFloat(document.getElementById('incomeGrowth').value)||5)/100;
+  const taxRate=parseFloat(document.getElementById('taxRate').value)||0.24;
+  const nolVintage=document.getElementById('nolVintage').value;
+  const limit=nolVintage==='pre'?1.0:0.80;
+
+  const totalNOL=priorNOL+currentNOL;
+  const maxDeduction=taxableIncome*limit;
+  const nolDeductionYear1=Math.min(totalNOL,maxDeduction);
+  const remainingAfterYear1=totalNOL-nolDeductionYear1;
+  const taxablAfterNOL=taxableIncome-nolDeductionYear1;
+  const taxSavingYear1=nolDeductionYear1*taxRate;
+
+  const rb=document.getElementById('res');
+  let h='';
+
+  h+=`<div class="sum-box"><div class="sum-title">Current Year NOL Application</div>
+    <div class="srow"><span class="sl">Total NOL carryforward</span><span class="sv coral">${fmt(totalNOL)}</span></div>
+    <div class="srow"><span class="sl">Taxable income this year</span><span class="sv">${fmt(taxableIncome)}</span></div>
+    <div class="srow"><span class="sl">80% limitation (${Math.round(limit*100)}% of ${fmt(taxableIncome)})</span><span class="sv">${fmt(maxDeduction)}</span></div>
+    <div class="srow"><span class="sl">NOL deduction this year</span><span class="sv green">${fmt(nolDeductionYear1)}</span></div>
+    <div class="srow"><span class="sl">Taxable income after NOL</span><span class="sv">${fmt(taxablAfterNOL)}</span></div>
+    <div class="srow"><span class="sl">Estimated tax savings (${Math.round(taxRate*100)}%)</span><span class="sv green">${fmt(taxSavingYear1)}</span></div>
+    <div class="srow"><span class="sl">Remaining NOL to carryforward</span><span class="sv ${remainingAfterYear1>0?'amber':'green'}">${fmt(remainingAfterYear1)}</span></div>
+  </div>`;
+
+  // 5-year absorption schedule
+  h+=`<div style="margin-bottom:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)">5-Year Absorption Schedule</div>`;
+  h+=`<div style="overflow-x:auto"><table class="nol-table"><thead><tr>
+    <th>Year</th><th>Taxable Income</th><th>80% Limit</th><th>NOL Used</th><th>Tax Saved</th><th>Remaining NOL</th>
+  </tr></thead><tbody>`;
+
+  let remaining=totalNOL;
+  let income=taxableIncome;
+  let totalSaved=0;
+  for(let y=1;y<=8&&remaining>0;y++){
+    const lim=income*limit;
+    const used=Math.min(remaining,lim);
+    const saved=used*taxRate;
+    totalSaved+=saved;
+    remaining-=used;
+    h+=`<tr>
+      <td>Year ${y}</td>
+      <td>${fmt(income)}</td>
+      <td>${fmt(lim)}</td>
+      <td class="green">${fmt(used)}</td>
+      <td class="green">${fmt(saved)}</td>
+      <td class="${remaining>0?'amber':'green'}">${remaining>0?fmt(remaining):'Fully absorbed'}</td>
+    </tr>`;
+    income=income*(1+incomeGrowth);
+  }
+  if(remaining>0){
+    h+=`<tr><td colspan="5" style="color:var(--amber);font-style:italic">Remaining NOL after 8 years: ${fmt(remaining)} (indefinite carryforward)</td><td class="amber">${fmt(remaining)}</td></tr>`;
+  }
+  h+=`<tr><td><strong>Total</strong></td><td></td><td></td><td class="green"><strong>${fmt(totalNOL-remaining)}</strong></td><td class="green"><strong>${fmt(totalSaved)}</strong></td><td></td></tr>`;
+  h+='</tbody></table></div>';
+
+  if(nolVintage==='pre'){
+    h+=flag('amber','!','<strong>Pre-2018 NOL rules apply.</strong> NOLs generated before 2018 are subject to the old rules: 2-year carryback (to prior profitable years), 20-year carryforward limit, and 100% income offset (no 80% limitation). Pre-2018 NOLs are applied before post-2017 NOLs. If you have both, the ordering matters - track separately on Schedule A of Form 1045.');
+  }
+  if(nolVintage==='post'){
+    h+=flag('blue','i','<strong>Post-2017 TCJA rules.</strong> NOLs from tax years beginning after December 31, 2017 carry forward indefinitely (no expiration) but are limited to 80% of taxable income in the absorption year. No carryback is permitted (except for farming losses, IRC 172(b)(1)(B)). OBBBA (P.L. 119-21) made these rules permanent.');
+  }
+  h+=flag('red','!','<strong>State conformity varies significantly.</strong> Many states do not conform to federal NOL rules. New York, California, New Jersey, and others have different carryforward periods, carryback rules, and percentage limitations. A federal NOL does not automatically create a state NOL - and vice versa. Track federal and state NOLs separately and verify current-year state conformity before filing.');
+  if(totalNOL>500000){
+    h+=flag('amber','!','<strong>Large NOL - consider Section 382 if there was an ownership change.</strong> If the entity that generated the NOL had an ownership change (defined as more than 50% change in ownership over a 3-year period under IRC 382), the annual NOL utilization is limited to the Section 382 limitation amount. This applies to corporations. Verify no ownership change events occurred before relying on the full NOL carryforward.');
+  }
+
+  h+=`<div class="src">IRC 172 (net operating loss deduction); IRC 172(a) (80% of taxable income limitation for post-2017 NOLs); IRC 172(b)(1)(A) (indefinite carryforward for post-2017 NOLs); IRC 172(b)(1)(B) (2-year carryback for farming losses); IRC 172(b)(1)(A)(i) (20-year carryforward, 2-year carryback for pre-2018 NOLs); IRC 382 (Section 382 limitation on NOL use after ownership change); TCJA 13302 (TCJA NOL reform); OBBBA P.L. 119-21 (TCJA NOL rules made permanent).</div>`;
+  h+=`<div class="disc">Projections assume income growth rate is constant - actual results will differ. State NOL rules not modeled. Section 382 limitation analysis requires separate review. Consult a CPA for multi-year planning. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+
+  rb.innerHTML=h;
 }
 calc();
-</script> </body>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
