@@ -106,4 +106,7 @@
 - section-199a-guide.html: QBI deduction deep dive - IRC §199A W-2 wage limitation, UBIA, 50% test, 25%+2.5% test, SSTB phaseout, aggregation elections, permanent under OBBBA.
 - business-sale-planning.html: Business sale planning - §338(h)(10) deemed asset election, §336(e), asset vs. stock comparison, §1060 price allocation 7 classes, §453 installment sales, earnout tax treatment.
 - international-information-returns.html: International information returns map - Forms 5471 5472 8865 8858 3520 3520-A 8938 FinCEN 114 8621, who files, thresholds, penalties, statute of limitations suspension.
-- international-info-returns.html: International info returns compliance map - Forms 5471 5472 8865 8858 3520 3520-A 8938 8621, FBAR FinCEN 114, penalties, SOL trap.
+- us-canada-tax-planning.html: US-Canada tax planning - snowbird SPT trap, closer connection Form 8840, treaty tiebreaker Article IV, RRSP RRIF Article XVIII(7) deferral, TFSA trust problem, Canadian departure tax ITA §128.1.
+- cryptocurrency-tax-guide.html: Cryptocurrency tax guide - HIFO FIFO specific ID Rev. Proc. 2024-28, staking ordinary income Rev. Rul. 2023-14, hard forks airdrops, DeFi, wash sale rule absence, Form 1099-DA 2025 broker reporting.
+- executive-compensation-guide.html: Executive compensation guide - ISO NSO RSU comparison, §83(b) election 30-day deadline, AMT on ISO exercise §56(b)(3), §409A deferred comp 20% penalty, planning strategies.
+- state-income-tax-nexus.html: State income tax nexus - domicile vs. statutory residency, 183-day rule by state, NY convenience of employer rule, remote worker multi-state, dual-resident trap, domicile change steps.
