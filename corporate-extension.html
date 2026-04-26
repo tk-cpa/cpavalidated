@@ -16,7 +16,9 @@
 .controls{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center}
 .fc{padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px;color:var(--ink);background:var(--white);outline:none;border-radius:0;cursor:pointer;appearance:none}
 .fc:focus{border-color:var(--coral)}
-select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;min-width:180px} .cat-filters{display:flex;gap:8px;flex-wrap:wrap}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;min-width:180px}
+
+.cat-filters{display:flex;gap:8px;flex-wrap:wrap}
 .cat-btn{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:6px 12px;border:1.5px solid var(--ink-20);background:var(--white);cursor:pointer;font-family:var(--font-mono);color:var(--ink-60);transition:all .15s}
 .cat-btn:hover,.cat-btn.active{border-color:var(--coral);color:var(--coral);background:var(--coral-100)}
 .cat-btn.all.active{background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -48,7 +50,7 @@ table.ext-table tr:hover td{background:var(--ink-10)}
 .pbn{background:var(--coral);color:#fff;border:none;padding:9px 20px;font-family:var(--font-sans);font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.02em}.pbn:hover{background:var(--coral-600)}
 .src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:16px 0 0;border-top:1px solid var(--ink-20);margin-top:20px}
 @media(max-width:700px){.summary-strip{flex-wrap:wrap}.ss-item{min-width:50%}.controls{flex-direction:column}.search-fc{min-width:100%}}
-.rl{display:inline-flex;align-items:center;padding:7px 13px;border:1.5px solid var(--coral,#F65F5A);color:var(--coral,#F65F5A);font-size:12.5px;font-weight:500;text-decoration:none;transition:all .15s;background:var(--white,#fff)}.rl:hover{background:var(--coral,#F65F5A);color:#fff}.related{background:var(--ink-10,#EDEEF0);border-top:2px solid var(--ink-20,#D9DBDE);padding:24px;margin-top:32px}.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60,#5E6166);margin-bottom:14px;font-family:var(--font-mono,"Courier New",monospace)}.related-links{display:flex;gap:10px;flex-wrap:wrap}</style>
+</style>
 <style>
 nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
 .brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
@@ -60,38 +62,307 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>Corporate Tax Extension Reference (2026)</h1> <div class="sub">C-Corp Form 1120 &nbsp;&bull;&nbsp; All 50 States + DC + Major Local Jurisdictions &nbsp;&bull;&nbsp; Verified March 2026</div> <div class="badges"> <span class="badge">IRC §6081</span> <span class="badge">Form 7004</span> <span class="badge">Treas. Reg. §1.6081-3</span> <span class="badge">59 Jurisdictions</span> </div>
+<div class="ph"><div class="phi">
+  <h1>Corporate Tax Extension Reference (2026)</h1>
+  <div class="sub">C-Corp Form 1120 &nbsp;&bull;&nbsp; All 50 States + DC + Major Local Jurisdictions &nbsp;&bull;&nbsp; Verified March 2026</div>
+  <div class="badges">
+    <span class="badge">IRC §6081</span>
+    <span class="badge">Form 7004</span>
+    <span class="badge">Treas. Reg. §1.6081-3</span>
+    <span class="badge">59 Jurisdictions</span>
+  </div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="container"> <div class="callout"> <p><strong>Universal rule:</strong> An extension of time to FILE never extends the time to PAY. Tax owed is due by the original due date in all jurisdictions. Interest and failure-to-pay penalties accrue from the original due date on any unpaid balance. Federal Form 7004 provides an automatic 6-month extension for calendar-year C-Corps: April 15 → October 15.</p>
-</div> <div style="margin-bottom:20px"> <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);display:block;margin-bottom:8px">Select Your Jurisdiction</label> <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"> <select class="fc" id="jumpSelect" onchange="showResult(this.value)" style="flex:1;min-width:260px;font-size:15px;padding:12px 14px"> <option value="">-- Choose a state or jurisdiction --</option> </select> <button class="pbn" onclick="window.print()">Print / PDF</button> </div>
-</div> <div id="resultCard" style="display:none;background:var(--ink);padding:20px;margin-bottom:20px;border-left:4px solid var(--coral)"> <div id="rc-content"></div>
-</div> <div style="margin-bottom:12px"> <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:8px">Browse All Jurisdictions</div> <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"> <div class="cat-filters" style="flex:1"> <button class="cat-btn all active" onclick="setCat('ALL',this)">All</button> <button class="cat-btn" onclick="setCat('AUTOMATIC',this)">Automatic</button> <button class="cat-btn" onclick="setCat('ACCEPTS FEDERAL',this)">Accepts Federal</button> <button class="cat-btn" onclick="setCat('SEPARATE FORM',this)">Separate Form</button> <button class="cat-btn" onclick="setCat('CONDITIONAL',this)">Conditional</button> <button class="cat-btn" onclick="setCat('NO CIT',this)">No CIT</button> </div> <select class="fc" id="typeFilter" onchange="filterTable()" style="max-width:160px"> <option value="">All types</option> <option value="State">States only</option> <option value="Local">Local only</option> </select> </div>
-</div> <div class="summary-strip" style="margin-top:12px"> <div class="ss-item"><div class="ss-num" id="cnt-auto">11</div><div class="ss-label">Automatic</div></div> <div class="ss-item"><div class="ss-num" id="cnt-fed">23</div><div class="ss-label">Accepts Federal</div></div> <div class="ss-item"><div class="ss-num" id="cnt-sep">17</div><div class="ss-label">Separate Form</div></div> <div class="ss-item"><div class="ss-num" id="cnt-cond">5</div><div class="ss-label">Conditional</div></div> <div class="ss-item"><div class="ss-num" id="cnt-noc">4</div><div class="ss-label">No CIT</div></div> <div class="ss-item"><div class="ss-num" id="cnt-vis">59</div><div class="ss-label">Showing</div></div>
-</div> <div style="overflow-x:auto">
+<div class="container">
+
+<div class="callout">
+  <p><strong>Universal rule:</strong> An extension of time to FILE never extends the time to PAY. Tax owed is due by the original due date in all jurisdictions. Interest and failure-to-pay penalties accrue from the original due date on any unpaid balance. Federal Form 7004 provides an automatic 6-month extension for calendar-year C-Corps: April 15 → October 15.</p>
+</div>
+
+<div style="margin-bottom:20px">
+  <label style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);display:block;margin-bottom:8px">Select Your Jurisdiction</label>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    <select class="fc" id="jumpSelect" onchange="showResult(this.value)" style="flex:1;min-width:260px;font-size:15px;padding:12px 14px">
+      <option value="">-- Choose a state or jurisdiction --</option>
+    </select>
+    <button class="pbn" onclick="window.print()">Print / PDF</button>
+  </div>
+</div>
+
+<div id="resultCard" style="display:none;background:var(--ink);padding:20px;margin-bottom:20px;border-left:4px solid var(--coral)">
+  <div id="rc-content"></div>
+</div>
+
+<div style="margin-bottom:12px">
+  <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:8px">Browse All Jurisdictions</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <div class="cat-filters" style="flex:1">
+      <button class="cat-btn all active" onclick="setCat('ALL',this)">All</button>
+      <button class="cat-btn" onclick="setCat('AUTOMATIC',this)">Automatic</button>
+      <button class="cat-btn" onclick="setCat('ACCEPTS FEDERAL',this)">Accepts Federal</button>
+      <button class="cat-btn" onclick="setCat('SEPARATE FORM',this)">Separate Form</button>
+      <button class="cat-btn" onclick="setCat('CONDITIONAL',this)">Conditional</button>
+      <button class="cat-btn" onclick="setCat('NO CIT',this)">No CIT</button>
+    </div>
+    <select class="fc" id="typeFilter" onchange="filterTable()" style="max-width:160px">
+      <option value="">All types</option>
+      <option value="State">States only</option>
+      <option value="Local">Local only</option>
+    </select>
+  </div>
+</div>
+
+<div class="summary-strip" style="margin-top:12px">
+  <div class="ss-item"><div class="ss-num" id="cnt-auto">11</div><div class="ss-label">Automatic</div></div>
+  <div class="ss-item"><div class="ss-num" id="cnt-fed">23</div><div class="ss-label">Accepts Federal</div></div>
+  <div class="ss-item"><div class="ss-num" id="cnt-sep">17</div><div class="ss-label">Separate Form</div></div>
+  <div class="ss-item"><div class="ss-num" id="cnt-cond">5</div><div class="ss-label">Conditional</div></div>
+  <div class="ss-item"><div class="ss-num" id="cnt-noc">4</div><div class="ss-label">No CIT</div></div>
+  <div class="ss-item"><div class="ss-num" id="cnt-vis">59</div><div class="ss-label">Showing</div></div>
+</div>
+
+<div style="overflow-x:auto">
 <table class="ext-table" id="extTable">
-<thead><tr> <th onclick="sortTable(0)">Jurisdiction <span class="sort-arrow">↕</span></th> <th onclick="sortTable(1)">Type <span class="sort-arrow">↕</span></th> <th onclick="sortTable(2)">Category <span class="sort-arrow">↕</span></th> <th>Form Required</th> <th>Length</th> <th>Payment w/ Extension</th> <th>Primary Citation</th> <th>Notes</th>
+<thead><tr>
+  <th onclick="sortTable(0)">Jurisdiction <span class="sort-arrow">↕</span></th>
+  <th onclick="sortTable(1)">Type <span class="sort-arrow">↕</span></th>
+  <th onclick="sortTable(2)">Category <span class="sort-arrow">↕</span></th>
+  <th>Form Required</th>
+  <th>Length</th>
+  <th>Payment w/ Extension</th>
+  <th>Primary Citation</th>
+  <th>Notes</th>
 </tr></thead>
 <tbody id="tableBody"></tbody>
 </table>
 </div>
-<div id="noResults" class="no-results hidden">No jurisdictions match your search.</div> <div class="src">Source: tk.cpa Corporate Extension Matrix (verified March 2026). Federal: IRC §6081; Treas. Reg. §1.6081-3; Form 7004 Instructions. State citations as noted per row. Scope: C-Corp (Form 1120) only. S-Corp (1120-S) and Partnership (1065) rules differ in many states. Local jurisdictions: NYC BCT/GCT, Detroit City CIT, Philadelphia BIRT, San Francisco GRT, Los Angeles LACBT, Portland/Multnomah BLT/MCBIT, Ohio Municipalities (RITA). Always verify current-year form instructions before filing.</div>
-</div> <script>
-const DATA = [ {j:'Alabama',t:'State',c:'AUTOMATIC',f:'None required',l:'Federal ext + 1 month',p:'Tax due by original date',cite:'Ala. Code 40-18-39.2',n:'Automatic = federal ext + 1 month. E.g., Oct 15 + 1 mo = Nov 15. No separate state form.'}, {j:'Alaska',t:'State',c:'ACCEPTS FEDERAL',f:'None (federal accepted)',l:'6 months',p:'Tax due by original date',cite:'Alaska Stat. 43.20.030',n:'Federal Form 7004 accepted. No separate AK form.'}, {j:'Arizona',t:'State',c:'ACCEPTS FEDERAL',f:'Form 120EXT (if no federal)',l:'6 months',p:'Penalty if <90% paid',cite:'A.R.S. 43-581',n:'Federal ext accepted. If no federal ext, file Form 120EXT. 90% safe harbor.'}, {j:'Arkansas',t:'State',c:'ACCEPTS FEDERAL',f:'Form AR1155 (if no federal)',l:'Same as federal',p:'Tax due; interest 10%/yr',cite:'Ark. Code Ann. 26-51-807',n:'Federal ext accepted. Check box on AR1100CT. Interest at 10% per annum.'}, {j:'California',t:'State',c:'AUTOMATIC',f:'None (FTB 3539 for payment only)',l:'7 months',p:'Tax + $800 min franchise tax',cite:'Cal. Rev. & Tax. Code 18604',n:'Automatic 7-month ext. No form to file. Must be in good standing with FTB and CA SOS. $800 min franchise tax due by original date.'}, {j:'Colorado',t:'State',c:'CONDITIONAL',f:'Form DR 0158-C (if tax due)',l:'6 months',p:'Tax due by original date',cite:'Colo. Rev. Stat. 39-22-621',n:'Automatic if NO tax due. If tax IS due, must file Form DR 0158-C with full payment.'}, {j:'Connecticut',t:'State',c:'SEPARATE FORM',f:'Form CT-1120 EXT',l:'7 months',p:'Tax due by original date',cite:'Conn. Gen. Stat. 12-222',n:'MUST file Form CT-1120 EXT. Federal ext NOT accepted. 7-month ext for TY 2023+.'}, {j:'Delaware',t:'State',c:'ACCEPTS FEDERAL',f:'Form 1100-T EXT (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Del. Code Ann. tit. 30, §1904',n:'Federal ext accepted. If no federal ext, file Form 1100-T EXT.'}, {j:'District of Columbia',t:'State',c:'SEPARATE FORM',f:'Form FR-120',l:'6 months',p:'Tax due by original date',cite:'D.C. Code 47-1805.03',n:'Must file Form FR-120. Federal ext not accepted.'}, {j:'Florida',t:'State',c:'SEPARATE FORM',f:'Form F-7004 (REQUIRED)',l:'6 months',p:'Tentative tax due with form',cite:'Fla. Stat. 220.222(2)',n:'CRITICAL: Must file FL Form F-7004. Federal ext alone does NOT extend FL. Tentative tax computed and paid with extension.'}, {j:'Georgia',t:'State',c:'ACCEPTS FEDERAL',f:'Form IT-303 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Ga. Code Ann. 48-7-56',n:'Federal ext accepted. Attach copy of Form 7004 or IT-303 to GA return.'}, {j:'Hawaii',t:'State',c:'CONDITIONAL',f:'Form N-201V (if tax due)',l:'6 months',p:'Tax due by original date',cite:'Haw. Rev. Stat. 235-98',n:'Automatic if no tax due. If tax is due, file Form N-201V (payment voucher).'}, {j:'Idaho',t:'State',c:'CONDITIONAL',f:'None required',l:'6 months',p:'80% safe harbor; penalty if <80% paid',cite:'Idaho Code 63-3033',n:'Automatic ext if at least 80% of tax paid by original due date. No form required.'}, {j:'Illinois',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'35 ILCS 5/911',n:'Automatic 7-month ext. No form required.'}, {j:'Indiana',t:'State',c:'ACCEPTS FEDERAL',f:'Written request (if no federal)',l:'Same as federal',p:'Tax due by original date',cite:'Ind. Code 6-3-4-4',n:'Federal ext accepted. If no federal ext, submit written request to IN DOR.'}, {j:'Iowa',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Iowa Code 422.21',n:'Automatic 7-month ext for TY 2023+. No form required.'}, {j:'Kansas',t:'State',c:'ACCEPTS FEDERAL',f:'None (auto with federal)',l:'Same as federal',p:'Tax due by original date',cite:'Kan. Stat. Ann. 79-32,105',n:'Automatic ext granted with approved federal Form 7004.'}, {j:'Kentucky',t:'State',c:'SEPARATE FORM',f:'Form 720EXT',l:'7 months',p:'Tax due by original date',cite:'Ky. Rev. Stat. 141.170',n:'MUST file Form 720EXT for income tax AND LLET. Federal ext does not substitute.'}, {j:'Louisiana',t:'State',c:'ACCEPTS FEDERAL',f:'Form CIFT-620EXT (if no federal)',l:'Same as federal + additional available',p:'Tax due by original date',cite:'La. Rev. Stat. 47:287.614',n:'Federal ext accepted. Additional 60-day ext beyond federal via Form R-7004.'}, {j:'Maine',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Me. Rev. Stat. Ann. tit. 36, §5231',n:'Automatic 7-month ext. No form required.'}, {j:'Maryland',t:'State',c:'SEPARATE FORM',f:'Form 500E',l:'7 months',p:'Tax due by original date',cite:'Md. Code Ann., Tax-Gen. §10-822',n:'MUST file Form 500E. Federal ext alone does NOT extend MD.'}, {j:'Massachusetts',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Mass. Gen. Laws ch. 62C, §19',n:'Automatic 7-month ext. No form required. Pay estimated tax by original date.'}, {j:'Michigan',t:'State',c:'SEPARATE FORM',f:'Form 4 (Application for Extension)',l:'6 months',p:'Tax due by original date',cite:'Mich. Comp. Laws 206.685',n:'MUST file MI Form 4. Federal ext NOT accepted. Detroit City CIT requires separate Form 5301.'}, {j:'Minnesota',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Minn. Stat. 289A.19',n:'Automatic 7-month ext. No form required.'}, {j:'Mississippi',t:'State',c:'SEPARATE FORM',f:'Form 83-180',l:'6 months',p:'Tax due by original date',cite:'Miss. Code Ann. 27-7-47',n:'Must file Form 83-180 by original due date.'}, {j:'Missouri',t:'State',c:'ACCEPTS FEDERAL',f:'Form MO-7004 (if no federal)',l:'Same as federal',p:'Tax due by original date',cite:'Mo. Rev. Stat. 143.581',n:'Federal ext accepted. If no federal ext, file Form MO-7004.'}, {j:'Montana',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months',p:'Tax due by original date',cite:'Mont. Code Ann. 15-31-111',n:'Automatic 6-month ext. No form required.'}, {j:'Nebraska',t:'State',c:'ACCEPTS FEDERAL',f:'Form 7004N (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Neb. Rev. Stat. 77-2769',n:'Federal ext accepted. Attach copy to NE return.'}, {j:'Nevada',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'Nev. Const. Art. 10, §1(9)',n:'No corporate income tax. Commerce Tax ($4M+ gross revenue) has separate rules.'}, {j:'New Hampshire',t:'State',c:'CONDITIONAL',f:'None (if tax paid)',l:'7 months',p:'BPT must be fully paid by original date',cite:'N.H. Rev. Stat. Ann. 77-A:6',n:'Automatic 7-month ext if all BPT due is paid by original date. Otherwise request extension.'}, {j:'New Jersey',t:'State',c:'SEPARATE FORM',f:'Form CBT-200-T',l:'6 months (extendable)',p:'Tax due by original date',cite:'N.J. Stat. Ann. 54:10A-19',n:'C-Corps MUST file Form CBT-200-T. Federal ext NOT accepted for corps.'}, {j:'New Mexico',t:'State',c:'ACCEPTS FEDERAL',f:'Form RPD-41096 (if no federal)',l:'Same as federal',p:'Tax due by original date',cite:'N.M. Stat. Ann. 7-2A-9',n:'Federal ext accepted. If no federal ext, file Form RPD-41096.'}, {j:'New York',t:'State',c:'SEPARATE FORM',f:'Form CT-5 (e-file mandatory)',l:'6 months + up to 2 additional 3-mo',p:'Estimated tax due with CT-5',cite:'N.Y. Tax Law §211(1)',n:'MUST file Form CT-5 electronically. Federal ext NOT accepted. Additional 3-month exts via CT-5.1 (up to 2). S-Corps use CT-5.4.'}, {j:'North Carolina',t:'State',c:'ACCEPTS FEDERAL',f:'Form CD-419 (if no federal)',l:'7 months (TY 2025+)',p:'Tax due by original date',cite:'N.C. Gen. Stat. 105-263',n:'For TY beginning on/after 1/1/2019, federal ext auto-extends NC. Must certify on return. 7-month ext for TY 2025+.'}, {j:'North Dakota',t:'State',c:'ACCEPTS FEDERAL',f:'Form 101 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'N.D. Cent. Code 57-38-34.1',n:'Federal ext accepted.'}, {j:'Ohio',t:'State',c:'ACCEPTS FEDERAL',f:'None (CAT phased out 2024)',l:'Same as federal',p:'N/A (no active CIT)',cite:'Ohio Rev. Code 5751 (CAT repealed/phased out 2024)',n:'No active corporate income tax as of 2024. Municipal net profit taxes separate.'}, {j:'Oklahoma',t:'State',c:'ACCEPTS FEDERAL',f:'Form 504-C (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Okla. Stat. tit. 68, §2385',n:'Federal ext accepted.'}, {j:'Oregon',t:'State',c:'ACCEPTS FEDERAL',f:'None (federal accepted)',l:'6 months',p:'Tax due by original date',cite:'Or. Rev. Stat. 314.385',n:'Federal ext automatically extends OR. Attach copy of Form 7004 to OR return.'}, {j:'Pennsylvania',t:'State',c:'ACCEPTS FEDERAL',f:'Form REV-853 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'72 P.S. §7403(e)',n:'Federal ext accepted. Philadelphia BIRT is separate.'}, {j:'Rhode Island',t:'State',c:'SEPARATE FORM',f:'Form RI-7004',l:'7 months',p:'Tax due by original date',cite:'R.I. Gen. Laws 44-11-5',n:'Must file RI Form RI-7004. Federal ext alone does not extend RI.'}, {j:'South Carolina',t:'State',c:'ACCEPTS FEDERAL',f:'Form SC 1120-T (if no federal)',l:'6 months',p:'Tax due by original date',cite:'S.C. Code Ann. 12-6-4980',n:'Federal ext accepted.'}, {j:'South Dakota',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'S.D. Const. Art. XI, §5',n:'No corporate income tax.'}, {j:'Tennessee',t:'State',c:'CONDITIONAL',f:'Form FAE173 (if tax due or no federal ext)',l:'Same as federal',p:'Tax due by original date',cite:'Tenn. Code Ann. 67-4-2017',n:'If no tax due AND federal ext filed, federal ext accepted. If tax is due OR no federal ext, must file Form FAE173 (Franchise & Excise Tax).'}, {j:'Texas',t:'State',c:'SEPARATE FORM',f:'Form 05-164 or Webfile',l:'First to Aug 15; second to Nov 15',p:'90% of tax by May 15 (original date)',cite:'Tex. Tax Code 171.202',n:'Franchise/margin tax. Due date is May 15, not April 15. Second ext to Nov 15 via TEXNET for EFT payors.'}, {j:'Utah',t:'State',c:'AUTOMATIC',f:'None (TC-559 for payment only)',l:'6 months',p:'Tax due by original date',cite:'Utah Code Ann. 59-7-507',n:'Automatic 6-month ext. No form required. Use TC-559 only to make payment.'}, {j:'Vermont',t:'State',c:'ACCEPTS FEDERAL',f:'Form BA-403 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Vt. Stat. Ann. tit. 32, §5868',n:'Federal ext accepted.'}, {j:'Virginia',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Must pay 90% of tax by original date',cite:'Va. Code Ann. 58.1-910',n:'Automatic 7-month ext. Must pay 90% by original due date to avoid penalty.'}, {j:'Washington',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'Wash. Rev. Code 82.04 (B&O Tax)',n:'No traditional corporate income tax. B&O and capital gains tax have separate rules.'}, {j:'West Virginia',t:'State',c:'ACCEPTS FEDERAL',f:'Form CIT-120EXT (if no federal)',l:'6 months',p:'Tax due by original date',cite:'W. Va. Code 11-24-13a',n:'Federal ext accepted.'}, {j:'Wisconsin',t:'State',c:'ACCEPTS FEDERAL',f:'None (federal accepted)',l:'6 months',p:'Tax due by original date',cite:'Wis. Stat. 71.44(3)',n:'Federal ext automatically extends WI.'}, {j:'Wyoming',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'Wyo. Const. Art. 15, §18',n:'No corporate income tax.'}, {j:'New York City (BCT)',t:'Local',c:'SEPARATE FORM',f:'Form NYC-EXT',l:'6 months + up to 2 additional 3-mo',p:'Estimated tax due with form',cite:'NYC Admin. Code §11-654',n:'Separate from NYS. Must file NYC Form NYC-EXT. Additional exts via NYC-EXT.1. BCT applies to C-corps (2015+).'}, {j:'New York City (GCT)',t:'Local',c:'SEPARATE FORM',f:'Form NYC-EXT',l:'6 months + up to 2 additional 3-mo',p:'Estimated tax due with form',cite:'NYC Admin. Code §11-503',n:'GCT applies to S-corps and qualified S subsidiaries only (2015+).'}, {j:'Detroit (City CIT)',t:'Local',c:'SEPARATE FORM',f:'Form 5301',l:'6 months',p:'Tax due by original date',cite:'MCL 141.631 et seq.',n:'Separate city ext Form 5301 required IN ADDITION to MI state Form 4. Detroit CIT rate: 2%.'}, {j:'Philadelphia (BIRT)',t:'Local',c:'AUTOMATIC',f:'None required',l:'Auto 60-day + match federal ext',p:'Tax due by original date (no payment ext)',cite:'Phila. Code §19-1502(9)',n:'Automatic 60-day ext from original due date. If IRS grants federal ext, Phila. auto-matches. TY 2025: $100K exemption eliminated.'}, {j:'San Francisco (GRT)',t:'Local',c:'SEPARATE FORM',f:'Extension request via SF Online or paper',l:'To Nov 30 (TY 2025+)',p:'110% of prior year tax due with ext request',cite:'SF Bus. & Tax Reg. Code Art. 12-A; Prop M (2024)',n:'Must submit ext request by March 2. Must pay 110% of prior year tax. GRT threshold: >$5M gross receipts (TY 2025+).'}, {j:'Los Angeles (LACBT)',t:'Local',c:'SEPARATE FORM',f:'Extension via LA Office of Finance',l:'45 days from original due date',p:'Estimated total tax due with extension',cite:'LAMC 21.00 et seq.',n:'Business license/gross receipts tax. Due date: March 2, 2026. Extension up to 45 days if requested before deadline.'}, {j:'Portland / Multnomah Co. (BLT/MCBIT)',t:'Local',c:'ACCEPTS FEDERAL',f:'Form EXT (if no federal/OR ext)',l:'6 months',p:'Tax due by original date',cite:'Portland City Code 7.02; Multnomah County Code 12.400',n:'Federal or Oregon ext accepted - attach copy to Portland return. BLT 2.6%; MCBIT 2%.'}, {j:'Ohio Municipalities (RITA)',t:'Local',c:'SEPARATE FORM',f:'RITA Form 20-EXT',l:'Same as federal',p:'Estimated tax due with extension',cite:'Ohio Rev. Code 718.05',n:'Must file RITA Form 20-EXT for net profit extension. Administers ~400 OH municipalities.'},
-]; // Populate dropdown
-window.addEventListener('DOMContentLoaded', () => { const sel = document.getElementById('jumpSelect'); // States first, then local const states = DATA.filter(d => d.t === 'State').sort((a,b) => a.j.localeCompare(b.j)); const locals = DATA.filter(d => d.t === 'Local').sort((a,b) => a.j.localeCompare(b.j)); const addGroup = (label, items) => { const og = document.createElement('optgroup'); og.label = label; items.forEach(d => { const o = document.createElement('option'); o.value = d.j; o.textContent = d.j; og.appendChild(o); }); sel.appendChild(og); }; addGroup('States & DC', states); addGroup('Local Jurisdictions', locals); filterTable();
-}); const catColors = { 'AUTOMATIC':'#6de88e','ACCEPTS FEDERAL':'#5ab4f5','SEPARATE FORM':'#ff8f8a','CONDITIONAL':'#f5c264','NO CIT':'#c8c8c8'
-}; function showResult(jurisdiction) { const card = document.getElementById('resultCard'); const rc = document.getElementById('rc-content'); if (!jurisdiction) { card.style.display = 'none'; return; } const d = DATA.find(x => x.j === jurisdiction); if (!d) { card.style.display = 'none'; return; } const col = catColors[d.c] || '#fff'; rc.innerHTML = ` <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap"> <div style="flex:1;min-width:200px"> <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:6px">${d.t === 'Local' ? 'Local Jurisdiction' : 'State'}</div> <div style="font-family:var(--font-display);font-size:28px;font-weight:500;color:#fff;margin-bottom:10px">${d.j}</div> <div style="display:inline-block;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.06em;background:${col};color:#111;margin-bottom:14px">${d.c}</div> </div> <div style="flex:2;min-width:240px;display:grid;grid-template-columns:1fr 1fr;gap:12px"> <div> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Form Required</div> <div style="font-size:13px;color:#fff;font-weight:600">${d.f}</div> </div> <div> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Extension Length</div> <div style="font-size:13px;color:#fff;font-weight:600">${d.l}</div> </div> <div> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Payment Required</div> <div style="font-size:13px;color:#fff;font-weight:600">${d.p}</div> </div> <div> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Primary Citation</div> <div style="font-size:13px;color:var(--coral);font-weight:600">${d.cite}</div> </div> </div> </div> <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:5px">Practitioner Notes</div> <div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6">${d.n}</div> </div>`; card.style.display = 'block';
-} let currentCat = 'ALL';
+<div id="noResults" class="no-results hidden">No jurisdictions match your search.</div>
+
+<div class="src">Source: tk.cpa Corporate Extension Matrix (verified March 2026). Federal: IRC §6081; Treas. Reg. §1.6081-3; Form 7004 Instructions. State citations as noted per row. Scope: C-Corp (Form 1120) only. S-Corp (1120-S) and Partnership (1065) rules differ in many states. Local jurisdictions: NYC BCT/GCT, Detroit City CIT, Philadelphia BIRT, San Francisco GRT, Los Angeles LACBT, Portland/Multnomah BLT/MCBIT, Ohio Municipalities (RITA). Maintained by the tk.cpa AI lab. Always verify current-year form instructions before filing. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc.</div>
+</div>
+
+<script>
+const DATA = [
+  {j:'Alabama',t:'State',c:'AUTOMATIC',f:'None required',l:'Federal ext + 1 month',p:'Tax due by original date',cite:'Ala. Code 40-18-39.2',n:'Automatic = federal ext + 1 month. E.g., Oct 15 + 1 mo = Nov 15. No separate state form.'},
+  {j:'Alaska',t:'State',c:'ACCEPTS FEDERAL',f:'None (federal accepted)',l:'6 months',p:'Tax due by original date',cite:'Alaska Stat. 43.20.030',n:'Federal Form 7004 accepted. No separate AK form.'},
+  {j:'Arizona',t:'State',c:'ACCEPTS FEDERAL',f:'Form 120EXT (if no federal)',l:'6 months',p:'Penalty if <90% paid',cite:'A.R.S. 43-581',n:'Federal ext accepted. If no federal ext, file Form 120EXT. 90% safe harbor.'},
+  {j:'Arkansas',t:'State',c:'ACCEPTS FEDERAL',f:'Form AR1155 (if no federal)',l:'Same as federal',p:'Tax due; interest 10%/yr',cite:'Ark. Code Ann. 26-51-807',n:'Federal ext accepted. Check box on AR1100CT. Interest at 10% per annum.'},
+  {j:'California',t:'State',c:'AUTOMATIC',f:'None (FTB 3539 for payment only)',l:'7 months',p:'Tax + $800 min franchise tax',cite:'Cal. Rev. & Tax. Code 18604',n:'Automatic 7-month ext. No form to file. Must be in good standing with FTB and CA SOS. $800 min franchise tax due by original date.'},
+  {j:'Colorado',t:'State',c:'CONDITIONAL',f:'Form DR 0158-C (if tax due)',l:'6 months',p:'Tax due by original date',cite:'Colo. Rev. Stat. 39-22-621',n:'Automatic if NO tax due. If tax IS due, must file Form DR 0158-C with full payment.'},
+  {j:'Connecticut',t:'State',c:'SEPARATE FORM',f:'Form CT-1120 EXT',l:'7 months',p:'Tax due by original date',cite:'Conn. Gen. Stat. 12-222',n:'MUST file Form CT-1120 EXT. Federal ext NOT accepted. 7-month ext for TY 2023+.'},
+  {j:'Delaware',t:'State',c:'ACCEPTS FEDERAL',f:'Form 1100-T EXT (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Del. Code Ann. tit. 30, §1904',n:'Federal ext accepted. If no federal ext, file Form 1100-T EXT.'},
+  {j:'District of Columbia',t:'State',c:'SEPARATE FORM',f:'Form FR-120',l:'6 months',p:'Tax due by original date',cite:'D.C. Code 47-1805.03',n:'Must file Form FR-120. Federal ext not accepted.'},
+  {j:'Florida',t:'State',c:'SEPARATE FORM',f:'Form F-7004 (REQUIRED)',l:'6 months',p:'Tentative tax due with form',cite:'Fla. Stat. 220.222(2)',n:'CRITICAL: Must file FL Form F-7004. Federal ext alone does NOT extend FL. Tentative tax computed and paid with extension.'},
+  {j:'Georgia',t:'State',c:'ACCEPTS FEDERAL',f:'Form IT-303 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Ga. Code Ann. 48-7-56',n:'Federal ext accepted. Attach copy of Form 7004 or IT-303 to GA return.'},
+  {j:'Hawaii',t:'State',c:'CONDITIONAL',f:'Form N-201V (if tax due)',l:'6 months',p:'Tax due by original date',cite:'Haw. Rev. Stat. 235-98',n:'Automatic if no tax due. If tax is due, file Form N-201V (payment voucher).'},
+  {j:'Idaho',t:'State',c:'CONDITIONAL',f:'None required',l:'6 months',p:'80% safe harbor; penalty if <80% paid',cite:'Idaho Code 63-3033',n:'Automatic ext if at least 80% of tax paid by original due date. No form required.'},
+  {j:'Illinois',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'35 ILCS 5/911',n:'Automatic 7-month ext. No form required.'},
+  {j:'Indiana',t:'State',c:'ACCEPTS FEDERAL',f:'Written request (if no federal)',l:'Same as federal',p:'Tax due by original date',cite:'Ind. Code 6-3-4-4',n:'Federal ext accepted. If no federal ext, submit written request to IN DOR.'},
+  {j:'Iowa',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Iowa Code 422.21',n:'Automatic 7-month ext for TY 2023+. No form required.'},
+  {j:'Kansas',t:'State',c:'ACCEPTS FEDERAL',f:'None (auto with federal)',l:'Same as federal',p:'Tax due by original date',cite:'Kan. Stat. Ann. 79-32,105',n:'Automatic ext granted with approved federal Form 7004.'},
+  {j:'Kentucky',t:'State',c:'SEPARATE FORM',f:'Form 720EXT',l:'7 months',p:'Tax due by original date',cite:'Ky. Rev. Stat. 141.170',n:'MUST file Form 720EXT for income tax AND LLET. Federal ext does not substitute.'},
+  {j:'Louisiana',t:'State',c:'ACCEPTS FEDERAL',f:'Form CIFT-620EXT (if no federal)',l:'Same as federal + additional available',p:'Tax due by original date',cite:'La. Rev. Stat. 47:287.614',n:'Federal ext accepted. Additional 60-day ext beyond federal via Form R-7004.'},
+  {j:'Maine',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Me. Rev. Stat. Ann. tit. 36, §5231',n:'Automatic 7-month ext. No form required.'},
+  {j:'Maryland',t:'State',c:'SEPARATE FORM',f:'Form 500E',l:'7 months',p:'Tax due by original date',cite:'Md. Code Ann., Tax-Gen. §10-822',n:'MUST file Form 500E. Federal ext alone does NOT extend MD.'},
+  {j:'Massachusetts',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Mass. Gen. Laws ch. 62C, §19',n:'Automatic 7-month ext. No form required. Pay estimated tax by original date.'},
+  {j:'Michigan',t:'State',c:'SEPARATE FORM',f:'Form 4 (Application for Extension)',l:'6 months',p:'Tax due by original date',cite:'Mich. Comp. Laws 206.685',n:'MUST file MI Form 4. Federal ext NOT accepted. Detroit City CIT requires separate Form 5301.'},
+  {j:'Minnesota',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Tax due by original date',cite:'Minn. Stat. 289A.19',n:'Automatic 7-month ext. No form required.'},
+  {j:'Mississippi',t:'State',c:'SEPARATE FORM',f:'Form 83-180',l:'6 months',p:'Tax due by original date',cite:'Miss. Code Ann. 27-7-47',n:'Must file Form 83-180 by original due date.'},
+  {j:'Missouri',t:'State',c:'ACCEPTS FEDERAL',f:'Form MO-7004 (if no federal)',l:'Same as federal',p:'Tax due by original date',cite:'Mo. Rev. Stat. 143.581',n:'Federal ext accepted. If no federal ext, file Form MO-7004.'},
+  {j:'Montana',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months',p:'Tax due by original date',cite:'Mont. Code Ann. 15-31-111',n:'Automatic 6-month ext. No form required.'},
+  {j:'Nebraska',t:'State',c:'ACCEPTS FEDERAL',f:'Form 7004N (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Neb. Rev. Stat. 77-2769',n:'Federal ext accepted. Attach copy to NE return.'},
+  {j:'Nevada',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'Nev. Const. Art. 10, §1(9)',n:'No corporate income tax. Commerce Tax ($4M+ gross revenue) has separate rules.'},
+  {j:'New Hampshire',t:'State',c:'CONDITIONAL',f:'None (if tax paid)',l:'7 months',p:'BPT must be fully paid by original date',cite:'N.H. Rev. Stat. Ann. 77-A:6',n:'Automatic 7-month ext if all BPT due is paid by original date. Otherwise request extension.'},
+  {j:'New Jersey',t:'State',c:'SEPARATE FORM',f:'Form CBT-200-T',l:'6 months (extendable)',p:'Tax due by original date',cite:'N.J. Stat. Ann. 54:10A-19',n:'C-Corps MUST file Form CBT-200-T. Federal ext NOT accepted for corps.'},
+  {j:'New Mexico',t:'State',c:'ACCEPTS FEDERAL',f:'Form RPD-41096 (if no federal)',l:'Same as federal',p:'Tax due by original date',cite:'N.M. Stat. Ann. 7-2A-9',n:'Federal ext accepted. If no federal ext, file Form RPD-41096.'},
+  {j:'New York',t:'State',c:'SEPARATE FORM',f:'Form CT-5 (e-file mandatory)',l:'6 months + up to 2 additional 3-mo',p:'Estimated tax due with CT-5',cite:'N.Y. Tax Law §211(1)',n:'MUST file Form CT-5 electronically. Federal ext NOT accepted. Additional 3-month exts via CT-5.1 (up to 2). S-Corps use CT-5.4.'},
+  {j:'North Carolina',t:'State',c:'ACCEPTS FEDERAL',f:'Form CD-419 (if no federal)',l:'7 months (TY 2025+)',p:'Tax due by original date',cite:'N.C. Gen. Stat. 105-263',n:'For TY beginning on/after 1/1/2019, federal ext auto-extends NC. Must certify on return. 7-month ext for TY 2025+.'},
+  {j:'North Dakota',t:'State',c:'ACCEPTS FEDERAL',f:'Form 101 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'N.D. Cent. Code 57-38-34.1',n:'Federal ext accepted.'},
+  {j:'Ohio',t:'State',c:'ACCEPTS FEDERAL',f:'None (CAT phased out 2024)',l:'Same as federal',p:'N/A (no active CIT)',cite:'Ohio Rev. Code 5751 (CAT repealed/phased out 2024)',n:'No active corporate income tax as of 2024. Municipal net profit taxes separate.'},
+  {j:'Oklahoma',t:'State',c:'ACCEPTS FEDERAL',f:'Form 504-C (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Okla. Stat. tit. 68, §2385',n:'Federal ext accepted.'},
+  {j:'Oregon',t:'State',c:'ACCEPTS FEDERAL',f:'None (federal accepted)',l:'6 months',p:'Tax due by original date',cite:'Or. Rev. Stat. 314.385',n:'Federal ext automatically extends OR. Attach copy of Form 7004 to OR return.'},
+  {j:'Pennsylvania',t:'State',c:'ACCEPTS FEDERAL',f:'Form REV-853 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'72 P.S. §7403(e)',n:'Federal ext accepted. Philadelphia BIRT is separate.'},
+  {j:'Rhode Island',t:'State',c:'SEPARATE FORM',f:'Form RI-7004',l:'7 months',p:'Tax due by original date',cite:'R.I. Gen. Laws 44-11-5',n:'Must file RI Form RI-7004. Federal ext alone does not extend RI.'},
+  {j:'South Carolina',t:'State',c:'ACCEPTS FEDERAL',f:'Form SC 1120-T (if no federal)',l:'6 months',p:'Tax due by original date',cite:'S.C. Code Ann. 12-6-4980',n:'Federal ext accepted.'},
+  {j:'South Dakota',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'S.D. Const. Art. XI, §5',n:'No corporate income tax.'},
+  {j:'Tennessee',t:'State',c:'CONDITIONAL',f:'Form FAE173 (if tax due or no federal ext)',l:'Same as federal',p:'Tax due by original date',cite:'Tenn. Code Ann. 67-4-2017',n:'If no tax due AND federal ext filed, federal ext accepted. If tax is due OR no federal ext, must file Form FAE173 (Franchise & Excise Tax).'},
+  {j:'Texas',t:'State',c:'SEPARATE FORM',f:'Form 05-164 or Webfile',l:'First to Aug 15; second to Nov 15',p:'90% of tax by May 15 (original date)',cite:'Tex. Tax Code 171.202',n:'Franchise/margin tax. Due date is May 15, not April 15. Second ext to Nov 15 via TEXNET for EFT payors.'},
+  {j:'Utah',t:'State',c:'AUTOMATIC',f:'None (TC-559 for payment only)',l:'6 months',p:'Tax due by original date',cite:'Utah Code Ann. 59-7-507',n:'Automatic 6-month ext. No form required. Use TC-559 only to make payment.'},
+  {j:'Vermont',t:'State',c:'ACCEPTS FEDERAL',f:'Form BA-403 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Vt. Stat. Ann. tit. 32, §5868',n:'Federal ext accepted.'},
+  {j:'Virginia',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Must pay 90% of tax by original date',cite:'Va. Code Ann. 58.1-910',n:'Automatic 7-month ext. Must pay 90% by original due date to avoid penalty.'},
+  {j:'Washington',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'Wash. Rev. Code 82.04 (B&O Tax)',n:'No traditional corporate income tax. B&O and capital gains tax have separate rules.'},
+  {j:'West Virginia',t:'State',c:'ACCEPTS FEDERAL',f:'Form CIT-120EXT (if no federal)',l:'6 months',p:'Tax due by original date',cite:'W. Va. Code 11-24-13a',n:'Federal ext accepted.'},
+  {j:'Wisconsin',t:'State',c:'ACCEPTS FEDERAL',f:'None (federal accepted)',l:'6 months',p:'Tax due by original date',cite:'Wis. Stat. 71.44(3)',n:'Federal ext automatically extends WI.'},
+  {j:'Wyoming',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'Wyo. Const. Art. 15, §18',n:'No corporate income tax.'},
+  {j:'New York City (BCT)',t:'Local',c:'SEPARATE FORM',f:'Form NYC-EXT',l:'6 months + up to 2 additional 3-mo',p:'Estimated tax due with form',cite:'NYC Admin. Code §11-654',n:'Separate from NYS. Must file NYC Form NYC-EXT. Additional exts via NYC-EXT.1. BCT applies to C-corps (2015+).'},
+  {j:'New York City (GCT)',t:'Local',c:'SEPARATE FORM',f:'Form NYC-EXT',l:'6 months + up to 2 additional 3-mo',p:'Estimated tax due with form',cite:'NYC Admin. Code §11-503',n:'GCT applies to S-corps and qualified S subsidiaries only (2015+).'},
+  {j:'Detroit (City CIT)',t:'Local',c:'SEPARATE FORM',f:'Form 5301',l:'6 months',p:'Tax due by original date',cite:'MCL 141.631 et seq.',n:'Separate city ext Form 5301 required IN ADDITION to MI state Form 4. Detroit CIT rate: 2%.'},
+  {j:'Philadelphia (BIRT)',t:'Local',c:'AUTOMATIC',f:'None required',l:'Auto 60-day + match federal ext',p:'Tax due by original date (no payment ext)',cite:'Phila. Code §19-1502(9)',n:'Automatic 60-day ext from original due date. If IRS grants federal ext, Phila. auto-matches. TY 2025: $100K exemption eliminated.'},
+  {j:'San Francisco (GRT)',t:'Local',c:'SEPARATE FORM',f:'Extension request via SF Online or paper',l:'To Nov 30 (TY 2025+)',p:'110% of prior year tax due with ext request',cite:'SF Bus. & Tax Reg. Code Art. 12-A; Prop M (2024)',n:'Must submit ext request by March 2. Must pay 110% of prior year tax. GRT threshold: >$5M gross receipts (TY 2025+).'},
+  {j:'Los Angeles (LACBT)',t:'Local',c:'SEPARATE FORM',f:'Extension via LA Office of Finance',l:'45 days from original due date',p:'Estimated total tax due with extension',cite:'LAMC 21.00 et seq.',n:'Business license/gross receipts tax. Due date: March 2, 2026. Extension up to 45 days if requested before deadline.'},
+  {j:'Portland / Multnomah Co. (BLT/MCBIT)',t:'Local',c:'ACCEPTS FEDERAL',f:'Form EXT (if no federal/OR ext)',l:'6 months',p:'Tax due by original date',cite:'Portland City Code 7.02; Multnomah County Code 12.400',n:'Federal or Oregon ext accepted - attach copy to Portland return. BLT 2.6%; MCBIT 2%.'},
+  {j:'Ohio Municipalities (RITA)',t:'Local',c:'SEPARATE FORM',f:'RITA Form 20-EXT',l:'Same as federal',p:'Estimated tax due with extension',cite:'Ohio Rev. Code 718.05',n:'Must file RITA Form 20-EXT for net profit extension. Administers ~400 OH municipalities.'},
+];
+
+// Populate dropdown
+window.addEventListener('DOMContentLoaded', () => {
+  const sel = document.getElementById('jumpSelect');
+  // States first, then local
+  const states = DATA.filter(d => d.t === 'State').sort((a,b) => a.j.localeCompare(b.j));
+  const locals = DATA.filter(d => d.t === 'Local').sort((a,b) => a.j.localeCompare(b.j));
+  const addGroup = (label, items) => {
+    const og = document.createElement('optgroup');
+    og.label = label;
+    items.forEach(d => {
+      const o = document.createElement('option');
+      o.value = d.j;
+      o.textContent = d.j;
+      og.appendChild(o);
+    });
+    sel.appendChild(og);
+  };
+  addGroup('States & DC', states);
+  addGroup('Local Jurisdictions', locals);
+  filterTable();
+});
+
+const catColors = {
+  'AUTOMATIC':'#6de88e','ACCEPTS FEDERAL':'#5ab4f5','SEPARATE FORM':'#ff8f8a','CONDITIONAL':'#f5c264','NO CIT':'#c8c8c8'
+};
+
+function showResult(jurisdiction) {
+  const card = document.getElementById('resultCard');
+  const rc = document.getElementById('rc-content');
+  if (!jurisdiction) { card.style.display = 'none'; return; }
+  const d = DATA.find(x => x.j === jurisdiction);
+  if (!d) { card.style.display = 'none'; return; }
+  const col = catColors[d.c] || '#fff';
+  rc.innerHTML = `
+    <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:6px">${d.t === 'Local' ? 'Local Jurisdiction' : 'State'}</div>
+        <div style="font-family:var(--font-display);font-size:28px;font-weight:500;color:#fff;margin-bottom:10px">${d.j}</div>
+        <div style="display:inline-block;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:.06em;background:${col};color:#111;margin-bottom:14px">${d.c}</div>
+      </div>
+      <div style="flex:2;min-width:240px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Form Required</div>
+          <div style="font-size:13px;color:#fff;font-weight:600">${d.f}</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Extension Length</div>
+          <div style="font-size:13px;color:#fff;font-weight:600">${d.l}</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Payment Required</div>
+          <div style="font-size:13px;color:#fff;font-weight:600">${d.p}</div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:4px">Primary Citation</div>
+          <div style="font-size:13px;color:var(--coral);font-weight:600">${d.cite}</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:5px">Practitioner Notes</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.6">${d.n}</div>
+    </div>`;
+  card.style.display = 'block';
+}
+
+let currentCat = 'ALL';
 let sortCol = -1;
-let sortDir = 1; function catClass(c){ if(c==='AUTOMATIC') return 'auto'; if(c==='ACCEPTS FEDERAL') return 'federal'; if(c==='SEPARATE FORM') return 'separate'; if(c==='CONDITIONAL') return 'conditional'; if(c==='NO CIT') return 'nocit'; return 'local';
-} function setCat(cat, btn){ currentCat = cat; document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); filterTable();
-} function filterTable(){ const search = document.getElementById('searchBox').value.toLowerCase(); const typeF = document.getElementById('typeFilter').value; const tbody = document.getElementById('tableBody'); tbody.innerHTML=''; let counts={AUTOMATIC:0,'ACCEPTS FEDERAL':0,'SEPARATE FORM':0,CONDITIONAL:0,'NO CIT':0}; let vis=0; let rows = [...DATA]; if(sortCol>=0){ const keys=['j','t','c']; rows.sort((a,b)=>{ const av=Object.values(a)[sortCol]||''; const bv=Object.values(b)[sortCol]||''; return sortDir*(av<bv?-1:av>bv?1:0); }); } rows.forEach(r=>{ const matchSearch = !search || Object.values(r).join(' ').toLowerCase().includes(search); const matchType = !typeF || r.t===typeF; const matchCat = currentCat==='ALL' || r.c===currentCat; if(!matchSearch||!matchType||!matchCat) return; counts[r.c]=(counts[r.c]||0)+1; vis++; const tr = document.createElement('tr'); if(r.t==='Local') tr.className='local-row'; tr.innerHTML=` <td><strong>${r.j}</strong>${r.t==='Local'?'<br><span style="font-size:10px;color:var(--blue-acc)">Local</span>':''}</td> <td>${r.t}</td> <td><span class="cat-pill ${catClass(r.c)}">${r.c}</span></td> <td style="font-size:12px;font-weight:${r.c==='SEPARATE FORM'?'600':'400'};color:${r.c==='SEPARATE FORM'?'var(--red)':'inherit'}">${r.f}</td> <td style="white-space:nowrap;font-size:12px">${r.l}</td> <td style="font-size:12px">${r.p}</td> <td><div class="cite">${r.cite}</div></td> <td><div class="note-cell">${r.n}</div></td>`; tbody.appendChild(tr); }); document.getElementById('cnt-auto').textContent=counts['AUTOMATIC']||0; document.getElementById('cnt-fed').textContent=counts['ACCEPTS FEDERAL']||0; document.getElementById('cnt-sep').textContent=counts['SEPARATE FORM']||0; document.getElementById('cnt-cond').textContent=counts['CONDITIONAL']||0; document.getElementById('cnt-noc').textContent=counts['NO CIT']||0; document.getElementById('cnt-vis').textContent=vis; document.getElementById('noResults').classList.toggle('hidden', vis>0);
-} function sortTable(col){ if(sortCol===col) sortDir*=-1; else{sortCol=col;sortDir=1;} document.querySelectorAll('th').forEach((th,i)=>{ th.classList.toggle('sorted',i===col); const a=th.querySelector('.sort-arrow'); if(a) a.textContent=i===col?(sortDir===1?'↑':'↓'):'↕'; }); filterTable();
-} filterTable();
-</script> 
-<div class="related"><div class="related-label">Related Tools &amp; Guides on CPA Validated</div><div class="related-links"><a href="individual-extension.html" class="rl">Individual Extension Reference</a><a href="tax-calendar.html" class="rl">Federal Tax Calendar</a><a href="penalty-calculator.html" class="rl">Penalty & Interest Calculator</a><a href="tax-extension-guide.html" class="rl">Tax Extension Guide</a><a href="irs-payments-guide.html" class="rl">IRS Payment Methods</a></div></div>
+let sortDir = 1;
+
+function catClass(c){
+  if(c==='AUTOMATIC') return 'auto';
+  if(c==='ACCEPTS FEDERAL') return 'federal';
+  if(c==='SEPARATE FORM') return 'separate';
+  if(c==='CONDITIONAL') return 'conditional';
+  if(c==='NO CIT') return 'nocit';
+  return 'local';
+}
+
+function setCat(cat, btn){
+  currentCat = cat;
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filterTable();
+}
+
+function filterTable(){
+  const search = document.getElementById('searchBox').value.toLowerCase();
+  const typeF = document.getElementById('typeFilter').value;
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML='';
+  let counts={AUTOMATIC:0,'ACCEPTS FEDERAL':0,'SEPARATE FORM':0,CONDITIONAL:0,'NO CIT':0};
+  let vis=0;
+
+  let rows = [...DATA];
+  if(sortCol>=0){
+    const keys=['j','t','c'];
+    rows.sort((a,b)=>{
+      const av=Object.values(a)[sortCol]||'';
+      const bv=Object.values(b)[sortCol]||'';
+      return sortDir*(av<bv?-1:av>bv?1:0);
+    });
+  }
+
+  rows.forEach(r=>{
+    const matchSearch = !search || Object.values(r).join(' ').toLowerCase().includes(search);
+    const matchType = !typeF || r.t===typeF;
+    const matchCat = currentCat==='ALL' || r.c===currentCat;
+    if(!matchSearch||!matchType||!matchCat) return;
+    counts[r.c]=(counts[r.c]||0)+1;
+    vis++;
+    const tr = document.createElement('tr');
+    if(r.t==='Local') tr.className='local-row';
+    tr.innerHTML=`
+      <td><strong>${r.j}</strong>${r.t==='Local'?'<br><span style="font-size:10px;color:var(--blue-acc)">Local</span>':''}</td>
+      <td>${r.t}</td>
+      <td><span class="cat-pill ${catClass(r.c)}">${r.c}</span></td>
+      <td style="font-size:12px;font-weight:${r.c==='SEPARATE FORM'?'600':'400'};color:${r.c==='SEPARATE FORM'?'var(--red)':'inherit'}">${r.f}</td>
+      <td style="white-space:nowrap;font-size:12px">${r.l}</td>
+      <td style="font-size:12px">${r.p}</td>
+      <td><div class="cite">${r.cite}</div></td>
+      <td><div class="note-cell">${r.n}</div></td>`;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById('cnt-auto').textContent=counts['AUTOMATIC']||0;
+  document.getElementById('cnt-fed').textContent=counts['ACCEPTS FEDERAL']||0;
+  document.getElementById('cnt-sep').textContent=counts['SEPARATE FORM']||0;
+  document.getElementById('cnt-cond').textContent=counts['CONDITIONAL']||0;
+  document.getElementById('cnt-noc').textContent=counts['NO CIT']||0;
+  document.getElementById('cnt-vis').textContent=vis;
+  document.getElementById('noResults').classList.toggle('hidden', vis>0);
+}
+
+function sortTable(col){
+  if(sortCol===col) sortDir*=-1; else{sortCol=col;sortDir=1;}
+  document.querySelectorAll('th').forEach((th,i)=>{
+    th.classList.toggle('sorted',i===col);
+    const a=th.querySelector('.sort-arrow');
+    if(a) a.textContent=i===col?(sortDir===1?'↑':'↓'):'↕';
+  });
+  filterTable();
+}
+
+filterTable();
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
 </body>
 </html>
