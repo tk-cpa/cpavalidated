@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foreign Trusts & US Tax: Forms 3520 and 3520-A Deep Dive | CPA Validated</title>
+<meta name="description" content="When a foreign trust has a US grantor or US beneficiaries, annual Forms 3520 and 3520-A are required. Penalties up to 35% of trust assets per year. Grantor trust treatment, distributions, accumulation distributions, and the IRC 679 trap. CPA-validated. IRC §6048, §6677.">
+<link rel="canonical" href="https://cpavalidated.com/form-3520-foreign-trusts.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,5vw,40px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.penalty-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.pg-head{background:var(--ink);color:#fff;padding:10px 14px;font-family:var(--font-display);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.pg-cell{background:var(--white);padding:14px;font-size:13px;line-height:1.6;color:var(--ink-80)}
+.pg-cell strong{color:var(--ink);display:block;margin-bottom:4px}
+.flow-step{border-left:3px solid var(--coral);padding:12px 16px;margin-bottom:8px;background:var(--white);border:1px solid var(--ink-20);border-left:3px solid var(--coral)}
+.fs-num{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:4px}
+.fs-title{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.fs-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.penalty-grid,.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>Foreign Trusts & US Tax: Forms 3520 and 3520-A Deep Dive</h1>
+  <div class="sub">US Grantor Rules &nbsp;&bull;&nbsp; §679 Transfer Trap &nbsp;&bull;&nbsp; Distribution Taxation &nbsp;&bull;&nbsp; Throwback Rules &nbsp;&bull;&nbsp; Penalties</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6048</span>
+    <span class="ph-meta-item">IRC §6677</span>
+    <span class="ph-meta-item">IRC §679</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">A foreign trust with a US grantor or US beneficiaries sits at the intersection of the most complex and most penalized areas of US international tax law. The reporting obligations are annual, the penalties are asset-based rather than income-based, and the compliance failures most commonly occur not because taxpayers are evading tax - but because they simply did not know the rules applied to them. This guide covers the full compliance framework for foreign trusts with US connections.</p>
+
+<h2>Who This Applies To</h2>
+
+<p>If any of the following describe your situation, this guide is directly relevant:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>You are a US person who transferred assets to a foreign trust, or who is treated as having done so</li>
+  <li>You are a US person who is a grantor or owner of any portion of a foreign trust</li>
+  <li>You are a US person who received a distribution from a foreign trust</li>
+  <li>You are a US person who received a loan from a foreign trust</li>
+  <li>You immigrated to the US and had a trust established in your home country before you arrived</li>
+  <li>A foreign relative established a trust that includes you as a beneficiary</li>
+</ul>
+
+<p>For US persons who receive foreign gifts or inheritances (not involving a trust), see our <a href="form-3520-guide.html">Form 3520 guide on foreign gifts</a> which covers those thresholds and penalties.</p>
+
+<h2>The Two-Form System</h2>
+
+<p>Congress created two separate annual reporting forms for foreign trusts with US connections. They cover different parties and different information but are interrelated:</p>
+
+<div class="penalty-grid">
+  <div class="pg-head">Form 3520</div>
+  <div class="pg-head">Form 3520-A</div>
+  <div class="pg-cell">
+    <strong>Filed by:</strong> The US grantor (owner) or US beneficiary
+    <strong>Due:</strong> April 15 (extended to October 15 with Form 4868)
+    <strong>Reports:</strong> Transfers to the trust, distributions received, loans from the trust, and the US grantor's income inclusion
+    <strong>Authority:</strong> IRC §6048(a), (b), (c)
+  </div>
+  <div class="pg-cell">
+    <strong>Filed by:</strong> The foreign trust itself (US grantor files on behalf of trust if trust does not file)
+    <strong>Due:</strong> March 15 (extended to September 15)
+    <strong>Reports:</strong> Complete trust financial information - income, assets, distributions, owner statements, beneficiary statements
+    <strong>Authority:</strong> IRC §6048(b)(1)
+  </div>
+</div>
+
+<div class="red-box"><strong>Penalty exposure is on the trust's gross assets - not its income.</strong> The Form 3520-A penalty for failure to file is 5% of the gross value of the portion of the trust treated as owned by the US grantor - per year. A $3 million foreign grantor trust with a missing Form 3520-A generates a $150,000 annual penalty before any abatement. This is not a percentage of income. It is a percentage of assets. The penalty accrues regardless of whether the trust earned any income or made any distributions.</div>
+
+<h2>Determining Who Is the Grantor: IRC §679</h2>
+
+<p>The most important - and most frequently misunderstood - rule in foreign trust taxation is IRC §679. Under §679, if a US person transfers property to a foreign trust that has (or could have) a US beneficiary, that US person is treated as the owner (grantor) of the trust for US income tax purposes. The result: all income, gain, deduction, and credit of the trust flows through to the US person's individual tax return, as if the trust were a US grantor trust.</p>
+
+<p>IRC §679 applies regardless of:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>What the trust document calls itself (discretionary, protective, irrevocable, etc.)</li>
+  <li>Whether the trust was established in a jurisdiction with strong confidentiality laws</li>
+  <li>Whether the US transferor is named as a beneficiary</li>
+  <li>The amount transferred - even a $1 transfer can trigger §679 if the trust has US beneficiaries</li>
+</ul>
+
+<div class="callout">
+  <div class="callout-label">The US Beneficiary Definition Under §679</div>
+  <p>A trust "has a US beneficiary" for §679 purposes if any US person could potentially benefit from the trust - even if no distribution has ever been made and even if the US person's interest is highly contingent. If the trust document grants the trustee discretion to distribute to any person in a class that includes US persons, the trust has US beneficiaries. If the trust can accumulate income and US persons could receive it in the future (including upon termination), the trust has US beneficiaries.</p>
+  <p><strong>The only safe harbor:</strong> a trust where the trust agreement itself prohibits any benefit to a US person under any circumstance - and where an independent trustee has no power to change that restriction - will generally not be treated as having US beneficiaries. Most offshore trusts marketed to US persons do not meet this standard.</p>
+</div>
+
+<h2>What the US Grantor Must Report and Pay</h2>
+
+<h3>Income Tax - The Grantor Pays Everything</h3>
+
+<p>If a foreign trust is a grantor trust (whether because of §679 or otherwise), the US grantor pays US income tax on the trust's worldwide income at their ordinary individual tax rates - including income that remains inside the trust and is never distributed. The trust is transparent for US income tax purposes. IRC §671.</p>
+
+<p>This means the US grantor needs the trust's complete financial information each year to prepare their tax return accurately. This is what Form 3520-A is designed to produce: an "Owner Statement" (Schedule B of Form 3520-A) that the trust prepares and provides to the US grantor, showing the grantor's share of trust income, deductions, and credits.</p>
+
+<h3>Form 3520 Reporting by the US Grantor</h3>
+
+<p>The US grantor (or deemed owner under §679) must file Form 3520 annually to report:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>The existence of the foreign grantor trust and the US grantor's ownership percentage</li>
+  <li>Any transfers made to the trust during the year</li>
+  <li>Any distributions received from the trust</li>
+  <li>Any loans received from the trust or using trust assets as collateral</li>
+  <li>The income tax treatment - confirming grantor trust status and the income reported on the individual return</li>
+</ul>
+
+<h2>What Happens When the Foreign Trust Is Not a Grantor Trust</h2>
+
+<p>If the foreign trust does not have a US grantor - for example, it was established entirely by non-US persons with no US transfers - and it has US beneficiaries, the tax treatment shifts dramatically. The trust is now a foreign non-grantor trust, and its US beneficiaries face the throwback rules.</p>
+
+<h3>The Throwback Rules: IRC §§665-668</h3>
+
+<p>When a foreign non-grantor trust distributes income to a US beneficiary, the tax treatment depends on whether the distribution represents current-year income or accumulated prior-year income:</p>
+
+<div class="flow-step">
+  <div class="fs-num">Current-Year Distributions</div>
+  <div class="fs-title">Taxed as Ordinary Income in the Year Received</div>
+  <div class="fs-desc">Distributions out of current-year Distributable Net Income (DNI) are taxed to the US beneficiary as ordinary income in the year of distribution. IRC §662. The character of the income (interest, dividends, capital gains) generally retains its character as it passes through to the beneficiary.</div>
+</div>
+
+<div class="flow-step">
+  <div class="fs-num">Accumulation Distributions</div>
+  <div class="fs-title">Throwback + Interest Charge</div>
+  <div class="fs-desc">Distributions in excess of current-year DNI are "accumulation distributions" - treated as if distributed in the prior years when the income was earned. The beneficiary pays tax at the highest ordinary income rate (37% for individuals) for each prior year the income was accumulated, plus an interest charge under IRC §668 compounding at the underpayment rate for each year. The interest charge is not deductible. Effective rates on old accumulated income can far exceed 37%.</div>
+</div>
+
+<div class="note-box"><strong>No step-down for lower-income years.</strong> The throwback rules compute the additional tax by treating the accumulation distribution as if it had been distributed in each prior accumulation year. The tax is computed at the highest marginal rate in effect for that year - not at the beneficiary's actual rate. If the beneficiary had low income in those years, that doesn't reduce the throwback tax. The system is deliberately punitive to discourage offshore income accumulation.</div>
+
+<h3>UNI: Undistributed Net Income</h3>
+
+<p>Undistributed Net Income (UNI) is the trust's accumulated DNI from prior years that has not yet been distributed. It is the pool from which accumulation distributions are drawn. Tracking UNI accurately requires maintaining complete records of the trust's annual DNI and all prior distributions - often for decades. Trustees of foreign non-grantor trusts with US beneficiaries should maintain UNI schedules from the trust's inception.</p>
+
+<h2>Loans from Foreign Trusts: A Deemed Distribution</h2>
+
+<p>If a foreign trust makes a loan to a US grantor or US beneficiary, and the loan does not carry adequate interest (at least the applicable federal rate under IRC §1274(d)) and is not repaid within the year, the loan is treated as a distribution from the trust for income tax purposes. IRC §643(i). This creates an immediate income inclusion - potentially as an accumulation distribution if the trust has accumulated UNI - without the US person having actually received an economic distribution they can use to pay the tax.</p>
+
+<p>The same treatment applies if a US person uses trust assets as collateral for a personal loan. The collateral pledge is treated as a deemed distribution of the value of the collateral.</p>
+
+<h2>The Penalty Structure</h2>
+
+<div class="penalty-grid">
+  <div class="pg-head">Form 3520 Penalties (US Person)</div>
+  <div class="pg-head">Form 3520-A Penalties (Trust)</div>
+  <div class="pg-cell">
+    <strong>Transfer to foreign trust:</strong> 35% of gross value of property transferred (IRC §6677(a))
+    <br><br>
+    <strong>Distribution received:</strong> 35% of gross distribution amount (IRC §6677(b))
+    <br><br>
+    <strong>Minimum penalty:</strong> $10,000 per failure
+    <br><br>
+    <strong>Continuation:</strong> $10,000 per 30-day period after IRS notice, up to the gross value of the trust property
+  </div>
+  <div class="pg-cell">
+    <strong>Failure to file:</strong> 5% of gross value of trust assets treated as owned by US person (IRC §6677(b))
+    <br><br>
+    <strong>Minimum penalty:</strong> $10,000 per failure
+    <br><br>
+    <strong>Continuation:</strong> $10,000 per 30-day period after IRS notice
+    <br><br>
+    <strong>Responsibility:</strong> If the trust does not file, the US grantor must file a substitute Form 3520-A and faces the penalties directly
+  </div>
+</div>
+
+<h3>Reasonable Cause Exception</h3>
+
+<p>Penalties under IRC §6677 can be abated if the taxpayer demonstrates "reasonable cause" for the failure to file and that the failure was not due to willful neglect. Treas. Reg. §301.6677-1. The IRS has historically granted reasonable cause abatement in cases where the taxpayer was genuinely unaware of the reporting obligation (common for recent immigrants with pre-existing foreign trusts) and promptly came into compliance once informed. The IRS is less forgiving where the taxpayer was represented by counsel or where offshore structures appear to have been designed to minimize tax.</p>
+
+<h2>Streamlined Procedures for Prior Non-Compliance</h2>
+
+<p>US persons who failed to file Forms 3520 and 3520-A in prior years due to non-willful conduct can often come into compliance through the IRS Streamlined Filing Compliance Procedures. The Streamlined Domestic Offshore Procedures (for US-resident taxpayers) require filing amended returns for the most recent three years with all required international forms and paying a 5% miscellaneous offshore penalty on the highest aggregate account/asset balance. The Streamlined Foreign Offshore Procedures (for taxpayers who were non-residents) carry no miscellaneous penalty but require meeting the non-residency requirements.</p>
+
+<p>For taxpayers with willful non-compliance, the Offshore Voluntary Disclosure Program (OVDP) was formally closed in 2018. Post-OVDP voluntary disclosure is handled through the IRS Criminal Investigation Voluntary Disclosure Practice, which provides reduced exposure to criminal prosecution but no capped civil penalty.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="form-3520-guide.html" class="related-link">Form 3520: Foreign Gifts & Inheritances<span>Thresholds &middot; Penalties &middot; Aggregation</span></a>
+    <a href="trust-guide.html" class="related-link">US Trust Guide<span>Foreign vs. Domestic &middot; §679 &middot; Throwback Rules</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Tax Planning<span>Trust restructuring before US residency</span></a>
+    <a href="streamlined-checker.html" class="related-link">Streamlined Filing Eligibility<span>SFOP &middot; SDOP &middot; Non-willfulness</span></a>
+    <a href="fbar-penalties.html" class="related-link">FBAR Penalties<span>31 USC §5314 &middot; Willful vs. Non-willful</span></a>
+    <a href="expatriation-tax-guide.html" class="related-link">Expatriation Tax Guide<span>§877A(f) - foreign trust distributions to covered expatriates</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §671-679 (grantor trust rules); IRC §679 (US person as grantor of foreign trust - US beneficiary test); IRC §643(i) (loans from trusts treated as distributions); IRC §661-662 (DNI and distribution deduction/inclusion rules); IRC §665-668 (throwback rules - accumulation distributions, UNI, interest charge); IRC §6048(a) (reporting of transfers to foreign trusts); IRC §6048(b) (Form 3520-A - annual report of foreign grantor trust); IRC §6048(c) (reporting of distributions from foreign trusts); IRC §6677 (penalties - 35% of transfer, 5% of trust assets, $10K minimum); IRC §6677(d) (reasonable cause exception); Treas. Reg. §1.679-1 through §1.679-5 (§679 regulations); Treas. Reg. §301.6677-1 (reasonable cause abatement); IRS Form 3520 and Instructions; IRS Form 3520-A and Instructions; Rev. Proc. 2014-55 (RRSP - for comparison, treaty-based deferral); IRS Streamlined Filing Compliance Procedures (irs.gov).</div>
+
+<div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Foreign trust compliance involves complex fact-specific determinations and IRS enforcement priorities that change over time. Taxpayers with unreported foreign trust interests should consult a qualified international tax attorney and CPA before taking any action. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc. - <a href="https://tk.cpa" target="_blank">tk.cpa</a>. <a href="disclaimer.html">Full disclaimer.</a></div>
+
+</div>
+</body>
+</html>
