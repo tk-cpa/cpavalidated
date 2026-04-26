@@ -67,154 +67,22 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="brand">
-    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
-  </a>
-  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi">
-  <h1>Qualified Opportunity Zone (QOZ) Tax Guide 2026</h1>
-  <div class="sub">Capital gain deferral, basis step-up, and permanent exclusion of QOF appreciation. 180-day reinvestment window. December 31, 2026 deferral deadline. Form 8997 annual reporting.</div>
-  <div class="badges"><span class="badge">IRC 1400Z-2</span><span class="badge">Form 8997</span><span class="badge">180-day reinvestment window</span><span class="badge">Dec 31 2026 deferral deadline</span></div>
+<div class="ph"><div class="phi"> <h1>Qualified Opportunity Zone (QOZ) Tax Guide 2026</h1> <div class="sub">Capital gain deferral, basis step-up, and permanent exclusion of QOF appreciation. 180-day reinvestment window. December 31, 2026 deferral deadline. Form 8997 annual reporting.</div> <div class="badges"><span class="badge">IRC 1400Z-2</span><span class="badge">Form 8997</span><span class="badge">180-day reinvestment window</span><span class="badge">Dec 31 2026 deferral deadline</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap">
-
-<div class="deadline-box">
-  <div class="db-icon">!</div>
-  <div class="db-content">
-    <div class="db-title">December 31, 2026: Final Deferral Deadline</div>
-    <div class="db-sub">The deferred gain is recognized on the earlier of (1) the date the QOF investment is sold/exchanged, or (2) December 31, 2026. Any gain that was deferred by investing in a QOF must be recognized no later than December 31, 2026 regardless of whether the investor sold. The appreciation exclusion (for QOF investments held 10+ years) is NOT affected by this deadline and remains available indefinitely. IRC 1400Z-2(b)(1).</div>
-  </div>
+<div class="wrap"> <div class="deadline-box"> <div class="db-icon">!</div> <div class="db-content"> <div class="db-title">December 31, 2026: Final Deferral Deadline</div> <div class="db-sub">The deferred gain is recognized on the earlier of (1) the date the QOF investment is sold/exchanged, or (2) December 31, 2026. Any gain that was deferred by investing in a QOF must be recognized no later than December 31, 2026 regardless of whether the investor sold. The appreciation exclusion (for QOF investments held 10+ years) is NOT affected by this deadline and remains available indefinitely. IRC 1400Z-2(b)(1).</div> </div>
+</div> <div class="benefit-grid"> <div class="benefit-box"> <div class="bb-num">1</div> <div class="bb-title">Deferral</div> <div class="bb-desc">Defer the original capital gain by investing in a QOF within 180 days. Tax not due until Dec 31, 2026 or earlier sale. IRC 1400Z-2(a).</div> </div> <div class="benefit-box"> <div class="bb-num">2</div> <div class="bb-title">Basis Step-Up</div> <div class="bb-desc">10% basis step-up after 5 years of holding. Reduces the taxable deferred gain at recognition. Only for investments made before Dec 31, 2021 (5-year hold now complete). IRC 1400Z-2(b)(2)(B).</div> </div> <div class="benefit-box"> <div class="bb-num">3</div> <div class="bb-title">Exclusion</div> <div class="bb-desc">Appreciation on the QOF investment itself is permanently excluded from income if held 10+ years. This is the primary ongoing benefit. IRC 1400Z-2(c).</div> </div>
+</div> <div class="card"> <div class="ch"><div class="sb">1</div><h2>QOZ Tax Benefit Calculator</h2></div> <div class="cb"> <div class="fg2"> <div class="f1"><label>Original Capital Gain Invested ($)</label> <input type="number" id="gain" class="fc" value="500000" oninput="calc()"> <div class="hint">The gain you are deferring. Only capital gains qualify (not ordinary income). The full gain must be invested to defer the full amount. IRC 1400Z-2(a)(1).</div> </div> <div class="f1"><label>QOF Investment Date</label> <select class="fc" id="investDate" onchange="calc()"> <option value="pre2022">Before Jan 1, 2022 (eligible for 10% step-up at 5-yr mark)</option> <option value="post2022" selected>Jan 1, 2022 or later (step-up benefit expired; deferral + exclusion only)</option> </select> <div class="hint">The 10% basis step-up required a 5-year hold. Investments made after Dec 31, 2021 cannot reach the 5-year mark by Dec 31, 2026 and do not qualify for the step-up.</div> </div> </div> <div class="fg2"> <div class="f1"><label>QOF Value at Projected Exit ($)</label> <input type="number" id="exitValue" class="fc" value="1500000" oninput="calc()"> <div class="hint">Projected fair market value of QOF interest at exit after 10+ years. This appreciation is excluded from tax if held 10+ years.</div> </div> <div class="f1"><label>Capital Gains Tax Rate</label> <select class="fc" id="cgRate" onchange="calc()"> <option value="0.20" selected>20% (top LTCG rate)</option> <option value="0.238">23.8% (20% + 3.8% NIIT)</option> <option value="0.15">15% LTCG rate</option> </select> </div> </div> <div id="res2"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div> </div>
+</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>QOZ Timeline & Key Rules</h2></div> <div class="cb"> <div class="timeline"> <div class="tl-item"><div class="tl-date">Day 0 - Sale of appreciated asset</div><div class="tl-title">Capital gain recognized</div><div class="tl-desc">Original asset sold. You have 180 days from the sale date to invest in a QOF. IRC 1400Z-2(a)(1)(A). Some K-1 gains have extended 180-day periods.</div></div> <div class="tl-item"><div class="tl-date">Within 180 days</div><div class="tl-title">Invest in Qualified Opportunity Fund</div><div class="tl-desc">Only the gain amount needs to be invested (not the full proceeds). QOF must be certified and hold at least 90% of assets in qualified opportunity zone property. IRC 1400Z-2(d).</div></div> <div class="tl-item"><div class="tl-date">Year 5 of holding (pre-2022 investments only)</div><div class="tl-title">10% basis step-up</div><div class="tl-desc">Basis in deferred gain increased by 10%. Reduces the taxable deferred gain at recognition. For pre-2022 investments only - the 5-year window expires Dec 31, 2026. IRC 1400Z-2(b)(2)(B)(iii).</div></div> <div class="tl-item"><div class="tl-date">December 31, 2026</div><div class="tl-title">DEADLINE: Deferred gain recognized</div><div class="tl-desc">All remaining deferred gain (original gain minus any basis step-up) is recognized and taxable at 2026 rates, even if you have not sold the QOF. Prepare for this tax bill now if you invested in 2018-2026. IRC 1400Z-2(b)(1)(B).</div></div> <div class="tl-item"><div class="tl-date">Year 10+ of holding</div><div class="tl-title">Appreciation exclusion</div><div class="tl-desc">All appreciation in the QOF investment above the original invested amount is permanently excluded from income. Basis in the QOF steps up to FMV at the time of sale. This benefit remains available indefinitely - the Dec 31, 2026 deadline does NOT affect this. IRC 1400Z-2(c).</div></div> </div> <div class="src">IRC 1400Z-1 (designation of qualified opportunity zones); IRC 1400Z-2 (special rules for capital gains invested in qualified opportunity zones); IRC 1400Z-2(a) (deferral election - invest within 180 days); IRC 1400Z-2(b) (deferred gain recognition - Dec 31, 2026 deadline); IRC 1400Z-2(b)(2)(B)(iii) (10% basis step-up at 5-year mark); IRC 1400Z-2(c) (exclusion of gain on QOF investment held 10+ years); Treas. Reg. 1.1400Z2(a)-1 through 1.1400Z2(f)-1 (comprehensive QOZ regulations); Form 8997 (annual QOZ reporting - required every year QOF investment is held).</div> <div class="disc">QOZ investments are complex, illiquid, and subject to numerous additional requirements (90% asset test, substantial improvement, original use). This guide covers only federal tax rules. State conformity to QOZ rules varies significantly. Consult qualified tax counsel and a financial advisor before investing.</div> </div>
 </div>
-
-<div class="benefit-grid">
-  <div class="benefit-box">
-    <div class="bb-num">1</div>
-    <div class="bb-title">Deferral</div>
-    <div class="bb-desc">Defer the original capital gain by investing in a QOF within 180 days. Tax not due until Dec 31, 2026 or earlier sale. IRC 1400Z-2(a).</div>
-  </div>
-  <div class="benefit-box">
-    <div class="bb-num">2</div>
-    <div class="bb-title">Basis Step-Up</div>
-    <div class="bb-desc">10% basis step-up after 5 years of holding. Reduces the taxable deferred gain at recognition. Only for investments made before Dec 31, 2021 (5-year hold now complete). IRC 1400Z-2(b)(2)(B).</div>
-  </div>
-  <div class="benefit-box">
-    <div class="bb-num">3</div>
-    <div class="bb-title">Exclusion</div>
-    <div class="bb-desc">Appreciation on the QOF investment itself is permanently excluded from income if held 10+ years. This is the primary ongoing benefit. IRC 1400Z-2(c).</div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="ch"><div class="sb">1</div><h2>QOZ Tax Benefit Calculator</h2></div>
-  <div class="cb">
-    <div class="fg2">
-      <div class="f1"><label>Original Capital Gain Invested ($)</label>
-        <input type="number" id="gain" class="fc" value="500000" oninput="calc()">
-        <div class="hint">The gain you are deferring. Only capital gains qualify (not ordinary income). The full gain must be invested to defer the full amount. IRC 1400Z-2(a)(1).</div>
-      </div>
-      <div class="f1"><label>QOF Investment Date</label>
-        <select class="fc" id="investDate" onchange="calc()">
-          <option value="pre2022">Before Jan 1, 2022 (eligible for 10% step-up at 5-yr mark)</option>
-          <option value="post2022" selected>Jan 1, 2022 or later (step-up benefit expired; deferral + exclusion only)</option>
-        </select>
-        <div class="hint">The 10% basis step-up required a 5-year hold. Investments made after Dec 31, 2021 cannot reach the 5-year mark by Dec 31, 2026 and do not qualify for the step-up.</div>
-      </div>
-    </div>
-    <div class="fg2">
-      <div class="f1"><label>QOF Value at Projected Exit ($)</label>
-        <input type="number" id="exitValue" class="fc" value="1500000" oninput="calc()">
-        <div class="hint">Projected fair market value of QOF interest at exit after 10+ years. This appreciation is excluded from tax if held 10+ years.</div>
-      </div>
-      <div class="f1"><label>Capital Gains Tax Rate</label>
-        <select class="fc" id="cgRate" onchange="calc()">
-          <option value="0.20" selected>20% (top LTCG rate)</option>
-          <option value="0.238">23.8% (20% + 3.8% NIIT)</option>
-          <option value="0.15">15% LTCG rate</option>
-        </select>
-      </div>
-    </div>
-    <div id="res2"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="ch"><div class="sb">2</div><h2>QOZ Timeline & Key Rules</h2></div>
-  <div class="cb">
-    <div class="timeline">
-      <div class="tl-item"><div class="tl-date">Day 0 - Sale of appreciated asset</div><div class="tl-title">Capital gain recognized</div><div class="tl-desc">Original asset sold. You have 180 days from the sale date to invest in a QOF. IRC 1400Z-2(a)(1)(A). Some K-1 gains have extended 180-day periods.</div></div>
-      <div class="tl-item"><div class="tl-date">Within 180 days</div><div class="tl-title">Invest in Qualified Opportunity Fund</div><div class="tl-desc">Only the gain amount needs to be invested (not the full proceeds). QOF must be certified and hold at least 90% of assets in qualified opportunity zone property. IRC 1400Z-2(d).</div></div>
-      <div class="tl-item"><div class="tl-date">Year 5 of holding (pre-2022 investments only)</div><div class="tl-title">10% basis step-up</div><div class="tl-desc">Basis in deferred gain increased by 10%. Reduces the taxable deferred gain at recognition. For pre-2022 investments only - the 5-year window expires Dec 31, 2026. IRC 1400Z-2(b)(2)(B)(iii).</div></div>
-      <div class="tl-item"><div class="tl-date">December 31, 2026</div><div class="tl-title">DEADLINE: Deferred gain recognized</div><div class="tl-desc">All remaining deferred gain (original gain minus any basis step-up) is recognized and taxable at 2026 rates, even if you have not sold the QOF. Prepare for this tax bill now if you invested in 2018-2026. IRC 1400Z-2(b)(1)(B).</div></div>
-      <div class="tl-item"><div class="tl-date">Year 10+ of holding</div><div class="tl-title">Appreciation exclusion</div><div class="tl-desc">All appreciation in the QOF investment above the original invested amount is permanently excluded from income. Basis in the QOF steps up to FMV at the time of sale. This benefit remains available indefinitely - the Dec 31, 2026 deadline does NOT affect this. IRC 1400Z-2(c).</div></div>
-    </div>
-    <div class="src">IRC 1400Z-1 (designation of qualified opportunity zones); IRC 1400Z-2 (special rules for capital gains invested in qualified opportunity zones); IRC 1400Z-2(a) (deferral election - invest within 180 days); IRC 1400Z-2(b) (deferred gain recognition - Dec 31, 2026 deadline); IRC 1400Z-2(b)(2)(B)(iii) (10% basis step-up at 5-year mark); IRC 1400Z-2(c) (exclusion of gain on QOF investment held 10+ years); Treas. Reg. 1.1400Z2(a)-1 through 1.1400Z2(f)-1 (comprehensive QOZ regulations); Form 8997 (annual QOZ reporting - required every year QOF investment is held).</div>
-    <div class="disc">QOZ investments are complex, illiquid, and subject to numerous additional requirements (90% asset test, substantial improvement, original use). This guide covers only federal tax rules. State conformity to QOZ rules varies significantly. Consult qualified tax counsel and a financial advisor before investing. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>
-  </div>
-</div>
-</div>
-
-<div class="related"><div style="max-width:900px;margin:0 auto">
-  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
-  <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a>
-  <a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a>
-  <a href="estate-tax-calculator.html" class="rl">Estate Tax Calculator</a>
-  <a href="nol-tracker.html" class="rl">NOL Tracker</a>
-  <a href="index.html" class="rl">All Tools</a>
-</div></div>
-
-<script>
+</div> <div class="related"><div style="max-width:900px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="capital-gains-calculator.html" class="rl">Capital Gains + NIIT</a> <a href="1031-exchange-guide.html" class="rl">1031 Exchange Guide</a> <a href="estate-tax-calculator.html" class="rl">Estate Tax Calculator</a> <a href="nol-tracker.html" class="rl">NOL Tracker</a> <a href="index.html" class="rl">All Tools</a>
+</div></div> <script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
 function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
-function calc(){
-  const gain=parseFloat(document.getElementById('gain').value)||0;
-  const exitValue=parseFloat(document.getElementById('exitValue').value)||0;
-  const cgRate=parseFloat(document.getElementById('cgRate').value)||0.20;
-  const pre2022=document.getElementById('investDate').value==='pre2022';
-  const stepUp=pre2022?gain*0.10:0;
-  const deferredGainAtDec2026=gain-stepUp;
-  const deferredTax=deferredGainAtDec2026*cgRate;
-  const appreciation=Math.max(0,exitValue-gain);
-  const taxOnAppreciation=appreciation*cgRate;
-  const taxSavedOnAppreciation=taxOnAppreciation;
-  const withoutQOZ_tax=gain*cgRate+appreciation*cgRate;
-  const withQOZ_tax=deferredTax; // appreciation excluded if held 10+yrs
-  const netBenefit=withoutQOZ_tax-withQOZ_tax;
-
-  const rb=document.getElementById('res2');
-  let h='';
-  h+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
-    <div style="border:2px solid var(--ink-20);padding:16px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px;font-family:var(--font-mono)">Without QOZ Investment</div>
-      <div style="font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:10px">Direct Investment</div>
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on original gain now</span><span>${fmt(gain*cgRate)}</span></div>
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on appreciation at exit</span><span>${fmt(taxOnAppreciation)}</span></div>
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;font-weight:700"><span>Total tax burden</span><span>${fmt(withoutQOZ_tax)}</span></div>
-    </div>
-    <div style="border:2px solid var(--green);background:var(--green-bg);padding:16px">
-      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px;font-family:var(--font-mono)">With QOZ Investment (10+ yr hold)</div>
-      <div style="font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:10px">QOF Investment</div>
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Deferred gain at Dec 31, 2026</span><span>${fmt(deferredGainAtDec2026)}</span></div>
-      ${stepUp>0?`<div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>10% step-up reduces taxable gain</span><span style="color:var(--green)">-${fmt(stepUp)}</span></div>`:''}
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on deferred gain</span><span style="color:var(--red)">${fmt(deferredTax)}</span></div>
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on QOF appreciation (EXCLUDED)</span><span style="color:var(--green)">$0</span></div>
-      <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;font-weight:700"><span>Total tax burden</span><span>${fmt(withQOZ_tax)}</span></div>
-    </div>
-  </div>`;
-  h+=`<div style="background:var(--ink);padding:16px 20px;margin-bottom:14px">
-    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:6px">Net Tax Savings from QOZ (if held 10+ years)</div>
-    <div style="font-family:var(--font-display);font-size:36px;font-weight:500;color:#fff">${fmt(netBenefit)}</div>
-    <div style="font-size:12px;color:rgba(255,255,255,.4)">Tax saved on ${fmt(appreciation)} of appreciation in QOF</div>
-  </div>`;
-  if(!pre2022) h+=flag('amber','!',`<strong>No 10% step-up available.</strong> Investments made after December 31, 2021 cannot reach the 5-year holding mark by December 31, 2026 and do not qualify for the 10% basis step-up. The primary benefits for your investment are: (1) deferral of the original ${fmt(gain)} gain until Dec 31, 2026, and (2) permanent exclusion of the ${fmt(appreciation)} of appreciation if you hold 10+ years.`);
-  h+=flag('red','!',`<strong>Prepare for Dec 31, 2026 tax payment.</strong> ${fmt(deferredTax)} of tax on the deferred gain will be due with your 2026 tax return (April 2027). Ensure you have liquidity for this payment - you may still hold the illiquid QOF investment while owing tax on the deferred gain.`);
-  h+=flag('green','v',`<strong>Permanent exclusion of ${fmt(appreciation)} appreciation.</strong> If you hold the QOF for 10+ years and make the election under IRC 1400Z-2(c), the ${fmt(appreciation)} of appreciation in the QOF is permanently excluded. At a ${Math.round(cgRate*100)}% rate, that is ${fmt(taxOnAppreciation)} of tax permanently eliminated.`);
-  rb.innerHTML=h;
+function calc(){ const gain=parseFloat(document.getElementById('gain').value)||0; const exitValue=parseFloat(document.getElementById('exitValue').value)||0; const cgRate=parseFloat(document.getElementById('cgRate').value)||0.20; const pre2022=document.getElementById('investDate').value==='pre2022'; const stepUp=pre2022?gain*0.10:0; const deferredGainAtDec2026=gain-stepUp; const deferredTax=deferredGainAtDec2026*cgRate; const appreciation=Math.max(0,exitValue-gain); const taxOnAppreciation=appreciation*cgRate; const taxSavedOnAppreciation=taxOnAppreciation; const withoutQOZ_tax=gain*cgRate+appreciation*cgRate; const withQOZ_tax=deferredTax; // appreciation excluded if held 10+yrs const netBenefit=withoutQOZ_tax-withQOZ_tax; const rb=document.getElementById('res2'); let h=''; h+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px"> <div style="border:2px solid var(--ink-20);padding:16px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px;font-family:var(--font-mono)">Without QOZ Investment</div> <div style="font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:10px">Direct Investment</div> <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on original gain now</span><span>${fmt(gain*cgRate)}</span></div> <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on appreciation at exit</span><span>${fmt(taxOnAppreciation)}</span></div> <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;font-weight:700"><span>Total tax burden</span><span>${fmt(withoutQOZ_tax)}</span></div> </div> <div style="border:2px solid var(--green);background:var(--green-bg);padding:16px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px;font-family:var(--font-mono)">With QOZ Investment (10+ yr hold)</div> <div style="font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:10px">QOF Investment</div> <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Deferred gain at Dec 31, 2026</span><span>${fmt(deferredGainAtDec2026)}</span></div> ${stepUp>0?`<div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>10% step-up reduces taxable gain</span><span style="color:var(--green)">-${fmt(stepUp)}</span></div>`:''} <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on deferred gain</span><span style="color:var(--red)">${fmt(deferredTax)}</span></div> <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.06)"><span>Tax on QOF appreciation (EXCLUDED)</span><span style="color:var(--green)">$0</span></div> <div style="display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0;font-weight:700"><span>Total tax burden</span><span>${fmt(withQOZ_tax)}</span></div> </div> </div>`; h+=`<div style="background:var(--ink);padding:16px 20px;margin-bottom:14px"> <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:6px">Net Tax Savings from QOZ (if held 10+ years)</div> <div style="font-family:var(--font-display);font-size:36px;font-weight:500;color:#fff">${fmt(netBenefit)}</div> <div style="font-size:12px;color:rgba(255,255,255,.4)">Tax saved on ${fmt(appreciation)} of appreciation in QOF</div> </div>`; if(!pre2022) h+=flag('amber','!',`<strong>No 10% step-up available.</strong> Investments made after December 31, 2021 cannot reach the 5-year holding mark by December 31, 2026 and do not qualify for the 10% basis step-up. The primary benefits for your investment are: (1) deferral of the original ${fmt(gain)} gain until Dec 31, 2026, and (2) permanent exclusion of the ${fmt(appreciation)} of appreciation if you hold 10+ years.`); h+=flag('red','!',`<strong>Prepare for Dec 31, 2026 tax payment.</strong> ${fmt(deferredTax)} of tax on the deferred gain will be due with your 2026 tax return (April 2027). Ensure you have liquidity for this payment - you may still hold the illiquid QOF investment while owing tax on the deferred gain.`); h+=flag('green','v',`<strong>Permanent exclusion of ${fmt(appreciation)} appreciation.</strong> If you hold the QOF for 10+ years and make the election under IRC 1400Z-2(c), the ${fmt(appreciation)} of appreciation in the QOF is permanently excluded. At a ${Math.round(cgRate*100)}% rate, that is ${fmt(taxOnAppreciation)} of tax permanently eliminated.`); rb.innerHTML=h;
 }
 calc();
-</script>
-
-</body>
+</script> </body>
 </html>
