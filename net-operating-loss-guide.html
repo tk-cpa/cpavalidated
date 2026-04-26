@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Operating Loss (NOL) Guide: §172, Carryforward & OBBBA Changes (2026) | CPA Validated</title>
+<meta name="description" content="NOL rules under IRC §172: the 80% taxable income limitation, indefinite carryforward (no carryback for most), farming NOL 2-year carryback, OBBBA interaction, excess business loss limitation §461(l), and how to compute and track an NOL. CPA-validated. Updated 2026.">
+<link rel="canonical" href="https://cpavalidated.com/net-operating-loss-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px;font-family:var(--font-mono)}
+.formula-line{font-size:14px;color:#fff;line-height:2.2;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px;font-family:var(--font-mono)}
+.formula-line .var{color:var(--coral);font-family:var(--font-mono)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="ph"><div class="phi">
+  <h1>Net Operating Loss (NOL): §172, 80% Limit & OBBBA Rules</h1>
+  <div class="sub">Indefinite Carryforward &nbsp;&bull;&nbsp; 80% Taxable Income Cap &nbsp;&bull;&nbsp; Farming 2-Year Carryback &nbsp;&bull;&nbsp; §461(l) Excess Business Loss &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §172</span>
+    <span class="ph-meta-item">IRC §461(l)</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">A net operating loss arises when a taxpayer's deductions exceed gross income for the year. The NOL can be carried to other tax years to reduce tax liability - but TCJA changed the rules significantly, and OBBBA made those changes permanent. Carrybacks are eliminated for most taxpayers. Carryforwards are indefinite but limited to 80% of taxable income in each carry year. Understanding how to compute, track, and utilize an NOL is essential for businesses with cyclical income, early-stage companies, and individuals with large deductible losses.</p>
+
+<div class="callout">
+  <div class="callout-label">Current NOL Rules - Post-TCJA, Post-OBBBA</div>
+  <p><strong>NOLs arising after 2017:</strong> Indefinite carryforward only. No carryback (with exceptions). Limited to 80% of taxable income in the carryforward year.</p>
+  <p><strong>NOLs arising before 2018:</strong> Old rules apply - 2-year carryback, 20-year carryforward, 100% offset (no 80% limitation).</p>
+  <p><strong>Farming NOLs:</strong> 2-year carryback election available regardless of the general carryback prohibition.</p>
+  <p><strong>Property/casualty insurance company NOLs:</strong> 2-year carryback, 20-year carryforward.</p>
+  <p><strong>OBBBA:</strong> Made TCJA's carryback prohibition and 80% limitation permanent - no sunset.</p>
+</div>
+
+<h2>Computing the NOL: What Goes In</h2>
+
+<p>An individual's NOL is not simply the negative number on the bottom of their Form 1040. Certain deductions must be excluded from the NOL computation because they are "non-business" items that should not create a loss that offsets business income in other years.</p>
+
+<div class="formula-box">
+  <div class="formula-label">Individual NOL Computation</div>
+  <div class="formula-line"><span class="op">Start:</span><span class="var">Taxable income (negative)</span><span class="def">The actual loss figure from the return</span></div>
+  <div class="formula-line"><span class="op">+</span><span class="var">Non-business capital losses in excess of non-business capital gains</span><span class="def">Add back - capital losses can only offset capital gains, not create an NOL</span></div>
+  <div class="formula-line"><span class="op">+</span><span class="var">Non-business deductions in excess of non-business income</span><span class="def">Add back personal deductions not related to trade or business</span></div>
+  <div class="formula-line"><span class="op">+</span><span class="var">§1202 exclusion amounts</span><span class="def">Add back QSBS exclusion if claimed</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Net Operating Loss</span><span class="def">The amount available for carryforward</span></div>
+</div>
+
+<p>For corporations, the NOL computation is simpler - it is generally the negative taxable income for the year, without the non-business adjustments required for individuals. C-corporations cannot deduct dividends received deduction when computing the NOL.</p>
+
+<h2>The 80% Limitation: How It Works in Practice</h2>
+
+<p>NOLs arising after December 31, 2017 can only offset 80% of taxable income in the carryforward year. The remaining 20% is always subject to tax - even if the taxpayer has a large NOL carryforward. The 80% is computed before the NOL deduction itself.</p>
+
+<div class="note-box"><strong>The 80% limit means an NOL carryforward never fully offsets income - it extends the NOL utilization.</strong> Example: $1,000,000 NOL carryforward. In year 2, taxable income (before NOL) = $500,000. Maximum NOL deduction = 80% x $500,000 = $400,000. Taxable income after NOL = $100,000. Remaining NOL carryforward = $600,000. The NOL is not consumed faster than the taxable income - it stretches across more years than would have been the case under the old unlimited offset rules.</div>
+
+<h2>No Carryback for Most NOLs - Exceptions</h2>
+
+<p>TCJA eliminated the general 2-year carryback for NOLs arising after 2017. OBBBA made this permanent. However, several exceptions remain:</p>
+
+<table class="key-table">
+  <tr><th>NOL Type</th><th>Carryback</th><th>Carryforward</th><th>80% Limit?</th></tr>
+  <tr><td>General NOL (post-2017)</td><td>None</td><td>Indefinite</td><td>Yes - 80% cap</td></tr>
+  <tr><td>Farming loss (post-2017)</td><td>2 years (election available)</td><td>Indefinite</td><td>Yes - 80% cap on carryforward</td></tr>
+  <tr><td>Property/casualty insurance company NOL</td><td>2 years</td><td>20 years</td><td>No</td></tr>
+  <tr><td>Pre-2018 NOL</td><td>2 years (under old rules)</td><td>20 years</td><td>No - 100% offset</td></tr>
+  <tr><td>COVID-19 NOL (2018-2020)</td><td>5 years (CARES Act P.L. 116-136)</td><td>Indefinite</td><td>No for carryback years; 80% for carryforward</td></tr>
+</table>
+
+<div class="green-box"><strong>Farming NOL carryback election.</strong> Farmers can elect to carry back an NOL 2 years, which can produce an immediate refund of prior-year taxes paid. The election is made on the return for the NOL year. Because farming income is highly variable - drought, commodity price swings, disaster losses - the carryback is particularly valuable. If no carryback election is made, the farming NOL carries forward indefinitely subject to the 80% limitation.</div>
+
+<h2>The Excess Business Loss Limitation: §461(l)</h2>
+
+<p>Before an NOL can even be created at the individual level, another limitation applies: the excess business loss (EBL) limitation under IRC §461(l). For non-corporate taxpayers (individuals, partners, S-corp shareholders), aggregate business losses cannot exceed $313,000 (single) / $626,000 (MFJ) in 2026, adjusted for inflation. Losses in excess of these thresholds are not allowed in the current year - they are treated as an NOL carryforward to the following year.</p>
+
+<p>The EBL limitation applies after the passive activity and at-risk rules. It was originally a TCJA provision, extended by CARES Act, and made permanent by OBBBA. The effect: large business losses from pass-through entities are capped at the threshold in the loss year, with the excess automatically becoming an NOL for the following year.</p>
+
+<div class="note-box"><strong>§461(l) and §172 interact in sequence.</strong> A large Schedule C or K-1 loss first passes through basis, at-risk, and passive activity limitations. Amounts that survive those limitations are subject to §461(l). Any excess over the EBL threshold becomes an NOL carryforward subject to the 80% limitation. Practitioners must track all three layers simultaneously for clients with large pass-through losses.</div>
+
+<h2>Tracking and Documenting NOL Carryforwards</h2>
+
+<p>NOL carryforwards must be tracked carefully across years, especially when they span different tax regimes (pre-2018 vs. post-2017). The IRS expects taxpayers to maintain records of: the year the NOL arose, the amount of the NOL, any amounts used in prior carryforward years, and the remaining carryforward. Form 1045 (Application for Tentative Refund) can be used to carry back eligible NOLs for a quick refund. The NOL is reported on Schedule A of Form 1045 or on the return itself using Form 1040 Schedule 1.</p>
+
+<p>If an NOL is carried forward into a year when the taxpayer's return is audited and the NOL year is outside the statute of limitations, the IRS can still examine the NOL computation to verify its amount - the NOL year does not need to be open for audit for the IRS to contest the carryforward amount.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>Permanent NOL rules &middot; §461(l) extension</span></a>
+    <a href="passive-activity-loss.html" class="related-link">Passive Activity Loss<span>PAL ordering before §461(l)</span></a>
+    <a href="at-risk-rules-guide.html" class="related-link">At-Risk Rules Guide<span>Loss ordering: basis, at-risk, passive, §461(l)</span></a>
+    <a href="business-sale-planning.html" class="related-link">Business Sale Planning<span>NOL carryforward in asset vs. stock sales</span></a>
+    <a href="hobby-loss-rules-guide.html" class="related-link">Hobby Loss Rules<span>IRC §183 vs. §172 interaction</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Model NOL carryforward utilization</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §172 (net operating loss deduction - general rules, carryback and carryforward); IRC §172(a) (NOL deduction allowed for loss year and carryback/carryforward years); IRC §172(b)(1)(A) (carryforward indefinite for post-2017 NOLs; no carryback except farming); IRC §172(b)(1)(B) (farming loss carryback - 2 years); IRC §172(b)(2) (80% of taxable income limitation for post-2017 NOL carryforward deductions); IRC §172(c) (net operating loss defined - adjustments for individuals including non-business capital losses and non-business deductions); IRC §172(d)(4) (individual NOL computation - add back deductions not attributable to trade or business); IRC §461(l) (excess business loss limitation for non-corporate taxpayers - $313,000 single / $626,000 MFJ for 2026, inflation-adjusted; excess treated as NOL carryforward); TCJA P.L. 115-97 (carryback repeal for post-2017 NOLs; 80% limitation; indefinite carryforward); CARES Act P.L. 116-136 (5-year carryback for 2018-2020 NOLs; temporary suspension of 80% limit for carryback years); OBBBA P.L. 119-21 (permanent extension of TCJA NOL rules and §461(l) excess business loss limitation); Form 1045 (application for tentative refund - NOL carryback); Form 1040 Schedule A (Form 1045) (NOL computation worksheet).</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
