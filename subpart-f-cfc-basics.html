@@ -3,44 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Subpart F Income & Controlled Foreign Corporations: CFC Basics (2026) | CPA Validated</title>
-<meta name="description" content="How Subpart F income works for US shareholders of controlled foreign corporations (CFCs). What triggers a Subpart F inclusion, FPHCI, insurance income, the TCJA changes, OBBBA renaming of GILTI to NCTI, and annual Form 5471 filing. CPA-validated. IRC §951-965.">
+<title>Subpart F & CFC Basics: What US Shareholders of Foreign Corporations Must Know | CPA Validated</title>
+<meta name="description" content="How Subpart F income works for US shareholders of Controlled Foreign Corporations (CFCs). FPHCI, FBCSI, FBCSvI, the 10% US shareholder test, IRC 951 inclusions, PTI accounts, TCJA downward attribution, and OBBBA's replacement of GILTI with NCTI. CPA-validated. IRC §951-965.">
 <link rel="canonical" href="https://cpavalidated.com/subpart-f-cfc-basics.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,5vw,40px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
 .back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
 .article{max-width:800px;margin:0 auto;padding:40px 24px 0}
-.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
 .article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
 .article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
 .article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
 .callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
 .note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
-.flow{border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
-.flow-step{padding:13px 16px;border-bottom:1px solid var(--ink-20);display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:flex-start;background:var(--white)}
-.flow-step:last-child{border-bottom:none}
-.flow-num{width:28px;height:28px;background:var(--coral);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:14px;font-weight:500;flex-shrink:0}
-.flow-body{font-size:13.5px;color:var(--ink-80);line-height:1.6}
-.flow-body strong{color:var(--ink)}
-.sf-cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0 24px}
-.sf-cat{border:1px solid var(--ink-20);padding:14px;background:var(--white)}
-.sf-cat-name{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:4px}
-.sf-cat-auth{font-family:var(--font-mono);font-size:10px;color:var(--ink-40);margin-bottom:7px}
-.sf-cat-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 26px}
+.test-card{border:2px solid var(--ink-20);padding:14px 16px;background:var(--white)}
+.tc-num{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:5px}
+.tc-name{font-family:var(--font-display);font-size:14px;font-weight:500;color:var(--ink);margin-bottom:7px}
+.tc-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+.income-row{border-bottom:1px solid var(--ink-20);padding:14px 0;display:grid;grid-template-columns:220px 1fr;gap:16px}
+.income-row:last-child{border-bottom:none}
+.ir-label{font-family:var(--font-display);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);padding-top:2px}
+.ir-auth{font-family:var(--font-mono);font-size:9.5px;color:var(--ink-40);margin-top:3px}
+.ir-desc{font-size:13px;color:var(--ink-60);line-height:1.6}
 .related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
 .source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
 .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
-@media(max-width:600px){.sf-cats,.related-links{grid-template-columns:1fr}}
+@media(max-width:600px){.test-grid,.income-row,.related-links{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="ph"><div class="phi">
   <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
-  <h1>Subpart F Income & Controlled Foreign Corporations: What Every US Shareholder Needs to Know</h1>
-  <div class="sub">CFC Definition &nbsp;&bull;&nbsp; Subpart F Categories &nbsp;&bull;&nbsp; FPHCI &nbsp;&bull;&nbsp; TCJA Changes &nbsp;&bull;&nbsp; NCTI Under OBBBA &nbsp;&bull;&nbsp; Form 5471</div>
+  <h1>Subpart F & CFC Basics: What US Shareholders of Foreign Corporations Must Know</h1>
+  <div class="sub">CFC Definition &nbsp;&bull;&nbsp; Subpart F Income Categories &nbsp;&bull;&nbsp; IRC §951 Inclusions &nbsp;&bull;&nbsp; PTI Accounts &nbsp;&bull;&nbsp; NCTI Post-OBBBA</div>
   <div class="meta">
     <span class="ph-meta-item">IRC §951-965</span>
     <span class="ph-meta-item">IRC §957</span>
@@ -51,126 +56,138 @@
 <div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
 <div class="article">
 
-<p class="lead">Subpart F is the set of rules under IRC §§951-965 that require US shareholders of controlled foreign corporations to include certain types of income in their US taxable income <em>currently</em> - even if the foreign corporation never distributes a dividend. The rules were enacted in 1962 to prevent US persons from using offshore companies to permanently defer US tax on passive and mobile income. After six decades of evolution and the TCJA and OBBBA rewrites, Subpart F remains the foundational layer of US international tax for anyone with a foreign business interest.</p>
+<p class="lead">If you own stock in a foreign corporation, you may be required to include certain income of that corporation in your own US taxable income - even if the corporation never paid you a dollar. This is Subpart F: a set of anti-deferral rules enacted in 1962 to prevent US shareholders from parking passive and mobile income offshore indefinitely. Understanding whether Subpart F applies, what income it reaches, and how TCJA and OBBBA changed the landscape is essential for any US person with foreign business interests.</p>
 
-<h2>Step 1: Is the Foreign Corporation a CFC?</h2>
+<h2>Step One: Is the Foreign Corporation a CFC?</h2>
 
-<p>Subpart F only applies to Controlled Foreign Corporations (CFCs). A foreign corporation is a CFC if US shareholders own more than 50% of the corporation's total voting power or total value on any day of the corporation's tax year. IRC §957(a).</p>
+<p>Subpart F only applies to Controlled Foreign Corporations (CFCs). A foreign corporation is a CFC if, on any day of the taxable year, more than 50% of its total combined voting power or total value is owned by "US shareholders." IRC §957(a).</p>
 
-<p>A "US shareholder" for this purpose is a US person who owns 10% or more of the foreign corporation's voting power or value. IRC §951(b). Constructive ownership rules under IRC §958 apply - you are treated as owning shares held by related parties, through entities, and through certain family members.</p>
+<div class="test-grid">
+  <div class="test-card">
+    <div class="tc-num">Definition</div>
+    <div class="tc-name">US Shareholder</div>
+    <div class="tc-desc">A US person who owns 10% or more of the total combined voting power or 10% or more of the total value of the foreign corporation's stock. IRC §951(b). Ownership is determined using attribution rules under IRC §958 - you are treated as owning stock held by related parties.</div>
+  </div>
+  <div class="test-card">
+    <div class="tc-num">Control Test</div>
+    <div class="tc-name">More Than 50%</div>
+    <div class="tc-desc">More than 50% of voting power or value must be owned by US shareholders (each owning 10%+). A foreign corporation owned 100% by one US person is a CFC. Ownership is tested on any single day of the tax year - even one day of CFC status triggers Subpart F for the full year.</div>
+  </div>
+</div>
+
+<div class="note-box"><strong>TCJA dramatically expanded CFC status via downward attribution.</strong> Before 2018, downward attribution from foreign persons to US entities was limited. TCJA amended IRC §958(b) to apply IRC §318(a)(3) downward attribution rules without restriction. Many foreign subsidiaries that were not CFCs pre-2018 became CFCs overnight. Groups with partially foreign-owned structures should verify CFC status under post-TCJA rules.</div>
+
+<h2>Step Two: Does the CFC Have Subpart F Income?</h2>
+
+<p>CFC status is a prerequisite - but it does not automatically trigger an inclusion. The CFC must also earn Subpart F income. Subpart F captures income that is highly mobile (easily shifted to low-tax jurisdictions), passive, or derived from related-party transactions designed to move profits offshore. IRC §952.</p>
+
+<h3>The Major Categories</h3>
+
+<div class="income-row">
+  <div>
+    <div class="ir-label">Foreign Personal Holding Company Income (FPHCI)</div>
+    <div class="ir-auth">IRC §954(c)</div>
+  </div>
+  <div class="ir-desc">The largest category in practice. Dividends, interest, rents, royalties, annuities, and gains from property. Also includes foreign currency gain and income equivalent to interest. Key exceptions: rents and royalties from active business operations received from unrelated parties are excluded. Related-CFC dividends and interest within the same country may qualify for the same-country exception under IRC §954(c)(6).</div>
+</div>
+<div class="income-row">
+  <div>
+    <div class="ir-label">Foreign Base Company Sales Income (FBCSI)</div>
+    <div class="ir-auth">IRC §954(d)</div>
+  </div>
+  <div class="ir-desc">Income from buying from a related party and selling to anyone - or buying from anyone and selling to a related party - where the property is manufactured and used outside the CFC's country of incorporation. Classic example: a holding company in a zero-tax jurisdiction buys from a related manufacturer and sells to end customers, capturing the margin offshore. Exception: the CFC itself manufactures the property (or causes it to be manufactured through a contract manufacturer it substantially controls).</div>
+</div>
+<div class="income-row">
+  <div>
+    <div class="ir-label">Foreign Base Company Services Income (FBCSvI)</div>
+    <div class="ir-auth">IRC §954(e)</div>
+  </div>
+  <div class="ir-desc">Income from services performed for or on behalf of a related party outside the CFC's country of incorporation. A CFC in the Cayman Islands that performs back-office services for a US parent has FBCSvI. Services performed entirely within the CFC's home country are excluded.</div>
+</div>
+<div class="income-row">
+  <div>
+    <div class="ir-label">Insurance Income</div>
+    <div class="ir-auth">IRC §953</div>
+  </div>
+  <div class="ir-desc">Income from insuring or reinsuring US or related-party risks. Offshore captive insurance arrangements are a recurring IRS examination target under §953. The IRS has challenged structures where a US operating company pays premiums to an offshore captive owned by the same shareholders, particularly where the arrangement lacks economic substance.</div>
+</div>
+
+<h3>De Minimis, Full-Inclusion, and High-Tax Exclusion</h3>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>De minimis (IRC §954(b)(3)(A)):</strong> If total Subpart F income is less than the lesser of 5% of gross income or $1 million, the entire amount is treated as zero. No inclusion.</li>
+  <li><strong>Full-inclusion (IRC §954(b)(3)(B)):</strong> If Subpart F income exceeds 70% of gross income, all of the CFC's gross income is treated as Subpart F income.</li>
+  <li><strong>High-tax exclusion (IRC §954(b)(4)):</strong> Subpart F income taxed by a foreign country at an effective rate above 18.9% (90% x 21% US corporate rate) can be excluded by election - applied separately by category and requiring consistency.</li>
+</ul>
+
+<h2>Step Three: The IRC §951 Inclusion Mechanics</h2>
+
+<p>A US shareholder includes their pro-rata share of the CFC's Subpart F income in gross income for any year in which the foreign corporation is a CFC, computed as of the last day of the CFC's taxable year on which CFC status exists. IRC §951(a)(1)(A).</p>
+
+<p>The inclusion is ordinary income - no preferential capital gains rates. For individual shareholders this is particularly costly: offshore passive income that would otherwise be qualified dividends (taxed at 20%) or long-term capital gains becomes ordinary income (up to 37%) under Subpart F.</p>
 
 <div class="callout">
-  <div class="callout-label">TCJA Changed the Constructive Ownership Rules - Watch the Downward Attribution Trap</div>
-  <p>Before TCJA (2017), the constructive ownership rules did not attribute stock ownership <em>downward</em> from a foreign parent to a US subsidiary. TCJA eliminated that exception under IRC §958(b), creating the "downward attribution" problem: stock owned by a foreign parent can now be attributed to a US subsidiary, potentially making the US subsidiary a "US shareholder" of its own foreign affiliates and turning those affiliates into CFCs. This was an unintended consequence that created CFC status for thousands of foreign subsidiaries of multinational groups that were never intended to be CFCs. IRS issued relief notices (Notice 2019-1, Notice 2020-69) but the underlying statute was not fixed until OBBBA, which retroactively restored the pre-TCJA rule for certain attribution situations.</p>
+  <div class="callout-label">The Previously Taxed Income (PTI) Account - IRC §959</div>
+  <p>Once Subpart F income is included in the US shareholder's gross income, it is tracked in a Previously Taxed Income (PTI) account. When the CFC later distributes that income, the distribution is excluded from gross income - no double taxation. IRC §959. Basis in the CFC stock is increased by the inclusion amount (IRC §961(a)) and decreased by excluded distributions (IRC §961(b)).</p>
+  <p><strong>Accurate PTI records are essential.</strong> Errors in PTI tracking cause phantom income at distribution or missed exclusions. In M&A transactions, PTI accounts must be traced through acquisitions or errors compound across years.</p>
 </div>
 
-<h2>Step 2: Is the Income Subpart F Income?</h2>
+<h3>Deemed-Paid Foreign Tax Credit</h3>
 
-<p>Not all CFC income is Subpart F income. The rules target specific categories of income that are passive, mobile, or related-party driven - income that could easily be shifted to a low-tax jurisdiction with no real economic substance. The CFC's operating business income from genuine commercial activity in its home country is generally not Subpart F income.</p>
+<p>To prevent double taxation, a US shareholder can claim a deemed-paid foreign tax credit under IRC §960 for foreign income taxes paid by the CFC attributable to the included Subpart F income. The credit is subject to the §904 overall FTC limitation, applied by basket (passive, general, foreign branch). Individual shareholders claiming the §960 credit must include a gross-up under IRC §78 - the foreign taxes are added to income before the credit is taken.</p>
 
-<div class="sf-cats">
-  <div class="sf-cat">
-    <div class="sf-cat-name">Foreign Personal Holding Company Income (FPHCI)</div>
-    <div class="sf-cat-auth">IRC §954(c)</div>
-    <div class="sf-cat-desc">The largest and most commonly triggered category. Includes: dividends, interest, rents, and royalties (unless from active business with unrelated parties), annuities, gains from property producing FPHCI, gains from commodities transactions, foreign currency gains, and income equivalent to interest. The "look-through" rule under IRC §954(c)(6) provides an exception for certain inter-company dividends, interest, rents, and royalties between related CFCs.</div>
-  </div>
-  <div class="sf-cat">
-    <div class="sf-cat-name">Foreign Base Company Sales Income (FBCSI)</div>
-    <div class="sf-cat-auth">IRC §954(d)</div>
-    <div class="sf-cat-desc">Income from buying property from (or selling to) a related party where the property is manufactured and sold for use outside the CFC's country of organization. Designed to prevent "base company" structures where a CFC in a low-tax country buys from a related manufacturer and sells to related customers elsewhere, capturing the profit in the low-tax jurisdiction without any real activity there.</div>
-  </div>
-  <div class="sf-cat">
-    <div class="sf-cat-name">Foreign Base Company Services Income (FBCSvI)</div>
-    <div class="sf-cat-auth">IRC §954(e)</div>
-    <div class="sf-cat-desc">Income from performing services for or on behalf of a related person, where the services are performed outside the CFC's country of organization. Prevents routing service income through low-tax offshore entities when the services benefit related parties elsewhere.</div>
-  </div>
-  <div class="sf-cat">
-    <div class="sf-cat-name">Insurance Income</div>
-    <div class="sf-cat-auth">IRC §953</div>
-    <div class="sf-cat-desc">Income from insuring or reinsuring risks of US persons or risks in the US. Prevents offshore captive insurance arrangements from sheltering premium income in low-tax jurisdictions without being subject to US tax. The captive insurance rules under IRC §831(b) for domestic micro-captives are a separate (and heavily scrutinized) issue.</div>
-  </div>
-  <div class="sf-cat">
-    <div class="sf-cat-name">International Boycott Income</div>
-    <div class="sf-cat-auth">IRC §952(a)(3)</div>
-    <div class="sf-cat-desc">Income from operations associated with international boycotts (principally the Arab League boycott of Israel). Rarely relevant in practice for most taxpayers.</div>
-  </div>
-  <div class="sf-cat">
-    <div class="sf-cat-name">Bribes and Illegal Payments</div>
-    <div class="sf-cat-auth">IRC §952(a)(4)</div>
-    <div class="sf-cat-desc">Income associated with illegal bribes, kickbacks, or similar payments in violation of US law (including FCPA). Subpart F income regardless of other categories.</div>
-  </div>
-</div>
+<h2>TCJA (2017): GILTI Added on Top of Subpart F</h2>
 
-<h3>The De Minimis and Full-Inclusion Rules</h3>
+<p>The 2017 Tax Cuts and Jobs Act added two major provisions alongside traditional Subpart F:</p>
 
-<p>If total Subpart F income for the year is less than the lesser of 5% of gross income or $1,000,000, all Subpart F income for that year is treated as zero (de minimis rule). IRC §954(b)(3)(A). Conversely, if Subpart F income exceeds 70% of gross income, the entire gross income of the CFC is treated as Subpart F income (full-inclusion rule). IRC §954(b)(3)(B).</p>
+<p><strong>IRC §965 Transition Tax.</strong> A one-time deemed repatriation of post-1986 accumulated offshore earnings at reduced rates (15.5% on cash and cash equivalents, 8% on illiquid assets). Most taxpayers completed installment payments by 2025. New §965 issues arise primarily in M&A transactions involving companies with unrepatriated earnings built up pre-2018.</p>
 
-<h3>The High-Tax Exclusion</h3>
+<p><strong>GILTI - IRC §951A.</strong> An annual minimum tax on the excess of the US shareholder's CFC tested income over a 10% deemed return on the CFC's tangible assets (QBAI). For C corporations, the §250 deduction reduced the effective GILTI rate to approximately 10.5% before FTCs (with a 20% FTC haircut reducing available credits). For individuals, GILTI was taxed at ordinary rates with no §250 deduction available directly - creating a planning mismatch that led many HNW shareholders to interpose S corporations or make §962 elections.</p>
 
-<p>Income that was subject to an effective rate of foreign income tax greater than 90% of the US maximum corporate rate is excluded from Subpart F income. IRC §954(b)(4). At the current 21% US corporate rate, the threshold is 18.9%. Income taxed at more than 18.9% by the foreign jurisdiction can be excluded. Taxpayers can elect this exclusion item-by-item.</p>
+<h2>OBBBA (2025): GILTI Replaced by NCTI</h2>
 
-<h2>Step 3: How Much Is Included on the US Return</h2>
+<p>OBBBA (P.L. 119-21, July 4, 2025) rewrote IRC §951A, renaming and restructuring GILTI as Net CFC Tested Income (NCTI). The key changes:</p>
 
-<p>A US shareholder includes in gross income their pro-rata share of the CFC's Subpart F income for the CFC's tax year that ends in or with the US shareholder's tax year. IRC §951(a). The inclusion is treated as a dividend for certain purposes (foreign tax credit eligibility) but is actually an income inclusion - not a distribution - so no actual cash changes hands.</p>
+<table class="key-table">
+  <thead>
+    <tr><th>Feature</th><th>GILTI (pre-OBBBA)</th><th>NCTI (2026+)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>QBAI exemption (10% deemed return)</td><td>Yes - tangible assets generate an exemption</td><td>Eliminated - all tested income included</td></tr>
+    <tr><td>§250 deduction rate (C corps)</td><td>50% (effective rate ~10.5% pre-FTC)</td><td>40% (effective rate ~12.6% pre-FTC)</td></tr>
+    <tr><td>20% FTC haircut</td><td>Yes - only 80% of CFC taxes creditable</td><td>Eliminated - full FTC available</td></tr>
+    <tr><td>Individual shareholders</td><td>No §250 deduction; ordinary rates only</td><td>§250 deduction proposed for individuals</td></tr>
+    <tr><td>High-tax exclusion</td><td>Available at 18.9% threshold</td><td>Revised - guidance pending</td></tr>
+  </tbody>
+</table>
 
-<div class="flow">
-  <div class="flow-step">
-    <div class="flow-num">1</div>
-    <div class="flow-body"><strong>Determine CFC status.</strong> Foreign corporation more than 50% owned (by vote or value) by US shareholders (10%+ each). IRC §957.</div>
-  </div>
-  <div class="flow-step">
-    <div class="flow-num">2</div>
-    <div class="flow-body"><strong>Calculate CFC's Subpart F income.</strong> Apply each category (FPHCI, FBCSI, etc.), apply de minimis / full-inclusion rules, apply high-tax exclusion if elected. IRC §954.</div>
-  </div>
-  <div class="flow-step">
-    <div class="flow-num">3</div>
-    <div class="flow-body"><strong>Allocate to US shareholders pro-rata.</strong> Each US shareholder includes their proportionate share based on ownership percentage and days in the year the stock was held. IRC §951(a).</div>
-  </div>
-  <div class="flow-step">
-    <div class="flow-num">4</div>
-    <div class="flow-body"><strong>Claim foreign tax credits.</strong> US shareholders can claim a deemed-paid foreign tax credit (IRC §960) for the foreign taxes associated with the Subpart F inclusion. The credit goes through the foreign tax credit limitation on Form 1116 (individuals) or Form 1118 (corporations).</div>
-  </div>
-  <div class="flow-step">
-    <div class="flow-num">5</div>
-    <div class="flow-body"><strong>Track previously taxed earnings and profits (PTEP).</strong> Amounts included as Subpart F income increase the shareholder's basis in the CFC stock and create previously taxed E&amp;P. When the CFC later distributes cash to the US shareholder, the distribution is excluded from income to the extent of PTEP - no double taxation. IRC §959.</div>
-  </div>
-  <div class="flow-step">
-    <div class="flow-num">6</div>
-    <div class="flow-body"><strong>File Form 5471.</strong> US persons with certain ownership interests in foreign corporations must file Form 5471 with their annual return. Penalties for failure to file start at $10,000 per form per year. IRC §6038.</div>
-  </div>
-</div>
+<div class="note-box"><strong>NCTI guidance still developing.</strong> Treasury is issuing regulations interpreting OBBBA's NCTI provisions. The statute is the primary authority for 2026 filings. Key open items: individual §250 deduction mechanics, NCTI-Subpart F ordering, fiscal year taxpayer transition rules. Monitor irs.gov/newsroom and the Federal Register before finalizing 2026 CFC returns.</div>
 
-<h2>NCTI Under OBBBA: How Subpart F Fits Now</h2>
+<h2>Form 5471: Annual Reporting and Penalties</h2>
 
-<p>OBBBA (P.L. 119-21, July 4, 2025) renamed and rewrote the GILTI regime (IRC §951A) as Net CFC Tested Income (NCTI). Subpart F under IRC §951 was not renamed or eliminated - it remains intact as a separate and cumulative inclusion regime. A CFC shareholder must calculate both Subpart F inclusions (IRC §951) and NCTI inclusions (the successor to GILTI under OBBBA), and both add to the US shareholder's taxable income.</p>
+<p>US shareholders of CFCs must file Form 5471 annually. The form has five filer categories; CFC shareholders are typically Category 4 (US persons who control the CFC) or Category 5 (US shareholders of a CFC). Required schedules include the CFC balance sheet (Schedule F), income statement (Schedule C), earnings and profits (Schedule H), Subpart F computation (Schedule I), PTI tracking (Schedule J), tested income for NCTI (Schedule I-1), and related-party transactions (Schedule M).</p>
 
-<p>The key relationship: Subpart F income is excluded from the NCTI calculation. IRC §951A(c)(2)(A)(ii) (as modified by OBBBA). Income that is already included under Subpart F is not double-counted as NCTI. Subpart F applies first; NCTI sweeps up residual tested income that is not Subpart F income. See our dedicated <a href="gilti-explained.html">GILTI/NCTI guide</a> for the post-OBBBA mechanics.</p>
+<div class="red-box"><strong>Penalties and the open SOL trap.</strong> Failure to file Form 5471: $10,000 per form per year, with continuation penalties of $10,000 per 30-day period up to $50,000. IRC §6038(b). More critically: a missing Form 5471 leaves the statute of limitations on the entire tax return open indefinitely under IRC §6501(c)(8) - not just the international items. The IRS has used this provision to audit domestic items on returns with missing CFC filings years after the normal 3-year period closed.</div>
 
-<div class="note-box"><strong>Form 5471 Penalties Are Automatic and Severe.</strong> The IRS assesses $10,000 per CFC per year for failure to file Form 5471, with an additional $10,000 for each 30-day period after IRS notification (up to $50,000 per form). IRC §6038(b). The IRS has the authority to reduce foreign tax credits by 10% for each failure. These penalties are assessed regardless of whether any tax is owed. Statute of limitations for the entire return remains open (no tolling) until the Form 5471 is filed. If you have a foreign corporation that might be a CFC and have not been filing Form 5471, this is a high-priority compliance issue.</div>
+<h3>Check-the-Box and Pre-Immigration Planning</h3>
 
-<h2>Subpart F for Individual US Shareholders</h2>
-
-<p>Most Subpart F guidance focuses on corporate shareholders, but individual US shareholders - entrepreneurs, immigrants with foreign businesses, investors - are equally subject to the rules. Individual shareholders face two additional complications:</p>
-
-<p><strong>No §250 deduction.</strong> US corporations can deduct 40% of their NCTI inclusion under IRC §250, producing an effective rate of approximately 12.6% on NCTI. Individual shareholders get no §250 deduction. Their Subpart F and NCTI inclusions are taxed at ordinary income rates - up to 37% - with a foreign tax credit offset limited to the taxes allocable to each inclusion.</p>
-
-<p><strong>The §962 election.</strong> Individual shareholders can elect under IRC §962 to be taxed on Subpart F and NCTI inclusions as if they were a domestic corporation - getting the 21% corporate rate and the §250 deduction on NCTI. The §962 election does not change the character of distributions when they are later paid out, creating a second layer of tax at the individual level. See our dedicated <a href="section-962-election.html">Section 962 Election guide</a> for the full mechanics.</p>
+<p>A foreign corporation can elect to be treated as a disregarded entity or partnership under Treas. Reg. §301.7701-3 by filing Form 8832. This eliminates CFC status but triggers a deemed liquidation - potentially recognizing gain. The election is most useful when basis in the foreign corporation is close to or exceeds fair market value. For pre-immigration planning, check-the-box is one of several tools to restructure CFC exposure before US residency begins. See our <a href="pre-immigration-planning.html">Pre-Immigration Planning guide</a> for a full analysis.</p>
 
 <div class="related">
   <div class="related-title">Related Tools &amp; Articles</div>
   <div class="related-links">
-    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Guide (OBBBA)<span>IRC §951A &middot; Post-OBBBA Mechanics</span></a>
-    <a href="form-5471-checker.html" class="related-link">Form 5471 Checker<span>CFC Filing Requirement Validator</span></a>
-    <a href="section-962-election.html" class="related-link">Section 962 Election Guide<span>Individual CFC Shareholders &middot; Corporate Rate</span></a>
-    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>CFC Restructuring Before US Entry</span></a>
-    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>P.L. 119-21 &middot; NCTI replaces GILTI</span></a>
-    <a href="ftc-calculator.html" class="related-link">Foreign Tax Credit Calculator<span>Form 1116 &middot; IRC §960</span></a>
+    <a href="form-5471-checker.html" class="related-link">Form 5471 Obligation Checker<span>CFC Status &middot; Filing Category &middot; Schedules</span></a>
+    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Guide (OBBBA)<span>IRC §951A &middot; §250 Deduction &middot; FTC</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Tax Planning<span>CFC restructuring before US residency</span></a>
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>P.L. 119-21 &middot; NCTI &middot; FDDEI</span></a>
+    <a href="ftc-calculator.html" class="related-link">Foreign Tax Credit Calculator<span>IRC §901 &middot; §904 Baskets &middot; §960</span></a>
+    <a href="form-5472.html" class="related-link">Form 5472 Checker<span>Foreign-owned US corps &middot; IRC §6038A</span></a>
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §951 (Subpart F inclusions); IRC §951A (NCTI/GILTI as amended by OBBBA); IRC §952 (Subpart F income definition); IRC §953 (insurance income); IRC §954 (foreign base company income - FPHCI §954(c), FBCSI §954(d), FBCSvI §954(e)); IRC §954(b)(3) (de minimis and full-inclusion rules); IRC §954(b)(4) (high-tax exclusion); IRC §957 (CFC definition - more than 50% by vote or value); IRC §951(b) (US shareholder - 10% threshold); IRC §958 (constructive ownership - downward attribution); IRC §959 (previously taxed E&amp;P); IRC §960 (deemed-paid foreign tax credit); IRC §250 (§250 deduction - NCTI, FDDEI); IRC §962 (individual election - corporate tax treatment); IRC §6038 (Form 5471 filing requirement and penalties); IRC §6038(b) (penalty - $10,000 per form); Notice 2019-1; Notice 2020-69 (downward attribution relief); OBBBA P.L. 119-21 (NCTI regime, downward attribution fix, §250 deduction modification).</div>
+<div class="source-row">Authority: IRC §951 (Subpart F inclusion); IRC §951A (NCTI/GILTI as amended by OBBBA P.L. 119-21); IRC §952 (Subpart F income); IRC §953 (insurance income); IRC §954 (FPHCI, FBCSI, FBCSvI); IRC §954(b)(3) (de minimis / full-inclusion); IRC §954(b)(4) (high-tax exclusion); IRC §957 (CFC definition); IRC §958 (attribution - TCJA downward attribution change); IRC §959 (PTI exclusion); IRC §960 (deemed-paid FTC); IRC §961 (basis adjustments); IRC §965 (transition tax); IRC §78 (gross-up); IRC §250 (§250 deduction, 40% under OBBBA); IRC §904 (FTC limitation); IRC §6038 (Form 5471 obligation); IRC §6038(b) (penalties); IRC §6501(c)(8) (unlimited SOL for missing §6038 returns); Treas. Reg. §1.951-1; Treas. Reg. §301.7701-3 (check-the-box); OBBBA P.L. 119-21 (NCTI provisions).</div>
 
-<div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. CFC and Subpart F analysis is highly fact-specific and requires detailed review of ownership structures, income characterization, and applicable elections. Consult a qualified international tax professional. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc. - <a href="https://tk.cpa" target="_blank">tk.cpa</a>. <a href="disclaimer.html">Full disclaimer.</a></div>
+<div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Subpart F, NCTI, and CFC compliance involve complex fact-specific determinations. Regulatory guidance under OBBBA continues to develop. Consult a qualified international tax professional before taking any filing position. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc. - <a href="https://tk.cpa" target="_blank">tk.cpa</a>. <a href="disclaimer.html">Full disclaimer.</a></div>
 
 </div>
 </body>
