@@ -63,26 +63,217 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </style>
 </head>
 <body>
-<nav> <a href="index.html" class="brand"> <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div> </a> <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
 </nav>
-<div class="ph"><div class="phi"> <h1>S-Corp Reasonable Compensation & Tax Savings</h1> <div class="sub">Quantify the payroll tax savings of S-corp vs. sole proprietor. Model salary vs. distribution split. IRS reasonable compensation standard. 2026 FICA wage base, Medicare surtax.</div> <div class="badges"><span class="badge">IRC 1402 - SE tax</span><span class="badge">IRC 3121 - FICA wages</span><span class="badge">IRC 3111 - employer FICA</span><span class="badge">IRC 1366 - S-corp passthrough</span><span class="badge">Rev. Rul. 74-44</span></div>
+<div class="ph"><div class="phi">
+  <h1>S-Corp Reasonable Compensation & Tax Savings</h1>
+  <div class="sub">Quantify the payroll tax savings of S-corp vs. sole proprietor. Model salary vs. distribution split. IRS reasonable compensation standard. 2026 FICA wage base, Medicare surtax.</div>
+  <div class="badges"><span class="badge">IRC 1402 - SE tax</span><span class="badge">IRC 3121 - FICA wages</span><span class="badge">IRC 3111 - employer FICA</span><span class="badge">IRC 1366 - S-corp passthrough</span><span class="badge">Rev. Rul. 74-44</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
-<div class="wrap"> <div class="card"> <div class="ch"><div class="sb">1</div><h2>Business & Owner Information</h2></div> <div class="cb"> <div class="fg3"> <div class="f1"><label>Net Business Income ($)</label> <input type="number" class="fc" id="netIncome" value="200000" oninput="calc()"> <div class="hint">Total net profit of the business before owner compensation. S-corp: this is the amount to split between salary and distributions.</div> </div> <div class="f1"><label>Proposed Reasonable Salary ($)</label> <input type="number" class="fc" id="salary" value="80000" oninput="calc()"> <div class="hint">W-2 salary paid to shareholder-employee. Must be "reasonable" for services rendered. IRS audits low or zero salaries. Rev. Rul. 74-44.</div> </div> <div class="f1"><label>Other W-2 Income This Year ($)</label> <input type="number" class="fc" id="otherW2" value="0" oninput="calc()"> <div class="hint">Other wages subject to FICA. Reduces the owner's exposure to Social Security tax on S-corp salary if already over wage base.</div> </div> </div> <div class="fg2"> <div class="f1"><label>Marginal Income Tax Rate</label> <select class="fc" id="taxRate" onchange="calc()"> <option value="0.22">22%</option> <option value="0.24" selected>24%</option> <option value="0.32">32%</option> <option value="0.35">35%</option> <option value="0.37">37%</option> </select> <div class="hint">Federal marginal rate on ordinary income. Used to estimate income tax cost of both salary and distributions (both pass through).</div> </div> <div class="f1"><label>State Income Tax Rate</label> <input type="number" class="fc" id="stateRate" value="6" min="0" max="15" step="0.5" oninput="calc()"> <div class="hint">Combined state + local marginal rate %. Enter 0 for no-income-tax states (TX, FL, NV, etc.).</div> </div> </div> </div>
-</div> <div class="card"> <div class="ch"><div class="sb">2</div><h2>Results</h2></div> <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+<div class="wrap">
+
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Business & Owner Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label>Net Business Income ($)</label>
+        <input type="number" class="fc" id="netIncome" value="200000" oninput="calc()">
+        <div class="hint">Total net profit of the business before owner compensation. S-corp: this is the amount to split between salary and distributions.</div>
+      </div>
+      <div class="f1"><label>Proposed Reasonable Salary ($)</label>
+        <input type="number" class="fc" id="salary" value="80000" oninput="calc()">
+        <div class="hint">W-2 salary paid to shareholder-employee. Must be "reasonable" for services rendered. IRS audits low or zero salaries. Rev. Rul. 74-44.</div>
+      </div>
+      <div class="f1"><label>Other W-2 Income This Year ($)</label>
+        <input type="number" class="fc" id="otherW2" value="0" oninput="calc()">
+        <div class="hint">Other wages subject to FICA. Reduces the owner's exposure to Social Security tax on S-corp salary if already over wage base.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Marginal Income Tax Rate</label>
+        <select class="fc" id="taxRate" onchange="calc()">
+          <option value="0.22">22%</option>
+          <option value="0.24" selected>24%</option>
+          <option value="0.32">32%</option>
+          <option value="0.35">35%</option>
+          <option value="0.37">37%</option>
+        </select>
+        <div class="hint">Federal marginal rate on ordinary income. Used to estimate income tax cost of both salary and distributions (both pass through).</div>
+      </div>
+      <div class="f1"><label>State Income Tax Rate</label>
+        <input type="number" class="fc" id="stateRate" value="6" min="0" max="15" step="0.5" oninput="calc()">
+        <div class="hint">Combined state + local marginal rate %. Enter 0 for no-income-tax states (TX, FL, NV, etc.).</div>
+      </div>
+    </div>
+  </div>
 </div>
-</div> <div class="related"><div style="max-width:920px;margin:0 auto"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div> <a href="scorp-vs-llc.html" class="rl">S-Corp vs. LLC Guide</a> <a href="tax-estimator.html" class="rl">Tax Estimator</a> <a href="safe-harbor.html" class="rl">Estimated Tax Safe Harbor</a> <a href="qbi-deduction-guide.html" class="rl">QBI Deduction Guide</a> <a href="index.html" class="rl">All Tools</a>
-</div></div> <script>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
+</div>
+</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="scorp-vs-llc.html" class="rl">S-Corp vs. LLC Guide</a>
+  <a href="tax-estimator.html" class="rl">Tax Estimator</a>
+  <a href="safe-harbor.html" class="rl">Estimated Tax Safe Harbor</a>
+  <a href="qbi-deduction-guide.html" class="rl">QBI Deduction Guide</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
+
+<script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;} // 2026 FICA parameters
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+
+// 2026 FICA parameters
 const SS_WAGE_BASE = 176100; // 2026 estimated (2025 was $176,100 per SSA announcement)
-const SS_RATE = 0.062; // employee 6.2% + employer 6.2% = 12.4% total
-const MC_RATE = 0.029; // employee 1.45% + employer 1.45% = 2.9% total
-const ADDL_MC = 0.009; // Additional Medicare 0.9% on wages over $200K (single) / $250K (MFJ)
-const SE_DEDUCTION = 0.9235; // SE income multiplier (net SE = gross x 0.9235) function calcSETax(netSE, otherW2){ // SE tax = 15.3% on first SS_WAGE_BASE of SE net, then 2.9% above that // Reduced by prior W-2 income already subject to SS const ssCovered = Math.max(0, SS_WAGE_BASE - otherW2); const seNet = netSE * SE_DEDUCTION; const ssBase = Math.min(seNet, ssCovered); const ssTax = ssBase * SS_RATE; const mcTax = seNet * MC_RATE; return ssTax + mcTax;
-} function calcFICA(salary, otherW2){ // Employee + employer FICA on salary const ssCovered = Math.max(0, SS_WAGE_BASE - otherW2); const ssBase = Math.min(salary, ssCovered); const ssTax = ssBase * SS_RATE; // both halves const mcTax = salary * MC_RATE; const addlMC = Math.max(0, salary + otherW2 - 200000) * ADDL_MC; // simplified: single threshold return {total: ssTax + mcTax + addlMC, ss: ssTax, mc: mcTax, addlMC};
-} function calc(){ const netIncome = parseFloat(document.getElementById('netIncome').value)||0; const salary = parseFloat(document.getElementById('salary').value)||0; const otherW2 = parseFloat(document.getElementById('otherW2').value)||0; const taxRate = parseFloat(document.getElementById('taxRate').value)||0.24; const stateRate = (parseFloat(document.getElementById('stateRate').value)||0)/100; const combinedRate = taxRate + stateRate; const distribution = Math.max(0, netIncome - salary); const salaryOverBase = Math.max(0, salary - Math.max(0, SS_WAGE_BASE - otherW2)); // ── SOLE PROPRIETOR (Schedule C) ── const spSETax = calcSETax(netIncome, otherW2); const spSEDeduction = spSETax / 2; // above-the-line deduction const spTaxableIncome = netIncome - spSEDeduction; const spIncomeTax = spTaxableIncome * combinedRate; const spTotalTax = spSETax + spIncomeTax; const spNetAfterTax = netIncome - spTotalTax; // ── S-CORP ── const fica = calcFICA(salary, otherW2); // Employer FICA is deductible from S-corp income const employerFICA = fica.total / 2; // employer half const scorpTaxableIncome = netIncome - employerFICA; // S-corp net after employer payroll const scIncomeTax = scorpTaxableIncome * combinedRate; const scTotalTax = fica.total + scIncomeTax; const scNetAfterTax = netIncome - scTotalTax; // ── SAVINGS ── const annualSavings = spTotalTax - scTotalTax; const ficaSavings = spSETax - fica.total; // ── QBI interaction ── // S-corp W-2 wages count toward QBI W-2 limitation (50% of W-2 wages) // Sole prop: SE income qualifies for QBI but no W-2 wage limitation issue at lower income const qbiSP = netIncome * 0.20; // simplified QBI deduction (20% of QBI, before phase-outs) const qbiSC = scorpTaxableIncome * 0.20; const rb = document.getElementById('res'); let h = ''; // Savings banner h += `<div class="savings-banner"> <div><div class="sb-label">Annual Payroll Tax Savings (S-Corp vs. Sole Prop)</div><div class="sb-amount">${fmt(annualSavings)}</div><div class="sb-sub">On ${fmt(netIncome)} net income with ${fmt(salary)} salary</div></div> </div>`; // Side by side h += `<div class="compare"> <div class="cbox"> <div class="cbox-label">Sole Proprietor / Schedule C</div> <div class="cbox-title">No S-Corp Election</div> <div class="cbox-row"><span>Net business income</span><span>${fmt(netIncome)}</span></div> <div class="cbox-row"><span>Self-employment tax (15.3%/2.9%)</span><span style="color:var(--red)">${fmt(spSETax)}</span></div> <div class="cbox-row"><span>SE deduction (50% of SE tax)</span><span style="color:var(--green)">-${fmt(spSEDeduction)}</span></div> <div class="cbox-row"><span>Income tax (~${Math.round(combinedRate*100)}%)</span><span>${fmt(spIncomeTax)}</span></div> <div class="cbox-row"><span><strong>Total tax burden</strong></span><span><strong>${fmt(spTotalTax)}</strong></span></div> <div class="cbox-total">${fmt(spNetAfterTax)}</div> <div style="font-size:11px;color:var(--ink-60)">Net after all taxes</div> </div> <div class="cbox winner"> <div class="cbox-label">S-Corporation</div> <div class="cbox-title">With S-Corp Election</div> <div class="cbox-row"><span>Net business income</span><span>${fmt(netIncome)}</span></div> <div class="cbox-row"><span>Reasonable salary (W-2)</span><span>${fmt(salary)}</span></div> <div class="cbox-row"><span>Distribution (no FICA)</span><span style="color:var(--green)">${fmt(distribution)}</span></div> <div class="cbox-row"><span>FICA (employee + employer)</span><span style="color:var(--red)">${fmt(fica.total)}</span></div> <div class="cbox-row"><span>Income tax (~${Math.round(combinedRate*100)}%)</span><span>${fmt(scIncomeTax)}</span></div> <div class="cbox-row"><span><strong>Total tax burden</strong></span><span><strong>${fmt(scTotalTax)}</strong></span></div> <div class="cbox-total">${fmt(scNetAfterTax)}</div> <div style="font-size:11px;color:var(--ink-60)">Net after all taxes</div> </div> </div>`; // FICA breakdown h += `<div class="sum-box"><div class="sum-title">FICA Detail on ${fmt(salary)} Salary</div> <div class="srow"><span class="sl">Social Security (6.2% + 6.2% on up to $${SS_WAGE_BASE.toLocaleString()})</span><span class="sv">${fmt(fica.ss)}</span></div> <div class="srow"><span class="sl">Medicare (1.45% + 1.45% on all wages)</span><span class="sv">${fmt(fica.mc)}</span></div> ${fica.addlMC>0?`<div class="srow"><span class="sl">Additional Medicare (0.9% on wages over $200K)</span><span class="sv">${fmt(fica.addlMC)}</span></div>`:''} <div class="srow"><span class="sl">Total FICA (employee + employer combined)</span><span class="sv coral">${fmt(fica.total)}</span></div> <div class="srow"><span class="sl">FICA savings vs. sole proprietor SE tax</span><span class="sv green">${fmt(ficaSavings)}</span></div> </div>`; // Reasonable comp flags const pctSalary = netIncome > 0 ? salary / netIncome : 0; if(pctSalary < 0.30 && salary > 0){ h += flag('red','!',`<strong>Low salary ratio - heightened audit risk.</strong> Salary of ${fmt(salary)} is ${Math.round(pctSalary*100)}% of net income. The IRS targets S-corp owners who pay themselves unreasonably low salaries to minimize FICA taxes. Rev. Rul. 74-44 requires reasonable compensation for services actually rendered. Factors: industry pay, owner's role, company size, comparable salaries, and actual time spent. A salary below ~40-60% of net income for a single owner-operator typically requires strong documentation.`); } if(salary === 0){ h += flag('red','!','<strong>Zero salary is not permitted for shareholder-employees who perform services.</strong> An S-corp shareholder who performs services for the corporation must receive reasonable compensation. Zero salary with all distributions is the most common S-corp audit trigger. Rev. Rul. 74-44; Watson v. Commissioner, 668 F.3d 1008 (8th Cir. 2012).'); } if(salary > SS_WAGE_BASE){ h += flag('blue','i',`<strong>Salary exceeds Social Security wage base ($${SS_WAGE_BASE.toLocaleString()}).</strong> The ${fmt(salary - SS_WAGE_BASE)} above the wage base is only subject to Medicare (2.9%), not Social Security (12.4%). FICA savings from distributions above the wage base are smaller. Consider whether a lower salary is still reasonable given this dynamic.`); } if(annualSavings < 5000 && netIncome > 0){ h += flag('amber','!',`<strong>S-corp savings of ${fmt(annualSavings)} may not justify the costs.</strong> S-corp administrative costs include: payroll processing (~$500-2,500/yr), separate business tax return (Form 1120-S, ~$800-2,500 in preparation fees), state registration fees, and potential state-level franchise/minimum taxes. At this income level, verify that net savings exceed all-in costs before electing S-corp status.`); } h += flag('blue','i',`<strong>QBI deduction interaction.</strong> Both structures qualify for the 20% QBI deduction under IRC 199A (made permanent by OBBBA). However, for higher-income owners in SSTBs (specified service trades or businesses), S-corp wages count toward the W-2 wage limitation (50% of W-2 wages paid). Salary of ${fmt(salary)} supports a W-2 limitation of ${fmt(salary*0.5)}. Model QBI carefully before finalizing salary level.`); h += flag('blue','i','<strong>2026 Social Security wage base.</strong> The $176,100 figure is estimated based on SSA projections. The official 2026 base will be announced by SSA in October 2025. Verify before year-end payroll planning. Medicare tax has no wage base - 2.9% total applies to all wages.'); h += `<div class="src">IRC 1402 (self-employment tax); IRC 3111 (employer FICA tax); IRC 3121 (wages for FICA purposes); IRC 1366 (S-corp income passthrough to shareholders); Rev. Rul. 74-44 (dividends paid by S-corps in lieu of salary reclassified as wages); Watson v. Commissioner, 668 F.3d 1008 (8th Cir. 2012) (IRS prevailed recharacterizing distributions as wages); IRC 199A (QBI deduction, made permanent by OBBBA P.L. 119-21); IRC 3101(b)(2) (additional 0.9% Medicare on wages over threshold).</div>`; h += `<div class="disc">This calculator estimates payroll tax savings only. The total cost/benefit of S-corp election includes state filing costs, payroll administration, and separate return preparation. Reasonable compensation is a facts-and-circumstances determination. Consult a CPA before making any entity election.</div>`; rb.innerHTML = h;
+const SS_RATE = 0.062;       // employee 6.2% + employer 6.2% = 12.4% total
+const MC_RATE = 0.029;       // employee 1.45% + employer 1.45% = 2.9% total
+const ADDL_MC = 0.009;       // Additional Medicare 0.9% on wages over $200K (single) / $250K (MFJ)
+const SE_DEDUCTION = 0.9235; // SE income multiplier (net SE = gross x 0.9235)
+
+function calcSETax(netSE, otherW2){
+  // SE tax = 15.3% on first SS_WAGE_BASE of SE net, then 2.9% above that
+  // Reduced by prior W-2 income already subject to SS
+  const ssCovered = Math.max(0, SS_WAGE_BASE - otherW2);
+  const seNet = netSE * SE_DEDUCTION;
+  const ssBase = Math.min(seNet, ssCovered);
+  const ssTax = ssBase * SS_RATE;
+  const mcTax = seNet * MC_RATE;
+  return ssTax + mcTax;
+}
+
+function calcFICA(salary, otherW2){
+  // Employee + employer FICA on salary
+  const ssCovered = Math.max(0, SS_WAGE_BASE - otherW2);
+  const ssBase = Math.min(salary, ssCovered);
+  const ssTax = ssBase * SS_RATE; // both halves
+  const mcTax = salary * MC_RATE;
+  const addlMC = Math.max(0, salary + otherW2 - 200000) * ADDL_MC; // simplified: single threshold
+  return {total: ssTax + mcTax + addlMC, ss: ssTax, mc: mcTax, addlMC};
+}
+
+function calc(){
+  const netIncome = parseFloat(document.getElementById('netIncome').value)||0;
+  const salary    = parseFloat(document.getElementById('salary').value)||0;
+  const otherW2   = parseFloat(document.getElementById('otherW2').value)||0;
+  const taxRate   = parseFloat(document.getElementById('taxRate').value)||0.24;
+  const stateRate = (parseFloat(document.getElementById('stateRate').value)||0)/100;
+  const combinedRate = taxRate + stateRate;
+
+  const distribution = Math.max(0, netIncome - salary);
+  const salaryOverBase = Math.max(0, salary - Math.max(0, SS_WAGE_BASE - otherW2));
+
+  // ── SOLE PROPRIETOR (Schedule C) ──
+  const spSETax = calcSETax(netIncome, otherW2);
+  const spSEDeduction = spSETax / 2; // above-the-line deduction
+  const spTaxableIncome = netIncome - spSEDeduction;
+  const spIncomeTax = spTaxableIncome * combinedRate;
+  const spTotalTax = spSETax + spIncomeTax;
+  const spNetAfterTax = netIncome - spTotalTax;
+
+  // ── S-CORP ──
+  const fica = calcFICA(salary, otherW2);
+  // Employer FICA is deductible from S-corp income
+  const employerFICA = fica.total / 2; // employer half
+  const scorpTaxableIncome = netIncome - employerFICA; // S-corp net after employer payroll
+  const scIncomeTax = scorpTaxableIncome * combinedRate;
+  const scTotalTax = fica.total + scIncomeTax;
+  const scNetAfterTax = netIncome - scTotalTax;
+
+  // ── SAVINGS ──
+  const annualSavings = spTotalTax - scTotalTax;
+  const ficaSavings = spSETax - fica.total;
+
+  // ── QBI interaction ──
+  // S-corp W-2 wages count toward QBI W-2 limitation (50% of W-2 wages)
+  // Sole prop: SE income qualifies for QBI but no W-2 wage limitation issue at lower income
+  const qbiSP = netIncome * 0.20; // simplified QBI deduction (20% of QBI, before phase-outs)
+  const qbiSC = scorpTaxableIncome * 0.20;
+
+  const rb = document.getElementById('res');
+  let h = '';
+
+  // Savings banner
+  h += `<div class="savings-banner">
+    <div><div class="sb-label">Annual Payroll Tax Savings (S-Corp vs. Sole Prop)</div><div class="sb-amount">${fmt(annualSavings)}</div><div class="sb-sub">On ${fmt(netIncome)} net income with ${fmt(salary)} salary</div></div>
+  </div>`;
+
+  // Side by side
+  h += `<div class="compare">
+    <div class="cbox">
+      <div class="cbox-label">Sole Proprietor / Schedule C</div>
+      <div class="cbox-title">No S-Corp Election</div>
+      <div class="cbox-row"><span>Net business income</span><span>${fmt(netIncome)}</span></div>
+      <div class="cbox-row"><span>Self-employment tax (15.3%/2.9%)</span><span style="color:var(--red)">${fmt(spSETax)}</span></div>
+      <div class="cbox-row"><span>SE deduction (50% of SE tax)</span><span style="color:var(--green)">-${fmt(spSEDeduction)}</span></div>
+      <div class="cbox-row"><span>Income tax (~${Math.round(combinedRate*100)}%)</span><span>${fmt(spIncomeTax)}</span></div>
+      <div class="cbox-row"><span><strong>Total tax burden</strong></span><span><strong>${fmt(spTotalTax)}</strong></span></div>
+      <div class="cbox-total">${fmt(spNetAfterTax)}</div>
+      <div style="font-size:11px;color:var(--ink-60)">Net after all taxes</div>
+    </div>
+    <div class="cbox winner">
+      <div class="cbox-label">S-Corporation</div>
+      <div class="cbox-title">With S-Corp Election</div>
+      <div class="cbox-row"><span>Net business income</span><span>${fmt(netIncome)}</span></div>
+      <div class="cbox-row"><span>Reasonable salary (W-2)</span><span>${fmt(salary)}</span></div>
+      <div class="cbox-row"><span>Distribution (no FICA)</span><span style="color:var(--green)">${fmt(distribution)}</span></div>
+      <div class="cbox-row"><span>FICA (employee + employer)</span><span style="color:var(--red)">${fmt(fica.total)}</span></div>
+      <div class="cbox-row"><span>Income tax (~${Math.round(combinedRate*100)}%)</span><span>${fmt(scIncomeTax)}</span></div>
+      <div class="cbox-row"><span><strong>Total tax burden</strong></span><span><strong>${fmt(scTotalTax)}</strong></span></div>
+      <div class="cbox-total">${fmt(scNetAfterTax)}</div>
+      <div style="font-size:11px;color:var(--ink-60)">Net after all taxes</div>
+    </div>
+  </div>`;
+
+  // FICA breakdown
+  h += `<div class="sum-box"><div class="sum-title">FICA Detail on ${fmt(salary)} Salary</div>
+    <div class="srow"><span class="sl">Social Security (6.2% + 6.2% on up to $${SS_WAGE_BASE.toLocaleString()})</span><span class="sv">${fmt(fica.ss)}</span></div>
+    <div class="srow"><span class="sl">Medicare (1.45% + 1.45% on all wages)</span><span class="sv">${fmt(fica.mc)}</span></div>
+    ${fica.addlMC>0?`<div class="srow"><span class="sl">Additional Medicare (0.9% on wages over $200K)</span><span class="sv">${fmt(fica.addlMC)}</span></div>`:''}
+    <div class="srow"><span class="sl">Total FICA (employee + employer combined)</span><span class="sv coral">${fmt(fica.total)}</span></div>
+    <div class="srow"><span class="sl">FICA savings vs. sole proprietor SE tax</span><span class="sv green">${fmt(ficaSavings)}</span></div>
+  </div>`;
+
+  // Reasonable comp flags
+  const pctSalary = netIncome > 0 ? salary / netIncome : 0;
+  if(pctSalary < 0.30 && salary > 0){
+    h += flag('red','!',`<strong>Low salary ratio - heightened audit risk.</strong> Salary of ${fmt(salary)} is ${Math.round(pctSalary*100)}% of net income. The IRS targets S-corp owners who pay themselves unreasonably low salaries to minimize FICA taxes. Rev. Rul. 74-44 requires reasonable compensation for services actually rendered. Factors: industry pay, owner's role, company size, comparable salaries, and actual time spent. A salary below ~40-60% of net income for a single owner-operator typically requires strong documentation.`);
+  }
+  if(salary === 0){
+    h += flag('red','!','<strong>Zero salary is not permitted for shareholder-employees who perform services.</strong> An S-corp shareholder who performs services for the corporation must receive reasonable compensation. Zero salary with all distributions is the most common S-corp audit trigger. Rev. Rul. 74-44; Watson v. Commissioner, 668 F.3d 1008 (8th Cir. 2012).');
+  }
+  if(salary > SS_WAGE_BASE){
+    h += flag('blue','i',`<strong>Salary exceeds Social Security wage base ($${SS_WAGE_BASE.toLocaleString()}).</strong> The ${fmt(salary - SS_WAGE_BASE)} above the wage base is only subject to Medicare (2.9%), not Social Security (12.4%). FICA savings from distributions above the wage base are smaller. Consider whether a lower salary is still reasonable given this dynamic.`);
+  }
+  if(annualSavings < 5000 && netIncome > 0){
+    h += flag('amber','!',`<strong>S-corp savings of ${fmt(annualSavings)} may not justify the costs.</strong> S-corp administrative costs include: payroll processing (~$500-2,500/yr), separate business tax return (Form 1120-S, ~$800-2,500 in preparation fees), state registration fees, and potential state-level franchise/minimum taxes. At this income level, verify that net savings exceed all-in costs before electing S-corp status.`);
+  }
+
+  h += flag('blue','i',`<strong>QBI deduction interaction.</strong> Both structures qualify for the 20% QBI deduction under IRC 199A (made permanent by OBBBA). However, for higher-income owners in SSTBs (specified service trades or businesses), S-corp wages count toward the W-2 wage limitation (50% of W-2 wages paid). Salary of ${fmt(salary)} supports a W-2 limitation of ${fmt(salary*0.5)}. Model QBI carefully before finalizing salary level.`);
+  h += flag('blue','i','<strong>2026 Social Security wage base.</strong> The $176,100 figure is estimated based on SSA projections. The official 2026 base will be announced by SSA in October 2025. Verify before year-end payroll planning. Medicare tax has no wage base - 2.9% total applies to all wages.');
+
+  h += `<div class="src">IRC 1402 (self-employment tax); IRC 3111 (employer FICA tax); IRC 3121 (wages for FICA purposes); IRC 1366 (S-corp income passthrough to shareholders); Rev. Rul. 74-44 (dividends paid by S-corps in lieu of salary reclassified as wages); Watson v. Commissioner, 668 F.3d 1008 (8th Cir. 2012) (IRS prevailed recharacterizing distributions as wages); IRC 199A (QBI deduction, made permanent by OBBBA P.L. 119-21); IRC 3101(b)(2) (additional 0.9% Medicare on wages over threshold).</div>`;
+  h += `<div class="disc">This calculator estimates payroll tax savings only. The total cost/benefit of S-corp election includes state filing costs, payroll administration, and separate return preparation. Reasonable compensation is a facts-and-circumstances determination. Consult a CPA before making any entity election. A tk.cpa resource. tk.cpa is owned and operated by CPA Inc.</div>`;
+
+  rb.innerHTML = h;
 }
 calc();
-</script> </body>
+</script>
+
+
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
 </html>
