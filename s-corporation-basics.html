@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S-Corporation Tax Basics: Election, Basis, Built-In Gains & Passive Income (2026) | CPA Validated</title>
+<meta name="description" content="S-corporation taxation: the §1362 election and eligibility requirements, shareholder stock and debt basis, the built-in gains tax (§1374), excess passive income penalty (§1375), AAA and AE&P, and the comparison to C-corp and partnership treatment. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/s-corporation-basics.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral);color:#fff!important;padding:9px 20px;font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px;font-family:var(--font-mono)}
+.formula-line{font-size:14px;color:#fff;line-height:2.2;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px;font-family:var(--font-mono)}
+.formula-line .var{color:var(--coral);font-family:var(--font-mono)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="ph"><div class="phi">
+  <h1>S-Corporation Tax Basics: Election, Basis, BIG Tax & §1375</h1>
+  <div class="sub">§1362 Election &nbsp;&bull;&nbsp; Eligibility Requirements &nbsp;&bull;&nbsp; Shareholder Basis &nbsp;&bull;&nbsp; Built-In Gains Tax &nbsp;&bull;&nbsp; AAA &amp; AE&P &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1361-1379</span>
+    <span class="ph-meta-item">IRC §1374 (BIG)</span>
+    <span class="ph-meta-item">IRC §1375</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The S-corporation is the most widely used pass-through entity for small and mid-size businesses in the US. Its appeal is straightforward: business income flows through to shareholders and is taxed only once at the individual level, while the corporate structure provides limited liability. But the rules governing S-corp taxation - particularly basis, distributions, and the traps that come with converting from a C-corp - are more complex than most owners realize, and errors here have real consequences.</p>
+
+<h2>The §1362 Election: Requirements and Timing</h2>
+
+<p>A corporation does not automatically qualify as an S-corp. It must make an election under IRC §1362(a) and meet all eligibility requirements continuously. The election is made by filing Form 2553 (Election by a Small Business Corporation).</p>
+
+<h3>Eligibility Requirements - All Must Be Met</h3>
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Domestic corporation:</strong> Must be incorporated in the US (not a foreign corporation or foreign-owned LLC)</li>
+  <li><strong>100 shareholder limit:</strong> No more than 100 shareholders. Members of the same family can elect to be treated as one shareholder.</li>
+  <li><strong>Eligible shareholders only:</strong> Shareholders must be US citizens, permanent residents, or certain trusts and estates. Corporations, partnerships, and nonresident aliens cannot be S-corp shareholders.</li>
+  <li><strong>One class of stock:</strong> Only one class of stock permitted. Differences in voting rights are allowed, but economic rights (distributions and liquidation proceeds) must be identical. No preferred stock.</li>
+  <li><strong>Not an ineligible corporation:</strong> Certain corporations cannot be S-corps (financial institutions using the reserve method for bad debts, insurance companies, DISC corporations).</li>
+</ul>
+
+<h3>Election Timing</h3>
+<p>To be effective for the current tax year, Form 2553 must be filed on or before the 15th day of the 3rd month of the tax year (March 15 for calendar-year corporations). An election filed after that date is effective for the following year. Late elections can be granted relief under Rev. Proc. 2013-30 if the failure was due to reasonable cause and the corporation has acted as if it were an S-corp.</p>
+
+<h2>Shareholder Basis: Stock Basis and Debt Basis</h2>
+
+<p>An S-corp shareholder can only deduct losses to the extent of their basis in the corporation. Unlike C-corp shareholders who simply own shares, S-corp shareholders have two components of basis: stock basis and debt basis. The ordering rules for basis adjustments and the distinction between the two are critical.</p>
+
+<h3>Stock Basis - Adjusted in Order</h3>
+
+<div class="formula-box">
+  <div class="formula-label">Annual Stock Basis Adjustments - Required Order</div>
+  <div class="formula-line"><span class="op">Start:</span><span class="var">Beginning stock basis</span></div>
+  <div class="formula-line"><span class="op">+</span><span class="var">Pro-rata share of income items</span><span class="def">Including tax-exempt income</span></div>
+  <div class="formula-line"><span class="op">-</span><span class="var">Distributions</span><span class="def">Non-dividend distributions reduce basis; excess over basis = capital gain</span></div>
+  <div class="formula-line"><span class="op">-</span><span class="var">Non-deductible non-capital expenses</span><span class="def">Fines, penalties, expenses that are not deductible</span></div>
+  <div class="formula-line"><span class="op">-</span><span class="var">Pro-rata share of loss and deduction items</span><span class="def">Cannot reduce below zero - excess is suspended</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Ending stock basis</span></div>
+</div>
+
+<h3>Debt Basis</h3>
+<p>When stock basis reaches zero, losses can still be deducted to the extent the shareholder has directly loaned money to the corporation. This is "debt basis." Important: a shareholder guarantee of a corporate loan does not create debt basis - only an actual loan from the shareholder to the corporation creates debt basis. When the S-corp generates income in subsequent years, debt basis is restored before stock basis is increased.</p>
+
+<div class="note-box"><strong>Suspended losses follow the shareholder.</strong> Losses in excess of basis are not lost - they are suspended and carry forward indefinitely, available to be deducted when the shareholder restores basis (by making additional loans or contributions) or disposes of the stock. This is materially different from C-corp losses which are trapped at the corporate level.</note-box>
+
+<h2>Distributions: The AAA Account</h2>
+
+<p>S-corp distributions are tax-free to the extent of the shareholder's stock basis. The accumulated adjustments account (AAA) tracks the cumulative undistributed income that has already been taxed at the shareholder level. For S-corps that were always S-corps (no prior C-corp history), distributions are generally tax-free to the extent of basis.</p>
+
+<p>For S-corps with accumulated earnings and profits (AE&P) from prior C-corp years, the interaction of AAA and AE&P determines the character of distributions. The general ordering: AAA is distributed first (tax-free to extent of basis), then AE&P (taxed as a dividend), then other adjustments account (OAA, for tax-exempt income), then remaining stock basis (return of capital), then any excess (capital gain).</p>
+
+<h2>Built-In Gains Tax: IRC §1374</h2>
+
+<p>When a C-corporation converts to S-corporation status, the IRS imposes a built-in gains (BIG) tax to prevent taxpayers from using the S-corp election to convert corporate-level C-corp gains into single-taxed pass-through income. The BIG tax applies at the corporate rate (21%) on net recognized built-in gains during the recognition period.</p>
+
+<p>The recognition period is 5 years from the date of the S election. Any asset held by the corporation on the date of the S election that is sold within those 5 years, for a gain that was built-in at the conversion date, is subject to the BIG tax at the S-corporation level - in addition to the shareholder-level pass-through. Effectively, appreciated assets sold within the recognition period face two levels of tax, similar to C-corp treatment.</p>
+
+<div class="red-box"><strong>BIG tax planning is time-sensitive.</strong> The 5-year clock starts on the effective date of the S election. Dispositions of appreciated assets should be carefully modeled in years 1-5. If possible, large asset sales should be deferred until after the recognition period ends. Basis in assets on the conversion date should be documented carefully - the BIG tax applies only to appreciation that existed at conversion, not to appreciation that occurred after the S election became effective.</div>
+
+<h2>Excess Passive Income: IRC §1375</h2>
+
+<p>An S-corporation that has AE&P from prior C-corp years (or from an acquired C-corp) is subject to an entity-level tax on excess passive income if passive investment income exceeds 25% of gross receipts. The tax rate is the highest corporate rate (currently 21%). Passive investment income includes dividends, interest, rents, royalties, and annuities.</p>
+
+<p>If excess passive income persists for three consecutive years, the S election is automatically terminated. This is one of the most overlooked S-corp traps - a profitable S-corp that holds significant investment assets alongside its operating business may unknowingly trigger the §1375 tax and face termination of its election if it has leftover C-corp AE&P.</p>
+
+<div class="green-box"><strong>Eliminating AE&P solves both problems.</strong> The §1375 tax and §1362(d)(3) termination risk only exist if the S-corp has C-corp AE&P. Distributing that AE&P as a dividend eliminates the risk entirely - though the distribution triggers dividend income to shareholders. For corporations with modest AE&P, a one-time distribution to clean out the account is often the right planning move.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="scorp-vs-llc.html" class="related-link">S-Corp vs. LLC Guide<span>Entity choice &middot; SE tax savings &middot; PTET</span></a>
+    <a href="scorp-compensation.html" class="related-link">S-Corp Compensation Guide<span>Reasonable salary &middot; Distribution planning</span></a>
+    <a href="section-199a-guide.html" class="related-link">QBI Deduction Guide<span>§199A &middot; W-2 wage optimization for S-corps</span></a>
+    <a href="salt-planning-guide.html" class="related-link">SALT Planning Guide<span>PTET election for S-corps &middot; State deduction</span></a>
+    <a href="business-sale-planning.html" class="related-link">Business Sale Planning<span>§338(h)(10) &middot; S-corp asset vs. stock sale</span></a>
+    <a href="partnership-tax-basics.html" class="related-link">Partnership Tax Basics<span>Compare S-corp vs. partnership rules</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §1361 (S-corporation defined - eligibility requirements: 100 shareholders, one class of stock, eligible shareholders, domestic corporation); IRC §1362 (election, revocation, and termination); IRC §1362(d)(3) (automatic termination for excess passive income - 3 consecutive years); IRC §1363 (effect of election - pass-through treatment); IRC §1366 (pass-through of items to shareholders - pro-rata allocation); IRC §1367 (adjustments to basis of stock of shareholders - ordering rules); IRC §1368 (distributions - AAA, AE&P, OAA ordering); IRC §1371 (coordination with subchapter C); IRC §1374 (tax imposed on built-in gains - 5-year recognition period, 21% corporate rate); IRC §1375 (tax imposed when passive investment income exceeds 25% of gross receipts - requires C-corp AE&P); IRC §1377 (special rules for determining pro-rata share - per-share per-day method); Rev. Proc. 2013-30 (late S election relief); Treas. Reg. §1.1366-2 (basis limitations on losses and deductions); Treas. Reg. §1.1368-1 through 1.1368-2 (distribution ordering - AAA and AE&P); Form 2553 (Election by a Small Business Corporation); Form 1120-S (U.S. Income Tax Return for an S Corporation); Schedule K-1 (Form 1120-S) (shareholder's share of income, deductions, credits).</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+<div style="background:var(--ink,#111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
