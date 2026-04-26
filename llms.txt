@@ -110,3 +110,7 @@
 - cryptocurrency-tax-guide.html: Cryptocurrency tax guide - HIFO FIFO specific ID Rev. Proc. 2024-28, staking ordinary income Rev. Rul. 2023-14, hard forks airdrops, DeFi, wash sale rule absence, Form 1099-DA 2025 broker reporting.
 - executive-compensation-guide.html: Executive compensation guide - ISO NSO RSU comparison, §83(b) election 30-day deadline, AMT on ISO exercise §56(b)(3), §409A deferred comp 20% penalty, planning strategies.
 - state-income-tax-nexus.html: State income tax nexus - domicile vs. statutory residency, 183-day rule by state, NY convenience of employer rule, remote worker multi-state, dual-resident trap, domicile change steps.
+- real-estate-tax-guide.html: Real estate tax guide - §1231 hotchpot and lookback, §1250 unrecaptured gain 25% rate, §1245 recapture, dealer vs investor, passive activity $25K offset, real estate professional §469(c)(7), short-term rental, cost segregation.
+- irs-audit-guide.html: IRS audit guide - DIF scoring, AUR matching, audit types, SOL §6501, 30-day and 90-day letters, IRS Appeals, OIC §7122, first-time penalty abatement.
+- charitable-giving-strategies.html: Charitable giving strategies - DAF bunching appreciated stock, QCD $108K age 70.5, CRT CRAT CRUT income stream, CLT estate planning, AGI limits 60%/30%/20%, 5-year carryforward.
+- s-corporation-basics.html: S-corporation basics - §1362 election eligibility, stock basis debt basis ordering, AAA AE&P distributions, §1374 BIG tax 5-year period, §1375 excess passive income termination risk.
