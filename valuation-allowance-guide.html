@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valuation Allowance Guide: ASC 740 Positive & Negative Evidence | CPA Validated</title>
+<meta name="description" content="ASC 740 valuation allowance: the more-likely-than-not standard, positive and negative evidence, the cumulative loss presumption, reversals, and how to document and defend valuation allowance positions for external audit. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/valuation-allowance-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Valuation Allowance Guide: ASC 740 Positive & Negative Evidence">
+<meta property="og:description" content="ASC 740 valuation allowance: more-likely-than-not standard, positive and negative evidence, cumulative loss presumption, and audit defense.">
+<meta property="og:url" content="https://cpavalidated.com/valuation-allowance-guide.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Valuation Allowance Guide: ASC 740 Positive & Negative Evidence","url":"https://cpavalidated.com/valuation-allowance-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0 28px}
+.evidence-card{padding:16px 18px;border:1px solid}
+.positive{border-color:var(--green-b);background:var(--green-bg)}
+.positive .ev-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:10px;font-family:var(--font-mono)}
+.negative{border-color:var(--red-b);background:var(--red-bg)}
+.negative .ev-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:10px;font-family:var(--font-mono)}
+.ev-item{font-size:12.5px;line-height:1.6;color:var(--ink-80);margin-bottom:6px;padding-left:12px;position:relative}
+.ev-item::before{content:"•";position:absolute;left:0;color:inherit}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.two-col,.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Valuation Allowance: ASC 740 Positive &amp; Negative Evidence</h1>
+  <div class="sub">More-Likely-Than-Not Standard &nbsp;&bull;&nbsp; Cumulative Loss Presumption &nbsp;&bull;&nbsp; Evidence Framework &nbsp;&bull;&nbsp; Reversals &nbsp;&bull;&nbsp; Audit Defense</div>
+  <div class="meta">
+    <span class="ph-meta-item">ASC 740-10-30</span>
+    <span class="ph-meta-item">ASC 740-10-55</span>
+  </div>
+</div></div>
+<div class="back"><a href="tax-provision.html">&#8592; Tax Provision / ASC 740</a></div>
+<div class="article">
+
+<p class="lead">A valuation allowance reduces a deferred tax asset to the amount more likely than not to be realized. Getting this judgment right is one of the most consequential decisions in the tax provision - and one of the most scrutinized by external auditors. An unnecessary valuation allowance overstates the tax provision. A missing one understates it. The analysis requires weighing all available positive and negative evidence with objective documentation.</p>
+
+<div class="callout">
+  <div class="callout-label">The Standard: ASC 740-10-30-5</div>
+  <p><strong>"A deferred tax asset shall be reduced by a valuation allowance if, based on the weight of all available evidence, it is more likely than not that some portion or all of the deferred tax asset will not be realized."</strong></p>
+  <p>"More likely than not" means a likelihood of more than 50%. This is an objective, forward-looking standard that requires weighing all evidence - positive and negative - with appropriate weight given to each item based on the extent to which it can be objectively verified. The entity assesses all evidence in total, not individual pieces in isolation.</p>
+</div>
+
+<h2>Positive and Negative Evidence: The Full Framework</h2>
+
+<div class="two-col">
+  <div class="evidence-card positive">
+    <div class="ev-label">Positive Evidence</div>
+    <div class="ev-item">Strong history of taxable income in prior years</div>
+    <div class="ev-item">Existing contracts or firm sales backlog that will produce sufficient taxable income</div>
+    <div class="ev-item">Excess of appreciated asset value over tax basis (unrealized gains that could be harvested)</div>
+    <div class="ev-item">Strong forecasts of future taxable income based on objective, verifiable data</div>
+    <div class="ev-item">Availability of tax planning strategies that would create taxable income before DTA expiration</div>
+    <div class="ev-item">Long carryforward periods for NOLs or credits (indefinite post-TCJA)</div>
+    <div class="ev-item">Carryback availability to years with taxable income</div>
+  </div>
+  <div class="evidence-card negative">
+    <div class="ev-label">Negative Evidence</div>
+    <div class="ev-item">Cumulative losses in recent years (the most significant negative indicator)</div>
+    <div class="ev-item">History of NOL or credit carryforwards expiring unused</div>
+    <div class="ev-item">Losses expected in early future years</div>
+    <div class="ev-item">Unsettled circumstances that, if unfavorably resolved, would adversely affect future taxable income</div>
+    <div class="ev-item">Brief carryback or carryforward periods</div>
+    <div class="ev-item">Operating in a declining industry or market</div>
+    <div class="ev-item">Recent change of control limiting NOL utilization (IRC §382)</div>
+  </div>
+</div>
+
+<h2>The Cumulative Loss Presumption</h2>
+
+<p>Cumulative losses in recent years is the single most powerful piece of negative evidence under ASC 740. ASC 740-10-30-21 states that a cumulative loss in recent years is a significant piece of negative evidence that is difficult to overcome with positive evidence that is uncertain or subjective in nature.</p>
+
+<div class="red-box"><strong>What "recent years" means in practice.</strong> The standard does not define the period, but the SEC staff has indicated that "recent years" typically means the current and two preceding years (the 3-year cumulative window). If the sum of pre-tax GAAP income (or loss) for the current year and the two preceding years is negative, the entity is presumed to be in a cumulative loss position. This creates a near-automatic need for a valuation allowance on DTAs that depend on future taxable income - unless the entity can overcome the presumption with objectively verifiable positive evidence. Forecasts and projections alone are generally not sufficient to overcome cumulative losses.</div>
+
+<h3>Overcoming the Cumulative Loss Presumption</h3>
+<p>The presumption can be overcome only by objectively verifiable positive evidence. The types of evidence that auditors find most credible include: specific contracts or purchase orders representing future revenue, non-recurring items that caused the historical losses (restructuring charges, write-offs, litigation), material changes in the business model with demonstrated results, or available tax planning strategies with clear mechanical availability (not dependent on future business performance).</p>
+
+<h2>Tax Planning Strategies as Positive Evidence</h2>
+
+<p>ASC 740-10-30-19 permits consideration of tax planning strategies as positive evidence only if they are prudent and feasible actions that an entity ordinarily might not take but would take to prevent an NOL carryforward from expiring unused. Tax planning strategies must be within the entity's control and available to be implemented. The mere existence of a strategy is not sufficient - the entity must be willing and able to implement it.</p>
+
+<p>Common tax planning strategies considered in valuation allowance analyses include: accelerating recognition of income, changing depreciation elections, selling and leasing back appreciated assets to trigger taxable income, and making entity classification elections. The tax cost of the strategy (incremental taxes paid in the near term) must be weighed against the benefit (preservation of the DTA).</p>
+
+<h2>Scheduling: Reversals and Expiration</h2>
+
+<p>The valuation allowance analysis requires scheduling the reversal pattern of existing deferred tax liabilities (which generate taxable income that can absorb DTAs) against the expiration dates of DTAs (particularly NOL and credit carryforwards). If sufficient DTLs reverse before the DTAs expire, no valuation allowance may be needed even in the absence of other positive evidence.</p>
+
+<div class="note-box"><strong>Indefinite-lived vs. definite-lived DTAs.</strong> Post-TCJA, federal NOL carryforwards are indefinite - they do not expire. This removes expiration pressure from the scheduling analysis for federal NOLs. However, many states still have 20-year carryforward periods. The scheduling analysis must be performed on a jurisdiction-by-jurisdiction basis. Indefinite-lived DTAs (federal NOLs) can only be offset against reversing temporary differences - not against future indefinite-lived income - unless the entity has positive evidence of future income.</div>
+
+<h2>Reversing a Valuation Allowance</h2>
+
+<p>When sufficient positive evidence emerges to conclude that a previously established valuation allowance is no longer needed, ASC 740-10-45-20 requires the reversal to be recorded in income from continuing operations (or in the appropriate component of other comprehensive income or equity if the underlying DTA was originally established through OCI or equity). A valuation allowance reversal is reported in the same line as income tax expense - it reduces the effective tax rate in the period of reversal.</p>
+
+<p>Reversal triggers that auditors look for include: return to sustained profitability for a sufficient period, backlog or contractual commitments providing high confidence in near-term taxable income, or structural changes (asset sales, business dispositions, reorganizations) that eliminate the source of historical losses.</p>
+
+<div class="related">
+  <div class="related-title">Related Articles</div>
+  <div class="related-links">
+    <a href="asc-740-guide.html" class="related-link">ASC 740 Overview<span>Current vs. deferred tax framework</span></a>
+    <a href="asc-740-tax-provision.html" class="related-link">Tax Provision Deep Dive<span>Multi-jurisdiction provision mechanics</span></a>
+    <a href="net-operating-loss-guide.html" class="related-link">NOL Guide<span>§172 carryforward rules &middot; 80% limitation</span></a>
+    <a href="tax-provision.html" class="related-link">Tax Provision Hub<span>All ASC 740 guides in one place</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: ASC 740-10-30-5 (valuation allowance - reduce DTA if more likely than not that some portion will not be realized); ASC 740-10-30-17 through 30-25 (positive and negative evidence - listed categories, weight of evidence); ASC 740-10-30-21 (cumulative losses in recent years as significant negative evidence - difficult to overcome with subjective positive evidence); ASC 740-10-30-18 (tax planning strategies as positive evidence - must be prudent, feasible, and within entity's control); ASC 740-10-55-39 through 55-51 (implementation guidance and examples for valuation allowance analysis); ASC 740-10-45-20 (reversal of valuation allowance - recorded in income from continuing operations); SEC Staff Accounting Bulletin Topic 6:I (SEC staff guidance on valuation allowance analysis for registrants); FASB Accounting Standards Codification Topic 740 (Income Taxes) overall.</div>
+
+<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+<div style="background:var(--ink,#111111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
