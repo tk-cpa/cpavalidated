@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASC 740 Income Tax Accounting: A Practical Guide | CPA Validated</title>
+<meta name="description" content="ASC 740 explained clearly. Current vs. deferred tax, temporary and permanent differences, deferred tax assets and liabilities, valuation allowances, uncertain tax positions (FIN 48), rate reconciliation, and OBBBA impact on tax provisions. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/asc-740-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.mono{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-60)}
+.formula-box{background:var(--ink);padding:18px 20px;margin:20px 0;border-left:4px solid var(--coral)}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px;font-family:var(--font-mono)}
+.formula-line{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;font-size:13px}
+.formula-line:last-child{margin-bottom:0;border-top:1px solid rgba(255,255,255,.15);padding-top:8px;margin-top:4px}
+.f-op{color:rgba(255,255,255,.4);font-family:var(--font-mono);min-width:16px}
+.f-var{color:#fff;font-weight:500}
+.f-def{color:rgba(255,255,255,.5);font-size:12px}
+.example-box{border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.ex-head{background:var(--coral);padding:10px 16px;font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.06em;color:#fff}
+.ex-body{padding:16px;background:var(--white)}
+.ex-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--ink-10);font-size:13px;color:var(--ink-80)}
+.ex-row:last-child{border-bottom:none;font-weight:700;color:var(--ink);padding-top:8px;margin-top:4px}
+.ex-val{font-family:var(--font-mono);font-size:12.5px}
+.ex-val.green{color:var(--green)}.ex-val.red{color:var(--red)}.ex-val.amber{color:var(--amber)}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.dg-head{background:var(--ink);color:#fff;padding:10px 14px;font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.06em}
+.dg-cell{background:var(--white);padding:12px 14px}
+.dg-item{font-size:13px;color:var(--ink-80);padding:4px 0;border-bottom:1px solid var(--ink-10);line-height:1.5}
+.dg-item:last-child{border-bottom:none}
+.dg-item strong{color:var(--ink);display:block;font-size:12px}
+.step-list{counter-reset:steps;margin:20px 0 28px}
+.step{counter-increment:steps;display:grid;grid-template-columns:36px 1fr;gap:0;border-bottom:1px solid var(--ink-20)}
+.step:last-child{border-bottom:none}
+.step-num{background:var(--ink);color:var(--coral);font-family:var(--font-display);font-size:16px;font-weight:500;display:flex;align-items:flex-start;justify-content:center;padding:14px 0;border-right:1px solid rgba(255,255,255,.05)}
+.step-body{padding:14px 16px}
+.step-title{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.step-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+.recon-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.recon-table td{padding:8px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80)}
+.recon-table .label{color:var(--ink-60);font-size:12px}
+.recon-table .val{font-family:var(--font-mono);font-size:12.5px;text-align:right}
+.recon-table .val.pos{color:var(--green)}.recon-table .val.neg{color:var(--red)}
+.recon-table .subtotal td{background:var(--ink-10);font-weight:600}
+.recon-table .total td{background:var(--ink);color:#fff;font-weight:700}
+.recon-table .total .val{color:var(--coral)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.diff-grid,.related-links{grid-template-columns:1fr}.step{grid-template-columns:28px 1fr}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>ASC 740: Income Tax Accounting - A Practical Guide</h1>
+  <div class="sub">Current vs. Deferred Tax &nbsp;&bull;&nbsp; Temporary Differences &nbsp;&bull;&nbsp; Valuation Allowances &nbsp;&bull;&nbsp; Uncertain Tax Positions &nbsp;&bull;&nbsp; Rate Reconciliation</div>
+  <div class="meta">
+    <span class="ph-meta-item">ASC 740</span>
+    <span class="ph-meta-item">ASC 740-10 (FIN 48)</span>
+    <span class="ph-meta-item">IRC §174A &nbsp;&bull;&nbsp; IRC §168(k)</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">ASC 740 is the GAAP standard that governs how companies account for income taxes in their financial statements. It determines the income tax expense on the income statement and the deferred tax balances on the balance sheet. Every entity that prepares GAAP financial statements - public or private, large or small - must apply ASC 740. This guide explains the mechanics clearly, from first principles to the judgment-intensive areas where errors are most common.</p>
+
+<div class="callout">
+  <div class="callout-label">What ASC 740 Is and Isn't</div>
+  <p>ASC 740 governs financial reporting of taxes - not the calculation of what you actually owe the IRS. The tax return (Form 1120, 1065, etc.) determines your cash tax liability. ASC 740 determines how that tax obligation, and the tax consequences of future events embedded in today's balance sheet, are presented in the financial statements. The two numbers - tax return tax and financial statement tax expense - are almost always different, sometimes dramatically so.</p>
+</div>
+
+<h2>The Income Statement: Two Components of Tax Expense</h2>
+
+<p>Under ASC 740, income tax expense (or benefit) on the income statement has two components that must be disclosed separately:</p>
+
+<div class="diff-grid">
+  <div class="dg-head">Current Tax Expense</div>
+  <div class="dg-head">Deferred Tax Expense (Benefit)</div>
+  <div class="dg-cell">
+    <div class="dg-item"><strong>What it is</strong>The income tax obligation for the current year based on taxable income reported on the tax return. This is what you actually owe (or expect to owe) the IRS and state authorities for this period.</div>
+    <div class="dg-item"><strong>Driven by</strong>Taxable income, current year tax rates, credits, and estimated payments/refunds due.</div>
+    <div class="dg-item"><strong>Balance sheet impact</strong>Creates a current taxes payable (or refund receivable) on the balance sheet.</div>
+  </div>
+  <div class="dg-cell">
+    <div class="dg-item"><strong>What it is</strong>The tax effect of temporary differences - items that have been recognized differently for GAAP versus tax purposes and will reverse in future periods. Can be expense or benefit.</div>
+    <div class="dg-item"><strong>Driven by</strong>Changes in deferred tax asset (DTA) and deferred tax liability (DTL) balances during the period.</div>
+    <div class="dg-item"><strong>Balance sheet impact</strong>Creates or adjusts deferred tax assets and liabilities on the balance sheet.</div>
+  </div>
+</div>
+
+<div class="formula-box">
+  <div class="formula-label">Total Income Tax Expense</div>
+  <div class="formula-line"><span class="f-op"></span><span class="f-var">Current Tax Expense</span><span class="f-def">Tax on current year taxable income at enacted rates</span></div>
+  <div class="formula-line"><span class="f-op">+</span><span class="f-var">Deferred Tax Expense (Benefit)</span><span class="f-def">Change in net DTA/DTL balances for the period</span></div>
+  <div class="formula-line"><span class="f-op">=</span><span class="f-var">Total Income Tax Expense (Benefit)</span><span class="f-def">Reported on the income statement</span></div>
+</div>
+
+<h2>Temporary vs. Permanent Differences</h2>
+
+<p>The engine of deferred taxes is the concept of temporary differences - situations where GAAP and tax recognize income or expense in different periods. These differences will eventually reverse and produce future tax consequences. Permanent differences, by contrast, never reverse and produce no deferred tax.</p>
+
+<h3>Temporary Differences - They Reverse, They Create Deferred Tax</h3>
+
+<div class="key-table">
+  <tr><th>Item</th><th>GAAP Treatment</th><th>Tax Treatment</th><th>Creates</th></tr>
+  <tr><td>Depreciation (book vs. tax)</td><td>Straight-line over useful life</td><td>MACRS accelerated / 100% bonus depreciation (OBBBA)</td><td>DTL - taxable temporary difference</td></tr>
+  <tr><td>Warranty reserves</td><td>Accrued when product sold</td><td>Deductible when paid (all-events test, IRC §461)</td><td>DTA - deductible temporary difference</td></tr>
+  <tr><td>Bad debt / credit loss reserve</td><td>Estimated allowance (CECL)</td><td>Deductible only on specific charge-off (IRC §166)</td><td>DTA - deductible temporary difference</td></tr>
+  <tr><td>Deferred revenue</td><td>Recognized when earned</td><td>Often taxable when received (IRC §451(c) elections)</td><td>DTA - tax paid before GAAP recognition</td></tr>
+  <tr><td>Stock-based compensation (NQSOs)</td><td>Grant-date fair value over vesting</td><td>Deductible at exercise (IRC §83(h))</td><td>DTA (or DTL depending on stock price movement)</td></tr>
+  <tr><td>Net operating loss carryforwards</td><td>No GAAP equivalent at creation</td><td>Carry forward to offset future taxable income (IRC §172)</td><td>DTA - future deductible amount</td></tr>
+  <tr><td>Capitalized R&amp;D (IRC §174A post-OBBBA)</td><td>Expensed immediately under ASC 730</td><td>Amortized over 5 years domestic / 15 years foreign</td><td>DTL - tax deduction comes later</td></tr>
+  <tr><td>Unrealized gains/losses</td><td>Mark-to-market through OCI or P&amp;L depending on ASC 321/323</td><td>Generally not taxed until realized (IRC §1001)</td><td>DTL on unrealized gains; DTA on unrealized losses</td></tr>
+</table>
+
+<h3>Permanent Differences - They Never Reverse, No Deferred Tax</h3>
+
+<div class="key-table">
+  <tr><th>Item</th><th>GAAP</th><th>Tax</th><th>Effect on Rate Recon</th></tr>
+  <tr><td>Meals &amp; entertainment (50% limit)</td><td>Fully expensed</td><td>50% nondeductible (IRC §274)</td><td>Increases effective tax rate</td></tr>
+  <tr><td>Tax-exempt interest (municipal bonds)</td><td>Income recognized</td><td>Excluded from taxable income (IRC §103)</td><td>Decreases effective tax rate</td></tr>
+  <tr><td>Penalties and fines</td><td>Expensed</td><td>Nondeductible (IRC §162(f))</td><td>Increases effective tax rate</td></tr>
+  <tr><td>Section 1202 QSBS gain exclusion</td><td>Gain recognized</td><td>Up to 100% excluded (IRC §1202)</td><td>Decreases effective tax rate</td></tr>
+  <tr><td>R&amp;D tax credit</td><td>No effect on income</td><td>Dollar-for-dollar tax reduction (IRC §41)</td><td>Decreases effective tax rate</td></tr>
+  <tr><td>FICA tip credit, other credits</td><td>No effect on income</td><td>Dollar-for-dollar tax reduction</td><td>Decreases effective tax rate</td></tr>
+  <tr><td>Excess officer compensation (IRC §162(m))</td><td>Expensed</td><td>Nondeductible above $1M per covered employee</td><td>Increases effective tax rate</td></tr>
+</table>
+
+<h2>Deferred Tax Assets and Liabilities</h2>
+
+<p>Once you identify your temporary differences, you calculate the deferred tax asset or liability by multiplying the temporary difference by the enacted tax rate expected to apply when the difference reverses. This is the liability method required by ASC 740.</p>
+
+<div class="formula-box">
+  <div class="formula-label">Deferred Tax Calculation</div>
+  <div class="formula-line"><span class="f-op"></span><span class="f-var">Temporary Difference</span><span class="f-def">GAAP basis minus tax basis of asset or liability</span></div>
+  <div class="formula-line"><span class="f-op">&times;</span><span class="f-var">Enacted Tax Rate</span><span class="f-def">Rate expected to apply when difference reverses - not current year rate</span></div>
+  <div class="formula-line"><span class="f-op">=</span><span class="f-var">Deferred Tax Asset or Liability</span><span class="f-def">DTA if deductible temp diff; DTL if taxable temp diff</span></div>
+</div>
+
+<div class="example-box">
+  <div class="ex-head">Example - Bonus Depreciation Creates a DTL</div>
+  <div class="ex-body">
+    <div class="ex-row"><span>Asset cost (equipment placed in service 2026)</span><span class="ex-val">$1,000,000</span></div>
+    <div class="ex-row"><span>GAAP book basis (5-year straight-line, year 1)</span><span class="ex-val">$800,000</span></div>
+    <div class="ex-row"><span>Tax basis (100% bonus depreciation under OBBBA, IRC §168(k))</span><span class="ex-val">$0</span></div>
+    <div class="ex-row"><span>Taxable temporary difference (book basis exceeds tax basis)</span><span class="ex-val">$800,000</span></div>
+    <div class="ex-row"><span>Federal corporate rate (IRC §11)</span><span class="ex-val">21%</span></div>
+    <div class="ex-row"><span>Deferred tax liability recorded on balance sheet</span><span class="ex-val amber">$168,000 DTL</span></div>
+    <div class="ex-row"><span>Interpretation: company will owe $168K more tax in future years as book depreciation continues but no further tax deduction is available</span><span class="ex-val"></span></div>
+  </div>
+</div>
+
+<p>A <strong>deferred tax liability</strong> arises when the tax basis of an asset is lower than its book basis (or a liability's tax basis is higher than book). You've deducted more for tax than for GAAP - you'll owe more tax later. Think bonus depreciation, installment sale gains, and accelerated amortization.</p>
+
+<p>A <strong>deferred tax asset</strong> arises when the tax basis of an asset is higher than book (or a liability's tax basis is lower). You've recognized more for GAAP than you've deducted for tax - you'll pay less tax later. Think warranty accruals, bad debt reserves, and NOL carryforwards.</p>
+
+<h2>Valuation Allowances: The Most Judgmental Part of ASC 740</h2>
+
+<p>A deferred tax asset only has value if the company will generate enough future taxable income to actually use it. ASC 740-10-30-5 requires a valuation allowance against any DTA for which it is "more likely than not" - meaning greater than 50% probability - that some or all of the DTA will not be realized.</p>
+
+<p>The four sources of taxable income that can support a DTA (listed in order of reliability under ASC 740-10-30-18) are:</p>
+
+<div class="step-list">
+  <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Future reversals of existing taxable temporary differences</div><div class="step-desc">DTLs will reverse and create taxable income - this is the most objective source. A DTA can often be supported by DTLs scheduled to reverse in the same period and jurisdiction.</div></div></div>
+  <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Future taxable income exclusive of reversals</div><div class="step-desc">Projected future profitability. This is subjective and requires persuasive evidence to rely upon, particularly when there is a history of losses. Projections must be based on feasible and supportable assumptions - not wishful thinking.</div></div></div>
+  <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Taxable income in carryback years</div><div class="step-desc">If the jurisdiction allows carrybacks, prior year taxable income can absorb deductible temporary differences. Note: the CARES Act temporarily restored federal NOL carrybacks; current law limits federal NOL carryforwards to 80% of taxable income with no carryback (IRC §172 post-TCJA).</div></div></div>
+  <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Tax planning strategies</div><div class="step-desc">Prudent and feasible strategies that management would implement to avoid allowing a carryforward to expire unused. These must be actions management would actually take - not hypothetical strategies invented solely to avoid a VA. Examples: accelerating income, deferring deductions, selling appreciated assets.</div></div></div>
+</div>
+
+<div class="note-box"><strong>The "more likely than not" threshold is an asset-level test.</strong> You evaluate each DTA separately. A company can have a full VA against its NOL carryforward DTA while carrying a different DTA (e.g., for warranty reserves) without a VA, if there is sufficient objective evidence of future reversals to support the latter but not the former. The evaluation is granular, not all-or-nothing.</div>
+
+<div class="red-box"><strong>Cumulative losses are a strong presumption of VA requirement.</strong> Three years of cumulative pretax losses creates a rebuttable presumption that a VA is needed against the full DTA. Rebutting this presumption requires specific, persuasive evidence - not general optimism about future results. Auditors scrutinize VA analyses intensely when a company has a loss history.</div>
+
+<h2>Uncertain Tax Positions: ASC 740-10 (FIN 48)</h2>
+
+<p>Not every tax position on the return is certain to be sustained if challenged by the IRS or a state authority. ASC 740-10 (originally issued as FIN 48) requires companies to identify, measure, and disclose uncertain tax positions (UTPs) - any position where there is uncertainty about whether the tax treatment will be upheld.</p>
+
+<h3>Step 1: Recognition - The More-Likely-Than-Not Threshold</h3>
+
+<p>A tax benefit from an uncertain position may only be recognized in the financial statements if it is "more likely than not" - greater than 50% probability - that the position will be sustained on examination, based on its technical merits. If this threshold is not met, no benefit is recognized, regardless of how the position was reported on the tax return.</p>
+
+<p>The evaluation is based on the technical merits of the position as if the taxing authority had full knowledge of all relevant facts. It ignores the probability of detection - a position is evaluated as if it will be audited.</p>
+
+<h3>Step 2: Measurement - Cumulative Probability</h3>
+
+<p>If the recognition threshold is met, the benefit is measured as the largest amount that is "more than 50% likely to be realized upon ultimate settlement." This is determined using a cumulative probability approach:</p>
+
+<div class="example-box">
+  <div class="ex-head">Measurement Example - Transfer Pricing Position</div>
+  <div class="ex-body">
+    <div class="ex-row"><span>Possible outcome: full deduction sustained ($500K benefit)</span><span class="ex-val">20% probability</span></div>
+    <div class="ex-row"><span>Possible outcome: 80% of deduction sustained ($400K benefit)</span><span class="ex-val">35% probability - cumulative 55%</span></div>
+    <div class="ex-row"><span>Possible outcome: 60% of deduction sustained ($300K benefit)</span><span class="ex-val">25% probability - cumulative 80%</span></div>
+    <div class="ex-row"><span>Possible outcome: no deduction ($0 benefit)</span><span class="ex-val">20% probability - cumulative 100%</span></div>
+    <div class="ex-row"><span>Recognized benefit (largest amount with &gt;50% cumulative probability)</span><span class="ex-val green">$400,000</span></div>
+  </div>
+</div>
+
+<h3>Rollforward Disclosure</h3>
+
+<p>Public companies must disclose a tabular rollforward of the total amount of unrecognized tax benefits (UTBs) from the beginning to the end of the period, including increases for current-period positions, increases/decreases for prior-period positions, settlements, and lapse of statutes of limitations. Private companies have reduced disclosure requirements but must still identify and measure all UTPs.</p>
+
+<h2>The Rate Reconciliation</h2>
+
+<p>ASC 740 requires a reconciliation of the expected income tax expense at the statutory federal rate (21% for C-corporations) to the actual income tax expense reported. This reconciliation, disclosed in the financial statement footnotes, explains why the effective tax rate differs from 21%. It is one of the most scrutinized parts of the tax footnote.</p>
+
+<table class="recon-table">
+  <tr><td>Pre-tax income</td><td class="val">$10,000,000</td></tr>
+  <tr><td>Expected tax at statutory federal rate (21%)</td><td class="val">$2,100,000</td></tr>
+  <tr><td class="label">State income taxes, net of federal benefit</td><td class="val pos">+$320,000</td></tr>
+  <tr><td class="label">Nondeductible meals &amp; entertainment (IRC §274)</td><td class="val pos">+$18,000</td></tr>
+  <tr><td class="label">Excess officer compensation (IRC §162(m))</td><td class="val pos">+$84,000</td></tr>
+  <tr><td class="label">R&amp;D tax credit (IRC §41)</td><td class="val neg">-$210,000</td></tr>
+  <tr><td class="label">Section 1202 QSBS gain exclusion (IRC §1202)</td><td class="val neg">-$140,000</td></tr>
+  <tr><td class="label">Stock compensation excess tax benefit (IRC §83(h))</td><td class="val neg">-$95,000</td></tr>
+  <tr><td class="label">Change in valuation allowance</td><td class="val pos">+$55,000</td></tr>
+  <tr><td class="label">Other, net</td><td class="val pos">+$8,000</td></tr>
+  <tr class="total"><td>Total income tax expense</td><td class="val">$2,140,000</td></tr>
+  <tr class="total"><td>Effective tax rate</td><td class="val">21.4%</td></tr>
+</table>
+
+<p>Each line in the reconciliation tells a story. A large "change in valuation allowance" line signals uncertainty about future profitability. A large "state income taxes" line may reflect significant multistate operations. A large stock compensation line may indicate a highly valued option program. Analysts and auditors read the rate recon carefully - it is the bridge between the statutory rate and the company's actual tax burden.</p>
+
+<h2>OBBBA Impact on Tax Provisions (2026)</h2>
+
+<p>The One Big Beautiful Bill Act (P.L. 119-21, signed July 4, 2025) introduced several provisions with significant ASC 740 implications that require immediate attention in 2026 provisions.</p>
+
+<h3>IRC §174A - Domestic R&amp;D Expensing Restored</h3>
+
+<p>OBBBA enacted IRC §174A, which restores immediate expensing for domestic research and experimental (R&amp;E) expenditures. Under the post-TCJA rule (pre-OBBBA), domestic R&amp;E had to be capitalized and amortized over 5 years. For many R&amp;D-intensive companies, this created a significant DTL - the tax deduction was slower than the GAAP expense.</p>
+
+<p>OBBBA reverses this for domestic R&amp;E incurred in tax years beginning after December 31, 2024. The DTL established for the TCJA-era capitalization is now reversed as those amounts become currently deductible. <strong>The DTL reversal timing must be carefully mapped to which R&amp;E cohorts are affected.</strong> Foreign R&amp;E remains subject to 15-year amortization under IRC §174.</p>
+
+<h3>IRC §168(k) - 100% Bonus Depreciation Permanent</h3>
+
+<p>OBBBA made 100% bonus depreciation permanent for qualifying property placed in service after January 19, 2025. The immediate ASC 740 impact: <strong>bonus depreciation creates DTLs</strong>, not DTAs. When an asset is fully deducted for tax in year 1 but depreciated over its GAAP useful life, the tax basis is zero while the book basis remains. This taxable temporary difference generates a DTL.</p>
+
+<p>For companies with significant capital expenditure programs, permanent 100% bonus depreciation means a structural, recurring DTL that grows with each capital investment and reverses as book depreciation is recognized. Provision teams should update their fixed-asset rollforward templates to reflect the permanent nature of this rule rather than treating it as a phase-down that eventually disappears.</p>
+
+<h3>IRC §163(j) - EBITDA-Based Interest Limitation Restored</h3>
+
+<p>OBBBA permanently restored the EBITDA-based limitation for the §163(j) business interest deduction. Under TCJA (2018-2021), the limitation was based on EBITDA (allowing add-back of depreciation and amortization). TCJA shifted to an EBIT-based limitation for 2022-2025, which was more restrictive for capital-intensive businesses. OBBBA restored EBITDA permanently. Companies that had accumulated §163(j) disallowed interest carryforwards (a DTA) should reassess whether those carryforwards are more likely than not to be utilized under the more favorable EBITDA limitation.</p>
+
+<h3>NCTI (Formerly GILTI) - Outside Basis and Deferred Tax</h3>
+
+<p>OBBBA renamed GILTI as Net CFC Tested Income (NCTI) and eliminated the 10% QBAI exemption, while permanently setting the §250 deduction at 40%. For multinational companies: (1) the NCTI inclusion may differ from prior GILTI calculations requiring DTA/DTL updates on outside basis differences in CFC stock; (2) the indefinite reinvestment assertion (APB 23 / ASC 740-30) for outside basis differences must be reassessed given the NCTI changes; (3) the blended NCTI foreign tax credit rate affects the realizability of FTC carryforward DTAs.</p>
+
+<h2>Interim Period Reporting</h2>
+
+<p>For companies that report on a quarterly basis (all public companies; many private companies with quarterly reporting obligations), ASC 740-270 requires use of the Annual Effective Tax Rate (AETR) method.</p>
+
+<p>The AETR method works as follows: at the start of each quarter, estimate the full-year pre-tax income and the full-year income tax expense. The ratio is the AETR. Apply the AETR to the year-to-date actual pre-tax income to compute year-to-date tax expense, then subtract the prior quarters' tax expense to get the current quarter expense.</p>
+
+<div class="note-box"><strong>Discrete items bypass the AETR.</strong> Certain items - called "discrete" - are recognized in the quarter they occur rather than being spread through the AETR. Common discrete items: changes in tax law enacted during the quarter (the OBBBA provisions, for example, were discrete items in Q3 2025); changes in valuation allowances related to a specific quarter's evidence; tax benefits from stock option exercises (ASC 718); settlements of UTPs; and prior period adjustments. Correctly identifying discrete versus ordinary items is one of the most common sources of interim provision error.</div>
+
+<h2>Balance Sheet Classification</h2>
+
+<p>Under ASC 740 (post-ASU 2015-17), all deferred tax assets and liabilities are classified as noncurrent on the balance sheet. There is no longer a current/noncurrent split for deferred taxes. DTAs and DTLs are netted within the same tax jurisdiction and presented as a single noncurrent DTA or DTL line item on the balance sheet. Amounts from different jurisdictions are not netted against each other.</p>
+
+<h2>Ten Common ASC 740 Errors</h2>
+
+<table class="key-table">
+  <tr><th>#</th><th>Error</th><th>How It Manifests</th></tr>
+  <tr><td>1</td><td>Using current-year rate instead of enacted future rate</td><td>DTL/DTA misstated when rates change; particularly relevant when tax law changes are enacted mid-year</td></tr>
+  <tr><td>2</td><td>Missing state NOL apportionment differences</td><td>States have separate NOL rules - some are post-apportionment, some pre-apportionment; state DTA overstated or understated</td></tr>
+  <tr><td>3</td><td>Netting DTAs and DTLs across jurisdictions</td><td>Overstatement of net DTA; ASC 740 requires netting only within the same jurisdiction</td></tr>
+  <tr><td>4</td><td>Inadequate UTP analysis for state positions</td><td>Companies often focus UTP analysis on federal; aggressive state positions are underreserved</td></tr>
+  <tr><td>5</td><td>Missing outside basis differences in subsidiaries</td><td>The tax basis of a subsidiary's stock differs from its GAAP book value; complex for CFCs post-NCTI</td></tr>
+  <tr><td>6</td><td>Incorrect stock compensation DTA calculation</td><td>DTA is based on the tax-deductible amount (intrinsic value for NQSOs), not grant-date fair value</td></tr>
+  <tr><td>7</td><td>Valuation allowance not reassessed at each balance sheet date</td><td>ASC 740 requires quarterly reassessment; VA may need to be established or released as evidence changes</td></tr>
+  <tr><td>8</td><td>Discrete items run through AETR</td><td>Smoothed tax rate in an interim period when item should have been recognized immediately</td></tr>
+  <tr><td>9</td><td>IRC §174A / §174 split not tracked by geography</td><td>Domestic R&amp;E now fully deductible under OBBBA (§174A); foreign R&amp;E still 15-year amortization under §174; mixing the two produces incorrect DTAs/DTLs</td></tr>
+  <tr><td>10</td><td>Failure to update deferred tax rollforward for enacted law changes</td><td>OBBBA enacted July 4, 2025 - all deferred tax balances must reflect the new enacted provisions as of that date regardless of fiscal year</td></tr>
+</table>
+
+<div class="related">
+  <div class="related-title">Related Articles</div>
+  <div class="related-links">
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>P.L. 119-21 &nbsp;&middot;&nbsp; All Major Provisions</span></a>
+    <a href="bonus-depreciation-guide.html" class="related-link">Bonus Depreciation Guide<span>IRC §168(k) &nbsp;&middot;&nbsp; 100% Permanent &nbsp;&middot;&nbsp; DTL Mechanics</span></a>
+    <a href="interest-deductibility.html" class="related-link">IRC §163(j) Interest Limitation<span>EBITDA Restoration &nbsp;&middot;&nbsp; OBBBA</span></a>
+    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Guide<span>IRC §951A &nbsp;&middot;&nbsp; OBBBA Rename &nbsp;&middot;&nbsp; §250 Deduction</span></a>
+    <a href="section-1202-qsbs.html" class="related-link">Section 1202 QSBS<span>IRC §1202 &nbsp;&middot;&nbsp; Permanent Difference</span></a>
+    <a href="nol-tracker.html" class="related-link">NOL Tracker<span>IRC §172 &nbsp;&middot;&nbsp; 80% Limitation &nbsp;&middot;&nbsp; DTA Carryforward</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: FASB ASC 740 (Income Taxes); ASC 740-10 (Uncertain Tax Positions, formerly FIN 48); ASC 740-270 (Interim Reporting); ASC 740-30 (Outside Basis Differences, formerly APB 23); ASU 2015-17 (Balance Sheet Classification of Deferred Taxes); IRC §11 (corporate tax rate, 21%); IRC §41 (R&amp;D credit); IRC §83(h) (stock compensation deduction); IRC §103 (tax-exempt interest); IRC §162(f) (fines and penalties); IRC §162(m) (excessive compensation); IRC §166 (bad debts); IRC §172 (net operating losses); IRC §174 (foreign R&amp;E, 15-year amortization); IRC §174A (domestic R&amp;E, immediate expensing, OBBBA P.L. 119-21); IRC §274 (meals and entertainment, 50% limit); IRC §451(c) (advance payments); IRC §461 (all-events test for deductions); IRC §168(k) (bonus depreciation, 100% permanent under OBBBA); IRC §163(j) (business interest limitation, EBITDA restored under OBBBA); IRC §951A / NCTI (formerly GILTI, OBBBA); IRC §1001 (recognition of gain/loss); IRC §1202 (QSBS exclusion); OBBBA P.L. 119-21 (July 4, 2025).</div>
+
+<div class="disc">This article is for informational purposes only and does not constitute legal, tax, or accounting advice. ASC 740 involves significant judgment and entity-specific facts. Nothing in this guide should be relied upon as a substitute for engagement with a qualified CPA or auditor. A pro bono contribution by <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a>. <a href="disclaimer.html">Full disclaimer.</a></div>
+
+</div>
+
+<footer style="background:var(--ink,#111111);border-top:3px solid var(--coral,#F65F5A);margin-top:60px;padding:28px 0 24px">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    <div>
+      <div style="font-family:var(--font-display,'Oswald',sans-serif);font-size:14px;font-weight:500;color:#fff;letter-spacing:.1em;text-transform:uppercase">CPA Validated</div>
+      <div style="font-size:10.5px;color:rgba(255,255,255,.38);margin-top:5px;font-family:var(--font-mono,'Courier New',monospace);line-height:1.7">Timur Knyazev, CPA, EA &nbsp;&middot;&nbsp; NY #109025 &nbsp;&middot;&nbsp; FL #AC58472 &nbsp;&middot;&nbsp; EA #93250<br><a href="about.html" style="color:rgba(255,255,255,.35);text-decoration:none">About</a> &nbsp;&middot;&nbsp; <a href="vetted-resources.html" style="color:rgba(255,255,255,.35);text-decoration:none">Vetted Resources</a> &nbsp;&middot;&nbsp; <a href="disclaimer.html" style="color:rgba(255,255,255,.35);text-decoration:none">Disclaimer</a></div>
+    </div>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;background:var(--coral,#F65F5A);color:#fff;padding:11px 22px;font-weight:600;font-size:13px;text-decoration:none;white-space:nowrap;font-family:var(--font-sans,'Inter',sans-serif);letter-spacing:.02em">tk.cpa &#8594;</a>
+  </div>
+</footer>
+</body>
+</html>
