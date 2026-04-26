@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PFICs and Form 8621 Explained | CPA Validated</title>
+<meta name="description" content="A plain-English guide to the Passive Foreign Investment Company (PFIC) regime under IRC §§1291-1298. The income and asset tests, the three taxation regimes (default §1291 excess distribution, QEF election under §1295, mark-to-market under §1296), Form 8621 filing requirements, and the steps to take if you discover unreported PFIC holdings - particularly for new US residents and US persons holding foreign mutual funds.">
+<link rel="canonical" href="https://cpavalidated.com/pfic-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--amber:#8B6535;--amber-bg:#EDE8D8;--red:#9B3D3D;--red-bg:#EDE0DC;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:22px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:24px 0 10px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}
+.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}
+.callout p{font-size:14px;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+.callout strong{color:#fff}
+.example{background:var(--ink-10);border-left:3px solid var(--ink-60);padding:16px 18px;margin:18px 0;font-size:14px;line-height:1.7;color:var(--ink-80)}
+.example strong{color:var(--ink)}
+.compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;background:var(--white);border:1px solid var(--ink-20)}
+.compare-table thead{background:var(--ink);color:#fff}
+.compare-table th{padding:10px 14px;text-align:left;font-family:var(--font-display);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.compare-table td{padding:10px 14px;border-top:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top}
+.compare-table tr:nth-child(even) td{background:var(--ink-10)}
+.compare-table .label{font-family:var(--font-display);font-weight:500;color:var(--ink);text-transform:uppercase;font-size:11px;letter-spacing:.04em}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--red);line-height:1.7}
+.red-box strong{font-weight:700}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--green);line-height:1.7}
+.green-box strong{font-weight:700}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--amber);line-height:1.7}
+.note-box strong{font-weight:700}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}
+.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}
+.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}
+.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:36px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}.compare-table{font-size:12px}.compare-table th,.compare-table td{padding:8px}}
+</style>
+</head>
+<body>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">CPA Validated &nbsp;&bull;&nbsp; <span style="text-transform:none!important">a tk.cpa resource</span></div>
+  <h1>PFICs and Form 8621 Explained</h1>
+  <div class="sub">Passive Foreign Investment Company &nbsp;&bull;&nbsp; The §1291 trap &nbsp;&bull;&nbsp; QEF and MTM elections</div>
+</div></div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">If you're a US person who owns foreign mutual funds, foreign ETFs, or certain foreign investment companies, you almost certainly own PFICs - and you almost certainly need to file Form 8621 for each one. The default tax regime that applies to unreported PFICs is genuinely punitive: ordinary income rates plus an interest charge that compounds back to the date of acquisition. People who arrive in the US owning foreign brokerage accounts find out about this the hard way. The good news: with proper elections made on time, the regime can become workable. The bad news: the elections have to be made early, and once you're in the §1291 default regime, getting out is hard.</p>
+
+<div class="callout">
+  <div class="callout-label">The One-Sentence Summary</div>
+  <p>A foreign mutual fund or other foreign passive investment vehicle is almost certainly a PFIC under IRC §1297. US persons holding PFICs face one of three tax regimes: the brutal default <strong>§1291 excess distribution regime</strong>, the better <strong>QEF election under §1295</strong>, or the workable <strong>mark-to-market election under §1296</strong>. Form 8621 is required annually for each PFIC. Most newly-arrived US residents own multiple PFICs without realizing it.</p>
+
+</div>
+
+<h2>What Is a PFIC</h2>
+
+<p>A Passive Foreign Investment Company under IRC §1297 is any foreign corporation that meets <strong>either</strong> of these tests for a tax year:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Income test.</strong> 75% or more of gross income is "passive" - dividends, interest, royalties, rents, gains from securities transactions, and similar.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Asset test.</strong> 50% or more of the average value of assets produce passive income (or are held to produce passive income).</li>
+</ul>
+
+<p>If either test is met, every US-person shareholder is treated as holding PFIC stock for that year - regardless of percentage ownership. There is no "small shareholder" exception. Owning 0.0001% of a foreign mutual fund is enough.</p>
+
+<h3>What's "Foreign"</h3>
+
+<p>A non-US corporation. The corporation's tax residence (where it's organized) is the key fact. A US-organized mutual fund (Vanguard's US-domiciled funds, for example) is NOT a PFIC even when invested heavily abroad. A non-US-organized fund - say, a UCITS fund in Ireland, a German Spezialfonds, or a Canadian mutual fund - typically IS a PFIC.</p>
+
+<h3>Common PFICs</h3>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Foreign mutual funds</strong> - the classic PFIC; nearly all of them qualify under the income test</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Foreign ETFs</strong> - same as mutual funds</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Foreign hedge funds</strong> - generally PFICs</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Foreign holding companies</strong> for passive investments</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Some foreign insurance products</strong> - foreign whole-life policies with investment components</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Foreign pension structures</strong> in some countries (though many are exempt under specific Code provisions or treaties)</li>
+</ul>
+
+<h2>The Three Taxation Regimes</h2>
+
+<p>Once you own a PFIC, your treatment depends on which regime applies. The choice is largely yours - but only if you make the election in time.</p>
+
+<table class="compare-table">
+  <thead>
+    <tr><th>Regime</th><th>How It Works</th><th>Annual Tax Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="label">§1291 Default (Excess Distribution)</td><td>Apply when no election made. Excess distributions and gains on sale are "thrown back" across the holding period and taxed at the highest ordinary rate plus interest charge.</td><td>Punitive. Effective rate often 50%+ on accumulated gain.</td></tr>
+    <tr><td class="label">§1295 QEF (Qualified Electing Fund)</td><td>Annually include your pro-rata share of the PFIC's earnings - ordinary income for ordinary E&amp;P, capital gain for LTCG portion. Like a partnership flow-through.</td><td>Reasonable. Tax is just regular ordinary/LTCG rates on actual income.</td></tr>
+    <tr><td class="label">§1296 Mark-to-Market</td><td>Annually mark to market - increase in value taxed as ordinary income; decrease deducted (limited to prior gain). Available only for "marketable" PFICs (publicly traded).</td><td>Workable but ordinary income rates on appreciation; no LTCG.</td></tr>
+  </tbody>
+</table>
+
+<h3>The §1291 Trap</h3>
+
+<p>The default regime under §1291 is what applies if you never made an election. It works like this:</p>
+
+<ol style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>You compute your "excess distribution" amount.</strong> Excess distribution = current year distribution minus 125% of average distributions over the prior 3 years. Plus the entire gain on any sale of the PFIC stock.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>The excess distribution is allocated ratably over your entire holding period.</strong> Each year of the holding period gets a slice.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>The current-year slice is taxed at ordinary rates.</strong> The prior-year slices are taxed at the highest ordinary rate that applied in those prior years (37% for any year since 2018).</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>An interest charge is added on the deemed deferred tax</strong>, computed at the §6601 underpayment rate, compounding from each prior year forward. The interest typically runs at 7-8% and compounds annually.</li>
+</ol>
+
+<div class="example">
+  <strong>How brutal §1291 actually is.</strong> A US person holds a Canadian mutual fund (PFIC) for 10 years. Bought it for $50,000, sold for $200,000 - a $150,000 gain. Under default §1291: the $150,000 is allocated $15,000 per year over the 10-year holding period. Each year's slice is taxed at 37% (the highest ordinary rate). That's $55,500 of base tax. Add interest at compounded underpayment rates back to year 1 - roughly $25,000 more. Total tax: $80,500 on a $150,000 gain - a 53% effective rate. Compare to long-term capital gain rates with no PFIC: $150,000 &times; 23.8% (LTCG + NIIT) = $35,700. The default PFIC regime more than doubled the tax.
+</div>
+
+<h3>The QEF Election (§1295)</h3>
+
+<p>If you can get the necessary information from the foreign fund, the QEF election converts the PFIC into something resembling a partnership flow-through. Annual mechanics:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">You include your pro-rata share of the PFIC's <strong>ordinary E&amp;P</strong> as ordinary income.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">You include your pro-rata share of the PFIC's <strong>net capital gain</strong> as long-term capital gain.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Your basis goes up by the included amount.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">When you eventually sell, gain is taxed normally - usually LTCG, since the bulk of the gain was already included annually.</li>
+</ul>
+
+<p>The catch: you need an "Annual Information Statement" from the PFIC showing the breakdown of E&amp;P and capital gain. Most foreign mutual funds do not provide this voluntarily because they're not built for US shareholders. Some specialty PFICs (a few large foreign hedge funds with US-investor desks) provide them. Most consumer-grade foreign mutual funds do not.</p>
+
+<p>The election is made the first year you own the PFIC, on a timely-filed Form 8621. Late elections require IRS consent under §1295(b)(2)(B) and Treas. Reg. §1.1295-3 (the "purging" procedure).</p>
+
+<h3>The Mark-to-Market Election (§1296)</h3>
+
+<p>For PFICs that are "marketable" (regularly traded on a qualifying exchange), the §1296 election lets you mark to market annually:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">If FMV at year-end exceeds adjusted basis, the difference is ordinary income (not capital gain).</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">If FMV is below adjusted basis, you deduct the difference as ordinary loss - but only up to the cumulative prior gains you included.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">When you sell, the gain on sale is also ordinary income (any unincluded gain).</li>
+</ul>
+
+<p>This is workable but loses the LTCG benefit. For a steadily appreciating foreign ETF, the result is a series of annual ordinary income inclusions at full rates. For a foreign mutual fund that doesn't trade on a US exchange, this election is unavailable.</p>
+
+<h2>Form 8621 Filing Requirements</h2>
+
+<p>Form 8621 (Information Return by a Shareholder of a Passive Foreign Investment Company or Qualified Electing Fund) is required annually for each PFIC. Filing thresholds:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Generally required if you own PFIC stock with FMV exceeding $25,000</strong> on the last day of the tax year (or $50,000 MFJ).</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Always required regardless of value</strong> if you received an excess distribution, recognized gain on a sale, made or revoked an election, or are a QEF or MTM electing shareholder.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>One Form 8621 per PFIC.</strong> If you own 8 foreign mutual funds, you file 8 separate Forms 8621.</li>
+</ul>
+
+<p>The form is filed with your annual income tax return (Form 1040 for individuals, Form 1041 for trusts, etc.).</p>
+
+<h3>Penalties</h3>
+
+<p>The Code does not impose a specific dollar penalty for late or missing Form 8621 filings - but the consequences are real:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Statute of limitations does not start running</strong> on the entire return until Form 8621 is filed (under IRC §6501(c)(8) and similar). The IRS can audit indefinitely.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Elections that should have been made are lost</strong> if not made on time. The taxpayer ends up stuck in the §1291 default regime.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Coordination with FBAR and Form 8938</strong> reporting - foreign financial accounts holding PFICs trigger those reporting requirements too, with their own penalty regimes.</li>
+</ul>
+
+<h2>The "Once a PFIC, Always a PFIC" Rule (§1298(b)(1))</h2>
+
+<p>This is one of the most punitive design features of the regime. Once a foreign corporation has been a PFIC during your holding period, it's treated as a PFIC for purposes of <em>your</em> tax treatment going forward - even if it later restructures, sells assets, becomes an active operating business, and stops meeting the income/asset tests.</p>
+
+<p>The only way to break the chain: a "purging election" under §1298(b)(1) that triggers a deemed sale of the stock at FMV (with §1291 treatment on the deemed gain) and resets the clock. Painful but sometimes necessary.</p>
+
+<h2>The Newly-Arrived US Resident Trap</h2>
+
+<p>This is where most PFIC headaches originate. A foreign person moves to the US (green card, SPT, or first-year choice election) bringing a portfolio of foreign mutual funds and ETFs accumulated over years. The PFIC regime starts applying the day they become a US tax resident.</p>
+
+<p>Common patterns:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Russian, European, Canadian, or Latin American wealth-management portfolios</strong> typically include 5-25 foreign mutual funds. Each is a separate PFIC requiring a separate Form 8621.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Australian and UK pension structures</strong> may or may not be PFICs depending on local-law characterization. Treaty analysis often required.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Tax-free local accounts</strong> - UK ISAs, Canadian TFSAs - are typically still PFICs to a US person, even though they're tax-free locally.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Non-grantor foreign trusts holding foreign funds</strong> create both PFIC and Form 3520-A filing obligations stacked on top of each other.</li>
+</ul>
+
+<div class="red-box"><strong>Pre-immigration restructuring is critical.</strong> The single most useful thing a soon-to-be US resident can do is sell their foreign mutual funds <em>before</em> becoming a US tax resident. Pre-residency, the foreign individual is taxed only by their home country - no PFIC issues. Sell, pay any home-country tax, then reinvest in US-domiciled equivalents (US ETFs, US mutual funds) <em>after</em> arrival. The foreign-mutual-fund gains accumulated pre-residency are forever escaped from PFIC treatment.</div>
+
+<h2>Practical Recommendations</h2>
+
+<p><strong>If you are about to become a US resident:</strong> Restructure foreign mutual funds and ETFs into US-domiciled equivalents <em>before</em> your residency start date. Don't rely on QEF or MTM elections - they can help, but the cleanest path is no PFICs at all.</p>
+
+<p><strong>If you are already a US resident with PFICs:</strong> Compute the §1291 hit. Consider a purging election to reset basis if the gain is manageable now. Look at whether QEF (with annual statement support) or MTM (if marketable) is achievable for ongoing holdings. Switch to US-domiciled funds going forward.</p>
+
+<p><strong>If you have unreported PFICs from prior years:</strong> Coordinate with FBAR and Form 8938 history. The Streamlined Filing Compliance Procedures often work as a path to come into compliance, with reduced or no penalties for non-willful failures. Don't try to fix this with ad-hoc amended returns - it's a coordinated procedure.</p>
+
+<p><strong>If your foreign retirement structure is involved:</strong> Treaty analysis. Some foreign retirement plans are exempt from PFIC under specific provisions (the Canadian RRSP under Rev. Proc. 2014-55 has its own exception, for example). Others are not. Don't assume.</p>
+
+<p><strong>If you are advising a US person on foreign investments:</strong> Avoid foreign mutual funds entirely. Direct foreign stocks (not funds) are not PFICs. Foreign ETFs are PFICs. US-domiciled funds investing internationally (Vanguard FTSE All-World ex-US, for instance) are not PFICs and provide the same global diversification.</p>
+
+<div class="related">
+  <div class="related-title">Related Articles</div>
+  <div class="related-links">
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>Foreign assets before US residency</span></a>
+    <a href="dual-status-returns.html" class="related-link">Dual-Status Returns<span>First year of US residency</span></a>
+    <a href="rrsp-rrif-us-persons.html" class="related-link">RRSP and RRIF for US Persons<span>Canadian retirement exception</span></a>
+    <a href="form-3520-foreign-gifts-trusts.html" class="related-link">Form 3520<span>Foreign trust reporting</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §1291 (excess distribution regime); IRC §1293 (QEF inclusion mechanics); IRC §1295 (QEF election); IRC §1296 (mark-to-market election); IRC §1297 (PFIC definition - income and asset tests); IRC §1297(b)(2) (passive income definition); IRC §1297(c) (look-through rule for 25%-owned foreign subsidiaries); IRC §1298 (special rules); IRC §1298(b)(1) (once-a-PFIC always-a-PFIC); IRC §1298(f) (Form 8621 reporting requirement); Treas. Reg. §§1.1295-1, 1.1295-3 (QEF election and purging); Treas. Reg. §1.1296-1 (MTM election); Form 8621 (Information Return by a Shareholder of a PFIC or QEF); IRC §6501(c)(8) (extended statute of limitations for unreported foreign assets); Rev. Proc. 2014-55 (RRSP/RRIF exception); IRS Streamlined Filing Compliance Procedures.</div>
+<div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. PFIC analysis depends on each foreign entity's income and asset composition, the shareholder's holding period, available elections, and treaty considerations. Consult a qualified international tax professional. A tk.cpa resource. tk.cpa is owned &amp; operated by CPA Inc. Visit <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
+
+</div>
+</body>
+</html>
