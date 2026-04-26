@@ -690,4 +690,28 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://cpavalidated.com/estate-planning-basics.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/social-security-taxation-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/ira-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/depreciation-recapture-guide.html</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
