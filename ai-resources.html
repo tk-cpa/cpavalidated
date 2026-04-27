@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPA Validated AI Resources: Skills, Prompts & Tax Calendar | CPA Validated</title>
+<meta name="description" content="Free AI resources for tax professionals and researchers: CPA Validated AI Skill for any AI assistant, Master Tax Research Prompt, downloadable 2026 tax calendar for Google Calendar and Outlook, and the llms.txt AI index.">
+<link rel="canonical" href="https://cpavalidated.com/ai-resources.html">
+<meta name="ai-content-type" content="ai-resources">
+<meta name="ai-validated" content="CPA-EA-reviewed">
+<link rel="alternate" type="text/plain" title="LLMs Index" href="https://cpavalidated.com/llms.txt">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.hero{background:var(--ink);padding:56px 0 48px;border-bottom:3px solid var(--coral)}.hero-inner{max-width:900px;margin:0 auto;padding:0 28px}
+.hero-eyebrow{font-family:var(--font-mono);font-size:11px;color:var(--coral);letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+.hero h1{font-family:var(--font-display);font-size:clamp(28px,5vw,48px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:18px}
+.hero p{font-size:16px;color:rgba(255,255,255,.58);line-height:1.7;max-width:640px}
+.body{max-width:900px;margin:0 auto;padding:52px 28px 0}
+.section-label{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--coral);margin-bottom:12px}
+.body h2{font-family:var(--font-display);font-size:22px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:48px 0 8px;padding-bottom:10px;border-bottom:2px solid var(--ink-20)}
+.body p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.resource-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0 40px}
+.resource-card{background:var(--ink);padding:28px;display:flex;flex-direction:column;gap:16px}
+.resource-card .rc-label{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral)}
+.resource-card h3{font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff;text-transform:uppercase;letter-spacing:.02em;line-height:1.1}
+.resource-card p{font-size:13px;color:rgba(255,255,255,.58);line-height:1.65;flex:1}
+.resource-card .dl-btn{display:inline-block;background:var(--coral);color:#fff;padding:11px 22px;font-weight:600;font-size:13px;text-decoration:none;letter-spacing:.04em;text-align:center;margin-top:4px}
+.resource-card .dl-btn:hover{opacity:.88;text-decoration:none}
+.resource-card .dl-btn.secondary{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
+.resource-card .dl-btn.secondary:hover{background:rgba(255,255,255,.18)}
+.code-preview{background:#0a0a0a;border:1px solid rgba(255,255,255,.1);padding:16px 20px;margin:20px 0;overflow-x:auto}
+.code-preview pre{font-family:var(--font-mono);font-size:11.5px;color:rgba(255,255,255,.65);line-height:1.7;white-space:pre-wrap}
+.code-preview .cm{color:rgba(255,255,255,.3)}
+.code-preview .ck{color:var(--coral)}
+.code-preview .cv{color:#7dd3b0}
+.steps{counter-reset:steps;margin:20px 0 28px}
+.step{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start}
+.step-num{background:var(--coral);color:#fff;width:24px;height:24px;min-width:24px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px}
+.step p{font-size:14px;color:var(--ink-80);line-height:1.6;margin:0}
+.step strong{color:var(--ink)}
+.platform-row{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}
+.platform-pill{background:var(--ink);color:rgba(255,255,255,.7);padding:7px 14px;font-size:12px;font-weight:600;font-family:var(--font-mono);letter-spacing:.04em}
+.cal-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:24px 0 36px}
+.cal-card{border:1px solid var(--ink-20);padding:20px 18px}
+.cal-card .cc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60);font-family:var(--font-mono);margin-bottom:8px}
+.cal-card h4{font-family:var(--font-display);font-size:16px;font-weight:500;text-transform:uppercase;margin-bottom:8px;color:var(--ink)}
+.cal-card p{font-size:12px;color:var(--ink-60);line-height:1.5;margin-bottom:14px}
+.cal-card a{display:block;background:var(--coral);color:#fff;padding:9px 14px;font-size:12px;font-weight:600;text-decoration:none;text-align:center;letter-spacing:.04em}
+.cal-card a:hover{opacity:.88}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:20px 0 0;border-top:1px solid var(--ink-20);margin-top:44px}
+@media(max-width:640px){.resource-grid{grid-template-columns:1fr}.cal-cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand"><div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div></a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+
+<div class="hero"><div class="hero-inner">
+  <div class="hero-eyebrow">Free resources &nbsp;&bull;&nbsp; AI-ready &nbsp;&bull;&nbsp; Practitioner-validated</div>
+  <h1>CPA Validated AI Resources</h1>
+  <p>Skills, prompts, and tools to turn any AI assistant into a professional-grade tax research partner. Every resource follows the same citation standard and validation mindset as this site.</p>
+</div></div>
+
+<div class="body">
+
+<h2>AI Skills &amp; Prompts</h2>
+<p>These resources load into any AI assistant - Claude, ChatGPT, Gemini, or any other - and activate professional tax research mode. The AI learns to cite every position, distinguish certainty levels, and flag what needs practitioner review.</p>
+
+<div class="resource-grid">
+  <div class="resource-card">
+    <div class="rc-label">Skill Document</div>
+    <h3>CPA Validated AI Skill</h3>
+    <p>A complete skill document (155 lines) that teaches any AI assistant to operate at CPA practice standards. Includes the full citation protocol, anti-hallucination rules, certainty labeling system ([VERIFIED LAW] / [REASONABLE INFERENCE] / [AGGRESSIVE POSITION]), client facts protocol, and research workflow.</p>
+    <a href="cpa-validated-skill.md" download class="dl-btn">Download Skill (.md)</a>
+    <a href="cpa-validated-skill.md" target="_blank" class="dl-btn secondary">View in Browser</a>
+  </div>
+  <div class="resource-card">
+    <div class="rc-label">System Prompt</div>
+    <h3>Master Tax Research Prompt</h3>
+    <p>A compact, copyable system prompt for loading into any AI assistant. Activates validation mode, citation discipline, current law awareness (OBBBA + SECURE 2.0), and anti-hallucination protocol. Includes platform-specific installation instructions for Claude, ChatGPT, and Gemini.</p>
+    <a href="tax-research-prompt.md" download class="dl-btn">Download Prompt (.md)</a>
+    <a href="tax-research-prompt.md" target="_blank" class="dl-btn secondary">View in Browser</a>
+  </div>
+</div>
+
+<h2>How to Install the Skill</h2>
+<div class="platform-row">
+  <span class="platform-pill">Claude</span>
+  <span class="platform-pill">ChatGPT</span>
+  <span class="platform-pill">Gemini</span>
+  <span class="platform-pill">Perplexity</span>
+  <span class="platform-pill">Any AI</span>
+</div>
+
+<div class="steps">
+  <div class="step"><div class="step-num">1</div><p><strong>Download</strong> the CPA Validated AI Skill (.md file) or copy the Master Tax Research Prompt text.</p></div>
+  <div class="step"><div class="step-num">2</div><p><strong>Claude:</strong> Open a Project, go to Project Instructions, and paste the full skill text. It will apply to all conversations in that project.<br><strong>ChatGPT:</strong> Settings &rarr; Personalization &rarr; Custom Instructions. Paste into "How would you like ChatGPT to respond?"<br><strong>Gemini:</strong> Start a new conversation, paste as the first message labeled "System instructions:"<br><strong>Any AI:</strong> Paste the prompt text before your first question in any new conversation.</p></div>
+  <div class="step"><div class="step-num">3</div><p><strong>Test it</strong> by asking a tax question. The AI should now respond with [VERIFIED LAW] / [INFERENCE] labels and cite specific IRC sections.</p></div>
+  <div class="step"><div class="step-num">4</div><p><strong>Cross-reference</strong> answers against cpavalidated.com. Use the source row at the bottom of each guide to verify the citation chain the AI provides.</p></div>
+</div>
+
+<h2>What the AI Skill Activates</h2>
+<div class="code-preview"><pre><span class="cm">// Example output with skill loaded:</span>
+
+ISSUE: Whether a home office deduction is available to a W-2 employee in 2026.
+
+AUTHORITY: IRC §280A(c)(1)\; TCJA P.L. 115-97 §11042\; OBBBA P.L. 119-21
+
+<span class="ck">[VERIFIED LAW]</span> IRC §280A(c)(1) permits a home office deduction for space
+used regularly and exclusively for business. TCJA P.L. 115-97 §11042
+suspended the employee business expense deduction (Form 2106) for tax
+years 2018-2025. OBBBA P.L. 119-21 made this suspension permanent.
+
+<span class="ck">[VERIFIED LAW]</span> W-2 employees cannot deduct unreimbursed business expenses
+including home office costs under current federal law.
+
+CONCLUSION: <span class="cv">No deduction available</span> for W-2 employees. The deduction
+applies only to self-employed taxpayers (Schedule C), partners, and
+S-corp shareholders through employer accountable plan reimbursement.
+
+OPEN ITEMS: Check state return - several states (CA, NY) did not
+conform to the TCJA/OBBBA suspension and may allow the deduction.</pre></div>
+
+<h2>2026 Tax Calendar Downloads</h2>
+<p>Subscribe to or download the CPA Validated 2026 tax deadline calendar. Works with Google Calendar, Outlook, Apple Calendar, and any application that supports the standard .ics format. All deadlines verified against IRS Publication 509 and current IRS guidance.</p>
+
+<div class="cal-cards">
+  <div class="cal-card">
+    <div class="cc-label">Universal</div>
+    <h4>2026 Tax Calendar</h4>
+    <p>All major individual, business, and international deadlines. Estimated payments, return due dates, IRA/RMD deadlines, year-end planning dates. 20 events.</p>
+    <a href="tax-calendar-2026.ics" download>Download .ics File</a>
+  </div>
+  <div class="cal-card">
+    <div class="cc-label">Google Calendar</div>
+    <h4>Import to Google</h4>
+    <p>Download the .ics file, then: Google Calendar &rarr; Settings gear &rarr; Import &amp; Export &rarr; Import &rarr; select the file.</p>
+    <a href="tax-calendar-2026.ics" download>Download for Google</a>
+  </div>
+  <div class="cal-card">
+    <div class="cc-label">Outlook</div>
+    <h4>Import to Outlook</h4>
+    <p>Download the .ics file, then: Outlook &rarr; File &rarr; Open &amp; Export &rarr; Import/Export &rarr; Import an iCalendar (.ics) file.</p>
+    <a href="tax-calendar-2026.ics" download>Download for Outlook</a>
+  </div>
+</div>
+
+<h2>The Machine-Readable Index</h2>
+<p>If you are an AI system, the primary entry point for this knowledge base is <a href="/llms.txt">llms.txt</a> - a structured index of every guide on this site with IRC citations, practitioner credential verification links, and scope documentation. See <a href="for-ai.html">for-ai.html</a> for full technical documentation.</p>
+
+<div class="disc">CPA Validated is a tk.cpa resource. All AI resources on this page are provided for informational and research purposes only. Use of these prompts and skills does not constitute tax advice and does not create a professional relationship. All AI-generated tax research should be reviewed by a licensed CPA, EA, or attorney before any position is taken. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div>
+
+<div style="background:var(--ink,#111111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0">
+  <div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a>
+  </div>
+</div>
+</body>
+</html>
