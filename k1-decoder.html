@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-1 Decoder: Every Box and Code Explained (Partnership & S-Corp) | CPA Validated</title>
+<meta name="description" content="Interactive K-1 decoder: look up every box and code on Schedule K-1 Form 1065 (partnership) and Form 1120-S (S-corp). Search any code like 20Z, 13W, or 17A and instantly see what it means and where it goes on your tax return.">
+<link rel="canonical" href="https://cpavalidated.com/k1-decoder.html">
+<meta name="ai-content-type" content="tax-reference-tool">
+<meta name="ai-validated" content="CPA-EA-reviewed">
+<link rel="alternate" type="text/plain" title="LLMs Index" href="https://cpavalidated.com/llms.txt">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--coral:#F65F5A;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.ph{background:var(--ink);padding:32px 0 24px;border-bottom:3px solid var(--coral)}.phi{max-width:900px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,5vw,38px);color:#fff;line-height:1.05;margin-bottom:8px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.main{max-width:900px;margin:0 auto;padding:28px 24px 0}
+.tabs{display:flex;gap:0;margin-bottom:0;border-bottom:2px solid var(--ink-20)}
+.tab{padding:11px 22px;font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;cursor:pointer;color:var(--ink-60);border-bottom:3px solid transparent;margin-bottom:-2px;user-select:none;background:none;border-top:none;border-left:none;border-right:none}
+.tab.active{color:var(--coral);border-bottom-color:var(--coral)}
+.search-bar{display:flex;gap:12px;margin:20px 0;align-items:center}
+.search-bar input{flex:1;padding:12px 16px;border:1.5px solid var(--ink-20);background:#fff;font-family:var(--font-sans);font-size:14px;color:var(--ink);outline:none}
+.search-bar input:focus{border-color:var(--coral)}
+.search-bar input::placeholder{color:var(--ink-40)}
+.count{font-size:12px;color:var(--ink-60);white-space:nowrap;font-family:var(--font-mono)}
+.section-header{background:var(--ink);color:#fff;padding:9px 14px;font-family:var(--font-display);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin:8px 0 0;display:flex;align-items:center;gap:10px}
+.section-header .box-num{background:var(--coral);color:#fff;padding:2px 8px;font-size:11px}
+.row{display:grid;grid-template-columns:72px 1fr auto;gap:0;border-bottom:1px solid var(--ink-10);align-items:stretch;background:#fff}
+.row:hover{background:var(--ink-10)}
+.row.hidden{display:none}
+.row .code{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--coral);padding:10px 12px;border-right:1px solid var(--ink-10);display:flex;align-items:center}
+.row .desc{padding:10px 14px;font-size:13px;line-height:1.55;color:var(--ink-80)}
+.row .desc strong{display:block;font-weight:600;color:var(--ink);margin-bottom:2px}
+.row .desc em{font-style:normal;font-size:11px;color:var(--ink-60);font-family:var(--font-mono)}
+.row .tag{padding:10px 10px 10px 0;display:flex;align-items:center}
+.tag-pill{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;padding:3px 7px;white-space:nowrap}
+.tag-income{background:#e2ede6;color:#4a7459}
+.tag-deduct{background:#ede8d8;color:#8b6535}
+.tag-credit{background:#e2e4f0;color:#071563}
+.tag-info{background:#edeef0;color:#5e6166}
+.tag-amt{background:#ede0dc;color:#9b3d3d}
+.no-results{text-align:center;padding:40px;color:var(--ink-60);font-size:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:16px 0 0;border-top:1px solid var(--ink-20);margin-top:32px}
+.pane{display:none}.pane.active{display:block}
+@media(max-width:600px){.row{grid-template-columns:58px 1fr}.row .tag{display:none}}
+</style>
+</head>
+<body>
+<nav><a href="index.html" class="brand"><div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div></a><a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a></nav>
+<div class="ph"><div class="phi">
+  <h1>K-1 Decoder: Every Box &amp; Code Explained</h1>
+  <div class="sub">Schedule K-1 (Form 1065 Partnership) &nbsp;&bull;&nbsp; Schedule K-1 (Form 1120-S S-Corp) &nbsp;&bull;&nbsp; Search any code instantly</div>
+</div></div>
+<div class="main">
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('p')">Partnership (Form 1065)</button>
+    <button class="tab" onclick="switchTab('s')">S-Corp (Form 1120-S)</button>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search by code, box number, or keyword... e.g. &quot;20Z&quot; or &quot;rental&quot; or &quot;179&quot;" oninput="filterRows()">
+    <span class="count" id="count"></span>
+  </div>
+
+  <!-- PARTNERSHIP PANE -->
+  <div id="pane-p" class="pane active">
+    <div id="rows-p">
+    <!-- Box 1-3 -->
+    <div class="section-header"><span class="box-num">1</span> Ordinary Business Income (Loss)</div>
+    <div class="row" data-s="box1 ordinary business income loss schedule e"><div class="code">Box 1</div><div class="desc"><strong>Ordinary Business Income (Loss)</strong><em>Schedule E, Part II &rarr; passive/nonpassive determination</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">2</span> Net Rental Real Estate Income (Loss)</div>
+    <div class="row" data-s="box2 rental real estate income loss form 8825"><div class="code">Box 2</div><div class="desc"><strong>Net Rental Real Estate Income (Loss)</strong><em>Schedule E &rarr; passive activity rules; may trigger Form 8582</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">3</span> Other Net Rental Income (Loss)</div>
+    <div class="row" data-s="box3 other rental income loss"><div class="code">Box 3</div><div class="desc"><strong>Other Net Rental Income (Loss)</strong><em>Schedule E &rarr; includes equipment rentals and certain royalties</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">4</span> Guaranteed Payments</div>
+    <div class="row" data-s="box4 guaranteed payments services capital"><div class="code">4a</div><div class="desc"><strong>Guaranteed Payments for Services</strong><em>Schedule E &rarr; ordinary income; SE tax applies</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="box4 guaranteed payments capital"><div class="code">4b</div><div class="desc"><strong>Guaranteed Payments for Capital</strong><em>Schedule E &rarr; ordinary income; SE tax generally not applicable</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="box4 guaranteed payments total"><div class="code">4c</div><div class="desc"><strong>Guaranteed Payments - Total</strong><em>Sum of 4a + 4b for reference</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">5</span> Interest Income</div>
+    <div class="row" data-s="box5 interest income schedule b"><div class="code">Box 5</div><div class="desc"><strong>Interest Income</strong><em>Schedule B, Part I &rarr; investment income</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">6</span> Dividends</div>
+    <div class="row" data-s="box6a ordinary dividends schedule b"><div class="code">6a</div><div class="desc"><strong>Ordinary Dividends</strong><em>Schedule B, Part II</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="box6b qualified dividends schedule b form 1040"><div class="code">6b</div><div class="desc"><strong>Qualified Dividends</strong><em>Form 1040 line 3b &rarr; eligible for 0/15/20% rate</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="box6c dividend equivalents"><div class="code">6c</div><div class="desc"><strong>Dividend Equivalents</strong><em>Certain substitute payments treated as dividends</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">7</span> Royalties</div>
+    <div class="row" data-s="box7 royalties schedule e"><div class="code">Box 7</div><div class="desc"><strong>Royalties</strong><em>Schedule E, Part I &rarr; generally passive</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">8</span> Net Short-Term Capital Gain (Loss)</div>
+    <div class="row" data-s="box8 net short term capital gain loss schedule d"><div class="code">Box 8</div><div class="desc"><strong>Net Short-Term Capital Gain (Loss)</strong><em>Schedule D, Part I</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">9</span> Net Long-Term Capital Gain (Loss)</div>
+    <div class="row" data-s="box9a long term capital gain loss schedule d"><div class="code">9a</div><div class="desc"><strong>Net Long-Term Capital Gain (Loss)</strong><em>Schedule D, Part II</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="box9b collectibles 28 percent gain loss"><div class="code">9b</div><div class="desc"><strong>Collectibles (28%) Gain (Loss)</strong><em>28% rate gains from art, coins, antiques &rarr; Schedule D</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="box9c unrecaptured section 1250 gain"><div class="code">9c</div><div class="desc"><strong>Unrecaptured Section 1250 Gain</strong><em>Up to 25% rate on depreciation recapture on real property &rarr; Schedule D Unrecap. 1250 Wksht</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">10</span> Net Section 1231 Gain (Loss)</div>
+    <div class="row" data-s="box10 section 1231 gain loss form 4797"><div class="code">Box 10</div><div class="desc"><strong>Net Section 1231 Gain (Loss)</strong><em>Form 4797, Part I &rarr; business property; if gain: LTCG; if loss: ordinary</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">11</span> Other Income (Loss) - Codes</div>
+    <div class="row" data-s="11A other portfolio income loss"><div class="code">11A</div><div class="desc"><strong>Other Portfolio Income (Loss)</strong><em>Schedule E &rarr; investment income not otherwise classified</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="11B involuntary conversions"><div class="code">11B</div><div class="desc"><strong>Involuntary Conversions</strong><em>Form 4684 or Form 4797 &rarr; casualty/condemnation gains</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="11C section 1256 contracts straddles"><div class="code">11C</div><div class="desc"><strong>Section 1256 Contracts &amp; Straddles</strong><em>Form 6781 &rarr; 60/40 long/short capital gain</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="11F section 743b adjustment"><div class="code">11F</div><div class="desc"><strong>Section 743(b) Positive Adjustments</strong><em>Inside basis step-up from §754 election; informational for partner</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+
+    <div class="section-header"><span class="box-num">12</span> Section 179 Deduction</div>
+    <div class="row" data-s="box12 section 179 deduction form 4562"><div class="code">Box 12</div><div class="desc"><strong>Section 179 Deduction</strong><em>Form 4562 &rarr; limited to partner's taxable income from all sources; excess carries forward</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+
+    <div class="section-header"><span class="box-num">13</span> Other Deductions - Codes</div>
+    <div class="row" data-s="13A cash contributions 60 percent"><div class="code">13A</div><div class="desc"><strong>Cash Contributions (60%)</strong><em>Schedule A &rarr; charitable contributions limited to 60% AGI</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13B cash contributions 30 percent"><div class="code">13B</div><div class="desc"><strong>Cash Contributions (30%)</strong><em>Schedule A &rarr; 30% AGI limit (to certain private foundations)</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13C noncash contributions 50 percent"><div class="code">13C</div><div class="desc"><strong>Noncash Contributions (50%)</strong><em>Schedule A &rarr; qualified noncash charitable gifts</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13D noncash contributions 30 percent"><div class="code">13D</div><div class="desc"><strong>Noncash Contributions (30%)</strong><em>Schedule A &rarr; 30% AGI limit</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13E capital gain property 20 percent"><div class="code">13E</div><div class="desc"><strong>Capital Gain Property to 50% Orgs (20%)</strong><em>Schedule A &rarr; appreciated property gifts to public charities</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13G investment interest expense form 4952"><div class="code">13G</div><div class="desc"><strong>Investment Interest Expense</strong><em>Form 4952 &rarr; limited to net investment income</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13I deductions royalty income"><div class="code">13I</div><div class="desc"><strong>Deductions - Royalty Income</strong><em>Schedule E &rarr; expenses allocable to royalty income</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13J section 59e expenditures"><div class="code">13J</div><div class="desc"><strong>Section 59(e)(2) Expenditures</strong><em>R&amp;D or mining costs partner may elect to capitalize over 10 years instead of deducting</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13K excess business interest expense form 8990"><div class="code">13K</div><div class="desc"><strong>Excess Business Interest Expense</strong><em>Form 8990 &rarr; §163(j) limitation; carries forward as excess business interest expense</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13M penalties fines"><div class="code">13M</div><div class="desc"><strong>Penalties and Fines</strong><em>Generally nondeductible to partners (IRC §162(f))</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="13W other deductions"><div class="code">13W</div><div class="desc"><strong>Other Deductions</strong><em>Catch-all; description will appear in supplemental statement attached to K-1</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+
+    <div class="section-header"><span class="box-num">14</span> Self-Employment Earnings (Loss)</div>
+    <div class="row" data-s="14A net earnings loss self employment schedule SE"><div class="code">14A</div><div class="desc"><strong>Net Earnings (Loss) from Self-Employment</strong><em>Schedule SE &rarr; subject to SE tax; general partners and LLC members in operating businesses</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="14B gross farming fishing income SE"><div class="code">14B</div><div class="desc"><strong>Gross Farming or Fishing Income</strong><em>Schedule SE &rarr; used to determine if optional SE method applies</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="14C gross non-farm income SE"><div class="code">14C</div><div class="desc"><strong>Gross Non-Farm Income</strong><em>Schedule SE &rarr; used for optional SE tax calculation</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">15</span> Credits</div>
+    <div class="row" data-s="15A low income housing credit pre-2008"><div class="code">15A</div><div class="desc"><strong>Low-Income Housing Credit (Pre-2008 Buildings)</strong><em>Form 8586 &rarr; passive activity credit</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+    <div class="row" data-s="15B low income housing credit post-2007"><div class="code">15B</div><div class="desc"><strong>Low-Income Housing Credit (Post-2007 Buildings)</strong><em>Form 8586</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+    <div class="row" data-s="15C qualified rehabilitation expenditures rental"><div class="code">15C</div><div class="desc"><strong>Qualified Rehabilitation Expenditures (Rental)</strong><em>Form 3468 &rarr; historic rehab credit; passive activity credit rules</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+    <div class="row" data-s="15F business credits form 3800"><div class="code">15F</div><div class="desc"><strong>Other Rental Credits</strong><em>Form 3800 &rarr; general business credit bucket</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+    <div class="row" data-s="15P research activities credit form 6765"><div class="code">15P</div><div class="desc"><strong>Research Activities Credit</strong><em>Form 6765 &rarr; §41 R&amp;D credit; passed through to partners</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+
+    <div class="section-header"><span class="box-num">17</span> Alternative Minimum Tax (AMT) Items</div>
+    <div class="row" data-s="17A post-1986 accelerated depreciation AMT Form 6251"><div class="code">17A</div><div class="desc"><strong>Post-1986 Depreciation Adjustment</strong><em>Form 6251 &rarr; difference between regular and AMT depreciation</em></div><div class="tag"><span class="tag-pill tag-amt">AMT</span></div></div>
+    <div class="row" data-s="17B adjusted gain or loss AMT"><div class="code">17B</div><div class="desc"><strong>Adjusted Gain or Loss (AMT)</strong><em>Form 6251 &rarr; recalculated under AMT depreciation basis</em></div><div class="tag"><span class="tag-pill tag-amt">AMT</span></div></div>
+    <div class="row" data-s="17C depletion AMT"><div class="code">17C</div><div class="desc"><strong>Depletion (AMT)</strong><em>Form 6251 &rarr; excess percentage depletion over cost depletion</em></div><div class="tag"><span class="tag-pill tag-amt">AMT</span></div></div>
+
+    <div class="section-header"><span class="box-num">18</span> Tax-Exempt Income &amp; Nondeductible Expenses</div>
+    <div class="row" data-s="18A tax exempt interest income"><div class="code">18A</div><div class="desc"><strong>Tax-Exempt Interest Income</strong><em>Form 1040 &rarr; increases outside basis; used in AMT and SS benefit calculations</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="18B excluded income under 108"><div class="code">18B</div><div class="desc"><strong>Other Tax-Exempt Income</strong><em>Increases outside basis; not reported as income</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="18C nondeductible expenses reduces basis"><div class="code">18C</div><div class="desc"><strong>Nondeductible Expenses</strong><em>Reduces outside basis; not deductible (meals disallowed portion, fines, etc.)</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+
+    <div class="section-header"><span class="box-num">19</span> Distributions</div>
+    <div class="row" data-s="19A cash liquidating distributions"><div class="code">19A</div><div class="desc"><strong>Cash and Marketable Securities</strong><em>Reduces outside basis; taxable only when exceeds basis (IRC §731)</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="19B noncash liquidating distributions property"><div class="code">19B</div><div class="desc"><strong>Distribution of Property</strong><em>Generally not taxable at distribution; partner takes carryover basis (IRC §732)</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+
+    <div class="section-header"><span class="box-num">20</span> Other Information - Codes (Most Important)</div>
+    <div class="row" data-s="20A investment income"><div class="code">20A</div><div class="desc"><strong>Investment Income</strong><em>Form 4952 &rarr; used to determine investment interest expense deduction limit</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="20B investment expenses"><div class="code">20B</div><div class="desc"><strong>Investment Expenses</strong><em>Form 4952 &rarr; reduces net investment income</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="20C fuel tax credit information"><div class="code">20C</div><div class="desc"><strong>Fuel Tax Credit Information</strong><em>Form 4136</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+    <div class="row" data-s="20N business interest income form 8990 163j"><div class="code">20N</div><div class="desc"><strong>Business Interest Income</strong><em>Form 8990 &rarr; §163(j) calculation; partner's share of gross business interest income</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="20P adjusted taxable income form 8990 163j ATI"><div class="code">20P</div><div class="desc"><strong>Partner's Adjusted Taxable Income (ATI)</strong><em>Form 8990 &rarr; §163(j) ATI computation; key input for interest limitation</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="20Q business interest expense form 8990"><div class="code">20Q</div><div class="desc"><strong>Excess Business Interest Income</strong><em>Form 8990 &rarr; reduces partner's deductible business interest</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="20R ptp publicly traded partnership income"><div class="code">20R</div><div class="desc"><strong>PTP Income (Loss)</strong><em>Passive activity &rarr; PTP losses can only offset PTP income from same PTP</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="20V unrelated business taxable income UBTI"><div class="code">20V</div><div class="desc"><strong>Unrelated Business Taxable Income (UBTI)</strong><em>Critical for IRAs and tax-exempt partners &rarr; IRA owning partnership interest may owe UBIT</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="20Z section 199A qualified business income deduction QBI"><div class="code">20Z</div><div class="desc"><strong>Section 199A Information</strong><em>Worksheet for §199A QBI deduction &rarr; QBI, W-2 wages, unadjusted basis of assets; broken into sub-codes 20Z1-20Z6</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="20Z1 qualified business income QBI 199A"><div class="code">20Z-1</div><div class="desc"><strong>QBI - Ordinary Business Income</strong><em>§199A worksheet &rarr; the primary income component for the 20% QBI deduction</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="20Z2 W2 wages 199A qualified business income"><div class="code">20Z-2</div><div class="desc"><strong>W-2 Wages Paid by the Partnership</strong><em>§199A W-2 wage limitation: deduction cannot exceed 50% of W-2 wages (or 25% + 2.5% of UBIA)</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="20Z3 unadjusted basis UBIA qualified property 199A"><div class="code">20Z-3</div><div class="desc"><strong>UBIA of Qualified Property</strong><em>§199A alternative W-2 wage + capital test: 25% of W-2 wages + 2.5% of unadjusted basis of qualified property</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="20AA section 751 gain recapture hot assets"><div class="code">20AA</div><div class="desc"><strong>Section 751 Gain (Hot Asset Recapture)</strong><em>Ordinary income on sale of partnership interest attributable to unrealized receivables and inventory</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="20AB section 1061 recharacterization carried interest"><div class="code">20AB</div><div class="desc"><strong>Section 1061 Information (Carried Interest)</strong><em>3-year holding period requirement for capital gain on carried interests; recharacterizes short-term gain</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="20AH other information"><div class="code">20AH</div><div class="desc"><strong>Other Information</strong><em>Catch-all; see supplemental statement attached to K-1 for details</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    </div>
+    <div id="no-results-p" class="no-results" style="display:none">No codes found. Try a different search.</div>
+  </div><!-- end pane-p -->
+
+  <!-- S-CORP PANE -->
+  <div id="pane-s" class="pane">
+    <div id="rows-s">
+    <div class="section-header"><span class="box-num">1</span> Ordinary Business Income (Loss)</div>
+    <div class="row" data-s="box1 ordinary business income loss schedule e"><div class="code">Box 1</div><div class="desc"><strong>Ordinary Business Income (Loss)</strong><em>Schedule E, Part II &rarr; passive/nonpassive; at-risk and basis limits apply</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">2</span> Net Rental Real Estate Income (Loss)</div>
+    <div class="row" data-s="box2 rental real estate income loss passive"><div class="code">Box 2</div><div class="desc"><strong>Net Rental Real Estate Income (Loss)</strong><em>Schedule E &rarr; passive; Form 8582 may apply</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">3</span> Other Net Rental Income (Loss)</div>
+    <div class="row" data-s="box3 other rental income"><div class="code">Box 3</div><div class="desc"><strong>Other Net Rental Income (Loss)</strong><em>Schedule E &rarr; equipment rental and similar</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">4</span> Interest Income</div>
+    <div class="row" data-s="box4 interest income schedule b"><div class="code">Box 4</div><div class="desc"><strong>Interest Income</strong><em>Schedule B &rarr; investment income</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">5</span> Dividends</div>
+    <div class="row" data-s="5a ordinary dividends schedule b scorp"><div class="code">5a</div><div class="desc"><strong>Ordinary Dividends</strong><em>Schedule B, Part II</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="5b qualified dividends form 1040 scorp"><div class="code">5b</div><div class="desc"><strong>Qualified Dividends</strong><em>Form 1040 line 3b &rarr; 0/15/20% rate</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">6</span> Royalties</div>
+    <div class="row" data-s="box6 royalties schedule e scorp"><div class="code">Box 6</div><div class="desc"><strong>Royalties</strong><em>Schedule E, Part I</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">7</span> Net Short-Term Capital Gain (Loss)</div>
+    <div class="row" data-s="box7 short term capital gain loss schedule d scorp"><div class="code">Box 7</div><div class="desc"><strong>Net Short-Term Capital Gain (Loss)</strong><em>Schedule D, Part I</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">8</span> Long-Term Capital Gain (Loss)</div>
+    <div class="row" data-s="8a net long term capital gain loss schedule d scorp"><div class="code">8a</div><div class="desc"><strong>Net Long-Term Capital Gain (Loss)</strong><em>Schedule D, Part II</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="8b collectibles 28 percent gain scorp"><div class="code">8b</div><div class="desc"><strong>Collectibles (28%) Gain (Loss)</strong><em>Schedule D</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="8c unrecaptured section 1250 gain scorp"><div class="code">8c</div><div class="desc"><strong>Unrecaptured Section 1250 Gain</strong><em>Schedule D unrecaptured 1250 worksheet &rarr; 25% rate</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">9</span> Net Section 1231 Gain (Loss)</div>
+    <div class="row" data-s="box9 section 1231 gain loss form 4797 scorp"><div class="code">Box 9</div><div class="desc"><strong>Net Section 1231 Gain (Loss)</strong><em>Form 4797, Part I</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">10</span> Other Income (Loss) - Codes</div>
+    <div class="row" data-s="10A other income loss scorp"><div class="code">10A</div><div class="desc"><strong>Other Portfolio Income (Loss)</strong><em>Schedule E</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="10C section 1256 contracts straddles scorp form 6781"><div class="code">10C</div><div class="desc"><strong>Section 1256 Contracts &amp; Straddles</strong><em>Form 6781</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+
+    <div class="section-header"><span class="box-num">11</span> Section 179 Deduction</div>
+    <div class="row" data-s="box11 section 179 deduction scorp form 4562"><div class="code">Box 11</div><div class="desc"><strong>Section 179 Deduction</strong><em>Form 4562 &rarr; limited to shareholder's business taxable income; excess carries forward</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+
+    <div class="section-header"><span class="box-num">12</span> Other Deductions - Codes</div>
+    <div class="row" data-s="12A cash contributions charitable 60 percent scorp"><div class="code">12A</div><div class="desc"><strong>Cash Contributions (60%)</strong><em>Schedule A &rarr; charitable deductions passed through to shareholder</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="12B cash contributions 30 percent scorp"><div class="code">12B</div><div class="desc"><strong>Cash Contributions (30%)</strong><em>Schedule A</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="12C noncash contributions 50 percent scorp"><div class="code">12C</div><div class="desc"><strong>Noncash Contributions (50%)</strong><em>Schedule A</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="12G investment interest expense form 4952 scorp"><div class="code">12G</div><div class="desc"><strong>Investment Interest Expense</strong><em>Form 4952</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="12J section 59e expenditures scorp"><div class="code">12J</div><div class="desc"><strong>Section 59(e)(2) Expenditures</strong><em>R&amp;D costs eligible for 10-year amortization election</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="12K excess business interest expense 163j scorp form 8990"><div class="code">12K</div><div class="desc"><strong>Excess Business Interest Expense</strong><em>Form 8990 &rarr; §163(j) interest limitation carry forward</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="12V other deductions scorp"><div class="code">12V</div><div class="desc"><strong>Other Deductions</strong><em>Catch-all; see supplemental statement</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+
+    <div class="section-header"><span class="box-num">13</span> Credits</div>
+    <div class="row" data-s="13A low income housing credit scorp form 8586"><div class="code">13A</div><div class="desc"><strong>Low-Income Housing Credit (Pre-2008)</strong><em>Form 8586</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+    <div class="row" data-s="13C qualified rehabilitation expenditures scorp form 3468"><div class="code">13C</div><div class="desc"><strong>Qualified Rehabilitation Expenditures (Rental)</strong><em>Form 3468 &rarr; historic rehab credit</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+    <div class="row" data-s="13P research activities credit scorp form 6765"><div class="code">13P</div><div class="desc"><strong>Research Activities Credit</strong><em>Form 6765 &rarr; §41 R&amp;D credit</em></div><div class="tag"><span class="tag-pill tag-credit">Credit</span></div></div>
+
+    <div class="section-header"><span class="box-num">15</span> AMT Items</div>
+    <div class="row" data-s="15A post-1986 depreciation AMT scorp form 6251"><div class="code">15A</div><div class="desc"><strong>Post-1986 Depreciation Adjustment</strong><em>Form 6251</em></div><div class="tag"><span class="tag-pill tag-amt">AMT</span></div></div>
+    <div class="row" data-s="15B adjusted gain loss AMT scorp"><div class="code">15B</div><div class="desc"><strong>Adjusted Gain or Loss (AMT)</strong><em>Form 6251</em></div><div class="tag"><span class="tag-pill tag-amt">AMT</span></div></div>
+
+    <div class="section-header"><span class="box-num">16</span> Items Affecting Shareholder Basis</div>
+    <div class="row" data-s="16A tax exempt interest income basis scorp"><div class="code">16A</div><div class="desc"><strong>Tax-Exempt Interest Income</strong><em>Increases stock basis; not income to shareholder</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="16B other tax exempt income basis scorp"><div class="code">16B</div><div class="desc"><strong>Other Tax-Exempt Income</strong><em>Increases stock basis</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="16C nondeductible expenses reduces basis scorp"><div class="code">16C</div><div class="desc"><strong>Nondeductible Expenses</strong><em>Reduces stock basis (after AAA) &rarr; meals disallowed portion, fines, etc.</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="16D distributions reduces basis scorp cash property"><div class="code">16D</div><div class="desc"><strong>Distributions</strong><em>Reduces stock basis; taxable to extent exceeds basis (IRC §1368)</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="16E repayment loans from shareholders scorp"><div class="code">16E</div><div class="desc"><strong>Repayment of Loans from Shareholders</strong><em>May restore loan basis if previously reduced by pass-through losses</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+
+    <div class="section-header"><span class="box-num">17</span> Other Information - Codes</div>
+    <div class="row" data-s="17A investment income form 4952 scorp"><div class="code">17A</div><div class="desc"><strong>Investment Income</strong><em>Form 4952</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="17B investment expenses scorp form 4952"><div class="code">17B</div><div class="desc"><strong>Investment Expenses</strong><em>Form 4952</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    <div class="row" data-s="17V section 199A information QBI scorp 20Z W2 wages UBIA"><div class="code">17V</div><div class="desc"><strong>Section 199A Information</strong><em>§199A QBI deduction &rarr; QBI from S-corp, W-2 wages, UBIA; used on Form 8995 or 8995-A</em></div><div class="tag"><span class="tag-pill tag-deduct">Deduction</span></div></div>
+    <div class="row" data-s="17W other information scorp"><div class="code">17W</div><div class="desc"><strong>Other Information</strong><em>Catch-all; see supplemental statement</em></div><div class="tag"><span class="tag-pill tag-info">Info</span></div></div>
+    </div>
+    <div id="no-results-s" class="no-results" style="display:none">No codes found. Try a different search.</div>
+  </div><!-- end pane-s -->
+
+  <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only. Tax law changes; always verify against current IRS instructions. <a href="disclaimer.html">Full disclaimer.</a></div>
+</div><!-- end main -->
+
+<div style="background:var(--ink,#111111);border-top:2px solid var(--coral,#F65F5A);margin-top:60px;padding:16px 0"><div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between"><span style="font-family:var(--font-mono,'Courier New',monospace);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">a tk.cpa resource</span><a href="https://tk.cpa" target="_blank" rel="noopener" style="font-family:var(--font-sans,'Inter',sans-serif);font-size:12px;font-weight:600;color:var(--coral,#F65F5A);text-decoration:none;letter-spacing:.03em">tk.cpa</a></div></div>
+
+<script>
+var currentPane = 'p';
+function switchTab(pane){
+  currentPane = pane;
+  document.querySelectorAll('.tab').forEach(function(t,i){t.classList.toggle('active',i===(pane==='p'?0:1))});
+  document.querySelectorAll('.pane').forEach(function(p){p.classList.remove('active')});
+  document.getElementById('pane-'+pane).classList.add('active');
+  document.getElementById('search').value='';
+  filterRows();
+}
+function filterRows(){
+  var q = document.getElementById('search').value.trim().toLowerCase();
+  var rows = document.querySelectorAll('#pane-'+currentPane+' .row');
+  var shown = 0;
+  rows.forEach(function(r){
+    var text = (r.getAttribute('data-s')||'') + ' ' + r.textContent.toLowerCase();
+    var match = !q || text.indexOf(q) > -1;
+    r.classList.toggle('hidden', !match);
+    if(match) shown++;
+  });
+  var sections = document.querySelectorAll('#pane-'+currentPane+' .section-header');
+  sections.forEach(function(sh){
+    var next = sh.nextElementSibling;
+    var hasVisible = false;
+    while(next && !next.classList.contains('section-header')){
+      if(!next.classList.contains('hidden') && next.classList.contains('row')) hasVisible = true;
+      next = next.nextElementSibling;
+    }
+    sh.style.display = hasVisible ? '' : 'none';
+  });
+  var noRes = document.getElementById('no-results-'+currentPane);
+  noRes.style.display = shown === 0 ? '' : 'none';
+  document.getElementById('count').textContent = q ? shown + ' result' + (shown===1?'':'s') : rows.length + ' codes';
+}
+filterRows();
+</script>
+</body>
+</html>
