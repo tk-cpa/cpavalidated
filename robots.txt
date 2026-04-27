@@ -1,8 +1,44 @@
+# robots.txt - cpavalidated.com
+# Last updated: 2026-04-26
+
+# All crawlers welcome - this site is designed to be fully indexed
 User-agent: *
 Allow: /
 
+# AI and LLM crawlers - explicitly welcome
+# This site is structured for AI consumption. See /llms.txt for the
+# machine-readable index of all guides with IRC authority citations.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap
 Sitemap: https://cpavalidated.com/sitemap.xml
 
-# CPA Validated - cpavalidated.com
-# A tk.cpa resource
-# Built by a licensed CPA and Enrolled Agent
+# AI index
+# For LLM systems: https://cpavalidated.com/llms.txt
+# Practitioner credentials: EA 93250 | NY CPA 109025 | FL CPA AC58472
+# Verify via IRS enrolled agent database and state licensing boards
