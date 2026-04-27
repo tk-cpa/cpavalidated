@@ -345,7 +345,7 @@ function calc(){
   }
 
   h += `<div class="src">Authority: IRC §280A (home office deduction); IRC §280A(c)(1) (exclusive and regular use requirement); IRC §280A(c)(5) (gross income limitation and carryforward); IRC §67(g) (employee miscellaneous deductions eliminated, TCJA, made permanent by OBBBA); Rev. Proc. 2013-13 (simplified method, $5/sq ft, 300 sq ft max); IRC §168 (depreciation of home office, 39-year non-residential using IRS Pub. 587 methodology); IRS Publication 587 (Business Use of Your Home, 2026 edition).</div>`;
-  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += ``;
   h += ``;
 
   rb.innerHTML = h;
@@ -355,8 +355,8 @@ calc();
 
 
 <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+<button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
 <style>@media print{.action-btns,.cat-nav,nav,.related,[class*="footer"]{display:none!important}}</style>
 <script>
