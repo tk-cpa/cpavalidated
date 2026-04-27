@@ -186,6 +186,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 </div>
 
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
+<button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href).then(function(){var b=event.target;var o=b.textContent;b.textContent='Copied!';setTimeout(function(){b.textContent=o},2000)})}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and CPA Inc. expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
 
 </div>
