@@ -433,7 +433,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
     <div id="adjNote" style="display:none" class="inf">
       <strong>Adjusted current-year days (after exclusions): <span id="adjDays">0</span></strong> - use this adjusted count if exclusions apply.
     </div>
-    <button class="pbn" onclick="window.print()">Print / Save as PDF</button>
+    
 
     <div style="background:var(--white);border:1px solid var(--ink-20);padding:18px;margin-top:20px">
       <div style="font-family:var(--font-display);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)">Related Tools</div>
@@ -647,8 +647,8 @@ init();
 
 
 <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+<button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
 <style>@media print{.action-btns,.cat-nav,nav,.related{display:none!important}}</style>
 <script>
