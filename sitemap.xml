@@ -1314,4 +1314,28 @@
     <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://cpavalidated.com/trucking-transportation-tax-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/law-firm-partnership-tax-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/restaurant-hospitality-tax-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/tech-startup-tax-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
