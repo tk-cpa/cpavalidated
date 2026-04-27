@@ -978,4 +978,22 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://cpavalidated.com/worker-classification-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/home-office-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/education-credits-guide.html</loc>
+    <lastmod>2026-04-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
