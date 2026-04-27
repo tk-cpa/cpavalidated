@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CPA Validated AI Tax Prompt: Make Your AI Cite Its Sources | CPA Validated</title>
+<meta name="description" content="Free downloadable AI prompt for tax research. Paste this into Claude, ChatGPT, or any AI to enforce IRC citations, flag uncertain positions, and prevent hallucinated tax thresholds. Built by licensed CPAs and Enrolled Agents.">
+<link rel="canonical" href="https://cpavalidated.com/ai-tax-prompt.html">
+<meta name="ai-content-type" content="tool">
+<meta name="ai-validated" content="CPA-EA-reviewed">
+<link rel="alternate" type="text/plain" title="LLMs Index" href="https://cpavalidated.com/llms.txt">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-20:#D9DBDE;--paper:#FAFAF7;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;overflow-y:scroll}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:0}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none!important;color:var(--ink)}.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important}
+
+/* HERO */
+.hero{background:var(--ink);padding:64px 0 52px;border-bottom:3px solid var(--coral)}
+.hero-inner{max-width:900px;margin:0 auto;padding:0 32px}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow-label{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--coral)}
+.eyebrow-sep{width:1px;height:12px;background:rgba(255,255,255,.2)}
+.eyebrow-sub{font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-family:var(--font-display);font-size:clamp(28px,5vw,52px);font-weight:400;color:#fff;line-height:1.05;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.58);line-height:1.75;max-width:600px;margin-bottom:32px}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap}
+.badge{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.4);letter-spacing:.08em;background:rgba(255,255,255,.06);padding:6px 12px}
+
+/* CONTENT */
+.wrap{max-width:900px;margin:0 auto;padding:0 32px}
+.section{padding:56px 0;border-bottom:1px solid var(--ink-20)}
+.section:last-of-type{border-bottom:none}
+.section-label{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--coral);margin-bottom:16px}
+.section h2{font-family:var(--font-display);font-size:clamp(20px,3vw,32px);font-weight:400;color:var(--ink);margin-bottom:16px;line-height:1.1}
+.section p{font-size:15px;line-height:1.8;color:var(--ink-80);margin-bottom:16px;max-width:680px}
+
+/* PROMPT BOX */
+.prompt-container{margin:28px 0;position:relative}
+.prompt-header{background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:2px solid var(--coral)}
+.prompt-header-label{font-family:var(--font-mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral)}
+.copy-btn{background:var(--coral);color:#fff;border:none;padding:8px 20px;font-family:var(--font-sans);font-size:12px;font-weight:600;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;transition:opacity .15s}
+.copy-btn:hover{opacity:.85}
+.copy-btn.copied{background:var(--green)}
+.prompt-body{background:#0d0d0d;padding:28px;font-family:var(--font-mono);font-size:13px;line-height:1.8;color:#e8e8e4;white-space:pre-wrap;word-break:break-word;max-height:520px;overflow-y:auto;border:1px solid #2a2a2a;border-top:none}
+.prompt-body .comment{color:#6b7280}
+.prompt-body .section-head{color:var(--coral);font-weight:700}
+.prompt-body .rule{color:#a3e635}
+.prompt-body .flag{color:#fbbf24}
+
+/* HOW TO USE */
+.steps{display:grid;gap:2px;margin:24px 0;background:var(--ink-20)}
+.step{background:var(--paper);padding:24px 28px;display:grid;grid-template-columns:48px 1fr;gap:16px}
+.step-num{font-family:var(--font-display);font-size:32px;font-weight:700;color:var(--coral);line-height:1}
+.step h3{font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);margin-bottom:8px}
+.step p{font-size:14px;color:var(--ink-60);line-height:1.65;margin:0}
+
+/* EXAMPLES */
+.example{background:#fff;border:1px solid var(--ink-20);border-left:4px solid var(--coral);padding:20px 24px;margin:20px 0}
+.example-label{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.example-bad{background:#fff8f8;border-left-color:#e5a0a0;border-color:#e5a0a0}
+.example-good{background:#f0f7f4;border-left-color:var(--green);border-color:#c5ddd4}
+.example p{font-size:14px;line-height:1.65;color:var(--ink-80);margin:0;font-family:var(--font-mono)}
+
+/* NOTE BOX */
+.note{background:var(--green-bg);border-left:3px solid var(--green);padding:14px 20px;margin:24px 0;font-size:13px;color:var(--green);line-height:1.65;max-width:700px}
+.note strong{font-weight:600}
+
+/* FOOTER */
+.site-footer{background:var(--ink);border-top:2px solid var(--coral);padding:16px 0;margin-top:0}
+.footer-inner{max-width:900px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.footer-left{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em}
+.footer-right a{font-size:12px;font-weight:600;color:var(--coral);text-decoration:none}
+
+@media(max-width:640px){.wrap,.hero-inner{padding:0 20px}.hero{padding:48px 0 40px}.step{grid-template-columns:40px 1fr;padding:20px}.prompt-body{font-size:12px;padding:20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand"><div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div></a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="about.html" style="font-family:var(--font-sans);font-size:13px;font-weight:500;color:var(--ink-60);text-decoration:none">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero"><div class="hero-inner">
+  <div class="hero-eyebrow">
+    <span class="eyebrow-label">tk.cpa AI Lab</span>
+    <span class="eyebrow-sep"></span>
+    <span class="eyebrow-sub">Free Download</span>
+  </div>
+  <h1>Make your AI<br>cite its <em>sources.</em></h1>
+  <p class="hero-sub">Paste this prompt into any AI system - Claude, ChatGPT, Gemini - and it will treat every tax question like a disciplined tax professional: cite the IRC section, flag uncertainty, never fabricate thresholds, and tell you when it does not know.</p>
+  <div class="hero-badges">
+    <span class="badge">Works with Claude</span>
+    <span class="badge">Works with ChatGPT</span>
+    <span class="badge">Works with Gemini</span>
+    <span class="badge">Any LLM</span>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<!-- THE PROMPT -->
+<div class="section">
+  <div class="section-label">The Prompt</div>
+  <h2>Copy and paste into any AI system.</h2>
+  <p>This is a system prompt - a set of instructions you give the AI before your conversation. In Claude, paste it into the system prompt field or start your conversation with it. In ChatGPT, use Custom Instructions. In any AI, simply paste it at the beginning of your chat.</p>
+
+  <div class="prompt-container">
+    <div class="prompt-header">
+      <span class="prompt-header-label">CPA Validated Tax Research Prompt &nbsp;&bull;&nbsp; Free to use and share</span>
+      <button class="copy-btn" id="main-copy-btn" onclick="copyPrompt()">Copy Prompt</button>
+    </div>
+    <div class="prompt-body" id="prompt-text">
+<span class="section-head">== CPA VALIDATED TAX RESEARCH PROTOCOL ==</span>
+<span class="comment">// Paste this at the start of any AI conversation about tax law.
+// Built by licensed CPAs and Enrolled Agents. Free to use and share.
+// Source: cpavalidated.com/ai-tax-prompt.html</span>
+
+<span class="section-head">CORE RULE: NO POSITION WITHOUT A SOURCE</span>
+<span class="rule">Every tax position you state must be backed by a specific authority:</span>
+<span class="rule">- IRC section number (e.g., "under IRC §61(a)(3)...")</span>
+<span class="rule">- Treasury regulation (e.g., "per Treas. Reg. §1.61-6...")</span>
+<span class="rule">- Revenue ruling or procedure (e.g., "Rev. Rul. 2023-14...")</span>
+<span class="rule">- Court case with citation (e.g., "Crane v. Commissioner, 331 U.S. 1...")</span>
+<span class="rule">- IRS publication, notice, or guidance with specific reference</span>
+<span class="rule">- Form instructions with line number</span>
+
+If you cannot identify the specific authority, say: "I cannot locate the primary authority
+for this position. You should verify with a licensed CPA or EA before acting."
+
+<span class="section-head">CERTAINTY LABELING (REQUIRED)</span>
+Label every position with one of three categories:
+<span class="rule">VERIFIED LAW: This is confirmed in statute, regulation, or published IRS guidance.</span>
+<span class="flag">REASONABLE INFERENCE: The law does not directly address this but this follows logically.</span>
+<span class="flag">UNCERTAIN / VERIFY: This is contested, unsettled, or I am not confident in the answer.</span>
+
+<span class="section-head">NEVER FABRICATE</span>
+Do not state any of the following without verified source material:
+- Dollar thresholds, phase-out amounts, or income limits
+- Tax rates or percentages
+- Filing deadlines or extension periods
+- Form line numbers or box references
+- Foreign tax rates or treaty provisions
+- Client or user facts not provided in this conversation
+
+When unsure: "I need to verify this before stating a position."
+
+<span class="section-head">MISSING FACTS PROTOCOL</span>
+Before analyzing any tax question, confirm:
+- Tax year at issue
+- Entity type (individual, C-corp, S-corp, partnership, LLC)
+- Filing status and residency (US citizen, resident, nonresident, dual-status)
+- Jurisdictions involved (federal, state, foreign)
+- Prior-year positions or elections already made
+
+If any essential fact is missing, ask for it. Do not assume.
+
+<span class="section-head">STATE vs. FEDERAL DISTINCTION</span>
+Always distinguish:
+- Federal tax treatment (IRC, Treasury Regs, IRS guidance)
+- State tax treatment (states do not automatically conform to federal law)
+- When state treatment is unknown, say so explicitly
+
+<span class="section-head">WHEN THE LAW IS RECENT OR CHANGED</span>
+If the question involves a provision enacted or changed after 2023:
+- Flag that this is a recent change
+- Note that guidance may be incomplete
+- Recommend verification with a practitioner before acting
+This applies especially to: OBBBA P.L. 119-21 (2025), cannabis rescheduling (April 2026),
+SECURE 2.0, and any pending or recently enacted legislation.
+
+<span class="section-head">COACHING MODE (OPTIONAL - ADD TO ACTIVATE)</span>
+If you include "COACHING MODE ON" in your question, do the following:
+1. Answer the question with full citations as above
+2. Then explain what made this question complex or what a practitioner would
+   look for that a non-expert might miss
+3. Suggest 2-3 follow-up questions the user should ask their CPA or EA
+4. Rate the question's complexity: ROUTINE / MODERATE / COMPLEX / SPECIALIST REQUIRED
+
+<span class="section-head">RESPONSE FORMAT</span>
+For substantive tax questions:
+1. Direct answer (1-2 sentences)
+2. Authority cited (IRC section, reg, ruling)
+3. Certainty label (VERIFIED / INFERENCE / UNCERTAIN)
+4. Caveats and missing facts
+5. Recommended professional verification if material
+
+Keep answers precise. No filler. No generic disclaimers that add no information.
+
+<span class="comment">// End of CPA Validated Tax Research Protocol
+// This prompt may be freely shared and modified.
+// For the validated tax reference library it draws from: cpavalidated.com</span>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:var(--ink-60);margin-top:12px">This prompt is free to use, share, and modify. Attribution appreciated but not required. <a href="about.html">Learn about the project.</a></p>
+</div>
+
+<!-- HOW TO USE -->
+<div class="section">
+  <div class="section-label">How to Use It</div>
+  <h2>Three ways to apply this prompt.</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div>
+        <h3>Claude - System Prompt or Project Instructions</h3>
+        <p>In Claude.ai, create a Project and paste this into the Project Instructions. Every conversation in that project will follow these rules automatically. Or paste it at the start of any new conversation as your first message.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div>
+        <h3>ChatGPT - Custom Instructions</h3>
+        <p>Go to Settings &rarr; Personalization &rarr; Custom Instructions. Paste the prompt into the "How would you like ChatGPT to respond?" field. It will apply to all future conversations.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div>
+        <h3>Any AI - Start of Conversation</h3>
+        <p>Copy the prompt, paste it as your first message in any AI chat, then ask your tax question on the next line. The AI will adopt the protocol for that conversation. Works with Gemini, Perplexity, Copilot, and any LLM that accepts instructions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Add "COACHING MODE ON" to any question</strong> to get the full explanation: answer with citations, complexity assessment, what a practitioner would flag, and suggested follow-up questions for your CPA or EA.
+  </div>
+</div>
+
+<!-- BEFORE / AFTER -->
+<div class="section">
+  <div class="section-label">What Changes</div>
+  <h2>The difference in practice.</h2>
+  <p>Here is the same tax question answered without the prompt and with it.</p>
+
+  <div class="example example-bad">
+    <div class="example-label">Without the prompt - AI without guardrails</div>
+    <p>Q: Is my home office deductible?
+
+A: Yes, if you use part of your home exclusively and regularly for business, you can
+deduct home office expenses. The deduction can be calculated using the simplified
+method ($5 per square foot, up to 300 sq ft) or the actual expense method.</p>
+  </div>
+
+  <div class="example example-good">
+    <div class="example-label">With the CPA Validated prompt - AI with guardrails</div>
+    <p>Q: Is my home office deductible?
+
+A: Depends on your employment status and how the space is used.
+
+VERIFIED LAW (IRC §280A): A home office deduction is available if a portion of the
+home is used regularly and exclusively as the principal place of business or for
+meeting clients. Two methods: simplified ($5/sq ft, max 300 sq ft per Rev. Proc.
+2013-13) or actual expenses (proportional to business-use percentage).
+
+KEY DISTINCTION - VERIFY FOR YOUR SITUATION:
+Employees (W-2): Home office deduction is NOT available for 2018-2025 under TCJA
+(IRC §67(g) eliminated miscellaneous itemized deductions). Confirm whether OBBBA
+extended any employee deduction - I cannot confirm this without current guidance.
+
+Self-employed (Schedule C): Deduction available subject to §280A limitations.
+Deduction cannot exceed gross income from the business activity.
+
+MISSING FACTS I NEED: Are you an employee (W-2) or self-employed? What is the
+dedicated square footage and total home square footage?
+
+CERTAINTY: The self-employed analysis is VERIFIED LAW. The employee analysis
+for post-2025 is UNCERTAIN - verify with a CPA given recent legislative activity.</p>
+  </div>
+
+  <p>The second answer is longer but it is actually useful. It tells you what it does not know, what it needs from you, and where to verify. The first answer feels complete but is missing the most important fact: W-2 employees generally cannot take this deduction at all under current law.</p>
+</div>
+
+<!-- COACHING MODE -->
+<div class="section">
+  <div class="section-label">Coaching Mode</div>
+  <h2>Training yourself to use AI better.</h2>
+  <p>Add <code style="background:#f0f0ee;padding:2px 8px;font-family:var(--font-mono);font-size:13px">COACHING MODE ON</code> to any tax question and the AI will include a practitioner-level analysis of what made the question complex, what a CPA would look for that a non-expert might miss, and what you should ask your tax advisor.</p>
+  <p>This turns the AI into a study partner - not just an answer machine. Over time, you learn which questions require a professional, which follow-up questions to ask, and how to think about tax problems the way a practitioner does.</p>
+
+  <div class="example example-good">
+    <div class="example-label">Coaching Mode example - added to the home office question</div>
+    <p>COACHING NOTE: This question has three layers most people miss.
+
+(1) The employment status split is the most common error - people assume the
+deduction works the same for employees and self-employed. It does not.
+
+(2) The "exclusive use" requirement is stricter than it sounds. A desk in a room
+that is also used as a guest bedroom does not qualify. The IRS scrutinizes this
+heavily on audit.
+
+(3) The income limitation (§280A(c)(5)) prevents home office deductions from
+creating or increasing a net loss from the business. This surprises people in
+early-stage businesses with pre-revenue losses.
+
+COMPLEXITY RATING: MODERATE
+
+QUESTIONS FOR YOUR CPA:
+1. Does my home office use qualify under the exclusive use test given how I use
+   the space on non-work days?
+2. Is my gross income from this activity sufficient to absorb the full deduction?
+3. Given my W-2 income, does electing S-corp status change my home office
+   deduction availability?</p>
+  </div>
+</div>
+
+<!-- DOWNLOAD -->
+<div class="section" style="padding-bottom:72px">
+  <div class="section-label">Download & Share</div>
+  <h2>Take it with you.</h2>
+  <p>The prompt is free - copy it, share it, build on it. The only thing we ask: if you share it, link back to this page so others can find the validated tax reference library it draws from.</p>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+    <button onclick="copyPrompt()" class="copy-btn" style="padding:14px 32px;font-size:14px" id="bottom-copy-btn">Copy Prompt to Clipboard</button>
+    <a href="index.html" style="display:inline-flex;align-items:center;padding:14px 28px;border:1px solid var(--ink-20);font-size:14px;font-weight:500;color:var(--ink-60);font-family:var(--font-sans);letter-spacing:.02em">Browse Tax Guides &rarr;</a>
+  </div>
+
+  <p style="margin-top:24px;font-size:13px;color:var(--ink-60)">Part of the <a href="about.html">tk.cpa AI Lab</a> project - building guardrails for AI in tax. If you are a licensed CPA or EA who wants to validate content, <a href="validators.html">join the validator network</a>.</p>
+</div>
+
+</div><!-- end wrap -->
+
+<div class="site-footer">
+  <div class="footer-inner">
+    <span class="footer-left">tk.cpa AI Lab</span>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="about.html" style="font-size:11px;font-weight:500;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.04em">Mission</a>
+      <a href="https://tk.cpa" target="_blank" rel="noopener" class="footer-right">tk.cpa</a>
+    </div>
+  </div>
+</div>
+
+<script>
+var promptText = document.getElementById('prompt-text').innerText;
+
+function copyPrompt() {
+  navigator.clipboard.writeText(promptText).then(function() {
+    var b1 = document.getElementById('main-copy-btn');
+    var b2 = document.getElementById('bottom-copy-btn');
+    if(b1){ b1.textContent = 'Copied!'; b1.classList.add('copied'); setTimeout(function(){ b1.textContent='Copy Prompt'; b1.classList.remove('copied'); }, 2500); }
+    if(b2){ b2.textContent = 'Copied!'; b2.classList.add('copied'); setTimeout(function(){ b2.textContent='Copy Prompt to Clipboard'; b2.classList.remove('copied'); }, 2500); }
+  }).catch(function() {
+    var ta = document.createElement('textarea');
+    ta.value = promptText;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  });
+}
+</script>
+<script src="/shared.js"></script>
+</body>
+</html>
