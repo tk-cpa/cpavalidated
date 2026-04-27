@@ -335,7 +335,7 @@ function calc(){
   h += flag('blue','ℹ','<strong>SALT cap interaction.</strong> The $10,000 annual cap on state and local tax deductions (including property taxes) under IRC §164(b)(6) applies on Schedule A at the same place as mortgage interest. If your property taxes are already filling the $10,000 SALT cap, the property tax deduction provides no additional benefit - but mortgage interest has no dollar cap separate from the acquisition debt limit, and remains fully deductible up to the $750K/$1M ceiling.');
 
   h += `<div class="src">Authority: IRC §163(h)(3)(A)-(B) (acquisition indebtedness definition); IRC §163(h)(3)(D) (TCJA $750,000 limit, loans after Dec 15, 2017); IRC §163(h)(3)(E) (pre-TCJA $1,000,000 grandfathered limit); IRS Notice 2018-32 (home equity debt - only deductible if used to buy/build/improve); Treas. Reg. §1.163-10T (allocation of interest); TCJA §11043 (P.L. 115-97); OBBBA (P.L. 119-21) (TCJA mortgage interest provisions made permanent); IRC §164(b)(6) (SALT $10,000 cap, also made permanent by OBBBA); Schedule A, Line 8a (deductible mortgage interest).</div>`;
-  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += ``;
   h += ``;
 
   rb.innerHTML = h;
@@ -345,8 +345,8 @@ calc();
 
 
 <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+<button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
 <style>@media print{.action-btns,.cat-nav,nav,.related{display:none!important}}</style>
 <script>
