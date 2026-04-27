@@ -1,0 +1,191 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CPA Validated//US Tax Calendar 2026//EN
+X-WR-CALNAME:US Tax Deadlines 2026 - CPA Validated
+X-WR-CALDESC:Key US federal tax deadlines for the 2026 tax year and 2025 filing season. Every date verified against IRS Publication 509 and current IRS guidance. A tk.cpa resource. cpavalidated.com
+X-WR-TIMEZONE:America/New_York
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-PUBLISHED-TTL:PT12H
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260115
+DTEND;VALUE=DATE:20260116
+SUMMARY:Q4 2025 Estimated Tax Due (Form 1040-ES)
+DESCRIPTION:Fourth and final 2025 estimated tax installment due. Safe harbor: pay the lesser of 90% of 2025 tax or 100%/110% of 2024 tax. IRC §6654. If you received W-2 income covering the full liability\, this payment may not be required. cpavalidated.com/tax-calendar.html
+CATEGORIES:Individual Tax\,Estimated Tax
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260131
+DTEND;VALUE=DATE:20260201
+SUMMARY:W-2 and 1099-NEC Due to Recipients and IRS
+DESCRIPTION:Employers must furnish W-2 forms to employees and file with SSA. Payers must furnish Form 1099-NEC to recipients for 2025 payments of $600 or more (2025 payments use $600 threshold - OBBBA $2,000 threshold applies to 2026 payments filed in January 2027). IRC §6041A. cpavalidated.com/form-1099-guide.html
+CATEGORIES:Business\,Information Returns
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260216
+DTEND;VALUE=DATE:20260217
+SUMMARY:1099-B\, 1099-DIV\, 1099-INT Due to Recipients
+DESCRIPTION:Brokers and financial institutions must furnish Forms 1099-B\, 1099-DIV\, and 1099-INT to recipients. Note: brokerage firms may issue corrected 1099s through mid-March. Hold off finalizing returns until all corrected 1099s arrive. cpavalidated.com/capital-gains-calculator.html
+CATEGORIES:Individual Tax\,Information Returns
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260315
+DTEND;VALUE=DATE:20260316
+SUMMARY:S-Corp (1120-S) and Partnership (1065) Returns Due
+DESCRIPTION:Calendar-year S-corporation and partnership returns due. 6-month extension available via Form 7004 to September 15\, 2026. K-1s must be furnished to shareholders/partners by this date (or extension date). Late filing penalty: $260 per K-1 per month. IRC §6698\, §6699. cpavalidated.com/s-corporation-basics.html
+CATEGORIES:Business\,Entity Returns
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260415
+DTEND;VALUE=DATE:20260416
+SUMMARY:Individual Return (1040) Due + IRA/HSA Contribution Deadline
+DESCRIPTION:Form 1040 due for calendar-year individuals. Extension to October 15 available via Form 4868 (does not extend payment). IRA and HSA contribution deadline for 2025 tax year - contribute by midnight April 15. FBAR (FinCEN 114) due - same date as 1040\, automatic 6-month extension to October 15. Form 8938 (FATCA) due with 1040. IRC §6072. cpavalidated.com/individual-tax.html
+CATEGORIES:Individual Tax\,IRA\,FBAR
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260415
+DTEND;VALUE=DATE:20260416
+SUMMARY:Q1 2026 Estimated Tax Due (Form 1040-ES)
+DESCRIPTION:First installment of 2026 estimated tax. Due same day as 1040. IRC §6654. cpavalidated.com/safe-harbor.html
+CATEGORIES:Individual Tax\,Estimated Tax
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260415
+DTEND;VALUE=DATE:20260416
+SUMMARY:C-Corp (1120) Return Due - Calendar Year
+DESCRIPTION:Calendar-year C-corporation income tax return due. 6-month extension to October 15 via Form 7004. IRC §6072(b). cpavalidated.com/business-entity.html
+CATEGORIES:Business\,Entity Returns
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:US Citizens Abroad: Automatic 2-Month Extension Deadline
+DESCRIPTION:Automatic 2-month extension for US citizens and resident aliens living outside the US on April 15. File by June 15 without Form 4868. Interest on tax due still accrues from April 15. Additional extension to December 15 available via Form 4868 filed by June 15. IRS Pub. 54. cpavalidated.com/us-expat-tax-guide.html
+CATEGORIES:International Tax\,Expat
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:Q2 2026 Estimated Tax Due (Form 1040-ES)
+DESCRIPTION:Second installment of 2026 estimated tax. Note: Q2 covers April 1 - May 31\, only 2 months. IRC §6654. cpavalidated.com/safe-harbor.html
+CATEGORIES:Individual Tax\,Estimated Tax
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260615
+DTEND;VALUE=DATE:20260616
+SUMMARY:California PTET First Installment Due
+DESCRIPTION:California elective pass-through entity tax (PTET) - first installment required by June 15 to elect into the California PTET for the 2026 tax year. Missing this date means losing the PTET election for 2026. cpavalidated.com/state-ptet-guide.html
+CATEGORIES:Business\,State Tax\,PTET
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:Q3 2026 Estimated Tax Due (Form 1040-ES)
+DESCRIPTION:Third installment of 2026 estimated tax. IRC §6654. cpavalidated.com/safe-harbor.html
+CATEGORIES:Individual Tax\,Estimated Tax
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260915
+DTEND;VALUE=DATE:20260916
+SUMMARY:S-Corp (1120-S) and Partnership (1065) Extended Returns Due
+DESCRIPTION:Extended S-corporation and partnership returns due. September 15\, 2026. No further extension available for calendar-year entities. cpavalidated.com/s-corporation-basics.html
+CATEGORIES:Business\,Entity Returns
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:Individual Return (1040) Extended Due Date
+DESCRIPTION:Final deadline for calendar-year individual returns with extension. No further extension available. Tax must have been paid by April 15 - this only extends the filing\, not the payment. FBAR automatic extension also expires today. cpavalidated.com/individual-tax.html
+CATEGORIES:Individual Tax
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:C-Corp (1120) Extended Return Due
+DESCRIPTION:Extended calendar-year C-corporation return due. Final deadline. cpavalidated.com/business-entity.html
+CATEGORIES:Business\,Entity Returns
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+SUMMARY:Year-End Tax Planning Deadline - Review Now
+DESCRIPTION:Critical planning window before December 31 year-end. Actions due by December 31: RMD distributions\, Roth conversions\, tax-loss harvesting (allow 30+ days for wash sale window)\, year-end charitable gifts\, business asset purchases for bonus depreciation\, 529 contributions for state deductions. cpavalidated.com/individual-tax.html
+CATEGORIES:Individual Tax\,Planning
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:RMD Deadline - Required Minimum Distributions Must Be Taken
+DESCRIPTION:Required minimum distributions for 2026 must be taken by December 31. Age 73+ (born 1951-1959) or age 75+ (born 1960+) under SECURE 2.0. Penalty for missed RMD: 25%\, reduced to 10% if corrected promptly. Roth IRA owners exempt. IRC §401(a)(9)\, §4974. cpavalidated.com/rmd-guide.html
+CATEGORIES:Retirement\,RMD
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Tax-Loss Harvesting Final Deadline (settle by Dec 31)
+DESCRIPTION:Security sales for 2026 tax-loss harvesting must settle by December 31. Most US equities settle T+1. Sell by December 30 to ensure settlement. Watch 30-day wash sale window - sales in December trigger disallowance if same securities repurchased before January 30\, 2027. cpavalidated.com/wash-sale-guide.html
+CATEGORIES:Individual Tax\,Investments
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:Year-End: Roth Conversions\, Charitable Gifts\, Business Purchases
+DESCRIPTION:Last day for: Roth IRA conversions (tax in 2026)\, cash charitable contributions (check must be mailed or card charged by 12/31)\, business asset purchases placed in service for bonus depreciation\, 529 plan contributions for state deduction in 2026. cpavalidated.com/roth-conversion.html
+CATEGORIES:Individual Tax\,Planning
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270115
+DTEND;VALUE=DATE:20270116
+SUMMARY:Q4 2026 Estimated Tax Due (Form 1040-ES)
+DESCRIPTION:Fourth and final 2026 estimated tax installment. IRC §6654. cpavalidated.com/safe-harbor.html
+CATEGORIES:Individual Tax\,Estimated Tax
+TRANSP:TRANSPARENT
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+SUMMARY:1099-NEC Due to Recipients and IRS (2026 Payments - $2\,000 Threshold)
+DESCRIPTION:1099-NEC for 2026 payments of $2\,000 or more due to recipients and IRS. OBBBA raised threshold from $600 to $2\,000 effective January 1\, 2026. Inflation-indexed from 2027. IRC §6041A. cpavalidated.com/form-1099-guide.html
+CATEGORIES:Business\,Information Returns
+TRANSP:TRANSPARENT
+END:VEVENT
+
+END:VCALENDAR
