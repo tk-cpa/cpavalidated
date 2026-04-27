@@ -291,7 +291,7 @@ function result(type){
     h+=flag('amber','!','<strong>TCJA downward attribution (post-2017).</strong> The TCJA eliminated the exception that previously prevented attribution from foreign persons to US persons through domestic entities. This caused widespread unexpected CFC status in many structures that were previously non-CFC. Review all structures involving both US and foreign common ownership.');
     h+='<div class="src">Authority: IRC &sect;957 (CFC definition); IRC &sect;951(b) (US shareholder, 10% threshold); IRC &sect;6038 (Form 5471 requirement); IRC &sect;6046 (Category 3); IRC &sect;6038(b) (penalties); IRC &sect;318 / &sect;958(b) (attribution); TCJA &sect;14214 (downward attribution); IRC &sect;951A (GILTI); IRC &sect;965(e)(1) (SFC); IRC &sect;6501(c)(8) (statute of limitations); Notice 2019-46 (downward attribution relief).</div>';
   }
-  h+='<button class="pbn" onclick="window.print()">Print / Save as PDF</button>';
+  h+='';
   h+='<button class="rbtn" onclick="resetAll()">Start Over</button>';
   h+='';
   rb.innerHTML=h;
@@ -312,8 +312,8 @@ function resetAll(){
 
 
 <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+<button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
 <style>@media print{.action-btns,.cat-nav,nav,.related,[class*="footer"]{display:none!important}}</style>
 <script>
