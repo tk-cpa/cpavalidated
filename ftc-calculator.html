@@ -368,7 +368,7 @@ function calc(){
   h += flag('amber','!','<strong>This calculator provides an estimate only.</strong> The actual FTC limitation requires a separate Form 1116 for each income basket (general, passive, HTKO, etc.). The self-employment tax (IRC §1401) is not reduced by the FEIE. This calculator does not address the SE tax impact, which can be significant for self-employed expats. Consult a qualified international tax CPA before making an election.');
 
   h += `<div class="src">Authority: IRC §901 (foreign tax credit); IRC §904 (FTC limitation); IRC §904(c) (carryback/carryforward); IRC §911 (FEIE); IRC §911(b)(2)(D) (2026 FEIE limit $126,500); IRC §1401 (SE tax not reduced by FEIE); Form 1116 instructions; IRS Rev. Proc. 2025-32 (2026 brackets and standard deductions).</div>`;
-  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += ``;
   h += ``;
 
   rb.innerHTML = h;
@@ -379,8 +379,8 @@ calc();
 
 
 <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+<button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
 <style>@media print{.action-btns,.cat-nav,nav,.related,[class*="footer"]{display:none!important}}</style>
 <script>
