@@ -240,7 +240,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
     <tr><td>Form 3921</td><td>ISO stock option exercises</td><td class="date-cell">Jan 31 (to employees)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6039</td></tr>
     <tr><td>1099-INT / 1099-DIV</td><td>Interest ($10+) and dividends ($10+)</td><td class="date-cell">Jan 31 (to recipients)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6049; IRC §6042</td></tr>
     <tr><td>1099-B</td><td>Broker and barter exchange proceeds</td><td class="date-cell">Feb 15 (to recipients)<br>Feb 28 paper / Mar 31 e-file (to IRS)</td><td class="ext-cell"> - </td><td>IRC §6045</td></tr>
-    <tr><td>1099-K</td><td>Payment card / third-party networks ($600+ for 2026)</td><td class="date-cell">Jan 31</td><td class="ext-cell"> - </td><td>IRC §6050W</td></tr>
+    <tr><td>1099-K</td><td>Payment card / third-party networks ($20,000/200 transactions - OBBBA restored)</td><td class="date-cell">Jan 31</td><td class="ext-cell"> - </td><td>IRC §6050W</td></tr>
     <tr><td>Corp Q1 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Apr 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr>
     <tr><td>Corp Q2 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Jun 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr>
     <tr><td>Corp Q3 Est. Tax</td><td>C-Corporation quarterly estimated tax</td><td class="date-cell">Sep 15</td><td class="ext-cell"> - </td><td>IRC §6655</td></tr>
@@ -289,9 +289,9 @@ const DEADLINES = [
   // JANUARY
   { month:1, day:15, cat:'personal', form:'Q4 2025 Est. Tax', desc:'Final 2025 estimated tax payment - individuals who did not pay via withholding. IRC §6654.', ext:null },
   { month:2, day:2, cat:'corp', form:'W-2', desc:'W-2s to employees and SSA. Covers wages, tips, and other compensation. IRC §6051.', ext:null },
-  { month:2, day:2, cat:'corp', form:'1099-NEC', desc:'Nonemployee compensation $600+. To recipients and IRS. No extension available. IRC §6041A.', ext:null },
+  { month:2, day:2, cat:'corp', form:'1099-NEC', desc:'Nonemployee compensation $2,000+ for 2026 (OBBBA); $600 for 2025. To recipients and IRS. No extension available. IRC §6041A.', ext:null },
   { month:2, day:2, cat:'corp', form:'1099-R', desc:'Retirement distributions, pensions, annuities, IRAs. To recipients and IRS. IRC §408.', ext:null },
-  { month:2, day:2, cat:'corp', form:'1099-K', desc:'Payment card and third-party network transactions. $600 threshold for 2026. IRC §6050W.', ext:null },
+  { month:2, day:2, cat:'corp', form:'1099-K', desc:'Payment card / third-party networks. $20,000 and 200 transactions threshold (OBBBA restored). IRC §6050W.', ext:null },
   { month:2, day:2, cat:'corp', form:'Form 3921', desc:'ISO stock option exercises during 2025. To employees by Jan 31. IRC §6039.', ext:null },
   { month:2, day:2, cat:'corp', form:'Form 940', desc:'Annual Federal Unemployment Tax (FUTA) return. Extended to Feb 10 if all deposits current. IRC §3301.', ext:'Feb 10 if deposits current' },
   { month:2, day:2, cat:'corp', form:'Form 941 (Q4)', desc:'Q4 2025 quarterly payroll tax return. IRC §3111; IRC §3402.', ext:null },
