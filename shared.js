@@ -15,6 +15,7 @@ var LINKS=
   +'<small style="display:block;font-family:Inter,-apple-system,sans-serif;font-weight:400;font-size:10px;color:#F65F5A;letter-spacing:.1em;margin-top:3px;text-transform:none">a tk.cpa resource</small>'
   +'</div></a>'
   +'<div style="display:flex;align-items:center;gap:20px">'
+  +'<a href="/search.html" onmouseover="this.style.textDecoration='none'" onmouseout="this.style.textDecoration='none'" aria-label="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px" title="Search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>'
   +'<a href="/about.html" onmouseover="this.style.textDecoration=\'none\'" onmouseout="this.style.textDecoration=\'none\'" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>'
   +'<a href="https://tk.cpa" target="_blank" rel="noopener" onmouseover="this.style.textDecoration=\'none\'" onmouseout="this.style.textDecoration=\'none\'" style="display:inline-block;background:#F65F5A;color:#fff;padding:9px 20px;font-weight:600;font-size:13px;text-decoration:none;white-space:nowrap;flex-shrink:0">tk.cpa</a>'
   +'</div>';
