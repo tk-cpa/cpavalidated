@@ -1,0 +1,2467 @@
+{
+  "meta": {
+    "site": "cpavalidated.com",
+    "generated": "2026-04-27",
+    "total": 273,
+    "description": "CPA Validated full page index. Rebuild by running index-builder.py."
+  },
+  "pages": [
+    {
+      "url": "1031-exchange-guide.html",
+      "title": "IRC §1031 Like-Kind Exchange Guide (2026)",
+      "heading": "IRC §1031 Like-Kind Exchange Guide (2026)",
+      "desc": "Complete guide to IRC Section 1031 like-kind exchanges for real estate. 45-day identification rule, 180-day closing deadline, boot, qualified intermediary, reverse exchanges, and 2026 rules. CPA-valid",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1031 IRC §1031 IRC §1031 IRC §1031 IRC §1031 IRC §1031 IRC §1250"
+    },
+    {
+      "url": "act60-estimator.html",
+      "title": "Puerto Rico Act 60 Tax Benefit Estimator",
+      "heading": "Puerto Rico Act 60 Tax Benefit Estimator",
+      "desc": "Estimate your tax savings under Puerto Rico Act 60 (Individual Investors, Export Services). Compare US federal tax vs. Act 60 rates. Eligibility checker, bona fide residency test, and annual savings c",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "agriculture-farming-tax-guide.html",
+      "title": "Agriculture & Farming Tax: Schedule F, Cash Method, Depletion & §1231 (2026)",
+      "heading": "Agriculture & Farming Tax: Schedule F, Cash Method & Crop Insurance",
+      "desc": "Tax guide for farmers and agricultural businesses: Schedule F income and expenses, cash method of accounting for most farms, prepaid farm expenses rule, soil and water conservation deductions, crop in",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §175 IRC §451"
+    },
+    {
+      "url": "ai-resources.html",
+      "title": "CPA Validated AI Resources: Skills, Prompts & Tax Calendar",
+      "heading": "CPA Validated AI Resources",
+      "desc": "Free AI resources for tax professionals and researchers: CPA Validated AI Skill for any AI assistant, Master Tax Research Prompt, downloadable 2026 tax calendar for Google Calendar and Outlook, and th",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "alimony-tax-guide.html",
+      "title": "Alimony Tax Treatment: Pre-2019 vs. Post-TCJA Rules (2026)",
+      "heading": "Alimony: Pre-2019 Deductible vs. Post-TCJA Non-Deductible",
+      "desc": "Alimony tax guide: TCJA eliminated deduction for payer and income inclusion for recipient for divorce agreements executed after December 31 2018, pre-2019 agreements grandfathered under old rules, mod",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §71 IRC §215"
+    },
+    {
+      "url": "amt-calculator.html",
+      "title": "Alternative Minimum Tax (AMT) Calculator 2026",
+      "heading": "Alternative Minimum Tax (AMT) Calculator 2026",
+      "desc": "Calculate AMT exposure for 2026. AMTI, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. CPA-validated. IRC Sections 55-58. Form 6251.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "amt-guide.html",
+      "title": "Alternative Minimum Tax (AMT) Guide: AMTI, Exemptions & ISO Trap (2026)",
+      "heading": "Alternative Minimum Tax (AMT): AMTI, Exemptions & ISO Trap",
+      "desc": "AMT mechanics: AMTI computation, 2026 exemption amounts, preferences and adjustments, the ISO exercise AMT trap, Form 6251, AMT credit carryforward, and who actually owes AMT after TCJA. CPA-validated",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §55 IRC §55 IRC §55 IRC §55 IRC §56"
+    },
+    {
+      "url": "annuity-tax-guide.html",
+      "title": "Annuity Tax Treatment: §72 Exclusion Ratio, LIFO Rules & Surrender (2026)",
+      "heading": "Annuity Tax Treatment: §72 Exclusion Ratio & Distribution Rules",
+      "desc": "Annuity tax guide under IRC §72: how annuity payments are taxed using the exclusion ratio, qualified vs nonqualified annuities, LIFO distribution rules on partial withdrawals, 10% early distribution p",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §72 IRC §72"
+    },
+    {
+      "url": "artist-performer-athlete-tax-guide.html",
+      "title": "Tax Guide for Artists, Performers & Athletes: Schedule C, State Allocation & NIL Income (2026)",
+      "heading": "Tax Guide for Artists, Performers & Athletes",
+      "desc": "Tax guide for creative professionals and athletes: Schedule C vs. hobby loss rules, the 3-of-5-years profit test, state income tax allocation for touring and performance income, athlete signing bonus ",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §183"
+    },
+    {
+      "url": "asc-740-guide.html",
+      "title": "ASC 740 Income Tax Accounting: A Practical Guide",
+      "heading": "ASC 740: Income Tax Accounting",
+      "desc": "How ASC 740 works in practice. Current vs. deferred tax, temporary and permanent differences, deferred tax assets and liabilities, valuation allowances, uncertain tax positions, rate reconciliation, a",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "asc-740-tax-provision.html",
+      "title": "ASC 740 Tax Provision Guide: Current Tax, Deferred Tax & Uncertain Tax Positions (2026)",
+      "heading": "ASC 740 Tax Provision: Current Tax, Deferred Tax & UTPs",
+      "desc": "ASC 740 income tax accounting: current vs. deferred tax computation, temporary and permanent differences, valuation allowances, uncertain tax positions (two-step model), effective tax rate reconciliat",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "at-risk-rules-guide.html",
+      "title": "At-Risk Rules Guide: IRC §465, Recourse vs. Nonrecourse & Passive Activity (2026)",
+      "heading": "At-Risk Rules: IRC §465, Recourse Debt & the Passive Activity Ordering",
+      "desc": "At-risk rules under IRC §465: what amounts are at-risk, recourse vs. nonrecourse debt, qualified nonrecourse financing exception for real estate, the ordering of at-risk vs. passive activity limitatio",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §465 IRC §465 IRC §465 IRC §465"
+    },
+    {
+      "url": "augusta-rule.html",
+      "title": "Augusta Rule (IRC 280A(g)) - 14-Day Home Rental Tax Exclusion",
+      "heading": "The Augusta Rule  IRC 280A(g)",
+      "desc": "The Augusta Rule: rent your home to your own business tax-free up to 14 days per year. IRC Section 280A(g). Fair rental value, documentation, S-corp strategy, IRS scrutiny. CPA-validated 2026 guide.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "backdoor-roth-guide.html",
+      "title": "Redirecting...",
+      "heading": "Redirecting...",
+      "desc": "",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "backdoor-roth.html",
+      "title": "Backdoor Roth IRA Guide & Pro-Rata Calculator 2026",
+      "heading": "Backdoor Roth IRA Guide & Pro-Rata Calculator 2026",
+      "desc": "Backdoor Roth IRA: step-by-step mechanics, pro-rata rule calculation, Form 8606. Mega backdoor Roth. Step transaction doctrine risk. 2026 income limits. CPA-validated. IRC 408A, 408(d)(2).",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "bonus-depreciation-guide.html",
+      "title": "Bonus Depreciation Guide (Post-OBBBA): 100% Permanent",
+      "heading": "Bonus Depreciation (Post-OBBBA)",
+      "desc": "OBBBA (P.L. 119-21) permanently restored 100% bonus depreciation for property acquired and placed in service after January 19, 2025. The TCJA phase-down was repealed prospectively. New IRC Section 168",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §168 IRC §168 IRC §179 IRC §163 IRC §168 IRC §280F"
+    },
+    {
+      "url": "business-entity-comparison.html",
+      "title": "Business Entity Comparison: Sole Prop vs. LLC vs. S-Corp vs. C-Corp vs. Partnership (2026)",
+      "heading": "Business Entity Comparison: Sole Prop, LLC, S-Corp, C-Corp & Partnership",
+      "desc": "Full business entity comparison: sole proprietorship, single-member LLC, multi-member LLC, S-corporation, C-corporation, and partnership - comparing SE tax, income tax rates, QBI deduction, §199A, exi",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1 IRC §11 IRC §1401 IRC §3111 IRC §199A"
+    },
+    {
+      "url": "business-entity.html",
+      "title": "Business & Entity Tax",
+      "heading": "Business & Entity Tax",
+      "desc": "Business entity tax guides: S-corporation, LLC vs. S-corp, partnership, C-corporation, QBI deduction, payroll tax, trust fund penalty, executive compensation, R&D credit, and OBBBA changes. CPA-valida",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "business-sale-planning.html",
+      "title": "Business Sale Tax Planning: Asset vs. Stock, §338(h)(10) & Installment Sales",
+      "heading": "Business Sale Tax Planning: Asset vs. Stock, §338(h)(10) & Installment Sales",
+      "desc": "Tax planning for selling a business: asset vs. stock sale comparison, §338(h)(10) and §336(e) elections, installment sales under §453, earnout taxation, §1202 QSBS exclusion, and the §1060 allocation ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §338 IRC §338 IRC §336 IRC §453 IRC §453 IRC §483"
+    },
+    {
+      "url": "business-travel-guide.html",
+      "title": "Business Travel Deduction: What Qualifies, What Doesn't (2026)",
+      "heading": "Business Travel Deduction: What Qualifies and What Doesn't",
+      "desc": "Business travel tax deduction guide: away-from-home test, primary purpose rule, transportation vs lodging vs meals (50%), combined business-personal trips, foreign travel proration, and documentation ",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §162 IRC §274 IRC §274"
+    },
+    {
+      "url": "c-corp-tax-guide.html",
+      "title": "C-Corporation Tax Guide: 21% Flat Rate, Double Taxation & Key Deductions (2026)",
+      "heading": "C-Corporation Tax: 21% Rate, Double Taxation & CAMT (2026)",
+      "desc": "C-corporation tax guide: 21% flat federal corporate income tax rate, double taxation on dividends (corporate tax then shareholder dividend tax), accumulated earnings tax on excessive retained earnings",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §11 IRC §1 IRC §531"
+    },
+    {
+      "url": "california-ftb-guide.html",
+      "title": "California FTB: State Income Tax, Franchise Tax and Nonresident Rules (2026)",
+      "heading": "California FTB: Income Tax, Franchise Tax and Nonresident Rules",
+      "desc": "California Franchise Tax Board guide: 13.3% top individual rate, $800 minimum franchise tax, CA nonconformity with federal bonus depreciation and OBBBA, 546-day safe harbor for nonresidence, nonreside",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "california-ftb-tax-guide.html",
+      "title": "California FTB: Income Tax, Residency Rules & Conformity (2026)",
+      "heading": "California FTB: Income Tax, Residency & OBBBA Non-Conformity",
+      "desc": "California Franchise Tax Board guide: CA income tax rates up to 13.3%, residency and domicile rules, California's non-conformity with federal OBBBA provisions, safe harbor for part-year residents, LLC",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "canadian-residency.html",
+      "title": "Are You a Canadian Tax Resident?",
+      "heading": "Are You a Canadian Tax Resident?",
+      "desc": "A plain-English guide to Canadian tax residency. The CRA's residential ties test, the 183-day deemed resident rule, leaving Canada and the departure tax under ITA s. 128.1, factual versus deemed resid",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "canadian-tax-hub.html",
+      "title": "Canadian Tax for Cross-Border Clients",
+      "heading": "Canadian Tax for Cross-Border Clients",
+      "desc": "A plain-English hub for US persons with Canadian tax issues, Canadians with US ties, and snowbirds. Residency, the US-Canada tax treaty, T1135 foreign property reporting, RRSP and RRIF rules for US pe",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §7701"
+    },
+    {
+      "url": "cancellation-of-debt-guide.html",
+      "title": "Cancellation of Debt (COD) Income: §108 Exceptions & Insolvency Exclusion",
+      "heading": "Cancellation of Debt (COD) Income: §108 Exclusions & Insolvency",
+      "desc": "Cancellation of debt income guide: when COD is taxable, the six §108 exclusions (insolvency, bankruptcy, qualified real property business debt, farm debt, student loans), Form 1099-C, attribute reduct",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §61 IRC §108 IRC §108"
+    },
+    {
+      "url": "cannabis-280e-guide.html",
+      "title": "Cannabis & §280E: Rescheduling Changed Everything on April 22, 2026",
+      "heading": "Cannabis & §280E: The April 22, 2026 Rescheduling Order",
+      "desc": "Breaking: DOJ/DEA final order April 22, 2026 moved state-licensed medical cannabis to Schedule III. §280E no longer applies to medical operators. Recreational cannabis remains Schedule I. What changed",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §280E IRC §471"
+    },
+    {
+      "url": "cant-pay-taxes-guide.html",
+      "title": "Can't Pay Your Taxes? Installment Agreements, CNC & Offer in Compromise (2026)",
+      "heading": "Can't Pay Your Taxes? Your Options Explained.",
+      "desc": "Can't pay your tax bill? Plain-English guide to IRS payment options: installment agreements (up to 72 months), Currently Not Collectible status, Offer in Compromise, partial pay installment agreements",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": "IRC §6159 IRC §6159 IRC §7122"
+    },
+    {
+      "url": "capital-gains-calculator.html",
+      "title": "Capital Gains & NIIT Calculator 2026",
+      "heading": "Capital Gains & NIIT Calculator 2026",
+      "desc": "Calculate 2026 long-term capital gains tax (0/15/20%) plus Net Investment Income Tax (3.8% NIIT). Stacking with ordinary income. Qualified dividends. CPA-validated. IRC 1(h), 1411.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "captive-insurance-guide.html",
+      "title": "Captive Insurance & §831(b): Micro-Captives, IRS Enforcement & 2026 Court Rulings",
+      "heading": "Captive Insurance & §831(b): Enforcement Landscape 2026",
+      "desc": "Comprehensive §831(b) micro-captive insurance guide: how captives work, the §831(b) election $2.9M premium limit, IRS final regulations T.D. 10029, listed transactions vs transactions of interest, the",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §831 IRC §831 IRC §162"
+    },
+    {
+      "url": "casualty-loss-guide.html",
+      "title": "Casualty and Theft Loss Deduction: §165 After TCJA and OBBBA (2026)",
+      "heading": "Casualty and Theft Loss Deduction: What Survived TCJA",
+      "desc": "Casualty and theft loss deduction guide: TCJA federally declared disaster restriction, §165 mechanics, personal use property 10% AGI floor and $100 floor, business casualty fully deductible, documenta",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §165 IRC §165 IRC §165"
+    },
+    {
+      "url": "charitable-deduction-guide.html",
+      "title": "Charitable Contribution Deduction Guide (2026) - 0.5% AGI Floor Under OBBBA",
+      "heading": "Charitable Deduction (2026)",
+      "desc": "Charitable contribution deduction under IRC Section 170 for 2026 and beyond. The new 0.5% AGI floor for individuals, 1% taxable income floor for corporations, the permanent 60% cash AGI limit, the 35%",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §170 IRC §170 IRC §170 IRC §170 IRC §170 IRC §170"
+    },
+    {
+      "url": "charitable-giving-strategies.html",
+      "title": "Charitable Giving Tax Strategies: DAF, CRT, CLT, QCD & Appreciated Property (2026)",
+      "heading": "Charitable Giving Tax Strategies (2026)",
+      "desc": "Charitable tax strategies: donor-advised funds (DAFs), charitable remainder trusts (CRTs), charitable lead trusts (CLTs), qualified charitable distributions (QCDs up to $111,000), contributing appreci",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §170 IRC §170 IRC §170 IRC §170 IRC §170 IRC §170"
+    },
+    {
+      "url": "child-tax-credit-guide.html",
+      "title": "Child Tax Credit & Dependent Tax Guide (2026)",
+      "heading": "Child Tax Credit & Dependent Tax Benefits (2026)",
+      "desc": "Child Tax Credit guide for 2026: $2,200 per child (OBBBA), $1,700 refundable portion, income phaseout, who qualifies as a dependent, the child and dependent care credit, dependent care FSA, and the ki",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §24 IRC §24 IRC §24 IRC §21"
+    },
+    {
+      "url": "clergy-housing-allowance-guide.html",
+      "title": "Clergy Housing Allowance §107: Tax-Free Income for Ministers (2026)",
+      "heading": "Clergy Housing Allowance §107: Minister Tax Exclusion",
+      "desc": "Clergy housing allowance tax guide: §107 exclusion for officially designated housing allowance paid to licensed ministers, the three limitations on the excludable amount, self-employment tax still app",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §107"
+    },
+    {
+      "url": "closer-connection.html",
+      "title": "Closer Connection Exception Checker - Form 8840",
+      "heading": "Closer Connection Exception Checker",
+      "desc": "Test eligibility for the Closer Connection Exception to the Substantial Presence Test. Evaluates all 11 IRS factors. Form 8840. CPA-validated. IRC Section 7701(b)(3)(B).",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "collectibles-28-percent-guide.html",
+      "title": "Collectibles: 28% Capital Gains Rate for Art, Coins, Precious Metals & Antiques (2026)",
+      "heading": "Collectibles: The 28% Capital Gains Rate Explained",
+      "desc": "Collectibles tax guide: which assets are collectibles under IRC §1(h)(5), the 28% maximum capital gains rate vs 20% for other long-term capital gains, short-term treatment, unrecaptured §1250 gain int",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1 IRC §1"
+    },
+    {
+      "url": "construction-tax-guide.html",
+      "title": "Construction Tax: Percentage of Completion vs. Completed Contract Method (2026)",
+      "heading": "Construction Tax: PCM vs. Completed Contract Method",
+      "desc": "Construction company tax guide: percentage of completion method (PCM) vs completed contract method (CCM), which contractors qualify for CCM, the look-back interest requirement under §460(b), home cons",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §460 IRC §460 IRC §460"
+    },
+    {
+      "url": "controlled-groups-guide.html",
+      "title": "Controlled Groups §1563: How Related Businesses Are Treated as One (2026)",
+      "heading": "Controlled Groups §1563: Related Business Rules for Tax Limits",
+      "desc": "Controlled groups guide: parent-subsidiary controlled groups, brother-sister controlled groups, and combined groups under IRC §1563, why controlled group status matters for retirement plan contributio",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §1563 IRC §1563"
+    },
+    {
+      "url": "corporate-extension.html",
+      "title": "Corporate Tax Extension Reference (2026)",
+      "heading": "Corporate Tax Extension Reference (2026)",
+      "desc": "C-Corp Form 1120 extension rules for all 50 states, DC, and major local jurisdictions. Automatic vs. accepts federal vs. separate form required. State forms, payment requirements, citations. CPA-valid",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "cost-segregation-guide.html",
+      "title": "Cost Segregation Studies: Accelerated Real Estate Depreciation (2026)",
+      "heading": "Cost Segregation Studies: Accelerate Real Estate Depreciation",
+      "desc": "Cost segregation study guide: reclassifying real property into 5, 7, 15-year personal property and land improvements, bonus depreciation interaction, look-back studies on existing property, recapture ",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §168 IRC §168 IRC §168 IRC §168"
+    },
+    {
+      "url": "cross-border-snowbirds.html",
+      "title": "Snowbird Day Counting Done Right",
+      "heading": "Snowbird Day Counting Done Right",
+      "desc": "A plain-English guide to US-Canada day counting for snowbirds. The Substantial Presence Test math, the Closer Connection Exception (Form 8840), the treaty tie-breaker (Form 8833), and how Canadian res",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §7701 IRC §7701 IRC §6114 IRC §871 IRC §1445 IRC §2102"
+    },
+    {
+      "url": "crowdfunding-tax-guide.html",
+      "title": "Crowdfunding Income Tax: Kickstarter, GoFundMe & Personal Campaigns (2026)",
+      "heading": "Crowdfunding Income: Taxable vs. Gift & Business Income",
+      "desc": "Crowdfunding tax guide: when crowdfunding income is taxable vs. excludable as a gift, reward-based Kickstarter campaigns as business income, personal hardship GoFundMe as gift income, equity crowdfund",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §61 IRC §102"
+    },
+    {
+      "url": "crypto-defi-staking-guide.html",
+      "title": "Crypto Staking, DeFi & NFT Taxes: Current IRS Guidance (2026)",
+      "heading": "Crypto Staking, DeFi & NFT Taxes: IRS Guidance 2026",
+      "desc": "Cryptocurrency tax guide for staking, DeFi, and NFTs: Rev. Rul. 2023-14 staking rewards as ordinary income when received, DeFi liquidity pools and LP token taxation, NFT classification as collectibles",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "crypto-tax-guide.html",
+      "title": "Crypto & NFT Tax Guide (2026)",
+      "heading": "Crypto & NFT Tax Guide (2026)",
+      "desc": "How cryptocurrency and NFTs are taxed in 2026. Capital gains, mining income, staking rewards (Rev. Rul. 2023-14), DeFi, NFTs as collectibles (IRS Notice 2023-27), Form 8949 reporting, FBAR for foreign",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1221 IRC §1222 IRC §1091 IRC §408 IRC §1401"
+    },
+    {
+      "url": "cryptocurrency-tax-guide.html",
+      "title": "Cryptocurrency Cost Basis & Tax Guide: HIFO, FIFO, Staking & Forks (2026)",
+      "heading": "Cryptocurrency Cost Basis & Tax Guide (2026)",
+      "desc": "Crypto tax rules: HIFO vs. FIFO vs. specific identification, Rev. Rul. 2023-14 on staking rewards, hard fork taxation, DeFi, wash sale rules (do not apply), broker reporting under IIJA, Form 1099-DA, ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1001 IRC §1221 IRC §1"
+    },
+    {
+      "url": "dental-medical-practice-tax-guide.html",
+      "title": "Dental & Medical Practice Tax: Entity Structure, Goodwill & Buy-In/Buy-Out (2026)",
+      "heading": "Dental & Medical Practice Tax: Structure, Goodwill & Transactions",
+      "desc": "Tax guide for dental and medical practices: entity choice (PC vs. PLLC vs. S-corp vs. C-corp), personal goodwill vs. enterprise goodwill in practice sales, associate vs. owner compensation planning, e",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §1060 IRC §338"
+    },
+    {
+      "url": "depreciation-calculator.html",
+      "title": "Real Estate Depreciation Calculator",
+      "heading": "Real Estate Depreciation Calculator",
+      "desc": "Calculate MACRS depreciation for residential rental (27.5 years), commercial (39 years), foreign property (40 years ADS), and QIP (15 years). Mid-month convention applied automatically. Section 168, I",
+      "category": "",
+      "type": "TOOL",
+      "authority": "IRC §168 IRC §167 IRC §168 IRC §168 IRC §16"
+    },
+    {
+      "url": "depreciation-recapture-guide.html",
+      "title": "Depreciation Recapture Guide: §1245, §1250, Bonus Depreciation & Partnerships (2026)",
+      "heading": "Depreciation Recapture: §1245, §1250, Bonus & Partnerships",
+      "desc": "Depreciation recapture mechanics: §1245 full recapture on personal property, §1250 unrecaptured gain at 25% on real property, §1254 natural resource recapture, §1255 cost-sharing recapture, bonus depr",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1245 IRC §1245 IRC §1250 IRC §1250"
+    },
+    {
+      "url": "digital-nomad-tax-guide.html",
+      "title": "Digital Nomad Tax Guide: US Citizens Working Abroad, FEIE & State Taxes (2026)",
+      "heading": "Digital Nomad Tax: FEIE, Self-Employment Tax & State Obligations",
+      "desc": "Digital nomad tax guide for US citizens: US citizens are taxed on worldwide income regardless of where they live or work, the foreign earned income exclusion §911 up to $130,000 for 2026, physical pre",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §911 IRC §911 IRC §911"
+    },
+    {
+      "url": "disability-income-tax-guide.html",
+      "title": "Disability Income Tax: Is It Taxable? Employer Plans, Individual Policies & SSDI (2026)",
+      "heading": "Disability Income: When It Is Taxable and When It Is Not",
+      "desc": "Disability income tax guide: when disability benefits are taxable vs. tax-free, employer-paid disability insurance creates taxable benefits, employee-paid premiums create tax-free benefits, SSDI Socia",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §104 IRC §104"
+    },
+    {
+      "url": "divorce-tax-guide.html",
+      "title": "Divorce & Taxes: Alimony, Property Settlements & QDROs (2026)",
+      "heading": "Divorce & Taxes: Alimony, Property Settlements & QDROs",
+      "desc": "Tax guide to divorce: TCJA alimony rules (not deductible / not taxable for agreements after 2018), §1041 property settlements (non-taxable), QDROs for retirement plans, filing status changes, dependen",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §71"
+    },
+    {
+      "url": "donor-advised-fund-guide.html",
+      "title": "Donor-Advised Fund (DAF): Immediate Deduction, Tax-Free Growth & Grant Strategy (2026)",
+      "heading": "Donor-Advised Fund: Immediate Deduction & Tax-Free Growth",
+      "desc": "Donor-advised fund tax guide: immediate charitable deduction when assets are contributed to a DAF, deduction limits (60% AGI for cash, 30% for appreciated property), no deduction for grants from the D",
+      "category": "Estate & Gifts",
+      "type": "GUIDE",
+      "authority": "IRC §170 IRC §4966"
+    },
+    {
+      "url": "dual-status-returns.html",
+      "title": "Dual-Status Returns: When You're Both Resident and Non-Resident in One Year",
+      "heading": "Dual-Status Returns: Both Resident and Non-Resident in One Year",
+      "desc": "A plain-English guide to dual-status tax returns for the year of arrival or departure. The Form 1040 plus 1040-NR combination, residency start and termination dates under IRC §7701(b), the lost deduct",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §7701 IRC §6013 IRC §6013 IRC §871 IRC §877A"
+    },
+    {
+      "url": "eci-fdap-explained.html",
+      "title": "Redirecting...",
+      "heading": "Redirecting...",
+      "desc": "",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "eci-vs-fdap.html",
+      "title": "ECI vs FDAP: How the US Taxes Non-Residents",
+      "heading": "ECI vs FDAP",
+      "desc": "A plain-English guide to the two ways the US taxes non-residents. ECI (effectively connected income) at graduated rates on a net basis; FDAP (fixed, determinable, annual or periodical income) at 30 pe",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §871 IRC §871 IRC §871 IRC §871 IRC §871 IRC §881 IRC §864 IRC §8"
+    },
+    {
+      "url": "ecommerce-seller-tax-guide.html",
+      "title": "E-Commerce & Marketplace Seller Tax: Sales Tax Nexus, Inventory & Income (2026)",
+      "heading": "E-Commerce & Marketplace Seller Tax: Nexus, FBA & Income",
+      "desc": "Tax guide for e-commerce sellers and Amazon/Shopify merchants: Wayfair economic nexus for online sellers, marketplace facilitator rules eliminating seller collection obligation in most states, FBA inv",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "education-credits-guide.html",
+      "title": "Education Tax Credits: AOTC, Lifetime Learning Credit & Student Loan Interest (2026)",
+      "heading": "Education Tax Credits: AOTC, Lifetime Learning & Student Loan Interest",
+      "desc": "Education tax credit guide: American Opportunity Tax Credit $2,500 (40% refundable), Lifetime Learning Credit $2,000, income phase-outs, student loan interest deduction $2,500, coordination with 529 d",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §25A IRC §25A IRC §25A"
+    },
+    {
+      "url": "education-tax-benefits.html",
+      "title": "Education Tax Benefits: AOTC, Lifetime Learning Credit & §529 Plans (2026)",
+      "heading": "Education Tax Benefits: AOTC, LLC, §529 Plans & Coordination Rules",
+      "desc": "Education tax benefits: American Opportunity Credit ($2,500), Lifetime Learning Credit ($2,000), §529 plan rules and K-12 expansion, coordination rules to avoid double-dipping, student loan interest d",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §25A IRC §25A IRC §25A IRC §25A IRC §25A"
+    },
+    {
+      "url": "eitc-guide.html",
+      "title": "Earned Income Tax Credit (EITC): Eligibility, Amounts & Phase-Out (2026)",
+      "heading": "Earned Income Tax Credit: Up to $7,830 for Families in 2026",
+      "desc": "Earned Income Tax Credit guide: 2026 maximum $7,830 for three children, eligibility tests, investment income $11,600 cap, qualifying child rules, childless worker credit, OBBBA expansion, and audit ri",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §32 IRC §32 IRC §32 IRC §32"
+    },
+    {
+      "url": "energy-credits-guide.html",
+      "title": "Energy Tax Credits After OBBBA: What Survived, What Was Terminated (2026)",
+      "heading": "Energy Tax Credits After OBBBA: What Survived, What Was Terminated",
+      "desc": "Energy tax credits after OBBBA (P.L. 119-21): §30D EV credit terminated after Sept 30 2025, §25C home energy and §25D solar terminated after Dec 31 2025. §48 commercial ITC survives with construction ",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §30D IRC §25E IRC §25C"
+    },
+    {
+      "url": "erc-guide.html",
+      "title": "Employee Retention Credit (ERC) Guide: Eligibility, IRS Enforcement & VDP (2026)",
+      "heading": "Employee Retention Credit (ERC): Eligibility, IRS Enforcement & Voluntary Disclosure",
+      "desc": "ERC guide: eligibility rules (government orders vs. gross receipts test), the IRS enforcement wave (20,000+ disallowance letters, audits, criminal referrals), the ERC Voluntary Disclosure Program, sta",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §3134"
+    },
+    {
+      "url": "espp-guide.html",
+      "title": "ESPP Tax Guide: Qualified vs. Nonqualified Employee Stock Purchase Plans (2026)",
+      "heading": "ESPP Tax: Qualified §423 Plans, Disqualifying Dispositions & Basis",
+      "desc": "Employee stock purchase plan tax guide: qualified §423 ESPP with up to 15% discount and favorable holding period treatment, disqualifying disposition triggers ordinary income on the discount, qualifyi",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §423 IRC §421"
+    },
+    {
+      "url": "estate-gifts.html",
+      "title": "Estate & Gifts",
+      "heading": "Estate & Gifts",
+      "desc": "Estate and gift tax guides: $15M exemption under OBBBA, step-up in basis at death, revocable living trusts, portability, gifting strategies, trust taxation, and high-net-worth planning. CPA-validated.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "estate-planning-basics.html",
+      "title": "Estate Planning Basics: Wills, Trusts, Step-Up in Basis & Probate (2026)",
+      "heading": "Estate Planning Basics: Wills, Trusts, Step-Up & Probate",
+      "desc": "Estate planning fundamentals: wills vs. revocable trusts, the step-up in basis at death (IRC §1014), beneficiary designation rules, powers of attorney, avoiding probate, the $15M estate tax exemption ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1014 IRC §1014 IRC §1015 IRC §2001 IRC §2010"
+    },
+    {
+      "url": "estate-tax-calculator.html",
+      "title": "Estate & Gift Tax Calculator 2026",
+      "heading": "Estate & Gift Tax Calculator 2026",
+      "desc": "2026 estate and gift tax calculator. OBBBA permanent $15M exemption (IRC 2010, P.L. 119-21). Annual exclusion. Portability DSUE. 40% rate on excess. State estate taxes. CPA-validated. IRC 2001, 2010, ",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "exchange-1031-calculator.html",
+      "title": "1031 Exchange Calculator 2026",
+      "heading": "1031 Like-Kind Exchange Calculator 2026",
+      "desc": "Calculate 1031 like-kind exchange: boot recognition, deferred gain, new basis, 45/180-day deadlines. Boot triggers: cash, mortgage relief, personal property. CPA-validated. IRC 1031.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "executive-compensation-guide.html",
+      "title": "Executive Compensation Tax Guide: ISOs, NSOs, RSUs, §83(b) & §409A (2026)",
+      "heading": "Executive Compensation Tax Guide: ISOs, NSOs, RSUs, §83(b) & §409A",
+      "desc": "Equity compensation tax guide: ISO vs. NSO comparison, RSU taxation at vesting, the §83(b) election for restricted stock, §409A deferred compensation rules and penalties, AMT on ISO exercise, and plan",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §421 IRC §422 IRC §423 IRC §424 IRC §56 IRC §55 IRC §83"
+    },
+    {
+      "url": "expatriation-tax-guide.html",
+      "title": "Expatriation Tax Guide - Form 8854 & IRC §877A (2026)",
+      "heading": "Expatriation Tax Guide",
+      "desc": "US expatriation tax rules for renouncing citizenship or abandoning a green card. Covered expatriate definition, mark-to-market exit tax, net worth test, income tax test, Form 8854. CPA-validated. IRC ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "fbar-checker.html",
+      "title": "FBAR & Form 8938 Filing Requirement Checker",
+      "heading": "FBAR & Form 8938 Filing Requirement Checker",
+      "desc": "Determine whether FinCEN 114 (FBAR) and Form 8938 (FATCA) filing is required. Enter accounts individually or as aggregate totals. CPA-validated. 31 USC 5314; IRC Section 6038D.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "fbar-penalties.html",
+      "title": "FBAR Penalties Explained (2026)",
+      "heading": "FBAR Penalties Explained (2026)",
+      "desc": "FBAR penalties for willful and non-willful violations. Willful: up to $100,000 or 50% of account balance per year. Non-willful: up to $10,000 per violation. Streamlined procedures, OVDP, and mitigatio",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "fbar-penalty-estimator.html",
+      "title": "FBAR Penalty Estimator 2026",
+      "heading": "FBAR Penalty Estimator 2026",
+      "desc": "Estimate FBAR civil penalties for willful and non-willful violations. Reasonable cause defense, mitigation guidelines, Streamlined vs VDP, Supreme Court Bittner decision. CPA-validated.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "feie-guide.html",
+      "title": "The Foreign Earned Income Exclusion (Form 2555)",
+      "heading": "The Foreign Earned Income Exclusion (Form 2555)",
+      "desc": "A plain-English guide to the Foreign Earned Income Exclusion (FEIE) under IRC §911 for US citizens and green card holders working abroad. The 2026 $132,900 exclusion, the foreign housing exclusion ($3",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §911 IRC §911 IRC §911 IRC §911 IRC §911 IRC §911"
+    },
+    {
+      "url": "filing-status-guide.html",
+      "title": "Filing Status Guide: MFJ, Single, HOH, MFS & Qualifying Surviving Spouse (2026)",
+      "heading": "Filing Status: MFJ, Single, HOH, MFS & Surviving Spouse (2026)",
+      "desc": "Filing status guide: five federal filing statuses and their 2026 standard deductions, married filing jointly benefits and the marriage penalty, head of household requirements (unmarried, paid more tha",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §1 IRC §1 IRC §1 IRC §1 IRC §2"
+    },
+    {
+      "url": "financial-services-tax-guide.html",
+      "title": "Financial Services & Hedge Fund Tax: Carried Interest, §1256 & Trader Status (2026)",
+      "heading": "Financial Services & Hedge Fund Tax: Carried Interest, §1256 & Trader Status",
+      "desc": "Tax guide for investment managers and financial services: carried interest 3-year holding period requirement under OBBBA, §1256 contracts and the 60/40 blended capital gains rate, trader vs. investor ",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1061 IRC §1061"
+    },
+    {
+      "url": "firpta-explained.html",
+      "title": "FIRPTA: When Foreigners Sell US Real Estate",
+      "heading": "FIRPTA: When Foreigners Sell US Real Estate",
+      "desc": "A plain-English guide to FIRPTA - the rule that requires the buyer to withhold 15% (or 10%, or 0%) of the sale price when a foreign person sells US real estate. The three withholding tiers, the reside",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §897 IRC §1445 IRC §1446"
+    },
+    {
+      "url": "firpta-foreign-sellers.html",
+      "title": "Redirecting...",
+      "heading": "Redirecting...",
+      "desc": "",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "florida-property-tax.html",
+      "title": "Florida Property Tax Elimination: What's Real, What's Not (2026)",
+      "heading": "Florida Property Tax Elimination: What's Real, What's Not",
+      "desc": "The real deal on Florida's property tax proposals. HJR 203 passed the House but died in the Senate. No amendment on the 2026 ballot yet. What it would actually eliminate, what it wouldn't, and what it",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "florida-retiree-tax-guide.html",
+      "title": "Florida Retiree Tax Guide: No Income Tax, Homestead Exemption & Medicaid Planning",
+      "heading": "Florida Retiree Tax Guide: No Income Tax & Homestead Exemption",
+      "desc": "Florida tax guide for retirees: Florida has no state income tax on wages, retirement income, Social Security, or capital gains, homestead exemption up to $50,000 on primary residence plus Save Our Hom",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "foreign-currency-guide.html",
+      "title": "Foreign Currency Tax: §988 Transactions, Ordinary Loss Treatment & the §988(e) Election (2026)",
+      "heading": "Foreign Currency: §988 Ordinary Income Rules & Planning",
+      "desc": "Foreign currency tax guide under IRC §988: what constitutes a §988 transaction, ordinary income or loss treatment on currency fluctuations, the §988(e) election to treat §988 gains as capital gains, f",
+      "category": "International Tax",
+      "type": "GUIDE",
+      "authority": "IRC §988 IRC §988 IRC §988"
+    },
+    {
+      "url": "foreign-pension-reporting.html",
+      "title": "Foreign Pension Reporting for US Persons (2026)",
+      "heading": "Foreign Pension Reporting for US Persons (2026)",
+      "desc": "How US persons must report foreign pension plans. FBAR, Form 8938, Form 3520 analysis. Key distinction: purely governmental defined benefit pensions vs. plans with individual savings components. Treat",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6038D IRC §402 IRC §679"
+    },
+    {
+      "url": "foreign-tax-credit-guide.html",
+      "title": "Foreign Tax Credit Guide: Form 1116, Baskets & FTC Limitation (2026)",
+      "heading": "Foreign Tax Credit: Form 1116, Baskets & FTC Limitation",
+      "desc": "Foreign tax credit mechanics: the IRC §901 credit, Form 1116 vs. Form 1118, the FTC limitation and income baskets, high-tax exclusion election, carryback and carryforward rules, deemed paid credits fo",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §901 IRC §901 IRC §902 IRC §903 IRC §904 IRC §904"
+    },
+    {
+      "url": "form-1099-guide.html",
+      "title": "1099 Form Guide: Thresholds, Rules & OBBBA Changes 2026",
+      "heading": "1099 Form Guide: OBBBA Threshold Changes & 2026 Rules",
+      "desc": "2026 1099 reporting: 1099-NEC and 1099-MISC threshold raised to $2,000 (OBBBA). 1099-K permanently reverted to $20,000/200 transactions. Deadlines, penalties, backup withholding. CPA-validated.",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §6041 IRC §6041A IRC §6041 IRC §6050W"
+    },
+    {
+      "url": "form-3115-guide.html",
+      "title": "Form 3115 & Section 481(a): Accounting Method Changes Explained",
+      "heading": "Form 3115 & Section 481(a): Accounting Method Changes",
+      "desc": "How to change a tax accounting method using Form 3115: the Section 481(a) adjustment, automatic vs. non-automatic changes, Rev. Proc. 2015-13, OBBBA §174A impact, and the 4-year spread rule. CPA-valid",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §446 IRC §446 IRC §481 IRC §481 IRC §174 IRC §174A"
+    },
+    {
+      "url": "form-3520-foreign-trusts.html",
+      "title": "Foreign Trusts & US Tax: Forms 3520 and 3520-A Deep Dive",
+      "heading": "Foreign Trusts & US Tax: Forms 3520 and 3520-A Deep Dive",
+      "desc": "When a foreign trust has a US grantor or US beneficiaries, annual Forms 3520 and 3520-A are required. Penalties up to 35% of trust assets per year. Grantor trust treatment, distributions, accumulation",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §671 IRC §679 IRC §643 IRC §661 IRC §665 IRC §6048 IRC §6048"
+    },
+    {
+      "url": "form-3520-guide.html",
+      "title": "Form 3520: Foreign Gifts, Inheritances & Trusts (2026)",
+      "heading": "Form 3520: Foreign Gifts, Inheritances & Trusts (2026)",
+      "desc": "Form 3520 filing requirements for US persons who receive foreign gifts, inheritances, or have transactions with foreign trusts. 2026 thresholds: $100,000 for gifts from individuals, $19,570 from forei",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6039F IRC §6048 IRC §6677 IRC §679 IRC §665 IRC §643"
+    },
+    {
+      "url": "form-5471-checker.html",
+      "title": "CFC / Form 5471 Obligation Checker",
+      "heading": "CFC / Form 5471 Obligation Checker",
+      "desc": "Determine CFC status and Form 5471 filing category. US shareholder 10% test, 50% CFC control test, all filing categories 1a-5b. Attribution rules, TCJA downward attribution, penalties. CPA-validated. ",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "form-5472-guide.html",
+      "title": "Form 5472 Guide: Foreign-Owned US Corporations & Reporting Requirements (2026)",
+      "heading": "Form 5472: Foreign-Owned US Corporations & Reporting",
+      "desc": "Form 5472 complete guide: who must file, reportable transactions, the $25,000 per-failure penalty, disregarded entity (DE) rules for foreign-owned single-member LLCs, related party transactions, and t",
+      "category": "International Tax",
+      "type": "GUIDE",
+      "authority": "IRC §6038A IRC §6038A IRC §6038A IRC §6038C"
+    },
+    {
+      "url": "form-5472.html",
+      "title": "Form 5472 Filing Obligation Checker",
+      "heading": "Form 5472 Filing Obligation Checker",
+      "desc": "Determine whether your U.S. corporation or foreign-owned LLC must file Form 5472. Covers 25% foreign ownership, 100% foreign-owned disregarded entities, and all 11 categories of reportable transaction",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "form-709-guide.html",
+      "title": "Form 709 Gift Tax Return: Who Files, When, and What Counts (2026)",
+      "heading": "Form 709 Gift Tax Return: Who Files, When, and What Counts",
+      "desc": "Form 709 gift tax return guide: annual exclusion $19,000, lifetime exemption $15M, what triggers a filing requirement, gift splitting, valuation rules for gifted property, direct tuition and medical e",
+      "category": "Estate & Gifts",
+      "type": "GUIDE",
+      "authority": "IRC §2501 IRC §2502 IRC §2503 IRC §2503"
+    },
+    {
+      "url": "form-8233-guide.html",
+      "title": "Form 8233 Treaty Exemption for Personal Services",
+      "heading": "Form 8233 Treaty Exemption for Personal Services",
+      "desc": "A plain-English guide to Form 8233, the treaty-based withholding exemption for nonresident alien personal services income. How students, teachers, researchers, athletes, and independent contractors cl",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1441 IRC §1442 IRC §3121 IRC §6114"
+    },
+    {
+      "url": "form-8854.html",
+      "title": "Form 8854 and the US Exit Tax: What Happens When You Renounce",
+      "heading": "Form 8854 and the US Exit Tax",
+      "desc": "A plain-English guide to Form 8854 and the US exit tax. The three covered expatriate tests (net worth $2M, average net income tax $211K for 2026, 5-year compliance certification), the mark-to-market r",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §877A IRC §877A IRC §877A IRC §877A IRC §877A IRC §877A IRC §2801 IRC §6039G"
+    },
+    {
+      "url": "form-8938-fatca-guide.html",
+      "title": "Form 8938 & FATCA: Reporting Foreign Financial Assets (2026)",
+      "heading": "Form 8938 & FATCA: Reporting Specified Foreign Financial Assets (2026)",
+      "desc": "Form 8938 (FATCA) reporting requirements for US persons with foreign financial assets. Thresholds by filing status and residency, what to report, how Form 8938 differs from FBAR, penalties, and the ov",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6038D IRC §6038D IRC §6038D IRC §6038D IRC §6038D IRC §6038D IRC §6662"
+    },
+    {
+      "url": "franchise-business-tax-guide.html",
+      "title": "Franchise Business Tax: Fees, Royalties, Area Developer Agreements & Multi-State (2026)",
+      "heading": "Franchise Business Tax: Fees, Royalties & Acquisition Structure",
+      "desc": "Tax guide for franchisors and franchisees: initial franchise fee treatment (amortize over 15 years vs. deduct), ongoing royalty payments as deductible business expenses, area developer and master fran",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §197 IRC §197"
+    },
+    {
+      "url": "fringe-benefits-guide.html",
+      "title": "Fringe Benefits Tax Guide: §132 Exclusions, De Minimis Rules & Imputed Income (2026)",
+      "heading": "Fringe Benefits: §132 Exclusions, Transportation & Imputed Income",
+      "desc": "Employee fringe benefits tax guide: §132 no-additional-cost services, qualified employee discounts, working condition fringes, de minimis fringes, transportation benefits, employer-provided meals and ",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §132 IRC §132"
+    },
+    {
+      "url": "fsa-dependent-care-guide.html",
+      "title": "FSA, Dependent Care FSA & Child Care Credit: Coordination Guide (2026)",
+      "heading": "Health FSA, Dependent Care FSA & Child Care Credit: 2026 Guide",
+      "desc": "Health FSA $3,400 and Dependent Care FSA $5,000 guide for 2026: how each reduces taxable income, §21 child and dependent care credit 20-35% up to $3,000/$6,000, the critical coordination rule preventi",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §125 IRC §106"
+    },
+    {
+      "url": "ftc-calculator.html",
+      "title": "Foreign Tax Credit Calculator (Form 1116) 2026",
+      "heading": "Foreign Tax Credit Calculator",
+      "desc": "Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116. FEIE vs. FTC comparison, per-basket limitation, carryforward. CPA-validated.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "gambling-tax-guide.html",
+      "title": "Gambling Income & Losses: W-2G, Session Method & Schedule A (2026)",
+      "heading": "Gambling Income & Losses: W-2G, Session Method & Schedule A",
+      "desc": "Gambling tax guide: all winnings are taxable income, losses deductible only if you itemize (limited to winnings), the IRS session method for casual gamblers, W-2G reporting thresholds, professional ga",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §61 IRC §165"
+    },
+    {
+      "url": "gift-estate-tax-guide.html",
+      "title": "US Gift & Estate Tax Guide (2026)",
+      "heading": "US Gift & Estate Tax Guide (2026)",
+      "desc": "How the US unified gift and estate tax system works. Annual exclusion ($19,000), lifetime exemption ($15M under OBBBA), gift splitting, GST tax, portability, and planning strategies. CPA-validated. IR",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §2001 IRC §2010 IRC §2031 IRC §2053 IRC §2056A IRC §2501 IRC §2503 IRC §2503"
+    },
+    {
+      "url": "gig-worker-tax-guide.html",
+      "title": "I Got a 1099-NEC: Gig Worker Tax Guide & Schedule C (2026)",
+      "heading": "I Got a 1099-NEC: Gig Worker & Freelancer Tax Guide",
+      "desc": "Plain-English guide for gig workers and freelancers who receive a 1099-NEC: what it means, Schedule C basics, the 15.3% self-employment tax, the home office deduction, quarterly estimated tax payments",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §1401 IRC §1402 IRC §164 IRC §162"
+    },
+    {
+      "url": "gilti-explained.html",
+      "title": "NCTI / GILTI: Net CFC Tested Income, §250 Deduction & OBBBA (2026)",
+      "heading": "NCTI / GILTI: Net CFC Tested Income & OBBBA Rules (2026)",
+      "desc": "NCTI (formerly GILTI) under OBBBA: renamed Net CFC Tested Income, §250 deduction reduced to 40% (effective rate 12.6%), permanent rules for US shareholders of CFCs. FDDEI, high-tax exclusion, §962 ele",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §951A IRC §250 IRC §957 IRC §951 IRC §960 IRC §962"
+    },
+    {
+      "url": "grantor-trust-guide.html",
+      "title": "Grantor Trust Rules: §671-678, IDGTs, Intentionally Defective Trusts & Estate Planning (2026)",
+      "heading": "Grantor Trust Rules: §671-678 & Intentionally Defective Trusts",
+      "desc": "Grantor trust rules guide: IRC §671-678 grantor trust definitions, how the grantor is taxed on trust income, intentionally defective grantor trusts (IDGTs) for estate planning, sale to an IDGT as an e",
+      "category": "Estate & Gifts",
+      "type": "GUIDE",
+      "authority": "IRC §671 IRC §673 IRC §674"
+    },
+    {
+      "url": "grat-crt-guide.html",
+      "title": "GRATs & Charitable Remainder Trusts: Estate Freeze & Income Planning (2026)",
+      "heading": "GRATs & Charitable Remainder Trusts: Estate Freeze & Income Planning",
+      "desc": "GRAT and CRT guide: how a grantor retained annuity trust freezes estate value using the §7520 rate, zeroed-out GRATs, the two-year minimum term after OBBBA, charitable remainder annuity trusts (CRATs)",
+      "category": "Estate & Gifts",
+      "type": "GUIDE",
+      "authority": "IRC §2702 IRC §2702"
+    },
+    {
+      "url": "gstt-guide.html",
+      "title": "Generation-Skipping Transfer Tax (GSTT): Exemption, Direct Skips & Taxable Terminations (2026)",
+      "heading": "Generation-Skipping Transfer Tax: GSTT Exemption & Planning",
+      "desc": "Generation-skipping transfer tax guide: GSTT basics, the $15 million GST exemption for 2026 (permanent under OBBBA), direct skips vs taxable terminations vs taxable distributions, 40% flat GST rate, d",
+      "category": "Estate & Gifts",
+      "type": "GUIDE",
+      "authority": "IRC §2601 IRC §2611 IRC §2612 IRC §2613"
+    },
+    {
+      "url": "hnw-planning-guide.html",
+      "title": "High Net Worth Tax Planning Guide (2026)",
+      "heading": "High Net Worth Tax Planning Guide (2026)",
+      "desc": "Comprehensive tax planning guide for high-net-worth individuals: estate and gift planning with the $15M OBBBA exemption, NIIT, SALT PTET elections, charitable strategies, entity structure, pre-exit pl",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1 IRC §1 IRC §1411 IRC §469 IRC §469 IRC §1202 IRC §453 IRC §2001"
+    },
+    {
+      "url": "hobby-loss-rules-guide.html",
+      "title": "Hobby Loss Rules: IRC §183, The 9-Factor Test & Profit Presumption (2026)",
+      "heading": "Hobby Loss Rules: IRC §183, the 9-Factor Test & Profit Presumption",
+      "desc": "Hobby loss rules under IRC §183: the nine-factor test for profit motive, the 3-of-5-year profit presumption, the post-TCJA deduction limitation, documentation strategies to defend business status, and",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §183 IRC §183 IRC §183 IRC §183"
+    },
+    {
+      "url": "home-office-calculator.html",
+      "title": "Home Office Deduction Calculator 2026",
+      "heading": "Home Office Deduction Calculator",
+      "desc": "Calculate home office deduction using simplified method ($5/sq ft) or actual expense method. Gross income limitation, Schedule A interaction, depreciation, carryforward. Self-employed only post-TCJA. ",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "home-office-guide.html",
+      "title": "Home Office Deduction: §280A Regular & Exclusive Use, Simplified Method (2026)",
+      "heading": "Home Office Deduction: §280A Regular & Exclusive Use Test",
+      "desc": "Home office deduction guide under IRC §280A: regular and exclusive use test, principal place of business, simplified $5/sq ft method vs actual expenses, self-employed vs employee limitation, and inter",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §280A IRC §280A"
+    },
+    {
+      "url": "home-sale-exclusion.html",
+      "title": "Home Sale Exclusion §121: $250,000/$500,000 Capital Gain Exclusion (2026)",
+      "heading": "Home Sale Exclusion §121: $250K / $500K Capital Gain Tax-Free",
+      "desc": "Home sale exclusion guide: §121 excludes up to $250,000 ($500,000 MFJ) of capital gain on sale of principal residence, 2-of-5-year ownership and use tests, partial exclusion for reduced circumstances ",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §121 IRC §121 IRC §121"
+    },
+    {
+      "url": "household-employee-guide.html",
+      "title": "Household Employee & Nanny Tax: Schedule H, FICA & State Obligations (2026)",
+      "heading": "Household Employee & Nanny Tax: Schedule H Guide",
+      "desc": "Household employee tax guide: who is a household employee, the $2,800 cash wage threshold for 2026, Schedule H mechanics, FICA employer and employee portions, federal unemployment (FUTA), state unempl",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §3510 IRC §3121"
+    },
+    {
+      "url": "hra-qsehra-ichra-guide.html",
+      "title": "HRA, QSEHRA & ICHRA: Small Business Health Reimbursement Arrangements (2026)",
+      "heading": "HRA, QSEHRA & ICHRA: Small Business Health Benefits",
+      "desc": "Health reimbursement arrangement guide: traditional HRA, Qualified Small Employer HRA (QSEHRA) $6,350/$12,800 limits for 2026, Individual Coverage HRA (ICHRA) with no dollar cap, how employees use HRA",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §105 IRC §106"
+    },
+    {
+      "url": "hsa-guide.html",
+      "title": "HSA Guide: Contribution Limits, HDHP Rules & Triple Tax Benefit (2026)",
+      "heading": "Health Savings Account (HSA): Contribution Limits, HDHP Rules & Triple Tax Benefit",
+      "desc": "Health Savings Account (HSA) guide: 2026 contribution limits ($4,400 individual / $8,750 family), HDHP eligibility requirements, the triple tax benefit, Medicare coordination, rollover rules, and inve",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §223 IRC §223 IRC §223 IRC §223"
+    },
+    {
+      "url": "illinois-income-tax-guide.html",
+      "title": "Illinois Income Tax: Flat 4.95% Rate, Retirement Income Exemption & Chicago Tax (2026)",
+      "heading": "Illinois Income Tax: 4.95% Flat Rate & Retirement Exemptions",
+      "desc": "Illinois income tax guide: flat 4.95% individual income tax rate, retirement income exemption (Social Security, pensions, 401(k)/IRA distributions all exempt from Illinois tax), Illinois personal exem",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "individual-extension.html",
+      "title": "Individual Tax Extension Reference (2026)",
+      "heading": "Individual Tax Extension Reference (2026)",
+      "desc": "Form 4868 individual extension rules for all 50 states, DC, and local jurisdictions. Automatic, accepts federal, separate form required. Expat 2-month extension, Form 2350, FBAR auto-extension. CPA-va",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "individual-tax.html",
+      "title": "Individual Tax",
+      "heading": "Individual Tax",
+      "desc": "Individual income tax guides and calculators: AMT, NIIT, self-employment tax, Social Security taxation, net operating loss, passive activity, at-risk rules, and filing mechanics. CPA-validated primary",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "inherited-money-guide.html",
+      "title": "I Inherited Money or Property: Tax Guide for Beneficiaries (2026)",
+      "heading": "I Inherited Money or Property: What You Actually Owe",
+      "desc": "Plain-English tax guide for beneficiaries: inherited cash is not income, the step-up in basis on inherited property, inherited IRA 10-year rule, estate tax threshold $15M, and the specific situations ",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §102 IRC §1014 IRC §1014"
+    },
+    {
+      "url": "installment-sales-guide.html",
+      "title": "Installment Sales: §453 Gross Profit Ratio, §453A Interest & Recapture (2026)",
+      "heading": "Installment Sales: §453 Mechanics, Gross Profit Ratio & §453A Interest",
+      "desc": "IRC §453 installment sale guide: gross profit ratio calculation, contract price, depreciation recapture accelerated in year of sale, §453A interest charge on deferred gains above $5M, related party ru",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §453 IRC §453 IRC §453 IRC §453"
+    },
+    {
+      "url": "interest-deductibility.html",
+      "title": "Vehicle & Investment Interest Deductibility 2026",
+      "heading": "Vehicle & Investment Interest Deductibility",
+      "desc": "Calculate deductible vehicle loan interest based on business use percentage, and investment interest expense deduction limited to net investment income. IRC Sections 163(h) and 163(d). CPA-validated.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "international-info-returns.html",
+      "title": "International Information Returns: Forms 5471, 5472, 8865, 3520, 8938 & FBAR",
+      "heading": "International Information Returns: The Complete Compliance Map",
+      "desc": "Complete compliance map for US international information returns: Forms 5471, 5472, 8865, 8858, 3520, 3520-A, 8938, FinCEN 114 (FBAR). Who files, thresholds, penalties, and deadlines. CPA-validated.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6038 IRC §6038 IRC §6038A IRC §6038A IRC §6038B IRC §6038D"
+    },
+    {
+      "url": "international-information-returns.html",
+      "title": "International Information Returns: Forms 5471, 5472, 8865, 8858, 3520, 8938 & FBAR",
+      "heading": "International Information Returns: The Complete Map",
+      "desc": "Complete guide to US international information return filing: Forms 5471, 5472, 8865, 8858, 3520, 3520-A, 8938, FinCEN 114 (FBAR), and 8621. Who must file, thresholds, penalties, and the statute of li",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6038 IRC §6038 IRC §6038A IRC §6038A IRC §6038D IRC §6677"
+    },
+    {
+      "url": "international-tax.html",
+      "title": "International Tax",
+      "heading": "International Tax",
+      "desc": "International tax guides and tools: FBAR, FATCA, Form 5471, GILTI, pre-immigration planning, US expat tax, dual-status returns, foreign tax credit, PFIC, and US-Canada tax planning. CPA-validated.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "investment-interest-expense-guide.html",
+      "title": "Investment Interest Expense: §163(d) Deduction Limit & Margin Loans (2026)",
+      "heading": "Investment Interest Expense: §163(d) Limit & Margin Loan Deduction",
+      "desc": "Investment interest expense deduction guide: margin loan interest deducted only against net investment income under IRC §163(d), what counts as investment income (dividends, interest, short-term gains",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §163 IRC §163"
+    },
+    {
+      "url": "investments-capital.html",
+      "title": "Investments & Capital Gains",
+      "heading": "Investments & Capital Gains",
+      "desc": "Investment tax guides: capital gain netting, tax loss harvesting, wash sale rule, cryptocurrency taxation, NIIT, QSBS 100% exclusion, charitable giving with appreciated securities, and donor-advised f",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "ira-basics-guide.html",
+      "title": "IRA & Retirement Plan Contribution Limits Guide (2026)",
+      "heading": "IRA & Retirement Limits (2026)",
+      "desc": "2026 IRA, Roth IRA, 401(k), 403(b), 457(b), SIMPLE, and HSA contribution limits and phase-outs. Traditional vs Roth IRA, deductibility phase-out, backdoor Roth, mega backdoor Roth, SECURE 2.0 catch-up",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §219 IRC §408 IRC §401 IRC §403 IRC §457 IRC §415 IRC §414 IRC §414"
+    },
+    {
+      "url": "ira-guide.html",
+      "title": "IRA Guide: Traditional vs. Roth, RMD Rules & Inherited IRA 10-Year Rule (2026)",
+      "heading": "IRA Guide: Traditional vs. Roth, RMDs & Inherited IRA Rules",
+      "desc": "Comprehensive IRA guide: traditional vs. Roth IRA contribution rules, deductibility limits, RMD rules post-SECURE 2.0 (age 73), the inherited IRA 10-year rule, Roth conversion strategies, backdoor Rot",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §408 IRC §408 IRC §408 IRC §408 IRC §408A IRC §72"
+    },
+    {
+      "url": "irs-accounts-guide.html",
+      "title": "IRS Online Accounts: What's There and How to Use One",
+      "heading": "IRS Online Accounts: What's There and How to Use One",
+      "desc": "A plain-English guide to the IRS's online accounts for individuals, businesses, and tax professionals. What you can see (transcripts, balances, payments, notices), how ID.me verification works, and th",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6103"
+    },
+    {
+      "url": "irs-audit-guide.html",
+      "title": "IRS Audit Guide: Triggers, Process, Appeals & Statute of Limitations (2026)",
+      "heading": "IRS Audit Guide: Triggers, Process & Appeals",
+      "desc": "IRS audit guide: what triggers audits, correspondence vs. office vs. field examination, the 3-year and 6-year statute of limitations, the appeals process, IRS settlement strategies, and how to respond",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6501 IRC §6501 IRC §6212 IRC §6213 IRC §6320"
+    },
+    {
+      "url": "irs-mailing-addresses-abroad.html",
+      "title": "IRS Mailing Addresses for People Living Abroad (2025 / 2026)",
+      "heading": "IRS Mailing Addresses for People Living Abroad",
+      "desc": "Exact IRS mailing addresses for US citizens and residents living abroad. Form 1040, 1040-NR, 1040-X, FBAR, ITIN, extensions. USPS vs. FedEx/UPS/DHL. Timely mailing rules. Verified from IRS.gov and IRS",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "irs-notice-guide.html",
+      "title": "IRS Notices Explained: CP2000, CP11, CP14 & How to Respond (2026)",
+      "heading": "IRS Notices Explained: What They Mean & What to Do",
+      "desc": "Plain-English guide to the most common IRS notices: CP2000 (income mismatch), CP11 and CP12 (math errors), CP14 (balance due), LT11 and Letter 1058 (final notice before levy). What each notice means, ",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": "IRC §6212 IRC §6213 IRC §6321 IRC §6330"
+    },
+    {
+      "url": "irs-payments-guide.html",
+      "title": "How to Pay the IRS: All the Options, Plainly",
+      "heading": "How to Pay the IRS: All the Options, Plainly",
+      "desc": "A plain-English guide to paying federal taxes. IRS Direct Pay, EFTPS, same-day wire (with verified ABA 091036164 and beneficiary format), foreign wire transfers, paying by check (Form 1040-V), debit a",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "itemized-deductions-guide.html",
+      "title": "Itemized Deductions: SALT, Mortgage Interest, Charitable & Medical (2026)",
+      "heading": "Itemized Deductions: SALT Cap, Mortgage Interest & Charitable (2026)",
+      "desc": "Itemized deductions guide: when itemizing beats the standard deduction, SALT cap $10,000 under OBBBA, mortgage interest deduction limits on $750,000 of acquisition debt, qualified residence interest, ",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §63 IRC §164 IRC §163"
+    },
+    {
+      "url": "itin-guide.html",
+      "title": "ITIN Applications and Form W-7",
+      "heading": "ITIN Applications and Form W-7",
+      "desc": "A plain-English guide to applying for an Individual Taxpayer Identification Number (ITIN) on Form W-7. Who needs an ITIN, the five exception categories that allow application without a tax return, the",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6109 IRC §6109"
+    },
+    {
+      "url": "k1-decoder.html",
+      "title": "K-1 Decoder: Every Box and Code Explained (Partnership & S-Corp)",
+      "heading": "K-1 Decoder: Every Box & Code Explained",
+      "desc": "Interactive K-1 decoder: look up every box and code on Schedule K-1 Form 1065 (partnership) and Form 1120-S (S-corp). Search any code like 20Z, 13W, or 17A and instantly see what it means and where it",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "kiddie-tax-guide.html",
+      "title": "Kiddie Tax: §1(g) Unearned Income of Children Taxed at Parent's Rate (2026)",
+      "heading": "Kiddie Tax: §1(g) Net Unearned Income at Parent's Rate",
+      "desc": "Kiddie tax guide under IRC §1(g): which children are subject to the kiddie tax, what counts as net unearned income, how the parent's marginal rate applies to the child's investment income, the thresho",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §1 IRC §1"
+    },
+    {
+      "url": "law-firm-partnership-tax-guide.html",
+      "title": "Law Firm & Professional Services Partnership Tax: Partner Economics, §199A & Retirement (2026)",
+      "heading": "Law Firm & Professional Services Partnership Tax",
+      "desc": "Tax guide for law firms and professional services partnerships: equity vs. non-equity partner economics, guaranteed payments vs. distributive shares, §199A SSTB limitation for law firms, self-employme",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §707 IRC §702 IRC §1402"
+    },
+    {
+      "url": "life-insurance-tax-guide.html",
+      "title": "Life Insurance Tax Treatment: §101 Exclusion, §7702, COLI & Modified Endowment Contracts (2026)",
+      "heading": "Life Insurance Tax Treatment: §101, §7702, COLI & MECs",
+      "desc": "Life insurance tax guide: §101(a) death benefit income exclusion, §7702 definition of life insurance contract, modified endowment contracts (MECs) and the 7-pay test, COLI corporate-owned life insuran",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §101 IRC §101"
+    },
+    {
+      "url": "like-kind-exchange-deep.html",
+      "title": "1031 Exchange Deep Dive: Boot, Identification Rules & Reverse Exchanges (2026)",
+      "heading": "1031 Exchange Deep Dive: Boot, Identification Rules & Reverse Exchanges",
+      "desc": "Like-kind exchange mechanics: boot calculation, the 45-day identification rule and 3-property/200%/95% tests, the 180-day exchange period, reverse exchanges under Rev. Proc. 2000-37, improvement excha",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1031 IRC §1031 IRC §1031 IRC §1031"
+    },
+    {
+      "url": "marital-deduction-guide.html",
+      "title": "Marital Deduction Guide: §2056 Estate Tax, §2523 Gift Tax & QDOT for Non-Citizens (2026)",
+      "heading": "Marital Deduction: §2056 Estate Tax, §2523 Gift Tax & QDOT for Non-Citizens",
+      "desc": "Marital deduction guide: IRC §2056 unlimited estate marital deduction, §2523 unlimited gift marital deduction, QTIP trusts, QDOT trusts for non-citizen surviving spouses, the $190,000 annual gift limi",
+      "category": "Estate & Gifts",
+      "type": "GUIDE",
+      "authority": "IRC §2056 IRC §2056 IRC §2056A"
+    },
+    {
+      "url": "meals-and-entertainment-guide.html",
+      "title": "Meals & Entertainment Deduction Guide (2026)",
+      "heading": "Meals & Entertainment (2026)",
+      "desc": "Business meals and entertainment deductibility under IRC Section 274 for 2026. The 50% meal standard, 0% entertainment disallowance (TCJA), the new Section 274(o) employer-meals disallowance effective",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §274 IRC §274 IRC §274 IRC §274 IRC §274 IRC §274 IRC §274 IRC §274"
+    },
+    {
+      "url": "medical-expense-deduction-guide.html",
+      "title": "Medical Expense Deduction: 7.5% AGI Floor, Qualifying Costs & HSA Interaction (2026)",
+      "heading": "Medical Expense Deduction: 7.5% AGI Floor & Qualifying Costs",
+      "desc": "Medical expense deduction guide: the 7.5% AGI floor under IRC §213, what medical expenses qualify (and what does not), home accessibility modifications, long-term care insurance premiums by age, cosme",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §213 IRC §213"
+    },
+    {
+      "url": "medicare-irmaa-guide.html",
+      "title": "Medicare & IRMAA: Income-Related Premium Surcharges (2026)",
+      "heading": "Medicare & IRMAA: Income-Related Premium Surcharges Explained",
+      "desc": "Medicare IRMAA guide: how income-related premium surcharges work for Parts B and D, 2026 IRMAA thresholds, the two-year lookback, how to appeal a life-changing event, and retirement income planning to",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "military-tax-guide.html",
+      "title": "Military Tax: Combat Pay, BAH, BAS & Veteran Benefits (2026)",
+      "heading": "Military Tax: Combat Pay, BAH, BAS & VA Benefits",
+      "desc": "Military tax guide: combat zone pay exclusion for all compensation received while serving in a designated combat zone, basic allowance for housing (BAH) and basic allowance for subsistence (BAS) exclu",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §112 IRC §134"
+    },
+    {
+      "url": "mortgage-interest-calculator.html",
+      "title": "Mortgage Interest Deduction Limit Calculator 2026",
+      "heading": "Mortgage Interest Deduction Limit Calculator",
+      "desc": "Calculate deductible mortgage interest under the $750,000 TCJA cap and $1,000,000 grandfathered limit. Multiple mortgages, home equity debt rules, Schedule A. CPA-validated. IRC Section 163(h)(3).",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "net-operating-loss-guide.html",
+      "title": "Net Operating Loss (NOL): §172 Carryforward Rules & 80% Limit (2026)",
+      "heading": "Net Operating Loss: §172 Carryforward, 80% Limit & Carryback Rules",
+      "desc": "Net operating loss guide: §172 indefinite carryforward, 80% taxable income limitation, no carryback for most taxpayers, CARES Act 2018-2020 NOLs, farming loss exception, and multi-year absorption trac",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §172 IRC §172 IRC §172 IRC §172 IRC §172"
+    },
+    {
+      "url": "new-jersey-income-tax-guide.html",
+      "title": "New Jersey Income Tax: Rates, Retirement Exclusion & Property Tax Relief (2026)",
+      "heading": "New Jersey Income Tax: 10.75% Top Rate & Retirement Exclusion",
+      "desc": "New Jersey income tax guide: NJ graduated rates up to 10.75% on income above $1 million, retirement income exclusion up to $100,000 for qualifying taxpayers, New Jersey does not tax Social Security, u",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "niit-guide.html",
+      "title": "Net Investment Income Tax (IRC §1411) Guide 2026",
+      "heading": "Net Investment Income Tax (IRC §1411) Guide 2026",
+      "desc": "The 3.8% Net Investment Income Tax on investment income above AGI thresholds. What is NIIT, what income it applies to, exceptions for active business income and real estate professionals, and planning",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1411 IRC §469 IRC §469"
+    },
+    {
+      "url": "niit-net-investment-income-tax-guide.html",
+      "title": "Net Investment Income Tax (NIIT): 3.8% Surtax on Investment Income (2026)",
+      "heading": "Net Investment Income Tax: 3.8% Surtax on Passive & Investment Income",
+      "desc": "Net investment income tax guide: 3.8% Medicare surtax on net investment income above the threshold ($200,000 single / $250,000 MFJ), what counts as net investment income (dividends, interest, capital ",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §1411 IRC §1411"
+    },
+    {
+      "url": "no-income-tax-countries.html",
+      "title": "Countries with No Personal Income Tax (2026)",
+      "heading": "Countries with No Personal Income Tax (2026)",
+      "desc": "Complete list of countries with zero personal income tax in 2026. UAE, Qatar, Bahamas, Monaco, Cayman Islands and more. Critical note for US citizens: the US taxes worldwide income regardless of resid",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §61 IRC §911 IRC §901 IRC §7701 IRC §877A IRC §6038D"
+    },
+    {
+      "url": "no-income-tax-states.html",
+      "title": "States with No Personal Income Tax (2026)",
+      "heading": "States with No Personal Income Tax (2026)",
+      "desc": "Nine states currently have no broad personal income tax in 2026: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. CPA-validated analysis with state-by-s",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "nol-tracker.html",
+      "title": "Net Operating Loss (NOL) Tracker 2026",
+      "heading": "Net Operating Loss (NOL) Tracker 2026",
+      "desc": "Track NOL carryforwards under post-TCJA rules. 80% taxable income limitation. No carryback (except farming). State conformity varies. CPA-validated. IRC 172.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "nonprofit-501c3-guide.html",
+      "title": "§501(c)(3) Tax-Exempt Organizations: Formation, UBIT, Private Foundations & Form 990 (2026)",
+      "heading": "§501(c)(3) Tax-Exempt Organizations: Formation, UBIT & Compliance",
+      "desc": "Tax-exempt organization guide: §501(c)(3) qualification requirements, public charity vs private foundation distinction, unrelated business income tax UBIT §511-513, private foundation excise taxes, Fo",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §501 IRC §508"
+    },
+    {
+      "url": "nra-estate-tax.html",
+      "title": "US Estate Tax for Non-Resident Aliens: Form 706-NA Guide (2026)",
+      "heading": "US Estate Tax for Non-Resident Aliens: The $60,000 Problem",
+      "desc": "Non-resident aliens who own US assets face US estate tax at death with only a $60,000 exemption - not the $15M available to US citizens. How the NRA estate tax works, what assets are included, FIRPTA ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §2101 IRC §2102 IRC §2104 IRC §2105 IRC §2106 IRC §2107 IRC §2501"
+    },
+    {
+      "url": "nua-guide.html",
+      "title": "Net Unrealized Appreciation (NUA): Company Stock in a 401(k) Strategy (2026)",
+      "heading": "Net Unrealized Appreciation (NUA): The Company Stock Distribution Strategy",
+      "desc": "Net unrealized appreciation NUA guide: taking company stock from a 401(k) as a lump-sum distribution instead of rolling to IRA, NUA taxed at long-term capital gains rates instead of ordinary income, c",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §402 IRC §402"
+    },
+    {
+      "url": "nyc-ubt-guide.html",
+      "title": "NYC Unincorporated Business Tax (UBT): Who Pays, How It Works & Planning (2026)",
+      "heading": "NYC Unincorporated Business Tax: UBT Rates, Exemptions & Credit",
+      "desc": "New York City Unincorporated Business Tax guide: who is subject to UBT (partnerships, LLCs, sole proprietors), the 4% UBT rate, the $95,000 exemption, deduction for NYC resident credit, investment inc",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "obbba-guide.html",
+      "title": "OBBBA Guide - Key Tax Provisions of the One Big Beautiful Bill Act (P.L. 119-21)",
+      "heading": "One Big Beautiful Bill Act (2025)",
+      "desc": "The biggest provisions of the One Big Beautiful Bill Act (OBBBA, P.L. 119-21), signed July 4, 2025. Individual and business changes: SALT cap, estate exemption, tip and overtime deductions, Section 17",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §24"
+    },
+    {
+      "url": "obbba-new-deductions-guide.html",
+      "title": "OBBBA New Deductions: Tips, Overtime, Auto Loan Interest & Trump Accounts (2026)",
+      "heading": "OBBBA New Deductions: Tips, Overtime, Auto Loan Interest & Trump Accounts",
+      "desc": "OBBBA new deductions guide: qualified tips above-the-line deduction, qualified overtime deduction, auto loan interest for US-made vehicles, Trump Account savings for children under 8. All four new 202",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "obbba-state-conformity-guide.html",
+      "title": "OBBBA State Tax Conformity: Which States Follow Federal Changes (2026)",
+      "heading": "OBBBA State Conformity: Which States Follow Federal Law",
+      "desc": "State conformity to OBBBA P.L. 119-21 guide: how rolling vs. static conformity works, which states automatically adopt federal changes vs. require legislation, known non-conformity positions on bonus ",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "oil-gas-tax-guide.html",
+      "title": "Oil & Gas Tax: Depletion, Intangible Drilling Costs & Energy Credits (2026)",
+      "heading": "Oil & Gas Tax: Depletion, IDCs & Energy Credits",
+      "desc": "Oil and gas taxation guide: percentage depletion vs cost depletion, intangible drilling costs (IDCs) as immediate deductions, working interest passive activity exception, §29/§45 production credits, i",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §611 IRC §613"
+    },
+    {
+      "url": "opportunity-zone-guide.html",
+      "title": "Opportunity Zone Investment: Capital Gain Deferral & Exclusion (2026)",
+      "heading": "Opportunity Zone: Capital Gain Deferral & 10-Year Exclusion",
+      "desc": "Qualified opportunity zone guide: investing capital gains in a qualified opportunity fund defers recognition until 2026 (or earlier disposition), 10% basis step-up eliminated by OBBBA but deferral rem",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1400Z IRC §1400Z"
+    },
+    {
+      "url": "options-tax-guide.html",
+      "title": "Stock Options Trading Tax: Covered Calls, Puts, §1256 & Straddle Rules (2026)",
+      "heading": "Stock Options Tax: Covered Calls, Index Options & Straddle Rules",
+      "desc": "Investment options tax guide: how buying and selling options is taxed, short-term vs. long-term capital gain on option exercises and expirations, covered call interaction with holding period of underl",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1234 IRC §1234 IRC §125"
+    },
+    {
+      "url": "partnership-basis-guide.html",
+      "title": "Partnership Tax Basis: Inside vs. Outside Basis, §704(b) & §754 Elections (2026)",
+      "heading": "Partnership Tax Basis: Inside vs. Outside Basis",
+      "desc": "Partnership basis guide: outside basis in the partnership interest vs inside basis in partnership assets, §704(b) capital accounts, §704(c) built-in gain, §754 election to step up inside basis on tran",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §705 IRC §722 IRC §752"
+    },
+    {
+      "url": "partnership-liquidation-guide.html",
+      "title": "Partnership Liquidation & Retirement: §736 Payments, §751 Hot Assets & Basis (2026)",
+      "heading": "Partnership Liquidation: §736 Payments & Hot Asset Rules",
+      "desc": "Partnership liquidation tax guide: §736(a) payments treated as distributive share or guaranteed payment (ordinary income) vs. §736(b) payments for partner's interest in property (capital gain or retur",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §736 IRC §736"
+    },
+    {
+      "url": "partnership-tax-basics.html",
+      "title": "Partnership Tax Basics: IRC 704, 752, and 754 Elections Explained",
+      "heading": "Partnership Tax Basics: IRC 704, 752 & 754 Elections",
+      "desc": "Partnership taxation explained: IRC §704(b) substantial economic effect, §704(c) built-in gain allocations, §752 liability allocation, §754 elections and §743(b)/§734(b) adjustments, and the basics of",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §702 IRC §704 IRC §704 IRC §704"
+    },
+    {
+      "url": "passive-activity-loss-guide.html",
+      "title": "Passive Activity Loss Rules §469: Material Participation & Rental Losses (2026)",
+      "heading": "Passive Activity Loss Rules §469: Material Participation & Rental Losses",
+      "desc": "Passive activity loss guide: §469 limits deduction of passive losses to passive income only, seven material participation tests, the $25,000 rental loss allowance for active participants phasing out f",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §469 IRC §469 IRC §469"
+    },
+    {
+      "url": "passive-activity-loss.html",
+      "title": "Passive Activity Loss (PAL) Calculator 2026",
+      "heading": "Passive Activity Loss (PAL) Calculator 2026",
+      "desc": "Calculate passive activity loss limitations. Material participation tests, real estate professional status, $25,000 rental allowance, PAL carryforward. CPA-validated. IRC Section 469.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "passive-loss-grouping-guide.html",
+      "title": "Passive Activity Grouping Elections: §469 Strategy to Unlock Deductions (2026)",
+      "heading": "Passive Activity Grouping Elections: §469 Strategy Guide",
+      "desc": "Passive activity loss grouping election guide under IRC §469 and Treas. Reg. §1.469-4: how grouping multiple activities as one can convert passive losses to deductible non-passive losses, material par",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §469 IRC §469"
+    },
+    {
+      "url": "payroll-tax-guide.html",
+      "title": "Payroll Tax Guide: Employer Obligations, Trust Fund Penalty & Worker Classification",
+      "heading": "Payroll Tax Guide: Employer Obligations, Trust Fund Penalty & Worker Classification",
+      "desc": "Payroll tax guide: employer FICA and FUTA obligations, the §6672 trust fund recovery penalty (100% personal liability), worker classification (employee vs. independent contractor), the 20-factor test,",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §3101 IRC §3111 IRC §3121 IRC §3301 IRC §3102 IRC §3402 IRC §6302"
+    },
+    {
+      "url": "penalty-calculator.html",
+      "title": "IRS Penalty & Interest Calculator 2026",
+      "heading": "IRS Penalty & Interest Calculator",
+      "desc": "Calculate IRS failure-to-file penalty, failure-to-pay penalty, accuracy-related penalty, and underpayment interest. CPA-validated. IRC Sections 6651, 6654, 6601.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "pfic-8621-checker.html",
+      "title": "PFIC / Form 8621 Checker & Tax Regime Analyzer 2026",
+      "heading": "PFIC / Form 8621 Checker & Regime Analyzer",
+      "desc": "Determine PFIC status using income and asset tests. Compare excess distribution (IRC §1291), QEF election (IRC §1293), and mark-to-market (IRC §1296) regimes. Form 8621 filing requirements. CPA-valida",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "pfic-guide-deep.html",
+      "title": "PFIC Deep Dive: Excess Distribution, QEF & Mark-to-Market Elections",
+      "heading": "PFIC Deep Dive: Excess Distribution, QEF & Mark-to-Market",
+      "desc": "PFIC taxation explained: §1291 excess distribution regime with interest charge, QEF election, mark-to-market election, the income and asset tests, Form 8621, purging elections, and the once-a-PFIC-alw",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1291 IRC §1291 IRC §1293 IRC §1295 IRC §1296"
+    },
+    {
+      "url": "pfic-guide.html",
+      "title": "PFICs and Form 8621 Explained",
+      "heading": "PFICs and Form 8621 Explained",
+      "desc": "A plain-English guide to the Passive Foreign Investment Company (PFIC) regime under IRC §§1291-1298. The income and asset tests, the three taxation regimes (default §1291 excess distribution, QEF elec",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1291 IRC §1293 IRC §1295 IRC §1296 IRC §1297 IRC §1297 IRC §1297 IRC §1298"
+    },
+    {
+      "url": "pillar-two-guide.html",
+      "title": "Pillar Two: OECD Global Minimum Tax, UTPR & US Position (2026)",
+      "heading": "Pillar Two: OECD Global Minimum Tax & US Multinationals",
+      "desc": "Pillar Two OECD global minimum tax guide: the 15% global minimum tax framework, Income Inclusion Rule (IIR), Undertaxed Profits Rule (UTPR), Qualified Domestic Minimum Top-Up Tax (QDMTT), which compan",
+      "category": "International Tax",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "pre-immigration-planning.html",
+      "title": "Pre-Immigration Tax Planning Checklist",
+      "heading": "Pre-Immigration Tax Planning Checklist",
+      "desc": "What to do before getting a US green card or visa. Pre-immigration tax planning checklist: entity restructuring, trust planning, retirement accounts, foreign pension reporting, PFIC elections, FBAR, a",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §7701 IRC §1291 IRC §951 IRC §951A IRC §957 IRC §679 IRC §6048 IRC §6038"
+    },
+    {
+      "url": "puerto-rico-act60-guide.html",
+      "title": "Puerto Rico Act 60: 0-4% Income Tax, Bona Fide Residency & IRS Scrutiny (2026)",
+      "heading": "Puerto Rico Act 60: 4% Capital Gains, Bona Fide Residency & IRS Rules",
+      "desc": "Puerto Rico Act 60 tax incentives guide: Individual Investors Act Chapter 2 4% flat rate on capital gains, 0% on dividends and interest, 100-day physical presence requirement to establish bona fide re",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §933 IRC §937"
+    },
+    {
+      "url": "qbi-calculator.html",
+      "title": "QBI Deduction Calculator 2026",
+      "heading": "QBI Deduction Calculator 2026  IRC 199A",
+      "desc": "Calculate the Section 199A qualified business income deduction. W-2 wage limitation, UBIA property limit, SSTB phaseout, aggregation. CPA-validated. IRC 199A. OBBBA permanent.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "qbi-deduction-guide.html",
+      "title": "IRC §199A QBI Deduction Guide (2026)",
+      "heading": "IRC §199A Qualified Business Income Deduction (2026)",
+      "desc": "Complete guide to the Section 199A qualified business income deduction for 2026. 20% deduction for pass-through income, W-2 wage limitations, SSTB phase-out, OBBBA made permanent. CPA-validated. 2026 ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §199A IRC §199A"
+    },
+    {
+      "url": "qcd-charitable-guide.html",
+      "title": "Qualified Charitable Distribution (QCD): Tax-Free IRA Giving at Age 70.5+ (2026)",
+      "heading": "Qualified Charitable Distribution: $105,000 Tax-Free IRA Gift (2026)",
+      "desc": "Qualified charitable distribution guide: QCD allows IRA owners age 70.5 or older to transfer up to $105,000 directly to charity tax-free, the amount counts toward RMD but is excluded from gross income",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §408"
+    },
+    {
+      "url": "qoz-guide.html",
+      "title": "Qualified Opportunity Zone (QOZ) Tax Guide 2026",
+      "heading": "Qualified Opportunity Zone (QOZ) Tax Guide 2026",
+      "desc": "Complete QOZ guide: capital gain deferral, exclusion of appreciation, 180-day reinvestment window, December 31 2026 deferral deadline, Form 8997. CPA-validated. IRC 1400Z-2.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "qsbs-section-1202-guide.html",
+      "title": "§1202 QSBS: 100% Capital Gains Exclusion on Qualified Small Business Stock (2026)",
+      "heading": "§1202 QSBS: 100% Capital Gains Exclusion for Startup Investors",
+      "desc": "Qualified small business stock guide: §1202 exclusion up to 100% of capital gain on QSBS held more than 5 years, $10 million or 10x basis limit, C-corporation requirement, active business test excludi",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1202 IRC §1202"
+    },
+    {
+      "url": "qualified-401k-guide.html",
+      "title": "401(k) Tax Guide: Contribution Limits, Roth vs. Traditional, Employer Match (2026)",
+      "heading": "401(k) Tax Guide: Limits, Roth vs. Traditional & Employer Match",
+      "desc": "Complete 401(k) guide: 2026 contribution limits $23,500 employee / $70,000 total, catch-up contributions at 50 and 60-63, Roth vs traditional 401(k) decision, employer match mechanics, early withdrawa",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §401 IRC §402 IRC §414"
+    },
+    {
+      "url": "qualified-dividends-guide.html",
+      "title": "Qualified Dividends: 0%, 15%, 20% Rates, Holding Period & NIIT (2026)",
+      "heading": "Qualified Dividends: 0%, 15%, and 20% Rates Explained",
+      "desc": "2026 qualified dividend tax guide: 0% rate up to $49,450 single/$98,900 MFJ per Rev. Proc. 2025-32, 60-day holding period requirement, what makes dividends qualified, REIT ordinary treatment, NIIT int",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1 IRC §1 IRC §246"
+    },
+    {
+      "url": "rd-tax-credit-guide.html",
+      "title": "R&D Tax Credit Guide: IRC Section 41 Explained (2026)",
+      "heading": "R&D Tax Credit: IRC Section 41 Explained",
+      "desc": "The R&D tax credit under IRC §41: the four-part test, qualified research expenses (QREs), the regular and ASC credit methods, payroll tax offset for startups, documentation requirements, and OBBBA int",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §41 IRC §41 IRC §41 IRC §41 IRC §41 IRC §41 IRC §41"
+    },
+    {
+      "url": "real-estate-professional-tax-guide.html",
+      "title": "Real Estate Professional Tax Guide: 750-Hour Test, Active Losses & Entity Structure (2026)",
+      "heading": "Tax Guide for Real Estate Professionals",
+      "desc": "Tax guide for real estate professionals: qualifying for RE professional status under IRC §469(c)(7), the 750-hour and 50% time tests, grouping election to aggregate rental activities, converting passi",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §469 IRC §469"
+    },
+    {
+      "url": "real-estate-tax-guide.html",
+      "title": "Real Estate Tax Guide: §1231, Depreciation Recapture, Dealer vs. Investor (2026)",
+      "heading": "Real Estate Tax Guide: §1231, Recapture & Passive Rules",
+      "desc": "Real estate taxation: IRC §1231 gains, §1250 depreciation recapture (25% rate), dealer vs. investor classification, passive activity rules for rentals, short-term rental exception, cost segregation, a",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1231 IRC §1231 IRC §1245 IRC §1250"
+    },
+    {
+      "url": "real-estate-tax.html",
+      "title": "Real Estate Tax",
+      "heading": "Real Estate Tax",
+      "desc": "Real estate tax guides: §1231 gains, §1250 depreciation recapture, 1031 like-kind exchanges, passive activity rules, real estate professional election, cost segregation, and opportunity zones. CPA-val",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "reinsurance-tax-guide.html",
+      "title": "Reinsurance Tax: Related-Party Reinsurance, §845, BEAT & Offshore Structures (2026)",
+      "heading": "Reinsurance Tax: Related-Party Structures, §845 & BEAT",
+      "desc": "Reinsurance taxation guide: how treaty and facultative reinsurance income is taxed, IRS authority under §845 to reallocate reinsurance income between related parties, offshore related-party reinsuranc",
+      "category": "International Tax",
+      "type": "GUIDE",
+      "authority": "IRC §845 IRC §59A"
+    },
+    {
+      "url": "remote-worker-state-tax.html",
+      "title": "State Income Tax for Remote Workers (2026)",
+      "heading": "State Income Tax for Remote Workers (2026)",
+      "desc": "Which state can tax your remote work income? New York convenience of employer rule, dual-state filing obligations, thresholds, reciprocity agreements. CPA-validated. 2026.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "restaurant-hospitality-tax-guide.html",
+      "title": "Restaurant & Hospitality Tax: Tips, FICA Tip Credit & Cost Segregation (2026)",
+      "heading": "Restaurant & Hospitality Tax: Tips, FICA Credit & Buildout Deductions",
+      "desc": "Tax guide for restaurants and hospitality businesses: FICA tip credit §45B, tip reporting obligations, cost segregation for restaurant buildouts, meals and entertainment deductions post-TCJA, Section ",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §45B IRC §274"
+    },
+    {
+      "url": "retirement-savings.html",
+      "title": "Retirement & Savings",
+      "heading": "Retirement & Savings",
+      "desc": "Retirement tax guides: traditional vs. Roth IRA, RMD rules at age 73, inherited IRA 10-year rule, backdoor Roth pro-rata rule, Roth conversion strategies, Social Security taxation, and qualified chari",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "rmd-guide.html",
+      "title": "RMD Guide: Required Minimum Distributions, Age 73 & Inherited IRA Rules (2026)",
+      "heading": "Required Minimum Distributions: Age 73, Calculation & Inherited IRA Rules",
+      "desc": "Required minimum distribution guide: RMD age 73 (SECURE 2.0), Uniform Lifetime Table calculation, the inherited IRA 10-year rule, spouse exception, QCD up to $111,000, and the 25% penalty for missed R",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §401 IRC §4974"
+    },
+    {
+      "url": "roth-conversion-guide.html",
+      "title": "Roth Conversion Guide: Tax Cost, Timing & Pro-Rata Rule (2026)",
+      "heading": "Roth Conversion: Tax Cost, Pro-Rata Rule & Timing Strategy",
+      "desc": "Roth conversion guide: converting traditional IRA to Roth triggers ordinary income tax, pro-rata rule aggregates all IRAs for basis calculation, best years to convert are low-income years before RMDs ",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §408A IRC §408"
+    },
+    {
+      "url": "roth-conversion.html",
+      "title": "Roth Conversion Optimizer 2026",
+      "heading": "Roth Conversion Optimizer 2026",
+      "desc": "Model Roth IRA conversion amounts by bracket. Show tax cost today vs. tax-free growth benefit. Break-even analysis. Pro-rata rule. 5-year rule. IRMAA impact. CPA-validated. IRC 408A.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "rrsp-rrif-us-persons.html",
+      "title": "RRSP and RRIF for US Persons",
+      "heading": "RRSP and RRIF for US Persons",
+      "desc": "A plain-English guide to how the IRS treats Canadian RRSPs and RRIFs for US persons. The automatic tax deferral under Rev. Proc. 2014-55, the elimination of Form 8891, what's still reportable on FBAR ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "rsu-restricted-stock-guide.html",
+      "title": "RSU & Restricted Stock Tax: Vesting Income, Withholding & Sale Treatment (2026)",
+      "heading": "RSU & Restricted Stock: Vesting Income, Withholding & Capital Gain",
+      "desc": "RSU and restricted stock tax guide: restricted stock units taxed as ordinary income at vesting at FMV, restricted stock with §83(b) election to recognize income at grant, supplemental wage withholding",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §83 IRC §83"
+    },
+    {
+      "url": "russia-treaty-suspension.html",
+      "title": "US-Russia Tax Treaty Suspension 2023: What It Means for Taxpayers",
+      "heading": "US-Russia Tax Treaty Suspension: What Taxpayers Need to Know",
+      "desc": "Russia partially suspended the US-Russia income tax treaty in August 2023. Key income provisions are suspended. Residency (Article 4) and structural articles remain in force. Withholding changes, pens",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §901 IRC §904"
+    },
+    {
+      "url": "s-corp-tax-guide.html",
+      "title": "S-Corporation Tax Guide: Election, Reasonable Compensation & Pass-Through (2026)",
+      "heading": "S-Corporation Tax: Election, Reasonable Comp & W-2/K-1 Split",
+      "desc": "S-corporation tax guide: S-corp election requirements, one class of stock rule, 100 shareholder limit, reasonable compensation requirement to avoid SE tax avoidance, W-2/K-1 split strategy, built-in g",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §1361 IRC §1362 IRC §1366 IRC §13"
+    },
+    {
+      "url": "s-corporation-basics.html",
+      "title": "S-Corporation Tax Basics: Election, Basis, Built-In Gains & Passive Income (2026)",
+      "heading": "S-Corporation Tax Basics: Election, Basis, BIG Tax & §1375",
+      "desc": "S-corporation taxation: the §1362 election and eligibility requirements, shareholder stock and debt basis, the built-in gains tax (§1374), excess passive income penalty (§1375), AAA and AE&P, and the ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1361 IRC §1362 IRC §1362 IRC §1363 IRC §1366"
+    },
+    {
+      "url": "saas-international-tax-guide.html",
+      "title": "SaaS International Tax: VAT Reverse Charge, EU OSS & FDII (2026)",
+      "heading": "SaaS International Tax: VAT, Reverse Charge & FDII",
+      "desc": "International tax guide for SaaS companies: EU VAT on digital services and the One-Stop Shop (OSS), UK digital services VAT, B2B reverse charge mechanism eliminating seller registration requirement, G",
+      "category": "International Tax",
+      "type": "GUIDE",
+      "authority": "IRC §250 IRC §250"
+    },
+    {
+      "url": "saas-sales-tax-guide.html",
+      "title": "SaaS Sales Tax: Economic Nexus, Taxability by State & Wayfair (2026)",
+      "heading": "SaaS Sales Tax: Economic Nexus and Taxability by State",
+      "desc": "SaaS state sales tax guide: post-Wayfair economic nexus thresholds, which states tax SaaS and which do not, B2B vs B2C treatment differences, marketplace facilitator rules for SaaS platforms, audit ex",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "safe-harbor.html",
+      "title": "Safe Harbor Estimated Tax Calculator - Federal & All 50 States",
+      "heading": "Safe Harbor Estimated Tax Calculator",
+      "desc": "Calculate federal and all 50-state safe harbor estimated tax payments. Quarterly schedule. California, Virginia, Hawaii, Iowa special rules. CPA-validated. IRC Section 6654.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "salt-planning-guide.html",
+      "title": "SALT Deduction Planning: $10,000 Cap, PTET Elections & Workarounds (2026)",
+      "heading": "SALT Planning: $10,000 Cap, PTET Elections & State Workarounds",
+      "desc": "SALT deduction planning guide: the $10,000 federal cap on state and local tax deductions enacted by TCJA and maintained by OBBBA, pass-through entity tax (PTET) elections in 36+ states that allow part",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": "IRC §164"
+    },
+    {
+      "url": "scholarship-tax-guide.html",
+      "title": "Scholarship & Fellowship Tax: §117 Exclusion, Taxable Stipends & Reporting (2026)",
+      "heading": "Scholarship & Fellowship Tax: §117 Exclusion & Taxable Amounts",
+      "desc": "Scholarship and fellowship tax guide: §117 exclusion for amounts used for tuition and required fees at a degree-granting institution, scholarship amounts used for room, board, and travel are taxable, ",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §117 IRC §117"
+    },
+    {
+      "url": "scorp-aaa-guide.html",
+      "title": "S-Corp AAA Account: Accumulated Adjustments Account, Distributions & E&P (2026)",
+      "heading": "S-Corp AAA: Accumulated Adjustments Account & Distribution Ordering",
+      "desc": "S-corporation AAA guide: what the Accumulated Adjustments Account is and why it matters, how AAA is calculated, distributions from S-corps with no earnings and profits history vs. those with C-corp E&",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §1368 IRC §1368"
+    },
+    {
+      "url": "scorp-built-in-gains-guide.html",
+      "title": "S-Corp Built-In Gains Tax §1374: C-Corp Conversion & Recognition Period (2026)",
+      "heading": "S-Corp Built-In Gains Tax §1374: Recognition Period & Planning",
+      "desc": "Section 1374 built-in gains tax guide: what triggers the BIG tax on S-corporations that converted from C-corps, the 5-year recognition period, net unrealized built-in gain at conversion, how to calcul",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §1374 IRC §1374"
+    },
+    {
+      "url": "scorp-compensation.html",
+      "title": "S-Corp Reasonable Compensation & Tax Savings Calculator 2026",
+      "heading": "S-Corp Reasonable Compensation & Tax Savings",
+      "desc": "Calculate S-corp salary vs. distribution split. Quantify payroll tax savings over sole proprietorship. IRS reasonable compensation analysis. SE tax, FICA, Medicare surtax. CPA-validated. IRC 1402, 312",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "scorp-vs-llc.html",
+      "title": "S-Corp vs. LLC Tax Comparison (2026)",
+      "heading": "S-Corp vs. LLC Tax Comparison (2026)",
+      "desc": "S-Corporation vs. LLC tax comparison for 2026. Self-employment tax savings, reasonable compensation, QBI deduction, state considerations, and when each structure makes sense. CPA-validated. IRC Sectio",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1361 IRC §1362 IRC §1363 IRC §1367 IRC §1401 IRC §3111 IRC §3101 IRC §199A"
+    },
+    {
+      "url": "section-1031-boot-guide.html",
+      "title": "1031 Exchange Boot: Cash Boot, Mortgage Boot & Partial Exchanges (2026)",
+      "heading": "§1031 Exchange Boot: Cash, Mortgage & Partial Exchange Tax",
+      "desc": "Section 1031 boot guide: when boot is recognized in a like-kind exchange, cash boot from net cash received, mortgage boot when replacement property has lower debt than relinquished property, how boot ",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §1031 IRC §1031"
+    },
+    {
+      "url": "section-1035-exchange-guide.html",
+      "title": "§1035 Exchange: Tax-Free Swaps of Life Insurance & Annuity Contracts (2026)",
+      "heading": "§1035 Exchange: Tax-Free Swap of Life Insurance & Annuities",
+      "desc": "Section 1035 exchange guide: tax-free exchange of life insurance for life insurance or annuity, annuity for annuity or long-term care policy, what qualifies and what does not, partial §1035 exchanges,",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §1035 IRC §103"
+    },
+    {
+      "url": "section-1202-qsbs.html",
+      "title": "Section 1202 QSBS: How Founders Can Exclude Up to $15M (or More)",
+      "heading": "Section 1202 QSBS: Founders Can Exclude $15M+ from Capital Gains",
+      "desc": "A plain-English guide to Section 1202 Qualified Small Business Stock. Pre and post-OBBBA rules, the new tiered holding period (3/4/5 years for 50%/75%/100% exclusion), the $15M per-issuer cap or 10x b",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1202 IRC §1202 IRC §1202 IRC §1202 IRC §1202 IRC §1202 IRC §1045"
+    },
+    {
+      "url": "section-121-exclusion.html",
+      "title": "Section 121 Home Sale Exclusion: $250K/$500K Explained (2026)",
+      "heading": "Section 121 Home Sale Exclusion: $250K / $500K Explained",
+      "desc": "IRC §121 home sale exclusion: the $250,000/$500,000 exclusion, ownership and use tests (2 of 5 years), partial exclusions for unforeseen circumstances, vacation home conversion, home office recapture,",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §121 IRC §121 IRC §121 IRC §121 IRC §121"
+    },
+    {
+      "url": "section-1231-guide.html",
+      "title": "§1231 Gains and Losses: Business Property Character Rules (2026)",
+      "heading": "§1231 Gains and Losses: Business Property Character Rules",
+      "desc": "Section 1231 property tax guide: what qualifies, the annual netting rule, why net §1231 gains are long-term capital gain and net losses are ordinary, the 5-year look-back recapture rule, §1245 and §12",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §1231 IRC §1231"
+    },
+    {
+      "url": "section-1244-guide.html",
+      "title": "§1244 Small Business Stock: $100,000 Ordinary Loss on Failed Business Stock (2026)",
+      "heading": "§1244 Small Business Stock: $100K Ordinary Loss on Failed Startup",
+      "desc": "Section 1244 small business stock guide: ordinary loss treatment up to $100,000 per year ($50,000 single) on loss from sale or worthlessness of qualifying small business stock, compared to capital los",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1244 IRC §1244"
+    },
+    {
+      "url": "section-163j-guide.html",
+      "title": "Section 163(j) Business Interest Limitation Guide (2026)",
+      "heading": "Section 163(j): Business Interest Limitation",
+      "desc": "IRC §163(j) business interest limitation: the 30% ATI cap, the small business exemption ($31M gross receipts), OBBBA changes restoring EBITDA-based ATI, real estate and floor plan financing exceptions",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §163 IRC §163 IRC §163 IRC §163 IRC §448 IRC §163 IRC §163"
+    },
+    {
+      "url": "section-174-guide.html",
+      "title": "Section 174A: R&D Expensing Restored by OBBBA (2026)",
+      "heading": "Section 174A: R&D Expensing Restored by OBBBA",
+      "desc": "IRC §174A guide: OBBBA permanently restored immediate expensing for domestic R&D costs. No more 5-year amortization for US research. Foreign R&D still 15-year amortization. Software development rules.",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §174A IRC §174"
+    },
+    {
+      "url": "section-199a-deep-dive.html",
+      "title": "§199A QBI Deduction Deep Dive: SSTB, W-2 Wage Limits & Aggregation (2026)",
+      "heading": "§199A QBI Deduction Deep Dive: SSTB, W-2 Wage Limits & Aggregation",
+      "desc": "§199A deep dive: SSTB classification by industry (which professions are excluded), the W-2 wage and UBIA limitation mechanics above the threshold, aggregation elections, rental activity safe harbor, a",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §199A IRC §199A IRC §199A IRC §199A IRC §199A"
+    },
+    {
+      "url": "section-199a-guide.html",
+      "title": "QBI Deduction Deep Dive: IRC §199A W-2 Wages, UBIA & SSTB Rules (2026)",
+      "heading": "QBI Deduction Deep Dive: IRC §199A Mechanics",
+      "desc": "IRC §199A QBI deduction mechanics: the 20% deduction, W-2 wage limitation, UBIA of qualified property, specified service trade or business (SSTB) phaseout, aggregation elections, and planning strategi",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §199A IRC §199A IRC §199A IRC §199A IRC §199A IRC §199A IRC §199A"
+    },
+    {
+      "url": "section-302-redemption-guide.html",
+      "title": "§302 Corporate Redemptions: Capital Gain vs. Dividend Treatment (2026)",
+      "heading": "§302 Corporate Redemptions: Capital Gain vs. Dividend",
+      "desc": "Section 302 corporate stock redemption guide: when a redemption is treated as a sale (capital gain) vs. a dividend (ordinary income), the four §302(b) tests, the §318 constructive ownership attributio",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §302 IRC §302"
+    },
+    {
+      "url": "section-409a-guide.html",
+      "title": "§409A Nonqualified Deferred Compensation: Rules, Failures & 20% Penalty (2026)",
+      "heading": "§409A Deferred Compensation: Six Payment Triggers & 20% Penalty",
+      "desc": "Section 409A nonqualified deferred compensation guide: plans that must comply with §409A, the six permissible payment triggers (separation from service, disability, death, change of control, unforesee",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §409A"
+    },
+    {
+      "url": "section-529-guide.html",
+      "title": "529 College Savings Plans: Tax-Free Growth, Superfunding & Roth Rollover (2026)",
+      "heading": "529 College Savings Plans: Tax-Free Growth, Superfunding & Roth Rollover",
+      "desc": "529 plan guide: tax-free growth and withdrawals, K-12 tuition $10K, five-year gift averaging superfunding, SECURE 2.0 529-to-Roth $35K rollover, coordination with AOTC/LLC credits. CPA-validated.",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §529 IRC §529"
+    },
+    {
+      "url": "section-754-guide.html",
+      "title": "Partnership §754 Election: Inside Basis Step-Up on Transfers & Deaths",
+      "heading": "Partnership §754 Election: Basis Step-Up on Transfers & Deaths",
+      "desc": "Section 754 election guide: what the §754 election does, how §743(b) adjustments work when a partnership interest is sold or transferred, §734(b) adjustments on distributions, why the election matters",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §754 IRC §743"
+    },
+    {
+      "url": "section-83b-guide.html",
+      "title": "§83(b) Election: 30-Day Window to Lock In Startup Equity Tax Treatment (2026)",
+      "heading": "§83(b) Election: 30-Day Window to Convert Stock Gain to Capital Gain",
+      "desc": "Section 83(b) election guide: what the election does, the strict 30-day filing deadline from date of grant, how the election converts future appreciation from ordinary income to capital gain, when the",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §83 IRC §83"
+    },
+    {
+      "url": "section-962-election.html",
+      "title": "Section 962 Election: How Individual CFC Shareholders Access Corporate Tax Rates",
+      "heading": "The Section 962 Election: Accessing Corporate Tax Rates on CFC Income as an Individual",
+      "desc": "The Section 962 election allows individual US shareholders of CFCs to be taxed on Subpart F and NCTI inclusions at the 21% corporate rate instead of 37% individual rates, and to access the Section 250",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §962 IRC §962 IRC §951 IRC §951A IRC §250 IRC §960 IRC §904"
+    },
+    {
+      "url": "secure-2-guide.html",
+      "title": "SECURE 2.0 Act: Complete Guide to All Major Retirement Rule Changes (2026)",
+      "heading": "SECURE 2.0 Act: Every Major Retirement Rule Change",
+      "desc": "SECURE 2.0 Act complete guide: RMD age raised to 73 (75 for born 1960+), catch-up super contribution ages 60-63, Roth catch-up requirement for high earners, 529-to-Roth rollover, automatic enrollment ",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §401 IRC §4974"
+    },
+    {
+      "url": "self-employed-health-insurance-guide.html",
+      "title": "Self-Employed Health Insurance Deduction: Above-the-Line, Not Schedule A (2026)",
+      "heading": "Self-Employed Health Insurance Deduction: The Above-the-Line Write-Off",
+      "desc": "Self-employed health insurance deduction guide: IRC §162(l) above-the-line deduction for premiums paid by sole proprietors, partners, and S-corp shareholders, eligibility requirements, limitation to n",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §162 IRC §162"
+    },
+    {
+      "url": "self-employment-tax-guide.html",
+      "title": "Self-Employment Tax Guide: SE Tax, S-Corp Election & Health Insurance (2026)",
+      "heading": "Self-Employment Tax: SE Tax, S-Corp Election & Health Insurance",
+      "desc": "Self-employment tax mechanics: the 15.3% SE tax, the deduction for half of SE tax, S-corporation election to reduce SE tax, reasonable compensation requirement, health insurance premium deduction for ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1401 IRC §1402 IRC §1402 IRC §3101 IRC §3111 IRC §3121"
+    },
+    {
+      "url": "sep-simple-ira-guide.html",
+      "title": "SEP-IRA & SIMPLE IRA: 2026 Limits, Setup & Self-Employed Deduction",
+      "heading": "SEP-IRA & SIMPLE IRA: 2026 Contribution Limits & Rules",
+      "desc": "SEP-IRA and SIMPLE IRA guide: 2026 SEP limit $70,000 (25% of comp), SIMPLE deferral $16,500, self-employed contribution calculation, employer matching rules, 2-year SIMPLE rule, and comparison to solo",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §408 IRC §408 IRC §408"
+    },
+    {
+      "url": "settlement-tax-guide.html",
+      "title": "Tax Treatment of Lawsuit Settlements and Legal Damages (2026) | CPA Validated",
+      "heading": "Tax Treatment of Lawsuit Settlements and Legal Damages",
+      "desc": "Settlement and legal damages tax guide: IRC §104 physical injury exclusion, emotional distress taxable unless linked to physical injury, punitive damages always taxable, employment discrimination sett",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §104 IRC §104 IRC §61"
+    },
+    {
+      "url": "short-term-rental-guide.html",
+      "title": "Short-Term Rental Tax Guide: Airbnb, VRBO & the 7-Day Rule (2026)",
+      "heading": "Short-Term Rental Tax Guide: Airbnb, VRBO & the 7-Day Rule",
+      "desc": "Short-term rental tax guide: the 7-day average rental period test, when STR losses are active vs. passive, material participation for rentals, Schedule C vs. Schedule E, the 14-day personal use rule, ",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §469"
+    },
+    {
+      "url": "social-security-tax.html",
+      "title": "Social Security Benefit Taxation Calculator 2026",
+      "heading": "Social Security Benefit Taxation Calculator 2026",
+      "desc": "Calculate how much of your Social Security benefit is taxable. Combined income test, 0/50/85% inclusion tiers. Impact of Roth conversions and IRA withdrawals on SS taxation. CPA-validated. IRC 86.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "social-security-taxation-guide.html",
+      "title": "Social Security Taxation Guide: 85% Inclusion & Provisional Income (2026)",
+      "heading": "Social Security Taxation: 85% Inclusion & Provisional Income",
+      "desc": "How Social Security benefits are taxed: provisional income calculation, the 50% and 85% inclusion thresholds, strategies to reduce taxation (Roth conversion timing, QCDs, capital gain harvesting), and",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §86 IRC §86 IRC §86 IRC §86 IRC §86"
+    },
+    {
+      "url": "social-security-timing-guide.html",
+      "title": "Social Security: When to Claim at 62 vs 67 vs 70",
+      "heading": "Social Security: When to Claim - Age 62 vs. 67 vs. 70",
+      "desc": "Social Security claiming strategy: breakeven analysis for claiming at 62 vs full retirement age vs 70, spousal benefits, earnings test before FRA, Social Security income taxation thresholds, and survi",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §86"
+    },
+    {
+      "url": "solo-401k-sep-guide.html",
+      "title": "Solo 401(k) vs. SEP-IRA: Self-Employed Retirement Plan Comparison (2026)",
+      "heading": "Solo 401(k) vs. SEP-IRA: Self-Employed Retirement Plans (2026)",
+      "desc": "Solo 401(k) and SEP-IRA comparison guide: solo 401(k) allows employee deferrals up to $23,500 plus employer profit-sharing contributions up to $70,000 total, SEP-IRA allows up to 25% of net self-emplo",
+      "category": "Retirement & Savings",
+      "type": "GUIDE",
+      "authority": "IRC §401 IRC §404 IRC §415"
+    },
+    {
+      "url": "spt-calculator.html",
+      "title": "Substantial Presence Test Calculator",
+      "heading": "Substantial Presence Test Calculator",
+      "desc": "Calculate U.S. tax residency under the Substantial Presence Test. Two input methods, weighted 3-year calculation, days to trigger SPT, maximum safe days. CPA-validated. IRC Section 7701(b)(3).",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "staffing-agency-tax-guide.html",
+      "title": "Staffing Agency & Gig Platform Tax: Worker Classification, Gross Receipts & Pass-Through (2026)",
+      "heading": "Staffing Agency & Gig Platform Tax: Classification & Gross Receipts",
+      "desc": "Tax guide for staffing agencies and gig platforms: the worker classification stakes for staffing agencies, gross receipts vs. net income for high-volume/low-margin businesses, §199A QBI for staffing a",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §3401 IRC §3111 IRC §3306"
+    },
+    {
+      "url": "startup-costs-guide.html",
+      "title": "Starting a Business: §195 Startup Costs & §248 Organizational Expenses (2026)",
+      "heading": "Starting a Business: §195 Startup Costs & Organizational Expenses",
+      "desc": "Tax treatment of startup costs and organizational expenses: §195 allows $5,000 immediate deduction (phased out above $50,000) with 15-year amortization for the remainder. §248 organizational expenses.",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §195 IRC §195 IRC §195"
+    },
+    {
+      "url": "startup-equity-guide.html",
+      "title": "Startup Equity Tax Guide: ISO, NSO, Restricted Stock, RSUs & QSBS (2026)",
+      "heading": "Startup Equity Tax: ISO, NSO, Restricted Stock, RSU & QSBS",
+      "desc": "Startup equity tax guide: overview of all major equity compensation types - incentive stock options (ISO) with AMT preference, nonqualified stock options (NSO) taxed at exercise, restricted stock with",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §422 IRC §56 IRC §83"
+    },
+    {
+      "url": "state-compliance.html",
+      "title": "State Tax & IRS Compliance",
+      "heading": "State Tax & IRS Compliance",
+      "desc": "State tax and IRS compliance guides: state income tax nexus, SALT deduction, remote work taxation, New York convenience rule, IRS audit process, penalties, payments, installment agreements, and tax ca",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "state-income-tax-nexus.html",
+      "title": "State Income Tax Nexus for Individuals & Remote Workers (2026)",
+      "heading": "State Income Tax Nexus: Individuals & Remote Workers",
+      "desc": "State income tax nexus for individuals: the 183-day rule by state, domicile vs. statutory residency, the convenience of employer rule (New York), remote worker multi-state filing obligations, and how ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "state-ptet-guide.html",
+      "title": "State Pass-Through Entity Tax (PTET) Elections: SALT Workaround Guide (2026)",
+      "heading": "State Pass-Through Entity Tax Elections: The SALT Workaround",
+      "desc": "Complete state PTET election guide: how the SALT cap workaround works, IRS Notice 2020-75 federal deductibility, state highlights NY CA NJ, election deadlines, credit mechanics, and OBBBA $40K SALT ca",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §164"
+    },
+    {
+      "url": "state-residency-change-guide.html",
+      "title": "How to Change State Residency: Breaking New York, California & Other High-Tax States (2026)",
+      "heading": "How to Change State Residency: Breaking New York, California & Other High-Tax States",
+      "desc": "Plain-English guide to changing state residency and domicile: the steps to break NY or CA residency, what the states look for in an audit, the 183-day trap, near and dear test, and the most common mis",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "state-residency-hnw.html",
+      "title": "State Residency for HNW Relocators: How to Actually Leave New York and California",
+      "heading": "State Residency for HNW Relocators",
+      "desc": "A plain-English guide to changing state tax residency for high-net-worth relocators. The two-prong test (domicile plus statutory residency), the 183-day rule and permanent place of abode, the New York",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "stock-options-guide.html",
+      "title": "ISO vs. NSO Stock Options: Tax Treatment Deep Dive (2026)",
+      "heading": "ISO vs. NSO Stock Options: Complete Tax Treatment Guide",
+      "desc": "Stock options tax guide: ISO vs NSO comparison, bargain element, AMT preference item for ISOs, disqualifying dispositions, NSO ordinary income at exercise, ESPP basics, 83(b) election interaction, and",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §422 IRC §422 IRC §422"
+    },
+    {
+      "url": "streamlined-checker.html",
+      "title": "Streamlined Filing Eligibility Checker",
+      "heading": "Streamlined Filing Eligibility Checker",
+      "desc": "Determine eligibility for IRS Streamlined Domestic Offshore Procedures (SDOP) or Streamlined Foreign Offshore Procedures (SFOP) to come into FBAR and FATCA compliance. Non-willfulness test, residency ",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "student-loan-forgiveness-tax-guide.html",
+      "title": "Student Loan Forgiveness: Is It Taxable? PSLF, IDR & State Treatment (2026)",
+      "heading": "Student Loan Forgiveness: Federal & State Tax Treatment",
+      "desc": "Student loan forgiveness tax guide: general COD income rule under §108, Public Service Loan Forgiveness (PSLF) exclusion, income-driven repayment (IDR) forgiveness federal tax treatment, OBBBA extensi",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §61 IRC §108 IRC §108"
+    },
+    {
+      "url": "subpart-f-cfc-basics.html",
+      "title": "Subpart F Income & Controlled Foreign Corporations: CFC Basics (2026)",
+      "heading": "Subpart F Income & Controlled Foreign Corporations: What Every US Shareholder Needs to Know",
+      "desc": "How Subpart F income works for US shareholders of controlled foreign corporations (CFCs). What triggers a Subpart F inclusion, FPHCI, insurance income, the TCJA changes, OBBBA renaming of GILTI to NCT",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §951 IRC §951A IRC §952 IRC §953 IRC §954 IRC §954 IRC §954 IRC §957"
+    },
+    {
+      "url": "t1135-foreign-property.html",
+      "title": "T1135: Canada's Foreign Property Form, Explained",
+      "heading": "T1135: Canada's Foreign Property Form",
+      "desc": "A plain-English guide to Form T1135 Foreign Income Verification Statement. The $100,000 cost threshold, simplified vs detailed reporting (Part A vs Part B), what counts as specified foreign property, ",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "tax-calendar.html",
+      "title": "US Federal Tax Calendar 2026",
+      "heading": "US Federal Tax Calendar 2026",
+      "desc": "Complete US federal tax deadline calendar for 2026. Corporate (1099, W-2, 1120, 1120-S, 1065) and personal (1040, FBAR, estimated tax) deadlines. Key state deadlines including Delaware franchise tax a",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "tax-estimator.html",
+      "title": "Tax Estimator 2026 - Personal & Corporate",
+      "heading": "Tax Estimator 2026",
+      "desc": "Estimate your 2026 federal and state income tax. Personal tax estimator using IRS Rev. Proc. 2025-32 brackets. Corporate tax estimator at 21% federal plus state rates from Tax Foundation. CPA-validate",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "tax-extension-guide.html",
+      "title": "Tax Extension Guide 2026 - Personal & Corporate",
+      "heading": "Tax Extension Guide 2026",
+      "desc": "Complete guide to filing tax extensions in 2026. Form 4868 (personal), Form 7004 (corporate/partnership/S-corp). Deadlines, what extensions do and don't do, state extension rules, payment requirements",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "tax-free-reorganization-guide.html",
+      "title": "Tax-Free Reorganizations: §368 Types A Through G, Boot & Continuity Requirements (2026)",
+      "heading": "Tax-Free Reorganizations: §368 Types, Boot & Continuity Rules",
+      "desc": "Corporate reorganization tax guide under IRC §368: Type A statutory merger, B stock-for-stock, C stock-for-assets, D divisive, triangular mergers, continuity of interest and business enterprise requir",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §368 IRC §368 IRC §368 IRC §368"
+    },
+    {
+      "url": "tax-loss-harvesting-guide.html",
+      "title": "Tax Loss Harvesting Guide: Capital Loss Mechanics & Wash Sale Rule (2026)",
+      "heading": "Tax Loss Harvesting: Capital Loss Mechanics & Wash Sale Rule",
+      "desc": "Tax loss harvesting: how capital loss netting works, the $3,000 ordinary income offset, the wash sale rule (IRC §1091) and its 30-day window, year-end harvesting strategies, loss harvesting in appreci",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §1211 IRC §1212 IRC §1222 IRC §1091"
+    },
+    {
+      "url": "tax-provision.html",
+      "title": "Tax Provision (ASC 740)",
+      "heading": "Tax Provision & ASC 740",
+      "desc": "ASC 740 tax provision guides: deferred tax assets and liabilities, valuation allowances, uncertain tax positions (UTPs), GILTI/NCTI in the provision, stock-based compensation ASC 740, interim period A",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "tech-startup-tax-guide.html",
+      "title": "Tech Startup Tax: R&D Credits, §1202 QSBS, Equity Compensation & §174A (2026)",
+      "heading": "Tech Startup Tax: R&D Credits, QSBS & Equity Compensation",
+      "desc": "Tax guide for technology startups: R&D tax credit mechanics under §41, §174A capitalization of R&D costs under OBBBA, §1202 QSBS $10 million gain exclusion, ISO and NSO stock option tax treatment, 83(",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §174A IRC §41"
+    },
+    {
+      "url": "texas-franchise-tax-guide.html",
+      "title": "Texas Franchise Tax (Margin Tax): Rates, No-Tax-Due Threshold & EZ Computation (2026)",
+      "heading": "Texas Franchise Tax: Margin Tax Rates & Computation Methods",
+      "desc": "Texas franchise tax guide: margin tax on taxable entities, four methods for computing taxable margin (total revenue minus COGS, compensation, 30%, or 70% of revenue), 0.75% rate for most businesses an",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "transfer-pricing-guide.html",
+      "title": "Transfer Pricing Basics: The Arm's Length Standard Explained",
+      "heading": "Transfer Pricing Basics: The Arm's Length Standard",
+      "desc": "Transfer pricing explained: the IRC §482 arm's length standard, the five OECD methods (CUP, RPM, cost-plus, TNMM, profit split), documentation requirements, penalty protection under §6662(e), intercom",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §482"
+    },
+    {
+      "url": "treaty-navigator.html",
+      "title": "US Tax Treaty Quick Reference Navigator 2026",
+      "heading": "US Tax Treaty Quick Reference Navigator",
+      "desc": "Key US tax treaty provisions for 20 countries. Dividend withholding rates, interest, royalties, pension articles, tie-breaker, savings clause. US-Russia treaty suspended 2023. CPA-validated.",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "trucking-transportation-tax-guide.html",
+      "title": "Trucking & Transportation Tax: Owner-Operators, Per Diem & IFTA (2026)",
+      "heading": "Trucking & Transportation Tax: Owner-Operators, Per Diem & Depreciation",
+      "desc": "Tax guide for trucking and transportation businesses: owner-operator vs. employee driver classification, per diem deduction for over-the-road drivers, depreciation on trucks and trailers under §168 an",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §168 IRC §179"
+    },
+    {
+      "url": "trust-guide.html",
+      "title": "US Trust Guide: Revocable vs. Irrevocable, Foreign vs. Domestic, Tax Planning",
+      "heading": "US Trust Guide: What Trusts Do, What They Don't, and Where Tax Fits In",
+      "desc": "How trusts actually work for tax planning. Revocable vs. irrevocable, foreign vs. domestic trusts (IRC 7701), grantor trust rules (IRC 671-679), the IRC 679 trap for US persons, throwback rules, and t",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §671 IRC §676 IRC §2036 IRC §2038 IRC §2041 IRC §2501 IRC §2511 IRC §2631"
+    },
+    {
+      "url": "ubit-guide.html",
+      "title": "Unrelated Business Income Tax (UBIT): When Nonprofits Owe Tax (2026)",
+      "heading": "UBIT: When Nonprofits Owe Corporate Income Tax",
+      "desc": "UBIT guide: unrelated business income tax on §501(c)(3) and other tax-exempt organizations, three-part test for unrelated business income (trade or business, regularly carried on, not substantially re",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §511 IRC §512"
+    },
+    {
+      "url": "us-canada-tax-planning.html",
+      "title": "US-Canada Tax Planning: Snowbirds, RRSP, Treaty & Departure Tax",
+      "heading": "US-Canada Tax Planning: Snowbirds, RRSP & Treaty",
+      "desc": "US-Canada cross-border tax planning: snowbird residency traps, treaty tiebreaker elections, RRSP/RRIF treatment for US persons, Canadian departure tax, Form 8833 treaty positions, and the 183-day rule",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §7701 IRC §7701 IRC §6712"
+    },
+    {
+      "url": "us-canada-tax-treaty.html",
+      "title": "The US-Canada Tax Treaty, Plainly",
+      "heading": "The US-Canada Tax Treaty, Plainly",
+      "desc": "A plain-English guide to the US-Canada tax treaty. Article IV residency tie-breaker, Article X dividends (5% / 15%), Article XV employment, Article XVIII pensions and RRSPs, the savings clause and how",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "us-expat-tax-guide.html",
+      "title": "US Expat Tax Filing Guide (2026)",
+      "heading": "US Expat Tax Filing Guide (2026)",
+      "desc": "Complete US expat tax filing guide for Americans living abroad. Who must file, FEIE ($132,900 for 2026), Foreign Tax Credit, FBAR, Form 8938, filing deadlines from abroad, state tax obligations. CPA-v",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §6012 IRC §911 IRC §911 IRC §911 IRC §901 IRC §6081 IRC §6072 IRC §1401"
+    },
+    {
+      "url": "usvi-edc-estimator.html",
+      "title": "U.S. Virgin Islands EDC Tax Benefit Estimator",
+      "heading": "U.S. Virgin Islands EDC Tax Benefit Estimator",
+      "desc": "Estimate your tax savings under the USVI Economic Development Commission (EDC) program. 90% corporate and personal income tax credit. Compare USVI EDC vs. Puerto Rico Act 60. CPA-validated. IRC §934, ",
+      "category": "",
+      "type": "TOOL",
+      "authority": "IRC §934 IRC §937"
+    },
+    {
+      "url": "vacation-rental-mixed-use-guide.html",
+      "title": "Vacation Home & Mixed-Use Rental: §280A Tax Rules (2026)",
+      "heading": "Vacation Home & Mixed-Use Rental: §280A Rules",
+      "desc": "Vacation home and mixed-use rental tax guide: the §280A three-category framework based on personal vs. rental use days, the 14-day/10% personal use threshold, deduction ordering rules, the Augusta Rul",
+      "category": "Real Estate",
+      "type": "GUIDE",
+      "authority": "IRC §280A IRC §280A"
+    },
+    {
+      "url": "valuation-allowance-guide.html",
+      "title": "Valuation Allowance Guide: ASC 740 Positive & Negative Evidence",
+      "heading": "Valuation Allowance: ASC 740 Positive & Negative Evidence",
+      "desc": "ASC 740 valuation allowance: the more-likely-than-not standard, positive and negative evidence, the cumulative loss presumption, reversals, and how to document and defend valuation allowance positions",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "vehicle-depreciation.html",
+      "title": "Business Vehicle Depreciation Calculator 2026",
+      "heading": "Business Vehicle Depreciation Calculator",
+      "desc": "Calculate business vehicle depreciation for 2026. Section 179, 100% bonus depreciation (post-OBBBA permanent for property after 1/19/2025), MACRS 5-year, luxury auto caps (Rev. Proc. 2025-24). Passeng",
+      "category": "",
+      "type": "GUIDE",
+      "authority": "IRC §168 IRC §179 IRC §280F"
+    },
+    {
+      "url": "w2-decoder.html",
+      "title": "W-2 Decoder: Every Box and Code Explained (2026)",
+      "heading": "W-2 Decoder: Every Box and Code Explained",
+      "desc": "Interactive W-2 decoder: look up every box and code on Form W-2. Search any Box 12 code like DD, W, AA, or V. Understand what each box means, where it goes on your tax return, and what is taxable. CPA",
+      "category": "",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "w2-k1-guide.html",
+      "title": "W-2 vs. K-1: How Employee and Pass-Through Income Are Taxed Differently",
+      "heading": "W-2 vs. K-1: How Employee and Pass-Through Income Work",
+      "desc": "W-2 vs K-1 comparison guide: W-2 employer withholds income tax and FICA, K-1 is your share of pass-through income with no withholding, self-employment tax on K-1 general partnership income, guaranteed",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §3401 IRC §3102 IRC §1402"
+    },
+    {
+      "url": "w2-vs-k1-guide.html",
+      "title": "W-2 vs. K-1: Employee vs. Business Owner Tax Income Explained (2026)",
+      "heading": "W-2 vs. K-1: How Employee and Business Owner Income Is Taxed Differently",
+      "desc": "W-2 vs K-1 comparison: how employee wages differ from pass-through business income, withholding vs estimated tax, SE tax on K-1 earnings, at-risk and basis limits on K-1 losses, deductions available t",
+      "category": "Individual Tax",
+      "type": "GUIDE",
+      "authority": "IRC §3401 IRC §61 IRC §702 IRC §1366 IRC §1402"
+    },
+    {
+      "url": "w4-optimizer.html",
+      "title": "W-4 Withholding Optimizer 2026",
+      "heading": "W-4 Withholding Optimizer 2026",
+      "desc": "Calculate the optimal W-4 withholding for 2026. Target refund or balance due, multiple jobs, spouse income, other income, deductions. Produces exact W-4 line entries. CPA-validated. IRC Section 3402.",
+      "category": "",
+      "type": "TOOL",
+      "authority": ""
+    },
+    {
+      "url": "wash-sale-guide.html",
+      "title": "Wash Sale Rule: §1091 Loss Disallowance, 30-Day Window & Crypto Exception (2026)",
+      "heading": "Wash Sale Rule: §1091 Loss Disallowance and the 61-Day Window",
+      "desc": "Wash sale rule guide under IRC §1091: 61-day window, substantially identical securities, disallowed loss added to replacement basis, year-end traps, IRAs count, mutual fund substantially identical que",
+      "category": "Investments & Capital",
+      "type": "GUIDE",
+      "authority": "IRC §1091 IRC §1091 IRC §1091"
+    },
+    {
+      "url": "washington-bo-tax-guide.html",
+      "title": "Washington State B&O Tax: Gross Receipts, Nexus & SaaS Classification (2026)",
+      "heading": "Washington B&O Tax: Gross Receipts, Rates & SaaS",
+      "desc": "Washington Business & Occupation tax guide: how the B&O gross receipts tax works, major B&O classifications and rates (service/other activities 1.5%, retailing 0.471%, manufacturing 0.484%), economic ",
+      "category": "State & Compliance",
+      "type": "GUIDE",
+      "authority": ""
+    },
+    {
+      "url": "worker-classification-guide.html",
+      "title": "Worker Classification: Employee vs. Independent Contractor Tax Rules (2026)",
+      "heading": "Worker Classification: Employee vs. Independent Contractor",
+      "desc": "W-2 employee vs. 1099 independent contractor classification: IRS common law test, behavioral control, financial control, type of relationship, Section 530 relief, Form SS-8, misclassification penaltie",
+      "category": "Business & Entity",
+      "type": "GUIDE",
+      "authority": "IRC §3401 IRC §3121 IRC §3509"
+    }
+  ]
+}
