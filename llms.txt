@@ -156,3 +156,7 @@
 - state-residency-change-guide.html: How to change state residency - plain English 7-step guide breaking NY/CA domicile, 183-day statutory residency trap, near and dear test, FL declaration of domicile, CA safe harbor limits.
 - marital-deduction-guide.html: Marital deduction - §2056 unlimited estate marital deduction, §2523 gift marital deduction, QTIP trusts, QDOT for non-citizen surviving spouses, $190K annual gift to non-citizen spouse, portability.
 - irs-notice-guide.html: IRS notices plain English - CP2000 income mismatch, CP14 balance due, LT11 final levy notice, CDP 30-day hearing right, First-Time Penalty Abatement, Taxpayer Advocate Service.
+- cant-pay-taxes-guide.html: Can't pay taxes guide - installment agreements up to 72 months, CNC currently not collectible, Offer in Compromise RCP formula, partial pay IA, first-time penalty abatement.
+- gig-worker-tax-guide.html: Gig worker 1099-NEC guide - Schedule C basics, 15.3% SE tax, quarterly estimated payments, mileage/home office/equipment deductions, QBI 20% deduction.
+- child-tax-credit-guide.html: Child Tax Credit guide - $2,200 per child OBBBA permanent, $1,700 ACTC refundable, income phaseout $400K MFJ, dependent care credit §21, DC FSA $5,000.
+- startup-costs-guide.html: §195 startup costs - $5,000 first-year deduction phased out above $50K, 15-year amortization, §248 organizational expenses, pre-opening vs. post-opening §162 line.
