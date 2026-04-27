@@ -367,7 +367,7 @@ function calc(){
   }
 
   h += `<div class="src">Authority: IRC §6651(a)(1) (failure-to-file, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay, 0.5%/month max 25%); IRC §6651(c)(1) (FTF reduced by FTP when both apply); IRC §6601 (underpayment interest, fed short-term rate +3); IRC §6662(a) (accuracy-related penalty, 20%); IRC §6662(h) (40% gross valuation misstatement); IRS Notice 2025-89 (Q2 2026 interest rate 8% - verify current quarter). Interest rate changes quarterly per IRC §6621.</div>`;
-  h += `<button class="pbn" onclick="window.print()">Print / Save as PDF</button>`;
+  h += ``;
   h += ``;
 
   rb.innerHTML = h;
@@ -378,8 +378,8 @@ calc();
 
 
 <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+<button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
 <style>@media print{.action-btns,.cat-nav,nav,.related{display:none!important}}</style>
 <script>
