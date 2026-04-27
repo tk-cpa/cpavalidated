@@ -160,3 +160,6 @@
 - gig-worker-tax-guide.html: Gig worker 1099-NEC guide - Schedule C basics, 15.3% SE tax, quarterly estimated payments, mileage/home office/equipment deductions, QBI 20% deduction.
 - child-tax-credit-guide.html: Child Tax Credit guide - $2,200 per child OBBBA permanent, $1,700 ACTC refundable, income phaseout $400K MFJ, dependent care credit §21, DC FSA $5,000.
 - startup-costs-guide.html: §195 startup costs - $5,000 first-year deduction phased out above $50K, 15-year amortization, §248 organizational expenses, pre-opening vs. post-opening §162 line.
+- divorce-tax-guide.html: Divorce and taxes - TCJA alimony not deductible/taxable for post-2018 agreements, §1041 non-taxable property transfers (basis carries over), QDRO retirement division, filing status change, §121 home sale.
+- gambling-tax-guide.html: Gambling income and losses - all winnings taxable, losses deductible only if itemizing up to winnings amount, session method Rev. Proc. 2015-29, W-2G thresholds, professional gambler Schedule C.
+- inherited-money-guide.html: Inherited money guide - IRC §102 cash inheritance not income, §1014 step-up in basis eliminates pre-death appreciation, inherited IRA 10-year rule, estate tax $15M threshold, six states with inheritance tax.
