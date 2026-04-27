@@ -227,6 +227,299 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 </div>
 
 <div class="source-row">Authority: IRC §6039F (reporting of gifts from foreign persons); IRC §6048 (reporting of foreign trust transactions); IRC §6677 (penalties); IRC §679 (foreign grantor trusts); IRC §665-668 (throwback rules); IRC §643(i) (loans and use of property as distributions); Treas. Reg. §1.6039F-1; Rev. Proc. 2020-17 (foreign retirement plan relief); Rev. Proc. 2025-32 (2026 inflation adjustment to $19,570 threshold for corporate gifts); Form 3520 and Form 3520-A Instructions (2024).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 3520: Foreign Gifts, Inheritances & Trusts (2026) | CPA Validated</title>
+<meta name="description" content="Form 3520 filing requirements for US persons who receive foreign gifts, inheritances, or have transactions with foreign trusts. 2026 thresholds: $100,000 for gifts from individuals, $19,570 from foreign corporations. Penalties up to 35%. CPA-validated. IRC Section 6039F, 6048.">
+<link rel="canonical" href="https://cpavalidated.com/form-3520-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,5vw,40px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.threshold-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 28px}
+.tg-box{border:1px solid var(--ink-20);padding:16px}
+.tg-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:8px;font-family:var(--font-mono)}
+.tg-amount{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.tg-desc{font-size:12px;color:var(--ink-60);line-height:1.5}
+.tg-auth{font-family:var(--font-mono);font-size:10px;color:var(--ink-40);margin-top:6px}
+.penalty-box{background:var(--red-bg);border:2px solid var(--red-b);padding:20px;margin:20px 0 28px}
+.pb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:10px}
+.pb-row{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--red-b);font-size:13px}
+.pb-row:last-child{border-bottom:none}
+.pb-type{color:var(--ink-60)}
+.pb-amount{font-family:var(--font-mono);font-weight:700;color:var(--red)}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.threshold-grid,.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}.callout,.penalty-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:640px){
+}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Form 3520: Foreign Gifts, Inheritances & Trusts (2026) | CPA Validated">
+  <meta property="og:description" content="Form 3520 filing requirements for US persons who receive foreign gifts, inheritances, or have transactions with foreign trusts. 2026 thresholds: $100,000 for gifts from individuals, $19,570 from forei">
+  <meta property="og:url" content="https://cpavalidated.com/form-3520-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Form 3520: Foreign Gifts, Inheritances & Trusts (2026) | CPA Validated">
+  <meta name="twitter:description" content="Form 3520 filing requirements for US persons who receive foreign gifts, inheritances, or have transactions with foreign trusts. 2026 thresholds: $100,000 for gifts from individuals, $19,570 from forei">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Form 3520: Foreign Gifts, Inheritances & Trusts (2026) | CPA Validated","description":"Form 3520 filing requirements for US persons who receive foreign gifts, inheritances, or have transactions with foreign trusts. 2026 thresholds: $100,000 for gifts from individuals, $19,570 from forei","url":"https://cpavalidated.com/form-3520-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+
+<div class="ph"><div class="phi">
+  <h1>Form 3520: Foreign Gifts, Inheritances & Trusts (2026)</h1>
+  <div class="sub">Reporting Thresholds &nbsp;&bull;&nbsp; Penalties &nbsp;&bull;&nbsp; What Counts as a Gift &nbsp;&bull;&nbsp; Trust Transactions</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6039F</span>
+    <span class="ph-meta-item">IRC §6048</span>
+    <span class="ph-meta-item">Form 3520</span>
+    <span class="ph-meta-item">Form 3520-A</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Form 3520 is one of the most frequently missed international information returns. US persons who receive large gifts or inheritances from foreign persons, or who have transactions with foreign trusts, must file Form 3520 annually with their tax return. The penalties for failure to file start at 25% of the amount received and can reach 35%.</p>
+
+<div class="callout">
+  <div class="callout-label">Key Point - Gifts Are Not Taxable, But Must Be Reported</div>
+  <p>Receiving a gift or inheritance from a foreign person is generally not subject to US income tax. The United States does not impose an inheritance tax on recipients. However, <strong>reporting is required</strong> when the amounts exceed the applicable thresholds. Failure to report is a separate violation from any tax owed - and the penalties apply even when no tax is due.</p>
+</div>
+
+<h2>2026 Reporting Thresholds</h2>
+
+<div class="threshold-grid">
+  <div class="tg-box">
+    <div class="tg-label">Foreign Individual or Estate</div>
+    <div class="tg-amount">$100,000</div>
+    <div class="tg-desc">Aggregate gifts or bequests from a nonresident alien individual or foreign estate exceeding $100,000 during the tax year must be reported on Form 3520. Each gift of $5,000 or more must be listed separately.</div>
+    <div class="tg-auth">IRC §6039F(a); Form 3520 Part IV</div>
+  </div>
+  <div class="tg-box">
+    <div class="tg-label">Foreign Corporation or Partnership</div>
+    <div class="tg-amount">$19,570</div>
+    <div class="tg-desc">Aggregate gifts from foreign corporations or foreign partnerships exceeding $19,570 in 2026 (inflation-adjusted annually) must be reported. This threshold is lower because transfers from entities are more likely to have a tax avoidance motivation.</div>
+    <div class="tg-auth">IRC §6039F(b); Rev. Proc. 2025-32</div>
+  </div>
+</div>
+
+<h2>What Triggers Form 3520 Filing</h2>
+
+<table class="key-table">
+  <thead><tr><th>Transaction Type</th><th>Form Required</th><th>Threshold</th><th>Authority</th></tr></thead>
+  <tbody>
+    <tr><td>Gift from foreign individual</td><td>Form 3520, Part IV</td><td>Aggregate &gt; $100,000</td><td>IRC §6039F(a)</td></tr>
+    <tr><td>Inheritance from foreign estate</td><td>Form 3520, Part IV</td><td>Aggregate &gt; $100,000</td><td>IRC §6039F(a)</td></tr>
+    <tr><td>Gift from foreign corporation or partnership</td><td>Form 3520, Part IV</td><td>Aggregate &gt; $19,570 (2026)</td><td>IRC §6039F(b)</td></tr>
+    <tr><td>Grantor of a foreign trust</td><td>Form 3520, Part I</td><td>Any transfer</td><td>IRC §6048(a)</td></tr>
+    <tr><td>Distribution received from foreign trust</td><td>Form 3520, Part III</td><td>Any distribution</td><td>IRC §6048(c)</td></tr>
+    <tr><td>Foreign trust with US owner (grantor trust)</td><td>Form 3520-A</td><td>Annual - regardless of activity</td><td>IRC §6048(b)</td></tr>
+    <tr><td>Loan from foreign trust treated as distribution</td><td>Form 3520, Part III</td><td>Any loan</td><td>IRC §643(i)</td></tr>
+    <tr><td>Use of foreign trust property</td><td>Form 3520, Part III</td><td>Any use</td><td>IRC §643(i)</td></tr>
+  </tbody>
+</table>
+
+<h2>What Counts as a "Gift" - Common Questions</h2>
+
+<h3>Money transferred from foreign parents</h3>
+<p>This is the most common scenario. A US resident receives a wire transfer from parents who live abroad. If the transfer is a genuine gift (not a loan, not compensation, not a business payment), it is reportable on Form 3520 if the aggregate exceeds $100,000 for the year. It is not taxable income - but it must be reported. The IRS has been clear that consistent non-reporting of foreign gifts over the threshold is treated as willful failure, even if no tax is owed.</p>
+
+<h3>Transfers disguised as gifts</h3>
+<p>The IRS scrutinizes transfers from foreign related parties. A transfer characterized as a "gift" from a foreign corporation controlled by the recipient's family member is treated as a gift from a foreign corporation (lower $19,570 threshold) rather than an individual. Transfers from a foreign entity to a US person in exchange for services are compensation - not gifts - regardless of how they are labeled.</p>
+
+<h3>Foreign inheritance</h3>
+<p>A bequest or inheritance from a foreign estate is treated the same as a gift from a foreign individual for Form 3520 purposes. The $100,000 threshold applies. No estate or inheritance tax is imposed on the US recipient - but reporting is required if the threshold is met. Treas. Reg. §1.6039F-1.</p>
+
+<h3>Forgiven loans from foreign persons</h3>
+<p>If a foreign person loans money to a US person and subsequently forgives the loan, the forgiven amount may be treated as a gift for Form 3520 purposes. IRS scrutinizes transactions structured as loans between related foreign persons and US recipients to ensure they are genuine debt obligations rather than gifts with extra steps.</p>
+
+<h2>Penalties for Failure to File</h2>
+
+<div class="penalty-box">
+  <div class="pb-label">Form 3520 Penalties - IRC §6677</div>
+  <div class="pb-row"><span class="pb-type">Failure to report gift from foreign individual / estate (Part IV)</span><span class="pb-amount">5% per month, up to 25% of gift amount</span></div>
+  <div class="pb-row"><span class="pb-type">Failure to report gift from foreign corporation / partnership (Part IV)</span><span class="pb-amount">5% per month, up to 25% of gift amount</span></div>
+  <div class="pb-row"><span class="pb-type">Failure to report distribution from foreign trust (Part III)</span><span class="pb-amount">35% of gross value of distribution</span></div>
+  <div class="pb-row"><span class="pb-type">Failure to report transfer to foreign trust (Part I)</span><span class="pb-amount">35% of gross value of property transferred</span></div>
+  <div class="pb-row"><span class="pb-type">Minimum penalty</span><span class="pb-amount">$10,000</span></div>
+  <div class="pb-row"><span class="pb-type">Form 3520-A - failure to file by foreign trust</span><span class="pb-amount">5% of gross value of trust assets</span></div>
+</div>
+
+<div class="note-box"><strong>Penalty abatement:</strong> The IRS can abate Form 3520 penalties for reasonable cause. Revenue Procedure 2020-34 provides guidance on penalty relief for certain foreign trust situations. First-time penalty abatement (FTA) may also be available. Penalties for failure to report gifts (Part IV) are generally more amenable to abatement than penalties for failure to report trust transactions, since the gift reporting obligation is less well-known.</div>
+
+<h2>Due Date and Filing Instructions</h2>
+
+<p>Form 3520 is due on the same date as the taxpayer's income tax return, including extensions. For calendar-year individuals, this is April 15, extended to October 15 with a Form 4868 extension. Form 3520 is filed separately from Form 1040 - it is mailed to a dedicated IRS address in Ogden, Utah, not submitted with the return. IRC §6048; Instructions to Form 3520.</p>
+
+<p>Form 3520-A is filed by the foreign trust (or by the US grantor if the trust fails to file) and is due March 15, extended to September 15. This is an earlier deadline than Form 3520 itself.</p>
+
+<h2>Foreign Trust Basics - When Form 3520 and 3520-A Both Apply</h2>
+
+<p>A foreign trust with a US grantor is treated as a grantor trust for US income tax purposes under IRC §679. The US grantor must: (1) include all trust income, deductions, and credits on their personal return (Form 1040); (2) file Form 3520 annually; and (3) ensure the foreign trust files Form 3520-A (or file it themselves if the trust fails to do so).</p>
+
+<p>A distribution from a foreign non-grantor trust to a US beneficiary is reported on Form 3520, Part III, and is generally taxable as ordinary income to the extent of the trust's distributable net income (DNI). The throwback rules under IRC §665-668 can cause distributions of accumulated income from prior years to be taxed at the beneficiary's highest marginal rate plus an interest charge - a significant tax cost for trusts that have been accumulating income for years.</p>
+
+<div class="green-box"><strong>Rev. Proc. 2020-17 relief:</strong> The IRS provided relief from Form 3520 filing requirements for certain foreign retirement trusts and foreign non-retirement savings trusts. Qualifying Canadian RRSPs, RRIFs, and certain other tax-favored foreign plans are exempt from Form 3520 (but not from FBAR or Form 8938). See the Foreign Pension Reporting guide for details.</div>
+
+<h2>Aggregation Rules - Splitting Gifts Doesn't Work</h2>
+
+<p>The $100,000 threshold is an aggregate of all gifts and bequests received from all foreign individuals and estates during the tax year. A taxpayer who receives $60,000 from a foreign parent in January and $60,000 from the same parent in June has received $120,000 in aggregate and must file Form 3520. Splitting a gift into multiple transfers below the threshold does not avoid the reporting requirement. The IRS looks at the total received from all foreign individuals combined, not from each individual separately - though gifts from spouses and related parties must be combined. IRC §6039F(a).</p>
+
+<div class="related">
+  <div class="related-title">Related Tools & Articles</div>
+  <div class="related-links">
+    <a href="fbar-checker.html" class="related-link">FBAR & Form 8938 Checker<span>Foreign account thresholds · 31 USC 5314</span></a>
+    <a href="fbar-penalties.html" class="related-link">FBAR Penalties Explained<span>Willful vs. non-willful · 31 USC §5321</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>Foreign trust planning · IRC §679</span></a>
+    <a href="foreign-pension-reporting.html" class="related-link">Foreign Pension Reporting<span>Rev. Proc. 2020-17 · IRC §6038D</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §6039F (reporting of gifts from foreign persons); IRC §6048 (reporting of foreign trust transactions); IRC §6677 (penalties); IRC §679 (foreign grantor trusts); IRC §665-668 (throwback rules); IRC §643(i) (loans and use of property as distributions); Treas. Reg. §1.6039F-1; Rev. Proc. 2020-17 (foreign retirement plan relief); Rev. Proc. 2025-32 (2026 inflation adjustment to $19,570 threshold for corporate gifts); Form 3520 and Form 3520-A Instructions (2024).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and tk.cpa expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>

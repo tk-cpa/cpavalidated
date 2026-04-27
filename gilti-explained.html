@@ -217,6 +217,289 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRC §951A (GILTI); IRC §250 (§250 deduction); IRC §957 (CFC definition); IRC §951 (Subpart F); IRC §960(d) (foreign tax credits on GILTI); IRC §962 (§962 election); Treas. Reg. §1.951A-1 through §1.951A-7; Treas. Reg. §1.951A-2(c)(7) (high-tax exclusion); Form 8992; Form 5471; OBBBA (P.L. 119-21), §§13101-13201 (GILTI and §250 deduction changes).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCTI / GILTI: Net CFC Tested Income, §250 Deduction & OBBBA (2026) | CPA Validated</title>
+<meta name="description" content="NCTI (formerly GILTI) under OBBBA: renamed Net CFC Tested Income, §250 deduction reduced to 40% (effective rate 12.6%), permanent rules for US shareholders of CFCs. FDDEI, high-tax exclusion, §962 election. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/gilti-explained.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px;font-family:var(--font-mono)}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px}
+.formula-line{font-size:14px;color:#fff;line-height:2;display:flex;align-items:center;gap:12px}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px}
+.formula-line .var{color:var(--coral)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45);margin-left:8px}
+.formula-total{border-top:1px solid rgba(255,255,255,.2);margin-top:8px;padding-top:8px;font-size:15px;font-weight:700;color:#fff}
+.rate-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0 28px}
+.rate-box{border:1px solid var(--ink-20);padding:16px;text-align:center}
+.rb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:8px}
+.rb-rate{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--coral)}
+.rb-note{font-size:11.5px;color:var(--ink-60);margin-top:6px;line-height:1.4}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.rate-grid,.related-links{grid-template-columns:1fr 1fr}}
+@media print{body{background:white}.ph,.formula-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="NCTI / GILTI: Net CFC Tested Income, §250 Deduction & OBBBA (2026) | CPA Validated">
+  <meta property="og:description" content="GILTI explained for US shareholders of controlled foreign corporations. How GILTI is calculated, the 10% deemed return, IRC 954 exclusions, Section 962 election, high-tax exclusion, and OBBBA changes.">
+  <meta property="og:url" content="https://cpavalidated.com/gilti-explained.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="NCTI / GILTI: Net CFC Tested Income, §250 Deduction & OBBBA (2026) | CPA Validated">
+  <meta name="twitter:description" content="GILTI explained for US shareholders of controlled foreign corporations. How GILTI is calculated, the 10% deemed return, IRC 954 exclusions, Section 962 election, high-tax exclusion, and OBBBA changes.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"NCTI / GILTI: Net CFC Tested Income, §250 Deduction & OBBBA (2026) | CPA Validated","description":"GILTI explained for US shareholders of controlled foreign corporations. How GILTI is calculated, the 10% deemed return, IRC 954 exclusions, Section 962 election, high-tax exclusion, and OBBBA changes.","url":"https://cpavalidated.com/gilti-explained.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>NCTI / GILTI: Net CFC Tested Income &amp; OBBBA Rules (2026)</h1>
+  <div class="sub">Global Intangible Low-Taxed Income &nbsp;&bull;&nbsp; IRC §951A &nbsp;&bull;&nbsp; CFC Shareholders &nbsp;&bull;&nbsp; OBBBA Updates</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §951A</span>
+    <span class="ph-meta-item">Treas. Reg. §1.951A-1</span>
+    <span class="ph-meta-item">OBBBA (P.L. 119-21)</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">GILTI - now officially renamed Net CFC Tested Income (NCTI) by OBBBA (P.L. 119-21) - is a minimum tax on the foreign earnings of US shareholders in controlled foreign corporations. Created by the Tax Cuts and Jobs Act (TCJA) in 2017, GILTI applies to income not tied to physical assets abroad. OBBBA made the regime permanent, renamed it, eliminated the QBAI exemption, and reduced the §250 deduction to 40% permanently. This page uses "GILTI" throughout for searchability; the governing code section remains IRC §951A.
+<div class="callout" style="border-left-color:#F65F5A;margin-top:0;margin-bottom:28px">
+  <div class="callout-label">OBBBA 2025 - GILTI Renamed to NCTI</div>
+  <p><strong>Effective for tax years beginning after December 31, 2024,</strong> OBBBA P.L. 119-21 renamed GILTI (Global Intangible Low-Taxed Income) to <strong>NCTI (Net CFC Tested Income)</strong>. The §250 deduction for C-corporations was permanently reduced from 50% to <strong>40%</strong>, producing an effective US tax rate of <strong>12.6%</strong> (21% corporate rate × 60% net inclusion). The fundamental computation - tested income, tested loss, QBAI, and DTIR - remains the same. The rename and rate change are the primary OBBBA modifications to this regime.</p>
+  <p>This page uses NCTI throughout for post-2024 tax years. References to GILTI refer to the pre-OBBBA regime or the underlying IRC §951A statute (which retains the GILTI label in the code).</p>
+</div>
+
+<div class="callout">
+  <div class="callout-label">Who It Applies To</div>
+  <p>GILTI applies to any <strong>US shareholder</strong> - a US person who owns 10% or more of a <strong>Controlled Foreign Corporation (CFC)</strong>. A CFC is a foreign corporation where US shareholders collectively own more than 50% of the stock by vote or value. IRC §957.</p>
+  <p>This includes US individuals, C-corporations, S-corporations, and partnerships that own CFC stock. The GILTI rules apply whether you are a large multinational or a US person who owns a small foreign company.</p>
+</div>
+
+<h2>The GILTI Calculation</h2>
+
+<div class="formula-box">
+  <div class="formula-label">GILTI = Net CFC Tested Income - Net Deemed Tangible Income Return (NDTIR)</div>
+  <div class="formula-line"><span class="op"></span><span class="var">Net CFC Tested Income</span><span class="def">= Total CFC income minus IRC §954 exclusions (ECI, Subpart F, high-tax exclusion income, etc.)</span></div>
+  <div class="formula-line"><span class="op">−</span><span class="var">Net DTIR</span><span class="def">= 10% × Net Qualified Business Asset Investment (QBAI) of all CFCs</span></div>
+  <div class="formula-line"><span class="op"></span><span class="var">QBAI</span><span class="def">= Average of the adjusted bases of tangible depreciable property used in CFC's trade or business, determined at end of each quarter</span></div>
+  <div class="formula-total">= GILTI Inclusion Amount</div>
+</div>
+
+<p>In plain terms: if your CFCs earn more than a 10% return on their physical assets (machinery, buildings, equipment), the excess is GILTI and must be included in your US income. Companies with heavy capital investment in physical assets abroad have low or no GILTI. Service businesses and IP-heavy businesses - which have little tangible property relative to income - typically have high GILTI exposure.</p>
+
+<h2>Tax Rates on GILTI</h2>
+
+<div class="rate-grid">
+  <div class="rate-box">
+    <div class="rb-label">Corporate (with 50% deduction)</div>
+    <div class="rb-rate">10.5%</div>
+    <div class="rb-note">21% corporate rate × 40% IRC §250 deduction (OBBBA) = 12.6% effective rate under TCJA. OBBBA (P.L. 119-21) reduced the §250 deduction to 40% permanently, raising the effective rate to approximately 12.6%.</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Individual (no deduction)</div>
+    <div class="rb-rate">Up to 37%</div>
+    <div class="rb-note">Individuals get no §250 deduction unless they make a §962 election. Without election, GILTI is taxed as ordinary income at up to 37%.</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Individual with §962 Election</div>
+    <div class="rb-rate">~10.5%</div>
+    <div class="rb-note">§962 election allows individual to be taxed as a corporation on GILTI, accessing the 50% §250 deduction. Complex second-level tax on actual distributions.</div>
+  </div>
+</div>
+
+<div class="note-box"><strong>OBBBA Update (P.L. 119-21, 2025) - GILTI Renamed NCTI:</strong> OBBBA made sweeping changes to the GILTI regime. (1) <strong>Renamed:</strong> GILTI is now officially called Net CFC Tested Income (NCTI), though IRC §951A remains the operative code section for most purposes. (2) <strong>§250 deduction permanently set at 40%</strong> (down from 50% under TCJA), producing a corporate effective rate of approximately 12.6% before foreign tax credits - permanent, no further phase-down. The pre-OBBBA schedule would have dropped to 37.5% in 2027; OBBBA overrode that schedule. (3) <strong>QBAI exemption eliminated:</strong> The 10% deemed return on Qualified Business Asset Investment (QBAI) is eliminated - all CFC tested income is now included in the base (other than excepted categories). This increases inclusions for CFCs with significant tangible assets. Verify current rates and guidance before filing.</div>
+
+<h2>Key Exclusions and Planning Tools</h2>
+
+<h3>High-Tax Exclusion (HTE)</h3>
+<p>CFC income that was subject to an effective foreign tax rate of at least 90% of the US corporate rate can be excluded from GILTI. For 2026 with a 21% US corporate rate, this means foreign income taxed at 18.9% or higher may be excluded. The election is made annually and applies on a CFC-by-CFC basis. Treas. Reg. §1.951A-2(c)(7).</p>
+
+<h3>Subpart F Income Exclusion</h3>
+<p>Income already included in the US shareholder's gross income under Subpart F (IRC §951) is excluded from GILTI tested income. No double taxation between Subpart F and GILTI.</p>
+
+<h3>IRC §962 Election (Individuals)</h3>
+<p>An individual US shareholder can elect to be treated as a corporation for purposes of GILTI. This allows access to the IRC §250 deduction and foreign tax credits on GILTI inclusions. The trade-off: actual distributions from the CFC are then subject to a second level of tax as if they were corporate dividends. The §962 election is made annually. It is particularly valuable when the effective foreign tax rate is moderate and the individual faces high US marginal rates. IRC §962.</p>
+
+<h3>Foreign Tax Credits on GILTI</h3>
+<p>Foreign taxes paid by CFCs can offset GILTI liability, subject to limitations. The GILTI foreign tax credit basket is separate from the general foreign tax credit basket. There is a 20% haircut on foreign taxes creditable against GILTI (i.e., only 80% of foreign taxes are creditable). IRC §960(d). Foreign taxes in excess of the GILTI inclusion cannot be carried forward in the GILTI basket.</p>
+
+<h2>GILTI vs. Subpart F - Key Differences</h2>
+
+<table class="key-table">
+  <thead><tr><th>Feature</th><th>Subpart F (IRC §951)</th><th>GILTI (IRC §951A)</th></tr></thead>
+  <tbody>
+    <tr><td>Type of income</td><td>Passive, base-eroding, and other specified income</td><td>All CFC income above 10% return on tangible assets</td></tr>
+    <tr><td>Threshold</td><td>No threshold - dollar one is included</td><td>10% × QBAI is exempt; only excess is included</td></tr>
+    <tr><td>Foreign tax credits</td><td>100% creditability</td><td>80% creditability; separate basket</td></tr>
+    <tr><td>§250 deduction (corporations)</td><td>Not applicable</td><td>50% deduction (reduced to 40% permanently under OBBBA; was 50% under OBBBA)</td></tr>
+    <tr><td>Individual treatment</td><td>Included as ordinary income</td><td>Ordinary income unless §962 election made</td></tr>
+    <tr><td>Form</td><td>Form 5471, Schedule I</td><td>Form 8992</td></tr>
+  </tbody>
+</table>
+
+<h2>Practical Example</h2>
+
+<p>A US shareholder owns 100% of a foreign tech service company (CFC) with $1,000,000 of net income and $200,000 of depreciable tangible property (QBAI = $200,000).</p>
+
+<p>NDTIR = 10% × $200,000 = $20,000. GILTI inclusion = $1,000,000 - $20,000 = $980,000.</p>
+
+<p>For a C-corporation shareholder: GILTI of $980,000, §250 deduction of $490,000 (50%), taxable GILTI = $490,000, tax at 21% = $102,900, less 80% of foreign taxes paid.</p>
+
+<p>For an individual shareholder without §962 election: $980,000 included as ordinary income, taxed at up to 37% = $362,600 - with no §250 deduction and limited foreign tax credit availability. The §962 election could reduce this substantially.</p>
+
+<div class="green-box"><strong>GILTI planning is most effective before the CFC earns income.</strong> Restructuring options include: moving tangible property into the CFC to increase QBAI (and the exempt return); electing the high-tax exclusion for high-tax CFC income; making the §962 election for individual shareholders; restructuring to reduce CFC status; or checking the box on the foreign entity to treat it as a disregarded entity or partnership (which avoids GILTI entirely but may create other issues).</div>
+
+<div class="related">
+  <div class="related-title">Related Tools & Articles</div>
+  <div class="related-links">
+    <a href="form-5472.html" class="related-link">Form 5472 Checker<span>Foreign-owned US corps · IRC §6038A</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>Foreign entity restructuring · IRC §951A</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Corporate 21% rate · OBBBA · IRC §11</span></a>
+    <a href="no-income-tax-countries.html" class="related-link">Countries with No Income Tax<span>Zero-tax jurisdictions · CFC planning</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §951A (GILTI); IRC §250 (§250 deduction); IRC §957 (CFC definition); IRC §951 (Subpart F); IRC §960(d) (foreign tax credits on GILTI); IRC §962 (§962 election); Treas. Reg. §1.951A-1 through §1.951A-7; Treas. Reg. §1.951A-2(c)(7) (high-tax exclusion); Form 8992; Form 5471; OBBBA (P.L. 119-21), §§13101-13201 (GILTI and §250 deduction changes).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and tk.cpa expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>

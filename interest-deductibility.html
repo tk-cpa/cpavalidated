@@ -185,78 +185,70 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 </div>
 
-<button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
-<button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
-<div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and tk.cpa expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>
-
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
-
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
 <script>
-function fmt(n){if(!n||n<=0) return '$0'; return '$'+Math.round(Math.abs(n)).toLocaleString('en-US');}
-function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
-
-function calcVeh(){
-  const vehInt = parseFloat(document.getElementById('vehInt').value)||0;
-  const bizPct = parseInt(document.getElementById('bizPct').value)/100;
-  const user   = document.getElementById('vehUser').value;
-  
-  const busInterest  = vehInt * bizPct;
-  const persInterest = vehInt * (1 - bizPct);
-  
-  let h = `<div class="result-box"><div class="rb-label">Vehicle Interest Analysis</div>
-    <div class="rb-row"><span class="rb-lbl">Total interest paid</span><span class="rb-val">${fmt(vehInt)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Business use (${Math.round(bizPct*100)}%)</span><span class="rb-val">${fmt(busInterest)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Personal use (${Math.round((1-bizPct)*100)}%) - nondeductible</span><span class="rb-val red">${fmt(persInterest)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Deductible interest</span><span class="rb-val coral">${user==='employee'?'$0':fmt(busInterest)}</span></div>
-  </div>`;
-
-  if(user === 'employee'){
-    h += flag('red','✗','<strong>W-2 employees: vehicle interest is not deductible after TCJA.</strong> Employee business expenses including unreimbursed vehicle costs were eliminated as a miscellaneous itemized deduction by TCJA §11045, now permanent. The personal interest on a vehicle loan has never been deductible under IRC §163(h). Request reimbursement from your employer under an accountable plan (IRC §62(a)(2)(A)) instead.');
-  } else if(bizPct < 0.50){
-    h += flag('amber','!','<strong>Under 50% business use - additional restrictions apply.</strong> Vehicles used 50% or less for business must use ADS straight-line depreciation (no bonus, no Section 179) and are subject to additional listed property rules under IRC §280F(d)(6). The interest deduction is still based on business use %, but depreciation is significantly limited.');
-  } else if(bizPct > 0){
-    h += flag('green','✓',`<strong>Self-employed deduction: ${fmt(busInterest)} on Schedule C.</strong> Business-use portion of vehicle loan interest is deductible on Schedule C (line 16a/b). Maintain a contemporaneous mileage log with: date, destination, business purpose, and miles. Required by IRC §274(d). Logs reconstructed after the fact are routinely disallowed on audit.`);
-  }
-
-  document.getElementById('vehResult').innerHTML = h;
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
 }
-
-function calcInv(){
-  const invInt    = parseFloat(document.getElementById('invInt').value)||0;
-  const invIncome = parseFloat(document.getElementById('invIncome').value)||0;
-  const electAmt  = parseFloat(document.getElementById('qualDivElect').value)||0;
-  const carryIn   = parseFloat(document.getElementById('invCarry').value)||0;
-
-  const nii = invIncome + electAmt;
-  const totalAvailable = invInt + carryIn;
-  const deductible = Math.min(totalAvailable, nii);
-  const carryOut   = Math.max(0, totalAvailable - nii);
-  const taxSaving  = deductible * 0.37; // approx at top rate
-
-  let h = `<div class="result-box"><div class="rb-label">Investment Interest Analysis</div>
-    <div class="rb-row"><span class="rb-lbl">Investment interest paid</span><span class="rb-val">${fmt(invInt)}</span></div>
-    ${carryIn>0?`<div class="rb-row"><span class="rb-lbl">Prior year carryforward</span><span class="rb-val">${fmt(carryIn)}</span></div>`:''}
-    <div class="rb-row"><span class="rb-lbl">Net investment income (NII)</span><span class="rb-val">${fmt(nii)}</span></div>
-    <div class="rb-row"><span class="rb-lbl">IRC §163(d) limitation</span><span class="rb-val ${deductible<totalAvailable?'amber':'green'}">${deductible<totalAvailable?'Applied':'Not triggered'}</span></div>
-    <div class="rb-row"><span class="rb-lbl">Deductible this year (Schedule A, Line 9)</span><span class="rb-val coral">${fmt(deductible)}</span></div>
-    ${carryOut>0?`<div class="rb-row"><span class="rb-lbl">Carryforward to next year (indefinite)</span><span class="rb-val amber">${fmt(carryOut)}</span></div>`:''}
-  </div>`;
-
-  if(carryOut > 0){
-    h += flag('amber','!',`<strong>Investment interest carryforward of ${fmt(carryOut)}.</strong> Investment interest expense that exceeds net investment income carries forward indefinitely to future years when NII is sufficient to absorb it. IRC §163(d)(2). Track this carefully - it can build up over years of low-income years.`);
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
   }
-  if(electAmt === 0 && invInt > invIncome){
-    h += flag('blue','ℹ','<strong>Consider electing to include qualified dividends in NII.</strong> Under IRC §163(d)(4)(B), you can elect to treat qualified dividends and long-term capital gains as ordinary NII to expand the investment interest deduction. The cost: that income is taxed at ordinary rates (up to 37%) instead of preferential rates (0%/15%/20%). Only worthwhile if your marginal rate on the additional income would be lower than the benefit from the expanded deduction.');
-  }
-  if(nii > 0 && deductible > 0){
-    h += flag('green','✓',`<strong>Estimated tax savings: ~${fmt(taxSaving)} at 37% rate.</strong> The actual tax savings depends on your marginal rate. At 37% on the deduction of ${fmt(deductible)}, approximate savings are ${fmt(taxSaving)}.`);
-  }
-
-  document.getElementById('invResult').innerHTML = h;
+  showModal(url,title);
 }
-
-calcVeh();
-calcInv();
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
 </script>
 
 

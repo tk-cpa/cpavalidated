@@ -203,6 +203,275 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: State-specific statutes and regulations - New York Tax Law §605(b)(1)(B) (statutory residency - more than 183 days + permanent place of abode); New York Tax Law §631 (nonresident income allocation); New York TSB-M-06(5)I (convenience of employer rule); Matter of Huckaby, 4 NY3d 427 (2005) (NY Court of Appeals upholding convenience rule); Delaware Code tit. 30 §1124 (convenience rule); Pennsylvania Rev. Stat. §7001 (domicile); Connecticut Gen. Stat. §12-701 (statutory residency - more than 183 days); New Jersey Rev. Stat. §54A:1-3 (statutory residency); Massachusetts Gen. Laws ch. 62 §1 (statutory residency - 183 days or more); Illinois Income Tax Act §1501(a)(20) (statutory resident - more than 182 days); California Rev. & Tax. Code §17014 (California domicile and residency); FLA. STAT. §222.17 (Florida declaration of domicile procedure); Harborfields Central School District v. Rossi (NY Div. of Tax Appeals, addressing near and dear factors); New York Nonresident Audit Guidelines (DTF publication); IRS Pub. 17 (individual tax residency - federal, not state-specific).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State Income Tax Nexus for Individuals & Remote Workers (2026) | CPA Validated</title>
+<meta name="description" content="State income tax nexus for individuals: the 183-day rule by state, domicile vs. statutory residency, the convenience of employer rule (New York), remote worker multi-state filing obligations, and how to change domicile cleanly. CPA-validated. Updated 2026.">
+<link rel="canonical" href="https://cpavalidated.com/state-income-tax-nexus.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="State Income Tax Nexus for Individuals & Remote Workers (2026) | CPA Validated">
+  <meta property="og:description" content="State income tax nexus for individuals: the 183-day rule by state, domicile vs. statutory residency, the convenience of employer rule (New York), remote worker multi-state filing obligations, and how ">
+  <meta property="og:url" content="https://cpavalidated.com/state-income-tax-nexus.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="State Income Tax Nexus for Individuals & Remote Workers (2026) | CPA Validated">
+  <meta name="twitter:description" content="State income tax nexus for individuals: the 183-day rule by state, domicile vs. statutory residency, the convenience of employer rule (New York), remote worker multi-state filing obligations, and how ">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"State Income Tax Nexus for Individuals & Remote Workers (2026) | CPA Validated","description":"State income tax nexus for individuals: the 183-day rule by state, domicile vs. statutory residency, the convenience of employer rule (New York), remote worker multi-state filing obligations, and how ","url":"https://cpavalidated.com/state-income-tax-nexus.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>State Income Tax Nexus: Individuals & Remote Workers</h1>
+  <div class="sub">183-Day Rule &nbsp;&bull;&nbsp; Domicile vs. Statutory Residency &nbsp;&bull;&nbsp; Convenience of Employer &nbsp;&bull;&nbsp; Remote Work Filing &nbsp;&bull;&nbsp; Domicile Change &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">State Law</span>
+    <span class="ph-meta-item">NY Tax Law §605</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">State income tax nexus for individuals is determined by two separate concepts that operate independently: domicile (your permanent home, where you intend to return) and statutory residency (being present in a state for a minimum number of days while maintaining a permanent place of abode there). Either one creates full resident tax liability. Remote work exploded the complexity - an employee working from home in a different state than their employer creates tax obligations in both states, often without the employee realizing it. The convenience of employer rule makes it worse for New York workers specifically.</p>
+
+<h2>Domicile: The First Test</h2>
+
+<p>Every individual has exactly one domicile at any given time - their permanent legal home, the place they intend to return to after absences and where they consider their true home. Domicile is a facts-and-circumstances determination that follows the person, not the property. Changing domicile requires both physically relocating to the new state and forming the intention to make it your permanent home. Both elements must be present.</p>
+
+<p>States look at a wide range of factors when evaluating domicile claims, particularly when an individual claims to have moved from a high-tax state:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>Location of primary residence and its size relative to other residences</li>
+  <li>Where the individual's business interests are managed from</li>
+  <li>Location of family members, particularly spouse and children</li>
+  <li>Where the individual is registered to vote</li>
+  <li>Location of professional and social club memberships</li>
+  <li>Location of doctors, dentists, lawyers, accountants</li>
+  <li>Where vehicles are registered and driver's license is held</li>
+  <li>Where religious affiliation is maintained</li>
+  <li>Location of bank accounts and investment accounts</li>
+  <li>Location of valued personal property (art, jewelry, family heirlooms)</li>
+</ul>
+
+<div class="note-box"><strong>The "near and dear" test.</strong> High-tax states (particularly New York, California, and New Jersey) focus heavily on where the taxpayer keeps things that are near and dear to them - family relationships, irreplaceable personal property, social connections. Moving to Florida while keeping a Manhattan apartment, leaving children in New York private schools, and maintaining a New York club membership is not a successful domicile change in the eyes of the New York Tax Department.</div>
+
+<h2>Statutory Residency: The 183-Day Trap</h2>
+
+<p>Even if an individual is not domiciled in a state, they can become a statutory resident subject to full resident income tax if they maintain a "permanent place of abode" in the state and spend more than a threshold number of days there. The most common threshold is 183 days, but it varies by state.</p>
+
+<table class="key-table">
+  <tr><th>State</th><th>Statutory Residency Threshold</th><th>Permanent Place of Abode Required?</th><th>Notes</th></tr>
+  <tr><td><strong>New York</strong></td><td>More than 183 days</td><td>Yes - must maintain a permanent place of abode in NY</td><td>183 days = resident; must maintain PPA. Days counted by midnight rule. Most aggressively enforced.</td></tr>
+  <tr><td><strong>California</strong></td><td>No separate statutory residency threshold - domicile controls, but presence creates presumption</td><td>N/A</td><td>CA has no 183-day rule; residency is based on domicile. Prolonged presence can support residency finding on facts.</td></tr>
+  <tr><td><strong>New Jersey</strong></td><td>More than 183 days</td><td>Yes - must maintain a permanent place of abode in NJ</td><td>Similar to NY. Common for NJ property owners who relocate but keep NJ home.</td></tr>
+  <tr><td><strong>Connecticut</strong></td><td>More than 183 days</td><td>Yes</td><td>183-day threshold. Often catches NY workers with CT vacation homes.</td></tr>
+  <tr><td><strong>Massachusetts</strong></td><td>183 days or more</td><td>Yes</td><td>183 days exactly = resident. Maintains a permanent place of abode.</td></tr>
+  <tr><td><strong>Illinois</strong></td><td>More than 182 days</td><td>Yes</td><td>183 days = resident. Permanent home required.</td></tr>
+</table>
+
+<div class="red-box"><strong>The dual-resident trap.</strong> A person who maintains a permanent place of abode in both their domicile state (e.g., Florida) and a statutory residency state (e.g., New York) can owe full resident income tax in both states simultaneously on the same income. New York will not give a resident credit for Florida income tax because Florida has no income tax. The double taxation is real. The only solution is to spend fewer than 183 days in New York or give up the New York permanent place of abode.</div>
+
+<h2>New York's Convenience of Employer Rule</h2>
+
+<p>New York has one of the most aggressive and consequential rules in state income taxation: the convenience of employer rule. Under this rule, a nonresident employee of a New York employer who works from home (or from another state) must still pay New York income tax on the days worked remotely - unless working out of state was a necessity of the employer's business rather than a convenience to the employee.</p>
+
+<div class="callout">
+  <div class="callout-label">The Convenience Rule in Practice</div>
+  <p>A California resident works remotely for a New York City company. They physically work in California 200 days and visit New York 50 days per year. Under normal allocation rules, they should pay California tax on 200/250 = 80% of income. Under New York's convenience rule, the 200 California days are treated as New York days because working from California was for the employee's convenience, not a business necessity - New York taxes 100% of income. California also taxes the California-worked days. <strong>The result is potential double taxation of the California days.</strong></p>
+</div>
+
+<p>States that apply similar convenience of employer rules as of 2026: New York, Delaware, Nebraska, Pennsylvania, and Connecticut (for CT employees of out-of-state employers). The rule disproportionately affects high earners who work remotely for New York employers while living in lower-tax or no-tax states.</p>
+
+<h2>Remote Workers: Multi-State Filing Obligations</h2>
+
+<p>A remote employee who works from a state different from their employer's state typically owes income tax in: (a) their state of domicile (on all income), and (b) the employer's state if the convenience rule applies, or alternatively the state where work is performed if the convenience rule does not apply. A credit for taxes paid to other states usually - but not always - eliminates double taxation.</p>
+
+<p>For employees who work in multiple states throughout the year, a day-counting log is essential. Contemporaneous records of where work was performed each day are the only reliable defense in a state residency audit. Hotel receipts, meeting records, flight records, and client visit logs all support the day count.</p>
+
+<h2>Changing Domicile: What It Actually Takes</h2>
+
+<p>High-tax states audit domicile change claims aggressively, particularly when the claimed new domicile is a no-income-tax state like Florida, Texas, or Nevada. A successful domicile change requires a sustained pattern of behavior that genuinely reflects a change in permanent home - not just establishing minimum connections in the new state while maintaining meaningful ties to the old one.</p>
+
+<p>Practical steps for a defensible domicile change from a high-tax state:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>Physically spend more time at the new residence than the old one (track days carefully)</li>
+  <li>Register to vote in the new state and vote there</li>
+  <li>Change driver's license and vehicle registration to the new state</li>
+  <li>Open primary bank and investment accounts at institutions in the new state</li>
+  <li>Transfer professional relationships (doctor, dentist, attorney, CPA) to the new state</li>
+  <li>Change club memberships, religious affiliation, and community involvement</li>
+  <li>File a declaration of domicile in Florida (available under Florida law) or equivalent</li>
+  <li>Sell or rent out the old-state residence, or at minimum downsize it relative to the new primary residence</li>
+  <li>Move "near and dear" personal property (art, jewelry, family heirlooms) to the new state</li>
+  <li>File the final-year part-year resident return in the old state and the first-year part-year resident return in the new state</li>
+</ul>
+
+<div class="green-box"><strong>Timing the move.</strong> If a large income event (business sale, large bonus, concentrated stock vesting) is anticipated, establishing new domicile before the event occurs is critical. High-tax states will challenge a domicile change that occurs immediately before a large income event, arguing that the intent to remain in the old state persisted through the income event. The longer the new domicile is established before the income event, the stronger the position.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="state-residency-hnw.html" class="related-link">State Residency Planning<span>HNW domicile change &middot; Audit defense</span></a>
+    <a href="remote-worker-state-tax.html" class="related-link">Remote Worker State Tax Guide<span>Multi-state filing &middot; Employer withholding</span></a>
+    <a href="no-income-tax-states.html" class="related-link">No Income Tax States<span>9 states &middot; Property tax tradeoffs</span></a>
+    <a href="salt-planning-guide.html" class="related-link">SALT Planning Guide<span>$40K cap &middot; PTET elections</span></a>
+    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>Domicile change &middot; Pre-exit timing</span></a>
+    <a href="closer-connection.html" class="related-link">Closer Connection Checker<span>Federal residency exception &middot; Form 8840</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: State-specific statutes and regulations - New York Tax Law §605(b)(1)(B) (statutory residency - more than 183 days + permanent place of abode); New York Tax Law §631 (nonresident income allocation); New York TSB-M-06(5)I (convenience of employer rule); Matter of Huckaby, 4 NY3d 427 (2005) (NY Court of Appeals upholding convenience rule); Delaware Code tit. 30 §1124 (convenience rule); Pennsylvania Rev. Stat. §7001 (domicile); Connecticut Gen. Stat. §12-701 (statutory residency - more than 183 days); New Jersey Rev. Stat. §54A:1-3 (statutory residency); Massachusetts Gen. Laws ch. 62 §1 (statutory residency - 183 days or more); Illinois Income Tax Act §1501(a)(20) (statutory resident - more than 182 days); California Rev. & Tax. Code §17014 (California domicile and residency); FLA. STAT. §222.17 (Florida declaration of domicile procedure); Harborfields Central School District v. Rossi (NY Div. of Tax Appeals, addressing near and dear factors); New York Nonresident Audit Guidelines (DTF publication); IRS Pub. 17 (individual tax residency - federal, not state-specific).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

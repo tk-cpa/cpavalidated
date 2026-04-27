@@ -338,6 +338,410 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRS Notice 2025-67 (2026 retirement plan COLA limits); IRC §219 (IRA deduction); IRC §408 (Individual Retirement Arrangements); IRC §401(k); IRC §403(b); IRC §457(b); IRC §415(b), §415(c) (DB and DC plan limits); IRC §414(v) (catch-up contributions); IRC §414(v)(7) (mandatory Roth catch-up for high earners, SECURE 2.0); IRC §408A (Roth IRAs); IRC §408(p) (SIMPLE IRA); IRC §408(d)(8) (qualified charitable distributions); IRC §223 (HSA); IRC §25B (Saver's Credit); SECURE 2.0 Act of 2022 (Pub. L. 117-328, Division T); Treasury Department final regulations on SECURE 2.0 catch-up rules (issued September 16, 2025); Form 8606 (non-deductible IRA contributions and Roth conversions). Sources: IRS, "401(k) limit increases to $24,500 for 2026" (Nov. 2025); Fidelity, Schwab, Mercer Advisors, ADP - 2026 retirement plan summaries.</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRA & Retirement Plan Contribution Limits Guide (2026) | CPA Validated</title>
+<meta name="description" content="2026 IRA, Roth IRA, 401(k), 403(b), 457(b), SIMPLE, and HSA contribution limits and phase-outs. Traditional vs Roth IRA, deductibility phase-out, backdoor Roth, mega backdoor Roth, SECURE 2.0 catch-up rules, mandatory Roth catch-up for high earners ($150K FICA), super catch-up for ages 60-63 ($11,250). Per IRS Notice 2025-67. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/ira-basics-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.article ul{margin:8px 0 18px 24px}
+.article ul li{font-size:14.5px;line-height:1.7;color:var(--ink-80);margin-bottom:6px}
+.rate-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin:20px 0 28px}
+.rate-box{border:1px solid var(--ink-20);padding:14px 10px;text-align:center}
+.rb-label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60);margin-bottom:6px;line-height:1.3}
+.rb-rate{font-family:var(--font-display);font-size:20px;font-weight:500;color:var(--coral);line-height:1}
+.rb-note{font-size:10.5px;color:var(--ink-60);margin-top:5px;line-height:1.35}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.ext-link-row{background:var(--paper);border:1px solid var(--ink-20);padding:16px 18px;margin:16px 0}
+.ext-link-row .ext-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:8px}
+.ext-link-row a{display:block;font-size:13px;color:var(--ink);font-weight:500;padding:6px 0;border-bottom:1px solid var(--ink-10)}
+.ext-link-row a:last-child{border-bottom:none}
+.ext-link-row a span{font-family:var(--font-mono);font-size:11px;color:var(--ink-60);font-weight:400;margin-left:8px}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.rate-grid{grid-template-columns:1fr 1fr}.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph,.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IRA & Retirement Plan Contribution Limits Guide (2026) | CPA Validated">
+  <meta property="og:description" content="2026 IRA, Roth IRA, 401(k), 403(b), 457(b), SIMPLE, and HSA contribution limits and phase-outs. Traditional vs Roth IRA, deductibility phase-out, backdoor Roth, mega backdoor Roth, SECURE 2.0 catch-up">
+  <meta property="og:url" content="https://cpavalidated.com/ira-basics-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IRA & Retirement Plan Contribution Limits Guide (2026) | CPA Validated">
+  <meta name="twitter:description" content="2026 IRA, Roth IRA, 401(k), 403(b), 457(b), SIMPLE, and HSA contribution limits and phase-outs. Traditional vs Roth IRA, deductibility phase-out, backdoor Roth, mega backdoor Roth, SECURE 2.0 catch-up">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"IRA & Retirement Plan Contribution Limits Guide (2026) | CPA Validated","description":"2026 IRA, Roth IRA, 401(k), 403(b), 457(b), SIMPLE, and HSA contribution limits and phase-outs. Traditional vs Roth IRA, deductibility phase-out, backdoor Roth, mega backdoor Roth, SECURE 2.0 catch-up","url":"https://cpavalidated.com/ira-basics-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>IRA &amp; Retirement Limits (2026)</h1>
+  <div class="sub">IRS Notice 2025-67 &nbsp;&bull;&nbsp; SECURE 2.0 Roth Catch-Up &nbsp;&bull;&nbsp; Super Catch-Up Ages 60-63 &nbsp;&bull;&nbsp; HSA Limits</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRS Notice 2025-67</span>
+    <span class="ph-meta-item">IRC §219, §401, §408, §415, §414(v)</span>
+    <span class="ph-meta-item">SECURE 2.0 Act of 2022</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The IRS released the 2026 retirement plan contribution limits in Notice 2025-67. Key changes vs. 2025: 401(k)/403(b)/457(b) elective deferrals up $1,000 to $24,500. IRAs up $500 to $7,500. The age 50+ catch-up rises to $8,000 (401(k)) and $1,100 (IRA). The age 60-63 super catch-up of $11,250 introduced in 2025 remains in place. Beginning in 2026, employees who earned more than $150,000 in FICA wages from the sponsoring employer in the prior year MUST make their catch-up contributions on a Roth (after-tax) basis. This guide covers all major retirement plan limits for 2026 and the SECURE 2.0 Act mechanics that practitioners need to flag for clients.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 Quick Reference</div>
+  <p><strong>401(k) / 403(b) / 457(b) / TSP elective deferral:</strong> $24,500<br>
+  <strong>Catch-up (age 50+):</strong> $8,000 → total $32,500<br>
+  <strong>Super catch-up (ages 60-63):</strong> $11,250 → total $35,750<br>
+  <strong>IRA / Roth IRA:</strong> $7,500<br>
+  <strong>IRA catch-up (age 50+):</strong> $1,100 → total $8,600<br>
+  <strong>SIMPLE IRA:</strong> $17,000 (or $18,100 for certain plans); catch-up $4,000 (or $3,850); super catch-up $5,250<br>
+  <strong>HSA self-only:</strong> $4,400 / family: $8,750<br>
+  <strong>DC plan total (§415(c)):</strong> $72,000 / DB plan annual benefit (§415(b)): $290,000</p>
+</div>
+
+<h2>Traditional IRA - Contribution Limits and Deductibility</h2>
+
+<div class="rate-grid">
+  <div class="rate-box">
+    <div class="rb-label">2026 Limit</div>
+    <div class="rb-rate">$7,500</div>
+    <div class="rb-note">Up from $7,000 in 2025</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Catch-Up (50+)</div>
+    <div class="rb-rate">$1,100</div>
+    <div class="rb-note">Up from $1,000 in 2025</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Total Age 50+</div>
+    <div class="rb-rate">$8,600</div>
+    <div class="rb-note">Combined IRA limit</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Compensation Required</div>
+    <div class="rb-rate">Yes</div>
+    <div class="rb-note">Earned income at least equal to contribution</div>
+  </div>
+</div>
+
+<p>The Traditional IRA contribution limit applies to the combined total of Traditional and Roth IRA contributions. A taxpayer cannot contribute $7,500 to a Traditional IRA and another $7,500 to a Roth IRA in the same year - the aggregate is $7,500.</p>
+
+<h3>Traditional IRA Deductibility Phase-Out (2026)</h3>
+
+<p>If the taxpayer (or spouse) is covered by a workplace retirement plan, the deductibility of Traditional IRA contributions phases out at income thresholds:</p>
+
+<table class="key-table">
+  <thead><tr><th>Filing Status</th><th>Phase-Out Range (2026)</th></tr></thead>
+  <tbody>
+    <tr><td>Single, covered by workplace plan</td><td>$81,000 - $91,000</td></tr>
+    <tr><td>Joint, taxpayer covered by workplace plan</td><td>$129,000 - $149,000</td></tr>
+    <tr><td>Joint, spouse covered (taxpayer not covered)</td><td>$242,000 - $252,000</td></tr>
+    <tr><td>MFS, taxpayer covered</td><td>$0 - $10,000 (not COLA-adjusted)</td></tr>
+    <tr><td>Neither spouse covered by workplace plan</td><td>No phase-out; fully deductible</td></tr>
+  </tbody>
+</table>
+
+<p>Above the upper end of the phase-out range, no deduction is available - but the contribution can still be made on a non-deductible basis. Non-deductible contributions create basis tracked on Form 8606.</p>
+
+<h2>Roth IRA - Income Phase-Out</h2>
+
+<table class="key-table">
+  <thead><tr><th>Filing Status</th><th>Phase-Out Range (2026)</th></tr></thead>
+  <tbody>
+    <tr><td>Single / HoH</td><td>$153,000 - $168,000</td></tr>
+    <tr><td>Married Filing Jointly</td><td>$242,000 - $252,000</td></tr>
+    <tr><td>Married Filing Separately</td><td>$0 - $10,000 (not COLA-adjusted)</td></tr>
+  </tbody>
+</table>
+
+<p>Above the upper end, direct Roth IRA contributions are not permitted. The Backdoor Roth strategy (non-deductible Traditional IRA contribution + Roth conversion) remains available; Treasury and IRS have not weighed in definitively on this strategy, but it has been used extensively for over a decade.</p>
+
+<div class="note-box"><strong>Pro-rata rule warning.</strong> The Backdoor Roth conversion is taxable to the extent the taxpayer has pre-tax balances in any Traditional IRA, SEP, or SIMPLE IRA across all accounts. The conversion is computed on a pro-rata basis (Form 8606). Taxpayers with pre-tax IRA balances should consider rolling those balances into a 401(k) (if the plan accepts inbound rollovers) before executing a Backdoor Roth conversion to avoid the pro-rata drag.</div>
+
+<h2>401(k), 403(b), 457(b), TSP - Elective Deferrals</h2>
+
+<div class="rate-grid">
+  <div class="rate-box">
+    <div class="rb-label">Base Limit</div>
+    <div class="rb-rate">$24,500</div>
+    <div class="rb-note">2026 elective deferral. 2025 was $23,500.</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Catch-Up 50+</div>
+    <div class="rb-rate">$8,000</div>
+    <div class="rb-note">Up from $7,500 in 2025. Total $32,500.</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Super 60-63</div>
+    <div class="rb-rate">$11,250</div>
+    <div class="rb-note">SECURE 2.0. Replaces (not adds to) standard catch-up. Total $35,750.</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">DC Plan Total</div>
+    <div class="rb-rate">$72,000</div>
+    <div class="rb-note">§415(c). Employee + employer combined.</div>
+  </div>
+</div>
+
+<p>The §415(c) total includes employee elective deferrals, employer match, profit-sharing contributions, and after-tax contributions. With catch-up included, the total can reach $80,000 (age 50+) or $83,250 (ages 60-63). The total cannot exceed 100% of compensation.</p>
+
+<h2>SECURE 2.0 - Mandatory Roth Catch-Up for High Earners</h2>
+
+<p>Starting January 1, 2026, employees aged 50 or older who earned <strong>more than $150,000 in FICA wages from the sponsoring employer in the prior calendar year</strong> must make their catch-up contributions as designated Roth (after-tax) contributions. Pre-tax catch-up is not available for these employees. IRC §414(v)(7).</p>
+
+<p>Mechanical points:</p>
+
+<ul>
+  <li>The $150,000 threshold is FICA wages (Box 3 of Form W-2), not gross wages or AGI</li>
+  <li>The threshold is COLA-adjusted; the 2026 amount is $150,000 (up from the original $145,000)</li>
+  <li>The lookback is to the prior year. 2026 Roth-catch-up status is based on 2025 W-2 Box 3</li>
+  <li>The rule applies to employer-sponsored plans (401(k), 403(b), 457(b), TSP). It does NOT apply to IRAs or SIMPLE plans</li>
+  <li>If the employer's plan does NOT offer a Roth feature, high earners cannot make catch-up contributions at all - the employer must add Roth or those employees forfeit the catch-up</li>
+  <li>The base elective deferral can still be split between pre-tax and Roth at the employee's election</li>
+  <li>Final regulations were issued September 16, 2025; reasonable good-faith implementation is permitted before 2027</li>
+</ul>
+
+<div class="red-box"><strong>Action item for plan sponsors.</strong> Confirm that the employer's 401(k) plan offers a Roth contribution option. If not, high-earner employees age 50 and older lose the catch-up entirely starting 2026. Coordinate with the plan administrator to add Roth before year-end if needed.</div>
+
+<h2>SECURE 2.0 - Super Catch-Up for Ages 60-63</h2>
+
+<p>For employees who turn 60, 61, 62, or 63 by the end of the calendar year, the catch-up limit is the greater of $10,000 or 150% of the regular catch-up. For 2026, the super catch-up is $11,250. This <strong>replaces</strong> (not adds to) the standard $8,000 catch-up. Total contribution: $24,500 + $11,250 = $35,750.</p>
+
+<p>Once the employee turns 64, the super catch-up no longer applies and the standard $8,000 catch-up resumes. Plan must offer the super catch-up feature; some plans have not yet adopted it.</p>
+
+<h2>SIMPLE IRA / SIMPLE 401(k)</h2>
+
+<table class="key-table">
+  <thead><tr><th>Provision</th><th>2026 Limit</th></tr></thead>
+  <tbody>
+    <tr><td>SIMPLE elective deferral (standard plans)</td><td>$17,000</td></tr>
+    <tr><td>SIMPLE elective deferral (certain plans, SECURE 2.0)</td><td>$18,100</td></tr>
+    <tr><td>SIMPLE catch-up (age 50+, standard)</td><td>$4,000</td></tr>
+    <tr><td>SIMPLE catch-up (age 50+, certain plans)</td><td>$3,850</td></tr>
+    <tr><td>SIMPLE super catch-up (ages 60-63)</td><td>$5,250</td></tr>
+  </tbody>
+</table>
+
+<p>The Roth catch-up requirement for high earners does NOT apply to SIMPLE plans.</p>
+
+<h2>SEP IRA</h2>
+
+<p>SEP IRA contributions are limited to the lesser of 25% of compensation or $72,000 for 2026 (the §415(c) limit). For self-employed taxpayers, the deduction is computed on a net-of-SE-tax basis, effectively about 20% of net SE earnings (Schedule C / Schedule K-1).</p>
+
+<h2>HSA (Health Savings Account)</h2>
+
+<div class="rate-grid">
+  <div class="rate-box">
+    <div class="rb-label">Self-Only</div>
+    <div class="rb-rate">$4,400</div>
+    <div class="rb-note">Up from $4,300 in 2025</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Family</div>
+    <div class="rb-rate">$8,750</div>
+    <div class="rb-note">Up from $8,550 in 2025</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Catch-Up 55+</div>
+    <div class="rb-rate">$1,000</div>
+    <div class="rb-note">Each spouse 55+ must use separate HSAs</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">HDHP Min Deductible</div>
+    <div class="rb-rate">$1,700/$3,400</div>
+    <div class="rb-note">Self-only / family (2026)</div>
+  </div>
+</div>
+
+<p>HSA contributions are deductible above-the-line, not subject to AGI phase-outs, and growth is tax-free. Withdrawals for qualified medical expenses are tax-free. After age 65, withdrawals for non-medical purposes are taxed as ordinary income (no 20% penalty). HSAs are arguably the most tax-favored account in the Code.</p>
+
+<h2>Saver's Credit (Retirement Savings Contributions Credit)</h2>
+
+<p>Low and moderate income taxpayers may claim a non-refundable credit equal to 10%, 20%, or 50% of contributions to retirement plans (max $1,000 single, $2,000 joint). 2026 income limits:</p>
+
+<ul>
+  <li>Joint: up to $80,500 AGI</li>
+  <li>Head of Household: up to $60,375</li>
+  <li>Single / MFS: up to $40,250</li>
+</ul>
+
+<h2>RMDs (Required Minimum Distributions)</h2>
+
+<p>SECURE 2.0 raised the RMD start age to 73 (effective for those turning 72 in 2023 or later) and to 75 starting in 2033. The RMD is computed annually using the IRS Uniform Lifetime Table (or Joint Life Table where the spouse is more than 10 years younger and is the sole beneficiary).</p>
+
+<p>Roth IRAs are not subject to RMDs during the owner's lifetime. Roth 401(k) accounts were subject to RMDs pre-SECURE 2.0; effective 2024, designated Roth accounts in employer plans are no longer subject to RMDs during the owner's lifetime.</p>
+
+<h2>Qualified Charitable Distributions (QCDs)</h2>
+
+<p>Taxpayers age 70&frac12; or older can direct up to $111,000 (2026, indexed; per IRS Notice 2025-67) annually from a Traditional IRA directly to a qualified public charity. The QCD is excluded from gross income and counts toward the RMD. SECURE 2.0 also created a one-time election to treat up to $55,000 (2026) as a QCD to a charitable remainder trust or charitable gift annuity.</p>
+
+<p>QCDs bypass the new OBBBA 0.5% AGI floor on charitable deductions and the 35% benefit cap, since they never enter gross income in the first place. For donors over 70&frac12; with substantial IRA balances, the QCD is meaningfully more valuable than equivalent cash giving in 2026 and beyond.</p>
+
+<h2>Where to Calculate - Trusted Third-Party Tools</h2>
+
+<p>For modeling specific scenarios, the following calculators from established institutions are reliable. CPA Validated does not endorse any specific provider; these are listed because they are widely used, transparent in methodology, and updated for current law:</p>
+
+<div class="ext-link-row">
+  <div class="ext-label">IRA &amp; Retirement Calculators (Third-Party)</div>
+  <a href="https://www.fidelity.com/calculators-tools/retirement-calculator" target="_blank">Fidelity Retirement Score &amp; Calculator <span>fidelity.com</span></a>
+  <a href="https://www.fidelity.com/calculators-tools/roth-conversion-calculator" target="_blank">Fidelity Roth Conversion Calculator <span>fidelity.com</span></a>
+  <a href="https://investor.vanguard.com/tools-calculators/retirement-income-calculator" target="_blank">Vanguard Retirement Income Calculator <span>vanguard.com</span></a>
+  <a href="https://www.schwab.com/retirement-planning-tools" target="_blank">Charles Schwab Retirement Planning Tools <span>schwab.com</span></a>
+  <a href="https://www.bankrate.com/calculators.aspx" target="_blank">Bankrate Retirement Calculators <span>bankrate.com</span></a>
+  <a href="https://www.ssa.gov/oact/quickcalc/" target="_blank">SSA Quick Calculator (Social Security Estimate) <span>ssa.gov</span></a>
+  <a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-required-minimum-distributions-rmds" target="_blank">IRS RMD Worksheets <span>irs.gov</span></a>
+</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>P.L. 119-21 · All Major Provisions</span></a>
+    <a href="charitable-deduction-guide.html" class="related-link">Charitable Deduction Guide<span>QCD bypasses 0.5% floor</span></a>
+    <a href="meals-and-entertainment-guide.html" class="related-link">Meals &amp; Entertainment<span>IRC §274 · 50% Rule</span></a>
+    <a href="vetted-resources.html" class="related-link">Vetted Resources<span>Authoritative third-party tools</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRS Notice 2025-67 (2026 retirement plan COLA limits); IRC §219 (IRA deduction); IRC §408 (Individual Retirement Arrangements); IRC §401(k); IRC §403(b); IRC §457(b); IRC §415(b), §415(c) (DB and DC plan limits); IRC §414(v) (catch-up contributions); IRC §414(v)(7) (mandatory Roth catch-up for high earners, SECURE 2.0); IRC §408A (Roth IRAs); IRC §408(p) (SIMPLE IRA); IRC §408(d)(8) (qualified charitable distributions); IRC §223 (HSA); IRC §25B (Saver's Credit); SECURE 2.0 Act of 2022 (Pub. L. 117-328, Division T); Treasury Department final regulations on SECURE 2.0 catch-up rules (issued September 16, 2025); Form 8606 (non-deductible IRA contributions and Roth conversions). Sources: IRS, "401(k) limit increases to $24,500 for 2026" (Nov. 2025); Fidelity, Schwab, Mercer Advisors, ADP - 2026 retirement plan summaries.</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal, tax, or investment advice. Retirement plan elections have long-term consequences that depend on the specific taxpayer's facts. Consult a qualified tax professional and / or financial advisor before making contribution, conversion, or rollover decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

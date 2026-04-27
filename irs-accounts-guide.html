@@ -281,6 +281,353 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: irs.gov/payments/online-account-for-individuals; irs.gov/businesses/business-tax-account; irs.gov/tax-professionals/tax-pro-account; ID.me identity verification platform; Form 2848 (Power of Attorney and Declaration of Representative); Form 8821 (Tax Information Authorization); Form 4506-T (Request for Transcript of Tax Return); IRC §6103 (confidentiality and disclosure of returns and return information); IRC §7216 (disclosure or use of information by preparers of returns).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRS Online Accounts: What's There and How to Use One | CPA Validated</title>
+<meta name="description" content="A plain-English guide to the IRS's online accounts for individuals, businesses, and tax professionals. What you can see (transcripts, balances, payments, notices), how ID.me verification works, and the three sign-in URLs. Free and most people can set one up in 10 to 15 minutes.">
+<link rel="canonical" href="https://cpavalidated.com/irs-accounts-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--amber:#8B6535;--amber-bg:#EDE8D8;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:22px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:24px 0 10px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}
+.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}
+.callout p{font-size:14px;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--amber);line-height:1.7}
+.note-box strong{font-weight:700}
+.url-card{background:var(--white);border:1px solid var(--ink-20);padding:18px 20px;margin:14px 0;border-left:3px solid var(--coral)}
+.url-card-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:6px}
+.url-card-name{font-family:var(--font-display);font-size:16px;font-weight:500;color:var(--ink);margin-bottom:4px}
+.url-card-url{font-family:var(--font-mono);font-size:13px;color:var(--ink-80);word-break:break-all;margin-bottom:6px}
+.url-card-desc{font-size:13px;color:var(--ink-60);line-height:1.5}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}
+.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}
+.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}
+.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:36px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IRS Online Accounts: What's There and How to Use One | CPA Validated">
+  <meta property="og:description" content="A plain-English guide to the IRS's online accounts for individuals, businesses, and tax professionals. What you can see (transcripts, balances, payments, notices), how ID.me verification works, and th">
+  <meta property="og:url" content="https://cpavalidated.com/irs-accounts-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IRS Online Accounts: What's There and How to Use One | CPA Validated">
+  <meta name="twitter:description" content="A plain-English guide to the IRS's online accounts for individuals, businesses, and tax professionals. What you can see (transcripts, balances, payments, notices), how ID.me verification works, and th">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"IRS Online Accounts: What's There and How to Use One | CPA Validated","description":"A plain-English guide to the IRS's online accounts for individuals, businesses, and tax professionals. What you can see (transcripts, balances, payments, notices), how ID.me verification works, and th","url":"https://cpavalidated.com/irs-accounts-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>IRS Online Accounts: What's There and How to Use One</h1>
+  <div class="sub">Individual &nbsp;&bull;&nbsp; Business &nbsp;&bull;&nbsp; Tax Pro &nbsp;&bull;&nbsp; ID.me verification</div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Most people don't know the IRS has a real website where you can sign in and see your tax record. Not the public-facing irs.gov pages everyone uses to look up forms - a real account, behind a login, where you can see how much you owe, what payments you've made, your wage and income statements from last year, the notices you've been sent, and your tax transcripts. It's free, it works, and you can set one up in about 15 minutes if you have a smartphone and a government ID.</p>
+
+<div class="callout">
+  <div class="callout-label">The Three Accounts</div>
+  <p>The IRS has three separate online portals - one for individuals, one for businesses, one for tax professionals. They look similar but they're <strong>not interchangeable</strong>. Each has its own sign-in URL, its own ID.me verification path, and its own scope of what you can see and do.</p>
+</div>
+
+<h2>Why Have One</h2>
+
+<p>If you've ever spent two hours on the phone with the IRS trying to figure out whether your payment posted, or whether the notice they sent you is real, this is the answer. Once you're logged in, you can see in seconds:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">How much you currently owe (broken out by tax year)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Your payment history for the last several years</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Tax transcripts (account, return, wage and income, record of account)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Digital copies of the notices the IRS has sent you</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Your estimated tax payments for the current year</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Your IP PIN (identity protection PIN) if you have one</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Your filing status and dependents on file</li>
+</ul>
+
+<p>You can also set up payment plans, make payments, and authorize a tax professional to access your account on your behalf - all without calling.</p>
+
+<h2>The Three Sign-In URLs</h2>
+
+<div class="url-card">
+  <div class="url-card-label">For Individuals</div>
+  <div class="url-card-name">IRS Individual Online Account</div>
+  <div class="url-card-url">sa.www4.irs.gov/ola</div>
+  <div class="url-card-desc">For taxpayers filing a Form 1040 (US citizens, US residents, dual-status filers, expats). This is the one most people will use.</div>
+</div>
+
+<div class="url-card">
+  <div class="url-card-label">For Businesses</div>
+  <div class="url-card-name">IRS Business Tax Account</div>
+  <div class="url-card-url">sa.www4.irs.gov/bola</div>
+  <div class="url-card-desc">For sole proprietors, partnerships, corporations, S-corporations, and tax-exempt organizations. Authorized officers and partners can sign in to access entity-level information.</div>
+</div>
+
+<div class="url-card">
+  <div class="url-card-label">For Tax Professionals</div>
+  <div class="url-card-name">IRS Tax Pro Account</div>
+  <div class="url-card-url">sa.www4.irs.gov/taxpro</div>
+  <div class="url-card-desc">For CPAs, EAs, attorneys, and other PTIN holders. Allows electronic submission of Form 2848 (Power of Attorney) and Form 8821 (Tax Information Authorization), and viewing of authorized client accounts.</div>
+</div>
+
+<h2>How ID.me Verification Works</h2>
+
+<p>The IRS uses a third-party identity verification service called ID.me. You'll need it to sign in to any of the three accounts above. The verification is one-time - once your ID.me account is set up, you sign in to all three IRS portals (and many other government sites) with the same credentials.</p>
+
+<p>You'll need:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">A smartphone or computer with a working camera</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">A government-issued photo ID (US driver's license, US passport, or US passport card)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">A phone number registered in your name (for two-factor authentication)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Your Social Security Number</li>
+</ul>
+
+<p>The verification involves uploading a photo of your ID, taking a selfie that the system compares to the ID photo, confirming your phone number via SMS, and answering some background questions about your tax history. Most people get through it in 10 to 15 minutes.</p>
+
+<div class="note-box"><strong>If automated verification fails</strong>, ID.me offers a video-call backup with a live agent (called "Trusted Referee"). Useful if your driver's license is expired, your selfie doesn't match well, or you have a name change that hasn't propagated. The video call usually adds 20 to 40 minutes including wait time.</div>
+
+<h2>What's in Your Individual Account</h2>
+
+<p>The Individual Online Account is the one most people will use. After you sign in, you'll see a dashboard with current-year balance information and links to several sections.</p>
+
+<h3>Balance Due</h3>
+
+<p>Shows what you currently owe, broken out by tax year. Includes the assessed tax, accrued interest, and penalties. Updates within a few days of any payment posting.</p>
+
+<h3>Payment Activity</h3>
+
+<p>Lists payments made for the past several years - estimated tax payments, payments with returns, scheduled installment plan payments. This is the fastest way to confirm a payment landed on the right account if you're not sure.</p>
+
+<h3>Tax Records and Transcripts</h3>
+
+<p>Five types of transcripts are downloadable as PDFs:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Tax Return Transcript</strong> - line-by-line summary of what you filed (most recent year and prior 3)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Tax Account Transcript</strong> - shows assessment dates, payments, refunds, and any adjustments</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Record of Account</strong> - combines the above two</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Wage and Income Transcript</strong> - all the W-2s, 1099s, K-1s, and other information returns the IRS received under your SSN</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Verification of Non-Filing</strong> - proof you didn't file a return for a given year</li>
+</ul>
+
+<p>The Wage and Income transcript is particularly useful for people who lost or never received a W-2 or 1099. The IRS already has the information from the issuer, and you can pull it directly.</p>
+
+<h3>Notices and Letters</h3>
+
+<p>The notices the IRS has sent you, in PDF form. Useful if you've moved and notices are arriving at the wrong address (or not at all). You can also see notices that haven't yet hit your physical mailbox - the digital version typically appears in the account a few days before the paper version arrives.</p>
+
+<h3>Authorization for a Tax Professional</h3>
+
+<p>You can review and approve power-of-attorney requests submitted by tax professionals through their Tax Pro Account. Faster than mailing or faxing Form 2848.</p>
+
+<h2>What's in the Business Tax Account</h2>
+
+<p>The Business Tax Account is newer and somewhat less complete than the individual account, but it's expanding. Currently you can:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">View business tax transcripts (where available - corporate transcripts are limited)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Make federal tax deposits and payments</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">View business tax notices</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">See your EFTPS enrollment status (if linked)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Access for sole proprietors, partnerships, S-corps, C-corps, and tax-exempt entities</li>
+</ul>
+
+<p>Access is controlled at the entity level. A partnership can grant access to specific partners. A corporation grants access to authorized officers. The verification process is more involved than the individual account because the IRS needs to confirm both your identity and your authority to act for the entity.</p>
+
+<h2>What's in the Tax Pro Account</h2>
+
+<p>If you're a tax professional with a PTIN, the Tax Pro Account lets you:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Submit Form 2848 (Power of Attorney) electronically - the client approves it from their Individual Online Account</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Submit Form 8821 (Tax Information Authorization) electronically</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">View transcripts for clients who have authorized you</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Manage authorizations across your client base</li>
+</ul>
+
+<p>This is the practical replacement for the old "fax Form 2848 and wait two weeks" workflow. Once you and the client are both set up, the authorization can be approved in minutes.</p>
+
+<h2>What If You Don't Have a US Driver's License or Passport?</h2>
+
+<p>This is a real problem for some Clients - particularly non-resident aliens with US tax obligations, Americans living abroad without a current US driver's license, or recent immigrants. The standard ID.me automated verification needs a US-issued photo ID.</p>
+
+<p>If you don't have one, the options are:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>ID.me Trusted Referee video call.</strong> The live agent can verify some non-US documents (foreign passports, in some cases) and can sometimes complete the verification when the automated path can't.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Authorize a tax professional</strong> to handle the matter through their Tax Pro Account. The professional can pull transcripts, see balances, and communicate with the IRS on your behalf without you needing your own online account.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Use traditional channels.</strong> Form 4506-T (transcript request), phone calls to the international taxpayer hotline, or mailed correspondence still work - they're just slower.</li>
+</ul>
+
+<h2>If You Get Locked Out</h2>
+
+<p>The most common reasons people lose access to their IRS account:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Phone number changed and the two-factor SMS goes to the wrong number</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">ID.me account was created with an email address you no longer have access to</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Photo ID expired and the system flags the new ID as a different person</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Address change hasn't propagated and the system can't match you to your tax record</li>
+</ul>
+
+<p>The recovery path is through ID.me support (help.id.me), not the IRS directly. The IRS doesn't manage the identity verification - they just consume it from ID.me. If your ID.me account is broken, your IRS account access is broken until ID.me is fixed.</p>
+
+<h2>One Word of Caution</h2>
+
+<p>Phishing emails and fake "IRS account" sites are common. The genuine sign-in URLs are:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">sa.www4.irs.gov/ola (individual)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">sa.www4.irs.gov/bola (business)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">sa.www4.irs.gov/taxpro (tax pro)</li>
+</ul>
+
+<p>If a "sign in" link in an email goes anywhere else, it's not the IRS. Always type the URL directly or navigate from irs.gov rather than clicking email links. The IRS does not initiate contact by email asking you to sign in to your account.</p>
+
+<div class="related">
+  <div class="related-title">Related Articles</div>
+  <div class="related-links">
+    <a href="irs-payments-guide.html" class="related-link">IRS Payments Guide<span>How to actually pay</span></a>
+    <a href="us-expat-tax-guide.html" class="related-link">US Expat Tax Guide<span>Filing from abroad</span></a>
+    <a href="irs-mailing-addresses-abroad.html" class="related-link">IRS Mailing Addresses Abroad<span>For paper filers</span></a>
+    <a href="canadian-tax-hub.html" class="related-link">Canadian Tax Hub<span>Cross-border filers</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: irs.gov/payments/online-account-for-individuals; irs.gov/businesses/business-tax-account; irs.gov/tax-professionals/tax-pro-account; ID.me identity verification platform; Form 2848 (Power of Attorney and Declaration of Representative); Form 8821 (Tax Information Authorization); Form 4506-T (Request for Transcript of Tax Return); IRC §6103 (confidentiality and disclosure of returns and return information); IRC §7216 (disclosure or use of information by preparers of returns).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Account access procedures, ID.me verification requirements, and IRS portals are subject to change. Verify URLs and procedures at irs.gov before signing in. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa Visit <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

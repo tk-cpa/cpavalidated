@@ -409,6 +409,481 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="source-row">Authority: IRC §671-679 (grantor trust rules); IRC §676 (power to revoke); IRC §2036 (retained interests); IRC §2038 (revocable transfers); IRC §2041 (general powers of appointment); IRC §2501 (gift tax); IRC §2511 (transfers in general); IRC §2631 (GST exemption); IRC §2702 (special valuation - GRATs, QPRTs); IRC §664 (charitable remainder trusts); IRC §7701(a)(30)-(31) (domestic vs. foreign trust definition); IRC §679 (US transferors to foreign trusts); IRC §665-668 (throwback rules); IRC §6048 (Form 3520/3520-A); IRC §6677 (penalties); IRC §2010(c)(3) (unified credit - $15M, OBBBA P.L. 119-21); Treas. Reg. §301.7701-7 (court and control tests); Treas. Reg. §25.2702-3 (GRATs); Treas. Reg. §25.2702-5 (QPRTs); Treas. Reg. §1.664-1 (CRTs); Treas. Reg. §20.2010-1(c) (anti-clawback); IRC §7520 (applicable federal rate for valuation); IRC §453 (installment sale - IDGT transactions); IRC §6662-6663 (accuracy and fraud penalties).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Trust Guide: Revocable vs. Irrevocable, Foreign vs. Domestic, Tax Planning | CPA Validated</title>
+<meta name="description" content="How trusts actually work for tax planning. Revocable vs. irrevocable, foreign vs. domestic trusts (IRC 7701), grantor trust rules (IRC 671-679), the IRC 679 trap for US persons, throwback rules, and the honest truth about what trusts do and don't accomplish. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/trust-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.cg-head{background:var(--ink);color:#fff;padding:10px 14px;font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em}
+.cg-cell{background:var(--white);padding:12px 14px;font-size:13px;line-height:1.6;color:var(--ink-80);vertical-align:top}
+.cg-cell ul{padding-left:14px}.cg-cell li{margin-bottom:4px}
+.cg-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-40);margin-bottom:6px;font-family:var(--font-mono)}
+.trap-box{border:2px solid var(--red-b);background:var(--red-bg);padding:16px 20px;margin:24px 0}
+.trap-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--red);margin-bottom:8px;font-family:var(--font-mono)}
+.trap-box p{font-size:13.5px;color:var(--red);line-height:1.65;margin-bottom:0}
+.truth-row{border-bottom:1px solid var(--ink-20);padding:14px 0;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:flex-start}
+.truth-row:last-child{border-bottom:none}
+.truth-icon{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;margin-top:1px}
+.icon-yes{background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
+.icon-no{background:var(--red-bg);color:var(--red);border:1px solid var(--red-b)}
+.icon-maybe{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b)}
+.truth-content{font-size:13.5px;color:var(--ink-80);line-height:1.6}
+.truth-content strong{color:var(--ink);display:block;margin-bottom:3px}
+.strategy-card{border:1px solid var(--ink-20);padding:16px;margin-bottom:12px;background:var(--white)}
+.sc-name{font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:4px}
+.sc-auth{font-family:var(--font-mono);font-size:10px;color:var(--ink-40);margin-bottom:8px}
+.sc-desc{font-size:13px;color:var(--ink-60);line-height:1.6}
+.sc-verdict{font-size:11.5px;font-weight:600;margin-top:8px;padding-top:8px;border-top:1px solid var(--ink-20)}
+.verdict-worth{color:var(--green)}.verdict-complex{color:var(--amber)}.verdict-narrow{color:var(--blue-acc)}
+.two-test{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 28px}
+.test-card{border:2px solid var(--ink-20);padding:16px;background:var(--white)}
+.test-num{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:6px}
+.test-name{font-family:var(--font-display);font-size:15px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.test-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+.test-fail{font-size:11.5px;font-weight:600;color:var(--red);margin-top:8px;padding-top:8px;border-top:1px solid var(--ink-20)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.compare-grid,.two-test,.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}.callout,.trap-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="US Trust Guide: Revocable vs. Irrevocable, Foreign vs. Domestic, Tax Planning | CPA Validated">
+  <meta property="og:description" content="How trusts actually work for tax planning. Revocable vs. irrevocable, foreign vs. domestic trusts (IRC 7701), grantor trust rules (IRC 671-679), the IRC 679 trap for US persons, throwback rules, and t">
+  <meta property="og:url" content="https://cpavalidated.com/trust-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="US Trust Guide: Revocable vs. Irrevocable, Foreign vs. Domestic, Tax Planning | CPA Validated">
+  <meta name="twitter:description" content="How trusts actually work for tax planning. Revocable vs. irrevocable, foreign vs. domestic trusts (IRC 7701), grantor trust rules (IRC 671-679), the IRC 679 trap for US persons, throwback rules, and t">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"US Trust Guide: Revocable vs. Irrevocable, Foreign vs. Domestic, Tax Planning | CPA Validated","description":"How trusts actually work for tax planning. Revocable vs. irrevocable, foreign vs. domestic trusts (IRC 7701), grantor trust rules (IRC 671-679), the IRC 679 trap for US persons, throwback rules, and t","url":"https://cpavalidated.com/trust-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>US Trust Guide: What Trusts Do, What They Don't, and Where Tax Fits In</h1>
+  <div class="sub">Revocable vs. Irrevocable &nbsp;&bull;&nbsp; Foreign vs. Domestic &nbsp;&bull;&nbsp; Grantor Trust Rules &nbsp;&bull;&nbsp; The Honest Truth About Tax Planning</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §671-679</span>
+    <span class="ph-meta-item">IRC §7701(a)(30)-(31)</span>
+    <span class="ph-meta-item">IRC §2036, §2038</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Trusts are one of the most misunderstood tools in tax and estate planning. Clients are told trusts save taxes, protect assets, and keep wealth out of the government's reach. Some of that is true, in specific circumstances. A lot of it isn't. This guide explains how trusts actually work under US tax law - the mechanics, the rules, and the honest assessment of what a trust can and cannot do for you.</p>
+
+<h2>Section 1: Revocable vs. Irrevocable Trusts</h2>
+
+<h3>The Basic Structure</h3>
+
+<p>Every trust has three roles: the <strong>grantor</strong> (the person who creates and funds the trust), the <strong>trustee</strong> (the person or institution that manages the assets), and the <strong>beneficiary</strong> (the person who receives benefits from the trust). In a revocable trust, the same person often fills all three roles simultaneously. In an irrevocable trust, the grantor must give up meaningful control - and that distinction is everything for tax purposes.</p>
+
+<h3>Revocable Trusts: What They Do and Don't Do</h3>
+
+<p>A revocable living trust is one where the grantor retains the power to amend, revoke, or terminate the trust at any time. This is the most common type of trust in the US, and it is enormously useful - just not for tax savings.</p>
+
+<p><strong>What a revocable trust actually does:</strong> It avoids probate. Assets held in a revocable trust pass directly to beneficiaries at death without going through the public probate process, saving time, cost, and privacy. It also provides continuity - if the grantor becomes incapacitated, a successor trustee steps in immediately without the need for a court-ordered conservatorship.</p>
+
+<div class="note-box"><strong>Grantor Trust Rule - IRC §676.</strong> Because the grantor retains the power to revoke, the IRS ignores the trust entirely for income tax purposes. Every dollar of income, gain, deduction, and credit generated inside the trust flows through to the grantor's personal tax return as if the trust didn't exist. There is no separate trust tax return for a revocable trust during the grantor's lifetime. No income tax savings. None.</div>
+
+<p><strong>What a revocable trust does not do:</strong> It does not reduce your income taxes. It does not remove assets from your taxable estate. Under IRC §2036 and §2038, assets in a revocable trust are fully included in your gross estate at death because you retained the power to take them back. A revocable trust is an estate planning and administration tool, not a tax reduction strategy.</p>
+
+<h3>Irrevocable Trusts: When They Matter for Tax</h3>
+
+<p>An irrevocable trust is one where the grantor has genuinely given up control - the power to revoke, amend, or change the beneficial interests. That relinquishment of control is what can remove assets from the grantor's estate and potentially shift the tax burden away from the grantor.</p>
+
+<p>But "irrevocable" is not a magic word. The IRS looks at substance, not labels. Three tests determine whether assets in an irrevocable trust are actually out of your estate:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>IRC §2036</strong> - If you retain the right to receive income from the trust, or retain control over who receives income, the assets are still in your estate.</li>
+  <li><strong>IRC §2038</strong> - If you retain the power to revoke, alter, or amend the trust - even through another person - the assets are included.</li>
+  <li><strong>IRC §2041</strong> - If a beneficiary holds a general power of appointment over trust assets, those assets are included in the beneficiary's estate at death.</li>
+</ul>
+
+<p>If the irrevocable trust is properly structured and the grantor truly relinquishes control, assets transferred to the trust are a completed gift for gift tax purposes (IRC §2511) and are removed from the grantor's gross estate. The appreciation on those assets from the transfer date forward also escapes estate tax - which is the planning opportunity for large, growing estates.</p>
+
+<div class="compare-grid">
+  <div class="cg-head">Revocable Trust</div>
+  <div class="cg-head">Irrevocable Trust</div>
+  <div class="cg-cell">
+    <div class="cg-label">Control</div>
+    Grantor retains full control; can revoke or amend at any time
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Control</div>
+    Grantor relinquishes control; changes require beneficiary consent or court approval
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Income Tax</div>
+    All income taxed to grantor (IRC §676). No separate return during grantor's life.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Income Tax</div>
+    Depends on grantor trust status. If grantor retains certain powers (IRC §671-679), still taxed to grantor. Otherwise, trust files its own return (Form 1041).
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Estate Tax</div>
+    Fully included in gross estate (IRC §2036, §2038). No estate tax benefit.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Estate Tax</div>
+    Removed from estate if grantor has no retained interests or powers. Future appreciation also escapes.
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Best Use</div>
+    Probate avoidance, incapacity planning, privacy at death
+  </div>
+  <div class="cg-cell">
+    <div class="cg-label">Best Use</div>
+    Estate tax reduction (for estates above the exemption), asset protection, dynasty planning
+  </div>
+</div>
+
+<h3>The Grantor Trust Rules: The Concept That Ties Everything Together</h3>
+
+<p>IRC §671 through §679 is a set of rules - collectively called the grantor trust rules - that determine when a trust is "transparent" for income tax purposes. When a trust is a grantor trust, the grantor (not the trust) pays income tax on everything inside it, even if the grantor isn't receiving the income. Understanding grantor trust status is essential to understanding why irrevocable trusts are not automatic income tax savers.</p>
+
+<p>The most common triggers for grantor trust status under IRC §§672-677 include: retaining the power to substitute assets of equivalent value (§675), retaining the power to control beneficial enjoyment (§674), having a reversionary interest worth more than 5% of the trust (§673), or having a related or subordinate party as trustee who can distribute income or principal to the grantor (§677). Any one of these is enough - the entire trust becomes a grantor trust for income tax purposes.</p>
+
+<div class="callout">
+  <div class="callout-label">The Intentionally Defective Grantor Trust (IDGT)</div>
+  <p>One of the most powerful advanced planning tools is a trust that is deliberately structured to be a grantor trust for <em>income tax</em> purposes but <em>not</em> included in the grantor's estate for <em>estate tax</em> purposes. The grantor pays income tax on trust earnings (effectively making a tax-free gift to the trust each year), while the assets grow estate-tax-free. Sales to an IDGT are not taxable events for income tax purposes (IRC §453), because the grantor is effectively selling to herself. <strong>This is legal, widely used, and a genuine planning technique - not a loophole.</strong></p>
+</div>
+
+<h2>Section 2: Foreign Trusts vs. Domestic Trusts</h2>
+
+<h3>Why the Distinction Matters So Much</h3>
+
+<p>The US tax treatment of a trust depends critically on whether it is classified as a domestic trust or a foreign trust. The difference is not where the trust was created, where the trustee lives, or where the assets are held. It is determined entirely by a two-part statutory test under IRC §7701(a)(30) and (31), and the consequences of being classified as a foreign trust are severe.</p>
+
+<div class="two-test">
+  <div class="test-card">
+    <div class="test-num">Test One</div>
+    <div class="test-name">The Court Test</div>
+    <div class="test-desc">A court within the United States must be able to exercise primary supervision over the trust's administration. If a foreign court has jurisdiction - or if no US court does - the trust fails this test.</div>
+    <div class="test-fail">Fail = Foreign Trust (regardless of Test 2)</div>
+  </div>
+  <div class="test-card">
+    <div class="test-num">Test Two</div>
+    <div class="test-name">The Control Test</div>
+    <div class="test-desc">One or more US persons must have the authority to control all substantial decisions of the trust. If any substantial decision can be made by a non-US person, the trust fails this test.</div>
+    <div class="test-fail">Fail = Foreign Trust (regardless of Test 1)</div>
+  </div>
+</div>
+
+<p>A trust must satisfy <em>both</em> tests to be classified as domestic. Fail either one and the trust is a foreign trust under US law - regardless of where it was drafted, regardless of what the document calls itself, and regardless of where the assets are physically located. Treasury Regulation §301.7701-7 provides detailed guidance on what constitutes a "substantial decision" for purposes of the control test.</p>
+
+<h3>Foreign Grantor Trusts: The US Grantor Pays, but the Reporting Burden is Severe</h3>
+
+<p>If a foreign trust has a US grantor - meaning a US person who transferred assets to the trust and is treated as the owner under the grantor trust rules - the income tax treatment is actually similar to a domestic grantor trust: the grantor pays US tax on the trust's worldwide income. The compliance burden, however, is dramatically different.</p>
+
+<p>A US person who is treated as the owner of any portion of a foreign trust must file Form 3520 annually (IRC §6048(b)) and ensure the trust files Form 3520-A annually (IRC §6048(b)(1)(B)). The penalties for failure to file are 5% of the gross value of the trust assets per year for Form 3520-A - not of income, but of total assets. A $5 million foreign trust with a missing Form 3520-A costs $250,000 per year in penalties before any abatement. See our dedicated <a href="form-3520-guide.html">Form 3520 guide</a> for full penalty mechanics.</p>
+
+<h3>IRC §679: The Trap That Catches Immigrants and International Families</h3>
+
+<div class="trap-box">
+  <div class="trap-label">High-Risk Zone - IRC §679</div>
+  <p>Under IRC §679, if a US person transfers property to a foreign trust that has - or may have - a US beneficiary, that US person is treated as the grantor of the trust for income tax purposes, regardless of what the trust document says. The trust's income is taxed to the transferor as if the trust doesn't exist. This rule was designed to prevent US persons from using foreign trusts to defer US income tax, and it is broadly applied. There is no minimum threshold - a single dollar transferred can trigger grantor trust treatment under §679.</p>
+</div>
+
+<p>The §679 trap is particularly dangerous for two groups. First, recent immigrants who had foreign trusts established before arriving in the US: if they transfer any additional assets to those trusts after becoming US tax residents, or if the trust has US beneficiaries (which it often does once the grantor becomes a US person), §679 applies. Second, US citizens who establish foreign trusts thinking the offshore structure protects them from US tax - it does not, if they have any US beneficiaries including themselves.</p>
+
+<h3>Foreign Non-Grantor Trusts: The Throwback Rules</h3>
+
+<p>If a foreign trust does not have a US grantor - for example, it was established by a non-US person with no US grantors - and it has US beneficiaries, those beneficiaries face a different and equally punishing regime: the throwback rules of IRC §§665-668.</p>
+
+<p>Under the throwback rules, when a foreign non-grantor trust makes an "accumulation distribution" - a distribution in excess of the trust's current-year distributable net income (DNI) - that excess is treated as if it had been distributed in the years when the income was actually earned. The beneficiary pays tax at ordinary income rates plus an interest charge for each year the income was accumulated in the trust. The interest charge under IRC §668 compounds and is not deductible. The practical effect: accumulating income inside a foreign non-grantor trust and then distributing it to a US beneficiary can result in a tax rate well above 37% once the interest charges are applied.</p>
+
+<div class="note-box"><strong>The Kiddie Tax Does Not Help.</strong> A common misconception is that distributing from a foreign trust to a minor US beneficiary reduces the tax burden. Under the throwback rules, the distribution is taxed at the highest individual rate regardless of the beneficiary's age or income level. The kiddie tax (IRC §1(g)) and the trust throwback rules operate independently.</div>
+
+<h3>The Immigrant Trap: Pre-Immigration Trusts</h3>
+
+<p>Among the most common and costly trust problems for international clients is the pre-immigration trust. A foreign national establishes a trust in their home country before immigrating to the US - often a standard estate planning tool in their jurisdiction. On the day they become a US tax resident, several things happen simultaneously:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>If the trust now has a US grantor (the immigrant) or US beneficiaries, §679 may apply immediately.</li>
+  <li>If the trust fails either part of the IRC §7701 two-part test, it is classified as a foreign trust from day one of US residency.</li>
+  <li>Annual Form 3520 and Form 3520-A obligations begin immediately.</li>
+  <li>Any distributions received from the trust after becoming a US person are subject to US income tax, potentially under the throwback rules.</li>
+</ul>
+
+<p>The window to restructure, decant, or terminate a foreign trust is <em>before</em> US tax residency begins. Once the taxpayer is a US person, options narrow significantly and compliance obligations begin immediately. Pre-immigration trust planning is one of the highest-value engagements in international tax practice precisely because the cost of getting it wrong is so high.</p>
+
+<h2>Section 3: The Truth About Trusts and Tax Planning</h2>
+
+<h3>What Trusts Actually Accomplish</h3>
+
+<div class="truth-row">
+  <div class="truth-icon icon-yes">&#10003;</div>
+  <div class="truth-content">
+    <strong>Probate avoidance (revocable trusts)</strong>
+    Assets in a revocable trust pass directly to beneficiaries at death without going through probate. This saves time, cost, and maintains privacy - probate is a public proceeding. This is real and valuable, but it is an estate administration benefit, not a tax benefit.
+  </div>
+</div>
+<div class="truth-row">
+  <div class="truth-icon icon-yes">&#10003;</div>
+  <div class="truth-content">
+    <strong>Estate tax reduction - but only for large estates, and only if properly structured</strong>
+    Assets transferred to a properly structured irrevocable trust - with no retained interests under IRC §2036 or §2038 - are removed from the grantor's taxable estate. Future appreciation on those assets also escapes estate tax. This is real and significant for estates above the $15M federal exemption (IRC §2010, OBBBA P.L. 119-21). For estates below the exemption, this benefit does not exist.
+  </div>
+</div>
+<div class="truth-row">
+  <div class="truth-icon icon-yes">&#10003;</div>
+  <div class="truth-content">
+    <strong>Incapacity planning and continuity</strong>
+    A funded revocable trust allows a successor trustee to manage assets immediately if the grantor becomes incapacitated - no court proceedings required. This is practical, not tax-driven.
+  </div>
+</div>
+<div class="truth-row">
+  <div class="truth-icon icon-yes">&#10003;</div>
+  <div class="truth-content">
+    <strong>Generation-skipping and dynasty planning</strong>
+    Irrevocable trusts can hold assets across multiple generations, utilizing the generation-skipping transfer (GST) tax exemption (IRC §2631) to pass wealth to grandchildren and beyond without an additional layer of transfer tax at each generation.
+  </div>
+</div>
+<div class="truth-row">
+  <div class="truth-icon icon-maybe">!</div>
+  <div class="truth-content">
+    <strong>Asset protection - jurisdiction-dependent, not guaranteed</strong>
+    Domestic asset protection trusts (DAPTs) are available in about 20 states and can provide creditor protection after a waiting period. Foreign asset protection trusts (FAPTs) are marketed aggressively and can provide stronger protection - but also carry the full weight of the foreign trust reporting regime. Asset protection is a function of state and foreign law, not the IRC. Federal bankruptcy law can override many asset protection structures. This area requires careful jurisdiction-specific legal analysis.
+  </div>
+</div>
+
+<h3>What Trusts Do Not Do</h3>
+
+<div class="truth-row">
+  <div class="truth-icon icon-no">&#10007;</div>
+  <div class="truth-content">
+    <strong>Trusts do not save income taxes under the grantor trust rules</strong>
+    If a trust is a grantor trust - which most revocable trusts and many irrevocable trusts are - the grantor pays income tax on all trust income at their own rates. No income tax savings. The trust is invisible for income tax purposes. Even for non-grantor trusts, the compressed tax brackets mean trust income above approximately $15,200 (2026) is taxed at the 37% rate - higher than most individual taxpayers reach.
+  </div>
+</div>
+<div class="truth-row">
+  <div class="truth-icon icon-no">&#10007;</div>
+  <div class="truth-content">
+    <strong>A trust label does not remove assets from your estate</strong>
+    Calling a trust "irrevocable" is not enough. If the grantor retains the right to receive income (IRC §2036(a)(1)), retains control over who receives income (IRC §2036(a)(2)), retains the power to revoke or amend (IRC §2038), or has any other disqualifying retained interest, the assets are included in the gross estate. The IRS looks at economic substance, not document labels.
+  </div>
+</div>
+<div class="truth-row">
+  <div class="truth-icon icon-no">&#10007;</div>
+  <div class="truth-content">
+    <strong>Offshore trusts do not eliminate US tax obligations</strong>
+    A US person who transfers assets to a foreign trust remains a US taxpayer. IRC §679 treats the transferor as the grantor. The trust's worldwide income is taxed to the grantor at US rates. The compliance burden (Forms 3520 and 3520-A) is added on top. Moving assets offshore does not move tax obligations offshore.
+  </div>
+</div>
+<div class="truth-row">
+  <div class="truth-icon icon-no">&#10007;</div>
+  <div class="truth-content">
+    <strong>Most people do not need trust-based estate tax planning</strong>
+    The federal estate tax exemption is $15,000,000 per individual ($30,000,000 per married couple) under OBBBA, indexed for inflation from 2027. Fewer than 0.1% of estates owe federal estate tax. If your estate is below the exemption, trust-based estate tax planning adds legal fees and complexity with zero federal estate tax benefit. State estate taxes (12 states plus DC have them, with exemptions as low as $1M) can still apply - but that is a state-specific analysis, not a federal trust strategy.
+  </div>
+</div>
+
+<h3>Advanced Strategies Worth Knowing</h3>
+
+<p>For clients with estates meaningfully above the federal exemption - generally $20M and above for married couples, where both exemptions are already deployed - several advanced trust strategies have a legitimate role. These are sophisticated tools that require careful implementation and ongoing administration.</p>
+
+<div class="strategy-card">
+  <div class="sc-name">Spousal Lifetime Access Trust (SLAT)</div>
+  <div class="sc-auth">IRC §2523 &nbsp;&middot;&nbsp; IRC §2036 &nbsp;&middot;&nbsp; IRC §2038</div>
+  <div class="sc-desc">An irrevocable trust for the benefit of a spouse (and often descendants), funded with gifts that use the grantor's lifetime exemption. The grantor removes assets from their estate while the spouse retains access to the trust. Works well for couples with sufficient assets that one spouse's needs can be met from the trust. Risk: if the marriage ends, the grantor loses access entirely. Reciprocal trust doctrine risk if both spouses create SLATs simultaneously with similar terms.</div>
+  <div class="sc-verdict verdict-worth">Best for: high-net-worth married couples with assets well above the exemption who want to lock in current exemption amounts.</div>
+</div>
+
+<div class="strategy-card">
+  <div class="sc-name">Grantor Retained Annuity Trust (GRAT)</div>
+  <div class="sc-auth">IRC §2702 &nbsp;&middot;&nbsp; Treas. Reg. §25.2702-3</div>
+  <div class="sc-desc">The grantor transfers assets to an irrevocable trust and retains the right to receive an annuity for a fixed term. At the end of the term, remaining assets pass to beneficiaries estate-tax-free. The gift is valued at the present value of the remainder after subtracting the annuity stream at the IRC §7520 rate. If assets grow faster than the §7520 rate, the excess passes tax-free. GRATs are zeroed out to minimize gift tax exposure. Risk: if the grantor dies during the GRAT term, assets are pulled back into the estate (IRC §2036).</div>
+  <div class="sc-verdict verdict-worth">Best for: high-growth assets (pre-IPO stock, real estate appreciating rapidly) and low interest rate environments.</div>
+</div>
+
+<div class="strategy-card">
+  <div class="sc-name">Intentionally Defective Grantor Trust (IDGT)</div>
+  <div class="sc-auth">IRC §671-677 &nbsp;&middot;&nbsp; IRC §2036 &nbsp;&middot;&nbsp; IRC §2038</div>
+  <div class="sc-desc">Structured to be a grantor trust for income tax (so the grantor pays taxes on trust income, effectively making an ongoing tax-free gift to beneficiaries) but outside the grantor's estate for estate tax. Often used in combination with an installment sale - the grantor sells appreciating assets to the IDGT in exchange for a promissory note at the AFR. Because the trust is a grantor trust, the sale is not a taxable event. The entire appreciation above the AFR passes estate-tax-free.</div>
+  <div class="sc-verdict verdict-worth">Best for: business owners and clients with large concentrations of illiquid, appreciating assets.</div>
+</div>
+
+<div class="strategy-card">
+  <div class="sc-name">Charitable Remainder Trust (CRT)</div>
+  <div class="sc-auth">IRC §664 &nbsp;&middot;&nbsp; Treas. Reg. §1.664-1</div>
+  <div class="sc-desc">The grantor transfers appreciated assets to the trust, receives an income stream for life or a term of years, and the remainder passes to charity. The grantor receives a partial charitable deduction at funding (the present value of the remainder interest) and avoids immediate capital gains recognition on appreciated property transferred in. The trust is tax-exempt and can sell appreciated assets without capital gains tax, reinvesting the full proceeds to generate the income stream.</div>
+  <div class="sc-verdict verdict-complex">Best for: charitably inclined clients with highly appreciated low-basis assets who also need income. Not appropriate as a pure tax strategy without charitable intent.</div>
+</div>
+
+<div class="strategy-card">
+  <div class="sc-name">Qualified Personal Residence Trust (QPRT)</div>
+  <div class="sc-auth">IRC §2702 &nbsp;&middot;&nbsp; Treas. Reg. §25.2702-5</div>
+  <div class="sc-desc">The grantor transfers a personal residence to an irrevocable trust while retaining the right to live in the home for a fixed term. The taxable gift is the present value of the remainder interest - significantly discounted from the home's full value. After the term, the home passes to beneficiaries at a fraction of its estate tax value. Risk: grantor must survive the trust term (otherwise the full value is pulled back into the estate), and the grantor must pay fair market rent to continue living in the home after the term ends.</div>
+  <div class="sc-verdict verdict-narrow">Best for: clients with high-value real estate who are comfortable with the term risk and willing to pay rent post-term.</div>
+</div>
+
+<h3>The Bottom Line: A Framework for Evaluating Trust Planning</h3>
+
+<p>Before engaging in any trust-based planning strategy, three questions cut through most of the noise:</p>
+
+<p><strong>1. Is your estate actually above the applicable exemption?</strong> At the federal level, the exemption is $15M per person ($30M per married couple). If you are below this threshold, trust-based federal estate tax planning costs more in legal fees than it saves in taxes. Check your state - 12 states have lower exemptions and may warrant planning even for smaller estates.</p>
+
+<p><strong>2. Are you prepared to actually give up control?</strong> Irrevocable means irrevocable. If you retain control, you retain the estate tax exposure. If you give up control, you genuinely cannot take the assets back. This is not a document-drafting question - it is an economic and psychological one.</p>
+
+<p><strong>3. Do you have the right facts for the strategy?</strong> GRATs need high-growth assets. SLATs need a strong marriage and sufficient wealth that the non-grantor spouse's needs can be met from the trust. IDGTs need illiquid appreciating assets. CRTs need genuine charitable intent. No trust strategy works in a vacuum - the facts have to fit the tool.</p>
+
+<div class="callout">
+  <div class="callout-label">A Note on Trust Mills and Promoters</div>
+  <p>A cottage industry of promoters sells revocable living trusts as tax-saving devices, offshore trusts as tax shelters, and "pure trust" arrangements as a way to legally avoid all taxes. These claims are false. The IRS has litigated and won against these schemes consistently. A revocable trust saves no income or estate taxes. An offshore trust with a US grantor and US beneficiaries is fully taxable in the US. Any arrangement marketed as eliminating all taxes through a trust structure warrants immediate skepticism and independent counsel. <strong>IRC §6662 accuracy penalties and IRC §6663 fraud penalties apply to positions taken without reasonable basis.</strong></p>
+</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="estate-tax-calculator.html" class="related-link">Estate Tax Calculator<span>IRC §2001 &middot; $15M OBBBA Exemption</span></a>
+    <a href="form-3520-guide.html" class="related-link">Form 3520 Guide<span>Foreign Gifts &middot; Foreign Trusts &middot; Penalties</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>IRC §7701(b) &middot; Trust Restructuring</span></a>
+    <a href="expatriation-tax-guide.html" class="related-link">Expatriation Tax Guide<span>IRC §877A &middot; Mark-to-Market</span></a>
+    <a href="foreign-pension-reporting.html" class="related-link">Foreign Pension Reporting<span>FBAR &middot; Form 8938 &middot; Treaty Analysis</span></a>
+    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Guide<span>IRC §951A &middot; OBBBA Changes</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §671-679 (grantor trust rules); IRC §676 (power to revoke); IRC §2036 (retained interests); IRC §2038 (revocable transfers); IRC §2041 (general powers of appointment); IRC §2501 (gift tax); IRC §2511 (transfers in general); IRC §2631 (GST exemption); IRC §2702 (special valuation - GRATs, QPRTs); IRC §664 (charitable remainder trusts); IRC §7701(a)(30)-(31) (domestic vs. foreign trust definition); IRC §679 (US transferors to foreign trusts); IRC §665-668 (throwback rules); IRC §6048 (Form 3520/3520-A); IRC §6677 (penalties); IRC §2010(c)(3) (unified credit - $15M, OBBBA P.L. 119-21); Treas. Reg. §301.7701-7 (court and control tests); Treas. Reg. §25.2702-3 (GRATs); Treas. Reg. §25.2702-5 (QPRTs); Treas. Reg. §1.664-1 (CRTs); Treas. Reg. §20.2010-1(c) (anti-clawback); IRC §7520 (applicable federal rate for valuation); IRC §453 (installment sale - IDGT transactions); IRC §6662-6663 (accuracy and fraud penalties).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Trust planning involves complex interactions between federal tax law, state law, and the specific facts of each taxpayer's situation. Nothing in this guide should be relied upon as a substitute for advice from a qualified attorney and tax professional reviewing your specific circumstances. A tk.cpa resource. tk.cpa is  - <a href="https://tk.cpa" target="_blank">tk.cpa</a>. <a href="disclaimer.html">Full disclaimer.</a></div>

@@ -185,6 +185,257 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §121 (exclusion of gain from sale of principal residence); IRC §121(a) (exclusion amount - $250,000 per taxpayer); IRC §121(b)(2) (maximum exclusion for married couples - $500,000 if both meet use test and at least one meets ownership test); IRC §121(b)(3) (once-every-two-years limitation); IRC §121(c) (partial exclusion for change in employment, health, or unforeseen circumstances - proportional formula); IRC §121(b)(4) (application to surviving spouse - increased exclusion for 2 years after death); IRC §121(d)(6) (non-qualified use period - reduces excludable gain proportionally for post-2008 non-use); IRC §121(d)(10) (denial of exclusion for gain attributable to depreciation after May 6, 1997 - §1250 recapture); Treas. Reg. §1.121-1 (requirements for exclusion - ownership and use tests); Treas. Reg. §1.121-3 (reduced maximum exclusion for unforeseen circumstances - safe harbors and general rule); Treas. Reg. §1.121-4 (special rules including separate structures, involuntary conversions, vacation homes); Rev. Proc. 2005-14 (combining §121 and §1031 in certain circumstances); IRS Publication 523 (Selling Your Home - comprehensive taxpayer guide).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 121 Home Sale Exclusion: $250K/$500K Explained (2026) | CPA Validated</title>
+<meta name="description" content="IRC §121 home sale exclusion: the $250,000/$500,000 exclusion, ownership and use tests (2 of 5 years), partial exclusions for unforeseen circumstances, vacation home conversion, home office recapture, and the interaction with 1031 exchanges. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/section-121-exclusion.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px;font-family:var(--font-mono)}
+.formula-line{font-size:14px;color:#fff;line-height:2.2;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px;font-family:var(--font-mono)}
+.formula-line .var{color:var(--coral);font-family:var(--font-mono)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Section 121 Home Sale Exclusion: $250K/$500K Explained (2026) | CPA Validated">
+  <meta property="og:description" content="IRC §121 home sale exclusion: the $250,000/$500,000 exclusion, ownership and use tests (2 of 5 years), partial exclusions for unforeseen circumstances, vacation home conversion, home office recapture,">
+  <meta property="og:url" content="https://cpavalidated.com/section-121-exclusion.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Section 121 Home Sale Exclusion: $250K/$500K Explained (2026) | CPA Validated">
+  <meta name="twitter:description" content="IRC §121 home sale exclusion: the $250,000/$500,000 exclusion, ownership and use tests (2 of 5 years), partial exclusions for unforeseen circumstances, vacation home conversion, home office recapture,">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Section 121 Home Sale Exclusion: $250K/$500K Explained (2026) | CPA Validated","description":"IRC §121 home sale exclusion: the $250,000/$500,000 exclusion, ownership and use tests (2 of 5 years), partial exclusions for unforeseen circumstances, vacation home conversion, home office recapture,","url":"https://cpavalidated.com/section-121-exclusion.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Section 121 Home Sale Exclusion: $250K / $500K Explained</h1>
+  <div class="sub">Ownership &amp; Use Tests &nbsp;&bull;&nbsp; Partial Exclusion &nbsp;&bull;&nbsp; Vacation Home Conversion &nbsp;&bull;&nbsp; Home Office Recapture &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §121</span>
+    <span class="ph-meta-item">Treas. Reg. §1.121</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The Section 121 exclusion is one of the most valuable provisions in the tax code for individual taxpayers. A married couple selling their primary residence can exclude up to $500,000 of capital gain from income - tax free - as long as they meet the ownership and use tests. For the typical homeowner who has owned their home for years in an appreciating market, this exclusion can eliminate the entire federal tax bill on the sale. But the rules have important nuances - vacation homes, home offices, non-qualified use periods, and the two-year limit on using the exclusion all require attention.</p>
+
+<div class="callout">
+  <div class="callout-label">The Basic Rule - IRC §121(a)</div>
+  <p>A taxpayer may exclude from gross income gain from the sale or exchange of property if, during the 5-year period ending on the date of sale, the taxpayer owned the property for at least 2 years (the ownership test) and used the property as a principal residence for at least 2 years (the use test). The maximum exclusion is <strong>$250,000 per taxpayer</strong> ($500,000 for married couples filing jointly if both spouses meet the use test and at least one meets the ownership test). The exclusion can only be used once every 2 years.</p>
+</div>
+
+<h2>Ownership Test and Use Test: The Details</h2>
+
+<p>The 2-year ownership and use requirements do not need to be concurrent - they just both need to be satisfied within the 5-year lookback window. A taxpayer who owned a home for 3 years, rented it out for 2 years, and moved back in for 2 more years before selling would meet both tests (owned 5 years, used as primary residence for 4 non-consecutive years within the 5-year window).</p>
+
+<p>For married couples, the $500,000 exclusion requires that: both spouses meet the use test (2 of the prior 5 years as principal residence) and at least one spouse meets the ownership test. If one spouse fails the use test (for example, moved in after marriage and has only lived there 18 months at time of sale), the couple can still claim the combined exclusion for the qualifying spouse - the non-qualifying spouse's $250,000 exclusion is available, and the qualifying spouse claims their $250,000, for a total of $250,000. Wait until both spouses meet the use test to claim the full $500,000.</p>
+
+<div class="note-box"><strong>The day count is calendar days, not tax years.</strong> 730 days of use as a principal residence within the 5-year window satisfies the 2-year use test. Days of temporary absence (vacations, short work assignments) generally count as days of use as long as the taxpayer intends to return and the home is not rented.</note-box>
+
+<h2>Partial Exclusion for Unforeseen Circumstances</h2>
+
+<p>If a taxpayer sells before meeting the 2-year ownership or use test, a partial exclusion is available if the sale was primarily due to a change in employment, health, or unforeseen circumstances. The partial exclusion is proportional: the fraction of the 2-year test that was met, multiplied by the full exclusion amount.</p>
+
+<div class="formula-box">
+  <div class="formula-label">Partial Exclusion Calculation</div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Days of qualifying use</span><span class="def">Actual days of ownership or use (whichever is less)</span></div>
+  <div class="formula-line"><span class="op">/</span><span class="var">730 days (2 years)</span></div>
+  <div class="formula-line"><span class="op">x</span><span class="var">Full Exclusion Amount</span><span class="def">$250,000 (single) or $500,000 (MFJ)</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Partial Exclusion Available</span></div>
+</div>
+
+<p>Qualifying unforeseen circumstances include: involuntary job loss, job transfer requiring a commute of more than 50 miles, death of a qualifying family member, divorce or legal separation, multiple births from a single pregnancy, natural or man-made disaster, acts of terrorism, and condemnation. The IRS has a safe harbor for these situations - circumstances outside these categories can still qualify but require a facts-and-circumstances analysis.</p>
+
+<h2>Non-Qualified Use: The Post-2008 Trap</h2>
+
+<p>For sales after 2008, periods of non-qualified use during the ownership period reduce the available exclusion. Non-qualified use is any period after 2008 when the property was not used as the principal residence of the taxpayer or spouse (with limited exceptions for temporary absences of up to 2 years, post-service use, and certain other circumstances).</p>
+
+<p>The reduction in the exclusion is proportional: the ratio of aggregate non-qualified use periods to total ownership period, multiplied by the total gain, equals the non-excludable portion. This primarily affects taxpayers who converted a vacation home or rental property to a principal residence.</p>
+
+<h2>Vacation Home Conversion</h2>
+
+<p>A taxpayer who converts a vacation home to a principal residence can eventually qualify for the §121 exclusion - but the non-qualified use rules limit the excludable gain for periods when the home was not the principal residence after 2008. The 5-year lookback for the use test works from the sale date backward, so a 3-year rental followed by 2 years as a primary residence satisfies the use test - but the 3 years of rental are non-qualified use that reduces the excludable gain proportionally.</p>
+
+<div class="note-box"><strong>Post-use rental does not trigger non-qualified use.</strong> The non-qualified use rules apply to periods before the home is used as a principal residence, not after. If a taxpayer lives in a home as their primary residence for 2 years and then rents it out for 2 years before selling, those 2 rental years do not reduce the exclusion - the 5-year window looks back from the sale date and the 2 years of qualifying use are within that window. Only non-qualifying use that precedes the qualifying use reduces the exclusion.</note-box>
+
+<h2>Home Office: The §121 Interaction</h2>
+
+<p>A taxpayer who has claimed a home office deduction faces two issues on sale. First, depreciation deducted for the home office must be recaptured as §1250 unrecaptured gain at the 25% rate - this recapture is not sheltered by the §121 exclusion. Second, if the home office is a separate structure (not within the main dwelling), the §121 exclusion does not apply to the gain allocable to that separate structure.</p>
+
+<p>For home offices within the home itself (a dedicated room), the exclusion applies to the entire property including the office portion - except for the depreciation recapture. The taxpayer cannot avoid the recapture by not deducting the home office in prior years if they were entitled to the deduction (the IRS taxes "allowed or allowable" depreciation, not just depreciation actually claimed).</p>
+
+<h2>The Once-Every-Two-Years Limitation</h2>
+
+<p>The §121 exclusion cannot be used more than once every 2 years. If a taxpayer sells their home and uses the exclusion, they must wait at least 2 years before claiming the exclusion again on a different home. The 2-year period runs from the most recent sale on which the exclusion was used - not from when the new home was purchased.</p>
+
+<div class="green-box"><strong>Strategically timing the sale.</strong> For taxpayers who have already used the exclusion recently, the 2-year wait is mandatory. For taxpayers approaching retirement planning, using the exclusion on a high-gain urban home and then purchasing a retirement home in a lower-cost area - and then using it again after 2 years of use there - can shelter multiple six-figure gains over a decade. The unlimited-use nature of the exclusion (once every 2 years, indefinitely) is an underappreciated planning tool.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>Model gain after §121 exclusion</span></a>
+    <a href="1031-exchange-guide.html" class="related-link">1031 Exchange Guide<span>Rental property &middot; Cannot combine with §121</span></a>
+    <a href="real-estate-tax-guide.html" class="related-link">Real Estate Tax Guide<span>§1250 recapture &middot; Home office depreciation</span></a>
+    <a href="florida-property-tax.html" class="related-link">Florida Property Tax<span>Homestead exemption &middot; SOH cap</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>3.8% does not apply to excluded §121 gain</span></a>
+    <a href="state-residency-hnw.html" class="related-link">State Residency Planning<span>State-level home sale exclusion rules vary</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §121 (exclusion of gain from sale of principal residence); IRC §121(a) (exclusion amount - $250,000 per taxpayer); IRC §121(b)(2) (maximum exclusion for married couples - $500,000 if both meet use test and at least one meets ownership test); IRC §121(b)(3) (once-every-two-years limitation); IRC §121(c) (partial exclusion for change in employment, health, or unforeseen circumstances - proportional formula); IRC §121(b)(4) (application to surviving spouse - increased exclusion for 2 years after death); IRC §121(d)(6) (non-qualified use period - reduces excludable gain proportionally for post-2008 non-use); IRC §121(d)(10) (denial of exclusion for gain attributable to depreciation after May 6, 1997 - §1250 recapture); Treas. Reg. §1.121-1 (requirements for exclusion - ownership and use tests); Treas. Reg. §1.121-3 (reduced maximum exclusion for unforeseen circumstances - safe harbors and general rule); Treas. Reg. §1.121-4 (special rules including separate structures, involuntary conversions, vacation homes); Rev. Proc. 2005-14 (combining §121 and §1031 in certain circumstances); IRS Publication 523 (Selling Your Home - comprehensive taxpayer guide).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

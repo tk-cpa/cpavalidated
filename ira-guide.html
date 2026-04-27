@@ -190,6 +190,262 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §408 (individual retirement accounts - traditional IRA rules); IRC §408(a) (IRA definition and contribution rules); IRC §408(d) (distributions from IRAs - inclusion in gross income); IRC §408(d)(8) (qualified charitable distributions - $111,000 limit, age 70.5+, indexed); IRC §408A (Roth IRAs - no deduction, qualified distributions tax-free, no lifetime RMDs); IRC §72(t) (early distribution penalty - 10%, exceptions); IRC §402(c) (rollover rules); IRC §4974 (excise tax on failure to take RMDs - 25%, reduced to 10% if corrected within 2 years per SECURE 2.0); IRC §401(a)(9) (required minimum distribution rules - applicable to all qualified plans and IRAs); Treas. Reg. §1.401(a)(9)-5 (RMD calculation - Uniform Lifetime Table); SECURE Act P.L. 116-94 (2019) (RMD age increased to 72, 10-year rule for non-EDB inherited IRAs); SECURE 2.0 Act P.L. 117-328 (2022) (RMD age increased to 73/75, penalty reduced to 25%/10%, Roth 401(k) no RMD during life); IRS Final Regulations on inherited IRAs (T.D. 10001, 2024) (annual RMDs required in years 1-9 for non-EDB when decedent reached RBD); Form 8606 (nondeductible IRA contributions and Roth conversions - pro-rata rule); Publication 590-B (distributions from individual retirement arrangements); IRS Notice 2022-53, Notice 2023-75 (inherited IRA transition relief).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRA Guide: Traditional vs. Roth, RMD Rules & Inherited IRA 10-Year Rule (2026) | CPA Validated</title>
+<meta name="description" content="Comprehensive IRA guide: traditional vs. Roth IRA contribution rules, deductibility limits, RMD rules post-SECURE 2.0 (age 73), the inherited IRA 10-year rule, Roth conversion strategies, backdoor Roth, and the pro-rata rule. CPA-validated. Updated 2026.">
+<link rel="canonical" href="https://cpavalidated.com/ira-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IRA Guide: Traditional vs. Roth, RMD Rules & Inherited IRA 10-Year Rule (2026) | CPA Validated">
+  <meta property="og:description" content="Comprehensive IRA guide: traditional vs. Roth IRA contribution rules, deductibility limits, RMD rules post-SECURE 2.0 (age 73), the inherited IRA 10-year rule, Roth conversion strategies, backdoor Rot">
+  <meta property="og:url" content="https://cpavalidated.com/ira-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IRA Guide: Traditional vs. Roth, RMD Rules & Inherited IRA 10-Year Rule (2026) | CPA Validated">
+  <meta name="twitter:description" content="Comprehensive IRA guide: traditional vs. Roth IRA contribution rules, deductibility limits, RMD rules post-SECURE 2.0 (age 73), the inherited IRA 10-year rule, Roth conversion strategies, backdoor Rot">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"IRA Guide: Traditional vs. Roth, RMD Rules & Inherited IRA 10-Year Rule (2026) | CPA Validated","description":"Comprehensive IRA guide: traditional vs. Roth IRA contribution rules, deductibility limits, RMD rules post-SECURE 2.0 (age 73), the inherited IRA 10-year rule, Roth conversion strategies, backdoor Rot","url":"https://cpavalidated.com/ira-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>IRA Guide: Traditional vs. Roth, RMDs & Inherited IRA Rules</h1>
+  <div class="sub">Contribution Limits &nbsp;&bull;&nbsp; Deductibility &nbsp;&bull;&nbsp; RMD Age 73 &nbsp;&bull;&nbsp; 10-Year Rule &nbsp;&bull;&nbsp; Roth Conversion &nbsp;&bull;&nbsp; Backdoor Roth &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §408</span>
+    <span class="ph-meta-item">IRC §408A (Roth)</span>
+    <span class="ph-meta-item">SECURE 2.0</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">IRAs are the most widely held retirement accounts in the US, and the rules governing contributions, deductibility, distributions, and inheritance have been substantially changed by SECURE Act (2019) and SECURE 2.0 (2022). The RMD age is now 73. The inherited IRA stretch has been eliminated for most non-spouse beneficiaries, replaced by a mandatory 10-year distribution period. Understanding these rules determines how efficiently retirement assets are accumulated, distributed, and transferred to heirs.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 IRA Key Numbers</div>
+  <p><strong>Contribution limit:</strong> $7,000 per person ($8,000 if age 50+)</p>
+  <p><strong>Traditional IRA deductibility phaseout (covered by workplace plan):</strong> $79,000-$89,000 (single) / $126,000-$146,000 (MFJ)</p>
+  <p><strong>Roth IRA contribution phaseout:</strong> $150,000-$165,000 (single) / $236,000-$246,000 (MFJ)</p>
+  <p><strong>RMD starting age:</strong> 73 (SECURE 2.0); increases to 75 for those born after 1959</p>
+  <p><strong>QCD limit:</strong> $111,000 per taxpayer (indexed annually, age 70.5+)</p>
+</div>
+
+<h2>Traditional IRA: Deductibility Rules</h2>
+
+<p>Anyone with earned income can contribute to a traditional IRA up to the annual limit. Whether the contribution is deductible depends on whether the taxpayer (or spouse) is covered by a workplace retirement plan and their income level.</p>
+
+<table class="key-table">
+  <tr><th>Situation</th><th>Deductibility (2026)</th></tr>
+  <tr><td>Neither spouse covered by workplace plan</td><td>Fully deductible regardless of income</td></tr>
+  <tr><td>Taxpayer covered by workplace plan - single</td><td>Full deduction below $79,000 AGI; phases out $79K-$89K; no deduction above $89K</td></tr>
+  <tr><td>Taxpayer covered by workplace plan - MFJ</td><td>Full deduction below $126,000 AGI; phases out $126K-$146K; no deduction above $146K</td></tr>
+  <tr><td>Spouse not covered but other spouse is - MFJ</td><td>Full deduction below $236,000 AGI; phases out $236K-$246K; no deduction above $246K</td></tr>
+</table>
+
+<p>Non-deductible contributions to a traditional IRA still make sense in some situations - the basis is tracked on Form 8606 and recovered tax-free on distribution. However, the pro-rata rule (discussed below) complicates the recovery when the taxpayer has other pre-tax IRA balances.</p>
+
+<h2>Roth IRA: No Deduction, Tax-Free Growth</h2>
+
+<p>Roth IRA contributions are made with after-tax dollars. No deduction. But qualified distributions from a Roth IRA are completely tax-free - including all earnings. There are no RMDs on a Roth IRA during the owner's lifetime. These features make the Roth IRA the most valuable retirement account for most taxpayers who qualify.</p>
+
+<p>The catch: direct Roth contributions phase out at higher income levels (see numbers above). Taxpayers above the phaseout cannot make direct Roth contributions - but can use the backdoor Roth strategy.</p>
+
+<h3>Backdoor Roth IRA</h3>
+<p>The backdoor Roth allows high-income taxpayers to effectively make Roth contributions despite the income limits. Steps: make a non-deductible traditional IRA contribution ($7,000), then convert the traditional IRA to Roth. If the taxpayer has no other pre-tax IRA balances, the conversion is essentially tax-free (only the small amount of earnings between contribution and conversion is taxable).</p>
+
+<div class="red-box"><strong>The pro-rata rule kills the backdoor for most people with existing IRAs.</strong> If a taxpayer has $100,000 of pre-tax traditional IRA balances and makes a $7,000 non-deductible contribution, the IRS aggregates all IRA balances for the conversion calculation. The non-deductible basis is $7,000 / ($107,000 total) = 6.5%. Converting $7,000 means only 6.5% ($455) is tax-free - the remaining 93.5% ($6,545) is taxable ordinary income. The backdoor Roth works cleanly only when the taxpayer has zero or minimal pre-tax IRA balances. Rolling pre-tax IRAs into a 401(k) before executing the backdoor solves this problem for those with workplace plans that accept IRA rollovers.</div>
+
+<h2>Required Minimum Distributions (RMDs): SECURE 2.0 Rules</h2>
+
+<p>SECURE 2.0 (P.L. 117-328) increased the RMD starting age to 73 for individuals who turn 72 after December 31, 2022. Individuals born after December 31, 1959 will have an RMD starting age of 75. Roth IRAs do not have RMDs during the owner's lifetime.</p>
+
+<p>RMDs are calculated by dividing the prior December 31 account balance by a life expectancy factor from the IRS Uniform Lifetime Table (Publication 590-B). The calculation must be performed separately for each IRA, though distributions can be aggregated across IRAs of the same type.</p>
+
+<div class="note-box"><strong>Missing an RMD triggers a 25% excise tax</strong> on the amount not distributed (reduced from 50% by SECURE 2.0). The penalty can be reduced to 10% if corrected within 2 years. SECURE 2.0 also provides a self-correction mechanism for missed RMDs. Despite the penalty reduction, the best strategy remains taking RMDs on time.</div>
+
+<h2>Inherited IRAs: The 10-Year Rule</h2>
+
+<p>The SECURE Act (2019) eliminated the ability to "stretch" inherited IRA distributions over the beneficiary's lifetime for most non-spouse beneficiaries who inherit after December 31, 2019. Instead, the account must be fully distributed within 10 years of the original owner's death.</p>
+
+<table class="key-table">
+  <tr><th>Beneficiary Type</th><th>Distribution Rule</th></tr>
+  <tr><td><strong>Spouse</strong></td><td>Can treat as own IRA (roll over), delay RMDs to age 73, stretch over own lifetime. Most favorable treatment.</td></tr>
+  <tr><td><strong>Eligible Designated Beneficiary (EDB)</strong></td><td>Can stretch over own life expectancy. EDBs: surviving spouse, disabled or chronically ill individuals, individuals not more than 10 years younger than the decedent, minor children of the decedent (until age of majority, then 10-year rule kicks in).</td></tr>
+  <tr><td><strong>Non-EDB (most adult children, siblings, friends)</strong></td><td>10-year rule: account must be fully distributed by December 31 of the 10th year after the year of death. Annual RMDs required during years 1-9 if the decedent had already reached RMD age.</td></tr>
+  <tr><td><strong>Non-person beneficiary (trust, estate, charity)</strong></td><td>5-year rule if decedent hadn't started RMDs; 10-year rule if decedent had reached RMD age (with some exceptions for see-through trusts).</td></tr>
+</table>
+
+<div class="note-box"><strong>The annual RMD requirement during the 10-year period.</strong> IRS final regulations (2024) confirmed that if the original IRA owner had reached their required beginning date (April 1 of the year after reaching RMD age), the non-EDB beneficiary must take annual RMDs in years 1-9 and distribute the remainder in year 10. This contradicted earlier IRS guidance that suggested beneficiaries could wait until year 10. Beneficiaries who skipped 2021-2023 RMDs on inherited IRAs were given penalty relief by the IRS, but must comply going forward.</div>
+
+<h2>Roth Conversion Strategy</h2>
+
+<p>Converting traditional IRA balances to Roth IRA triggers ordinary income tax on the converted amount in the year of conversion. The long-term benefit: no future RMDs, tax-free growth, and tax-free distributions for heirs. The optimal conversion strategy is to convert in years when income is temporarily lower - retirement before Social Security begins, years with large deductions, or years with capital losses to offset.</p>
+
+<p>The "fill the bracket" approach converts enough each year to fill up the current tax bracket without crossing into the next. For a married couple in the 22% bracket with $100,000 of taxable income, filling to the top of the 22% bracket ($201,050 in 2026) allows converting $101,050 of IRA balance at 22% - locking in that rate before RMDs potentially push income into higher brackets in future years.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="roth-conversion.html" class="related-link">Roth Conversion Calculator<span>Model the conversion tax and breakeven</span></a>
+    <a href="backdoor-roth.html" class="related-link">Backdoor Roth Guide<span>Pro-rata rule &middot; Form 8606 mechanics</span></a>
+    <a href="social-security-taxation-guide.html" class="related-link">Social Security Taxation<span>RMDs increase provisional income</span></a>
+    <a href="charitable-giving-strategies.html" class="related-link">Charitable Giving Strategies<span>QCDs reduce RMD burden</span></a>
+    <a href="self-employment-tax-guide.html" class="related-link">SE Tax Guide<span>SEP-IRA and Solo 401(k) limits</span></a>
+    <a href="estate-planning-basics.html" class="related-link">Estate Planning Basics<span>Inherited IRA 10-year rule planning</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §408 (individual retirement accounts - traditional IRA rules); IRC §408(a) (IRA definition and contribution rules); IRC §408(d) (distributions from IRAs - inclusion in gross income); IRC §408(d)(8) (qualified charitable distributions - $111,000 limit, age 70.5+, indexed); IRC §408A (Roth IRAs - no deduction, qualified distributions tax-free, no lifetime RMDs); IRC §72(t) (early distribution penalty - 10%, exceptions); IRC §402(c) (rollover rules); IRC §4974 (excise tax on failure to take RMDs - 25%, reduced to 10% if corrected within 2 years per SECURE 2.0); IRC §401(a)(9) (required minimum distribution rules - applicable to all qualified plans and IRAs); Treas. Reg. §1.401(a)(9)-5 (RMD calculation - Uniform Lifetime Table); SECURE Act P.L. 116-94 (2019) (RMD age increased to 72, 10-year rule for non-EDB inherited IRAs); SECURE 2.0 Act P.L. 117-328 (2022) (RMD age increased to 73/75, penalty reduced to 25%/10%, Roth 401(k) no RMD during life); IRS Final Regulations on inherited IRAs (T.D. 10001, 2024) (annual RMDs required in years 1-9 for non-EDB when decedent reached RBD); Form 8606 (nondeductible IRA contributions and Roth conversions - pro-rata rule); Publication 590-B (distributions from individual retirement arrangements); IRS Notice 2022-53, Notice 2023-75 (inherited IRA transition relief).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. <a href="disclaimer.html">Full disclaimer.</a></div>

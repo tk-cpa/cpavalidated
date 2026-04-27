@@ -144,6 +144,216 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §2056 (estate tax marital deduction - unlimited for transfers to US citizen surviving spouse; terminable interest rule §2056(b)); IRC §2056(b)(7) (QTIP exception - qualified terminable interest property; all income to surviving spouse; executor QTIP election on Form 706); IRC §2056A (qualified domestic trust - requirements for marital deduction when surviving spouse is not a US citizen; US trustee requirement; QDOT tax on principal distributions and at surviving spouse's death); IRC §2523 (gift tax marital deduction - unlimited for gifts to US citizen spouse); IRC §2523(i) (limitation for gifts to non-citizen spouses - increased annual exclusion of $190,000 for 2026, inflation-indexed, replaces unlimited marital deduction); IRC §2010(c) (portability - deceased spousal unused exclusion amount (DSUE); must elect portability on timely filed Form 706); Treas. Reg. §20.2056A-2 through 20.2056A-13 (QDOT requirements - trustee requirements, withholding tax, return filing, bond or letter of credit requirement for trusts over $2 million); Rev. Proc. 2022-32 (simplified late portability election procedure - available for estates within 5 years of date of death where gross estate does not exceed 5 times basic exclusion amount); Form 706 (United States Estate Tax Return - QTIP election and portability election); IRS Publication 559 (Survivors, Executors, and Administrators).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marital Deduction Guide: §2056 Estate Tax, §2523 Gift Tax & QDOT for Non-Citizens (2026) | CPA Validated</title>
+<meta name="description" content="Marital deduction guide: IRC §2056 unlimited estate marital deduction, §2523 unlimited gift marital deduction, QTIP trusts, QDOT trusts for non-citizen surviving spouses, the $190,000 annual gift limit for non-citizens, portability, and common planning mistakes. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/marital-deduction-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Marital Deduction Guide: §2056, §2523 & QDOT for Non-Citizen Spouses (2026)">
+<meta property="og:description" content="Unlimited marital deduction §2056 estate and §2523 gift, QTIP trusts, QDOT rules for non-citizen spouses, $190K annual gift limit, portability. CPA-validated.">
+<meta property="og:url" content="https://cpavalidated.com/marital-deduction-guide.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Marital Deduction Guide: §2056 Estate Tax, §2523 Gift Tax & QDOT for Non-Citizens (2026)","url":"https://cpavalidated.com/marital-deduction-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html" class="active">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Marital Deduction: §2056 Estate Tax, §2523 Gift Tax &amp; QDOT for Non-Citizens</h1>
+  <div class="sub">Unlimited Marital Deduction &nbsp;&bull;&nbsp; QTIP Trusts &nbsp;&bull;&nbsp; QDOT for Non-Citizen Spouses &nbsp;&bull;&nbsp; $190K Annual Gift Limit &nbsp;&bull;&nbsp; Portability</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §2056</span>
+    <span class="ph-meta-item">IRC §2523</span>
+    <span class="ph-meta-item">IRC §2056A (QDOT)</span>
+  </div>
+</div></div>
+<div class="back"><a href="estate-gifts.html">&#8592; Estate &amp; Gifts</a></div>
+<div class="article">
+
+<p class="lead">The marital deduction is one of the most powerful provisions in the estate and gift tax code: transfers between US citizen spouses are generally free of estate and gift tax without limit. A married couple can pass unlimited wealth between themselves with zero transfer tax - the tax is only imposed when assets pass outside the marital unit to children or other beneficiaries. But the deduction has real limits, and for couples where one spouse is not a US citizen, the rules change dramatically.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 Key Numbers</div>
+  <p><strong>Unlimited marital deduction (§2056 estate / §2523 gift):</strong> No dollar limit for transfers to a US citizen spouse.</p>
+  <p><strong>Annual gift to non-citizen spouse (§2523(i)):</strong> $190,000 in 2026 (inflation-adjusted annually) - this replaces the unlimited gift marital deduction when the recipient spouse is not a US citizen.</p>
+  <p><strong>Federal estate tax exemption:</strong> $15 million per person (OBBBA permanent, inflation-indexed).</p>
+  <p><strong>Annual gift exclusion (§2503(b)):</strong> $19,000 per recipient in 2026 (applies in addition to the $190,000 non-citizen spouse exclusion).</p>
+</div>
+
+<h2>The Unlimited Marital Deduction: §2056 and §2523</h2>
+
+<p>IRC §2056 allows an estate to deduct the value of property passing to a surviving US citizen spouse, eliminating any estate tax on that transfer. The deduction is unlimited in amount - a $50 million estate can pass entirely to a US citizen spouse with zero estate tax. The tax is only deferred, not permanently eliminated: when the surviving spouse later dies, their estate is taxed on everything above the exemption. The marital deduction buys time but does not eliminate the eventual transfer tax.</p>
+
+<p>On the gift side, IRC §2523 provides an unlimited gift tax marital deduction for gifts to a US citizen spouse. A spouse can give the other spouse any amount of property during their lifetime with no gift tax - and no use of the lifetime exemption.</p>
+
+<h2>The Terminable Interest Rule: What Cannot Use the Deduction</h2>
+
+<p>Not every transfer to a spouse qualifies for the marital deduction. Terminable interests - interests that will terminate or fail on the lapse of time, on the occurrence of an event or contingency, or on the failure of an event or contingency to occur - do not qualify unless they fall within a specific exception. The most important exception is the QTIP trust.</p>
+
+<h2>QTIP Trusts: Deductible Terminable Interest</h2>
+
+<p>A Qualified Terminable Interest Property (QTIP) trust allows a deceased spouse to provide for a surviving spouse while controlling the ultimate disposition of the assets. The QTIP trust qualifies for the marital deduction if: all trust income is paid to the surviving spouse at least annually, no one (including the surviving spouse) has a power to appoint any part of the trust to anyone other than the surviving spouse during the spouse's lifetime, and the executor makes a QTIP election on the estate tax return (Form 706).</p>
+
+<p>The tax consequence of QTIP treatment: the trust assets are included in the surviving spouse's estate when they die, and the estate tax is paid then. The QTIP structure is used when the first spouse to die wants to ensure that assets ultimately pass to their own children (not the surviving spouse's future spouse or children from another relationship) while still obtaining the marital deduction.</p>
+
+<h2>Non-Citizen Surviving Spouses: The QDOT Requirement</h2>
+
+<p>When the surviving spouse is not a US citizen, the unlimited estate marital deduction is eliminated. The concern: a non-citizen surviving spouse could leave the US with the inherited assets, permanently removing them from US estate tax jurisdiction. Congress responded by creating the Qualified Domestic Trust (QDOT) under IRC §2056A.</p>
+
+<div class="red-box"><strong>If your surviving spouse is not a US citizen, the unlimited marital deduction does not apply - assets will be taxed at death unless placed in a QDOT.</strong> For a couple where one spouse is not a US citizen, failing to plan for this means the federal estate tax exemption ($15 million in 2026) is the only protection against estate tax. Assets above $15 million passing to a non-citizen surviving spouse face estate tax at death. The QDOT is not optional for large estates with a non-citizen spouse.</div>
+
+<h3>How a QDOT Works</h3>
+<p>A QDOT is a trust that qualifies for the marital deduction despite having a non-citizen surviving spouse as beneficiary. Requirements: at least one trustee must be a US citizen or US corporation, no distribution of principal may be made from the trust without the US trustee's approval, and the trust must meet additional requirements to ensure estate tax is collected on principal distributions and on the trust's assets at the surviving spouse's death.</p>
+
+<p>The mechanics: ordinary income distributions from the QDOT to the surviving spouse are not subject to estate tax. Principal distributions are subject to the QDOT tax (effectively the estate tax that would have been owed by the first spouse) when distributed. When the surviving non-citizen spouse dies, the remaining QDOT assets are included in a "deemed estate" and the QDOT tax applies.</p>
+
+<h2>Annual Gift to Non-Citizen Spouse: $190,000 in 2026</h2>
+
+<p>During lifetime, the unlimited gift marital deduction (§2523) does not apply to gifts to non-citizen spouses. Instead, IRC §2523(i) allows an increased annual exclusion of $190,000 per year (2026, inflation-indexed annually) for gifts to a non-citizen spouse. This is in addition to the regular $19,000 annual exclusion. The non-citizen spouse annual exclusion is available for any gift - cash, real estate, securities - as long as the recipient is the donor's legal spouse and is not a US citizen.</p>
+
+<h2>Portability and the Marital Deduction Interaction</h2>
+
+<p>Portability allows the surviving US citizen spouse to use the deceased spouse's unused exemption (DSUE). When an estate passes entirely to the surviving spouse using the marital deduction, the first spouse's $15 million exemption is unused. Portability preserves that unused exemption for the surviving spouse's estate - but only if the executor timely files Form 706 to elect portability (within 9 months of death, or 15 months with extension).</p>
+
+<div class="note-box"><strong>The portability election deadline is hard.</strong> Many executors skip Form 706 when there is no estate tax due because the entire estate passed to the surviving spouse under the marital deduction. That is a serious mistake. Without a timely portability election, the DSUE is lost permanently. The IRS has provided simplified late portability election procedures (Rev. Proc. 2022-32) for estates up to 5 times the basic exclusion amount, but filing on time is always better.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="estate-planning-basics.html" class="related-link">Estate Planning Basics<span>$15M exemption &middot; Step-up &middot; Portability</span></a>
+    <a href="gift-estate-tax-guide.html" class="related-link">Gift &amp; Estate Tax Guide<span>Unified exemption &middot; Annual exclusion $19K</span></a>
+    <a href="trust-guide.html" class="related-link">Trust Guide<span>QTIP, SLAT, GRAT, IDGT structures</span></a>
+    <a href="nra-estate-tax.html" class="related-link">NRA Estate Tax<span>Non-resident alien estate tax &middot; $60K exemption</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>QDOT planning before green card date</span></a>
+    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>Marital deduction in wealth transfer strategies</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §2056 (estate tax marital deduction - unlimited for transfers to US citizen surviving spouse; terminable interest rule §2056(b)); IRC §2056(b)(7) (QTIP exception - qualified terminable interest property; all income to surviving spouse; executor QTIP election on Form 706); IRC §2056A (qualified domestic trust - requirements for marital deduction when surviving spouse is not a US citizen; US trustee requirement; QDOT tax on principal distributions and at surviving spouse's death); IRC §2523 (gift tax marital deduction - unlimited for gifts to US citizen spouse); IRC §2523(i) (limitation for gifts to non-citizen spouses - increased annual exclusion of $190,000 for 2026, inflation-indexed, replaces unlimited marital deduction); IRC §2010(c) (portability - deceased spousal unused exclusion amount (DSUE); must elect portability on timely filed Form 706); Treas. Reg. §20.2056A-2 through 20.2056A-13 (QDOT requirements - trustee requirements, withholding tax, return filing, bond or letter of credit requirement for trusts over $2 million); Rev. Proc. 2022-32 (simplified late portability election procedure - available for estates within 5 years of date of death where gross estate does not exceed 5 times basic exclusion amount); Form 706 (United States Estate Tax Return - QTIP election and portability election); IRS Publication 559 (Survivors, Executors, and Administrators).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

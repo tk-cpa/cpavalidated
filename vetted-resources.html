@@ -233,6 +233,305 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <div class="grid3">
   
 </div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vetted Resources | CPA Validated</title>
+<meta name="description" content="CPA-vetted external tax resources. Primary legal authority, Big Four research tools (PwC, EY, KPMG, Deloitte), OECD, official government tax authorities worldwide, Tax Foundation 2026 data, Avalara, TaxJar, and more. Personally reviewed by a licensed CPA and Enrolled Agent.">
+<link rel="canonical" href="https://cpavalidated.com/vetted-resources.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:40px 0 32px;border-bottom:3px solid var(--coral)}.phi{max-width:1000px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:14px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,5vw,52px);color:#fff;line-height:1.0;letter-spacing:-.01em;margin-bottom:12px}.ph .sub{font-size:14px;color:rgba(255,255,255,.5);max-width:560px;line-height:1.6}
+.back{max-width:1000px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.page{max-width:1000px;margin:0 auto;padding:32px 24px 0}
+.intro{font-size:15px;line-height:1.8;color:var(--ink-60);margin-bottom:40px;border-left:3px solid var(--coral);padding-left:18px}
+.section-head{display:flex;align-items:baseline;gap:12px;margin:44px 0 18px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.sh-title{font-family:var(--font-display);font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
+.sh-count{font-family:var(--font-mono);font-size:11px;color:var(--ink-40)}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+.rc{background:var(--white);border:1px solid var(--ink-20);padding:18px;display:flex;flex-direction:column;gap:8px;transition:border-color .15s}
+.rc:hover{border-color:var(--coral)}
+.rc.featured{border-left:3px solid var(--coral)}
+.rc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.rc-pub{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-40);font-family:var(--font-mono);margin-bottom:3px}
+.rc-name{font-size:14px;font-weight:700;color:var(--ink);line-height:1.2}
+.rc-tag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 7px;border:1px solid;flex-shrink:0;white-space:nowrap;margin-top:2px}
+.tag-free{background:var(--green-bg);color:var(--green);border-color:var(--green-b)}
+.tag-gov{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rc-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6;flex:1}
+.rc-url{font-family:var(--font-mono);font-size:10px;color:var(--ink-40);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rc-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:var(--coral);font-family:var(--font-mono);margin-top:auto;padding-top:4px}
+.rc-link::after{content:'\2192'}
+.rc-link:hover{text-decoration:underline}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:32px 0 20px;font-size:13px;color:var(--amber);line-height:1.6}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:16px 0 0;border-top:1px solid var(--ink-20);margin-top:40px}
+@media(max-width:800px){.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.grid3,.grid2{grid-template-columns:1fr}}
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vetted Resources | CPA Validated">
+  <meta property="og:description" content="CPA-vetted external tax resources. Primary legal authority, Big Four research tools (PwC, EY, KPMG, Deloitte), OECD, official government tax authorities worldwide, Tax Foundation 2026 data, Avalara, T">
+  <meta property="og:url" content="https://cpavalidated.com/vetted-resources.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vetted Resources | CPA Validated">
+  <meta name="twitter:description" content="CPA-vetted external tax resources. Primary legal authority, Big Four research tools (PwC, EY, KPMG, Deloitte), OECD, official government tax authorities worldwide, Tax Foundation 2026 data, Avalara, T">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Vetted Resources | CPA Validated","description":"CPA-vetted external tax resources. Primary legal authority, Big Four research tools (PwC, EY, KPMG, Deloitte), OECD, official government tax authorities worldwide, Tax Foundation 2026 data, Avalara, T","url":"https://cpavalidated.com/vetted-resources.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topic categories">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Vetted Resources</h1>
+  <div class="sub">Primary authority, Big Four research tools, official government tax authorities, professional reference, and compliance resources - personally reviewed and used in practice by a licensed CPA and Enrolled Agent. 47 resources across 11 categories.</div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="page">
+
+<p class="intro">These are the sources serious practitioners actually use. No content farms. No aggregators. Every link points to primary authority, official government sources, or professional research tools from recognized institutions. Curated on merit only - no commercial relationships with any listed organization.</p>
+
+<div class="section-head"><span class="sh-title">Free Calculators &amp; Validators - Federal Government</span><span class="sh-count">8 resources</span></div>
+<div class="grid3">
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">Tax Withholding Estimator</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The official IRS tool for adjusting Form W-4 withholding. Walks through filing status, income, deductions, credits. Generates a pre-filled W-4. The most authoritative withholding calculator available - directly from the source.</div><div class="rc-url">apps.irs.gov/app/tax-withholding-estimator</div><a href="https://apps.irs.gov/app/tax-withholding-estimator/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">Sales Tax Deduction Calculator</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Optional sales tax tables for taxpayers itemizing on Schedule A who deduct sales tax instead of state income tax. Uses ZIP code, family size, and income to estimate without receipts. Useful for low/no income tax states (FL, TX, WA, NV).</div><div class="rc-url">apps.irs.gov/app/stdc</div><a href="https://apps.irs.gov/app/stdc/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">Interactive Tax Assistant (ITA)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">A decision-tree tool answering common tax questions. Filing requirements, dependents, credits, deductions, retirement distributions. Each answer cites the relevant statute or publication. Useful for client-facing FAQ-style questions.</div><div class="rc-url">irs.gov/help/ita</div><a href="https://www.irs.gov/help/ita" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">EITC Assistant</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Determines eligibility and approximate amount of the Earned Income Tax Credit. Available in English and Spanish. Useful for taxpayers near the income threshold or with complex household situations.</div><div class="rc-url">irs.gov/.../use-the-eitc-assistant</div><a href="https://www.irs.gov/credits-deductions/individuals/earned-income-tax-credit/use-the-eitc-assistant" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">RMD Worksheets &amp; Tables</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Official Required Minimum Distribution worksheets and the Uniform Lifetime Table. The only authoritative source for RMD calculations. SECURE 2.0 raised the age to 73 (then 75 in 2033).</div><div class="rc-url">irs.gov/.../retirement-topics-rmds</div><a href="https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-required-minimum-distributions-rmds" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">SSA</div><div class="rc-name">Quick Calculator (Benefits Estimate)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Social Security retirement benefit estimator. Quick three-input version (date of birth, current earnings, retirement age). For higher precision, the my Social Security account uses actual earnings history.</div><div class="rc-url">ssa.gov/oact/quickcalc</div><a href="https://www.ssa.gov/oact/quickcalc/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">SSA</div><div class="rc-name">Detailed Online Benefit Calculator</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">More detailed retirement, disability, and survivor benefit calculator. Allows custom earnings histories and what-if scenarios. The authoritative tool for retirement planning involving Social Security.</div><div class="rc-url">ssa.gov/benefits/calculators</div><a href="https://www.ssa.gov/benefits/calculators/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">US Treasury / FRED</div><div class="rc-name">FRED Inflation &amp; CPI Data</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Federal Reserve Economic Data. Authoritative source for CPI, inflation rates, exchange rates, and economic indicators. Useful for valuation work, COLA calculations, and historical real-dollar conversions.</div><div class="rc-url">fred.stlouisfed.org</div><a href="https://fred.stlouisfed.org" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">Retirement &amp; Investment Calculators - Major Custodians</span><span class="sh-count">6 resources</span></div>
+<div class="grid3">
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Fidelity Charitable</div><div class="rc-name">DAF &amp; Tax Savings Calculator</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Models tax savings from contributions to a donor-advised fund. Useful for bunching strategy analysis post-OBBBA (the new 0.5% AGI floor makes bunching more valuable). Generic enough to apply to any DAF sponsor.</div><div class="rc-url">fidelitycharitable.org/giving-account/calculators-tools.html</div><a href="https://www.fidelitycharitable.org/giving-account/calculators-tools.html" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">State Tax Authorities &amp; Calculators</span><span class="sh-count">10 resources</span></div>
+<div class="grid3">
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">California</div><div class="rc-name">FTB - Franchise Tax Board</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">CA personal and corporate income tax authority. Tax tables, withholding schedules, residency rules, R&amp;TC sections. Range of free tools including PTE elective tax estimator. Critical for any high-income California or pre-immigration analysis.</div><div class="rc-url">ftb.ca.gov</div><a href="https://www.ftb.ca.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">New York</div><div class="rc-name">NYS DTF - Tax &amp; Finance</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">NY State and NYC personal income tax. Convenience-of-employer rule, dual-residency, allocation tables. Tax computation tools, withholding tables, and the Tax Calculator. Essential for remote-worker and dual-residency analyses.</div><div class="rc-url">tax.ny.gov</div><a href="https://www.tax.ny.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Florida</div><div class="rc-name">FL Dept. of Revenue</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Florida has no personal income tax but has corporate income tax (5.5%), sales tax, documentary stamp tax, and intangible tax. Property tax is administered locally. Critical for Florida-relocation analysis and FL-based businesses.</div><div class="rc-url">floridarevenue.com</div><a href="https://floridarevenue.com" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Texas</div><div class="rc-name">TX Comptroller</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">No personal income tax, but franchise tax on businesses, sales/use tax, property tax administered locally. Online sales tax rate locator and franchise tax filing tools. Essential for TX-based and TX-relocating businesses.</div><div class="rc-url">comptroller.texas.gov</div><a href="https://comptroller.texas.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Illinois</div><div class="rc-name">IL Dept. of Revenue</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Illinois personal (4.95% flat), corporate, sales tax, and franchise tax. MyTax Illinois portal for filing and payment. Estate tax exemption $4M (2026, indexed). Critical for IL residents and IL-source income.</div><div class="rc-url">tax.illinois.gov</div><a href="https://tax.illinois.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Massachusetts</div><div class="rc-name">MassTaxConnect (DOR)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">MA personal income tax (5% on most income, 4% surcharge on income over $1M effective 2023), corporate excise tax, sales/use tax. The "Millionaire's Tax" calculator and MA-source income rules.</div><div class="rc-url">mass.gov/orgs/massachusetts-department-of-revenue</div><a href="https://www.mass.gov/orgs/massachusetts-department-of-revenue" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">New Jersey</div><div class="rc-name">NJ Division of Taxation</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">NJ personal income tax, corporate business tax (CBT), sales tax. NJ has its own depreciation rules and decouples from federal bonus depreciation - state addback workpapers are required. Essential for NY/NJ tristate situations.</div><div class="rc-url">nj.gov/treasury/taxation</div><a href="https://www.nj.gov/treasury/taxation/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Pennsylvania</div><div class="rc-name">PA Dept. of Revenue</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">PA personal (3.07% flat), corporate (CNIT, reduced to 4.99% by 2031), sales tax, and complex local Earned Income Tax (EIT). Pennsylvania has unusual conformity rules - state-specific addbacks for many federal items.</div><div class="rc-url">revenue.pa.gov</div><a href="https://www.revenue.pa.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Federation of Tax Admins</div><div class="rc-name">FTA - State Tax Agencies Directory</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Single directory of every state revenue department with direct links and contact information. Indispensable for multi-state work. Maintained by the Federation of Tax Administrators.</div><div class="rc-url">taxadmin.org/state-tax-agencies</div><a href="https://taxadmin.org/state-tax-agencies/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  
+</div>
+
+<div class="section-head"><span class="sh-title">Healthcare, ACA &amp; Medicare</span><span class="sh-count">4 resources</span></div>
+<div class="grid2">
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">KFF (Kaiser Family Foundation)</div><div class="rc-name">ACA Subsidy Calculator</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">The standard reference for ACA Premium Tax Credit eligibility and subsidy estimation. Updated annually for current poverty levels and benchmark plan costs. Used by tax practitioners for §36B planning and reconciliation.</div><div class="rc-url">kff.org/interactive/subsidy-calculator</div><a href="https://www.kff.org/interactive/subsidy-calculator/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">HealthCare.gov</div><div class="rc-name">Federal Marketplace Plan &amp; Subsidy Tool</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Federal Marketplace plan finder. Required for taxpayers receiving Form 1095-A and reconciling the Premium Tax Credit on Form 8962. State-marketplace residents (CA Covered, NY State of Health, etc.) use their state portal instead.</div><div class="rc-url">healthcare.gov</div><a href="https://www.healthcare.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Medicare.gov</div><div class="rc-name">Plan Finder &amp; IRMAA Tables</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Medicare Plan Finder for Part A/B/D and Medigap. IRMAA (Income-Related Monthly Adjustment Amount) tables for Part B and Part D premium surcharges based on prior-year MAGI - relevant for retirement income planning.</div><div class="rc-url">medicare.gov</div><a href="https://www.medicare.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">SSA</div><div class="rc-name">IRMAA Reconsideration (Form SSA-44)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">SSA-44 is the form to request reconsideration of an IRMAA determination after a life-changing event (retirement, divorce, death of spouse). Useful for clients facing higher Medicare premiums in their first retirement year.</div><div class="rc-url">ssa.gov/forms/ssa-44.pdf</div><a href="https://www.ssa.gov/forms/ssa-44.pdf" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+
+<div class="section-head"><span class="sh-title">Primary US Legal Authority</span><span class="sh-count">10 resources</span></div>
+<div class="grid3">
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Cornell Law / US Congress</div><div class="rc-name">Internal Revenue Code (Title 26)</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">The complete IRC maintained by Cornell LII. Most accessible free version of primary US tax law. Always cite to the IRC section, not to summaries of it.</div><div class="rc-url">law.cornell.edu/uscode/text/26</div><a href="https://www.law.cornell.edu/uscode/text/26" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">US Treasury / eCFR</div><div class="rc-name">Treasury Regulations (Title 26 CFR)</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Electronic CFR, Title 26. Treasury Regulations have the force of law and are primary authority under Circular 230. Always check proposed vs. final status.</div><div class="rc-url">ecfr.gov/current/title-26</div><a href="https://www.ecfr.gov/current/title-26" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Internal Revenue Service</div><div class="rc-name">IRS.gov - Primary IRS Source</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Revenue Procedures, Revenue Rulings, Notices, forms, and instructions. Rev. Rulings and Rev. Procs. in the Internal Revenue Bulletin are primary authority under Circular 230.</div><div class="rc-url">irs.gov</div><a href="https://www.irs.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">Where's My Refund - Federal</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Track your federal income tax refund status. Available 24 hours after e-filing or 4 weeks after mailing. Requires SSN, filing status, and exact refund amount.</div><div class="rc-url">irs.gov/refunds</div><a href="https://www.irs.gov/refunds" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">New York State</div><div class="rc-name">Where's My Refund - New York</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Check the status of your New York State income tax refund. Refunds are generally issued within 3 weeks for e-filed returns. Requires Social Security number and exact refund amount.</div><div class="rc-url">tax.ny.gov/pit/file/refund.htm</div><a href="https://www.tax.ny.gov/pit/file/refund.htm" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">California FTB</div><div class="rc-name">Where's My Refund - California</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Track your California state income tax refund. Requires Social Security number, ZIP code, and exact refund amount. Generally issued within 3 weeks for e-filed returns.</div><div class="rc-url">ftb.ca.gov/refund</div><a href="https://www.ftb.ca.gov/refund/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">New Jersey</div><div class="rc-name">Where's My Refund - New Jersey</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Check New Jersey income tax refund status. Requires Social Security number and exact refund amount. NJ refunds typically take 4-6 weeks for paper returns.</div><div class="rc-url">njportal.com/DOR/refundstatus</div><a href="https://www.njportal.com/DOR/refundstatus" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Illinois</div><div class="rc-name">Where's My Refund - Illinois</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Track your Illinois state income tax refund. Requires Social Security number and tax year.</div><div class="rc-url">mytax.illinois.gov</div><a href="https://mytax.illinois.gov/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Massachusetts</div><div class="rc-name">Where's My Refund - Massachusetts</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Check Massachusetts state income tax refund status via MassTaxConnect.</div><div class="rc-url">mass.gov/masstaxconnect</div><a href="https://mtc.dor.state.ma.us/mtc/_/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">Yearly Average Currency Exchange Rates</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The only IRS-approved source for yearly average exchange rates used in FBAR, FATCA, and international return preparation. Required for USD conversion of foreign account values.</div><div class="rc-url">irs.gov/.../yearly-average-currency-exchange-rates</div><a href="https://www.irs.gov/individuals/international-taxpayers/yearly-average-currency-exchange-rates" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">US Tax Court</div><div class="rc-name">Tax Court Opinions - Official</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Official source for Tax Court opinions. Regular decisions are binding precedent; memoranda decisions are persuasive. Free, searchable, updated daily.</div><div class="rc-url">ustaxcourt.gov</div><a href="https://www.ustaxcourt.gov/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">IRS Internal Revenue Manual (IRM)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The IRS's own internal procedures manual. Reveals how IRS agents are instructed to conduct examinations, assess penalties, and handle collections. Not binding on taxpayers but invaluable for understanding IRS procedure.</div><div class="rc-url">irs.gov/irm</div><a href="https://www.irs.gov/irm" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">Big Four International Research Tools</span><span class="sh-count">4 resources</span></div>
+<div class="grid2">
+  
+  
+  
+  
+</div>
+
+<div class="section-head"><span class="sh-title">Tax Foundation - State & Federal Data</span><span class="sh-count">5 resources</span></div>
+<div class="grid3">
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">Tax Foundation</div><div class="rc-name">2026 State Income Tax Rates & Brackets</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Definitive annual reference for state individual income tax rates, brackets, standard deductions, and personal exemptions for all 50 states. Updated for 2026 including OBBBA conformity analysis. Nonpartisan, data-driven, primary practitioner reference.</div><div class="rc-url">taxfoundation.org/data/all/state/state-income-tax-rates-2026/</div><a href="https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">Tax Foundation</div><div class="rc-name">2026 Federal Tax Brackets & Parameters</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Federal income tax brackets, standard deductions, AMT exemptions, estate/gift tax parameters for 2026. Includes OBBBA changes. Sourced from IRS Rev. Proc. 2025-32. Fastest verified reference for 2026 federal thresholds.</div><div class="rc-url">taxfoundation.org/data/all/federal/2026-tax-brackets/</div><a href="https://taxfoundation.org/data/all/federal/2026-tax-brackets/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Tax Foundation</div><div class="rc-name">State Tax Competitiveness Index 2026</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Annual ranking of all 50 states on 150+ variables: corporate taxes, individual income taxes, sales and excise taxes, property taxes, unemployment insurance. Essential for state tax planning and business location analysis.</div><div class="rc-url">taxfoundation.org/statetaxindex/</div><a href="https://taxfoundation.org/statetaxindex/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Tax Foundation</div><div class="rc-name">Facts & Figures 2026 - State Tax Data</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">One-stop reference comparing all 50 states on 40+ tax measures: rates, collections, burdens, property taxes, sales taxes. Interactive tool and downloadable PDF. Published annually since 1941.</div><div class="rc-url">taxfoundation.org/data/all/state/2026-state-tax-data/</div><a href="https://taxfoundation.org/data/all/state/2026-state-tax-data/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">OECD & International Policy</span><span class="sh-count">4 resources</span></div>
+<div class="grid2">
+  
+  
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS</div><div class="rc-name">US Income Tax Treaties - Full Text</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Full text of all US income tax treaties currently in force. Treaty articles override domestic law in most cases. Always read the specific treaty article - not a summary - before relying on a treaty position.</div><div class="rc-url">irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z</div><a href="https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">Sales Tax, Nexus & SaaS Compliance</span><span class="sh-count">4 resources</span></div>
+<div class="grid2">
+  
+  
+  
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Streamlined Sales Tax</div><div class="rc-name">SST Registration System</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Simultaneous registration in 24 SST member states through one system. Essential for remote sellers managing multi-state compliance. Free registration for sellers using certified SST software.</div><div class="rc-url">streamlinedsalestax.org</div><a href="https://www.streamlinedsalestax.org" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">Official Government Tax Authorities</span><span class="sh-count">7 resources</span></div>
+<div class="grid3">
+  
+  
+  
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">FinCEN / US Treasury</div><div class="rc-name">FinCEN - FBAR & BSA Filing</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Official FBAR (FinCEN Form 114) filing and Bank Secrecy Act guidance. FBAR is filed through the BSA E-Filing System linked here. Primary source for 31 USC 5314 compliance.</div><div class="rc-url">fincen.gov</div><a href="https://www.fincen.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Puerto Rico</div><div class="rc-name">Hacienda - PR Treasury</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Puerto Rico Department of Treasury. Official source for Act 60 (Individual Investors, Export Services), tax decree applications, and PR income tax. Note Dec 31, 2026 deadline for grandfathered 0% Act 60 rate.</div><div class="rc-url">hacienda.pr.gov</div><a href="https://hacienda.pr.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">US Congress</div><div class="rc-name">Congress.gov - Primary Legislation</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Full text of Public Laws and legislative history. OBBBA (P.L. 119-21), TCJA (P.L. 115-97), CARES Act (P.L. 116-136). Essential for legislative intent research and checking what a statute actually says.</div><div class="rc-url">congress.gov</div><a href="https://www.congress.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">Professional Research & Ethics</span><span class="sh-count">4 resources</span></div>
+<div class="grid2">
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">Google Scholar</div><div class="rc-name">Tax Court & Federal Court Decisions</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">Free access to US Tax Court memoranda, circuit court decisions, and Supreme Court opinions. Search by IRC section, taxpayer name, or legal concept. Good for case-finding; not a substitute for a professional research platform.</div><div class="rc-url">scholar.google.com</div><a href="https://scholar.google.com" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">AICPA</div><div class="rc-name">Statements on Standards for Tax Services</div></div><span class="rc-tag tag-free">Free</span></div><div class="rc-desc">The SSTS are the professional standards governing CPA tax practice. Circular 230's professional complement from the AICPA. Every CPA providing tax services is subject to these standards.</div><div class="rc-url">aicpa-cima.com/topic/tax</div><a href="https://www.aicpa-cima.com/topic/tax" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS / US Treasury</div><div class="rc-name">Circular 230 - Practice Before the IRS</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The regulations governing practice before the IRS for CPAs, attorneys, and enrolled agents. Primary authority for practitioner conduct, ethics, and standards of practice. Required reading for any tax professional.</div><div class="rc-url">irs.gov/pub/irs-pdf/pcir230.pdf</div><a href="https://www.irs.gov/pub/irs-pdf/pcir230.pdf" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="note-box"><strong>Curation note:</strong> All resources listed here have been personally reviewed and are used in practice by a licensed CPA and Enrolled Agent. No commercial relationship exists with any listed organization - inclusion is merit-only. Links are verified periodically. CPA Validated has no affiliation with any listed organizations and receives no compensation for these listings.</div>
+
+
+<div class="section-head"><span class="sh-title">IRS Compliance & Practitioner Procedures</span><span class="sh-count">5 resources</span></div>
+<div class="grid3">
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">IRS / US Treasury</div><div class="rc-name">IRS Streamlined Filing Compliance Procedures</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The official IRS page for the Streamlined Foreign Offshore Procedure (SFOP) and Streamlined Domestic Offshore Procedure (SDOP). The primary amnesty path for non-willful FBAR and foreign reporting failures. Read the actual IRS page, not practitioner summaries - the certification language matters. Directly relevant to pre-immigration planning and late-filer remediation.</div><div class="rc-url">irs.gov/compliance/streamlined-filing-compliance-procedures</div><a href="https://www.irs.gov/compliance/streamlined-filing-compliance-procedures" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">IRS Criminal Investigation</div><div class="rc-name">IRS Voluntary Disclosure Practice (VDP)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The current IRS Voluntary Disclosure Practice replaced the old OVDP (which closed in September 2018). VDP is available for willful violations. Requires pre-clearance, a narrative, amended returns, and negotiated penalties. Distinct from Streamlined - VDP is for willful conduct, Streamlined is for non-willful. Practitioners handling either must know both pages.</div><div class="rc-url">irs.gov/compliance/criminal-investigation</div><a href="https://www.irs.gov/compliance/criminal-investigation" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">IRS / National Taxpayer Advocate</div><div class="rc-name">Taxpayer Advocate Service (TAS)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The IRS's independent advocate for taxpayers. The Annual Report to Congress is essential reading - it identifies the most serious IRS problems and audit priorities each year. TAS intervenes when normal IRS channels fail. The NTA blog is a practitioner-grade commentary on emerging IRS procedures and taxpayer rights issues.</div><div class="rc-url">taxpayeradvocate.irs.gov</div><a href="https://www.taxpayeradvocate.irs.gov/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">FinCEN / US Treasury</div><div class="rc-name">BSA E-Filing System (FBAR Filing Portal)</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The actual portal where FBAR (FinCEN Form 114) is filed. Distinct from FinCEN.gov. This is the direct filing link practitioners need for BSA E-Filing. FBAR is not filed with the IRS - it is filed directly with FinCEN through this system. Deadline: April 15 with automatic extension to October 15.</div><div class="rc-url">bsaefiling.fincen.treas.gov</div><a href="https://bsaefiling.fincen.treas.gov/main.html" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">TIGTA / US Treasury</div><div class="rc-name">Treasury Inspector General for Tax Administration</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">TIGTA audit reports reveal IRS enforcement priorities, systemic failures, and compliance data. The reports are public and regularly cover FBAR enforcement, foreign account compliance, passport revocation under IRC 7345, and EIN abuse. Required reading for practitioners tracking where IRS enforcement resources are actually being deployed.</div><div class="rc-url">tigta.gov</div><a href="https://www.tigta.gov/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">Sanctions, OFAC & Financial Crimes</span><span class="sh-count">2 resources</span></div>
+<div class="grid3">
+  <div class="rc featured"><div class="rc-top"><div><div class="rc-pub">OFAC / US Treasury</div><div class="rc-name">Office of Foreign Assets Control - Sanctions Lists</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">The Specially Designated Nationals (SDN) list and consolidated sanctions programs. Post-2022, OFAC compliance is a threshold issue for any practitioner with Russian-connected clients, cross-border wire transfers, or foreign entity representations. The SDN search tool is free. Failure to screen is not a defense - and penalties are strict liability. Know before you engage.</div><div class="rc-url">ofac.treasury.gov</div><a href="https://ofac.treasury.gov/" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+  <div class="rc"><div class="rc-top"><div><div class="rc-pub">FinCEN / US Treasury</div><div class="rc-name">FinCEN - Anti-Money Laundering & BSA</div></div><span class="rc-tag tag-gov">Official</span></div><div class="rc-desc">Primary source for Bank Secrecy Act regulations, beneficial ownership rules (CTA), and AML guidance. The Corporate Transparency Act (CTA) beneficial ownership reporting - though enforcement is currently suspended pending litigation - originated here. Any practitioner with entity clients needs to monitor this page for status updates.</div><div class="rc-url">fincen.gov</div><a href="https://www.fincen.gov" target="_blank" rel="noopener" class="rc-link">Open</a></div>
+</div>
+
+<div class="section-head"><span class="sh-title">Additional Official Tax Authorities</span><span class="sh-count">4 resources</span></div>
+<div class="grid3">
+  
+</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and tk.cpa expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>

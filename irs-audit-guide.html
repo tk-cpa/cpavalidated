@@ -201,6 +201,273 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §6501 (limitations on assessment - 3-year standard, 6-year substantial omission, unlimited for fraud/no return); IRC §6501(c)(8) (unlimited SOL for missing international information returns); IRC §6212 (notice of deficiency - 90-day letter); IRC §6213 (restrictions applicable to deficiencies - 90-day Tax Court petition right); IRC §6320 and §6330 (collection due process rights); IRC §7121 (closing agreements); IRC §7122 (compromises - OIC); IRC §6404 (abatement of interest and penalties); IRM 4.10 (examination of returns - examination techniques, workpapers, IDRs); IRM 8.7 (appeals - general procedures and settlement authority); IRM 20.1 (penalty handbook - first-time abatement); IRC §6662 (accuracy-related penalty - 20%); IRC §6663 (civil fraud penalty - 75%); IRC §6651 (failure to file and failure to pay penalties); Taxpayer Bill of Rights (IRC §7803(a)(3) - Publication 1); Form 872 (consent to extend statute of limitations); Form 2848 (power of attorney and declaration of representative); Form 656 (offer in compromise application).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRS Audit Guide: Triggers, Process, Appeals & Statute of Limitations (2026) | CPA Validated</title>
+<meta name="description" content="IRS audit guide: what triggers audits, correspondence vs. office vs. field examination, the 3-year and 6-year statute of limitations, the appeals process, IRS settlement strategies, and how to respond to an audit notice. CPA-validated. Updated 2026.">
+<link rel="canonical" href="https://cpavalidated.com/irs-audit-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IRS Audit Guide: Triggers, Process, Appeals & Statute of Limitations (2026) | CPA Validated">
+  <meta property="og:description" content="IRS audit guide: what triggers audits, correspondence vs. office vs. field examination, the 3-year and 6-year statute of limitations, the appeals process, IRS settlement strategies, and how to respond">
+  <meta property="og:url" content="https://cpavalidated.com/irs-audit-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IRS Audit Guide: Triggers, Process, Appeals & Statute of Limitations (2026) | CPA Validated">
+  <meta name="twitter:description" content="IRS audit guide: what triggers audits, correspondence vs. office vs. field examination, the 3-year and 6-year statute of limitations, the appeals process, IRS settlement strategies, and how to respond">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"IRS Audit Guide: Triggers, Process, Appeals & Statute of Limitations (2026) | CPA Validated","description":"IRS audit guide: what triggers audits, correspondence vs. office vs. field examination, the 3-year and 6-year statute of limitations, the appeals process, IRS settlement strategies, and how to respond","url":"https://cpavalidated.com/irs-audit-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>IRS Audit Guide: Triggers, Process & Appeals</h1>
+  <div class="sub">Audit Selection &nbsp;&bull;&nbsp; Correspondence vs. Field &nbsp;&bull;&nbsp; Statute of Limitations &nbsp;&bull;&nbsp; Appeals Process &nbsp;&bull;&nbsp; Settlement &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6501</span>
+    <span class="ph-meta-item">IRC §7121-7122</span>
+    <span class="ph-meta-item">IRM 4.10</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Most IRS audits are not random. They are driven by computer scoring, information return mismatches, specific high-risk items, and industry-wide initiatives. Understanding what triggers scrutiny, what each type of examination involves, and how the process works from first contact through appeals is essential for anyone who prepares returns, advises clients, or receives an audit notice. The worst audit outcomes almost always result from not understanding the process - not from the underlying tax position itself.</p>
+
+<h2>How Returns Are Selected for Audit</h2>
+
+<p>The IRS uses several selection methods simultaneously. No single factor guarantees an audit, but certain items consistently elevate risk.</p>
+
+<h3>DIF Score: The Statistical Baseline</h3>
+<p>The Discriminant Information Function (DIF) is a statistical scoring system that compares each line of a return to statistical norms for that income level. Items that deviate significantly from the norm score higher. The IRS does not publish the DIF formula, but high deduction ratios, large losses relative to income, and unusual item combinations consistently correlate with high DIF scores. High-DIF returns are flagged for human review - a classifier then decides whether to open an examination.</p>
+
+<h3>Information Return Matching</h3>
+<p>The Automated Underreporter (AUR) program matches 1099s, W-2s, K-1s, and other information returns filed by third parties against what appears on the taxpayer's return. Unreported income is the most common trigger - a 1099-NEC for $15,000 that doesn't appear on Schedule C, or a 1099-B for stock proceeds with no corresponding Schedule D entry. The AUR generates CP2000 notices automatically, proposing additional tax on the unreported amount.</p>
+
+<h3>High-Risk Items</h3>
+<table class="key-table">
+  <tr><th>Item</th><th>Why It Attracts Scrutiny</th></tr>
+  <tr><td>Large cash businesses (restaurants, contractors, auto dealers)</td><td>High underreporting rates historically; IRS uses bank deposit analysis</td></tr>
+  <tr><td>Home office deduction</td><td>Exclusive use requirement frequently not met; large deductions relative to income</td></tr>
+  <tr><td>Rental real estate losses at high income</td><td>Passive activity rules frequently misapplied; real estate professional claims audited heavily</td></tr>
+  <tr><td>Schedule C with consistent losses</td><td>Hobby loss rules (IRC §183); activity that appears to lack profit motive</td></tr>
+  <tr><td>Large charitable contribution deductions</td><td>Noncash contributions frequently overvalued; qualified appraisal requirements not met</td></tr>
+  <tr><td>R&D credit claims</td><td>Four-part test frequently misapplied; documentation requirements not met</td></tr>
+  <tr><td>International information returns (5471, FBAR)</td><td>Specifically targeted; high penalty rates; statute of limitations suspension</td></tr>
+  <tr><td>Very high income (&gt;$1M)</td><td>IRS audit rates for high-income returns are significantly higher</td></tr>
+  <tr><td>Pass-through entities with large losses</td><td>Basis limitations, at-risk rules, passive activity frequently misapplied</td></tr>
+</table>
+
+<h2>Types of IRS Examinations</h2>
+
+<h3>Correspondence Examination</h3>
+<p>The most common type - conducted entirely by mail. The IRS sends a letter asking the taxpayer to substantiate a specific item (typically a deduction, credit, or income item). The taxpayer responds with documentation. Most correspondence exams are resolved without the taxpayer or their representative ever speaking to an IRS agent. CP2000 notices (unreported income) and CP notices generally fall in this category.</p>
+
+<h3>Office Examination</h3>
+<p>Conducted at an IRS office. The taxpayer (or their representative) brings documentation to meet with an examiner. Typically involves multiple issues on a return - more complex than a correspondence exam but less extensive than a field audit. Common for Schedule C businesses, rental activities, and mid-range income returns with unusual items.</p>
+
+<h3>Field Examination</h3>
+<p>The most comprehensive audit type - conducted at the taxpayer's home, business, or representative's office. An IRS Revenue Agent (RA) reviews books and records, interviews personnel, and examines multiple years. Field exams are common for businesses, partnerships, S-corporations, high-income individuals, and returns involving complex issues like transfer pricing, international structures, or large transactions. Field exams can last months or years.</p>
+
+<h2>Statute of Limitations: IRC §6501</h2>
+
+<p>The statute of limitations defines how long the IRS has to assess additional tax. Understanding the applicable statute is essential in any examination.</p>
+
+<table class="key-table">
+  <tr><th>Situation</th><th>Assessment Period</th><th>Authority</th></tr>
+  <tr><td>Standard - return filed</td><td>3 years from the later of the return due date or the date filed</td><td>IRC §6501(a)</td></tr>
+  <tr><td>Substantial omission of income (&gt;25% of gross income)</td><td>6 years from filing date</td><td>IRC §6501(e)(1)</td></tr>
+  <tr><td>False or fraudulent return</td><td>No limitation - open indefinitely</td><td>IRC §6501(c)(1)</td></tr>
+  <tr><td>No return filed</td><td>No limitation - open indefinitely</td><td>IRC §6501(c)(3)</td></tr>
+  <tr><td>Missing international information returns (5471, 8938, etc.)</td><td>No limitation on entire return until form is filed</td><td>IRC §6501(c)(8)</td></tr>
+  <tr><td>Consent (Form 872)</td><td>Extended by agreement to date specified</td><td>IRC §6501(c)(4)</td></tr>
+</table>
+
+<div class="note-box"><strong>Signing a statute extension (Form 872) is not automatic.</strong> When the IRS requests a consent to extend the statute of limitations, the taxpayer is not required to sign. However, refusing typically means the IRS will issue a notice of deficiency (90-day letter) immediately to preserve its right to assess - which may force the taxpayer to Tax Court before the examination is complete. In most cases, signing a limited extension while the examination proceeds is the practical approach. Consult a representative before signing.</div>
+
+<h2>The Audit Process: From Notice to Resolution</h2>
+
+<p><strong>Step 1 - Initial contact.</strong> The IRS contacts the taxpayer by mail (never initially by phone or email - those are scams). The notice specifies the year(s) under examination and the items at issue. The taxpayer has a right to be represented by a CPA, attorney, or enrolled agent under a Form 2848 Power of Attorney.</p>
+
+<p><strong>Step 2 - Information document request (IDR).</strong> The examiner issues an IDR listing documents requested. Responding completely and promptly - without volunteering additional information beyond what is requested - is the correct approach. Everything provided becomes part of the administrative record.</p>
+
+<p><strong>Step 3 - Examination and proposed adjustments.</strong> The examiner reviews the documentation and issues a Revenue Agent Report (RAR) proposing adjustments. The taxpayer has the opportunity to agree, partially agree, or disagree with each proposed adjustment.</p>
+
+<p><strong>Step 4 - 30-day letter.</strong> If the taxpayer disagrees, the IRS issues a 30-day letter (Letter 950) with the proposed adjustments. The taxpayer has 30 days to request a conference with the IRS Office of Appeals.</p>
+
+<p><strong>Step 5 - Appeals.</strong> The IRS Independent Office of Appeals is a separate division that resolves disputes without litigation. Appeals officers have settlement authority and consider the "hazards of litigation" - the likelihood that the IRS would prevail in court. Most examinations are settled at Appeals without going to court.</p>
+
+<p><strong>Step 6 - 90-day letter (Notice of Deficiency).</strong> If Appeals does not resolve the dispute, the IRS issues a statutory notice of deficiency - the "90-day letter." The taxpayer has 90 days to file a petition in the US Tax Court to contest the deficiency without paying it first. Missing the 90-day deadline is catastrophic - it eliminates the right to Tax Court and the IRS can immediately assess and collect.</p>
+
+<h2>Settlement Tools: Offers in Compromise and Closing Agreements</h2>
+
+<p>An Offer in Compromise (OIC) under IRC §7122 allows a taxpayer to settle a tax liability for less than the full amount owed when: (a) there is doubt as to liability (the tax is disputed), (b) there is doubt as to collectibility (the taxpayer cannot pay the full amount), or (c) collection would create economic hardship or be inequitable. The IRS evaluates OICs based on the taxpayer's reasonable collection potential - assets plus future income capacity.</p>
+
+<p>A closing agreement under IRC §7121 is a binding final settlement between the taxpayer and the IRS on specific issues - once signed, neither party can reopen the issue. Closing agreements are used to resolve issues that require certainty going forward, including advance pricing agreements for transfer pricing and resolution of recurring issues.</p>
+
+<div class="green-box"><strong>Penalties are often abatable.</strong> The IRS assesses accuracy-related penalties (20%) and failure-to-file/failure-to-pay penalties routinely during examinations. First-time penalty abatement (FTA) is available administratively for taxpayers with a clean three-year compliance history - no penalties in the prior three years. FTA can eliminate the first year's penalty without requiring a showing of reasonable cause. Request it proactively - the IRS does not volunteer it.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="irs-payments-guide.html" class="related-link">IRS Payments Guide<span>Payment methods &middot; Installment agreements</span></a>
+    <a href="penalty-calculator.html" class="related-link">Penalty Calculator<span>Failure to file &middot; Failure to pay &middot; Interest</span></a>
+    <a href="fbar-penalties.html" class="related-link">FBAR Penalties Guide<span>Willful vs. non-willful &middot; Streamlined</span></a>
+    <a href="international-information-returns.html" class="related-link">International Returns Map<span>SOL suspension &middot; Forms 5471 5472 8938</span></a>
+    <a href="streamlined-checker.html" class="related-link">Streamlined Filing Checker<span>OVDP alternative &middot; Non-willful certification</span></a>
+    <a href="irs-accounts-guide.html" class="related-link">IRS Account Guide<span>Access transcripts &middot; Online tools</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §6501 (limitations on assessment - 3-year standard, 6-year substantial omission, unlimited for fraud/no return); IRC §6501(c)(8) (unlimited SOL for missing international information returns); IRC §6212 (notice of deficiency - 90-day letter); IRC §6213 (restrictions applicable to deficiencies - 90-day Tax Court petition right); IRC §6320 and §6330 (collection due process rights); IRC §7121 (closing agreements); IRC §7122 (compromises - OIC); IRC §6404 (abatement of interest and penalties); IRM 4.10 (examination of returns - examination techniques, workpapers, IDRs); IRM 8.7 (appeals - general procedures and settlement authority); IRM 20.1 (penalty handbook - first-time abatement); IRC §6662 (accuracy-related penalty - 20%); IRC §6663 (civil fraud penalty - 75%); IRC §6651 (failure to file and failure to pay penalties); Taxpayer Bill of Rights (IRC §7803(a)(3) - Publication 1); Form 872 (consent to extend statute of limitations); Form 2848 (power of attorney and declaration of representative); Form 656 (offer in compromise application).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

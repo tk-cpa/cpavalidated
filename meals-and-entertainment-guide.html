@@ -278,6 +278,350 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRC §274 (entertainment, meals, gifts); IRC §274(a) (entertainment disallowance, TCJA); IRC §274(n)(1) (50% limitation on food/beverages); IRC §274(n)(2)(C) (commercial vessels, fishing/oil rig exception); IRC §274(n)(2)(D) (restaurant 100% rule, expired 12/31/2022); IRC §274(o) (employer-provided meals disallowance, effective 1/1/2026); IRC §274(e) (six 100% exceptions); IRC §274(d) (substantiation); IRC §119 (meals furnished for convenience of employer); IRC §132(e)(2) (employer-operated eating facility); Treas. Reg. §1.274-11 (entertainment); Treas. Reg. §1.274-12 (food and beverage); Notice 2018-76 (transitional guidance); Notice 2021-25 (restaurant 100% guidance); T.D. 9925 (final §274 regulations); OBBBA P.L. 119-21 (§274(o) sunset retained, narrow exceptions for restaurants and fishing/fish-processing).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meals & Entertainment Deduction Guide (2026) | CPA Validated</title>
+<meta name="description" content="Business meals and entertainment deductibility under IRC Section 274 for 2026. The 50% meal standard, 0% entertainment disallowance (TCJA), the new Section 274(o) employer-meals disallowance effective 1/1/2026, the expired Section 274(n)(2)(D) restaurant 100% (2021-2022), and the seven categories of 100% deductible meals under Section 274(e). CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/meals-and-entertainment-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.article ul{margin:8px 0 18px 24px}
+.article ul li{font-size:14.5px;line-height:1.7;color:var(--ink-80);margin-bottom:6px}
+.rate-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0 28px}
+.rate-box{border:1px solid var(--ink-20);padding:16px;text-align:center}
+.rb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:8px}
+.rb-rate{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--coral)}
+.rb-note{font-size:11.5px;color:var(--ink-60);margin-top:6px;line-height:1.4}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.key-table .rate-pct{font-family:var(--font-display);font-size:18px;color:var(--coral);font-weight:500;text-align:center}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.rate-grid,.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph,.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Meals & Entertainment Deduction Guide (2026) | CPA Validated">
+  <meta property="og:description" content="Business meals and entertainment deductibility under IRC Section 274 for 2026. The 50% meal standard, 0% entertainment disallowance (TCJA), the new Section 274(o) employer-meals disallowance effective">
+  <meta property="og:url" content="https://cpavalidated.com/meals-and-entertainment-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Meals & Entertainment Deduction Guide (2026) | CPA Validated">
+  <meta name="twitter:description" content="Business meals and entertainment deductibility under IRC Section 274 for 2026. The 50% meal standard, 0% entertainment disallowance (TCJA), the new Section 274(o) employer-meals disallowance effective">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Meals & Entertainment Deduction Guide (2026) | CPA Validated","description":"Business meals and entertainment deductibility under IRC Section 274 for 2026. The 50% meal standard, 0% entertainment disallowance (TCJA), the new Section 274(o) employer-meals disallowance effective","url":"https://cpavalidated.com/meals-and-entertainment-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Meals &amp; Entertainment (2026)</h1>
+  <div class="sub">IRC §274 &nbsp;&bull;&nbsp; The 50% Meal Rule &nbsp;&bull;&nbsp; Entertainment Disallowance &nbsp;&bull;&nbsp; New §274(o) for Employer Meals (2026)</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §274</span>
+    <span class="ph-meta-item">Treas. Reg. §1.274-11, §1.274-12</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Meals and entertainment deductibility is governed by IRC §274, not by the general "ordinary and necessary" rule of §162. §274 is the gatekeeper - it imposes additional limits on top of the §162 deduction even when the underlying expense is clearly business-related. The rules have shifted multiple times: TCJA (2017) eliminated the entertainment deduction; the COVID-era §274(n)(2)(D) restaurant 100% (2021-2022) expired; OBBBA retained the long-pending §274(o) sunset that disallows convenience-of-employer meals starting 1/1/2026. This guide covers the rules in effect for 2026 and the planning consequences.</p>
+
+<div class="callout">
+  <div class="callout-label">The Three Numbers</div>
+  <p><strong>0%</strong> - Entertainment, amusement, recreation (TCJA, permanent disallowance under §274(a))<br>
+  <strong>50%</strong> - Standard business meal (§274(n)(1))<br>
+  <strong>100%</strong> - Six narrow exceptions under §274(e), §274(n)(2)(C), and bona-fide-customer transactions</p>
+  <p>The COVID-era 100% restaurant rule (§274(n)(2)(D)) expired on December 31, 2022. Lobbying to revive it has not succeeded. Restaurant meals revert to the 50% rule for 2023 and beyond.</p>
+</div>
+
+<h2>The Default Rules</h2>
+
+<div class="rate-grid">
+  <div class="rate-box">
+    <div class="rb-label">Entertainment</div>
+    <div class="rb-rate">0%</div>
+    <div class="rb-note">Disallowed under §274(a) since TCJA (2017). Permanent. No partial deduction available.</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Business Meals</div>
+    <div class="rb-rate">50%</div>
+    <div class="rb-note">§274(n)(1) standard limitation. Applies to most business meals with clients, prospects, and travel meals.</div>
+  </div>
+  <div class="rate-box">
+    <div class="rb-label">Specific Exceptions</div>
+    <div class="rb-rate">100%</div>
+    <div class="rb-note">Six categories under §274(e). See below.</div>
+  </div>
+</div>
+
+<h2>What Is "Entertainment"?</h2>
+
+<p>Treasury Regulation §1.274-2 defines entertainment as activities of a type generally considered to be entertainment, amusement, or recreation - including theater, sporting events, hunting, fishing, vacation, golf, country clubs, social clubs. After TCJA, expenses for entertainment activities are 0% deductible. There is no business-purpose test that revives the deduction.</p>
+
+<p>The bright line: <strong>food and beverages are not entertainment</strong> as long as they are purchased separately from any entertainment activity (or stated separately on the invoice). Notice 2018-76 (formalized in Treas. Reg. §1.274-11) confirmed this. So:</p>
+
+<ul>
+  <li>Hot dogs purchased at a baseball game while entertaining a client - <strong>50% deductible</strong> (food, not entertainment, separately purchased)</li>
+  <li>The baseball game tickets - <strong>0% deductible</strong></li>
+  <li>Suite tickets that include all-inclusive food and beverages, no separate invoice - <strong>0% on the entire package</strong> (entertainment, food not separately stated)</li>
+</ul>
+
+<div class="green-box"><strong>Practitioner tip.</strong> If a client takes a customer to a sporting event with a hospitality suite, the catering should be invoiced separately from the ticket cost. Done correctly, the food is 50% deductible. Done sloppily (one bundled invoice), 100% of the package is disallowed.</div>
+
+<h2>The 50% Rule - Standard Business Meals</h2>
+
+<p>Under §274(n)(1), most ordinary business meal expenses are limited to 50% deductibility. To qualify even for the 50%, the meal must:</p>
+
+<ul>
+  <li>Be ordinary and necessary under §162(a) in carrying on a trade or business</li>
+  <li>Not be lavish or extravagant under the circumstances</li>
+  <li>Have the taxpayer (or an employee) present at the furnishing</li>
+  <li>Be provided to a current or potential business customer, client, consultant, or similar business contact (or be a meal during travel away from home)</li>
+  <li>Be substantiated under §274(d) - amount, time, place, business purpose, and business relationship</li>
+</ul>
+
+<p>Travel meals (away-from-home meals during business travel) are 50% deductible under the same standard.</p>
+
+<h2>Section 274(e) - The 100% Exceptions</h2>
+
+<p>Six categories of food/beverage expenses are exempt from the §274(n)(1) 50% limit and remain fully deductible at 100%. These are codified in §274(e):</p>
+
+<table class="key-table">
+  <thead><tr><th>Code Section</th><th>Description</th><th>Rate</th></tr></thead>
+  <tbody>
+    <tr><td>§274(e)(1)</td><td>De minimis food/beverages provided to employees (e.g., office coffee, breakroom snacks, occasional doughnuts) - subject to §274(o) starting 2026, see below</td><td class="rate-pct">100%*</td></tr>
+    <tr><td>§274(e)(2)</td><td>Expenses treated as compensation to recipient and reported on Form W-2</td><td class="rate-pct">100%</td></tr>
+    <tr><td>§274(e)(3)</td><td>Expenses reimbursed by a non-employer (independent contractor reimbursement under accountable plan)</td><td class="rate-pct">100%</td></tr>
+    <tr><td>§274(e)(4)</td><td>Recreational, social, or similar activities primarily for the benefit of employees (e.g., holiday party, summer picnic, employee appreciation events) - not just for highly-compensated</td><td class="rate-pct">100%</td></tr>
+    <tr><td>§274(e)(7)</td><td>Expenses available to general public (e.g., free samples at a trade show)</td><td class="rate-pct">100%</td></tr>
+    <tr><td>§274(e)(8)</td><td>Goods/services sold to customers in a bona fide transaction for adequate consideration (e.g., a restaurant's cost of goods sold for meals served to paying customers)</td><td class="rate-pct">100%</td></tr>
+    <tr><td>§274(n)(2)(C)</td><td>Meals on certain commercial vessels, fishing vessels, and oil/gas platforms in remote locations</td><td class="rate-pct">100%</td></tr>
+  </tbody>
+</table>
+
+<p style="font-size:13px;color:var(--ink-60);font-style:italic">* §274(e)(1) de minimis and §274(e)(4) employee social meals were historically 100% deductible, but coordination with the new §274(o) is required for de minimis food provided as a convenience-of-employer meal starting 1/1/2026. See next section.</p>
+
+<h2>Section 274(o) - The 2026 Cliff for Employer-Provided Meals</h2>
+
+<p>This is the change practitioners need to flag for every employer client. Effective for amounts paid or incurred <strong>after December 31, 2025</strong>, IRC §274(o) (added by the TCJA but with a delayed sunset that OBBBA retained in full) disallows 100% of:</p>
+
+<ul>
+  <li>Meals provided to employees that are excludable from employee gross income under §119(a) (meals furnished for the convenience of the employer)</li>
+  <li>Food and beverage expenses for an employer-operated eating facility (defined in §132(e)(2))</li>
+</ul>
+
+<p>Pre-2026, these meals were 50% deductible to the employer. Post-2025, they are 0% deductible. This is a significant change for tech companies, hospital systems, manufacturing facilities with on-site cafeterias, and any employer that historically provided "convenience" meals to keep employees on premises.</p>
+
+<div class="red-box"><strong>Free office lunch is now 0% deductible for the employer.</strong> If the employer wants to keep providing meals: either (a) include the meal value in the employee's W-2 wages (then 100% deductible to the employer under §274(e)(2), but employee pays tax), (b) charge employees fair value for the meal (then potentially 100% under §274(e)(8) as a bona-fide-customer transaction), or (c) take the 0% disallowance and accept the cost. There is no clean third path.</div>
+
+<h2>OBBBA's Narrow Exceptions to §274(o)</h2>
+
+<p>OBBBA added two narrow carve-outs to the §274(o) disallowance:</p>
+
+<ul>
+  <li><strong>Restaurants.</strong> Establishments that provide meals to customers (i.e., a restaurant's own kitchen feeding its own staff during shifts) remain 100% deductible under Treas. Reg. §1.274-12(c)(2)(v)(A). This preserves the food-service industry's ability to feed staff without losing the deduction.</li>
+  <li><strong>Fishing vessels and fish-processing facilities.</strong> Meals provided on fishing/fish-processing vessels and at certain U.S. fish-processing facilities (north of 50&deg; latitude, outside metropolitan statistical areas) remain 100% deductible under §274(n)(2)(C).</li>
+</ul>
+
+<p>For everyone else - tech, finance, manufacturing, healthcare, professional services - the §274(o) disallowance applies starting 1/1/2026.</p>
+
+<h2>The Expired §274(n)(2)(D) Restaurant Rule</h2>
+
+<p>For amounts paid or incurred <strong>after December 31, 2020, and before January 1, 2023</strong>, §274(n)(2)(D) (added by the Consolidated Appropriations Act, 2021) provided a temporary 100% deduction for food or beverages provided by a restaurant. IRS guidance is in Notice 2021-25.</p>
+
+<p>"Restaurant" was defined as a business that prepares and sells food or beverages to retail customers for immediate consumption, regardless of whether the food was consumed on the premises. Excluded: grocery stores, specialty food stores, beer/wine/liquor stores, drug stores, convenience stores, newsstands, vending machines, and kiosks - those remained at the 50% rate.</p>
+
+<p>The provision expired on schedule. Despite ongoing lobbying from the restaurant industry, neither subsequent legislation nor OBBBA revived it. Business meals from restaurants are back to the 50% standard for 2023 and forward.</p>
+
+<h2>Substantiation Under §274(d)</h2>
+
+<p>Even fully deductible meals require substantiation. §274(d) requires the taxpayer to substantiate by adequate records or sufficient evidence:</p>
+
+<ul>
+  <li>Amount of the expense</li>
+  <li>Time and place</li>
+  <li>Business purpose</li>
+  <li>Business relationship of the persons involved</li>
+</ul>
+
+<p>Practical implementation: keep the receipt; record on the receipt (or in a contemporaneous log) the names of attendees, business relationship, and topic discussed. Credit card statements alone are insufficient. The standard tightens for amounts of $75 or more (Rev. Proc. 2003-15), where a documentary record is required.</p>
+
+<h2>Chart-of-Accounts Implications</h2>
+
+<p>A single "Meals & Entertainment" line item in the chart of accounts is no longer adequate. Different categories carry different deductibility rates. The recommended structure for 2026:</p>
+
+<table class="key-table">
+  <thead><tr><th>Account</th><th>Examples</th><th>Rate</th></tr></thead>
+  <tbody>
+    <tr><td>Business Meals - 50%</td><td>Client lunches, business travel meals, prospect dinners</td><td class="rate-pct">50%</td></tr>
+    <tr><td>Employee Social - 100%</td><td>Holiday party, summer picnic, employee appreciation events</td><td class="rate-pct">100%</td></tr>
+    <tr><td>De Minimis Food - 100% (subject to §274(o))</td><td>Office coffee, breakroom snacks, occasional doughnuts</td><td class="rate-pct">100%/0%</td></tr>
+    <tr><td>Convenience-of-Employer Meals - 0% (2026)</td><td>Free lunches, on-site cafeteria, late-night work meals to keep employees</td><td class="rate-pct">0%</td></tr>
+    <tr><td>Sold to Customers - 100%</td><td>Goods sold in bona-fide transactions, restaurant COGS</td><td class="rate-pct">100%</td></tr>
+    <tr><td>Entertainment - 0%</td><td>Sporting event tickets, concerts, golf, hunting/fishing</td><td class="rate-pct">0%</td></tr>
+    <tr><td>Travel Meals - 50%</td><td>Per diem and actual cost for away-from-home meals</td><td class="rate-pct">50%</td></tr>
+  </tbody>
+</table>
+
+<h2>Planning Notes for 2026</h2>
+
+<p><strong>Audit your "free lunch" policy now.</strong> If the business has been providing on-site meals or operating an in-house cafeteria, the post-2025 disallowance may be material. Quantify the lost deduction at the corporate effective rate to assess whether the practice should continue, be priced (charged to employees), or be added to W-2 wages.</p>
+
+<p><strong>Bundled invoices are a deduction risk.</strong> Sporting event suites, conference packages with included meals, hospitality events - require separately stated invoices for the food component. A single bundled invoice typically defaults to entertainment treatment (0%).</p>
+
+<p><strong>Holiday parties and employee social events remain 100% deductible.</strong> §274(e)(4) applies as long as the event is primarily for the benefit of employees (not just executives). This is one of the few unambiguously favorable carve-outs that OBBBA did not touch.</p>
+
+<p><strong>Per diem rates simplify substantiation but not deductibility.</strong> Use of GSA per diem rates for travel meals satisfies §274(d) recordkeeping but does not change the 50% deductibility of those meals.</p>
+
+<p><strong>Don't forget Form 1099 reporting.</strong> If the business reimburses a non-employee (e.g., a board member or consultant) for meals and treats the reimbursement as compensation, that's §274(e)(2) territory - 100% deductible to the payer but reportable on Form 1099-NEC.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>P.L. 119-21 · All Major Provisions</span></a>
+    <a href="charitable-deduction-guide.html" class="related-link">Charitable Deduction Guide<span>IRC §170 · 0.5% AGI Floor</span></a>
+    <a href="qbi-deduction-guide.html" class="related-link">QBI Deduction Guide<span>IRC §199A · Pass-Through</span></a>
+    <a href="tax-calendar.html" class="related-link">Tax Calendar 2026<span>Filing &amp; payment deadlines</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §274 (entertainment, meals, gifts); IRC §274(a) (entertainment disallowance, TCJA); IRC §274(n)(1) (50% limitation on food/beverages); IRC §274(n)(2)(C) (commercial vessels, fishing/oil rig exception); IRC §274(n)(2)(D) (restaurant 100% rule, expired 12/31/2022); IRC §274(o) (employer-provided meals disallowance, effective 1/1/2026); IRC §274(e) (six 100% exceptions); IRC §274(d) (substantiation); IRC §119 (meals furnished for convenience of employer); IRC §132(e)(2) (employer-operated eating facility); Treas. Reg. §1.274-11 (entertainment); Treas. Reg. §1.274-12 (food and beverage); Notice 2018-76 (transitional guidance); Notice 2021-25 (restaurant 100% guidance); T.D. 9925 (final §274 regulations); OBBBA P.L. 119-21 (§274(o) sunset retained, narrow exceptions for restaurants and fishing/fish-processing).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. State conformity to §274 varies. Verify current rules before taking any filing position. Consult a qualified tax professional before making any planning or filing decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

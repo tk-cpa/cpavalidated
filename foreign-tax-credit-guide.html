@@ -189,6 +189,261 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §901 (allowance of foreign tax credit - taxes paid or accrued to foreign countries); IRC §901(j) (denial of credit for taxes paid to certain countries under sanctions); IRC §902 (repealed by TCJA - replaced by §960 deemed paid rules); IRC §903 (credit for taxes in lieu of income taxes - creditable in-lieu-of taxes); IRC §904 (limitation on credit - per-basket computation); IRC §904(d) (separate limitation baskets - general, passive, GILTI/NCTI, foreign branch, §901(j)); IRC §904(j) (simplified election - $300/$600 passive taxes, no Form 1116 required); IRC §904(c) (carryback 1 year, carryforward 10 years); IRC §960 (deemed paid credit for corporate US shareholders of CFCs - 80% limitation in NCTI basket); IRC §951A (NCTI/GILTI - inclusion amount); IRC §250 (§250 deduction - 40% permanent under OBBBA P.L. 119-21); Treas. Reg. §1.951A-2(c)(7) (high-tax exclusion election - effective rate exceeding 90% of US rate, currently 18.9%); Treas. Reg. §1.904-4 (separate limitation income - basket definitions and passive income lookthrough rules); Form 1116 (foreign tax credit for individuals, estates, and trusts); Form 1118 (foreign tax credit for corporations); IRS Publication 514 (foreign tax credit for individuals).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foreign Tax Credit Guide: Form 1116, Baskets & FTC Limitation (2026) | CPA Validated</title>
+<meta name="description" content="Foreign tax credit mechanics: the IRC §901 credit, Form 1116 vs. Form 1118, the FTC limitation and income baskets, high-tax exclusion election, carryback and carryforward rules, deemed paid credits for CFC shareholders, and OBBBA NCTI interaction. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/foreign-tax-credit-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px;font-family:var(--font-mono)}
+.formula-line{font-size:14px;color:#fff;line-height:2.2;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px;font-family:var(--font-mono)}
+.formula-line .var{color:var(--coral);font-family:var(--font-mono)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Foreign Tax Credit Guide: Form 1116, Baskets & FTC Limitation (2026) | CPA Validated">
+  <meta property="og:description" content="Foreign tax credit mechanics: the IRC §901 credit, Form 1116 vs. Form 1118, the FTC limitation and income baskets, high-tax exclusion election, carryback and carryforward rules, deemed paid credits fo">
+  <meta property="og:url" content="https://cpavalidated.com/foreign-tax-credit-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Foreign Tax Credit Guide: Form 1116, Baskets & FTC Limitation (2026) | CPA Validated">
+  <meta name="twitter:description" content="Foreign tax credit mechanics: the IRC §901 credit, Form 1116 vs. Form 1118, the FTC limitation and income baskets, high-tax exclusion election, carryback and carryforward rules, deemed paid credits fo">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Foreign Tax Credit Guide: Form 1116, Baskets & FTC Limitation (2026) | CPA Validated","description":"Foreign tax credit mechanics: the IRC §901 credit, Form 1116 vs. Form 1118, the FTC limitation and income baskets, high-tax exclusion election, carryback and carryforward rules, deemed paid credits fo","url":"https://cpavalidated.com/foreign-tax-credit-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Foreign Tax Credit: Form 1116, Baskets & FTC Limitation</h1>
+  <div class="sub">IRC §901 Credit &nbsp;&bull;&nbsp; Income Baskets &nbsp;&bull;&nbsp; FTC Limitation Formula &nbsp;&bull;&nbsp; High-Tax Exclusion &nbsp;&bull;&nbsp; Carryovers &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §901</span>
+    <span class="ph-meta-item">IRC §904</span>
+    <span class="ph-meta-item">Form 1116 / 1118</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The foreign tax credit is the primary mechanism the US uses to prevent double taxation of income earned and taxed abroad. Without it, a US citizen working in Germany paying 42% German income tax would also owe US tax on the same income - an effective rate potentially exceeding 70%. The credit eliminates that double taxation, but only up to the amount of US tax that would otherwise apply to that foreign income. The mechanics of the limitation, the income baskets, and the interaction with GILTI/NCTI are where most of the complexity lives.</p>
+
+<div class="callout">
+  <div class="callout-label">Credit vs. Deduction - Always Take the Credit</div>
+  <p>A taxpayer can either deduct foreign taxes paid as an itemized deduction (IRC §164) or claim them as a credit (IRC §901). The credit is almost always more valuable - a $10,000 foreign tax deduction at the 37% rate saves $3,700; a $10,000 credit saves $10,000. The deduction can be used without limitation; the credit is subject to the FTC limitation. Even so, the credit wins in virtually all cases. The election to take the deduction instead is made on the return and can be changed year to year.</p>
+</div>
+
+<h2>The FTC Limitation: IRC §904</h2>
+
+<p>The foreign tax credit cannot exceed the amount of US tax that would have been owed on the foreign income. This prevents the credit from offsetting US tax on US-source income. The limitation is calculated separately for each income basket.</p>
+
+<div class="formula-box">
+  <div class="formula-label">FTC Limitation - Per Basket</div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Foreign Source Income (basket)</span><span class="def">Numerator - net income in this basket from foreign sources</span></div>
+  <div class="formula-line"><span class="op">/</span><span class="var">Worldwide Taxable Income</span><span class="def">Denominator - total taxable income from all sources</span></div>
+  <div class="formula-line"><span class="op">x</span><span class="var">US Tax Before Credits</span><span class="def">Tentative minimum tax not relevant here; use regular tax</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">FTC Limitation for this basket</span><span class="def">Maximum credit allowed; excess carries over</span></div>
+</div>
+
+<p>If foreign taxes paid in a basket exceed the limitation, the excess is a credit carryback (1 year) and carryforward (10 years). If foreign taxes paid are less than the limitation, the unused limitation carries forward and can absorb future excess credits from the same basket.</p>
+
+<h2>Income Baskets: The Separation Requirement</h2>
+
+<p>The FTC limitation is computed separately for each income basket. Foreign taxes in one basket cannot offset the limitation in another basket. This prevents high-taxed income in one category from sheltering low-taxed income in another.</p>
+
+<table class="key-table">
+  <tr><th>Basket</th><th>What It Contains</th><th>Key Planning Note</th></tr>
+  <tr><td><strong>General</strong></td><td>Most foreign-source earned income, wages, business income not in another basket</td><td>The catch-all basket; most working expats use this primarily</td></tr>
+  <tr><td><strong>Passive</strong></td><td>Foreign dividends, interest, rents, royalties, capital gains (unless high-taxed)</td><td>Separated to prevent high passive taxes from sheltering active income</td></tr>
+  <tr><td><strong>GILTI/NCTI</strong></td><td>Global intangible low-taxed income (now Net CFC Tested Income) from CFCs</td><td>Separate basket; 80% foreign tax credit limitation applies; high-tax exclusion available</td></tr>
+  <tr><td><strong>Foreign Branch</strong></td><td>Income from foreign branches of US corporations</td><td>Separated post-TCJA to prevent blending with general basket</td></tr>
+  <tr><td><strong>Section 901(j)</strong></td><td>Income from countries designated as supporting terrorism or under sanction</td><td>No FTC allowed; deduction only</td></tr>
+</table>
+
+<div class="note-box"><strong>Passive basket pitfall for individual investors.</strong> Foreign dividends from stocks held in a taxable brokerage account go into the passive basket. Foreign withholding taxes on those dividends are also in the passive basket. If the taxpayer has no other passive foreign income, the FTC limitation for the passive basket may be small, leaving significant excess credits that carry forward with limited utility. The Form 1116 for the passive basket is where most individual taxpayer FTC issues arise.</div>
+
+<h2>High-Tax Exclusion: Electing Out of NCTI</h2>
+
+<p>Under Treas. Reg. §1.951A-2(c)(7), a CFC's income that bears a foreign effective tax rate exceeding 18.9% (90% of the 21% US corporate rate) can be excluded from the NCTI/GILTI inclusion entirely via the high-tax exclusion (HTE) election. This is a per-CFC, per-item election made on the US shareholder's return.</p>
+
+<p>The HTE prevents the anomalous result where a US company's CFC pays high foreign taxes on its income but the US parent must include the same income in NCTI and then apply a limited FTC (80% cap in the NCTI basket) - potentially resulting in net US tax on already-heavily-taxed income. By electing out, the income stays offshore and the US parent avoids the inclusion entirely.</p>
+
+<div class="green-box"><strong>OBBBA and the NCTI effective rate.</strong> OBBBA set the §250 deduction permanently at 40%, producing an effective NCTI rate of 10.5% (21% x (1 - 50%)) - wait, under OBBBA the deduction is 40%, so effective rate is 21% x (1 - 40%) = 12.6%. The HTE threshold is 90% of the US rate = 18.9%. CFCs in jurisdictions with rates above 18.9% (most developed countries) should evaluate the HTE election annually to eliminate US tax on already high-taxed income.</div>
+
+<h2>Form 1116 vs. Form 1118</h2>
+
+<p>Individuals, estates, and trusts use Form 1116 to claim the foreign tax credit. Corporations use Form 1118. The individual Form 1116 must be filed separately for each basket - a taxpayer with foreign wages (general basket) and foreign dividends (passive basket) files two Form 1116s. A simplified election under IRC §904(j) allows taxpayers with $300 or less ($600 MFJ) of passive basket foreign taxes and no general basket foreign taxes to claim the credit directly on Schedule 3 without Form 1116.</p>
+
+<h2>Deemed Paid Credits: §960</h2>
+
+<p>Corporate US shareholders of CFCs can claim a deemed paid credit under IRC §960 for foreign taxes paid by the CFC on income that is included in the US shareholder's income (Subpart F income, NCTI). The deemed paid credit is limited to 80% of the foreign taxes in the NCTI basket. The credit represents foreign taxes attributable to the inclusion - the US shareholder is treated as having paid those taxes.</p>
+
+<p>Individual US shareholders of CFCs generally cannot claim deemed paid credits under §960 directly - they can make a §962 election to be taxed as a corporation on CFC income, which then allows access to the §960 deemed paid credit. See the Section 962 Election guide for details.</p>
+
+<h2>Carryback and Carryforward Rules</h2>
+
+<p>Excess FTCs in any basket (foreign taxes paid exceed the limitation) can be carried back 1 year and forward 10 years to offset limitations in years where taxes paid are less than the limitation. The carryback and carryforward are tracked separately by basket and by year. Carryforwards that expire unused after 10 years produce a permanent tax cost - they cannot be deducted after expiration.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="ftc-calculator.html" class="related-link">FTC Calculator<span>Form 1116 &middot; Basket limitation modeling</span></a>
+    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Guide<span>IRC §951A &middot; §250 deduction &middot; HTE election</span></a>
+    <a href="section-962-election.html" class="related-link">Section 962 Election<span>Individual CFC shareholders &middot; §960 credit access</span></a>
+    <a href="feie-guide.html" class="related-link">FEIE Guide<span>IRC §911 exclusion vs. FTC - the election</span></a>
+    <a href="us-expat-tax-guide.html" class="related-link">US Expat Tax Guide<span>Foreign income reporting &middot; Credit vs. exclusion</span></a>
+    <a href="transfer-pricing-guide.html" class="related-link">Transfer Pricing Guide<span>FTC basket interaction with intercompany pricing</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §901 (allowance of foreign tax credit - taxes paid or accrued to foreign countries); IRC §901(j) (denial of credit for taxes paid to certain countries under sanctions); IRC §902 (repealed by TCJA - replaced by §960 deemed paid rules); IRC §903 (credit for taxes in lieu of income taxes - creditable in-lieu-of taxes); IRC §904 (limitation on credit - per-basket computation); IRC §904(d) (separate limitation baskets - general, passive, GILTI/NCTI, foreign branch, §901(j)); IRC §904(j) (simplified election - $300/$600 passive taxes, no Form 1116 required); IRC §904(c) (carryback 1 year, carryforward 10 years); IRC §960 (deemed paid credit for corporate US shareholders of CFCs - 80% limitation in NCTI basket); IRC §951A (NCTI/GILTI - inclusion amount); IRC §250 (§250 deduction - 40% permanent under OBBBA P.L. 119-21); Treas. Reg. §1.951A-2(c)(7) (high-tax exclusion election - effective rate exceeding 90% of US rate, currently 18.9%); Treas. Reg. §1.904-4 (separate limitation income - basket definitions and passive income lookthrough rules); Form 1116 (foreign tax credit for individuals, estates, and trusts); Form 1118 (foreign tax credit for corporations); IRS Publication 514 (foreign tax credit for individuals).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

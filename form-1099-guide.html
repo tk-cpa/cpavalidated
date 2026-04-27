@@ -155,6 +155,227 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §6041 (information returns for certain payments to persons engaged in trade or business); IRC §6041A (returns regarding payments of remuneration for services - 1099-NEC); OBBBA P.L. 119-21 §70433 (amends IRC §6041 and §6041A to raise threshold from $600 to $2,000 for payments made after December 31, 2025; provides for inflation indexing from 2027); IRC §6050W (payment card and third-party network transactions - Form 1099-K); OBBBA P.L. 119-21 (permanently restores 1099-K threshold to $20,000 AND 200 transactions; retroactively repeals ARP P.L. 117-2 §9674 lower thresholds back to 2022; supersedes IRS transitional guidance in Notices 2022-53, 2023-74, 2024-85); IRC §6050N (royalties - $10 reporting threshold; not modified by OBBBA); IRC §3406 (backup withholding - 24% rate; threshold aligned with 1099-NEC $2,000 for 2026 payments); IRC §6721-6722 (penalties for failure to file correct information returns - graduated from $60 to $660 per form).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1099 Form Guide: Thresholds, Rules & OBBBA Changes 2026 | CPA Validated</title>
+<meta name="description" content="2026 1099 reporting: 1099-NEC and 1099-MISC threshold raised to $2,000 (OBBBA). 1099-K permanently reverted to $20,000/200 transactions. Deadlines, penalties, backup withholding. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/form-1099-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1099 Form Guide: 2026 OBBBA Threshold Changes">
+<meta property="og:description" content="1099-NEC/MISC $2,000 threshold for 2026. 1099-K reverted to $20K/200 transactions. Complete 1099 rules.">
+<meta property="og:url" content="https://cpavalidated.com/form-1099-guide.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"1099 Form Guide: 2026 OBBBA Threshold Changes","url":"https://cpavalidated.com/form-1099-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>1099 Form Guide: OBBBA Threshold Changes &amp; 2026 Rules</h1>
+  <div class="sub">1099-NEC/MISC: $2,000 (OBBBA) &nbsp;&bull;&nbsp; 1099-K: $20,000/200 Transactions Restored &nbsp;&bull;&nbsp; Deadlines &nbsp;&bull;&nbsp; Penalties</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6041 / §6041A</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21 §70433</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="business-entity.html">&#8592; Business &amp; Entity</a></div>
+<div class="article">
+
+<p class="lead">Starting with 2026 payments, the 1099-NEC and 1099-MISC threshold is $2,000 per payee per calendar year - inflation-indexed from 2027 forward. The 1099-K threshold is $20,000 and 200 transactions. Income below these thresholds is still fully taxable. Only the payor's reporting obligation changed.</p>
+
+<div class="callout">
+  <div class="callout-label">OBBBA 2026 - The Two Major 1099 Changes</div>
+  <p><strong>1099-NEC and 1099-MISC threshold: $2,000</strong> per payee per calendar year. Inflation-indexed annually from 2027. Income below the threshold is still fully taxable - only the payor's filing obligation is affected.</p>
+  <p><strong>1099-K threshold: $20,000 AND 200 transactions</strong> - permanent. Applies to payment platforms (PayPal, Venmo, Stripe, Airbnb, etc.). Below both tests: no 1099-K issued, but income remains taxable.
+</div>
+
+<div class="red-box"><strong>Lower reporting threshold does not mean lower tax.</strong> A freelancer paid $1,800 in 2026 will not receive a Form 1099-NEC. That does not reduce their tax liability by one dollar. All $1,800 is Schedule C income, subject to self-employment tax, and required to be reported on their return. The 1099 threshold is a payor's paperwork obligation. It has never been an income exclusion and OBBBA did not change that principle.</div>
+
+<h2>1099-NEC: Nonemployee Compensation</h2>
+
+<p>Form 1099-NEC reports payments made to independent contractors and freelancers for services in the course of a trade or business. The $2,000 threshold applies per payee per calendar year.</p>
+
+<table class="key-table">
+  <tr><th>Tax Year</th><th>Threshold</th><th>Authority</th></tr>
+  <tr><td><strong>2026</strong></td><td><strong>$2,000</strong></td><td>OBBBA P.L. 119-21 §70433 amending IRC §6041(a) and §6041A</td></tr>
+  <tr><td>2027 and beyond</td><td>$2,000 + annual inflation adjustment</td><td>IRC §6041(h) as added by OBBBA §70433(b)</td></tr>
+</table>
+
+<p>Best practice: collect Form W-9 from every contractor before the first payment regardless of expected amount. You cannot always predict total annual payments in January. Backup withholding at 24% applies when a contractor fails to provide a valid TIN and total payments reach the $2,000 threshold.</p>
+
+<h2>1099-MISC: Miscellaneous Income</h2>
+
+<p>The $2,000 threshold applies to rents, services, prizes, and most other miscellaneous income reportable under IRC §6041. Key exceptions:</p>
+
+<table class="key-table">
+  <tr><th>Payment Type</th><th>2026 Threshold</th></tr>
+  <tr><td>Rents, services, prizes, other §6041 payments</td><td>$2,000 (OBBBA)</td></tr>
+  <tr><td>Royalties (§6050N)</td><td>$10 - unchanged by OBBBA</td></tr>
+  <tr><td>Substitute payments in lieu of dividends</td><td>$10 - unchanged</td></tr>
+  <tr><td>Cancellation of debt (1099-C)</td><td>$600 - unchanged</td></tr>
+</table>
+
+<h2>1099-K: Third-Party Payment Platforms</h2>
+
+<table class="key-table">
+  <tr><th>Year</th><th>Threshold</th><th>Authority</th></tr>
+  <tr><td><strong>2025 and beyond</strong></td><td><strong>$20,000 AND 200 transactions</strong></td><td>OBBBA P.L. 119-21 §70432 amending IRC §6050W(e) - permanent</td></tr>
+</table>
+
+<div class="note-box"><strong>The ARP $600 threshold never went into effect and is now permanently repealed.</strong> Platforms like Venmo, PayPal, Etsy, eBay, Airbnb, and StubHub apply the $20,000/200-transaction standard. Sellers on these platforms who receive less than $20,000 or have fewer than 200 transactions will not receive a 1099-K. Their income is still taxable - they just won't have a form to match against.</div>
+
+<h2>Other 1099 Forms: Quick Reference</h2>
+
+<table class="key-table">
+  <tr><th>Form</th><th>What It Reports</th><th>Threshold</th></tr>
+  <tr><td>1099-INT</td><td>Bank and investment interest</td><td>$10</td></tr>
+  <tr><td>1099-DIV</td><td>Dividends and distributions</td><td>$10 ordinary; $600 liquidating</td></tr>
+  <tr><td>1099-B</td><td>Broker sale proceeds</td><td>All amounts</td></tr>
+  <tr><td>1099-R</td><td>Retirement account distributions</td><td>$10</td></tr>
+  <tr><td>1099-S</td><td>Real estate sale proceeds</td><td>$600</td></tr>
+  <tr><td>1099-G</td><td>Government payments, unemployment</td><td>$10</td></tr>
+  <tr><td>1099-C</td><td>Cancellation of debt</td><td>$600</td></tr>
+  <tr><td>W-2G</td><td>Gambling winnings</td><td>$600 (slots/bingo: $1,200)</td></tr>
+</table>
+
+<h2>Filing Deadlines and Penalties</h2>
+
+<p>1099-NEC is due January 31 to both the recipient and the IRS (electronic or paper). Most other 1099s are due February 15 to recipients and March 31 electronically to the IRS. Late filing penalties range from $60 per form (filed within 30 days) to $660 per form for intentional disregard under IRC §6721-6722.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="payroll-tax-guide.html" class="related-link">Payroll Tax Guide<span>Worker classification - employee vs. 1099</span></a>
+    <a href="self-employment-tax-guide.html" class="related-link">SE Tax Guide<span>Schedule C for 1099-NEC recipients</span></a>
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>All 2026 OBBBA tax changes</span></a>
+    <a href="cancellation-of-debt-guide.html" class="related-link">COD Income Guide<span>Form 1099-C - cancellation of debt</span></a>
+    <a href="irs-audit-guide.html" class="related-link">IRS Audit Guide<span>CP2000 notices from 1099 mismatches</span></a>
+    <a href="tax-calendar.html" class="related-link">Tax Calendar 2026<span>All 1099 filing deadlines</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §6041 (information returns for certain payments to persons engaged in trade or business); IRC §6041A (returns regarding payments of remuneration for services - 1099-NEC); OBBBA P.L. 119-21 §70433 (amends IRC §6041 and §6041A to raise threshold from $600 to $2,000 for payments made after December 31, 2025; provides for inflation indexing from 2027); IRC §6050W (payment card and third-party network transactions - Form 1099-K); OBBBA P.L. 119-21 (permanently restores 1099-K threshold to $20,000 AND 200 transactions; retroactively repeals ARP P.L. 117-2 §9674 lower thresholds back to 2022; supersedes IRS transitional guidance in Notices 2022-53, 2023-74, 2024-85); IRC §6050N (royalties - $10 reporting threshold; not modified by OBBBA); IRC §3406 (backup withholding - 24% rate; threshold aligned with 1099-NEC $2,000 for 2026 payments); IRC §6721-6722 (penalties for failure to file correct information returns - graduated from $60 to $660 per form).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

@@ -238,6 +238,310 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="source-row">Authority: IRC §6038D (Form 8938 - statement of specified foreign financial assets); IRC §6038D(a) (filing requirement); IRC §6038D(b) (definition of specified foreign financial assets); IRC §6038D(c) (valuation); IRC §6038D(d) (penalties - $10,000 initial, $50,000 maximum); IRC §6038D(g) (reasonable cause exception); IRC §6662(j) (40% accuracy-related penalty on undisclosed foreign assets); IRC §6501(e)(1)(A)(ii) (unlimited statute of limitations for omitted foreign asset income); IRC §911 (foreign earned income exclusion - residency tests for higher thresholds); 31 USC §5314 (FBAR); Treas. Reg. §1.6038D-1 through §1.6038D-7 (FATCA regulations); Treas. Reg. §1.6038D-2(b) (residing abroad definition); Treas. Reg. §1.6038D-3 (specified foreign financial assets - inclusions and exclusions); Treas. Reg. §1.6038D-5 (valuation rules); Treas. Reg. §1.6038D-6 (domestic entity reporting); Foreign Account Tax Compliance Act (FATCA), enacted as part of the HIRE Act (P.L. 111-147, March 18, 2010).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 8938 & FATCA: Reporting Foreign Financial Assets (2026) | CPA Validated</title>
+<meta name="description" content="Form 8938 (FATCA) reporting requirements for US persons with foreign financial assets. Thresholds by filing status and residency, what to report, how Form 8938 differs from FBAR, penalties, and the overlap between the two regimes. CPA-validated. IRC §6038D.">
+<link rel="canonical" href="https://cpavalidated.com/form-8938-fatca-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.threshold-table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:13px}
+.threshold-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.threshold-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top}
+.threshold-table tr:last-child td{border-bottom:none}
+.threshold-table tr:nth-child(even) td{background:var(--ink-10)}
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 26px}
+.diff-card{border:1px solid var(--ink-20);padding:16px;background:var(--white)}
+.diff-name{font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.diff-row{display:grid;grid-template-columns:110px 1fr;gap:6px;margin-bottom:6px;font-size:12.5px}
+.diff-label{color:var(--ink-40);font-weight:600}
+.diff-val{color:var(--ink-80)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.diff-grid,.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Form 8938 & FATCA: Reporting Foreign Financial Assets (2026) | CPA Validated">
+  <meta property="og:description" content="Form 8938 (FATCA) reporting requirements for US persons with foreign financial assets. Thresholds by filing status and residency, what to report, how Form 8938 differs from FBAR, penalties, and the ov">
+  <meta property="og:url" content="https://cpavalidated.com/form-8938-fatca-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Form 8938 & FATCA: Reporting Foreign Financial Assets (2026) | CPA Validated">
+  <meta name="twitter:description" content="Form 8938 (FATCA) reporting requirements for US persons with foreign financial assets. Thresholds by filing status and residency, what to report, how Form 8938 differs from FBAR, penalties, and the ov">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Form 8938 & FATCA: Reporting Foreign Financial Assets (2026) | CPA Validated","description":"Form 8938 (FATCA) reporting requirements for US persons with foreign financial assets. Thresholds by filing status and residency, what to report, how Form 8938 differs from FBAR, penalties, and the ov","url":"https://cpavalidated.com/form-8938-fatca-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Form 8938 & FATCA: Reporting Specified Foreign Financial Assets (2026)</h1>
+  <div class="sub">Filing Thresholds &nbsp;&bull;&nbsp; What Counts as a Specified Foreign Financial Asset &nbsp;&bull;&nbsp; Form 8938 vs. FBAR &nbsp;&bull;&nbsp; Penalties &nbsp;&bull;&nbsp; Statute of Limitations</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6038D</span>
+    <span class="ph-meta-item">FATCA</span>
+    <span class="ph-meta-item">Form 8938</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Form 8938 is the Statement of Specified Foreign Financial Assets required under IRC §6038D (enacted as part of the Foreign Account Tax Compliance Act - FATCA - in 2010). It is a separate and distinct requirement from the FBAR (FinCEN Form 114). Both may apply to the same person in the same year. Both have their own penalties. And critically - filing one does not satisfy the other. Many US persons with foreign assets comply with one and unknowingly miss the other.</p>
+
+<h2>Who Must File Form 8938</h2>
+
+<p>Form 8938 is required for US persons who have an interest in specified foreign financial assets with an aggregate value that exceeds the applicable threshold at year-end or at any point during the year. IRC §6038D(a). The thresholds vary by filing status and where the taxpayer lives:</p>
+
+<table class="threshold-table">
+  <thead>
+    <tr><th>Taxpayer Category</th><th>Year-End Value</th><th>At Any Time During Year</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Single / MFS - residing in the US</td><td>$50,000</td><td>$75,000</td></tr>
+    <tr><td>MFJ - residing in the US</td><td>$100,000</td><td>$150,000</td></tr>
+    <tr><td>Single / MFS - residing outside the US</td><td>$200,000</td><td>$300,000</td></tr>
+    <tr><td>MFJ - residing outside the US</td><td>$400,000</td><td>$600,000</td></tr>
+  </tbody>
+</table>
+
+<p>"Residing outside the US" for this purpose means meeting the requirements of IRC §911 (bona fide residence or physical presence test for the foreign earned income exclusion) or having a tax home in a foreign country and being present in a foreign country for at least 330 days during a 12-month period. Treas. Reg. §1.6038D-2(b).</p>
+
+<div class="note-box"><strong>Both Thresholds Matter.</strong> You must file if either the year-end balance OR the highest value at any point during the year exceeds the threshold. A foreign account that hits $80,000 in July but closes to $45,000 by December 31 still triggers the filing requirement for a single US-resident taxpayer - because the $75,000 "at any time" threshold was crossed.</div>
+
+<h2>What Are Specified Foreign Financial Assets</h2>
+
+<p>Form 8938 covers a broader category of assets than the FBAR. "Specified foreign financial assets" under IRC §6038D(b) include:</p>
+
+<h3>Financial Accounts at Foreign Financial Institutions</h3>
+<p>Any account maintained at a foreign financial institution - bank accounts, brokerage accounts, custodial accounts, insurance contracts with cash surrender value, annuity contracts - qualifies as a specified foreign financial asset. This overlaps substantially with the FBAR definition of a "financial interest" or "signatory authority" over a foreign account.</p>
+
+<h3>Other Specified Foreign Financial Assets (Non-Account Assets)</h3>
+<p>This is where Form 8938 goes well beyond the FBAR. The following assets must be reported on Form 8938 even if they are not held through a foreign financial institution:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Stock or securities issued by a foreign corporation</strong> (held outside a financial account)</li>
+  <li><strong>Financial instruments or contracts with a foreign counterparty</strong></li>
+  <li><strong>Interests in foreign entities</strong> - partnerships, trusts, and estates organized under foreign law</li>
+  <li><strong>Foreign pensions and deferred compensation plans</strong></li>
+  <li><strong>Foreign grantor trust interests</strong> (if the US person is treated as owner under the grantor trust rules)</li>
+</ul>
+
+<p>Notably absent from Form 8938 - and different from FBAR: foreign real estate held directly (not through a foreign entity) is not a specified foreign financial asset. A French vacation home owned directly by a US person is not reported on either Form 8938 or FBAR. But if that same property is held through a French SCI (a French real property company), the interest in the SCI is a specified foreign financial asset reported on Form 8938.</p>
+
+<h2>Form 8938 vs. FBAR: The Side-by-Side Comparison</h2>
+
+<div class="diff-grid">
+  <div class="diff-card">
+    <div class="diff-name">Form 8938 (FATCA)</div>
+    <div class="diff-row"><span class="diff-label">Authority</span><span class="diff-val">IRC §6038D</span></div>
+    <div class="diff-row"><span class="diff-label">Filed with</span><span class="diff-val">Attached to Form 1040 or 1041</span></div>
+    <div class="diff-row"><span class="diff-label">Due date</span><span class="diff-val">Same as income tax return (April 15, extended to Oct 15)</span></div>
+    <div class="diff-row"><span class="diff-label">Who files</span><span class="diff-val">Specified individuals (citizens, residents, certain nonresidents) and certain domestic entities</span></div>
+    <div class="diff-row"><span class="diff-label">Threshold</span><span class="diff-val">$50K-$400K depending on filing status and residency</span></div>
+    <div class="diff-row"><span class="diff-label">What reported</span><span class="diff-val">Specified foreign financial assets including non-account assets (foreign stock, entity interests, pensions)</span></div>
+    <div class="diff-row"><span class="diff-label">Penalty</span><span class="diff-val">$10,000 failure to file; up to $50,000 continued failure; 40% understatement penalty on undisclosed assets</span></div>
+    <div class="diff-row"><span class="diff-label">Administered by</span><span class="diff-val">IRS</span></div>
+  </div>
+  <div class="diff-card">
+    <div class="diff-name">FBAR (FinCEN Form 114)</div>
+    <div class="diff-row"><span class="diff-label">Authority</span><span class="diff-val">31 USC §5314; Bank Secrecy Act</span></div>
+    <div class="diff-row"><span class="diff-label">Filed with</span><span class="diff-val">FinCEN (Financial Crimes Enforcement Network) - separate electronic filing</span></div>
+    <div class="diff-row"><span class="diff-label">Due date</span><span class="diff-val">April 15; automatic extension to October 15</span></div>
+    <div class="diff-row"><span class="diff-label">Who files</span><span class="diff-val">US persons with financial interest in or signature authority over foreign financial accounts</span></div>
+    <div class="diff-row"><span class="diff-label">Threshold</span><span class="diff-val">$10,000 aggregate maximum value at any point during year</span></div>
+    <div class="diff-row"><span class="diff-label">What reported</span><span class="diff-val">Foreign financial accounts only - no non-account assets</span></div>
+    <div class="diff-row"><span class="diff-label">Penalty</span><span class="diff-val">Non-willful: $10,000-$15,000/year; Willful: greater of $100,000 or 50% of account balance/year; criminal exposure</span></div>
+    <div class="diff-row"><span class="diff-label">Administered by</span><span class="diff-val">FinCEN / Treasury (not IRS)</span></div>
+  </div>
+</div>
+
+<h2>Assets Exempt from Form 8938</h2>
+
+<p>Certain assets are explicitly excluded from the Form 8938 reporting requirement under Treas. Reg. §1.6038D-3(c) and (d):</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Accounts with US financial institutions.</strong> Even if those accounts hold foreign securities.</li>
+  <li><strong>Foreign real property held directly.</strong> A French apartment, a Canadian cottage, Israeli land - all excluded if owned directly by the individual (not through a foreign entity).</li>
+  <li><strong>US-based retirement accounts (IRAs, 401(k)s).</strong> Even if the account holds foreign securities.</li>
+  <li><strong>Social Security-type benefits from foreign governments.</strong> Excluded if treated as a pension by the foreign government.</li>
+  <li><strong>Assets reported on other information returns.</strong> If an asset is already reported on Form 3520 (foreign trust), Form 5471 (CFC), Form 8865 (foreign partnership), or similar returns, it is excluded from Form 8938 to avoid duplication - but only if the return actually reports the asset.</li>
+</ul>
+
+<h2>Valuation: What Number Goes on the Form</h2>
+
+<p>The value reported on Form 8938 is the fair market value of the asset in US dollars, converted at the applicable exchange rate. For financial accounts, use the highest value during the year. For non-account assets, use the fair market value at year-end. IRC §6038D(c); Treas. Reg. §1.6038D-5.</p>
+
+<p>Currency conversion uses the December 31 spot rate for year-end values, and the rate on the date of the highest value for the "at any time" threshold calculation. The IRS publishes yearly average exchange rates - but the specific date rate is required for Form 8938, not the annual average. See the IRS's exchange rate resource at https://www.irs.gov/individuals/international-taxpayers/yearly-average-currency-exchange-rates for reference rates.</p>
+
+<h2>Penalties for Failure to File or Underreporting</h2>
+
+<p>The Form 8938 penalty regime under IRC §6038D(d) is aggressive:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>$10,000 initial failure-to-file penalty</strong> for each Form 8938 not filed by the due date (including extensions).</li>
+  <li><strong>Additional $10,000 per 30-day period</strong> (up to $50,000 maximum) after IRS notification of failure.</li>
+  <li><strong>40% accuracy-related penalty</strong> on any underpayment of tax attributable to undisclosed foreign financial assets. IRC §6662(j). This is on top of the failure-to-file penalty - the two stack.</li>
+  <li><strong>Statute of limitations stays open.</strong> If Form 8938 is required but not filed, or if the taxpayer omits gross income attributable to a specified foreign financial asset of more than $5,000, the statute of limitations for the entire tax return remains open indefinitely. IRC §6501(e)(1)(A)(ii). This is the most consequential practical effect of non-filing.</li>
+</ul>
+
+<div class="callout">
+  <div class="callout-label">Reasonable Cause Exception</div>
+  <p>Penalties for Form 8938 failure can be avoided if the failure was due to reasonable cause and not willful neglect. IRC §6038D(g). The IRS looks at whether the taxpayer exercised ordinary business care and prudence in determining their filing obligations. First-time non-filers who come forward voluntarily through the Streamlined Filing Compliance Procedures may qualify for penalty relief. <strong>Voluntary disclosure and correction are always better than waiting for an IRS inquiry.</strong></p>
+</div>
+
+<h2>Domestic Entities Must Also File</h2>
+
+<p>Form 8938 is not only for individuals. Domestic corporations, partnerships, and trusts that are closely held by specified individuals and that hold specified foreign financial assets exceeding $50,000 may also be required to file Form 8938. Treas. Reg. §1.6038D-6. This rule prevents individuals from using domestic entities to hold foreign assets and avoid FATCA reporting.</p>
+
+<h2>How FATCA Works on the Other Side: Foreign Institution Reporting</h2>
+
+<p>FATCA has two sides. Form 8938 is the US taxpayer's obligation. The other side is the obligation of foreign financial institutions (FFIs) - banks, brokers, insurance companies, funds - to report account information about US account holders to the IRS. FFIs that comply enter into agreements with the IRS or operate under intergovernmental agreements (IGAs) between their country and the US. FFIs that do not comply face a 30% withholding on US-source income paid to them.</p>
+
+<p>The practical implication: foreign banks and brokerages are actively reporting US account holders to the IRS. The IRS receives this information and cross-references it against Form 8938 filings and FBAR filings. Non-compliance is increasingly visible to the IRS without audit - the data flows automatically.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="fbar-checker.html" class="related-link">FBAR / Form 8938 Threshold Checker<span>31 USC §5314 &middot; IRC §6038D</span></a>
+    <a href="fbar-penalties.html" class="related-link">FBAR Penalties Guide<span>Willful vs. Non-Willful &middot; Criminal Exposure</span></a>
+    <a href="streamlined-checker.html" class="related-link">Streamlined Filing Eligibility<span>Penalty Relief for Late Filers</span></a>
+    <a href="foreign-pension-reporting.html" class="related-link">Foreign Pension Reporting<span>FBAR &middot; Form 8938 &middot; Treaty Analysis</span></a>
+    <a href="form-3520-guide.html" class="related-link">Form 3520: Foreign Trusts & Gifts<span>IRC §6048 &middot; Foreign Trust Reporting</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Tax Planning<span>Foreign Asset Inventory Before US Entry</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §6038D (Form 8938 - statement of specified foreign financial assets); IRC §6038D(a) (filing requirement); IRC §6038D(b) (definition of specified foreign financial assets); IRC §6038D(c) (valuation); IRC §6038D(d) (penalties - $10,000 initial, $50,000 maximum); IRC §6038D(g) (reasonable cause exception); IRC §6662(j) (40% accuracy-related penalty on undisclosed foreign assets); IRC §6501(e)(1)(A)(ii) (unlimited statute of limitations for omitted foreign asset income); IRC §911 (foreign earned income exclusion - residency tests for higher thresholds); 31 USC §5314 (FBAR); Treas. Reg. §1.6038D-1 through §1.6038D-7 (FATCA regulations); Treas. Reg. §1.6038D-2(b) (residing abroad definition); Treas. Reg. §1.6038D-3 (specified foreign financial assets - inclusions and exclusions); Treas. Reg. §1.6038D-5 (valuation rules); Treas. Reg. §1.6038D-6 (domestic entity reporting); Foreign Account Tax Compliance Act (FATCA), enacted as part of the HIRE Act (P.L. 111-147, March 18, 2010).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. FATCA and FBAR compliance depends on the specific nature of each asset, account, and the taxpayer's filing status and residency. Consult a qualified international tax professional to evaluate your specific reporting obligations. A tk.cpa resource. tk.cpa is  - <a href="https://tk.cpa" target="_blank">tk.cpa</a>. <a href="disclaimer.html">Full disclaimer.</a></div>

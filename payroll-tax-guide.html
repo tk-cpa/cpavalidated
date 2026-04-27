@@ -145,6 +145,217 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="source-row">Authority: IRC §3101 (employee FICA rates - 6.2% Social Security + 1.45% Medicare); IRC §3111 (employer FICA rates - matching 6.2% + 1.45%); IRC §3121 (FICA wages - definitions, exclusions, wage base); IRC §3301-3311 (FUTA - 6.0% federal rate, $7,000 wage base, 5.4% credit for state unemployment); IRC §3102 (collection of employee taxes by employer); IRC §3402 (income tax withholding); IRC §6302 (deposit rules - EFTPS); IRC §6656 (failure to deposit penalty - 2%/5%/10%/15% tiers); IRC §6672 (trust fund recovery penalty - 100% of unpaid trust fund taxes assessed against responsible persons); IRC §6672(a) (willfulness requirement); IRC §6673 (penalty for frivolous proceedings); Rev. Rul. 87-41 (20-factor behavioral/financial/relationship test for worker classification - still primary IRS guidance); IRC §3509 (reduced rates for misclassified workers - partial offset for amounts paid as SE tax); Revenue Act of 1978 §530 (safe harbor against reclassification - 1099 filing, consistent treatment, reasonable basis); Ann. 2012-45 (VCSP - Voluntary Classification Settlement Program - 10% of prior year taxes); IRS Publication 15 (Circular E - Employer's Tax Guide); IRS Publication 15-A (employer's supplemental tax guide - worker classification); Form 941 (employer's quarterly federal tax return); Form SS-8 (determination of worker status for purposes of FICA taxes and income tax withholding).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payroll Tax Guide: Employer Obligations, Trust Fund Penalty & Worker Classification | CPA Validated</title>
+<meta name="description" content="Payroll tax guide: employer FICA and FUTA obligations, the §6672 trust fund recovery penalty (100% personal liability), worker classification (employee vs. independent contractor), the 20-factor test, SS-8, and safe harbor rules. CPA-validated. Updated 2026.">
+<link rel="canonical" href="https://cpavalidated.com/payroll-tax-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20);background:var(--paper);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Payroll Tax Guide: Employer Obligations, Trust Fund Penalty & Worker Classification</h1>
+  <div class="sub">Employer FICA &amp; FUTA &nbsp;&bull;&nbsp; §6672 Trust Fund Penalty (100%) &nbsp;&bull;&nbsp; Employee vs. Independent Contractor &nbsp;&bull;&nbsp; Safe Harbors &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §3111-3121</span>
+    <span class="ph-meta-item">IRC §6672</span>
+    <span class="ph-meta-item">Rev. Rul. 87-41</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Payroll taxes are the most cash-sensitive tax obligation a business faces. Unlike income tax, FICA taxes are collected from employees and held in trust for the government - using those funds for other purposes triggers the trust fund recovery penalty under IRC §6672, a 100% penalty assessed personally against any "responsible person." Worker misclassification - treating employees as independent contractors - creates years of back payroll taxes, penalties, and interest. These are two of the most devastating tax problems in small business practice.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 Payroll Tax Rates</div>
+  <p><strong>Social Security (OASDI):</strong> 6.2% employee + 6.2% employer = 12.4% combined, on wages up to $176,100 (2026 wage base)</p>
+  <p><strong>Medicare (HI):</strong> 1.45% employee + 1.45% employer = 2.9% combined, no wage base limit</p>
+  <p><strong>Additional Medicare Tax:</strong> 0.9% employee-only on wages above $200,000 (single) / $250,000 (MFJ) - employer withholds from $200K threshold regardless of filing status</p>
+  <p><strong>FUTA:</strong> 6.0% federal rate on first $7,000 of wages, reduced to 0.6% net after the 5.4% state credit for employers in states with approved unemployment programs</p>
+</div>
+
+<h2>Employer FICA Obligations: Deposit and Filing Requirements</h2>
+
+<p>Employers must withhold employee FICA and income tax from wages and deposit these amounts with the IRS on a schedule based on total tax liability. Deposits are made through the Electronic Federal Tax Payment System (EFTPS). Missing deposit deadlines triggers graduated failure-to-deposit penalties under IRC §6656 (2%, 5%, 10%, or 15% depending on how late the deposit is).</p>
+
+<table class="key-table">
+  <tr><th>Deposit Schedule</th><th>Who Qualifies</th><th>Deadline</th></tr>
+  <tr><td><strong>Monthly</strong></td><td>Employers whose total taxes were $50,000 or less in the lookback period (the 4 quarters ending June 30 of the prior year)</td><td>15th of the following month</td></tr>
+  <tr><td><strong>Semi-weekly</strong></td><td>Employers whose total taxes exceeded $50,000 in the lookback period</td><td>Wednesday payday: deposit by following Wednesday. Friday payday: deposit by following Friday</td></tr>
+  <tr><td><strong>Next-day ($100,000+)</strong></td><td>Any employer whose accumulated liability reaches $100,000 or more on any day during a deposit period</td><td>Next business day - regardless of regular deposit schedule</td></tr>
+  <tr><td><strong>Annual (Form 944)</strong></td><td>Employers whose annual liability is $1,000 or less (IRS must notify employer of eligibility)</td><td>January 31 of following year</td></tr>
+</table>
+
+<h2>The Trust Fund Recovery Penalty: IRC §6672</h2>
+
+<p>This is one of the most severe penalties in the tax code. When an employer fails to collect and pay over trust fund taxes - the employee's share of FICA and withheld income taxes - the IRS can assess a 100% penalty personally against any "responsible person" who willfully failed to collect or pay over those taxes.</p>
+
+<div class="red-box"><strong>100% penalty assessed personally.</strong> The trust fund recovery penalty (TFRP) is not a business tax. It is assessed personally against individuals - the business owner, CFO, bookkeeper, or anyone else who had control over company funds and chose to pay other creditors instead of the IRS. The penalty equals the entire unpaid trust fund amount. It can be assessed against multiple individuals simultaneously for the same unpaid taxes. Corporate bankruptcy does not discharge the TFRP assessed against individuals.</div>
+
+<h3>Who Is a "Responsible Person"?</h3>
+<p>The IRS looks for anyone who had authority to determine which creditors get paid. This typically includes: business owners, officers with financial authority, shareholders who controlled company finances, and in some cases bookkeepers or office managers who signed checks. Having the title "president" or "owner" creates a presumption of responsibility. The defense is either: (a) not responsible - no actual authority over payroll decisions, or (b) not willful - did not know the taxes were unpaid.</p>
+
+<h3>The Willfulness Standard</h3>
+<p>Willfulness for TFRP purposes does not require intent to defraud. It means: the responsible person knew the taxes were due and either intentionally chose not to pay them, or recklessly disregarded the obvious risk that taxes were not being paid. Paying other creditors (rent, vendors, employees) while knowing payroll taxes are unpaid is willfulness. Ignorance of the tax obligation is generally not a defense once the person has signing authority over company funds.</p>
+
+<h2>Worker Classification: Employee vs. Independent Contractor</h2>
+
+<p>Misclassifying an employee as an independent contractor is one of the most common and costly payroll tax errors. If the IRS reclassifies a worker as an employee, the employer owes back employer FICA taxes, is liable for the employee's share of FICA (with limited offset for amounts the worker already paid as self-employment tax), plus interest and failure-to-deposit penalties - potentially for multiple years.</p>
+
+<h3>The Common Law Test</h3>
+<p>Worker classification is determined under the common law test - does the hiring party have the right to control not just the result of the work but the manner and means by which the result is achieved? The IRS groups the relevant factors into three categories under Rev. Rul. 87-41:</p>
+
+<table class="key-table">
+  <tr><th>Category</th><th>Factors Suggesting Employee</th><th>Factors Suggesting Contractor</th></tr>
+  <tr><td><strong>Behavioral Control</strong></td><td>Instructions on when/where/how to work; training provided by company; set hours; supervised closely</td><td>Worker controls how job is done; no company training; flexible schedule; works independently</td></tr>
+  <tr><td><strong>Financial Control</strong></td><td>Company provides tools and equipment; worker not at risk for profit/loss; paid by hour or salary; cannot work for competitors</td><td>Worker invests in own equipment; can profit or lose money; paid by project; works for multiple clients</td></tr>
+  <tr><td><strong>Type of Relationship</strong></td><td>Written employment contract; employee benefits (health insurance, pension); relationship is permanent or indefinite; work is core business function</td><td>Written independent contractor agreement; no benefits; project-based relationship; work is specialized/outside core business</td></tr>
+</table>
+
+<div class="note-box"><strong>No single factor is determinative.</strong> The IRS evaluates all facts and circumstances. A written independent contractor agreement helps but does not control - the IRS looks at the economic reality of the relationship, not just what the contract says. A worker who is labeled a contractor but works exclusively for one company, on company equipment, under close supervision, during set hours, is likely an employee regardless of the agreement.</div>
+
+<h3>Section 530 Safe Harbor</h3>
+<p>IRC §530 of the Revenue Act of 1978 (not codified in the IRC) provides a safe harbor against reclassification if the employer: (a) consistently treated the workers as contractors and did not treat any substantially similar workers as employees, (b) timely filed all required 1099s for those workers, and (c) had a reasonable basis for treating them as contractors (based on court decision, revenue ruling, past IRS audit, or long-standing industry practice). The §530 safe harbor does not apply to technical service workers (software engineers, programmers, systems analysts) in some circumstances.</p>
+
+<h3>Voluntary Classification Settlement Program (VCSP)</h3>
+<p>Employers who want to reclassify workers as employees prospectively can apply for the VCSP under Announcement 2012-45. The VCSP allows reclassification at significantly reduced cost: 10% of the employment taxes that would have been owed on the workers' compensation in the most recent tax year. The employer must not be under IRS or DOL audit and must agree to treat the workers as employees going forward.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="self-employment-tax-guide.html" class="related-link">SE Tax Guide<span>Worker perspective &middot; 15.3% SE tax</span></a>
+    <a href="scorp-compensation.html" class="related-link">S-Corp Compensation<span>Reasonable salary &middot; Payroll obligations</span></a>
+    <a href="penalty-calculator.html" class="related-link">Penalty Calculator<span>Failure to deposit &middot; §6656 penalties</span></a>
+    <a href="irs-audit-guide.html" class="related-link">IRS Audit Guide<span>Employment tax audits &middot; TFRP interviews</span></a>
+    <a href="form-1099-guide.html" class="related-link">1099 Guide<span>1099-NEC &middot; $2,000 threshold (2026) &middot; Worker payments</span></a>
+    <a href="s-corporation-basics.html" class="related-link">S-Corp Basics<span>Payroll requirements for S-corp owners</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §3101 (employee FICA rates - 6.2% Social Security + 1.45% Medicare); IRC §3111 (employer FICA rates - matching 6.2% + 1.45%); IRC §3121 (FICA wages - definitions, exclusions, wage base); IRC §3301-3311 (FUTA - 6.0% federal rate, $7,000 wage base, 5.4% credit for state unemployment); IRC §3102 (collection of employee taxes by employer); IRC §3402 (income tax withholding); IRC §6302 (deposit rules - EFTPS); IRC §6656 (failure to deposit penalty - 2%/5%/10%/15% tiers); IRC §6672 (trust fund recovery penalty - 100% of unpaid trust fund taxes assessed against responsible persons); IRC §6672(a) (willfulness requirement); IRC §6673 (penalty for frivolous proceedings); Rev. Rul. 87-41 (20-factor behavioral/financial/relationship test for worker classification - still primary IRS guidance); IRC §3509 (reduced rates for misclassified workers - partial offset for amounts paid as SE tax); Revenue Act of 1978 §530 (safe harbor against reclassification - 1099 filing, consistent treatment, reasonable basis); Ann. 2012-45 (VCSP - Voluntary Classification Settlement Program - 10% of prior year taxes); IRS Publication 15 (Circular E - Employer's Tax Guide); IRS Publication 15-A (employer's supplemental tax guide - worker classification); Form 941 (employer's quarterly federal tax return); Form SS-8 (determination of worker status for purposes of FICA taxes and income tax withholding).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

@@ -171,75 +171,70 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
       <li><div class="rl-num">7</div><div><strong>No offsetting deductions on Schedule E.</strong> Under IRC 280A(g), no deductions are allowed for expenses allocable to the rental days (other than expenses allowable regardless of rental use, like mortgage interest and property taxes on Schedule A). The exclusion is clean - no depreciation, no prorated utilities.</div></li>
     </ul>
     <div class="src">IRC 280A(g) (14-day rental exclusion - rental income not included in gross income if rented fewer than 15 days); IRC 280A(g)(1) (gross income exclusion); IRC 280A(g)(2) (no deductions allowed for expenses related to excluded rental); IRC 162 (ordinary and necessary business expense - rental payment deductible by business); Weightman v. Commissioner, TC Memo 2011-81 (IRS successfully challenged inadequate documentation); IRS Audit Technique Guide - Business Use of Home (guidance on IRS examination approach).</div>
-    <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
-<button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
-<div class="disc">The Augusta Rule is a legitimate tax strategy when properly executed with arm's-length fair rental value, genuine business purpose, and thorough documentation. It is also one of the most aggressively marketed and improperly implemented strategies in tax planning. Improper implementation can result in income recharacterization, penalties, and interest. Consult a CPA before implementing. A tk.cpa resource. tk.cpa is </div>
-  </div>
+    <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
-</div>
-
-<div class="related"><div style="max-width:860px;margin:0 auto">
-  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
-  <a href="scorp-compensation.html" class="rl-link">S-Corp Compensation</a>
-  <a href="home-office-calculator.html" class="rl-link">Home Office Calculator</a>
-  <a href="passive-activity-loss.html" class="rl-link">PAL Calculator</a>
-  <a href="tax-estimator.html" class="rl-link">Tax Estimator</a>
-  <a href="index.html" class="rl-link">All Tools</a>
-</div></div>
-
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
 <script>
-function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
-
-function calc(){
-  const days=Math.min(14,Math.max(1,parseInt(document.getElementById('days').value)||12));
-  const dayRate=parseFloat(document.getElementById('dayRate').value)||0;
-  const taxRate=parseFloat(document.getElementById('taxRate').value)||0.32;
-  const stateRate=(parseFloat(document.getElementById('stateRate').value)||0)/100;
-  const entityType=document.getElementById('entityType').value;
-
-  const totalRental=days*dayRate;
-  const fedTaxSaved=totalRental*taxRate;
-  const stateTaxNote=stateRate>0?` Note: ${(stateRate*100).toFixed(1)}% state tax may apply - verify conformity.`:'';
-  const seTaxSaved=entityType==='sole'?0:totalRental*0.1413; // SE tax savings if shifted from active income
-  const businessDeduction=totalRental;
-  const netBenefit=fedTaxSaved; // conservative - just fed income tax
-
-  const rb=document.getElementById('res');
-  let h='';
-
-  if(days>14){
-    h+=flag('red','!','<strong>STOP - 14-day limit exceeded.</strong> At 15+ days, IRC 280A(g) does not apply. All rental income becomes taxable and you enter the complex mixed-use rules. Reduce to 14 days maximum.');
-    document.getElementById('res').innerHTML=h;
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
     return;
   }
-
-  h+=`<div class="result-banner">
-    <div class="rb-label">Federal Tax-Free Rental Income</div>
-    <div class="rb-amount">${fmt(totalRental)}</div>
-    <div class="rb-sub">${days} days x ${fmt(dayRate)}/day &nbsp;|&nbsp; Excluded from gross income under IRC 280A(g)&nbsp;|&nbsp; Approx. federal tax saved: ${fmt(fedTaxSaved)} at ${Math.round(taxRate*100)}%${stateTaxNote}</div>
-  </div>`;
-
-  h+=`<div class="sum-box"><div class="sum-title">Augusta Rule Analysis</div>
-    <div class="srow"><span class="sl">Days rented to business</span><span class="sv">${days} (max 14)</span></div>
-    <div class="srow"><span class="sl">Fair rental value per day</span><span class="sv">${fmt(dayRate)}</span></div>
-    <div class="srow"><span class="sl">Total rental income (excluded from gross income)</span><span class="sv green">${fmt(totalRental)}</span></div>
-    <div class="srow"><span class="sl">Business deduction (IRC 162)</span><span class="sv green">${fmt(businessDeduction)}</span></div>
-    <div class="srow"><span class="sl">Federal income tax saved (owner level)</span><span class="sv green">${fmt(fedTaxSaved)}</span></div>
-    ${stateRate>0?`<div class="srow"><span class="sl">State income tax exposure (verify conformity)</span><span class="sv amber">${fmt(totalRental*stateRate)}</span></div>`:''}
-    <div class="srow"><span class="sl">Net federal tax benefit</span><span class="sv green">${fmt(fedTaxSaved-(stateRate>0?totalRental*stateRate:0))}</span></div>
-  </div>`;
-
-  if(entityType==='sole'){
-    h+=flag('amber','!','<strong>Sole proprietor Augusta Rule is the most scrutinized.</strong> When you and your business are the same person (Schedule C), the IRS and Tax Court have been skeptical of self-rental exclusions. The business deduction and owner exclusion effectively cancel each other - the net federal benefit is primarily the SE tax savings on the shifted income, not income tax. An entity (S-corp, C-corp) creates a cleaner structure.');
-  }
-  if(entityType==='scorp'){
-    h+=flag('green','v',`<strong>S-corp is the optimal structure for the Augusta Rule.</strong> The S-corp deducts ${fmt(totalRental)} as a business expense (reducing W-2 income or distributions flowing to you). You exclude ${fmt(totalRental)} of rental income under IRC 280A(g). The net result: ${fmt(totalRental)} moves from potentially SE-taxable or subject to payroll taxes at the S-corp level to completely tax-free personal income.`);
-  }
-  h+=flag('red','!','<strong>IRS scrutiny is high and increasing.</strong> The Augusta Rule has been featured in practitioner marketing materials and is now on IRS radar. Recent IRS guidance and Tax Court cases (Weightman v. Commissioner) show the IRS will challenge: (1) rates above comparable venue FMV, (2) meetings without genuine business substance, (3) lack of contemporaneous documentation, and (4) sole proprietor self-rental structures. Maintain an iron-clad paper trail.');
-  h+=flag('amber','!',`<strong>Only ${14-days} days of annual allowance remaining.</strong> You are using ${days} of your 14-day maximum. The 14-day count is per dwelling unit, per year. If you use this home for other short-term rentals during the year, those days count toward the 14-day limit.`);
+  showModal(url,title);
 }
-calc();
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
 </script>
 
 

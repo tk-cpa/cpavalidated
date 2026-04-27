@@ -341,6 +341,413 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <div class="flag green"><div class="fi">✓</div><div class="ft"><strong>Key related resources on CPA Validated:</strong> <a href="us-expat-tax-guide.html" style="color:var(--green);font-weight:600">US Expat Tax Guide</a> (2-month automatic extension, FEIE, FBAR overview) &bull; <a href="fbar-checker.html" style="color:var(--green);font-weight:600">FBAR Checker</a> (do you need to file?) &bull; <a href="spt-calculator.html" style="color:var(--green);font-weight:600">Substantial Presence Test Calculator</a> (are you a US tax resident?) &bull; <a href="tax-extension-guide.html" style="color:var(--green);font-weight:600">Individual Extension Guide</a> (Form 4868 by state)</div></div>
 
 <div class="src">Sources: IRS Publication 3891 (Rev. 7-2025), "Address Directory for Tax Practitioners &amp; Taxpayers" (lockbox addresses); IRS, "International - Where to File Form 1040 Addresses for Taxpayers and Tax Professionals" (calendar year 2025); IRS, "International - Where to File Forms 1040-NR, 1040-PR, and 1040-SS" (calendar year 2025); IRS, "Submission Processing Center Street Addresses for Private Delivery Service (PDS)"; IRS, "Private Delivery Services (PDS)" (designated services for IRC §7502); IRC §7502 (timely mailing = timely filing); IRC §7502(f) (designated private delivery services); Rev. Rul. 2002-23, 2002-18 IRB 811 (foreign postmarks); IRC §6081(d) (automatic 2-month extension for persons abroad); 31 U.S.C. §5314; 31 C.F.R. §1010.350 (FBAR filing requirement); FinCEN BSA E-Filing System; IRS Form W-7 Instructions (Rev. 12-2023) (ITIN - address for Austin ITIN Operations); IRC §7508 (combat zone deadline relief). IRS.gov links: <a href="https://www.irs.gov/filing/international-where-to-file-addresses-for-taxpayers-and-tax-professionals" target="_blank">International Where to File</a> &bull; <a href="https://www.irs.gov/filing/submission-processing-center-street-addresses-for-private-delivery-service-pds" target="_blank">PDS Street Addresses</a> &bull; <a href="https://bsaefiling.fincen.treas.gov" target="_blank">FBAR E-Filing</a>.</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRS Mailing Addresses for People Living Abroad (2025 / 2026) | CPA Validated</title>
+<meta name="description" content="Exact IRS mailing addresses for US citizens and residents living abroad. Form 1040, 1040-NR, 1040-X, FBAR, ITIN, extensions. USPS vs. FedEx/UPS/DHL. Timely mailing rules. Verified from IRS.gov and IRS Pub. 3891 (July 2025). CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/irs-mailing-addresses-abroad.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:860px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:860px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}.back a:hover{color:var(--coral)}
+.wrap{max-width:860px;margin:0 auto;padding:28px 24px 0}
+.toc{background:var(--white);border:1px solid var(--ink-20);padding:18px 20px;margin-bottom:24px}
+.toc-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:10px;font-family:var(--font-mono)}
+.toc ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.toc li a{font-size:13px;color:var(--ink-80)}
+.toc li a:hover{color:var(--coral);text-decoration:none}
+.toc li::before{content:"#";color:var(--coral);margin-right:5px;font-size:11px}
+h2.sec{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin:32px 0 14px;letter-spacing:.02em;padding-bottom:6px;border-bottom:2px solid var(--coral)}
+h3.sub{font-size:14px;font-weight:700;color:var(--ink);margin:18px 0 8px;text-transform:uppercase;letter-spacing:.05em}
+p{font-size:15px;line-height:1.65;color:var(--ink-80);margin-bottom:12px}
+.addr-card{background:var(--ink);border-left:4px solid var(--coral);padding:18px 20px;margin:14px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.addr-half{border-right:1px solid rgba(255,255,255,.1);padding-right:16px}
+.addr-half:last-child{border-right:none;padding-right:0}
+.addr-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:10px}
+.addr-lines{font-family:var(--font-mono);font-size:13px;color:#fff;line-height:1.9}
+.addr-card-single{background:var(--ink);border-left:4px solid var(--coral);padding:18px 20px;margin:14px 0}
+.flag{display:flex;gap:10px;padding:10px 14px;margin:12px 0;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:13px;line-height:1.55}.ft strong{font-weight:600;display:block;margin-bottom:3px}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+table.addr-table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13px}
+table.addr-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+table.addr-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;color:var(--ink-80)}
+table.addr-table tr:last-child td{border-bottom:none}
+table.addr-table tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+table.addr-table td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+table.addr-table td.mono{font-family:var(--font-mono);font-size:12px}
+.pds-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:12px 0}
+.pds-item{background:var(--white);border:1px solid var(--ink-20);padding:12px;font-size:12px}
+.pds-carrier{font-weight:700;font-size:13px;margin-bottom:4px;color:var(--ink)}
+.pds-services{font-size:11px;color:var(--ink-60);line-height:1.5}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:14px;margin-top:24px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.updated-strip{background:var(--green-bg);border:1px solid var(--green-b);padding:8px 14px;font-size:12px;color:var(--green);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+@media(max-width:600px){.addr-card{grid-template-columns:1fr}.addr-half{border-right:none;padding-right:0;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:12px;margin-bottom:12px}.addr-half:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}.toc ul{grid-template-columns:1fr}.pds-list{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="IRS Mailing Addresses for People Living Abroad (2025 / 2026) | CPA Validated">
+  <meta property="og:description" content="Exact IRS mailing addresses for US citizens and residents living abroad. Form 1040, 1040-NR, 1040-X, FBAR, ITIN, extensions. USPS vs. FedEx/UPS/DHL. Timely mailing rules. Verified from IRS.gov and IRS">
+  <meta property="og:url" content="https://cpavalidated.com/irs-mailing-addresses-abroad.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IRS Mailing Addresses for People Living Abroad (2025 / 2026) | CPA Validated">
+  <meta name="twitter:description" content="Exact IRS mailing addresses for US citizens and residents living abroad. Form 1040, 1040-NR, 1040-X, FBAR, ITIN, extensions. USPS vs. FedEx/UPS/DHL. Timely mailing rules. Verified from IRS.gov and IRS">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"IRS Mailing Addresses for People Living Abroad (2025 / 2026) | CPA Validated","description":"Exact IRS mailing addresses for US citizens and residents living abroad. Form 1040, 1040-NR, 1040-X, FBAR, ITIN, extensions. USPS vs. FedEx/UPS/DHL. Timely mailing rules. Verified from IRS.gov and IRS","url":"https://cpavalidated.com/irs-mailing-addresses-abroad.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>IRS Mailing Addresses for People Living Abroad</h1>
+  <div class="sub">Verified USPS, FedEx / UPS / DHL addresses &nbsp;&bull;&nbsp; 1040, 1040-NR, 1040-X, Extensions, FBAR, ITIN &nbsp;&bull;&nbsp; 2025 / 2026 Tax Years</div>
+  <div class="badges">
+    <span class="badge">IRS Pub. 3891 (Jul. 2025)</span>
+    <span class="badge">IRC §7502</span>
+    <span class="badge">Rev. Rul. 2002-23</span>
+    <span class="badge">FinCEN 114</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="wrap">
+
+<div class="updated-strip">
+  <span>✓</span>
+  <span>Addresses verified against IRS Publication 3891 (Rev. 7-2025) and IRS.gov. Last reviewed April 2026. Always confirm at <a href="https://www.irs.gov/filing/international-where-to-file-addresses-for-taxpayers-and-tax-professionals" target="_blank" rel="noopener">IRS.gov</a> before mailing.</span>
+</div>
+
+<div class="flag red"><div class="fi">✗</div><div class="ft"><strong>Electronic filing is almost always better.</strong> The IRS processes e-filed returns faster (days vs. weeks or months for paper), provides electronic confirmation of receipt, and eliminates the risk of lost mail. If you are using a professional tax preparer, ask about e-filing. Free options exist for qualifying returns. Paper filing is necessary only when e-filing is unavailable for your specific return type, or when you are attaching original documents (such as a Form W-7 / ITIN application).</div></div>
+
+<div class="toc">
+  <div class="toc-title">Contents</div>
+  <ul>
+    <li><a href="#rule1">The one rule that matters most</a></li>
+    <li><a href="#form1040">Form 1040 / 1040-SR</a></li>
+    <li><a href="#form1040nr">Form 1040-NR</a></li>
+    <li><a href="#form1040x">Form 1040-X (Amended)</a></li>
+    <li><a href="#extension">Form 4868 (Extension)</a></li>
+    <li><a href="#fbar">FBAR / FinCEN 114</a></li>
+    <li><a href="#itin">Form W-7 (ITIN Application)</a></li>
+    <li><a href="#pds">FedEx / UPS / DHL addresses</a></li>
+    <li><a href="#howtomail">How to mail from abroad</a></li>
+    <li><a href="#territories">US territories & APO/FPO</a></li>
+  </ul>
+</div>
+
+<!-- RULE 1 -->
+<h2 class="sec" id="rule1">The One Rule That Matters Most</h2>
+<p>Under IRC §7502, a return is considered filed on the date it is postmarked - not the date it arrives at the IRS. This is critical for international filers whose mail may take weeks to arrive. Revenue Ruling 2002-23 confirms that foreign postmarks dated on or before the filing deadline are accepted as timely filed, even if the IRS receives the return weeks later.</p>
+<p><strong>What this means in practice:</strong> If your return is due June 16, 2025 (the extended deadline for international filers), a foreign post office stamp dated June 16 is sufficient - even if the IRS receives the envelope in July. Keep your mailing receipts permanently.</p>
+<div class="flag amber"><div class="fi">!</div><div class="ft"><strong>Foreign postmarks only work with USPS or a designated private delivery service (PDS).</strong> An unofficial courier, domestic carrier of a foreign country, or non-designated service level does not qualify for the IRC §7502 timely mailing rule. If you miss the deadline or your mailing service is not designated, the return is treated as filed on the date the IRS receives it.</div></div>
+
+<!-- FORM 1040 -->
+<h2 class="sec" id="form1040">Form 1040 / 1040-SR - US Citizens and Residents Abroad</h2>
+<p>Use these addresses if you: live in a foreign country; use an APO or FPO address; file Form 2555 (Foreign Earned Income Exclusion); file Form 4563 (Bona Fide Residents of American Samoa); or are a dual-status alien. Source: IRS Publication 3891 (Rev. 7-2025).</p>
+
+<div class="addr-card">
+  <div class="addr-half">
+    <div class="addr-label">Without Payment (USPS)</div>
+    <div class="addr-lines">Department of the Treasury<br>Internal Revenue Service<br>Austin, TX 73301-0215<br>USA</div>
+  </div>
+  <div class="addr-half">
+    <div class="addr-label">With Payment (USPS)</div>
+    <div class="addr-lines">Internal Revenue Service<br>P.O. Box 1303<br>Charlotte, NC 28201-1303<br>USA</div>
+  </div>
+</div>
+
+<div class="flag blue"><div class="fi">ℹ</div><div class="ft"><strong>Why two different addresses?</strong> The IRS routes returns with payments to a lockbox facility (Charlotte, NC) that processes checks. Returns without payment go directly to the Austin, TX submission processing center. Using the wrong address does not void the filing, but can cause delays. When in doubt - no check enclosed, use Austin; check enclosed, use Charlotte.</div></div>
+
+<!-- FORM 1040-NR -->
+<h2 class="sec" id="form1040nr">Form 1040-NR - Nonresident Aliens</h2>
+<p>Nonresident aliens filing Form 1040-NR use the same Austin / Charlotte addresses as US citizens abroad. This also applies to Form 1040-NR filers claiming treaty benefits.</p>
+
+<div class="addr-card">
+  <div class="addr-half">
+    <div class="addr-label">Without Payment (USPS)</div>
+    <div class="addr-lines">Department of the Treasury<br>Internal Revenue Service<br>Austin, TX 73301-0215<br>USA</div>
+  </div>
+  <div class="addr-half">
+    <div class="addr-label">With Payment (USPS)</div>
+    <div class="addr-lines">Internal Revenue Service<br>P.O. Box 1303<br>Charlotte, NC 28201-1303<br>USA</div>
+  </div>
+</div>
+
+<div class="flag amber"><div class="fi">!</div><div class="ft"><strong>Note for 1040-NR filers with withholding.</strong> If you had federal income tax withheld (reported on Forms 1042-S, W-2, or 1099), attach copies to the 1040-NR. Send certified international mail and retain a proof of postmark. Refund claims on 1040-NR returns can take 6-9 months to process when filed on paper.</div></div>
+
+<!-- FORM 1040-X -->
+<h2 class="sec" id="form1040x">Form 1040-X - Amended Returns</h2>
+<p>The address for an amended return differs from the original return - even though both may go to Austin, the ZIP codes are different. Do not use the original return address for a 1040-X.</p>
+
+<div class="addr-card">
+  <div class="addr-half">
+    <div class="addr-label">Without Payment (USPS)</div>
+    <div class="addr-lines">Department of the Treasury<br>Internal Revenue Service<br>Austin, TX 73301-0052<br>USA</div>
+    <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:8px">ZIP: 73301-0052 (differs from original return ZIP 73301-0215)</div>
+  </div>
+  <div class="addr-half">
+    <div class="addr-label">With Payment (USPS)</div>
+    <div class="addr-lines">Internal Revenue Service<br>P.O. Box 1303<br>Charlotte, NC 28201-1303<br>USA</div>
+  </div>
+</div>
+
+<div class="flag red"><div class="fi">!</div><div class="ft"><strong>Critical: ZIP code differs from original return.</strong> 1040-X without payment goes to Austin TX 73301-<strong>0052</strong>. Form 1040 without payment goes to Austin TX 73301-<strong>0215</strong>. These are different sorting codes within the same facility. Use the correct ZIP for each. Source: IRS Where to File Addresses for Form 1040-X (Calendar Year 2025).</div></div>
+
+<!-- FORM 4868 EXTENSION -->
+<h2 class="sec" id="extension">Form 4868 - Extension of Time to File</h2>
+<p>International filers who want to request the standard 6-month extension (beyond the automatic 2-month extension for those living abroad) file Form 4868 by the June 15 deadline. Note: most international filers can e-file Form 4868 for free. Paper is rarely necessary.</p>
+
+<div class="addr-card">
+  <div class="addr-half">
+    <div class="addr-label">Without Payment (USPS)</div>
+    <div class="addr-lines">Department of the Treasury<br>Internal Revenue Service<br>Austin, TX 73301-0215<br>USA</div>
+  </div>
+  <div class="addr-half">
+    <div class="addr-label">With Payment (USPS)</div>
+    <div class="addr-lines">Internal Revenue Service<br>P.O. Box 1303<br>Charlotte, NC 28201-1303<br>USA</div>
+  </div>
+</div>
+
+<div class="flag blue"><div class="fi">ℹ</div><div class="ft"><strong>The automatic 2-month extension for people living abroad.</strong> If you are a US citizen or resident alien living and working outside the US on April 15, you automatically get 2 extra months to file and pay (to June 15) - no form needed. IRC §6081(d). If you still need more time, file Form 4868 by June 15 to extend to October 15. If you need time beyond October 15, request an additional extension via Form 2350 (for bona fide foreign residents qualifying for the FEIE) - that must be mailed to the same Austin address.</div></div>
+
+<!-- FBAR -->
+<h2 class="sec" id="fbar">FBAR / FinCEN 114 - Foreign Bank Account Report</h2>
+<p>The FBAR is a FinCEN form, not an IRS form. It is filed with the Financial Crimes Enforcement Network (FinCEN), not with the IRS. There is no payment associated with an FBAR.</p>
+<div class="flag green"><div class="fi">✓</div><div class="ft"><strong>FBARs must be filed electronically via FinCEN BSA E-Filing System.</strong> Go to <a href="https://bsaefiling.fincen.treas.gov" target="_blank" rel="noopener" style="color:var(--green);font-weight:700">bsaefiling.fincen.treas.gov</a>. There is no filing fee. The system accepts individual and batch filings. Paper filing is only permitted for people who request and receive a hardship exemption from FinCEN. The FBAR deadline is April 15, with an automatic 6-month extension to October 15 - no form required for the extension. IRC §5314; 31 C.F.R. §1010.350; 31 U.S.C. §5314.</div></div>
+
+<h3 class="sub">FBAR Paper Filing (Hardship Only)</h3>
+<p>If FinCEN has granted a hardship waiver for electronic filing, paper FBARs go to:</p>
+<div class="addr-card-single">
+  <div class="addr-label">FBAR Paper (USPS - Hardship Only)</div>
+  <div class="addr-lines" style="font-family:var(--font-mono);font-size:13px;color:#fff;line-height:1.9;margin-top:8px">Department of the Treasury<br>P.O. Box 32621<br>Detroit, MI 48232-0621<br>USA</div>
+</div>
+
+<!-- ITIN / W-7 -->
+<h2 class="sec" id="itin">Form W-7 - ITIN Application</h2>
+<p>An ITIN (Individual Taxpayer Identification Number) is required for non-US persons who have a US tax filing obligation but are not eligible for a Social Security Number. Form W-7 applications typically must be attached to a tax return (or meet a limited exception). Original documents or certified copies are required - the IRS will return them.</p>
+
+<div class="addr-card">
+  <div class="addr-half">
+    <div class="addr-label">USPS Mail</div>
+    <div class="addr-lines">Internal Revenue Service<br>ITIN Operations<br>P.O. Box 149342<br>Austin, TX 78714-9342<br>USA</div>
+  </div>
+  <div class="addr-half">
+    <div class="addr-label">Private Delivery (FedEx / UPS / DHL)</div>
+    <div class="addr-lines">Internal Revenue Service<br>ITIN Operation<br>Mail Stop 6090-AUSC<br>3651 S. Interregional Hwy 35<br>Austin, TX 78741-0000<br>USA</div>
+  </div>
+</div>
+
+<div class="flag amber"><div class="fi">!</div><div class="ft"><strong>Original passport or certified copies required.</strong> The IRS accepts original passports, national ID cards, or certified copies issued by the foreign government. Notarized copies alone are not sufficient. The IRS returns original documents by mail - processing time can be 7-11 weeks. Consider using an IRS-authorized Certifying Acceptance Agent (CAA) abroad who can certify copies without surrendering your original passport. Treas. Reg. §301.6109-3.</div></div>
+
+<!-- PRIVATE DELIVERY SERVICES -->
+<h2 class="sec" id="pds">Private Delivery Service Addresses (FedEx, UPS, DHL)</h2>
+<p>FedEx, UPS, and DHL cannot deliver to P.O. boxes or simplified city-state-ZIP mail addresses. When using these carriers for the Austin service center, use the physical street address regardless of whether a payment is included.</p>
+
+<div class="addr-card">
+  <div class="addr-half">
+    <div class="addr-label">Austin (for 1040, 1040-NR, 4868, ITIN)</div>
+    <div class="addr-lines">Internal Revenue<br>Submission Processing Center<br>3651 S IH35<br>Austin, TX 78741<br>USA</div>
+  </div>
+  <div class="addr-half">
+    <div class="addr-label">Kansas City / Ogden (reference only)</div>
+    <div class="addr-lines">Kansas City:<br>333 W. Pershing<br>Kansas City, MO 64108<br><br>Ogden:<br>1973 Rulon White Blvd.<br>Ogden, UT 84201</div>
+  </div>
+</div>
+
+<h3 class="sub">IRS-Designated Private Delivery Services (for Timely Filing Rule - IRC §7502)</h3>
+<p>Only the following carriers and service levels qualify as "timely mailing = timely filing" under IRC §7502(f). Ground and economy services do NOT qualify.</p>
+
+<ul class="pds-list">
+  <li class="pds-item">
+    <div class="pds-carrier">DHL Express</div>
+    <div class="pds-services">DHL Express 9:00 &bull; Express 10:30 &bull; Express 12:00 &bull; Worldwide &bull; Envelope &bull; Import Express 10:30, 12:00, Worldwide</div>
+  </li>
+  <li class="pds-item">
+    <div class="pds-carrier">FedEx</div>
+    <div class="pds-services">First Overnight &bull; Priority Overnight &bull; Standard Overnight &bull; 2 Day &bull; International Next Flight Out &bull; International Priority &bull; International First &bull; International Economy</div>
+  </li>
+  <li class="pds-item">
+    <div class="pds-carrier">UPS</div>
+    <div class="pds-services">Next Day Air Early A.M. &bull; Next Day Air &bull; Next Day Air Saver &bull; 2nd Day Air &bull; 2nd Day Air A.M. &bull; Worldwide Express Plus &bull; Worldwide Express</div>
+  </li>
+</ul>
+
+<div class="flag red"><div class="fi">✗</div><div class="ft"><strong>FedEx Ground, UPS Ground, DHL eCommerce, and economy/standard international services do NOT qualify.</strong> If you send a return via a non-qualifying service level, the timely mailing rule does not apply. The filing date is the date the IRS actually receives the return - which could be after the deadline. Always confirm your service type before mailing if timing is close.</div></div>
+
+<!-- HOW TO MAIL FROM ABROAD -->
+<h2 class="sec" id="howtomail">Practical Guidance: Mailing from Outside the US</h2>
+
+<h3 class="sub">What to send and how to package it</h3>
+<p>Mail the following in one envelope in this order: the signed tax return (all pages), all required schedules (in order), all required attachments (W-2s, 1042-S, Form 2555, Form 8938, etc.), and any payment (check or money order payable to "United States Treasury," written in USD). Do not staple the pages together - use a paper clip or binder clip. Write your SSN/ITIN and tax year on the memo line of any check.</p>
+
+<h3 class="sub">Getting proof of timely filing</h3>
+<p>Request a postmarked receipt at the post office or use a trackable private delivery service. For USPS international, Registered Mail provides the best tracking and proof of date. Keep the receipt indefinitely - the IRS has 3 years to assess tax on a timely filed return, but disputes over whether a return was timely filed can arise years later. Rev. Rul. 2002-23 governs the foreign postmark rule.</p>
+
+<h3 class="sub">When USPS service is unavailable or unreliable</h3>
+<p>USPS does not directly serve all countries. Where USPS is unavailable, use FedEx, UPS, or DHL International at a qualifying service level (see section above). Many expats in countries with unreliable postal systems find DHL or FedEx International more reliable than local postal services, even at higher cost. The cost of a lost return - in penalties, interest, and follow-up - far exceeds the shipping cost.</p>
+
+<div class="flag blue"><div class="fi">ℹ</div><div class="ft"><strong>The "postmark" rule for private delivery services.</strong> For a FedEx/UPS/DHL shipment to count as timely, the service must record the shipping date electronically on or before the deadline. The date printed on the airbill or in the electronic tracking system is the controlling date - not a physical postmark. Keep the tracking confirmation and your shipper's copy.</div></div>
+
+<h3 class="sub">US Embassy / Consulate mail services</h3>
+<p>US embassies and consulates do not provide IRS mailing services for private citizens. Some embassies accept USPS mail through diplomatic pouch for official purposes only. This does not apply to individual tax returns. Do not attempt to mail tax documents through embassy facilities.</p>
+
+<!-- US TERRITORIES / APO-FPO -->
+<h2 class="sec" id="territories">US Territories, APO/FPO Addresses, and Special Cases</h2>
+
+<table class="addr-table">
+  <thead>
+    <tr><th>Situation</th><th>Address / Rule</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>APO / FPO (military abroad)</td>
+      <td>Use USPS military mail system. Same Austin TX 73301-0215 address applies. USPS military mail is treated as domestic; IRC §7508 also provides deadline relief for combat zone service members.</td>
+    </tr>
+    <tr>
+      <td>American Samoa, Guam, USVI, Puerto Rico, Northern Mariana Islands</td>
+      <td>See IRS Publication 570 (Tax Guide for Individuals With Income from U.S. Possessions). Filing rules differ significantly from regular international filers.</td>
+    </tr>
+    <tr>
+      <td>Dual-status returns (year of green card / citizenship)</td>
+      <td>Same international addresses apply (Austin TX 73301-0215 / Charlotte NC 28201-1303). Attach a statement showing income for each period. IRC §7701(b).</td>
+    </tr>
+    <tr>
+      <td>Form 2350 (Special extension for qualifying under FEIE)</td>
+      <td>Department of the Treasury, Internal Revenue Service, Austin, TX 73301-0215, USA. Must file by the regular due date (April 15 for calendar year) or the automatic 2-month extension date (June 15).</td>
+    </tr>
+    <tr>
+      <td>Form 8938 (FATCA - Statement of Specified Foreign Assets)</td>
+      <td>Filed with and attached to your tax return. Same mailing address as your return - no separate submission. Do not send separately to the IRS.</td>
+    </tr>
+    <tr>
+      <td>Form 5471 / 5472 / 3520</td>
+      <td>Filed with and attached to your tax return. Same mailing address as your return. If filed as a standalone (e.g., 5472 for a disregarded entity), see specific form instructions for the applicable service center.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="flag green"><div class="fi">✓</div><div class="ft"><strong>Key related resources on CPA Validated:</strong> <a href="us-expat-tax-guide.html" style="color:var(--green);font-weight:600">US Expat Tax Guide</a> (2-month automatic extension, FEIE, FBAR overview) &bull; <a href="fbar-checker.html" style="color:var(--green);font-weight:600">FBAR Checker</a> (do you need to file?) &bull; <a href="spt-calculator.html" style="color:var(--green);font-weight:600">Substantial Presence Test Calculator</a> (are you a US tax resident?) &bull; <a href="tax-extension-guide.html" style="color:var(--green);font-weight:600">Individual Extension Guide</a> (Form 4868 by state)</div></div>
+
+<div class="src">Sources: IRS Publication 3891 (Rev. 7-2025), "Address Directory for Tax Practitioners &amp; Taxpayers" (lockbox addresses); IRS, "International - Where to File Form 1040 Addresses for Taxpayers and Tax Professionals" (calendar year 2025); IRS, "International - Where to File Forms 1040-NR, 1040-PR, and 1040-SS" (calendar year 2025); IRS, "Submission Processing Center Street Addresses for Private Delivery Service (PDS)"; IRS, "Private Delivery Services (PDS)" (designated services for IRC §7502); IRC §7502 (timely mailing = timely filing); IRC §7502(f) (designated private delivery services); Rev. Rul. 2002-23, 2002-18 IRB 811 (foreign postmarks); IRC §6081(d) (automatic 2-month extension for persons abroad); 31 U.S.C. §5314; 31 C.F.R. §1010.350 (FBAR filing requirement); FinCEN BSA E-Filing System; IRS Form W-7 Instructions (Rev. 12-2023) (ITIN - address for Austin ITIN Operations); IRC §7508 (combat zone deadline relief). IRS.gov links: <a href="https://www.irs.gov/filing/international-where-to-file-addresses-for-taxpayers-and-tax-professionals" target="_blank">International Where to File</a> &bull; <a href="https://www.irs.gov/filing/submission-processing-center-street-addresses-for-private-delivery-service-pds" target="_blank">PDS Street Addresses</a> &bull; <a href="https://bsaefiling.fincen.treas.gov" target="_blank">FBAR E-Filing</a>.</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">Addresses are updated periodically by the IRS. Always verify at IRS.gov before mailing. This guide is for informational purposes only. No professional relationship is created by using this resource. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

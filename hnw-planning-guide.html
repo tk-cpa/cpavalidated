@@ -213,6 +213,285 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §1 (individual income tax rates); IRC §1(h) (preferential rates on capital gains and dividends); IRC §1411 (net investment income tax - 3.8%, thresholds not indexed); IRC §469 (passive activity loss rules); IRC §469(c)(7) (real estate professional exception); IRC §1202 (QSBS exclusion - 100% for qualified small business stock held 5+ years); IRC §453 (installment sales); IRC §2001 (estate tax rate - 40%); IRC §2010 (unified credit - $15M exemption permanent under OBBBA P.L. 119-21); IRC §2503 (taxable gifts); IRC §2523 (marital deduction); IRC §2632 (GST exemption); IRC §664 (charitable remainder trusts); IRC §170 (charitable contribution deduction); IRC §408(d)(8) (qualified charitable distributions - $105,000 limit 2026); IRC §702 and §704 (partnership allocation rules); IRC §338(h)(10) and §336(e) (deemed asset sale elections); IRC §2702 (GRATs - special valuation); IRC §7520 (hurdle rate for GRATs); IRC §671-677 (grantor trust rules - IDGTs); IRC §7701(b) (substantial presence test - US residency); IRC §877A (expatriation tax - exit tax for long-term residents); OBBBA P.L. 119-21 (estate exemption, SALT cap, bonus depreciation - all permanent).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High Net Worth Tax Planning Guide (2026) | CPA Validated</title>
+<meta name="description" content="Comprehensive tax planning guide for high-net-worth individuals: estate and gift planning with the $15M OBBBA exemption, NIIT, SALT PTET elections, charitable strategies, entity structure, pre-exit planning, and international considerations. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/hnw-planning-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.strategy-card{border-left:4px solid var(--coral);background:var(--white);padding:16px 18px;margin-bottom:14px;border-top:1px solid var(--ink-20);border-right:1px solid var(--ink-20);border-bottom:1px solid var(--ink-20)}
+.sc-title{font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:6px}
+.sc-body{font-size:13px;color:var(--ink-80);line-height:1.65}
+.sc-auth{font-size:11px;font-family:var(--font-mono);color:var(--ink-40);margin-top:6px}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="High Net Worth Tax Planning Guide (2026) | CPA Validated">
+  <meta property="og:description" content="Comprehensive tax planning guide for high-net-worth individuals: estate and gift planning with the $15M OBBBA exemption, NIIT, SALT PTET elections, charitable strategies, entity structure, pre-exit pl">
+  <meta property="og:url" content="https://cpavalidated.com/hnw-planning-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="High Net Worth Tax Planning Guide (2026) | CPA Validated">
+  <meta name="twitter:description" content="Comprehensive tax planning guide for high-net-worth individuals: estate and gift planning with the $15M OBBBA exemption, NIIT, SALT PTET elections, charitable strategies, entity structure, pre-exit pl">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"High Net Worth Tax Planning Guide (2026) | CPA Validated","description":"Comprehensive tax planning guide for high-net-worth individuals: estate and gift planning with the $15M OBBBA exemption, NIIT, SALT PTET elections, charitable strategies, entity structure, pre-exit pl","url":"https://cpavalidated.com/hnw-planning-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>High Net Worth Tax Planning Guide (2026)</h1>
+  <div class="sub">Estate & Gift &nbsp;&bull;&nbsp; NIIT &nbsp;&bull;&nbsp; SALT / PTET &nbsp;&bull;&nbsp; Charitable Strategies &nbsp;&bull;&nbsp; Business Exit &nbsp;&bull;&nbsp; International Considerations</div>
+  <div class="meta">
+    <span class="ph-meta-item">OBBBA P.L. 119-21</span>
+    <span class="ph-meta-item">$15M Estate Exemption</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Tax planning for high-net-worth individuals operates across multiple simultaneous fronts: income tax at the top marginal rates, the 3.8% net investment income tax layered on top, a SALT cap that limits state tax deductions, estate and gift tax on every dollar above the exemption, and in many cases cross-border complexity. OBBBA changed the landscape significantly - the estate exemption is now $15 million permanently, SALT is capped at $40,000 with a phaseout, and bonus depreciation is back at 100%. This guide covers the main planning areas and the strategies that actually move the needle.</p>
+
+<div class="callout">
+  <div class="callout-label">The 2026 HNW Tax Environment - Key Numbers</div>
+  <p><strong>Top federal income tax rate:</strong> 37% (ordinary income above ~$750K MFJ)</p>
+  <p><strong>Long-term capital gains rate:</strong> 20% (income above ~$583K MFJ) + 3.8% NIIT = 23.8% combined federal rate</p>
+  <p><strong>Estate and gift tax exemption:</strong> $15,000,000 per person ($30M combined for married couples with portability), permanent under OBBBA</p>
+  <p><strong>Annual gift exclusion:</strong> $19,000 per donee (2026, indexed)</p>
+  <p><strong>SALT cap:</strong> $40,000 (phased down above $500K AGI for MFJ, down to $10K floor)</p>
+  <p><strong>NIIT threshold:</strong> $250,000 (MFJ) / $200,000 (single) - not indexed for inflation</p>
+</div>
+
+<h2>Estate and Gift Planning: The $15M Window</h2>
+
+<p>OBBBA permanently set the estate and gift tax exemption at $15 million per person, inflation-adjusted going forward. This is the highest exemption in US history. For married couples using portability, the combined exemption is $30 million. The top estate tax rate remains 40%.</p>
+
+<p>For estates below $15 million ($30M for couples), federal estate tax is not a near-term concern. Planning focus shifts to income tax efficiency - minimizing capital gains on inherited assets (the step-up in basis under IRC §1014) and managing distributions from inherited IRAs. For estates above these thresholds, the estate tax remains a significant planning driver.</p>
+
+<h3>Strategies That Still Make Sense Above $15M</h3>
+
+<div class="strategy-card">
+  <div class="sc-title">Spousal Lifetime Access Trust (SLAT)</div>
+  <div class="sc-body">An irrevocable trust where one spouse transfers assets (using gift tax exemption) for the benefit of the other spouse and descendants. The donor spouse removes assets from their taxable estate while the beneficiary spouse retains access to distributions. Assets grow outside both estates. Best deployed while the $15M exemption is in place and rates are favorable.</div>
+  <div class="sc-auth">IRC §2503 (taxable gifts) &middot; IRC §2523 (marital deduction - does not apply to SLATs) &middot; IRC §677 (grantor trust rules)</div>
+</div>
+
+<div class="strategy-card">
+  <div class="sc-title">Grantor Retained Annuity Trust (GRAT)</div>
+  <div class="sc-body">Grantor transfers assets to an irrevocable trust and receives an annuity payment stream for a fixed term. At the end of the term, remaining assets pass to beneficiaries gift-tax free if asset growth exceeds the IRC §7520 hurdle rate. Works best with high-growth assets (pre-IPO stock, concentrated positions) and low §7520 rates. The "zeroed-out GRAT" eliminates upfront gift tax exposure.</div>
+  <div class="sc-auth">IRC §2702 (special valuation rules) &middot; IRC §7520 (hurdle rate - 120% of AFR)</div>
+</div>
+
+<div class="strategy-card">
+  <div class="sc-title">Intentionally Defective Grantor Trust (IDGT)</div>
+  <div class="sc-body">An irrevocable trust that is outside the grantor's taxable estate (for estate tax purposes) but treated as owned by the grantor for income tax purposes. The grantor pays income tax on trust earnings - a tax-free gift to the trust beneficiaries. The trust can purchase assets from the grantor in exchange for an installment note at the AFR, freezing the estate at the purchase price while growth accumulates outside the estate.</div>
+  <div class="sc-auth">IRC §671-677 (grantor trust rules) &middot; IRC §1274 (AFR for installment notes)</div>
+</div>
+
+<h2>Managing the Net Investment Income Tax (NIIT)</h2>
+
+<p>The 3.8% NIIT under IRC §1411 applies to the lesser of net investment income or the excess of MAGI over the threshold ($250,000 MFJ / $200,000 single - not inflation-adjusted). For high earners with investment income, the NIIT is effectively an additional top rate that applies on top of the 20% capital gains rate, producing a 23.8% combined federal rate on long-term capital gains and a 40.8% rate on ordinary investment income at the top bracket.</p>
+
+<h3>NIIT Reduction Strategies</h3>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Material participation in business activities.</strong> Income from a business in which the taxpayer materially participates is not NII. Converting passive rental income to active income through real estate professional status (IRC §469(c)(7)) removes it from the NIIT base. This requires more than 750 hours per year in real estate activities and more hours in real estate than any other trade or business.</li>
+  <li><strong>Qualified opportunity zone investments.</strong> Appreciation on QOZ investments held more than 10 years is excluded from NII entirely under IRC §1400Z-2(c). The December 31, 2026 deferred gain recognition deadline is approaching.</li>
+  <li><strong>Roth conversions in low-income years.</strong> Roth IRA distributions are not NII. Converting traditional IRA balances to Roth in years of lower MAGI reduces future NII exposure. Model the breakeven carefully given the upfront conversion tax.</li>
+  <li><strong>Qualified small business stock exclusion.</strong> Gain excluded under IRC §1202 (QSBS) is also excluded from NII. Up to 100% of gain on qualified small business stock held more than 5 years may be excludable.</li>
+</ul>
+
+<h2>SALT and PTET Planning</h2>
+
+<p>The $40,000 SALT cap (phased down to $10,000 for AGI above $500K MFJ) applies to individual returns. For business owners with pass-through income, the PTET election shifts state income tax to the entity level where it is deductible without limitation. This is the primary SALT planning tool for S-corp and partnership owners.</p>
+
+<p>For HNW individuals in high-tax states (New York, California, New Jersey), the PTET benefit can be substantial. A New York-based S-corp owner with $2 million of pass-through income at a 10.9% state rate can eliminate approximately $218,000 of New York state tax from federal taxable income via the PTET - saving approximately $80,000 in federal tax at the 37% rate. See the SALT Planning Guide for detailed mechanics and state-by-state rules.</p>
+
+<h2>Charitable Planning Strategies</h2>
+
+<h3>Donor-Advised Funds (DAFs)</h3>
+<p>A contribution to a DAF produces an immediate charitable deduction in the year of contribution (subject to AGI limits - generally 60% of AGI for cash, 30% for appreciated property). The fund can invest the contributed assets and distribute grants to qualifying charities over time. The primary benefit: contributing appreciated securities eliminates capital gains that would otherwise be recognized on a sale, while the full fair market value is deductible. Bunching multiple years of charitable giving into one year maximizes the Schedule A deduction in that year.</p>
+
+<h3>Charitable Remainder Trust (CRT)</h3>
+<p>A CRT provides an income stream to the grantor (or other non-charitable beneficiary) for life or a term of years, with the remainder passing to charity at the end. The grantor receives a partial charitable deduction at funding, avoids immediate capital gains on appreciated assets contributed to the trust, and receives an income stream. The income stream is taxed as it is distributed - ordinary income tiers are distributed before capital gains tiers. Best for donors with highly appreciated, low-basis assets who want income rather than a lump-sum charitable deduction.</p>
+
+<h3>Qualified Charitable Distributions (QCDs)</h3>
+<p>Taxpayers over age 70.5 can direct up to $105,000 per year (2026, indexed) from an IRA directly to a qualified charity. The distribution satisfies the RMD requirement but is excluded from gross income entirely - it does not count as AGI. This is more tax-efficient than taking the RMD and then donating cash, because the QCD reduces MAGI and therefore reduces IRMAA Medicare surcharges, NIIT exposure, and the taxability of Social Security benefits.</p>
+
+<h2>Pre-Exit and Liquidity Event Planning</h2>
+
+<p>Business owners approaching a sale need to plan well in advance - ideally 3 to 5 years before exit. Key considerations:</p>
+
+<p><strong>Entity structure review.</strong> C-corporations selling assets pay corporate tax plus shareholder-level tax on dividends. S-corporations and partnerships generally pay only one level of tax, often at the 20% long-term capital gains rate plus NIIT. A §338(h)(10) election or §336(e) election may allow a stock sale to be treated as an asset sale, potentially benefiting both buyer and seller.</p>
+
+<p><strong>QSBS planning (IRC §1202).</strong> Gain on qualified small business stock (C-corporation, held more than 5 years, original issuance) can be excluded from federal income tax up to $10 million or 10x basis, whichever is greater. For founders who have not yet issued QSBS, converting to a C-corporation and issuing new stock restarts the 5-year clock. NIIT does not apply to §1202 excluded gain.</p>
+
+<p><strong>Installment sales.</strong> Spreading recognition of gain over multiple years through an installment sale (IRC §453) keeps MAGI below NIIT thresholds in each year and may keep capital gains in lower rate brackets. The tradeoff is credit risk on the buyer's installment obligation and the loss of use of the after-tax proceeds.</p>
+
+<h2>International Considerations for HNW Individuals</h2>
+
+<p>For US citizens and residents with foreign assets, accounts, or income, the compliance obligations are extensive regardless of where the assets are held. FBAR (FinCEN 114) reporting applies to foreign financial accounts exceeding $10,000 in aggregate. Form 8938 (FATCA) applies at higher thresholds. Foreign trusts trigger Form 3520 and 3520-A. CFCs trigger Form 5471 and potential Subpart F / NCTI inclusions.</p>
+
+<p>Pre-immigration planning - for non-US persons considering US residency - is a particularly high-value planning area. Once a person becomes a US tax resident, worldwide income is taxable. Assets with unrealized gains can be restructured before the trigger date. Foreign pensions may be restructurable. Entity elections can be made before residency begins. The window for pre-immigration planning closes the moment substantial presence is established or a green card is received.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="gift-estate-tax-guide.html" class="related-link">Gift & Estate Tax Guide<span>$15M exemption &middot; GST &middot; portability</span></a>
+    <a href="salt-planning-guide.html" class="related-link">SALT Planning Guide<span>$40K cap &middot; PTET elections &middot; phaseout</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>IRC §1411 &middot; 3.8% tax &middot; NII definition</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>Before green card &middot; IRC §7701(b)</span></a>
+    <a href="section-1202-qsbs.html" class="related-link">QSBS Guide<span>IRC §1202 &middot; $10M exclusion &middot; C-corp</span></a>
+    <a href="trust-guide.html" class="related-link">Trust Tax Guide<span>SLAT &middot; GRAT &middot; IDGT &middot; CRT &middot; IRC §671-679</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §1 (individual income tax rates); IRC §1(h) (preferential rates on capital gains and dividends); IRC §1411 (net investment income tax - 3.8%, thresholds not indexed); IRC §469 (passive activity loss rules); IRC §469(c)(7) (real estate professional exception); IRC §1202 (QSBS exclusion - 100% for qualified small business stock held 5+ years); IRC §453 (installment sales); IRC §2001 (estate tax rate - 40%); IRC §2010 (unified credit - $15M exemption permanent under OBBBA P.L. 119-21); IRC §2503 (taxable gifts); IRC §2523 (marital deduction); IRC §2632 (GST exemption); IRC §664 (charitable remainder trusts); IRC §170 (charitable contribution deduction); IRC §408(d)(8) (qualified charitable distributions - $105,000 limit 2026); IRC §702 and §704 (partnership allocation rules); IRC §338(h)(10) and §336(e) (deemed asset sale elections); IRC §2702 (GRATs - special valuation); IRC §7520 (hurdle rate for GRATs); IRC §671-677 (grantor trust rules - IDGTs); IRC §7701(b) (substantial presence test - US residency); IRC §877A (expatriation tax - exit tax for long-term residents); OBBBA P.L. 119-21 (estate exemption, SALT cap, bonus depreciation - all permanent).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

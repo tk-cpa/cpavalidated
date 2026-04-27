@@ -74,6 +74,146 @@
   </div>
 </div>
 <div class="source-row">Authority: IRC §1(h)(11) (qualified dividend income - preferential rate equal to net capital gain rates; definition of qualified dividend income; US corporation or qualified foreign corporation requirement); IRC §1(h)(11)(B)(iii) (qualified foreign corporation - US possession incorporation, comprehensive income tax treaty, or readily tradable on established US securities market); IRC §246(c) (holding period requirement for dividends to receive preferential treatment - more than 60 days in 121-day period; diminished risk of loss rule - days with offsetting positions do not count); IRC §1411 (Net Investment Income Tax - 3.8% surtax on lesser of net investment income or excess MAGI over threshold; $200,000 single/$250,000 MFJ - statutory, not inflation-indexed); IRS Rev. Proc. 2025-32 (2026 inflation-adjusted thresholds: 0% rate up to $49,450 single/$98,900 MFJ/$66,200 HOH; 15% rate up to $545,500 single/$613,700 MFJ; 20% rate above those amounts); IRC §199A(e)(3) (qualified REIT dividends - 20% deduction on ordinary REIT dividends; made permanent by OBBBA P.L. 119-21; reduces effective top rate from 37% to approximately 29.6% before NIIT); Form 1099-DIV Box 1a (total ordinary dividends) and Box 1b (qualified dividends - amount eligible for preferential rates; taxpayer must separately track holding periods; broker reporting may not reflect holding period adjustments); IRS Publication 550 (Investment Income and Expenses - qualified dividend definition, holding period rules, examples of qualified and nonqualified dividends).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qualified Dividends: 0%, 15%, 20% Rates, Holding Period & NIIT (2026) | CPA Validated</title>
+<meta name="description" content="2026 qualified dividend tax guide: 0% rate up to $49,450 single/$98,900 MFJ per Rev. Proc. 2025-32, 60-day holding period requirement, what makes dividends qualified, REIT ordinary treatment, NIIT interaction, and account placement strategy. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/qualified-dividends-guide.html">
+<meta name="ai-content-type" content="tax-reference">
+<meta name="ai-validated" content="CPA-EA-reviewed">
+<meta name="ai-authority" content="IRC-cited">
+<link rel="alternate" type="text/plain" title="LLMs Index" href="https://cpavalidated.com/llms.txt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qualified Dividends: 0%, 15%, 20% Rates, Holding Period & NIIT (2026)">
+<meta property="og:url" content="https://cpavalidated.com/qualified-dividends-guide.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Qualified Dividends: 0%, 15%, and 20% Rates Explained","url":"https://cpavalidated.com/qualified-dividends-guide.html","author":{"@type":"Organization","name":"tk.cpa","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-20:#D9DBDE;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}.cat-nav{background:var(--ink);overflow-x:auto;scrollbar-width:none}.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent}.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}.article{max-width:800px;margin:0 auto;padding:40px 24px 0}.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}.note-box{background:var(--amber-bg);border-left:3px solid var(--amber-b);padding:14px 18px;margin:22px 0;font-size:13px;color:var(--amber);line-height:1.65}.note-box strong{font-weight:600}.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:14px 18px;margin:22px 0;font-size:13px;color:var(--green);line-height:1.65}.green-box strong{font-weight:600}.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:14px 18px;margin:22px 0;font-size:13px;color:var(--red);line-height:1.65}.red-box strong{font-weight:600}.rate-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px}.rate-table th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;font-family:var(--font-display);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}.rate-table td{padding:10px 14px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);line-height:1.5}.rate-table tr:nth-child(even) td{background:var(--ink-10)}.rate-table .highlight td{background:#E2EDE6;font-weight:600;color:var(--green)}.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:14px;margin-top:28px}.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}@media(max-width:600px){.related-links{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<nav><a href="index.html" class="brand"><div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div></a><a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a></nav>
+<div class="cat-nav" role="navigation" aria-label="Topics"><div class="cat-nav-inner"><a href="individual-tax.html">Individual Tax</a><a href="business-entity.html">Business &amp; Entity</a><a href="real-estate-tax.html">Real Estate</a><a href="international-tax.html">International Tax</a><a href="retirement-savings.html">Retirement &amp; Savings</a><a href="investments-capital.html" class="active">Investments &amp; Capital</a><a href="estate-gifts.html">Estate &amp; Gifts</a><a href="state-compliance.html">State &amp; Compliance</a></div></div>
+<div class="ph"><div class="phi">
+  <h1>Qualified Dividends: 0%, 15%, and 20% Rates Explained</h1>
+  <div class="sub">0% Up to $49,450/$98,900 &bull; 60-Day Holding Period &bull; REIT Exception &bull; NIIT Interaction</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1(h)(11)</span>
+    <span class="ph-meta-item">Rev. Proc. 2025-32</span>
+    <span class="ph-meta-item">Form 1099-DIV Box 1b</span>
+  </div>
+</div></div>
+<div class="back"><a href="investments-capital.html">&#8592; Investments &amp; Capital</a></div>
+<div class="article">
+<p class="lead">Qualified dividends are taxed at 0%, 15%, or 20% - the same preferential rates as long-term capital gains. Ordinary dividends are taxed at your full marginal income tax rate, which can reach 37% plus 3.8% NIIT. On the same $50,000 of dividend income, that difference can exceed $15,000 in annual federal tax. Whether a dividend is "qualified" depends on who paid it and whether you held the stock long enough. Most US stock dividends held for more than two months are qualified. REIT dividends, most foreign dividends, and money market distributions are generally not.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 Qualified Dividend Rates - Rev. Proc. 2025-32</div>
+  <p><strong>0% rate:</strong> Taxable income up to $49,450 (single) / $98,900 (MFJ) / $66,200 (HOH).<br>Every dollar of qualified dividends that falls within this income range is completely free of federal tax.</p>
+  <p><strong>15% rate:</strong> Taxable income $49,451 to $545,500 (single) / $98,901 to $613,700 (MFJ). Covers the vast majority of investors.</p>
+  <p><strong>20% rate:</strong> Taxable income above $545,500 (single) / $613,700 (MFJ).</p>
+  <p><strong>NIIT surcharge (3.8%):</strong> Applies on top of the above rates if MAGI exceeds $200,000 (single) / $250,000 (MFJ). These thresholds are statutory - not indexed for inflation - so more taxpayers are captured each year.</p>
+</div>
+
+<h2>The Two Requirements: Source and Holding Period</h2>
+<p>Under IRC §1(h)(11), a dividend is qualified if it is: (1) paid by a US corporation or a qualified foreign corporation, and (2) the taxpayer held the underlying stock for more than 60 days during the 121-day period beginning 60 days before the ex-dividend date.</p>
+<p>The holding period requirement has a practical translation: if you buy a stock, receive a dividend, and sell the stock quickly - the dividend is ordinary income. If you hold through the dividend for the required period, the dividend is qualified. Day traders and frequent traders regularly receive ordinary dividends on positions they thought would be qualified. Dividend stripping - buying just before the ex-date to capture the dividend - produces ordinary income, not qualified.</p>
+<div class="note-box"><strong>The holding period clock pauses when you are "at risk" on the position.</strong> Under IRC §246(c), days on which you have diminished risk through options, short sales, or other hedging positions do not count toward the holding period. An investor who holds stock for 80 calendar days but maintained a protective put for 30 of those days may not have the required 60 days of unhedged exposure. This rule trips up sophisticated investors with covered call positions around dividend dates.</div>
+
+<h2>The Rate Is Based on Taxable Income, Not the Dividend Alone</h2>
+<p>The stacking rule: ordinary income fills the tax brackets first. Qualified dividends and long-term capital gains are stacked on top. The rate that applies to your qualified dividends depends on where they fall in your total income stack - not on a separate computation.</p>
+<p><strong>Example:</strong> Single filer with $42,000 of wage income and $12,000 of qualified dividends. Standard deduction $16,100. Taxable income = $37,900. All $12,000 of dividends stacks above the $37,900 of ordinary income, landing between $37,900 and $49,900 - within the 0% threshold of $49,450. Tax on all $12,000 of dividends: $0. This is why tax-efficient Roth conversions and income management around the 0% threshold can eliminate tax on substantial investment income entirely.</p>
+
+<h2>What Is Not Qualified</h2>
+<p>These common distributions are <em>not</em> qualified dividends and are taxed at ordinary income rates:</p>
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>REIT dividends:</strong> Generally taxed as ordinary income. Exception: the portion classified as capital gain distributions or return of capital. REIT dividends qualify for the §199A(e)(3) deduction of 20% of the qualified REIT dividend amount, reducing the effective top rate from 37% to approximately 29.6% - made permanent by OBBBA P.L. 119-21.</li>
+  <li><strong>Money market fund distributions:</strong> Interest income, not dividends.</li>
+  <li><strong>Dividends paid by foreign corporations that are not "qualified foreign corporations":</strong> A foreign corporation is qualified if incorporated in a US possession, eligible for benefits under a comprehensive US income tax treaty, or its stock is readily tradable on an established US securities market.</li>
+  <li><strong>Dividends on stock held in an IRA or 401(k):</strong> These are not currently taxed but will be ordinary income on distribution - the qualified dividend status is lost inside tax-deferred accounts.</li>
+</ul>
+<div class="green-box"><strong>Asset location is a direct application of this rule.</strong> Holding REIT funds and other high-yield ordinary-income investments inside a Roth IRA shields them from any tax permanently. Holding qualified-dividend stocks in a taxable account where they may be taxed at 0% or 15% is often more efficient than sheltering them. The decision depends on your income level, account balances, and withdrawal timeline - but the tax character of each investment should drive account selection.</div>
+
+<h2>NIIT: The 3.8% Surcharge</h2>
+<p>The Net Investment Income Tax under IRC §1411 adds 3.8% to investment income - including all dividends, qualified or not - for taxpayers with MAGI above $200,000 (single) or $250,000 (MFJ). These thresholds were set by Congress in 2010 and have never been adjusted for inflation. At the top end, a high-income investor pays 20% + 3.8% = 23.8% on qualified dividends, and 37% + 3.8% = 40.8% on ordinary dividends. That 17-percentage-point differential is why dividend characterization matters so much for high earners.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>Qualified dividends use same preferential rates as LTCG</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>3.8% surcharge mechanics and planning strategies</span></a>
+    <a href="tax-loss-harvesting-guide.html" class="related-link">Tax-Loss Harvesting<span>Offset ordinary dividends with capital losses</span></a>
+    <a href="ira-guide.html" class="related-link">IRA &amp; Roth Guide<span>Asset location: where to hold dividend-paying investments</span></a>
+    <a href="rmd-guide.html" class="related-link">RMD Guide<span>IRA distributions are ordinary income - qualified status irrelevant</span></a>
+    <a href="investments-capital.html" class="related-link">Investments &amp; Capital Hub<span>All investment tax topics</span></a>
+  </div>
+</div>
+<div class="source-row">Authority: IRC §1(h)(11) (qualified dividend income - preferential rate equal to net capital gain rates; definition of qualified dividend income; US corporation or qualified foreign corporation requirement); IRC §1(h)(11)(B)(iii) (qualified foreign corporation - US possession incorporation, comprehensive income tax treaty, or readily tradable on established US securities market); IRC §246(c) (holding period requirement for dividends to receive preferential treatment - more than 60 days in 121-day period; diminished risk of loss rule - days with offsetting positions do not count); IRC §1411 (Net Investment Income Tax - 3.8% surtax on lesser of net investment income or excess MAGI over threshold; $200,000 single/$250,000 MFJ - statutory, not inflation-indexed); IRS Rev. Proc. 2025-32 (2026 inflation-adjusted thresholds: 0% rate up to $49,450 single/$98,900 MFJ/$66,200 HOH; 15% rate up to $545,500 single/$613,700 MFJ; 20% rate above those amounts); IRC §199A(e)(3) (qualified REIT dividends - 20% deduction on ordinary REIT dividends; made permanent by OBBBA P.L. 119-21; reduces effective top rate from 37% to approximately 29.6% before NIIT); Form 1099-DIV Box 1a (total ordinary dividends) and Box 1b (qualified dividends - amount eligible for preferential rates; taxpayer must separately track holding periods; broker reporting may not reflect holding period adjustments); IRS Publication 550 (Investment Income and Expenses - qualified dividend definition, holding period rules, examples of qualified and nonqualified dividends).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button><button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)},{n:'Email',c:'#888',h:'mailto:?subject='+t+'&body='+u}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;<\/button>';html+='<\/div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'<\/a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link<\/button>';html+='<button onclick="svQR()" style="padding:13px 14px;border-left:3px solid #7dd3b0;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">QR Code<\/button>';html+='<\/div><div id="sv-qr" style="display:none;padding:0 22px 20px;text-align:center"><img id="sv-qr-img" src="" style="width:160px;height:160px;background:#fff;padding:8px" alt="QR Code"><p style="font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;font-family:Inter,sans-serif">Scan to open on another device<\/p><\/div><\/div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}function svQR(){var d=document.getElementById('sv-qr');var img=document.getElementById('sv-qr-img');if(d.style.display==='none'){img.src='https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+encodeURIComponent(location.href);d.style.display='block';}else{d.style.display='none';}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
 </div>

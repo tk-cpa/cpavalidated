@@ -260,6 +260,332 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRC §7701(b) (US resident definition); IRC §1291-1298 (PFIC); IRC §951; IRC §951A (GILTI); IRC §957 (CFC); IRC §679 (foreign trusts); IRC §6048; Form 3520; Form 3520-A; IRC §6038; Form 5471; 31 USC §5314; IRC §6038D; IRC §877A (exit tax); Treas. Reg. §301.7701-3 (check-the-box); Treas. Reg. §1.6012-1(b)(2) (dual-status); IRS Publication 519 (US Tax Guide for Aliens).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pre-Immigration Tax Planning Checklist | CPA Validated</title>
+<meta name="description" content="What to do before getting a US green card or visa. Pre-immigration tax planning checklist: entity restructuring, trust planning, retirement accounts, foreign pension reporting, PFIC elections, FBAR, and state tax exposure. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/pre-immigration-planning.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.checklist{display:flex;flex-direction:column;gap:0;border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.ci{display:grid;grid-template-columns:auto 1fr;gap:0;border-bottom:1px solid var(--ink-20)}
+.ci:last-child{border-bottom:none}
+.ci-num{background:var(--ink);color:var(--coral);font-family:var(--font-display);font-size:18px;font-weight:500;padding:16px 14px;display:flex;align-items:flex-start;min-width:48px;justify-content:center}
+.ci-body{padding:14px 16px}
+.ci-title{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.ci-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+.ci-auth{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-40);margin-top:5px}
+.ci-urgency{display:inline-block;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 7px;margin-bottom:5px;border:1px solid}
+.urgency-critical{background:var(--red-bg);color:var(--red);border-color:var(--red-b)}
+.urgency-high{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-b)}
+.urgency-medium{background:var(--blue-bg);color:var(--blue-acc);border-color:var(--blue-b)}
+.timeline{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0 28px}
+.tl-item{border:1px solid var(--ink-20);padding:14px}
+.tl-when{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:8px;font-family:var(--font-mono)}
+.tl-items{font-size:12px;color:var(--ink-60);line-height:1.8}
+.tl-items li{margin-left:12px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.timeline,.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}.ci-num,.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pre-Immigration Tax Planning Checklist | CPA Validated">
+  <meta property="og:description" content="What to do before getting a US green card or visa. Pre-immigration tax planning checklist: entity restructuring, trust planning, retirement accounts, foreign pension reporting, PFIC elections, FBAR, a">
+  <meta property="og:url" content="https://cpavalidated.com/pre-immigration-planning.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pre-Immigration Tax Planning Checklist | CPA Validated">
+  <meta name="twitter:description" content="What to do before getting a US green card or visa. Pre-immigration tax planning checklist: entity restructuring, trust planning, retirement accounts, foreign pension reporting, PFIC elections, FBAR, a">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Pre-Immigration Tax Planning Checklist | CPA Validated","description":"What to do before getting a US green card or visa. Pre-immigration tax planning checklist: entity restructuring, trust planning, retirement accounts, foreign pension reporting, PFIC elections, FBAR, a","url":"https://cpavalidated.com/pre-immigration-planning.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Pre-Immigration Tax Planning Checklist</h1>
+  <div class="sub">Before You Get a Green Card or US Visa &nbsp;&bull;&nbsp; Entity Planning &nbsp;&bull;&nbsp; Foreign Assets &nbsp;&bull;&nbsp; Pension Reporting</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §877A</span>
+    <span class="ph-meta-item">IRC §7701(b)</span>
+    <span class="ph-meta-item">IRC §1291-1298</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The day you become a US tax resident, the clock starts. Assets that could have been restructured, elections that could have been made, and income that could have been recognized at foreign rates - all of these opportunities close the moment US residency begins. Pre-immigration tax planning is not optional for high-net-worth individuals. It is essential.</p>
+
+<div class="callout">
+  <div class="callout-label">When US Tax Residency Begins</div>
+  <p>US tax residency begins on the first day you are present in the US as a lawful permanent resident (green card holder) or on the first day you meet the Substantial Presence Test (183 weighted days over 3 years). <strong>IRC §7701(b).</strong> From that date, you are taxed on worldwide income. Planning must be completed before that date - not after. For green card holders, this is typically the date of admission as a permanent resident.</p>
+</div>
+
+<h2>The Pre-Immigration Checklist</h2>
+
+<div class="checklist">
+  <div class="ci">
+    <div class="ci-num">1</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-critical">Critical - Do Before Entry</span>
+      <div class="ci-title">Recognize and Harvest Foreign Capital Gains</div>
+      <div class="ci-desc">Sell and repurchase appreciated foreign assets before becoming a US tax resident to step up the cost basis to fair market value. Once you are a US person, all subsequent appreciation is subject to US capital gains tax. A pre-immigration sale and repurchase resets the basis at the current market price - eliminating US tax on pre-immigration appreciation. This is one of the highest-impact planning steps available.</div>
+      <div class="ci-auth">IRC §1001; Treas. Reg. §1.1012-1(a)</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">2</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-critical">Critical - Do Before Entry</span>
+      <div class="ci-title">Address PFIC Holdings (Foreign Mutual Funds and Investment Funds)</div>
+      <div class="ci-desc">Foreign mutual funds, ETFs, and most foreign investment funds are Passive Foreign Investment Companies (PFICs) under IRC §1291-1298. Once you become a US person holding PFICs, the tax treatment is punitive: gains are allocated back to each year the fund was held and taxed at the highest ordinary income rate plus an interest charge. <strong>Options before entry:</strong> (1) Sell the funds entirely before becoming a US resident - no PFIC issue. (2) Make a QEF or mark-to-market election on the first day of US residency (requires the fund to provide PFIC Annual Information Statements, which many foreign funds will not do). (3) Restructure holdings into non-PFIC vehicles. Foreign funds held through tax-deferred accounts may have different treatment depending on treaty position.</div>
+      <div class="ci-auth">IRC §1291; IRC §1293; IRC §1296; Form 8621</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">3</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-critical">Critical - Do Before Entry</span>
+      <div class="ci-title">Restructure Foreign Business Entities</div>
+      <div class="ci-desc">Foreign corporations owned by incoming US persons may become Controlled Foreign Corporations (CFCs) subject to Subpart F income, GILTI (IRC §951A), and annual Form 5471 reporting. Before immigration: evaluate whether the foreign entity should be restructured, sold, or reorganized. Consider whether a check-the-box election (treating the foreign entity as a disregarded entity or partnership) would be advantageous. Timing matters - certain reorganizations must occur before the taxpayer becomes a US person.</div>
+      <div class="ci-auth">IRC §951; IRC §951A; IRC §957; Form 5471; Treas. Reg. §301.7701-3</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">4</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-high">High Priority</span>
+      <div class="ci-title">Inventory All Foreign Financial Accounts and Assets</div>
+      <div class="ci-desc">From the first day of US residency, FBAR (FinCEN 114) filing is required for any foreign financial accounts with aggregate value exceeding $10,000 at any point during the year. Form 8938 (FATCA) requires reporting of specified foreign financial assets above applicable thresholds. Create a complete inventory of all foreign bank accounts, brokerage accounts, pension accounts, life insurance policies with cash value, and interests in foreign entities before entry. Understand which will require annual reporting and compliance.</div>
+      <div class="ci-auth">31 USC §5314; IRC §6038D; FinCEN Form 114; Form 8938</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">5</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-high">High Priority</span>
+      <div class="ci-title">Analyze Foreign Pension Plans</div>
+      <div class="ci-desc">Foreign pension plans present significant complexity for incoming US residents. The key distinction is between purely governmental defined benefit pensions (where the individual has no personal account and no control over assets) and plans with an individual savings or investment component. Plans with a savings component - including employer-sponsored savings plans (e.g., Israeli Keren Hishtalmut, German Riester-Rente, Canadian RRSP) - are generally reportable on FBAR and Form 8938. Contributions to foreign pension plans after becoming a US person may not be deductible. Distributions from foreign pension plans are generally taxable in the US unless a treaty exemption applies. Treaty analysis is required for each specific plan and country.</div>
+      <div class="ci-auth">31 USC §5314; IRC §6038D; IRC §402(b); applicable tax treaties</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">6</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-high">High Priority</span>
+      <div class="ci-title">Consider Trust Planning</div>
+      <div class="ci-desc">Foreign trusts become subject to complex US reporting requirements once a US person becomes a grantor or beneficiary. A foreign grantor trust with a US grantor triggers Form 3520 and Form 3520-A reporting annually. Before immigration, consider whether existing foreign trusts should be restructured, whether the trust should be decanted or terminated, or whether assets should be distributed to the beneficiary before US residency begins. New foreign grantor trusts created after becoming a US person are generally treated as US grantor trusts for income tax purposes.</div>
+      <div class="ci-auth">IRC §679; IRC §6048; Form 3520; Form 3520-A</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">7</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-high">High Priority</span>
+      <div class="ci-title">Plan for the Dual-Status Tax Year</div>
+      <div class="ci-desc">In the year of immigration, the taxpayer is a nonresident alien for part of the year and a resident alien for the remainder. This is the "dual-status" year. The dual-status return (Form 1040 with a Form 1040-NR attachment) taxes US-source income for the nonresident period and worldwide income for the resident period. Significant planning opportunities exist in timing income recognition - for example, recognizing foreign income before the residency start date to avoid US tax on it. The dual-status rules and limitations are found in Treas. Reg. §1.6012-1(b)(2).</div>
+      <div class="ci-auth">IRC §7701(b); Treas. Reg. §1.6012-1(b)(2); Form 1040-NR</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">8</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-medium">Plan Ahead</span>
+      <div class="ci-title">Evaluate State Tax Exposure</div>
+      <div class="ci-desc">The state in which you establish residence matters significantly. California and New York impose income tax on worldwide income with no credit for taxes paid to foreign countries in some situations. States without income tax (Florida, Texas, Nevada, Wyoming, etc.) are worth considering for initial establishment of US domicile. Once you establish domicile in a high-tax state, changing it requires careful documentation and is subject to audit. Choosing your initial US state of residence is a one-time opportunity that should not be left to chance.</div>
+      <div class="ci-auth">State tax statutes; California Revenue and Taxation Code §17014-17018</div>
+    </div>
+  </div>
+  <div class="ci">
+    <div class="ci-num">9</div>
+    <div class="ci-body">
+      <span class="ci-urgency urgency-medium">Plan Ahead</span>
+      <div class="ci-title">Obtain an ITIN or SSN Before Filing</div>
+      <div class="ci-desc">US tax returns require either a Social Security Number (available once work-authorized) or an Individual Taxpayer Identification Number (ITIN) obtained via Form W-7. The dual-status year return cannot be filed without one. Apply for an ITIN before the first US tax filing deadline if you do not yet have an SSN. Processing times for ITINs can be 7-11 weeks.</div>
+      <div class="ci-auth">IRC §6109; Form W-7</div>
+    </div>
+  </div>
+</div>
+
+<h2>Planning Timeline</h2>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-when">12+ Months Before</div>
+    <ul class="tl-items">
+      <li>Full asset and entity inventory</li>
+      <li>Foreign pension analysis</li>
+      <li>PFIC identification and strategy</li>
+      <li>Foreign entity restructuring</li>
+      <li>Trust planning</li>
+      <li>State of initial residency decision</li>
+    </ul>
+  </div>
+  <div class="tl-item">
+    <div class="tl-when">3-6 Months Before</div>
+    <ul class="tl-items">
+      <li>Capital gains harvesting / basis step-up</li>
+      <li>PFIC fund liquidation or election preparation</li>
+      <li>Foreign account documentation</li>
+      <li>Treaty position analysis</li>
+      <li>Dual-status year income timing</li>
+    </ul>
+  </div>
+  <div class="tl-item">
+    <div class="tl-when">After Entry</div>
+    <ul class="tl-items">
+      <li>ITIN / SSN application</li>
+      <li>FBAR filing (first year)</li>
+      <li>Form 8938 with first return</li>
+      <li>Dual-status return preparation</li>
+      <li>PFIC elections on first return</li>
+      <li>Foreign pension treaty claims</li>
+    </ul>
+  </div>
+</div>
+
+<div class="note-box"><strong>The most expensive mistake in pre-immigration planning</strong> is doing nothing until after the green card is received. At that point, the step-up opportunity is gone, PFIC positions are locked in under punitive rules, and foreign entities have become CFCs with full Subpart F exposure. Planning must happen before the residency start date.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools</div>
+  <div class="related-links">
+    <a href="spt-calculator.html" class="related-link">Substantial Presence Test<span>US residency trigger · IRC §7701(b)</span></a>
+    <a href="fbar-checker.html" class="related-link">FBAR & Form 8938 Checker<span>Foreign account thresholds · 31 USC 5314</span></a>
+    <a href="closer-connection.html" class="related-link">Closer Connection Exception<span>Form 8840 · IRC §7701(b)(3)(B)</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Federal + all 50 states · IRC §1</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §7701(b) (US resident definition); IRC §1291-1298 (PFIC); IRC §951; IRC §951A (GILTI); IRC §957 (CFC); IRC §679 (foreign trusts); IRC §6048; Form 3520; Form 3520-A; IRC §6038; Form 5471; 31 USC §5314; IRC §6038D; IRC §877A (exit tax); Treas. Reg. §301.7701-3 (check-the-box); Treas. Reg. §1.6012-1(b)(2) (dual-status); IRS Publication 519 (US Tax Guide for Aliens).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and tk.cpa expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>

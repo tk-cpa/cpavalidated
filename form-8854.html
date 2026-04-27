@@ -305,6 +305,377 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRC §877A (mark-to-market expatriation tax for covered expatriates); IRC §877A(g)(1) (definition of covered expatriate); IRC §877A(b) (deferral election); IRC §877A(c) (specified tax-deferred accounts); IRC §877A(d) (eligible deferred compensation items); IRC §877A(f) (non-grantor trusts); IRC §2801 (succession tax on covered gifts and bequests at 40% rate); IRC §6039G (information reporting); IRC §877(e) (long-term resident definition - 8 of 15 tax years); Notice 2009-85 (mark-to-market regime guidance); Form 8854 (Initial and Annual Expatriation Statement); Form 708 (§2801 return); IRS, Expatriation Tax, irs.gov/individuals/international-taxpayers/expatriation-tax. 2026 thresholds: $211,000 average annual net income tax test, $910,000 mark-to-market exclusion, $2,000,000 net worth threshold (unchanged since enactment). Streamlined Procedures and Relief Procedures for Certain Former Citizens. State Department Form DS-4079 / DS-4080 / DS-4081 (citizenship relinquishment); Form I-407 (green card surrender). State Department fee for renunciation reduced from $2,350 to $450 effective April 13, 2026.</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 8854 and the US Exit Tax: What Happens When You Renounce | CPA Validated</title>
+<meta name="description" content="A plain-English guide to Form 8854 and the US exit tax. The three covered expatriate tests (net worth $2M, average net income tax $211K for 2026, 5-year compliance certification), the mark-to-market regime under IRC 877A, the $910K exclusion (2026), special rules for deferred compensation and tax-deferred accounts, the IRC 2801 succession tax on covered gifts and bequests (40% rate, no time limit), and what long-term green card holders need to know.">
+<link rel="canonical" href="https://cpavalidated.com/form-8854.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--amber:#8B6535;--amber-bg:#EDE8D8;--red:#9B3D3D;--red-bg:#EDE0DC;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:22px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:24px 0 10px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}
+.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}
+.callout p{font-size:14px;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+.callout strong{color:#fff}
+.example{background:var(--ink-10);border-left:3px solid var(--ink-60);padding:16px 18px;margin:18px 0;font-size:14px;line-height:1.7;color:var(--ink-80)}
+.example strong{color:var(--ink)}
+.test-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.test-table th{background:var(--ink);color:#fff;font-family:var(--font-display);font-weight:500;text-transform:uppercase;letter-spacing:.05em;font-size:11px;padding:12px;text-align:left}
+.test-table td{padding:12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);line-height:1.5;vertical-align:top}
+.test-table tr:last-child td{border-bottom:none}
+.test-table td:first-child{font-weight:600;color:var(--ink);width:30%}
+.calc-box{background:var(--ink);color:#fff;padding:18px 22px;margin:22px 0;font-family:var(--font-mono);font-size:14px;line-height:2}
+.calc-box .label{color:var(--coral);font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-sans);font-weight:700;margin-bottom:10px;display:block}
+.calc-box .row{display:flex;justify-content:space-between;border-bottom:1px dashed rgba(255,255,255,.2);padding:4px 0}
+.calc-box .row:last-of-type{border-bottom:none}
+.calc-box .total{border-top:1px solid rgba(255,255,255,.4);padding-top:10px;margin-top:10px;font-weight:700}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--red);line-height:1.7}
+.red-box strong{font-weight:700}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--green);line-height:1.7}
+.green-box strong{font-weight:700}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--amber);line-height:1.7}
+.note-box strong{font-weight:700}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}
+.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}
+.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}
+.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:36px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}.test-table{font-size:13px}.test-table td:first-child{width:auto}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Form 8854 and the US Exit Tax: What Happens When You Renounce | CPA Validated">
+  <meta property="og:description" content="A plain-English guide to Form 8854 and the US exit tax. The three covered expatriate tests (net worth $2M, average net income tax $211K for 2026, 5-year compliance certification), the mark-to-market r">
+  <meta property="og:url" content="https://cpavalidated.com/form-8854.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Form 8854 and the US Exit Tax: What Happens When You Renounce | CPA Validated">
+  <meta name="twitter:description" content="A plain-English guide to Form 8854 and the US exit tax. The three covered expatriate tests (net worth $2M, average net income tax $211K for 2026, 5-year compliance certification), the mark-to-market r">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Form 8854 and the US Exit Tax: What Happens When You Renounce | CPA Validated","description":"A plain-English guide to Form 8854 and the US exit tax. The three covered expatriate tests (net worth $2M, average net income tax $211K for 2026, 5-year compliance certification), the mark-to-market r","url":"https://cpavalidated.com/form-8854.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Form 8854 and the US Exit Tax</h1>
+  <div class="sub">Covered expatriate tests &nbsp;&bull;&nbsp; Mark-to-market regime &nbsp;&bull;&nbsp; The $910K exclusion &nbsp;&bull;&nbsp; The 2801 trap that never goes away</div>
+</div></div>
+<div class="back"><a href="canadian-tax-hub.html">← Canadian Tax Hub</a></div>
+<div class="article">
+
+<p class="lead">If you give up US citizenship or surrender a green card you've held for many years, the IRS does not just let you walk. There's a final form (Form 8854), a final tax calculation that pretends you sold everything you own the day before you leave, and a permanent rule that taxes any future gift or inheritance you give to a US relative at 40% - forever, with no expiration. The exit tax doesn't apply to everyone. Whether it applies to you depends on three specific tests at the moment of expatriation. Get them right and you walk clean. Get them wrong and the cost can be in the hundreds of thousands.</p>
+
+<div class="callout">
+  <div class="callout-label">The Two Categories</div>
+  <p>The exit tax under IRC §877A applies to two groups: <strong>US citizens who renounce their citizenship</strong>, and <strong>long-term residents</strong> (green card holders for at least 8 of the last 15 tax years) who surrender or abandon their green card. Both groups must file Form 8854. Whether the actual exit tax applies depends on the three covered expatriate tests below.</p>
+</div>
+
+<h2>The Three Covered Expatriate Tests</h2>
+
+<p>You're a "covered expatriate" if you meet <strong>any one</strong> of these three tests. Most expatriates with substantial assets meet at least one. Some meet all three.</p>
+
+<table class="test-table">
+  <tr>
+    <th>Test</th>
+    <th>How It Works</th>
+  </tr>
+  <tr>
+    <td>Net Worth Test</td>
+    <td><strong>Net worth of $2 million or more</strong> on the date of expatriation. Calculated using fair market value of all worldwide assets minus liabilities. Includes US and foreign property, retirement accounts, business interests, the family home. Mortgages and other debts reduce net worth, but the threshold itself is unchanged - $2M has been the line since the rule was enacted.</td>
+  </tr>
+  <tr>
+    <td>Income Tax Test</td>
+    <td><strong>Average annual net US income tax over the 5 years preceding expatriation exceeds the threshold.</strong> For 2026 expatriations, the threshold is <strong>$211,000</strong> (was $206,000 for 2025; adjusts annually for inflation). This is total federal income tax, not income - so you need to have actually paid tax above this amount on average for five consecutive years.</td>
+  </tr>
+  <tr>
+    <td>Compliance Certification Test</td>
+    <td>You <strong>must certify on Form 8854 under penalties of perjury that you complied with all federal tax obligations for the 5 tax years preceding expatriation</strong>. Any unfiled return, any FBAR miss, any unpaid balance, any incomplete Form 8938 - blocks certification. If you can't certify, you're a covered expatriate <em>regardless</em> of net worth or income tax.</td>
+  </tr>
+</table>
+
+<div class="red-box"><strong>The compliance test is the one that quietly catches most people.</strong> If you have any prior-year filing miss - a missed FBAR, an incomplete Form 8938, an unfiled 1040 from a year you thought you were below the threshold - you cannot truthfully sign the certification. That alone makes you a covered expatriate even if your net worth is $50,000 and your income tax has been $5,000 a year. The fix is to clean up the prior years before expatriating, often via the IRS Streamlined Procedures or relief programs for former citizens.</div>
+
+<h2>Two Narrow Exceptions</h2>
+
+<p>Two groups can qualify for an exception to covered expatriate status even if they meet the net worth or income tax tests, but only if they pass the compliance certification:</p>
+
+<h3>Dual Citizens at Birth</h3>
+
+<p>If you became a US citizen at birth and a citizen of another country at birth, and as of your expatriation date you continue to be a citizen of and taxed as a resident of that other country - and you have been a US resident for not more than 10 of the 15 tax years ending with the year of expatriation - you escape covered expatriate status by virtue of the net worth and income tax tests.</p>
+
+<h3>Minor Expatriates</h3>
+
+<p>Individuals who relinquish citizenship before age 18.5 and who were never a US resident for more than 10 tax years also qualify for the exception.</p>
+
+<p>Both exceptions still require the Form 8854 compliance certification - they only address the net worth and income tax prongs.</p>
+
+<h2>The Mark-to-Market Regime</h2>
+
+<p>If you are a covered expatriate, the day before your expatriation date is treated as if you sold everything you own at fair market value. The resulting gain (after the exclusion) is taxed at regular US rates as if it were realized capital gain.</p>
+
+<h3>The 2026 Exclusion: $910,000</h3>
+
+<p>The first $910,000 of net unrealized gain is excluded from the mark-to-market tax. This was $890,000 for 2025, adjusts annually. For someone with modest unrealized appreciation in their portfolio, the exclusion may eliminate the exit tax entirely. For someone with a large appreciated stock position or a successful business interest, the exclusion is a small fraction of total gain.</p>
+
+<div class="example">
+  <strong>How the math works.</strong> Daniel is a covered expatriate in 2026. His portfolio is worth $4 million on the day before expatriation. His basis (what he paid) is $1 million. Unrealized gain: $3 million.
+  <div class="calc-box">
+    <span class="label">Daniel's exit tax calculation (2026)</span>
+    <div class="row"><span>FMV of all assets</span><span>$4,000,000</span></div>
+    <div class="row"><span>Basis</span><span>($1,000,000)</span></div>
+    <div class="row"><span>Net unrealized gain</span><span>$3,000,000</span></div>
+    <div class="row"><span>Less 2026 exclusion</span><span>($910,000)</span></div>
+    <div class="row total"><span>Taxable mark-to-market gain</span><span>$2,090,000</span></div>
+  </div>
+  Assuming long-term capital gains treatment at the top 20% federal rate plus 3.8% Net Investment Income Tax: roughly $497,500 in exit tax.
+</div>
+
+<h3>What's Marked to Market</h3>
+
+<p>The mark-to-market regime applies to most worldwide property of the covered expatriate, including:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Stocks, bonds, mutual funds, ETFs in taxable accounts</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Real estate (US or foreign)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Business interests (closely-held stock, partnership interests, LLC membership interests)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Cryptocurrency</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Precious metals, art, collectibles</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Direct interests in non-grantor trusts (with separate valuation rules)</li>
+</ul>
+
+<h3>What Has Special Rules (Not Marked to Market)</h3>
+
+<p>Three categories of property are <em>not</em> subject to the basic mark-to-market regime - they have their own treatment:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Eligible deferred compensation items.</strong> These include non-qualified deferred comp from a US employer where the payor agrees to withhold 30% on payment. Examples: certain pension annuities, deferred bonuses, restricted stock units that haven't vested. The covered expatriate elects to subject these to 30% withholding when paid out (no exit tax now); or alternatively can include the present value in income immediately and pay tax at exit.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Specified tax-deferred accounts.</strong> IRAs, 401(k)s, HSAs, qualified plans. These are <strong>fully taxable on the day before expatriation</strong> as if the entire account was distributed - no early-withdrawal penalty applies, but the full account value above basis goes on the final-year 1040.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Non-grantor trust interests.</strong> Distributions from non-grantor trusts to the expatriate after expatriation are subject to 30% withholding under §877A(f), with possible election to include the present value at exit.</li>
+</ul>
+
+<h2>Deferral Election</h2>
+
+<p>The mark-to-market tax can be a substantial cash outflow with no actual sale to fund it. IRC §877A(b) allows the covered expatriate to elect to defer payment of the exit tax on specific assets until the actual sale.</p>
+
+<p>The deferral comes with conditions:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Interest accrues on the deferred amount at the underpayment rate</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Adequate security must be posted (typically a bond or pledge of the deferred property)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">An irrevocable waiver of treaty rights that would otherwise reduce the tax</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Annual Form 8854 filings required after expatriation to track the deferred amount</li>
+</ul>
+
+<h2>The IRC §2801 Succession Tax: The Permanent Trap</h2>
+
+<p>This is the rule that surprises people the most, and the one that has the longest reach.</p>
+
+<p>Once you're a covered expatriate, <strong>any gift or bequest you give to a US citizen or resident is subject to a 40% tax in the hands of the recipient</strong>. There is no annual exclusion. There is no expiration. There is no statute of limitations. This rule applies for the rest of your life and after your death.</p>
+
+<p>The recipient (the US person receiving the gift or bequest) is the one who pays the tax, not you. They report the gift on Form 708 (the §2801 return) and remit the tax. If they don't know you were a covered expatriate, they're presumed to be receiving a covered gift unless they can document otherwise.</p>
+
+<div class="red-box"><strong>This is permanent.</strong> Twenty years after expatriation, when a covered expatriate dies and leaves $5 million to a US-citizen niece, the niece pays $2 million in §2801 tax. The expatriate's foreign citizenship and decades of being a non-US person change nothing. The covered status is forever.</div>
+
+<h3>How to Avoid §2801 Going Forward</h3>
+
+<p>The only way to avoid §2801 exposure for future generations is to <strong>not be a covered expatriate at the moment of expatriation</strong>. This is the strongest argument for careful pre-expatriation planning - the exit tax itself is a one-time hit, but §2801 is a lifelong drag on future generosity.</p>
+
+<h2>Filing Mechanics</h2>
+
+<h3>The Year of Expatriation</h3>
+
+<p>You file a final dual-status return for the year that contains your expatriation date - resident period for the part of the year before expatriation, non-resident period after. See our <a href="dual-status-returns.html">dual-status returns article</a> for the mechanics.</p>
+
+<p>Form 8854 (Initial and Annual Expatriation Statement) is attached to the final return:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Part I:</strong> Personal information, citizenship status, expatriation date</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Part II Section A:</strong> Income tax test computation, net worth statement, compliance certification</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Part II Section B:</strong> Detailed balance sheet (used for net worth determination)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Part II Section C:</strong> Mark-to-market gain or loss schedule</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Part II Section D:</strong> Deferral election if applicable</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Part III, IV:</strong> For annual filings post-expatriation if you have deferred items</li>
+</ul>
+
+<p>Penalty for failure to file Form 8854 is $10,000 per year, and the IRS will treat you as a covered expatriate by default if you fail to file - regardless of your actual numbers.</p>
+
+<h3>Annual Filings After Expatriation</h3>
+
+<p>Even after the year of expatriation, Form 8854 must continue to be filed annually if any of the following apply:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">You deferred tax on any property under the §877A(b) election</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">You have an eligible deferred compensation item</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">You have an interest in a non-grantor trust</li>
+</ul>
+
+<p>The annual filings continue until the deferred items are fully resolved (paid out, distributed, or terminated).</p>
+
+<h2>Long-Term Resident Specifics</h2>
+
+<p>The exit tax applies not just to citizens but to "long-term residents" - green card holders for at least 8 of the past 15 tax years.</p>
+
+<p>The 8-of-15 count: you are a long-term resident if you held lawful permanent resident status (i.e., a green card) for any portion of 8 of the 15 tax years ending with the year your status terminates. Even one day of green card residency in a tax year counts as a "year" for this purpose.</p>
+
+<div class="green-box"><strong>The pre-8-year exit window.</strong> Green card holders who realize the exit tax is in their future can avoid LTR status by surrendering the green card in year 7 (or earlier) of holding it. Once you cross the 8-of-15 threshold, you're an LTR and the same expatriation rules apply as for citizens. This is the cleanest planning move and the most commonly used by deliberate expatriates.</div>
+
+<h3>The Treaty Tie-Breaker Path for Green Card Holders</h3>
+
+<p>A green card holder who is a tax resident of a treaty country can claim non-US-resident status under the treaty residency tie-breaker (e.g., Article IV of the US-Canada treaty). For most US tax purposes, this works - but for §877A purposes, claiming the treaty tie-breaker actually <strong>triggers an expatriation event</strong> on the date the treaty position is taken. So a green card holder cannot use the treaty to avoid the exit tax - taking the treaty position is itself the expatriation.</p>
+
+<h2>Practical Recommendations</h2>
+
+<p><strong>Plan the timing well in advance.</strong> The 5-year income tax averaging means a single high-income year before expatriation can push you into covered status. If you have control over the timing of a large bonus, business sale, or stock vesting, consider the impact on the 5-year average.</p>
+
+<p><strong>Clean up prior compliance before announcing intent.</strong> The Streamlined Procedures (for non-willful past failures) and the Relief Procedures for Certain Former Citizens (for those who were already non-citizens) require that they be initiated <em>before</em> the IRS contacts you. Once you announce or take steps toward expatriation, the available paths narrow.</p>
+
+<p><strong>Get fair market value documentation.</strong> Net worth and mark-to-market valuations need to be defensible. For closely-held businesses, real estate, and illiquid assets, get a qualified appraisal as of the day before expatriation. The IRS has been increasing audit attention on Form 8854 valuations - documentation matters.</p>
+
+<p><strong>Consider gift planning before expatriation.</strong> Once you're a covered expatriate, all future gifts to US persons are §2801 events. Gifts <em>before</em> expatriation are subject to normal US gift tax rules (with the lifetime exemption available, currently far above $13M). For someone planning to gift substantial wealth to US-citizen children, the timing of gifts vs. expatriation matters significantly.</p>
+
+<p><strong>Don't underestimate the renunciation fee, even though it's now lower.</strong> Effective April 13, 2026, the State Department fee for renouncing US citizenship dropped from $2,350 to $450. This is a State Department fee, separate from any tax. The fee for surrendering a green card (Form I-407) has always been $0.</p>
+
+<p><strong>For Russian-speaking and other immigrant clients near the LTR boundary:</strong> the difference between holding a green card for 7.5 years vs 8.5 years is not trivial - the latter brings full LTR status and the §877A regime, the former does not. If permanent residence is genuinely no longer the plan, surrender before crossing the line.</p>
+
+<div class="related">
+  <div class="related-title">Related Articles</div>
+  <div class="related-links">
+    <a href="canadian-tax-hub.html" class="related-link">Canadian Tax Hub<span>Cross-border landing page</span></a>
+    <a href="dual-status-returns.html" class="related-link">Dual-Status Returns<span>The final year mechanics</span></a>
+    <a href="us-canada-tax-treaty.html" class="related-link">US-Canada Tax Treaty<span>The treaty tie-breaker trap for LTRs</span></a>
+    <a href="https://tk.cpa" target="_blank" class="related-link">Engage tk.cpa<span>Pre-expatriation planning</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §877A (mark-to-market expatriation tax for covered expatriates); IRC §877A(g)(1) (definition of covered expatriate); IRC §877A(b) (deferral election); IRC §877A(c) (specified tax-deferred accounts); IRC §877A(d) (eligible deferred compensation items); IRC §877A(f) (non-grantor trusts); IRC §2801 (succession tax on covered gifts and bequests at 40% rate); IRC §6039G (information reporting); IRC §877(e) (long-term resident definition - 8 of 15 tax years); Notice 2009-85 (mark-to-market regime guidance); Form 8854 (Initial and Annual Expatriation Statement); Form 708 (§2801 return); IRS, Expatriation Tax, irs.gov/individuals/international-taxpayers/expatriation-tax. 2026 thresholds: $211,000 average annual net income tax test, $910,000 mark-to-market exclusion, $2,000,000 net worth threshold (unchanged since enactment). Streamlined Procedures and Relief Procedures for Certain Former Citizens. State Department Form DS-4079 / DS-4080 / DS-4081 (citizenship relinquishment); Form I-407 (green card surrender). State Department fee for renunciation reduced from $2,350 to $450 effective April 13, 2026.</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Expatriation is a one-way decision with significant tax and legal consequences. The mark-to-market regime, §2801 succession tax, and compliance certification are all highly fact-specific and depend on individual asset composition, prior compliance history, and citizenship status. Consult a qualified cross-border tax professional well in advance of any expatriating act. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa Visit <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

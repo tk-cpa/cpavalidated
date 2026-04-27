@@ -206,6 +206,278 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRS Notice 2014-21 (cryptocurrency as property for federal tax purposes); Rev. Rul. 2023-14 (staking rewards - gross income when received, rejects Jarrett position); IRC §1001 (computation of gain or loss on property dispositions); IRC §1221 (definition of capital asset - crypto is capital asset unless held as inventory); IRC §1(h) (preferential tax rates on long-term capital gains); IRC §1(h)(5) (28% maximum rate on collectibles - potential application to NFTs); IRC §1091 (wash sale rule - does not apply to property, only stock and securities); IRC §61 (gross income - includes compensation received in crypto, staking rewards, mining rewards); IRC §83 (property transferred in connection with services - basis and income recognition); IRC §6045 (broker reporting - expanded to digital asset brokers by IIJA P.L. 117-58); IRC §6045(g) (digital asset broker definition); Form 1099-DA (Digital Asset Proceeds from Broker Transactions - effective for 2025 transactions); Rev. Proc. 2024-28 (safe harbor for specific identification using universal method by account/wallet); IRS FAQ on Virtual Currency (irs.gov/virtualcurrency, updated 2024); Jarrett v. United States, No. 3:21-cv-00419 (M.D. Tenn. 2022) - IRS position rejected per Rev. Rul. 2023-14.</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cryptocurrency Cost Basis & Tax Guide: HIFO, FIFO, Staking & Forks (2026) | CPA Validated</title>
+<meta name="description" content="Crypto tax rules: HIFO vs. FIFO vs. specific identification, Rev. Rul. 2023-14 on staking rewards, hard fork taxation, DeFi, wash sale rules (do not apply), broker reporting under IIJA, Form 1099-DA, and record-keeping requirements. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/cryptocurrency-tax-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cryptocurrency Cost Basis & Tax Guide: HIFO, FIFO, Staking & Forks (2026) | CPA Validated">
+  <meta property="og:description" content="Crypto tax rules: HIFO vs. FIFO vs. specific identification, Rev. Rul. 2023-14 on staking rewards, hard fork taxation, DeFi, wash sale rules (do not apply), broker reporting under IIJA, Form 1099-DA, ">
+  <meta property="og:url" content="https://cpavalidated.com/cryptocurrency-tax-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cryptocurrency Cost Basis & Tax Guide: HIFO, FIFO, Staking & Forks (2026) | CPA Validated">
+  <meta name="twitter:description" content="Crypto tax rules: HIFO vs. FIFO vs. specific identification, Rev. Rul. 2023-14 on staking rewards, hard fork taxation, DeFi, wash sale rules (do not apply), broker reporting under IIJA, Form 1099-DA, ">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Cryptocurrency Cost Basis & Tax Guide: HIFO, FIFO, Staking & Forks (2026) | CPA Validated","description":"Crypto tax rules: HIFO vs. FIFO vs. specific identification, Rev. Rul. 2023-14 on staking rewards, hard fork taxation, DeFi, wash sale rules (do not apply), broker reporting under IIJA, Form 1099-DA, ","url":"https://cpavalidated.com/cryptocurrency-tax-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Cryptocurrency Cost Basis & Tax Guide (2026)</h1>
+  <div class="sub">HIFO vs. FIFO vs. Specific ID &nbsp;&bull;&nbsp; Staking &nbsp;&bull;&nbsp; Hard Forks &nbsp;&bull;&nbsp; DeFi &nbsp;&bull;&nbsp; Form 1099-DA &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">Notice 2014-21</span>
+    <span class="ph-meta-item">Rev. Rul. 2023-14</span>
+    <span class="ph-meta-item">IRC §1001</span>
+    <span class="ph-meta-item">Form 8949</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The IRS treats cryptocurrency as property - not currency - under Notice 2014-21. Every disposition of crypto is a taxable event: every sale, every exchange of one crypto for another, every purchase made with crypto. The cost basis method chosen determines how much gain or loss is recognized and whether it is short-term (ordinary rates) or long-term (preferential rates). With new Form 1099-DA broker reporting requirements taking effect in 2025, the era of informal crypto record-keeping is over.</p>
+
+<div class="callout">
+  <div class="callout-label">Property, Not Currency - The Foundational Rule</div>
+  <p>IRS Notice 2014-21 established that virtual currency is treated as property for federal tax purposes. General tax principles applicable to property transactions apply to cryptocurrency. <strong>Every exchange of crypto for goods, services, or other crypto is a taxable disposition</strong> - the same as selling stock. The gain or loss is the difference between the fair market value received and the taxpayer's adjusted basis in the crypto disposed of. This applies regardless of whether the exchange produces a profit - losses are also reportable.</p>
+</div>
+
+<h2>Cost Basis Methods: FIFO, HIFO, and Specific Identification</h2>
+
+<p>When a taxpayer holds multiple lots of the same cryptocurrency purchased at different times and prices, they must choose a method for identifying which units are being sold. The choice significantly affects the amount and character of gain recognized.</p>
+
+<table class="key-table">
+  <tr><th>Method</th><th>How It Works</th><th>Best When</th><th>IRS Status</th></tr>
+  <tr><td><strong>FIFO</strong><br>(First In, First Out)</td><td>Oldest purchased units are treated as sold first. Default method if no specific identification is made.</td><td>Prices are declining (older units have higher basis); or when simplicity is the priority</td><td>Clearly permitted. Default if no election made.</td></tr>
+  <tr><td><strong>HIFO</strong><br>(Highest In, First Out)</td><td>Units with the highest cost basis are treated as sold first, minimizing gain recognized in each transaction.</td><td>Minimizing current-year gain is the priority; when holding period is not a concern</td><td>Permitted as a form of specific identification if adequate records support it per Rev. Proc. 2024-28</td></tr>
+  <tr><td><strong>Specific Identification</strong></td><td>Taxpayer identifies the exact lot(s) being sold at the time of each transaction - by acquisition date, price, and exchange.</td><td>Optimizing for long-term vs. short-term character; harvesting specific losses</td><td>Permitted if taxpayer can adequately identify the specific units at the time of sale</td></tr>
+  <tr><td><strong>LIFO</strong><br>(Last In, First Out)</td><td>Most recently purchased units are treated as sold first.</td><td>Prices are rising</td><td>Not specifically addressed by IRS for crypto; generally permitted for non-inventory property but risky without clear IRS endorsement</td></tr>
+</table>
+
+<div class="note-box"><strong>Specific ID requires contemporaneous documentation.</strong> To use specific identification, the taxpayer must identify the specific units being disposed of at the time of each transaction - not after the fact. This requires records of each purchase lot (date, quantity, price, exchange) and documentation connecting each sale to a specific lot. Rev. Proc. 2024-28 provides a safe harbor for specific identification using wallet-by-wallet or account-by-account tracking with the universal method applied within each account.</div>
+
+<h2>What Is a Taxable Event?</h2>
+
+<p>The following events all trigger gain or loss recognition for cryptocurrency:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Selling crypto for fiat currency</strong> (USD, EUR, etc.) - the most straightforward taxable event</li>
+  <li><strong>Exchanging one crypto for another</strong> - trading Bitcoin for Ethereum is a disposition of Bitcoin at its FMV on the exchange date</li>
+  <li><strong>Using crypto to purchase goods or services</strong> - paying for a coffee with Bitcoin is a disposition of Bitcoin at FMV</li>
+  <li><strong>Receiving crypto as compensation</strong> - ordinary income at FMV on receipt date; subsequent sale triggers additional capital gain or loss</li>
+  <li><strong>Staking rewards received</strong> - ordinary income at FMV when received per Rev. Rul. 2023-14; basis equals FMV at receipt</li>
+  <li><strong>Mining rewards</strong> - ordinary income at FMV when mined; subject to self-employment tax for miners operating as a trade or business</li>
+  <li><strong>Hard fork proceeds received</strong> - ordinary income at FMV when received and under dominion and control per Rev. Rul. 2023-14</li>
+  <li><strong>Airdrops received</strong> - ordinary income at FMV when received and under dominion and control</li>
+</ul>
+
+<p>The following events are generally <em>not</em> taxable events:</p>
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>Transferring crypto between wallets or exchanges you own (no change in ownership)</li>
+  <li>Purchasing crypto with fiat currency (no disposition - creates a new basis)</li>
+  <li>Gifting crypto (no gain to the donor at time of gift; donee takes carry-over basis)</li>
+  <li>Donating crypto to charity (no gain recognized; fair market value deduction available)</li>
+</ul>
+
+<h2>Staking Rewards: Rev. Rul. 2023-14</h2>
+
+<p>Revenue Ruling 2023-14 resolved a significant open question: staking rewards are includable in gross income when received. The ruling held that when a taxpayer receives new units of cryptocurrency as rewards for validating transactions on a proof-of-stake blockchain, those rewards constitute gross income in the amount of the FMV of the new units at the time they are received. The taxpayer's basis in the staking rewards equals the FMV at time of receipt, and subsequent sale triggers capital gain or loss.</p>
+
+<div class="note-box"><strong>Jarrett case was not followed.</strong> The Jarrett v. United States case (M.D. Tenn. 2022) had held that staking rewards were not income until sold, analogizing them to newly created property. The IRS issued Rev. Rul. 2023-14 specifically to reject this position as the IRS's official view. Taxpayers relying on the Jarrett rationale to defer income from staking rewards should be aware that the IRS's position is directly contrary.</note-box>
+
+<h2>Hard Forks and Airdrops</h2>
+
+<p>When a cryptocurrency blockchain forks and the taxpayer receives new cryptocurrency units as a result, those units are ordinary income when received - measured at FMV at the time the taxpayer has dominion and control over them. "Dominion and control" means the taxpayer has the ability to sell, exchange, or transfer the new units. If the new fork tokens are not supported by the taxpayer's exchange and cannot be transferred or sold, income is not recognized until the taxpayer has actual control.</p>
+
+<p>Airdrops (unsolicited transfers of new tokens to wallet addresses) follow the same rule: ordinary income at FMV when received and the taxpayer has dominion and control. Many airdropped tokens have near-zero market value at receipt; the income recognized may be immaterial, but must still be reported.</p>
+
+<h2>DeFi: Liquidity Pools, Yield Farming, Wrapping</h2>
+
+<p>Decentralized finance (DeFi) transactions present the most complex crypto tax questions, many of which remain unresolved by formal IRS guidance. The IRS has not issued specific guidance on liquidity pool contributions, yield farming rewards, or wrapped token transactions. Current practitioner positions:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Adding liquidity to a pool:</strong> Contributing two assets to a liquidity pool in exchange for LP tokens is likely a taxable exchange of the contributed assets at FMV. The LP tokens have a basis equal to FMV of contributed assets.</li>
+  <li><strong>Yield farming rewards:</strong> Rewards received for providing liquidity are likely ordinary income at FMV when received, analogous to staking rewards under Rev. Rul. 2023-14.</li>
+  <li><strong>Wrapped tokens (e.g., WBTC for BTC):</strong> Wrapping native tokens into wrapped versions may or may not be a taxable exchange depending on whether the wrapped token is substantially identical property. No clear IRS guidance exists.</li>
+  <li><strong>NFT sales:</strong> Gain on NFT sales is capital gain (long or short-term depending on holding period). However, NFTs may be classified as collectibles subject to the 28% maximum rate under IRC §1(h)(5) if they represent rights in art, music, or other collectibles.</li>
+</ul>
+
+<h2>The Wash Sale Rule Does Not Apply - Yet</h2>
+
+<p>IRC §1091 (the wash sale rule) applies to stock and securities - not to property. Since the IRS treats cryptocurrency as property rather than a security, the wash sale rule currently does not apply. A taxpayer can sell Bitcoin at a loss, immediately buy it back, and still recognize the loss. This creates a tax-loss harvesting opportunity that does not exist for stocks.</p>
+
+<div class="red-box"><strong>Legislative risk.</strong> Congress has repeatedly proposed extending the wash sale rule to digital assets. OBBBA did not include this provision, but it remains a possibility in future legislation. Taxpayers using crypto loss harvesting strategies should monitor legislative developments closely.</div>
+
+<h2>Form 1099-DA: New Broker Reporting (2025 Onward)</h2>
+
+<p>The Infrastructure Investment and Jobs Act (IIJA) expanded the definition of "broker" under IRC §6045 to include digital asset exchanges and custodians. Beginning with transactions in 2025, brokers are required to issue Form 1099-DA (Digital Asset Proceeds from Broker Transactions) to customers and file with the IRS. The form reports gross proceeds from digital asset sales.</p>
+
+<p>Cost basis reporting on Form 1099-DA is being phased in - exchanges must report basis for assets acquired on or after January 1, 2025. Assets acquired before 2025 ("covered" vs. "noncovered" securities terminology applies) will be reported as gross proceeds only, with taxpayers responsible for their own basis tracking. Taxpayers who have not maintained adequate cost basis records for pre-2025 holdings should work with a tax professional to reconstruct records before the reporting mismatch creates IRS notices.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="crypto-tax-guide.html" class="related-link">Crypto Tax Basics<span>Fundamentals &middot; Notice 2014-21</span></a>
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>Short vs. long-term rates &middot; NIIT</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>3.8% on crypto gains &middot; IRC §1411</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Model your crypto gain tax impact</span></a>
+    <a href="form-1099-guide.html" class="related-link">1099 Rules Guide<span>Form 1099-DA &middot; Broker reporting 2025</span></a>
+    <a href="hnw-planning-guide.html" class="related-link">HNW Planning Guide<span>Charitable donation of crypto &middot; DAFs</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRS Notice 2014-21 (cryptocurrency as property for federal tax purposes); Rev. Rul. 2023-14 (staking rewards - gross income when received, rejects Jarrett position); IRC §1001 (computation of gain or loss on property dispositions); IRC §1221 (definition of capital asset - crypto is capital asset unless held as inventory); IRC §1(h) (preferential tax rates on long-term capital gains); IRC §1(h)(5) (28% maximum rate on collectibles - potential application to NFTs); IRC §1091 (wash sale rule - does not apply to property, only stock and securities); IRC §61 (gross income - includes compensation received in crypto, staking rewards, mining rewards); IRC §83 (property transferred in connection with services - basis and income recognition); IRC §6045 (broker reporting - expanded to digital asset brokers by IIJA P.L. 117-58); IRC §6045(g) (digital asset broker definition); Form 1099-DA (Digital Asset Proceeds from Broker Transactions - effective for 2025 transactions); Rev. Proc. 2024-28 (safe harbor for specific identification using universal method by account/wallet); IRS FAQ on Virtual Currency (irs.gov/virtualcurrency, updated 2024); Jarrett v. United States, No. 3:21-cv-00419 (M.D. Tenn. 2022) - IRS position rejected per Rev. Rul. 2023-14.</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

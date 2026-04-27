@@ -172,6 +172,244 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §6212 (notice of deficiency - the 90-day letter; taxpayer right to petition Tax Court); IRC §6213 (restrictions on assessment - IRS cannot assess tax before the 90-day letter period expires); IRC §6321-6323 (federal tax lien - arises when demand for payment is made and taxpayer refuses or neglects to pay); IRC §6330 (Collection Due Process hearing - right to hearing before levy; 30-day request window after LT11 or Letter 1058); IRC §6331 (levy - IRS authority to seize wages, bank accounts, and property after final notice); IRC §6343 (release of levy); IRC §7803(a)(3) (Taxpayer Bill of Rights - codified right to be informed, right to challenge IRS position, right to appeal, right to retain representation, right to a fair and just tax system); IRC §6651 (failure to file and failure to pay penalties); IRC §6656 (failure to deposit penalty); First-Time Penalty Abatement (administrative policy under IRM 20.1.1.3.6.1); IRS Publication 594 (The IRS Collection Process); IRS Publication 1 (Your Rights as a Taxpayer - Taxpayer Bill of Rights summary); Taxpayer Advocate Service: 1-877-777-4778 or taxpayeradvocate.irs.gov.</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IRS Notices Explained: CP2000, CP11, CP14 & How to Respond (2026) | CPA Validated</title>
+<meta name="description" content="Plain-English guide to the most common IRS notices: CP2000 (income mismatch), CP11 and CP12 (math errors), CP14 (balance due), LT11 and Letter 1058 (final notice before levy). What each notice means, your rights, response deadlines, and when to get help.">
+<link rel="canonical" href="https://cpavalidated.com/irs-notice-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IRS Notices Explained: CP2000, CP11, CP14 & How to Respond (2026)">
+<meta property="og:description" content="What IRS notices mean and what to do: CP2000 income mismatch, CP14 balance due, LT11 levy warning, CP501-CP503 collection. Response deadlines and rights explained.">
+<meta property="og:url" content="https://cpavalidated.com/irs-notice-guide.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"IRS Notices Explained: CP2000, CP11, CP14 & How to Respond","url":"https://cpavalidated.com/irs-notice-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.notice-card{background:var(--white);border:1px solid var(--ink-20);border-left:4px solid var(--coral);padding:18px 20px;margin-bottom:16px}
+.notice-id{font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--coral);margin-bottom:6px}
+.notice-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.notice-what{font-size:13px;color:var(--ink-80);line-height:1.6;margin-bottom:8px}
+.notice-action{font-size:12px;color:var(--ink-60);font-style:italic;line-height:1.5}
+.notice-urgent{border-left-color:var(--red)}.notice-urgent .notice-id{color:var(--red)}
+.notice-amber{border-left-color:var(--amber)}.notice-amber .notice-id{color:var(--amber)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html" class="active">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>IRS Notices Explained: What They Mean &amp; What to Do</h1>
+  <div class="sub">CP2000 &nbsp;&bull;&nbsp; CP14 &nbsp;&bull;&nbsp; CP501-503 &nbsp;&bull;&nbsp; LT11 Levy Warning &nbsp;&bull;&nbsp; Deadlines &nbsp;&bull;&nbsp; Your Rights</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6212</span>
+    <span class="ph-meta-item">IRC §6330</span>
+    <span class="ph-meta-item">Taxpayer Bill of Rights</span>
+  </div>
+</div></div>
+<div class="back"><a href="state-compliance.html">&#8592; State &amp; Compliance</a></div>
+<div class="article">
+
+<p class="lead">Getting a letter from the IRS is unsettling, but most IRS notices are not as serious as they look. Many are routine requests for information, notification of minor adjustments, or balance due reminders. The key is understanding what each notice actually says, responding within the deadline, and knowing when the situation requires professional help. Ignoring IRS mail is the one thing that turns a manageable situation into a serious one.</p>
+
+<div class="callout">
+  <div class="callout-label">First: Verify It Is Real</div>
+  <p>IRS scams are rampant. The real IRS communicates by mail to your address on file - not by phone calls demanding immediate payment, not by email, not by text message. If you receive a call claiming to be from the IRS demanding immediate payment or threatening arrest, hang up. It is a scam. If you receive a letter and want to verify it, call the IRS directly at 1-800-829-1040 using the number from IRS.gov - not the number on the letter.</p>
+</div>
+
+<h2>The Most Common IRS Notices</h2>
+
+<div class="notice-card notice-amber">
+  <div class="notice-id">CP2000</div>
+  <div class="notice-title">Proposed Changes to Your Tax Return - Income Mismatch</div>
+  <div class="notice-what">The IRS received 1099s, W-2s, or other income reports that do not match your tax return. The CP2000 proposes additional taxes, penalties, and interest based on the difference. This is not a bill - it is a proposal. You have the right to agree or disagree.</div>
+  <div class="notice-action">Deadline: typically 60 days from the notice date. If you agree, respond with payment or payment agreement. If you disagree (because you reported the income differently, the 1099 was incorrect, or you have offsetting deductions), respond in writing with documentation explaining your position. Do not ignore - if you do not respond, the IRS will assess the proposed amount.</div>
+</div>
+
+<div class="notice-card">
+  <div class="notice-id">CP11 / CP12</div>
+  <div class="notice-title">Math Error - Changes Made to Your Return</div>
+  <div class="notice-what">The IRS made a math correction to your return. CP11 means the correction resulted in a balance due. CP12 means it resulted in a reduced refund. The IRS has already made the change - you are being notified after the fact.</div>
+  <div class="notice-action">Review the notice to understand what was corrected. If you believe the IRS made an error, you have 60 days to request an abatement of the adjustment. If you agree, pay any balance due or accept the reduced refund.</div>
+</div>
+
+<div class="notice-card notice-amber">
+  <div class="notice-id">CP14</div>
+  <div class="notice-title">First Notice of Balance Due</div>
+  <div class="notice-what">You have unpaid taxes for a specific year. This is the first collection notice. Interest and failure-to-pay penalties are accruing daily on the unpaid amount.</div>
+  <div class="notice-action">Pay the balance in full to stop interest accrual, or contact the IRS to set up a payment plan (installment agreement). If you cannot pay, explore Currently Not Collectible status or an Offer in Compromise. Do not ignore - ignoring CP14 leads to CP501, CP502, CP503, and eventually levy notices.</div>
+</div>
+
+<div class="notice-card">
+  <div class="notice-id">CP501 / CP502 / CP503</div>
+  <div class="notice-title">Reminder Notices - Balance Still Owed</div>
+  <div class="notice-what">Follow-up reminders after CP14. The balance is increasing as interest and penalties accrue. These are the escalating collection sequence before the IRS proceeds to enforce collection.</div>
+  <div class="notice-action">Respond and pay or set up a payment arrangement before the sequence reaches the levy stage. Each notice gives you an opportunity to resolve the balance before more aggressive collection begins.</div>
+</div>
+
+<div class="notice-card notice-urgent">
+  <div class="notice-id">LT11 / Letter 1058</div>
+  <div class="notice-title">Final Notice of Intent to Levy - Your Rights to a Hearing</div>
+  <div class="notice-what">This is a serious notice. The IRS is informing you it intends to seize (levy) your wages, bank accounts, Social Security benefits, or other assets. This is the last notice before enforcement action. It also notifies you of your right to a Collection Due Process (CDP) hearing.</div>
+  <div class="notice-action"><strong>You have 30 days from the notice date to request a CDP hearing.</strong> Filing a CDP hearing request stops the levy while the hearing is pending. Miss this 30-day window and you lose your most important protection against immediate levy. If you receive LT11 or Letter 1058, consult a tax professional immediately - this is not a situation to navigate alone.</div>
+</div>
+
+<div class="notice-card notice-amber">
+  <div class="notice-id">CP90 / CP297</div>
+  <div class="notice-title">Final Notice - Intent to Seize Assets (Levy Already Authorized)</div>
+  <div class="notice-what">The levy process is underway. Depending on the type of property, seizure may be imminent. CP90 is for individuals; CP297 is for businesses.</div>
+  <div class="notice-action">Act immediately. Contact the IRS or a tax professional the same day. You may still be able to stop the levy by requesting a CDP hearing if you have not already, or by making payment arrangements. Time is critical.</div>
+</div>
+
+<div class="notice-card">
+  <div class="notice-id">CP504</div>
+  <div class="notice-title">Urgent Notice - Intent to Levy State Tax Refund</div>
+  <div class="notice-what">The IRS intends to apply your state tax refund to your federal balance. This is a specific levy on your state refund and is often the first levy action the IRS takes.</div>
+  <div class="notice-action">Respond to the underlying balance. The state refund levy may already have occurred by the time you receive this notice.</div>
+</div>
+
+<h2>Your Rights When You Receive an IRS Notice</h2>
+
+<p>The Taxpayer Bill of Rights (codified at IRC §7803(a)(3)) gives you specific rights in every IRS interaction. The most important ones when dealing with notices:</p>
+
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li><strong>Right to be informed</strong> - the IRS must explain what it wants and why</li>
+  <li><strong>Right to challenge the IRS's position</strong> - you can respond to any proposed change</li>
+  <li><strong>Right to appeal</strong> - you can request an independent review through IRS Appeals</li>
+  <li><strong>Right to retain representation</strong> - you can have a CPA, attorney, or enrolled agent represent you in any IRS proceeding</li>
+  <li><strong>Right to a Collection Due Process hearing</strong> - before the IRS levies your property, you have the right to a hearing before an independent IRS Appeals officer</li>
+  <li><strong>Right to contact the Taxpayer Advocate Service</strong> - if you are experiencing a hardship or the IRS is not responding appropriately, the TAS (1-877-777-4778) is an independent IRS organization that can intervene</li>
+</ul>
+
+<div class="green-box"><strong>First-Time Penalty Abatement (FTA).</strong> If you have a clean compliance history (no penalties in the prior 3 years), you may qualify for automatic first-time penalty abatement of the failure-to-file or failure-to-pay penalty. FTA is available by simply calling the IRS or writing a letter - no special form required. It can eliminate hundreds or thousands of dollars in penalties. Ask for it when you call.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="irs-audit-guide.html" class="related-link">IRS Audit Guide<span>When a notice escalates to a full examination</span></a>
+    <a href="penalty-calculator.html" class="related-link">Penalty Calculator<span>Estimate your failure-to-file and failure-to-pay penalties</span></a>
+    <a href="irs-payments-guide.html" class="related-link">IRS Payments Guide<span>Payment plans, installment agreements, OIC</span></a>
+    <a href="irs-accounts-guide.html" class="related-link">IRS Account Guide<span>Check your IRS transcript and account balance online</span></a>
+    <a href="tax-extension-guide.html" class="related-link">Tax Extension Guide<span>How extensions affect penalties and notices</span></a>
+    <a href="cancellation-of-debt-guide.html" class="related-link">COD Income Guide<span>If your notice involves a 1099-C debt cancellation</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §6212 (notice of deficiency - the 90-day letter; taxpayer right to petition Tax Court); IRC §6213 (restrictions on assessment - IRS cannot assess tax before the 90-day letter period expires); IRC §6321-6323 (federal tax lien - arises when demand for payment is made and taxpayer refuses or neglects to pay); IRC §6330 (Collection Due Process hearing - right to hearing before levy; 30-day request window after LT11 or Letter 1058); IRC §6331 (levy - IRS authority to seize wages, bank accounts, and property after final notice); IRC §6343 (release of levy); IRC §7803(a)(3) (Taxpayer Bill of Rights - codified right to be informed, right to challenge IRS position, right to appeal, right to retain representation, right to a fair and just tax system); IRC §6651 (failure to file and failure to pay penalties); IRC §6656 (failure to deposit penalty); First-Time Penalty Abatement (administrative policy under IRM 20.1.1.3.6.1); IRS Publication 594 (The IRS Collection Process); IRS Publication 1 (Your Rights as a Taxpayer - Taxpayer Bill of Rights summary); Taxpayer Advocate Service: 1-877-777-4778 or taxpayeradvocate.irs.gov.</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

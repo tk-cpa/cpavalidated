@@ -147,6 +147,219 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §223 (health savings accounts - general rules, eligibility, contribution limits, qualified medical expenses); IRC §223(a) (deduction for HSA contributions); IRC §223(b) (contribution limits - $4,400 self-only / $8,750 family for 2026, indexed for inflation; $1,000 catch-up for age 55+); IRC §223(c)(1) (eligible individual definition - HDHP coverage required, no disqualifying coverage); IRC §223(c)(2) (HDHP defined - minimum deductible $1,700/$3,400, out-of-pocket maximum $8,500/$17,000 for 2026, indexed); IRC §223(d) (HSA trust requirements - no tax on growth); IRC §223(f)(2) (distributions for qualified medical expenses - excluded from gross income); IRC §223(f)(4) (nonqualified distributions - included in income plus 20% additional tax); IRC §223(f)(7) (death - HSA to surviving spouse tax-free; other beneficiary included in income); IRC §213(d) (qualified medical expenses - broad definition including premiums for certain coverage); IRS Rev. Proc. 2025-19 (2026 HSA inflation adjustments); IRS Publication 969 (Health Savings Accounts and Other Tax-Favored Health Plans); Form 8889 (Health Savings Accounts).</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSA Guide: Contribution Limits, HDHP Rules & Triple Tax Benefit (2026) | CPA Validated</title>
+<meta name="description" content="Health Savings Account (HSA) guide: 2026 contribution limits ($4,400 individual / $8,750 family), HDHP eligibility requirements, the triple tax benefit, Medicare coordination, rollover rules, and investing your HSA. CPA-validated. IRC §223.">
+<link rel="canonical" href="https://cpavalidated.com/hsa-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HSA Guide: Contribution Limits, HDHP Rules & Triple Tax Benefit (2026)">
+<meta property="og:description" content="2026 HSA contribution limits, HDHP eligibility, triple tax benefit mechanics, Medicare coordination, and investing your HSA. CPA-validated.">
+<meta property="og:url" content="https://cpavalidated.com/hsa-guide.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"HSA Guide: Contribution Limits, HDHP Rules & Triple Tax Benefit (2026)","url":"https://cpavalidated.com/hsa-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html" class="active">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Health Savings Account (HSA): Contribution Limits, HDHP Rules &amp; Triple Tax Benefit</h1>
+  <div class="sub">2026 Limits &nbsp;&bull;&nbsp; HDHP Eligibility &nbsp;&bull;&nbsp; Triple Tax Benefit &nbsp;&bull;&nbsp; Medicare Coordination &nbsp;&bull;&nbsp; Investing Your HSA</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §223</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="individual-tax.html">&#8592; Individual Tax</a></div>
+<div class="article">
+
+<p class="lead">The HSA is the only account in the tax code that provides a triple tax benefit: contributions are deductible (or pre-tax through payroll), growth is tax-free, and qualified distributions are tax-free. No other account - not the IRA, not the 401(k) - offers all three. For people with eligible high-deductible health plans, maxing the HSA is among the highest-return tax moves available.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 HSA Numbers</div>
+  <p><strong>Contribution limit (self-only HDHP):</strong> $4,400</p>
+  <p><strong>Contribution limit (family HDHP):</strong> $8,750</p>
+  <p><strong>Catch-up contribution (age 55+):</strong> $1,000 additional (not inflation-adjusted)</p>
+  <p><strong>HDHP minimum deductible:</strong> $1,700 (self-only) / $3,400 (family)</p>
+  <p><strong>HDHP out-of-pocket maximum:</strong> $8,500 (self-only) / $17,000 (family)</p>
+</div>
+
+<h2>Eligibility: The HDHP Requirement</h2>
+
+<p>To contribute to an HSA, you must be covered by a High Deductible Health Plan (HDHP) on the first day of the month for which you want to contribute. An HDHP is a health plan with a minimum deductible and a maximum out-of-pocket limit that meets the IRS thresholds above. No other health coverage is permitted - not Medicare, not a general-purpose FSA, not a spouse's non-HDHP employer plan that covers you.</p>
+
+<p>Permitted coverage that does not disqualify HSA eligibility includes: specific injury insurance, accident insurance, dental and vision plans, long-term care insurance, coverage for a specified disease or illness, and preventive care coverage with no deductible. Telehealth-only coverage also does not disqualify eligibility under current law.</p>
+
+<div class="note-box"><strong>The testing period trap.</strong> If you make HSA contributions under the "last-month rule" (contributing the full year's limit because you were eligible on December 1), you must remain eligible for all 12 months of the following year. If you fail this testing period - for example, by enrolling in Medicare in March of the next year - the contributions attributable to months you were not eligible become taxable income plus a 10% penalty. Plan carefully around Medicare enrollment and HDHP transitions.</div>
+
+<h2>The Triple Tax Benefit - How It Actually Works</h2>
+
+<p><strong>Benefit 1 - Contributions are deductible above the line.</strong> Contributions made directly to an HSA are deductible under IRC §223(a) regardless of whether you itemize. Contributions made through payroll via a §125 cafeteria plan are even better - they escape both income tax and FICA (saving the 7.65% employee FICA on top of income tax). Employer contributions are excluded from income entirely.</p>
+
+<p><strong>Benefit 2 - Growth is tax-free.</strong> Money inside an HSA grows without any annual tax drag. Most HSA custodians offer investment options once the balance exceeds a threshold (commonly $1,000 or $2,000). Invested in low-cost index funds, an HSA balance can compound for decades without taxation - unlike a brokerage account where dividends and capital gains are taxed annually.</p>
+
+<p><strong>Benefit 3 - Qualified distributions are tax-free.</strong> Withdrawals for qualified medical expenses are completely tax-free - no income tax, no penalty. Qualified medical expenses are defined broadly under IRC §213(d) and include most out-of-pocket medical, dental, and vision costs, COBRA premiums, long-term care insurance premiums (subject to limits), and Medicare premiums after age 65.</p>
+
+<div class="green-box"><strong>The optimal HSA strategy: pay medical costs out of pocket now, reimburse yourself later.</strong> There is no deadline to reimburse yourself from an HSA for a qualified medical expense - the expense just needs to have occurred after the HSA was established. Paying a $3,000 medical bill out of pocket today, keeping the receipt, and reimbursing yourself tax-free in 20 years after the HSA has compounded is a legitimate and powerful strategy. The HSA becomes a stealth retirement account funded with pre-tax dollars.</div>
+
+<h2>Non-Qualified Distributions</h2>
+
+<p>Distributions not used for qualified medical expenses are included in gross income and subject to a 20% additional tax (the penalty). The penalty is steep - steeper than the 10% early IRA distribution penalty. However, once you reach age 65 (or become disabled), the 20% penalty disappears. Non-qualified distributions after 65 are simply included in taxable income at ordinary rates - effectively making the HSA function like a traditional IRA for non-medical spending after 65, but with the added benefit that qualified medical withdrawals remain tax-free forever.</p>
+
+<h2>Medicare Coordination</h2>
+
+<p>Enrolling in Medicare Part A or Part B makes you ineligible to contribute to an HSA from that point forward. Medicare enrollment is not always a voluntary event - if you are receiving Social Security benefits when you turn 65, Medicare Part A enrollment is automatic and retroactive up to 6 months. This means someone who claims Social Security at 64.5 and turns 65 six months later may find their HSA contributions for the prior 6 months are disqualified retroactively.</p>
+
+<div class="red-box"><strong>The Social Security / Medicare / HSA trap.</strong> If you plan to continue working past 65 and contributing to an HSA, do not claim Social Security early. Claiming SS triggers automatic Medicare Part A enrollment which kills HSA eligibility. To maintain HSA eligibility past 65, you must actively delay both Social Security and Medicare enrollment. Confirm with your employer's HR and a tax advisor before the year you turn 65.</div>
+
+<h2>HSA vs. FSA vs. HRA</h2>
+
+<table class="key-table">
+  <tr><th>Feature</th><th>HSA</th><th>Health FSA</th><th>HRA</th></tr>
+  <tr><td><strong>Who owns it</strong></td><td>Employee - portable, stays with you</td><td>Employer - forfeited if you leave</td><td>Employer - not portable</td></tr>
+  <tr><td><strong>HDHP required</strong></td><td>Yes</td><td>No</td><td>No</td></tr>
+  <tr><td><strong>Rollover</strong></td><td>Full rollover, no limit</td><td>Up to $660 (2026) or grace period</td><td>Employer discretion</td></tr>
+  <tr><td><strong>Investment growth</strong></td><td>Yes - tax-free</td><td>No</td><td>No</td></tr>
+  <tr><td><strong>Employee contributions</strong></td><td>Yes</td><td>Yes</td><td>No (employer only)</td></tr>
+  <tr><td><strong>FICA savings on payroll contributions</strong></td><td>Yes (via §125 plan)</td><td>Yes (via §125 plan)</td><td>N/A</td></tr>
+</table>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="ira-guide.html" class="related-link">IRA Guide<span>Compare HSA to Roth IRA for retirement savings</span></a>
+    <a href="social-security-taxation-guide.html" class="related-link">Social Security Taxation<span>SS claiming strategy &middot; Medicare timing</span></a>
+    <a href="rmd-guide.html" class="related-link">RMD Guide<span>Coordinate HSA drawdown with RMD strategy</span></a>
+    <a href="self-employment-tax-guide.html" class="related-link">SE Tax Guide<span>Self-employed HSA deduction &middot; §162(l) interaction</span></a>
+    <a href="education-tax-benefits.html" class="related-link">Education Tax Benefits<span>Other above-the-line deduction comparisons</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Model the tax savings from HSA contributions</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §223 (health savings accounts - general rules, eligibility, contribution limits, qualified medical expenses); IRC §223(a) (deduction for HSA contributions); IRC §223(b) (contribution limits - $4,400 self-only / $8,750 family for 2026, indexed for inflation; $1,000 catch-up for age 55+); IRC §223(c)(1) (eligible individual definition - HDHP coverage required, no disqualifying coverage); IRC §223(c)(2) (HDHP defined - minimum deductible $1,700/$3,400, out-of-pocket maximum $8,500/$17,000 for 2026, indexed); IRC §223(d) (HSA trust requirements - no tax on growth); IRC §223(f)(2) (distributions for qualified medical expenses - excluded from gross income); IRC §223(f)(4) (nonqualified distributions - included in income plus 20% additional tax); IRC §223(f)(7) (death - HSA to surviving spouse tax-free; other beneficiary included in income); IRC §213(d) (qualified medical expenses - broad definition including premiums for certain coverage); IRS Rev. Proc. 2025-19 (2026 HSA inflation adjustments); IRS Publication 969 (Health Savings Accounts and Other Tax-Favored Health Plans); Form 8889 (Health Savings Accounts).</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

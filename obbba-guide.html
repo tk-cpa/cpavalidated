@@ -405,6 +405,477 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: One Big Beautiful Bill Act, P.L. 119-21 (July 4, 2025); IRC §24, §59A, §63, §163(h)(2), §163(j), §164(b)(6), §168(k), §168(n), §174, §174A, §179, §199A, §250, §530A, §951A, §1202, §2010(c)(3); Rev. Proc. 2025-28 (§174A procedural guidance); Notice 2025-72 (§898 repeal transition); IRS, "One, Big, Beautiful Bill provisions," irs.gov/newsroom; Cooley LLP, "Key International Tax Provisions Under the One Big Beautiful Bill Act" (July 21, 2025); Grant Thornton, "Permanent full expensing for U.S. research in OBBBA" and "OBBBA offers new ways to accelerate depreciation" (2025); BDO, "IRS Issues Procedural Guidance on OBBBA Treatment of R&amp;E Expenditures" (Sept. 4, 2025); Penn Wharton Budget Model, "OBBBA International Tax Reforms: Updated Cost Estimates" (Oct. 29, 2025); RSM US, "Global taxation reform" (Sept. 12, 2025); AICPA, "2025 OBBBA Charts" (July 2025).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OBBBA Guide - Key Tax Provisions of the One Big Beautiful Bill Act (P.L. 119-21) | CPA Validated</title>
+<meta name="description" content="The biggest provisions of the One Big Beautiful Bill Act (OBBBA, P.L. 119-21), signed July 4, 2025. Individual and business changes: SALT cap, estate exemption, tip and overtime deductions, Section 174A R&D, 100% bonus depreciation, Section 163(j) EBITDA, Section 199A, Section 1202 QSBS, NCTI/FDDEI international rules. Effective dates and authority citations.">
+<link rel="canonical" href="https://cpavalidated.com/obbba-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.section-bar{background:var(--coral);color:#fff;padding:8px 14px;font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;margin:42px 0 18px}
+.prov{border:1px solid var(--ink-20);padding:20px 22px;margin:0 0 18px;background:var(--white)}
+.prov-num{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--coral);letter-spacing:.05em;margin-bottom:6px}
+.prov-title{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.2}
+.prov-cite{display:inline-block;font-family:var(--font-mono);font-size:10.5px;font-weight:600;padding:3px 8px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60);margin:0 6px 10px 0}
+.prov-cite.eff{background:var(--green-bg);border-color:var(--green-b);color:var(--green)}
+.prov-cite.exp{background:var(--amber-bg);border-color:var(--amber-b);color:var(--amber)}
+.prov p{font-size:14px;line-height:1.7;color:var(--ink-80);margin-bottom:12px}
+.prov p:last-child{margin-bottom:0}
+.prov ul{margin:6px 0 12px 20px;padding:0}
+.prov ul li{font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:6px}
+.rate-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0 8px}
+.rate-box{border:1px solid var(--ink-20);padding:14px;text-align:center;background:var(--paper)}
+.rb-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px}
+.rb-rate{font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--coral)}
+.rb-note{font-size:11px;color:var(--ink-60);margin-top:4px;line-height:1.4}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:14px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:14px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 16px;margin:14px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.rate-grid,.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph,.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OBBBA Guide - Key Tax Provisions of the One Big Beautiful Bill Act (P.L. 119-21) | CPA Validated">
+  <meta property="og:description" content="The biggest provisions of the One Big Beautiful Bill Act (OBBBA, P.L. 119-21), signed July 4, 2025. Individual and business changes: SALT cap, estate exemption, tip and overtime deductions, Section 17">
+  <meta property="og:url" content="https://cpavalidated.com/obbba-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OBBBA Guide - Key Tax Provisions of the One Big Beautiful Bill Act (P.L. 119-21) | CPA Validated">
+  <meta name="twitter:description" content="The biggest provisions of the One Big Beautiful Bill Act (OBBBA, P.L. 119-21), signed July 4, 2025. Individual and business changes: SALT cap, estate exemption, tip and overtime deductions, Section 17">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"OBBBA Guide - Key Tax Provisions of the One Big Beautiful Bill Act (P.L. 119-21) | CPA Validated","description":"The biggest provisions of the One Big Beautiful Bill Act (OBBBA, P.L. 119-21), signed July 4, 2025. Individual and business changes: SALT cap, estate exemption, tip and overtime deductions, Section 17","url":"https://cpavalidated.com/obbba-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>One Big Beautiful Bill Act (2025)</h1>
+  <div class="sub">Public Law 119-21 &nbsp;&bull;&nbsp; Signed July 4, 2025 &nbsp;&bull;&nbsp; The Biggest Provisions for Individuals and Businesses</div>
+  <div class="meta">
+    <span class="ph-meta-item">P.L. 119-21</span>
+    <span class="ph-meta-item">Enacted 7/4/2025</span>
+    <span class="ph-meta-item">119th Congress, H.R. 1</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The One Big Beautiful Bill Act (OBBBA), Public Law 119-21, was signed into law on July 4, 2025. It is the most consequential federal tax legislation since the Tax Cuts and Jobs Act of 2017. OBBBA permanently extends most of the expiring TCJA individual provisions, restores immediate expensing for domestic research, makes 100% bonus depreciation permanent, rewrites the international tax regime by replacing GILTI and FDII with NCTI and FDDEI, and introduces a set of temporary deductions for tips, overtime, seniors, and auto loan interest. This guide covers the biggest provisions for individuals and businesses, with effective dates and authority citations.</p>
+
+<div class="callout">
+  <div class="callout-label">How OBBBA Changed the Code</div>
+  <p>OBBBA was passed through budget reconciliation. The Vice President cast the tie-breaking vote in the Senate. The bill makes most pre-2026 TCJA sunsets permanent, then layers new temporary deductions on top, and rewrites the international tax base. Most individual provisions are effective for tax years beginning after December 31, 2024. Most international changes are effective for tax years beginning after December 31, 2025.</p>
+  <p><strong>The "Big Three" domestic business provisions:</strong> Section 174A (R&E expensing), Section 168(k) (100% bonus depreciation), and Section 163(j) (EBITDA-based interest limitation) - all restored to taxpayer-favorable treatment and made permanent.</p>
+</div>
+
+<div class="section-bar">Part I &nbsp;&bull;&nbsp; Individual Provisions</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 01</div>
+  <div class="prov-title">SALT Deduction Cap Raised to $40,000 (Temporarily)</div>
+  <span class="prov-cite">IRC §164(b)(6)</span>
+  <span class="prov-cite eff">Effective 2025</span>
+  <span class="prov-cite exp">Sunsets after 2029</span>
+  <p>The state and local tax deduction cap is raised from $10,000 to $40,000 for tax year 2025, with 1% annual increases through 2029 (so $40,400 in 2026; 101% of the prior year for 2027 through 2029). The cap reverts to $10,000 in 2030.</p>
+  <p>For taxpayers with modified AGI above $500,000, the cap is reduced by 30% of the excess MAGI over the threshold, but never below $10,000. The threshold is $250,000 for married filing separately and is itself indexed at 1% per year. The married-filing-separately cap is $20,000 (rather than the previous $5,000), eliminating the prior MFS penalty.</p>
+  <div class="note-box"><strong>Planning note.</strong> A taxpayer with MAGI of $700,000 in 2025 has the cap reduced by 30% &times; ($700,000 - $500,000) = $60,000, fully phasing out the enhanced cap and leaving the $10,000 floor. The relief is meaningful but narrow. High earners in high-tax states should still review pass-through entity tax (PTET) elections at the state level.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 02</div>
+  <div class="prov-title">Estate, Gift, and GST Exemption Permanently Increased to $15M</div>
+  <span class="prov-cite">IRC §2010(c)(3)</span>
+  <span class="prov-cite eff">Effective 1/1/2026</span>
+  <span class="prov-cite">Permanent</span>
+  <p>The unified estate and gift tax exemption is permanently set at $15 million per individual ($30 million per married couple) beginning January 1, 2026, indexed for inflation from 2027. The generation-skipping transfer tax exemption is aligned with this amount. The 40% top transfer tax rate is unchanged. Step-up in basis at death is unchanged. Portability is unchanged.</p>
+  <p>This eliminates the scheduled TCJA sunset, which would have dropped the exemption to roughly $7 million per person on January 1, 2026. The "use it or lose it" pressure that drove the late-2025 gifting wave is gone.</p>
+  <div class="green-box"><strong>State-level estate taxes still matter.</strong> Eighteen states and DC impose an estate or inheritance tax with thresholds well below the federal exemption. New York, Massachusetts, Illinois, Maryland, Oregon, Washington, and Minnesota are notable. Federal exemption planning does not eliminate state planning.</div>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 03</div>
+  <div class="prov-title">No Tax on Tips - Up to $25,000 Deduction</div>
+  <span class="prov-cite">IRC §224 (new)</span>
+  <span class="prov-cite eff">2025-2028</span>
+  <span class="prov-cite exp">Sunsets after 2028</span>
+  <p>Employees and self-employed individuals in occupations that customarily and regularly received tips on or before December 31, 2024, may deduct qualified tips up to $25,000 per year. The deduction is available whether the taxpayer itemizes or takes the standard deduction (above-the-line). For self-employed taxpayers, the deduction may not exceed net income from the trade or business in which the tips were earned.</p>
+  <p>Qualified tips are voluntary cash or charged tips received from customers or via tip sharing, reported on Form W-2, Form 1099, or Form 4137. The IRS publishes the list of qualifying occupations. The deduction phases out above MAGI of $150,000 (single) / $300,000 (joint).</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 04</div>
+  <div class="prov-title">No Tax on Overtime - Up to $12,500 / $25,000 Deduction</div>
+  <span class="prov-cite">IRC §225 (new)</span>
+  <span class="prov-cite eff">2025-2028</span>
+  <span class="prov-cite exp">Sunsets after 2028</span>
+  <p>Workers may deduct qualified overtime pay covered by the Fair Labor Standards Act, up to $12,500 (single) or $25,000 (joint), as an above-the-line deduction. The deduction phases out above MAGI of $150,000 (single) / $300,000 (joint). Married filing separately is ineligible. The taxpayer must have a Social Security number valid for work, and the employer must designate overtime wages on Form W-2 (a transitional approximation rule applies for 2025).</p>
+  <p>Qualified overtime is the premium portion - the amount paid in excess of the regular rate, not the full hour. A worker paid $30 per hour regular and $45 per hour overtime deducts $15 per overtime hour, not $45.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 05</div>
+  <div class="prov-title">$6,000 Senior Bonus Deduction</div>
+  <span class="prov-cite">IRC §63 (amended)</span>
+  <span class="prov-cite eff">2025-2028</span>
+  <span class="prov-cite exp">Sunsets after 2028</span>
+  <p>Taxpayers age 65 and older receive a $6,000 deduction in addition to the standard deduction or itemized deductions ($12,000 for joint filers where both spouses qualify). The deduction phases out beginning at MAGI of $75,000 (single) / $150,000 (joint). A Social Security number valid for work is required. Married filing separately is ineligible.</p>
+  <p>This was the political response to "no tax on Social Security." The bill does not actually exempt Social Security benefits from tax - the deduction reduces taxable income for many seniors but is income-sensitive and capped.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 06</div>
+  <div class="prov-title">Auto Loan Interest Deduction (Domestic Vehicles)</div>
+  <span class="prov-cite">IRC §163(h)(2) (amended)</span>
+  <span class="prov-cite eff">2025-2028</span>
+  <span class="prov-cite exp">Sunsets after 2028</span>
+  <p>Up to $10,000 of interest on a loan used to purchase a personal-use vehicle assembled in the United States may be deducted as an above-the-line deduction. The deduction phases out beginning at MAGI of $100,000 (single) / $200,000 (joint). The vehicle must be new, for personal use, and the loan must be secured by the vehicle.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 07</div>
+  <div class="prov-title">Child Tax Credit Permanent at $2,200 (Indexed)</div>
+  <span class="prov-cite">IRC §24</span>
+  <span class="prov-cite eff">2025</span>
+  <span class="prov-cite">Permanent</span>
+  <p>The Child Tax Credit is permanently set at $2,200 per qualifying child (up from $2,000) and indexed for inflation. The refundable portion ($1,400 base, indexed) is also permanent. Phase-out thresholds remain at $200,000 (single) / $400,000 (joint). A Social Security number valid for work is required for the taxpayer (or at least one spouse for joint filers) and for the child. The Other Dependent Credit remains at $500 and is permanent.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 08</div>
+  <div class="prov-title">Trump Accounts - New Tax-Advantaged Children's Savings</div>
+  <span class="prov-cite">IRC §530A (new)</span>
+  <span class="prov-cite eff">Effective 2026</span>
+  <span class="prov-cite">Permanent</span>
+  <p>A new tax-advantaged savings account for children under 18, structured similarly to a Roth IRA. Each U.S. child born from 2025 through 2028 receives a one-time $1,000 federal seed contribution. Annual contributions of up to $5,000 are permitted with no income phase-out. Employers may contribute up to $2,500 per year per employee (or per dependent) tax-free to the employee. Funds must be invested in U.S. equity index funds (S&amp;P 500 or similar). Withdrawals after age 18 are tax-free for qualified expenses (higher education, first-time home purchase, qualified small business expenses).</p>
+</div>
+
+<div class="section-bar">Part II &nbsp;&bull;&nbsp; Business Provisions</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 09</div>
+  <div class="prov-title">Section 174A - Domestic R&amp;E Expensing Restored (Permanent)</div>
+  <span class="prov-cite">IRC §174A (new)</span>
+  <span class="prov-cite eff">Tax years beginning after 12/31/2024</span>
+  <span class="prov-cite">Permanent</span>
+  <p>OBBBA §70302 added new IRC §174A, allowing taxpayers to fully deduct domestic research and experimental expenditures in the year paid or incurred. This reverses the TCJA capitalization-and-amortization mandate that had been in effect since 2022. Foreign R&amp;E expenditures must still be capitalized and amortized over 15 years under the unchanged IRC §174.</p>
+  <p><strong>Treatment of capitalized 2022-2024 amounts.</strong> All taxpayers may elect to deduct any remaining unamortized domestic R&amp;E balance entirely in 2025, ratably over 2025 and 2026, or continue the original 5-year amortization. The change is a taxpayer-initiated method change with automatic IRS consent; no Section 481(a) catch-up adjustment is required for the prospective change.</p>
+  <p><strong>Small business retroactivity election.</strong> Taxpayers meeting the IRC §448(c) gross-receipts test ($31 million average over the prior three years, tested for the first tax year beginning after December 31, 2024) may elect to retroactively apply Section 174A to expenditures paid or incurred in tax years beginning after December 31, 2021, by amending 2022, 2023, and 2024 returns or by filing Form 3115. The retroactive election must coordinate with Section 280C(c) (the credit-vs.-deduction reduction).</p>
+  <div class="note-box"><strong>Procedural authority.</strong> Rev. Proc. 2025-28 (issued August 28, 2025) provides the procedural guidance for Section 174A elections, automatic accounting method changes, and the small business retroactivity election. The deduction of unamortized domestic R&amp;E is treated as amortization for purposes of the Section 163(j) interest limitation. Software development continues to be R&amp;E under §174A(d)(3); domestic software development is deductible, foreign software development must still be amortized over 15 years.</div>
+  <div class="green-box"><strong>State conformity is uneven.</strong> Some states (e.g., California, fixed to IRC as of January 1, 2015) follow pre-TCJA rules and already permit full expensing. States with rolling conformity will generally adopt §174A automatically. Static-conformity states may continue to apply TCJA §174 unless they update legislatively. Multistate taxpayers must reconcile state-by-state.</div>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 10</div>
+  <div class="prov-title">100% Bonus Depreciation Permanent</div>
+  <span class="prov-cite">IRC §168(k)</span>
+  <span class="prov-cite eff">Property acquired and placed in service after 1/19/2025</span>
+  <span class="prov-cite">Permanent</span>
+  <p>OBBBA permanently restores 100% bonus depreciation for qualified property acquired and placed in service after January 19, 2025. The TCJA phase-down (40% for 2025, 20% for 2026, 0% for 2027) is repealed prospectively. Qualified property is generally tangible MACRS property with a class life of 20 years or less, computer software, and qualified improvement property. Used property remains eligible if acquired from an unrelated party.</p>
+  <p><strong>The January 19, 2025 cliff.</strong> Property subject to a written binding contract entered into before January 20, 2025, is not eligible for 100% expensing under the new rules. Such property is locked into the TCJA phase-down rate (40% for 2025 placed-in-service). Letters of intent and non-binding agreements are generally not "binding contracts." Deal teams need to track contract dates, not just placed-in-service dates.</p>
+  <p>OBBBA also includes a transition election allowing taxpayers to apply the 40% TCJA rate for property placed in service in the first tax year ending after January 19, 2025 (60% for long-production-period property and certain aircraft under §168(k)(2)(B)/(C)). Taxpayers may also elect out of bonus entirely for one or more property classes.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 11</div>
+  <div class="prov-title">Section 168(n) - 100% Expensing of Qualified Production Property</div>
+  <span class="prov-cite">IRC §168(n) (new)</span>
+  <span class="prov-cite eff">Construction begun after 1/19/2025</span>
+  <span class="prov-cite exp">Placed in service before 1/1/2031</span>
+  <p>A new provision allowing 100% expensing of certain non-residential real property used in a qualified production activity in the United States. Without §168(n), such property would otherwise depreciate over 39 years.</p>
+  <p>To qualify, property must (i) be non-residential real property, (ii) have construction beginning after January 19, 2025, and before January 1, 2029, (iii) be placed in service in the U.S. before January 1, 2031, (iv) have its original use begin with the taxpayer, and (v) be used as an integral part of a qualified production activity (manufacturing, production, or refining of qualified products). Food served on-site (i.e., restaurants) does not qualify. This is a major new incentive for U.S. manufacturing capacity.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 12</div>
+  <div class="prov-title">Section 163(j) - EBITDA Calculation Restored</div>
+  <span class="prov-cite">IRC §163(j)</span>
+  <span class="prov-cite eff">Tax years beginning after 12/31/2024</span>
+  <span class="prov-cite">Permanent</span>
+  <p>OBBBA permanently restores the EBITDA-based calculation of adjusted taxable income (ATI) for purposes of the 30% business interest expense limitation. From 2022 through 2024, ATI was calculated on an EBIT basis (no depreciation, amortization, or depletion add-back), which materially tightened the cap for capital-intensive businesses. The EBITDA add-back is now permanent.</p>
+  <p><strong>New twist - capitalized interest.</strong> Effective for tax years beginning after December 31, 2025, OBBBA brings capitalized business interest under §163(j) (unless it is required to be capitalized under §263(g) or §263A(f)). This closes a common workaround that capitalized interest could avoid the §163(j) limitation. The new ordering rule generally calculates the §163(j) limitation before applying interest capitalization provisions.</p>
+  <p><strong>International coordination.</strong> Subpart F income, NCTI inclusions, and §78 gross-up are excluded from ATI for tax years beginning after December 31, 2025.</p>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 13</div>
+  <div class="prov-title">Section 199A - QBI Deduction Made Permanent</div>
+  <span class="prov-cite">IRC §199A</span>
+  <span class="prov-cite eff">Tax years beginning after 12/31/2025</span>
+  <span class="prov-cite">Permanent</span>
+  <p>The 20% qualified business income deduction is made permanent for owners of S-corporations, partnerships, and other pass-throughs (including REIT dividends). The deduction was set to expire at the end of 2025 under TCJA. The phase-in range for the W-2 wages and unadjusted basis limitations is widened from $50,000 / $100,000 to $75,000 (single) / $150,000 (joint), reducing the cliff effect for taxpayers above the threshold.</p>
+  <p>A new $400 minimum deduction applies to taxpayers with at least $1,000 of QBI from activities in which they materially participate. The new itemized-deduction threshold rules under OBBBA do not affect the QBI deduction calculation.</p>
+  <div class="note-box"><strong>Interaction with bonus depreciation.</strong> Bonus depreciation reduces QBI - sometimes pushing it negative for non-SSTB owners (forfeiting the 20% deduction). For SSTB owners above the phase-in, bonus depreciation may push taxable income below the threshold and unlock the full deduction. Run QBI last in any optimization model.</div>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 14</div>
+  <div class="prov-title">Section 1202 QSBS - Tiered Exclusion, Higher Caps, Broader Eligibility</div>
+  <span class="prov-cite">IRC §1202</span>
+  <span class="prov-cite eff">Stock issued after 7/4/2025</span>
+  <span class="prov-cite">Permanent</span>
+  <p>For QSBS issued after July 4, 2025, OBBBA replaces the binary five-year hold with a tiered exclusion:</p>
+  <ul>
+    <li>3-year hold: 50% gain exclusion (28% rate on remaining gain)</li>
+    <li>4-year hold: 75% gain exclusion (28% rate on remaining gain)</li>
+    <li>5-year hold: 100% gain exclusion (unchanged from prior law)</li>
+  </ul>
+  <p>The per-issuer gain cap is increased from $10 million to $15 million (or 10x basis if greater), indexed for inflation from 2027. The aggregate gross-assets test for the issuing C-corporation is increased from $50 million to $75 million, also indexed.</p>
+  <p>Stock acquired before July 4, 2025, follows the prior rules ($10 million cap, $50 million asset test, full five-year hold). F-reorganizations and similar structures do not reset the holding period to access the new tiers - the original issuance date governs.</p>
+  <div class="green-box"><strong>C-corporation formation just got more attractive.</strong> The combination of the 21% corporate rate, expanded QSBS, and partial-exclusion at three years materially shifts the entity-choice calculation for venture-backed and growth-stage businesses. Founders rolling out cap tables should track issuance dates for the post-7/4/25 cohort separately.</div>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 15</div>
+  <div class="prov-title">Section 179 Expanded to $2.5M with $4M Phaseout</div>
+  <span class="prov-cite">IRC §179</span>
+  <span class="prov-cite eff">Property placed in service after 12/31/2024</span>
+  <span class="prov-cite">Permanent</span>
+  <p>The maximum Section 179 deduction is increased from $1 million to $2.5 million, with the dollar-for-dollar phaseout beginning at $4 million of qualifying property (up from $2.5 million). Both amounts are indexed for inflation. Section 179 is treated as amortization for §163(j) purposes - factor it into interest-cap models.</p>
+</div>
+
+<div class="section-bar">Part III &nbsp;&bull;&nbsp; International Provisions</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 16</div>
+  <div class="prov-title">GILTI Becomes NCTI - Net CFC Tested Income</div>
+  <span class="prov-cite">IRC §951A</span>
+  <span class="prov-cite">IRC §250 (deduction)</span>
+  <span class="prov-cite eff">Tax years beginning after 12/31/2025</span>
+  <p>OBBBA renames Global Intangible Low-Taxed Income (GILTI) as Net CFC Tested Income (NCTI) and rewrites the calculation. The 10% Qualified Business Asset Investment (QBAI) exemption is eliminated entirely - all CFC tested income (other than excepted categories) is now subject to inclusion. The Section 250 deduction is permanently set at 40% (down from 50%), producing a corporate effective tax rate on NCTI of approximately 12.6% before foreign tax credits.</p>
+  <p>The deemed-paid foreign tax credit haircut on NCTI is reduced from 20% to 10% - meaning corporations may now claim 90% of foreign taxes paid (previously 80%). The NCTI FTC limitation is calculated by excluding interest expense and R&amp;E from allocation, and only directly allocable deductions reduce foreign-source NCTI.</p>
+  <p><strong>Inclusion shareholder rule.</strong> A 10% U.S. shareholder must now include subpart F and NCTI income if the shareholder held CFC stock at any time during the tax year - not just on the last day of the year. This change is material for M&amp;A diligence, mid-year exits, and structures with rotating ownership.</p>
+  <div class="rate-grid">
+    <div class="rate-box">
+      <div class="rb-label">NCTI Effective Rate</div>
+      <div class="rb-rate">12.6%</div>
+      <div class="rb-note">21% &times; (1 - 40% §250 deduction). Before FTC.</div>
+    </div>
+    <div class="rate-box">
+      <div class="rb-label">FTC Haircut</div>
+      <div class="rb-rate">10%</div>
+      <div class="rb-note">Down from 20%. 90% of foreign taxes creditable.</div>
+    </div>
+    <div class="rate-box">
+      <div class="rb-label">QBAI Exemption</div>
+      <div class="rb-rate">0%</div>
+      <div class="rb-note">Eliminated. Capital-intensive CFCs lose the prior 10% return shield.</div>
+    </div>
+  </div>
+  <div class="red-box"><strong>Capital-intensive CFCs are exposed.</strong> Manufacturers and other asset-heavy foreign subs that previously generated little or no GILTI inclusion (because the 10% QBAI return covered most of the income) will now produce sizeable NCTI inclusions. This is the most adverse change in the international package and warrants modeling for any group with offshore tangible-asset operations.</div>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 17</div>
+  <div class="prov-title">FDII Becomes FDDEI - Foreign-Derived Deduction Eligible Income</div>
+  <span class="prov-cite">IRC §250</span>
+  <span class="prov-cite eff">Tax years beginning after 12/31/2025</span>
+  <p>FDII is renamed Foreign-Derived Deduction Eligible Income (FDDEI) and the §250 deduction is permanently set at 33.34%, producing a 14% effective rate on qualifying foreign-derived income. This sits between the prior 13.125% rate (37.5% deduction) and the 16.4% rate (21.875% deduction) that would have applied beginning in 2026 under TCJA's pre-OBBBA sunset.</p>
+  <p>The 10% QBAI return is eliminated. Interest expense and R&amp;E are no longer allocated against deduction-eligible income, materially expanding FDDEI for highly-leveraged or research-intensive exporters. Gains from disposition of certain intangibles described in §367(d) are excluded from FDDEI for dispositions after June 16, 2025. Up to 50% of income from U.S.-produced inventory sold for foreign use through a foreign office or fixed place of business may be treated as foreign-source.</p>
+  <div class="green-box"><strong>FDDEI is now permanent and broader.</strong> The combination of §174A immediate domestic R&amp;E expensing plus the elimination of R&amp;E allocation to FDDEI creates a powerful incentive to keep IP and research onshore. Multinationals should reassess whether IP previously located in low-tax foreign jurisdictions should be repatriated.</div>
+</div>
+
+<div class="prov">
+  <div class="prov-num">PROVISION 18</div>
+  <div class="prov-title">BEAT Rate Increased to 10.5%</div>
+  <span class="prov-cite">IRC §59A</span>
+  <span class="prov-cite eff">Tax years beginning after 12/31/2025</span>
+  <p>The base erosion and anti-abuse tax (BEAT) rate increases from 10% to 10.5%. The research credit and a portion of applicable §38 credits are permanently excluded from the BEAT add-back. The threshold for BEAT applicability (generally, U.S. corporations with average annual gross receipts of at least $500 million making deductible payments to foreign related parties) is unchanged.</p>
+  <p>OBBBA also imposes a new 1% excise tax on certain outbound cash and physical-instrument remittance transfers from the U.S. to foreign jurisdictions. The originally-proposed Section 899 "revenge tax" on residents of "discriminatory foreign countries" was removed in the Senate.</p>
+</div>
+
+<h2>Effective Dates Summary</h2>
+
+<table class="key-table">
+  <thead><tr><th>Provision</th><th>Effective</th><th>Sunset</th></tr></thead>
+  <tbody>
+    <tr><td>SALT cap $40,000</td><td>2025</td><td>After 2029</td></tr>
+    <tr><td>Estate / gift / GST exemption $15M</td><td>1/1/2026</td><td>Permanent</td></tr>
+    <tr><td>Tip deduction up to $25,000</td><td>2025</td><td>After 2028</td></tr>
+    <tr><td>Overtime deduction $12,500 / $25,000</td><td>2025</td><td>After 2028</td></tr>
+    <tr><td>Senior $6,000 deduction</td><td>2025</td><td>After 2028</td></tr>
+    <tr><td>Auto loan interest deduction</td><td>2025</td><td>After 2028</td></tr>
+    <tr><td>CTC $2,200 (indexed)</td><td>2025</td><td>Permanent</td></tr>
+    <tr><td>Trump Accounts</td><td>2026</td><td>Permanent</td></tr>
+    <tr><td>§174A domestic R&amp;E expensing</td><td>TY beginning after 12/31/2024</td><td>Permanent</td></tr>
+    <tr><td>100% bonus depreciation</td><td>Property after 1/19/2025</td><td>Permanent</td></tr>
+    <tr><td>§168(n) qualified production property</td><td>Construction after 1/19/2025</td><td>Placed in service before 1/1/2031</td></tr>
+    <tr><td>§163(j) EBITDA</td><td>TY beginning after 12/31/2024</td><td>Permanent</td></tr>
+    <tr><td>§199A QBI permanent</td><td>TY beginning after 12/31/2025</td><td>Permanent</td></tr>
+    <tr><td>§1202 QSBS tiered exclusion</td><td>Stock issued after 7/4/2025</td><td>Permanent</td></tr>
+    <tr><td>NCTI replaces GILTI</td><td>TY beginning after 12/31/2025</td><td>Permanent</td></tr>
+    <tr><td>FDDEI replaces FDII</td><td>TY beginning after 12/31/2025</td><td>Permanent</td></tr>
+    <tr><td>BEAT 10.5%</td><td>TY beginning after 12/31/2025</td><td>Permanent</td></tr>
+  </tbody>
+</table>
+
+<h2>Practitioner Takeaways</h2>
+
+<p><strong>Run the §174A retroactivity check on every small business.</strong> The $31 million gross-receipts test (with §448(c) aggregation and tax-shelter screens) is a meaningful threshold. Eligible taxpayers can amend 2022, 2023, and 2024 to recover unamortized R&amp;E, or use the cleaner Form 3115 method change going forward. Coordinate with §280C(c) before filing.</p>
+
+<p><strong>Track contract dates, not just placed-in-service dates.</strong> The January 19, 2025 written-binding-contract cliff for 100% bonus depreciation creates two distinct cohorts of property at the same taxpayer. Build the contract-date column into the depreciation workpaper.</p>
+
+<p><strong>Re-run §163(j) for 2024 and 2025.</strong> The EBITDA restoration unlocks deductions that were trapped by the EBIT regime. For real estate, capital-intensive manufacturing, and leveraged platforms, the cumulative carryforward may be substantial. The 2026+ change to capitalized interest closes a common workaround - debt models need to be re-run.</p>
+
+<p><strong>QSBS issuance dates matter more than ever.</strong> Pre-7/4/2025 stock follows the old rules; post-7/4/2025 stock accesses the new tiers and higher caps. Cap tables and option exercises should be tracked against the cutoff. Reorganizations that preserve the original issuance date do not reset the clock.</p>
+
+<p><strong>Model NCTI under elimination of QBAI.</strong> Capital-intensive CFCs that historically had little or no GILTI inclusion will produce sizeable NCTI. The 10% FTC haircut helps, but only if foreign tax is high enough. Asset-placement decisions that were optimal for QBAI may now be suboptimal.</p>
+
+<p><strong>Reassess IP location for FDDEI.</strong> With domestic R&amp;E now fully expensed under §174A and no longer allocated against FDDEI, U.S.-based IP serving foreign markets is materially more attractive. The 14% rate is permanent - the planning horizon is no longer "until the next sunset."</p>
+
+<div class="callout">
+  <div class="callout-label">Open Questions and Pending Guidance</div>
+  <p>OBBBA contains hundreds of provisions and Treasury / IRS guidance is still rolling out. Key areas where additional regulatory guidance is expected: scope of qualified occupations under the tip deduction; employer reporting mechanics for tips and overtime on Form W-2; coordination of the §174A small business retroactivity election with §280C(c); definitional rules for "qualified production activity" under §168(n); transition rules for fiscal-year taxpayers crossing the 1/19/2025 bonus depreciation cutoff; coordination of NCTI inclusion with the inclusion-shareholder rule for mid-year transactions.</p>
+  <p>Notice 2025-72 addresses the OBBBA repeal of the one-month deferral election under §898 and provides relief for the allocation of foreign income taxes between the short period and the succeeding tax year. Rev. Proc. 2025-28 governs §174A method changes and the small business retroactivity election. Additional guidance is expected through 2026 and 2027.</p>
+</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="gilti-explained.html" class="related-link">GILTI / NCTI Explained<span>IRC §951A · CFC Inclusions</span></a>
+    <a href="bonus-depreciation-guide.html" class="related-link">Bonus Depreciation Guide<span>IRC §168(k) · 100% Permanent</span></a>
+    <a href="qbi-deduction-guide.html" class="related-link">QBI Deduction Guide<span>IRC §199A · 20% Pass-Through</span></a>
+    <a href="form-5472.html" class="related-link">Form 5472 Checker<span>Foreign-owned US corps · IRC §6038A</span></a>
+    <a href="depreciation-calculator.html" class="related-link">Depreciation Calculator<span>MACRS · Bonus · §179</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>OBBBA rates · IRC §1, §11</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: One Big Beautiful Bill Act, P.L. 119-21 (July 4, 2025); IRC §24, §59A, §63, §163(h)(2), §163(j), §164(b)(6), §168(k), §168(n), §174, §174A, §179, §199A, §250, §530A, §951A, §1202, §2010(c)(3); Rev. Proc. 2025-28 (§174A procedural guidance); Notice 2025-72 (§898 repeal transition); IRS, "One, Big, Beautiful Bill provisions," irs.gov/newsroom; Cooley LLP, "Key International Tax Provisions Under the One Big Beautiful Bill Act" (July 21, 2025); Grant Thornton, "Permanent full expensing for U.S. research in OBBBA" and "OBBBA offers new ways to accelerate depreciation" (2025); BDO, "IRS Issues Procedural Guidance on OBBBA Treatment of R&amp;E Expenditures" (Sept. 4, 2025); Penn Wharton Budget Model, "OBBBA International Tax Reforms: Updated Cost Estimates" (Oct. 29, 2025); RSM US, "Global taxation reform" (Sept. 12, 2025); AICPA, "2025 OBBBA Charts" (July 2025).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. OBBBA is extensive and Treasury / IRS guidance is still being released. Verify current rates, thresholds, and procedural rules before taking any filing position. Consult a qualified tax professional before making any planning or filing decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

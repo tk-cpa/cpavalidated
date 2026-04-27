@@ -373,6 +373,445 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="source-row">Authority: IRC §2001 (estate tax computation and rates); IRC §2010(c)(3) (unified credit - $15M, OBBBA P.L. 119-21); IRC §2031-2044 (gross estate); IRC §2053-2056 (estate tax deductions); IRC §2056A (QDOT); IRC §2501 (gift tax); IRC §2503(b) (annual exclusion - $19,000 for 2026, Rev. Proc. 2024-40); IRC §2503(e) (tuition and medical exclusions); IRC §2511 (transfers subject to gift tax); IRC §2513 (gift splitting); IRC §2522 (gift tax charitable deduction); IRC §2523 (gift tax marital deduction); IRC §2523(i)(2) (non-citizen spouse exclusion - $190,000 for 2026); IRC §2055 (estate tax charitable deduction); IRC §2601-2642 (generation-skipping transfer tax); IRC §2631 (GST exemption); IRC §1014 (step-up in basis at death); IRC §1015 (carryover basis for gifts); IRC §529(c)(2)(B) (superfunding election); IRC §2042 (life insurance in gross estate); IRC §664 (charitable remainder trusts); Treas. Reg. §20.2010-1(c) (anti-clawback); Rev. Proc. 2022-32 (late portability election, 5-year window); Crummey v. Commissioner, 397 F.2d 82 (9th Cir. 1968); OBBBA P.L. 119-21 (July 4, 2025). State exemption figures are estimates subject to annual adjustment by each state; verify current figures before planning.</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Gift & Estate Tax Guide (2026) | CPA Validated</title>
+<meta name="description" content="How the US unified gift and estate tax system works. Annual exclusion ($19,000), lifetime exemption ($15M under OBBBA), gift splitting, GST tax, portability, and planning strategies. CPA-validated. IRC 2001, 2010, 2503, 2631.">
+<link rel="canonical" href="https://cpavalidated.com/gift-estate-tax-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table .mono{font-family:var(--font-mono);font-size:11.5px;color:var(--ink-40)}
+.num-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.nr-cell{background:var(--white);padding:16px 14px;text-align:center}
+.nr-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-40);font-family:var(--font-mono);margin-bottom:6px}
+.nr-val{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--coral);line-height:1;margin-bottom:4px}
+.nr-desc{font-size:11.5px;color:var(--ink-60);line-height:1.5}
+.exclusion-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 28px}
+.eg-card{border:1px solid var(--ink-20);padding:16px;background:var(--white)}
+.eg-head{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:6px}
+.eg-auth{font-family:var(--font-mono);font-size:10px;color:var(--ink-40);margin-bottom:8px}
+.eg-desc{font-size:12.5px;color:var(--ink-60);line-height:1.6}
+.eg-amount{font-size:18px;font-family:var(--font-display);font-weight:500;color:var(--coral);margin-top:8px}
+.timeline-bar{border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.tb-head{background:var(--ink);padding:10px 16px;font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.06em;color:#fff}
+.tb-row{display:grid;grid-template-columns:140px 1fr;border-bottom:1px solid var(--ink-20)}
+.tb-row:last-child{border-bottom:none}
+.tb-year{background:var(--ink-10);padding:12px 14px;font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--ink);display:flex;align-items:center}
+.tb-detail{padding:12px 14px;font-size:13px;color:var(--ink-80);line-height:1.5}
+.tb-detail strong{color:var(--ink)}
+.scenario-box{border:1px solid var(--ink-20);margin:20px 0 28px;overflow:hidden}
+.sc-head{background:var(--coral);padding:10px 16px;font-family:var(--font-display);font-size:12px;font-weight:400;text-transform:uppercase;letter-spacing:.06em;color:#fff}
+.sc-body{padding:16px;background:var(--white)}
+.sc-line{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--ink-10);font-size:13px;color:var(--ink-80)}
+.sc-line:last-child{border-bottom:none;font-weight:700;color:var(--ink);padding-top:8px;margin-top:4px}
+.sc-line .val{font-family:var(--font-mono);font-size:12.5px}
+.sc-line .val.green{color:var(--green)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.num-row,.exclusion-grid,.related-links{grid-template-columns:1fr}.tb-row{grid-template-columns:90px 1fr}}
+@media print{body{background:white}.ph,.callout,.sc-head{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="US Gift & Estate Tax Guide (2026) | CPA Validated">
+  <meta property="og:description" content="How the US unified gift and estate tax system works. Annual exclusion ($19,000), lifetime exemption ($15M under OBBBA), gift splitting, GST tax, portability, and planning strategies. CPA-validated. IR">
+  <meta property="og:url" content="https://cpavalidated.com/gift-estate-tax-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="US Gift & Estate Tax Guide (2026) | CPA Validated">
+  <meta name="twitter:description" content="How the US unified gift and estate tax system works. Annual exclusion ($19,000), lifetime exemption ($15M under OBBBA), gift splitting, GST tax, portability, and planning strategies. CPA-validated. IR">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"US Gift & Estate Tax Guide (2026) | CPA Validated","description":"How the US unified gift and estate tax system works. Annual exclusion ($19,000), lifetime exemption ($15M under OBBBA), gift splitting, GST tax, portability, and planning strategies. CPA-validated. IR","url":"https://cpavalidated.com/gift-estate-tax-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>US Gift &amp; Estate Tax Guide (2026)</h1>
+  <div class="sub">Annual Exclusion &nbsp;&bull;&nbsp; $15M Lifetime Exemption &nbsp;&bull;&nbsp; Gift Splitting &nbsp;&bull;&nbsp; GST Tax &nbsp;&bull;&nbsp; Portability &nbsp;&bull;&nbsp; Planning Strategies</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §2001</span>
+    <span class="ph-meta-item">IRC §2010</span>
+    <span class="ph-meta-item">IRC §2503</span>
+    <span class="ph-meta-item">IRC §2631</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The US gift tax and estate tax are not two separate taxes - they are one unified transfer tax system, designed so that a dollar moved during life and a dollar moved at death are taxed the same way. Understanding how the two connect, what the exemptions are, and where the real planning opportunities exist requires understanding the system as a whole. This guide covers all of it, with the 2026 numbers under OBBBA.</p>
+
+<h2>The 2026 Numbers at a Glance</h2>
+
+<div class="num-row">
+  <div class="nr-cell">
+    <div class="nr-label">Annual Exclusion</div>
+    <div class="nr-val">$19K</div>
+    <div class="nr-desc">Per donor, per recipient, per year. No return required. IRC §2503(b).</div>
+  </div>
+  <div class="nr-cell">
+    <div class="nr-label">Lifetime Exemption</div>
+    <div class="nr-val">$15M</div>
+    <div class="nr-desc">Per individual. $30M per married couple. OBBBA P.L. 119-21, IRC §2010(c)(3). Indexed from 2027.</div>
+  </div>
+  <div class="nr-cell">
+    <div class="nr-label">Top Tax Rate</div>
+    <div class="nr-val">40%</div>
+    <div class="nr-desc">On taxable transfers above the exemption. IRC §2001(c). Unchanged by OBBBA.</div>
+  </div>
+</div>
+
+<h2>The Unified Credit: How Gift and Estate Tax Connect</h2>
+
+<p>The gift tax (IRC §2501 et seq.) and the estate tax (IRC §2001 et seq.) share a single lifetime exemption - the "unified credit" under IRC §2010. Every taxable gift you make during your lifetime reduces the exemption available at death. The system is designed to prevent a straightforward workaround: you cannot give everything away the day before you die and escape estate tax.</p>
+
+<p>Here is how the math works. If you have a $15M exemption and you make $4M of taxable gifts during your life - gifts above the annual exclusion - your remaining estate tax exemption at death is $11M. The two buckets are the same bucket, just allocated between lifetime and death-time transfers.</p>
+
+<div class="callout">
+  <div class="callout-label">The Anti-Clawback Rule</div>
+  <p>The anti-clawback regulation (Treas. Reg. §20.2010-1(c)) confirms that gifts made under a higher exemption are not recaptured into the estate if the exemption later decreases. With OBBBA making the $15M level permanent and indexed going forward, the immediate pressure here has eased - but the principle holds: large gifts made today lock in today's exemption permanently, regardless of future legislative changes.</p>
+</div>
+
+<h2>The Annual Exclusion: The Most Underused Tool Available</h2>
+
+<p>IRC §2503(b) allows you to give $19,000 per recipient per year in 2026 without any gift tax consequences and without touching your lifetime exemption. The exclusion resets every January 1. There is no limit on the number of recipients.</p>
+
+<p>For a married couple with three adult children, each married with two children, the math over time is significant:</p>
+
+<div class="scenario-box">
+  <div class="sc-head">Annual Exclusion Gifting - Married Couple, 12 Recipients</div>
+  <div class="sc-body">
+    <div class="sc-line"><span>Annual exclusion per donor (2026)</span><span class="val">$19,000</span></div>
+    <div class="sc-line"><span>Combined with gift splitting (2 donors)</span><span class="val">$38,000 per recipient</span></div>
+    <div class="sc-line"><span>Total annual (12 recipients x $38,000)</span><span class="val green">$456,000 / year</span></div>
+    <div class="sc-line"><span>Over 10 years - out of estate, no gift tax, no exemption used</span><span class="val green">$4,560,000+</span></div>
+  </div>
+</div>
+
+<p>No gift tax return is required for gifts at or below the annual exclusion per recipient. No lifetime exemption is consumed. The $456,000 per year simply leaves the taxable estate - permanently - along with all future appreciation on those dollars. Annual exclusion gifting compounded over decades is one of the highest-return, lowest-complexity strategies in transfer tax planning.</p>
+
+<h3>The Present Interest Requirement</h3>
+
+<p>The annual exclusion applies only to gifts of a "present interest" - the recipient must have an immediate, unrestricted right to use and enjoy the gift. A check to an adult child qualifies. A transfer to an irrevocable trust generally does not unless the trust contains a Crummey provision - a limited right of withdrawal given to beneficiaries that converts the transfer into a present interest for gift tax purposes. (<em>Crummey v. Commissioner</em>, 397 F.2d 82 (9th Cir. 1968).)</p>
+
+<h3>Exclusions Completely Outside the System</h3>
+
+<p>Two categories of transfers are excluded from the gift and estate tax system entirely - they consume neither the annual exclusion nor the lifetime exemption:</p>
+
+<div class="exclusion-grid">
+  <div class="eg-card">
+    <div class="eg-head">Direct Tuition Payments</div>
+    <div class="eg-auth">IRC §2503(e)</div>
+    <div class="eg-desc">Amounts paid directly to an educational institution for tuition are excluded from gift tax entirely. Must be paid directly to the institution - not to the student. Room, board, and fees do not qualify.</div>
+    <div class="eg-amount">Unlimited</div>
+  </div>
+  <div class="eg-card">
+    <div class="eg-head">Direct Medical Payments</div>
+    <div class="eg-auth">IRC §2503(e)</div>
+    <div class="eg-desc">Amounts paid directly to a medical provider for another person's medical care are excluded entirely. Must go to the provider - reimbursing the patient after the fact does not qualify.</div>
+    <div class="eg-amount">Unlimited</div>
+  </div>
+</div>
+
+<p>A grandparent who writes a $200,000 check directly to a university for a grandchild's tuition owes no gift tax and files no gift tax return. No annual exclusion used. No lifetime exemption used. This is one of the cleanest wealth transfer tools available and is consistently underutilized.</p>
+
+<h2>Gift Splitting: Doubling the Annual Exclusion</h2>
+
+<p>Married couples can elect to "split" gifts under IRC §2513. When elected, any gift made by either spouse is treated as if each made half. The practical effect: a couple can give $38,000 per recipient per year using one spouse's funds, with both annual exclusions applied. Gift splitting requires a Form 709 election and applies to all gifts made by both spouses during the calendar year - it cannot be applied selectively. Both spouses must be US citizens or residents at the time of the gift and must be married when the gift is made.</p>
+
+<div class="note-box"><strong>Non-citizen spouse limitation.</strong> The unlimited marital deduction (IRC §2523) does not apply to gifts to a non-citizen spouse. Gifts to a non-citizen spouse above $190,000 in 2026 (adjusted annually under IRC §2523(i)(2)) use lifetime exemption. This is a common pressure point for international couples and requires specific planning.</div>
+
+<h2>The Lifetime Exemption: $15 Million Under OBBBA</h2>
+
+<p>OBBBA (P.L. 119-21, signed July 4, 2025) permanently set the unified estate and gift tax exemption at $15,000,000 per individual, effective January 1, 2026, indexed for inflation beginning in 2027. A married couple effectively has $30,000,000 of combined exemption through portability.</p>
+
+<div class="timeline-bar">
+  <div class="tb-head">Exemption History and OBBBA Change</div>
+  <div class="tb-row">
+    <div class="tb-year">Pre-2018</div>
+    <div class="tb-detail"><strong>~$5.49M</strong> (2017). TCJA temporarily doubled the exemption.</div>
+  </div>
+  <div class="tb-row">
+    <div class="tb-year">2018-2025</div>
+    <div class="tb-detail"><strong>$11.18M - $13.99M</strong> (inflation-adjusted). Scheduled to sunset to ~$7M in 2026 without legislation.</div>
+  </div>
+  <div class="tb-row">
+    <div class="tb-year">2026</div>
+    <div class="tb-detail"><strong>$15,000,000 exactly.</strong> OBBBA overrode the sunset and reset the exemption to $15M. IRC §2010(c)(3), P.L. 119-21.</div>
+  </div>
+  <div class="tb-row">
+    <div class="tb-year">2027+</div>
+    <div class="tb-detail"><strong>Indexed for inflation</strong> from the $15M 2026 base. Permanent under current law.</div>
+  </div>
+</div>
+
+<h2>Portability: The Surviving Spouse's Bonus Exemption</h2>
+
+<p>Under IRC §2010(c)(4), a surviving spouse can inherit the deceased spouse's unused exemption (DSUE) and stack it on top of their own. If a spouse dies with $8M of unused exemption, the survivor inherits that $8M in addition to their own $15M - a combined $23M of protection.</p>
+
+<p>Portability is not automatic. The executor must elect it on a timely filed Form 706, even if no estate tax is due. Rev. Proc. 2022-32 provides a 5-year window to make a late portability election for estates not otherwise required to file. Missing the portability election - particularly for a first spouse dying with a large unused exemption - is an expensive and largely irreversible mistake.</p>
+
+<div class="note-box"><strong>GST exemption is not portable.</strong> The generation-skipping transfer tax exemption (IRC §2631) equals the estate tax exemption but does not pass to the surviving spouse. Each person's unused GST exemption is lost at death if not allocated. This is why dynasty trust planning retains value even with large exemptions - it deploys the GST exemption during life rather than letting it expire unused.</div>
+
+<h2>When a Gift Tax Return Is Required</h2>
+
+<table class="key-table">
+  <tr><th>Situation</th><th>Return (Form 709)?</th><th>Tax Due?</th></tr>
+  <tr><td>Gift of $19,000 or less to one recipient</td><td>No</td><td>No</td></tr>
+  <tr><td>Gift of $25,000 to one recipient</td><td>Yes - reports $6,000 taxable gift</td><td>No (uses $6,000 of lifetime exemption)</td></tr>
+  <tr><td>Gift splitting with spouse</td><td>Yes - both spouses file</td><td>No if within combined exclusion</td></tr>
+  <tr><td>Gift to non-citizen spouse over $190,000</td><td>Yes</td><td>Possibly - excess reduces lifetime exemption</td></tr>
+  <tr><td>Direct tuition or medical payment (IRC §2503(e))</td><td>No</td><td>No</td></tr>
+  <tr><td>Transfer to irrevocable trust with no Crummey rights</td><td>Yes - future interest, no annual exclusion</td><td>No (uses lifetime exemption)</td></tr>
+  <tr><td>Gift of a partial interest in a business or real estate</td><td>Yes - valuation discount issues may apply</td><td>Depends on value after discounts</td></tr>
+</table>
+
+<p>Form 709 is due April 15 of the year following the gift, with a 6-month extension available (October 15). Filing Form 709 does not mean you owe gift tax - it means you are disclosing gifts that reduce your remaining lifetime exemption. The IRS statute of limitations does not begin to run on a gift until it is reported on a return - another reason to file even when no tax is due.</p>
+
+<h2>The Marital Deduction</h2>
+
+<p>The unlimited marital deduction (IRC §2523 for gifts, IRC §2056 for bequests at death) allows unlimited transfers between US citizen spouses with zero transfer tax. You can give your US citizen spouse your entire estate without triggering any gift or estate tax.</p>
+
+<p>The catch is the word "defer." The marital deduction postpones tax - it does not eliminate it. Assets passing to a surviving spouse are included in the survivor's estate at death. If the survivor's taxable estate then exceeds their available exemption (their $15M plus any DSUE), the 40% tax applies to the excess. With a $30M combined exemption for most married couples, deferral effectively functions as elimination for the vast majority of estates.</p>
+
+<h2>The Generation-Skipping Transfer Tax</h2>
+
+<p>The GST tax (IRC §2601) is a separate 40% tax imposed on transfers that skip a generation - leaving assets directly to grandchildren or great-grandchildren, bypassing the intermediate generation. Its purpose is to prevent wealthy families from avoiding one round of estate tax by jumping over it. Each person has a GST exemption equal to the estate tax exemption ($15M in 2026) under IRC §2631.</p>
+
+<p>Allocating GST exemption to a dynasty trust - a long-term irrevocable trust for descendants - allows the trust assets to grow and be distributed across multiple generations free of GST tax. The $15M GST exemption contributed today, growing at 6% for 30 years, produces roughly $86M of GST-exempt wealth. That math is why dynasty trusts remain one of the most powerful intergenerational planning tools despite the large exemption.</p>
+
+<h2>The Federal Estate Tax Computation</h2>
+
+<p>The computation follows a specific statutory sequence under IRC §2001:</p>
+
+<table class="key-table">
+  <tr><th>Step</th><th>Description</th><th>Authority</th></tr>
+  <tr><td>1</td><td>Gross estate: all assets owned or deemed owned at death at fair market value</td><td class="mono">IRC §2031-2044</td></tr>
+  <tr><td>2</td><td>Subtract deductions: debts, expenses, marital deduction, charitable deduction</td><td class="mono">IRC §2053-2056</td></tr>
+  <tr><td>3</td><td>Add back: adjusted taxable gifts made after 1976</td><td class="mono">IRC §2001(b)</td></tr>
+  <tr><td>4</td><td>Apply unified rate schedule (40% flat on amount above exemption)</td><td class="mono">IRC §2001(c)</td></tr>
+  <tr><td>5</td><td>Subtract unified credit (equivalent to $15M exemption)</td><td class="mono">IRC §2010</td></tr>
+  <tr><td>6</td><td>Net federal estate tax due on Form 706</td><td class="mono">Form 706</td></tr>
+</table>
+
+<p>Step 3 - adding back lifetime taxable gifts - is the mechanism that unifies the system. Gifts and estate are computed together as one cumulative base, then the unified credit offsets the tax on that base. This is why using lifetime exemption now or saving it for death produces mathematically equivalent results - the computation converges either way.</p>
+
+<h2>State Estate Taxes</h2>
+
+<p>Twelve states plus DC impose a state estate tax, almost always with a lower exemption than the federal threshold. State estate tax is not deductible for federal purposes. For clients in high-estate-tax states with estates in the $3M-$15M range, planning may be warranted well below the federal threshold.</p>
+
+<table class="key-table">
+  <tr><th>State</th><th>2026 Exemption (est.)</th><th>Top Rate</th></tr>
+  <tr><td>Oregon</td><td>$1,000,000</td><td>16%</td></tr>
+  <tr><td>Massachusetts</td><td>$2,000,000</td><td>16%</td></tr>
+  <tr><td>Washington</td><td>~$2,193,000</td><td>20%</td></tr>
+  <tr><td>Minnesota</td><td>~$3,000,000</td><td>16%</td></tr>
+  <tr><td>Illinois</td><td>$4,000,000</td><td>16%</td></tr>
+  <tr><td>Vermont</td><td>$5,000,000</td><td>16%</td></tr>
+  <tr><td>Maryland</td><td>$5,000,000</td><td>16%</td></tr>
+  <tr><td>Hawaii</td><td>~$5,490,000</td><td>20%</td></tr>
+  <tr><td>Maine</td><td>~$6,800,000</td><td>12%</td></tr>
+  <tr><td>New York</td><td>~$7,160,000</td><td>16%</td></tr>
+  <tr><td>Connecticut</td><td>~$13,610,000</td><td>12%</td></tr>
+  <tr><td>Rhode Island</td><td>~$1,774,583</td><td>16%</td></tr>
+  <tr><td>D.C.</td><td>~$4,711,800</td><td>16%</td></tr>
+</table>
+
+<div class="note-box"><strong>New York's cliff tax.</strong> If a New York estate exceeds 105% of the NY exemption, the entire estate is subject to tax - not just the excess above the exemption. An estate just over the 105% threshold can pay more tax than an estate just below it. This cliff effect requires careful planning for NY residents with estates in the $7M-$10M range.</div>
+
+<h2>Who Actually Has a Federal Estate Tax Problem in 2026</h2>
+
+<table class="key-table">
+  <tr><th>Situation</th><th>Federal Risk</th><th>Priority Action</th></tr>
+  <tr><td>Single, estate under $15M</td><td>None</td><td>Check your state; focus on income tax planning and probate avoidance</td></tr>
+  <tr><td>Married, combined under $30M</td><td>None with portability</td><td>Elect portability on first death; verify beneficiary designations</td></tr>
+  <tr><td>Single, estate $15M-$25M</td><td>Low but real</td><td>Annual gifting program; consider irrevocable trust strategies</td></tr>
+  <tr><td>Married, combined $30M-$50M</td><td>Moderate</td><td>Active planning: SLATs, GRATs, annual gifting at scale</td></tr>
+  <tr><td>Estate over $50M</td><td>Significant</td><td>Comprehensive trust-based transfer tax planning required</td></tr>
+  <tr><td>Any estate in NY, OR, MA, WA, MN, IL</td><td>State risk below federal threshold</td><td>State-specific analysis; domicile change may be the highest-value move</td></tr>
+</table>
+
+<h2>Planning Strategies That Work</h2>
+
+<h3>Annual Exclusion Gifting Program</h3>
+<p>No trust required. No gift tax return required below the exclusion. A systematic program of annual exclusion gifts - ideally to a broad recipient pool including children, children's spouses, and grandchildren - is the most reliable and lowest-cost estate reduction strategy available. Start early; the compounding of excluded amounts over decades is where the real value accumulates.</p>
+
+<h3>529 Plan Superfunding</h3>
+<p>IRC §529(c)(2)(B) allows front-loading five years of annual exclusions into a 529 college savings plan in a single contribution - $95,000 per beneficiary in 2026 ($190,000 per beneficiary for a married couple using gift splitting). The contribution is treated as made ratably over five years. The account grows tax-free for education; any amounts not used for education can be rolled over to a Roth IRA under post-SECURE 2.0 rules (subject to limits).</p>
+
+<h3>Direct Tuition and Medical Payments</h3>
+<p>As described above - entirely outside the transfer tax system, no limit, no return. For families with members in expensive educational or medical situations, this is money left on the table if not used.</p>
+
+<h3>Lifetime Exemption Gifts: Freeze the Estate, Transfer the Growth</h3>
+<p>A gift today removes not just the gifted value but all future appreciation from the taxable estate. A $5M gift in a business interest that grows to $15M over 15 years removes $15M from the estate, using only $5M of exemption. The growth is completely exempt. This is the core logic of lifetime gifting for appreciating assets - and why business owners, real estate holders, and equity investors with large unrealized gains benefit most from early gifting programs.</p>
+
+<h3>Charitable Bequests and Lifetime Charitable Giving</h3>
+<p>Direct charitable bequests reduce the taxable estate dollar for dollar (IRC §2055). Lifetime gifts to charity generate both an income tax deduction and reduce the estate. For clients with highly appreciated low-basis assets and genuine charitable intent, donating those assets eliminates capital gains tax (the asset is deducted at fair market value, not basis), generates an income tax deduction, and reduces the taxable estate. A Charitable Remainder Trust (IRC §664) can also provide a lifetime income stream while generating the charitable deduction and avoiding immediate capital gains.</p>
+
+<h3>Irrevocable Life Insurance Trust (ILIT)</h3>
+<p>Life insurance death benefits are included in the insured's gross estate if the insured holds any "incidents of ownership" in the policy at death (IRC §2042). An ILIT owns the policy outside the insured's estate. Premiums are funded with annual exclusion gifts (using Crummey withdrawal rights to qualify for the exclusion). The death benefit pays to the trust estate-tax-free and can provide liquidity to the estate without being subject to estate tax itself. ILITs are particularly useful for illiquid estates - a business owner whose estate is mostly business equity, for example - where the estate needs cash to pay the tax without forcing a sale.</p>
+
+<div class="callout">
+  <div class="callout-label">The Non-Citizen Spouse: A Separate Regime</div>
+  <p>The unlimited marital deduction does not apply to transfers to a non-citizen spouse. To defer estate tax, assets must pass into a Qualified Domestic Trust (QDOT) under IRC §2056A - which requires a US trustee, restricts principal distributions, and defers tax until distributions are made or the survivor dies. Failing to plan for the non-citizen spouse in a large estate can mean an immediate 40% tax bill that could otherwise be deferred indefinitely.</p>
+  <p>The 2026 annual exclusion for gifts to a non-citizen spouse is $190,000 (IRC §2523(i)(2), inflation-adjusted annually). Gifts above $190,000 to a non-citizen spouse reduce the lifetime exemption.</p>
+</div>
+
+<h2>Three Misconceptions Worth Correcting</h2>
+
+<p><strong>"I need to avoid probate, so I need estate tax planning."</strong> Probate avoidance and estate tax planning are completely separate. A revocable trust avoids probate but provides zero estate tax benefit - it is fully included in the gross estate. These are different problems requiring different tools. Most people with estates under $15M need probate planning, not estate tax planning.</p>
+
+<p><strong>"Gifting appreciated assets to my children saves taxes."</strong> Gifting low-basis appreciated assets transfers the carryover basis to the recipient (IRC §1015). When the recipient sells, they owe capital gains tax on all accumulated appreciation. Assets received at death get a stepped-up basis to date-of-death value (IRC §1014), eliminating all pre-death capital gains. For low-basis assets in an estate under the exemption, gifting during life can produce a worse outcome than holding until death. Run the math - the answer depends on the relative size of the capital gains tax versus any estate tax savings.</p>
+
+<p><strong>"Estate tax is 40% of everything I own."</strong> The 40% rate applies only to the amount above the available exemption. An estate of $18M with no deductions and a $15M exemption owes 40% on $3M = $1.2M. That is significant - but it is 6.7% of the gross estate, not 40%. And that ignores any marital deduction, charitable deduction, or annual gifting that would reduce the taxable estate further.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="estate-tax-calculator.html" class="related-link">Estate Tax Calculator<span>IRC §2001 &middot; $15M OBBBA Exemption &middot; 12 States</span></a>
+    <a href="trust-guide.html" class="related-link">US Trust Guide<span>Revocable vs. Irrevocable &middot; IRC §679 &middot; Foreign Trusts</span></a>
+    <a href="pre-immigration-planning.html" class="related-link">Pre-Immigration Planning<span>Basis Step-Up Planning &middot; Trust Restructuring</span></a>
+    <a href="form-3520-guide.html" class="related-link">Form 3520 Guide<span>Foreign Gifts &middot; Foreign Trusts &middot; Penalties</span></a>
+    <a href="expatriation-tax-guide.html" class="related-link">Expatriation Tax Guide<span>IRC §877A &middot; Mark-to-Market &middot; Gift Tax on Expatriation</span></a>
+    <a href="state-residency-hnw.html" class="related-link">State Residency Guide<span>Domicile Planning &middot; State Estate Tax Avoidance</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §2001 (estate tax computation and rates); IRC §2010(c)(3) (unified credit - $15M, OBBBA P.L. 119-21); IRC §2031-2044 (gross estate); IRC §2053-2056 (estate tax deductions); IRC §2056A (QDOT); IRC §2501 (gift tax); IRC §2503(b) (annual exclusion - $19,000 for 2026, Rev. Proc. 2024-40); IRC §2503(e) (tuition and medical exclusions); IRC §2511 (transfers subject to gift tax); IRC §2513 (gift splitting); IRC §2522 (gift tax charitable deduction); IRC §2523 (gift tax marital deduction); IRC §2523(i)(2) (non-citizen spouse exclusion - $190,000 for 2026); IRC §2055 (estate tax charitable deduction); IRC §2601-2642 (generation-skipping transfer tax); IRC §2631 (GST exemption); IRC §1014 (step-up in basis at death); IRC §1015 (carryover basis for gifts); IRC §529(c)(2)(B) (superfunding election); IRC §2042 (life insurance in gross estate); IRC §664 (charitable remainder trusts); Treas. Reg. §20.2010-1(c) (anti-clawback); Rev. Proc. 2022-32 (late portability election, 5-year window); Crummey v. Commissioner, 397 F.2d 82 (9th Cir. 1968); OBBBA P.L. 119-21 (July 4, 2025). State exemption figures are estimates subject to annual adjustment by each state; verify current figures before planning.</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Gift and estate tax planning depends on facts specific to each taxpayer: asset values, state of domicile, family structure, citizenship, and prior filing history all affect results. Consult a qualified attorney and CPA before making any planning decisions. A tk.cpa resource. tk.cpa is  - <a href="https://tk.cpa" target="_blank">tk.cpa</a>. <a href="disclaimer.html">Full disclaimer.</a></div>

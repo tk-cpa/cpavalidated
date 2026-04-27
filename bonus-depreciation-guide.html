@@ -282,6 +282,354 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRC §168(k) (bonus depreciation, 100% permanent post-OBBBA for property after 1/19/2025); IRC §168(n) (qualified production property, new); IRC §179 (Section 179 expensing, $2.5M / $4M indexed); IRC §163(j) (interest expense limitation, EBITDA restored); IRC §168(g) (ADS); IRC §280F (luxury auto caps); OBBBA (P.L. 119-21), §70401 et seq. (depreciation provisions); CARES Act §2307 (QIP technical correction). Grant Thornton, "OBBBA offers new ways to accelerate depreciation"; BDO, "OBBBA Expands 100% Depreciation Expensing Opportunities" (Sept. 2025); Allen Matkins, "Bonus Depreciation Is Back!" (July 2025).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonus Depreciation Guide (Post-OBBBA): 100% Permanent | CPA Validated</title>
+<meta name="description" content="OBBBA (P.L. 119-21) permanently restored 100% bonus depreciation for property acquired and placed in service after January 19, 2025. The TCJA phase-down was repealed prospectively. New IRC Section 168(n) provides 100% expensing for qualified production property. What qualifies, the 1/19/2025 binding contract cliff, Section 179 comparison ($2.5M / $4M), Section 163(j) interaction. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/bonus-depreciation-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.yes-cell{color:var(--green);font-weight:700}
+.no-cell{color:var(--red);font-weight:700}
+.example-box{background:var(--ink-10);border:1px solid var(--ink-20);padding:20px;margin:20px 0 28px}
+.ex-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.ex-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px solid var(--ink-20)}
+.ex-row:last-child{border-bottom:none;font-weight:700}
+.ex-label{color:var(--ink-60)}
+.ex-val{font-family:var(--font-mono);font-weight:600}
+.ex-val.green{color:var(--green)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Bonus Depreciation Guide (Post-OBBBA): 100% Permanent | CPA Validated">
+  <meta property="og:description" content="OBBBA (P.L. 119-21) permanently restored 100% bonus depreciation for property acquired and placed in service after January 19, 2025. The TCJA phase-down was repealed prospectively. New IRC Section 168">
+  <meta property="og:url" content="https://cpavalidated.com/bonus-depreciation-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bonus Depreciation Guide (Post-OBBBA): 100% Permanent | CPA Validated">
+  <meta name="twitter:description" content="OBBBA (P.L. 119-21) permanently restored 100% bonus depreciation for property acquired and placed in service after January 19, 2025. The TCJA phase-down was repealed prospectively. New IRC Section 168">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Bonus Depreciation Guide (Post-OBBBA): 100% Permanent | CPA Validated","description":"OBBBA (P.L. 119-21) permanently restored 100% bonus depreciation for property acquired and placed in service after January 19, 2025. The TCJA phase-down was repealed prospectively. New IRC Section 168","url":"https://cpavalidated.com/bonus-depreciation-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Bonus Depreciation (Post-OBBBA)</h1>
+  <div class="sub">100% Permanent &nbsp;&bull;&nbsp; Property After 1/19/2025 &nbsp;&bull;&nbsp; IRC §168(k) &nbsp;&bull;&nbsp; New §168(n) Production Property</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §168(k)</span>
+    <span class="ph-meta-item">IRC §168(n)</span>
+    <span class="ph-meta-item">IRC §179</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">The One Big Beautiful Bill Act (OBBBA), P.L. 119-21, signed into law on July 4, 2025, permanently restored 100% bonus depreciation for qualified property acquired and placed in service after January 19, 2025. The TCJA phase-down (which would have driven the rate to 40% in 2025, 20% in 2026, and zero by 2027) was repealed prospectively. OBBBA also created new IRC Section 168(n), allowing 100% expensing of certain non-residential real property used in qualified U.S. production activities. The Section 179 maximum is increased to $2.5 million with a $4 million phaseout, both indexed for inflation.</p>
+
+<div class="callout">
+  <div class="callout-label">What Changed Under OBBBA</div>
+  <p><strong>Permanent 100% bonus depreciation.</strong> For property acquired and placed in service after January 19, 2025, qualified MACRS property with a class life of 20 years or less, computer software, and qualified improvement property is fully deductible in the year placed in service. The TCJA phase-down is repealed prospectively. IRC §168(k).</p>
+  <p><strong>The 1/19/2025 binding contract cliff.</strong> Property subject to a written binding contract entered into before January 20, 2025, is locked into the TCJA phase-down rate (40% for 2025 placed-in-service). Letters of intent and non-binding agreements are generally not "binding contracts."</p>
+  <p><strong>Section 168(n).</strong> A new provision allowing 100% expensing of non-residential real property used in qualified production activities (manufacturing, production, refining). Construction must begin after 1/19/2025 and before 1/1/2029; property must be placed in service before 1/1/2031.</p>
+  <p><strong>Section 179.</strong> Maximum deduction increased to $2.5 million; phaseout begins at $4 million of qualifying property. Both indexed for inflation. Effective for property placed in service after 12/31/2024.</p>
+</div>
+
+<h2>The Phase-Down That Was Repealed</h2>
+
+<p>Before OBBBA, bonus depreciation was on a glide path to zero. The schedule below shows what was scheduled to happen versus what actually applies post-OBBBA:</p>
+
+<table class="key-table">
+  <thead><tr><th>Year</th><th>Pre-OBBBA Scheduled Rate</th><th>Post-OBBBA Actual Rate</th></tr></thead>
+  <tbody>
+    <tr><td>2022</td><td>100%</td><td>100% (no change)</td></tr>
+    <tr><td>2023</td><td>80%</td><td>80% (no change)</td></tr>
+    <tr><td>2024</td><td>60%</td><td>60% (no change)</td></tr>
+    <tr><td>2025 (1/1 - 1/19)</td><td>40%</td><td>40% (binding contract before 1/20/2025: 40%)</td></tr>
+    <tr><td>2025 (after 1/19)</td><td>40%</td><td><strong>100%</strong></td></tr>
+    <tr><td>2026</td><td>20%</td><td><strong>100%</strong></td></tr>
+    <tr><td>2027 and beyond</td><td>0%</td><td><strong>100% (permanent)</strong></td></tr>
+  </tbody>
+</table>
+
+<p>The "100% permanent" status is permanent in the same sense that the TCJA estate exemption is permanent: it has no statutory sunset, but a future Congress could change the law. As written, there is no scheduled phase-down.</p>
+
+<h2>What Qualifies for 100% Bonus Depreciation</h2>
+
+<table class="key-table">
+  <thead><tr><th>Property Type</th><th>Bonus Eligible?</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Tangible personal property (MACRS &le;20 yr)</td><td class="yes-cell">YES</td><td>Machinery, equipment, furniture, fixtures</td></tr>
+    <tr><td>Computer software (off-the-shelf)</td><td class="yes-cell">YES</td><td>IRC §168(k)(2)(A)(i)(II)</td></tr>
+    <tr><td>Qualified Improvement Property (QIP)</td><td class="yes-cell">YES</td><td>15-year MACRS recovery; CARES Act 2020 technical correction</td></tr>
+    <tr><td>Used property (acquired from unrelated party)</td><td class="yes-cell">YES</td><td>Original use need not begin with the taxpayer (TCJA expansion)</td></tr>
+    <tr><td>Vehicles (subject to §280F caps)</td><td class="yes-cell">YES</td><td>Luxury auto cap still applies; SUVs &gt;6,000 lb GVWR not subject to §280F caps</td></tr>
+    <tr><td>Non-residential real property (39 yr)</td><td class="no-cell">NO</td><td>Generally not bonus-eligible. But see §168(n) below for qualified production property.</td></tr>
+    <tr><td>Residential rental property (27.5 yr)</td><td class="no-cell">NO</td><td>Straight-line MACRS only</td></tr>
+    <tr><td>Land</td><td class="no-cell">NO</td><td>Not depreciable</td></tr>
+    <tr><td>ADS-required property</td><td class="no-cell">NO</td><td>Real property trades / businesses electing out of §163(j); foreign-use property; tax-exempt use property</td></tr>
+  </tbody>
+</table>
+
+<h2>Section 168(n) - Qualified Production Property</h2>
+
+<p>OBBBA created a new category of 100% expensable real property: <strong>qualified production property</strong> (QPP). This is the single biggest new domestic tax incentive for U.S. manufacturers since TCJA.</p>
+
+<p>To qualify as QPP, all of the following must be true:</p>
+
+<ul style="margin:8px 0 18px 24px">
+  <li style="font-size:14px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Non-residential real property</li>
+  <li style="font-size:14px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Construction begins after January 19, 2025, and before January 1, 2029</li>
+  <li style="font-size:14px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Placed in service in the United States before January 1, 2031</li>
+  <li style="font-size:14px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Original use begins with the taxpayer</li>
+  <li style="font-size:14px;line-height:1.7;color:var(--ink-80)">Used as an integral part of a qualified production activity (manufacturing, production, or refining of qualified products)</li>
+</ul>
+
+<p>Qualified products generally include any tangible personal property. Food served on-site does not qualify, so a restaurant cannot use §168(n) to expense its building. Office space within a manufacturing facility may qualify if it is integral to the production activity.</p>
+
+<div class="green-box"><strong>The 39-year asset that gets expensed.</strong> Without §168(n), a U.S. manufacturing plant depreciates over 39 years. Under §168(n), qualifying portions of the building are 100% deductible in the year placed in service. For a $50 million plant, the year-one tax benefit can exceed $10 million at the corporate rate.</div>
+
+<h2>Bonus Depreciation vs. Section 179</h2>
+
+<table class="key-table">
+  <thead><tr><th>Feature</th><th>Bonus Depreciation §168(k)</th><th>Section 179</th></tr></thead>
+  <tbody>
+    <tr><td>Rate (post-OBBBA)</td><td>100%</td><td>100% up to limit</td></tr>
+    <tr><td>Annual cap</td><td>None</td><td>$2.5 million (indexed)</td></tr>
+    <tr><td>Phaseout threshold</td><td>None</td><td>Begins at $4 million of qualifying property</td></tr>
+    <tr><td>Can create a loss</td><td class="yes-cell">YES</td><td class="no-cell">NO - limited to taxable income</td></tr>
+    <tr><td>SUVs &gt;6,000 lb GVWR</td><td>Eligible</td><td>Capped (annual indexed)</td></tr>
+    <tr><td>Used property</td><td class="yes-cell">Eligible</td><td class="yes-cell">Eligible</td></tr>
+    <tr><td>Real property (improvements)</td><td>QIP only</td><td>Roofs, HVAC, fire / alarm / security on non-residential real</td></tr>
+    <tr><td>Election needed</td><td>Auto-applied unless elect out</td><td>Must elect on Form 4562</td></tr>
+    <tr><td>State conformity</td><td>Mixed - many states decouple</td><td>Better state conformity</td></tr>
+    <tr><td>§163(j) interaction</td><td>Treated as amortization for ATI add-back</td><td>Treated as amortization for ATI add-back</td></tr>
+  </tbody>
+</table>
+
+<p>Strategic point: bonus depreciation creates losses that flow through to owners; Section 179 cannot. For a profitable C-corporation, the choice is largely indifferent on the federal side. For a pass-through with a loss-generating year, bonus depreciation can produce a deduction that Section 179 would not allow.</p>
+
+<h2>The §163(j) Interaction</h2>
+
+<p>OBBBA also restored the EBITDA-based calculation for the Section 163(j) business interest expense limitation, effective for tax years beginning after December 31, 2024. Bonus depreciation now <em>helps</em> §163(j) capacity by adding back to ATI - which it did not from 2022-2024 under the EBIT regime.</p>
+
+<p>For leveraged businesses, this changes the calculus: aggressive bonus depreciation no longer trades against interest deduction capacity. Both deductions are available simultaneously. Run §163(j) and bonus depreciation together in the same model rather than sequentially.</p>
+
+<div class="note-box"><strong>2026 ordering rule.</strong> For tax years beginning after 12/31/2025, OBBBA also brings capitalized business interest under §163(j) (unless required to be capitalized under §263(g) or §263A(f)). The §163(j) limitation is generally calculated <em>before</em> applying interest capitalization provisions. Real estate and capital-intensive groups need to re-run debt models for 2026 and forward.</div>
+
+<h2>Example - Equipment Purchase 2026</h2>
+
+<div class="example-box">
+  <div class="ex-title">$500,000 Manufacturing Equipment, Placed in Service April 2026</div>
+  <div class="ex-row"><span class="ex-label">Cost basis</span><span class="ex-val">$500,000</span></div>
+  <div class="ex-row"><span class="ex-label">Bonus rate (post-OBBBA, post-1/19/2025)</span><span class="ex-val">100%</span></div>
+  <div class="ex-row"><span class="ex-label">Year 1 bonus deduction</span><span class="ex-val green">$500,000</span></div>
+  <div class="ex-row"><span class="ex-label">Remaining depreciable basis</span><span class="ex-val">$0</span></div>
+  <div class="ex-row"><span class="ex-label">Federal tax benefit at 21% C-corp rate</span><span class="ex-val green">$105,000</span></div>
+</div>
+
+<p>Compare to the pre-OBBBA scheduled outcome: 20% bonus would have allowed only $100,000 in year 1, with the remaining $400,000 depreciated over the 7-year MACRS recovery period. The cash-tax delta in year 1 is roughly $84,000 in this example.</p>
+
+<h2>Placed-in-Service Requirement</h2>
+
+<p>Bonus depreciation is only available in the year property is "placed in service" - meaning ready and available for the taxpayer's intended use. Ordering, paying for, or even taking delivery of property is not enough; the property must be functional and in the taxpayer's possession at its intended location.</p>
+
+<p>For self-constructed property and long-production-period property, additional rules apply under §168(k)(2)(B) and (C). The transition election under OBBBA allows taxpayers to apply the 40% TCJA rate (or 60% for long-production-period property and certain aircraft) for property placed in service in the first tax year ending after January 19, 2025.</p>
+
+<h3>The Written Binding Contract Rule</h3>
+
+<p>Property subject to a written binding contract entered into before January 20, 2025, is treated as acquired on the contract date for bonus depreciation eligibility. Under existing regulations issued after TCJA, a "written binding contract" is a contract enforceable against the taxpayer under state law that does not limit damages to a specified amount (or limits damages to at least 5% of the contract price).</p>
+
+<p>What is binding:</p>
+<ul style="margin:6px 0 14px 24px">
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Signed purchase agreements with full damages enforceable</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80)">Construction contracts where the taxpayer is bound to pay for the asset</li>
+</ul>
+
+<p>What is generally not binding:</p>
+<ul style="margin:6px 0 14px 24px">
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Letters of intent</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Memoranda of understanding</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80)">Contracts where damages are capped below 5% of the purchase price</li>
+</ul>
+
+<div class="red-box"><strong>The trap.</strong> Two pieces of equipment placed in service the same week in 2025 may have different bonus rates: one ordered under a binding contract dated December 2024 gets 40%; one ordered February 2025 gets 100%. Track contract date as a separate column on the depreciation schedule. The IRS is expected to issue updated written binding contract guidance in response to OBBBA - check for the most recent regulation before filing.</div>
+
+<h2>Election Out</h2>
+
+<p>Taxpayers may elect out of bonus depreciation by class of property for any taxable year. The election is made on a timely-filed return (including extensions), is irrevocable without IRS consent, and applies to all property in the elected class placed in service that year. IRC §168(k)(7).</p>
+
+<p>Common reasons to elect out:</p>
+<ul style="margin:6px 0 14px 24px">
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Generating losses that exceed at-risk or passive activity loss limits</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Pass-through owner cannot use the loss in the current year (basis, at-risk, PAL, excess business loss)</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Smoothing income to avoid NOL 80% taxable income limitation in later years</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80)">QBI optimization (bonus depreciation can drive QBI negative for non-SSTB owners)</li>
+</ul>
+
+<h2>Alternative Depreciation System (ADS)</h2>
+
+<p>Property required to be depreciated under the Alternative Depreciation System (longer recovery, straight-line) is not eligible for bonus depreciation. ADS applies to:</p>
+<ul style="margin:6px 0 14px 24px">
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Real property trades or businesses that have elected out of the §163(j) interest limitation</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Property used predominantly outside the United States</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80);margin-bottom:5px">Tax-exempt use property</li>
+  <li style="font-size:14px;line-height:1.65;color:var(--ink-80)">Property financed with tax-exempt bonds</li>
+</ul>
+
+<p>Real estate businesses that elected out of §163(j) under the TCJA / CARES regime to avoid the EBIT-based interest cap should re-evaluate. With OBBBA's restoration of EBITDA, the original reason for the §163(j) election may no longer apply. Revoking the election (subject to IRS procedural rules) restores access to bonus depreciation for newly acquired real estate improvements that qualify as QIP.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>P.L. 119-21 · All Major Provisions</span></a>
+    <a href="depreciation-calculator.html" class="related-link">Depreciation Calculator<span>MACRS · Bonus · §179</span></a>
+    <a href="vehicle-depreciation.html" class="related-link">Vehicle Depreciation<span>§280F · SUVs · Luxury Auto Caps</span></a>
+    <a href="qbi-deduction-guide.html" class="related-link">QBI Deduction Guide<span>IRC §199A · Bonus Interaction</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §168(k) (bonus depreciation, 100% permanent post-OBBBA for property after 1/19/2025); IRC §168(n) (qualified production property, new); IRC §179 (Section 179 expensing, $2.5M / $4M indexed); IRC §163(j) (interest expense limitation, EBITDA restored); IRC §168(g) (ADS); IRC §280F (luxury auto caps); OBBBA (P.L. 119-21), §70401 et seq. (depreciation provisions); CARES Act §2307 (QIP technical correction). Grant Thornton, "OBBBA offers new ways to accelerate depreciation"; BDO, "OBBBA Expands 100% Depreciation Expensing Opportunities" (Sept. 2025); Allen Matkins, "Bonus Depreciation Is Back!" (July 2025).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. The IRS is expected to issue updated regulations and guidance on §168(k), §168(n), and the OBBBA written binding contract rules. Verify current rates, thresholds, and procedural rules before taking any filing position. Consult a qualified tax professional. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

@@ -55,6 +55,127 @@
   </div>
 </div>
 <div class="source-row">Authority: IRC §1(g) (tax on net unearned income of certain minor children - child's net unearned income above threshold taxed at parent's rate; applies to children under 19, or students under 24 whose earned income does not exceed half of support; does not apply to married children filing jointly); IRC §1(g)(4) (net unearned income defined - unearned income exceeding sum of $1,250 plus greater of $1,250 or itemized deductions directly connected with production of unearned income; amounts indexed for inflation under §1(g)(7)); IRC §1(g)(2) (tax computed at parent's rate - net unearned income taxed as if it were additional income of the parent at parent's marginal rate); IRC §1(g)(6) (election to include child's income on parent's return - Form 8814; conditions: income consists solely of interest/dividends/Alaska Permanent Fund; under $11,500; no estimated tax in child's name; no §6154 underpayment penalty exposure); Rev. Proc. 2025-32 (2026 kiddie tax thresholds - $1,250 per tier; indexed amounts for 2026 tax year); Form 8615 (Tax for Certain Children Who Have Unearned Income - annual computation; requires parent taxable income and filing status; attached to child's Form 1040); IRS Publication 929 (Tax Rules for Children and Dependents - kiddie tax computation, Form 8814 election, support test for students).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiddie Tax: §1(g) Unearned Income of Children Taxed at Parent's Rate (2026) | CPA Validated</title>
+<meta name="description" content="Kiddie tax guide under IRC §1(g): which children are subject to the kiddie tax, what counts as net unearned income, how the parent's marginal rate applies to the child's investment income, the threshold amounts for 2026, Form 8615, college student age rules, earned income exception, and planning strategies. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/kiddie-tax-guide.html">
+<meta name="ai-content-type" content="tax-reference">
+<meta name="ai-validated" content="CPA-EA-reviewed">
+<meta name="ai-authority" content="IRC-cited">
+<link rel="alternate" type="text/plain" title="LLMs Index" href="https://cpavalidated.com/llms.txt">
+<meta property="og:type" content="article"><meta property="og:title" content="Kiddie Tax: §1(g) Unearned Income of Children Taxed at Parent's Rate (2026)"><meta property="og:url" content="https://cpavalidated.com/kiddie-tax-guide.html"><meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Kiddie Tax: §1(g) Net Unearned Income at Parent's Rate","url":"https://cpavalidated.com/kiddie-tax-guide.html","author":{"@type":"Organization","name":"tk.cpa","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-20:#D9DBDE;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}.cat-nav{background:var(--ink);overflow-x:auto;scrollbar-width:none}.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent}.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}.article{max-width:800px;margin:0 auto;padding:40px 24px 0}.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}.note-box{background:var(--amber-bg);border-left:3px solid var(--amber-b);padding:14px 18px;margin:22px 0;font-size:13px;color:var(--amber);line-height:1.65}.note-box strong{font-weight:600}.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:14px 18px;margin:22px 0;font-size:13px;color:var(--green);line-height:1.65}.green-box strong{font-weight:600}.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:14px 18px;margin:22px 0;font-size:13px;color:var(--red);line-height:1.65}.red-box strong{font-weight:600}.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:14px;margin-top:28px}.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}@media(max-width:600px){.related-links{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<nav><a href="index.html" class="brand"><div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div></a><a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a></nav>
+<div class="cat-nav" role="navigation" aria-label="Topics"><div class="cat-nav-inner"><a href="individual-tax.html" class="active">Individual Tax</a><a href="business-entity.html">Business &amp; Entity</a><a href="real-estate-tax.html">Real Estate</a><a href="international-tax.html">International Tax</a><a href="retirement-savings.html">Retirement &amp; Savings</a><a href="investments-capital.html">Investments &amp; Capital</a><a href="estate-gifts.html">Estate &amp; Gifts</a><a href="state-compliance.html">State &amp; Compliance</a></div></div>
+<div class="ph"><div class="phi"><h1>Kiddie Tax: §1(g) Net Unearned Income at Parent's Rate</h1><div class="sub">Children Under 19 (or 24 if Student) &bull; Net Unearned Income &bull; Parent's Marginal Rate &bull; Form 8615</div><div class="meta"><span class="ph-meta-item">IRC §1(g)</span><span class="ph-meta-item">Form 8615</span><span class="ph-meta-item">Rev. Proc. 2025-32</span></div></div></div>
+<div class="back"><a href="individual-tax.html">&#8592; Individual Tax</a></div>
+<div class="article">
+<p class="lead">The kiddie tax under IRC §1(g) taxes a child's net unearned income above a threshold at the parent's marginal rate rather than the child's lower rate. Congress enacted the kiddie tax to prevent high-bracket parents from shifting investment income to their children to take advantage of the child's zero or 10% tax rate. The rules apply more broadly than many families realize - they cover not just young children but full-time students up to age 23, and they apply regardless of whether the child files a joint return.</p>
+
+<div class="callout">
+  <div class="callout-label">2026 Kiddie Tax Thresholds - Rev. Proc. 2025-32</div>
+  <p><strong>Kiddie tax threshold:</strong> $2,500 of net unearned income for 2026 (indexed annually). The first $1,250 is covered by the child's standard deduction; the next $1,250 is taxed at the child's rate; anything above $2,500 is taxed at the parent's rate.</p>
+  <p><strong>Who is subject:</strong> A child who (1) has net unearned income above the threshold, (2) has at least one living parent at year-end, (3) does not file a joint return, and (4) is under age 19, OR is a full-time student under age 24 who does not have earned income exceeding half of their support.</p>
+</div>
+
+<h2>The Three-Tier Calculation</h2>
+<p>The child's unearned income is divided into three tiers for 2026:</p>
+<p><strong>Tier 1 - $0 to $1,250:</strong> Sheltered by the child's standard deduction (allocated to unearned income first). No tax.</p>
+<p><strong>Tier 2 - $1,251 to $2,500:</strong> Taxed at the child's own marginal rate. If the child has little or no other income, this is the 10% bracket.</p>
+<p><strong>Tier 3 - Above $2,500 (Net Unearned Income):</strong> Taxed at the parent's marginal rate - whatever rate the parent would pay on an additional dollar of income. If the parent is in the 37% bracket, the child's investment income above $2,500 is also taxed at 37%.</p>
+
+<h2>What Is Unearned Income</h2>
+<p>Unearned income includes: interest, dividends (including qualified dividends), capital gains distributions, taxable scholarships not used for tuition, and trust income that is not compensation for services. It does not include wages, salaries, self-employment income, or amounts received under a retirement plan. Qualified dividends and long-term capital gains retain their preferential character even when subject to the kiddie tax - they are still taxed at the preferential rates (0%/15%/20%) but at the parent's income level bracket rather than the child's.</p>
+<div class="note-box"><strong>The UGMA/UTMA account trap.</strong> Custodial accounts (UGMA/UTMA) set up for children generate unearned income taxable to the child. Parents who fund these accounts to shift investment income to their children's lower bracket are often surprised to find that the kiddie tax applies throughout college - the child's capital gains and dividends from the custodial account are taxed at the parent's rate until the child is 24 (if a full-time student) or 19 (if not). The intended tax savings evaporate entirely for high-bracket parents.</div>
+
+<h2>The Full-Time Student Age 24 Rule</h2>
+<p>A full-time student (enrolled for at least five calendar months during the year) who is under age 24 is subject to the kiddie tax unless the student's earned income exceeds half of their support. Support includes tuition, room, board, clothing, transportation - the full cost of supporting the student for the year. For most college students supported primarily by parents, the earned income (summer job wages) does not exceed half of total support, so the kiddie tax applies. A student who becomes financially self-supporting - earning wages that exceed half of their total support costs - escapes the kiddie tax regardless of age under 24.</p>
+
+<h2>Form 8615 and Reporting</h2>
+<p>The kiddie tax is computed on Form 8615 (Tax for Certain Children Who Have Unearned Income), which is attached to the child's Form 1040. The form requires the parent's taxable income and filing status. The parent's return does not need to be completed first - the parent's tax information can be estimated and Form 8615 amended if the parent's return changes. Alternatively, the parent may elect to include the child's unearned income on the parent's own return using Form 8814, avoiding a separate child return - but only if the child's income consists solely of interest and dividends under $11,500 and no estimated tax payments were made in the child's name.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="section-529-guide.html" class="related-link">§529 Plan Guide<span>529 distributions shift education costs to tax-free treatment</span></a>
+    <a href="child-tax-credit-guide.html" class="related-link">Child Tax Credit<span>CTC $2,200 for qualifying children in 2026</span></a>
+    <a href="qualified-dividends-guide.html" class="related-link">Qualified Dividends<span>Kiddie tax applies parent's income level to child's qualified divs</span></a>
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>Model kiddie tax impact on child's investment account gains</span></a>
+    <a href="education-credits-guide.html" class="related-link">Education Credits<span>AOTC and LLC alongside kiddie tax planning</span></a>
+    <a href="individual-tax.html" class="related-link">Individual Tax Hub<span>All individual tax topics</span></a>
+  </div>
+</div>
+<div class="source-row">Authority: IRC §1(g) (tax on net unearned income of certain minor children - child's net unearned income above threshold taxed at parent's rate; applies to children under 19, or students under 24 whose earned income does not exceed half of support; does not apply to married children filing jointly); IRC §1(g)(4) (net unearned income defined - unearned income exceeding sum of $1,250 plus greater of $1,250 or itemized deductions directly connected with production of unearned income; amounts indexed for inflation under §1(g)(7)); IRC §1(g)(2) (tax computed at parent's rate - net unearned income taxed as if it were additional income of the parent at parent's marginal rate); IRC §1(g)(6) (election to include child's income on parent's return - Form 8814; conditions: income consists solely of interest/dividends/Alaska Permanent Fund; under $11,500; no estimated tax in child's name; no §6154 underpayment penalty exposure); Rev. Proc. 2025-32 (2026 kiddie tax thresholds - $1,250 per tier; indexed amounts for 2026 tax year); Form 8615 (Tax for Certain Children Who Have Unearned Income - annual computation; requires parent taxable income and filing status; attached to child's Form 1040); IRS Publication 929 (Tax Rules for Children and Dependents - kiddie tax computation, Form 8814 election, support test for students).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button><button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;<\/button>';html+='<\/div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'<\/a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link<\/button>';html+='<\/div><\/div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>
 </div>

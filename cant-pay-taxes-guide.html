@@ -144,6 +144,216 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §6159 (installment agreements - IRS authority to enter into agreements for payment of tax in installments; streamlined IA for balances under $50,000 up to 72 months); IRC §6159(c) (IRS may modify or terminate IA if taxpayer fails to timely pay any installment or other federal tax liability); IRC §7122 (offers in compromise - IRS authority to compromise tax liabilities; doubt as to collectibility, doubt as to liability, or effective tax administration grounds); Treas. Reg. §301.7122-1 (OIC regulations - acceptable offer amount equals reasonable collection potential (RCP)); IRM 5.8 (offers in compromise - processing, evaluation, RCP calculation methodology); IRM 5.14 (installment agreements - streamlined, regular, and partial pay procedures); IRM 5.16 (currently not collectible procedures - CNC status, financial hardship standards, collection information statement requirements); IRC §6651(a)(1) (failure-to-file penalty - 5% per month up to 25%); IRC §6651(a)(2) (failure-to-pay penalty - 0.5% per month up to 25%; reduced to 0.25% while valid IA in effect); IRC §6601 (interest on underpayments - federal short-term rate plus 3%, compounding daily); Form 433-A/433-F (Collection Information Statement - required for PPIA, OIC, and CNC); Form 9465 (Installment Agreement Request); IRS OIC Pre-Qualifier Tool at irs.gov/oic-pre-qualifier.</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can't Pay Your Taxes? Installment Agreements, CNC & Offer in Compromise (2026) | CPA Validated</title>
+<meta name="description" content="Can't pay your tax bill? Plain-English guide to IRS payment options: installment agreements (up to 72 months), Currently Not Collectible status, Offer in Compromise, partial pay installment agreements, and how penalties and interest work while you pay. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/cant-pay-taxes-guide.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can't Pay Your Taxes? Installment Agreements, CNC & Offer in Compromise">
+<meta property="og:description" content="IRS payment options explained: installment agreements, Currently Not Collectible, Offer in Compromise. Penalties keep running. Your options and rights. CPA-validated.">
+<meta property="og:url" content="https://cpavalidated.com/cant-pay-taxes-guide.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Can't Pay Your Taxes? Installment Agreements, CNC & Offer in Compromise","url":"https://cpavalidated.com/cant-pay-taxes-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.option-card{background:var(--white);border:1px solid var(--ink-20);border-left:4px solid var(--coral);padding:20px;margin-bottom:16px}
+.option-card h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--ink);margin-bottom:8px}
+.option-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.option-tag{font-size:11px;font-weight:600;background:var(--ink-10);color:var(--ink-60);padding:3px 8px;font-family:var(--font-mono)}
+.option-body{font-size:13.5px;color:var(--ink-80);line-height:1.65}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html" class="active">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Can't Pay Your Taxes? Your Options Explained.</h1>
+  <div class="sub">Installment Agreements &nbsp;&bull;&nbsp; Currently Not Collectible &nbsp;&bull;&nbsp; Offer in Compromise &nbsp;&bull;&nbsp; Penalties Keep Running &nbsp;&bull;&nbsp; 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6159</span>
+    <span class="ph-meta-item">IRC §7122</span>
+    <span class="ph-meta-item">IRM 5.8, 5.14, 5.16</span>
+  </div>
+</div></div>
+<div class="back"><a href="state-compliance.html">&#8592; State &amp; Compliance</a></div>
+<div class="article">
+
+<p class="lead">Not being able to pay your tax bill is stressful, but it is not the end of the world. The IRS has formal programs for taxpayers who cannot pay in full. What matters is that you file your return on time regardless - the failure-to-file penalty is 10 times worse than the failure-to-pay penalty. Once you have filed, the IRS gives you several paths to resolve a balance you cannot pay immediately.</p>
+
+<div class="callout">
+  <div class="callout-label">The Single Most Important Thing</div>
+  <p><strong>File your return even if you cannot pay.</strong> The failure-to-file penalty is 5% per month of the unpaid tax, up to 25%. The failure-to-pay penalty is only 0.5% per month. Filing without paying costs you 0.5% per month. Not filing costs you 5% per month. Always file on time - or file an extension - even if you cannot pay a penny.</p>
+</div>
+
+<h2>How Penalties and Interest Work While You Owe</h2>
+
+<p>While you have an unpaid balance, two things are running simultaneously: the failure-to-pay penalty (0.5% per month of the unpaid tax, up to 25% total) and interest (currently the federal short-term rate plus 3%, compounding daily). Both continue until the balance is paid in full. Setting up an installment agreement reduces the failure-to-pay penalty to 0.25% per month while the agreement is in effect - a small but real benefit.</p>
+
+<h2>Your Options - From Easiest to Most Complex</h2>
+
+<div class="option-card">
+  <h3>1. Pay in Full (Short Extension)</h3>
+  <div class="option-meta"><span class="option-tag">Simplest</span><span class="option-tag">Up to 180 days</span></div>
+  <div class="option-body">If you can pay the full balance within 180 days, request a short-term payment plan online at IRS.gov (irs.gov/payments). No fee for short-term plans. Interest and the failure-to-pay penalty continue to accrue until paid, but you avoid the installment agreement setup fee and ongoing compliance requirements.</div>
+</div>
+
+<div class="option-card">
+  <h3>2. Installment Agreement (Monthly Payments)</h3>
+  <div class="option-meta"><span class="option-tag">Most Common</span><span class="option-tag">Up to 72 months</span><span class="option-tag">$31-$130 setup fee</span></div>
+  <div class="option-body">If you owe $50,000 or less in combined taxes, penalties, and interest, you can set up a streamlined installment agreement online without providing financial information. Payments can extend up to 72 months (6 years). The minimum payment is roughly your balance divided by the number of months. You must stay current on all future taxes while the agreement is in effect - any new balance terminates the agreement. Setup fee is $31 for direct debit agreements or $130 for other payment methods ($43/$130 for low-income taxpayers).</div>
+</div>
+
+<div class="option-card">
+  <h3>3. Partial Pay Installment Agreement (PPIA)</h3>
+  <div class="option-meta"><span class="option-tag">When full payment impossible</span><span class="option-tag">Financial disclosure required</span></div>
+  <div class="option-body">If you cannot pay the full balance over 72 months, you can propose monthly payments based on what you can actually afford after allowable living expenses. The IRS uses national and local expense standards to determine what is "allowable." You pay what you can; when the collection statute of limitations expires (10 years from assessment), the remaining balance is written off. The IRS reviews PPIAs every two years and may increase payments if your financial situation improves.</div>
+</div>
+
+<div class="option-card">
+  <h3>4. Currently Not Collectible (CNC)</h3>
+  <div class="option-meta"><span class="option-tag">Hardship status</span><span class="option-tag">Temporary relief</span></div>
+  <div class="option-body">If paying anything would prevent you from meeting basic living expenses - housing, food, utilities, transportation - the IRS can place your account in Currently Not Collectible status. Collection activity stops. The balance does not go away - interest still accrues and the 10-year statute runs - but the IRS will not levy your wages or bank accounts. The IRS reviews CNC status periodically and will begin collection again if your financial situation improves. CNC requires filing Form 433-F or 433-A (Collection Information Statement) documenting your income, expenses, and assets.</div>
+</div>
+
+<div class="option-card">
+  <h3>5. Offer in Compromise (OIC)</h3>
+  <div class="option-meta"><span class="option-tag">Settle for less than owed</span><span class="option-tag">Strict eligibility</span><span class="option-tag">Complex process</span></div>
+  <div class="option-body">An OIC allows you to settle your tax debt for less than the full amount owed if the IRS determines you cannot pay the full liability or doing so would create economic hardship. The IRS accepts roughly 40% of OIC applications. The amount the IRS will accept equals your "reasonable collection potential" (RCP) - essentially the net equity in your assets plus your future income capacity over a set period. The IRS offer formula: RCP = net asset equity + (monthly disposable income × 12 or 24 depending on payment terms). If your total assets and future income stream produce an RCP less than what you owe, an OIC may be viable. Application fee is $205 (waived for low-income taxpayers). You must be current on all tax filings and not in an open bankruptcy.</div>
+</div>
+
+<div class="red-box"><strong>Beware OIC mills.</strong> Companies advertising "settle your tax debt for pennies on the dollar" charge large upfront fees and often file OICs that have no realistic chance of acceptance - then keep the fee. The IRS's own OIC pre-qualifier tool at IRS.gov (free) will tell you if you are likely eligible before you pay anyone anything. If you do not qualify for an OIC, installment agreement or CNC is the right path.</div>
+
+<div class="green-box"><strong>First-Time Penalty Abatement can eliminate hundreds or thousands in penalties.</strong> If you have a clean compliance history (no penalties in the prior 3 tax years), call the IRS and ask for first-time penalty abatement (FTA) of the failure-to-file and failure-to-pay penalties. It is a one-time administrative relief that requires no special application. Many people do not know it exists. It does not reduce the underlying tax or interest, but eliminating penalties can meaningfully reduce the total balance.</div>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="irs-notice-guide.html" class="related-link">IRS Notices Guide<span>CP14 balance due &middot; LT11 levy warning</span></a>
+    <a href="penalty-calculator.html" class="related-link">Penalty Calculator<span>Estimate failure-to-file and failure-to-pay</span></a>
+    <a href="irs-payments-guide.html" class="related-link">IRS Payments Guide<span>How to make payments &middot; EFTPS &middot; IRS Direct Pay</span></a>
+    <a href="irs-audit-guide.html" class="related-link">IRS Audit Guide<span>If the balance is disputed &middot; SOL on assessment</span></a>
+    <a href="tax-extension-guide.html" class="related-link">Tax Extension Guide<span>File an extension even if you can't pay</span></a>
+    <a href="tax-calendar.html" class="related-link">Tax Calendar 2026<span>Filing deadlines &middot; Estimated tax due dates</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §6159 (installment agreements - IRS authority to enter into agreements for payment of tax in installments; streamlined IA for balances under $50,000 up to 72 months); IRC §6159(c) (IRS may modify or terminate IA if taxpayer fails to timely pay any installment or other federal tax liability); IRC §7122 (offers in compromise - IRS authority to compromise tax liabilities; doubt as to collectibility, doubt as to liability, or effective tax administration grounds); Treas. Reg. §301.7122-1 (OIC regulations - acceptable offer amount equals reasonable collection potential (RCP)); IRM 5.8 (offers in compromise - processing, evaluation, RCP calculation methodology); IRM 5.14 (installment agreements - streamlined, regular, and partial pay procedures); IRM 5.16 (currently not collectible procedures - CNC status, financial hardship standards, collection information statement requirements); IRC §6651(a)(1) (failure-to-file penalty - 5% per month up to 25%); IRC §6651(a)(2) (failure-to-pay penalty - 0.5% per month up to 25%; reduced to 0.25% while valid IA in effect); IRC §6601 (interest on underpayments - federal short-term rate plus 3%, compounding daily); Form 433-A/433-F (Collection Information Statement - required for PPIA, OIC, and CNC); Form 9465 (Installment Agreement Request); IRS OIC Pre-Qualifier Tool at irs.gov/oic-pre-qualifier.</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

@@ -207,6 +207,279 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §1231 (gains and losses from property used in trade or business - §1231 netting and hotchpot); IRC §1231(c) (lookback rule - recapture of prior §1231 losses as ordinary income); IRC §1245 (gain from disposition of certain depreciable property - full recapture as ordinary income); IRC §1250 (gain from disposition of certain real property - unrecaptured §1250 gain at 25% maximum rate per IRC §1(h)(1)(D)); IRC §168 (MACRS depreciation - 39-year residential and nonresidential real property); IRC §168(k) (bonus depreciation - 100% permanent under OBBBA P.L. 119-21 for qualifying property); IRC §469 (passive activity loss rules); IRC §469(c)(7) (real estate professional exception - 750 hours, 50% of personal services); IRC §469(i) ($25,000 rental real estate offset - active participation, $100,000-$150,000 AGI phaseout); Treas. Reg. §1.469-1T(e)(3) (short-term rental - average stay 7 days or less not treated as rental activity); Treas. Reg. §1.469-5T (material participation - 7 tests); IRC §1411 (net investment income tax - 3.8% on rental income and gains); Rev. Proc. 87-56 (MACRS asset class lives); IRS Rev. Proc. 2011-26 (cost segregation - partial disposition rules); IRS Audit Techniques Guide: Cost Segregation.</div>
 
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate Tax Guide: §1231, Depreciation Recapture, Dealer vs. Investor (2026) | CPA Validated</title>
+<meta name="description" content="Real estate taxation: IRC §1231 gains, §1250 depreciation recapture (25% rate), dealer vs. investor classification, passive activity rules for rentals, short-term rental exception, cost segregation, and the real estate professional election. CPA-validated. Updated 2026.">
+<link rel="canonical" href="https://cpavalidated.com/real-estate-tax-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:480px){
+.
+}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px;font-family:var(--font-mono)}
+.formula-line{font-size:14px;color:#fff;line-height:2.2;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px;font-family:var(--font-mono)}
+.formula-line .var{color:var(--coral);font-family:var(--font-mono)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Real Estate Tax Guide: §1231, Depreciation Recapture, Dealer vs. Investor (2026) | CPA Validated">
+  <meta property="og:description" content="Real estate taxation: IRC §1231 gains, §1250 depreciation recapture (25% rate), dealer vs. investor classification, passive activity rules for rentals, short-term rental exception, cost segregation, a">
+  <meta property="og:url" content="https://cpavalidated.com/real-estate-tax-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Real Estate Tax Guide: §1231, Depreciation Recapture, Dealer vs. Investor (2026) | CPA Validated">
+  <meta name="twitter:description" content="Real estate taxation: IRC §1231 gains, §1250 depreciation recapture (25% rate), dealer vs. investor classification, passive activity rules for rentals, short-term rental exception, cost segregation, a">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Real Estate Tax Guide: §1231, Depreciation Recapture, Dealer vs. Investor (2026) | CPA Validated","description":"Real estate taxation: IRC §1231 gains, §1250 depreciation recapture (25% rate), dealer vs. investor classification, passive activity rules for rentals, short-term rental exception, cost segregation, a","url":"https://cpavalidated.com/real-estate-tax-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Real Estate Tax Guide: §1231, Recapture & Passive Rules</h1>
+  <div class="sub">IRC §1231 &nbsp;&bull;&nbsp; §1250 Recapture at 25% &nbsp;&bull;&nbsp; Dealer vs. Investor &nbsp;&bull;&nbsp; Passive Activity Rules &nbsp;&bull;&nbsp; Cost Segregation &nbsp;&bull;&nbsp; Updated 2026</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1231</span>
+    <span class="ph-meta-item">IRC §1250</span>
+    <span class="ph-meta-item">IRC §469</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">&#8592; cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Real estate sits at the intersection of nearly every complex area of tax law - capital gains, depreciation recapture, passive activity limitations, dealer classification, self-employment tax, and the net investment income tax. The rate structure alone is confusing: a rental property sale can generate gain taxed at four different rates simultaneously. Understanding the mechanics is essential for anyone who owns, advises on, or prepares returns involving investment real estate.</p>
+
+<h2>IRC §1231: The Best of Both Worlds</h2>
+
+<p>Real property used in a trade or business (rental properties, commercial buildings, land held for investment) is §1231 property. The §1231 netting rules provide unusually favorable treatment: net §1231 gains are taxed as long-term capital gains, but net §1231 losses are treated as ordinary losses - fully deductible without the $3,000 annual capital loss limitation.</p>
+
+<div class="callout">
+  <div class="callout-label">The §1231 Hotchpot - How Netting Works</div>
+  <p>All §1231 gains and losses from all properties are netted together at year-end. If the result is a net gain, all items are treated as long-term capital gain (subject to recapture rules discussed below). If the result is a net loss, all items are treated as ordinary loss - which can offset W-2 income, business income, and other ordinary income without limitation.</p>
+  <p><strong>The §1231 lookback rule:</strong> If a taxpayer has taken net §1231 losses in any of the prior 5 years, current-year net §1231 gain is recharacterized as ordinary income to the extent of those unrecaptured prior losses. This prevents taxpayers from getting an ordinary loss deduction one year and capital gain treatment the next on the same underlying property.</p>
+</div>
+
+<h2>Depreciation Recapture: The Tax on Getting Your Deductions Back</h2>
+
+<p>When a depreciated property is sold for more than its adjusted tax basis, the gain attributable to prior depreciation deductions is "recaptured" - taxed at higher rates than pure capital appreciation. The recapture rules exist to prevent taxpayers from taking ordinary deductions (depreciation) and then converting that benefit into capital gain on sale.</p>
+
+<h3>§1245 Recapture: Personal Property</h3>
+<p>Gain on the sale of §1245 property (tangible personal property - equipment, machinery, furniture, improvements with a recovery period of 20 years or less) is recaptured as ordinary income to the extent of all prior depreciation taken, including bonus depreciation. If a piece of equipment was purchased for $100,000, fully expensed via bonus depreciation, and later sold for $60,000, the entire $60,000 gain is §1245 ordinary income. No portion escapes recapture simply because the property appreciated.</p>
+
+<h3>§1250 Recapture: Real Property</h3>
+<p>Real property (buildings, structural components) uses a different recapture rule. Under current law, real property placed in service after 1986 must be depreciated using straight-line MACRS - meaning there is no "additional" depreciation above straight-line to recapture. However, the §1250 unrecaptured gain (the portion of §1231 gain attributable to straight-line depreciation taken on real property) is taxed at a maximum rate of 25% rather than the 20% preferential capital gains rate.</p>
+
+<div class="formula-box">
+  <div class="formula-label">Real Property Sale - Four-Layer Rate Structure</div>
+  <div class="formula-line"><span class="op">1.</span><span class="var">§1245 recapture</span><span class="def">Depreciation on personal property components - ordinary income rates (37% max)</span></div>
+  <div class="formula-line"><span class="op">2.</span><span class="var">§1250 unrecaptured gain</span><span class="def">Straight-line depreciation on real property - 25% maximum rate</span></div>
+  <div class="formula-line"><span class="op">3.</span><span class="var">§1231 gain above original cost</span><span class="def">Appreciation above original purchase price - 20% long-term capital gains rate</span></div>
+  <div class="formula-line"><span class="op">4.</span><span class="var">NIIT</span><span class="def">3.8% on all rental property gain for taxpayers above MAGI thresholds (unless real estate professional)</span></div>
+</div>
+
+<div class="note-box"><strong>Cost segregation dramatically increases §1245 recapture exposure.</strong> A cost segregation study accelerates depreciation on building components by reclassifying them from 39-year real property to 5, 7, or 15-year personal property - allowing bonus depreciation. This produces large upfront deductions but also converts what would have been §1250 gain (taxed at 25%) into §1245 gain (taxed at ordinary rates up to 37%) on sale. The tradeoff is usually still favorable due to the time value of money, but sellers must model the recapture exposure before closing.</div>
+
+<h2>Dealer vs. Investor: The Classification That Changes Everything</h2>
+
+<p>The distinction between a real estate dealer (holds property primarily for sale to customers in the ordinary course of a trade or business) and a real estate investor (holds property for investment - rental income or long-term appreciation) determines whether gain is capital or ordinary. Dealer gain is ordinary income subject to self-employment tax. Investor gain is §1231 gain eligible for capital rates.</p>
+
+<table class="key-table">
+  <tr><th>Factor</th><th>Suggests Dealer</th><th>Suggests Investor</th></tr>
+  <tr><td>Frequency of sales</td><td>Frequent, regular sales</td><td>Infrequent, isolated sales</td></tr>
+  <tr><td>Holding period</td><td>Short holds, quick flips</td><td>Long-term holds</td></tr>
+  <tr><td>Purpose of acquisition</td><td>Acquired for resale</td><td>Acquired for rental income or appreciation</td></tr>
+  <tr><td>Development activity</td><td>Subdivides, develops, improves for sale</td><td>Minimal improvements; holds in current state</td></tr>
+  <tr><td>Advertising and marketing</td><td>Actively markets properties for sale</td><td>No active marketing; uses brokers passively</td></tr>
+  <tr><td>Business activity</td><td>Real estate is primary business</td><td>Real estate is investment alongside other income</td></tr>
+</table>
+
+<div class="note-box"><strong>Dual-purpose holdings.</strong> A taxpayer can hold some properties as a dealer and others as an investor simultaneously. Classification is property-by-property. Documenting investment intent at acquisition (purpose for buying, expected holding period, rental history) is essential. Courts look at the totality of facts at the time of sale, not just at acquisition.</div>
+
+<h2>Passive Activity Rules: IRC §469</h2>
+
+<p>Rental real estate is generally treated as a passive activity under IRC §469, regardless of how much time the owner spends managing it. Passive losses can only offset passive income - they cannot offset wages, business income, or portfolio income. Unused passive losses are suspended and carried forward until either (a) the taxpayer generates passive income to absorb them, or (b) the property is sold in a fully taxable disposition.</p>
+
+<h3>The $25,000 Rental Real Estate Exception</h3>
+<p>An exception allows individual taxpayers who "actively participate" in rental real estate to deduct up to $25,000 of rental losses against non-passive income annually. Active participation is a lower standard than material participation - it requires only that the taxpayer makes management decisions (approving tenants, setting rent, authorizing repairs). The $25,000 allowance phases out at a rate of $0.50 per dollar of AGI above $100,000, eliminating completely at $150,000 AGI.</p>
+
+<h3>Real Estate Professional Exception: IRC §469(c)(7)</h3>
+<p>A taxpayer who qualifies as a real estate professional is not subject to the passive activity characterization for rental activities. All rental losses are deductible against any type of income - including W-2 wages - without limitation. To qualify:</p>
+<ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
+  <li>More than 50% of personal services during the year must be performed in real property trades or businesses in which the taxpayer materially participates</li>
+  <li>More than 750 hours of personal services must be performed in those real property trades or businesses</li>
+  <li>For married couples filing jointly, only one spouse needs to qualify - but only that spouse's hours count</li>
+</ul>
+
+<div class="green-box"><strong>The real estate professional election is one of the most valuable in the code for high-income taxpayers with rental losses.</strong> A spouse who manages the family's rental portfolio full-time - 750+ hours, more than any other occupation - can unlock unlimited rental loss deductions against the other spouse's W-2 income. At the 37% bracket, $200,000 of rental losses freed from the passive rules saves $74,000 in federal tax annually. Document hours meticulously with contemporaneous logs - this election is heavily audited.</div>
+
+<h3>Short-Term Rental Exception</h3>
+<p>Rental activity with average guest stay of 7 days or less is not treated as a rental activity for passive activity purposes under Treas. Reg. §1.469-1T(e)(3). It is instead treated as a business activity - which means material participation rules (not the rental real estate rules) determine whether it is passive or active. A taxpayer who materially participates in a short-term rental (Airbnb, VRBO) treats losses as non-passive, deductible against all income. A taxpayer who does not materially participate treats it as a passive activity.</p>
+
+<h2>Cost Segregation: Accelerating Depreciation</h2>
+
+<p>A cost segregation study is an engineering analysis that breaks a building's cost into components and reclassifies personal property and land improvements from 39-year real property to shorter recovery periods (5, 7, or 15 years). Components eligible for reclassification include specialty electrical systems, plumbing fixtures, flooring, cabinetry, specialized HVAC, parking lots, landscaping, and exterior lighting.</p>
+
+<p>With 100% bonus depreciation restored permanently by OBBBA, 5, 7, and 15-year property identified in a cost segregation study can be fully expensed in year one. On a $5 million commercial building, a cost segregation study might reclassify $750,000 to 5/7-year property - generating $750,000 of year-one deductions instead of $19,231 per year over 39 years. For a taxpayer in the 37% bracket, the present value of that acceleration is substantial.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="1031-exchange-guide.html" class="related-link">1031 Exchange Guide<span>Like-kind exchanges &middot; Boot &middot; Identification rules</span></a>
+    <a href="passive-activity-loss.html" class="related-link">Passive Activity Loss<span>IRC §469 &middot; At-risk rules &middot; Suspended losses</span></a>
+    <a href="depreciation-calculator.html" class="related-link">Depreciation Calculator<span>MACRS &middot; Bonus depreciation &middot; Cost basis</span></a>
+    <a href="bonus-depreciation-guide.html" class="related-link">Bonus Depreciation Guide<span>100% permanent &middot; IRC §168(k) &middot; OBBBA</span></a>
+    <a href="niit-guide.html" class="related-link">NIIT Guide<span>3.8% on rental income &middot; Real estate pro exception</span></a>
+    <a href="qoz-guide.html" class="related-link">Opportunity Zone Guide<span>Defer and exclude real estate gains</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §1231 (gains and losses from property used in trade or business - §1231 netting and hotchpot); IRC §1231(c) (lookback rule - recapture of prior §1231 losses as ordinary income); IRC §1245 (gain from disposition of certain depreciable property - full recapture as ordinary income); IRC §1250 (gain from disposition of certain real property - unrecaptured §1250 gain at 25% maximum rate per IRC §1(h)(1)(D)); IRC §168 (MACRS depreciation - 39-year residential and nonresidential real property); IRC §168(k) (bonus depreciation - 100% permanent under OBBBA P.L. 119-21 for qualifying property); IRC §469 (passive activity loss rules); IRC §469(c)(7) (real estate professional exception - 750 hours, 50% of personal services); IRC §469(i) ($25,000 rental real estate offset - active participation, $100,000-$150,000 AGI phaseout); Treas. Reg. §1.469-1T(e)(3) (short-term rental - average stay 7 days or less not treated as rental activity); Treas. Reg. §1.469-5T (material participation - 7 tests); IRC §1411 (net investment income tax - 3.8% on rental income and gains); Rev. Proc. 87-56 (MACRS asset class lives); IRS Rev. Proc. 2011-26 (cost segregation - partial disposition rules); IRS Audit Techniques Guide: Cost Segregation.</div>
+
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer.</a></div>

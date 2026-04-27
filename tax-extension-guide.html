@@ -228,6 +228,300 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 </div>
 
 <div class="src">Authority: IRC §6081 (extension of time to file); IRC §6081(a) (6-month extension for individuals); IRC §6081(d) (2-month extension for taxpayers abroad); Treas. Reg. §1.6081-4 (Form 4868); Treas. Reg. §1.6081-5 (automatic 2-month extension abroad); IRC §6601 (interest on underpayments); IRC §6651(a)(1) (failure-to-file penalty, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay penalty, 0.5%/month); IRC §6072(b) (partnership and S-corp original due dates); 31 USC §5314 (FBAR); IRS Rev. Proc. 2025-32 (2026 calendar).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Extension Guide 2026 - Personal & Corporate | CPA Validated</title>
+<meta name="description" content="Complete guide to filing tax extensions in 2026. Form 4868 (personal), Form 7004 (corporate/partnership/S-corp). Deadlines, what extensions do and don't do, state extension rules, payment requirements. CPA-validated. IRC Section 6081.">
+<link rel="canonical" href="https://cpavalidated.com/tax-extension-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.deadline-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 28px}
+.dg-box{border:1px solid var(--ink-20);padding:18px;background:var(--white)}
+.dg-type{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);font-family:var(--font-mono);margin-bottom:8px}
+.dg-date{font-family:var(--font-display);font-size:22px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.dg-desc{font-size:12.5px;color:var(--ink-60);line-height:1.5}
+.dg-extended{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--green);margin-top:8px}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.deadline-grid,.related-links{grid-template-columns:1fr}}
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+.
+
+@media(max-width:640px){
+}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tax Extension Guide 2026 - Personal & Corporate | CPA Validated">
+  <meta property="og:description" content="Complete guide to filing tax extensions in 2026. Form 4868 (personal), Form 7004 (corporate/partnership/S-corp). Deadlines, what extensions do and don't do, state extension rules, payment requirements">
+  <meta property="og:url" content="https://cpavalidated.com/tax-extension-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tax Extension Guide 2026 - Personal & Corporate | CPA Validated">
+  <meta name="twitter:description" content="Complete guide to filing tax extensions in 2026. Form 4868 (personal), Form 7004 (corporate/partnership/S-corp). Deadlines, what extensions do and don't do, state extension rules, payment requirements">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Tax Extension Guide 2026 - Personal & Corporate | CPA Validated","description":"Complete guide to filing tax extensions in 2026. Form 4868 (personal), Form 7004 (corporate/partnership/S-corp). Deadlines, what extensions do and don't do, state extension rules, payment requirements","url":"https://cpavalidated.com/tax-extension-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+
+<div class="ph"><div class="phi">
+  <h1>Tax Extension Guide 2026</h1>
+  <div class="sub">Form 4868 (Personal) &nbsp;&bull;&nbsp; Form 7004 (Corporate / Partnership / S-Corp) &nbsp;&bull;&nbsp; State Extensions &nbsp;&bull;&nbsp; What Extensions Do Not Do</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6081</span>
+    <span class="ph-meta-item">Treas. Reg. §1.6081-4</span>
+    <span class="ph-meta-item">Form 4868 / Form 7004</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">A tax extension gives you more time to file your return - it does not give you more time to pay any tax owed. This distinction is the most important thing to understand about extensions. Filing an extension without paying the estimated tax due results in failure-to-pay penalties and interest accruing from the original due date.</p>
+
+<div class="callout">
+  <div class="callout-label">The Critical Rule</div>
+  <p><strong>An extension extends the time to FILE. It does not extend the time to PAY.</strong> Any tax estimated to be owed must be paid by the original due date (April 15 for individuals). Interest under IRC §6601 accrues from the original due date on any unpaid balance. The failure-to-pay penalty under IRC §6651(a)(2) is 0.5% per month on the unpaid balance. Filing an extension does not eliminate either.</p>
+</div>
+
+<h2>2026 Extension Deadlines</h2>
+
+<div class="deadline-grid">
+  <div class="dg-box">
+    <div class="dg-type">Form 4868 - Individual (1040)</div>
+    <div class="dg-date">April 15, 2026</div>
+    <div class="dg-desc">Original due date for Form 1040. File Form 4868 by April 15 to extend.</div>
+    <div class="dg-extended">Extended to: October 15, 2026</div>
+  </div>
+  <div class="dg-box">
+    <div class="dg-type">Form 7004 - S-Corp / Partnership (1120-S / 1065)</div>
+    <div class="dg-date">March 16, 2026</div>
+    <div class="dg-desc">March 15 falls on Sunday in 2026. File Form 7004 by March 16 to extend. IRC §6072(b).</div>
+    <div class="dg-extended">Extended to: September 15, 2026</div>
+  </div>
+  <div class="dg-box">
+    <div class="dg-type">Form 7004 - C-Corp (1120)</div>
+    <div class="dg-date">April 15, 2026</div>
+    <div class="dg-desc">Calendar-year C-corps due April 15. File Form 7004 by April 15. IRC §6072(b).</div>
+    <div class="dg-extended">Extended to: October 15, 2026</div>
+  </div>
+  <div class="dg-box">
+    <div class="dg-type">Form 7004 - Trust / Estate (1041)</div>
+    <div class="dg-date">April 15, 2026</div>
+    <div class="dg-desc">Trusts and estates due April 15. File Form 7004 by April 15.</div>
+    <div class="dg-extended">Extended to: September 30, 2026</div>
+  </div>
+  <div class="dg-box">
+    <div class="dg-type">Abroad - Automatic (1040)</div>
+    <div class="dg-date">June 15, 2026</div>
+    <div class="dg-desc">US citizens abroad get automatic 2-month extension to June 15. No form required - attach statement. IRC §6081(d).</div>
+    <div class="dg-extended">Further extended to Oct 15 with Form 4868</div>
+  </div>
+  <div class="dg-box">
+    <div class="dg-type">FinCEN 114 - FBAR</div>
+    <div class="dg-date">April 15, 2026</div>
+    <div class="dg-desc">FBAR due April 15 with automatic extension to October 15. No form required. 31 USC §5314.</div>
+    <div class="dg-extended">Auto-extended to: October 15, 2026</div>
+  </div>
+</div>
+
+<h2>What Form 4868 Does and Does Not Do</h2>
+
+<table class="key-table">
+  <thead><tr><th>Form 4868 DOES</th><th>Form 4868 DOES NOT</th></tr></thead>
+  <tbody>
+    <tr><td>Extend the time to file Form 1040 to October 15</td><td>Extend the time to pay any tax owed</td></tr>
+    <tr><td>Prevent the failure-to-file penalty (5%/month, max 25%) if filed timely</td><td>Prevent interest accruing from April 15 on unpaid balance</td></tr>
+    <tr><td>Give additional time to gather documents (K-1s, foreign account statements, brokerage consolidations)</td><td>Extend state tax return deadlines in most states (check your state)</td></tr>
+    <tr><td>Extend time for IRA contributions - IRA contributions for 2025 are due April 15, 2026 regardless of extension</td><td>Extend time for HSA contributions - same deadline as IRA</td></tr>
+    <tr><td>Require no reason or explanation - the extension is automatic if filed timely</td><td>Require a minimum payment - you can file Form 4868 with $0 payment if you genuinely owe nothing</td></tr>
+  </tbody>
+</table>
+
+<div class="red-box"><strong>The failure-to-file penalty is severe:</strong> IRC §6651(a)(1) imposes a penalty of 5% of unpaid tax per month (or fraction thereof), up to 25% maximum. If you owe $50,000 and do not file or extend, the penalty can reach $12,500 before even counting interest. Filing a timely extension eliminates this penalty entirely - even if you cannot pay.</div>
+
+<h2>How to File Form 4868</h2>
+
+<p>Form 4868 can be filed electronically through IRS Direct Pay, through tax software, or through a tax preparer. It can also be filed by mailing a paper Form 4868 (must be postmarked by April 15). Electronic filing is strongly preferred - you receive immediate confirmation. The form requires only your name, address, Social Security number, estimated total tax liability, total payments already made, and estimated balance due.</p>
+
+<p>You do not need a reason to file an extension. The IRS grants extensions automatically when Form 4868 is filed timely. There is no approval process and no response from the IRS unless you owe money and did not pay.</p>
+
+<h2>Form 7004 - Business Extensions</h2>
+
+<p>Form 7004 covers extensions for all business entity returns: 1120 (C-corp), 1120-S (S-corp), 1065 (partnership), 1041 (trust/estate), and others. Like Form 4868, it is automatic when filed timely. Unlike Form 4868, the extended deadline varies by return type.</p>
+
+<table class="key-table">
+  <thead><tr><th>Return Type</th><th>Original Due</th><th>Extended Due</th><th>Extension Length</th></tr></thead>
+  <tbody>
+    <tr><td>Form 1065 (Partnership)</td><td>March 16, 2026</td><td>September 15, 2026</td><td>6 months</td></tr>
+    <tr><td>Form 1120-S (S-Corp)</td><td>March 16, 2026</td><td>September 15, 2026</td><td>6 months</td></tr>
+    <tr><td>Form 1120 (C-Corp, calendar year)</td><td>April 15, 2026</td><td>October 15, 2026</td><td>6 months</td></tr>
+    <tr><td>Form 1041 (Trust/Estate)</td><td>April 15, 2026</td><td>September 30, 2026</td><td>5.5 months</td></tr>
+    <tr><td>Form 990 (Exempt Org.)</td><td>May 15, 2026</td><td>November 16, 2026</td><td>6 months</td></tr>
+  </tbody>
+</table>
+
+<div class="note-box"><strong>K-1 timing:</strong> S-corp and partnership extensions to September 15 delay K-1 delivery to partners and shareholders. Individual partners who receive K-1s from extended partnerships should file their own Form 4868 by April 15 to avoid a late filing penalty on their 1040, since they will not have all K-1 information by April 15.</div>
+
+<h2>State Extension Rules</h2>
+
+<p>States generally fall into one of three categories regarding extensions:</p>
+
+<p><strong>Automatic federal conformity:</strong> Most states (including New York and Florida) automatically honor the federal extension. If you file Form 4868 federally, your state return is also extended without filing a separate state form. However, payment of any state tax estimated to be owed is still due by the original state deadline.</p>
+
+<p><strong>Separate state extension required:</strong> Some states require filing their own extension form regardless of the federal extension. California (Form FTB 3519), Massachusetts, and a handful of others require a separate filing or payment by the original due date to avoid state penalties.</p>
+
+<p><strong>States with no income tax:</strong> Florida, Texas, Nevada, Wyoming, South Dakota, Alaska, Washington (no individual income tax), Tennessee, and New Hampshire - no state income tax return, no state extension issue.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools & Guides</div>
+  <div class="related-links">
+    <a href="tax-calendar.html" class="related-link">Tax Calendar 2026<span>All federal deadlines · IRC §6072</span></a>
+    <a href="safe-harbor.html" class="related-link">Safe Harbor Calculator<span>Estimated tax · avoid underpayment penalties</span></a>
+    <a href="us-expat-tax-guide.html" class="related-link">US Expat Filing Guide<span>June 15 automatic extension abroad</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator 2026<span>Estimate balance due before extending</span></a>
+  </div>
+</div>
+
+<div class="src">Authority: IRC §6081 (extension of time to file); IRC §6081(a) (6-month extension for individuals); IRC §6081(d) (2-month extension for taxpayers abroad); Treas. Reg. §1.6081-4 (Form 4868); Treas. Reg. §1.6081-5 (automatic 2-month extension abroad); IRC §6601 (interest on underpayments); IRC §6651(a)(1) (failure-to-file penalty, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay penalty, 0.5%/month); IRC §6072(b) (partnership and S-corp original due dates); 31 USC §5314 (FBAR); IRS Rev. Proc. 2025-32 (2026 calendar).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">A <a href="https://tk.cpa" target="_blank" style="color:inherit">tk.cpa</a> resource. For informational purposes only - not legal or tax advice. No professional relationship is created by using this site. tk.cpa and tk.cpa expressly disclaim liability arising from reliance on this content. Tax law changes; verify against current authority before acting. <a href="disclaimer.html">Full disclaimer &amp; terms.</a></div>

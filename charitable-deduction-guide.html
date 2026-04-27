@@ -282,6 +282,354 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRC §170 (charitable contribution deduction); IRC §170(b)(1)(I) (0.5% AGI floor for individuals, new under OBBBA); IRC §170(b)(2)(A) (1% taxable income floor for corporations, amended under OBBBA); IRC §170(b)(1)(G) (60% AGI cash limit to public charities, made permanent under OBBBA); IRC §170(d)(1)(C) (carryforward and ordering rules); IRC §170(p) (above-the-line deduction for non-itemizers, $1,000/$2,000); IRC §170(f) (substantiation); IRC §408(d)(8) (qualified charitable distribution from IRA); Form 8283 (non-cash contributions); OBBBA P.L. 119-21 §70424-70427. Sources: Greenberg Traurig, "New Limitations on Charitable Deductions Take Effect in 2026" (Oct. 2025); Taft Law, "Charitable Giving After the OBBBA" (2025); Fidelity Charitable, "One Big Beautiful Bill: Impact on Charitable Giving" (2025); CAPTRUST, "OBBBA Charitable Rules Update for 2026" (2026).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charitable Contribution Deduction Guide (2026) - 0.5% AGI Floor Under OBBBA | CPA Validated</title>
+<meta name="description" content="Charitable contribution deduction under IRC Section 170 for 2026 and beyond. The new 0.5% AGI floor for individuals, 1% taxable income floor for corporations, the permanent 60% cash AGI limit, the 35% benefit cap for top-bracket itemizers, $1,000/$2,000 above-the-line deduction for non-itemizers, AGI percentage limitations by donee type, ordering rules, carryforwards, and bunching strategies under OBBBA. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/charitable-deduction-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:22px 0 8px}
+.article ul{margin:8px 0 18px 24px}
+.article ul li{font-size:14.5px;line-height:1.7;color:var(--ink-80);margin-bottom:6px}
+.article ol{margin:8px 0 18px 24px}
+.article ol li{font-size:14.5px;line-height:1.7;color:var(--ink-80);margin-bottom:6px}
+.formula-box{background:var(--ink);padding:20px 24px;margin:20px 0 28px;font-family:var(--font-mono)}
+.formula-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px}
+.formula-line{font-size:14px;color:#fff;line-height:2;display:flex;align-items:center;gap:12px}
+.formula-line .op{color:rgba(255,255,255,.4);min-width:20px}
+.formula-line .var{color:var(--coral)}
+.formula-line .def{font-family:var(--font-sans);font-size:11px;color:rgba(255,255,255,.45);margin-left:8px}
+.formula-total{border-top:1px solid rgba(255,255,255,.2);margin-top:8px;padding-top:8px;font-size:15px;font-weight:700;color:#fff}
+.key-table{width:100%;border-collapse:collapse;margin:18px 0 28px;font-size:13px}
+.key-table th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;background:var(--ink);color:#fff;text-align:left}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.key-table td:first-child{font-weight:600;color:var(--ink)}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:28px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{body{background:white}.ph,.formula-box,.callout{-webkit-print-color-adjust:exact;print-color-adjust:exact}.back,.related{display:none}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Charitable Contribution Deduction Guide (2026) - 0.5% AGI Floor Under OBBBA | CPA Validated">
+  <meta property="og:description" content="Charitable contribution deduction under IRC Section 170 for 2026 and beyond. The new 0.5% AGI floor for individuals, 1% taxable income floor for corporations, the permanent 60% cash AGI limit, the 35%">
+  <meta property="og:url" content="https://cpavalidated.com/charitable-deduction-guide.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Charitable Contribution Deduction Guide (2026) - 0.5% AGI Floor Under OBBBA | CPA Validated">
+  <meta name="twitter:description" content="Charitable contribution deduction under IRC Section 170 for 2026 and beyond. The new 0.5% AGI floor for individuals, 1% taxable income floor for corporations, the permanent 60% cash AGI limit, the 35%">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Charitable Contribution Deduction Guide (2026) - 0.5% AGI Floor Under OBBBA | CPA Validated","description":"Charitable contribution deduction under IRC Section 170 for 2026 and beyond. The new 0.5% AGI floor for individuals, 1% taxable income floor for corporations, the permanent 60% cash AGI limit, the 35%","url":"https://cpavalidated.com/charitable-deduction-guide.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Charitable Deduction (2026)</h1>
+  <div class="sub">IRC §170 &nbsp;&bull;&nbsp; The 0.5% AGI Floor &nbsp;&bull;&nbsp; 35% Benefit Cap &nbsp;&bull;&nbsp; Permanent 60% Cash Limit &nbsp;&bull;&nbsp; OBBBA Changes</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §170</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21</span>
+    <span class="ph-meta-item">Effective TY 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">OBBBA materially changed the federal charitable deduction starting January 1, 2026. Itemizers face a new 0.5% of AGI floor before any contribution becomes deductible. Top-bracket itemizers face a 35% benefit cap. Corporations face a 1% of taxable income floor (with the existing 10% ceiling unchanged). Non-itemizers get a new $1,000 / $2,000 above-the-line deduction. The 60% AGI limit for cash gifts to public charities is now permanent. This guide walks through the §170 mechanics post-OBBBA, the planning consequences, and the strategies that still work.</p>
+
+<div class="callout">
+  <div class="callout-label">The Five OBBBA Charitable Changes</div>
+  <p><strong>1.</strong> 0.5% of AGI floor for individual itemizers (new IRC §170(b)(1)(I))<br>
+  <strong>2.</strong> 1% of taxable income floor for corporations (amended §170(b)(2)(A))<br>
+  <strong>3.</strong> 60% of AGI cash limit to public charities made permanent (was set to expire end of 2025)<br>
+  <strong>4.</strong> 35% benefit cap on itemized deductions for taxpayers in the 37% bracket<br>
+  <strong>5.</strong> $1,000 / $2,000 above-the-line deduction for non-itemizers (new §170(p))</p>
+  <p>All five take effect for tax years beginning after December 31, 2025.</p>
+</div>
+
+<h2>The 0.5% AGI Floor for Itemizers</h2>
+
+<p>Under new IRC §170(b)(1)(I), individual itemizers may deduct charitable contributions only to the extent the aggregate contributions exceed 0.5% of the taxpayer's "contribution base" (i.e., AGI without regard to NOL carrybacks).</p>
+
+<div class="formula-box">
+  <div class="formula-label">Itemized Charitable Deduction Calculation (2026+)</div>
+  <div class="formula-line"><span class="var">Total Contributions</span><span class="def">All charitable gifts otherwise eligible under §170</span></div>
+  <div class="formula-line"><span class="op">-</span><span class="var">0.5% &times; AGI</span><span class="def">The new floor; cannot reduce below zero</span></div>
+  <div class="formula-line"><span class="op">=</span><span class="var">Pre-Limit Deduction</span><span class="def">Apply existing AGI percentage caps (60% cash, 30% appreciated, etc.)</span></div>
+  <div class="formula-total">= Allowable Deduction</div>
+</div>
+
+<p><strong>Example.</strong> Taxpayer with AGI of $400,000 makes $20,000 of cash contributions to public charities in 2026. The 0.5% floor is $2,000. The first $2,000 is non-deductible. $18,000 is potentially deductible, subject to the 60% AGI cap ($240,000), so all $18,000 is allowed.</p>
+
+<h2>Ordering Rules for the 0.5% Floor</h2>
+
+<p>The 0.5% reduction applies in a specific order under §170(d)(1)(C). The least favorable contributions are reduced first, preserving the most favorable contributions to be deducted. The order:</p>
+
+<ol>
+  <li>Capital gain property contributions to private foundations</li>
+  <li>Capital gain property contributions to public charities</li>
+  <li>Other contributions to private foundations</li>
+  <li>Qualified conservation easements</li>
+  <li>Other contributions to public charities</li>
+  <li>Cash contributions to public charities</li>
+</ol>
+
+<p>This ordering is taxpayer-favorable in concept (preserve cash to public charities, which already has the most generous AGI cap). In practice, for taxpayers whose only contributions are cash to public charities, the ordering is moot.</p>
+
+<h2>The 35% Benefit Cap (Top-Bracket Itemizers)</h2>
+
+<p>OBBBA caps the benefit of itemized deductions at 35% for taxpayers in the 37% top marginal bracket. A donor in the 37% bracket who contributes $10,000 (after the 0.5% floor) saves only $3,500 in federal tax, not $3,700.</p>
+
+<p>This is a 2-cent-per-dollar reduction in benefit at the top end. It applies to all itemized deductions for top-bracket taxpayers, not just charitable. The mechanism is structured as a deduction-conversion: the deduction is allowed at 35% rather than at the 37% marginal rate.</p>
+
+<h2>Carryforwards from Pre-2026 Years</h2>
+
+<p>Carryover amounts from contributions made <strong>before January 1, 2026</strong> are NOT subject to the 0.5% floor when used in later years. Pre-2026 carryforwards retain their pre-OBBBA character and can be used against future income without the floor reduction.</p>
+
+<p>Carryforwards arising in 2026 or later years are subject to the 0.5% floor in each year they are used. For a taxpayer with $300,000 of contributions in 2026 and $500,000 of AGI, the §170 percentage cap allows only 60% &times; $500,000 = $300,000. After the 0.5% floor of $2,500, $297,500 is deductible in 2026. The unused $2,500 carries forward and is subject to the 0.5% floor again in the carryforward year.</p>
+
+<div class="green-box"><strong>Pre-2026 acceleration was the play.</strong> Taxpayers who concentrated contributions into 2025 (especially DAF contributions) escape the 0.5% floor on those amounts. For 2026 and forward, the planning shifts to bunching multiple years' contributions into a single year to amortize the 0.5% floor across more deductible giving.</div>
+
+<h2>The Above-the-Line Deduction for Non-Itemizers</h2>
+
+<p>New IRC §170(p) creates a permanent above-the-line deduction for non-itemizers:</p>
+
+<ul>
+  <li>$1,000 for single filers</li>
+  <li>$2,000 for joint filers</li>
+  <li>Cash contributions only</li>
+  <li>Must go to qualified operating charities (§170(b)(1)(A))</li>
+</ul>
+
+<p><strong>Excluded:</strong> Donor-advised funds (DAFs) and private non-operating foundations are NOT eligible for the above-the-line deduction. The exclusion is intentional - the legislators wanted the deduction to flow to operating charities, not pass-through vehicles.</p>
+
+<p>Non-itemizers who currently donate to a DAF should consider whether to shift recurring small gifts to a qualified operating charity to capture the new above-the-line benefit. Up to $2,000 of joint giving fully bypasses the 0.5% floor (which only applies to itemizers).</p>
+
+<h2>The 60% AGI Cash Limit (Permanent)</h2>
+
+<p>The 60% of AGI limitation for cash contributions to public charities was scheduled to expire at the end of 2025, reverting to the historical 50% cap. OBBBA made the 60% limit permanent. This is one of the favorable changes - donors retain the higher AGI ceiling for cash giving.</p>
+
+<h2>AGI Percentage Limitations by Donee/Property Type</h2>
+
+<table class="key-table">
+  <thead><tr><th>Property Type / Donee</th><th>AGI Limit</th><th>Carryforward</th></tr></thead>
+  <tbody>
+    <tr><td>Cash to public charity</td><td>60% (permanent under OBBBA)</td><td>5 years</td></tr>
+    <tr><td>Cash to private foundation</td><td>30%</td><td>5 years</td></tr>
+    <tr><td>Appreciated long-term capital gain property to public charity (FMV deduction)</td><td>30%</td><td>5 years</td></tr>
+    <tr><td>Appreciated long-term capital gain property to private foundation (basis or 30% AGI election)</td><td>20%</td><td>5 years</td></tr>
+    <tr><td>Ordinary income property (basis only)</td><td>50%</td><td>5 years</td></tr>
+    <tr><td>Conservation easement (qualified real property)</td><td>50% (100% for farmers/ranchers)</td><td>15 years</td></tr>
+  </tbody>
+</table>
+
+<p>The 0.5% floor applies on top of these caps. The order of application: percentage cap is calculated first; the floor is then applied.</p>
+
+<h2>Corporate Charitable Deduction Changes</h2>
+
+<p>Pre-OBBBA, corporations could deduct charitable contributions up to 10% of taxable income (computed before the deduction). OBBBA amended IRC §170(b)(2)(A) to add a 1% floor:</p>
+
+<ul>
+  <li><strong>Below 1% of taxable income:</strong> permanently nondeductible (no carryforward of disallowed amounts)</li>
+  <li><strong>Above 1% but below 10%:</strong> deductible in the current year</li>
+  <li><strong>Above 10%:</strong> excess carries forward up to 5 years, subject to the 1% floor and 10% cap in each carryforward year</li>
+</ul>
+
+<p>For a corporation with $10 million of taxable income, the floor is $100,000 and the ceiling is $1,000,000. The first $100,000 of giving produces no tax benefit. Giving between $100,000 and $1,000,000 is deductible. Giving above $1,000,000 carries forward.</p>
+
+<div class="red-box"><strong>Small-program corporations may lose the deduction entirely.</strong> A company with $5 million of taxable income and $30,000 of annual charitable giving falls below the $50,000 floor. All $30,000 becomes permanently nondeductible. Corporations with modest giving programs should consider consolidating multi-year giving into a single tax year to clear the floor, or redirect support through alternative mechanisms (trade-or-business expenditures under §162 where appropriate).</div>
+
+<h2>Bunching Strategy Under the New Rules</h2>
+
+<p>Bunching - concentrating multiple years of charitable contributions into a single tax year - was already a useful strategy post-TCJA (with the higher standard deduction). OBBBA's 0.5% floor amplifies the benefit. The math:</p>
+
+<p>Donor with AGI of $500,000 wants to give $10,000/year to charity. Other itemized deductions: $30,000.</p>
+
+<h3>Without Bunching (annual giving)</h3>
+<p>Each year: $10,000 contributions, $2,500 floor, $7,500 net charitable. Total itemized = $7,500 + $30,000 = $37,500. Vs. standard deduction of $32,200 (joint, 2026). Itemize, save $5,300 over standard. Over 3 years: $15,900 of net itemizing benefit.</p>
+
+<h3>With Bunching (3 years into 1)</h3>
+<p>Year 1: $30,000 contributions, $2,500 floor, $27,500 net charitable. Total itemized = $27,500 + $30,000 = $57,500. Vs. standard $32,200, itemize, save $25,300 over standard. Years 2 and 3: standard deduction (no charitable giving). Over 3 years: $25,300 of net itemizing benefit. <strong>Difference: $9,400 in additional tax savings from bunching.</strong></p>
+
+<p>The 0.5% floor is calculated on AGI in the year of giving, so concentrating giving into one year still incurs only one floor. Spreading giving across three years incurs three floors. Bunching becomes more valuable as AGI rises.</p>
+
+<h2>Donor-Advised Funds and Private Foundations</h2>
+
+<p>DAF contributions are still deductible at the time of contribution to the DAF (subject to the 0.5% floor, AGI percentage limits, and 35% benefit cap). DAFs remain a clean bunching vehicle: contribute a multi-year amount in one year, then distribute to operating charities over time without further deductibility considerations.</p>
+
+<p>OBBBA did NOT change the DAF deduction mechanics for itemizers. What changed: DAFs are excluded from the new $1,000/$2,000 above-the-line deduction for non-itemizers. Itemizers using DAFs are unaffected by that exclusion.</p>
+
+<p>Private non-operating foundations remain subject to the 30% AGI cap on cash and the 20% cap on appreciated property. Both are also excluded from the above-the-line deduction.</p>
+
+<h2>Substantiation Requirements (Unchanged)</h2>
+
+<p>Substantiation rules under §170(f) survive OBBBA unchanged:</p>
+
+<ul>
+  <li><strong>Cash contributions of any amount:</strong> bank record (canceled check, credit card statement) or written acknowledgment from the charity</li>
+  <li><strong>Cash or property of $250 or more:</strong> contemporaneous written acknowledgment from the charity stating amount and whether goods/services were provided in return</li>
+  <li><strong>Non-cash contributions over $500:</strong> Form 8283, Section A</li>
+  <li><strong>Non-cash contributions over $5,000:</strong> Form 8283, Section B + qualified appraisal</li>
+  <li><strong>Non-cash contributions over $500,000:</strong> qualified appraisal attached to return</li>
+</ul>
+
+<h2>Planning Takeaways for 2026</h2>
+
+<p><strong>Bunching is now the default strategy.</strong> The 0.5% floor punishes annual giving and rewards concentration. Donors should plan multi-year giving cycles, alternating bunching years and standard-deduction years.</p>
+
+<p><strong>Use a DAF to time the deduction.</strong> Contribute the bunched amount to a DAF in the bunching year (capture the deduction), then distribute to operating charities over time. This decouples the tax-deduction timing from the cash-flow-to-charity timing.</p>
+
+<p><strong>Appreciated stock still beats cash.</strong> A donation of appreciated long-term capital gain property to a public charity gives the donor an FMV deduction (subject to 30% AGI cap) and avoids the embedded capital gain. The tax benefit is potentially 35-40 cents per dollar of fair market value, vs. 35 cents on cash. Bring this into the bunching analysis.</p>
+
+<p><strong>QCDs from IRAs are unchanged and still useful.</strong> Donors over 70&frac12; can make qualified charitable distributions of up to $111,000 (2026, indexed) directly from an IRA to a qualified public charity. The QCD is excluded from gross income and does not run through the §170 framework - meaning the 0.5% floor and 35% benefit cap do not apply. This is now meaningfully more valuable than equivalent cash giving for high-AGI donors.</p>
+
+<p><strong>Non-itemizers should redirect to operating charities.</strong> The new $1,000 / $2,000 above-the-line deduction (§170(p)) is gold for non-itemizers, but only for direct giving to operating charities. Recurring DAF contributions by non-itemizers should be reconsidered.</p>
+
+<p><strong>Corporations with small giving programs face a real choice.</strong> Either consolidate giving into the years where the program clears the 1% floor, or accept that smaller giving will produce no tax deduction. Some corporations may shift support to trade-or-business expenditures under §162 where the giving has a clear business purpose.</p>
+
+<div class="related">
+  <div class="related-title">Related Tools &amp; Articles</div>
+  <div class="related-links">
+    <a href="obbba-guide.html" class="related-link">OBBBA Guide<span>P.L. 119-21 · All Major Provisions</span></a>
+    <a href="meals-and-entertainment-guide.html" class="related-link">Meals &amp; Entertainment<span>IRC §274 · 50% Rule · §274(o)</span></a>
+    <a href="ira-basics-guide.html" class="related-link">IRA &amp; Retirement Basics<span>IRC §408 · 2026 Limits</span></a>
+    <a href="qbi-deduction-guide.html" class="related-link">QBI Deduction Guide<span>IRC §199A · 20% Pass-Through</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §170 (charitable contribution deduction); IRC §170(b)(1)(I) (0.5% AGI floor for individuals, new under OBBBA); IRC §170(b)(2)(A) (1% taxable income floor for corporations, amended under OBBBA); IRC §170(b)(1)(G) (60% AGI cash limit to public charities, made permanent under OBBBA); IRC §170(d)(1)(C) (carryforward and ordering rules); IRC §170(p) (above-the-line deduction for non-itemizers, $1,000/$2,000); IRC §170(f) (substantiation); IRC §408(d)(8) (qualified charitable distribution from IRA); Form 8283 (non-cash contributions); OBBBA P.L. 119-21 §70424-70427. Sources: Greenberg Traurig, "New Limitations on Charitable Deductions Take Effect in 2026" (Oct. 2025); Taft Law, "Charitable Giving After the OBBBA" (2025); Fidelity Charitable, "One Big Beautiful Bill: Impact on Charitable Giving" (2025); CAPTRUST, "OBBBA Charitable Rules Update for 2026" (2026).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. The Treasury Department is expected to issue additional regulatory guidance on the new floors and ordering rules. Verify current rules and applicable thresholds before taking any filing position. Consult a qualified tax professional before making any planning or filing decisions. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa - <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>

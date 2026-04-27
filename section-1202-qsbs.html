@@ -313,6 +313,385 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 
 <div class="source-row">Authority: IRC §1202 (qualified small business stock - 50/75/100% exclusion); IRC §1202(a)(5) (post-OBBBA tiered holding period for stock issued after July 4, 2025); IRC §1202(b)(4) ($15M per-issuer cap, indexed from 2027); IRC §1202(d)(2) (aggregate gross assets test, $75M post-OBBBA); IRC §1202(e) (active business test); IRC §1202(h) (carryover rules for gifts and reorganizations); IRC §1045 (rollover of gain from QSBS); IRC §1(h)(7) (28% Section 1202 gain rate on non-excluded portion); One Big Beautiful Bill Act (OBBBA), H.R. 1, P.L. 119-21, enacted July 4, 2025; Omnibus Budget Reconciliation Act of 1993, P.L. 103-66 (original Section 1202).</div>
+<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
+<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+</div>
+<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+<script>
+function doPrint(){
+  var s=document.createElement('style');
+  s.id='print-hide';
+  s.innerHTML='@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid"]{display:none!important}.article{padding-top:8px}}';
+  if(!document.getElementById('print-hide'))document.head.appendChild(s);
+  window.print();
+}
+function doShare(){
+  var url=location.href;
+  var title=document.title.replace(' | CPA Validated','');
+  if(navigator.share){
+    navigator.share({title:title,url:url}).catch(function(){});
+    return;
+  }
+  showModal(url,title);
+}
+function showModal(url,title){
+  if(document.getElementById('sv-ol'))return;
+  var enc=encodeURIComponent(url);
+  var et=encodeURIComponent(title);
+  var links=[
+    ['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],
+    ['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],
+    ['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],
+    ['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],
+    ['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]
+  ];
+  var ol=document.createElement('div');
+  ol.id='sv-ol';
+  ol.setAttribute('style','position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center');
+  var inner='<div style="background:#111;width:100%;max-width:520px;font-family:Inter,sans-serif">';
+  inner+='<div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A">';
+  inner+='<span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff">Share</span>';
+  inner+='<button id="sv-close" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;line-height:1;cursor:pointer;padding:0">&times;</button>';
+  inner+='</div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+  links.forEach(function(l){
+    inner+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'</a>';
+  });
+  inner+='<button id="sv-copy" style="padding:12px 14px;border-left:3px solid #F65F5A;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link</button>';
+  inner+='</div></div>';
+  ol.innerHTML=inner;
+  document.body.appendChild(ol);
+  document.getElementById('sv-close').onclick=function(){ol.remove()};
+  ol.onclick=function(e){if(e.target===ol)ol.remove()};
+  document.getElementById('sv-copy').onclick=function(){
+    var btn=this;
+    navigator.clipboard.writeText(url).then(function(){
+      btn.textContent='Copied!';btn.style.borderLeftColor='#4A7459';
+      setTimeout(function(){btn.textContent='Copy Link';btn.style.borderLeftColor='#F65F5A';},2200);
+    }).catch(function(){
+      var ta=document.createElement('textarea');ta.value=url;
+      document.body.appendChild(ta);ta.select();document.execCommand('copy');
+      document.body.removeChild(ta);
+      btn.textContent='Copied!';
+      setTimeout(function(){btn.textContent='Copy Link';},2200);
+    });
+  };
+}
+</script>E html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 1202 QSBS: How Founders Can Exclude Up to $15M (or More) | CPA Validated</title>
+<meta name="description" content="A plain-English guide to Section 1202 Qualified Small Business Stock. Pre and post-OBBBA rules, the new tiered holding period (3/4/5 years for 50%/75%/100% exclusion), the $15M per-issuer cap or 10x basis, the $75M aggregate gross assets test, the active business test, excluded industries, state non-conformity (CA, NJ, PA, AL, MS), and stacking strategies through gifting and non-grantor trusts.">
+<link rel="canonical" href="https://cpavalidated.com/section-1202-qsbs.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--amber:#8B6535;--amber-bg:#EDE8D8;--red:#9B3D3D;--red-bg:#EDE0DC;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;font-weight:400;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:22px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:24px 0 10px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}
+.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}
+.callout p{font-size:14px;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+.callout strong{color:#fff}
+.example{background:var(--ink-10);border-left:3px solid var(--ink-60);padding:16px 18px;margin:18px 0;font-size:14px;line-height:1.7;color:var(--ink-80)}
+.example strong{color:var(--ink)}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--amber);line-height:1.7}
+.note-box strong{font-weight:700}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--red);line-height:1.7}
+.red-box strong{font-weight:700}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--green);line-height:1.7}
+.green-box strong{font-weight:700}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}
+.compare-card{background:var(--white);border:1px solid var(--ink-20);padding:20px;border-left:3px solid var(--coral)}
+.compare-card-title{font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:4px}
+.compare-card-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:12px}
+.compare-card-row{font-size:13px;line-height:1.6;color:var(--ink-80);padding:6px 0;border-bottom:1px dashed var(--ink-20)}
+.compare-card-row:last-child{border-bottom:none}
+.compare-card-row strong{color:var(--ink-60);font-weight:600;display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.tier-card{background:var(--white);border:1px solid var(--ink-20);padding:18px 20px;margin:14px 0;border-left:3px solid var(--coral)}
+.tier-card-rate{font-family:var(--font-display);font-size:32px;font-weight:500;color:var(--coral);line-height:1;margin-bottom:6px}
+.tier-card-name{font-family:var(--font-display);font-size:14px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin-bottom:8px}
+.tier-card-desc{font-size:13px;color:var(--ink-80);line-height:1.6}
+.tier-card-desc strong{color:var(--ink)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}
+.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}
+.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}
+.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}
+.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:12px;margin-top:36px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:600px){.compare-grid,.related-links{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Section 1202 QSBS: How Founders Can Exclude Up to $15M (or More) | CPA Validated">
+  <meta property="og:description" content="A plain-English guide to Section 1202 Qualified Small Business Stock. Pre and post-OBBBA rules, the new tiered holding period (3/4/5 years for 50%/75%/100% exclusion), the $15M per-issuer cap or 10x b">
+  <meta property="og:url" content="https://cpavalidated.com/section-1202-qsbs.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Section 1202 QSBS: How Founders Can Exclude Up to $15M (or More) | CPA Validated">
+  <meta name="twitter:description" content="A plain-English guide to Section 1202 Qualified Small Business Stock. Pre and post-OBBBA rules, the new tiered holding period (3/4/5 years for 50%/75%/100% exclusion), the $15M per-issuer cap or 10x b">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Section 1202 QSBS: How Founders Can Exclude Up to $15M (or More) | CPA Validated","description":"A plain-English guide to Section 1202 Qualified Small Business Stock. Pre and post-OBBBA rules, the new tiered holding period (3/4/5 years for 50%/75%/100% exclusion), the $15M per-issuer cap or 10x b","url":"https://cpavalidated.com/section-1202-qsbs.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","jobTitle":"CPA, Enrolled Agent","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+  </script>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Section 1202 QSBS: Founders Can Exclude $15M+ from Capital Gains</h1>
+  <div class="sub">Post-OBBBA tiered holds &nbsp;&bull;&nbsp; $15M cap or 10x basis &nbsp;&bull;&nbsp; $75M asset test &nbsp;&bull;&nbsp; Stacking strategies</div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="article">
+
+<p class="lead">Section 1202 is the most generous capital gains tax break in the entire Code, and most founders, early employees, and investors don't know it exists - or assume their company doesn't qualify. If you got stock in a US C-corporation when it was small, held it for at least three years (post-OBBBA) or five years (pre-OBBBA), and the company stayed within size and business limits, you may be able to exclude $15 million or more of the eventual gain from federal tax entirely. The One Big Beautiful Bill Act (P.L. 119-21, signed July 4, 2025) significantly expanded the rules. This article walks through how it works.</p>
+
+<div class="callout">
+  <div class="callout-label">The One-Sentence Summary</div>
+  <p>QSBS lets you exclude up to <strong>$15 million</strong> (or 10 times your basis, whichever is greater) of capital gain on the sale of qualifying small business stock - if the stock was originally issued by a domestic C corporation that had under $75 million in aggregate gross assets at issuance, in a non-excluded industry, and you held it long enough.</p>
+</div>
+
+<h2>Two Parallel Regimes (Pre and Post-OBBBA)</h2>
+
+<p>The first thing to understand: there are now <strong>two sets of QSBS rules running in parallel</strong>. Stock issued on or before July 4, 2025 follows the pre-OBBBA rules. Stock issued after July 4, 2025 follows the new (more generous) rules. Pre-OBBBA stock cannot be "converted" to post-OBBBA treatment - the acquisition-date carryover rules prevent simple resets via reorganizations.</p>
+
+<div class="compare-grid">
+  <div class="compare-card">
+    <div class="compare-card-tag">Stock issued on or before July 4, 2025</div>
+    <div class="compare-card-title">Pre-OBBBA</div>
+    <div class="compare-card-row"><strong>Holding Period</strong>5+ years for any exclusion</div>
+    <div class="compare-card-row"><strong>Exclusion %</strong>100% (issued after Sept 27, 2010); 75% (Feb 18, 2009 to Sept 27, 2010); 50% (before Feb 18, 2009)</div>
+    <div class="compare-card-row"><strong>Per-Issuer Cap</strong>Greater of $10M or 10x basis</div>
+    <div class="compare-card-row"><strong>Aggregate Gross Assets Test</strong>$50M (not indexed)</div>
+    <div class="compare-card-row"><strong>MFS Limit</strong>$5M</div>
+  </div>
+  <div class="compare-card">
+    <div class="compare-card-tag">Stock issued after July 4, 2025</div>
+    <div class="compare-card-title">Post-OBBBA</div>
+    <div class="compare-card-row"><strong>Holding Period</strong>Tiered: 3yr / 4yr / 5yr</div>
+    <div class="compare-card-row"><strong>Exclusion %</strong>50% / 75% / 100%</div>
+    <div class="compare-card-row"><strong>Per-Issuer Cap</strong>Greater of $15M or 10x basis (indexed from 2027)</div>
+    <div class="compare-card-row"><strong>Aggregate Gross Assets Test</strong>$75M (indexed from 2027)</div>
+    <div class="compare-card-row"><strong>MFS Limit</strong>$7.5M (half of $15M, scaled by exclusion %)</div>
+  </div>
+</div>
+
+<h2>The New Tiered Holding Period (Post-OBBBA)</h2>
+
+<p>For stock issued after July 4, 2025, OBBBA replaced the old all-or-nothing five-year requirement with a graduated schedule:</p>
+
+<div class="tier-card">
+  <div class="tier-card-rate">50%</div>
+  <div class="tier-card-name">Hold 3+ years</div>
+  <div class="tier-card-desc">Exclude 50% of eligible gain. Effective federal rate on QSBS gain: roughly 14% (50% taxable × 28% Section 1202 rate), plus 3.8% NIIT possible on the non-excluded portion. The non-excluded half is taxed at the 28% Section 1202 rate, not the regular 15%/20% LTCG rate.</div>
+</div>
+
+<div class="tier-card">
+  <div class="tier-card-rate">75%</div>
+  <div class="tier-card-name">Hold 4+ years</div>
+  <div class="tier-card-desc">Exclude 75% of eligible gain. Effective federal rate on QSBS gain: roughly 7% (25% taxable × 28% rate). The non-excluded quarter is at the 28% Section 1202 rate.</div>
+</div>
+
+<div class="tier-card">
+  <div class="tier-card-rate">100%</div>
+  <div class="tier-card-name">Hold 5+ years</div>
+  <div class="tier-card-desc">Exclude 100% of eligible gain. Effective federal rate on QSBS gain: 0%. Same as pre-OBBBA stock acquired after Sept 27, 2010.</div>
+</div>
+
+<div class="example">
+  <strong>How the math works.</strong> A startup founder receives QSBS in late 2025 with $0 basis. The company is acquired in 2029 (4-year hold) and the founder's gain is $20 million. Under post-OBBBA: 75% of gain ($15M) is excluded; $5M is taxable at 28% Section 1202 rate = $1.4M federal tax + 3.8% NIIT on $5M = $190K. Total federal tax: ~$1.59M on a $20M gain (effective rate 7.95%). Compare to the same $20M gain without QSBS: $20M × 23.8% (LTCG + NIIT) = $4.76M. Savings: roughly $3.17M.
+</div>
+
+<h2>The Per-Issuer Cap: $15M or 10x Basis</h2>
+
+<p>The exclusion is capped per taxpayer per issuing company at the greater of:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>$15 million</strong> (post-OBBBA; $10M for pre-OBBBA stock), reduced by any prior excluded gain from the same issuer</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>10 times the taxpayer's adjusted basis</strong> in the QSBS sold during the year</li>
+</ul>
+
+<p>The 10x basis alternative is what makes QSBS extraordinary for higher-basis investors. A late-stage VC who invests $5 million in QSBS could potentially exclude up to $50 million of gain, regardless of the $15M cap. Most founders with founder stock at $0 or near-zero basis will be limited to the $15M cap. Late-stage cash investors, recapitalizing investors, and angels who participated meaningfully often have enough basis that 10x basis is the binding constraint.</p>
+
+<h2>What "Qualified Small Business Stock" Actually Requires</h2>
+
+<p>For stock to be QSBS, every one of the following has to be true. Missing any one disqualifies the stock entirely.</p>
+
+<h3>1. Domestic C Corporation</h3>
+
+<p>The issuer must be a domestic (US) C corporation - on the date of issuance and during substantially all of the holding period. LLCs taxed as partnerships, S corporations, foreign corporations, REITs, and RICs cannot issue QSBS.</p>
+
+<p>This is the first reason many companies don't qualify: the founder structure. Most startups now begin as Delaware C corps from inception, often QSBS-driven. Companies that started as LLCs and converted to C-corp status only start the QSBS clock at the conversion date, and only equity issued after the conversion qualifies.</p>
+
+<h3>2. Original Issuance</h3>
+
+<p>The stock must be issued directly by the corporation to the taxpayer, in exchange for cash, property (other than stock), or services. Buying QSBS from another shareholder on the secondary market does not qualify - the buyer's stock is not QSBS in their hands. Exceptions: stock received by gift or inheritance generally retains QSBS status (with the holding period tacked on); stock received in tax-free reorganizations under §351 or §368 also generally retains QSBS status.</p>
+
+<h3>3. Aggregate Gross Assets Test</h3>
+
+<p>Immediately before and immediately after the stock is issued, the corporation's aggregate gross assets cannot exceed:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>$50 million</strong> for stock issued on or before July 4, 2025</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>$75 million</strong> for stock issued after July 4, 2025 (indexed for inflation from 2027)</li>
+</ul>
+
+<p>"Aggregate gross assets" means cash plus the aggregate adjusted tax basis of other property held by the corporation. Property contributed to the corporation in §351 contributions is treated as if its basis equals fair market value at the time of contribution.</p>
+
+<p>The test applies only at the time of issuance. A company that grows past $75M in assets after issuing QSBS doesn't disqualify the stock that's already out - but no new QSBS can be issued from that point forward.</p>
+
+<h3>4. Active Business Test</h3>
+
+<p>For substantially all of the taxpayer's holding period, at least 80% of the corporation's assets (by value) must be used in the active conduct of one or more "qualified trades or businesses." This is checked continuously throughout the holding period, not just at issuance. Holding too much cash, marketable securities, or non-business real estate can fail this test.</p>
+
+<h3>5. Excluded Industries</h3>
+
+<p>The active business cannot be in certain excluded categories. The list is long and matters:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Health, law, engineering, architecture, accounting, actuarial science, performing arts, consulting, athletics, financial services, brokerage services</strong> - the broad "professional services" catch</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Banking, insurance, financing, leasing, investing</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px">Farming, oil and gas, mining, and other extraction industries</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Hotels, motels, restaurants, and similar businesses</li>
+</ul>
+
+<p>What does qualify: tech (software, hardware, biotech, clean tech), manufacturing, retail (other than restaurants), most consumer products and services. The IRS has been increasingly liberal in interpreting where "tech" or "service" companies fall - a SaaS analytics platform that serves law firms is generally not a "law" business.</p>
+
+<div class="red-box"><strong>The professional-services catch is the most common disqualifier.</strong> Many founders of consulting firms, accounting firms, financial advisory practices, law firms, and medical practices assume QSBS applies and find out at exit that it doesn't. Read the excluded list before relying on QSBS in your exit modeling. If your company is in a gray zone, get a written tax opinion well in advance of any sale.</div>
+
+<h2>The 28% Section 1202 Gain Rate</h2>
+
+<p>One detail that surprises a lot of investors: the portion of QSBS gain that's <em>not</em> excluded isn't taxed at regular long-term capital gains rates. It's taxed at a special 28% rate (the "Section 1202 gain rate"), plus the 3.8% Net Investment Income Tax if applicable.</p>
+
+<p>This matters for:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Pre-OBBBA stock acquired before Sept 28, 2010 (50% or 75% exclusion)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Post-OBBBA stock held only 3 years (50% exclusion)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px">Post-OBBBA stock held only 4 years (75% exclusion)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)">Any QSBS gain in excess of the per-issuer cap</li>
+</ul>
+
+<p>So if you have $20M of gain from post-OBBBA QSBS held 4 years, the $5M not excluded is taxed at 28% (federal), not 20%. Plus 3.8% NIIT. Add state tax if your state doesn't conform.</p>
+
+<h2>State Conformity (or the Lack of It)</h2>
+
+<p>Federal QSBS exclusion does not automatically apply at the state level. Several states tax the full gain even when the federal exclusion applies:</p>
+
+<ul style="margin:6px 0 22px 24px">
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Don't conform:</strong> California, Pennsylvania, New Jersey, Alabama, Mississippi</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>Partial conformity:</strong> Hawaii, Massachusetts</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Limited or delayed conformity:</strong> New York, others (verify before relying)</li>
+</ul>
+
+<p>For a California founder, this is a roughly 13% state tax bill on what would otherwise be tax-free federal income. On a $15M federal exclusion, that's $1.95M of state tax. The planning response: many California QSBS holders move to no-tax states (Texas, Florida, Tennessee, Nevada) before sale - or use non-grantor irrevocable trusts established in QSBS-friendly jurisdictions.</p>
+
+<h2>Stacking Strategies: Multiplying the Exclusion</h2>
+
+<p>The $15M cap is per taxpayer per issuing company. With careful planning, you can multiply it across multiple taxpayers.</p>
+
+<h3>Gifting to Family Members</h3>
+
+<p>QSBS gifted to family members (or trusts for their benefit) carries with it the donor's holding period and basis. Each donee gets their own $15M cap. A founder who gifts $5M of QSBS to each of three children before sale has potentially created three additional $15M exclusions on top of their own.</p>
+
+<p>Constraints: the gift must be a real, complete transfer. Reciprocal gifts and step transactions are scrutinized. Annual gift tax exclusion ($19,000 in 2025) and lifetime exemption ($13.99M in 2025) need to be considered.</p>
+
+<h3>Non-Grantor Irrevocable Trusts</h3>
+
+<p>A non-grantor trust is a separate taxpayer for income tax purposes. Each non-grantor trust gets its own $15M cap. By gifting QSBS to multiple non-grantor trusts (often situated in no-state-tax jurisdictions like South Dakota, Nevada, Wyoming, or Alaska), the same founder can multiply both federal and state QSBS exclusion many times over.</p>
+
+<p>Considerations: the gift uses lifetime exemption (for amounts over $19K per donee per year); the trust must have a real purpose beyond tax savings; the trust's administration must be genuinely separate. Self-settled trust structures and gift-and-leaseback arrangements can fail under economic substance doctrine.</p>
+
+<div class="green-box"><strong>The combination of QSBS plus stacking plus state-tax-free trust situs</strong> is one of the most powerful exit-planning tools in current US tax practice. A founder selling $50M of QSBS through a properly structured combination of personal exclusion, spousal stacking, and non-grantor trusts in a no-tax state can potentially eliminate nearly all federal and state tax on the entire $50M. Done sloppily, it produces audit risk and disqualification. The structures need to be set up <em>well</em> before any sale - typically 1 to 3 years before, while the company is still well below the $75M asset test.</div>
+
+<h2>Section 1045 Rollover (When You Can't Wait)</h2>
+
+<p>If you sell QSBS before meeting the holding period (under three years post-OBBBA, under five years pre-OBBBA), Section 1045 lets you roll the proceeds into new QSBS within 60 days, deferring the gain. The original stock must have been held more than six months for §1045 to apply. The new stock's holding period continues from the original.</p>
+
+<p>Useful when an early acquisition disrupts a planned hold. The seller takes the cash, finds new qualifying QSBS investments within 60 days, and preserves the eventual exclusion when the new stock matures.</p>
+
+<h2>Practical Recommendations</h2>
+
+<p><strong>Establish QSBS status from day one.</strong> If you're forming a new company, a Delaware C corporation almost always beats an LLC for QSBS-eligible founders and early employees. The QSBS clock starts at C-corp issuance.</p>
+
+<p><strong>Document the aggregate gross assets test.</strong> Each round of issuance needs a contemporaneous calculation showing the $50M / $75M test was met. After-the-fact reconstruction is much harder.</p>
+
+<p><strong>Run the active business test continuously.</strong> If the company holds large cash balances post-fundraising or invests in non-business real estate, the 80% test can fail in years where you weren't tracking.</p>
+
+<p><strong>Plan stacking 1 to 3 years before sale.</strong> Trust formation, gifting, and state-residency moves done in the year of sale draw scrutiny. Done years in advance, with separate economic purposes, they hold up.</p>
+
+<p><strong>Don't bet the farm on QSBS for excluded industries.</strong> If your company is in health, financial services, consulting, or another excluded category, build your exit financial model assuming no QSBS. Treat any actual exclusion as upside.</p>
+
+<p><strong>For pre-OBBBA stockholders: the new rules don't apply retroactively.</strong> Your pre-OBBBA QSBS keeps the original $10M cap and 5-year all-or-nothing hold, even if you continue holding past July 4, 2025. The new regime is a separate generation; old shares don't get a free upgrade.</p>
+
+<div class="related">
+  <div class="related-title">Related Articles</div>
+  <div class="related-links">
+    <a href="obbba-guide.html" class="related-link">OBBBA Full Guide<span>All major provisions of P.L. 119-21</span></a>
+    <a href="bonus-depreciation-guide.html" class="related-link">Bonus Depreciation Guide<span>Another OBBBA business benefit</span></a>
+    <a href="qbi-deduction-guide.html" class="related-link">QBI Deduction Guide<span>The other major small-business break</span></a>
+    <a href="tax-estimator.html" class="related-link">Tax Estimator<span>Run your numbers</span></a>
+  </div>
+</div>
+
+<div class="source-row">Authority: IRC §1202 (qualified small business stock - 50/75/100% exclusion); IRC §1202(a)(5) (post-OBBBA tiered holding period for stock issued after July 4, 2025); IRC §1202(b)(4) ($15M per-issuer cap, indexed from 2027); IRC §1202(d)(2) (aggregate gross assets test, $75M post-OBBBA); IRC §1202(e) (active business test); IRC §1202(h) (carryover rules for gifts and reorganizations); IRC §1045 (rollover of gain from QSBS); IRC §1(h)(7) (28% Section 1202 gain rate on non-excluded portion); One Big Beautiful Bill Act (OBBBA), H.R. 1, P.L. 119-21, enacted July 4, 2025; Omnibus Budget Reconciliation Act of 1993, P.L. 103-66 (original Section 1202).</div>
 <button onclick="window.print()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px;letter-spacing:.03em;display:inline-block">Print / Save as PDF</button>
 <button onclick="shareArticle()" style="background:var(--ink,#111);color:#fff;border:none;padding:11px 24px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;margin:20px 0 4px 8px;letter-spacing:.03em;display:inline-block">Share</button><script>function shareArticle(){if(document.getElementById('sv-modal'))return;var u=encodeURIComponent(location.href);var t=encodeURIComponent(document.title.replace(' | CPA Validated',''));var pl=[{n:'Facebook',c:'#1877F2',h:'https://www.facebook.com/sharer/sharer.php?u='+u},{n:'Telegram',c:'#29A8E0',h:'https://t.me/share/url?url='+u+'&text='+t},{n:'X \/ Twitter',c:'#e7e7e7',h:'https://twitter.com/intent/tweet?url='+u+'&text='+t+'+%7C+CPA+Validated'},{n:'LinkedIn',c:'#0A66C2',h:'https://www.linkedin.com/sharing/share-offsite/?url='+u},{n:'WhatsApp',c:'#25D366',h:'https://wa.me/?text='+t+'%0A'+decodeURIComponent(u)}];var ov=document.createElement('div');ov.id='sv-modal';ov.style='position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:9998;display:flex;align-items:flex-end;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0)';var html='<div style="background:#111111;width:100%;max-width:520px">';html+='<div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px 14px;border-bottom:2px solid #F65F5A">';html+='<span style="font-family:Oswald,sans-serif;font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share This Guide</span>';html+='<button onclick="document.getElementById(\'sv-modal\').remove()" style="background:none;border:none;color:rgba(255,255,255,.45);font-size:26px;cursor:pointer;line-height:1;padding:2px 0 0">&times;</button>';html+='</div>';html+='<div style="padding:16px 22px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';pl.forEach(function(p){html+='<a href="'+p.h+'" target="_blank" rel="noopener" style="display:block;padding:13px 14px;border-left:3px solid '+p.c+';background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.01em">'+p.n+'</a>';});html+='<button id="sv-copy-btn" onclick="svCopy()" style="padding:13px 14px;border-left:3px solid #F65F5A;border-top:none;border-right:none;border-bottom:none;background:rgba(255,255,255,.06);color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;cursor:pointer;text-align:left;letter-spacing:.01em">Copy Link</button>';html+='</div></div>';ov.innerHTML=html;ov.addEventListener('click',function(e){if(e.target===ov)ov.remove()});document.body.appendChild(ov);}function svCopy(){var b=document.getElementById('sv-copy-btn');var orig=b.textContent;function ok(){b.textContent='Copied!';b.style.borderLeftColor='#4A7459';setTimeout(function(){if(b){b.textContent=orig;b.style.borderLeftColor='#F65F5A'}},2500);}if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(location.href).then(ok).catch(function(){var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();});}else{var ta=document.createElement('textarea');ta.value=location.href;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);ok();}}<\/script>
 <div class="disc">This article is for informational purposes only and does not constitute legal or tax advice. Section 1202 application is highly fact-specific and depends on the corporation's structure, the issuance date, the active business activities, and proper documentation throughout the holding period. State conformity varies. Stacking and trust strategies require formal legal and tax structuring before relying on them. Consult a qualified tax professional. A tk.cpa resource. tk.cpa is owned &amp; operated by tk.cpa Visit <a href="https://tk.cpa" target="_blank">tk.cpa</a>.</div>
