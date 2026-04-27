@@ -343,7 +343,7 @@ function result(type){
   }
 
   h+=`<div class="src">Authority: IRM 4.26.16.4 (Streamlined eligibility); IRM 4.26.16.6 (SFOP - Streamlined Foreign); IRM 4.26.16.7 (SDOP - Streamlined Domestic); 31 USC §5314 (FBAR requirement); 31 USC §5321 (FBAR penalties); IRC §6038D (Form 8938); IRM 9.5.11 (Voluntary Disclosure Program); Bittner v. United States, 598 US 85 (2023) (non-willful penalty per form, not per account).</div>`;
-  h+=`<button class="pbn" onclick="window.print()">Print / Save as PDF</button><button class="rbtn" onclick="resetAll()">Start Over</button>`;
+  h+=``;
   h+=``;
 
   rb.innerHTML=h;
@@ -363,8 +363,8 @@ function resetAll(){
 
 
 <div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
+<button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
+<button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
 </div>
 <style>@media print{.action-btns,.cat-nav,nav,.related{display:none!important}}</style>
 <script>
