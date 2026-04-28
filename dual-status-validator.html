@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dual-Status Tax Year Validator | CPA Validated</title>
+<meta name="description" content="Determine if you qualify for dual-status tax year treatment for year of arrival or departure.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
+.q-row:last-child{border-bottom:none}
+.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;cursor:pointer;background:#fff;border-right:1px solid #D9DBDE}
+.yn-btn:last-child{border-right:none}
+.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:#EDE0DC;color:#9B3D3D;font-weight:700}
+.result-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:16px;margin-top:20px}
+.result-box h3{font-size:16px;color:var(--ink);margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Dual-Status Tax Year Validator</h1>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine eligibility for dual-status treatment in year of US arrival or departure.</p>
+</div>
+</div>
+
+<div class="container">
+<div class="card">
+<div class="ch"><h2>Year Details</h2></div>
+<div class="cb">
+<div class="q-row">
+<div><div style="font-size:13.5px;color:var(--ink)">Is this your first year as a US resident?</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('first_year', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('first_year', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row" id="date_row" style="display:none">
+<div><div style="font-size:13.5px;color:var(--ink)">Date you became a US resident (Green Card issued or Substantial Presence Test met)</div></div>
+<div style="min-width:120px">
+<input type="date" id="arrival_date" class="fc" oninput="calculate()" style="width:150px;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px">
+</div>
+</div>
+
+<div class="q-row">
+<div><div style="font-size:13.5px;color:var(--ink)">Did you marry a US citizen or resident during this year?</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('married_us', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('married_us', 'no')">No</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Dual-Status Eligibility</h2></div>
+<div class="cb">
+<div id="result_area"></div>
+</div>
+</div>
+</div>
+
+<script>
+const state = {
+  first_year: '',
+  married_us: ''
+};
+
+function setState(key, val) {
+  state[key] = val;
+  document.querySelectorAll(`[onclick*="setState('${key}'"]`).forEach(btn => {
+    btn.classList.remove('sel-yes', 'sel-no', 'unsel');
+  });
+  document.querySelector(`[onclick*="setState('${key}','${val}']`).classList.add(`sel-${val}`);
+  
+  if (key === 'first_year') {
+    document.getElementById('date_row').style.display = val === 'yes' ? 'grid' : 'none';
+  }
+  
+  calculate();
+}
+
+function calculate() {
+  if (!state.first_year || !state.married_us) return;
+  
+  let eligible = false;
+  let reason = '';
+  
+  if (state.first_year === 'yes') {
+    eligible = true;
+    reason = 'You are in your first year as a US resident. You may elect dual-status treatment if you were not a US resident at any time during the two preceding calendar years (IRC §7701(b)(3)).';
+  } else if (state.married_us === 'yes') {
+    eligible = true;
+    reason = 'You married a US citizen or resident during this year. You may qualify for dual-status based on spousal election.';
+  } else {
+    eligible = false;
+    reason = 'Based on your responses, dual-status treatment does not appear to apply. If you departed the US permanently this year, contact a tax professional to determine if departure-year dual-status applies.';
+  }
+  
+  let html = `
+    <div class="result-box">
+      <h3>Dual-Status Eligible: ${eligible ? 'POSSIBLY' : 'UNLIKELY'}</h3>
+      <p style="font-size:13px;line-height:1.6;margin-top:8px">${reason}</p>
+      <p style="font-size:12px;color:var(--ink-80);margin-top:12px"><strong>Important:</strong> Dual-status is complex and requires proper election on Form 1040 or Form 1040-NR. Consult a tax professional before filing. This validator provides guidance only.</p>
+    </div>
+  `;
+  
+  document.getElementById('result_area').innerHTML = html;
+}
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
+<div style="font-size:10px;color:rgba(255,255,255,.75)">Educational guidance only. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+<script src="/shared.js"></script>
+</body>
+</html>
