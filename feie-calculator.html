@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foreign Earned Income Exclusion (FEIE) Calculator | CPA Validated</title>
+<meta name="description" content="Calculate your Foreign Earned Income Exclusion. Interactive calculator for expatriates and digital nomads.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6;
+  --amber:#8B6535; --amber-bg:#EDE8D8;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.08em}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px}
+.fc:focus{border-color:var(--coral);outline:none}
+.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
+.result-box h3{font-family:var(--font-display);font-size:16px;color:var(--green);margin-bottom:8px}
+.result-num{font-family:var(--font-mono);font-size:24px;font-weight:700;color:var(--green);margin:10px 0}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Foreign Earned Income Exclusion (FEIE) Calculator</h1>
+<p class="sub">Calculate your 2026 Foreign Earned Income Exclusion under IRC §911. For US citizens and residents living and working abroad.</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="ch"><h2>Foreign Earned Income</h2></div>
+<div class="cb">
+<div class="f1" style="margin-bottom:14px">
+<label>What is your foreign earned income for 2026?</label>
+<input type="number" id="earned_income" class="fc" placeholder="0" min="0" oninput="calculate()">
+<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>FEIE Calculation</h2></div>
+<div class="cb">
+<div id="calculation_area"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+const feie_2026 = 132900;
+
+function calculate() {
+  const income = parseFloat(document.getElementById('earned_income').value) || 0;
+  const excluded = Math.min(income, feie_2026);
+  const taxable = income - excluded;
+  
+  let calc_html = `
+    <div style="font-size:13px;line-height:1.7">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10)">
+        <span>Foreign Earned Income:</span>
+        <strong style="font-family:var(--font-mono)">$${income.toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10)">
+        <span>2026 FEIE Limit:</span>
+        <strong style="font-family:var(--font-mono);color:var(--coral)">$${feie_2026.toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--green);font-weight:700">
+        <span>Amount Excluded:</span>
+        <strong style="font-family:var(--font-mono)">$${excluded.toLocaleString()}</strong>
+      </div>
+    </div>
+    <div class="result-box">
+      <h3>Taxable US Income</h3>
+      <div class="result-num">$${taxable.toLocaleString()}</div>
+      <p style="font-size:12px">Only this amount is subject to US income tax.</p>
+    </div>
+    <div class="note-box">
+      <strong>Important:</strong> This calculation assumes you meet the Physical Presence Test or Bona Fide Residence Test. You must be a US citizen or resident alien working abroad and meet IRC §911 requirements. Self-employment tax (15.3%) may apply to excluded income. Consult a tax professional to ensure eligibility.
+    </div>
+  `;
+  
+  document.getElementById('calculation_area').innerHTML = calc_html;
+}
+
+document.getElementById('earned_income').addEventListener('change', calculate);
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+<span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+<div style="display:flex;gap:20px">
+<a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+<a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+<a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+</div>
+</div>
+<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice. Calculator outputs are estimates only. Verify your FEIE eligibility with a tax professional. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+</div>
+
+<script src="/shared.js"></script>
+</body>
+</html>
