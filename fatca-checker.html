@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FATCA & FBAR Filing Requirement Checker | CPA Validated</title>
+<meta name="description" content="Determine whether you must file FATCA (Form 8938) and FBAR (FinCEN 114). Interactive checker for foreign account and asset reporting requirements.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --navy:#071563; --navy-100:#E2E4F0;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+::selection{background:var(--coral);color:#fff}
+a{color:var(--coral);text-decoration:none}
+a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:8px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.1}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
+.cb{padding:20px 20px 22px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px}
+.fc:focus{border-color:var(--coral);outline:none}
+.yn-group{display:flex;border:1.5px solid var(--ink-20);overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;background:var(--white);color:var(--ink-60);border-right:1px solid var(--ink-20)}
+.yn-btn:last-child{border-right:none}
+.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
+.yn-btn.unsel:hover{background:var(--ink-10)}
+.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid var(--ink-10)}
+.q-row:last-child{border-bottom:none}
+.q-text{font-size:13.5px;color:var(--ink);line-height:1.5}
+.q-sub{font-size:11.5px;color:var(--ink-60);margin-top:4px;line-height:1.4}
+.q-authority{display:inline-block;font-size:10.5px;font-weight:600;background:var(--ink);color:rgba(255,255,255,.5);padding:2px 6px;border-radius:2px;margin-left:4px}
+.q-ctrl{min-width:120px;flex-shrink:0}
+.result{margin-top:24px;padding:16px;border-left:3px solid var(--coral);background:var(--coral-100)}
+.result h3{font-family:var(--font-display);font-size:16px;color:var(--ink);margin-bottom:8px}
+.result p{font-size:13px;line-height:1.6;color:var(--ink-80)}
+.threshold-table{width:100%;border-collapse:collapse;margin-top:12px}
+.threshold-table th{text-align:left;font-weight:600;font-size:12px;color:var(--ink-60);background:var(--ink-10);padding:8px 10px;border:1px solid var(--ink-20)}
+.threshold-table td{padding:8px 10px;border:1px solid var(--ink-20);font-size:12px}
+.threshold-table td:first-child{font-weight:500;color:var(--ink-80)}
+.threshold-table td:last-child{text-align:right;font-family:var(--font-mono);color:var(--coral);font-weight:600}
+.summary-box{background:var(--navy-100);border:1px solid var(--navy);padding:14px;margin:14px 0;border-radius:4px}
+.summary-box h4{font-size:12px;font-weight:600;color:var(--navy);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.summary-box p{font-size:12px;line-height:1.5;color:var(--ink-80)}
+@media(max-width:640px){.fg2{grid-template-columns:1fr}.q-row{grid-template-columns:1fr;gap:8px}.q-ctrl{min-width:auto}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<div class="ph-eyebrow">Compliance Checker</div>
+<h1>FATCA & FBAR Filing Requirements</h1>
+<p class="sub">Determine whether you must file Form 8938 (FATCA) and FinCEN 114 (FBAR) based on your residency status and foreign account balances.</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="summary-box">
+<h4>How This Checker Works</h4>
+<p>FATCA (Form 8938) and FBAR (FinCEN 114) are separate reporting requirements with different thresholds and rules. Answer the questions below to determine filing obligations. This is educational guidance only - consult a tax professional for your specific situation.</p>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Step 1: Residency Status</h2></div>
+<div class="cb">
+<div class="q-row">
+<div><div class="q-text">What is your US tax residency status?</div><div class="q-sub">FATCA thresholds depend on whether you are a US citizen, resident alien, or nonresident alien.</div></div>
+<div class="q-ctrl">
+<select id="residency" class="fc">
+<option value="">Select...</option>
+<option value="citizen">US Citizen</option>
+<option value="resident">US Resident Alien</option>
+<option value="nonresident">Nonresident Alien</option>
+<option value="us-person">US Person (Green Card/Other)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Step 2: Foreign Account Balances</h2></div>
+<div class="cb">
+<div class="q-row">
+<div><div class="q-text">What is your highest aggregate foreign account balance during the tax year?</div><div class="q-sub">Include checking, savings, investment, and retirement accounts held at foreign banks or brokers.</div></div>
+<div class="q-ctrl"><input type="number" id="foreign_balance" class="fc" placeholder="0" min="0"></div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Step 3: Filing Status</h2></div>
+<div class="cb">
+<div class="q-row">
+<div><div class="q-text">Are you filing a joint return?</div><div class="q-sub">FATCA thresholds increase for married filing jointly.</div></div>
+<div class="q-ctrl">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setYN('filing_joint', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setYN('filing_joint', 'no')">No</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="results" style="display:none">
+
+<div class="card">
+<div class="ch"><h2>FBAR (FinCEN 114) Filing Requirement</h2></div>
+<div class="cb">
+<div id="fbar-result"></div>
+<table class="threshold-table">
+<tr><th>Filing Status</th><th>FBAR Threshold</th></tr>
+<tr><td>All Filers</td><td>$10,000</td></tr>
+</table>
+<div class="q-sub" style="margin-top:12px"><strong>Authority:</strong> 31 USC §5314, FinCEN 114 Instructions. The FBAR threshold is $10,000 in aggregate foreign account balances at any point during the calendar year. Threshold applies equally to all filers regardless of residency or filing status.</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Form 8938 (FATCA) Filing Requirement</h2></div>
+<div class="cb">
+<div id="fatca-result"></div>
+<table class="threshold-table" id="fatca-thresholds"></table>
+<div class="q-sub" style="margin-top:12px"><strong>Authority:</strong> IRC §6038D, Form 8938 Instructions. FATCA thresholds vary based on residency status and filing status. Resident aliens and US citizens use higher thresholds than nonresident aliens.</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Summary & Next Steps</h2></div>
+<div class="cb">
+<div id="summary-result"></div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<script>
+const state = {
+  residency: '',
+  foreign_balance: 0,
+  filing_joint: ''
+};
+
+function setYN(key, val) {
+  state[key] = val;
+  document.querySelectorAll(`[data-yn="${key}"]`).forEach(el => el.classList.remove('sel-yes', 'sel-no', 'unsel'));
+  document.querySelector(`[data-yn="${key}"][data-val="${val}"]`).classList.add(`sel-${val}`);
+  calculate();
+}
+
+document.getElementById('residency').addEventListener('change', (e) => {
+  state.residency = e.target.value;
+  calculate();
+});
+
+document.getElementById('foreign_balance').addEventListener('input', (e) => {
+  state.foreign_balance = parseFloat(e.target.value) || 0;
+  calculate();
+});
+
+document.querySelectorAll('.yn-btn').forEach(btn => {
+  const key = btn.parentElement.parentElement.querySelector('.q-text')?.textContent.includes('joint') ? 'filing_joint' : '';
+  if (key) {
+    btn.setAttribute('data-yn', key);
+    btn.setAttribute('data-val', btn.textContent.toLowerCase());
+  }
+});
+
+function calculate() {
+  if (!state.residency || state.foreign_balance < 1 || state.filing_joint === '') return;
+  
+  const fbar_threshold = 10000;
+  const fbar_required = state.foreign_balance > fbar_threshold;
+  
+  let fatca_threshold;
+  if (state.residency === 'nonresident') {
+    fatca_threshold = 600000; // NRA nonUS spouse separate filing
+  } else {
+    fatca_threshold = state.filing_joint === 'yes' ? 600000 : 300000; // US person
+    if (state.residency === 'citizen' && state.filing_joint === 'yes') {
+      fatca_threshold = 600000;
+    }
+  }
+  
+  const fatca_required = state.foreign_balance > fatca_threshold;
+  
+  // FBAR Result
+  document.getElementById('fbar-result').innerHTML = `
+    <div class="result">
+      <h3>FBAR Required: ${fbar_required ? 'YES' : 'NO'}</h3>
+      <p>Your foreign account balance is ${fbar_required ? 'ABOVE' : 'BELOW'} the $10,000 threshold. You ${fbar_required ? 'MUST' : 'DO NOT'} file FinCEN 114 (FBAR).</p>
+      <p style="margin-top:8px"><strong>Deadline:</strong> April 15 (with extension to October 15) | <strong>Filed with:</strong> FinCEN electronically via BSA E-Filing System</p>
+    </div>
+  `;
+  
+  // FATCA Result
+  const fatca_label = state.residency === 'nonresident' ? 'Nonresident Alien (NRA)' : 'US Citizen / Resident Alien';
+  document.getElementById('fatca-result').innerHTML = `
+    <div class="result">
+      <h3>Form 8938 Required: ${fatca_required ? 'YES' : 'NO'}</h3>
+      <p>Your foreign account balance is ${fatca_required ? 'ABOVE' : 'BELOW'} the Form 8938 threshold of ${fatca_threshold.toLocaleString()} for a ${state.filing_joint === 'yes' ? 'joint' : 'single'} filer (${fatca_label}). You ${fatca_required ? 'MUST' : 'DO NOT'} file Form 8938.</p>
+      <p style="margin-top:8px"><strong>Deadline:</strong> Same as income tax return (April 15 with extension) | <strong>Filed with:</strong> Form 1040 (US citizens/residents) or Form 1040-NR (nonresidents)</p>
+    </div>
+  `;
+  
+  // Thresholds table
+  const thresholds = [
+    { status: 'US Citizen (Single)', threshold: 300000 },
+    { status: 'US Citizen (MFJ)', threshold: 600000 },
+    { status: 'Resident Alien (Single)', threshold: 300000 },
+    { status: 'Resident Alien (MFJ)', threshold: 600000 },
+    { status: 'Nonresident Alien', threshold: 600000 },
+  ];
+  
+  let table_html = '<tr><th>Filer Type</th><th>Form 8938 Threshold</th></tr>';
+  thresholds.forEach(t => {
+    table_html += `<tr><td>${t.status}</td><td>$${t.threshold.toLocaleString()}</td></tr>`;
+  });
+  document.getElementById('fatca-thresholds').innerHTML = table_html;
+  
+  // Summary
+  let summary = '<div class="summary-box">';
+  if (fbar_required && fatca_required) {
+    summary += '<h4>You Must File Both FBAR AND Form 8938</h4><p>Your foreign accounts exceed both thresholds. File FinCEN 114 with FinCEN and Form 8938 with your tax return. Penalties for failure to file are substantial.</p>';
+  } else if (fbar_required) {
+    summary += '<h4>You Must File FBAR Only</h4><p>Your accounts exceed the FBAR threshold but not Form 8938. File FinCEN 114 electronically with FinCEN.</p>';
+  } else if (fatca_required) {
+    summary += '<h4>You Must File Form 8938 Only</h4><p>Your accounts exceed the Form 8938 threshold but not FBAR. File Form 8938 with your income tax return.</p>';
+  } else {
+    summary += '<h4>No Filing Required</h4><p>Your foreign account balances do not exceed either threshold. You are not required to file FBAR or Form 8938.</p>';
+  }
+  summary += '</div>';
+  document.getElementById('summary-result').innerHTML = summary;
+  
+  document.getElementById('results').style.display = 'block';
+  window.scrollTo({top: document.getElementById('results').offsetTop - 100, behavior: 'smooth'});
+}
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+<button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+<button onclick="window.location.href='mailto:?subject=FATCA%20FBAR%20Filing%20Checker'; return false;" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+</div>
+<div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+<span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+<div style="display:flex;gap:20px">
+<a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+<a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+<a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+</div>
+</div>
+<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+</div>
+</div>
+</div>
+
+<script src="/shared.js"></script>
+</body>
+</html>
