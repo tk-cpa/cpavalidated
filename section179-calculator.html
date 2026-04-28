@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 179 Expensing Calculator | CPA Validated</title>
+<meta name="description" content="Calculate your 2026 Section 179 expensing deduction for business equipment.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.f1 label{font-size:11px;font-weight:600;color:#5E6166;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px}
+.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
+.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green)}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Section 179 Expensing Calculator</h1>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Calculate 2026 Section 179 equipment expensing. Limit $1,220,000 with $5,000,000 phase-out.</p>
+</div>
+</div>
+
+<div class="container">
+<div class="card">
+<div class="ch"><h2>2026 Limits</h2></div>
+<div class="cb">
+<div style="font-size:13px;line-height:1.8">
+<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+<span>Section 179 Annual Limit</span>
+<strong style="font-family:var(--font-mono)">$1,220,000</strong>
+</div>
+<div style="display:flex;justify-content:space-between;padding:8px 0">
+<span>Phase-Out Threshold</span>
+<strong style="font-family:var(--font-mono)">$5,000,000</strong>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Equipment Cost</h2></div>
+<div class="cb">
+<div class="f1">
+<label>Total Cost of Qualified Property</label>
+<input type="number" id="cost" class="fc" placeholder="0" min="0" oninput="calculate()">
+<div style="font-size:11px;color:#5E6166;margin-top:4px">Qualifying tangible business property placed in service during 2026</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Section 179 Deduction</h2></div>
+<div class="cb">
+<div id="calc_result"></div>
+</div>
+</div>
+</div>
+
+<script>
+function calculate() {
+  const cost = parseFloat(document.getElementById('cost').value) || 0;
+  const limit = 1220000;
+  const threshold = 5000000;
+  
+  // Phase-out: $1 reduction for every $1 over threshold
+  let phaseout = Math.max(0, cost - threshold);
+  let deduction = Math.max(0, limit - phaseout);
+  deduction = Math.min(deduction, cost); // Can't exceed actual cost
+  
+  let html = `
+    <div style="font-size:13px;line-height:1.8">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+        <span>Equipment Cost</span>
+        <strong>$${cost.toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+        <span>Annual Limit</span>
+        <strong>$${limit.toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--green);font-weight:700">
+        <span>Section 179 Deduction</span>
+        <strong style="font-family:var(--font-mono)">$${Math.round(deduction).toLocaleString()}</strong>
+      </div>
+    </div>
+    <div class="result-box">
+      <h3>You Can Deduct</h3>
+      <div class="result-num">$${Math.round(deduction).toLocaleString()}</div>
+      <p style="font-size:12px;margin-top:8px">Balance of ${(cost - deduction).toLocaleString()} must be depreciated using MACRS if not elected as bonus depreciation.</p>
+    </div>
+  `;
+  
+  document.getElementById('calc_result').innerHTML = html;
+}
+
+calculate();
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
+<div style="font-size:10px;color:rgba(255,255,255,.75)">Educational estimate only. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+<script src="/shared.js"></script>
+</body>
+</html>
