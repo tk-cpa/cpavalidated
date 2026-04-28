@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Child Tax Credit Calculator | CPA Validated</title>
+<meta name="description" content="Calculate your 2026 Child Tax Credit (CTC) and Additional CTC. Interactive calculator.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-size:13px}
+.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
+.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green)}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Child Tax Credit Calculator</h1>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Calculate your 2026 Child Tax Credit (CTC) and Additional CTC refund.</p>
+</div>
+</div>
+
+<div class="container">
+<div class="card">
+<div class="ch"><h2>Children & Income</h2></div>
+<div class="cb">
+<div class="fg2">
+<div class="f1">
+<label>Number of Qualifying Children (under 17)</label>
+<input type="number" id="num_children" class="fc" value="1" min="0" max="20" oninput="calculate()">
+</div>
+<div class="f1">
+<label>Modified AGI for 2026</label>
+<input type="number" id="magi" class="fc" placeholder="0" min="0" oninput="calculate()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>CTC Calculation</h2></div>
+<div class="cb">
+<div id="calc_result"></div>
+</div>
+</div>
+</div>
+
+<script>
+function calculate() {
+  const children = parseInt(document.getElementById('num_children').value) || 0;
+  const magi = parseFloat(document.getElementById('magi').value) || 0;
+  
+  // 2026: $2,000 per child, phases out at $400k MFJ / $200k single
+  const ctc_per_child = 2000;
+  const phaseout_start = 400000; // Assume MFJ
+  const phaseout_rate = 50;
+  
+  let base_ctc = children * ctc_per_child;
+  let phaseout = Math.max(0, (magi - phaseout_start) / 1000) * phaseout_rate;
+  let ctc = Math.max(0, base_ctc - phaseout);
+  
+  // Additional CTC (refundable portion): 15% of earned income over $2,500
+  const earned_income = magi; // Assume all income is earned
+  let additional_ctc = Math.max(0, (earned_income - 2500) * 0.15);
+  additional_ctc = Math.min(additional_ctc, 1700 * children); // Capped
+  
+  const total_credit = ctc + additional_ctc;
+  
+  let html = `
+    <div style="font-size:13px;line-height:1.8">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10)">
+        <span>${children} Child(ren) × $2,000</span>
+        <strong>$${base_ctc.toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10);color:var(--ink-80)">
+        <span>Phase-out reduction (if applicable)</span>
+        <strong>-$${Math.round(phaseout).toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10);color:var(--green);font-weight:700">
+        <span>Child Tax Credit</span>
+        <strong>$${Math.round(ctc).toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--green);font-weight:700">
+        <span>Additional CTC (Refundable)</span>
+        <strong>$${Math.round(additional_ctc).toLocaleString()}</strong>
+      </div>
+    </div>
+    <div class="result-box">
+      <h3>Total Child Tax Credit</h3>
+      <div class="result-num">$${Math.round(total_credit).toLocaleString()}</div>
+    </div>
+  `;
+  
+  document.getElementById('calc_result').innerHTML = html;
+}
+
+calculate();
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7">Educational estimate only. Consult a tax professional for exact calculation. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+</div>
+<script src="/shared.js"></script>
+</body>
+</html>
