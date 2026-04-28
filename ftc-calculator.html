@@ -133,7 +133,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <div class="wrap">
 
 <div class="callout">
-  <strong>Two strategies for US taxpayers abroad:</strong> The Foreign Earned Income Exclusion (FEIE, IRC §911) excludes up to $126,500 of foreign earned income from US tax. The Foreign Tax Credit (FTC, IRC §901) credits foreign taxes paid against US tax dollar-for-dollar. This calculator helps determine which strategy produces a lower US tax bill based on your specific income and foreign tax situation.
+  <strong>Two strategies for US taxpayers abroad:</strong> The Foreign Earned Income Exclusion (FEIE, IRC §911) excludes up to $132,900 of foreign earned income from US tax. The Foreign Tax Credit (FTC, IRC §901) credits foreign taxes paid against US tax dollar-for-dollar. This calculator helps determine which strategy produces a lower US tax bill based on your specific income and foreign tax situation.
 </div>
 
 <div class="card">
@@ -219,7 +219,7 @@ const BRACKETS_SINGLE = [[0,11925,0.10],[11925,48475,0.12],[48475,103350,0.22],[
 const BRACKETS_MFJ = [[0,23850,0.10],[23850,96950,0.12],[96950,206700,0.22],[206700,394600,0.24],[394600,501050,0.32],[501050,751600,0.35],[751600,Infinity,0.37]];
 const BRACKETS_MFS = [[0,11925,0.10],[11925,48475,0.12],[48475,103350,0.22],[103350,197300,0.24],[197300,250525,0.32],[250525,375800,0.35],[375800,Infinity,0.37]];
 const BRACKETS_HOH = [[0,17000,0.10],[17000,64850,0.12],[64850,103350,0.22],[103350,197300,0.24],[197300,250500,0.32],[250500,626350,0.35],[626350,Infinity,0.37]];
-const FEIE_LIMIT = 126500;
+const FEIE_LIMIT = 132900;
 
 function getBrackets(status){
   if(status==='mfj') return BRACKETS_MFJ;
@@ -330,7 +330,7 @@ function calc(){
   h += `<div class="sum-box"><div class="sum-title">${showA ? 'FEIE Strategy Detail' : 'FTC-Only Strategy Detail'}</div>
     ${showA ? `
     <div class="sum-row"><span class="sum-lbl">Gross income</span><span class="sum-val">${fmt(gross)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">FEIE exclusion (IRC §911, 2026 limit $126,500)</span><span class="sum-val green">- ${fmt(feieExclusion)}</span></div>
+    <div class="sum-row"><span class="sum-lbl">FEIE exclusion (IRC §911, 2026 limit $132,900)</span><span class="sum-val green">- ${fmt(feieExclusion)}</span></div>
     <div class="sum-row"><span class="sum-lbl">Adjusted gross income</span><span class="sum-val">${fmt(grossA)}</span></div>
     <div class="sum-row"><span class="sum-lbl">${itemized>stdDed?'Itemized':'Standard'} deduction</span><span class="sum-val">- ${fmt(deduction)}</span></div>
     <div class="sum-row"><span class="sum-lbl">Taxable income</span><span class="sum-val">${fmt(taxableA)}</span></div>
@@ -355,19 +355,19 @@ function calc(){
   } else if(effectiveForeignRate > 0 && effectiveForeignRate < 0.15){
     h += flag('blue','ℹ','<strong>Low effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> When foreign taxes paid are low, the FEIE typically produces a better result because it directly excludes income rather than crediting taxes that were barely paid. The comparison above shows which is better for your numbers.');
   } else if(effectiveForeignRate === 0 && foreignEarned > 0){
-    h += flag('blue','ℹ','<strong>No foreign tax paid.</strong> With zero foreign taxes paid, the FTC produces no credit. The FEIE is the only meaningful strategy for reducing US tax on this income - subject to the $126,500 limit and the passive activity rules.');
+    h += flag('blue','ℹ','<strong>No foreign tax paid.</strong> With zero foreign taxes paid, the FTC produces no credit. The FEIE is the only meaningful strategy for reducing US tax on this income - subject to the $132,900 limit and the passive activity rules.');
   } else if(effectiveForeignRate >= 0.15 && effectiveForeignRate < 0.30){
     h += flag('blue','ℹ','<strong>Moderate effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> In this range, the better strategy depends on your specific income level and US bracket. The comparison above shows which produces a lower US tax bill for your numbers.');
   }
   if(totalForeignIncome > FEIE_LIMIT && foreignEarned > FEIE_LIMIT){
-    h += flag('amber','!',`<strong>Income exceeds FEIE limit.</strong> Your foreign earned income of ${fmt(foreignEarned)} exceeds the 2026 FEIE limit of $126,500. The excess ${fmt(foreignEarned - FEIE_LIMIT)} is still subject to US tax under the FEIE strategy. The FTC strategy may be more effective for high earners in high-tax jurisdictions.`);
+    h += flag('amber','!',`<strong>Income exceeds FEIE limit.</strong> Your foreign earned income of ${fmt(foreignEarned)} exceeds the 2026 FEIE limit of $132,900. The excess ${fmt(foreignEarned - FEIE_LIMIT)} is still subject to US tax under the FEIE strategy. The FTC strategy may be more effective for high earners in high-tax jurisdictions.`);
   }
   if(carryB > 0 && (feieElect === 'ftc' || (feieElect === 'compare' && !showA))){
     h += flag('amber','!',`<strong>FTC carryforward of ${fmt(carryB)} generated.</strong> Your foreign taxes paid exceed the IRC §904 limitation this year. The excess carries forward up to 10 years and can be applied against future US tax on foreign income. IRC §904(c).`);
   }
   h += flag('amber','!','<strong>This calculator provides an estimate only.</strong> The actual FTC limitation requires a separate Form 1116 for each income basket (general, passive, HTKO, etc.). The self-employment tax (IRC §1401) is not reduced by the FEIE. This calculator does not address the SE tax impact, which can be significant for self-employed expats. Consult a qualified international tax CPA before making an election.');
 
-  h += `<div class="src">Authority: IRC §901 (foreign tax credit); IRC §904 (FTC limitation); IRC §904(c) (carryback/carryforward); IRC §911 (FEIE); IRC §911(b)(2)(D) (2026 FEIE limit $126,500); IRC §1401 (SE tax not reduced by FEIE); Form 1116 instructions; IRS Rev. Proc. 2025-32 (2026 brackets and standard deductions).</div>`;
+  h += `<div class="src">Authority: IRC §901 (foreign tax credit); IRC §904 (FTC limitation); IRC §904(c) (carryback/carryforward); IRC §911 (FEIE); IRC §911(b)(2)(D) (2026 FEIE limit $132,900); IRC §1401 (SE tax not reduced by FEIE); Form 1116 instructions; IRS Rev. Proc. 2025-32 (2026 brackets and standard deductions).</div>`;
   h += ``;
   h += ``;
 
