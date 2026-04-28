@@ -60,3 +60,26 @@ if(document.readyState==='loading'){
 
 })();
 
+/* ── BUTTON FUNCTIONS ───────────────────────────────────────────── */
+function doPrint(){
+  window.print();
+}
+
+function doShare(){
+  if(navigator.share){
+    navigator.share({
+      title:document.title,
+      text:'Check this out',
+      url:window.location.href
+    }).catch(e=>console.log('Share failed',e));
+  }else{
+    var url=window.location.href;
+    if(navigator.clipboard){
+      navigator.clipboard.writeText(url).then(()=>{
+        alert('Link copied to clipboard');
+      }).catch(e=>console.log('Copy failed',e));
+    }else{
+      alert(url);
+    }
+  }
+}
