@@ -33,6 +33,8 @@ function styleButtons(){
   var print_=null,share_=null;
   for(var i=0;i<btns.length;i++){
     var oc=btns[i].getAttribute('onclick')||'';
+    var isInFooter=btns[i].closest('[style*="border-top:2px solid"]');
+    if(isInFooter)continue;
     if(!print_&&(oc.indexOf('print')>-1||oc.indexOf('Print')>-1))print_=btns[i];
     if(!share_&&(oc.indexOf('share')>-1||oc.indexOf('Share')>-1))share_=btns[i];
   }
@@ -44,7 +46,6 @@ function styleButtons(){
     print_.style.cssText='background:transparent;color:#5E6166;border:1px solid #D9DBDE;padding:11px 22px;font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.03em;margin-left:8px';
     print_.textContent='Print / PDF';
   }
-  // Mark done
   var done=document.createElement('span');
   done.id='cpa-btns-done';
   done.style.display='none';
@@ -58,3 +59,4 @@ if(document.readyState==='loading'){
 }
 
 })();
+
