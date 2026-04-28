@@ -186,11 +186,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §170 (charitable contribution deduction - general rule and limitations); IRC §170(b)(1)(A) (60% AGI limit for cash to public charities); IRC §170(b)(1)(B) (30% AGI limit for appreciated property to public charities); IRC §170(b)(1)(C) (30% AGI limit for cash to private foundations); IRC §170(b)(1)(D) (20% AGI limit for appreciated property to private foundations); IRC §170(d) (5-year carryforward for excess contributions); IRC §664 (charitable remainder trusts - CRAT and CRUT); IRC §664(d)(1) (CRAT - fixed annuity, 5% minimum, 50% maximum, 10% remainder test); IRC §664(d)(2) (CRUT - fixed percentage of assets, 5% minimum, 50% maximum); IRC §170(f)(2) (charitable remainder trust contribution - deduction for remainder interest); IRC §2522 (charitable deduction for gift tax purposes); IRC §2055 (charitable deduction for estate tax purposes); IRC §408(d)(8) (qualified charitable distributions from IRAs - age 70.5+, $111,000 limit for 2026 indexed); IRC §4945 (taxable expenditures by private foundations); IRC §4941 (self-dealing - private foundations); IRC §7520 (applicable federal rate for valuing charitable interests in CLTs and CRTs); Treas. Reg. §1.664-1 through 1.664-4 (CRT requirements, taxation of distributions, tier system); IRS Publication 526 (charitable contributions - AGI limits, substantiation requirements); IRS Publication 561 (determining value of donated property).</div>
 
-<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
-</div>
-<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+
 <script>
 function doPrint(){
   var s=document.createElement('style');
@@ -251,9 +247,29 @@ function showModal(url,title){
   };
 }
 </script>
-<div class="disc" style="font-size:11.5px;color:#5E6166;font-style:italic;line-height:1.7;padding:14px 0 0;border-top:1px solid #D9DBDE;margin-top:16px">For informational purposes only. Nothing on this page constitutes legal, tax, or accounting advice, and no professional relationship is formed by your use of this site. Tax law is complex and highly fact-specific - general information that applies in one situation may not apply in yours. Tax law changes frequently; verify all information against current primary authority (IRC, Treasury regulations, IRS guidance) before filing or acting. Outputs from tools and calculators are estimates only and may not reflect your specific circumstances. tk.cpa expressly disclaims all liability arising from reliance on this content. <a href="https://cpavalidated.com/disclaimer.html" style="color:inherit;text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
 </div>
-<div style="background:#111111;border-top:2px solid #F65F5A;margin-top:60px;padding:16px 0"><div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between"><span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38)">tk.cpa AI Lab</span><div style="display:flex;gap:16px"><a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none">Mission</a><a href="https://tk.cpa" target="_blank" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a></div></div></div>
+</div></div>
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+    <button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.4);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, or accounting advice. For informational purposes only - this site is for educational use. Tax law is complex, fact-specific, and changes frequently. Always verify all information against current primary authority (IRC, Treasury regulations, IRS guidance) before filing or acting. Outputs from tools and calculators are estimates only and may not reflect your specific circumstances. tk.cpa expressly disclaims all liability arising from reliance on this content. <a href="https://cpavalidated.com/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
 <script src="/shared.js"></script>
 </body>
 </html>
