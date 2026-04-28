@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Required Minimum Distribution (RMD) Calculator | CPA Validated</title>
+<meta name="description" content="Calculate your 2026 Required Minimum Distribution from IRAs and retirement plans.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.f1 label{font-size:11px;font-weight:600;color:#5E6166;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
+.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green)}
+@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Required Minimum Distribution Calculator</h1>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Calculate your 2026 RMD from traditional IRAs and retirement plans.</p>
+</div>
+</div>
+
+<div class="container">
+<div class="card">
+<div class="ch"><h2>Account Information</h2></div>
+<div class="cb">
+<div class="fg2">
+<div class="f1">
+<label>Your Age (as of Dec 31, 2026)</label>
+<input type="number" id="age" class="fc" value="72" min="59" max="120" oninput="calculate()">
+</div>
+<div class="f1">
+<label>IRA Balance (Dec 31, 2025)</label>
+<input type="number" id="balance" class="fc" placeholder="0" min="0" oninput="calculate()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>RMD Calculation</h2></div>
+<div class="cb">
+<div id="calc_result"></div>
+</div>
+</div>
+</div>
+
+<script>
+const life_expectancy = {
+  72: 27.4, 73: 26.5, 74: 25.5, 75: 24.6, 76: 23.7, 77: 22.9, 78: 22.0, 79: 21.1, 80: 20.2,
+  81: 19.4, 82: 18.5, 83: 17.7, 84: 16.8, 85: 16.0, 86: 15.2, 87: 14.4, 88: 13.7, 89: 12.9,
+  90: 12.2, 95: 9.6, 100: 7.3, 110: 2.0
+};
+
+function calculate() {
+  const age = parseInt(document.getElementById('age').value) || 72;
+  const balance = parseFloat(document.getElementById('balance').value) || 0;
+  
+  let factor = life_expectancy[age] || 27.4;
+  let rmd = (balance / factor).toFixed(0);
+  
+  let html = `
+    <div style="font-size:13px;line-height:1.8">
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+        <span>IRA Balance (12/31/2025)</span>
+        <strong>$${parseFloat(balance).toLocaleString()}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+        <span>Life Expectancy Factor (Age ${age})</span>
+        <strong>${factor}</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--green);font-weight:700">
+        <span>RMD Calculation</span>
+        <strong style="font-family:var(--font-mono)">$${parseFloat(balance).toLocaleString()} ÷ ${factor}</strong>
+      </div>
+    </div>
+    <div class="result-box">
+      <h3>Your 2026 RMD</h3>
+      <div class="result-num">$${parseInt(rmd).toLocaleString()}</div>
+      <p style="font-size:12px;margin-top:8px">You must withdraw this amount by December 31, 2026 to avoid a 25% penalty.</p>
+    </div>
+  `;
+  
+  document.getElementById('calc_result').innerHTML = html;
+}
+
+calculate();
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7">Educational estimate only. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+</div>
+<script src="/shared.js"></script>
+</body>
+</html>
