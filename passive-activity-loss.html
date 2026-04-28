@@ -299,7 +299,6 @@ function calc(){
   h+=flag('blue','i','<strong>Real Estate Professional test (IRC 469(c)(7)).</strong> To convert rental activities from passive to non-passive without the $25K limitation: (1) more than 750 hours of services in real property trades or businesses in which you materially participate, AND (2) more than 50% of your personal services in all trades/businesses are in real property activities. This is the spouse test too - only one spouse needs to qualify. Must document hours carefully.');
 
   h+=`<div class="src">IRC 469 (passive activity loss rules - general); IRC 469(a) (passive activity losses disallowed); IRC 469(b) (PAL carryforward - indefinite); IRC 469(c) (passive activity definition); IRC 469(c)(2) (rental activities are per se passive); IRC 469(c)(7) (real estate professional exception - 750 hours, 50% test); IRC 469(d) (passive activity income defined); IRC 469(g) (disposition of entire interest - PAL released); IRC 469(i) ($25,000 rental allowance for active participants; MAGI phaseout $100K-$150K); Temp. Reg. 1.469-5T (material participation - seven tests); Form 8582 (Passive Activity Loss Limitations); IRC 465 (at-risk rules); IRC 704(d) (partnership basis limitation).</div>`;
-  h+=`
 <script>
 function doPrint(){
   var s=document.createElement('style');
@@ -359,6 +358,8 @@ function showModal(url,title){
     });
   };
 }
+
+document.addEventListener("DOMContentLoaded",function(){updateTests();calc();});
 </script>
 
 
