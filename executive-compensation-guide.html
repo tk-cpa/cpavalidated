@@ -232,11 +232,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §421 (general rules for statutory options); IRC §422 (incentive stock options - requirements and qualifying disposition holding period); IRC §423 (employee stock purchase plans); IRC §424 (definitions for statutory options); IRC §56(b)(3) (ISO spread as AMT preference item); IRC §55 and §56 (alternative minimum tax); IRC §83 (property transferred in connection with performance of services - taxation at vesting); IRC §83(b) (election to include in income in year of transfer - 30-day deadline); Treas. Reg. §1.83-2 (§83(b) election requirements and procedures); IRC §409A (inclusion in gross income of deferred compensation under nonqualified deferred compensation plans); IRC §409A(a)(1) (permissible distribution events - separation, disability, death, change in control, unforeseeable emergency, fixed date); IRC §409A(b) (funding prohibited - offshore and restricted assets); Treas. Reg. §1.409A-1 through §1.409A-6 (comprehensive §409A regulations - definitions, permissible timing, corrections); IRS Notice 2005-1 (Q&A guidance on §409A); Treas. Reg. §1.422-2 (ISO requirements in detail); Form 3921 (ISO exercise reporting by employer); Form 3922 (ESPP transfer reporting).</div>
 
-<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
-</div>
-<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+
 <script>
 function doPrint(){
   var s=document.createElement('style');
@@ -297,9 +293,29 @@ function showModal(url,title){
   };
 }
 </script>
-<div class="disc" style="font-size:11.5px;color:#5E6166;font-style:italic;line-height:1.7;padding:14px 0 0;border-top:1px solid #D9DBDE;margin-top:16px">For informational purposes only. Nothing on this page constitutes legal, tax, or accounting advice, and no professional relationship is formed by your use of this site. Tax law is complex and highly fact-specific - general information that applies in one situation may not apply in yours. Tax law changes frequently; verify all information against current primary authority (IRC, Treasury regulations, IRS guidance) before filing or acting. Outputs from tools and calculators are estimates only and may not reflect your specific circumstances. tk.cpa expressly disclaims all liability arising from reliance on this content. <a href="https://cpavalidated.com/disclaimer.html" style="color:inherit;text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
 </div>
-<div style="background:#111111;border-top:2px solid #F65F5A;margin-top:60px;padding:16px 0"><div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between"><span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38)">tk.cpa AI Lab</span><div style="display:flex;gap:16px"><a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none">Mission</a><a href="https://tk.cpa" target="_blank" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a></div></div></div>
+</div></div>
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+    <button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.4);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, or accounting advice. For informational purposes only - this site is for educational use. Tax law is complex, fact-specific, and changes frequently. Always verify all information against current primary authority (IRC, Treasury regulations, IRS guidance) before filing or acting. Outputs from tools and calculators are estimates only and may not reflect your specific circumstances. tk.cpa expressly disclaims all liability arising from reliance on this content. <a href="https://cpavalidated.com/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
 <script src="/shared.js"></script>
 </body>
 </html>
