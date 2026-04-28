@@ -161,11 +161,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="source-row">Authority: IRC §199A (qualified business income deduction - 20% of QBI; OBBBA P.L. 119-21 made permanent); IRC §199A(b)(2) (W-2 wage limitation - greater of 50% of W-2 wages or 25% of wages + 2.5% of UBIA); IRC §199A(b)(4) (W-2 wages defined); IRC §199A(d)(1)(A) (SSTB definition - enumerated fields); IRC §199A(d)(2) (SSTB definition by field - health, law, accounting, actuarial, performing arts, consulting, athletics, financial services, brokerage, reputation/skill; engineering and architecture expressly excluded); IRC §199A(d)(3) (SSTB phase-out - complete disqualification above income threshold + $100 phase-in range); Treas. Reg. §1.199A-1 (overview and definitions); Treas. Reg. §1.199A-2 (W-2 wages and UBIA computation); Treas. Reg. §1.199A-3 (QBI computation - deductions, losses, carryforward rules); Treas. Reg. §1.199A-4 (aggregation rules - common ownership requirements, consistency election, reporting); Treas. Reg. §1.199A-5 (SSTB definitions by field; de minimis rule for mixed businesses - 10%/5% gross receipts thresholds); Treas. Reg. §1.199A-6 (RPE, PTP, trust and estate reporting); Rev. Proc. 2019-38 (rental real estate safe harbor - 250 hours, separate books, contemporaneous records); Form 8995 (below-threshold simplified calculation); Form 8995-A (above-threshold detailed calculation with wage limitation worksheets).</div>
 
-<div class="action-btns" style="margin:28px 0 8px;display:flex;gap:10px;flex-wrap:wrap">
-<button onclick="doPrint()" style="background:var(--coral,#F65F5A);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Print / Save PDF</button>
-<button onclick="doShare()" style="background:var(--ink,#111111);color:#fff;border:none;padding:11px 26px;font-family:var(--font-sans,'Inter',sans-serif);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em">Share</button>
-</div>
-<style>@media print{.action-btns,.cat-nav,nav,.related,footer,[style*="border-top:2px solid var(--coral"]{display:none!important}.article{padding-top:16px}.ph{padding:20px 0 16px}}</style>
+
 <script>
 function doPrint(){
   var s=document.createElement('style');
@@ -226,9 +222,29 @@ function showModal(url,title){
   };
 }
 </script>
-<div class="disc" style="font-size:11.5px;color:#5E6166;font-style:italic;line-height:1.7;padding:14px 0 0;border-top:1px solid #D9DBDE;margin-top:16px">For informational purposes only. Nothing on this page constitutes legal, tax, or accounting advice, and no professional relationship is formed by your use of this site. Tax law is complex and highly fact-specific - general information that applies in one situation may not apply in yours. Tax law changes frequently; verify all information against current primary authority (IRC, Treasury regulations, IRS guidance) before filing or acting. Outputs from tools and calculators are estimates only and may not reflect your specific circumstances. tk.cpa expressly disclaims all liability arising from reliance on this content. <a href="https://cpavalidated.com/disclaimer.html" style="color:inherit;text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
 </div>
-<div style="background:#111111;border-top:2px solid #F65F5A;margin-top:60px;padding:16px 0"><div style="max-width:800px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between"><span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38)">tk.cpa AI Lab</span><div style="display:flex;gap:16px"><a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none">Mission</a><a href="https://tk.cpa" target="_blank" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a></div></div></div>
+</div></div>
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+    <button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.4);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, or accounting advice. For informational purposes only - this site is for educational use. Tax law is complex, fact-specific, and changes frequently. Always verify all information against current primary authority (IRC, Treasury regulations, IRS guidance) before filing or acting. Outputs from tools and calculators are estimates only and may not reflect your specific circumstances. tk.cpa expressly disclaims all liability arising from reliance on this content. <a href="https://cpavalidated.com/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
 <script src="/shared.js"></script>
 </body>
 </html>
