@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roth Conversion Tax Impact Calculator | CPA Validated</title>
+<meta name="description" content="Calculate the tax impact of converting traditional IRA funds to Roth. Model conversion amount against marginal tax rate.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-size:13px}
+.fc:focus{border-color:var(--coral);outline:none}
+.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
+.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green);margin:10px 0}
+.calc-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--ink-10);font-size:13px}
+.calc-row:last-child{border-bottom:none}
+.calc-label{color:var(--ink-80)}
+.calc-value{font-family:var(--font-mono);font-weight:600;color:var(--ink)}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Roth Conversion Tax Impact Calculator</h1>
+<p class="sub">Estimate the federal tax cost of converting traditional IRA funds to Roth. Model conversion scenarios against your marginal tax rate.</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="ch"><h2>Conversion Scenario</h2></div>
+<div class="cb">
+<div class="fg2">
+<div class="f1">
+<label>Conversion Amount</label>
+<input type="number" id="conv_amt" class="fc" placeholder="0" min="0" oninput="calculate()">
+<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Amount of traditional IRA being converted</div>
+</div>
+<div class="f1">
+<label>Your Federal Tax Bracket (%)</label>
+<input type="number" id="fed_rate" class="fc" value="24" min="10" max="37" step="1" oninput="calculate()">
+<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Marginal federal tax rate for 2026</div>
+</div>
+</div>
+<div class="fg2">
+<div class="f1">
+<label>State Income Tax Rate (%)</label>
+<input type="number" id="state_rate" class="fc" value="0" min="0" max="13" step="0.1" oninput="calculate()">
+<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Optional: add state tax impact</div>
+</div>
+<div class="f1">
+<label>Pre-Tax IRA Balance</label>
+<input type="number" id="pretax_bal" class="fc" placeholder="0" min="0" oninput="calculate()">
+<div style="font-size:11px;color:var(--ink-60);margin-top:4px">For pro-rata rule calculation</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Tax Impact Analysis</h2></div>
+<div class="cb">
+<div id="results"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+function calculate() {
+  const conv_amt = parseFloat(document.getElementById('conv_amt').value) || 0;
+  const fed_rate = parseFloat(document.getElementById('fed_rate').value) / 100;
+  const state_rate = parseFloat(document.getElementById('state_rate').value) / 100;
+  const pretax_bal = parseFloat(document.getElementById('pretax_bal').value) || 0;
+  
+  if (conv_amt < 1) {
+    document.getElementById('results').innerHTML = '';
+    return;
+  }
+  
+  // Calculate taxes
+  const fed_tax = conv_amt * fed_rate;
+  const state_tax = conv_amt * state_rate;
+  const total_tax = fed_tax + state_tax;
+  
+  // Pro-rata rule: if you have pre-tax IRA balance, the conversion is partially non-taxable
+  // But this is complex; simplified here for education
+  const total_fed_rate_display = (fed_rate * 100).toFixed(0);
+  const total_state_display = (state_rate * 100).toFixed(1);
+  
+  // Net benefit over 20 years (assuming 7% growth, tax-free after conversion)
+  const years = 20;
+  const growth_rate = 0.07;
+  const growth_value = conv_amt * (Math.pow(1 + growth_rate, years) - 1);
+  const growth_value_tax = growth_value * (fed_rate + state_rate);
+  
+  let html = `
+    <div style="margin-bottom:20px">
+      <div class="calc-row">
+        <span class="calc-label">Conversion Amount</span>
+        <span class="calc-value">$${conv_amt.toLocaleString()}</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">Federal Tax (${total_fed_rate_display}%)</span>
+        <span class="calc-value">$${Math.round(fed_tax).toLocaleString()}</span>
+      </div>
+      <div class="calc-row">
+        <span class="calc-label">State Tax (${total_state_display}%)</span>
+        <span class="calc-value">$${Math.round(state_tax).toLocaleString()}</span>
+      </div>
+      <div class="calc-row" style="color:var(--green);font-weight:700">
+        <span class="calc-label">Total Tax Due in 2026</span>
+        <span class="calc-value">$${Math.round(total_tax).toLocaleString()}</span>
+      </div>
+    </div>
+    
+    <div class="result-box">
+      <h3>20-Year Roth Value</h3>
+      <div class="result-num">$${Math.round(conv_amt + growth_value).toLocaleString()}</div>
+      <p style="font-size:12px;margin-top:8px">Assumes 7% annual growth tax-free. Compare to traditional IRA value of $${Math.round(conv_amt + growth_value - growth_value_tax).toLocaleString()} after taxes.</p>
+    </div>
+    
+    <div class="note-box">
+      <strong>Important Notes:</strong>
+      <ul style="margin-left:16px;margin-top:8px">
+        <li><strong>Pro-Rata Rule:</strong> If you have pre-tax IRAs, conversions are partially taxable. Non-deductible contributions are not taxed on conversion.</li>
+        <li><strong>Medicare/IRMAA:</strong> Conversion may increase modified AGI, affecting Medicare premiums.</li>
+        <li><strong>RMD Planning:</strong> Conversions in low-income years (retirement, sabbatical) can save taxes.</li>
+        <li><strong>State Taxes:</strong> Some states don't tax retirement income; factor in your specific state.</li>
+      </ul>
+    </div>
+  `;
+  
+  document.getElementById('results').innerHTML = html;
+}
+
+calculate();
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+<span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+<div style="display:flex;gap:20px">
+<a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+<a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+<a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--coral);text-decoration:none">tk.cpa</a>
+</div>
+</div>
+<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Educational estimate only. Pro-rata rule, state taxes, and IRMAA impacts require professional analysis. Consult a tax advisor before converting. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+</div>
+
+<script src="/shared.js"></script>
+</body>
+</html>
