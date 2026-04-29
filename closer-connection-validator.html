@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Closer Connection Test Validator | CPA Validated</title>
+<meta name="description" content="Determine if you qualify for the closer connection exception to US tax residency under IRC Section 7701(b)(3)(B).">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
+.q-row:last-child{border-bottom:none}
+.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-size:13px;cursor:pointer;background:#fff;color:#5E6166;border-right:1px solid #D9DBDE;font-weight:500}
+.yn-btn:last-child{border-right:none}
+.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:#EDE0DC;color:#9B3D3D;font-weight:700}
+.result-box{border-left:3px solid var(--coral);padding:16px;margin-top:20px;background:#FCE3E2}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+@media(max-width:640px){.q-row{grid-template-columns:1fr;gap:8px}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Closer Connection Test Validator</h1>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine if you meet the closer connection exception to US tax residency under IRC §7701(b)(3)(B). Requires Form 8840 filing.</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="ch"><h2>Residency Facts</h2></div>
+<div class="cb">
+
+<div class="q-row">
+<div><div style="font-size:13.5px">Did you meet the Substantial Presence Test in this year?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">183+ days in the US during the year (using weighted formula)</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('spt', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('spt', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row">
+<div><div style="font-size:13.5px">Do you have a closer connection to another country?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Home, family, employment, and business ties outside the US</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('closer_conn', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('closer_conn', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row">
+<div><div style="font-size:13.5px">Did you file Form 8840 with the IRS by June 15?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Required to claim closer connection exception</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('form8840', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('form8840', 'no')">No</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Closer Connection Factors</h2></div>
+<div class="cb">
+<div style="font-size:12px;line-height:1.7;color:var(--ink-80)">
+The IRS considers these factors (no single factor is determinative):
+<ul style="margin-left:20px;margin-top:8px">
+<li><strong>Permanent home:</strong> Do you have housing available in a foreign country?</li>
+<li><strong>Family:</strong> Are your spouse and children in a foreign country?</li>
+<li><strong>Employment:</strong> Your job location and business activities</li>
+<li><strong>Social ties:</strong> Clubs, cultural organizations, religious affiliations</li>
+<li><strong>Professional ties:</strong> Licenses, professional organizations</li>
+<li><strong>Financial:</strong> Bank accounts, investments, business interests outside US</li>
+<li><strong>Time:</strong> More days outside the US than in it</li>
+</ul>
+<p style="margin-top:12px;color:var(--ink-60)"><strong>Authority:</strong> IRC §7701(b)(3)(B), Form 8840 Instructions, Treasury Regulation §301.7701(b)-7</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Closer Connection Determination</h2></div>
+<div class="cb">
+<div id="result_area"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+const state = {spt: '', closer_conn: '', form8840: ''};
+
+function setState(key, val) {
+  state[key] = val;
+  document.querySelectorAll(`[onclick*="setState('${key}'"]`).forEach(b => {
+    b.classList.remove('sel-yes', 'sel-no', 'unsel');
+  });
+  document.querySelector(`[onclick="setState('${key}','${val}')"]`).classList.add(`sel-${val}`);
+  calculate();
+}
+
+function calculate() {
+  if (!state.spt || !state.closer_conn || !state.form8840) return;
+  
+  let eligible = false;
+  let summary = '';
+  
+  if (state.spt === 'no') {
+    eligible = false;
+    summary = 'You did not meet the Substantial Presence Test. You are not a resident alien for this tax year. Closer connection test is not applicable.';
+  } else if (state.spt === 'yes' && state.closer_conn === 'yes' && state.form8840 === 'yes') {
+    eligible = true;
+    summary = 'You meet all three requirements for the closer connection exception. You may be treated as a nonresident alien for this tax year despite meeting the SPT, provided the IRS accepts your Form 8840.';
+  } else if (state.spt === 'yes' && state.closer_conn === 'yes' && state.form8840 === 'no') {
+    eligible = false;
+    summary = 'You have a closer connection to another country but did NOT file Form 8840 by June 15. This form is REQUIRED to claim the exception. You are a resident alien for this tax year.';
+  } else {
+    eligible = false;
+    summary = 'You do not meet all requirements for the closer connection exception. You are a resident alien for this tax year.';
+  }
+  
+  let html = `
+    <div class="result-box">
+      <h3>Closer Connection Exception: ${eligible ? 'POSSIBLY AVAILABLE' : 'NOT AVAILABLE'}</h3>
+      <p style="font-size:13px;line-height:1.6;margin-top:8px">${summary}</p>
+      <p style="font-size:12px;margin-top:12px"><strong>Authority:</strong> IRC §7701(b)(3)(B), Form 8840 (Statement of Closer Connection to a Foreign Country)</p>
+    </div>
+    <div class="note-box">
+      <strong>Critical Reminder:</strong> Form 8840 must be filed by June 15 of the year following the tax year in question. Filing deadline has already passed for most prior-year claims. If you just realized you're eligible, consult a tax professional immediately about amended returns.
+    </div>
+  `;
+  
+  document.getElementById('result_area').innerHTML = html;
+}
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="font-size:10px;color:rgba(255,255,255,.75)">Educational guidance only. Closer connection determinations are fact-intensive and highly auditable. Consult a tax professional. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+</div>
+<script src="/shared.js"></script>
+</body>
+</html>
