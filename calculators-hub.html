@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Calculators & Tools | CPA Validated</title>
+<meta name="description" content="Free, professional-grade tax calculators and compliance checkers. FBAR, FEIE, RMD, Section 179, Child Tax Credit, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --green:#4A7459; --green-bg:#E2EDE6;
+  --amber:#8B6535; --amber-bg:#EDE8D8;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
+::selection{background:var(--coral);color:#fff}
+a{color:var(--coral);text-decoration:none}
+a:hover{text-decoration:underline}
+.ph{background:var(--ink);padding:48px 0 36px;border-bottom:3px solid var(--coral)}
+.phi{max-width:1000px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(32px,6vw,52px);color:#fff;line-height:1.1;margin-bottom:16px}
+.ph .sub{font-size:16px;color:rgba(255,255,255,.6);line-height:1.6;max-width:700px}
+.container{max-width:1000px;margin:0 auto;padding:48px 24px}
+.intro-box{background:var(--amber-bg);border:1px solid var(--amber);border-left:3px solid var(--amber);padding:20px;margin-bottom:40px;border-radius:2px}
+.intro-box h2{font-family:var(--font-display);font-size:18px;color:var(--ink);margin-bottom:10px}
+.intro-box p{font-size:14px;line-height:1.6;color:var(--ink-80)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:48px}
+.tool-card{background:var(--white);border:1px solid var(--ink-20);padding:0;overflow:hidden;transition:box-shadow .2s}
+.tool-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.12);border-color:var(--coral)}
+.tool-header{background:var(--ink);padding:16px;border-bottom:2px solid var(--coral)}
+.tool-header h3{font-family:var(--font-display);font-size:15px;color:#fff;font-weight:400;letter-spacing:.04em;margin:0}
+.tool-body{padding:16px}
+.tool-body p{font-size:13px;color:var(--ink-80);line-height:1.5;margin:0 0 12px}
+.tool-body a{display:inline-block;background:var(--coral);color:#fff;padding:8px 16px;font-size:12px;font-weight:600;text-decoration:none;margin-top:8px}
+.tool-body a:hover{background:var(--coral-600);text-decoration:none}
+.section-title{font-family:var(--font-display);font-size:24px;color:var(--ink);margin:40px 0 24px;padding-bottom:12px;border-bottom:2px solid var(--ink-20)}
+.section-title.intl{color:var(--green)}
+.section-title.domestic{color:#0066CC}
+.badge{display:inline-block;background:var(--ink-10);color:var(--ink-60);padding:4px 10px;font-size:11px;font-weight:600;border-radius:2px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em}
+.badge.intl{background:var(--green-bg);color:var(--green)}
+.badge.domestic{background:#E3F2FD;color:#0066CC}
+@media(max-width:768px){.tools-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Tax Calculators & Compliance Tools</h1>
+<p class="sub">Professional-grade calculators for international tax, compliance, and personal income tax. Every tool cites specific IRC sections and Treasury regulations.</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="intro-box">
+<h2>How to Use These Tools</h2>
+<p>Each calculator provides real-time computation based on your inputs. Results are estimates and educational guidance only. Always verify against current primary authority (IRC, Treasury regulations, IRS forms) and consult a tax professional before relying on any calculation for filing or planning decisions.</p>
+</div>
+
+<!-- International Tax & Compliance -->
+<h2 class="section-title intl">International Tax & Expatriate Compliance</h2>
+<div class="tools-grid">
+
+<div class="tool-card">
+<div class="tool-header"><h3>FATCA Compliance Checker</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Determine whether you must file Form 8938 (FATCA) and FinCEN 114 (FBAR) based on residency status and foreign account balances.</p>
+<p><strong>Authority:</strong> 31 USC §5314, IRC §6038D</p>
+<a href="fatca-checker.html">Open Checker →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>Foreign Earned Income Exclusion</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Calculate your 2026 FEIE under IRC §911. For US citizens and residents living and working abroad.</p>
+<p><strong>2026 Limit:</strong> $132,900</p>
+<a href="feie-calculator.html">Open Calculator →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>Dual-Status Tax Year Validator</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Determine eligibility for dual-status treatment in year of US arrival or departure.</p>
+<p><strong>Authority:</strong> IRC §7701(b)(3)</p>
+<a href="dual-status-validator.html">Open Validator →</a>
+</div>
+</div>
+
+</div>
+
+<!-- Domestic Tax & Personal Income -->
+<h2 class="section-title domestic">Personal & Domestic Tax</h2>
+<div class="tools-grid">
+
+<div class="tool-card">
+<div class="tool-header"><h3>Child Tax Credit Calculator</h3></div>
+<div class="tool-body">
+<div class="badge domestic">Domestic</div>
+<p>Calculate your 2026 Child Tax Credit (CTC) and Additional CTC refund.</p>
+<p><strong>Authority:</strong> IRC §24</p>
+<a href="child-tax-credit-calc.html">Open Calculator →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>Required Minimum Distribution</h3></div>
+<div class="tool-body">
+<div class="badge domestic">Domestic</div>
+<p>Calculate your 2026 RMD from traditional IRAs and retirement plans using IRS life expectancy tables.</p>
+<p><strong>Authority:</strong> IRC §408(a)(6), Form 541</p>
+<a href="rmd-calculator.html">Open Calculator →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>Section 179 Expensing</h3></div>
+<div class="tool-body">
+<div class="badge domestic">Domestic</div>
+<p>Calculate 2026 Section 179 business equipment deduction. $1,220,000 annual limit with $5,000,000 phase-out.</p>
+<p><strong>Authority:</strong> IRC §179</p>
+<a href="section179-calculator.html">Open Calculator →</a>
+</div>
+</div>
+
+</div>
+
+<!-- Additional Calculators from existing inventory -->
+<h2 class="section-title">Additional Tools</h2>
+<div class="tools-grid">
+
+<div class="tool-card">
+<div class="tool-header"><h3>Substantial Presence Test</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Determine US tax residency under the substantial presence test formula.</p>
+<a href="spt-calculator.html">Open Calculator →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>FBAR & Form 8938 Checker</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Determine FinCEN 114 and Form 8938 filing requirements based on foreign account balances.</p>
+<a href="fbar-checker.html">Open Checker →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>Form 5471 Checker</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Determine Form 5471 filing obligation for US persons with interests in foreign corporations.</p>
+<a href="form-5471-checker.html">Open Checker →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>Tax Estimator 2026</h3></div>
+<div class="tool-body">
+<div class="badge domestic">Domestic</div>
+<p>Estimate personal and corporate income tax for 2026 using IRS brackets and deductions.</p>
+<a href="tax-estimator.html">Open Estimator →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>Act 60 Estimator</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Estimate tax savings under Puerto Rico Act 60 Individual Investors incentives.</p>
+<a href="act60-estimator.html">Open Estimator →</a>
+</div>
+</div>
+
+<div class="tool-card">
+<div class="tool-header"><h3>USVI EDC Estimator</h3></div>
+<div class="tool-body">
+<div class="badge intl">International</div>
+<p>Estimate tax savings under USVI Economic Development Commission 90% tax credit program.</p>
+<a href="usvi-edc-estimator.html">Open Estimator →</a>
+</div>
+</div>
+
+</div>
+
+<div style="margin-top:60px;padding:32px;background:var(--ink-10);border-left:3px solid var(--coral)">
+<h3 style="font-family:var(--font-display);font-size:18px;margin-bottom:12px">Not What You're Looking For?</h3>
+<p style="font-size:14px;line-height:1.6;color:var(--ink-80);margin-bottom:12px">Browse our comprehensive guides covering every major tax topic, forms, and cross-border issues. Use the search bar to find specific guidance.</p>
+<a href="index.html" style="display:inline-block;background:var(--coral);color:#fff;padding:10px 20px;font-weight:600;text-decoration:none">Return to Home →</a>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+<button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+<button onclick="window.location.href='mailto:?subject=CPA%20Validated%20Calculators'; return false;" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+</div>
+<div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+<span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+<div style="display:flex;gap:20px">
+<a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+<a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+<a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+</div>
+</div>
+<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+</div>
+</div>
+</div>
+
+<script src="/shared.js"></script>
+</body>
+</html>
