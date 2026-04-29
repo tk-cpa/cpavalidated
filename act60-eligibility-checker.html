@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puerto Rico Act 60 Eligibility Checker | CPA Validated</title>
+<meta name="description" content="Determine if you qualify for Puerto Rico Act 60 Individual Investors Chapter 2 (0% capital gains rate). Check residency and income requirements.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
+.q-row:last-child{border-bottom:none}
+.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-size:13px;cursor:pointer;background:#fff;color:#5E6166;border-right:1px solid #D9DBDE;font-weight:500}
+.yn-btn:last-child{border-right:none}
+.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:#EDE0DC;color:#9B3D3D;font-weight:700}
+.result-box{border-left:3px solid var(--coral);padding:16px;margin-top:20px;background:#FCE3E2}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+@media(max-width:640px){.q-row{grid-template-columns:1fr;gap:8px}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Puerto Rico Act 60 Eligibility Checker</h1>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine if you qualify for Act 60 Individual Investors Chapter 2 (0% capital gains, dividends, interest). **December 31, 2026 application deadline for 0% rate.**</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="ch"><h2>Individual Investors (Chapter 2) Requirements</h2></div>
+<div class="cb">
+
+<div class="q-row">
+<div><div style="font-size:13.5px">Are you a Puerto Rico bona fide resident?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">183+ days in PR during tax year; no significant ties to US</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('pr_resident', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('pr_resident', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row">
+<div><div style="font-size:13.5px">Are you a US citizen or green card holder?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Act 60 requires US person status</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('us_person', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('us_person', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row">
+<div><div style="font-size:13.5px">Did you apply for Act 60 benefits on or before December 31, 2026?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">2026 is the final deadline for 0% capital gains rate. After 2026, the rate phases up.</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('deadline', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('deadline', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row">
+<div><div style="font-size:13.5px">Do your capital gains and passive income exceed $25,000 annually?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Annual investment income for Act 60 purposes</div></div>
+<div style="min-width:120px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('income_test', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('income_test', 'no')">No</button>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Act 60 Determination</h2></div>
+<div class="cb">
+<div id="result_area"></div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Act 60 Benefits (Individual Investors Chapter 2)</h2></div>
+<div class="cb">
+<div style="font-size:12px;line-height:1.8;color:var(--ink-80)">
+<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+<span><strong>Capital Gains Tax Rate</strong></span>
+<span style="font-weight:600;color:var(--coral)">0% (2026 deadline)</span>
+</div>
+<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+<span><strong>Dividend Income Tax</strong></span>
+<span style="font-weight:600;color:var(--coral)">0%</span>
+</div>
+<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
+<span><strong>Interest Income Tax</strong></span>
+<span style="font-weight:600;color:var(--coral)">0%</span>
+</div>
+<div style="display:flex;justify-content:space-between;padding:8px 0">
+<span><strong>Filing Requirement</strong></span>
+<span>PR income tax return (Declaración de Ingresos)</span>
+</div>
+<p style="margin-top:12px;font-size:11px;color:var(--ink-60)"><strong>Note:</strong> Act 60 rates are scheduled to change post-2026. Currently: 0% through 2026 (if applied before deadline), then phases to higher rates in 2027+.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<script>
+const state = {pr_resident: '', us_person: '', deadline: '', income_test: ''};
+
+function setState(key, val) {
+  state[key] = val;
+  document.querySelectorAll(`[onclick*="setState('${key}'"]`).forEach(b => {
+    b.classList.remove('sel-yes', 'sel-no', 'unsel');
+  });
+  document.querySelector(`[onclick="setState('${key}','${val}')"]`).classList.add(`sel-${val}`);
+  calculate();
+}
+
+function calculate() {
+  if (!state.pr_resident || !state.us_person || !state.deadline || !state.income_test) return;
+  
+  let eligible = false;
+  let summary = '';
+  
+  if (state.deadline === 'no') {
+    eligible = false;
+    summary = 'The December 31, 2026 application deadline for 0% capital gains rate has passed. You may still qualify for Act 60 benefits at higher rates (beginning 2027).';
+  } else if (state.pr_resident === 'yes' && state.us_person === 'yes' && state.deadline === 'yes') {
+    eligible = true;
+    summary = 'You appear to meet the basic requirements for Act 60 Individual Investors Chapter 2. You qualify for 0% taxation on capital gains, dividends, and interest, provided you maintain PR bona fide residence.';
+  } else {
+    eligible = false;
+    summary = 'You do not meet all requirements for Act 60 Individual Investors. Key requirements: PR bona fide residence, US person status, and timely application.';
+  }
+  
+  let html = `
+    <div class="result-box">
+      <h3>Act 60 Eligible: ${eligible ? 'YES' : 'NO'}</h3>
+      <p style="font-size:13px;line-height:1.6;margin-top:8px">${summary}</p>
+      <p style="font-size:12px;margin-top:12px"><strong>Authority:</strong> Puerto Rico Act 60-2022 (formerly Acts 20/22), Chapter 2 (Individual Investors)</p>
+    </div>
+    <div class="note-box">
+      <strong>Critical Deadline:</strong> December 31, 2026 is the final deadline to apply for the 0% capital gains rate. After this date, new applicants face higher rates. Applications require PR residency establishment, filing PR tax returns, and ongoing compliance. Consult a PR tax professional for proper documentation and filing.
+    </div>
+  `;
+  
+  document.getElementById('result_area').innerHTML = html;
+}
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="font-size:10px;color:rgba(255,255,255,.75)">Educational guidance only. Act 60 benefits require proper documentation, PR residency, and ongoing compliance. Consult a Puerto Rico tax professional. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+</div>
+<script src="/shared.js"></script>
+</body>
+</html>
