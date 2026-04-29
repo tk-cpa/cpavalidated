@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passive Activity Loss Limitation Checker | CPA Validated</title>
+<meta name="description" content="Determine if passive activity loss (PAL) limitations apply to your rental or business activity.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --red:#9B3D3D; --red-bg:#EDE0DC; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
+.phi{max-width:900px;margin:0 auto;padding:0 24px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.container{max-width:900px;margin:0 auto;padding:28px 24px}
+.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
+.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.cb{padding:20px}
+.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
+.q-row:last-child{border-bottom:none}
+.q-text{font-size:13.5px;color:var(--ink);line-height:1.5}
+.q-sub{font-size:11.5px;color:#5E6166;margin-top:4px;line-height:1.4}
+.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;cursor:pointer;background:#fff;color:#5E6166;border-right:1px solid #D9DBDE;font-weight:500}
+.yn-btn:last-child{border-right:none}
+.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
+.result-box{border-left:3px solid var(--coral);padding:16px;margin-top:20px;background:#FCE3E2}
+.result-box h3{font-family:var(--font-display);font-size:16px;color:var(--ink);margin-bottom:8px}
+.result-box p{font-size:13px;line-height:1.6;color:var(--ink-80);margin-bottom:10px}
+.material-participation{background:var(--green-bg);border-left:3px solid var(--green);padding:12px;margin-top:12px;font-size:12px;line-height:1.5}
+@media(max-width:640px){.q-row{grid-template-columns:1fr;gap:8px}}
+</style>
+</head>
+<body>
+
+<div class="ph">
+<div class="phi">
+<h1>Passive Activity Loss Limitation Checker</h1>
+<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine if PAL limitations apply to your rental or business activity under IRC Section 469.</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="ch"><h2>Activity Analysis</h2></div>
+<div class="cb">
+<div class="q-row">
+<div><div class="q-text">What type of activity is this?</div><div class="q-sub">Passive activities are generally rental real estate or business activities where you don't materially participate.</div></div>
+<div class="q-ctrl" style="min-width:140px">
+<select id="activity_type" class="fc" style="width:100%;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px" oninput="calculate()">
+<option value="">Select...</option>
+<option value="rental">Rental Real Estate</option>
+<option value="business">Business Activity</option>
+<option value="other">Other Investment</option>
+</select>
+</div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">Do you materially participate in the activity?</div><div class="q-sub">Material participation means significant, regular involvement in managing the activity. See the "7 Tests" below.</div></div>
+<div class="q-ctrl" style="min-width:140px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('material', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('material', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">Is this a rental activity?</div><div class="q-sub">Rental activities are generally passive regardless of material participation, with limited exceptions.</div></div>
+<div class="q-ctrl" style="min-width:140px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('rental', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('rental', 'no')">No</button>
+</div>
+</div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">Do you have material participation in rental real estate?</div><div class="q-sub">Special rules for real estate professionals or those meeting the 750-hour test.</div></div>
+<div class="q-ctrl" style="min-width:140px">
+<div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('re_material', 'yes')">Yes</button>
+<button class="yn-btn unsel" onclick="setState('re_material', 'no')">No</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Material Participation Tests (IRC §469)</h2></div>
+<div class="cb">
+<div style="font-size:12px;line-height:1.7;color:var(--ink-80)">
+You materially participate if you meet ANY of these 7 tests:
+<ul style="margin-left:20px;margin-top:8px">
+<li>You work 500+ hours in the activity during the tax year</li>
+<li>You do substantially all the work (100+ hours, and no one works more)</li>
+<li>You work 100+ hours and no one works more</li>
+<li>Your activity is rental real estate and you actively participate (25%+ ownership, involved in management)</li>
+<li>Prior 5 years you materially participated AND you're testing current year participation</li>
+<li>You're a real estate professional (750+ hours in real estate activities)</li>
+<li>You have a significant participation (100+ hours) in multiple activities and combined they're significant</li>
+</ul>
+<p style="margin-top:12px;color:var(--ink-60)"><strong>Authority:</strong> IRC §469(c)(7), Treas. Reg. §1.469-5T</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>PAL Determination</h2></div>
+<div class="cb">
+<div id="result_area"></div>
+</div>
+</div>
+
+</div>
+
+<script>
+const state = {material: '', rental: '', re_material: ''};
+
+function setState(key, val) {
+  state[key] = val;
+  document.querySelectorAll(`[onclick*="setState('${key}'"]`).forEach(b => {
+    b.classList.remove('sel-yes', 'sel-no', 'unsel');
+  });
+  document.querySelector(`[onclick="setState('${key}','${val}')"]`).classList.add(`sel-${val}`);
+  calculate();
+}
+
+function calculate() {
+  if (!state.material || !state.rental || !state.re_material) return;
+  
+  let passive = true;
+  let summary = '';
+  
+  if (state.material === 'yes' && state.rental === 'no') {
+    passive = false;
+    summary = 'You have material participation in a non-rental business activity. This activity is NOT passive. PAL limitations do NOT apply.';
+  } else if (state.rental === 'yes' && state.re_material === 'yes') {
+    passive = false;
+    summary = 'You have material participation in rental real estate (likely as a real estate professional or through the active participation test). This activity is NOT passive for PAL purposes.';
+  } else if (state.rental === 'yes' && state.re_material === 'no' && state.material === 'yes') {
+    passive = false;
+    summary = 'You have material participation but the activity is rental real estate. PAL may still limit losses unless you qualify as a real estate professional.';
+  } else {
+    passive = true;
+    summary = 'This activity appears to be PASSIVE under IRC §469. Losses are suspended and carried forward until the activity is disposed of (IRC §469(f)).';
+  }
+  
+  let html = `
+    <div class="result-box">
+      <h3>Subject to PAL: ${passive ? 'YES' : 'NO'}</h3>
+      <p>${summary}</p>
+      <p style="font-size:12px;margin-top:12px"><strong>Authority:</strong> IRC §469 (Passive Activity Loss Limitations)</p>
+    </div>
+    <div class="material-participation">
+      <strong>Recommendation:</strong> Document your participation hours for the year. Keep records of time spent, management decisions, and involvement level. PAL determinations are heavily fact-dependent and subject to IRS challenge. Consult a tax professional if losses are material.
+    </div>
+  `;
+  
+  document.getElementById('result_area').innerHTML = html;
+}
+</script>
+
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
+<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
+<div style="max-width:800px;margin:0 auto">
+<div style="font-size:10px;color:rgba(255,255,255,.75)">Educational guidance only. PAL determinations are fact-intensive. Consult a tax professional. <a href="/disclaimer.html">Full disclaimer</a></div>
+</div>
+</div>
+</div>
+<script src="/shared.js"></script>
+</body>
+</html>
