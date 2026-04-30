@@ -196,11 +196,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
     <div class="rate-strip">
       <div class="rs-box"><div class="rs-label">FTF Penalty Rate</div><div class="rs-val">5%</div><div class="rs-sub">Per month, max 25% - IRC §6651(a)(1)</div></div>
       <div class="rs-box"><div class="rs-label">FTP Penalty Rate</div><div class="rs-val">0.5%</div><div class="rs-sub">Per month, max 25% - IRC §6651(a)(2)</div></div>
-      <div class="rs-box"><div class="rs-label">Underpayment Interest</div><div class="rs-val">8%</div><div class="rs-sub">Federal short-term rate + 3% - IRC §6601</div></div>
+      <div class="rs-box"><div class="rs-label">Underpayment Interest</div><div class="rs-val">6%</div><div class="rs-sub">Federal short-term rate + 3% - IRC §6601</div></div>
       <div class="rs-box"><div class="rs-label">Accuracy Penalty</div><div class="rs-val">20%</div><div class="rs-sub">Of underpayment - IRC §6662(a)</div></div>
     </div>
     <div style="font-size:12px;color:var(--ink-60);padding:10px;background:var(--ink-10);border-left:2px solid var(--ink-20);line-height:1.6">
-      IRS underpayment interest rate = Federal short-term rate + 3 percentage points. Set quarterly by IRS Notice. Current rate used: <strong>8% (Q2 2026)</strong>. Verify current quarter rate at <a href="https://www.irs.gov/newsroom/interest-rates-remain-the-same-for-the-second-quarter-of-2026" target="_blank">IRS.gov</a> as rates change quarterly.
+      IRS underpayment interest rate = Federal short-term rate + 3 percentage points. Set quarterly by IRS Notice. Current rate used: <strong>6% (Q2 2026, per Rev. Rul. 2026-5)</strong>. Verify current quarter rate at <a href="https://www.irs.gov/payments/quarterly-interest-rates" target="_blank">IRS.gov</a> as rates change quarterly.
     </div>
   </div>
 </div>
@@ -290,10 +290,10 @@ function calc(){
   const totalFTF = ftfAdjusted;
 
   // ── UNDERPAYMENT INTEREST (IRC §6601) ──
-  // 8% annual (approximate 2026 rate) on unpaid balance
+  // 6% annual (Q2 2026 rate per Rev. Rul. 2026-5) on unpaid balance
   // Compounds daily from original due date to payment date
   const days = daysBetween(dueDate, filedDate > dueDate ? filedDate : dueDate);
-  const dailyRate = 0.08 / 365;
+  const dailyRate = 0.06 / 365;
   const interest = unpaidTax * (Math.pow(1 + dailyRate, days) - 1);
 
   // ── ACCURACY PENALTY (IRC §6662(a)) ──
@@ -312,7 +312,7 @@ function calc(){
   h += `<div class="result-hero"><div class="rh-grid">
     <div class="rh-item"><div class="rh-label">Unpaid Tax</div><div class="rh-val">${fmt(unpaidTax)}</div><div class="rh-sub">Before penalties</div></div>
     <div class="rh-item"><div class="rh-label">Total Penalties</div><div class="rh-val red">${fmt(totalPenalties)}</div><div class="rh-sub">All penalties combined</div></div>
-    <div class="rh-item"><div class="rh-label">Interest</div><div class="rh-val amber">${fmt(interest)}</div><div class="rh-sub">${days} days @ 8%</div></div>
+    <div class="rh-item"><div class="rh-label">Interest</div><div class="rh-val amber">${fmt(interest)}</div><div class="rh-sub">${days} days @ 6%</div></div>
     <div class="rh-item"><div class="rh-label">Total Due IRS</div><div class="rh-val coral">${fmt(totalDue)}</div><div class="rh-sub">Tax + penalties + interest</div></div>
   </div></div>`;
 
@@ -342,7 +342,7 @@ function calc(){
     <div class="pb-item">
       <div class="pb-left">
         <div class="pb-name">Underpayment Interest (IRC §6601)</div>
-        <div class="pb-detail">8% annual rate (Q2 2026), compounded daily. ${days} days on ${fmt(unpaidTax)}. Verify current rate - changes quarterly.</div>
+        <div class="pb-detail">6% annual rate (Q2 2026, Rev. Rul. 2026-5), compounded daily. ${days} days on ${fmt(unpaidTax)}. Verify current rate - changes quarterly.</div>
       </div>
       <div class="pb-amount amber">${fmt(interest)}</div>
     </div>
@@ -366,7 +366,7 @@ function calc(){
     h += flag('red','✗','<strong>Potential 40% gross valuation misstatement penalty.</strong> If the additional tax after audit exceeds 25% of correct tax, the accuracy-related penalty may be increased to 40% (gross valuation misstatement) under IRC §6662(h). Consult a tax professional immediately.');
   }
 
-  h += `<div class="src">Authority: IRC §6651(a)(1) (failure-to-file, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay, 0.5%/month max 25%); IRC §6651(c)(1) (FTF reduced by FTP when both apply); IRC §6601 (underpayment interest, fed short-term rate +3); IRC §6662(a) (accuracy-related penalty, 20%); IRC §6662(h) (40% gross valuation misstatement); IRS Notice 2025-89 (Q2 2026 interest rate 8% - verify current quarter). Interest rate changes quarterly per IRC §6621.</div>`;
+  h += `<div class="src">Authority: IRC §6651(a)(1) (failure-to-file, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay, 0.5%/month max 25%); IRC §6651(c)(1) (FTF reduced by FTP when both apply); IRC §6601 (underpayment interest, fed short-term rate +3); IRC §6662(a) (accuracy-related penalty, 20%); IRC §6662(h) (40% gross valuation misstatement); Rev. Rul. 2026-5 (Q2 2026 individual underpayment rate 6% - verify current quarter). Interest rate changes quarterly per IRC §6621.</div>`;
   h += ``;
   h += ``;
 
