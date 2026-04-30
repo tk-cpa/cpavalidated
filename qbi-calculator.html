@@ -184,7 +184,7 @@ function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocal
 function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
 
 // 2026 thresholds (2025: $197,300 single / $394,600 MFJ; 2026 est. ~$202,500 / $405,000)
-const THRESH = {single:{lo:202500,hi:242500}, mfj:{lo:405000,hi:445000}};
+const THRESH = {single:{lo:201750,hi:276750}, mfj:{lo:403500,hi:553500}, hoh:{lo:201750,hi:276750}, mfs:{lo:201750,hi:276750}};
 
 function calc(){
   const fs = document.getElementById('fs').value;
@@ -246,7 +246,11 @@ function calc(){
 
   // Overall taxable income cap: 20% of (taxable income - net capital gains)
   const overallCap = Math.max(0, (taxIncome - capGains) * 0.20);
-  const finalDeduction = Math.min(totalBeforeCap, overallCap);
+  const computedDeduction = Math.min(totalBeforeCap, overallCap);
+  // OBBBA §70105 / IRC §199A(i): $400 minimum deduction effective 2026 if QBI >= $1,000.
+  // Does not override SSTB elimination above the upper threshold.
+  const obbbaFloorApplies = qbi >= 1000 && !sstbFullyElim && computedDeduction < 400;
+  const finalDeduction = obbbaFloorApplies ? 400 : computedDeduction;
   const taxSaving = finalDeduction * 0.37; // approx at 37%
   const effectiveRate = finalDeduction > 0 && taxIncome > 0 ? (finalDeduction/taxIncome) : 0;
 
