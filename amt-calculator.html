@@ -193,7 +193,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
 function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
-const P={single:{ex:88100,ps:618725},mfj:{ex:137000,ps:1237450},mfs:{ex:68500,ps:618725}};
+const P={single:{ex:90100,ps:500000},mfj:{ex:140200,ps:1000000},mfs:{ex:70100,ps:500000}};
 function calc(){
   const fs=document.getElementById('fs').value;
   const rti=parseFloat(document.getElementById('rti').value)||0;
@@ -208,10 +208,10 @@ function calc(){
   const totalAdj=salt+iso+dep+other;
   const amti=rti+totalAdj;
   let ex=p.ex;
-  if(amti>p.ps){ex=Math.max(0,ex-(amti-p.ps)*0.25);}
+  if(amti>p.ps){ex=Math.max(0,ex-(amti-p.ps)*0.50);}
   const amtiOE=Math.max(0,amti-ex);
   const ordAMTI=Math.max(0,amtiOE-Math.min(ltcg,amtiOE));
-  let tmt=ordAMTI<=232600?ordAMTI*0.26:232600*0.26+(ordAMTI-232600)*0.28;
+  let tmt=ordAMTI<=244500?ordAMTI*0.26:244500*0.26+(ordAMTI-244500)*0.28;
   tmt+=Math.min(ltcg,amtiOE)*0.20;
   const amtLiab=Math.max(0,tmt-regt);
   const amtNet=Math.max(0,amtLiab-cred);
