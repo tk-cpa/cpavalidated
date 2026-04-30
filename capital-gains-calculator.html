@@ -180,10 +180,11 @@ function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><di
 // 2026 LTCG thresholds (2025 confirmed + ~2.8% inflation est for 2026)
 // Source: Rev. Proc. 2024-40 for 2025; 2026 approximate
 const LTCG={
-  single:   {r0:48350,  r15:533400},
-  mfj:      {r0:96700,  r15:600050},
+  single:   {r0:49450,  r15:545500},
+  mfj:      {r0:98900,  r15:613700},
   hoh:      {r0:64750,  r15:566700},
-  mfs:      {r0:48350,  r15:300000},
+  mfs:      {r0:49450,  r15:306850},
+      hoh:      {r0:66200,  r15:578900},
 };
 // NIIT MAGI thresholds (NOT inflation-adjusted per statute - fixed)
 const NIIT={single:200000,mfj:250000,hoh:200000,mfs:125000};
@@ -315,7 +316,6 @@ function showShareModal(url,title){if(document.getElementById('sv-ol'))return;va
         <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
         <div style="display:flex;gap:20px">
           <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
-<a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
           <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
         </div>
       </div>
