@@ -42,7 +42,7 @@ body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
 <div class="fg2">
 <div class="f1">
 <label>Your Age (as of Dec 31, 2026)</label>
-<input type="number" id="age" class="fc" value="72" min="59" max="120" oninput="calculate()">
+<input type="number" id="age" class="fc" value="73" min="59" max="120" oninput="calculate()">
 </div>
 <div class="f1">
 <label>IRA Balance (Dec 31, 2025)</label>
@@ -68,7 +68,7 @@ const life_expectancy = {
 };
 
 function calculate() {
-  const age = parseInt(document.getElementById('age').value) || 72;
+  const age = parseInt(document.getElementById('age').value) || 73;
   const balance = parseFloat(document.getElementById('balance').value) || 0;
   
   let factor = life_expectancy[age] || 27.4;
