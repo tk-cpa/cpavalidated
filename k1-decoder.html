@@ -89,7 +89,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
     <div class="section-header"><span class="box-num">6</span> Dividends</div>
     <div class="row" data-s="box6a ordinary dividends schedule b"><div class="code">6a</div><div class="desc"><strong>Ordinary Dividends</strong><em>Schedule B, Part II</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
-    <div class="row" data-s="box6b qualified dividends schedule b form 1040"><div class="code">6b</div><div class="desc"><strong>Qualified Dividends</strong><em>Form 1040 line 3b &rarr; eligible for 0/15/20% rate</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="box6b qualified dividends schedule b form 1040"><div class="code">6b</div><div class="desc"><strong>Qualified Dividends</strong><em>Form 1040 line 3a &rarr; eligible for 0/15/20% rate</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
     <div class="row" data-s="box6c dividend equivalents"><div class="code">6c</div><div class="desc"><strong>Dividend Equivalents</strong><em>Certain substitute payments treated as dividends</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
 
     <div class="section-header"><span class="box-num">7</span> Royalties</div>
@@ -191,7 +191,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
     <div class="section-header"><span class="box-num">5</span> Dividends</div>
     <div class="row" data-s="5a ordinary dividends schedule b scorp"><div class="code">5a</div><div class="desc"><strong>Ordinary Dividends</strong><em>Schedule B, Part II</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
-    <div class="row" data-s="5b qualified dividends form 1040 scorp"><div class="code">5b</div><div class="desc"><strong>Qualified Dividends</strong><em>Form 1040 line 3b &rarr; 0/15/20% rate</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
+    <div class="row" data-s="5b qualified dividends form 1040 scorp"><div class="code">5b</div><div class="desc"><strong>Qualified Dividends</strong><em>Form 1040 line 3a &rarr; 0/15/20% rate</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
 
     <div class="section-header"><span class="box-num">6</span> Royalties</div>
     <div class="row" data-s="box6 royalties schedule e scorp"><div class="code">Box 6</div><div class="desc"><strong>Royalties</strong><em>Schedule E, Part I</em></div><div class="tag"><span class="tag-pill tag-income">Income</span></div></div>
@@ -296,11 +296,12 @@ filterRows();
 </script>
 
 
+
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
-  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;justify-content:center">
-    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
-    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px">
+    <button onclick="doPrint()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="doShare()" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
   </div>
   <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
     <div style="max-width:800px;margin:0 auto">
