@@ -278,7 +278,7 @@ function calc(){
     ${reit>0?`<div class="srow"><span class="sl">REIT / PTP component (20% of ${fmt(reit)})</span><span class="sv green">${fmt(reitComponent)}</span></div>`:''}
     <div class="srow"><span class="sl">Total before overall cap</span><span class="sv">${fmt(totalBeforeCap)}</span></div>
     <div class="srow"><span class="sl">Overall cap: 20% of (taxable income - cap gains)</span><span class="sv">${fmt(overallCap)}</span></div>
-    <div class="srow"><span class="sl"><strong>Final QBI deduction (Form 8995-A, Line 40)</strong></span><span class="sv coral">${fmt(finalDeduction)}</span></div>
+    <div class="srow"><span class="sl"><strong>Final QBI deduction (Form 8995-A, Line 39)</strong></span><span class="sv coral">${fmt(finalDeduction)}</span></div>
   </div>`;
 
   if(sstbFullyElim) h += flag('red','!',`<strong>SSTB fully eliminated.</strong> As an SSTB with taxable income above ${fmt(t.hi)}, no QBI deduction is available. For MFJ filers, the SSTB deduction is fully eliminated above $445,000 (est. 2026). Strategies: accelerate deductions, defer income, or restructure the business (though the IRS has anti-abuse rules for artificially segregating an SSTB from a non-SSTB). Treas. Reg. 1.199A-5.`);
