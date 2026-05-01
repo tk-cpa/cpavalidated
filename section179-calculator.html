@@ -74,8 +74,8 @@ body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
 <script>
 function calculate() {
   const cost = parseFloat(document.getElementById('cost').value) || 0;
-  const limit = 2500000;  // OBBBA §70302 / Rev. Proc. 2025-32
-  const threshold = 4000000;  // OBBBA §70302 phase-out start
+  const limit = 2500000;  // OBBBA §70306 / Rev. Proc. 2025-32
+  const threshold = 4000000;  // OBBBA §70306 phase-out start
   
   // Phase-out: $1 reduction for every $1 over threshold
   let phaseout = Math.max(0, cost - threshold);
