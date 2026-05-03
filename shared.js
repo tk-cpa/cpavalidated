@@ -22,7 +22,11 @@ var LINKS=
 
 var nav=document.querySelector('nav');
 if(nav){
-  nav.innerHTML=LINKS;
+  /* Idempotency: if static nav already has the search icon, it's the canonical
+     post-2026.05 structure - skip the innerHTML rewrite to avoid a redundant
+     reflow. Only enforce the nav.style cssText. */
+  var hasSearch=nav.querySelector('a[aria-label="Search"]');
+  if(!hasSearch){nav.innerHTML=LINKS;}
   nav.style.cssText='display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid #D9DBDE!important;background:#FAFAF7!important;position:sticky!important;top:0!important;z-index:100!important';
 }
 
