@@ -4,12 +4,19 @@
 (function(){
 
 /* ── CSS ──────────────────────────────────────────────────────────── */
-/* Only inject the nav-link decoration override at runtime.
+/* Inject nav-link decoration override AND nav height lock.
    The scrollbar-gutter rule is in static <style id="cpav-scrollbar-fix">
-   on every page, so injecting it again here would only cause a redundant
-   layout recalc. */
+   on every page, so it is not duplicated here.
+   
+   The nav height lock forces a deterministic 64px (desktop) / 56px (mobile)
+   height on every page. Without this, subtle differences between pages in CSS
+   cascade duplication or content-driven box sizing produced visible nav
+   height shifts when navigating between pages. The height is set on nav itself
+   plus inner align-items:center to vertically center the brand block. */
 var s=document.createElement('style');
-s.textContent='nav a,nav a:hover,nav a:visited,nav a:active{text-decoration:none!important}';
+s.textContent='nav a,nav a:hover,nav a:visited,nav a:active{text-decoration:none!important}'+
+'nav{box-sizing:border-box!important;height:64px!important;min-height:64px!important;max-height:64px!important;align-items:center!important}'+
+'@media(max-width:480px){nav{height:56px!important;min-height:56px!important;max-height:56px!important;padding:0 16px!important}}';
 document.head.appendChild(s);
 
 /* ── NAV (update in place) ────────────────────────────────────────── */
