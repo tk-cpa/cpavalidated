@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>CPA Validated - Where Tax Law Gets Validated | tk.cpa</title>
+<meta name="description" content="CPA-validated tax research with primary authority citations. 300+ guides and calculators. Built by a licensed CPA and IRS Enrolled Agent. Free.">
+<meta name="author" content="tk.cpa">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="CPA Validated - Where Tax Law Gets Validated">
+<meta property="og:description" content="CPA-validated tax research with primary authority citations. 300+ guides and calculators. Built by a licensed CPA and IRS Enrolled Agent. Free.">
+<meta property="og:url" content="https://cpavalidated.com">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://cpavalidated.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> <script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "name": "CPA Validated", "url": "https://cpavalidated.com", "description": "CPA-validated US tax tools and calculators. Every tool cites specific IRC sections and Treasury regulations. Built by a licensed CPA and Enrolled Agent. A tk.cpa resource.", "author": { "@type": "Person", "name": "Timur Knyazev, CPA", "url": "https://tk.cpa", "hasCredential": [ {"@type":"EducationalOccupationalCredential","name":"Certified Public Accountant - New York ","credentialCategory":"Professional License"}, {"@type":"EducationalOccupationalCredential","name":"Certified Public Accountant - Florida ","credentialCategory":"Professional License"}, {"@type":"EducationalOccupationalCredential","name":"IRS Enrolled Agent","credentialCategory":"Professional License"}, {"@type":"EducationalOccupationalCredential","name":"Master of Science in Taxation - Baruch College (CUNY) 2011","credentialCategory":"Degree"}, {"@type":"EducationalOccupationalCredential","name":"CGMA - Chartered Global Management Accountant","credentialCategory":"Professional Designation"}, {"@type":"EducationalOccupationalCredential","name":"ACCA CertIFRS","credentialCategory":"Professional Designation"} ] }, "hasPart": [ {"@type":"WebApplication","name":"Substantial Presence Test Calculator","url":"https://cpavalidated.com/spt-calculator.html","description":"Determines U.S. tax residency under IRC Section 7701(b)(3)."}, {"@type":"WebApplication","name":"Closer Connection Exception Checker","url":"https://cpavalidated.com/closer-connection.html","description":"Tests Form 8840 eligibility under IRC Section 7701(b)(3)(B)."}, {"@type":"WebApplication","name":"FBAR and Form 8938 Threshold Checker","url":"https://cpavalidated.com/fbar-checker.html","description":"Determines FinCEN 114 and Form 8938 filing requirements under 31 USC 5314 and IRC Section 6038D."}, {"@type":"WebApplication","name":"Safe Harbor Estimated Tax Calculator","url":"https://cpavalidated.com/safe-harbor.html","description":"Federal and all 50-state safe harbor estimated tax under IRC Section 6654."}, {"@type":"WebApplication","name":"Form 5472 Filing Obligation Checker","url":"https://cpavalidated.com/form-5472.html","description":"Determines Form 5472 filing obligation under IRC Sections 6038A and 6038C."}, {"@type":"WebApplication","name":"Tax Estimator 2026","url":"https://cpavalidated.com/tax-estimator.html","description":"Personal and corporate income tax estimator for 2026 using IRS Rev. Proc. 2025-32 brackets."}, {"@type":"WebApplication","name":"Puerto Rico Act 60 Tax Benefit Estimator","url":"https://cpavalidated.com/act60-estimator.html","description":"Estimates tax savings under Puerto Rico Act 60 Individual Investors and Export Services chapters. December 31, 2026 deadline for 0% rate."}, {"@type":"WebApplication","name":"USVI EDC Tax Benefit Estimator","url":"https://cpavalidated.com/usvi-edc-estimator.html","description":"Estimates tax savings under the USVI Economic Development Commission 90% tax credit program."} ,
+{
+  "@type":"WebApplication",
+  "name":"FATCA Compliance Checker",
+  "url":"https://cpavalidated.com/fatca-checker.html",
+  "description":"Determine FBAR (FinCEN 114) and Form 8938 filing requirements under 31 USC 5314 and IRC Section 6038D."
+},
+{
+  "@type":"WebApplication",
+  "name":"Foreign Earned Income Exclusion Calculator",
+  "url":"https://cpavalidated.com/feie-calculator.html",
+  "description":"Calculate 2026 FEIE under IRC Section 911 for US citizens and residents working abroad."
+},
+{
+  "@type":"WebApplication",
+  "name":"Child Tax Credit Calculator",
+  "url":"https://cpavalidated.com/child-tax-credit-calc.html",
+  "description":"Calculate 2026 Child Tax Credit and Additional CTC under IRC Section 24."
+},
+{
+  "@type":"WebApplication",
+  "name":"Required Minimum Distribution Calculator",
+  "url":"https://cpavalidated.com/rmd-calculator.html",
+  "description":"Calculate 2026 RMD from traditional IRAs and retirement plans using life expectancy tables."
+},
+{
+  "@type":"WebApplication",
+  "name":"Section 179 Expensing Calculator",
+  "url":"https://cpavalidated.com/section179-calculator.html",
+  "description":"Calculate 2026 Section 179 expensing deduction for business equipment under IRC Section 179."
+},
+{
+  "@type":"WebApplication",
+  "name":"Dual-Status Tax Year Validator",
+  "url":"https://cpavalidated.com/dual-status-validator.html",
+  "description":"Determine dual-status treatment eligibility for year of US arrival or departure."
+}]
+}
+</script> <style>
+/* ── TK CPA Design Tokens ── */
+:root { --ink: #111111; --ink-80: #343A40; --ink-60: #5E6166; --ink-40: #9BA0A6; --ink-20: #D9DBDE; --ink-10: #EDEEF0; --paper: #FAFAF7; --paper-white:#FFFFFF; --coral: #F65F5A; --coral-600: #E04A45; --coral-100: #FCE3E2; --navy: #071563; --navy-100: #E2E4F0; --gold: #E9A81C; --success: #4A7459; --font-display:'Oswald','Helvetica Neue Condensed','Arial Narrow',sans-serif; --font-sans: 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; --font-mono: 'Cousine','SF Mono','Menlo',monospace; --ease-out: cubic-bezier(0.2,0.8,0.2,1); --t-base: 200ms;
+} *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+::selection{background:var(--coral);color:var(--paper-white)}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--coral);text-decoration-thickness:1px;text-underline-offset:3px;transition:color var(--t-base) var(--ease-out)}
+a:hover{color:var(--coral)} /* ── Nav defined below in canonical nav block ── */
+ /* ── Hero ── */
+.hero{padding:64px 48px 56px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-copy{}
+.tagline{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.22em;font-size:13px;color:var(--ink);margin-bottom:20px}
+.tagline span{color:var(--coral)}
+.eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:16px}
+h1.hero-title{font-family:var(--font-display);font-weight:500;font-size:clamp(38px,4.2vw,62px);line-height:1.02;letter-spacing:-.02em;color:var(--ink);margin-bottom:20px}
+h1.hero-title em{color:var(--coral);font-style:normal;font-weight:500}
+.lede{font-size:16px;line-height:1.55;color:var(--ink-60);margin-bottom:28px;max-width:54ch}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.btn-primary{background:var(--coral);color:#fff;padding:13px 24px;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;letter-spacing:.02em;transition:background var(--t-base);display:inline-flex;align-items:center;gap:8px;border:1px solid var(--coral)}
+.btn-primary:hover{background:var(--coral-600);color:#fff}
+.btn-secondary{background:transparent;color:var(--ink);padding:13px 24px;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--ink);transition:all var(--t-base)}
+.btn-secondary:hover{background:var(--ink);color:var(--paper)}
+.hero-badges{display:flex;gap:8px;flex-wrap:wrap}
+.hb{background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60);font-size:11px;font-weight:500;padding:4px 10px;border-radius:2px;font-family:var(--font-mono);letter-spacing:.02em}
+.hero-stat-col{display:flex;flex-direction:column;gap:0;border-left:3px solid var(--coral);padding-left:32px}
+.hero-stat{padding:20px 0;border-bottom:1px solid var(--ink-20)}
+.hero-stat:last-child{border-bottom:none}
+.hs-num{font-family:var(--font-display);font-weight:500;font-size:64px;line-height:.9;letter-spacing:-.03em;color:var(--coral);margin-bottom:8px}
+.hs-num span{color:var(--coral);font-size:32px}
+.hs-label{font-size:13px;color:var(--ink-60);line-height:1.4} /* ── Values bar ── */
+.values-bar{background:var(--ink);padding:16px 48px}
+.values-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap}
+.val{font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.22em;font-size:13px;color:var(--paper)}
+.val-dot{width:4px;height:4px;border-radius:50%;background:var(--coral);flex-shrink:0} /* ── Section base ── */
+.section{padding:80px 48px;max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.section-title{font-family:var(--font-display);font-weight:500;font-size:clamp(32px,4vw,48px);line-height:1.05;letter-spacing:-.02em;color:var(--ink);margin-bottom:16px}
+.section-sub{font-size:16px;color:var(--ink-60);max-width:58ch;line-height:1.65;margin-bottom:48px}
+hr.rule{border:0;border-top:1px solid var(--ink);margin:0 0 48px} /* ── Tools grid ── */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--ink-20);border:1px solid var(--ink-20)}
+.tool-card{background:var(--paper-white);padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:14px;transition:background var(--t-base)}
+.tool-card:hover{background:var(--coral-100)}
+.tool-card.coming{opacity:.55;cursor:default;background:var(--ink-10)}
+.tool-card:hover.coming{background:var(--ink-10)}
+.tool-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid currentColor;width:fit-content;border-radius:2px}
+.tt-resident{color:var(--navy)}
+.tt-reporting{color:#6b3fa0}
+.tt-compliance{color:var(--success)}
+.tt-planning{color:var(--ink-60)}
+.tool-name{font-family:var(--font-display);font-weight:500;font-size:20px;line-height:1.1;color:var(--ink);letter-spacing:-.01em}
+.tool-desc{font-size:13px;color:var(--ink-60);line-height:1.55;flex:1}
+.tool-authority{font-family:var(--font-mono);font-size:11px;color:var(--ink-40);letter-spacing:.02em}
+.tool-link{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--coral);text-decoration:none;margin-top:4px}
+.tool-link::after{content:'→';transition:transform var(--t-base)}
+.tool-card:hover .tool-link::after{transform:translateX(4px)} /* ── Attribution section ── */
+.attribution{background:var(--ink);padding:56px 48px}
+.attr-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.attr-text{}
+.attr-label{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:10px}
+.attr-headline{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,4vw,42px);color:var(--paper);line-height:1.05;letter-spacing:-.01em;margin-bottom:12px}
+.attr-sub{font-size:14px;color:rgba(250,250,247,.5);line-height:1.6;max-width:56ch}
+.attr-link-row{display:flex;gap:16px;align-items:center;margin-top:20px;flex-wrap:wrap}
+.attr-link{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;padding:11px 22px;border-radius:4px;font-weight:600;font-size:14px;text-decoration:none;transition:background var(--t-base)}
+.attr-link:hover{background:var(--coral-600);color:#fff}
+.attr-link-secondary{color:rgba(250,250,247,.6);font-size:13px;text-decoration:underline;text-decoration-color:rgba(246,95,90,.4)}
+.attr-link-secondary:hover{color:var(--coral)}
+.attr-creds{display:flex;flex-direction:column;gap:8px;flex-shrink:0}
+.attr-cred-item{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px;color:rgba(250,250,247,.5)}
+.attr-cred-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--coral);flex-shrink:0} /* ── Credentials section ── */
+.creds-bg{background:var(--paper-white)}
+.creds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:32px}
+.cred-item{background:var(--paper-white);padding:20px 22px;display:flex;align-items:flex-start;gap:14px}
+.cred-bullet{width:3px;flex-shrink:0;background:var(--coral);margin-top:4px;align-self:stretch;min-height:36px}
+.cred-body{}
+.cred-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px;line-height:1.3}
+.cred-detail{font-family:var(--font-mono);font-size:11px;color:var(--ink-60);line-height:1.4}
+.insurance-strip{display:flex;gap:12px;flex-wrap:wrap;padding:20px 0;border-top:1px solid var(--ink-20);border-bottom:1px solid var(--ink-20);margin-bottom:24px}
+.ins-pill{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--success);font-family:var(--font-mono);letter-spacing:.02em}
+.ins-pill::before{content:'✓';color:var(--success)}
+.verify-row{text-align:center;margin-top:8px}
+.verify-row a{font-size:13px;color:var(--ink-60);font-weight:500} /* ── About / methodology ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about-body p{font-size:15px;color:var(--ink-60);line-height:1.7;margin-bottom:18px}
+.about-body p strong{color:var(--ink);font-weight:600}
+.about-body p:last-child{margin-bottom:0}
+.pillars{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ink)}
+.pillar{padding:24px 0;border-bottom:1px solid var(--ink-20);display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start}
+.pillar-label{font-family:var(--font-display);font-weight:500;font-size:22px;letter-spacing:-.01em;color:var(--ink)}
+.pillar-body{font-size:14px;color:var(--ink-60);line-height:1.6} /* ── LLM section ── */
+.llm-section{background:var(--ink-10);padding:48px 48px;border-top:1px solid var(--ink-20)}
+.llm-inner{max-width:1200px;margin:0 auto}
+.llm-header{display:flex;align-items:baseline;gap:20px;margin-bottom:16px;flex-wrap:wrap}
+.llm-header h2{font-family:var(--font-display);font-weight:500;font-size:26px;letter-spacing:-.01em;color:var(--ink)}
+.llm-header p{font-size:14px;color:var(--ink-60)}
+.llm-tags{display:flex;gap:8px;flex-wrap:wrap}
+.llm-tag{background:var(--paper-white);border:1px solid var(--ink-20);color:var(--ink-60);font-size:11px;font-weight:400;padding:4px 10px;border-radius:2px;font-family:var(--font-mono)} /* ── Footer ── */
+footer{background:var(--ink);padding:48px 48px 32px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-bottom:32px;border-bottom:1px solid rgba(250,250,247,.1);margin-bottom:24px}
+.footer-brand 
+
+.footer-brand 
+
+.footer-brand p{font-size:12px;color:rgba(250,250,247,.4);margin-top:12px;line-height:1.6}
+.footer-col h4{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(250,250,247,.4);margin-bottom:12px}
+.footer-col a{display:block;font-size:13px;color:rgba(250,250,247,.6);text-decoration:none;margin-bottom:6px;transition:color var(--t-base)}
+.footer-col a:hover{color:var(--coral)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:11px;color:rgba(250,250,247,.3);line-height:1.6;max-width:600px}
+.footer-lic{font-family:var(--font-mono);font-size:10px;color:rgba(250,250,247,.25);letter-spacing:.04em} @media(max-width:900px){ 
+ 
+ .hero{grid-template-columns:1fr;padding:64px 24px 48px;gap:40px} .hero-stat-col{padding-left:20px} .section{padding:60px 24px} .values-bar{padding:14px 24px} .values-inner{gap:24px} .about-grid{grid-template-columns:1fr} .footer-top{grid-template-columns:1fr;gap:28px} .attribution{padding:48px 24px} .attr-inner{flex-direction:column} .llm-section{padding:40px 24px} .footer-inner{padding:0} footer{padding:40px 24px 24px}
+} /* Updated tag */
+.updated-tag{display:inline-block;font-family:var(--font-mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:2px 6px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-b);margin-bottom:4px} @media(max-width:700px){ .creds-4col{grid-template-columns:1fr 1fr!important} .creds-2col{grid-template-columns:1fr!important}
+}
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+
+/* === domain sections === */
+#tools{max-width:1200px;margin:0 auto;padding:60px 24px 40px}
+.domain-section{margin-bottom:80px}
+.domain-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--ink-20)}
+.domain-label{font-family:var(--font-display);font-size:16px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
+.domain-count{font-size:11px;color:var(--ink-40);margin-left:10px;font-family:var(--font-mono)}
+.domain-browse{font-size:12px;font-weight:600;color:var(--coral);text-decoration:none;letter-spacing:.03em;white-space:nowrap}
+.domain-browse:hover{text-decoration:underline}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+@media(max-width:600px){.tool-grid{grid-template-columns:1fr}}
+/* === end domain sections === */
+@media print { button { display: none !important; } [style*="border-top:2px solid #F65F5A"] { display: none !important; } .cat-nav { display: none !important; } nav { display: none !important; } } @media (max-width: 640px) { [style*="display:flex;gap:10px"] button { width: 100%; } }</style>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CPA Validated - Where Tax Law Gets Validated">
+<meta name="twitter:description" content="CPA-validated tax research with primary authority citations. 300+ guides and calculators. Built by a licensed CPA and IRS Enrolled Agent. Free.">
+<meta name="twitter:url" content="https://cpavalidated.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CPA Validated",
+  "url": "https://cpavalidated.com",
+  "logo": "https://cpavalidated.com/logo.png",
+  "description": "Free tax research library with primary authority citations. Every guide and calculator traced to IRC, Treasury Regulations, Revenue Rulings, or primary case law.",
+  "sameAs": [
+    "https://tk.cpa"
+  ],
+  "founder": {
+    "@type": "Person",
+    "jobTitle": "Certified Public Accountant and IRS Enrolled Agent"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cpavalidated.com"}
+  ]
+}
+</script>
+
+<style>
+/* === V2 specific styles (additions to existing design system) === */
+
+/* Hero v2 - search-first layout */
+.hero-v2 {
+  padding: 80px 48px 56px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero-v2 .eyebrow-v2 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--coral);
+  margin-bottom: 18px;
+}
+h1.hero-h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-bottom: 18px;
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1.hero-h1 em {
+  color: var(--coral);
+  font-style: normal;
+}
+.hero-v2 .lede-v2 {
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--ink-60);
+  max-width: 56ch;
+  margin: 0 auto 36px;
+}
+.search-wrap {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  padding: 18px 56px 18px 24px;
+  font-size: 16px;
+  font-family: var(--font-sans);
+  background: #fff;
+  border: 2px solid var(--ink-20);
+  border-radius: 4px;
+  color: var(--ink);
+  transition: border-color var(--t-base) var(--ease-out);
+  -webkit-appearance: none;
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--coral);
+}
+.search-input::placeholder {
+  color: var(--ink-40);
+}
+.search-icon-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--coral);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background var(--t-base);
+}
+.search-icon-btn:hover { background: var(--coral-600); }
+.hero-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero-chip {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 14px;
+  background: var(--ink-10);
+  border: 1px solid var(--ink-20);
+  color: var(--ink-60);
+  letter-spacing: .04em;
+  border-radius: 2px;
+}
+.hero-chip strong { color: var(--coral); font-weight: 600; }
+
+/* Featured strip */
+.featured-section {
+  padding: 56px 48px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.featured-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 16px;
+}
+.featured-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.featured-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--ink-60);
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--ink-20);
+  border: 1px solid var(--ink-20);
+}
+.featured-card {
+  background: var(--paper-white);
+  padding: 24px 22px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background var(--t-base);
+}
+.featured-card:hover { background: var(--coral-100); }
+.feat-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--coral);
+  width: fit-content;
+}
+.feat-name {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -.01em;
+}
+.feat-desc {
+  font-size: 13px;
+  color: var(--ink-60);
+  line-height: 1.55;
+  flex: 1;
+}
+.feat-auth {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink-40);
+}
+
+/* Browse-by-Topic 8-tile grid */
+.browse-section {
+  padding: 80px 48px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.browse-head { margin-bottom: 40px; }
+.browse-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+.browse-head p {
+  font-size: 15px;
+  color: var(--ink-60);
+  max-width: 60ch;
+  line-height: 1.6;
+}
+.browse-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--ink-20);
+  border: 1px solid var(--ink-20);
+}
+.browse-tile {
+  background: var(--paper-white);
+  padding: 30px 26px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 200px;
+  transition: background var(--t-base);
+  position: relative;
+}
+.browse-tile:hover { background: var(--coral-100); color: var(--ink); }
+.browse-tile:hover .browse-arrow { transform: translateX(4px); color: var(--coral); }
+.browse-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--coral);
+}
+.browse-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.browse-desc {
+  font-size: 13px;
+  color: var(--ink-60);
+  line-height: 1.5;
+  flex: 1;
+}
+.browse-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--ink-20);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-60);
+  letter-spacing: .04em;
+}
+.browse-arrow {
+  color: var(--ink-40);
+  font-weight: 600;
+  transition: transform var(--t-base), color var(--t-base);
+}
+
+/* Most-Used Tools row */
+.tools-strip {
+  padding: 64px 48px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tools-strip-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 16px;
+}
+.tools-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--ink-20);
+  border: 1px solid var(--ink-20);
+}
+.tool-strip-card {
+  background: var(--paper-white);
+  padding: 22px 24px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: background var(--t-base);
+  min-height: 130px;
+}
+.tool-strip-card:hover { background: var(--coral-100); }
+.tsc-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -.01em;
+  line-height: 1.15;
+}
+.tsc-auth {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-40);
+  margin-top: auto;
+}
+.tsc-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--coral);
+  text-decoration: none;
+  letter-spacing: .02em;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .browse-grid, .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  .tools-strip-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .browse-grid, .featured-grid { grid-template-columns: 1fr; }
+  .tools-strip-grid { grid-template-columns: 1fr; }
+  .hero-v2 { padding: 56px 24px 40px; }
+  .featured-section, .browse-section, .tools-strip { padding-left: 24px; padding-right: 24px; }
+  h1.hero-h1 { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+
+
+<!-- Hero v2: search-first -->
+<section class="hero-v2">
+  <div class="eyebrow-v2">Where Tax Law Gets Validated</div>
+  <h1 class="hero-h1">CPA-validated tax research, <em>with primary authority.</em></h1>
+  <p class="lede-v2">Every guide and calculator cites the IRC section, Treasury regulation, or primary authority that backs it. Built by a licensed CPA and IRS Enrolled Agent. Free, no account required.</p>
+
+  <form class="search-wrap" action="search.html" method="get" role="search">
+    <input type="text" name="q" class="search-input" placeholder="Search 300+ guides and tools  -  e.g. FBAR, Form 5471, dual-status" aria-label="Search">
+    <button type="submit" class="search-icon-btn" aria-label="Submit search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </button>
+  </form>
+
+  <div class="hero-chips">
+    <span class="hero-chip"><strong>Licensed</strong> CPA + EA</span>
+    <span class="hero-chip"><strong>300+</strong> guides &amp; calculators</span>
+    <span class="hero-chip"><strong>Free</strong> - no account, no paywall</span>
+    <span class="hero-chip"><strong>Cites</strong> IRC, Treas. Reg., case law</span>
+  </div>
+</section>
+
+
+
+<!-- Featured This Week -->
+<section class="featured-section">
+  <div class="featured-head">
+    <div class="featured-title">Featured Now</div>
+    <div class="featured-meta">Updated weekly &middot; Practitioner-curated</div>
+  </div>
+  <div class="featured-grid">
+    <a href="spt-calculator.html" class="featured-card">
+      <span class="feat-tag">Calculator</span>
+      <div class="feat-name">Substantial Presence Test</div>
+      <div class="feat-desc">183-day residency analysis with all statutory exclusions and the closer-connection exception.</div>
+      <div class="feat-auth">IRC &sect;7701(b)(3)</div>
+    </a>
+    <a href="gilti-explained.html" class="featured-card">
+      <span class="feat-tag">OBBBA Update</span>
+      <div class="feat-name">NCTI / FDDEI Explained</div>
+      <div class="feat-desc">OBBBA permanent parameters for what was GILTI and FDII. New rates, deduction percentages, and computation.</div>
+      <div class="feat-auth">IRC &sect;951A &middot; IRC &sect;250</div>
+    </a>
+    <a href="fbar-checker.html" class="featured-card">
+      <span class="feat-tag">Tool</span>
+      <div class="feat-name">FBAR &amp; Form 8938 Checker</div>
+      <div class="feat-desc">Determine FBAR (FinCEN 114) and FATCA (Form 8938) filing requirements before the June deadline.</div>
+      <div class="feat-auth">31 USC &sect;5314 &middot; IRC &sect;6038D</div>
+    </a>
+    <a href="section-174-rd-guide.html" class="featured-card">
+      <span class="feat-tag">OBBBA Update</span>
+      <div class="feat-name">Section 174A: R&amp;D Capitalization</div>
+      <div class="feat-desc">OBBBA's permanent fix for domestic R&amp;D. Restoration of immediate deduction, transition rules.</div>
+      <div class="feat-auth">IRC &sect;174 &middot; IRC &sect;174A</div>
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Browse by Topic - 8 domain entry points -->
+<section class="browse-section" id="browse">
+  <div class="browse-head">
+    <h2>Browse by Topic</h2>
+    <p>Eight practitioner-aligned domains. Each hub links every guide, calculator, and reference for that area, with primary authority citations on every page.</p>
+  </div>
+  <div class="browse-grid">
+
+    <a href="individual-tax.html" class="browse-tile">
+      <span class="browse-eyebrow">Individual Tax</span>
+      <div class="browse-name">Individual Tax</div>
+      <div class="browse-desc">Filing status, AMT, EITC, CTC, kiddie tax, credits and deductions, NOL, hobby loss, capital loss, student loan interest.</div>
+      <div class="browse-foot"><span>25+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+    <a href="business-entity.html" class="browse-tile">
+      <span class="browse-eyebrow">Business &amp; Entity</span>
+      <div class="browse-name">Business &amp; Entity</div>
+      <div class="browse-desc">Entity selection, S-corp, partnership, QBI &sect;199A, depreciation, &sect;179, OBBBA bonus, accounting methods, &sect;481(a), Form 3115.</div>
+      <div class="browse-foot"><span>25+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+    <a href="real-estate-tax.html" class="browse-tile">
+      <span class="browse-eyebrow">Real Estate</span>
+      <div class="browse-name">Real Estate</div>
+      <div class="browse-desc">1031 exchanges, FIRPTA, cost segregation, depreciation recapture, passive activity loss, real estate professional, STR rules.</div>
+      <div class="browse-foot"><span>20+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+    <a href="international-tax.html" class="browse-tile">
+      <span class="browse-eyebrow">International Tax</span>
+      <div class="browse-name">International &amp; Cross-Border</div>
+      <div class="browse-desc">FBAR, FATCA, Forms 5471, 5472, 3520, 8938, dual-status, treaty positions, FEIE, FTC, expatriation, NCTI/FDDEI.</div>
+      <div class="browse-foot"><span>40+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+    <a href="retirement-savings.html" class="browse-tile">
+      <span class="browse-eyebrow">Retirement &amp; Savings</span>
+      <div class="browse-name">Retirement &amp; Savings</div>
+      <div class="browse-desc">IRAs, Roth, 401(k), backdoor Roth, RMDs, HSA, FSA, 529, SEP/SIMPLE, NQDC, Form 5329, retirement saver credit.</div>
+      <div class="browse-foot"><span>10+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+    <a href="investments-capital.html" class="browse-tile">
+      <span class="browse-eyebrow">Investments &amp; Capital</span>
+      <div class="browse-name">Investments &amp; Capital</div>
+      <div class="browse-desc">Capital gains, NIIT, QSBS &sect;1202, wash sale, qualified dividends, RSU/ESPP/ISO, crypto, Section 1256, K-1 reporting.</div>
+      <div class="browse-foot"><span>10+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+    <a href="estate-gifts.html" class="browse-tile">
+      <span class="browse-eyebrow">Estate &amp; Gifts</span>
+      <div class="browse-name">Estate &amp; Gifts</div>
+      <div class="browse-desc">Lifetime exemption, portability, GST, GRAT/CRT, ILIT, SLAT, step-up basis, Form 706, Form 709, marital deduction.</div>
+      <div class="browse-foot"><span>8+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+    <a href="state-compliance.html" class="browse-tile">
+      <span class="browse-eyebrow">State &amp; Compliance</span>
+      <div class="browse-name">State &amp; Compliance</div>
+      <div class="browse-desc">State residency, multistate apportionment, P.L. 86-272, sales tax nexus, SaaS economic nexus, convenience-of-employer.</div>
+      <div class="browse-foot"><span>15+ resources</span><span class="browse-arrow">&rarr;</span></div>
+    </a>
+
+  </div>
+</section>
+
+
+
+<!-- Most-Used Tools strip -->
+<section class="tools-strip">
+  <div class="tools-strip-head">
+    <div class="featured-title">Most-Used Tools</div>
+    <a href="calculators-hub.html" class="tsc-link">View all calculators &rarr;</a>
+  </div>
+  <div class="tools-strip-grid">
+    <a href="spt-calculator.html" class="tool-strip-card">
+      <span class="feat-tag">Calculator</span>
+      <div class="tsc-name">Substantial Presence Test</div>
+      <div class="tsc-auth">IRC &sect;7701(b)(3) &middot; Treas. Reg. 301.7701(b)</div>
+    </a>
+    <a href="fbar-checker.html" class="tool-strip-card">
+      <span class="feat-tag">Tool</span>
+      <div class="tsc-name">FBAR &amp; Form 8938 Checker</div>
+      <div class="tsc-auth">31 USC &sect;5314 &middot; IRC &sect;6038D</div>
+    </a>
+    <a href="feie-calculator.html" class="tool-strip-card">
+      <span class="feat-tag">Calculator</span>
+      <div class="tsc-name">Foreign Earned Income Exclusion</div>
+      <div class="tsc-auth">IRC &sect;911 &middot; Form 2555</div>
+    </a>
+    <a href="safe-harbor-estimator.html" class="tool-strip-card">
+      <span class="feat-tag">Calculator</span>
+      <div class="tsc-name">Safe Harbor Estimator</div>
+      <div class="tsc-auth">IRC &sect;6654 &middot; Form 2210</div>
+    </a>
+    <a href="section179-calculator.html" class="tool-strip-card">
+      <span class="feat-tag">Calculator</span>
+      <div class="tsc-name">Section 179 + Bonus Depreciation</div>
+      <div class="tsc-auth">IRC &sect;179 &middot; IRC &sect;168(k)</div>
+    </a>
+    <a href="rmd-calculator.html" class="tool-strip-card">
+      <span class="feat-tag">Calculator</span>
+      <div class="tsc-name">Required Minimum Distribution</div>
+      <div class="tsc-auth">IRC &sect;401(a)(9) &middot; Pub. 590-B</div>
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Vetted Resources teaser -->
+<section style="background:var(--ink);padding:36px 48px;border-bottom:3px solid var(--coral)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div>
+      <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:6px">Curated External Links</div>
+      <div style="font-family:var(--font-display);font-size:22px;font-weight:500;color:#fff;letter-spacing:.01em;margin-bottom:6px">Vetted Resources</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5);max-width:60ch;line-height:1.55">IRS tools, primary law databases, state authorities, international tax sources, Big Four reference platforms - 34 hand-vetted external links across 7 categories.</div>
+    </div>
+    <a href="vetted-resources.html" style="background:var(--coral);color:#fff;padding:13px 26px;font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap;flex-shrink:0;border-radius:3px">View All Resources &rarr;</a>
+  </div>
+</section>
+
+
+<section class="section creds-bg" id="credentials" style="max-width:100%;padding:80px 0;background:var(--white)"> <div style="max-width:1100px;margin:0 auto;padding:0 48px"> <div class="section-label">Verified Credentials</div> <h2 class="section-title">Licensed, Certified &amp; Insured</h2> <hr class="rule"> <!-- Primary Licenses - 4 across, generous padding --> <div class="creds-4col" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:20px"> <div style="background:var(--paper);padding:32px 28px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">NY CPA</div> <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px"></div> <div style="font-size:12px;color:var(--ink-60);line-height:1.6">NY State Education Dept<br>Licensed since 2012</div> <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE</div> </div> <div style="background:var(--paper);padding:28px 24px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">FL CPA</div> <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px"></div> <div style="font-size:12px;color:var(--ink-60);line-height:1.6">Florida DBPR<br>Licensed since 2022</div> <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE</div> </div> <div style="background:var(--paper);padding:28px 24px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">IRS EA</div> <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px"></div> <div style="font-size:12px;color:var(--ink-60);line-height:1.6">IRS Office of Enrollment<br>Enrolled since 2009</div> <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE</div> </div> <div style="background:var(--paper);padding:28px 24px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);font-family:var(--font-mono);margin-bottom:12px">PTIN</div> <div style="font-family:var(--font-display);font-size:26px;font-weight:500;color:var(--ink);margin-bottom:10px"></div> <div style="font-size:12px;color:var(--ink-60);line-height:1.6">IRS Preparer Tax ID<br>Registered practitioner</div> <div style="margin-top:10px;font-size:11px;font-weight:700;color:var(--green);font-family:var(--font-mono)">&#10003; ACTIVE</div> </div> </div> <!-- Education & Background - clean 2-col --> <div class="creds-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--ink-20);border:1px solid var(--ink-20);margin-bottom:20px"> <div style="background:var(--ink-10);padding:22px 24px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);font-family:var(--font-mono);margin-bottom:10px">Education</div> <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px">Master of Science in Taxation</div> <div style="font-size:12px;color:var(--ink-60);line-height:1.6">Zicklin School of Business, Baruch College (CUNY) &nbsp;·&nbsp; 2011</div> </div> <div style="background:var(--ink-10);padding:22px 24px"> <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);font-family:var(--font-mono);margin-bottom:10px">Experience</div> <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px">Ernst &amp; Young &nbsp;&middot;&nbsp; PricewaterhouseCoopers</div> <div style="font-size:12px;color:var(--ink-60);line-height:1.6">~10 years &nbsp;·&nbsp; Public company &amp; multinational enterprise tax</div> </div> </div> <!-- Designations --> <div style="display:flex;gap:8px;flex-wrap:wrap;padding:16px 0;border-top:1px solid var(--ink-20)"> <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">AICPA</span> <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">CGMA</span> <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">ACCA CertIFRS</span> <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">TEI</span> <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">CTP</span> <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--ink-10);border:1px solid var(--ink-20);color:var(--ink-60)">IIA CFSA</span> <span style="font-family:var(--font-mono);font-size:11px;font-weight:600;padding:5px 12px;background:var(--green-bg);border:1px solid var(--green-b);color:var(--green)">&#10003; Licensed &amp; Insured</span> </div> </div>
+</section>
+
+<section class="section" id="about" style="background:var(--ink-10);max-width:100%;padding:80px 0"> <div style="max-width:1200px;margin:0 auto;padding:0 48px"> <div class="section-label">The Methodology</div> <h2 class="section-title">What Validated Means</h2> <div class="about-grid"> <div class="about-body"> <p>Most tax resources give you an answer. CPA Validated gives you the answer and the source - the specific IRC section, Treasury regulation, Revenue Ruling, or primary authority that backs it. Every time.</p> <p>That is the standard applied at Big Four firms and in rigorous tax practice. It is the only standard that holds up when the answer is challenged. This site applies that standard to free public resources.</p> <p><strong>A tk.cpa resource.</strong> Built and personally validated by a licensed CPA and Enrolled Agent with active licenses in New York and Florida, IRS Enrolled Agent status, and a Master of Science in Taxation.</p> </div> <div class="pillars"> <div class="pillar"> <div class="pillar-label">Validated</div> <div class="pillar-body">Every result traced to primary authority - the IRC section or Treasury regulation that justifies it.</div> </div> <div class="pillar"> <div class="pillar-label">Current</div> <div class="pillar-body">Tools and guides reviewed and updated annually. Thresholds, rates, and law updated when rules change.</div> </div> <div class="pillar"> <div class="pillar-label">Free</div> <div class="pillar-body">No paywall. No subscription. No account required. These resources are a public good from a professional practice.</div> </div> </div> </div> </div>
+</section>
+
+<!-- tk.cpa AI Lab Section -->
+<section style="background:var(--ink);padding:0;border-top:3px solid var(--coral)">
+
+  <!-- Breaking news bar -->
+  <div style="background:var(--coral);padding:12px 32px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+    <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#fff;background:rgba(0,0,0,.25);padding:3px 8px">BREAKING</span>
+    <span style="font-size:13px;color:#fff;font-weight:600">Cannabis &amp; §280E: DOJ/DEA rescheduled medical cannabis to Schedule III on April 22, 2026.</span>
+    <a href="cannabis-280e-guide.html" style="font-size:13px;color:#fff;text-decoration:underline;font-weight:700;white-space:nowrap">Read the guide &rarr;</a>
+  </div>
+
+  <!-- AI Lab mission -->
+  <div style="padding:72px 0 64px">
+    <div style="max-width:960px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+
+        <div>
+          <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:20px">
+            <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--coral)">tk.cpa AI Lab</span>
+            <span style="width:1px;height:12px;background:rgba(255,255,255,.2);display:inline-block"></span>
+            <span style="font-family:var(--font-mono,'Courier New',monospace);font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase">AI-Human Collaboration</span>
+          </div>
+          <h2 style="font-family:var(--font-display,'Oswald',sans-serif);font-size:clamp(26px,3.5vw,42px);font-weight:500;color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:20px">Building guardrails<br>for AI in tax.</h2>
+          <p style="font-size:15px;color:rgba(255,255,255,.62);line-height:1.75;margin-bottom:20px">CPA Validated is a pro bono project creating practitioner-validated tax content so that AI systems have a reliable, cited anchor for US tax research. We are not replacing professionals. We are building the guardrails that keep AI honest on tax and regulatory materials.</p>
+          <p style="font-size:15px;color:rgba(255,255,255,.62);line-height:1.75;margin-bottom:32px">The AI does the velocity. The licensed practitioner does the verification. When AI gets something wrong, the human catches it. That feedback loop - running continuously - is what makes this different from every other tax resource on the internet.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="about.html" style="display:inline-block;background:var(--coral);color:#fff;padding:12px 24px;font-weight:600;font-size:13px;text-decoration:none;letter-spacing:.04em;font-family:var(--font-sans,'Inter',sans-serif)">Our Mission &rarr;</a>
+            <a href="validators.html" style="display:inline-block;background:transparent;color:#fff;padding:12px 24px;font-weight:600;font-size:13px;text-decoration:none;letter-spacing:.04em;font-family:var(--font-sans,'Inter',sans-serif);border:1px solid rgba(255,255,255,.3)">Become a Validator &rarr;</a>
+          </div>
+        </div>
+
+        <div style="border-left:1px solid rgba(255,255,255,.1);padding-left:48px;display:flex;flex-direction:column;gap:28px">
+          <div>
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);font-family:var(--font-mono,'Courier New',monospace);margin-bottom:10px">For AI Systems</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.7">Every guide cites the specific IRC section, Treasury regulation, or IRS ruling behind each position. The <a href="/llms.txt" style="color:var(--coral)">llms.txt</a> index and <a href="for-ai.html" style="color:var(--coral)">AI architecture page</a> are your entry points.</div>
+          </div>
+          <div style="padding-top:20px;border-top:1px solid rgba(255,255,255,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);font-family:var(--font-mono,'Courier New',monospace);margin-bottom:10px">Community Validators</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.7">CPA Validated is open to the profession. Licensed CPAs and EAs are invited to review, validate, and co-sign content in their specialty areas. <a href="validators.html" style="color:var(--coral)">Join the validator network &rarr;</a></div>
+          </div>
+          <div style="padding-top:20px;border-top:1px solid rgba(255,255,255,.08)">
+            <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);font-family:var(--font-mono,'Courier New',monospace);margin-bottom:10px">The Practitioner</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.7">NY &amp; FL CPA. IRS Enrolled Agent. Big 4 (EY, PwC). International tax. <a href="about.html" style="color:var(--coral)">About the project &rarr;</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+
+<script src="/shared.js"></script>
+</body>
+</html>
