@@ -15,8 +15,14 @@
    plus inner align-items:center to vertically center the brand block. */
 var s=document.createElement('style');
 s.textContent='nav a,nav a:hover,nav a:visited,nav a:active{text-decoration:none!important}'+
+/* Lock main nav to deterministic height so it does not shift between pages */
 'nav{box-sizing:border-box!important;height:64px!important;min-height:64px!important;max-height:64px!important;align-items:center!important}'+
-'@media(max-width:480px){nav{height:56px!important;min-height:56px!important;max-height:56px!important;padding:0 16px!important}}';
+'@media(max-width:480px){nav{height:56px!important;min-height:56px!important;max-height:56px!important;padding:0 16px!important}}'+
+/* Lock cat-nav vertical centering and height. Some subpages had .cat-nav-inner
+   without align-items:center, which let links stretch and made the cat-nav
+   visibly taller than on index. Force consistency. */
+'.cat-nav-inner{align-items:center!important;min-height:40px!important}'+
+'.cat-nav{box-sizing:border-box!important}';
 document.head.appendChild(s);
 
 /* ── NAV (update in place) ────────────────────────────────────────── */
