@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Form 5471 CFC 2026 Deep Dive: NCTI, Categories, §954(c)(6), Schedule H-1 | CPA Validated</title>
+<meta name="description" content="Form 5471 controlled foreign corporation deep dive. OBBBA renamed GILTI to NCTI for 2026+. §250 deduction 50%→40%. FTC haircut 20%→10%. QBAI eliminated. Downward attribution restored. 5 categories, $60K penalty cap.">
+<link rel="canonical" href="https://cpavalidated.com/form-5471-cfc-deep-dive.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Form 5471 CFC Deep Dive: NCTI, OBBBA Changes &amp; 5 Categories (2026)">
+<meta property="og:description" content="Complete §951A NCTI mechanics post-OBBBA. New 12.6% effective rate, 90% FTC for corporations, QBAI eliminated, downward attribution restored, Schedule H-1 for CAMT.">
+<meta property="og:url" content="https://cpavalidated.com/form-5471-cfc-deep-dive.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Form 5471 CFC Deep Dive: NCTI, OBBBA Changes &amp; 5 Categories (2026)","url":"https://cpavalidated.com/form-5471-cfc-deep-dive.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html" class="active">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Form 5471: CFC Reporting Deep Dive</h1>
+  <div class="sub">OBBBA 2026 Rebrand: GILTI → NCTI &nbsp;&bull;&nbsp; §250 Deduction 50% → 40% &nbsp;&bull;&nbsp; FTC Haircut 20% → 10% &nbsp;&bull;&nbsp; QBAI Eliminated &nbsp;&bull;&nbsp; Downward Attribution Restored &nbsp;&bull;&nbsp; Schedule H-1 for CAMT</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §951 / §951A / §6038</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21 §70321</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="international-tax.html">&#8592; International Tax</a></div>
+<div class="article">
+
+<p class="lead">Form 5471 is the single most consequential international information return in US tax. It captures ownership, control, transactions, and income inclusions for US persons with interests in foreign corporations. The form is information-only but the underlying §951A regime - now renamed Net CFC Tested Income (NCTI) under OBBBA for tax years beginning after December 31, 2025 - drives the actual tax. OBBBA delivered four structural changes: GILTI was renamed to NCTI, the §250 deduction dropped from 50% to 40% (effective rate rises 10.5% to 12.6%), the §960(d)(1) deemed-paid FTC cap rose from 80% to 90%, and the 10% QBAI deduction was eliminated. Downward attribution from foreign persons was restored, the §954(c)(6) look-through rule was made permanent, and a new Schedule H-1 captures CFC adjusted net income for Corporate Alternative Minimum Tax purposes. Statutory penalties remain $10,000 base with $60,000 cap per CFC per year.</p>
+
+<div class="callout">
+  <div class="callout-label">OBBBA 2026 Headline Changes - Tax Years After 12/31/2025</div>
+  <p><strong>1. GILTI → NCTI rebrand.</strong> The regime under IRC §951A is now called Net CFC Tested Income. Same anti-deferral concept, different name and mechanics.</p>
+  <p><strong>2. QBAI elimination.</strong> The 10% Qualified Business Asset Investment deduction (Net Deemed Tangible Income Return) is gone. The entire foreign tested income base is now potentially taxable - no more "high tangible asset" shelter.</p>
+  <p><strong>3. §250 deduction 50% → 40%.</strong> Corporate shareholders previously received a 50% deduction against GILTI inclusions, producing a 10.5% effective rate (21% × 50%). The new 40% deduction produces a 12.6% effective rate (21% × 60%).</p>
+  <p><strong>4. §960(d)(1) FTC haircut 20% → 10%.</strong> Foreign taxes deemed paid on tested income previously had a 20% reduction (80% creditable); now reduced by 10% (90% creditable). Meaningful improvement for high-tax jurisdictions.</p>
+  <p><strong>5. Interest and R&amp;E exclusion from NCTI basket.</strong> Per §904(b)(5), interest and R&amp;E deductions are no longer apportioned against NCTI for FTC limitation purposes.</p>
+  <p><strong>6. Downward attribution restored.</strong> The TCJA repeal of §958(b)(4) is itself repealed. Foreign-to-US downward attribution no longer creates artificial CFC status from nonresident spouse ownership.</p>
+  <p><strong>7. Schedule H-1 for CAMT.</strong> New mandatory schedule tracks CFC Adjusted Net Income for the §59 Corporate Alternative Minimum Tax. Applies to large corporations.</p>
+</div>
+
+<h2>The Five Filing Categories - Who Files</h2>
+
+<table class="key-table">
+  <tr><th>Category</th><th>Trigger</th><th>Schedule Burden</th></tr>
+  <tr><td>Category 1</td><td>US shareholders of Specified Foreign Corporations (SFCs) under §965 transition tax</td><td>Limited - SFC-specific schedules</td></tr>
+  <tr><td>Category 2</td><td>US person who is officer or director of a foreign corporation when a US person acquires 10% stock interest or additional 10%</td><td>Schedule O only</td></tr>
+  <tr><td>Category 3</td><td>US person acquiring stock resulting in 10%+ ownership, or disposing/changing stock interest by 10%+, or becoming a US person while holding 10%+</td><td>Limited - Schedule O, identifying schedules</td></tr>
+  <tr><td>Category 4</td><td>US person who had CONTROL (50%+ vote or value) of foreign corporation for uninterrupted 30 days or more in foreign corporation's annual accounting period</td><td>Heavy - 12+ schedules: A, B, C, E, E-1, F, G, G-1, H, H-1, I-1, J, M, P, Q, R</td></tr>
+  <tr><td>Category 5</td><td>US shareholder (10%+) of CFC at any time during foreign corporation's annual accounting period</td><td>Heavy - similar to Category 4. Splits into 5a, 5b, 5c subcategories</td></tr>
+</table>
+
+<div class="note-box"><strong>Multiple categories possible.</strong> A single US person can fall into multiple categories simultaneously. A 100% owner of a foreign corporation that is a CFC is BOTH Category 4 (control) and Category 5 (US shareholder of CFC). The taxpayer files one Form 5471 indicating all applicable categories. Filing fewer schedules than the highest category requires triggers incomplete filing penalty.</div>
+
+<h2>What Is a CFC - The §957 Definition</h2>
+
+<p>A controlled foreign corporation under IRC §957(a) is any foreign corporation in which "United States shareholders" (each owning 10%+ of vote or value) collectively own MORE THAN 50% of the vote or value at any time during the foreign corporation's taxable year. The 50% test is by aggregate US shareholder ownership, not by any single shareholder.</p>
+
+<table class="key-table">
+  <tr><th>Element</th><th>Definition</th></tr>
+  <tr><td>"United States shareholder"</td><td>US person owning 10%+ of vote or value of the foreign corporation (§951(b))</td></tr>
+  <tr><td>"More than 50%"</td><td>Bare majority - 50.0001% is sufficient; exactly 50% is NOT</td></tr>
+  <tr><td>Ownership test</td><td>Direct, indirect (through entities), and constructive (through family) per §958</td></tr>
+  <tr><td>Time period</td><td>At any time during the foreign corporation's tax year (post-OBBBA, ownership on any day of year may trigger NCTI inclusion, not just last day)</td></tr>
+  <tr><td>Downward attribution</td><td>Restored under OBBBA 2026+. Foreign person's ownership is NOT attributed downward to US person. Reverses TCJA §958(b)(4) repeal.</td></tr>
+</table>
+
+<h2>NCTI Mechanics - The 2026 Calculation</h2>
+
+<p>NCTI under §951A captures CFC income that exceeds a baseline routine return. Under TCJA's GILTI regime (through 2025), the baseline was 10% of Qualified Business Asset Investment (QBAI). OBBBA eliminated QBAI - the entire net tested income of the CFC is now potentially included.</p>
+
+<table class="key-table">
+  <tr><th>Step</th><th>2025 GILTI Calculation</th><th>2026 NCTI Calculation</th></tr>
+  <tr><td>1. Net CFC tested income</td><td>Sum of tested income less tested losses across all CFCs</td><td>Same</td></tr>
+  <tr><td>2. Less QBAI exclusion</td><td>10% × QBAI (Net Deemed Tangible Income Return)</td><td>ELIMINATED</td></tr>
+  <tr><td>3. Less specified interest expense</td><td>Net interest expense allocable to NCTI basket</td><td>Same</td></tr>
+  <tr><td>4. = GILTI / NCTI inclusion</td><td>Result is GILTI</td><td>Result is NCTI - broader base</td></tr>
+  <tr><td>5. §250 deduction (corporate shareholder)</td><td>50% deduction</td><td>40% deduction</td></tr>
+  <tr><td>6. Effective tax rate</td><td>~10.5% (21% × 50%)</td><td>~12.6% (21% × 60%)</td></tr>
+  <tr><td>7. FTC haircut under §960(d)(1)</td><td>20% haircut (80% creditable)</td><td>10% haircut (90% creditable)</td></tr>
+  <tr><td>8. FTC effective coverage</td><td>Foreign rate ~13.125% covers</td><td>Foreign rate ~14% covers</td></tr>
+</table>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - NCTI Inclusion for 2026 CFC</div>
+  <p><strong>Facts:</strong> US corporation owns 100% of UK CFC. CFC tested income for 2026 = $1,000,000. Foreign tax paid = $200,000 (20% effective UK rate). No tested losses, no specified interest.</p>
+  <p><strong>NCTI inclusion:</strong> $1,000,000 (no QBAI reduction, no interest deduction).</p>
+  <p><strong>§250 deduction:</strong> 40% × $1,000,000 = $400,000.</p>
+  <p><strong>Net NCTI taxable income:</strong> $600,000.</p>
+  <p><strong>US corporate tax before FTC:</strong> 21% × $600,000 = $126,000.</p>
+  <p><strong>§960(d)(1) FTC:</strong> 90% × $200,000 × ($400,000 NCTI net of deduction / total foreign income) - complex formula with §904 limitation; in this case, full $180,000 creditable.</p>
+  <p><strong>Result:</strong> Net US tax on the $1M NCTI = $126,000 less $180,000 FTC = $0 (excess FTC unusable in NCTI basket - no carryback or carryforward per §904(c) limitation for NCTI).</p>
+</div>
+
+<h2>The §954(c)(6) Look-Through Rule - Now Permanent</h2>
+
+<p>Section 954(c)(6) allows certain related-party payments between CFCs (dividends, interest, rents, royalties) to be excluded from Subpart F income if attributable to the payor CFC's active income. The rule was originally enacted as a temporary provision in 2006 and had been extended repeatedly. OBBBA made it permanent.</p>
+
+<p>For boutique tax practices and multinational families, this matters: a Cayman holding company receiving dividends from a Singapore operating subsidiary will not have Subpart F inclusion for the dividend if the underlying Singapore income is active business income. The rule eliminates a major friction point in intra-group structures and provides long-term planning certainty.</p>
+
+<h2>Subpart F Income - Still Separate From NCTI</h2>
+
+<p>Subpart F under §951 predates GILTI/NCTI and continues to operate in parallel. Subpart F captures specific categories of "tainted" income that the IRS taxes currently regardless of distribution. Categories include:</p>
+
+<table class="key-table">
+  <tr><th>Subpart F Income Category</th><th>Authority</th></tr>
+  <tr><td>Foreign personal holding company income (interest, dividends, royalties, rents, gains)</td><td>§954(c)</td></tr>
+  <tr><td>Foreign base company sales income (related-party sales lacking economic activity)</td><td>§954(d)</td></tr>
+  <tr><td>Foreign base company services income (services to related parties outside CFC's country)</td><td>§954(e)</td></tr>
+  <tr><td>Insurance income</td><td>§953</td></tr>
+  <tr><td>Boycott income</td><td>§952(a)(3)</td></tr>
+  <tr><td>Illegal bribes, kickbacks</td><td>§952(a)(4)</td></tr>
+  <tr><td>Income from §901(j) sanctioned countries (Cuba, Iran, North Korea, Syria, Sudan, in part)</td><td>§952(a)(5)</td></tr>
+</table>
+
+<p>Subpart F inclusions reduce NCTI tested income for the same CFC - the income is already taxed under Subpart F, so it does not double-count in NCTI. The ordering matters and is reflected on Schedule I of Form 5471.</p>
+
+<h2>The §962 Election - Individual Shareholders</h2>
+
+<p>Individual US shareholders of CFCs face the worst of both worlds without planning: NCTI and Subpart F inclusions taxed at ordinary individual rates (up to 37%) with no §250 deduction. The §962 election allows an individual to be taxed at corporate rates on inclusions, accessing the §250 deduction and FTC mechanics available to C-corp shareholders.</p>
+
+<table class="key-table">
+  <tr><th>Without §962 (Individual Default)</th><th>With §962 Election</th></tr>
+  <tr><td>NCTI taxed at up to 37% individual rate</td><td>NCTI taxed at 21% corporate rate</td></tr>
+  <tr><td>No §250 deduction</td><td>40% §250 deduction available</td></tr>
+  <tr><td>No deemed-paid FTC under §960</td><td>FTC under §960(d)(1) available (90% post-OBBBA)</td></tr>
+  <tr><td>Distributions later are dividend income (qualified rate if treaty country)</td><td>Distributions later are dividend income, but only amounts ABOVE prior §962 inclusions count - the prior inclusions are PTEP and tax-free</td></tr>
+  <tr><td>Effective rate could be 30%+</td><td>Effective rate roughly 12.6% on inclusions</td></tr>
+</table>
+
+<div class="green-box"><strong>When §962 makes sense.</strong> Most individual CFC owners benefit from §962 when foreign effective tax rates are 10-14% (high enough to use the deemed-paid FTC fully). At foreign rates above 14% × 90% = 12.6%, the election eliminates US tax on inclusions entirely. At lower foreign rates, the election still helps but does not eliminate US tax. The election must be made annually and is irrevocable for the year.</div>
+
+<h2>PTEP - Previously Taxed Earnings and Profits</h2>
+
+<p>When a US shareholder includes NCTI or Subpart F income in the current year, those earnings become Previously Taxed E&amp;P (PTEP) under §959. When the CFC later distributes those earnings as a dividend, the PTEP comes back tax-free at the shareholder level (it was already taxed currently). PTEP tracking is one of the most error-prone areas of Form 5471 preparation.</p>
+
+<table class="key-table">
+  <tr><th>PTEP Bucket</th><th>Origin</th></tr>
+  <tr><td>§959(c)(1) PTEP</td><td>Investments in US property (Subpart F §956 investments)</td></tr>
+  <tr><td>§959(c)(2) PTEP</td><td>Subpart F income inclusions</td></tr>
+  <tr><td>§959(c)(2)(B) PTEP - reclassified §965</td><td>§965(a) and (b) transition tax (mandatory repatriation)</td></tr>
+  <tr><td>§959(c)(2) PTEP - GILTI/NCTI</td><td>§951A inclusions (now NCTI for 2026+)</td></tr>
+  <tr><td>§959(c)(3) E&amp;P</td><td>Not yet taxed - subject to future Subpart F or NCTI inclusion or eventual qualifying dividend</td></tr>
+</table>
+
+<p>Schedule J of Form 5471 tracks E&amp;P with PTEP and non-PTEP layers by category. Schedule P tracks PTEP movements with previously-taxed account information. Both schedules are required for Category 4 and 5 filers and create compounding complexity over multi-year CFC ownership.</p>
+
+<h2>Schedules - The Form 5471 Stack</h2>
+
+<table class="key-table">
+  <tr><th>Schedule</th><th>Purpose</th><th>Filer Categories</th></tr>
+  <tr><td>Schedule A</td><td>Stock of Foreign Corporation</td><td>3, 4, 5</td></tr>
+  <tr><td>Schedule B</td><td>US Shareholders of Foreign Corporation</td><td>4, 5</td></tr>
+  <tr><td>Schedule C</td><td>Income Statement</td><td>4, 5</td></tr>
+  <tr><td>Schedule E</td><td>Taxes Paid, Accrued, or Deemed Paid</td><td>4, 5</td></tr>
+  <tr><td>Schedule E-1</td><td>Taxes Paid, Accrued, or Deemed Paid on E&amp;P</td><td>4, 5</td></tr>
+  <tr><td>Schedule F</td><td>Balance Sheet</td><td>4</td></tr>
+  <tr><td>Schedule G</td><td>Other Information (consent fees, etc.)</td><td>4, 5</td></tr>
+  <tr><td>Schedule G-1</td><td>Cost Sharing Arrangement (transfer pricing)</td><td>If applicable</td></tr>
+  <tr><td>Schedule H</td><td>Current E&amp;P</td><td>4, 5</td></tr>
+  <tr><td>Schedule H-1 (NEW 2026)</td><td>CFC Adjusted Net Income for CAMT under §59</td><td>Required for applicable corporations</td></tr>
+  <tr><td>Schedule I</td><td>Summary of Shareholder's Income from Foreign Corporation (Subpart F)</td><td>4, 5</td></tr>
+  <tr><td>Schedule I-1</td><td>Tested Income/Loss for NCTI (formerly GILTI) - QBAI eliminated 2026+</td><td>5</td></tr>
+  <tr><td>Schedule J</td><td>Accumulated E&amp;P</td><td>4, 5</td></tr>
+  <tr><td>Schedule M</td><td>Transactions Between CFC and Shareholders or Other Related Persons</td><td>4</td></tr>
+  <tr><td>Schedule O</td><td>Organization or Reorganization of Foreign Corporation</td><td>2, 3</td></tr>
+  <tr><td>Schedule P</td><td>Previously Taxed E&amp;P</td><td>5</td></tr>
+  <tr><td>Schedule Q</td><td>CFC Income by CFC Income Groups</td><td>5</td></tr>
+  <tr><td>Schedule R</td><td>Distributions From a Foreign Corporation</td><td>4, 5</td></tr>
+</table>
+
+<h2>Penalties - $60,000 Per CFC Per Year</h2>
+
+<table class="key-table">
+  <tr><th>Penalty</th><th>Amount</th><th>Authority</th></tr>
+  <tr><td>Initial failure to file Form 5471</td><td>$10,000 per CFC per year</td><td>§6038(b)(1)</td></tr>
+  <tr><td>Continuation penalty after IRS notice</td><td>$10,000 per 30-day period (or fraction), capped at $50,000 additional</td><td>§6038(b)(2)</td></tr>
+  <tr><td>Maximum per CFC per year</td><td>$60,000 ($10K initial + $50K continuation)</td><td></td></tr>
+  <tr><td>FTC reduction for failure to file</td><td>10% reduction in FTC, plus additional 5% per 90-day period</td><td>§6038(c)</td></tr>
+  <tr><td>SOL impact</td><td>Statute of limitations does not begin until Form 5471 is filed</td><td>§6501(c)(8)</td></tr>
+  <tr><td>Criminal penalties</td><td>Available for willful failure</td><td>§7203, §7206</td></tr>
+</table>
+
+<div class="red-box"><strong>Farhy v. Commissioner.</strong> In <em>Farhy v. Commissioner</em>, 160 T.C. 6 (2023), the Tax Court held that the IRS lacks statutory authority to administratively assess §6038(b) penalties for failure to file Form 5471. The D.C. Circuit reversed in 2024, restoring IRS administrative assessment authority. The case sparked widespread protective claim filings. Practitioners should be aware that the procedural enforcement framework is currently settled in IRS's favor but remains an area of ongoing litigation. Substantive filing obligations are unaffected.</div>
+
+<h2>Delinquent Filing - DIIRSP and Streamlined</h2>
+
+<table class="key-table">
+  <tr><th>Compliance Procedure</th><th>Who Qualifies</th><th>Penalty Relief</th></tr>
+  <tr><td>Delinquent International Information Return Submission Procedures (DIIRSP)</td><td>Taxpayer not under exam, all tax was reported on original return, reasonable cause exists</td><td>Penalties waived if reasonable cause established</td></tr>
+  <tr><td>Streamlined Filing Compliance Procedures (Foreign Offshore)</td><td>Non-willful foreign-resident US taxpayers</td><td>No failure-to-file or accuracy-related penalties; 0% miscellaneous offshore penalty</td></tr>
+  <tr><td>Streamlined Filing Compliance Procedures (Domestic Offshore)</td><td>Non-willful US-resident taxpayers</td><td>5% miscellaneous offshore penalty on highest aggregate balance over 6 years</td></tr>
+  <tr><td>Voluntary Disclosure Practice (VDP)</td><td>Willful conduct cases</td><td>Avoid criminal prosecution; civil penalties at preset rates</td></tr>
+  <tr><td>Quiet disclosure</td><td>NOT recommended</td><td>No protection - exposes taxpayer to full penalties if examined</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Confusing 5471 With 5472</h3>
+
+<p>Form 5471 is for OUTBOUND - US person with interest in a foreign corporation. Form 5472 is for INBOUND - foreign-owned US corporation reporting transactions with foreign owner. Different rules, different penalties (Form 5472 has higher $25,000 base penalty). Disregarded entity (LLC) wholly owned by foreign person also files Form 5472.</p>
+
+<h3>Missing Indirect or Constructive Ownership</h3>
+
+<p>The §958 attribution rules can create filing obligations even when direct ownership is below 10%. Family attribution under §318 (modified by §958(b)) attributes ownership among spouses, children, parents, grandchildren. A wife with 8% direct ownership plus a husband's 3% may have 11% combined - triggering filing for both.</p>
+
+<h3>Forgetting the §959 PTEP Distribution Order</h3>
+
+<p>CFC distributions are sourced first from §959(c)(1) PTEP, then §959(c)(2) PTEP, then §959(c)(3) (untaxed E&amp;P). Practitioners who source from untaxed E&amp;P first will compute too much dividend income and too little tax-free PTEP recovery. The error compounds across years.</p>
+
+<h3>Not Filing Schedule H-1 for 2026 Returns</h3>
+
+<p>The new Schedule H-1 for CFC Adjusted Net Income (CAMT) is mandatory starting with tax year 2026 returns. Failure to attach Schedule H-1 to Form 5471 for applicable corporations is incomplete filing and triggers the §6038(b) penalty. The schedule is required even if the corporation is below the $1B CAMT threshold for the current year - it serves a recordkeeping function.</p>
+
+<h3>Treating Foreign Earnings as Foreign Currency Without Translation</h3>
+
+<p>Schedule C and Schedule J amounts must be in functional currency of the CFC and translated to USD for E&amp;P tracking. Practitioners who fail to use IRS-published yearly average rates (https://www.irs.gov/individuals/international-taxpayers/yearly-average-currency-exchange-rates) for translation produce unreliable PTEP tracking that propagates across years.</p>
+
+<h3>Missing the §962 Election Window</h3>
+
+<p>The §962 election is made annually on a timely-filed return (including extensions). It cannot be made on a late or amended return. Individual shareholders with significant CFC inclusions who fail to elect §962 on the original return lose the planning benefit for that year - the difference can be 20+ percentage points of effective rate.</p>
+
+<h3>Overlooking the New Pro Rata Inclusion Rule</h3>
+
+<p>Pre-OBBBA, §951 required ownership on the LAST day of the CFC's tax year for inclusion. OBBBA changed this for tax years after 12/31/2025 - ownership on ANY day of the year can now trigger inclusion. A US person who sells CFC stock mid-year may now have NCTI for the portion of the year owned, where previously they had nothing.</p>
+
+<h3>Ignoring State Conformity Variances</h3>
+
+<p>State conformity to NCTI/GILTI varies dramatically. California, New York, New Jersey, and Massachusetts have specific rules that often diverge from federal treatment. A federal §250 deduction may not be available at state level, producing materially higher state effective rates on NCTI inclusions.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="form-5471-checker.html" class="related-link">Form 5471 Filing Checker<span>Determine your filing category</span></a>
+    <a href="form-8865-foreign-partnership.html" class="related-link">Form 8865 Foreign Partnership<span>The partnership equivalent</span></a>
+    <a href="form-1116-foreign-tax-credit.html" class="related-link">Form 1116 Foreign Tax Credit<span>NCTI basket, 90% credit, §904</span></a>
+    <a href="form-3520-guide.html" class="related-link">Form 3520 Foreign Trusts/Gifts<span>Reporting foreign trusts and gifts</span></a>
+    <a href="section-911-feie-guide.html" class="related-link">§911 Foreign Earned Income<span>$132,900 2026 FEIE for expats</span></a>
+    <a href="international-tax.html" class="related-link">International Tax Hub<span>All international topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §951 (amounts included in gross income of US shareholders - Subpart F), §951(b) (US shareholder definition), §951A (Net CFC Tested Income - formerly GILTI), §952 (Subpart F income definition), §953 (insurance income), §954 (foreign base company income), §954(c) (foreign personal holding company income), §954(c)(6) (look-through rule - made permanent by OBBBA), §954(d) (foreign base company sales income), §954(e) (foreign base company services income), §956 (investment in US property), §957 (CFC definition - 50% US shareholder ownership test), §958 (attribution rules), §958(b)(4) (downward attribution - restored by OBBBA), §959 (previously taxed E&amp;P), §960 (deemed paid FTC), §960(d)(1) (90% FTC for NCTI under OBBBA, up from 80%), §962 (election to be taxed at corporate rates), §965 (transition tax - §965(a)/(b)), §250 (deduction for FDII and GILTI/NCTI - 40% for NCTI 2026+), §6038 (information reporting on foreign corporations - Form 5471), §6038(b) (penalties - $10K base, $50K continuation), §6038(c) (FTC reduction), §6501(c)(8) (SOL doesn't begin until filed), §901(j) (sanctioned countries), §904(b)(5) (interest and R&amp;E exclusion from NCTI for FTC limitation - OBBBA addition). One Big Beautiful Bill Act, P.L. 119-21, §70321 (NCTI rebrand and rate changes), effective tax years beginning after December 31, 2025. <em>Farhy v. Commissioner</em>, 160 T.C. 6 (2023), reversed and remanded, <em>Farhy v. Commissioner</em>, 100 F.4th 223 (D.C. Cir. 2024). IRS Form 5471 (2025 revision) and Instructions. Schedules A, B, C, E, E-1, F, G, G-1, H, H-1, I, I-1, J, M, O, P, Q, R. Streamlined Filing Compliance Procedures (Foreign and Domestic Offshore). Delinquent International Information Return Submission Procedures.</p>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
