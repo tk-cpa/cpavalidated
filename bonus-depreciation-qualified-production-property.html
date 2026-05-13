@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§168(n) Qualified Production Property: 100% Depreciation for Factories Under OBBBA | CPA Validated</title>
+<meta name="description" content="OBBBA §70307 §168(n) deep dive. 100% depreciation deduction for qualified production property (QPP) - nonresidential real property in manufacturing, agricultural/chemical production, or refining. Construction after 1/19/2025; placed in service before 1/1/2031. IRS Notice 2026-16.">
+<link rel="canonical" href="https://cpavalidated.com/bonus-depreciation-qualified-production-property.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§168(n) Qualified Production Property: 100% Depreciation for Factories">
+<meta property="og:description" content="Complete §168(n) mechanics: qualified production activity, substantial transformation, integrated facility rule, 95% de minimis, lessor exclusion, 10-year recapture, §1245 treatment, election requirements. Notice 2026-16 interim guidance.">
+<meta property="og:url" content="https://cpavalidated.com/bonus-depreciation-qualified-production-property.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"§168(n) Qualified Production Property: 100% Depreciation for Factories","url":"https://cpavalidated.com/bonus-depreciation-qualified-production-property.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§168(n) Qualified Production Property</h1>
+  <div class="sub">100% Depreciation Deduction for Factories &nbsp;&bull;&nbsp; Manufacturing, Agricultural/Chemical Production, Refining &nbsp;&bull;&nbsp; Construction 1/20/2025 to 12/31/2028 &nbsp;&bull;&nbsp; Placed in Service Through 12/31/2030 &nbsp;&bull;&nbsp; §1245 Recapture &nbsp;&bull;&nbsp; 95% De Minimis &nbsp;&bull;&nbsp; Notice 2026-16</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §168(n) (new under OBBBA §70307)</span>
+    <span class="ph-meta-item">IRS Notice 2026-16</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="business-entity.html">&#8592; Business &amp; Entity</a></div>
+<div class="article">
+
+<p class="lead">OBBBA §70307 added a brand-new IRC §168(n) creating a 100% first-year depreciation deduction for "qualified production property" (QPP) - nonresidential real property used as an integral part of a qualified production activity (QPA). Previously, factories and production facilities depreciated over 39 years; now eligible new construction can be fully expensed in the year placed in service, for both regular tax AND alternative minimum tax purposes. The deduction is targeted at three activity categories: manufacturing, production (limited to agricultural and chemical), and refining of tangible personal property that results in a "substantial transformation" of the product. Construction must begin after January 19, 2025 and before January 1, 2029; the property must be placed in service after July 4, 2025 and before January 1, 2031. QPP is treated as §1245 property - ordinary income recapture applies on sale up to depreciation taken. An affirmative election is required on a timely-filed return and is effectively irrevocable. A 10-year recapture period applies if the property ceases QPA use. IRS Notice 2026-16 (issued February 20, 2026) provides interim guidance taxpayers can rely on until proposed regulations.</p>
+
+<div class="callout">
+  <div class="callout-label">The §168(n) Window - Construction and Placed-In-Service Gates</div>
+  <p><strong>Construction begin date window:</strong> AFTER January 19, 2025 AND BEFORE January 1, 2029.</p>
+  <p><strong>Placed-in-service window:</strong> AFTER July 4, 2025 (OBBBA enactment) AND BEFORE January 1, 2031.</p>
+  <p><strong>Why two windows:</strong> Construction must begin during the 4-year window (1/20/2025 - 12/31/2028); but placed-in-service has a separate 5.5-year window allowing longer projects to complete and qualify even when construction extends. A project beginning Jan 2026 and completing Dec 2030 qualifies.</p>
+  <p><strong>"Begin construction" definition:</strong> Pending §168(n)-specific regulations, taxpayers may rely on existing §168(k) bonus depreciation "begin construction" rules under Reg §1.168(k)-2(b)(5)(iv)(B) - physical work of significant nature OR 5% safe harbor of total cost.</p>
+  <p><strong>Election:</strong> Affirmative; made on timely-filed federal income tax return for the year property placed in service; effectively irrevocable once made.</p>
+</div>
+
+<h2>Qualified Production Property - The Four-Part Test</h2>
+
+<table class="key-table">
+  <tr><th>Requirement</th><th>Detail</th></tr>
+  <tr><td>(1) Property type</td><td>Nonresidential real property depreciable under MACRS (non-ADS); must be located in the United States or US territory</td></tr>
+  <tr><td>(2) Original use begins with taxpayer</td><td>Generally new construction; existing property qualifies only if NOT used in QPA during 1/1/2021 through 5/12/2025</td></tr>
+  <tr><td>(3) Used by taxpayer as integral part of QPA</td><td>The property must be used by the taxpayer for the qualified production activity - lessor cannot benefit (with consolidated group exception)</td></tr>
+  <tr><td>(4) Construction and placed-in-service windows met</td><td>Construction begins after 1/19/2025 and before 1/1/2029; placed in service after 7/4/2025 and before 1/1/2031</td></tr>
+</table>
+
+<h2>Qualified Production Activity (QPA) - Three Categories</h2>
+
+<table class="key-table">
+  <tr><th>Activity Category</th><th>Eligible</th><th>Notes</th></tr>
+  <tr><td>Manufacturing</td><td>YES - broadly defined</td><td>Material change in form or function of property/components to create a new item held for rent, lease, or sale. Cannot return to original states.</td></tr>
+  <tr><td>Production - Agricultural</td><td>YES</td><td>Limited to agricultural production specifically (not general production)</td></tr>
+  <tr><td>Production - Chemical</td><td>YES</td><td>Limited to chemical production specifically</td></tr>
+  <tr><td>Production - General (other)</td><td>NO</td><td>OBBBA expressly limits production to agricultural and chemical categories only</td></tr>
+  <tr><td>Refining</td><td>YES</td><td>Refining of tangible personal property</td></tr>
+  <tr><td>Software development</td><td>NO</td><td>Excluded</td></tr>
+  <tr><td>Research activities</td><td>NO</td><td>Excluded</td></tr>
+  <tr><td>Engineering activities</td><td>NO</td><td>Excluded</td></tr>
+</table>
+
+<h3>Substantial Transformation Required</h3>
+
+<p>Per Notice 2026-16, an activity is a QPA only if it results in a "substantial transformation" of the property comprising the product. The OBBBA directs IRS to follow guidance consistent with §954(d) (Subpart F manufacturing). Manufacturing means "to materially change the form or function of property, including its parts and components, to create a new item of property that is held for rent, lease, or sale."</p>
+
+<table class="key-table">
+  <tr><th>Constitutes Substantial Transformation</th><th>Does NOT Constitute</th></tr>
+  <tr><td>Chemical change altering molecular structure</td><td>Packaging or repackaging alone</td></tr>
+  <tr><td>Mechanical processes resulting in new product (e.g., raw materials → finished goods)</td><td>Labeling alone</td></tr>
+  <tr><td>Assembly creating new functional unit (full vehicle from parts)</td><td>Minor assembly alone</td></tr>
+  <tr><td>Refining (extracting/purifying)</td><td>Inspection or testing alone</td></tr>
+  <tr><td>Material processing creating distinguishable product</td><td>Storage of finished products</td></tr>
+</table>
+
+<h2>Qualified Product Definition</h2>
+
+<table class="key-table">
+  <tr><th>Qualified Product</th><th>Excluded Product</th></tr>
+  <tr><td>Tangible personal property generally</td><td>Food or beverage prepared in the same building as a retail establishment where sold (restaurants, coffee shops, bakeries, caterers, similar)</td></tr>
+  <tr><td>Manufactured goods (cars, appliances, electronics, apparel, furniture, etc.)</td><td>Real property (buildings, land)</td></tr>
+  <tr><td>Refined products (gasoline, petrochemicals, refined metals)</td><td>Intangible property (software, patents)</td></tr>
+  <tr><td>Agricultural products (crops, livestock products processed)</td><td>Services</td></tr>
+  <tr><td>Chemicals and chemical products</td><td>Food/beverage retailers selling on-site</td></tr>
+</table>
+
+<h2>Property Excluded Even If Part of Facility</h2>
+
+<p>Even if a facility qualifies overall, certain space within is excluded from QPP designation:</p>
+
+<table class="key-table">
+  <tr><th>Excluded Property Use</th></tr>
+  <tr><td>Office space (administrative offices)</td></tr>
+  <tr><td>Administrative services area</td></tr>
+  <tr><td>Lodging facilities</td></tr>
+  <tr><td>Parking structures or surfaces</td></tr>
+  <tr><td>Sales activities (showroom, retail space)</td></tr>
+  <tr><td>Research activities (R&amp;D lab not directly producing)</td></tr>
+  <tr><td>Software development facilities</td></tr>
+  <tr><td>Engineering activities</td></tr>
+</table>
+
+<h2>The 95% De Minimis Rule</h2>
+
+<p>Per Notice 2026-16, if at least 95% of a property's physical space meets the integral-part requirement, the taxpayer may elect to treat 100% of the property as qualifying. This avoids the administrative burden of carving out small amounts of incidental office or administrative space.</p>
+
+<table class="key-table">
+  <tr><th>Threshold</th><th>Effect</th></tr>
+  <tr><td>95% or more of physical space is integral to QPA</td><td>Elect to treat entire property as QPP - full 100% deduction on entire unadjusted basis</td></tr>
+  <tr><td>Less than 95% integral</td><td>Must allocate basis between qualifying and non-qualifying portions using reasonable methods</td></tr>
+</table>
+
+<h2>The Integrated Facility Rule</h2>
+
+<p>Multiple buildings can be combined into a single integrated facility for purposes of the integral-part requirement. Notice 2026-16 provides:</p>
+
+<table class="key-table">
+  <tr><th>Integrated Facility Requirement</th><th>Detail</th></tr>
+  <tr><td>Multiple properties operating together</td><td>Buildings that function as a unit (e.g., raw materials storage + main production + finished goods staging)</td></tr>
+  <tr><td>Physically located on contiguous land</td><td>All buildings on adjacent parcels treated as one facility</td></tr>
+  <tr><td>Raw materials storage as essential activity</td><td>If raw materials storage is for materials consumed during the QPA at the same property, the storage building qualifies as part of the integrated facility</td></tr>
+  <tr><td>Finished product storage</td><td>Generally NOT essential to QPA - storage of finished goods does not qualify</td></tr>
+  <tr><td>Buildings with only ineligible property</td><td>Cannot be part of integrated facility</td></tr>
+</table>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - Integrated Facility (per Notice 2026-16)</div>
+  <p><strong>Facts:</strong> Company A operates an integrated facility with three buildings on contiguous land:</p>
+  <p>• Building A (raw materials storage): 30,000 sq ft</p>
+  <p>• Factory B (primary production): 100,000 sq ft</p>
+  <p>• Factory C (assembly and finishing): 60,000 sq ft</p>
+  <p>Each building is a separate unit of property. But because they operate as an integrated facility on contiguous land, Company A treats all three as a single unit of property for the integral part requirement.</p>
+  <p><strong>Analysis:</strong> Building A's storage activity is essential to Factory B's QPA (raw materials consumed during QPA). When combined, all three buildings constitute QPP. The entire unadjusted basis of all three buildings ($190 million combined) is eligible for §168(n) 100% deduction.</p>
+  <p><strong>Without integrated facility rule:</strong> Building A alone would not qualify (storage isn't directly QPA), losing $50M of deduction.</p>
+</div>
+
+<h2>The Lessor Exclusion - Significant Limitation</h2>
+
+<p>Section 168(n)(2)(A) excludes a lessor from §168(n) treatment if the lessee uses the property in QPA. The lessor cannot regard a lessee's QPA as its own use.</p>
+
+<table class="key-table">
+  <tr><th>Leasing Scenario</th><th>§168(n) Treatment</th></tr>
+  <tr><td>Lessor owns factory; leases to unrelated manufacturer who uses it in QPA</td><td>LESSOR does NOT qualify for §168(n) (lessee's QPA does not count as lessor's use)</td></tr>
+  <tr><td>Lessee in same consolidated group as lessor (intercompany lease)</td><td>Awaiting regulatory clarification - common consolidated group leases appear excluded under statute, though policy concern is that this creates structuring penalty for vertical integration</td></tr>
+  <tr><td>Lessor uses property in own QPA</td><td>QUALIFIES</td></tr>
+  <tr><td>Sale-leaseback structures</td><td>Generally lessor cannot get §168(n) post-sale-leaseback if lessee uses for QPA</td></tr>
+</table>
+
+<div class="note-box"><strong>The intercompany lease question is critical for corporate planning.</strong> Many large manufacturers historically structure real estate ownership in a separate entity (often a REIT or non-operating subsidiary) leasing to the operating subsidiary. The literal statute appears to exclude such intercompany leases from §168(n). Pending Treasury guidance, taxpayers should model both structures and may need to consolidate ownership and operations in the same entity to capture §168(n) benefit.</p>
+
+<h2>10-Year Recapture Period</h2>
+
+<p>Section 168(n) creates a substantial 10-year commitment. If QPP ceases to be used in a qualified production activity within 10 years of being placed in service, recapture applies:</p>
+
+<table class="key-table">
+  <tr><th>Disposition Event</th><th>Recapture</th></tr>
+  <tr><td>Sale of QPP within 10 years</td><td>§1245 recapture - depreciation taken (potentially the entire 100% deduction) recaptured as ORDINARY income; gain in excess of original cost taxed as capital gain</td></tr>
+  <tr><td>Conversion to non-QPA use within 10 years (e.g., factory converted to warehouse for finished products)</td><td>Recapture under §168(n) special rule - portion of deduction recaptured as ordinary income</td></tr>
+  <tr><td>Discontinuation of business within 10 years</td><td>Potential recapture; facts and circumstances</td></tr>
+  <tr><td>Lease to another party for QPA after taxpayer ceased own QPA</td><td>Likely recapture (taxpayer no longer using; lessor exclusion applies)</td></tr>
+  <tr><td>Disposition after 10-year period</td><td>§1245 recapture still applies on sale (QPP is §1245 property regardless of holding period) but no additional §168(n) recapture</td></tr>
+</table>
+
+<h3>§1245 Treatment - Permanent Designation</h3>
+
+<p>QPP is treated as §1245 property throughout its life, not just during the 10-year period. This has several important consequences:</p>
+
+<table class="key-table">
+  <tr><th>§1245 Consequence</th><th>Detail</th></tr>
+  <tr><td>Ordinary income recapture on sale</td><td>Gain on sale recaptured as ordinary income up to depreciation taken (likely entire $100M+ in some deals); only excess over original cost is capital gain</td></tr>
+  <tr><td>No like-kind exchange treatment</td><td>QPP is NOT eligible for §1031 like-kind exchange (which is limited to real property NOT classified as §1245)</td></tr>
+  <tr><td>Installment sale impact</td><td>§453(i) - recapture income reported in year of sale; only post-recapture gain may be reported on installment basis</td></tr>
+  <tr><td>Estate basis step-up</td><td>Heirs receive stepped-up basis under §1014; future depreciation begins fresh; §1245 recapture characterization wiped at death</td></tr>
+</table>
+
+<h2>Election Mechanics - Notice 2026-16</h2>
+
+<table class="key-table">
+  <tr><th>Election Step</th><th>Detail</th></tr>
+  <tr><td>Form</td><td>Election statement attached to timely-filed federal income tax return for the year property placed in service</td></tr>
+  <tr><td>Content</td><td>Identify the QPP, designate the portion treated as QPP, certify eligibility</td></tr>
+  <tr><td>Allocation methods (mixed-use property)</td><td>Any reasonable method - square footage allocation, cost allocation, function-based allocation. Multiple methods may be used for different components.</td></tr>
+  <tr><td>Coordination with §168(k) bonus</td><td>Taxpayer may elect under §168(k)(7) to not take §168(k) bonus depreciation on portions designated as QPP under §168(n) to avoid duplication</td></tr>
+  <tr><td>Revocability</td><td>Effectively irrevocable absent IRS consent</td></tr>
+  <tr><td>Late election</td><td>Future Treasury guidance expected; pending guidance, late election relief uncertain</td></tr>
+</table>
+
+<h2>§168(n) vs §168(k) Bonus vs §179 - When Each Applies</h2>
+
+<table class="key-table">
+  <tr><th>Provision</th><th>Eligible Property</th><th>2026 Treatment</th></tr>
+  <tr><td>§168(n) QPP</td><td>Nonresidential real property used in QPA - factories, refineries, agricultural production</td><td>100% deduction; election required; 10-year recapture</td></tr>
+  <tr><td>§168(k) Bonus Depreciation</td><td>Property with class life ≤ 20 years (most personal property), computer software, qualified improvement property</td><td>100% permanent under OBBBA for property acquired AND placed in service after 1/19/2025; default election (auto-applies)</td></tr>
+  <tr><td>§179 Expensing</td><td>Tangible personal property, off-the-shelf software, QIP, roofs/HVAC/security on nonresidential real property</td><td>2026: $2,560,000 cap / $4,090,000 phaseout per OBBBA-doubled baseline; per-asset election</td></tr>
+  <tr><td>Standard MACRS 39-year</td><td>Nonresidential real property NOT QPP and not §168(k)-eligible improvements</td><td>Default - 39-year recovery</td></tr>
+</table>
+
+<h2>§163(j) Interaction - EBITDA Treatment</h2>
+
+<p>OBBBA permanently restored the EBITDA-based "adjusted taxable income" (ATI) calculation for the §163(j) business interest limitation. §168(n) deductions count as DEPRECIATION for ATI purposes and are added back when computing EBITDA-based ATI.</p>
+
+<table class="key-table">
+  <tr><th>§163(j) ATI Component</th><th>Treatment</th></tr>
+  <tr><td>Starting point</td><td>Taxable income before §163(j) limit</td></tr>
+  <tr><td>Add back §168(n) deduction</td><td>YES - treated as depreciation</td></tr>
+  <tr><td>Add back §168(k) bonus depreciation</td><td>YES</td></tr>
+  <tr><td>Add back §179 amounts</td><td>YES (treated as amortization)</td></tr>
+  <tr><td>Result</td><td>EBITDA ATI - higher than EBIT, allowing more interest deduction</td></tr>
+</table>
+
+<h2>NOL Generation and §172 Carryforward</h2>
+
+<p>The §168(n) deduction can generate a net operating loss in the year of placed-in-service. Under post-TCJA NOL rules:</p>
+
+<table class="key-table">
+  <tr><th>NOL Aspect</th><th>Treatment</th></tr>
+  <tr><td>Carryforward period</td><td>Indefinite (no expiration) under post-TCJA §172(b)</td></tr>
+  <tr><td>Annual deduction limit</td><td>80% of taxable income (computed without the NOL deduction) under §172(a)(2)</td></tr>
+  <tr><td>Carryback</td><td>Generally not permitted under post-TCJA rules</td></tr>
+  <tr><td>Strategic effect</td><td>Large §168(n) deductions on $50M+ facilities can produce NOL that shields taxable income for many years</td></tr>
+</table>
+
+<h2>State Conformity</h2>
+
+<p>States vary on §168(n) conformity. Many states that decouple from federal bonus depreciation under §168(k) may also decouple from §168(n). Some practitioners expect majority state conformity to §168(n) given decoupling history has typically targeted §168(k) specifically. Verify state-by-state for each Client.</p>
+
+<table class="key-table">
+  <tr><th>State Posture</th><th>Conformity Approach (verify annually)</th></tr>
+  <tr><td>Full federal conformity</td><td>Most rolling-conformity states; some specific-conformity states</td></tr>
+  <tr><td>Decoupled from §168(k) bonus depreciation</td><td>States like California, Illinois, New York; verify whether §168(n) is separately decoupled</td></tr>
+  <tr><td>Florida, North Carolina</td><td>State-specific bonus depreciation method allowing partial acceleration</td></tr>
+  <tr><td>§179 alternative</td><td>If state decouples from §168(n), §179 may provide partial state benefit (state caps vary)</td></tr>
+</table>
+
+<h2>Cost Segregation Coordination</h2>
+
+<p>For a $100M factory, a comprehensive cost segregation study identifies:</p>
+
+<table class="key-table">
+  <tr><th>Component</th><th>Typical % of Cost</th><th>Depreciation Treatment</th></tr>
+  <tr><td>§1245 personal property (equipment, machinery)</td><td>20-30% (varies)</td><td>§168(k) 100% bonus depreciation</td></tr>
+  <tr><td>§1245 land improvements (utilities, paving)</td><td>5-10%</td><td>§168(k) 100% bonus (15-year property)</td></tr>
+  <tr><td>QIP - interior improvements to nonresidential real property</td><td>10-20%</td><td>§168(k) 100% bonus and/or §179</td></tr>
+  <tr><td>§168(n) QPP - structural elements in production-integral space</td><td>40-60% (varies)</td><td>§168(n) 100% deduction</td></tr>
+  <tr><td>Office/admin space (excluded from §168(n))</td><td>5-10%</td><td>39-year MACRS</td></tr>
+  <tr><td>Land (not depreciable)</td><td>5-15%</td><td>None</td></tr>
+</table>
+
+<div class="green-box"><strong>Cost segregation is essential for §168(n).</strong> The four-part test requires identifying the portion of nonresidential real property that is integral to QPA. Cost segregation studies create the documentation supporting the QPP basis allocation. For mixed-use facilities (production + office), cost segregation isolates the qualifying space and provides defensible allocation methodology in audit.</div>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Treating Restaurant Kitchens as QPA</h3>
+
+<p>Restaurants, coffee shops, bakeries, and similar establishments that prepare food AND sell on-site are EXCLUDED from QPP. The food/beverage carve-out specifically targets these businesses. A standalone food processing plant supplying multiple restaurants may qualify; an in-house bakery within a retail establishment does not.</p>
+
+<h3>Ignoring the Lessor Exclusion</h3>
+
+<p>Corporate Clients with separate real estate ownership entities cannot benefit from §168(n) on facilities leased to operating subsidiaries (under literal reading of the statute). Restructuring to consolidate ownership and operations may be necessary - but triggers other tax considerations including §351 contribution rules and state tax implications.</p>
+
+<h3>Missing the 1/1/2021 - 5/12/2025 Existing-Property Lookback</h3>
+
+<p>The original-use requirement generally requires new construction. The limited existing-property exception requires NO QPA use during 1/1/2021 - 5/12/2025. An acquired existing facility that was used for QPA during that window does NOT qualify, even if the new buyer would use it for QPA going forward. Pre-acquisition due diligence must confirm historical use.</p>
+
+<h3>Forgetting the Affirmative Election</h3>
+
+<p>Unlike §168(k) bonus depreciation which applies by default unless elected out, §168(n) requires an AFFIRMATIVE election. Missing the election on the original return forfeits the benefit. Practitioners must specifically address §168(n) election in return preparation for any taxpayer with new factory construction.</p>
+
+<h3>Underestimating §1245 Recapture on Sale</h3>
+
+<p>QPP is §1245 property permanently. A factory expensed at $100M under §168(n) and later sold for $150M generates $100M of ordinary income (recapture) plus $50M of capital gain. The full §168(n) deduction effectively becomes ordinary income at sale. This is fundamentally different from traditional 39-year MACRS treatment where most gain on real property is capital gain (with only §1250 recapture for accelerated depreciation in excess of straight-line).</p>
+
+<h3>No §1031 Like-Kind Exchange Option</h3>
+
+<p>Because QPP is §1245 property, it does NOT qualify for §1031 like-kind exchange. Owners who would otherwise structure a 1031 exchange to defer gain on facility disposition lose that option after §168(n) election.</p>
+
+<h3>Underestimating 10-Year Commitment</h3>
+
+<p>The 10-year recapture window is meaningful. Business pivots, technology obsolescence, M&amp;A transactions, or plant closures within 10 years can trigger recapture. Long-term business stability assessment should accompany §168(n) election decisions.</p>
+
+<h3>Allocating Office Space Carelessly</h3>
+
+<p>The 95% de minimis rule is generous, but only at the 95% threshold. A facility with 90% qualifying space and 10% office/admin must allocate basis with reasonable methods - cannot use the 95% bright line. Square footage allocation, construction cost allocation, or cost segregation-based allocation are acceptable. Documentation in audit defense is critical.</p>
+
+<h3>Missing State Decoupling Differential</h3>
+
+<p>Federal §168(n) full expensing may produce minimal state benefit in decoupled states. The state-federal difference creates a permanent deferred tax adjustment requiring tracking of separate state and federal basis for the entire 39-year traditional MACRS period.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="bonus-depreciation-guide.html" class="related-link">Bonus Depreciation §168(k)<span>100% restored permanent under OBBBA</span></a>
+    <a href="section-179-expensing-2026-guide.html" class="related-link">§179 Expensing 2026<span>$2.56M cap / $4.09M phaseout</span></a>
+    <a href="cost-segregation-guide.html" class="related-link">Cost Segregation<span>QPP basis allocation methodology</span></a>
+    <a href="section-163j-interest-limitation.html" class="related-link">§163(j) Interest Limitation<span>EBITDA ATI permanent under OBBBA</span></a>
+    <a href="form-3115-guide.html" class="related-link">Form 3115 / §481(a)<span>Accounting method changes for depreciation</span></a>
+    <a href="business-entity.html" class="related-link">Business &amp; Entity Hub<span>All entity-related topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §168(n) (new - Special depreciation allowance for qualified production property), added by One Big Beautiful Bill Act §70307, P.L. 119-21, signed July 4, 2025. §168(n)(1)(A) (100% special depreciation allowance for unadjusted depreciable basis of QPP). §168(n)(1)(B) (adjusted basis reduced before computing otherwise-allowable depreciation). §168(n)(2)(A) (lessor exclusion - lessee's QPA does not constitute lessor's use). §168(n)(2)(B) (placed-in-service window). §168(n)(2)(B)(ii) (written binding contract rule for acquisition date). §168(n)(3) (qualified production activity definition). §168(n)(4) (qualified product definition; food/beverage same-building exclusion). §168(n)(5) (10-year recapture period; §1245 treatment). §168(n)(6) (election requirement). §168(k) (100% bonus depreciation permanently restored under OBBBA for property acquired AND placed in service after January 19, 2025; §168(k)(7) election out). §168(e)(6) (qualified improvement property). §168(g) (alternative depreciation system - §168(n) excludes ADS property). §163(j) (business interest limitation - EBITDA ATI permanent under OBBBA; §168(n) treated as depreciation for ATI). §172 (NOL - 80% annual limitation; indefinite carryforward under post-TCJA rules). §179 (alternative for state non-conformity; OBBBA-doubled to $2.5M baseline). §1245 (ordinary income recapture - QPP permanently §1245 property). §1031 (like-kind exchange - NOT available for §1245 property). §453(i) (installment sale recapture). §954(d) (Subpart F manufacturing - referenced for "substantial transformation" guidance). §1014 (estate basis step-up). Treasury Regulation §1.168(k)-2(b)(5) (acquisition date / binding contract rules for §168(k); referenced for §168(n) pending §168(n)-specific regulations). Reg §1.954-3 (Subpart F substantial transformation examples). IRS Notice 2026-16 (February 20, 2026 - interim guidance on §168(n) including QPA definition, integrated facility rule, 95% de minimis rule, election mechanics, basis allocation methods; taxpayers may rely on Notice until proposed regulations issued). Form 4562 (Depreciation and Amortization).</p>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
