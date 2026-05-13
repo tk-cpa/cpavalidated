@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>OBBBA SALT Cap $40,000: 2025-2029 Phaseout, MAGI $500K, PTET Workarounds | CPA Validated</title>
+<meta name="description" content="OBBBA SALT cap deep dive. $40,000 for 2025, increasing 1% annually through 2029. MAGI phaseout begins $500,000 (single/MFJ) / $250,000 (MFS); 30% phaseout rate; floor $10,000. Reverts to $10K cap in 2030. PTET workarounds preserved. AMT and 5% haircut interactions.">
+<link rel="canonical" href="https://cpavalidated.com/salt-cap-40k-obbba.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OBBBA SALT Cap $40K: Phaseout, PTET, AMT Interaction">
+<meta property="og:description" content="Complete SALT cap mechanics post-OBBBA. $40K cap with 1% annual growth through 2029. MAGI $500K phaseout, 30% rate, never below $10K floor. 2030 sunset. PTET still available. Top-bracket 5% haircut replaces Pease.">
+<meta property="og:url" content="https://cpavalidated.com/salt-cap-40k-obbba.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OBBBA SALT Cap $40K: Phaseout, PTET, AMT Interaction","url":"https://cpavalidated.com/salt-cap-40k-obbba.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html" class="active">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>OBBBA SALT Cap: $40,000 Through 2029</h1>
+  <div class="sub">$40,000 for 2025 / $40,400 for 2026 &nbsp;&bull;&nbsp; +1% Annually Through 2029 &nbsp;&bull;&nbsp; MAGI Phaseout Begins $500K (Single/MFJ) / $250K (MFS) &nbsp;&bull;&nbsp; 30% Phaseout Rate &nbsp;&bull;&nbsp; Never Below $10,000 Floor &nbsp;&bull;&nbsp; Reverts to $10K in 2030 &nbsp;&bull;&nbsp; PTET Workarounds Still Available</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §164(b)(6)</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21 §70120</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="individual-tax.html">&#8592; Individual Tax</a></div>
+<div class="article">
+
+<p class="lead">OBBBA §70120 temporarily quadrupled the federal SALT itemized deduction cap from the TCJA's $10,000 to $40,000, beginning with tax year 2025. The cap increases 1% annually through 2029 ($40,400 for 2026; reaching approximately $41,624 by 2029), then snaps back to $10,000 in 2030 unless Congress extends. The expanded cap is subject to a phaseout for high-income taxpayers: when modified adjusted gross income (MAGI) exceeds $500,000 ($250,000 for MFS), the cap is reduced by 30% of the excess - but never falls below the $10,000 floor. The cap fully phases out to $10,000 at approximately $600,000 MAGI in 2025 (slightly higher each year as thresholds grow 1%). The phaseout creates a steep marginal rate spike in the $500K-$600K MAGI band - the taxpayer pays additional federal tax on income WHILE simultaneously losing SALT deduction. Pass-through entity tax (PTET) regimes adopted by 36 states are NOT capped by §164(b)(6) and remain a powerful workaround for owners of S-corporations and partnerships. The OBBBA also added a permanent 5% haircut on SALT deductions for taxpayers in the top 37% bracket - replacing the pre-TCJA Pease overall itemized deduction limitation. The higher cap interacts with the OBBBA's permanent AMT exemption (with reset 2026 joint phaseout threshold to $1,000,000) and the higher standard deduction ($31,500 MFJ for 2025 under OBBBA) - many more high-tax-state taxpayers return to itemizing. The cap applies to combined state and local real and personal property taxes plus state and local income taxes OR general sales taxes (not both).</p>
+
+<div class="callout">
+  <div class="callout-label">OBBBA SALT Cap §70120 - Year-by-Year</div>
+  <p><strong>2024 and prior (TCJA):</strong> $10,000 cap ($5,000 MFS).</p>
+  <p><strong>2025:</strong> $40,000 cap ($20,000 MFS). Phaseout threshold $500,000 ($250,000 MFS).</p>
+  <p><strong>2026:</strong> $40,400 cap (1% increase). Phaseout threshold $505,000.</p>
+  <p><strong>2027:</strong> $40,804. Phaseout threshold $510,050.</p>
+  <p><strong>2028:</strong> $41,212. Phaseout threshold $515,150.</p>
+  <p><strong>2029:</strong> $41,624. Phaseout threshold $520,302.</p>
+  <p><strong>2030 onwards:</strong> REVERTS to $10,000 cap (sunset).</p>
+  <p><strong>Phaseout rate:</strong> 30% of MAGI excess over threshold; floor $10,000.</p>
+  <p><strong>5% top-bracket haircut:</strong> Permanent 5% reduction in SALT for 37% bracket taxpayers (replaces Pease).</p>
+</div>
+
+<h2>The Phaseout Math - 30% Per Dollar Over $500K</h2>
+
+<table class="key-table">
+  <tr><th>2025 MAGI</th><th>SALT Cap Calculation</th><th>Effective Cap</th></tr>
+  <tr><td>$400,000</td><td>Below threshold</td><td>$40,000</td></tr>
+  <tr><td>$500,000</td><td>At threshold</td><td>$40,000</td></tr>
+  <tr><td>$520,000</td><td>$40,000 - (30% × $20,000) = $40,000 - $6,000</td><td>$34,000</td></tr>
+  <tr><td>$550,000</td><td>$40,000 - (30% × $50,000) = $40,000 - $15,000</td><td>$25,000</td></tr>
+  <tr><td>$580,000</td><td>$40,000 - (30% × $80,000) = $40,000 - $24,000</td><td>$16,000</td></tr>
+  <tr><td>$600,000</td><td>$40,000 - (30% × $100,000) = $40,000 - $30,000 = $10,000 (floor)</td><td>$10,000</td></tr>
+  <tr><td>$1,000,000+</td><td>Floor applies</td><td>$10,000</td></tr>
+</table>
+
+<div class="red-box"><strong>The $500K-$600K MAGI band creates a brutal marginal rate spike.</strong> Each additional $1,000 of MAGI between $500K and $600K not only adds federal income tax on the income itself, but also reduces the SALT deduction by $300. For a 35% bracket taxpayer with $40K of SALT and $35K of other itemized deductions, going from $500K to $600K MAGI raises taxable income by $130,000 ($100K of new income + $30K of lost SALT deduction). Effective marginal federal rate in this band approaches 45.5% (35% × 1.30).</div>
+
+<h2>What Counts as SALT Under §164(b)(6)</h2>
+
+<table class="key-table">
+  <tr><th>SALT Component</th><th>Status</th></tr>
+  <tr><td>State and local income taxes (paid or accrued)</td><td>SUBJECT to cap</td></tr>
+  <tr><td>State and local general sales tax (alternative to income tax)</td><td>SUBJECT to cap - elective in lieu of income tax</td></tr>
+  <tr><td>State and local real property taxes</td><td>SUBJECT to cap</td></tr>
+  <tr><td>State and local personal property taxes (vehicle registration based on value)</td><td>SUBJECT to cap</td></tr>
+  <tr><td>Foreign income taxes</td><td>EXCLUDED from itemized deduction; deductible via Schedule A line for foreign income taxes only if FTC not claimed; foreign real property taxes NOT deductible (TCJA change preserved)</td></tr>
+  <tr><td>Trade or business property taxes (Schedule C, E rental)</td><td>NOT subject to cap - deducted as business expense</td></tr>
+  <tr><td>PTET (Pass-Through Entity Tax)</td><td>NOT subject to §164(b)(6) cap - paid at entity level, deducted at entity, reduces flow-through income</td></tr>
+  <tr><td>Federal taxes (income, estate, gift)</td><td>NOT deductible</td></tr>
+  <tr><td>Foreign real property taxes</td><td>NOT deductible (TCJA permanent change)</td></tr>
+</table>
+
+<h2>PTET - The Pass-Through Workaround (Preserved)</h2>
+
+<p>Following TCJA's $10K cap, 36 states enacted Pass-Through Entity Tax (PTET) regimes. These allow S-corporations and partnerships to elect entity-level taxation - state tax paid by entity rather than owner. Entity-level state tax is NOT subject to §164(b)(6) individual SALT cap. OBBBA preserved PTET workarounds without modification.</p>
+
+<table class="key-table">
+  <tr><th>PTET Mechanic</th><th>Detail</th></tr>
+  <tr><td>How it works</td><td>Pass-through entity (S-corp, partnership) elects to pay state income tax at entity level. Entity deducts the state tax as a §162 business expense, reducing federal flow-through income. Owners receive K-1 with reduced taxable income (effectively shielding the state tax).</td></tr>
+  <tr><td>State credit</td><td>Owner receives state credit for their share of PTET, eliminating double taxation at state level.</td></tr>
+  <tr><td>OBBBA preservation</td><td>OBBBA §70120 did NOT modify PTET; Notice 2020-75 remains the federal framework allowing the deduction.</td></tr>
+  <tr><td>States with PTET (~36)</td><td>NY, NJ, CA, CT, MA, IL, MD, MN, MI, NC, OR, PA, RI, VA, WI, AZ, AR, CO, GA, IA, KS, KY, LA, MS, MT, NM, OH, OK, SC, UT, AL, ID, NM, WV, KS, others</td></tr>
+  <tr><td>States WITHOUT individual income tax (PTET N/A)</td><td>AK, FL, NV, SD, TN, TX, WA, WY, NH (limited)</td></tr>
+  <tr><td>State sunset issues</td><td>Some state PTET regimes were scheduled to expire when TCJA $10K cap was expected to sunset 12/31/2025; states are extending</td></tr>
+  <tr><td>OBBBA-era benefit</td><td>Even with $40K cap, PTET can still be valuable for taxpayers with high state income tax that exceeds $40K minus other deductible SALT</td></tr>
+</table>
+
+<div class="callout">
+  <div class="callout-label">PTET Worked Example - Post-OBBBA Still Valuable</div>
+  <p><strong>Facts:</strong> New York S-corp owner. K-1 income $1,000,000. NY state income tax rate effectively 10.9%. Property taxes $15,000. MAGI $1,050,000 (above SALT phaseout).</p>
+  <p><strong>Without PTET:</strong> Owner pays NY state income tax of $109,000 individually. With $40K cap fully phased out at $1.05M MAGI, owner's SALT deduction = $10,000 floor. Loses deduction for $114,000 of SALT ($109K state income + $15K property minus $10K cap).</p>
+  <p><strong>With PTET election:</strong> S-corp pays $109,000 to NY State; deducts as business expense. Owner's K-1 income reduced to $891,000. Owner still gets $10K cap for property taxes. Federal tax savings: $109,000 × 35% = $38,150.</p>
+  <p><strong>PTET still works even post-OBBBA for high earners above phaseout.</strong></p>
+</div>
+
+<h2>The 5% Top-Bracket Haircut (Replaces Pease)</h2>
+
+<p>Before TCJA, the "Pease" limitation under §68 reduced certain itemized deductions for high-income taxpayers. TCJA suspended Pease through 2025; it was scheduled to return in 2026. OBBBA permanently REPLACED Pease with a 5% haircut on SALT deductions for taxpayers in the top 37% federal tax bracket.</p>
+
+<table class="key-table">
+  <tr><th>5% SALT Haircut</th><th>Detail</th></tr>
+  <tr><td>Application</td><td>Reduces SALT deduction by 5.41% for taxpayers in 37% bracket</td></tr>
+  <tr><td>Net effect</td><td>$10,000 SALT deduction effectively worth $9,459 (a $541 reduction in tax savings; $200 tax increase at 37%)</td></tr>
+  <tr><td>Replaces Pease</td><td>Pease overall itemized limitation does NOT return under OBBBA</td></tr>
+  <tr><td>Other itemized deductions</td><td>Mortgage interest, charitable contributions, medical expenses NOT subject to 5% haircut</td></tr>
+  <tr><td>Permanence</td><td>Permanent (no sunset like the $40K cap)</td></tr>
+</table>
+
+<h2>Itemize vs Standard Deduction Crossover</h2>
+
+<p>OBBBA's higher SALT cap is meaningless if the taxpayer takes the standard deduction. The OBBBA's higher 2025 standard deductions ($15,750 single; $23,625 HOH; $31,500 MFJ) raised the itemization threshold. The $40K SALT cap brings more taxpayers back into itemizing.</p>
+
+<table class="key-table">
+  <tr><th>2025 Filing Status</th><th>Standard Deduction</th><th>Approximate Itemize Threshold (with $40K SALT)</th></tr>
+  <tr><td>Single</td><td>$15,750</td><td>Itemize if SALT + mortgage interest + charitable + medical exceeds $15,750</td></tr>
+  <tr><td>Head of Household</td><td>$23,625</td><td>Itemize if total itemized > $23,625</td></tr>
+  <tr><td>Married Filing Jointly</td><td>$31,500</td><td>Itemize if total itemized > $31,500</td></tr>
+  <tr><td>Married Filing Separately</td><td>$15,750</td><td>Standard if total < $15,750 (BUT if one spouse itemizes, both must)</td></tr>
+  <tr><td>Single 65+</td><td>$17,750 ($15,750 + $2,000 senior add)</td><td>Senior add stacks PLUS new OBBBA $6,000 senior deduction (below-the-line)</td></tr>
+  <tr><td>MFJ both 65+</td><td>$35,100 ($31,500 + $3,600 senior add)</td><td>Plus 2 × $6,000 senior deductions (below-the-line)</td></tr>
+</table>
+
+<h2>State-by-State SALT Reality - Why $40K Matters</h2>
+
+<p>The higher cap primarily benefits taxpayers in high-tax states. Average household SALT burden by state:</p>
+
+<table class="key-table">
+  <tr><th>State</th><th>Typical High-Income SALT Profile (2025 verify)</th></tr>
+  <tr><td>California</td><td>Top marginal income tax 13.3%; property tax ~1%. $200K AGI Californian easily exceeds $40K SALT (with $1M+ home).</td></tr>
+  <tr><td>New York</td><td>Top marginal 10.9% state + up to 3.876% NYC (combined 14.776%). $300K NYC earner likely above $40K SALT.</td></tr>
+  <tr><td>New Jersey</td><td>Top 10.75% state; property tax average 2.21% (highest in nation). $500K NJ MAGI taxpayer typically owes $50K+ SALT.</td></tr>
+  <tr><td>Connecticut</td><td>Top 6.99%; high property tax. $40K SALT typical for $400K AGI.</td></tr>
+  <tr><td>Massachusetts</td><td>5% flat (9% on $1M+); property tax ~1.2%. $300K MA MAGI = ~$30K-$40K SALT.</td></tr>
+  <tr><td>Illinois</td><td>4.95% flat; property tax ~2.27% (high). Most $200K+ IL households exceed $20K SALT.</td></tr>
+  <tr><td>Oregon</td><td>Top 9.9%; no sales tax. Income-tax-heavy SALT.</td></tr>
+  <tr><td>Texas, Florida, etc. (no state income tax)</td><td>SALT is mostly property tax; $40K cap rarely hit unless very expensive home.</td></tr>
+</table>
+
+<h2>AMT Interaction Under OBBBA</h2>
+
+<p>OBBBA made TCJA-era higher AMT exemption permanent but also reset the joint filer phaseout threshold to $1,000,000 for 2026 (indexed). The phaseout rate was doubled. This may bring MORE high-income SALT itemizers into AMT.</p>
+
+<table class="key-table">
+  <tr><th>AMT Component (Post-OBBBA)</th><th>Detail</th></tr>
+  <tr><td>2025 AMT exemption</td><td>$88,100 single / $137,000 MFJ (inflation-indexed)</td></tr>
+  <tr><td>2026 AMT exemption</td><td>Continues post-OBBBA permanent levels</td></tr>
+  <tr><td>2026 phaseout threshold (joint)</td><td>RESET to $1,000,000 (lower than recent years; possibly drafting issue per practitioner commentary)</td></tr>
+  <tr><td>Phaseout rate</td><td>DOUBLED to 50% under OBBBA</td></tr>
+  <tr><td>SALT add-back in AMTI</td><td>SALT not deductible for AMT purposes - this is the historical AMT trigger for high-SALT itemizers</td></tr>
+  <tr><td>Post-OBBBA AMT exposure</td><td>Higher SALT cap (up to $40K) means LARGER add-back when computing AMTI; some taxpayers may move into AMT zone</td></tr>
+</table>
+
+<div class="note-box"><strong>Run the AMT calculation BEFORE celebrating the SALT savings.</strong> The full benefit of the $40K SALT deduction may be partially clawed back via AMT for some taxpayers. Software must run both regular tax and AMT computations to determine true benefit.</div>
+
+<h2>Married Filing Separately - Penalty</h2>
+
+<table class="key-table">
+  <tr><th>MFS Aspect</th><th>Treatment</th></tr>
+  <tr><td>MFS SALT cap</td><td>HALF of joint cap - $20,000 for 2025 (vs $40,000 MFJ)</td></tr>
+  <tr><td>MFS phaseout threshold</td><td>$250,000 (vs $500,000 MFJ)</td></tr>
+  <tr><td>Standard deduction MFS</td><td>$15,750 - same as single but applies only to half of typical joint income</td></tr>
+  <tr><td>Both spouses must itemize</td><td>If one spouse itemizes, BOTH must - cannot mix standard and itemized for MFS pair</td></tr>
+  <tr><td>OBBBA personal deductions</td><td>Senior $6K, tips $25K, overtime, auto loan all REQUIRE joint filing - MFS ineligible</td></tr>
+</table>
+
+<h2>Charitable Contribution Deduction - New $1K/$2K Above-the-Line</h2>
+
+<p>OBBBA also created a new above-the-line charitable deduction (effective 2026) for non-itemizers: up to $1,000 ($2,000 MFJ) for qualified cash contributions to qualifying charitable organizations. This is SEPARATE from SALT mechanics but interacts with the itemize/standard decision.</p>
+
+<h2>Prepayment Strategies - 2025-2029</h2>
+
+<table class="key-table">
+  <tr><th>Strategy</th><th>Detail</th></tr>
+  <tr><td>Prepay 2026 property tax in 2025</td><td>Only allowed if jurisdiction has actually assessed the 2026 tax. Estimated prepayment doesn't qualify (Reg §1.461-1(a)(1)).</td></tr>
+  <tr><td>Bunching state tax withholding</td><td>Limited - state income taxes deductible when paid, but federal withholding rules constrain timing</td></tr>
+  <tr><td>Estimated tax payments timing</td><td>Final-quarter Q4 state estimates due 1/15 - paying by 12/31 accelerates deduction by 1 year</td></tr>
+  <tr><td>PTET election timing</td><td>Most state PTET regimes have specific election deadlines; entity-level payment timing matters</td></tr>
+  <tr><td>2029 -> 2030 SALT cliff</td><td>2030 reverts to $10K cap. 2029 may be last year to capture full SALT for properties with high tax.</td></tr>
+  <tr><td>Below-phaseout management</td><td>For taxpayers near $500K MAGI, consider deferral strategies to keep MAGI below phaseout threshold (HSA, 401(k), traditional IRA deductions)</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Using $10,000 Cap on 2025 Returns</h3>
+
+<p>The most basic error - using legacy TCJA $10,000 cap when preparing 2025 returns. The new $40,000 cap is RETROACTIVE to tax year 2025 (effective for tax years beginning after 12/31/2024). Software updates required.</p>
+
+<h3>Missing the 30% Phaseout for $500K+ MAGI Clients</h3>
+
+<p>Many tax preparation programs default to $40K cap without applying the MAGI phaseout. High-income clients above $500K MAGI need phaseout computation. Manual override may be required pending software updates.</p>
+
+<h3>Forgetting MFS Halving</h3>
+
+<p>$20,000 MFS cap and $250,000 phaseout threshold are EACH half of joint amounts. Practitioners must remember to halve both.</p>
+
+<h3>Including Foreign Real Property Tax</h3>
+
+<p>TCJA disallowed foreign real property tax deduction; OBBBA did NOT change this. Foreign vacation home property tax remains NON-deductible.</p>
+
+<h3>Choosing Income vs Sales Tax Incorrectly</h3>
+
+<p>Taxpayers must choose between deducting state income tax OR general sales tax (not both). For residents of no-income-tax states (FL, TX, etc.), sales tax election is typically used. For income-tax-state residents, income tax usually higher. The IRS Sales Tax Calculator estimates the deduction without receipts.</p>
+
+<h3>Forgetting PTET for High-Earning S-Corp/Partnership Owners</h3>
+
+<p>For owners above the $500K MAGI phaseout, PTET remains valuable because their personal SALT cap is reduced to $10K floor. Entity-level PTET payments fully deductible at entity, bypassing individual cap entirely.</p>
+
+<h3>Including PTET in Individual SALT</h3>
+
+<p>The opposite error - PTET is paid by the ENTITY, not the individual. PTET payment is a §162 business expense at entity level, NOT an itemized §164 deduction on individual return. Owner does NOT add PTET to Schedule A SALT.</p>
+
+<h3>Missing the 5% Top-Bracket Haircut</h3>
+
+<p>For 37%-bracket taxpayers, SALT deduction effectively reduced 5.41%. Practitioners modeling SALT savings without this haircut overstate the benefit. The 5% haircut is permanent and replaces Pease.</p>
+
+<h3>AMT Add-Back Surprise</h3>
+
+<p>SALT is NOT deductible for AMT purposes. High-SALT itemizers in the AMT zone get clawback. OBBBA's 2026 lower joint phaseout threshold ($1M) plus doubled phaseout rate increases AMT exposure for some.</p>
+
+<h3>Treating MAGI as AGI</h3>
+
+<p>The §164(b)(6) phaseout uses MAGI - generally AGI plus certain items (foreign income exclusion, etc.). Pure AGI may differ from MAGI for some taxpayers.</p>
+
+<h3>Estimated Prepayment of Property Tax</h3>
+
+<p>Prepaying property tax based on estimate does NOT qualify for current-year deduction (IRS held in 2017 advisory after TCJA, Rev. Rul. 2017-8 informally). Only assessed amounts qualify. Confirm with assessor before year-end timing.</p>
+
+<h3>Forgetting 2030 Cliff Planning</h3>
+
+<p>2030 reverts to $10K cap. Long-term planning (property purchase, refinancing, state of residence) should account for the cliff. Don't lock into high-SALT positions assuming the $40K cap continues indefinitely.</p>
+
+<h3>State PTET Sunset Provisions</h3>
+
+<p>Many state PTET regimes were enacted with sunset clauses tied to federal $10K cap expiration (which was scheduled for 12/31/2025). With OBBBA preserving the federal cap (now $40K), states are extending PTET; verify state-by-state.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="salt-planning-guide.html" class="related-link">SALT Planning General<span>Strategy framework</span></a>
+    <a href="state-ptet-guide.html" class="related-link">PTET State-by-State<span>Pass-through entity tax workaround</span></a>
+    <a href="senior-tip-overtime-obbba-deductions.html" class="related-link">OBBBA Personal Deductions<span>Schedule 1-A senior, tips, OT, auto loan</span></a>
+    <a href="estate-planning-obbba-permanent-exemption.html" class="related-link">OBBBA $15M Estate Exemption<span>Companion permanent OBBBA change</span></a>
+    <a href="amt-guide.html" class="related-link">AMT Guide<span>SALT add-back and AMT interaction</span></a>
+    <a href="individual-tax.html" class="related-link">Individual Tax Hub<span>All individual topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §164 (state and local taxes - general deductibility). §164(a) (general rule allowing deduction). §164(b)(6) (limitation on individual SALT deduction; $10,000 under TCJA; $40,000 under OBBBA for tax years 2025-2029; reverts to $10,000 in 2030). §164(b)(6)(B) (MAGI phaseout - 30% of MAGI excess over threshold; floor $10,000). §164(b)(6)(C) (5% top-bracket haircut - permanent reduction in SALT deduction for 37%-bracket taxpayers; replaces pre-TCJA Pease overall itemized limitation). §164(a)(3) (state and local income tax). §164(a)(4) (state and local general sales tax - elective in lieu of income tax). §164(b)(5) (election of sales tax in lieu of income tax). §63(c) (standard deduction). §63(c)(7) (OBBBA-raised standard deduction $15,750 single / $31,500 MFJ for 2025). §63(f) (senior addition to standard deduction). §55-§59 (Alternative Minimum Tax). §55(d)(1) (AMT exemption amount). §55(d)(2) (phaseout of AMT exemption - OBBBA 2026 reset for joint to $1,000,000; doubled phaseout rate). §56(b)(1)(A)(ii) (SALT add-back in AMT income computation - SALT not deductible for AMT). §68 (REPEALED - Pease overall itemized deduction limitation; replaced by §164(b)(6)(C) 5% haircut). §162 (trade or business expense - PTET deductible by entity as §162 business expense). §170 (charitable contribution deduction). One Big Beautiful Bill Act, P.L. 119-21, signed July 4, 2025. OBBBA §70120 (SALT cap modifications - $40,000 cap for tax years 2025 through 2029; 1% annual growth; MAGI phaseout begins $500,000/$250,000 MFS at 30% rate; floor $10,000; reverts to $10,000 for tax years beginning after 12/31/2029). OBBBA §70106 (estate tax exemption permanent $15M - companion provision). OBBBA §70103 (senior $6,000 bonus deduction). OBBBA §70201-70203 (tips/overtime/auto loan personal deductions). IRS Notice 2020-75 (Pass-Through Entity Tax federal treatment - allows entity-level state tax deduction; preserved post-OBBBA). State PTET regimes in ~36 states. Foreign real property tax deduction permanently disallowed (TCJA modification to §164(b)(2); preserved by OBBBA). Foreign income tax - alternative deduction if FTC not claimed (§164(a)(3)). Reg §1.461-1(a)(1) (timing of deductions - estimated property tax prepayment generally not deductible). Form 1040 Schedule A line 5 (state and local taxes paid).</p>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
