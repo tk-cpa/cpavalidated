@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Estate Tax Portability and DSUE: §2010(c) Deep Dive, Rev. Proc. 2022-32, Last Deceased Spouse | CPA Validated</title>
+<meta name="description" content="Estate tax portability and Deceased Spousal Unused Exemption (DSUE) deep dive. §2010(c). 5-year late portability election under Rev. Proc. 2022-32. Last Deceased Spouse rule. Multiple marriages. Form 706 mechanics. GST exemption NOT portable. $15M per spouse under OBBBA.">
+<link rel="canonical" href="https://cpavalidated.com/estate-tax-portability-dsue.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Estate Tax Portability and DSUE: §2010(c) Complete Mechanics">
+<meta property="og:description" content="Complete DSUE portability mechanics. Form 706 election. Rev. Proc. 2022-32 5-year late election relief. Last Deceased Spouse rule. Multiple spouses. GST non-portability. Computation examples. Practitioner traps.">
+<meta property="og:url" content="https://cpavalidated.com/estate-tax-portability-dsue.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Estate Tax Portability and DSUE: §2010(c) Complete Mechanics","url":"https://cpavalidated.com/estate-tax-portability-dsue.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html" class="active">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Estate Tax Portability and DSUE</h1>
+  <div class="sub">§2010(c) Portability Election &nbsp;&bull;&nbsp; Deceased Spousal Unused Exemption (DSUE) &nbsp;&bull;&nbsp; Rev. Proc. 2022-32 5-Year Late Election &nbsp;&bull;&nbsp; Last Deceased Spouse Rule &nbsp;&bull;&nbsp; Form 706 Mechanics &nbsp;&bull;&nbsp; GST NOT Portable &nbsp;&bull;&nbsp; $30M Combined Exemption Under OBBBA</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §2010(c) / §2010(c)(4) / §2056A</span>
+    <span class="ph-meta-item">Rev. Proc. 2022-32; Reg §20.2010-1 through 20.2010-3</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="estate-gifts.html">&#8592; Estate &amp; Gifts</a></div>
+<div class="article">
+
+<p class="lead">Estate tax portability under IRC §2010(c) is the mechanism allowing a surviving spouse to use the deceased spouse's Deceased Spousal Unused Exemption (DSUE) for their own gift and estate tax purposes. Enacted in 2010 (Tax Relief Act of 2010) and made permanent in 2012 (ATRA), portability effectively doubles a married couple's combined federal exemption when properly elected. Under OBBBA's permanent $15M per-spouse exemption (effective 2026), portability enables a married couple to shield up to $30,000,000 from federal estate and gift tax (subject to inflation-indexing from 2027). The election is made on the deceased spouse's Form 706 - even if no estate tax is otherwise owed, the estate must file Form 706 within 9 months of death (extendable to 15 months) to preserve DSUE. Rev. Proc. 2022-32 provides automatic 5-year late election relief for estates not otherwise required to file Form 706. The "Last Deceased Spouse" rule under §2010(c)(4)(B)(i) restricts surviving spouses with multiple deceased spouses to using only the most recently deceased spouse's DSUE. The GST exemption is NOT portable - must be allocated through the estate or by survivor's affirmative allocation. OBBBA preserved portability mechanics without change.</p>
+
+<div class="callout">
+  <div class="callout-label">DSUE Computation in One Line</div>
+  <p><strong>DSUE = Lesser of (basic exclusion amount in year of death) OR (decedent's basic exclusion amount LESS taxable estate LESS adjusted taxable gifts during life)</strong></p>
+  <p><strong>Capped at:</strong> Decedent's basic exclusion amount in year of death (cannot exceed).</p>
+  <p><strong>Available to:</strong> Surviving spouse for lifetime gifts and estate.</p>
+  <p><strong>Required:</strong> Estate of deceased spouse files Form 706 with portability election (timely or under Rev. Proc. 2022-32 late relief).</p>
+</div>
+
+<h2>The DSUE Computation - Three-Step Mechanism</h2>
+
+<table class="key-table">
+  <tr><th>Step</th><th>Computation</th></tr>
+  <tr><td>Step 1 - Decedent's BEA</td><td>Basic Exclusion Amount in year of decedent's death ($15M in 2026, inflation-indexed thereafter)</td></tr>
+  <tr><td>Step 2 - Subtract decedent's taxable estate</td><td>Estate value AFTER deductions (marital, charitable, debts, expenses, etc.)</td></tr>
+  <tr><td>Step 3 - Subtract decedent's adjusted taxable gifts</td><td>Sum of lifetime gifts above annual exclusions, valued at time of gift</td></tr>
+  <tr><td>Result = DSUE</td><td>Amount transferred to surviving spouse</td></tr>
+  <tr><td>DSUE cap</td><td>Cannot exceed decedent's BEA in year of death</td></tr>
+</table>
+
+<h2>Why Portability Matters - Worked Example</h2>
+
+<div class="callout">
+  <div class="callout-label">DSUE Worked Example - 2026 Death</div>
+  <p><strong>Facts:</strong> Husband dies March 2026 with $3,000,000 taxable estate. H made $2,000,000 of taxable lifetime gifts. Wife is sole beneficiary. H's BEA in 2026 = $15,000,000.</p>
+  <p><strong>Step 1:</strong> Decedent's BEA = $15,000,000</p>
+  <p><strong>Step 2:</strong> Minus taxable estate = $15,000,000 - $3,000,000 = $12,000,000</p>
+  <p><strong>Step 3:</strong> Minus adjusted taxable gifts = $12,000,000 - $2,000,000 = $10,000,000</p>
+  <p><strong>DSUE = $10,000,000</strong> available to surviving wife.</p>
+  <p><strong>Wife's effective exemption:</strong> Her own $15M + H's $10M DSUE = $25,000,000 available for her lifetime gifts and ultimate estate (subject to her own subsequent gift use and inflation indexing of her own BEA).</p>
+  <p><strong>If no portability election made:</strong> Wife stuck with only her own $15M exemption. The $10M DSUE is lost forever - cannot be recaptured.</p>
+</div>
+
+<h2>The Form 706 Filing Requirement</h2>
+
+<table class="key-table">
+  <tr><th>Filing Requirement</th><th>Detail</th></tr>
+  <tr><td>Form 706 (Estate Tax Return)</td><td>Required to elect portability - even if no estate tax due and even if estate is below filing threshold</td></tr>
+  <tr><td>Standard deadline</td><td>9 months after date of death (§6075(a))</td></tr>
+  <tr><td>Automatic 6-month extension</td><td>Form 4768 - extends to 15 months after death</td></tr>
+  <tr><td>Election mechanics</td><td>Filing Form 706 with all required information constitutes affirmative portability election unless box explicitly checked to opt out (§20.2010-2(a)(1))</td></tr>
+  <tr><td>Opt-out election</td><td>Affirmative opt-out box on Form 706 - irrevocable; rare to elect out</td></tr>
+  <tr><td>Estate value information required</td><td>"Reasonable" valuation of gross estate; full appraisals not required for non-taxable estates per §20.2010-2(a)(7)(ii)</td></tr>
+  <tr><td>Closing letter or Account Transcript</td><td>IRS issues closing letter (or transcript) within ~12-18 months confirming DSUE amount</td></tr>
+</table>
+
+<h2>Rev. Proc. 2022-32 - The 5-Year Late Election Window</h2>
+
+<p>For estates that did NOT file Form 706 timely (because no estate tax was otherwise owed), Rev. Proc. 2022-32 provides automatic relief allowing late portability election within 5 years of death.</p>
+
+<table class="key-table">
+  <tr><th>Rev. Proc. 2022-32 Requirements</th><th>Detail</th></tr>
+  <tr><td>Decedent died after December 31, 2010 (when portability first available)</td><td>Eligible if portability was available at death</td></tr>
+  <tr><td>Surviving spouse</td><td>Must be living US citizen or resident</td></tr>
+  <tr><td>Filing window</td><td>Form 706 filed within 5 years of decedent's date of death</td></tr>
+  <tr><td>Decedent's estate not otherwise required to file</td><td>Estate must have been below filing threshold (basic exclusion amount in year of death)</td></tr>
+  <tr><td>Form 706 marking</td><td>Top of Form 706 marked: "FILED PURSUANT TO REV. PROC. 2022-32 TO ELECT PORTABILITY UNDER §2010(c)(5)(A)"</td></tr>
+  <tr><td>No private letter ruling required</td><td>Self-executing relief; no PLR filing or fee needed (replaces prior PLR-based process)</td></tr>
+  <tr><td>Failure to qualify within 5 years</td><td>Must request PLR for §301.9100-3 relief - separate procedure with $13,200 user fee (2026, inflation-adjusted)</td></tr>
+</table>
+
+<div class="green-box"><strong>Rev. Proc. 2022-32 is a major taxpayer-friendly change.</strong> Prior to its issuance (October 2022), surviving spouses had only 2 years under Rev. Proc. 2017-34, and many missed the deadline. The expansion to 5 years has saved countless estates from losing DSUE. Practitioners should always evaluate late portability for any deceased spouse within 5 years.</div>
+
+<h2>The "Last Deceased Spouse" Rule - §2010(c)(4)(B)(i)</h2>
+
+<p>If a surviving spouse has had multiple deceased spouses, only the DSUE from the MOST RECENT deceased spouse is available. Earlier-deceased spouses' unused DSUE is lost upon a subsequent spouse's death.</p>
+
+<table class="key-table">
+  <tr><th>Scenario</th><th>Available DSUE</th></tr>
+  <tr><td>Spouse A dies 2020 with $5M DSUE; surviving spouse remarries Spouse B; Spouse B dies 2025 with $8M DSUE; surviving spouse now dies in 2026</td><td>DSUE = $8M (Spouse B - most recent). Spouse A's $5M is lost.</td></tr>
+  <tr><td>Spouse A dies 2020 with $5M DSUE; surviving spouse never remarries; surviving spouse dies 2026</td><td>DSUE = $5M from Spouse A (only deceased spouse)</td></tr>
+  <tr><td>Spouse A dies 2020 with $5M DSUE; surviving spouse remarries Spouse B but never uses A's DSUE; Spouse B is still alive when surviving spouse dies in 2026</td><td>DSUE = $5M from Spouse A (still "last deceased")</td></tr>
+  <tr><td>Strategy: Use earlier spouse's DSUE before remarrying or before new spouse dies</td><td>Surviving spouse can make a large lifetime gift using Spouse A's DSUE before Spouse B's death locks it out</td></tr>
+</table>
+
+<h3>Strategic Gift Before Remarriage</h3>
+
+<p>If surviving spouse with DSUE from earlier-deceased spouse plans to remarry, making a large lifetime gift that uses up the earlier DSUE before the new spouse predeceases protects the benefit. Once the new spouse dies, the earlier DSUE is permanently lost. Gift the earlier DSUE first, then the new spouse can supply fresh DSUE if they later predecease.</p>
+
+<h2>Application Order - DSUE Used First</h2>
+
+<p>Per §2010(c)(2), the DSUE is applied BEFORE the surviving spouse's own basic exclusion amount when computing gift or estate tax. This is automatic - the surviving spouse doesn't choose the order.</p>
+
+<table class="key-table">
+  <tr><th>Order of Application</th><th>Effect</th></tr>
+  <tr><td>1. DSUE from last deceased spouse</td><td>Used first against surviving spouse's taxable transfers</td></tr>
+  <tr><td>2. Surviving spouse's own BEA</td><td>Used next, after DSUE exhausted</td></tr>
+  <tr><td>Practical implication</td><td>Surviving spouse can "use up" DSUE through lifetime gifts before remarrying, protecting against last-deceased-spouse rule</td></tr>
+  <tr><td>Pre-deceased spouse change</td><td>If surviving spouse remarries and new spouse dies, DSUE from earlier spouse is replaced by new spouse's DSUE; gifts already made under earlier DSUE remain valid (no recapture)</td></tr>
+</table>
+
+<h2>GST Exemption is NOT Portable - Critical Distinction</h2>
+
+<table class="key-table">
+  <tr><th>Exemption Type</th><th>Portability</th></tr>
+  <tr><td>Basic exclusion / unified estate &amp; gift exemption</td><td>PORTABLE via §2010(c) DSUE election</td></tr>
+  <tr><td>GST exemption (§2631)</td><td>NOT PORTABLE - must be allocated by deceased spouse during life or by estate</td></tr>
+  <tr><td>Marital deduction (§2056)</td><td>Not a portability issue - unlimited deduction for transfers to citizen spouse</td></tr>
+  <tr><td>Annual gift exclusion (§2503(b))</td><td>Not portable in the DSUE sense - each spouse has their own $19,000 per donee per year</td></tr>
+  <tr><td>Non-citizen spouse annual exclusion (§2523(i))</td><td>Not portable; per-spouse only ($190,000 for 2026)</td></tr>
+</table>
+
+<div class="red-box"><strong>The GST non-portability is a major planning pitfall.</strong> A couple with $30M in assets can shield from federal estate/gift tax via portability ($15M + $15M DSUE). But for generation-skipping transfers, each spouse must use their own $15M GST exemption - the deceased spouse's unused GST is LOST at death unless allocated to a trust. Bypass trust structures funded at first spouse's death can preserve GST exemption that would otherwise vanish.</div>
+
+<h2>Form 706 Schedule R - GST Allocation at Death</h2>
+
+<table class="key-table">
+  <tr><th>GST Allocation Mechanism</th><th>Detail</th></tr>
+  <tr><td>Automatic allocation under §2632(b)/(c)</td><td>Certain transfers automatically receive GST exemption allocation unless opt-out</td></tr>
+  <tr><td>Affirmative allocation on Form 706 Schedule R</td><td>Executor can allocate GST exemption to specific transfers at death</td></tr>
+  <tr><td>Late allocation - §2642(b)(3) / Reg §26.2632-1</td><td>Limited late allocation relief available for missed timely allocations</td></tr>
+  <tr><td>Form 709 lifetime GST allocation</td><td>Annual allocation of GST exemption to lifetime gifts</td></tr>
+  <tr><td>Strategic allocation</td><td>Allocate to assets expected to appreciate; use of valuation discounts; allocation to GST trusts</td></tr>
+</table>
+
+<h2>Statute of Limitations on DSUE Review</h2>
+
+<p>Per §2010(c)(5)(B), the IRS may examine the predeceased spouse's estate tax return to determine DSUE amount even AFTER the normal statute of limitations on assessment has run. This is a one-way street - IRS can look back to recompute DSUE if surviving spouse uses it, even decades later.</p>
+
+<table class="key-table">
+  <tr><th>SOL Aspect</th><th>Detail</th></tr>
+  <tr><td>Normal SOL on Form 706</td><td>3 years from filing under §6501(a)</td></tr>
+  <tr><td>DSUE redetermination authority</td><td>IRS can recompute DSUE upon use by surviving spouse - no SOL bar under §2010(c)(5)(B)</td></tr>
+  <tr><td>Practical implication</td><td>Maintain complete records of decedent's Form 706 and supporting valuations indefinitely for surviving spouse</td></tr>
+  <tr><td>Surviving spouse audit risk</td><td>When surviving spouse uses DSUE on gift or estate return, IRS may recompute DSUE through full review of decedent's estate</td></tr>
+</table>
+
+<h2>Special Situations - QDOT and Non-Citizen Spouses</h2>
+
+<table class="key-table">
+  <tr><th>QDOT Scenario</th><th>DSUE Treatment</th></tr>
+  <tr><td>Citizen spouse dies; non-citizen surviving spouse</td><td>Marital deduction NOT automatic for non-citizen spouse; must use Qualified Domestic Trust (QDOT) under §2056A</td></tr>
+  <tr><td>DSUE with QDOT</td><td>DSUE is preliminary - amount not finalized until QDOT principal distributions are taxed or trust terminates</td></tr>
+  <tr><td>QDOT distribution event</td><td>Deferred estate tax on principal distributions; DSUE may be adjusted downward</td></tr>
+  <tr><td>Surviving spouse later becomes US citizen</td><td>QDOT no longer required; DSUE becomes available without QDOT constraints</td></tr>
+  <tr><td>Form 706 filing requirement</td><td>Required to elect portability even with QDOT</td></tr>
+</table>
+
+<h2>Coordination with Bypass Trust / Credit Shelter Planning</h2>
+
+<p>Pre-portability planning often used "credit shelter trusts" (bypass trusts) to absorb the first spouse's exemption. Now, with portability, simpler "I love you" wills with outright spousal bequests may suffice federally. But state-level estate tax and GST exemption preservation still favor bypass trust structures in many cases.</p>
+
+<table class="key-table">
+  <tr><th>Plan Type</th><th>Federal Benefit</th><th>State Benefit</th><th>GST Benefit</th></tr>
+  <tr><td>Outright bequest to surviving spouse + portability</td><td>Achieves $30M federal exemption</td><td>Loses state exemption of first-to-die in states without portability (most state estate tax states)</td><td>Loses GST exemption of first-to-die</td></tr>
+  <tr><td>Bypass / Credit Shelter Trust</td><td>Preserves first-to-die's federal exemption in trust; ALSO preserves portability for unused amount</td><td>Preserves first-to-die's state exemption</td><td>Preserves first-to-die's GST exemption (with trust allocation)</td></tr>
+  <tr><td>QTIP trust</td><td>Achieves marital deduction + preserves option to elect portability AND/OR reverse QTIP for GST</td><td>Varies by state</td><td>Reverse QTIP election under §2652(a)(3) preserves GST</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Missing the Form 706 Filing for Non-Taxable Estates</h3>
+
+<p>Surviving spouses often assume Form 706 is only required for taxable estates. For estates below the filing threshold, Form 706 must STILL be filed to elect portability. Missing this filing costs DSUE permanently (unless late-relief under Rev. Proc. 2022-32 is available within 5 years).</p>
+
+<h3>Forgetting the 5-Year Rev. Proc. 2022-32 Window</h3>
+
+<p>For deaths in the past 5 years where portability was not timely elected, Rev. Proc. 2022-32 still permits late election. Practitioners reviewing estate plans should evaluate every recent deceased-spouse case for late portability eligibility.</p>
+
+<h3>Treating GST Exemption as Portable</h3>
+
+<p>The most common high-net-worth estate planning error. GST exemption is NOT portable. Wealthy clients planning for grandchildren or generation-skipping must allocate first-to-die's GST exemption to bypass trusts or risk losing $15M of GST shelter.</p>
+
+<h3>Last Deceased Spouse Rule Trap</h3>
+
+<p>Widowed clients with sizeable DSUE who remarry risk losing the DSUE upon new spouse's death. Counsel widowed clients with DSUE to consider using it via lifetime gifts BEFORE remarriage if remarriage is anticipated.</p>
+
+<h3>Ignoring State-Level Estate Tax</h3>
+
+<p>State estate tax remains an issue in 12 states + DC. Most state estate taxes do NOT have portability. Bypass trust structures may still be essential for state-level exemption preservation even when federal portability eliminates federal estate tax.</p>
+
+<h3>Inadequate Valuation Documentation for Non-Taxable Estates</h3>
+
+<p>For non-taxable estates filing Form 706 solely for portability, "reasonable" valuation is acceptable under §20.2010-2(a)(7)(ii). But the surviving spouse will need this valuation later when using DSUE. Inadequate documentation invites IRS recomputation under §2010(c)(5)(B) without SOL protection.</p>
+
+<h3>Filing Form 706 Without Marking Rev. Proc. 2022-32</h3>
+
+<p>Late filings under Rev. Proc. 2022-32 MUST be marked: "FILED PURSUANT TO REV. PROC. 2022-32 TO ELECT PORTABILITY UNDER §2010(c)(5)(A)" at the top. Missing this notation can cause IRS to reject the late election.</p>
+
+<h3>Confusing DSUE with Marital Deduction</h3>
+
+<p>Marital deduction (§2056) defers estate tax on transfers to citizen spouse. DSUE under §2010(c) transfers the deceased spouse's unused exemption to the survivor. These are DIFFERENT mechanisms - both available, both serve different purposes.</p>
+
+<h3>Failing to Verify DSUE Amount Years Later</h3>
+
+<p>When surviving spouse uses DSUE on lifetime gifts or estate return, the executor's claimed DSUE may be challenged. Maintain decedent's full estate file (Form 706, valuations, gift history, supporting docs) for the surviving spouse's lifetime - the SOL on DSUE redetermination is open-ended.</p>
+
+<h3>Missing the Opt-Out Implications</h3>
+
+<p>Affirmative opt-out of portability is rare but irrevocable. Practitioners should verify that the opt-out box is NOT checked on Form 706 unless explicitly intended - some preparers default the opt-out without client direction.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="estate-planning-obbba-permanent-exemption.html" class="related-link">OBBBA $15M Permanent Exemption<span>2026 unified exemption framework</span></a>
+    <a href="estate-planning-basics.html" class="related-link">Estate Planning Basics<span>General framework</span></a>
+    <a href="gift-estate-tax-guide.html" class="related-link">Gift &amp; Estate Tax Guide<span>Annual exclusion and lifetime gifting</span></a>
+    <a href="form-709-guide.html" class="related-link">Form 709 Gift Tax<span>DSUE use on lifetime gifts</span></a>
+    <a href="nra-estate-tax.html" class="related-link">NRA Estate Tax<span>QDOT for non-citizen spouses</span></a>
+    <a href="estate-gifts.html" class="related-link">Estate &amp; Gifts Hub<span>All estate topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §2010 (unified credit against estate tax). §2010(a) (applicable credit amount). §2010(c) (applicable exclusion amount including DSUE). §2010(c)(2) (DSUE applies before surviving spouse's own basic exclusion). §2010(c)(3) (basic exclusion amount - $15M effective 2026 per OBBBA). §2010(c)(4) (DSUE definition). §2010(c)(4)(B)(i) ("last deceased spouse" rule). §2010(c)(5)(A) (portability election requirement). §2010(c)(5)(B) (IRS authority to redetermine DSUE without statute of limitations bar). §2056 (marital deduction - unlimited for transfers to US citizen spouse). §2056A (Qualified Domestic Trust for non-citizen spouse). §2502 (gift tax imposition). §2503(b) (annual gift exclusion - $19,000 per donee for 2026). §2523(i) (non-citizen spouse annual exclusion - $190,000 for 2026). §2601 (GST tax imposition - 40% rate). §2631 (GST exemption - $15M aligned with unified exemption; NOT portable). §2632 (allocation of GST exemption; automatic allocation rules). §2632(b) (automatic allocation to direct skips). §2632(c) (automatic allocation to indirect skips). §2642(b)(3) (late GST allocation relief). §2652(a)(3) (reverse QTIP election for GST). §6075(a) (Form 706 filing deadline - 9 months from death). §6081 (extension - 6 additional months via Form 4768). §6501(a) (general 3-year statute of limitations). §301.9100-3 (regulatory relief for late elections; user fee required). Treasury Regulations §20.2010-1 (DSUE general). §20.2010-2 (portability election on Form 706). §20.2010-2(a)(1) (election by filing). §20.2010-2(a)(7)(ii) (reasonable valuation for non-taxable estates - special asset valuation rule). §20.2010-3 (surviving spouse use of DSUE). §26.2632-1 (GST exemption allocation rules). Revenue Procedure 2022-32 (5-year late portability election relief; replaces 2-year Rev. Proc. 2017-34 relief; supersedes prior PLR-only relief; effective July 8, 2022). Revenue Procedure 2017-34 (prior 2-year late portability relief - replaced). Rev. Proc. 2014-18 (prior portability late election relief - replaced). Form 706 (United States Estate (and Generation-Skipping Transfer) Tax Return). Form 706 Schedule R (GST allocation). Form 4768 (extension of time to file Form 706). Form 709 (United States Gift (and Generation-Skipping Transfer) Tax Return). One Big Beautiful Bill Act, P.L. 119-21, §70106 (preserved portability mechanics unchanged; raised BEA to $15M effective 2026).</p>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
