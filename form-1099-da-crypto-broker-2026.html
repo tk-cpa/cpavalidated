@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>Form 1099-DA Digital Asset Broker Reporting: §6045, Rev. Proc. 2024-28 Wallet-by-Wallet Basis | CPA Validated</title>
+<meta name="description" content="Form 1099-DA complete mechanics. §6045 broker reporting effective 1/1/2025. 2025 gross proceeds only; 2026 basis added for covered securities. Rev. Proc. 2024-28 wallet-by-wallet basis transition (mandatory by 1/1/2025). Notice 2024-56 / 2025-33 transition relief through 2027. Universal accounting elimination. DeFi CRA repeal. NFT and stablecoin rules.">
+<link rel="canonical" href="https://cpavalidated.com/form-1099-da-crypto-broker-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Form 1099-DA: Crypto Broker Reporting Deep Dive">
+<meta property="og:description" content="§6045 digital asset broker reporting. Form 1099-DA effective 2025. Rev. Proc. 2024-28 wallet-by-wallet basis. Transition relief through 2027. Custodial brokers only after DeFi CRA. Stablecoin and NFT de minimis rules.">
+<meta property="og:url" content="https://cpavalidated.com/form-1099-da-crypto-broker-2026.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Form 1099-DA: Crypto Broker Reporting Deep Dive","url":"https://cpavalidated.com/form-1099-da-crypto-broker-2026.html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html" class="active">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>Form 1099-DA: Digital Asset Broker Reporting</h1>
+  <div class="sub">IRC §6045 Effective 1/1/2025 &nbsp;&bull;&nbsp; 2025: Gross Proceeds Only &nbsp;&bull;&nbsp; 2026: Basis Added for Covered Digital Assets &nbsp;&bull;&nbsp; Custodial Brokers Only (DeFi CRA Repeal March 2025) &nbsp;&bull;&nbsp; Rev. Proc. 2024-28 Wallet-by-Wallet Basis Mandate &nbsp;&bull;&nbsp; Notice 2024-56 / Notice 2025-33 Transition Relief Through 2027</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §6045 / §6045A / §3406 (backup withholding)</span>
+    <span class="ph-meta-item">Treas. Reg. §1.6045-1; T.D. 10000 (June 2024); T.D. 10021 (Dec 2024)</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="investments-capital.html">&#8592; Investments &amp; Capital</a></div>
+<div class="article">
+
+<p class="lead">Form 1099-DA, "Digital Asset Proceeds From Broker Transactions," is the first IRS information return specifically for digital asset reporting. Created under IRC §6045 as modified by the Infrastructure Investment and Jobs Act (2021), it imposes mandatory broker reporting of digital asset sales effective for transactions occurring on or after January 1, 2025 (first forms issued to taxpayers in early 2026 for the 2025 tax year). The final regulations were issued via T.D. 10000 (June 28, 2024) for custodial brokers and T.D. 10021 (December 27, 2024) for DeFi broker rules. The DeFi portion was OVERTURNED in March 2025 via Congressional Review Act resolution; only CUSTODIAL brokers remain subject to Form 1099-DA reporting for 2025 and 2026 transactions. Form 1099-DA reporting phases in: 2025 - gross proceeds only; 2026 - gross proceeds PLUS adjusted basis for covered digital assets (acquired in a custodial account after 12/31/2025 and held there until sale); 2027+ - real estate professional reporting of FMV in real estate transactions paid with digital assets, and backup withholding obligations under §3406. The most disruptive related guidance is Rev. Proc. 2024-28 (June 2024), which mandated a TRANSITION FROM UNIVERSAL ACCOUNTING (one global basis pool across all wallets) to WALLET-BY-WALLET ACCOUNTING effective January 1, 2025 - requiring all taxpayers holding digital assets at year-end 2024 to allocate unused basis to specific units in specific wallets by January 1, 2025 (with safe harbor allocation procedures). Notice 2024-56 and Notice 2025-33 provide cascading transition relief: penalty relief for brokers' good-faith 2025 reporting failures; backup withholding relief extended through 2026 generally and through 2027 for TIN-matched accounts.</p>
+
+<div class="callout">
+  <div class="callout-label">Form 1099-DA Phase-In Schedule</div>
+  <p><strong>2025 transactions (reported on 1099-DA forms in early 2026):</strong> CUSTODIAL brokers report GROSS PROCEEDS only. No basis reporting required.</p>
+  <p><strong>2026 transactions:</strong> CUSTODIAL brokers report gross proceeds PLUS adjusted basis for COVERED digital assets (acquired in a custodial account after 12/31/2025).</p>
+  <p><strong>2027 transactions:</strong> Real estate professionals report FMV of digital assets used in real estate closings (closings on/after 1/1/2026 per final regs, but transition relief applies). Backup withholding obligations under §3406 begin in earnest.</p>
+  <p><strong>Wallet-by-wallet basis:</strong> Rev. Proc. 2024-28 required transition by 1/1/2025 - allocate unused basis to specific units in specific wallets. Universal/global accounting NO LONGER permitted.</p>
+  <p><strong>NOT covered (post-CRA repeal):</strong> Non-custodial DeFi front-ends, smart contract operators - DeFi broker rules vacated by Congressional Review Act resolution March 2025.</p>
+</div>
+
+<h2>Who Is a "Digital Asset Broker" - Custodial Definition Only</h2>
+
+<table class="key-table">
+  <tr><th>Broker Type</th><th>Status Under Final Regulations (Post-CRA)</th></tr>
+  <tr><td>Centralized custodial exchanges (Coinbase, Kraken, Gemini, etc.)</td><td>YES - mandatory 1099-DA reporting</td></tr>
+  <tr><td>Custodial trading platforms</td><td>YES</td></tr>
+  <tr><td>Custodial hosted wallet providers</td><td>YES if facilitating sales of digital assets</td></tr>
+  <tr><td>Digital asset kiosks (crypto ATMs)</td><td>YES - "digital asset middlemen" effecting sales</td></tr>
+  <tr><td>Processors of digital asset payments (PDAPs)</td><td>YES - certain payment processors</td></tr>
+  <tr><td>Real estate professionals (closings paid with crypto)</td><td>YES - for closings after 1/1/2026, report FMV under §6045A</td></tr>
+  <tr><td>DeFi front-ends / smart contract operators</td><td>NO - DeFi regulations vacated by CRA resolution March 2025</td></tr>
+  <tr><td>Non-custodial wallets (MetaMask, Ledger hardware)</td><td>NO - never within scope of final regs</td></tr>
+  <tr><td>Mining pool operators</td><td>NO - mining rewards reported differently (Form 1099-MISC or ordinary income)</td></tr>
+  <tr><td>NFT marketplaces (OpenSea, etc.)</td><td>YES if custodial; varies by structure</td></tr>
+</table>
+
+<h2>The Wallet-by-Wallet Basis Mandate - Rev. Proc. 2024-28</h2>
+
+<p>Pre-2025, taxpayers commonly used UNIVERSAL ACCOUNTING for crypto basis tracking - one global pool of basis applied across all wallets and exchanges. Rev. Proc. 2024-28 ELIMINATED universal accounting effective January 1, 2025. Taxpayers must now allocate basis WALLET-BY-WALLET (or account-by-account) and track each unit's basis within its specific holding location.</p>
+
+<table class="key-table">
+  <tr><th>Rev. Proc. 2024-28 Aspect</th><th>Detail</th></tr>
+  <tr><td>Effective date</td><td>January 1, 2025</td></tr>
+  <tr><td>What changed</td><td>Universal accounting NO LONGER permitted; must allocate unused basis to specific wallets/accounts as of 1/1/2025</td></tr>
+  <tr><td>Safe harbor allocation methods</td><td>(a) Specific identification - allocate specific basis lots to specific wallets; (b) Global allocation method - allocate basis across wallets using consistent methodology</td></tr>
+  <tr><td>Documentation requirements</td><td>Records of allocation must be maintained; allocation made by reasonable methodology</td></tr>
+  <tr><td>Deadline for allocation</td><td>By the earlier of (a) date taxpayer first sells/transfers a digital asset on or after 1/1/2025, or (b) date taxpayer's first sale of digital assets is reportable on 1099-DA</td></tr>
+  <tr><td>Effect on basis methods</td><td>FIFO, Specific Identification, and certain other methods PER WALLET; LIFO not generally available</td></tr>
+  <tr><td>Foundation</td><td>Treas. Reg. §1.1012-1(j) - digital asset basis rules</td></tr>
+  <tr><td>Penalty for non-compliance</td><td>Inadequate records may cause IRS to use FIFO from earliest acquisitions - potentially much higher gain</td></tr>
+</table>
+
+<div class="red-box"><strong>Universal accounting is dead.</strong> Taxpayers who did not allocate basis to specific wallets by January 1, 2025 face a serious recordkeeping challenge for 2025+ transactions. IRS may apply default FIFO across all units, potentially generating gains different from what historic universal accounting produced. Reconstruct records aggressively; document allocation methodology.</div>
+
+<h2>Form 1099-DA Box-by-Box - 2025 Version</h2>
+
+<table class="key-table">
+  <tr><th>1099-DA Box</th><th>Information Reported</th></tr>
+  <tr><td>Box 1a - Description of digital asset</td><td>Token symbol (BTC, ETH, USDC, etc.)</td></tr>
+  <tr><td>Box 1b - Date acquired</td><td>Acquisition date (blank if basis not reported in 2025)</td></tr>
+  <tr><td>Box 1c - Date sold or disposed</td><td>Disposition date</td></tr>
+  <tr><td>Box 1d - Number of units</td><td>Quantity sold</td></tr>
+  <tr><td>Box 1e - Proceeds (gross)</td><td>USD proceeds from sale</td></tr>
+  <tr><td>Box 1f - Cost or other basis</td><td>Adjusted basis (blank for 2025; required for covered digital assets in 2026)</td></tr>
+  <tr><td>Box 1g - Wash sale loss disallowed</td><td>Digital assets generally NOT subject to wash sale rule §1091 (not "stock or securities") - typically blank</td></tr>
+  <tr><td>Box 2 - Basis reported to IRS</td><td>Check if basis reported to IRS for covered securities</td></tr>
+  <tr><td>Box 3 - Whether short-term or long-term</td><td>Holding period indicator</td></tr>
+  <tr><td>Box 4 - Federal income tax withheld</td><td>Backup withholding amount (relief through 2027 for TIN-matched accounts)</td></tr>
+  <tr><td>Box 5 - Loss not allowed</td><td>Loss disallowance flag</td></tr>
+  <tr><td>Box 8 - Customer-provided acquisition information</td><td>Check if broker relied on customer-supplied data (cannot be reported as basis to IRS)</td></tr>
+  <tr><td>Box 9 - Noncovered security</td><td>Check if digital asset is noncovered</td></tr>
+  <tr><td>Box 11a-c - Specified NFT reporting</td><td>NFT-specific reporting</td></tr>
+  <tr><td>Box 12a-b - Transaction identifier (TX ID)</td><td>Blockchain transaction hash and date transferred-in info</td></tr>
+</table>
+
+<h2>Covered vs Noncovered Digital Assets</h2>
+
+<table class="key-table">
+  <tr><th>Classification</th><th>Definition</th><th>Basis Reporting</th></tr>
+  <tr><td>Covered digital asset</td><td>Acquired after 12/31/2025 in an account for which broker provides custodial services AND held in that account until disposition</td><td>Broker MUST report basis from 2026 forward</td></tr>
+  <tr><td>Noncovered digital asset</td><td>(a) Acquired before 1/1/2026; OR (b) Transferred in from another account with no acquisition info; OR (c) Basis provided only by customer (not broker records)</td><td>Broker leaves Box 1f blank; Box 9 checked; taxpayer reports basis on Form 8949</td></tr>
+  <tr><td>Transfer-in problem</td><td>Crypto moved from non-custodial wallet INTO custodial exchange has no broker-tracked basis - generally noncovered even after 2026</td><td>Customer must self-report basis from own records</td></tr>
+  <tr><td>Customer-provided basis</td><td>If customer supplies acquisition info but broker uses only for lot ordering (not basis reporting) - check Box 8</td><td>Still noncovered for basis-reporting purposes</td></tr>
+</table>
+
+<h2>Transition Relief - Notice 2024-56 and Notice 2025-33</h2>
+
+<table class="key-table">
+  <tr><th>Relief Provision</th><th>Detail</th></tr>
+  <tr><td>2025 reporting penalties</td><td>NO penalties for broker failure to file or furnish 1099-DA if broker makes GOOD-FAITH EFFORT (Notice 2024-56)</td></tr>
+  <tr><td>2026 backup withholding</td><td>Relief from §3406 backup withholding obligations and associated penalties through calendar year 2026 (Notice 2024-56 / Notice 2025-33)</td></tr>
+  <tr><td>2027 backup withholding - TIN-matched accounts</td><td>Continued relief for 2027 transactions where broker obtained TIN, submitted to IRS TIN Matching Program, and received match response</td></tr>
+  <tr><td>2027 backup withholding - foreign accounts</td><td>Continued relief for pre-2026 accounts never classified as US person with non-US address on file</td></tr>
+  <tr><td>Token valuation timing</td><td>Liquidation-based methodology - withholding capped at 24% of liquidation proceeds; relief if value decline between transaction and liquidation</td></tr>
+  <tr><td>Notional principal contracts</td><td>Not yet required to report - Notice 2024-57</td></tr>
+  <tr><td>Identified deferred transactions</td><td>Notice 2024-57 - certain identified transactions deferred from 1099-DA reporting pending guidance</td></tr>
+</table>
+
+<h2>Reconciling 1099-DA to Actual Tax - The Reality</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - Why You Can't File From 1099-DA Alone (2025)</div>
+  <p><strong>Facts:</strong> Sarah holds 5 BTC across 3 wallets at start of 2025. She acquired the BTC across multiple years (2017-2023) at various prices.</p>
+  <p><strong>2025 activity:</strong> Sold 1 BTC on Coinbase for $80,000. Coinbase issues 1099-DA showing Box 1e = $80,000; Box 1f (basis) BLANK because 2025 reporting is gross proceeds only.</p>
+  <p><strong>Sarah's basis tracking responsibility:</strong></p>
+  <p>1. Identify which lot of BTC was sold (specific identification under wallet-by-wallet method per Rev. Proc. 2024-28)<br>2. Look up acquisition cost from her own records<br>3. Compute gain or loss<br>4. Report on Form 8949 / Schedule D with correct basis</p>
+  <p><strong>If Sarah relies on 1099-DA alone:</strong> Reports $80,000 of proceeds with NO basis - effectively reports 100% gain - significantly overpays tax.</p>
+  <p><strong>If Sarah reports a basis the broker did not report:</strong> Form 8949 Box B or E with adjustment to basis. IRS will see mismatch; expect potential CP2000 notice; documentation must support adjustment.</p>
+</div>
+
+<h2>Stablecoin and NFT De Minimis Rules</h2>
+
+<table class="key-table">
+  <tr><th>Special Rule</th><th>Detail</th></tr>
+  <tr><td>Qualifying stablecoin de minimis</td><td>Reg §1.6045-1(c)(13)(iv) - sales of qualifying stablecoins (e.g., USDC, USDT, DAI) reported only if certain de minimis thresholds exceeded; aggregate reporting permitted</td></tr>
+  <tr><td>Optional method for stablecoins</td><td>Broker may use aggregate reporting for stablecoin sales (sum of proceeds reported in single 1099-DA)</td></tr>
+  <tr><td>Specified NFT de minimis</td><td>NFT sales below $600 threshold may not require reporting; optional method available</td></tr>
+  <tr><td>NFT mints by customer</td><td>If customer minted NFT (first sale by minter), proceeds reported in Box 11c; Box 1e left blank</td></tr>
+  <tr><td>NFT secondary sales</td><td>Sales of NFTs customer did NOT mint - reported in Box 1e</td></tr>
+  <tr><td>Aggregate reporting threshold</td><td>$600+ for specified NFTs; optional method allows aggregated reporting</td></tr>
+</table>
+
+<h2>Dual Classification Assets - Tokenized Securities</h2>
+
+<table class="key-table">
+  <tr><th>Asset Type</th><th>Reporting</th></tr>
+  <tr><td>Pure digital asset (BTC, ETH, ADA)</td><td>Form 1099-DA only</td></tr>
+  <tr><td>Tokenized security (digital token representing equity, debt, or other security)</td><td>Generally Form 1099-DA (NOT Form 1099-B going forward); single-form reporting</td></tr>
+  <tr><td>Stablecoins backed by securities</td><td>Form 1099-DA; subject to qualifying stablecoin rules</td></tr>
+  <tr><td>Pre-2025 dual classification reporting</td><td>Brokers used 1099-B; transition to 1099-DA for 2025+</td></tr>
+</table>
+
+<h2>Backup Withholding - §3406</h2>
+
+<table class="key-table">
+  <tr><th>Backup Withholding Aspect</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>IRC §3406 - 24% backup withholding on reportable payments when customer fails to furnish TIN or provides incorrect TIN</td></tr>
+  <tr><td>Effective date for 1099-DA</td><td>Originally 1/1/2025; transition relief delays through 2026 generally; through 2027 for TIN-matched customers</td></tr>
+  <tr><td>Liquidation methodology</td><td>For digital-asset-for-digital-asset exchanges: withhold 24% of received assets; liquidate at first opportunity</td></tr>
+  <tr><td>TIN matching</td><td>Brokers must integrate IRS TIN Matching Program into onboarding to qualify for safe harbor relief</td></tr>
+  <tr><td>Form 945 reporting</td><td>Annual broker filing of withheld tax</td></tr>
+  <tr><td>Value decline relief</td><td>If withheld digital asset value declines between transaction and liquidation, broker not penalized for shortfall (Notice 2025-33)</td></tr>
+</table>
+
+<h2>Customer Reporting - Form 8949 and Schedule D</h2>
+
+<table class="key-table">
+  <tr><th>Form 8949 Box Selection</th><th>When Used</th></tr>
+  <tr><td>Box A - Short-term covered, basis reported to IRS</td><td>2026+ covered digital asset short-term sale with broker-reported basis</td></tr>
+  <tr><td>Box B - Short-term noncovered, basis NOT reported to IRS</td><td>2025 sales (basis not on 1099-DA); transferred-in noncovered assets; 1099-DA Box 9 checked</td></tr>
+  <tr><td>Box C - Short-term not reported on 1099 at all</td><td>Sales from non-custodial wallets; peer-to-peer trades; DeFi transactions (post-CRA, not reportable to IRS)</td></tr>
+  <tr><td>Box D - Long-term covered, basis reported to IRS</td><td>2026+ covered digital asset long-term sale</td></tr>
+  <tr><td>Box E - Long-term noncovered</td><td>2025 long-term sales; transferred-in long-term assets</td></tr>
+  <tr><td>Box F - Long-term not reported on 1099 at all</td><td>Long-term non-custodial sales</td></tr>
+  <tr><td>Adjustment codes</td><td>Use code B (Box B basis incorrect) when reporting basis different from broker-reported amount</td></tr>
+</table>
+
+<h2>The DeFi CRA Repeal - What Changed in March 2025</h2>
+
+<table class="key-table">
+  <tr><th>DeFi Repeal Aspect</th><th>Detail</th></tr>
+  <tr><td>Original DeFi rule</td><td>T.D. 10021 (December 27, 2024) - extended broker definition to certain non-custodial DeFi participants including front-end interface operators</td></tr>
+  <tr><td>Congressional Review Act resolution</td><td>March 2025 - joint resolution disapproving DeFi broker regulation; signed by President</td></tr>
+  <tr><td>Effect</td><td>DeFi broker rules VOID; only custodial brokers remain within 1099-DA scope</td></tr>
+  <tr><td>What is still reportable by DeFi users</td><td>Taxpayer's own reporting obligations under §61, §1001 unchanged; users still report DeFi gains/losses on Form 8949 from own records</td></tr>
+  <tr><td>What is NOT reported</td><td>DeFi protocols, smart contract operators, decentralized exchanges do NOT issue 1099-DAs</td></tr>
+  <tr><td>Future Treasury action</td><td>Treasury barred from issuing substantially similar regulations under CRA; legislative action would be required</td></tr>
+</table>
+
+<h2>Tax Software and Brokerage Reconciliation</h2>
+
+<table class="key-table">
+  <tr><th>Software Approach</th><th>Considerations</th></tr>
+  <tr><td>Crypto tax software (CoinTracker, Koinly, ZenLedger, etc.)</td><td>Aggregates wallet/exchange data; computes wallet-by-wallet basis per Rev. Proc. 2024-28; produces Form 8949</td></tr>
+  <tr><td>Reconciliation challenge</td><td>1099-DA shows broker's view (gross proceeds for 2025); crypto software shows comprehensive view (basis + cross-wallet transfers); must reconcile</td></tr>
+  <tr><td>Missing basis on 1099-DA</td><td>Use crypto tax software basis with documentation; report on Form 8949 noncovered section</td></tr>
+  <tr><td>Cross-broker transfers</td><td>Crypto transferred FROM Broker A TO Broker B - Broker B reports as transferred-in (noncovered) even in 2026+; manual basis tracking required</td></tr>
+  <tr><td>FIFO default if no records</td><td>IRS will apply FIFO from earliest acquisitions if taxpayer cannot substantiate specific identification</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Using Universal Accounting Post-1/1/2025</h3>
+
+<p>Universal accounting (single global basis pool) ELIMINATED by Rev. Proc. 2024-28 effective 1/1/2025. Must use wallet-by-wallet (or account-by-account). Taxpayers who failed to allocate basis by January 1, 2025 face severe recordkeeping issues for 2025 transactions.</p>
+
+<h3>Treating 1099-DA Gross Proceeds as Taxable Gain</h3>
+
+<p>2025 1099-DA shows ONLY gross proceeds with no basis. Treating proceeds as gain (Box 1f = $0) drastically overstates tax. Taxpayer responsible for substantiating basis from own records.</p>
+
+<h3>Missing Cross-Wallet Transfer Basis Tracking</h3>
+
+<p>Moving crypto from Exchange A to Exchange B does NOT trigger gain/loss but does transfer basis. Without records, Exchange B has no basis to report - entire eventual sale appears as gain.</p>
+
+<h3>Confusing Custodial With Non-Custodial</h3>
+
+<p>Only CUSTODIAL brokers issue 1099-DA. Non-custodial wallet transactions (MetaMask, hardware wallets, DeFi protocols) NOT reported by broker - but STILL TAXABLE - reported on Form 8949 Box C or F (not on a 1099).</p>
+
+<h3>Applying Wash Sale Rule to Digital Assets</h3>
+
+<p>Digital assets generally NOT "stock or securities" under §1091 wash sale rule. Selling crypto at a loss and rebuying within 30 days does NOT trigger wash sale disallowance (with limited exceptions for tokenized securities). Practitioners applying §1091 to crypto in 2025-2026 are over-conservative.</p>
+
+<h3>Treating Specified NFTs as Generic Crypto</h3>
+
+<p>NFTs have special aggregate reporting rules with different boxes (11a-c). NFT minters report under special method; secondary sales differently. Distinguish NFTs from generic crypto.</p>
+
+<h3>Missing the Foreign Account / Form 8938 / FBAR Interaction</h3>
+
+<p>Digital assets held on FOREIGN exchanges may be reportable on FBAR (FinCEN 114) and Form 8938 - SEPARATE from 1099-DA. FinCEN final rules pending; treat conservatively pending clarity.</p>
+
+<h3>Reporting DeFi Activity Just Because It Wasn't on 1099-DA</h3>
+
+<p>Post-CRA, DeFi transactions NOT on 1099-DA. But taxpayer's reporting obligation under §61 / §1001 UNCHANGED. Failure to report DeFi gains is income tax noncompliance even when no 1099 issued.</p>
+
+<h3>Ignoring Backup Withholding Implications</h3>
+
+<p>2027 onward, brokers must backup withhold 24% if no certified TIN. Customer must provide W-9 or risk withholding on every transaction.</p>
+
+<h3>Treating Mining/Staking Rewards as 1099-DA</h3>
+
+<p>Mining rewards generally reported as ordinary income at FMV when received (Notice 2014-21; Rev. Rul. 2023-14 for staking). 1099-MISC or 1099-NEC may apply. NOT on 1099-DA which covers SALES.</p>
+
+<h3>Missing Lot-Selection Documentation</h3>
+
+<p>Specific identification of lots sold (necessary for wallet-by-wallet method) requires CONTEMPORANEOUS documentation. Post-sale claimed specific identification often rejected on audit; treat as FIFO from earliest acquisitions in wallet.</p>
+
+<h3>Confusing Tokenized Security vs Crypto Reporting</h3>
+
+<p>Tokenized securities are reported on 1099-DA (not 1099-B) under final regs. Practitioners using 1099-B for tokenized securities are using outdated form.</p>
+
+<h3>Forgetting Stablecoin De Minimis</h3>
+
+<p>Qualifying stablecoin transactions have de minimis rules and aggregate reporting. Individual stablecoin transactions below threshold may not be on 1099-DA but ARE still taxable; aggregate reporting can mask individual transaction detail.</p>
+
+<h3>Missing Customer-Provided Basis Limitation</h3>
+
+<p>If broker reports Box 8 (customer-provided acquisition info), this is for lot ordering ONLY - cannot be relied on as basis to IRS. Customer remains responsible for basis substantiation.</p>
+
+<h3>NFT Reporting Box Confusion</h3>
+
+<p>2025 Form 1099-DA has known text error in Box 11c (IRS acknowledged). Aggregate NFT gross proceeds should be in Box 11c with Box 1f left blank for NFT mint sales; future form versions will correct text.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="crypto-tax-guide.html" class="related-link">Crypto Tax General<span>Cryptocurrency tax framework</span></a>
+    <a href="crypto-defi-staking-guide.html" class="related-link">DeFi and Staking<span>Staking, lending, yield income</span></a>
+    <a href="form-8938-guide.html" class="related-link">Form 8938 FATCA<span>Specified foreign financial assets</span></a>
+    <a href="wash-sale-guide.html" class="related-link">Wash Sale Rule<span>§1091 - generally not applied to digital assets</span></a>
+    <a href="qsbs-section-1202-obbba-graduated.html" class="related-link">QSBS §1202 OBBBA<span>OBBBA capital gains exclusion</span></a>
+    <a href="investments-capital.html" class="related-link">Investments &amp; Capital Hub<span>All investment topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §6045 (Returns of brokers). §6045(a) (general broker reporting). §6045(c)(1)(D) (digital asset broker - added by Infrastructure Investment and Jobs Act, P.L. 117-58, November 15, 2021). §6045(g) (basis reporting). §6045A (information furnished by broker to customer). §3406 (backup withholding - 24% rate). §61 (gross income from disposition). §1001 (gain or loss realized). §1012 (cost basis). §1091 (wash sale rule - generally inapplicable to digital assets). §6721 (failure to file information return penalty). §6722 (failure to furnish payee statement penalty). Reg §1.6045-1 (broker reporting in general). §1.6045-1(c)(8) (digital asset broker definition - custodial only post-CRA). §1.6045-1(d)(2)(ii)(B)(4) (customer-provided acquisition information - lot ordering only, not basis reporting). §1.6045-1(c)(13)(iv) (qualifying stablecoin de minimis rule). §1.1012-1(j) (digital asset basis rules - wallet-by-wallet). Treasury Decision 10000 (June 28, 2024 - final custodial broker regulations effective for transactions on or after January 1, 2025). Treasury Decision 10021 (December 27, 2024 - DeFi broker regulations - VACATED by Congressional Review Act resolution March 2025). Revenue Procedure 2024-28 (June 2024 - wallet-by-wallet basis allocation; effective January 1, 2025; safe harbor for transition from universal accounting). Notice 2024-56 (transition relief - penalty relief for 2025 broker reporting failures with good-faith effort; backup withholding relief through 2026). Notice 2024-57 (identified transactions deferred from 1099-DA reporting including notional principal contracts). Notice 2025-33 (extension of backup withholding relief through 2027 for TIN-matched accounts; foreign account relief). Notice 2014-21 (cryptocurrency as property, mining rewards as ordinary income). Revenue Ruling 2023-14 (proof-of-stake validation rewards as ordinary income at FMV when received). Form 1099-DA (Digital Asset Proceeds From Broker Transactions). Form 8949 (Sales and Other Dispositions of Capital Assets). Schedule D (Form 1040). Form 945 (Annual Return of Withheld Federal Income Tax). Form W-9 (Request for Taxpayer Identification Number). Congressional Review Act (5 U.S.C. §§801-808) - joint resolution March 2025 vacating DeFi broker regulations; bars Treasury from substantially similar regulations without new legislative authorization. Infrastructure Investment and Jobs Act, P.L. 117-58 (November 15, 2021) - added §6045 digital asset broker reporting authority.</p>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
