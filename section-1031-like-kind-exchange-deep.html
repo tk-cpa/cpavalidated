@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§1031 Like-Kind Exchange Deep Dive: Real Property Only, 45/180 Day Rules, QI, OBBBA Preserved | CPA Validated</title>
+<meta name="description" content="Section 1031 complete mechanics. Real property only post-TCJA. OBBBA July 4 2025 preserved unchanged. 45-day identification, 180-day exchange. Q4 trap. Qualified Intermediary safe harbor. Reverse and improvement exchanges. New section 1062 farmland deferral.">
+<link rel="canonical" href="https://cpavalidated.com/section-1031-like-kind-exchange-deep.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§1031 Like-Kind Exchange: Complete Mechanics Post-OBBBA">
+<meta property="og:description" content="Section 1031 framework. Real property only. 45/180 day deadlines. Qualified Intermediary. Reverse exchange Rev. Proc. 2000-37. Section 121 coordination Rev. Proc. 2005-14.">
+<meta property="og:url" content="https://cpavalidated.com/section-1031-like-kind-exchange-deep.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"§1031 Like-Kind Exchange: Complete Mechanics Post-OBBBA","url":"https://cpavalidated.com/section-1031-like-kind-exchange-deep.html","author":{{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"}},"publisher":{{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}},"isAccessibleForFree":true,"inLanguage":"en-US"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html" class="active">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§1031 Like-Kind Exchange: Real Property Deep Dive</h1>
+  <div class="sub">Real Property Only Since TCJA 2018 &nbsp;&bull;&nbsp; OBBBA July 4 2025 Preserved Unchanged &nbsp;&bull;&nbsp; 45-Day Identification &nbsp;&bull;&nbsp; 180-Day Exchange (Or Return Due Date If Earlier) &nbsp;&bull;&nbsp; Qualified Intermediary Required &nbsp;&bull;&nbsp; New §1062 Farmland Deferral Added By OBBBA</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1031 / §1062 / Reg §1.1031(a)-3, §1.1031(k)-1</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21 (preserved); TCJA P.L. 115-97 §13303</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="real-estate-tax.html">&#8592; Real Estate</a></div>
+<div class="article">
+
+<p class="lead">Section 1031 (Exchange of real property held for productive use or investment) allows non-recognition of gain or loss when business or investment real property is exchanged for like-kind real property. The TCJA (P.L. 115-97, December 22, 2017) restricted §1031 to REAL PROPERTY ONLY effective January 1, 2018 - personal property (machinery, vehicles, equipment), intangibles (franchise rights, patents, broadband spectrum), and living property (livestock, racehorses, artwork) were ELIMINATED from §1031 treatment. The OBBBA (P.L. 119-21, July 4, 2025) PRESERVED §1031 unchanged - despite earlier proposals to cap deferral at $500,000 per taxpayer, the final law made NO changes to §1031. Two new provisions added by OBBBA do interact: §1062 (deferral for qualified farmland sales to qualified farmers) is a NEW non-recognition provision SEPARATE from §1031, effective for tax years beginning after July 4, 2025. The §1031 mechanics require: (1) RELINQUISHED and REPLACEMENT real property both LOCATED IN THE UNITED STATES (foreign real property is NOT like-kind to US real property under §1031(h)); (2) both held for productive use in a trade or business OR for investment (NOT held primarily for sale; primary residences DO NOT qualify but may use §121 instead); (3) 45-DAY IDENTIFICATION period from disposition of relinquished property to identify potential replacement property in writing; (4) 180-DAY EXCHANGE period - replacement property must be received by EARLIER of 180 days after relinquished property transfer OR the due date of the return for the year of disposition (with extensions). Q4 trap: relinquished property sold October 17, 2025 or later forces filing extension to get full 180 days. (5) QUALIFIED INTERMEDIARY (QI) under Reg §1.1031(k)-1(g)(4) safe harbor required - taxpayer cannot have actual or constructive receipt of sale proceeds. The 2020 final regulations under Reg §1.1031(a)-3 clarified the "real property" definition including a 15% incidental personal property rule. Like-kind in real estate is broadly defined - vacant land for office building, raw land for apartment complex, retail for warehouse all qualify. Related-party exchanges have a 2-year holding requirement under §1031(f). Boot (cash or debt relief) triggers gain recognition up to the amount of boot. Form 8824 reports the exchange.</p>
+
+<div class="callout">
+  <div class="callout-label">§1031 in One Paragraph</div>
+  <p><strong>Eligible property:</strong> Real property held for productive use in trade or business or for investment, located in the United States. NOT primary residences, NOT property held primarily for sale, NOT foreign real estate. Personal property and intangibles eliminated post-TCJA.</p>
+  <p><strong>Deadlines (both hard - no extensions, no flexibility):</strong> 45 DAYS to identify replacement property in writing; 180 DAYS to close (or earlier - return due date of disposition year).</p>
+  <p><strong>Qualified Intermediary:</strong> Required. Taxpayer cannot touch proceeds. Constructive receipt = disqualified exchange.</p>
+  <p><strong>OBBBA preserved §1031 unchanged.</strong> Earlier $500,000 cap proposals (Biden FY budgets) never enacted; OBBBA July 4, 2025 confirmed §1031 fully intact.</p>
+  <p><strong>What you defer:</strong> Capital gain + depreciation recapture (§1245/§1250). Basis carries over to replacement property. Cumulative deferral until ultimate sale (or stepped up at death under §1014).</p>
+</div>
+
+<h2>What Qualifies as Like-Kind Real Property</h2>
+
+<table class="key-table">
+  <tr><th>Eligible (Like-Kind for §1031)</th><th>NOT Eligible</th></tr>
+  <tr><td>Office building exchanged for apartment complex</td><td>Foreign real property exchanged for US real property (§1031(h))</td></tr>
+  <tr><td>Raw land exchanged for developed retail</td><td>Primary residence (use §121 exclusion instead)</td></tr>
+  <tr><td>Vacant land exchanged for rental property</td><td>Property held primarily for sale (dealer property; flips)</td></tr>
+  <tr><td>Industrial warehouse exchanged for hotel</td><td>Personal property (machinery, vehicles, equipment) - eliminated TCJA 2018</td></tr>
+  <tr><td>Single-family rental exchanged for multifamily</td><td>Intangibles (franchise rights, patents, broadband spectrum) - eliminated TCJA</td></tr>
+  <tr><td>Tenant-in-common (TIC) interest in real estate</td><td>Livestock, racehorses, breeding animals - eliminated TCJA</td></tr>
+  <tr><td>Delaware Statutory Trust (DST) interest (Rev. Rul. 2004-86)</td><td>Artwork, collectibles - eliminated TCJA</td></tr>
+  <tr><td>Leasehold of 30 years or more (Reg §1.1031(a)-1(c))</td><td>Securities, stock, partnership interests (§1031(a)(2))</td></tr>
+  <tr><td>Mineral rights, water rights, easements</td><td>Certificates of trust, beneficial interests</td></tr>
+  <tr><td>Improved property exchanged for unimproved</td><td>Inventory or stock-in-trade</td></tr>
+</table>
+
+<h2>The Time Deadlines - Non-Negotiable</h2>
+
+<table class="key-table">
+  <tr><th>Deadline</th><th>Authority</th><th>Details</th></tr>
+  <tr><td>Day 0 - Closing on Relinquished Property</td><td>§1031(a)(3)</td><td>Triggers both clocks; proceeds go to QI, never to taxpayer</td></tr>
+  <tr><td>Day 45 - Identification Deadline</td><td>§1031(a)(3)(A)</td><td>Identify potential replacement property in writing, signed, delivered to QI or other exchange party; midnight cutoff; no flexibility for weekends/holidays</td></tr>
+  <tr><td>Day 180 OR return due date - Exchange Completion</td><td>§1031(a)(3)(B)</td><td>Earlier of 180 days OR due date of return (with extensions) of year relinquished property transferred</td></tr>
+  <tr><td>Q4 trap - October 17 onward</td><td>Reg §1.1031(k)-1(b)</td><td>For 2025 disposition Oct 17+, must file Form 4868 extension to get full 180 days; otherwise must close by April 15, 2026</td></tr>
+  <tr><td>Disaster relief extensions</td><td>Rev. Proc. 2018-58</td><td>Federally declared disasters may extend 45/180 day deadlines; taxpayer or QI must qualify</td></tr>
+</table>
+
+<h2>Identification Rules - Three Alternative Tests</h2>
+
+<table class="key-table">
+  <tr><th>Identification Rule</th><th>Detail</th></tr>
+  <tr><td>Three-Property Rule</td><td>Identify up to THREE replacement properties regardless of value; close on at least one by day 180. Most common choice.</td></tr>
+  <tr><td>200% Rule</td><td>Identify ANY number of properties as long as total FMV does NOT exceed 200% of relinquished property value. Useful for portfolio replacement.</td></tr>
+  <tr><td>95% Exception</td><td>Identify any number of properties, even exceeding 200% FMV, provided taxpayer acquires properties worth at least 95% of the FMV of all identified properties. Rarely used - high failure risk.</td></tr>
+  <tr><td>Identification format</td><td>Written, signed by taxpayer, dated, delivered to QI or party involved in exchange (not to attorney or accountant). For real estate: legal description, street address, or distinguishable name.</td></tr>
+  <tr><td>Revocation/Replacement</td><td>Within 45 days, taxpayer may revoke and reidentify; after day 45, all identifications locked in</td></tr>
+</table>
+
+<h2>Qualified Intermediary (QI) - Safe Harbor Mechanics</h2>
+
+<table class="key-table">
+  <tr><th>QI Requirement</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>Reg §1.1031(k)-1(g)(4) safe harbor</td></tr>
+  <tr><td>Definition</td><td>Person not the taxpayer or disqualified person who acquires the relinquished property from taxpayer, transfers to buyer, acquires replacement property, transfers to taxpayer</td></tr>
+  <tr><td>Disqualified persons (cannot be QI)</td><td>Agent of taxpayer (attorney, CPA, broker, real estate agent, investment banker within 2 years); related party under §267(b) or §707(b)(1); employee</td></tr>
+  <tr><td>Required documents</td><td>Exchange agreement before closing; assignment of taxpayer's rights under contracts; notice to parties</td></tr>
+  <tr><td>Funds held</td><td>QI holds proceeds in segregated account; taxpayer cannot have right to receive, pledge, borrow against, or otherwise benefit before exchange complete</td></tr>
+  <tr><td>QI insolvency risk</td><td>Major risk - some QIs have failed (e.g., LandAmerica 2008). Choose bonded, established QI; consider escrow account protection</td></tr>
+  <tr><td>QI fee structure</td><td>Typical $1,000-$2,500 for simple forward exchange; $5,000-$15,000 for reverse exchange</td></tr>
+  <tr><td>Constructive receipt - exchange invalidated</td><td>If taxpayer touches proceeds directly, exchange voided - full taxable sale</td></tr>
+</table>
+
+<h2>The Five Exchange Structures</h2>
+
+<table class="key-table">
+  <tr><th>Structure</th><th>Mechanics</th></tr>
+  <tr><td>Simultaneous Exchange</td><td>Relinquished and replacement properties close on same day; rare due to coordination challenges; QI still recommended</td></tr>
+  <tr><td>Delayed (Forward) Exchange</td><td>MOST COMMON. Sell first; identify within 45 days; close on replacement within 180 days; QI holds proceeds in between</td></tr>
+  <tr><td>Reverse Exchange</td><td>Buy replacement FIRST; sell relinquished within 180 days. Exchange Accommodation Titleholder (EAT) parks replacement under Rev. Proc. 2000-37 safe harbor. More expensive ($5,000-$15,000 QI fee)</td></tr>
+  <tr><td>Improvement (Build-to-Suit / Construction) Exchange</td><td>Use exchange proceeds to construct improvements on replacement property; EAT takes title during construction; same 45/180 day clocks</td></tr>
+  <tr><td>Combined Reverse + Improvement</td><td>Most complex; EAT parks property AND oversees construction; safe harbor under Rev. Proc. 2000-37</td></tr>
+</table>
+
+<h2>Boot - Gain Recognition Up to Boot Received</h2>
+
+<table class="key-table">
+  <tr><th>Boot Type</th><th>Treatment</th></tr>
+  <tr><td>Cash Boot</td><td>Cash retained from exchange = gain recognized up to amount of cash; remaining gain deferred</td></tr>
+  <tr><td>Mortgage Boot (debt relief)</td><td>Net decrease in debt from relinquished to replacement = boot; if replacement debt < relinquished debt, difference is boot recognized as gain</td></tr>
+  <tr><td>Non-Like-Kind Property received</td><td>Treated as boot at FMV (e.g., if taxpayer receives furniture as part of building exchange)</td></tr>
+  <tr><td>Boot Netting</td><td>Cash and mortgage boot generally CANNOT be offset by cash and mortgage paid; boot received always recognized</td></tr>
+  <tr><td>Gain recognition limit</td><td>Recognized gain = LESSER of (a) total realized gain, (b) boot received</td></tr>
+  <tr><td>Character of gain</td><td>Recognized gain retains character (capital gain, §1231 gain, §1245/§1250 recapture)</td></tr>
+  <tr><td>Boot examples</td><td>Receive $500K relinquished property, $400K replacement + $100K cash = $100K cash boot recognized</td></tr>
+</table>
+
+<h2>Basis Carryover Mechanics</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - Forward Exchange With Boot</div>
+  <p><strong>Facts:</strong> Sarah owns rental property: original cost $400,000, depreciation taken $100,000, adjusted basis $300,000. She exchanges for new rental property worth $700,000. She receives $50,000 cash boot. New property assumed $500,000 mortgage; she had no debt on old property.</p>
+  <p><strong>Amount realized:</strong></p>
+  <p>FMV of replacement property: $700,000<br>Cash boot received: $50,000<br>Debt relief: $0 (mortgage assumed by Sarah, not debt relief)<br>Total: $750,000</p>
+  <p><strong>Realized gain:</strong> $750,000 - $300,000 adjusted basis = $450,000</p>
+  <p><strong>Recognized gain:</strong> LESSER of realized gain ($450,000) or boot ($50,000) = <strong>$50,000 recognized</strong></p>
+  <p><strong>Character of recognized gain:</strong> $50,000 - allocate to depreciation recapture first under §1250 (up to $100,000 prior depreciation), rest §1231 gain. Recognized gain = $50,000 unrecaptured §1250 gain taxed at max 25% under §1(h)(1)(D).</p>
+  <p><strong>Basis in replacement property:</strong></p>
+  <p>Old adjusted basis: $300,000<br>+ Boot recognized: $50,000<br>+ Debt assumed (new): $500,000<br>- Cash boot received: $50,000<br>= <strong>Basis in replacement: $800,000</strong></p>
+  <p><strong>Deferred gain:</strong> $450,000 - $50,000 = $400,000 deferred; this $400,000 reduces basis to $300,000 + $500,000 debt - $400,000 deferred = $400,000 substituted basis component; new property basis $800,000 reflects FMV ($700,000) + boot received recognized ($50,000) + debt assumed ($500,000) - boot received cash ($50,000) - deferred gain not yet recognized.</p>
+</div>
+
+<h2>Related-Party Exchanges - §1031(f) Two-Year Rule</h2>
+
+<table class="key-table">
+  <tr><th>Related-Party Rule</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>§1031(f) added by Revenue Reconciliation Act of 1989</td></tr>
+  <tr><td>Related party definition</td><td>Under §267(b) or §707(b)(1) - family members, controlled entities, partnerships, S-corps, trusts</td></tr>
+  <tr><td>Two-year holding requirement</td><td>If exchange between related parties, BOTH parties must hold the exchanged properties for at least 2 years after the exchange; early disposition triggers retroactive gain recognition</td></tr>
+  <tr><td>Exceptions to 2-year rule</td><td>Death of taxpayer or related party; involuntary conversion; transaction without tax avoidance principal purpose</td></tr>
+  <tr><td>Related-party with QI</td><td>Even with QI, related-party rules apply if taxpayer ultimately acquires from related party - look-through prevents using QI to bypass §1031(f)</td></tr>
+  <tr><td>Basis-swap concern</td><td>IRS concerned with related-party exchanges that "swap" high-basis property to taxpayer planning to sell while moving low-basis property to related party (preserving deferral)</td></tr>
+</table>
+
+<h2>§1031 + §121 Coordination - Mixed-Use Property</h2>
+
+<p>A property that was once a primary residence and is now investment-use, or vice versa, may qualify for both §121 (exclusion) and §1031 (deferral). The interaction is governed by Rev. Proc. 2005-14.</p>
+
+<table class="key-table">
+  <tr><th>Coordination Element</th><th>Treatment</th></tr>
+  <tr><td>Authority</td><td>Rev. Proc. 2005-14</td></tr>
+  <tr><td>Order of application</td><td>§121 applied FIRST to realized gain, then §1031 applied to remaining gain</td></tr>
+  <tr><td>Cash boot threshold</td><td>Cash received in exchange ignored to the extent it does NOT exceed §121 excluded gain on the rental portion</td></tr>
+  <tr><td>Basis</td><td>§121 excluded gain ADDED to replacement property basis (similar to recognized gain treatment)</td></tr>
+  <tr><td>Conversion timing</td><td>Cannot convert replacement property to main home immediately under §1031(a)(1) - requires holding for investment or productive use; safe harbor of 2 years' rental use commonly applied</td></tr>
+  <tr><td>5-year residence requirement</td><td>If property acquired in §1031 exchange and later converted to residence, must own at least 5 years before §121 exclusion available under §121(d)(10)</td></tr>
+  <tr><td>Common scenario</td><td>Primary residence converted to rental, eventually exchanged into another rental; §121 may exclude pre-conversion appreciation; §1031 defers post-conversion gain</td></tr>
+</table>
+
+<h2>Reverse Exchange - Rev. Proc. 2000-37 Safe Harbor</h2>
+
+<table class="key-table">
+  <tr><th>Reverse Exchange Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>Rev. Proc. 2000-37 (modified by Rev. Proc. 2004-51)</td></tr>
+  <tr><td>Exchange Accommodation Titleholder (EAT)</td><td>Takes title to replacement property at outset; parks for up to 180 days; transfers to taxpayer at exchange completion</td></tr>
+  <tr><td>Day 45 identification</td><td>Taxpayer must identify potential RELINQUISHED properties within 45 days of EAT acquiring parked property</td></tr>
+  <tr><td>Day 180 completion</td><td>EAT must transfer either parked replacement to taxpayer OR parked relinquished to buyer within 180 days</td></tr>
+  <tr><td>Permitted arrangements</td><td>Taxpayer may loan funds to EAT (even interest-free); guaranty third-party loans; lease parked property; control construction; act as general contractor; indemnify EAT</td></tr>
+  <tr><td>EAT can also act as QI</td><td>Permitted under Rev. Proc. 2000-37</td></tr>
+  <tr><td>Cost</td><td>Higher - $5,000 to $15,000 typical EAT/QI combined fee due to legal structure and real property title holding</td></tr>
+  <tr><td>Use case</td><td>Competitive markets where replacement property might be lost during sale of relinquished; investor must move fast on attractive replacement</td></tr>
+</table>
+
+<h2>The New §1062 Qualified Farmland Sale Provision</h2>
+
+<table class="key-table">
+  <tr><th>§1062 Aspect (OBBBA New Provision)</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>IRC §1062 (added by OBBBA P.L. 119-21)</td></tr>
+  <tr><td>Effective date</td><td>Tax years beginning after July 4, 2025</td></tr>
+  <tr><td>Eligible sale</td><td>Sale of qualified farmland by qualifying taxpayer to "qualified farmer"</td></tr>
+  <tr><td>Effect</td><td>Defer income tax on qualified farmland sale similar to §1031 but with different qualification rules</td></tr>
+  <tr><td>Separate from §1031</td><td>§1062 is a NEW non-recognition provision; does not modify §1031</td></tr>
+  <tr><td>Practitioner status</td><td>Awaiting Treasury guidance; current operation limited by lack of regulatory framework</td></tr>
+  <tr><td>Coordination</td><td>Taxpayer cannot use both §1031 and §1062 for same transaction</td></tr>
+</table>
+
+<h2>Depreciation Recapture in §1031 Exchanges</h2>
+
+<table class="key-table">
+  <tr><th>Recapture Element</th><th>Treatment</th></tr>
+  <tr><td>§1245 recapture (personal property)</td><td>Not applicable post-TCJA - personal property excluded from §1031; full recapture on disposition of any personal property NOT part of §1031</td></tr>
+  <tr><td>§1250 recapture (real property)</td><td>Generally deferred via §1031 to extent gain is deferred; recapture preserved in basis of replacement property</td></tr>
+  <tr><td>Unrecaptured §1250 gain</td><td>If boot recognized, allocated FIRST to unrecaptured §1250 gain (taxed at max 25% under §1(h)(1)(D)); balance to §1231 gain</td></tr>
+  <tr><td>Tracking</td><td>Required - replacement property carries forward both original basis history and §1250 prior depreciation; on ultimate sale, recapture extends across multiple exchanged properties</td></tr>
+  <tr><td>15-year amortization period</td><td>Replacement property basis equal to remaining basis of relinquished + boot adjustments; for nonresidential real property, 39-year MACRS continues on substituted basis portion (Reg §1.168(i)-6 election available)</td></tr>
+  <tr><td>Excess basis (purchase price > carryover)</td><td>Excess basis treated as newly acquired - 27.5/39 year MACRS</td></tr>
+</table>
+
+<h2>15% Incidental Personal Property Rule</h2>
+
+<table class="key-table">
+  <tr><th>Reg §1.1031(a)-3 Incidental Rule</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>Reg §1.1031(a)-3 (effective for transfers after December 2, 2020)</td></tr>
+  <tr><td>Rule</td><td>Personal property incidental to real property NOT TREATED as separate property if (a) typically transferred with real property in normal commercial transactions and (b) aggregate FMV does NOT exceed 15% of FMV of replacement real property</td></tr>
+  <tr><td>Example - hotel exchange</td><td>Hotel real property + room furniture, fixtures, equipment (FF&E) - if FF&E is 15% or less of hotel value, included in like-kind exchange</td></tr>
+  <tr><td>Example - office building</td><td>Office building + tenant improvements + minor equipment (HVAC, security systems) - typically below 15% threshold</td></tr>
+  <tr><td>Effect if exceeds 15%</td><td>Personal property is BOOT - generates recognized gain at FMV</td></tr>
+  <tr><td>Practical tip</td><td>For mixed-asset transactions (hotels, restaurants, gas stations, agricultural), allocate carefully to stay below 15% to preserve full §1031 deferral</td></tr>
+</table>
+
+<h2>Form 8824 Reporting</h2>
+
+<table class="key-table">
+  <tr><th>Form 8824 Section</th><th>Content</th></tr>
+  <tr><td>Part I - Information on the Like-Kind Exchange</td><td>Description of properties; dates; related party indicator</td></tr>
+  <tr><td>Part II - Related Party Exchange Information</td><td>If related party - identifying info, 2-year holding period acknowledgment</td></tr>
+  <tr><td>Part III - Realized Gain/Loss, Recognized Gain, Basis of Like-Kind Property Received</td><td>FMV of property received; cash received; debt relief; computation of recognized gain (line 22); basis in replacement (line 25)</td></tr>
+  <tr><td>Part IV - Deferral of Gain From Section 1043 Conflict-of-Interest Sales</td><td>Government officials with conflict-of-interest divestitures (separate provision)</td></tr>
+  <tr><td>Filing</td><td>Attach to Form 1040, 1041, 1065, 1120, 1120-S for year of exchange</td></tr>
+  <tr><td>Multiple exchanges</td><td>Separate Form 8824 for each exchange</td></tr>
+</table>
+
+<h2>State Conformity</h2>
+
+<table class="key-table">
+  <tr><th>State Issue</th><th>Detail</th></tr>
+  <tr><td>Conformity</td><td>Most states conform to §1031 generally; rolling conformity automatic; static-conformity states verify date</td></tr>
+  <tr><td>California §18031.5 "clawback"</td><td>California sources gain on §1031 exchange property to California even if replacement property in another state; sells CA property + acquires out-of-state replacement = CA tax due on eventual sale</td></tr>
+  <tr><td>Annual reporting California</td><td>Form FTB 3840 - annual reporting of out-of-state §1031 replacement property until ultimately taxed</td></tr>
+  <tr><td>State tax during exchange</td><td>State withholding may apply on real property sales; FIRPTA withholding for foreign sellers ALWAYS applies regardless of §1031</td></tr>
+  <tr><td>Pennsylvania non-conformity</td><td>PA does not conform to §1031 - full taxable sale at state level</td></tr>
+  <tr><td>Property tax / transfer tax</td><td>Local property and real estate transfer taxes NOT affected by §1031 - assess as new transaction</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Constructive Receipt - Touching the Proceeds</h3>
+
+<p>Taxpayer who takes any control over relinquished property proceeds disqualifies the exchange. Avoid: (a) closing into taxpayer's bank account, (b) personal escrow holding, (c) attorney trust account, (d) wire to taxpayer directly. Engage QI BEFORE closing.</p>
+
+<h3>Missing 45-Day Identification</h3>
+
+<p>Day 45 is midnight cutoff regardless of weekends, holidays, or natural disasters (absent disaster relief proclamation). Identifications must be written, signed, and delivered. Verbal or email-only often inadequate. Most QIs require their own identification form.</p>
+
+<h3>Missing the October 17 Q4 Trap</h3>
+
+<p>Relinquished property sold October 17, 2025 or later (calendar year taxpayer): 180-day clock would extend past April 15, 2026 due date. MUST file Form 4868 extension to preserve full 180 days; otherwise, exchange must close by April 15, 2026 (earlier than 180 days).</p>
+
+<h3>Treating Foreign Real Estate as Like-Kind</h3>
+
+<p>US real property is NOT like-kind to foreign real property under §1031(h). Cannot exchange Florida condo for Mexican villa; cannot exchange French apartment for New York office building. Both must be located in United States.</p>
+
+<h3>Using a Disqualified Person as QI</h3>
+
+<p>Taxpayer's attorney, CPA, broker, or related party (within 2 years of taxpayer relationship) is DISQUALIFIED from acting as QI under Reg §1.1031(k)-1(g)(4)(iii). Using a disqualified person voids the safe harbor.</p>
+
+<h3>Forgetting Related-Party 2-Year Rule</h3>
+
+<p>Related-party exchange requires both parties hold for 2 years post-exchange. Early disposition retroactively triggers original gain recognition. Document and track.</p>
+
+<h3>Missing Boot Through Debt Reduction</h3>
+
+<p>Replacement property mortgage less than relinquished property mortgage = net debt relief = boot. Often missed in calculations. Use boot offset rules carefully.</p>
+
+<h3>Identifying Too Many Properties Under 200% Rule</h3>
+
+<p>200% rule cap = exact 200%, not 201%. Inadvertent overshoot voids exchange unless 95% rule met (rarely available). Identify conservatively or use 3-property rule.</p>
+
+<h3>Selling Primary Residence as §1031</h3>
+
+<p>Personal residence not held for investment - cannot use §1031. Use §121 instead ($250K/$500K exclusion). Mixed-use property (e.g., home office) may bifurcate.</p>
+
+<h3>Holding Property "For Sale" Then Trying §1031</h3>
+
+<p>Property held primarily for sale (dealers, flippers) does NOT qualify for §1031 - even if titled as "investment." Intent at acquisition matters; short holding periods + active marketing suggest sale-intent.</p>
+
+<h3>Converting Replacement Property to Personal Use Too Soon</h3>
+
+<p>§1031(a)(1) requires replacement property held for investment or productive use. Immediate conversion to primary residence violates this. Safe harbor under Rev. Proc. 2008-16: 2 years of rental use (with 14-day personal use limit per year) - then convert to primary residence.</p>
+
+<h3>Forgetting California §18031.5 Clawback</h3>
+
+<p>California sources eventual gain back to California even if replacement property in non-CA state. Annual FTB 3840 filings required indefinitely. Many practitioners and software miss this.</p>
+
+<h3>Improperly Allocating Personal Property in Mixed Sale</h3>
+
+<p>Hotel + FF&E sale where personal property exceeds 15% incidental rule = personal property is boot. Misallocation causes unexpected gain recognition. Engage appraiser for proper allocation.</p>
+
+<h3>Not Reporting on Form 8824</h3>
+
+<p>Form 8824 required even when no gain recognized (full deferral). Failure to file may invalidate exchange documentation if challenged.</p>
+
+<h3>Believing the "$500,000 Cap" Rumor</h3>
+
+<p>Multiple political proposals (Biden FY budgets) suggested capping §1031 deferral at $500K per taxpayer. None enacted. OBBBA July 4, 2025 confirmed NO cap. §1031 fully intact.</p>
+
+<h3>Confusing §1031 With Opportunity Zones</h3>
+
+<p>§1400Z-2 Opportunity Zones (extended through 2029 under OBBBA) are SEPARATE deferral regime - apply to capital gain reinvestment in QOFs. §1031 applies only to real property exchange. Different mechanics, different deadlines, different reporting.</p>
+
+<h3>QI Insolvency Risk</h3>
+
+<p>QI holding millions of dollars in segregated funds during 45-180 day window is risk. Several QIs have failed (LandAmerica 2008). Choose bonded, established QI. Verify segregated account structure.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="like-kind-exchange-calc.html" class="related-link">Like-Kind Exchange Calculator<span>Computes basis carryover and gain</span></a>
+    <a href="real-estate-professional-status-469c7.html" class="related-link">REPS §469(c)(7)<span>Real estate professional status</span></a>
+    <a href="opportunity-zones-2027-obbba.html" class="related-link">Opportunity Zones 2.0<span>Alternative deferral regime</span></a>
+    <a href="section-121-home-sale-exclusion-deep.html" class="related-link">§121 Home Sale Exclusion<span>Mixed-use coordination</span></a>
+    <a href="firpta-foreign-sellers.html" class="related-link">FIRPTA Withholding<span>Foreign seller exchange rules</span></a>
+    <a href="real-estate-tax.html" class="related-link">Real Estate Hub<span>All real estate topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §1031 (Exchange of real property held for productive use or investment - retitled by TCJA P.L. 115-97 §13303 effective January 1, 2018). §1031(a) (non-recognition of gain or loss on exchange of like-kind property). §1031(a)(1) (held for productive use in trade or business or for investment). §1031(a)(2) (exclusions - stocks, bonds, partnership interests, certificates of trust). §1031(a)(3)(A) (45-day identification period). §1031(a)(3)(B) (180-day exchange period - earlier of 180 days or due date of return with extensions). §1031(b) (gain from boot recognized to extent of boot). §1031(c) (loss not recognized). §1031(d) (basis in replacement property - substituted basis). §1031(f) (related party exchanges - 2-year holding requirement). §1031(g) (special rules where substantial diminution in value). §1031(h) (foreign real property NOT like-kind to US real property). §1031(j) (multi-asset exchanges - regs to be issued). §1062 (NEW under OBBBA - qualified farmland sale deferral for tax years beginning after July 4, 2025, separate from §1031). §1.1031(a)-1 (definition of like-kind). §1.1031(a)-3 (real property definition - effective for transfers after December 2, 2020; 15% incidental personal property rule). §1.1031(k)-1 (deferred exchange regulations). §1.1031(k)-1(g)(4) (qualified intermediary safe harbor). §1.1031(k)-1(g)(4)(iii) (disqualified persons). §1.1031(k)-1(c) (identification rules - three-property, 200%, 95% exception). §1.1031(j)-1 (multi-asset exchange regs). §121 (principal residence exclusion - coordination with §1031). §121(d)(10) (5-year holding rule for §1031 replacement property converted to residence). §267(b) (related persons). §707(b)(1) (related partnerships). §1245 (personal property depreciation recapture - inapplicable post-TCJA to §1031). §1250 (real property depreciation recapture). §1(h)(1)(D) (unrecaptured §1250 gain - max 25% rate). §1231 (property used in trade or business). §1400Z-2 (Opportunity Zones - separate deferral regime). §6651 (failure to file penalty). §7701(o) (economic substance doctrine). Revenue Procedure 2000-37 (Reverse Exchange safe harbor). Revenue Procedure 2004-51 (modifications to Rev. Proc. 2000-37). Revenue Procedure 2005-14 (§121 and §1031 combined application). Revenue Procedure 2008-16 (residence conversion safe harbor - 2 years rental). Revenue Procedure 2018-58 (disaster relief - extensions of 45-day and 180-day periods). Revenue Ruling 2004-86 (Delaware Statutory Trust as like-kind property). Form 8824 (Like-Kind Exchanges). Form 4797 (Sales of Business Property - depreciation recapture). California FTB 3840 (annual reporting for out-of-state §1031 replacement). FIRPTA §1445 (foreign seller withholding - independent of §1031). Tax Cuts and Jobs Act P.L. 115-97 (December 22, 2017) §13303 (eliminated personal property and intangibles from §1031). One Big Beautiful Bill Act P.L. 119-21 (July 4, 2025) - PRESERVED §1031 unchanged; rejected proposed caps.</p>
+
+</div>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>

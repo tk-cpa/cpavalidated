@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§754 Election / §743(b) / §734(b) Partnership Basis Adjustment: TCJA Substantial Built-In Loss, 2025 Related-Party Reporting | CPA Validated</title>
+<meta name="description" content="Section 754 election complete mechanics. Section 743(b) transfer of interest; Section 734(b) distribution. TCJA substantial built-in loss mandatory test. Technical termination 708(b)(1)(B) repealed. T.D. 10024 January 2025 related-party reporting. Otay Project LP T.C. Memo 2026-21. Section 755 allocation. Section 197 intangibles 15-year amortization.">
+<link rel="canonical" href="https://cpavalidated.com/section-754-743b-partnership-basis-adjustment.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§754 / §743(b) / §734(b): Partnership Basis Adjustment Deep Dive">
+<meta property="og:description" content="Section 754 election framework. Section 743(b) transferee adjustment. Section 734(b) distribution adjustment. Substantial built-in loss mandatory rule. Related-party reporting 2025 regs.">
+<meta property="og:url" content="https://cpavalidated.com/section-754-743b-partnership-basis-adjustment.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"§754 / §743(b) / §734(b): Partnership Basis Adjustment Deep Dive","url":"https://cpavalidated.com/section-754-743b-partnership-basis-adjustment.html","author":{{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"}},"publisher":{{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}},"isAccessibleForFree":true,"inLanguage":"en-US"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§754 Election: Partnership Basis Adjustments</h1>
+  <div class="sub">Single Irrevocable Election Covers §743(b) Transfer + §734(b) Distribution &nbsp;&bull;&nbsp; TCJA Substantial Built-In Loss Mandatory (Either $250K Test) &nbsp;&bull;&nbsp; §708(b)(1)(B) Technical Termination REPEALED &nbsp;&bull;&nbsp; T.D. 10024 January 2025 Related-Party Transactions Of Interest &nbsp;&bull;&nbsp; §197 Goodwill 15-Year Transferee Amortization</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §754 / §743 / §734 / §755 / §197 / Reg §1.743-1, §1.754-1</span>
+    <span class="ph-meta-item">TCJA §13504; T.D. 10024 (Jan 10 2025); Otay Project LP T.C. Memo 2026-21</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="business-entity.html">&#8592; Business &amp; Entity</a></div>
+<div class="article">
+
+<p class="lead">Section 754 (Manner of electing optional adjustment to basis of partnership property) allows a partnership to make an irrevocable election to adjust the inside basis of partnership property in two scenarios: (1) §743(b) - upon TRANSFER of a partnership interest by sale, exchange, or upon a partner's death, the inside basis of partnership property is adjusted with respect to the TRANSFEREE PARTNER ONLY (preventing phantom gain on subsequent sale of appreciated partnership property); and (2) §734(b) - upon DISTRIBUTION of partnership property to a partner, inside basis of remaining partnership property is adjusted (to either preserve gain that distributee would otherwise recognize on excess distribution, or capture loss from a basis-reducing distribution). A SINGLE §754 election covers BOTH §743(b) and §734(b); cannot elect separately. Election is made on a TIMELY-FILED Form 1065 (with extensions) for the partnership tax year in which the relevant transfer or distribution occurs - the election is IRREVOCABLE except with IRS consent under Reg §1.754-1(c) (which IRS rarely grants). Once made, the election applies to all subsequent transfers and distributions in that year and all future years. The TCJA (P.L. 115-97 §13504, December 22, 2017) added the SUBSTANTIAL BUILT-IN LOSS rule under §743(d) - a MANDATORY §743(b) adjustment when partnership has substantial built-in loss immediately after transfer of partnership interest, EVEN WITHOUT §754 election. Substantial built-in loss exists if (a) partnership's adjusted basis in its property exceeds FMV by more than $250,000, OR (b) transferee partner would be allocated loss in excess of $250,000 if partnership sold all assets for cash equal to FMV. Post-TCJA, technical termination under former §708(b)(1)(B) was REPEALED - no longer triggers §743(b) adjustment. The IRS January 10, 2025 final regulations (T.D. 10024) identified four related-party "transactions of interest" under Reg §1.6011-18 as REPORTABLE TRANSACTIONS - basis adjustments resulting from §732, §734, or §743 between related persons exceeding $5 million over gain recognized are reportable. The Tax Court in Otay Project LP v. Commissioner (T.C. Memo 2026-21, February 2026) denied a $714 million §743(b) deduction on economic substance grounds. §755 governs ALLOCATION of basis adjustment among partnership properties (capital gain property class vs ordinary income property class; FMV-based within class). Allocation to §197 intangibles (goodwill) amortized over 15 YEARS by transferee even if remaining useful life of partnership's intangibles is shorter.</p>
+
+<div class="callout">
+  <div class="callout-label">§754 / §743(b) / §734(b) in One Paragraph</div>
+  <p><strong>What it does:</strong> Aligns inside basis (partnership's basis in its assets) with outside basis (partner's basis in partnership interest) after a transfer or distribution. Without it, incoming partner faces phantom gain when partnership sells appreciated asset.</p>
+  <p><strong>§743(b) trigger:</strong> Transfer of partnership interest by sale, exchange, or death. Adjusts inside basis ONLY with respect to transferee.</p>
+  <p><strong>§734(b) trigger:</strong> Distribution of property to a partner that causes gain recognition or basis adjustment under §732. Adjusts inside basis with respect to REMAINING partners.</p>
+  <p><strong>Election mechanics:</strong> Single irrevocable election on Form 1065 covers both. Applies to all subsequent qualifying events. Reg §1.754-1(b) - made by attaching statement.</p>
+  <p><strong>Mandatory without election:</strong> §743(b) MANDATORY when "substantial built-in loss" exists (>$250K excess basis over FMV, or transferee allocated loss >$250K). §734(b) MANDATORY when "substantial basis reduction" exists (downward adjustment exceeds $250K).</p>
+  <p><strong>2025 transaction-of-interest reporting:</strong> Final regs T.D. 10024 require disclosure on Form 8886 for certain related-party basis adjustments exceeding $5M over gain recognized.</p>
+</div>
+
+<h2>The Inside Basis / Outside Basis Mismatch Problem</h2>
+
+<div class="callout">
+  <div class="callout-label">Why §754 Exists - The Phantom Gain Problem</div>
+  <p><strong>Facts:</strong> Real estate partnership ABC has 4 partners, each with $250,000 capital account. Partnership owns one building purchased for $1,000,000 with $1,000,000 inside basis remaining. Building now worth $1,800,000.</p>
+  <p><strong>Without §754 election - Partner D buys Partner B's 25% interest for $450,000 (FMV of share):</strong></p>
+  <p>Partner D outside basis: $450,000 (what he paid)<br>Partner D share of inside basis: $250,000 (unchanged - partnership inside basis still $1M)<br>One year later, partnership sells building for $1,800,000.<br>Partnership recognizes gain: $1,800,000 - $1,000,000 = $800,000<br>Partner D allocated 25% = $200,000 of taxable gain<br>BUT Partner D already paid $450,000 for an interest reflecting his share of the appreciated FMV - he's now paying TAX on appreciation that occurred BEFORE he bought in.</p>
+  <p><strong>With §754 election (§743(b) adjustment for transferee):</strong></p>
+  <p>Partner D outside basis: $450,000<br>Partner D share of inside basis WITHOUT adjustment: $250,000<br>§743(b) adjustment = $450,000 - $250,000 = $200,000 ADDITIONAL inside basis allocated to Partner D's share of partnership assets<br>One year later, partnership sells building for $1,800,000.<br>Partnership tax gain: $800,000 allocated $200,000 to Partner D<br>Partner D's special §743(b) basis adjustment: $200,000 reduction in gain<br>Partner D's net taxable gain: $0 (correctly reflecting he bought in at FMV)<br>Other partners (A, C, and the partnership's tracking of D's adjustment) unaffected by §743(b) on D's behalf.</p>
+</div>
+
+<h2>§743(b) - Transfer of Partnership Interest</h2>
+
+<table class="key-table">
+  <tr><th>§743(b) Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>IRC §743(b) and Reg §1.743-1</td></tr>
+  <tr><td>Trigger</td><td>Transfer of partnership interest by sale, exchange, or death of partner</td></tr>
+  <tr><td>Activation</td><td>(a) Partnership has §754 election in effect; OR (b) Substantial built-in loss exists immediately after transfer (§743(d) - mandatory)</td></tr>
+  <tr><td>Effect</td><td>Inside basis of partnership property INCREASED or DECREASED to align with transferee's purchase price (outside basis)</td></tr>
+  <tr><td>Computation</td><td>Adjustment = Transferee's outside basis MINUS transferee's proportionate share of inside basis (positive = step-up; negative = step-down)</td></tr>
+  <tr><td>Transferee's share of inside basis</td><td>Per Reg §1.743-1(d) - share of "previously taxed capital" PLUS share of partnership liabilities; tax-book-FMV "hypothetical liquidation" method generally applied</td></tr>
+  <tr><td>Allocation among assets</td><td>Under §755 and Reg §1.755-1 - among capital gain property and ordinary income property classes; within class, by FMV</td></tr>
+  <tr><td>Tracking</td><td>Adjustment maintained on partnership books PARTNER-BY-PARTNER; not allocated to other partners</td></tr>
+  <tr><td>Death of partner step-up</td><td>Heir's outside basis = FMV at date of death (§1014); §743(b) brings inside basis up to FMV with respect to heir only</td></tr>
+</table>
+
+<h2>§743(d) Mandatory Adjustment - Substantial Built-In Loss</h2>
+
+<table class="key-table">
+  <tr><th>Substantial Built-In Loss Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>§743(d) - added by TCJA P.L. 115-97 §13504(b)(1) effective for transfers after December 31, 2017</td></tr>
+  <tr><td>Test 1 - Partnership-level</td><td>Partnership's adjusted basis in property exceeds FMV by more than $250,000</td></tr>
+  <tr><td>Test 2 - Transferee-level (added by TCJA)</td><td>Transferee would be allocated loss of more than $250,000 if partnership sold all assets for cash equal to FMV immediately after transfer</td></tr>
+  <tr><td>Either test triggers mandatory §743(b)</td><td>Even without §754 election in place</td></tr>
+  <tr><td>Adjustment is DOWNWARD</td><td>Decreases inside basis with respect to transferee - prevents transferee from being allocated built-in loss that should remain with original partner</td></tr>
+  <tr><td>Securitization partnership exception</td><td>§743(e) - electing investment partnerships exempt</td></tr>
+  <tr><td>Pre-TCJA position</td><td>Only Test 1 applied; Test 2 added to address tax shelter abuses where specially-allocated built-in losses to specific partners weren't caught by partnership-level test</td></tr>
+</table>
+
+<h2>§734(b) - Distribution to a Partner</h2>
+
+<table class="key-table">
+  <tr><th>§734(b) Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>IRC §734(b) and Reg §1.734-1</td></tr>
+  <tr><td>Trigger 1 - Excess distribution</td><td>Distributee partner recognizes gain because sum of money + adjusted basis of property distributed exceeds partner's outside basis</td></tr>
+  <tr><td>Trigger 2 - Basis adjustment under §732</td><td>Upon complete liquidation of distributee's interest, distributee's basis in distributed property differs from partnership's basis (§732(b))</td></tr>
+  <tr><td>Activation</td><td>(a) §754 election in effect; OR (b) Substantial basis reduction exists under §734(d) - mandatory</td></tr>
+  <tr><td>Effect</td><td>Inside basis of REMAINING partnership property adjusted (INCREASED for trigger 1 gain recognized; DECREASED for downward §732 adjustment)</td></tr>
+  <tr><td>Adjustment amount</td><td>Equal to gain recognized by distributee OR amount of downward §732 adjustment</td></tr>
+  <tr><td>Allocation</td><td>Under §755 and Reg §1.755-1 - among remaining partnership property</td></tr>
+  <tr><td>§734(d) substantial basis reduction</td><td>Downward §732 adjustment exceeding $250,000; mandatory §734(b) adjustment even without §754</td></tr>
+  <tr><td>Affects all remaining partners</td><td>Unlike §743(b), §734(b) impacts all remaining partners proportionately</td></tr>
+</table>
+
+<h2>§755 Allocation Among Partnership Properties</h2>
+
+<table class="key-table">
+  <tr><th>§755 Allocation Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>IRC §755 and Reg §1.755-1</td></tr>
+  <tr><td>Two property classes</td><td>(1) Capital gain property (capital assets and §1231 property); (2) Ordinary income property (inventory, accounts receivable, depreciable property to extent of recapture)</td></tr>
+  <tr><td>Step 1 - Class allocation</td><td>Adjustment allocated between classes based on relative appreciation/depreciation within each class</td></tr>
+  <tr><td>Step 2 - Within-class allocation</td><td>By FMV of properties within each class (subject to special rules for negative adjustments)</td></tr>
+  <tr><td>Negative adjustments</td><td>Allocated first to assets with built-in gain within class, then to others; cannot reduce basis below zero</td></tr>
+  <tr><td>§197 intangibles (goodwill)</td><td>Treated as capital gain property; positive adjustment amortized by transferee over 15 YEARS regardless of partnership's remaining useful life - Reg §1.743-1(j)(4)(i)(B)</td></tr>
+  <tr><td>Inventory</td><td>Adjustment to inventory increases COGS upon sale of inventory; no acceleration into other assets</td></tr>
+  <tr><td>Sub-assets in same class</td><td>Multiple individual assets may need adjustment; track each separately on partnership books</td></tr>
+</table>
+
+<h2>Election Mechanics</h2>
+
+<table class="key-table">
+  <tr><th>Election Element</th><th>Detail</th></tr>
+  <tr><td>How to make</td><td>Attach written statement to TIMELY-FILED Form 1065 (including extensions) for year of triggering event; statement signed by any partner; must explicitly reference §754</td></tr>
+  <tr><td>Statement content</td><td>Partnership name, address, taxpayer ID, declaration of §754 election, signature</td></tr>
+  <tr><td>Year of effect</td><td>Year of qualifying transfer/distribution AND ALL SUBSEQUENT YEARS</td></tr>
+  <tr><td>Irrevocable</td><td>Per §754 - irrevocable except with IRS consent under Reg §1.754-1(c); consent rarely granted</td></tr>
+  <tr><td>Revocation grounds (when IRS may grant)</td><td>Change in nature of partnership business; substantial increase in assets; change in character of assets; increased frequency of retirements/transfers</td></tr>
+  <tr><td>Pre-2018 automatic election under §708(b)(1)(B)</td><td>Eliminated by TCJA - technical termination repealed; no automatic refresh of §754</td></tr>
+  <tr><td>Failed to file timely</td><td>Reg §1.9100-2 automatic 12-month extension for §754 election OR §1.9100-3 discretionary relief for inadvertent failures</td></tr>
+  <tr><td>Late §1.9100-3 relief</td><td>Available if reasonable reliance and good faith; PLR may be required</td></tr>
+</table>
+
+<h2>Partnership-Level Bookkeeping - Tracking §743(b) Adjustments</h2>
+
+<table class="key-table">
+  <tr><th>Bookkeeping Requirement</th><th>Detail</th></tr>
+  <tr><td>Per-partner tracking</td><td>§743(b) adjustment is PARTNER-SPECIFIC - tracked separately for each transferee on partnership books</td></tr>
+  <tr><td>Asset-level allocation</td><td>Adjustment allocated to specific partnership assets under §755; track on each asset</td></tr>
+  <tr><td>Annual recovery</td><td>Adjustment to depreciable property recovered over remaining useful life; immediate deduction if allocated to inventory upon sale</td></tr>
+  <tr><td>Asset disposition</td><td>Upon partnership sale of asset with §743(b) adjustment, transferee's gain/loss allocation reduced/increased by adjustment</td></tr>
+  <tr><td>K-1 reporting</td><td>§743(b) adjustment income impact reported on transferee's K-1 line 11 / 13 / etc.; ordinary depreciation through line 1 for ordinary income property</td></tr>
+  <tr><td>Loss of records</td><td>Successor accountants must reconstruct §743(b) basis from prior partnership records; significant audit risk if records inadequate</td></tr>
+  <tr><td>Multi-tier partnerships</td><td>§743(b) of upper-tier partnership flows through; lower-tier separate tracking - Reg §1.743-1(g)</td></tr>
+</table>
+
+<h2>Death of Partner - §1014 Step-Up + §743(b) Adjustment</h2>
+
+<table class="key-table">
+  <tr><th>Death Coordination</th><th>Detail</th></tr>
+  <tr><td>Heir's outside basis</td><td>FMV at date of death under §1014(a) - basis step-up</td></tr>
+  <tr><td>Heir's share of inside basis</td><td>Unchanged at partnership level absent §743(b) - heir would face phantom gain</td></tr>
+  <tr><td>With §754 election</td><td>§743(b) adjustment aligns heir's share of inside basis with stepped-up outside basis</td></tr>
+  <tr><td>Without §754 election</td><td>Heir bears built-in gain that originally accrued to decedent; effectively double-taxes the appreciation (estate tax + income tax on partnership's eventual sale)</td></tr>
+  <tr><td>Substantial built-in loss check</td><td>§743(d) still applies - mandatory §743(b) adjustment if partnership has substantial built-in loss</td></tr>
+  <tr><td>IRD exception §1014(c)</td><td>Income in respect of decedent NOT eligible for §1014 step-up - applies to certain partnership items like unrealized receivables (§751 hot assets)</td></tr>
+  <tr><td>Hot asset §751 issue</td><td>§751(a) "hot assets" (unrealized receivables, inventory) treated as IRD - no step-up; ordinary income gain on partnership's eventual collection/sale</td></tr>
+</table>
+
+<h2>Reverse §754 - Eliminating the Election</h2>
+
+<table class="key-table">
+  <tr><th>Reverse §754 Issue</th><th>Detail</th></tr>
+  <tr><td>Why considered</td><td>§754 once-elected applies forever; if partnership now in net loss position (basis > FMV), §743(b) DECREASES inside basis on transfers; may be undesirable</td></tr>
+  <tr><td>Revocation under Reg §1.754-1(c)</td><td>Permitted only with IRS consent; consent rarely granted; established grounds include changed circumstances</td></tr>
+  <tr><td>Automatic acceptable grounds</td><td>Change in nature of partnership business; substantial increase in assets; change in character of assets; increased frequency of retirements or shifts of interests</td></tr>
+  <tr><td>Inappropriate grounds</td><td>Sole purpose of avoiding §743(b) downward adjustment NOT acceptable basis for revocation</td></tr>
+  <tr><td>Application procedure</td><td>Letter to IRS within 30 days after end of partnership year for which revocation sought; specific grounds and documentation</td></tr>
+  <tr><td>Substantial built-in loss override</td><td>Even with revocation, §743(d) mandatory adjustment still applies if substantial built-in loss exists - cannot avoid mandatory adjustment by revoking §754</td></tr>
+</table>
+
+<h2>Related-Party Basis-Shifting Transactions (T.D. 10024 - January 2025)</h2>
+
+<table class="key-table">
+  <tr><th>Transaction of Interest Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>Reg §1.6011-18 finalized January 10, 2025 in T.D. 10024</td></tr>
+  <tr><td>Four reportable transactions identified</td><td>(1) Distribution to related partner with §732 basis increase; (2) Distribution to related partner with §734(b) basis increase; (3) §732(d) basis adjustment in distribution to related partner; (4) Transfer of partnership interest to related partner with §743(b) basis increase</td></tr>
+  <tr><td>Threshold</td><td>Sum of basis increases exceeds gain recognized by $5,000,000 over taxable year</td></tr>
+  <tr><td>Related party</td><td>Under §267(b) or §707(b)(1)</td></tr>
+  <tr><td>Reporting</td><td>Form 8886 (Reportable Transaction Disclosure Statement); penalty for failure to disclose under §6707A up to $200,000</td></tr>
+  <tr><td>Rev. Rul. 2024-14</td><td>IRS announced intent to challenge transactions lacking economic substance under §7701(o)</td></tr>
+  <tr><td>Otay Project case</td><td>T.C. Memo 2026-21 (February 2026) denied $714 million §743(b) deduction on economic substance grounds</td></tr>
+  <tr><td>Forthcoming mechanical regs</td><td>Treasury / IRS Notice 2024-54 - proposed regs would mechanically reduce or eliminate benefit of related-party basis adjustments; retroactive in effect</td></tr>
+</table>
+
+<h2>Special Rules and Coordination</h2>
+
+<table class="key-table">
+  <tr><th>Special Rule</th><th>Treatment</th></tr>
+  <tr><td>§704(c) built-in gain/loss</td><td>Contributed property with built-in gain/loss tracked separately under §704(c); §743(b) adjustment to transferee partner does NOT alter §704(c) tracking</td></tr>
+  <tr><td>Securitization partnerships §743(e)</td><td>Electing investment partnerships exempt from mandatory §743(b) under §743(d); special look-through rules apply</td></tr>
+  <tr><td>UBI partnerships</td><td>§743(b) adjustments by tax-exempt partners create UBTI issues; special analysis</td></tr>
+  <tr><td>Disguised sale §707(a)(2)(B)</td><td>If transaction recharacterized as disguised sale, §743(b) adjustment may be inapplicable - transferee is not a partner</td></tr>
+  <tr><td>§708(b)(1)(B) technical termination REPEALED</td><td>Post-TCJA - no longer triggers §743(b); partnership continues uninterrupted</td></tr>
+  <tr><td>§708(a) termination (no remaining business)</td><td>Different from technical termination; §743(b) tracking ends with partnership</td></tr>
+  <tr><td>S-corp §1377 election analogy</td><td>S-corp basis adjustments DIFFERENT - no §754 equivalent; closing-of-the-books election under §1377(a)(2) addresses different issue</td></tr>
+  <tr><td>Investment partnerships §731(c)</td><td>Marketable security distributions special rules; §734(b) adjustment may apply</td></tr>
+</table>
+
+<h2>Worked Example - Sale of Interest With §754</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - §743(b) Adjustment on Sale</div>
+  <p><strong>Facts:</strong> Partnership PRS has 3 equal partners A, B, C. Assets:</p>
+  <p>- Land: basis $30, FMV $90<br>- Equipment: basis $60, FMV $30 (cost $200, $140 depreciation, FMV $30 - built-in loss)<br>- Cash: $30<br>Total inside basis = $120; Total FMV = $150<br>Each partner's outside basis: $40 (initial capital + share of taxable income)<br>FMV per partner: $50</p>
+  <p><strong>Transaction:</strong> Partner A sells interest to D for $50 (FMV). PRS has §754 election in effect.</p>
+  <p><strong>§743(b) computation:</strong></p>
+  <p>D's outside basis: $50<br>D's share of inside basis: $40<br>§743(b) adjustment = $50 - $40 = $10 INCREASE</p>
+  <p><strong>§755 allocation - land vs equipment vs cash classes:</strong></p>
+  <p>Land: $90 FMV - $30 basis = $60 built-in gain<br>Equipment: $30 FMV - $60 basis = $30 built-in loss<br>Cash: $30 FMV - $30 basis = $0</p>
+  <p>Allocate $10 §743(b) adjustment based on D's 1/3 share of each property's built-in gain/loss:<br>D's share of land gain = $20; allocate $20 of $10 ratably<br>D's share of equipment loss = $10 (negative)<br>Net D's share of unrealized appreciation/depreciation across capital assets = $20 - $10 = $10<br>$10 §743(b) adjustment EXACTLY MATCHES D's net pre-acquisition appreciation</p>
+  <p><strong>Effect on D:</strong></p>
+  <p>D has $10 special inside basis adjustment - allocated $20 increase to land basis, $10 decrease to equipment basis (per §755 within-class FMV)<br>If PRS sells land for $90, partnership recognizes $60 gain; D allocated 1/3 = $20<br>D's §743(b) adjustment offsets gain: $20 - $20 = $0 - D pays no tax on his share of land gain that occurred before he bought in<br>Other partners (B, C) bear their own $20 gain shares (had basis $30, now FMV $90)</p>
+</div>
+
+<h2>Form 1065 / K-1 Mechanics</h2>
+
+<table class="key-table">
+  <tr><th>Reporting Element</th><th>Detail</th></tr>
+  <tr><td>§754 election statement</td><td>Attached to Form 1065 for year of triggering event; required content per Reg §1.754-1</td></tr>
+  <tr><td>K-1 Box 13 codes</td><td>§743(b) and §734(b) basis adjustments reported in Box 13 of Schedule K-1; specific letter codes for each type</td></tr>
+  <tr><td>Notification of transfer</td><td>Transferee partner must notify partnership within 30 days of transfer per Reg §1.743-1(k)(2); failure makes partnership not liable for adjustment computation</td></tr>
+  <tr><td>Partnership notification of §743(b)</td><td>Statement attached to K-1 of transferee showing amount of adjustment, allocation among assets, recovery period</td></tr>
+  <tr><td>Schedule M-2 capital account reconciliation</td><td>§743(b) adjustments do NOT affect partnership capital accounts (transferee-specific only); but tracking required</td></tr>
+  <tr><td>Form 8082 inconsistent treatment</td><td>If transferee disagrees with partnership's §743(b) computation, file Form 8082 with own return</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Forgetting Mandatory §743(b) Without §754 Election</h3>
+
+<p>§743(d) post-TCJA mandates §743(b) adjustment when substantial built-in loss exists, even WITHOUT §754 election. Partnerships in net loss position must still compute and allocate adjustment for transferees - cannot avoid by simply not electing.</p>
+
+<h3>Missing the §708(b)(1)(B) Repeal</h3>
+
+<p>Pre-TCJA technical terminations under former §708(b)(1)(B) triggered automatic §743(b) refresh. Post-TCJA - REPEALED. Partnership now continues uninterrupted; no automatic basis refresh on 50% interest transfers.</p>
+
+<h3>Treating §754 Election as Annual</h3>
+
+<p>§754 election is IRREVOCABLE once made; applies to ALL subsequent qualifying years. Cannot elect just for "good" years and skip "bad" years. Practitioners reflexively making annual elections waste time; once-elected remains in effect indefinitely.</p>
+
+<h3>Failing to Notify Partnership of Transfer</h3>
+
+<p>Transferee must notify partnership within 30 days under Reg §1.743-1(k)(2). Without notification, partnership not required to compute §743(b) adjustment. Heirs particularly miss this requirement; family partnership transfers especially vulnerable.</p>
+
+<h3>Allocating §743(b) to Wrong Asset Class</h3>
+
+<p>§755 requires capital gain class vs ordinary income class allocation FIRST. Allocating $743(b) to inventory when adjustment should go to capital asset class creates incorrect future ordinary income vs capital gain character.</p>
+
+<h3>Treating §197 Intangibles as Having Remaining Partnership Useful Life</h3>
+
+<p>Transferee's §743(b) adjustment to §197 intangibles amortizable over 15 YEARS by transferee, regardless of partnership's remaining basis recovery period. Often missed - results in slower-than-allowable amortization.</p>
+
+<h3>Missing Death-Triggered §743(b)</h3>
+
+<p>Partner's death triggers §743(b) if §754 in effect. Heir gets stepped-up outside basis via §1014; without §743(b), inside basis frozen at old amount = phantom gain on partnership's eventual sale. Estate planners often miss partnership-level coordination.</p>
+
+<h3>Allocating §743(b) to IRD Items</h3>
+
+<p>Hot assets under §751(a) (unrealized receivables, substantially appreciated inventory) treated as IRD under §1014(c) - NO step-up. §743(b) adjustment to these items inappropriate; need to bifurcate hot assets from cold assets.</p>
+
+<h3>Forgetting §734(b) Mandatory Adjustment</h3>
+
+<p>§734(d) - distributions with substantial basis reduction (>$250K) trigger mandatory §734(b) even without §754. Often overlooked when partnership distributes property to redeeming partner.</p>
+
+<h3>Treating §734(b) as Partner-Specific</h3>
+
+<p>§734(b) affects ALL remaining partners (unlike §743(b) which is transferee-specific). Mistakenly treating §734(b) as adjustment for distributee only.</p>
+
+<h3>Missing Related-Party Disclosure (T.D. 10024)</h3>
+
+<p>January 10, 2025 final regs require Form 8886 disclosure for related-party basis adjustments exceeding $5M. Penalty up to $200,000 under §6707A for failure to disclose. Many partnership preparers unfamiliar with new reporting.</p>
+
+<h3>Confusing §704(c) With §743(b)</h3>
+
+<p>§704(c) tracks built-in gain/loss on CONTRIBUTED property; addresses contributing partner only. §743(b) tracks adjustment for INCOMING transferee. Different mechanics; tracked separately on partnership books.</p>
+
+<h3>Late §754 Election Without §1.9100 Relief</h3>
+
+<p>Late §754 election requires Reg §1.9100-2 automatic 12-month relief OR §1.9100-3 discretionary relief via PLR. Filing late without proper procedure invalidates election.</p>
+
+<h3>Revocation Petition Filed After Year-End</h3>
+
+<p>Reg §1.754-1(c) - revocation request must be submitted to IRS no later than 30 days after close of partnership year for which revocation sought. Many practitioners miss this short window.</p>
+
+<h3>Misallocating §743(b) Among Multiple Buildings</h3>
+
+<p>Multiple properties in capital gain class - §755 requires within-class FMV allocation. Allocating proportionately to historical cost instead of FMV is incorrect.</p>
+
+<h3>Forgetting Multi-Tier Partnership Look-Through</h3>
+
+<p>Upper-tier partnership §743(b) adjustment flows to lower-tier; Reg §1.743-1(g) requires special tracking; lower-tier separately tracks its own adjustments. Multi-tier structures particularly complex.</p>
+
+<h3>Substantial Built-In Loss Test 2 (Transferee-Level) Missed</h3>
+
+<p>TCJA added second test - mandatory §743(b) if TRANSFEREE allocated loss >$250K. Even if partnership-level test fails, transferee-level test may trigger mandatory adjustment. Specially-allocated losses to specific partners particularly affected.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="form-7203-s-corp-basis.html" class="related-link">Form 7203 S-Corp Basis<span>Comparable basis tracking for S-corps</span></a>
+    <a href="form-1065-deep-dive.html" class="related-link">Form 1065 Partnership Return<span>Annual partnership reporting</span></a>
+    <a href="cost-basis-step-up-1014-death.html" class="related-link">§1014 Step-Up at Death<span>Basis adjustment for inherited interests</span></a>
+    <a href="partnership-distribution-guide.html" class="related-link">Partnership Distribution Rules<span>§731/§732/§734 mechanics</span></a>
+    <a href="form-3115-481a-obbba-174-retroactive.html" class="related-link">Form 3115 Accounting Method<span>Method changes affecting basis</span></a>
+    <a href="business-entity.html" class="related-link">Business &amp; Entity Hub<span>All entity topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §754 (Manner of electing optional adjustment to basis of partnership property). §734 (Optional adjustment to basis of undistributed partnership property). §734(a) (general rule - no adjustment unless §754 election or substantial basis reduction). §734(b) (adjustment to basis of partnership property). §734(d) (substantial basis reduction - $250,000 mandatory threshold). §743 (Special rules where section 754 election or substantial built-in loss). §743(a) (general rule - no adjustment unless §754 or substantial built-in loss). §743(b) (adjustment to basis of partnership property with respect to transferee partner). §743(b)(1) (positive adjustment - excess of basis over share). §743(b)(2) (negative adjustment - excess of share over basis). §743(c) (allocation of adjustment among partnership properties via §755). §743(d) (substantial built-in loss - TCJA mandatory adjustment thresholds; partnership-level test ($250K basis over FMV) and transferee-level test ($250K loss allocation)). §743(e) (electing investment partnerships exception). §755 (Rules for allocation of basis - capital gain class vs ordinary income class; FMV within class). §704(c) (allocations with respect to contributed property - separate from §743(b)). §708(b)(1)(B) (REPEALED by TCJA P.L. 115-97 §13504 - technical termination eliminated). §731 (extent of recognition of gain or loss on distribution). §732 (basis of distributed property other than money). §732(b) (complete liquidation distribution basis). §732(d) (special partner election - 2-year window without §754). §741 (recognition and character of gain or loss on sale or exchange of partnership interest). §751 (unrealized receivables and inventory items - hot assets). §751(a) (treatment as ordinary income on sale of partnership interest). §1014 (basis of property acquired from decedent). §1014(c) (IRD exception - hot assets not stepped up). §1.743-1 (regulations - inside basis adjustment to transferee). §1.743-1(d) (transferee's share of inside basis - previously taxed capital plus liabilities). §1.743-1(g) (multi-tier partnerships). §1.743-1(j)(4)(i)(B) (§197 intangibles - 15-year amortization to transferee). §1.743-1(k)(2) (transferee 30-day notification). §1.734-1 (regulations - §734(b) adjustments). §1.754-1 (manner of making §754 election). §1.754-1(b) (timing and content of election statement). §1.754-1(c) (revocation with IRS consent). §1.755-1 (allocation of basis adjustment among partnership properties). §1.9100-2 (automatic 12-month extension for §754 election). §1.9100-3 (discretionary relief for inadvertent failure). §6011 (general reporting requirement). §1.6011-18 (related-party basis adjustment transactions of interest - final regs January 10, 2025 in T.D. 10024). §6707A (penalty for failure to disclose reportable transaction - up to $200,000). §267(b) (related persons). §707(b)(1) (related partnerships). §7701(o) (economic substance doctrine). Tax Cuts and Jobs Act P.L. 115-97 §13504 (December 22, 2017) - added §743(d) Test 2; repealed §708(b)(1)(B) technical termination. Treasury Decision 10024 (January 10, 2025) - final regulations on related-party basis adjustment transactions of interest. Revenue Ruling 2024-14 (IRS announced intent to challenge transactions lacking economic substance). Notice 2024-54 (proposed regulations to mechanically reduce or eliminate benefit of related-party basis adjustments; retroactive application contemplated). Otay Project LP v. Commissioner, T.C. Memo 2026-21 (February 2026) - $714 million §743(b) deduction denied on economic substance grounds; Tax Court applied Ninth Circuit framework from Sochin v. Commissioner, 843 F.2d 351 (9th Cir. 1988) and Reddam v. Commissioner, 755 F.3d 1051 (9th Cir. 2014). Form 1065 (US Return of Partnership Income). Schedule K-1 (Form 1065). Form 8082 (Notice of Inconsistent Treatment). Form 8886 (Reportable Transaction Disclosure). One Big Beautiful Bill Act P.L. 119-21 (July 4, 2025) - did NOT modify §754 / §743(b) / §734(b) framework.</p>
+
+</div>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
