@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§1256 Contracts Mark-to-Market: 60/40 Rule, Regulated Futures, Nonequity Options, Loss Carryback, Form 6781 | CPA Validated</title>
+<meta name="description" content="Section 1256 contracts complete mechanics. Five contract categories: regulated futures, foreign currency, nonequity options, dealer equity options, dealer securities futures. Annual mark-to-market at year-end FMV. 60/40 long/short character regardless of holding period. 3-year loss carryback election. Wash sale not applied. Hedge exception. Form 6781. §988 forex coordination.">
+<link rel="canonical" href="https://cpavalidated.com/section-1256-contracts-mark-to-market.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§1256 Mark-to-Market Contracts: Deep Dive 2026">
+<meta property="og:description" content="IRC §1256 framework. Year-end MTM at FMV. 60/40 capital gain treatment. 3-year carryback. Hedge exception. Form 6781. §988 forex.">
+<meta property="og:url" content="https://cpavalidated.com/section-1256-contracts-mark-to-market.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"§1256 Mark-to-Market Contracts: Deep Dive 2026","url":"https://cpavalidated.com/section-1256-contracts-mark-to-market.html","author":{{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"}},"publisher":{{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}},"isAccessibleForFree":true,"inLanguage":"en-US"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html" class="active">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§1256 Contracts: Mark-to-Market Deep Dive</h1>
+  <div class="sub">Annual Year-End Mark-To-Market At FMV &nbsp;&bull;&nbsp; 60% Long-Term + 40% Short-Term Capital (Regardless Of Holding Period) &nbsp;&bull;&nbsp; Maximum 2026 Federal Rate ~26.8% &nbsp;&bull;&nbsp; 3-Year Loss Carryback §1256(c) &nbsp;&bull;&nbsp; Wash Sale §1091 NOT Applied &nbsp;&bull;&nbsp; Hedge Exception §1256(e) Ordinary Treatment &nbsp;&bull;&nbsp; Form 6781</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1256 / §1092 / §988 / §263(g) / §475(f) / Reg §1.1256 / §1.1092</span>
+    <span class="ph-meta-item">P.L. 97-34 (1981 enactment); P.L. 111-203 Dodd-Frank (swaps exclusion)</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="investments-capital.html">&#8592; Investments &amp; Capital</a></div>
+<div class="article">
+
+<p class="lead">IRC §1256 (Section 1256 contracts marked to market) imposes ANNUAL MARK-TO-MARKET tax treatment on five categories of derivative contracts AND grants automatic 60/40 capital gain treatment regardless of holding period. SCOPE §1256(b): (1) REGULATED FUTURES CONTRACTS - traded on or subject to rules of qualified board or exchange (CME, ICE, etc.) where amount required to be deposited and withdrawn depends on system of marking to market; (2) FOREIGN CURRENCY CONTRACTS - traded in interbank market that settle within 2 business days, on foreign currencies for which positions in regulated futures are traded; (3) NONEQUITY OPTIONS - options on commodities, currencies, broad-based indices, debt instruments; (4) DEALER EQUITY OPTIONS - listed equity options traded by dealers; (5) DEALER SECURITIES FUTURES CONTRACTS - dealer-traded futures on securities (with limited applicability since narrow-based security futures excluded). EXCLUSIONS §1256(b)(2): (A) securities futures contracts (single-stock futures) not held by dealer; (B) interest rate swaps, currency swaps, basis swaps, interest rate caps/floors, commodity swaps, equity swaps, equity index swaps, credit default swaps, similar agreements; (C) options on stock and equity options not held by dealer. CORE MECHANICS §1256(a): each §1256 contract held at end of taxable year TREATED AS SOLD for FMV on last business day; gain/loss recognized currently regardless of actual disposition; subsequent realization basis adjusted to FMV at deemed sale. 60/40 RULE §1256(a)(3) - ALL gain/loss treated as 60% LONG-TERM capital gain/loss + 40% SHORT-TERM capital gain/loss, regardless of actual holding period. Maximum effective federal rate ~26.8% (2026 top brackets: 60% × 20% LTCG + 40% × 37% ordinary = 12% + 14.8% = 26.8%) vs 37% ordinary on day-trade equivalent stocks. §1256 LOSS CARRYBACK §1256(c) - 3-year carryback election; carried back to OFFSET §1256 gains in prior years; carries forward indefinitely if unused. WASH SALE §1091 NOT APPLIED to §1256 mark-to-market losses §1256(f). HEDGE EXCEPTION §1256(e) - identified hedging transactions opted out of §1256 treatment - generate ordinary gain/loss instead. MIXED STRADDLE elections §1256(d). FORM 6781 (Gains and Losses From Section 1256 Contracts and Straddles) - report all §1256 activity. §988 FOREIGN CURRENCY - default ordinary treatment for retail forex; §988(a)(1)(B) election out to capital gain (NOT §1256) for non-trader; §1256(g)(2) for "regulated futures contracts" in foreign currency NOT subject to §988.</p>
+
+<div class="callout">
+  <div class="callout-label">§1256 Contracts in One Paragraph</div>
+  <p><strong>Five contract categories:</strong> Regulated futures contracts (CME, ICE), foreign currency forward contracts (interbank, settled in 2 days), nonequity options (commodity, currency, broad-based index), dealer equity options, dealer securities futures contracts.</p>
+  <p><strong>Mark-to-market:</strong> All §1256 contracts open on December 31 treated as sold at FMV; gain/loss recognized currently; basis adjusted to FMV; holding period reset.</p>
+  <p><strong>60/40 treatment:</strong> Regardless of actual holding period, gain/loss = 60% long-term + 40% short-term. Maximum 2026 federal rate ~26.8% (vs 37% for day-traded stocks).</p>
+  <p><strong>Loss carryback:</strong> 3-year carryback election against prior §1256 gains; unused losses carry forward indefinitely. Wash sale §1091 NOT applied to MTM losses.</p>
+  <p><strong>Hedge exception:</strong> Identified hedging transactions opt out - generate ordinary income (matches hedged item character). Report on Form 6781.</p>
+</div>
+
+<h2>§1256 Contract Categories</h2>
+
+<table class="key-table">
+  <tr><th>Category</th><th>Authority</th><th>Examples</th></tr>
+  <tr><td>Regulated futures contracts (RFC)</td><td>§1256(b)(1)(A); §1256(g)(1)</td><td>S&P 500 futures (ES), oil futures (CL), gold futures (GC), Treasury bond futures (ZB), corn futures (ZC), wheat (ZW); contracts traded on CME, NYMEX, COMEX, CBOT, ICE</td></tr>
+  <tr><td>Foreign currency contracts</td><td>§1256(b)(1)(B); §1256(g)(2)</td><td>Interbank market FX forwards on currencies where regulated futures trade (USD/EUR, USD/JPY, USD/GBP, USD/CHF, USD/CAD, USD/AUD, USD/NZD); settle within 2 business days; "major pairs"</td></tr>
+  <tr><td>Nonequity options</td><td>§1256(b)(1)(C); §1256(g)(3)</td><td>SPX options (S&P 500 cash-settled index options); NDX options (Nasdaq-100); RUT options (Russell 2000); VIX options; option on gold futures (OG); option on currency futures; option on Treasury futures</td></tr>
+  <tr><td>Dealer equity options</td><td>§1256(b)(1)(D); §1256(g)(4)</td><td>Listed equity options held by registered options dealers in capacity as such</td></tr>
+  <tr><td>Dealer securities futures contracts</td><td>§1256(b)(1)(E); §1256(g)(5)</td><td>Securities futures contracts held by dealer; narrow application since most single-stock futures excluded for non-dealers</td></tr>
+  <tr><td>EXCLUSIONS §1256(b)(2)</td><td>§1256(b)(2)</td><td>Securities futures contracts (single-stock futures) for non-dealers; interest rate swaps, currency swaps, basis swaps, caps/floors, commodity swaps, equity swaps, equity index swaps, credit default swaps; options on stock (equity options) for non-dealers</td></tr>
+  <tr><td>Qualified board or exchange §1256(g)(7)</td><td>§1256(g)(7)</td><td>(A) National securities exchange registered with SEC; (B) domestic board of trade designated as contract market by CFTC; (C) any other exchange/board determined by Treasury - includes major foreign exchanges (Eurex, LIFFE, ICE Futures Europe, Osaka SE, etc.) per IRS rulings</td></tr>
+  <tr><td>Broad-based index</td><td>Reg §1.1256(b)-1</td><td>Index with 10+ component securities; no single component represents >30% of weighting; top 5 components represent <60% of weighting - SPX, NDX, RUT, DJX qualify; single-stock or narrow-based index options do NOT</td></tr>
+  <tr><td>Single-stock options (NOT §1256)</td><td>§1256(b)(2)(A)</td><td>Options on AAPL, TSLA, SPY (single ETF), QQQ, IWM - all narrow-based equity options - treated as REGULAR capital assets with holding period rules</td></tr>
+</table>
+
+<h2>Mark-to-Market Mechanics</h2>
+
+<table class="key-table">
+  <tr><th>MTM Element</th><th>Detail</th></tr>
+  <tr><td>End-of-year deemed sale §1256(a)(1)</td><td>Each §1256 contract held at close of taxable year treated as SOLD for FAIR MARKET VALUE on last business day of year</td></tr>
+  <tr><td>Gain/loss recognition</td><td>Recognized currently for tax purposes whether actually closed or still open</td></tr>
+  <tr><td>Basis adjustment §1256(a)(2)</td><td>Proper adjustment made for gain/loss taken into account; new cost basis equals year-end FMV</td></tr>
+  <tr><td>Holding period reset</td><td>Effectively resets at year-end - but irrelevant since 60/40 treatment applies regardless</td></tr>
+  <tr><td>Termination during year §1256(c)</td><td>Same rules apply to actual termination/transfer during year - mark-to-market triggers gain/loss recognition</td></tr>
+  <tr><td>Brokerage 1099-B reporting</td><td>Brokers issue single-line 1099-B showing AGGREGATE PROFIT OR LOSS (realized + unrealized year-end MTM); separate from regular 1099-B for non-§1256 securities</td></tr>
+  <tr><td>No carrying cost capitalization</td><td>Cost of carry on §1256 positions deductible as ordinary expense (§263(g) limitation does not apply to MTM-treated contracts)</td></tr>
+  <tr><td>Wash sale §1091 NOT applied §1256(f)</td><td>MTM losses recognized currently; no 30-day disallowance rule</td></tr>
+  <tr><td>§1233 short sale rules</td><td>Generally inapplicable due to MTM resetting positions annually</td></tr>
+  <tr><td>Estate basis adjustment §1014</td><td>Step-up applies to §1256 contracts held at death; income in respect of decedent rules complex</td></tr>
+</table>
+
+<h2>60/40 Tax Treatment §1256(a)(3)</h2>
+
+<table class="key-table">
+  <tr><th>60/40 Element</th><th>Detail</th></tr>
+  <tr><td>Statutory rule</td><td>All gain/loss from §1256 contracts treated as 60% long-term + 40% short-term capital, regardless of actual holding period</td></tr>
+  <tr><td>Long-term portion 60%</td><td>Taxed at preferential LTCG rates: 0% / 15% / 20% based on income bracket; plus 3.8% NIIT if applicable</td></tr>
+  <tr><td>Short-term portion 40%</td><td>Taxed at ordinary income rates: up to 37% federal (2026 top bracket); plus 3.8% NIIT for investment income</td></tr>
+  <tr><td>2026 maximum blended federal rate</td><td>60% × 20% + 40% × 37% = 12% + 14.8% = 26.8% (vs 37% for ordinary income; vs 23.8% (20% + 3.8% NIIT) for pure LTCG)</td></tr>
+  <tr><td>Lower bracket calculation</td><td>At 22% bracket: 60% × 0% + 40% × 22% = 8.8% effective (assuming 0% LTCG bracket and ordinary rate)</td></tr>
+  <tr><td>Day-trader advantage</td><td>Day-trader trading futures: 60/40 vs day-trader trading stocks (100% short-term at 37%) - significant savings</td></tr>
+  <tr><td>Hedge exception §1256(e)</td><td>Identified hedging transactions opt out of 60/40 - become ordinary; matches character of hedged item</td></tr>
+  <tr><td>Mixed straddle §1256(d)</td><td>Specific elections for combined §1256 + non-§1256 positions; can preserve 60/40 character or convert</td></tr>
+  <tr><td>State conformity</td><td>Most states tax all capital gains as ordinary; 60/40 federal benefit doesn't transfer to state; few states (Arizona, Montana, New Mexico) offer preferential LTCG treatment</td></tr>
+  <tr><td>Limited partner / limited entrepreneur dealer §1256(a)(4)</td><td>Special rule - dealer equity options held by limited partners/entrepreneurs treated as ALL SHORT-TERM (no 60/40 benefit)</td></tr>
+</table>
+
+<h2>Loss Carryback Election §1256(c)</h2>
+
+<table class="key-table">
+  <tr><th>Carryback Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>§1256(c) - Net §1256 loss carryback election</td></tr>
+  <tr><td>Election eligibility</td><td>Individual, trust, estate (NOT corporation); §1256 net loss for year</td></tr>
+  <tr><td>Carryback period</td><td>3 YEARS - one of few remaining carryback opportunities; applied to earliest year first</td></tr>
+  <tr><td>What can be offset</td><td>§1256 GAIN only in carryback years - cannot offset ordinary income or non-§1256 capital gain</td></tr>
+  <tr><td>Carryback mechanics</td><td>60% treated as long-term capital loss, 40% as short-term capital loss in carryback year</td></tr>
+  <tr><td>Election timing</td><td>Made on Form 6781 in year of loss; OR Form 1045 (Application for Tentative Refund) for faster refund (90 days vs 1040X processing time)</td></tr>
+  <tr><td>Form 1045 advantage</td><td>Faster refund processing; less complex than amended return; available within 12 months of close of loss year</td></tr>
+  <tr><td>Form 1040X alternative</td><td>If Form 1045 deadline missed, amend prior year returns within statute of limitations</td></tr>
+  <tr><td>Carryforward of unused</td><td>Unused carryback amount carries FORWARD indefinitely; same 60/40 character maintained</td></tr>
+  <tr><td>Capital loss offset general rules</td><td>Carryforward §1256 losses offset capital gains; $3,000 annual ordinary income offset still applies to taxpayer</td></tr>
+  <tr><td>Strategic election timing</td><td>Evaluate whether carryback to prior year saves more than carryforward; depends on prior-year tax rate, recent §1256 gains</td></tr>
+  <tr><td>Net loss definition §1256(c)(3)</td><td>Net §1256 capital loss = excess of §1256 losses over §1256 gains; if losses exceed gains for year</td></tr>
+</table>
+
+<h2>Hedge Exception §1256(e)</h2>
+
+<table class="key-table">
+  <tr><th>Hedge Exception Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>§1256(e) - §1256 does NOT apply to identified hedging transactions</td></tr>
+  <tr><td>Hedging transaction definition</td><td>Transaction entered into in normal course of business primarily to manage risk of price changes, currency fluctuations, or interest rate changes with respect to ordinary property/borrowings</td></tr>
+  <tr><td>Identification requirement</td><td>Must be IDENTIFIED as hedge on day acquired/entered in books and records; specific format per Reg §1.1221-2(f)</td></tr>
+  <tr><td>Character of gain/loss</td><td>ORDINARY (matches character of hedged item) - not 60/40 capital</td></tr>
+  <tr><td>Timing of gain/loss</td><td>Matching - hedge gain/loss recognized when hedged item recognized (not annually MTM)</td></tr>
+  <tr><td>Failure to identify</td><td>If economically a hedge but not identified, IRS may impose ordinary treatment but taxpayer cannot claim ordinary; "inadvertent error" exceptions narrow per Reg §1.1221-2(g)</td></tr>
+  <tr><td>Business use requirement</td><td>Must be in normal course of trade or business; investment hedges don't qualify</td></tr>
+  <tr><td>Mixed straddle interaction</td><td>If hedge component of mixed straddle, treatment depends on straddle election</td></tr>
+  <tr><td>§1233 short sale rules</td><td>Coordination with short sale rules; hedge identification affects character determination</td></tr>
+  <tr><td>Foreign currency hedges</td><td>§988 transactions; complex coordination with §1256 for forex hedges of business borrowings</td></tr>
+</table>
+
+<h2>Mixed Straddles §1256(d)</h2>
+
+<table class="key-table">
+  <tr><th>Mixed Straddle Element</th><th>Detail</th></tr>
+  <tr><td>Definition §1092(c)</td><td>Straddle (offsetting positions reducing risk of loss) where at least one but not all positions are §1256 contracts</td></tr>
+  <tr><td>Example</td><td>Long SPX options (§1256) + short SPY shares (regular equity) - offsetting positions; one §1256, one not</td></tr>
+  <tr><td>Default treatment</td><td>§1092 straddle rules limit loss deductions; §263(g) capitalizes carrying costs; can defer losses</td></tr>
+  <tr><td>Election §1256(d)(1) - Identified Mixed Straddle</td><td>Specifically identified positions; §1256 contracts NOT subject to §1256(a) MTM</td></tr>
+  <tr><td>Election §1256(d)(2) - Mixed Straddle Account</td><td>Designated account; all positions treated under modified rules; 60/40 character preserved within</td></tr>
+  <tr><td>Effects of election</td><td>Loss/gain timing modified; character may be preserved or converted; reduces complexity for active traders</td></tr>
+  <tr><td>Election timing</td><td>Made before close of day first §1256 contract acquired (for §1256(d)(1)); before tax year start for §1256(d)(2)</td></tr>
+  <tr><td>Revocation</td><td>Election generally irrevocable; Secretary consent required</td></tr>
+  <tr><td>§1256(d)(4) Treasury authority</td><td>Treasury authority to issue regulations on mixed straddle treatment</td></tr>
+  <tr><td>Reg §1.1092-3 (mixed straddle account)</td><td>Detailed procedural rules for account designation, identification, computation</td></tr>
+</table>
+
+<h2>Form 6781 Reporting</h2>
+
+<table class="key-table">
+  <tr><th>Form 6781 Element</th><th>Detail</th></tr>
+  <tr><td>Title</td><td>Gains and Losses From Section 1256 Contracts and Straddles</td></tr>
+  <tr><td>Part I - §1256 Contracts</td><td>Report aggregate profit or loss from broker 1099-B Line 11; allocate to short-term (40%) and long-term (60%); flows to Schedule D</td></tr>
+  <tr><td>Part II - Section 1092 Straddle Gains and Losses</td><td>Section A - Losses from straddles; Section B - Gains from straddles; report unrecognized gains/losses where applicable</td></tr>
+  <tr><td>Part III - Unrecognized Gains</td><td>Only required if recognized loss on a position; track unrecognized gains from offsetting positions held at year-end</td></tr>
+  <tr><td>Part IV - Mark-to-Market Election Section 1256(b)</td><td>Originally for §475(f) trader election (different from §1256); now obsolete on this form</td></tr>
+  <tr><td>Schedule D flow</td><td>Long-term portion (60%) → Schedule D Part II (long-term capital gains); Short-term portion (40%) → Schedule D Part I (short-term)</td></tr>
+  <tr><td>Form 1045 carryback</td><td>Reference §1256 loss carryback on Form 1045 with copy of original Form 6781</td></tr>
+  <tr><td>1099-B Box 11</td><td>Aggregate profit/loss on regulated futures and §1256 contracts; report on Form 6781 Part I Line 1</td></tr>
+  <tr><td>1099-B Box 8/9/10</td><td>Profit or loss realized, unrealized profit or loss; supporting details</td></tr>
+  <tr><td>Multiple brokers</td><td>Aggregate all §1256 across brokers; single Form 6781 per taxpayer</td></tr>
+  <tr><td>Tax software handling</td><td>Most platforms (TaxAct, TurboTax, ProSeries, Drake) import 1099-B directly to Form 6781</td></tr>
+</table>
+
+<h2>Worked Example - §1256 Tax Calculation</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - Active Futures Trader 2026</div>
+  <p><strong>Facts:</strong> Anna, individual, 37% federal bracket (single, taxable income above $626,350 for 2026 LTCG; in top regular bracket), 5% state. 2026 trading:</p>
+  <p>- ES (S&P 500 futures) closed positions: +$200,000 realized<br>- CL (oil futures) closed positions: ($80,000) realized<br>- GC (gold futures) year-end open positions: $50,000 unrealized gain (MTM)<br>- ZB (Treasury futures) closed positions: $30,000 realized<br>- NQ (Nasdaq futures) year-end open positions: ($20,000) unrealized loss (MTM)<br>- SPX (broad-based index option, nonequity §1256): $40,000 realized</p>
+  <p><strong>Step 1 - Aggregate §1256 P&L:</strong></p>
+  <p>Realized: $200K - $80K + $30K + $40K = $190,000<br>Year-end MTM: $50K - $20K = $30,000<br>Total §1256 net: $220,000</p>
+  <p><strong>Step 2 - 60/40 character allocation:</strong></p>
+  <p>Long-term (60%): $132,000<br>Short-term (40%): $88,000</p>
+  <p><strong>Step 3 - Federal tax calculation:</strong></p>
+  <p>Long-term portion $132,000 × 20% LTCG rate = $26,400<br>Short-term portion $88,000 × 37% ordinary rate = $32,560<br>NIIT 3.8% × $220,000 = $8,360<br><strong>Federal total: $67,320 (effective rate 30.6%)</strong></p>
+  <p><strong>Comparison - if same gain were from day-trading stocks:</strong></p>
+  <p>$220,000 × 37% ordinary (short-term) = $81,400<br>NIIT 3.8% × $220,000 = $8,360<br>Total: $89,760 (effective 40.8%)<br><strong>§1256 advantage: $22,440 saved annually</strong></p>
+  <p><strong>If 2026 instead had net LOSS:</strong></p>
+  <p>Suppose 2026 = ($150,000) net §1256 loss<br>Anna can elect §1256(c) carryback to 2023, 2024, 2025<br>Offset prior-year §1256 gains; recover federal tax paid at then-prevailing rates<br>Form 1045 within 12 months for fast refund<br>Excess carries forward at 60/40 character</p>
+</div>
+
+<h2>§988 Foreign Currency Coordination</h2>
+
+<table class="key-table">
+  <tr><th>§988 Element</th><th>Detail</th></tr>
+  <tr><td>§988 default treatment</td><td>Foreign currency transactions ORDINARY gain/loss (not capital)</td></tr>
+  <tr><td>Retail spot forex</td><td>Subject to §988 ordinary treatment by default</td></tr>
+  <tr><td>§988(a)(1)(B) election</td><td>Election OUT of §988 ordinary treatment INTO capital gain (NOT §1256); on or before transaction or by close of day; clear and convincing identification</td></tr>
+  <tr><td>§1256(g)(2) forex futures</td><td>Foreign currency contracts in interbank market settling within 2 days on currencies with regulated futures trading = §1256 - automatic 60/40</td></tr>
+  <tr><td>EUR/USD spot forex retail</td><td>Default §988 ordinary; election to capital available; NOT §1256</td></tr>
+  <tr><td>EUR/USD forward (CME futures)</td><td>§1256 (regulated futures contract on CME) - automatic 60/40</td></tr>
+  <tr><td>OTC forex forward (interbank)</td><td>§1256 if meets §1256(g)(2) requirements (settle within 2 days, currency with regulated futures)</td></tr>
+  <tr><td>Cross-currency forward (EUR/JPY)</td><td>§1256 if EUR and JPY both have regulated futures; otherwise §988</td></tr>
+  <tr><td>Election out of §988 mechanics</td><td>Once made, applies to all subsequent transactions in that currency; difficult to revoke</td></tr>
+  <tr><td>Trader status complication</td><td>Active trader vs investor classification affects ordinary vs capital treatment; §475(f) MTM election for traders separate</td></tr>
+  <tr><td>Section 988 transactions §988(c)</td><td>Forward, futures, options on currency; loans denominated in foreign currency; foreign currency-denominated receivables/payables; nonfunctional currency holding</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Treating Equity Options as §1256</h3>
+
+<p>Single-stock options (SPY, AAPL, TSLA) are NOT §1256 - they are regular capital assets. §1256(b)(2) specifically excludes equity options for non-dealers. Practitioner applying §1256 to retail equity options misclassifies tax treatment.</p>
+
+<h3>Confusing Broad-Based vs Narrow-Based Index Options</h3>
+
+<p>SPX, NDX, RUT (cash-settled broad-based index) = §1256. SPY, QQQ, IWM (ETF options - single security) = NOT §1256. Reg §1.1256(b)-1 criteria: 10+ components, no >30% weighting, top 5 <60%. Practitioner must verify each index.</p>
+
+<h3>Missing Year-End MTM Inclusion</h3>
+
+<p>§1256(a)(1) requires year-end MTM on OPEN positions. Practitioner reporting only closed positions misses unrealized gains/losses. Broker 1099-B Box 11 shows aggregate including MTM; cross-check.</p>
+
+<h3>60/40 Holding Period Confusion</h3>
+
+<p>60/40 applies REGARDLESS of actual holding period - even 1-day trades qualify. Practitioner applying holding period tests (>1 year for LT) miscalculates.</p>
+
+<h3>§1256 Loss Carryback Election Missed</h3>
+
+<p>Net §1256 loss eligible for 3-year carryback to prior §1256 gains only. Form 1045 faster than 1040X; deadline within 12 months of loss year. Practitioner defaulting to forward carryover misses refund opportunity.</p>
+
+<h3>Wash Sale §1091 Misapplication</h3>
+
+<p>§1091 does NOT apply to §1256 MTM losses §1256(f). Practitioner applying wash sale to §1256 disallows valid loss. Conversely, §1091 DOES apply to non-§1256 securities even if §1256 contracts in same account.</p>
+
+<h3>Mixed Straddle Election Default</h3>
+
+<p>Without identified mixed straddle election, §1092 straddle rules limit loss deductions on offsetting §1256/non-§1256 positions. Practitioner must affirmatively elect §1256(d)(1) or §1256(d)(2) treatment; default is restrictive.</p>
+
+<h3>§988 vs §1256 Forex Classification</h3>
+
+<p>Spot forex retail = §988 ordinary (default). Forex futures = §1256. Practitioner applying §1256 60/40 to retail spot forex incorrect; §988 election to capital available but not to §1256.</p>
+
+<h3>Foreign Exchange Qualified Status</h3>
+
+<p>§1256(g)(7)(C) - foreign exchange qualifies if Treasury determines rules adequate. IRS rulings have approved most major foreign exchanges (Eurex, LIFFE, ICE Futures Europe, SGX, HKFE, Osaka SE) but some less-developed markets unclear. Verify each exchange.</p>
+
+<h3>Hedge Identification Timing</h3>
+
+<p>Reg §1.1221-2(f) - hedge must be IDENTIFIED on books AND records ON DAY ACQUIRED. After-the-fact identification not effective. Practitioner failing to document hedge contemporaneously loses ordinary treatment.</p>
+
+<h3>State Tax Conformity</h3>
+
+<p>Most states tax all capital gains as ordinary; 60/40 federal benefit does NOT transfer. Practitioner projecting state taxes using federal 60/40 character overstates state benefit. Arizona, Montana, New Mexico have preferential LTCG treatment.</p>
+
+<h3>§475(f) Trader Election Confusion</h3>
+
+<p>§475(f) elections (securities trader, commodities trader) impose MTM on ALL positions and treat all as ORDINARY income (loses 60/40 benefit). Different from §1256 automatic MTM. Active futures trader generally does NOT want §475(f) commodity election - retains §1256 60/40.</p>
+
+<h3>Estate Treatment</h3>
+
+<p>§1014 step-up applies to §1256 contracts held at death. However, MTM on date of death creates final-year gain/loss for decedent; valuation at date of death establishes new basis for heir. Complex coordination.</p>
+
+<h3>Dealer vs Non-Dealer Classification</h3>
+
+<p>Dealer equity options §1256(b)(1)(D) - §1256 treatment. Non-dealer equity options - regular capital treatment. Dealer status depends on §475 facts/circumstances test; not interchangeable. Limited partner/limited entrepreneur §1256(a)(4) special rule overrides 60/40 for dealer equity options.</p>
+
+<h3>1099-B Mis-reporting</h3>
+
+<p>Broker 1099-B Box 11 reports aggregate including MTM. Practitioner sometimes reports only realized component (Box 8/9 details) and misses MTM in Box 11. Aggregate = correct §1256 reporting.</p>
+
+<h3>Form 6781 Section/Part Confusion</h3>
+
+<p>Part I = §1256 contracts (60/40); Part II Section A = straddle losses; Part II Section B = straddle gains; Part III = unrecognized gains. Practitioner must place transactions in correct part; misallocation can trigger §1092 straddle rules erroneously.</p>
+
+<h3>Carrying Cost Capitalization</h3>
+
+<p>§263(g) requires capitalization of carrying costs for non-§1256 straddle positions. §1256-only positions exempt from §263(g) because of annual MTM. Mixed straddle treatment depends on elections made.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>2026 LTCG brackets</span></a>
+    <a href="form-1099-da-crypto-broker-2026.html" class="related-link">Form 1099-DA Crypto<span>2026 broker reporting</span></a>
+    <a href="section-1411-niit-guide.html" class="related-link">§1411 NIIT<span>3.8% net investment income tax</span></a>
+    <a href="form-1040x-amended-return.html" class="related-link">Form 1040X Amended Return<span>Carryback alternative</span></a>
+    <a href="form-8275-disclosure-guide.html" class="related-link">Form 8275 Disclosure<span>Position disclosure</span></a>
+    <a href="investments-capital.html" class="related-link">Investments &amp; Capital Hub<span>All investment topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §1256 (Section 1256 contracts marked to market). §1256(a) (general rule - mark to market). §1256(a)(1) (each §1256 contract treated as sold for FMV at close of taxable year). §1256(a)(2) (basis adjustment for gain/loss taken into account). §1256(a)(3) (60% long-term / 40% short-term character regardless of holding period). §1256(a)(4) (special rule for dealer equity options and dealer securities futures contracts held by limited partners/limited entrepreneurs - all short-term). §1256(b) (Section 1256 contract definition). §1256(b)(1) (categories - regulated futures contracts, foreign currency contracts, nonequity options, dealer equity options, dealer securities futures contracts). §1256(b)(2) (exclusions - securities futures contracts not by dealer; interest rate swaps, currency swaps, etc.; equity options not by dealer). §1256(c) (carryback of losses from §1256 contracts). §1256(c)(1) (3-year carryback election). §1256(c)(3) (net §1256 capital loss definition). §1256(d) (mixed straddles). §1256(d)(1) (identified mixed straddle election). §1256(d)(2) (mixed straddle account election). §1256(e) (exception for hedging transactions - ordinary treatment). §1256(f) (wash sale §1091 not applied). §1256(g) (definitions and special rules). §1256(g)(1) (regulated futures contract). §1256(g)(2) (foreign currency contract). §1256(g)(3) (nonequity option). §1256(g)(4) (dealer equity option). §1256(g)(5) (dealer securities futures contract). §1256(g)(7) (qualified board or exchange). §1092 (straddle rules - offsetting positions). §1092(c) (straddle definition). §1233 (short sale rules). §263(g) (capitalization of carrying charges for straddle positions; not applied to §1256 contracts). §475 (mark-to-market accounting for dealers and traders). §475(f) (trader election - separate from §1256). §988 (foreign currency transactions). §988(a)(1)(B) (election out of ordinary treatment to capital). §988(c) (Section 988 transactions defined). §1091 (wash sale - not applied to §1256 MTM losses). §1221 (capital asset definition). §1222 (capital gains and losses definitions). §1411 (NIIT). §1014 (basis step-up at death). §1.1221-2 (hedging transactions - identification rules). §1.1256(b)-1 (broad-based index option definition). §1.1092-1 through §1.1092-7 (straddle rules - extensive regulations). §1.1092-3 (mixed straddle account regulations). §1.988-1 through §1.988-5 (foreign currency regulations). Form 6781 (Gains and Losses From Section 1256 Contracts and Straddles). Form 1099-B (Proceeds From Broker and Barter Exchange Transactions - Box 11 for §1256 aggregate). Schedule D (Capital Gains and Losses). Form 1045 (Application for Tentative Refund - §1256 loss carryback). Form 1040X (Amended Return - carryback alternative). Tax Reform Act of 1981, P.L. 97-34 (created §1256). Deficit Reduction Act of 1984, P.L. 98-369 (modified to "Section 1256 contracts"). Dodd-Frank Wall Street Reform and Consumer Protection Act of 2010, P.L. 111-203 (modified §1256(b) re swaps exclusion). One Big Beautiful Bill Act P.L. 119-21 (July 4, 2025) - did NOT modify §1256.</p>
+
+</div>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§382 NOL Limitation: Ownership Change Mechanics, Long-Term Tax-Exempt Rate, NUBIG / NUBIL, §163(j) Post-TCJA | CPA Validated</title>
+<meta name="description" content="Section 382 complete mechanics. Limits pre-change NOLs after ownership change. 50 percentage point threshold over 3-year testing period. §382 limitation = pre-change FMV × long-term tax-exempt rate. TCJA §13301 added §163(j) carryforwards. NUBIG / NUBIL 5-year recognition period. §382(c) continuity of business enterprise 2-year requirement. §382(l)(5) and §382(l)(6) bankruptcy exceptions.">
+<link rel="canonical" href="https://cpavalidated.com/section-382-nol-limitation-ownership-change.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§382 Limitation: Deep Dive On NOL Restriction">
+<meta property="og:description" content="IRC §382 framework. Ownership change. §382 limitation formula. NUBIG/NUBIL. CoBE. Bankruptcy exceptions. §163(j) carryforwards post-TCJA.">
+<meta property="og:url" content="https://cpavalidated.com/section-382-nol-limitation-ownership-change.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"§382 Limitation: Deep Dive On NOL Restriction","url":"https://cpavalidated.com/section-382-nol-limitation-ownership-change.html","author":{{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"}},"publisher":{{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}},"isAccessibleForFree":true,"inLanguage":"en-US"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§382 NOL Limitation</h1>
+  <div class="sub">Ownership Change = >50 Percentage Points By 5-Percent Shareholders Over 3-Year Testing Period &nbsp;&bull;&nbsp; Limitation = Pre-Change FMV × Long-Term Tax-Exempt Rate &nbsp;&bull;&nbsp; TCJA §13301 Added §163(j) Carryforwards &nbsp;&bull;&nbsp; NUBIG / NUBIL 5-Year Recognition Period &nbsp;&bull;&nbsp; §382(c) Continuity Of Business Enterprise 2-Year &nbsp;&bull;&nbsp; §382(l)(5) / (l)(6) Bankruptcy Exceptions</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §382 / §383 / §163(j) / §269 / §368 / §172 / Reg §1.382 / Reg §1.383</span>
+    <span class="ph-meta-item">TCJA P.L. 115-97 §13301; Notice 2003-65 (NUBIG/NUBIL methods)</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="business-entity.html">&#8592; Business &amp; Entity</a></div>
+<div class="article">
+
+<p class="lead">IRC §382 (Limitation on net operating loss carryforwards and certain built-in losses following ownership change) LIMITS the use of pre-change net operating losses (NOLs), capital loss carryforwards, business interest disallowed under §163(j), and §163(j) carryforwards by a "loss corporation" after an OWNERSHIP CHANGE. CORE RULE: Once ownership change occurs, the loss corporation's pre-change losses can offset post-change income only up to the §382 LIMITATION = VALUE of the loss corporation immediately before ownership change × LONG-TERM TAX-EXEMPT RATE (published monthly by IRS). Any excess pre-change losses CARRY FORWARD subject to same per-year cap. OWNERSHIP CHANGE §382(g)(1) - increase of more than 50 PERCENTAGE POINTS in stock ownership by 5-percent shareholders during 3-YEAR TESTING PERIOD ending on day of OWNER SHIFT or EQUITY STRUCTURE SHIFT. KEY TERMS: "5-percent shareholder" §382(k)(7) - direct or indirect owner of 5% or more; non-5% shareholders aggregated into "public group" treated as single 5-percent shareholder. OWNER SHIFT - any change in stock ownership affecting percentage held by 5-percent shareholder. EQUITY STRUCTURE SHIFT - tax-free reorganization under §368(a)(1)(A)/(B)/(C)/(D)/(F)/(G) where target's shareholders become new corp shareholders. SECTION 382 LIMITATION: applied annually; if loss corp value low or rate low, severely restricts NOL usage; carryforward continues but limited per year. NET UNREALIZED BUILT-IN GAIN/LOSS - NUBIG (gain) increases §382 limitation when recognized in 5-year recognition period; NUBIL (loss) increases pre-change losses subject to limitation. CONTINUITY OF BUSINESS ENTERPRISE §382(c) - loss corp must continue historic business or use significant historic assets in business for 2 years post-change; failure to comply DISALLOWS pre-change losses entirely. §382(h) "RECOGNITION PERIOD" - 5-year period starting on change date. §382(l)(5) ELECTION - bankruptcy reorganization exception; QUALIFIED CREDITOR safe harbor avoids §382 limitation but reduces NOLs by 50% of post-petition interest. TCJA P.L. 115-97 (2017) §13301 EXPANDED §382 to include §163(j) disallowed business interest in "pre-change loss" definition. CARES Act 2020 temporarily modified §382 limits for tax years 2018-2020 - now expired. OBBBA P.L. 119-21 did NOT modify §382 core mechanics.</p>
+
+<div class="callout">
+  <div class="callout-label">§382 Limitation in One Paragraph</div>
+  <p><strong>Trigger:</strong> Ownership change = more than 50 percentage point increase in stock held by 5-percent shareholders during 3-year testing period. Tested at every "owner shift" (any change affecting 5% shareholders) or "equity structure shift" (tax-free reorg).</p>
+  <p><strong>The limitation:</strong> Pre-change NOLs (including §163(j) carryforwards post-TCJA) can offset post-change income only up to: VALUE of loss corp pre-change × LONG-TERM TAX-EXEMPT RATE. Currently ~4-5% range; multiplied by value = annual cap.</p>
+  <p><strong>Carry forward:</strong> Excess pre-change losses carry forward but remain subject to same annual cap. Useful tax attributes may take decades to absorb or expire under §172 20-year carryforward (or unlimited for post-TCJA NOLs).</p>
+  <p><strong>NUBIG/NUBIL:</strong> Net unrealized built-in gain INCREASES §382 limit when recognized; net unrealized built-in loss INCREASES pre-change losses subject to limit. 5-year recognition period.</p>
+  <p><strong>CoBE requirement §382(c):</strong> Loss corp must continue historic business or use significant historic assets for 2 years post-change. Failure = COMPLETE DISALLOWANCE of pre-change losses.</p>
+</div>
+
+<h2>Loss Corporation Definition</h2>
+
+<table class="key-table">
+  <tr><th>Loss Corporation Element</th><th>Detail</th></tr>
+  <tr><td>Statutory definition §382(k)(1)</td><td>Corporation with NOL carryforward, NOL for year of ownership change, or net unrealized built-in loss</td></tr>
+  <tr><td>TCJA expansion §13301</td><td>Now includes corporation with disallowed business interest carryforward under §163(j) (effective tax years after 2017)</td></tr>
+  <tr><td>Pre-change loss §382(d)</td><td>(1) NOL carryforward to loss corporation's tax year ending with or after change date; (2) NOL for portion of taxable year ending on or before change date; (3) capital loss carryforward; (4) recognized built-in losses; (5) §163(j) carryforward</td></tr>
+  <tr><td>Tax credit carryforwards</td><td>§383 applies SIMILAR limitation to credit carryforwards (general business credit §38, AMT credit §53, foreign tax credit §904 carryover)</td></tr>
+  <tr><td>Successor corporation</td><td>Corporation acquiring loss corp's assets via tax-free reorganization (Type A, C, D acquisitive) inherits §382 limitation calculated as of ownership change</td></tr>
+  <tr><td>Consolidated group SRLY rules</td><td>Separate Return Limitation Year rules under consolidated return regulations - complementary to §382</td></tr>
+  <tr><td>S-corp shareholders</td><td>S-corp losses pass through; §382 not directly applicable; but loss corporation converting from S to C carries baggage</td></tr>
+  <tr><td>Partnership / LLC</td><td>§382 applies only to C corporations; partnerships have separate §704(b)(2) economic effect rules and §704(c) built-in loss provisions</td></tr>
+  <tr><td>RIC / REIT</td><td>§382 applies but with special considerations under §856-§859 / §852</td></tr>
+</table>
+
+<h2>Ownership Change Mechanics</h2>
+
+<table class="key-table">
+  <tr><th>Ownership Change Element</th><th>Detail</th></tr>
+  <tr><td>Trigger §382(g)(1)</td><td>Increase of MORE THAN 50 percentage points in stock owned by 1+ 5-percent shareholders</td></tr>
+  <tr><td>Testing period §382(i)</td><td>3 years ending on day of latest owner shift or equity structure shift</td></tr>
+  <tr><td>Owner shift §382(g)(2)</td><td>Any change in respective stock ownership affecting percentage held by any person who is 5-percent shareholder before or after change</td></tr>
+  <tr><td>Equity structure shift §382(g)(3)</td><td>Any tax-free reorganization (other than §368(a)(1)(D) or (G) divisive, or §368(a)(1)(F) mere recapitalization with no change in ownership)</td></tr>
+  <tr><td>Public group §382(g)(4)(A)</td><td>Stock owned by less-than-5% shareholders aggregated and treated as held by single 5-percent shareholder</td></tr>
+  <tr><td>5-percent shareholder §382(k)(7)</td><td>Direct or indirect owner of 5% or more of corporation's stock at any time during testing period</td></tr>
+  <tr><td>Stock attribution §318 (modified)</td><td>§382(l)(3) modifies §318 - family attribution limited; partnership/estate attribution simplified; specific options/warrants treated as exercised under "deemed exercise" rules</td></tr>
+  <tr><td>Segregation rules</td><td>Reg §1.382-2T - multiple owner shifts can be aggregated; testing period reset on each ownership change</td></tr>
+  <tr><td>Issuance of new stock</td><td>Increases ownership by recipients; can trigger ownership change if stock to non-existing shareholders or shifts among existing</td></tr>
+  <tr><td>Buy-back of stock</td><td>Decreases ownership by remaining shareholders; treated as owner shift</td></tr>
+  <tr><td>Convertible debt / preferred stock</td><td>Various rules under Reg §1.382-2T for measuring ownership; "deemed exercise" if exercise reasonably anticipated</td></tr>
+</table>
+
+<h2>§382 Limitation Calculation</h2>
+
+<table class="key-table">
+  <tr><th>Limitation Element</th><th>Detail</th></tr>
+  <tr><td>Formula §382(b)</td><td>§382 LIMITATION = VALUE OF LOSS CORPORATION × LONG-TERM TAX-EXEMPT RATE</td></tr>
+  <tr><td>Value of loss corporation §382(e)</td><td>Fair market value of stock immediately BEFORE ownership change; includes all stock classes (common and preferred per §1504(a)(4))</td></tr>
+  <tr><td>Long-term tax-exempt rate §382(f)</td><td>Highest of three most recent monthly applicable federal rates for long-term tax-exempt obligations; published by IRS monthly; Q3 2026 approximately 4.0-4.5% range</td></tr>
+  <tr><td>Annual limitation</td><td>Pre-change losses offset post-change income up to limitation amount per year</td></tr>
+  <tr><td>Short year first year</td><td>First year limitation prorated for portion of year after ownership change</td></tr>
+  <tr><td>Carryforward of unused limitation</td><td>§382(b)(2) - excess of limitation over post-change income carried forward and added to future year limitation</td></tr>
+  <tr><td>Effect of NUBIG §382(h)(1)</td><td>Net unrealized built-in gain increases §382 limit by amount recognized during 5-year recognition period</td></tr>
+  <tr><td>Effect of NUBIL §382(h)(1)</td><td>Net unrealized built-in loss treated as pre-change loss subject to §382 limitation - rather than reducing limitation, expands "pre-change loss" pool</td></tr>
+  <tr><td>NUBIG/NUBIL threshold</td><td>Computed as net unrealized gain/loss; threshold applies only if BIG/BIL exceeds the lesser of $10M or 15% of FMV of assets</td></tr>
+  <tr><td>Recognition period §382(h)(7)</td><td>5 years beginning on change date</td></tr>
+  <tr><td>Capital contributions §382(l)(1)</td><td>Capital contributions made in 2 years before ownership change ANTI-STUFFING - not included in value if intended to inflate §382 limit</td></tr>
+</table>
+
+<h2>Long-Term Tax-Exempt Rate</h2>
+
+<table class="key-table">
+  <tr><th>Rate Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>§382(f); IRS publishes monthly via Rev. Rul. (e.g., Rev. Rul. 2026-XX for May 2026)</td></tr>
+  <tr><td>Calculation</td><td>Highest of long-term tax-exempt rate for the month of ownership change and TWO preceding months</td></tr>
+  <tr><td>Source</td><td>Adjusted federal long-term rate further adjusted for differences between taxable and tax-exempt obligations</td></tr>
+  <tr><td>Trend 2020-2026</td><td>2020: ~1.5-2.0%; 2022: ~2.5-3.5%; 2024-2026: ~3.5-4.5% range with rate volatility</td></tr>
+  <tr><td>Practical effect</td><td>Lower rate = lower §382 limit = NOLs largely unusable; higher rate = more usable</td></tr>
+  <tr><td>$1B loss corp at 4% rate</td><td>$40M annual §382 limitation = $40M annual NOL usage</td></tr>
+  <tr><td>$10M loss corp at 4% rate</td><td>$400K annual limitation = practically unusable for substantial NOLs</td></tr>
+  <tr><td>Locking in rate</td><td>Rate at ownership change persists; subsequent rate changes do not adjust limitation amount</td></tr>
+  <tr><td>State conformity</td><td>Most states follow federal §382 limitation; some have separate state §382-style rules</td></tr>
+</table>
+
+<h2>Continuity of Business Enterprise §382(c)</h2>
+
+<table class="key-table">
+  <tr><th>CoBE Element</th><th>Detail</th></tr>
+  <tr><td>Requirement §382(c)(1)</td><td>Loss corporation must continue HISTORIC BUSINESS or use SIGNIFICANT HISTORIC ASSETS in business for 2 YEARS after ownership change</td></tr>
+  <tr><td>Failure consequence</td><td>ENTIRE pre-change loss is DISALLOWED - not just limited; complete loss of NOL tax attribute</td></tr>
+  <tr><td>"Historic business" test</td><td>Must continue business operations conducted by loss corp before ownership change; not just hold business identity</td></tr>
+  <tr><td>"Significant historic assets" alternative</td><td>If business changed, must use significant portion of pre-change assets in any business</td></tr>
+  <tr><td>Acquisitive reorganizations</td><td>Generally satisfied if loss corp business continues; problematic for asset-stripping acquisitions</td></tr>
+  <tr><td>Tax-free §368(a)(1)(F) recapitalization</td><td>Generally satisfies CoBE - mere reorganization without business change</td></tr>
+  <tr><td>Bankruptcy reorganization §382(l)(5)</td><td>CoBE applies as part of bankruptcy exception requirements</td></tr>
+  <tr><td>Investment company exception</td><td>If loss corp was investment company before ownership change, CoBE test modified - holding portfolio with continuing investment objective satisfies</td></tr>
+  <tr><td>Practical compliance</td><td>Buyer should document continuation plan; maintain employees, customer relationships, business operations; PLR available for unclear situations</td></tr>
+  <tr><td>Recent caselaw</td><td>Tax Court strict on CoBE - "ghost company" with minimal operations may fail</td></tr>
+</table>
+
+<h2>Worked Example - §382 Limitation Application</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - Acquisition With NOLs</div>
+  <p><strong>Facts:</strong> TechStartup, Inc. (C-corp) has accumulated $50,000,000 of NOL carryforwards and $5,000,000 of §163(j) disallowed business interest. Pre-change FMV: $20,000,000. Acquirer purchases 80% of TechStartup stock on July 1, 2026. Long-term tax-exempt rate for July 2026: 4.0%.</p>
+  <p><strong>Step 1 - Ownership change determination:</strong></p>
+  <p>Pre-acquisition: founders and early investors hold 100%<br>Post-acquisition: acquirer holds 80%, founders/early investors hold 20%<br>Owner shift: from 0% acquirer ownership to 80% = 80 percentage point INCREASE for new 5-percent shareholder (acquirer)<br>EXCEEDS 50 percentage point threshold → OWNERSHIP CHANGE TRIGGERED on July 1, 2026</p>
+  <p><strong>Step 2 - §382 limitation calculation:</strong></p>
+  <p>Value of loss corporation (pre-change FMV): $20,000,000<br>Long-term tax-exempt rate: 4.0%<br>§382 LIMITATION = $20,000,000 × 4.0% = <strong>$800,000 ANNUAL</strong></p>
+  <p><strong>Step 3 - NOL usage timeline:</strong></p>
+  <p>Pre-change losses: $50,000,000 NOLs + $5,000,000 §163(j) = $55,000,000<br>Annual §382 limit: $800,000<br>Years to fully use: 55,000,000 / 800,000 ≈ 68.75 YEARS<br>But NOLs post-2017 have unlimited carryforward → can be absorbed if business has sufficient long-term taxable income</p>
+  <p><strong>Step 4 - 2026 post-change income tax effect:</strong></p>
+  <p>Assume TechStartup 2026 post-change taxable income (6 months Jul-Dec): $3,000,000<br>NOL usage limited: $800,000 × 6/12 (proration) = $400,000<br>Taxable income after NOL: $3,000,000 - $400,000 = $2,600,000<br>Federal tax (21%): $546,000</p>
+  <p><strong>Step 5 - NUBIG/NUBIL analysis:</strong></p>
+  <p>Suppose TechStartup has $8,000,000 of unrealized built-in gain (intangibles, equipment FMV > basis) at acquisition - and $10M threshold met (gain > 15% of $20M = $3M; also less than $10M absolute floor BUT statutory floor is LESSER of $10M or 15%; using 15% threshold = $3M).<br>Built-in gain $8M > $3M threshold → NUBIG applies<br>When recognized during 5-year recognition period, NUBIG INCREASES §382 limit by amount recognized<br>If $2M of NUBIG recognized in 2026 → 2026 §382 limit increases by $2M = $800K + $2M = $2.8M</p>
+  <p><strong>Step 6 - CoBE compliance:</strong></p>
+  <p>Acquirer must continue TechStartup's historic business for 2 years (July 2026 - July 2028) OR use significant historic assets in any business. Asset-stripping or business shutdown DISALLOWS entire $55,000,000 of pre-change losses.</p>
+  <p><strong>Practical valuation impact:</strong></p>
+  <p>Acquirer might pay LESS for TechStartup due to limited NOL usability. NOL of $55M with $20M FMV - acquirer values NOLs at present value of limited annual usage = perhaps $5-8M present value vs $55M face value. Major acquisition pricing factor.</p>
+</div>
+
+<h2>Built-In Gain/Loss Mechanics</h2>
+
+<table class="key-table">
+  <tr><th>NUBIG/NUBIL Element</th><th>Detail</th></tr>
+  <tr><td>Net Unrealized Built-In Gain §382(h)(1)(A)</td><td>FMV of assets immediately before ownership change minus aggregate adjusted basis</td></tr>
+  <tr><td>Net Unrealized Built-In Loss §382(h)(1)(B)</td><td>Aggregate adjusted basis minus FMV of assets immediately before ownership change</td></tr>
+  <tr><td>Threshold de minimis</td><td>NUBIG/NUBIL must exceed LESSER of $10,000,000 OR 15% of FMV of assets to apply</td></tr>
+  <tr><td>Recognition period §382(h)(7)</td><td>5 years beginning on change date</td></tr>
+  <tr><td>Recognized built-in gain (RBIG) §382(h)(2)(A)</td><td>Gain recognized during recognition period on items where amount of gain at change date can be substantiated</td></tr>
+  <tr><td>Recognized built-in loss (RBIL) §382(h)(2)(B)</td><td>Loss recognized during recognition period on items where amount of loss at change date can be substantiated</td></tr>
+  <tr><td>Effect of RBIG</td><td>Increases §382 limit for year recognized; encourages bringing in gain during recognition period</td></tr>
+  <tr><td>Effect of RBIL</td><td>Treated as pre-change loss subject to §382 limitation - so even losses recognized post-change face the same per-year cap</td></tr>
+  <tr><td>Notice 2003-65 deferred items</td><td>Provides safe harbor methods for measuring NUBIG/NUBIL - "338 approach," "1374 approach," and various hybrid methods</td></tr>
+  <tr><td>5-year continuous recognition</td><td>Period runs from change date for 5 years - track all gain/loss recognitions during this window for §382 effects</td></tr>
+  <tr><td>Asset-level tracking</td><td>Each asset's pre-change FMV vs basis tracked individually to compute RBIG/RBIL on disposition</td></tr>
+</table>
+
+<h2>§382(l)(5) Bankruptcy Exception</h2>
+
+<table class="key-table">
+  <tr><th>Bankruptcy Exception Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>§382(l)(5) - alternative regime for bankruptcy reorganizations</td></tr>
+  <tr><td>Election</td><td>Loss corporation can elect §382(l)(5) treatment - bypasses standard §382 limitation</td></tr>
+  <tr><td>Trade-off</td><td>NOLs reduced by 50% of post-petition interest paid or accrued during 3 years before plan + during plan</td></tr>
+  <tr><td>Qualified Creditor §382(l)(5)(E)</td><td>Pre-bankruptcy creditor satisfying "longstanding creditor" requirements - typically held debt at least 18 months before petition</td></tr>
+  <tr><td>Operational requirement</td><td>Plan of reorganization confirmed under Title 11 (bankruptcy code)</td></tr>
+  <tr><td>Continuity of business</td><td>§382(c) CoBE still applies - 2-year continuation required</td></tr>
+  <tr><td>Subsequent ownership change protection</td><td>Subsequent §382 ownership change within 2 years of original WIPES OUT pre-change losses entirely (anti-trafficking)</td></tr>
+  <tr><td>Alternative §382(l)(6)</td><td>Bankruptcy ownership change with stock-for-debt exchange - special "value" computed using formula reflecting post-reorganization equity value</td></tr>
+  <tr><td>Strategic election</td><td>Compare §382(l)(5) "50% NOL haircut" vs §382(l)(6) "stepped-up value" - typically (l)(6) better for high-interest situations, (l)(5) better for low-interest</td></tr>
+  <tr><td>Application timing</td><td>Election made within 30 days of plan confirmation by attaching statement to Form 1120</td></tr>
+</table>
+
+<h2>§382 in Acquisitive Reorganizations</h2>
+
+<table class="key-table">
+  <tr><th>Reorganization Element</th><th>Detail</th></tr>
+  <tr><td>Type A (statutory merger)</td><td>Target merges into acquirer; target shareholders receive acquirer stock; §382 ownership change typically triggered for acquirer's NOL pool if acquirer is loss corp</td></tr>
+  <tr><td>Type B (stock-for-stock)</td><td>Acquirer obtains 80%+ of target via stock; §382 applies if target is loss corp</td></tr>
+  <tr><td>Type C (asset-for-stock)</td><td>Acquirer obtains target's assets for acquirer stock; §382 applies if target was loss corp</td></tr>
+  <tr><td>Type D (divisive)</td><td>Spin-off, split-off, split-up; §382 ownership change rarely triggered (just reshuffling existing ownership)</td></tr>
+  <tr><td>Type F (mere recapitalization)</td><td>Reincorporation, name change; §382 NOT triggered if no change in ownership</td></tr>
+  <tr><td>Type G (bankruptcy reorganization)</td><td>Tax-free reorganization in bankruptcy; §382 ownership change may be triggered; §382(l)(5) or §382(l)(6) potential alternatives</td></tr>
+  <tr><td>§338(h)(10) deemed asset sale</td><td>Stock sale treated as asset sale - new corporation has new tax attributes; §382 applies to the deemed asset transaction</td></tr>
+  <tr><td>§336(e) deemed asset sale</td><td>Similar to §338(h)(10) for S-corp targets; analogous §382 application</td></tr>
+  <tr><td>Pre-acquisition planning</td><td>Buyer often requires NOL carryforward usability analysis as part of due diligence; NOL value reduces purchase price</td></tr>
+  <tr><td>Consolidated return SRLY rules</td><td>Separate from §382 - applies to consolidated group when loss corp joins; treated as separate-return-limitation-year rules</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Forgetting §163(j) Carryforwards Subject to §382</h3>
+
+<p>TCJA §13301 added §163(j) disallowed business interest to "pre-change loss" definition. Practitioners focus on NOLs and forget §163(j) carryforwards - same §382 limitation applies. Track both pre-change items separately.</p>
+
+<h3>Misapplying 3-Year Testing Period</h3>
+
+<p>Testing period is ROLLING 3 years ending on each owner shift / equity structure shift, not a fixed 3-year period. Multiple ownership shifts within 3 years aggregate. Each test snapshot uses latest 3-year window.</p>
+
+<h3>Public Group Treated as Multiple Shareholders</h3>
+
+<p>Non-5% shareholders aggregated as SINGLE 5-percent shareholder ("public group"). Practitioner sometimes treats as multiple shareholders - reverses §382 result. Public group ownership shift important - new public stock issuance can constitute ownership change.</p>
+
+<h3>Stock Attribution Modifications</h3>
+
+<p>§382(l)(3) MODIFIES §318 attribution: family attribution limited (no spouse-to-spouse); partnership/estate attribution simplified; specific deemed-exercise rules for options/warrants. Practitioner using full §318 may miscalculate ownership.</p>
+
+<h3>Anti-Stuffing Capital Contributions</h3>
+
+<p>§382(l)(1) - capital contributions in 2 years before ownership change to artificially inflate §382 limit are DISALLOWED. Practitioner pre-ownership-change capital injection backfires if perceived as anti-abuse maneuver.</p>
+
+<h3>NUBIG Threshold Computation</h3>
+
+<p>NUBIG/NUBIL threshold is LESSER of $10M OR 15% of asset FMV. Practitioner using $10M absolute threshold misses smaller corporations where 15% applies. $20M company: threshold = $3M (15% × $20M).</p>
+
+<h3>RBIL Treated as Increasing Limitation</h3>
+
+<p>NUBIG INCREASES §382 limit when recognized; NUBIL treats recognized loss as PRE-CHANGE loss subject to limitation - common misunderstanding. RBIL doesn't expand annual limit; expands pool of pre-change losses competing for limited annual capacity.</p>
+
+<h3>Failure of CoBE = Total Disallowance</h3>
+
+<p>CoBE failure = TOTAL DISALLOWANCE of pre-change losses (not just limitation). Practitioner accepting "we changed the business but kept the entity" - high risk of total NOL loss. Asset shutdown, conversion to holding company, etc. - all potentially fatal.</p>
+
+<h3>Short-Year First-Year Proration</h3>
+
+<p>First year after ownership change is short year - §382 limitation prorated based on days post-change. Practitioner applying full annual limitation in short first year overstates NOL usage.</p>
+
+<h3>Unused Limitation Carryforward</h3>
+
+<p>§382(b)(2) - excess limitation over post-change income CARRIES FORWARD and adds to future limitation. Practitioner not tracking unused capacity loses future absorption ability.</p>
+
+<h3>5-Year Recognition Period Tracking</h3>
+
+<p>Track gain/loss recognitions during 5-year recognition period for NUBIG/NUBIL effects. Practitioner ignoring asset disposition timing misses §382 limit increases (RBIG) or compounding pre-change loss exposure (RBIL).</p>
+
+<h3>State NOL Conformity Issues</h3>
+
+<p>Most states follow federal §382 but apply own NOL carryforward rules. State-level §382 limit may differ if state has different "value" or "rate" rules. Multistate analysis required.</p>
+
+<h3>Subsidiary Joining Consolidated Return</h3>
+
+<p>Loss subsidiary joining consolidated return - SRLY rules apply in addition to §382. Pre-acquisition NOLs limited to subsidiary's separate-return income; §382 also caps overall use.</p>
+
+<h3>S-to-C Conversion</h3>
+
+<p>S-corp converting to C-corp doesn't trigger §382 directly (no ownership change at conversion); but pre-conversion NOLs reset (none exist at conversion since S losses passed through). Post-conversion, future §382 events apply to post-conversion NOLs.</p>
+
+<h3>§383 Credit Carryforwards Forgotten</h3>
+
+<p>§383 imposes similar limitation on general business credit, AMT credit, and foreign tax credit carryforwards. Practitioner focusing only on §382 NOLs forgets credit carryforwards equally limited.</p>
+
+<h3>Notice 2003-65 Method Selection</h3>
+
+<p>Three methods for computing NUBIG/NUBIL: 338 approach, 1374 approach, hybrid. Each yields different results depending on asset mix. Practitioner using default method may miss optimization; consult with M&A tax specialist.</p>
+
+<h3>§382 vs §269 vs §269A Coordination</h3>
+
+<p>§269 (acquisition for tax avoidance) can disallow tax benefits entirely if acquisition principal purpose was tax avoidance. §382 is a "soft" limit (capped over time); §269 is a "hard" disallowance. IRS sometimes asserts §269 in addition to §382 in aggressive transactions.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="section-163j-interest-limitation.html" class="related-link">§163(j) Business Interest<span>Pre-change loss item post-TCJA</span></a>
+    <a href="form-461-excess-business-loss.html" class="related-link">Form 461 Excess Business Loss<span>§461(l) interaction</span></a>
+    <a href="section-461l-excess-business-loss-permanent.html" class="related-link">§461(l) Permanent<span>OBBBA permanent</span></a>
+    <a href="form-3115-481a-obbba-174-retroactive.html" class="related-link">Form 3115 §481(a)<span>Accounting method changes</span></a>
+    <a href="form-7203-s-corp-basis.html" class="related-link">Form 7203 S-Corp Basis<span>Shareholder basis</span></a>
+    <a href="business-entity.html" class="related-link">Business &amp; Entity Hub<span>All business topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §382 (Limitation on net operating loss carryforwards and certain built-in losses following ownership change). §382(a) (general rule - post-change income offset limit). §382(b) (§382 limitation - value × long-term tax-exempt rate). §382(b)(2) (carryforward of unused limitation). §382(c) (continuity of business enterprise requirement - 2 years). §382(d) (pre-change losses definition). §382(e) (value of loss corporation). §382(f) (long-term tax-exempt rate). §382(g) (ownership change definition). §382(g)(1) (general ownership change rule - 50 percentage point threshold). §382(g)(2) (owner shift involving 5-percent shareholder). §382(g)(3) (equity structure shift). §382(g)(4) (other definitions including public group treatment). §382(h) (special rules for built-in gains and losses). §382(h)(1)(A) (net unrealized built-in gain - NUBIG). §382(h)(1)(B) (net unrealized built-in loss - NUBIL). §382(h)(2) (recognized built-in gain/loss). §382(h)(7) (recognition period - 5 years). §382(i) (testing period - 3 years). §382(k) (definitions). §382(k)(1) (loss corporation). §382(k)(7) (5-percent shareholder). §382(l) (special rules). §382(l)(1) (capital contributions anti-stuffing). §382(l)(3) (modifications to §318 attribution). §382(l)(4) (continuity of business enterprise rules). §382(l)(5) (bankruptcy exception with 50% NOL haircut for post-petition interest). §382(l)(6) (alternative bankruptcy rule - stepped-up value). §382(m) (regulatory authority). §383 (Special limitations on certain excess credits, etc. - applies §382-type limits to credits). §172 (NOL deduction - 20-year carryforward pre-TCJA, unlimited post-TCJA, 80% of taxable income post-2017). §163(j) (business interest limitation - post-TCJA carryforwards subject to §382). §269 (acquisitions made to evade or avoid income tax - hard disallowance). §269A (personal service corporations - excess passthroughs). §318 (constructive ownership - modified by §382(l)(3)). §338 (corporate stock purchases treated as asset purchases). §338(h)(10) (election for qualified stock purchase). §336(e) (analogous election for S-corp and consolidated targets). §368 (definitions relating to corporate reorganizations). §368(a)(1)(A) (statutory merger or consolidation). §368(a)(1)(B) (stock-for-stock). §368(a)(1)(C) (asset-for-stock). §368(a)(1)(D) (transfer of assets to controlled corp). §368(a)(1)(F) (mere change in identity, form, or place). §368(a)(1)(G) (insolvency reorganization). §1504 (definition of affiliated group). §1504(a)(4) (preferred stock excluded). Reg §1.382-1 through §1.382-12 (extensive regulatory framework). Reg §1.382-2T (temporary regulations on testing dates, public groups, options). Reg §1.382-3 (definitions of 5-percent shareholder, public group). Reg §1.382-4 (treatment of options - deemed exercise rules). Reg §1.382-5 (§382 limitation; calculation specifics). Reg §1.382-6 (apportionment of items between pre- and post-change periods). Reg §1.382-9 (special rules under §382(l)(5) - bankruptcy). Reg §1.383-1 (excess credit carryforward limits). Notice 2003-65 (NUBIG/NUBIL safe harbor methods - 338 approach, 1374 approach, hybrid). Treasury Decision 9986 (recent §382 amendments). Tax Cuts and Jobs Act P.L. 115-97 §13301 (December 22, 2017) - added §163(j) carryforwards to pre-change loss definition. Coronavirus Aid Relief and Economic Security Act (CARES Act) of 2020 P.L. 116-136 - temporary §382 modifications (expired). One Big Beautiful Bill Act P.L. 119-21 (July 4, 2025) - did NOT modify §382 core mechanics. Internal Revenue Manual Part 4.55 (Mergers and Acquisitions Examination). Form 1120 Schedule J (corporate tax computation with NOL deduction).</p>
+
+</div>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
