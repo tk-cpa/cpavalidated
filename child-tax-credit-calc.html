@@ -74,8 +74,8 @@ function calculate() {
   const children = parseInt(document.getElementById('num_children').value) || 0;
   const magi = parseFloat(document.getElementById('magi').value) || 0;
   
-  // 2026: $2,000 per child, phases out at $400k MFJ / $200k single
-  const ctc_per_child = 2000;
+  // 2026: $2,200 per child (OBBBA made permanent and increased from $2,000), phases out at $400k MFJ / $200k single
+  const ctc_per_child = 2200;
   const phaseout_start = 400000; // Assume MFJ
   const phaseout_rate = 50;
   
@@ -93,7 +93,7 @@ function calculate() {
   let html = `
     <div style="font-size:13px;line-height:1.8">
       <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10)">
-        <span>${children} Child(ren) × $2,000</span>
+        <span>${children} Child(ren) × $2,200</span>
         <strong>$${base_ctc.toLocaleString()}</strong>
       </div>
       <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10);color:var(--ink-80)">
