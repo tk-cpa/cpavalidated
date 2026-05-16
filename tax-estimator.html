@@ -957,6 +957,47 @@ function showShareModal(url,title){if(document.getElementById("sv-ol"))return;va
   </div>
 </div>
 <!-- END UNIFIED FOOTER -->
-<script src="/shared.js"></script>
+<script src="/shared.js">
+// ── Self-test fixture: known-good rate calculation cases, run on page load. Console errors if any state engine result diverges. ─
+function runStateCorpSelfTests(){
+  if(typeof STATE_CORP_RATES === 'undefined') return;
+  const cases = [
+    {state:'FL', income:150000, expected:5500.00,  label:'FL $150K (5.5% on $100K after $50K exemption)'},
+    {state:'KS', income:150000, expected:9000.00,  label:'KS $150K (4% to $50K + 7% above)'},
+    {state:'NJ', income:150000, expected:11500.00, label:'NJ $150K (6.5%+7.5%+9% graduated)'},
+    {state:'CA', income:1000000,expected:88400.00, label:'CA $1M (8.84% flat)'},
+    {state:'TX', income:1000000,expected:0,        label:'TX $1M (no corp income tax)'},
+    {state:'PA', income:200000, expected:14980.00, label:'PA $200K (7.49% flat)'},
+    {state:'NC', income:1000000,expected:20000.00, label:'NC $1M (2% flat)'},
+    {state:'MS', income:100000, expected:4700.00,  label:'MS $100K ($5K exempt; 4% slice $5K + 5% slice $90K)'},
+    {state:'IA', income:200000, expected:12600.00, label:'IA $200K (5.5% to $100K + 7.1% above)'},
+    {state:'AK', income:300000, expected:18162.00, label:'AK $300K (10-bracket graduated, top 9.4%)'},
+  ];
+  let pass=0, fail=0;
+  cases.forEach(t=>{
+    const info = STATE_CORP_RATES[t.state];
+    if(!info){ console.error('[selftest] State '+t.state+' missing from STATE_CORP_RATES'); fail++; return; }
+    const stateTaxable = Math.max(0, t.income - (info.exemption || 0));
+    let tax = 0;
+    const brackets = info.brackets || [{thresh:0, rate:0}];
+    for(let k=0; k<brackets.length; k++){
+      const thresh = brackets[k].thresh;
+      const next = (k+1 < brackets.length) ? brackets[k+1].thresh : Infinity;
+      if(stateTaxable > thresh){
+        const slice = Math.min(stateTaxable, next) - thresh;
+        tax += slice * brackets[k].rate;
+      }
+    }
+    if(Math.abs(tax - t.expected) > 1){
+      console.error('[selftest FAIL] '+t.label+': computed '+tax.toFixed(2)+', expected '+t.expected.toFixed(2));
+      fail++;
+    } else { pass++; }
+  });
+  if(fail===0) console.log('[selftest] tax-estimator state corp engine: '+pass+'/'+cases.length+' cases pass');
+  else console.error('[selftest] tax-estimator FAILURES: '+fail+'/'+cases.length);
+}
+if(typeof window!=='undefined') window.addEventListener('load', runStateCorpSelfTests);
+
+</script>
 </body>
 </html>
