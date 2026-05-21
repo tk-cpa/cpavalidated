@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§83(b) Election: Restricted Stock, 30-Day Deadline, Early Exercise, Founder Stock, Form 15620 | CPA Validated</title>
+<meta name="description" content="Section 83(b) election complete mechanics. Elect to be taxed at grant instead of vesting. Strict 30-day deadline, no extensions. Applies to restricted stock awards and early-exercised options, NOT RSUs. Converts ordinary income to capital gain. Holding period starts at grant. ISO AMT and QSBS coordination. Forfeiture risk. Form 15620 standardized template (November 2024).">
+<link rel="canonical" href="https://cpavalidated.com/section-83b-election-restricted-stock.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§83(b) Election: Restricted Stock Deep Dive 2026">
+<meta property="og:description" content="IRC §83(b) framework. 30-day deadline. Restricted stock and early exercise. Founder stock. ISO/QSBS coordination. Form 15620.">
+<meta property="og:url" content="https://cpavalidated.com/section-83b-election-restricted-stock.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"§83(b) Election: Restricted Stock Deep Dive 2026","url":"https://cpavalidated.com/section-83b-election-restricted-stock.html","author":{{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"}},"publisher":{{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}},"isAccessibleForFree":true,"inLanguage":"en-US"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html" class="active">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§83(b) Election for Restricted Stock</h1>
+  <div class="sub">Elect Taxation At GRANT Instead Of VESTING &nbsp;&bull;&nbsp; STRICT 30-Day Deadline (No Extensions) &nbsp;&bull;&nbsp; Applies To RSAs + Early-Exercised Options (NOT RSUs) &nbsp;&bull;&nbsp; Converts Ordinary Income To Capital Gain &nbsp;&bull;&nbsp; Holding Period Starts At Grant &nbsp;&bull;&nbsp; ISO AMT + §1202 QSBS Coordination &nbsp;&bull;&nbsp; Form 15620 (November 2024)</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §83 / §83(b) / §422 / §1202 / §409A / §56(b)(3) / Reg §1.83-2</span>
+    <span class="ph-meta-item">Form 15620 (Nov 2024); Rev. Proc. 93-27 / 2001-43</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="individual-tax.html">&#8592; Individual Tax</a></div>
+<div class="article">
+
+<p class="lead">IRC §83(b) (Property transferred in connection with performance of services - election to include in gross income in year of transfer) lets a service provider who receives RESTRICTED PROPERTY (typically unvested equity subject to a substantial risk of forfeiture) ELECT to be taxed on the property's value AT THE TIME OF TRANSFER rather than waiting until it VESTS. DEFAULT RULE §83(a): when property received for services is subject to a SUBSTANTIAL RISK OF FORFEITURE, the service provider recognizes ORDINARY INCOME equal to FMV minus amount paid WHEN the property VESTS (when risk of forfeiture lapses) - measured at the THEN-current value. For appreciating equity, this means tax on a much higher value at vesting. §83(b) ELECTION: service provider elects to include in income the EXCESS of FMV at GRANT over amount paid, in the YEAR OF TRANSFER - locking in a low (often zero) taxable amount at grant, with all future appreciation taxed as CAPITAL GAIN on eventual sale rather than ordinary income at vesting. STRICT 30-DAY DEADLINE: the §83(b) election MUST be filed with the IRS within 30 DAYS of the property TRANSFER (grant of restricted stock, or exercise of an option for early-exercised shares). NO EXTENSIONS, NO EXCEPTIONS - a single day late is fatal. WHAT IT APPLIES TO: restricted stock awards (RSAs); shares acquired by EARLY EXERCISE of stock options (ISO or NSO) before vesting; founder stock subject to vesting. WHAT IT DOES NOT APPLY TO: restricted stock UNITS (RSUs) - no property transferred at grant, only a promise; unexercised options. MECHANICS OF BENEFIT: founder receives 1,000,000 shares at $0.001 ($1,000 FMV); files §83(b); pays ordinary income tax on $1,000 (or less); holds; sells years later at $5,000,000; entire $4,999,000 gain is LONG-TERM CAPITAL GAIN. Without election, taxed at ordinary rates on FMV at each vesting date as shares vest - potentially millions in ordinary income with no liquidity. RISK: if forfeited after election, NO deduction for amount previously included (only loss is amount paid). HOLDING PERIOD starts at grant for §83(b) electors (vs at vesting otherwise) - critical for 1-year LTCG and §1202 QSBS 5-year holding. FORM 15620 - IRS released standardized §83(b) election form in November 2024 (use optional; written statement still acceptable). §83(i) - separate 5-year deferral election for private company "qualified equity grants" (not the same as §83(b)). Employer gets §83(h) deduction matching income included.</p>
+
+<div class="callout">
+  <div class="callout-label">§83(b) Election in One Paragraph</div>
+  <p><strong>The default (§83(a)):</strong> Restricted property received for services is taxed as ORDINARY INCOME when it VESTS, at the THEN-current FMV. Appreciating equity gets taxed on a high value at vesting.</p>
+  <p><strong>The election (§83(b)):</strong> Elect to be taxed NOW at grant-date value (often near zero for founders). All future appreciation becomes LONG-TERM CAPITAL GAIN on sale instead of ordinary income at vesting.</p>
+  <p><strong>The 30-day rule:</strong> Must file with the IRS within 30 days of the property TRANSFER (restricted stock grant, or option early-exercise date). NO extensions, no exceptions. One day late is fatal.</p>
+  <p><strong>Applies to:</strong> Restricted stock awards (RSAs) and early-exercised options. Does NOT apply to RSUs (no property at grant) or unexercised options.</p>
+  <p><strong>The risk:</strong> If you forfeit the property after electing, no deduction for the income you already recognized (only the amount paid is a capital loss). Form 15620 standardized template released November 2024.</p>
+</div>
+
+<h2>Default Rule §83(a) and the Election §83(b)</h2>
+
+<table class="key-table">
+  <tr><th>Element</th><th>Detail</th></tr>
+  <tr><td>§83(a) default rule</td><td>Property transferred for services included in gross income when no longer subject to substantial risk of forfeiture (vesting); amount = FMV at vesting minus amount paid</td></tr>
+  <tr><td>Substantial risk of forfeiture §83(c)(1)</td><td>Rights conditioned on future performance of substantial services OR occurrence of condition related to transfer purpose; typical vesting schedule</td></tr>
+  <tr><td>§83(b) election</td><td>Elect to include in income at TRANSFER (grant) the excess of FMV at grant over amount paid; future appreciation NOT ordinary income at vesting</td></tr>
+  <tr><td>Character at grant</td><td>Ordinary compensation income (subject to payroll/withholding if employee)</td></tr>
+  <tr><td>Character on later sale</td><td>Capital gain/loss measured from FMV included at grant (basis) to sale price; long-term if held 1+ year from grant</td></tr>
+  <tr><td>Amount paid</td><td>If service provider pays FMV for stock (common for founders at formation), §83(b) income is $0 - but election still critical to start holding period and lock character</td></tr>
+  <tr><td>Holding period §83(b)</td><td>Begins on date of transfer (grant) for electors; begins at vesting if no election</td></tr>
+  <tr><td>Employer deduction §83(h)</td><td>Employer deducts amount included in service provider's income, in employer's tax year that includes the income inclusion date</td></tr>
+  <tr><td>Withholding</td><td>For employees, §83(b) income subject to FICA and income tax withholding at grant</td></tr>
+  <tr><td>Capital gain rate benefit</td><td>Future appreciation taxed at 0%/15%/20% LTCG rather than up to 37% ordinary</td></tr>
+</table>
+
+<h2>30-Day Deadline and Filing Mechanics</h2>
+
+<table class="key-table">
+  <tr><th>Filing Element</th><th>Detail</th></tr>
+  <tr><td>30-day deadline §83(b)(2)</td><td>Election must be made not later than 30 days AFTER the date the property is transferred; STRICT - no extensions under Reg §301.9100 relief (statutory deadline)</td></tr>
+  <tr><td>Date of transfer - RSA</td><td>Grant date of restricted stock award (when stock issued/transferred to service provider)</td></tr>
+  <tr><td>Date of transfer - early-exercised option</td><td>Date of EXERCISE (when shares acquired), not grant of option; 30 days from exercise</td></tr>
+  <tr><td>Where to file</td><td>IRS office where service provider files income tax return; mail election statement</td></tr>
+  <tr><td>Copy to employer</td><td>Must furnish copy of election to employer/service recipient</td></tr>
+  <tr><td>Copy to return (historic)</td><td>Prior rule required attaching copy to tax return; IRS eliminated this requirement for elections after 2015 but retention recommended</td></tr>
+  <tr><td>Certified mail</td><td>Best practice - certified mail with return receipt for proof of timely filing</td></tr>
+  <tr><td>Form 15620</td><td>IRS released standardized §83(b) election form November 2024; OPTIONAL - taxpayer may use own written statement with required information</td></tr>
+  <tr><td>Required information</td><td>Name, address, TIN; description of property; date of transfer and tax year; nature of restrictions; FMV at transfer; amount paid; amount to include in income; statement that copy furnished to employer</td></tr>
+  <tr><td>No extensions</td><td>Statutory 30-day deadline; missed deadline cannot be cured; election irrevocable once made (revocation only with IRS consent and only for mistake of fact)</td></tr>
+</table>
+
+<h2>Worked Example - §83(b) Election Value</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - Startup Founder</div>
+  <p><strong>Facts:</strong> Anna co-founds a startup in January 2026. She receives 2,000,000 shares of founder restricted stock subject to 4-year vesting (25% per year). At grant, FMV = $0.001/share (par value); Anna pays $2,000 (par). The company's value will grow substantially.</p>
+  <p><strong>Scenario A - WITH §83(b) election (filed within 30 days):</strong></p>
+  <p>At grant January 2026: income = (FMV $2,000) - (paid $2,000) = $0 ordinary income<br>Anna files §83(b) within 30 days; pays $0 tax (or minimal); basis $2,000; holding period starts January 2026<br>4 years later (2030), all shares vested; company acquired; Anna sells 2,000,000 shares at $10/share = $20,000,000<br>Gain: $20,000,000 - $2,000 = $19,998,000 LONG-TERM CAPITAL GAIN<br>Federal tax at 20% LTCG + 3.8% NIIT = 23.8% × $19,998,000 = $4,759,524</p>
+  <p><strong>Scenario B - WITHOUT §83(b) election:</strong></p>
+  <p>No tax at grant. As each tranche vests, ordinary income = FMV at vesting minus $0.001 paid.<br>Year 1 vest (500,000 shares), FMV grown to $1/share: ordinary income $500,000<br>Year 2 vest (500,000 shares), FMV $3/share: ordinary income $1,500,000<br>Year 3 vest (500,000 shares), FMV $6/share: ordinary income $3,000,000<br>Year 4 vest (500,000 shares), FMV $10/share: ordinary income $5,000,000<br>Total ordinary income over vesting: $10,000,000 taxed at up to 37% + payroll taxes, WITHOUT liquidity to pay<br>Federal ordinary tax (37%): approximately $3,700,000 spread over 4 years, plus the post-vesting appreciation to $20M sale taxed separately<br>Worse: ordinary rates on $10M of vesting income, illiquid shares, no cash to pay tax</p>
+  <p><strong>The §83(b) advantage:</strong></p>
+  <p>Scenario A: ~$4.76M total tax, all capital gain, paid only at liquidity event<br>Scenario B: ~$3.7M ordinary tax at vesting (no liquidity) PLUS capital gains tax on later appreciation; much higher total; severe cash-flow problem at each vesting<br><strong>§83(b) converts millions of ordinary income into capital gain and defers all tax to the liquidity event.</strong></p>
+  <p><strong>The risk if Anna leaves early:</strong></p>
+  <p>If Anna forfeits unvested shares (leaves after year 2), she gets NO deduction for the $0 income she recognized (here minimal since income was $0). For higher grant-value situations, the §83(b) income recognized but later forfeited is lost with only a capital loss for amounts PAID. With $0 income, downside is minimal - which is why §83(b) is near-automatic for founder stock at formation.</p>
+</div>
+
+<h2>What §83(b) Applies To and Does Not</h2>
+
+<table class="key-table">
+  <tr><th>Equity Type</th><th>§83(b) Availability</th></tr>
+  <tr><td>Restricted Stock Award (RSA)</td><td>YES - property (stock) transferred at grant subject to forfeiture; file within 30 days of grant</td></tr>
+  <tr><td>Early-exercised stock options (ISO/NSO)</td><td>YES - if plan permits early exercise, exercising before vesting transfers restricted stock; file within 30 days of EXERCISE</td></tr>
+  <tr><td>Founder stock</td><td>YES - typically subject to vesting; §83(b) near-universal at formation when FMV minimal</td></tr>
+  <tr><td>Restricted Stock Units (RSU)</td><td>NO - RSU is unfunded promise to deliver shares at vesting; no property transferred at grant; nothing to elect on</td></tr>
+  <tr><td>Unexercised stock options</td><td>NO - option itself generally not "transferred property"; must exercise first (for early-exercise plans)</td></tr>
+  <tr><td>Vested stock (no restrictions)</td><td>NO ELECTION NEEDED - already taxed at grant as ordinary income; no risk of forfeiture</td></tr>
+  <tr><td>Profits interest (partnership)</td><td>Different regime - Rev. Proc. 93-27 / 2001-43; §83(b) protective election common for safe harbor</td></tr>
+  <tr><td>Stock appreciation rights (SARs)</td><td>NO - cash/phantom right, not property</td></tr>
+  <tr><td>Phantom stock</td><td>NO - deferred compensation, not property transfer</td></tr>
+  <tr><td>ISO shares (regular vesting)</td><td>ISO has own rules; AMT preference at exercise; §83(b) relevant for early-exercised ISO to start holding period and limit AMT</td></tr>
+</table>
+
+<h2>ISO and NSO Coordination</h2>
+
+<table class="key-table">
+  <tr><th>Option Type</th><th>§83(b) Interaction</th></tr>
+  <tr><td>NSO early exercise + §83(b)</td><td>Exercise before vesting; §83(b) locks ordinary income at spread (FMV minus strike) at exercise; if strike = FMV, $0 income; future gain is capital</td></tr>
+  <tr><td>NSO without early exercise</td><td>Ordinary income on spread at exercise (when vested); §83(b) not applicable to vested exercise</td></tr>
+  <tr><td>ISO early exercise + §83(b)</td><td>§83(b) starts holding period; ISO AMT preference equals spread at exercise; if early exercised at low spread, minimizes AMT; §83(b) protects against AMT on future appreciation at vesting</td></tr>
+  <tr><td>ISO qualifying disposition</td><td>Hold 2 years from grant AND 1 year from exercise for all-LTCG treatment; §83(b) on early exercise starts the 1-year clock at exercise</td></tr>
+  <tr><td>ISO AMT adjustment §56(b)(3)</td><td>ISO spread at exercise is AMT preference item; early exercise + §83(b) with minimal spread reduces AMT exposure</td></tr>
+  <tr><td>NSO §83(b) and §409A</td><td>NSO with exercise price below FMV may have §409A deferred comp problems; §83(b) does not cure §409A issues</td></tr>
+  <tr><td>Disqualifying disposition (ISO)</td><td>Sale before holding periods met converts to ordinary income on spread; §83(b) holding period start affects this</td></tr>
+  <tr><td>§422 ISO requirements</td><td>ISO must meet §422 (statutory option) requirements; early exercise permitted only if plan allows</td></tr>
+  <tr><td>Withholding NSO</td><td>NSO §83(b) income subject to withholding; ISO generally not subject to withholding even with §83(b)</td></tr>
+  <tr><td>QSBS §1202 coordination</td><td>§83(b) starts holding period for §1202 5-year QSBS requirement; early election critical for QSBS planning</td></tr>
+</table>
+
+<h2>Risks and Downsides of §83(b)</h2>
+
+<table class="key-table">
+  <tr><th>Risk Element</th><th>Detail</th></tr>
+  <tr><td>Forfeiture after election §83(b)(1)</td><td>If property forfeited after §83(b) election, NO deduction allowed for amount previously included in income; only capital LOSS for amount PAID (less amount realized on forfeiture)</td></tr>
+  <tr><td>Prepaid tax with no liquidity</td><td>If grant FMV is substantial (not founder-formation $0), §83(b) requires paying ordinary tax on value before any liquidity - cash flow risk</td></tr>
+  <tr><td>Stock becomes worthless</td><td>Tax paid at grant on value that later evaporates; no recovery of tax paid (only capital loss for basis)</td></tr>
+  <tr><td>Irrevocability §83(b)</td><td>Election irrevocable except with IRS consent (only for mistake of fact, not change of mind)</td></tr>
+  <tr><td>Valuation risk</td><td>If IRS later determines grant FMV higher than reported, additional ordinary income plus penalties; 409A valuation important</td></tr>
+  <tr><td>When NOT to elect</td><td>High grant-date value with uncertain vesting; likely to leave before vesting; stock unlikely to appreciate; insufficient cash for tax</td></tr>
+  <tr><td>When TO elect</td><td>Low/zero grant value (founders); strong expected appreciation; intend to stay through vesting; want LTCG and QSBS holding period</td></tr>
+  <tr><td>30-day miss</td><td>Cannot be cured; default §83(a) ordinary income at vesting applies; significant lost benefit for appreciating stock</td></tr>
+  <tr><td>State conformity</td><td>Most states conform; some require separate state election or have different rules; multistate service providers complex</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Missing the 30-Day Deadline</h3>
+
+<p>The single most catastrophic error. §83(b) MUST be filed within 30 days of transfer. No extensions, no §301.9100 relief, no exceptions. Practitioner must counsel client immediately on grant/early exercise. Certified mail with receipt for proof.</p>
+
+<h3>Attempting §83(b) on RSUs</h3>
+
+<p>RSUs are NOT eligible - no property transferred at grant, only a promise to deliver shares at vesting. §83(b) requires actual property transfer. Practitioner advising §83(b) on RSUs misunderstands the mechanics; RSU holders cannot elect.</p>
+
+<h3>Filing on Unexercised Options</h3>
+
+<p>Options themselves generally are not "transferred property" for §83(b). Must EARLY EXERCISE first (if plan permits) to acquire restricted shares, then file §83(b) within 30 days of exercise. Practitioner filing on option grant is ineffective.</p>
+
+<h3>Wrong Transfer Date for Options</h3>
+
+<p>For early-exercised options, the 30-day clock runs from EXERCISE date, not option grant date. Practitioner counting from grant misses the deadline. Document exercise date precisely.</p>
+
+<h3>High-Value Grant Election Without Liquidity</h3>
+
+<p>§83(b) on high-FMV grant requires paying ordinary tax immediately with no liquidity. Practitioner reflexively recommending §83(b) for late-stage employees with high 409A valuations creates cash crisis. Evaluate grant value and forfeiture risk.</p>
+
+<h3>Forfeiture Deduction Misconception</h3>
+
+<p>If property forfeited after §83(b), NO deduction for income previously recognized §83(b)(1). Only capital loss for amount paid. Practitioner assuming forfeiture reverses the income is wrong; the recognized income is permanently lost.</p>
+
+<h3>Holding Period for QSBS</h3>
+
+<p>§83(b) starts holding period at grant - critical for §1202 QSBS 5-year requirement and 1-year LTCG. Practitioner failing to elect delays QSBS clock to vesting, potentially losing years of qualified holding period.</p>
+
+<h3>Copy to Employer Omitted</h3>
+
+<p>§83(b) requires furnishing copy to employer/service recipient. Practitioner filing only with IRS may have defective election. Provide copy to company and retain proof.</p>
+
+<h3>409A Valuation Ignored</h3>
+
+<p>§83(b) reports FMV at grant; if 409A valuation later challenged as too low, additional ordinary income plus penalties. Practitioner should ensure defensible 409A valuation supports the §83(b) reported value.</p>
+
+<h3>ISO AMT Coordination Missed</h3>
+
+<p>Early-exercised ISO + §83(b) with minimal spread reduces AMT preference. Practitioner not coordinating §83(b) with ISO AMT planning misses opportunity to minimize AMT on future appreciation.</p>
+
+<h3>Profits Interest Protective Election</h3>
+
+<p>Partnership profits interests (Rev. Proc. 93-27 / 2001-43) - protective §83(b) election common to confirm $0 value safe harbor. Practitioner omitting protective election for profits interest may face valuation dispute.</p>
+
+<h3>Revocation Misunderstanding</h3>
+
+<p>§83(b) election irrevocable except IRS consent for mistake of FACT (not change of mind). Practitioner advising client they can undo a §83(b) if stock drops is wrong; only mistake-of-fact revocation within strict limits.</p>
+
+<h3>Form 15620 vs Written Statement</h3>
+
+<p>Form 15620 (November 2024) is OPTIONAL standardized template. A compliant written statement remains acceptable. Practitioner believing Form 15620 mandatory may delay filing; either method works if required information included.</p>
+
+<h3>Withholding for Employee Electors</h3>
+
+<p>Employee §83(b) income subject to FICA and income tax withholding at grant. Practitioner not coordinating payroll withholding with company creates compliance gap; company must withhold on the §83(b) income.</p>
+
+<h3>State Election Requirements</h3>
+
+<p>Some states require separate state §83(b) election or have nonconforming rules. Practitioner filing only federal election may miss state requirement; multistate service providers need state-by-state analysis.</p>
+
+<h3>Vesting Acceleration Not Considered</h3>
+
+<p>If vesting accelerates (acquisition, single/double trigger), §83(b) elector already recognized income at grant - no additional income on acceleration. Non-elector recognizes ordinary income on accelerated vesting at then-FMV. §83(b) advantage magnified by acceleration.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="qsbs-section-1202-obbba-graduated.html" class="related-link">§1202 QSBS<span>5-year holding period</span></a>
+    <a href="capital-gains-calculator.html" class="related-link">Capital Gains Calculator<span>LTCG vs ordinary</span></a>
+    <a href="amt-individual-2026-obbba.html" class="related-link">AMT 2026<span>ISO AMT preference</span></a>
+    <a href="section-1411-niit-guide.html" class="related-link">§1411 NIIT<span>3.8% on capital gain</span></a>
+    <a href="form-7203-s-corp-basis.html" class="related-link">Form 7203 Basis<span>Stock basis tracking</span></a>
+    <a href="individual-tax.html" class="related-link">Individual Tax Hub<span>All individual topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §83 (Property transferred in connection with performance of services). §83(a) (general rule - income at vesting equal to FMV minus amount paid). §83(b) (election to include in gross income in year of transfer). §83(b)(1) (election mechanics; no deduction on forfeiture). §83(b)(2) (manner and time of election - 30 days). §83(c) (special rules). §83(c)(1) (substantial risk of forfeiture). §83(c)(2) (transferability). §83(c)(3) (sales that could give rise to §16(b) liability). §83(d) (certain restrictions that will never lapse). §83(e) (applicability). §83(f) (holding period). §83(h) (deduction by employer - matching year of inclusion). §83(i) (qualified equity grants - 5-year deferral election for private company employees; separate from §83(b)). §409A (nonqualified deferred compensation - NSO below FMV issues). §421 (statutory stock options - general rules). §422 (incentive stock options - ISO requirements; 2-year/1-year holding). §423 (employee stock purchase plans). §56(b)(3) (ISO AMT preference - spread at exercise). §1202 (qualified small business stock - 5-year holding; §83(b) starts clock). §1221 (capital asset). §1223 (holding period). §3401 (wages - withholding). §3121 (FICA). Reg §1.83-1 (property transferred in connection with services). Reg §1.83-2 (election to include in gross income in year of transfer). Reg §1.83-2(a) (in general). Reg §1.83-2(b) (time for making election - 30 days). Reg §1.83-2(c) (manner of making election). Reg §1.83-2(d) (additional copies). Reg §1.83-2(e) (content of election - required information). Reg §1.83-2(f) (revocability - only with consent for mistake of fact). Reg §1.83-3 (meaning and operation of terms - substantial risk of forfeiture, transferability). Reg §1.83-6 (deduction by employer). Reg §1.83-7 (taxation of nonqualified stock options). Revenue Procedure 93-27 (profits interests - safe harbor). Revenue Procedure 2001-43 (profits interests - unvested; §83(b) protective election). Revenue Procedure 2012-29 (sample §83(b) election language). Form 15620 (Section 83(b) Election - IRS standardized form released November 2024). IRS Form 15620 instructions. Tax Cuts and Jobs Act P.L. 115-97 (added §83(i) qualified equity grants).</p>
+
+</div>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
