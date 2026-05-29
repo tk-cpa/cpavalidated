@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§351 Transfer to Controlled Corporation: 80% Control, Boot, Liabilities, Basis, Anti-Loss-Duplication | CPA Validated</title>
+<meta name="description" content="Section 351 complete mechanics. Nonrecognition for transfers of property to a corporation when transferors control immediately after (80% voting + 80% each nonvoting class per §368(c)). Services excluded. Boot §351(b) gain recognition. Liabilities §357 - general rule, tax-avoidance, excess-over-basis. Basis §358 / §362. §362(e)(2) anti-loss-duplication. Investment company exception §351(e). Statement Reg §1.351-3.">
+<link rel="canonical" href="https://cpavalidated.com/section-351-transfer-controlled-corporation.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§351 Transfer to Controlled Corporation Deep Dive">
+<meta property="og:description" content="IRC §351 framework. 80% control test. Boot. Liabilities. Basis mechanics. Anti-loss-duplication. Form 8594.">
+<meta property="og:url" content="https://cpavalidated.com/section-351-transfer-controlled-corporation.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"§351 Transfer to Controlled Corporation Deep Dive","url":"https://cpavalidated.com/section-351-transfer-controlled-corporation.html","author":{{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"}},"publisher":{{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}},"isAccessibleForFree":true,"inLanguage":"en-US"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§351 Transfer to Controlled Corporation</h1>
+  <div class="sub">Property In, Stock Out, No Current Gain Or Loss &nbsp;&bull;&nbsp; 80% Voting + 80% Each Nonvoting Class Control Test §368(c) &nbsp;&bull;&nbsp; Services Excluded - Stock For Services Is Compensation §83 &nbsp;&bull;&nbsp; Boot §351(b) Gain To Lesser Of FMV / Realized Gain &nbsp;&bull;&nbsp; Liabilities §357(a) / §357(b) / §357(c) &nbsp;&bull;&nbsp; Basis §358 / §362 / §362(e)(2) &nbsp;&bull;&nbsp; Investment Company §351(e)</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §351 / §357 / §358 / §362 / §368(c) / §1223 / Reg §1.351-1 to §1.351-3</span>
+    <span class="ph-meta-item">Rev. Proc. 77-37 (10% safe harbor); Rev. Rul. 84-111 (partnership to corp)</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="business-entity.html">&#8592; Business &amp; Entity</a></div>
+<div class="article">
+
+<p class="lead">IRC §351 (Transfer to corporation controlled by transferor) is the foundational nonrecognition provision for INCORPORATING a business or transferring property to an existing controlled corporation. CORE RULE §351(a): no gain or loss recognized when one or more persons transfer PROPERTY to a corporation SOLELY in exchange for STOCK of that corporation IF, IMMEDIATELY AFTER the exchange, those persons are IN CONTROL of the corporation. CONTROL §368(c): ownership of at least 80% of total combined voting power of all voting-stock classes AND at least 80% of total shares of each nonvoting class. KEY TERMS: "PROPERTY" §351(d) includes cash, real estate, equipment, inventory, intangibles, accounts receivable - but does NOT include services rendered (stock received for services is taxable ordinary compensation income §83). "SOLELY in exchange for stock" - if transferor receives anything besides stock (cash, notes, other property = "BOOT"), §351(b) requires gain (not loss) recognition to the lesser of FMV of boot or realized gain; basis and holding period rules adjust. "IMMEDIATELY AFTER" §1.351-1(a)(1) is judged on a flexible step-transaction basis - includes near-simultaneous transfers part of one integrated plan. CONTROL GROUP - multiple transferors may aggregate property contributions to satisfy 80%/80% test collectively. SERVICE PROVIDER PROBLEM: stock received for services is NOT property contribution; service-only shareholders' shares do NOT count toward 80% control unless they ALSO contribute meaningful property (>10% of stock value contributed as property, per Rev. Proc. 77-37 safe harbor). BASIS §358(a)(1): transferor's basis in stock received = adjusted basis of property transferred, MINUS boot/liabilities, PLUS gain recognized. CORPORATION'S BASIS §362(a): substituted basis = transferor's basis PLUS gain recognized; §362(e)(2) loss duplication rule limits stepped-up basis where aggregate built-in loss transferred. LIABILITIES ASSUMED: §357(a) - generally not boot; §357(b) - tax-avoidance liabilities recharacterized as boot; §357(c) - liabilities EXCEEDING aggregate basis recognized as gain. INVESTMENT COMPANY §351(e) - no nonrecognition where transferee is an investment company (mainly stocks/securities); diversification rule. STATEMENT REQUIRED Reg §1.351-3 - both transferor and corporation attach §351 statement to first return.</p>
+
+<div class="callout">
+  <div class="callout-label">§351 in One Paragraph</div>
+  <p><strong>The trade:</strong> Property in, stock out, no current gain or loss - IF the transferors collectively control the corporation immediately after (80% voting + 80% of each nonvoting class per §368(c)).</p>
+  <p><strong>What counts:</strong> Property includes cash, real estate, equipment, intangibles, accounts receivable. Services do NOT - stock for services is ordinary compensation income §83. Service-only shareholders' shares don't help the 80% test.</p>
+  <p><strong>Boot §351(b):</strong> Anything received other than transferee stock (cash, notes, other property). Recognized as gain to the LESSER of boot FMV or realized gain. Losses never recognized.</p>
+  <p><strong>Liabilities §357:</strong> Generally not boot under §357(a). §357(b) tax-avoidance liabilities = boot. §357(c) liabilities ASSUMED in excess of aggregate property basis = gain recognized.</p>
+  <p><strong>Basis:</strong> Transferor takes substituted basis in stock §358(a); corporation takes carryover basis in property §362(a), subject to §362(e)(2) anti-loss-duplication rules. Statement required Reg §1.351-3.</p>
+</div>
+
+<h2>The Three §351 Elements</h2>
+
+<table class="key-table">
+  <tr><th>Element</th><th>Detail</th></tr>
+  <tr><td>(1) PROPERTY transferred</td><td>§351(a) requires "property"; §351(d) excludes services, indebtedness of transferee corp not evidenced by a security, interest on transferee debt. Property: cash, real estate, equipment, inventory, intangibles (patents, customer lists, goodwill, going concern value), accounts receivable, securities.</td></tr>
+  <tr><td>Services exclusion §351(d)(1)</td><td>Stock issued for services rendered = ordinary compensation income to recipient under §83; not property contribution; service shares do NOT count toward 80% control.</td></tr>
+  <tr><td>(2) SOLELY for STOCK of transferee</td><td>Stock includes common, preferred (but NOT nonqualified preferred under §351(g)), voting and nonvoting. Excludes: warrants, options, debt instruments, contingent rights.</td></tr>
+  <tr><td>Nonqualified preferred stock §351(g)</td><td>Preferred with mandatory redemption, holder put right within 20 years, issuer call where redemption likely, or dividend rate referencing interest rates/commodities - treated as BOOT, not stock</td></tr>
+  <tr><td>(3) CONTROL immediately after §368(c)</td><td>Transferors collectively own at least 80% of total combined voting power of all voting-stock classes AND at least 80% of total shares of EACH OTHER class of stock</td></tr>
+  <tr><td>"Immediately after" timing</td><td>Reg §1.351-1(a)(1) - mutual interdependence test; near-simultaneous transfers part of one integrated plan aggregate; step-transaction doctrine may apply</td></tr>
+  <tr><td>Multiple transferors</td><td>§351(a) "one or more persons" - aggregate contributions; control group must hold 80%/80% in aggregate immediately after</td></tr>
+  <tr><td>Pre-existing corporation</td><td>§351 works for new and existing corporations; control measured after the transfer regardless of corporation's pre-existing ownership</td></tr>
+  <tr><td>Stock issuance to new investor concurrent</td><td>If new investor receives stock in same plan, transferor group's control percentage may drop below 80% - destroys §351 if not careful</td></tr>
+  <tr><td>Loss not recognized either</td><td>§351 is nonrecognition - both gain AND loss deferred; basis preserves loss for later recognition on disposition</td></tr>
+</table>
+
+<h2>The 80%/80% Control Test §368(c)</h2>
+
+<table class="key-table">
+  <tr><th>Control Test Element</th><th>Detail</th></tr>
+  <tr><td>Voting stock test</td><td>Transferors must own 80% of total combined voting power of all classes of stock entitled to vote</td></tr>
+  <tr><td>Nonvoting stock test</td><td>Transferors must own 80% of total number of shares of EACH OTHER class (not aggregated across classes)</td></tr>
+  <tr><td>"Vertical" test per class</td><td>Each nonvoting class tested separately; failing 80% on any single nonvoting class breaks control</td></tr>
+  <tr><td>Attribution</td><td>§368(c) does NOT apply §318 attribution; each transferor counted individually; family/entity ownership generally not attributed</td></tr>
+  <tr><td>Treasury stock</td><td>Not outstanding for purposes of 80% test; only outstanding shares count</td></tr>
+  <tr><td>Group transferors</td><td>Multiple transferors aggregated only if all are "persons" who transferred property and received stock in same transaction</td></tr>
+  <tr><td>Failure consequences</td><td>If control fails, ENTIRE transfer is taxable; not partial - all gain recognized at FMV minus basis</td></tr>
+  <tr><td>Concurrent third-party issuance</td><td>Stock issued to third-party investor in same plan dilutes transferor control; can destroy 80% test</td></tr>
+  <tr><td>Service-only shareholders</td><td>Stock for services not property; service-only shares don't count toward transferor group's 80%; Rev. Proc. 77-37 safe harbor: service shareholder must contribute property >10% of FMV of stock received</td></tr>
+  <tr><td>"Accommodation" property transfer</td><td>Small property transfer by service provider purely to qualify - IRS may disregard if not "more than nominal"</td></tr>
+</table>
+
+<h2>Boot §351(b)</h2>
+
+<table class="key-table">
+  <tr><th>Boot Element</th><th>Detail</th></tr>
+  <tr><td>Definition</td><td>Anything received in exchange other than stock of transferee corporation - cash, notes, debt instruments, other property</td></tr>
+  <tr><td>Gain recognition</td><td>§351(b) - gain recognized to the LESSER of (i) FMV of boot received OR (ii) realized gain on the exchange</td></tr>
+  <tr><td>Loss never recognized</td><td>§351(b)(2) - loss never recognized even when boot received; loss carries forward in basis</td></tr>
+  <tr><td>Character of gain</td><td>Same as character of property transferred - capital, ordinary, §1245, §1250 recapture; allocation pro rata</td></tr>
+  <tr><td>Allocation rules</td><td>If multiple assets transferred with mixed character, boot allocated proportionally based on FMV; gain computed per asset</td></tr>
+  <tr><td>Nonqualified preferred stock §351(g)</td><td>Specified preferred features = treated as boot, not stock</td></tr>
+  <tr><td>Securities and debt instruments</td><td>Securities of transferee corp received in exchange = boot per §351(a) "solely for stock"; pre-2001 rule allowed securities as nonrecognition</td></tr>
+  <tr><td>Basis adjustment §358(a)(1)</td><td>Stock basis = property basis MINUS FMV of boot received PLUS gain recognized</td></tr>
+  <tr><td>Boot received takes FMV basis</td><td>Boot received takes its own basis = FMV at distribution</td></tr>
+  <tr><td>Holding period</td><td>Stock receives tacked holding period from property if capital asset / §1231; boot received starts new holding period</td></tr>
+</table>
+
+<h2>Worked Example - §351 Formation</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - Multi-Founder Incorporation</div>
+  <p><strong>Facts:</strong> Anna and Frank form Newco, Inc. in 2026. Anna contributes:</p>
+  <p>- Manufacturing equipment: basis $50,000, FMV $200,000<br>- Cash: $50,000<br>Frank contributes:<br>- Patent portfolio: basis $10,000, FMV $250,000<br>In exchange, each receives 500 shares of Newco common stock (1,000 total outstanding). Sarah (CTO) also receives 100 shares of restricted stock for services rendered.</p>
+  <p><strong>§351 control analysis:</strong></p>
+  <p>Sarah's 100 shares for services - NOT property contribution; do NOT count toward control group<br>Newco total outstanding: 1,100 shares<br>Anna + Frank own: 1,000 / 1,100 = 90.9%<br>90.9% > 80% threshold → §351 CONTROL satisfied → nonrecognition for Anna and Frank</p>
+  <p><strong>Anna's transfer:</strong></p>
+  <p>Property transferred: $50K equipment + $50K cash = $100,000 total basis<br>FMV of property: $200K + $50K = $250,000<br>Stock received: 500 shares Newco<br>No boot received → no gain recognition<br>Anna's basis in 500 shares: $100,000 (substituted basis §358(a)(1))<br>Newco's basis in equipment: $50,000 (carryover §362(a)); in cash: $50,000<br>Anna's holding period in stock: tacked from equipment (capital asset)</p>
+  <p><strong>Frank's transfer:</strong></p>
+  <p>Property: patent basis $10,000, FMV $250,000 (built-in gain $240,000)<br>Stock received: 500 shares Newco<br>No boot → no gain recognition<br>Frank's basis in 500 shares: $10,000<br>Newco's basis in patent: $10,000 (carryover)<br>Built-in gain $240K preserved at corporate level</p>
+  <p><strong>Sarah's stock for services:</strong></p>
+  <p>NOT a §351 transfer; treated under §83<br>Sarah recognizes ordinary compensation income on 100 shares at FMV<br>If FMV per share = $500 (matching Anna/Frank stock value), Sarah includes $50,000 ordinary income<br>Sarah should file §83(b) election within 30 days if shares subject to vesting<br>Newco gets §83(h) deduction matching Sarah's income inclusion</p>
+  <p><strong>What if Frank also received $50,000 cash boot:</strong></p>
+  <p>Frank's realized gain: $250K FMV minus $10K basis = $240,000<br>Boot received: $50,000<br>§351(b) gain recognized: LESSER of $50,000 boot OR $240,000 realized = $50,000 recognized<br>Frank's basis in 500 shares: $10,000 - $50,000 + $50,000 = $10,000<br>$240,000 - $50,000 = $190,000 built-in gain preserved in stock<br>Character: patent is §1221 capital asset → $50,000 long-term capital gain (if 1-year holding)</p>
+  <p><strong>Newco basis in patent (with boot):</strong></p>
+  <p>§362(a) - carryover basis $10,000 PLUS gain recognized by transferor $50,000 = $60,000</p>
+</div>
+
+<h2>Liabilities Assumed §357</h2>
+
+<table class="key-table">
+  <tr><th>§357 Element</th><th>Detail</th></tr>
+  <tr><td>General rule §357(a)</td><td>Corporation's assumption of transferor's liabilities NOT treated as boot - despite providing equivalent value to transferor</td></tr>
+  <tr><td>Tax-avoidance liabilities §357(b)</td><td>If principal purpose of liability assumption was tax avoidance OR not bona fide business purpose, ALL assumed liabilities treated as boot - large potential trap</td></tr>
+  <tr><td>Liabilities exceeding basis §357(c)</td><td>If aggregate liabilities assumed EXCEEDS aggregate adjusted basis of property transferred, the EXCESS is GAIN RECOGNIZED (capital or ordinary per character of underlying assets)</td></tr>
+  <tr><td>§357(c)(1) gain recognition</td><td>Cannot be deferred; cash-method service businesses with high receivables (no basis) often trip this when incorporating</td></tr>
+  <tr><td>Exception §357(c)(3) - deductible liabilities</td><td>Liabilities that would give rise to deduction when paid (e.g., accounts payable for cash-basis taxpayer) excluded from §357(c) computation</td></tr>
+  <tr><td>Aggregation across transferors</td><td>§357(c) computed PER TRANSFEROR, not aggregated across transferor group</td></tr>
+  <tr><td>Recourse vs nonrecourse</td><td>Generally treated equivalently for §357; substance over form</td></tr>
+  <tr><td>Strategy: contribute additional basis</td><td>Transferor can contribute cash or higher-basis property to bring aggregate basis above liabilities and avoid §357(c) gain</td></tr>
+  <tr><td>Basis effect §358(d)</td><td>Liabilities assumed reduce transferor's stock basis dollar-for-dollar</td></tr>
+  <tr><td>Conversion of partnership to corp</td><td>Common §357(c) trap - cash-basis partnership with receivables (zero basis) plus payables; structure carefully to avoid gain recognition</td></tr>
+</table>
+
+<h2>Basis and Holding Period</h2>
+
+<table class="key-table">
+  <tr><th>Basis Element</th><th>Detail</th></tr>
+  <tr><td>Transferor's stock basis §358(a)(1)</td><td>Substituted basis = adjusted basis of property MINUS FMV of boot/liabilities assumed PLUS gain recognized to transferor</td></tr>
+  <tr><td>Transferor's boot basis §358(a)(2)</td><td>FMV at distribution date</td></tr>
+  <tr><td>Corporation's property basis §362(a)</td><td>Carryover basis = transferor's basis PLUS gain recognized by transferor</td></tr>
+  <tr><td>§362(e)(2) anti-loss-duplication</td><td>Where aggregate built-in losses > aggregate built-in gains, corporation's basis in built-in-loss property reduced to FMV (stepped DOWN) - or transferor can elect to step DOWN stock basis instead under §362(e)(2)(C)</td></tr>
+  <tr><td>Loss duplication purpose</td><td>Prevents duplicating loss at both transferor and corporation levels; one loss only</td></tr>
+  <tr><td>§362(e)(2)(C) basis-shift election</td><td>Transferor and corporation jointly elect to reduce stock basis (preserving full asset basis at corp level); election irrevocable</td></tr>
+  <tr><td>Holding period §1223(1)</td><td>Transferor's stock holding period = tacked from property holding period IF property is capital asset or §1231 property; otherwise starts new</td></tr>
+  <tr><td>Corporation's holding period §1223(2)</td><td>Tacked from transferor</td></tr>
+  <tr><td>Multiple-asset transfer</td><td>If both capital and ordinary property contributed, stock receives blended/split holding period based on FMV allocation</td></tr>
+  <tr><td>Statement Reg §1.351-3</td><td>Both transferor and corporation attach §351 statement to first return: description of property, FMV, basis, stock received, etc.</td></tr>
+</table>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Service Provider Breaks Control</h3>
+
+<p>Stock issued for services is not a property contribution and does NOT count toward 80% test. Practitioner who lets a service founder receive equity at formation without proper property contribution can break §351 control and turn the entire deal taxable. Rev. Proc. 77-37 safe harbor: service shareholder should also contribute property >10% of FMV of stock received.</p>
+
+<h3>Concurrent Outside Investor Dilution</h3>
+
+<p>Stock issued to a new outside investor in the same plan dilutes the transferor group's control. Practitioner forming a corporation and simultaneously raising equity from a VC must carefully time and structure - if VC takes >20% at formation, §351 control fails.</p>
+
+<h3>Forgetting §357(c) Liabilities-Over-Basis</h3>
+
+<p>Liabilities assumed in excess of aggregate property basis = gain recognized §357(c). Common trap on cash-basis service business incorporation (high receivables with zero basis + payables). Cure by contributing additional cash/high-basis property.</p>
+
+<h3>Accounts Payable §357(c)(3) Exception Missed</h3>
+
+<p>§357(c)(3) excludes cash-basis payables (would be deductible when paid) from the §357(c) liabilities-over-basis computation. Practitioner including all payables in the §357(c) test overstates gain recognition.</p>
+
+<h3>Investment Company §351(e)</h3>
+
+<p>§351 nonrecognition does NOT apply if transferee is an "investment company" - corp with >80% of assets in stocks, securities, money, certain derivatives - PLUS the transaction results in diversification of transferors' interests. Practitioner contributing portfolio assets to a holding corp can inadvertently trigger §351(e).</p>
+
+<h3>Nonqualified Preferred Stock as Boot</h3>
+
+<p>§351(g) - preferred stock with mandatory redemption, holder put within 20 years, issuer call where redemption likely, or interest-rate-linked dividends is treated as BOOT, not stock. Practitioner issuing preferred without checking §351(g) features can inadvertently trigger gain recognition.</p>
+
+<h3>Loss Not Recognized Even With Boot</h3>
+
+<p>§351(b)(2) - loss is NEVER recognized in a §351 exchange, even when boot received. Practitioner expecting to recognize loss via partial-boot structure is wrong; loss preserved in stock basis.</p>
+
+<h3>§362(e)(2) Loss Duplication Mishandled</h3>
+
+<p>If aggregate built-in losses exceed aggregate built-in gains, §362(e)(2) reduces corporation's basis in loss property to FMV - eliminating duplicated loss. Transferor can elect §362(e)(2)(C) to step DOWN stock basis instead, preserving full asset basis. Practitioner ignoring §362(e)(2) misstates basis on both sides.</p>
+
+<h3>Step Transaction / Integrated Plan</h3>
+
+<p>"Immediately after" judged on integrated-plan basis; near-simultaneous transfers can be aggregated. Practitioner separating transactions in time without genuine business purpose may have steps collapsed - changing control percentage and breaking §351.</p>
+
+<h3>Failing to File §351 Statement</h3>
+
+<p>Reg §1.351-3 - both transferor and corporation must attach a §351 statement to their first return: property description, FMV, basis, stock received, liabilities assumed, etc. Practitioner omitting the statement creates audit exposure.</p>
+
+<h3>Holding Period Misapplication</h3>
+
+<p>§1223(1) tacks holding period only for capital and §1231 property. Inventory and other ordinary-character property starts a new holding period on stock received. Practitioner applying tacking to all property miscalculates LTCG on later stock sale.</p>
+
+<h3>Pre-Existing Corp Control Failure</h3>
+
+<p>§351 works for transfers to existing corps, but transferors must control corp immediately after. Practitioner transferring property to a 60%-owned existing subsidiary may fail control test even with a "controlled" entity.</p>
+
+<h3>§357(b) Tax-Avoidance Liability Trap</h3>
+
+<p>§357(b) treats ALL assumed liabilities as boot if any liability had tax-avoidance principal purpose. Practitioner allowing transferor to dump tax-motivated liabilities into corporation can blow up entire §351 transfer.</p>
+
+<h3>Inventory in §351 Transfer</h3>
+
+<p>Inventory is property under §351 but its character flows through for gain recognition and stock holding period. Practitioner not segregating ordinary-character assets misallocates boot gain character.</p>
+
+<h3>Going Concern and Goodwill as Property</h3>
+
+<p>Self-created goodwill, going concern value, customer lists ARE "property" for §351 purposes if associated with active trade or business. Valuation often disputed; document with appraisal at formation.</p>
+
+<h3>Recapture on §1245/§1250 Property</h3>
+
+<p>§1245/§1250 recapture potential preserved in transferor stock basis and corporation property basis; recapture eventually recognized on disposition. Practitioner overlooking recapture potential miscalculates long-term tax exposure.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="section-83b-election-restricted-stock.html" class="related-link">§83(b) Election<span>Service-provider stock</span></a>
+    <a href="section-367-outbound-transfer-foreign-corporation.html" class="related-link">§367 Outbound Transfers<span>Foreign §351</span></a>
+    <a href="qsbs-section-1202-obbba-graduated.html" class="related-link">§1202 QSBS<span>Original-issue stock</span></a>
+    <a href="form-7203-s-corp-basis.html" class="related-link">Form 7203 Basis<span>Shareholder basis tracking</span></a>
+    <a href="section-382-nol-limitation-ownership-change.html" class="related-link">§382 Ownership Change<span>Post-incorporation</span></a>
+    <a href="business-entity.html" class="related-link">Business &amp; Entity Hub<span>All business topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §351 (Transfer to corporation controlled by transferor). §351(a) (general rule - nonrecognition). §351(b) (boot - gain to lesser of boot FMV or realized gain; loss never recognized). §351(c) (special rule for subsidiary stock distributions). §351(d) (items not treated as property - services, indebtedness of transferee, interest). §351(e) (investment company exception). §351(f) (treatment of installment obligations). §351(g) (nonqualified preferred stock as boot). §351(h) (cross references). §357 (assumption of liability). §357(a) (general rule - not boot). §357(b) (tax-avoidance purpose). §357(c) (liabilities in excess of basis - gain recognized). §357(c)(3) (deductible liabilities exception - accounts payable). §358 (basis to distributees). §358(a)(1) (substituted basis to transferor). §358(a)(2) (basis of boot). §358(d) (liabilities reduce stock basis). §362 (basis to corporations). §362(a) (carryover basis in property received). §362(e)(2) (anti-loss-duplication - basis reduction for built-in-loss property). §362(e)(2)(C) (transferor election to reduce stock basis instead). §368(c) (control definition - 80% voting + 80% each nonvoting class). §1223 (holding period). §1223(1) (transferor's stock - tacked if capital or §1231). §1223(2) (corporation's property - tacked). §83 (property transferred in connection with services). §83(h) (employer deduction). §1221 (capital asset). §1245 (depreciation recapture). §1250 (real property recapture). §1366 (S corporation pass-through). §1361 (S corporation election). §1202 (qualified small business stock - original-issue requirement). §7701 (definitions). Reg §1.351-1 through §1.351-3. Reg §1.351-1(a) (transferor and control group). Reg §1.351-1(b) (control test). Reg §1.351-1(c)(1) (investment company). Reg §1.351-3 (statement requirement). Reg §1.358-1, -2, -6 (basis). Reg §1.362-1 (corporation's basis). Reg §1.362-4 (loss duplication). Reg §1.368-1(b) (continuity of interest doctrine analog). Rev. Proc. 77-37 (10% safe harbor for service-shareholder property contribution). Rev. Rul. 68-55 (allocation of boot among multiple assets). Rev. Rul. 83-34 (§351 step-transaction analysis). Rev. Rul. 84-111 (partnership-to-corporation conversion). Commissioner v. Court Holding Co., 324 U.S. 331 (1945) (step transaction). Form 1120 (corporate tax return). Form 7004 (extension).</p>
+
+</div>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>

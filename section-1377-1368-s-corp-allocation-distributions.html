@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>§1377 / §1368 S-Corp Allocation & Distributions: Closing-of-Books, AAA, PTTP, Distribution Ordering | CPA Validated</title>
+<meta name="description" content="Section 1377 and Section 1368 complete mechanics. §1377(a)(1) default per-share per-day allocation. §1377(a)(2) closing-of-books election for shareholder termination. Reg §1.1368-1(g)(2) qualifying disposition election. §1368 distribution ordering (with/without C corp E&P): AAA, PTI, E&P, basis, gain. §1377(b) post-termination transition period. §1371(e) PTTP cash distributions. §1368(e)(3) E&P-first election. AAA mechanics.">
+<link rel="canonical" href="https://cpavalidated.com/section-1377-1368-s-corp-allocation-distributions.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="§1377 / §1368 S-Corp Allocation Deep Dive">
+<meta property="og:description" content="IRC §1377 and §1368 framework. Per-share per-day allocation. Closing-of-books election. AAA. PTTP. Distribution ordering.">
+<meta property="og:url" content="https://cpavalidated.com/section-1377-1368-s-corp-allocation-distributions.html">
+<meta property="og:site_name" content="CPA Validated">
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"§1377 / §1368 S-Corp Allocation Deep Dive","url":"https://cpavalidated.com/section-1377-1368-s-corp-allocation-distributions.html","author":{{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"}},"publisher":{{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}},"isAccessibleForFree":true,"inLanguage":"en-US"}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}::selection{background:var(--coral);color:#fff}a{color:var(--coral);text-decoration:none}a:hover{text-decoration:underline}
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20)!important;background:var(--paper)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink)}
+.wm{font-family:var(--font-display);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink)}
+.wm small{display:block;font-family:var(--font-sans);font-weight:400;font-size:10px;color:var(--coral);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{display:inline-block!important;background:var(--coral)!important;color:#fff!important;padding:9px 20px!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+.cat-nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:800px;margin:0 auto;padding:0 24px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,5vw,42px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .meta{display:flex;gap:16px;margin-top:14px;flex-wrap:wrap}.ph-meta-item{font-size:11.5px;color:rgba(255,255,255,.45);font-family:var(--font-mono)}
+.back{max-width:800px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
+.article{max-width:800px;margin:0 auto;padding:40px 24px 0}
+.lead{font-size:17px;line-height:1.7;color:var(--ink-80);margin-bottom:32px;border-left:3px solid var(--coral);padding-left:18px}
+.article p{font-size:15px;line-height:1.75;color:var(--ink-80);margin-bottom:18px}
+.article h2{font-family:var(--font-display);font-size:20px;font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);margin:40px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--ink-20)}
+.article h3{font-family:var(--font-display);font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin:26px 0 9px}
+.callout{background:var(--ink);color:#fff;padding:20px 22px;margin:24px 0;border-left:4px solid var(--coral)}.callout-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:8px}.callout p{font-size:13.5px;color:rgba(255,255,255,.85);line-height:1.65;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout strong{color:#fff}
+.red-box{background:var(--red-bg);border-left:3px solid var(--red-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--red);line-height:1.6}.red-box strong{font-weight:600}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--amber);line-height:1.6}.note-box strong{font-weight:600}
+.green-box{background:var(--green-bg);border-left:3px solid var(--green-b);padding:12px 16px;margin:20px 0;font-size:13px;color:var(--green);line-height:1.6}.green-box strong{font-weight:600}
+.key-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:13px}
+.key-table th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-family:var(--font-display);font-weight:400;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.key-table td{padding:9px 12px;border-bottom:1px solid var(--ink-20);color:var(--ink-80);vertical-align:top;line-height:1.55}
+.key-table tr:last-child td{border-bottom:none}
+.key-table tr:nth-child(even) td{background:var(--ink-10)}
+.related{background:var(--white);border:1px solid var(--ink-20);padding:20px;margin-top:36px}.related-title{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)}.related-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.related-link{display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);transition:border-color .15s}.related-link:hover{border-color:var(--coral);color:var(--coral);text-decoration:none}.related-link span{display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)}
+@media(max-width:600px){.related-links{grid-template-columns:1fr}}
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html" class="active">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <h1>§1377 / §1368 S-Corp Allocations and Distributions</h1>
+  <div class="sub">§1377(a)(1) Default Per-Share, Per-Day Allocation &nbsp;&bull;&nbsp; §1377(a)(2) Closing-Of-Books Election On Shareholder Termination &nbsp;&bull;&nbsp; Reg §1.1368-1(g)(2) Qualifying Disposition Election &nbsp;&bull;&nbsp; §1368 Distribution Ordering AAA / PTI / E&P / Basis / Gain &nbsp;&bull;&nbsp; §1377(b) Post-Termination Transition Period &nbsp;&bull;&nbsp; §1371(e) PTTP Distributions</div>
+  <div class="meta">
+    <span class="ph-meta-item">IRC §1377 / §1368 / §1371(e) / §1361 / §1366 / §1374 / §1375 / Reg §1.1377 / §1.1368</span>
+    <span class="ph-meta-item">T.D. 8508 (1994); T.D. 8852 (1999); T.D. 8869 (2000)</span>
+    <span class="ph-meta-item">Updated 2026</span>
+  </div>
+</div></div>
+<div class="back"><a href="business-entity.html">&#8592; Business &amp; Entity</a></div>
+<div class="article">
+
+<p class="lead">IRC §1377 (Definitions and special rule) and IRC §1368 (Distributions) together govern two critical S corporation mechanics: (1) ALLOCATION of pass-through items among shareholders during the tax year, and (2) ORDERING and CHARACTER of distributions from the S corporation to shareholders. §1377 ALLOCATION RULE §1377(a)(1): pass-through items allocated to each shareholder on a PRO-RATA, PER-SHARE, PER-DAY basis - shareholder's share = (corporation's item) × (days share held / total days in year) × (shares held / total shares outstanding). DEFAULT METHOD applies absent special election. §1377(a)(2) "CLOSING OF THE BOOKS" ELECTION: when a shareholder's ENTIRE interest is terminated mid-year, the S corporation and ALL "affected shareholders" can elect to TREAT THE TAX YEAR AS TWO TAX YEARS - first ending on date interest terminated; allocates pre-termination items based on actual results during pre-termination period rather than ratable proration. AFFECTED SHAREHOLDERS §1377(a)(2)(B): terminated shareholder + any shareholder to whom interest transferred. ELECTION REQUIRES UNANIMOUS CONSENT of all affected shareholders. Reg §1.1368-1(g)(2) "QUALIFYING DISPOSITION" ELECTION: similar closing-of-books treatment available for non-terminating but substantial dispositions (sale/issuance/redemption affecting 20%+ of outstanding stock); requires consent of all persons who held stock during year. §1368 DISTRIBUTION ORDERING: for S corp WITHOUT C corporation earnings and profits (E&P), distributions reduce stock basis under §1368(b); to extent of basis = tax-free return of capital; excess = capital gain. For S corp WITH C corp E&P (accumulated from prior C-years), §1368(c) layered rules apply: (1) AAA (Accumulated Adjustments Account) - tax-free to extent of basis; (2) Pre-1983 PTI; (3) C-corp E&P - taxable dividend; (4) Remaining basis - tax-free; (5) Excess - capital gain. POST-TERMINATION TRANSITION PERIOD §1377(b): period beginning day after S-corp terminates and ending later of 1 year after termination or due date of final S-return - allows AAA distributions during PTTP to receive S-corp treatment per §1371(e). 65-DAY RULE - distributions in first 65 days of following year can be treated as prior-year if elected. AAA computation per Reg §1.1368-2 - adjusted by income/loss/distributions/redemptions; can go NEGATIVE due to losses but not negative due to distributions. ALL SHAREHOLDERS MUST CONSENT to §1368(e)(3) "earnings and profits first" election.</p>
+
+<div class="callout">
+  <div class="callout-label">§1377 / §1368 in One Paragraph</div>
+  <p><strong>§1377(a)(1) default allocation:</strong> Pro-rata, per-share, per-day allocation of pass-through items - daily accrual method based on days held and shares held.</p>
+  <p><strong>§1377(a)(2) "closing of the books" election:</strong> When a shareholder terminates ENTIRE interest, the S corp + all affected shareholders may elect to treat the year as two taxable years; pre-termination items allocated based on actual results during that period. Unanimous consent of affected shareholders required.</p>
+  <p><strong>Reg §1.1368-1(g)(2) "qualifying disposition":</strong> Similar election for non-terminating dispositions of 20%+ stock; all year shareholders must consent.</p>
+  <p><strong>§1368 distribution ordering:</strong> No C corp E&P → reduces basis; basis to zero, excess = capital gain. With C corp E&P → AAA tax-free to extent of basis, then C corp E&P as dividend, then remaining basis, then capital gain. AAA maintained per Reg §1.1368-2.</p>
+  <p><strong>Post-termination transition period §1377(b):</strong> Day after S-termination through later of 1 year or final return due date; distributions during PTTP can come from AAA and retain S-corp treatment.</p>
+</div>
+
+<h2>§1377(a)(1) Per-Share Per-Day Default Allocation</h2>
+
+<table class="key-table">
+  <tr><th>Element</th><th>Detail</th></tr>
+  <tr><td>Default rule</td><td>Each pass-through item allocated to shareholders pro-rata based on shares held and days held during the year</td></tr>
+  <tr><td>Formula</td><td>Shareholder's allocable share = (Item amount) × (Shares held / Total outstanding) × (Days held / Total days in year)</td></tr>
+  <tr><td>Daily accrual</td><td>Treated as ratably accruing each day of year regardless of when actually earned</td></tr>
+  <tr><td>Items allocated</td><td>Ordinary income/loss; separately stated items (capital gain/loss, charitable contributions, §179, foreign income, etc.); credits</td></tr>
+  <tr><td>Mid-year stock transfer</td><td>Transferor allocated income/loss through transfer date; transferee allocated income/loss after transfer date - both based on pro-rata daily method</td></tr>
+  <tr><td>Issuance of new stock</td><td>New shares dilute pre-issuance shareholders' allocation; daily prorate handles automatically</td></tr>
+  <tr><td>Redemption</td><td>Redeemed shareholder receives allocation through redemption date; remaining shareholders absorb post-redemption allocation</td></tr>
+  <tr><td>Death of shareholder</td><td>Decedent allocated through date of death; estate/heir allocated from date of death forward; §1377(a)(2) closing-of-books often elected</td></tr>
+  <tr><td>Schedule K-1 reporting</td><td>Each shareholder receives K-1 reflecting allocable share; pro-rata method shown on K-1 supplemental statement</td></tr>
+  <tr><td>No special partnership-style allocations</td><td>Unlike partnerships under §704(b)/(c), S corp allocations strictly by stock ownership; cannot specially allocate</td></tr>
+</table>
+
+<h2>§1377(a)(2) Closing-of-the-Books Election</h2>
+
+<table class="key-table">
+  <tr><th>Election Element</th><th>Detail</th></tr>
+  <tr><td>Trigger</td><td>Shareholder's ENTIRE interest in S corporation TERMINATED during the year</td></tr>
+  <tr><td>Termination methods</td><td>Sale of all shares; redemption of all shares; transfer to non-eligible shareholder triggering involuntary termination; death (with estate not retaining interest)</td></tr>
+  <tr><td>Effect of election</td><td>Year treated as TWO taxable years: first ending close of day shareholder terminated; second beginning following day</td></tr>
+  <tr><td>Allocation pre-termination</td><td>Items allocated based on ACTUAL income/loss/expenses during pre-termination period - "books closed" determination</td></tr>
+  <tr><td>Allocation post-termination</td><td>Remaining shareholders allocate full post-termination period income/loss</td></tr>
+  <tr><td>Affected shareholders §1377(a)(2)(B)</td><td>(i) terminating shareholder; (ii) any shareholder to whom shares transferred (purchaser/donee/devisee)</td></tr>
+  <tr><td>Unanimous consent</td><td>ALL affected shareholders must consent to election; non-affected shareholders' consent not required</td></tr>
+  <tr><td>How election made</td><td>Statement attached to S corp's Form 1120-S; must be TIMELY filed (due date with extensions); identifies date of termination, all affected shareholders, basis of computation</td></tr>
+  <tr><td>Irrevocable</td><td>Once made for a particular termination, irrevocable</td></tr>
+  <tr><td>Strategic value</td><td>When pre/post-termination income differs materially (lumpy gains, year-end bonus), closing the books prevents allocation distortion under default daily method</td></tr>
+  <tr><td>Multiple terminations</td><td>If multiple terminations in same year, separate election per termination event possible</td></tr>
+</table>
+
+<h2>Reg §1.1368-1(g)(2) Qualifying Disposition Election</h2>
+
+<table class="key-table">
+  <tr><th>Qualifying Disposition Element</th><th>Detail</th></tr>
+  <tr><td>Authority</td><td>Reg §1.1368-1(g)(2); does not require full shareholder termination</td></tr>
+  <tr><td>Qualifying disposition definition</td><td>(i) Disposition during 30-day period of 20%+ of outstanding stock; (ii) Redemption from 1+ shareholders of 20%+ of outstanding stock; (iii) Issuance of stock equal to 25%+ of outstanding stock to 1+ new shareholders</td></tr>
+  <tr><td>Effect</td><td>Similar closing-of-books treatment - year treated as two taxable years ending day before qualifying disposition (technically the day of qualifying disposition)</td></tr>
+  <tr><td>Consent requirement</td><td>ALL persons who held stock during the year must consent (broader than §1377(a)(2) "affected shareholders")</td></tr>
+  <tr><td>Coordination with §1377(a)(2)</td><td>If the disposition both terminates a shareholder's entire interest AND qualifies as qualifying disposition, §1.1368-1(g)(2)(iv) - §1377(a)(2) election TRUMPS the qualifying disposition election</td></tr>
+  <tr><td>Use case</td><td>Substantial stock issuance to new investor (>25%) or redemption (>20%) without full termination</td></tr>
+  <tr><td>Statement requirement</td><td>Election statement attached to S corp's Form 1120-S; identifies qualifying disposition; basis of computation</td></tr>
+  <tr><td>Multiple qualifying dispositions</td><td>Multiple qualifying dispositions in same year - separate elections possible</td></tr>
+</table>
+
+<h2>§1368 Distribution Ordering - No C Corp E&P</h2>
+
+<table class="key-table">
+  <tr><th>No-E&P Element</th><th>Detail</th></tr>
+  <tr><td>Applies when</td><td>S corporation has never had C corp earnings; or S corp had E&P but exhausted; or S corp filed §1368(e)(3) election to bypass AAA</td></tr>
+  <tr><td>Ordering §1368(b)</td><td>(1) Reduce shareholder's stock basis - tax-free; (2) Excess over basis - capital gain</td></tr>
+  <tr><td>Basis floor</td><td>Distributions cannot reduce basis below zero; excess automatically capital gain</td></tr>
+  <tr><td>No AAA tracking needed</td><td>Reg §1.1368-2 - S corp without E&P NOT required to maintain AAA</td></tr>
+  <tr><td>Per-shareholder basis</td><td>Distributions reduce EACH shareholder's basis separately; basis tracking on Form 7203 (S Corporation Shareholder Stock and Debt Basis Limitations)</td></tr>
+  <tr><td>Disproportionate distributions</td><td>Generally not allowed - S corp must maintain "one class of stock" §1361(b)(1)(D); disproportionate distributions can trigger "second class" inquiry</td></tr>
+  <tr><td>Loan vs distribution</td><td>Bona fide shareholder loans not distributions; documentation/intent matter</td></tr>
+  <tr><td>Property distribution §311</td><td>S corp recognizes gain (not loss) on appreciated property distributed; shareholder takes FMV basis</td></tr>
+  <tr><td>Subsequent income increases basis</td><td>Future income passes through and increases basis; supports future distributions</td></tr>
+  <tr><td>Suspended losses §1366(d)</td><td>If basis at zero, current losses suspended; subsequent basis increase from income (not distributions) frees suspended losses</td></tr>
+</table>
+
+<h2>§1368 Distribution Ordering - With C Corp E&P</h2>
+
+<table class="key-table">
+  <tr><th>With-E&P Element</th><th>Detail</th></tr>
+  <tr><td>Applies when</td><td>S corp converted from C corp with retained E&P; or S corp acquired E&P from C corp in §381(a) transaction</td></tr>
+  <tr><td>Ordering §1368(c)</td><td>(1) AAA - tax-free to extent of basis; excess capital gain (treated like no-E&P case); (2) Pre-1983 PTI; (3) C corp E&P - dividend (ordinary income, qualified dividend if individual); (4) Remaining basis - tax-free; (5) Excess - capital gain</td></tr>
+  <tr><td>AAA - Accumulated Adjustments Account</td><td>Tracks cumulative S corp income/loss/distributions (excluding tax-exempt income and related expenses); Reg §1.1368-2</td></tr>
+  <tr><td>AAA adjustments</td><td>+ separately stated income items; + non-separately stated income; - separately stated losses/deductions; - non-separately stated losses; - non-dividend distributions; - redemptions treated under §302(d); NOT adjusted for tax-exempt income or related expenses</td></tr>
+  <tr><td>AAA negative</td><td>Can go NEGATIVE due to losses; CANNOT go negative due to distributions (distributions stop at $0 AAA)</td></tr>
+  <tr><td>Pre-1983 PTI</td><td>Previously Taxed Income from pre-1983 Subchapter S - historical category; rare today</td></tr>
+  <tr><td>C corp E&P</td><td>Distribution from this layer = §301 dividend; ordinary income; qualified dividend rate if individual shareholder</td></tr>
+  <tr><td>§1368(e)(3) bypass election</td><td>S corp + all shareholders consent to distribute E&P FIRST (skip AAA layer); useful to clear out E&P, eliminate sting tax exposure</td></tr>
+  <tr><td>§1374 sting tax interaction</td><td>S corp with C corp E&P potentially subject to §1374 built-in gains tax for 5 years; coordinates with distribution planning</td></tr>
+  <tr><td>§1375 excess passive income tax</td><td>S corp with C corp E&P and >25% passive income may face §1375 corporate-level tax</td></tr>
+</table>
+
+<h2>Post-Termination Transition Period §1377(b)</h2>
+
+<table class="key-table">
+  <tr><th>PTTP Element</th><th>Detail</th></tr>
+  <tr><td>Definition §1377(b)(1)</td><td>Period beginning DAY AFTER S corporation termination and ending LATER of: (A) 1 year after termination; OR (B) due date for filing S corporation's final return (including extensions)</td></tr>
+  <tr><td>Purpose</td><td>Provides window for distributing AAA after S election terminates - allows former S-corp accumulated earnings to be distributed with S-corp treatment</td></tr>
+  <tr><td>§1371(e) distribution during PTTP</td><td>Cash distributions during PTTP treated as coming FIRST from AAA (tax-free to basis); receives §1368 ordering as if still S corp</td></tr>
+  <tr><td>Cash only</td><td>§1371(e) applies only to CASH distributions during PTTP; property distributions during PTTP treated under §301 dividend rules</td></tr>
+  <tr><td>Coordination with §1361/§1362 termination</td><td>S election can terminate voluntarily (revocation) or involuntarily (loss of S eligibility); PTTP applies either way</td></tr>
+  <tr><td>Subsequent reelection</td><td>5-year waiting period for re-electing after termination §1362(g); PTTP applies during interim C-corp years</td></tr>
+  <tr><td>Tax planning</td><td>Termination plus PTTP distribution can be planned to extract AAA tax-free before C-corp treatment kicks in; coordinate with §1374 sting tax</td></tr>
+  <tr><td>Multiple PTTPs</td><td>Each termination event has own PTTP; if subsequent S election terminated, new PTTP</td></tr>
+  <tr><td>Reporting</td><td>Distributions during PTTP reported on Form 1099-DIV (or no form if from AAA only); coordinate with C-corp accounting</td></tr>
+  <tr><td>State conformity</td><td>States generally conform but PTTP mechanics vary; multistate S corp needs state-specific analysis</td></tr>
+</table>
+
+<h2>Worked Example - Mid-Year Stock Sale</h2>
+
+<div class="callout">
+  <div class="callout-label">Worked Example - §1377(a)(2) Election</div>
+  <p><strong>Facts:</strong> ABC S-Corp has calendar tax year 2026. 100 shares outstanding throughout year. Anna owns 50 shares; Frank owns 50 shares. On July 1, 2026, Anna sells all 50 shares to new investor Robert.</p>
+  <p>2026 income: $200,000 ordinary income spread unevenly - $40,000 January-June (slow), $160,000 July-December (large Q4 contract).</p>
+  <p><strong>DEFAULT §1377(a)(1) per-share per-day allocation:</strong></p>
+  <p>Anna held 50 shares × 181 days (Jan 1 - June 30) = 9,050 share-days<br>Robert held 50 shares × 184 days (July 1 - Dec 31) = 9,200 share-days<br>Frank held 50 shares × 365 days = 18,250 share-days<br>Total: 36,500 share-days<br>Anna: $200,000 × (9,050 / 36,500) = $49,589 ordinary income<br>Robert: $200,000 × (9,200 / 36,500) = $50,411 ordinary income<br>Frank: $200,000 × (18,250 / 36,500) = $100,000 ordinary income</p>
+  <p><strong>Distortion under default method:</strong></p>
+  <p>Anna held during low-income half but receives ~$50K allocation; Robert held during high-income half but receives ~$50K allocation. Anna over-allocated by ~$30K relative to actual economic period; Robert under-allocated by ~$30K.</p>
+  <p><strong>WITH §1377(a)(2) closing-of-books election:</strong></p>
+  <p>Year treated as two periods:<br>Period 1 (Jan 1 - June 30): $40,000 income<br>- Anna: 50% × $40,000 = $20,000<br>- Frank: 50% × $40,000 = $20,000<br>Period 2 (July 1 - Dec 31): $160,000 income<br>- Robert: 50% × $160,000 = $80,000<br>- Frank: 50% × $160,000 = $80,000<br>Anna total: $20,000<br>Robert total: $80,000<br>Frank total: $100,000</p>
+  <p><strong>Election benefits Anna and Frank, costs Robert:</strong></p>
+  <p>Anna's allocation drops from $49,589 to $20,000 (saves ~$29,589 × top rate ~37% = $10,949 in tax)<br>Robert's allocation rises from $50,411 to $80,000 (costs ~$29,589 × 37% = $10,949 in additional tax)<br>This is a ZERO-SUM allocation question - the parties must negotiate the election in the purchase agreement</p>
+  <p><strong>Election mechanics:</strong></p>
+  <p>Affected shareholders = Anna (terminating) + Robert (transferee). Both must unanimously consent. Frank (continuing shareholder) NOT required to consent - he's not "affected."<br>Statement attached to ABC's 2026 Form 1120-S identifying termination date, affected shareholders, basis of computation. Filed timely with return.</p>
+  <p><strong>Negotiation in purchase agreement:</strong></p>
+  <p>Typical: Anna and Robert agree to election if Anna pays Robert a price adjustment for absorbing higher allocation, OR they share difference. Without contractual provision, default applies and each party bears their own allocated tax.</p>
+</div>
+
+<h2>Common Practitioner Errors</h2>
+
+<h3>Missing §1377(a)(2) Election Opportunity</h3>
+
+<p>Default per-share per-day method can distort allocations when income is lumpy. Practitioner failing to evaluate closing-of-books election for mid-year terminations leaves money on the table for one of the parties. Discuss at purchase agreement stage.</p>
+
+<h3>Failing to Get All Affected Shareholders to Consent</h3>
+
+<p>§1377(a)(2) requires unanimous consent of ALL affected shareholders (terminating + transferees). Practitioner obtaining only terminating shareholder's consent makes invalid election. Both sides of the transaction must consent in writing.</p>
+
+<h3>Confusing §1377(a)(2) and Reg §1.1368-1(g)(2)</h3>
+
+<p>§1377(a)(2) - full shareholder TERMINATION required; affected-shareholder consent. §1.1368-1(g)(2) qualifying disposition - 20%/25% threshold, NOT full termination; ALL year-shareholders must consent. Different tests, different consent groups. Reg §1.1368-1(g)(2)(iv) gives §1377(a)(2) priority where both apply.</p>
+
+<h3>AAA Maintained When Not Required</h3>
+
+<p>S corp WITHOUT C corp E&P does not need to maintain AAA. Practitioner forcing AAA maintenance on never-was-C-corp S corp creates unnecessary complexity. AAA only matters when there's E&P to layer through.</p>
+
+<h3>AAA Goes Negative From Distributions</h3>
+
+<p>AAA can go negative from LOSSES; distributions stop at zero AAA. Practitioner allowing AAA to go negative via distributions misapplies §1.1368-2(a)(5).</p>
+
+<h3>Forgetting Pre-1983 PTI Layer</h3>
+
+<p>Pre-1983 Previously Taxed Income is a distinct layer in §1368(c) ordering - between AAA and C corp E&P. Rare today but historical S corps may still have. Practitioner skipping PTI layer misapplies ordering.</p>
+
+<h3>§1368(e)(3) E&P-First Election Overlooked</h3>
+
+<p>Election to distribute C corp E&P FIRST (bypass AAA) - useful to clear out E&P and eliminate §1375 passive-income tax risk. Requires unanimous shareholder consent. Practitioner not evaluating this election misses strategic planning opportunity.</p>
+
+<h3>Distributions During PTTP Treated as Dividends</h3>
+
+<p>§1377(b) PTTP - cash distributions during PTTP can come from AAA with S-corp treatment per §1371(e). Practitioner treating post-termination distributions as immediate §301 dividends overstates tax. Coordinate PTTP cash distributions carefully.</p>
+
+<h3>Property Distributions During PTTP</h3>
+
+<p>§1371(e) covers CASH only; property distributions during PTTP fall under regular C-corp §301 dividend rules. Practitioner distributing appreciated property during PTTP expecting S-corp treatment triggers full corporate-level §311(b) gain plus shareholder dividend.</p>
+
+<h3>One Class of Stock Concerns</h3>
+
+<p>Disproportionate distributions can trigger §1361(b)(1)(D) "one class of stock" inquiry - risks S election termination. Practitioner allowing material disproportionate distributions exposes S election to termination risk.</p>
+
+<h3>§1374 Sting Tax Coordination</h3>
+
+<p>S corp with C corp E&P subject to §1374 BIG (built-in gains) tax for 5 years post-conversion. Coordinate distribution planning with §1374 exposure - paying corporate tax on built-in gains adds layer beyond §1368.</p>
+
+<h3>§1375 Excess Passive Income Trap</h3>
+
+<p>S corp with C corp E&P plus passive investment income >25% of gross receipts faces §1375 corporate-level tax. Three consecutive years of this can TERMINATE S election under §1362(d)(3). Distribute E&P out via §1368(e)(3) election to eliminate exposure.</p>
+
+<h3>Schedule M-2 vs AAA Reconciliation</h3>
+
+<p>Form 1120-S Schedule M-2 tracks AAA, OAA (Other Adjustments Account for tax-exempt income), PTI, and accumulated E&P. Practitioner not reconciling Schedule M-2 entries with §1368/§1377 mechanics creates audit exposure.</p>
+
+<h3>Suspended Losses §1366(d) at Termination</h3>
+
+<p>If shareholder has suspended losses at termination due to basis limitation §1366(d), losses LOST on termination unless §1377(b) PTTP allows basis restoration via §1366(d)(3). Practitioner failing to track suspended losses misses recovery opportunity during PTTP.</p>
+
+<h3>Form 7203 Basis Tracking</h3>
+
+<p>Each S-corp shareholder must track stock and debt basis on Form 7203. Distributions reduce basis; income increases basis. Practitioner not maintaining Form 7203 cannot properly compute §1368 distribution character; IRS requires Form 7203 attached when losses claimed or basis at issue.</p>
+
+<h3>Termination From Loss of Eligible Shareholder</h3>
+
+<p>Transfer of S-corp stock to ineligible holder (nonresident alien, partnership, ineligible trust) terminates S election retroactively. Practitioner allowing transfers without confirming eligibility risks involuntary termination and retroactive C-corp treatment.</p>
+
+<h3>Death of Shareholder and §645 Election</h3>
+
+<p>Deceased shareholder's estate is eligible S-corp shareholder; §1361(c)(2)(A)(iii). Estate has 2-year window for ESBT/QSST election if interest passes to trust. §645 election can extend window during election period. Practitioner not coordinating §1377(a)(2) closing-of-books with §645 and §1361 may misallocate decedent vs estate income.</p>
+
+<h3>Reasonable Compensation Issue</h3>
+
+<p>S-corp shareholder-employee must receive reasonable wage compensation §3121(a); failure exposes to reclassification of distributions as wages with FICA. Not directly §1368/§1377 issue but coordinates - distributions analyzed in context of overall compensation structure.</p>
+
+<div class="related">
+  <div class="related-title">Related Guides &amp; Calculators</div>
+  <div class="related-links">
+    <a href="form-7203-s-corp-basis.html" class="related-link">Form 7203 S-Corp Basis<span>Shareholder basis tracking</span></a>
+    <a href="section-645-revocable-trust-as-estate.html" class="related-link">§645 Election<span>QRT as estate / S-corp eligibility</span></a>
+    <a href="section-83b-election-restricted-stock.html" class="related-link">§83(b) Election<span>S-corp restricted stock</span></a>
+    <a href="section-1411-niit-guide.html" class="related-link">§1411 NIIT<span>S-corp pass-through and NIIT</span></a>
+    <a href="penalty-stacking-6651-6662-6663.html" class="related-link">Penalty Stacking<span>FTF/FTP on S-corp returns</span></a>
+    <a href="business-entity.html" class="related-link">Business &amp; Entity Hub<span>All business topics</span></a>
+  </div>
+</div>
+
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §1377 (Definitions and special rule). §1377(a) (pro rata share defined). §1377(a)(1) (per-share, per-day allocation - default method). §1377(a)(2) (election to terminate year when shareholder's entire interest terminated). §1377(a)(2)(A) (treatment as two taxable years). §1377(a)(2)(B) (affected shareholders defined). §1377(b) (post-termination transition period). §1377(b)(1) (PTTP defined - 1 year or final return due date). §1377(b)(2) (special rules for §1371(e)). §1377(c) (rules of application). §1368 (Distributions). §1368(a) (general rule - reduce basis). §1368(b) (S corp without C corp E&P - basis recovery then capital gain). §1368(c) (S corp with C corp E&P - AAA / PTI / E&P / basis / gain ordering). §1368(d) (certain adjustments taken into account). §1368(e) (definitions and special rules). §1368(e)(1) (AAA defined). §1368(e)(1)(A) (AAA adjustments). §1368(e)(1)(C)(ii) (net negative adjustment). §1368(e)(3) (election to distribute E&P first). §1371 (coordination with subchapter C). §1371(a) (application of subchapter C). §1371(c) (E&P). §1371(e) (post-termination transition period distributions - cash from AAA). §1361 (S corporation defined). §1361(b)(1)(D) (one class of stock). §1361(c)(2) (special rules for certain trusts as shareholders). §1361(c)(2)(A)(iii) (estate). §1362 (election; revocation; termination). §1362(d)(2) (termination by reason of ceasing to meet definition). §1362(d)(3) (termination - excessive passive investment income for 3 consecutive years). §1362(g) (5-year waiting period for re-election). §1366 (pass-through to shareholders). §1366(d) (basis limitation on losses). §1366(d)(3) (carryover of suspended losses). §1367 (basis adjustments). §1374 (built-in gains tax - sting tax 5-year period). §1375 (excess net passive income tax). §301 (distributions of property generally). §301(c) (dividend treatment). §302 (redemptions). §311 (corporate distributions of property - gain recognition on appreciated property). §311(b) (gain recognition). §381 (carryover of attributes in tax-free transactions). §645 (revocable trust treated as estate). §3121 (FICA - reasonable compensation). Reg §1.1377-1 (pro rata share). Reg §1.1377-1(b) (election to terminate year). Reg §1.1377-2 (post-termination transition period). Reg §1.1368-1 (distributions). Reg §1.1368-1(g)(2) (qualifying disposition election - 20%/25% thresholds). Reg §1.1368-1(g)(2)(iv) (coordination with §1377(a)(2)). Reg §1.1368-1(f) (elections relating to source of distributions). Reg §1.1368-2 (accumulated adjustments account). Reg §1.1368-3 (examples). Reg §1.1361-1(l) (one class of stock). T.D. 8508 (1994 - §1368 final regulations). T.D. 8852 (1999 - amendments). T.D. 8869 (2000 - §1377 final regs). Form 1120-S (US Income Tax Return for an S Corporation). Form 1120-S Schedule K-1 (Shareholder's Share of Income). Form 1120-S Schedule M-2 (Analysis of AAA, PTI, OAA, AE&P). Form 7203 (S Corporation Shareholder Stock and Debt Basis Limitations). Form 2553 (S election). Rev. Rul. 64-162 (debt basis). Rev. Rul. 81-187 (return of capital).</p>
+
+</div>
+
+
+<!-- START UNIFIED FOOTER -->
+<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
+    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
+    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
+  </div>
+  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
+    <div style="max-width:800px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
+        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
+        <div style="display:flex;gap:20px">
+          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
+          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
+          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
+        </div>
+      </div>
+      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
+    </div>
+  </div>
+</div>
+<!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
+</body>
+</html>
