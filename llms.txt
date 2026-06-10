@@ -381,3 +381,4 @@
 - virginia-income-tax-guide.html: Virginia income tax guide: Virginia graduated income tax rates up to 5.75% on income over $17,000, age deductions for seniors, partial Social Security exemption for lower incomes, military pay exempti.
 - 1099-thresholds-2026-obbba-matrix.html: 2026 federal and state 1099 reporting threshold matrix - NEC/MISC $2,000 (OBBBA 70433), 1099-K $20,000/200 (OBBBA 70432), backup withholding, state thresholds. IRC 6041, 6041A, 6050W(e).
 - https://cpavalidated.com/irs-whistleblower-7623-form-211.html: IRS whistleblower awards under IRC 7623, Form 211 (digital per IR-2025-123), award taxation
+- https://cpavalidated.com/form-8898-territory-bona-fide-resident.html: Form 8898 territory bona fide residence, IRC 937 tests, year-of-move rule, 6688 penalty
