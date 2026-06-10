@@ -525,3 +525,17 @@ Total: 143+ pages
 ---
 
 *Last updated: April 2026 | cpavalidated.com | a tk.cpa resource*
+
+## Quality control protocol (mandatory, added June 10, 2026)
+
+No HTML page is pushed unless tools/gate.py exits 0 for the exact bytes being pushed.
+Run: python3 tools/gate.py PAGE.html --template form-1099-guide.html (or the page's template sibling).
+The gate blocks: broken template nesting, classes used without CSS rules, label/value
+span rows without a horizontal-separation rule, em-dash variants, forbidden strings,
+the last name, missing disclaimer link, missing canonical.
+
+Standing rules from the June 10 incident review:
+- Gate the bytes about to be pushed, fetched or built fresh. Never gate or patch a cached copy.
+- A new build pattern ships only together with a verification pattern that covers it.
+- Status reports must state which gates ran. "Verified" without scope is not a report.
+- After deploy, re-fetch the live URL and re-run the gate against the served bytes.
