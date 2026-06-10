@@ -1,1795 +1,1844 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://cpavalidated.com/index.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/search.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/about.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/disclaimer.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/privacy.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/vetted-resources.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/calculators-hub.html</loc>
-    <lastmod>2026-04-30</lastmod>
+    <url>
+    <loc>https://cpavalidated.com/ai-resources.html</loc>
+    <lastmod>2026-06-09</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cpavalidated.com/1031-exchange-guide.html</loc>
     <lastmod>2026-04-30</lastmod>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
+    <loc>https://cpavalidated.com/about.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.5</priority>
+  </url>
+<url>
     <loc>https://cpavalidated.com/act60-eligibility-checker.html</loc>
     <lastmod>2026-04-30</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cpavalidated.com/act60-estimator.html</loc>
     <lastmod>2026-04-30</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cpavalidated.com/agriculture-farming-tax-guide.html</loc>
     <lastmod>2026-04-30</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://cpavalidated.com/ai-tax-prompt.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
     <loc>https://cpavalidated.com/alimony-tax-guide.html</loc>
     <lastmod>2026-04-30</lastmod>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://cpavalidated.com/amt-calculator.html</loc>
     <lastmod>2026-04-30</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
     <loc>https://cpavalidated.com/amt-guide.html</loc>
     <lastmod>2026-04-30</lastmod>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://cpavalidated.com/annuity-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/artist-performer-athlete-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/asc-740-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/asc-740-tax-provision.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/at-risk-rules-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/augusta-rule.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/backdoor-roth.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/bonus-depreciation-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/business-entity-comparison.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/business-entity.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/business-sale-planning.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/business-travel-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/c-corp-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/california-ftb-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/california-ftb-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/canadian-residency.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/canadian-tax-hub.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/cancellation-of-debt-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/cannabis-280e-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/cant-pay-taxes-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/capital-gains-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/captive-insurance-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/casualty-loss-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/charitable-deduction-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/charitable-giving-strategies.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/child-tax-credit-calc.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/child-tax-credit-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/clergy-housing-allowance-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/closer-connection-validator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/closer-connection.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/collectibles-28-percent-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/connecticut-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/construction-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/controlled-groups-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/corporate-extension.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/cost-segregation-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/cross-border-snowbirds.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/crowdfunding-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/crypto-defi-staking-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/crypto-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/dental-medical-practice-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/depreciation-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/depreciation-recapture-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/digital-nomad-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/disability-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/divorce-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/donor-advised-fund-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/dual-status-returns.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/dual-status-validator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/eci-vs-fdap.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ecommerce-seller-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/education-credits-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/education-tax-benefits.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/eitc-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/energy-credits-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/erc-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/espp-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/estate-gifts.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/estate-planning-basics.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/estate-tax-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/exchange-1031-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/executive-compensation-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/expatriation-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/fatca-checker.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/fbar-checker.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/fbar-penalties.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/fbar-penalty-estimator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/feie-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/feie-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/filing-status-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/financial-services-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/firpta-explained.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/florida-property-tax.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/florida-retiree-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/foreign-currency-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/foreign-pension-reporting.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/foreign-tax-credit-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-1099-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-3115-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-3520-foreign-trusts.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-5471-checker.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-5472.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-709-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-8233-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-8854.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-8938-fatca-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/franchise-business-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/fringe-benefits-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/fsa-dependent-care-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ftc-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/gambling-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/georgia-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/gift-estate-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/gig-worker-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/gilti-explained.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/grantor-trust-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/grat-crt-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/gstt-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/hnw-planning-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/hobby-loss-rules-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/home-office-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/home-office-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/household-employee-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/hra-qsehra-ichra-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/hsa-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/illinois-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/individual-extension.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/individual-tax.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/inherited-money-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/innocent-spouse-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/installment-sales-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/interest-deductibility.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/international-information-returns.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/international-tax.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/investment-interest-expense-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/investments-capital.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ira-basics-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ira-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/irs-accounts-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/irs-audit-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/irs-mailing-addresses-abroad.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/irs-notice-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/irs-payments-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/itemized-deductions-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/itin-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/k1-decoder.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/kiddie-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/law-firm-partnership-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/life-insurance-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/marital-deduction-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/massachusetts-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/meals-and-entertainment-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/medical-expense-deduction-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/medicare-irmaa-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/military-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/minnesota-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/mortgage-interest-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/net-operating-loss-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/new-jersey-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/niit-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/no-income-tax-countries.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/no-income-tax-states.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/nol-tracker.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/nonprofit-501c3-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/nra-estate-tax.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/nua-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/nyc-ubt-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/obbba-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/obbba-new-deductions-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/obbba-state-conformity-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ohio-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/oil-gas-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/opportunity-zone-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/options-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/partnership-basis-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/partnership-liquidation-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/partnership-tax-basics.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/passive-activity-loss-checker.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/passive-activity-loss.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/passive-loss-grouping-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/payroll-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/penalty-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/pennsylvania-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/pfic-8621-checker.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/pfic-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/pillar-two-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/pre-immigration-planning.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/puerto-rico-act60-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/qbi-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/qcd-charitable-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/qoz-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/qsbs-section-1202-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/qualified-401k-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/qualified-dividends-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/rd-tax-credit-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/real-estate-professional-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/real-estate-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/real-estate-tax.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/reinsurance-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/remote-worker-state-tax.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/restaurant-hospitality-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/retirement-savings.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/rmd-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/rmd-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/roth-conversion-calc.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/roth-conversion.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/rrsp-rrif-us-persons.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/rsu-restricted-stock-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/russia-treaty-suspension.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/s-corp-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/s-corporation-basics.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/saas-international-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/saas-sales-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/safe-harbor.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/salt-planning-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/schedule-k1-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/scholarship-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/scorp-aaa-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/scorp-built-in-gains-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/scorp-compensation.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/scorp-vs-llc.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1031-boot-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1035-exchange-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1202-qsbs.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-121-exclusion.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1231-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1244-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-163j-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-174-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-199a-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-302-redemption-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-409a-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-529-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-754-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-83b-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-962-election.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section179-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/secure-2-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/self-employed-health-insurance-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/self-employment-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/sep-simple-ira-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/settlement-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/short-term-rental-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/social-security-tax.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/social-security-timing-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/solo-401k-sep-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/spt-calculator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/staffing-agency-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/startup-costs-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/startup-equity-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/state-compliance.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/state-income-tax-nexus.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/state-ptet-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/state-residency-change-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/state-residency-hnw.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/statute-of-limitations-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/stock-options-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/streamlined-checker.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/student-loan-forgiveness-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/subpart-f-cfc-basics.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/t1135-foreign-property.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/tax-calendar.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/tax-estimator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/tax-extension-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/tax-free-reorganization-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/tax-loss-harvesting-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/tax-provision.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/tech-startup-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/texas-franchise-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/totalization-agreements-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/transfer-pricing-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/treaty-navigator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/trucking-transportation-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/trust-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ubit-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/us-canada-tax-planning.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/us-canada-tax-treaty.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/us-expat-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/usvi-edc-estimator.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/vacation-rental-mixed-use-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/valuation-allowance-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/vehicle-depreciation.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/virginia-income-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/w2-decoder.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/w2-k1-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/w2-vs-k1-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/w4-optimizer.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/wash-sale-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/washington-bo-tax-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/worker-classification-guide.html</loc>
-    <lastmod>2026-04-30</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-1098-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-8606-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-5329-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/irs-appeals-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-7203-s-corp-basis.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-1116-foreign-tax-credit.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-163j-interest-limitation.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/penalty-abatement-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-2210-underpayment-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-1040x-amended-return.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-8275-disclosure-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-461-excess-business-loss.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-5471-cfc-deep-dive.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-8865-foreign-partnership.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-911-feie-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1411-niit-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-179-expensing-2026-guide.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/trust-fund-recovery-penalty-6672.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-8858-foreign-disregarded-entity.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/streamlined-filing-compliance-procedures.html</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/opportunity-zones-2027-obbba.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/bonus-depreciation-qualified-production-property.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/inherited-ira-secure-act-rmd-guide.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/senior-tip-overtime-obbba-deductions.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/gilti-ncti-obbba-mechanics.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/estate-planning-obbba-permanent-exemption.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/estate-tax-portability-dsue.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/real-estate-professional-status-469c7.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/qsbs-section-1202-obbba-graduated.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/salt-cap-40k-obbba.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-3115-481a-obbba-174-retroactive.html</loc>
-    <lastmod>2026-05-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+<url>
     <loc>https://cpavalidated.com/amt-individual-2026-obbba.html</loc>
     <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+<url>
+    <loc>https://cpavalidated.com/annuity-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/artist-performer-athlete-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/asc-740-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/asc-740-tax-provision.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/at-risk-rules-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/augusta-rule.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
   <url>
-    <loc>https://cpavalidated.com/form-3520-foreign-gifts-trusts.html</loc>
-    <lastmod>2026-05-14</lastmod>
+    <loc>https://cpavalidated.com/backdoor-roth-guide.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/backdoor-roth.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/bonus-depreciation-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/bonus-depreciation-qualified-production-property.html</loc>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://cpavalidated.com/form-1099-da-crypto-broker-2026.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
+<url>
+    <loc>https://cpavalidated.com/business-entity-comparison.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/business-entity.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/business-sale-planning.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/business-travel-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/c-corp-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/calculators-hub.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://cpavalidated.com/section-461l-excess-business-loss-permanent.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+<url>
+    <loc>https://cpavalidated.com/california-ftb-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://cpavalidated.com/pte-passthrough-entity-tax-state-workaround.html</loc>
-    <lastmod>2026-05-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+<url>
+    <loc>https://cpavalidated.com/california-ftb-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1031-like-kind-exchange-deep.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-121-home-sale-exclusion-deep.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-754-743b-partnership-basis-adjustment.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/cost-basis-step-up-1014-death.html</loc>
-    <lastmod>2026-05-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-877a-expatriation-mark-to-market.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1245-1250-depreciation-recapture.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-904-foreign-tax-credit-baskets.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/form-3520a-foreign-grantor-trust.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/penalty-stacking-6651-6662-6663.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-645-revocable-trust-as-estate.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-382-nol-limitation-ownership-change.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1256-contracts-mark-to-market.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1259-constructive-sale-appreciated-position.html</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-6166-estate-tax-installment-closely-held.html</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-367-outbound-transfer-foreign-corporation.html</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-83b-election-restricted-stock.html</loc>
-    <lastmod>2026-05-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-351-transfer-controlled-corporation.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-197-goodwill-15-year-amortization.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/section-1377-1368-s-corp-allocation-distributions.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/self-rental-rule-1469-2f6.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ny-nonresident-allocation-tax-law-631.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/convenience-of-employer-rule-state-tax.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cpavalidated.com/ny-statutory-residency-permanent-place-abode.html</loc>
-    <lastmod>2026-05-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+<url>
     <loc>https://cpavalidated.com/california-source-income-nonresident.html</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
+<url>
+    <loc>https://cpavalidated.com/canadian-residency.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/canadian-tax-hub.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/cancellation-of-debt-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/cannabis-280e-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/cant-pay-taxes-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/capital-gains-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/captive-insurance-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/casualty-loss-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/charitable-deduction-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/charitable-giving-strategies.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/child-tax-credit-calc.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/child-tax-credit-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/clergy-housing-allowance-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/closer-connection-validator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/closer-connection.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/collectibles-28-percent-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/connecticut-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/construction-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/controlled-groups-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/convenience-of-employer-rule-state-tax.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/corporate-extension.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/cost-basis-step-up-1014-death.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/cost-segregation-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
     <loc>https://cpavalidated.com/credit-taxes-paid-other-states.html</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+<url>
+    <loc>https://cpavalidated.com/cross-border-snowbirds.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/crowdfunding-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/crypto-defi-staking-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/crypto-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/dental-medical-practice-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/depreciation-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/depreciation-recapture-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/digital-nomad-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/disability-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/disclaimer.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/divorce-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/donor-advised-fund-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/dual-status-returns.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/dual-status-validator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/eci-vs-fdap.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ecommerce-seller-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/education-credits-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/education-tax-benefits.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/eitc-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/energy-credits-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/erc-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/espp-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/estate-gifts.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/estate-planning-basics.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/estate-planning-obbba-permanent-exemption.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/estate-tax-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/estate-tax-portability-dsue.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/exchange-1031-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/executive-compensation-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/expatriation-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/fatca-checker.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/fbar-checker.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/fbar-penalties.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/fbar-penalty-estimator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/feie-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/feie-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/filing-status-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/financial-services-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/firpta-explained.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
   <url>
+    <loc>https://cpavalidated.com/firpta-foreign-sellers.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/florida-property-tax.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/florida-retiree-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/for-ai.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/foreign-currency-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/foreign-pension-reporting.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/foreign-tax-credit-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-1040x-amended-return.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-1098-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-1099-da-crypto-broker-2026.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-1099-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-1116-foreign-tax-credit.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-2210-underpayment-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-3115-481a-obbba-174-retroactive.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-3115-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-3520-foreign-gifts-trusts.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-3520-foreign-trusts.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/form-3520-guide.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-3520a-foreign-grantor-trust.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-461-excess-business-loss.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-5329-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-5471-cfc-deep-dive.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-5471-checker.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-5472.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-709-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-7203-s-corp-basis.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-8233-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-8275-disclosure-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-8606-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-8854.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-8858-foreign-disregarded-entity.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-8865-foreign-partnership.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/form-8938-fatca-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/form-8938-guide.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/franchise-business-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/fringe-benefits-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/fsa-dependent-care-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ftc-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/gambling-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/georgia-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/gift-estate-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/gig-worker-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/gilti-explained.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/gilti-ncti-obbba-mechanics.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/grantor-trust-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/grat-crt-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/gstt-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/hnw-planning-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/hobby-loss-rules-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/home-office-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/home-office-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/household-employee-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/hra-qsehra-ichra-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/hsa-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/illinois-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/index.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>1.0</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/individual-extension.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/individual-tax.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/inherited-ira-secure-act-rmd-guide.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/inherited-money-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/innocent-spouse-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/installment-sales-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/interest-deductibility.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/international-information-returns.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/international-tax.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/investment-interest-expense-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/investments-capital.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ira-basics-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ira-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/irs-accounts-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/irs-appeals-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/irs-audit-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/irs-mailing-addresses-abroad.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/irs-notice-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/irs-payments-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/itemized-deductions-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/itin-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/k1-decoder.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/kiddie-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/law-firm-partnership-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/life-insurance-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/marital-deduction-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/massachusetts-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/meals-and-entertainment-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/medical-expense-deduction-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/medicare-irmaa-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/military-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/minnesota-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/mortgage-interest-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/net-operating-loss-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/new-jersey-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/niit-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/no-income-tax-countries.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/no-income-tax-states.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/nol-tracker.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/nonprofit-501c3-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/nra-estate-tax.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/nua-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ny-nonresident-allocation-tax-law-631.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ny-statutory-residency-permanent-place-abode.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/nyc-ubt-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/obbba-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/obbba-new-deductions-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/obbba-state-conformity-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ohio-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/oil-gas-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/opportunity-zone-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/opportunity-zones-2027-obbba.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/options-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/partnership-basis-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/partnership-liquidation-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/partnership-tax-basics.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/passive-activity-loss-checker.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/passive-activity-loss-guide.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/passive-activity-loss.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/passive-loss-grouping-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/payroll-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/penalty-abatement-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/penalty-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/penalty-stacking-6651-6662-6663.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/pennsylvania-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/pfic-8621-checker.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/pfic-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/pillar-two-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/pre-immigration-planning.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/privacy.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.3</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/pte-passthrough-entity-tax-state-workaround.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/puerto-rico-act60-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/qbi-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/qbi-deduction-guide.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/qcd-charitable-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/qoz-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/qsbs-section-1202-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/qsbs-section-1202-obbba-graduated.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/qualified-401k-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/qualified-dividends-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/rd-tax-credit-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/real-estate-professional-status-469c7.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/real-estate-professional-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/real-estate-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/real-estate-tax.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/reinsurance-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/remote-worker-state-tax.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/restaurant-hospitality-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/retirement-savings.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/rmd-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/rmd-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/roth-conversion-calc.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/roth-conversion.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/rrsp-rrif-us-persons.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/rsu-restricted-stock-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/russia-treaty-suspension.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/s-corp-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/s-corporation-basics.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/saas-international-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/saas-sales-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/safe-harbor.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/salt-cap-40k-obbba.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/salt-planning-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/schedule-k1-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/scholarship-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/scorp-aaa-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/scorp-built-in-gains-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/scorp-compensation.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/scorp-vs-llc.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/search.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1031-boot-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1031-like-kind-exchange-deep.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1035-exchange-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1202-qsbs.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-121-exclusion.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-121-home-sale-exclusion-deep.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1231-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1244-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1245-1250-depreciation-recapture.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1256-contracts-mark-to-market.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1259-constructive-sale-appreciated-position.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1377-1368-s-corp-allocation-distributions.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-1411-niit-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-163j-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-163j-interest-limitation.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-174-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-179-expensing-2026-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-197-goodwill-15-year-amortization.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-199a-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-302-redemption-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-351-transfer-controlled-corporation.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-367-outbound-transfer-foreign-corporation.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-382-nol-limitation-ownership-change.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-409a-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-461l-excess-business-loss-permanent.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-529-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-6166-estate-tax-installment-closely-held.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-645-revocable-trust-as-estate.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-754-743b-partnership-basis-adjustment.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-754-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-83b-election-restricted-stock.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-83b-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-877a-expatriation-mark-to-market.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-904-foreign-tax-credit-baskets.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-911-feie-guide.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section-962-election.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/section179-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/secure-2-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/self-employed-health-insurance-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/self-employment-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/self-rental-rule-1469-2f6.html</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/senior-tip-overtime-obbba-deductions.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/sep-simple-ira-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/settlement-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/short-term-rental-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/social-security-tax.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/social-security-timing-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/solo-401k-sep-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/spt-calculator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/staffing-agency-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/startup-costs-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/startup-equity-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
     <loc>https://cpavalidated.com/state-apportionment-service-businesses.html</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+<url>
+    <loc>https://cpavalidated.com/state-compliance.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/state-income-tax-nexus.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/state-ptet-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/state-residency-change-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/state-residency-hnw.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/statute-of-limitations-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/stock-options-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/streamlined-checker.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/streamlined-filing-compliance-procedures.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/student-loan-forgiveness-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/subpart-f-cfc-basics.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/t1135-foreign-property.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/tax-calendar.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/tax-estimator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/tax-extension-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/tax-free-reorganization-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/tax-loss-harvesting-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/tax-provision.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/tech-startup-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/texas-franchise-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/totalization-agreements-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/transfer-pricing-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/treaty-navigator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/trucking-transportation-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/trust-fund-recovery-penalty-6672.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/trust-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/ubit-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/us-canada-tax-planning.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/us-canada-tax-treaty.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/us-expat-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/usvi-edc-estimator.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/vacation-rental-mixed-use-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cpavalidated.com/validators.html</loc>
+    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/valuation-allowance-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/vehicle-depreciation.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/vetted-resources.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/virginia-income-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/w2-decoder.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/w2-k1-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/w2-vs-k1-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/w4-optimizer.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/wash-sale-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/washington-bo-tax-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://cpavalidated.com/worker-classification-guide.html</loc>
+    <lastmod>2026-04-30</lastmod>
+    <priority>0.7</priority>
+  </url></urlset>

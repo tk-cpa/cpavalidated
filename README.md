@@ -25,36 +25,31 @@ Live site: [cpavalidated.com](https://cpavalidated.com) &nbsp;·&nbsp; A [tk.cpa
 
 ## About the Practitioner
 
-**Timur Knyazev, CPA** — Founder, [tk.cpa](https://tk.cpa)
+[tk.cpa](https://tk.cpa)
 
 Boutique international tax practice based in New York. Referral-only. Focused on high-net-worth individuals, entrepreneurs, and the Russian-speaking community. Experience across public companies, private multinationals, and international individuals.
 
-### Active Licenses
+#### Credentials
 
-| License | Number | Jurisdiction | Since | Status |
-|---------|--------|-------------|-------|--------|
-| Certified Public Accountant | #109025 | New York (NYSED) | 2012 | Active |
-| Certified Public Accountant | #AC58472 | Florida (DBPR) | 2022 | Active |
-| IRS Enrolled Agent | #93250 | Federal / IRS | 2009 | Active 2026 |
-| PTIN | P00646638 | Federal / IRS | — | Active |
+Maintained by a licensed practitioner: CPA (New York, Florida) and IRS Enrolled Agent, via [tk.cpa](https://tk.cpa). Verify licensure through the state boards and the IRS EA lookup.
 
 ### Education
 
-- **Master of Science in Taxation (MST)** — Zicklin School of Business, Baruch College (CUNY), 2011
-- Big Four training: Ernst & Young (EY) and PricewaterhouseCoopers (PwC) — approximately 10 years combined
+- **Master of Science in Taxation (MST)** - Zicklin School of Business, Baruch College (CUNY), 2011
+- Big Four training: Ernst & Young (EY) and PricewaterhouseCoopers (PwC) - approximately 10 years combined
 
 ### Professional Designations & Memberships
 
-- **AICPA** — American Institute of Certified Public Accountants
-- **CGMA** — Chartered Global Management Accountant
-- **ACCA CertIFRS** — ACCA Certificate in International Financial Reporting
-- **TEI** — Tax Executives Institute
-- **CTP** — Certified Tax Professional
-- **IIA CFSA** — Certified Financial Services Auditor (Institute of Internal Auditors)
+- **AICPA** - American Institute of Certified Public Accountants
+- **CGMA** - Chartered Global Management Accountant
+- **ACCA CertIFRS** - ACCA Certificate in International Financial Reporting
+- **TEI** - Tax Executives Institute
+- **CTP** - Certified Tax Professional
+- **IIA CFSA** - Certified Financial Services Auditor (Institute of Internal Auditors)
 
 ### Insurance
 
-Licensed and insured — professional liability, business liability, and third-party protection insurance. Active.
+Licensed and insured - professional liability, business liability, and third-party protection insurance. Active.
 
 ### Verify Credentials
 
@@ -87,4 +82,4 @@ Every tool is built to the same standard applied at Big Four firms:
 
 All tools are provided for informational purposes only and do not constitute legal or tax advice. Tax determinations are fact-specific. Consult a qualified tax professional before making any filing or planning decisions.
 
-Built with AI. Validated by a CPA. — [cpavalidated.com](https://cpavalidated.com)
+Built with AI. Validated by a CPA. - [cpavalidated.com](https://cpavalidated.com)

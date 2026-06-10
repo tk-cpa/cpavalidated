@@ -3,7 +3,7 @@
 **Site:** cpavalidated.com
 **GitHub Repo:** https://github.com/tk-cpa/cpavalidated
 **Branch:** main (auto-deploys via Cloudflare Pages, ~60 seconds after push)
-**Owner:** Timur Knyazev, CPA, EA | tk.cpa
+**Owner:** tk.cpa (CPA, EA)
 
 ---
 
@@ -260,7 +260,7 @@ Copy this skeleton and fill in the bracketed sections:
 <meta property="og:url" content="https://cpavalidated.com/[filename].html">
 <meta property="og:site_name" content="CPA Validated">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"[TITLE]","url":"https://cpavalidated.com/[filename].html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+{"@context":"https://schema.org","@type":"Article","headline":"[TITLE]","url":"https://cpavalidated.com/[filename].html","author":{"@type":"Person","name":"tk.cpa, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -461,7 +461,7 @@ Every page requires in <head>:
 
 <!-- JSON-LD (Article for guides, WebApplication for calculators) -->
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"[Title]","url":"https://cpavalidated.com/[filename].html","author":{"@type":"Person","name":"Timur Knyazev, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
+{"@context":"https://schema.org","@type":"Article","headline":"[Title]","url":"https://cpavalidated.com/[filename].html","author":{"@type":"Person","name":"tk.cpa, CPA, EA","url":"https://tk.cpa"},"publisher":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"},"isAccessibleForFree":true,"inLanguage":"en-US"}
 </script>
 ```
 
