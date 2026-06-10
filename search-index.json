@@ -1,8 +1,8 @@
 {
  "meta": {
   "site": "cpavalidated.com",
-  "generated": "2026-06-09",
-  "total": 345,
+  "generated": "2026-06-10",
+  "total": 346,
   "description": "CPA Validated full page index (canonical pages only; duplicates excluded)."
  },
  "pages": [
@@ -3110,6 +3110,15 @@
    "category": "State Tax & Compliance",
    "type": "GUIDE",
    "authority": "IRC §6672 / §3403 / §3505 IRM 5.7.3 / 5.7.6 Updated 2026"
+  },
+  {
+   "url": "1099-thresholds-2026-obbba-matrix.html",
+   "title": "1099 Threshold Matrix 2026: NEC, MISC & 1099-K After OBBBA",
+   "heading": "1099 Threshold Matrix 2026: NEC, MISC & 1099-K After OBBBA",
+   "desc": "Federal and state 1099 reporting thresholds for 2026: $2,000 NEC/MISC under OBBBA 70433, $20,000/200 1099-K under 70432, unchanged forms, backup withholding, nine states with lower 1099-K thresholds. CPA-validated.",
+   "category": "State Tax & Compliance",
+   "type": "GUIDE",
+   "authority": "OBBBA P.L. 119-21 §§70432-70433; IRC §6041, §6041A, §6050W(e)"
   }
  ]
 }
