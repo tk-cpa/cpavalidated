@@ -187,10 +187,10 @@ function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocal
 function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
 
 // 2026 FBAR penalty amounts (inflation-adjusted from base amounts)
-// Non-willful: $10,000 per form per year (pre-Bittner was per account) - $16,117 as of 2024 inflation adj.
-// Willful: greater of $100,000 or 50% of balance - $161,166 base as of 2024 inflation adj.
-const NW_PER_YEAR = 16117;   // non-willful per form (per year after Bittner)
-const W_BASE = 161166;        // willful base per account per year (inflation adj.)
+// Non-willful: $10,000 per form per year (pre-Bittner was per account) - $16,536 as of 2026 inflation adj. (31 CFR 1010.821)
+// Willful: greater of $100,000 or 50% of balance - $165,353 base as of 2026 inflation adj. (31 CFR 1010.821)
+const NW_PER_YEAR = 16536;   // non-willful per form (per year after Bittner), 2026 inflation-adjusted
+const W_BASE = 165353;        // willful base per account per year, 2026 inflation-adjusted
 
 function calc(){
   const years = parseInt(document.getElementById('years').value)||1;
@@ -256,7 +256,7 @@ function calc(){
     `}
   </div>`;
 
-  h += flag('blue','i','<strong>Bittner v. United States, 598 US 85 (2023).</strong> The Supreme Court held 5-4 that non-willful FBAR penalties apply per report (one per year), not per account. This dramatically reduced exposure for multi-account non-willful filers. Pre-Bittner, a filer with 5 accounts over 4 years faced $200,000 in non-willful penalties. Post-Bittner: $64,000 ($16,117 x 4 years). Willful penalties were NOT addressed by Bittner and still apply per account per year.');
+  h += flag('blue','i','<strong>Bittner v. United States, 598 US 85 (2023).</strong> The Supreme Court held 5-4 that non-willful FBAR penalties apply per report (one per year), not per account. This dramatically reduced exposure for multi-account non-willful filers. Pre-Bittner, a filer with 5 accounts over 4 years faced $200,000 in non-willful penalties. Post-Bittner: $66,144 ($16,536 x 4 years, 2026 rate). Willful penalties were NOT addressed by Bittner and still apply per account per year.');
 
   if(willfulness === 'nonwillful'){
     h += flag('green','v','<strong>Streamlined Foreign Offshore Procedure (SFOP) - the optimal path for non-willful filers.</strong> If you are non-willful, outside the US, and have not been previously contacted by IRS: SFOP allows you to file 3 years of amended returns, 6 years of FBARs, and pay a 5% miscellaneous offshore penalty on the highest year-end aggregate balance. Criminal immunity. No examination risk if accepted. The $0 income tax penalty and lower offshore penalty make SFOP dramatically better than bare-bone voluntary disclosure for non-willful filers.');
