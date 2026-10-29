@@ -148,7 +148,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="method-card-name">EFTPS (Electronic Federal Tax Payment System)</div>
   <div class="method-card-desc"><strong>What it is.</strong> The Treasury's master payment system for federal taxes. Free, supports both individuals and businesses, but requires enrollment.</div>
   <div class="method-card-desc"><strong>Best for.</strong> Businesses paying federal tax deposits (payroll, corporate income tax). Individuals making regular estimated tax payments. Anyone who pays the IRS more than once or twice a year.</div>
-  <div class="method-card-desc"><strong>How it works.</strong> Enroll at eftps.gov. The IRS mails a PIN to your address on file - usually 5 to 7 business days. Once enrolled, you log in any time to schedule a payment up to 365 days in advance, and you can change or cancel up to 2 days before the payment date.</div>
+  <div class="method-card-desc"><strong>How it works.</strong> Enroll at eftps.gov. The IRS mails a PIN to your address on file - new enrollments can take up to five business days to process. Once enrolled, you log in any time to schedule a payment up to 365 days in advance, and you can change or cancel up to 2 days before the payment date.</div>
   <div class="method-card-desc"><strong>Limits.</strong> No upper limit. Payments are scheduled, not real-time - submit by 8pm ET the day before for next-business-day execution.</div>
 </div>
 
@@ -162,14 +162,14 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="wire-box">
   <span class="label">IRS Same-Day Wire Instructions</span>
-  <div class="row"><span class="k">Bank Name</span><span>Federal Reserve Bank</span></div>
+  <div class="row"><span class="k">Receiving Institution</span><span>IRS SINGLE PAYOR TAX WIRES</span></div>
   <div class="row"><span class="k">Routing (ABA)</span><span>091036164</span></div>
-  <div class="row"><span class="k">Beneficiary Name</span><span>IRS SINGLE PAYOR TAX WIRES</span></div>
-  <div class="row"><span class="k">Beneficiary Address</span><span>333 W. Pershing Rd</span></div>
+  <div class="row"><span class="k">Beneficiary Name</span><span>(taxpayer name - individuals: last name, first name)</span></div>
+  <div class="row"><span class="k">Institution Address</span><span>333 West Pershing Road</span></div>
   <div class="row"><span class="k"></span><span>Kansas City, MO 64108</span></div>
   <div class="row"><span class="k">Beneficiary TIN</span><span>(your SSN or EIN)</span></div>
   <div class="row"><span class="k">Tax Type Code</span><span>(see below)</span></div>
-  <div class="row"><span class="k">Tax Period</span><span>(YYMM, e.g. 2412 for 2024)</span></div>
+  <div class="row"><span class="k">Tax Period</span><span>(tax year as YYYY-12-31 and tax month as MM plus two digits, e.g. 2025-12-31 and MM12)</span></div>
   <div class="row"><span class="k">Payor Name</span><span>(your full legal name)</span></div>
   <div class="row"><span class="k">Confirm Receipt</span><span>FTCS 1-800-382-0045</span></div>
   <div class="row"><span class="k">EFTPS Inquiry</span><span>1-800-605-9876</span></div>
@@ -180,14 +180,14 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <p>Your bank will ask for a "tax type code" when sending the wire. The IRS uses these to route the payment to the right form and tax period:</p>
 
 <ul style="margin:6px 0 22px 24px">
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>10401</strong> - Form 1040 balance due (current year)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>10407</strong> - Form 1040 balance due (current year)</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>10406</strong> - Form 1040-ES estimated tax</li>
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>11206</strong> - Form 1120 corporate income tax</li>
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>11207</strong> - Form 1120 corporate estimated</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>11206</strong> - Form 1120 corporate estimated tax</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>11207</strong> - Form 1120 corporate balance due</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>9410x</strong> series - Form 941 employment taxes</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>09405</strong> - Form 940 FUTA</li>
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>10421</strong> - Form 1042 withholding tax</li>
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>22906</strong> - Form 2290 heavy highway use</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:5px"><strong>10425</strong> - Form 1042 withholding tax (federal tax deposit; 10427 for balance due)</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>22907</strong> - Form 2290 heavy highway use (balance due)</li>
 </ul>
 
 <p>The full list is in IRS Publication 4990 (EFTPS Payment Instruction Booklet). When in doubt, your bank's wire desk usually has the IRS Same-Day Taxpayer Worksheet, or you can pull it from eftps.gov.</p>
@@ -220,9 +220,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <div class="method-card">
   <div class="method-card-tag">Method 6 - Convenience fee</div>
   <div class="method-card-name">Debit or Credit Card</div>
-  <div class="method-card-desc"><strong>What it is.</strong> Pay through one of three IRS-authorized third-party processors: payUSAtax, Pay1040, or ACI Payments.</div>
+  <div class="method-card-desc"><strong>What it is.</strong> Pay through one of two IRS-authorized third-party processors: Pay1040 or ACI Payments.</div>
   <div class="method-card-desc"><strong>Best for.</strong> People who don't have an immediately available bank balance but have credit card capacity. Also useful for chasing credit card rewards on tax payments (the math only works if your reward rate exceeds the processing fee).</div>
-  <div class="method-card-desc"><strong>Fees.</strong> Debit card: flat fee around $2 to $3. Credit card: percentage fee around 1.75% to 1.85% of payment amount. The credit card processor passes the fee straight through, so the IRS receives the full payment, but you pay the fee.</div>
+  <div class="method-card-desc"><strong>Fees.</strong> Debit card: flat fee of $2.10 to $2.15 depending on the processor. Credit card: percentage fee of 1.75% to 1.85% of payment amount (minimum $2.50). The credit card processor passes the fee straight through, so the IRS receives the full payment, but you pay the fee.</div>
   <div class="method-card-desc"><strong>Limits.</strong> Generally two payments per processor per tax type per year for individual taxpayers. Aggregate limits per year apply.</div>
 </div>
 
@@ -241,7 +241,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="method-card-desc"><strong>What it is.</strong> The IRS contracts with retail partners (currently the program runs through ACI Payments at participating 7-Eleven, Walgreens, Family Dollar, and other locations) to accept cash payments toward federal taxes.</div>
   <div class="method-card-desc"><strong>Best for.</strong> Taxpayers without bank accounts, or those who prefer cash for any reason.</div>
   <div class="method-card-desc"><strong>How it works.</strong> Register at irs.gov/payments/pay-by-cash, generate a payment code, then visit a participating retail location with the code, your photo ID, and the cash. The retail partner takes the payment, the partner remits to the IRS, and your IRS account gets credited within 5 to 7 business days.</div>
-  <div class="method-card-desc"><strong>Limits.</strong> $1,000 per payment, $1,000 per day. Fee around $1.50 to $2.50 per transaction.</div>
+  <div class="method-card-desc"><strong>Limits.</strong> $500 limit per payment at participating retailers. Fee of up to $1.50 per payment.</div>
 </div>
 
 <h2>What If You Can't Pay All at Once?</h2>
@@ -254,7 +254,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <h3>Long-Term Installment Agreement</h3>
 
-<p>For balances under $50,000 (combined). Setup fee applies (around $31 if you set up online with direct debit, more if you go through paper or phone, with a low-income waiver available). You commit to monthly payments over up to 72 months. Direct-debit installment agreements get the lowest setup fee and the lowest risk of default.</p>
+<p>For balances of $50,000 or less (combined). Setup fee applies ($29 if you set up online with direct debit, more if you go through paper or phone, with a low-income waiver available). You commit to monthly payments over up to 72 months. Direct-debit installment agreements get the lowest setup fee and the lowest risk of default.</p>
 
 <h3>Offer in Compromise</h3>
 
