@@ -100,13 +100,13 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <table class="key-table">
   <tr><th>Basket</th><th>Authority</th><th>Content</th></tr>
-  <tr><td>Passive Category</td><td>§904(d)(1)(B); §904(d)(2)(B)</td><td>Passive investment income - dividends, interest, royalties (passive), rents (passive use), capital gain on stock/securities; certain specified passive income categories</td></tr>
-  <tr><td>General Category</td><td>§904(d)(1)(D); §904(d)(2)(D)</td><td>Active business income; financial services income (not branch); income not falling in other baskets - default catchall</td></tr>
-  <tr><td>NCTI / GILTI Category §951A</td><td>§904(d)(1)(A); §904(d)(2)(A); TCJA addition</td><td>Net CFC Tested Income (renamed from GILTI by OBBBA effective 2026); CFC-level income subject to §951A inclusion; NO carryover under §904(c)</td></tr>
+  <tr><td>Passive Category</td><td>§904(d)(1)(C); §904(d)(2)(A)(i), (B)</td><td>Passive investment income - dividends, interest, royalties (passive), rents (passive use), capital gain on stock/securities; certain specified passive income categories</td></tr>
+  <tr><td>General Category</td><td>§904(d)(1)(D); §904(d)(2)(A)(ii)</td><td>Active business income; financial services income (not branch); income not falling in other baskets - default catchall</td></tr>
+  <tr><td>NCTI / GILTI Category §951A</td><td>§904(d)(1)(A); TCJA addition</td><td>Net CFC Tested Income (renamed from GILTI by OBBBA effective 2026); CFC-level income subject to §951A inclusion; NO carryover under §904(c)</td></tr>
   <tr><td>Foreign Branch Category</td><td>§904(d)(1)(B); §904(d)(2)(J); TCJA addition</td><td>Income attributable to foreign branch operations of US person; branches of US C-corps</td></tr>
-  <tr><td>§901(j) Sanctioned Country Income</td><td>§904(d)(1)(F); §901(j)</td><td>Income sourced from sanctioned countries (Iran, North Korea, Sudan, Syria, currently); foreign tax NOT creditable</td></tr>
+  <tr><td>§901(j) Sanctioned Country Income</td><td>§901(j)(1)(B)</td><td>Income sourced from sanctioned countries (Iran, North Korea, Sudan, Syria per Pub. 514 for 2025; Libya meets the description but has a Presidential waiver; confirm the list each year); foreign tax NOT creditable</td></tr>
   <tr><td>Treaty-Resourced Income</td><td>§904(d)(6)</td><td>Income resourced under treaty - taxpayer elects to treat US source as foreign source per treaty article</td></tr>
-  <tr><td>Lump-Sum Distributions §402(e)</td><td>§904(d)(1)(E)</td><td>Specific category for certain pension distribution-related foreign tax</td></tr>
+  <tr><td>Lump-Sum Distributions (Form 4972)</td><td>Form 1116, category g</td><td>Separate limitation applies only if Form 4972 treatment is elected for a lump-sum distribution; use a separate Form 1116</td></tr>
 </table>
 
 <h2>FTC Limitation Formula and Application</h2>
@@ -120,7 +120,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Step 5</td><td>Credit allowed per basket = lesser of (a) foreign taxes paid/accrued in basket or (b) FTC limit for basket</td></tr>
   <tr><td>Step 6</td><td>Excess foreign tax credit per basket = foreign tax paid - FTC limit; carryover 1 year back + 10 forward (except NCTI - no carryover)</td></tr>
   <tr><td>Expense allocation</td><td>Interest expense, R&E expenses, stewardship, general SG&A allocated to baskets per Reg §1.861-8 through §1.861-14</td></tr>
-  <tr><td>§904(b)(4) adjustment</td><td>Expenses allocated to §245A-eligible income added back to worldwide TI denominator; OBBBA-affected; pending Treasury guidance</td></tr>
+  <tr><td>§904(b)(4) adjustment</td><td>For a domestic corporation that is a US shareholder of a specified 10-percent owned foreign corporation, the foreign-source portion of any §245A dividend and deductions properly allocable to it are disregarded in determining both foreign source taxable income and entire taxable income (OBBBA added (b)(5) and (b)(6), not (b)(4))</td></tr>
   <tr><td>Separate-basket loss recapture §904(f)</td><td>Net loss in one basket reduces income in another; recaptured in later years</td></tr>
   <tr><td>Overall foreign loss §904(f)</td><td>Foreign losses recaptured against future foreign source income</td></tr>
   <tr><td>Overall domestic loss §904(g)</td><td>Domestic losses recaptured against future US source income</td></tr>
@@ -136,8 +136,8 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>§250 deduction</td><td>50% deduction (effective rate 10.5%)</td><td>40% deduction (effective rate 12.6%)</td></tr>
   <tr><td>§960 deemed-paid foreign tax credit</td><td>80% × CFC's foreign taxes attributable to tested income</td><td>90% × CFC's foreign taxes (10% haircut, down from 20%)</td></tr>
   <tr><td>FTC carryover</td><td>NO carryover</td><td>NO carryover</td></tr>
-  <tr><td>Expense allocation §904(b)(4)</td><td>Interest, R&E, SG&A allocated to NCTI basket - reduces FTC limit</td><td>OBBBA §70311(a) - interest and R&E NOT allocated to NCTI; SG&A only if "properly allocable"; reduces over-allocation</td></tr>
-  <tr><td>Effective US tax on NCTI</td><td>~13.125% with full FTC; higher with disallowed taxes</td><td>~14% with full FTC; reduced from 16.4% scheduled increase</td></tr>
+  <tr><td>Expense allocation (§904(b)(5) from 2026)</td><td>Interest, R&E, SG&A allocated to NCTI basket - reduces FTC limit</td><td>OBBBA §70311(a) adds §904(b)(5) - no interest or R&E allocated to NCTI income; other deductions (e.g., SG&A) only if "directly allocable"; the §250(a)(1)(B) deduction is allocated to NCTI</td></tr>
+  <tr><td>Foreign tax rate needed for no residual US tax on NCTI</td><td>~13.125% (10.5% effective US rate / 80%)</td><td>~14% (12.6% effective US rate / 90%); reduced from the ~16.4% that the pre-OBBBA 2026 law (13.125% / 80%) would have required</td></tr>
   <tr><td>Tested income basket</td><td>NCTI distributions allocated to NCTI basket</td><td>Same - NCTI inclusions in NCTI basket</td></tr>
   <tr><td>Subpart F vs NCTI planning</td><td>Subpart F (general basket) often preferred to GILTI (no carryover)</td><td>Same planning consideration - subpart F more flexible</td></tr>
 </table>
@@ -190,11 +190,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <table class="key-table">
   <tr><th>Carryover Element</th><th>Detail</th></tr>
-  <tr><td>Carryback</td><td>1 year - elect to apply current year unused FTC to prior year</td></tr>
+  <tr><td>Carryback</td><td>1 year - excess taxes are deemed paid or accrued in the first preceding year to the extent of that year's unused limitation (if the credit was chosen for that year)</td></tr>
   <tr><td>Carryforward</td><td>10 years per basket</td></tr>
   <tr><td>NCTI basket exception</td><td>NO carryover - use it or lose it annually</td></tr>
   <tr><td>Per-basket tracking</td><td>Carryovers segregated by basket - cannot cross between baskets</td></tr>
-  <tr><td>Application order</td><td>Carrybacks first; then current year; then carryforwards (oldest first)</td></tr>
+  <tr><td>Application order</td><td>Current-year taxes first; then carryovers to the extent of remaining limitation (earlier years first)</td></tr>
   <tr><td>Election to credit vs deduct</td><td>Annual election - take all foreign income tax as credit OR as deduction; once election made, all-or-nothing for the year</td></tr>
   <tr><td>Form 1116 Schedule B</td><td>Reconciliation of FTC carryovers per basket</td></tr>
   <tr><td>Stacking</td><td>10-year FCFs accumulate; may expire unused if foreign source income too small in basket</td></tr>
@@ -206,14 +206,14 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>OBBBA Indirect Effect</th><th>Detail</th></tr>
   <tr><td>§163(j) interest limitation modifications</td><td>Modified EBITDA add-back computation may affect interest allocation to foreign source income</td></tr>
-  <tr><td>§174 R&E retroactive expensing</td><td>OBBBA allowed retroactive 2022-2024 R&E expensing for domestic; affects R&E allocation in earlier §904 limits; Form 3115 §481(a) catch-up</td></tr>
-  <tr><td>§70311(a) NCTI expense allocation</td><td>Interest and R&E NOT allocated to NCTI for §904 purposes; SG&A only if "properly allocable" - reduces over-allocation</td></tr>
-  <tr><td>FDII / FDDEI rules parallel</td><td>OBBBA's FDDEI provisions (formerly FDII) - similar §904(b)(4) implications; pending guidance on stewardship/SG&A</td></tr>
+  <tr><td>§174 R&E retroactive expensing</td><td>OBBBA §174A expenses domestic R&E paid or incurred in tax years beginning after December 31, 2024; only small businesses meeting the §448(c) gross receipts test could elect retroactive application to 2022-2024 (one-year election window), and other taxpayers may deduct unamortized 2022-2024 amounts in 2025 or ratably over 2025-2026; changes are generally cut-off with no §481(a) adjustment</td></tr>
+  <tr><td>§70311(a) NCTI expense allocation</td><td>Interest and R&E NOT allocated to NCTI for §904 purposes; other deductions only if "directly allocable" (§904(b)(5)) - reduces over-allocation</td></tr>
+  <tr><td>FDII / FDDEI rules parallel</td><td>OBBBA's FDDEI provisions (formerly FDII) - parallel rules under §250(b)(3); proposed regulations (REG-117273-25, September 11, 2026) would treat stewardship and legal expenses as not directly allocable</td></tr>
   <tr><td>BEAT increase</td><td>OBBBA increased BEAT rate; FTC interaction with BEAT requires modeling</td></tr>
-  <tr><td>§951B new</td><td>New CFC inclusion provision added by OBBBA; affects basket categorization</td></tr>
+  <tr><td>§951B new</td><td>Added by OBBBA §70353(b): amounts included in gross income of foreign controlled United States shareholders of foreign controlled foreign corporations; effective for taxable years of foreign corporations beginning after December 31, 2025</td></tr>
   <tr><td>Inventory sourcing 50%</td><td>OBBBA allows up to 50% foreign sourcing for US-produced inventory sold abroad through foreign office/PE; increases foreign branch FTC capacity</td></tr>
   <tr><td>§958(b)(4) downward attribution reinstated</td><td>OBBBA narrows CFC determinations - reduces incidental CFC classifications; affects FTC computations</td></tr>
-  <tr><td>PTEP haircut</td><td>10% disallowance on FTC for §951A PTEP distributions on/after June 28, 2025</td></tr>
+  <tr><td>PTEP haircut</td><td>§960(d)(4): no credit for 10% of foreign income taxes paid or accrued (or deemed paid under §960(b)(1)) after June 28, 2025 with respect to amounts excluded under §959(a) by reason of a §951A inclusion</td></tr>
 </table>
 
 <h2>Worked Example - Multi-Basket FTC Computation</h2>
@@ -221,7 +221,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <div class="callout">
   <div class="callout-label">Worked Example - 2026 Individual With Multiple Foreign Sources</div>
   <p><strong>Facts:</strong> James (US citizen) for 2026:</p>
-  <p>Worldwide taxable income: $500,000<br>US source: $300,000<br>Foreign source - General basket: $100,000 (active foreign business income); foreign tax $35,000<br>Foreign source - Passive basket: $80,000 (foreign dividends); foreign tax $12,000<br>Foreign source - NCTI basket: $20,000 (CFC tested income inclusion); foreign tax $4,000<br>Pre-FTC US tax: $145,000 (effective rate 29%)</p>
+  <p>Worldwide taxable income: $500,000<br>US source: $300,000<br>Foreign source - General basket: $100,000 (active foreign business income); foreign tax $35,000<br>Foreign source - Passive basket: $80,000 (foreign dividends); foreign tax $12,000<br>Foreign source - NCTI basket: $20,000 (CFC tested income inclusion); foreign tax $4,000 (creditable only if Client makes a §962 election - §960(d) applies to a domestic corporation - and a §962 elector is taxed on the inclusion at §11 corporate rates, so this example is simplified)<br>Pre-FTC US tax: $145,000 (effective rate 29%)</p>
   <p><strong>Step 1 - FTC limit per basket:</strong></p>
   <p>General: $145,000 × ($100,000 / $500,000) = $29,000<br>Passive: $145,000 × ($80,000 / $500,000) = $23,200<br>NCTI: $145,000 × ($20,000 / $500,000) = $5,800</p>
   <p><strong>Step 2 - Credit allowed per basket (lesser of tax paid or limit):</strong></p>
@@ -229,7 +229,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <p><strong>Step 3 - Total FTC and US tax:</strong></p>
   <p>Total FTC: $29,000 + $12,000 + $4,000 = $45,000<br>US tax after FTC: $145,000 - $45,000 = $100,000<br>Effective US tax on $500,000: 20%</p>
   <p><strong>Step 4 - Carryover tracking:</strong></p>
-  <p>General basket excess: $6,000 - elect to carry back to 2025 or forward through 2036<br>Passive unused limit: $11,200 - cannot be used by other baskets; carries forward as foreign tax shortfall (no benefit unless paid more foreign tax than limit in future year)<br>NCTI: $1,800 unused limit lost (no carryover)</p>
+  <p>General basket excess: $6,000 - carries back to 2025 (to the extent of unused limitation) and then forward through 2036<br>Passive unused limit: $11,200 - cannot be used by other baskets and does not itself carry over; it only matters if passive-basket excess taxes from other years exist to absorb<br>NCTI: $1,800 unused limit lost (no carryover)</p>
   <p><strong>Step 5 - High-tax kick-out test on passive:</strong></p>
   <p>Passive foreign rate: $12,000 / $80,000 = 15% - below 37% US rate → NO HTKO; stays passive</p>
 </div>
@@ -244,9 +244,9 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Part III</td><td>FTC computation with limitation</td></tr>
   <tr><td>Part IV</td><td>Summary across baskets</td></tr>
   <tr><td>Schedule B</td><td>FTC carryover/carryback reconciliation per basket</td></tr>
-  <tr><td>De minimis exception</td><td>Form 1116 not required if total foreign tax under $300 single / $600 MFJ AND all foreign tax shown on 1099-DIV/INT - take credit directly on Schedule 3</td></tr>
-  <tr><td>Election to deduct</td><td>If FTC limit zero or unfavorable, elect to deduct foreign tax instead under §164 - on Schedule A or Schedule 1</td></tr>
-  <tr><td>Form 1118 (corporations)</td><td>More complex; Schedule J for NCTI; Schedule K for foreign branch; Schedule M for high-tax kick-out</td></tr>
+  <tr><td>De minimis exception</td><td>Form 1116 not required if all foreign source gross income is passive category income, total creditable foreign tax is not more than $300 single / $600 MFJ, and the income and taxes are shown on a qualified payee statement (e.g., 1099-DIV/INT) - elect to take credit directly on Schedule 3</td></tr>
+  <tr><td>Election to deduct</td><td>If FTC limit zero or unfavorable, elect to deduct foreign tax instead under §164 - on Schedule A (Form 1040)</td></tr>
+  <tr><td>Form 1118 (corporations)</td><td>More complex; separate Form 1118 per category; Schedule D for taxes deemed paid on §951A inclusions; Schedule J for adjustments to separate limitation income and OFL/ODL accounts; Schedule K for carryover reconciliation</td></tr>
   <tr><td>Form 8993 (FDII/FDDEI)</td><td>§250 deduction computation</td></tr>
 </table>
 
@@ -259,10 +259,10 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Dividends §861(a)(2)</td><td>Residence of payor (US corp = US source; foreign corp = foreign source)</td></tr>
   <tr><td>Royalties §861(a)(4)</td><td>Where intangible used</td></tr>
   <tr><td>Rents from real property §861(a)(4)</td><td>Where property located</td></tr>
-  <tr><td>Sale of inventory §861(a)(6); §862(a)(6)</td><td>Title passage rule generally; manufactured inventory split rules; OBBBA - 50% foreign source for US-produced sold abroad through foreign office</td></tr>
+  <tr><td>Sale of inventory §861(a)(6); §862(a)(6)</td><td>Title passage rule generally; manufactured inventory split rules; OBBBA §904(b)(6) - for §904 purposes only, income from US-produced inventory sold abroad that is attributable to a foreign office or fixed place of business is foreign source, capped at 50% of the income</td></tr>
   <tr><td>Sale of personal property §865</td><td>Generally residence of seller (US seller = US source); exceptions for inventory, intangibles, depreciable property</td></tr>
   <tr><td>Sale of real property §861(a)(5); §862(a)(5)</td><td>Location of property</td></tr>
-  <tr><td>NCTI §904(d)(2)(H)(i)</td><td>100% foreign source (post-OBBBA may have nuances)</td></tr>
+  <tr><td>NCTI §951A(d)(1)(A); §904(h)</td><td>Generally foreign source, but treated as US source to the extent provided in §904(h) for amounts derived from a United States-owned foreign corporation</td></tr>
   <tr><td>Treaty resourcing</td><td>Election to treat US source as foreign source per treaty article</td></tr>
 </table>
 
@@ -286,11 +286,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>§250 Deduction Wrong Rate</h3>
 
-<p>2025: 50% NCTI / 37.5% FDII. 2026 (OBBBA): 40% NCTI / 33.34% FDDEI. Effective rates change from 13.125%/10.5% to ~14%/12.6%. Update calculations.</p>
+<p>2025: 50% NCTI / 37.5% FDII. 2026 (OBBBA): 40% NCTI / 33.34% FDDEI. Effective rates change from 10.5% (NCTI) / 13.125% (FDII) to 12.6% (NCTI) / ~14% (FDDEI). Update calculations.</p>
 
 <h3>Expense Allocation to NCTI Basket Over-Allocation</h3>
 
-<p>OBBBA §70311(a) - interest and R&E NOT allocated to NCTI; SG&A only if "properly allocable." Pre-OBBBA allocation rules over-allocated, reducing FTC. Confirm 2026 software updated.</p>
+<p>OBBBA §70311(a) (§904(b)(5)) - interest and R&E NOT allocated to NCTI; other deductions only if "directly allocable." Pre-OBBBA allocation rules over-allocated, reducing FTC. Confirm 2026 software updated.</p>
 
 <h3>Foreign Branch vs CFC Treatment Confusion</h3>
 
@@ -314,11 +314,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Choice of Credit vs Deduction</h3>
 
-<p>Annual election - all foreign tax as credit OR all as deduction. Election irrevocable for year. If basket excess limits FTC heavily, deduction may be better. Model both alternatives.</p>
+<p>Annual election - all foreign tax as credit OR all as deduction. The election may be made or changed within the period prescribed by Reg. §1.901-1(d) (10-year period of §6511(d)(3) for the credit; §6511(a) or (c) period for the deduction). If basket excess limits FTC heavily, deduction may be better. Model both alternatives.</p>
 
 <h3>De Minimis $300/$600 Exception Missed</h3>
 
-<p>Total foreign tax under $300 single / $600 MFJ AND shown on 1099-DIV/INT - skip Form 1116; take credit directly. Simpler. Many practitioners file Form 1116 unnecessarily.</p>
+<p>All foreign source income passive, total creditable foreign tax not more than $300 single / $600 MFJ, and income and tax shown on a payee statement such as 1099-DIV/INT - elect to skip Form 1116 and take credit directly. Simpler. Many practitioners file Form 1116 unnecessarily.</p>
 
 <h3>Treaty Resourcing Election</h3>
 
@@ -326,7 +326,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Forgetting PTEP Haircut</h3>
 
-<p>OBBBA - 10% FTC disallowance on §951A PTEP distributions on/after June 28, 2025. Reduces FTC on prior-year accumulated NCTI/GILTI when distributed.</p>
+<p>OBBBA §960(d)(4) - no credit for 10% of foreign income taxes paid or accrued (or deemed paid under §960(b)(1)) after June 28, 2025 with respect to PTEP excluded under §959(a) by reason of a §951A inclusion. Reduces FTC on prior-year accumulated NCTI/GILTI when distributed.</p>
 
 <h3>Inventory Sourcing OBBBA Change Missed</h3>
 
@@ -334,7 +334,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Stewardship and SG&A Allocation</h3>
 
-<p>OBBBA Working Group submission - urging Treasury to confirm stewardship and SG&A not "properly allocable" to NCTI. Pending guidance. Conservative approach - continue allocating until guidance issued.</p>
+<p>Proposed regulations (REG-117273-25, 91 Fed. Reg. 57832, September 11, 2026; comments due November 10, 2026) would treat stewardship and legal expenses as not directly allocable to foreign source NCTI income, with excluded deductions reallocated to US source income. The statute (§904(b)(5)(C)) already limits other deductions to those "directly allocable" for tax years beginning after December 31, 2025, and taxpayers may rely on the proposed regulations if applied in their entirety.</p>
 
 <div class="related">
   <div class="related-title">Related Guides &amp; Calculators</div>
@@ -348,7 +348,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §904 (Limitation on credit - foreign tax credit). §904(a) (general limitation formula). §904(b) (taxable income from sources without the United States). §904(b)(4) (§245A-eligible income/asset expense allocation - OBBBA affected). §904(c) (carryback and carryover - 1 year back, 10 forward; except NCTI no carryover). §904(d)(1) (separate application of section). §904(d)(1)(A) (NCTI/§951A category). §904(d)(1)(B) (foreign branch and passive category). §904(d)(1)(C) (NCTI/§951A category - renamed by OBBBA). §904(d)(1)(D) (general category - catchall). §904(d)(1)(E) (lump-sum distributions). §904(d)(1)(F) (§901(j) sanctioned country income). §904(d)(2) (categorization of income). §904(d)(2)(A) (passive category items). §904(d)(2)(B) (passive category income definition - high-tax kick-out). §904(d)(2)(D) (general category catchall). §904(d)(2)(H)(i) (NCTI sourcing - 100% foreign source). §904(d)(2)(J) (foreign branch income). §904(d)(3) (look-through rules - CFC distributions categorized based on underlying CFC income). §904(d)(6) (treaty-resourced income basket). §904(f) (overall foreign loss recapture). §904(g) (overall domestic loss recapture). §901 (taxes of foreign countries - credit allowed). §901(b) (foreign income taxes - direct credit). §901(j) (non-creditable taxes - sanctioned countries). §903 (in lieu of foreign income tax - certain compulsory payments). §905 (timing of crediting foreign taxes). §951A (Net CFC Tested Income - RENAMED by OBBBA from GILTI effective tax years beginning after December 31, 2025). §951B (NEW under OBBBA). §954(c)(6) (CFC look-through - made PERMANENT by OBBBA). §954(b)(4) (high-tax exception election). §958(b)(4) (downward attribution - REINSTATED by OBBBA with anti-abuse rules). §960 (deemed paid credit for taxes of CFC). §960(d) (NCTI deemed paid - 90% post-OBBBA, up from 80%). §250 (foreign-derived intangible income / FDDEI deduction - 40% NCTI, 33.34% FDDEI post-OBBBA). §245A (participation exemption - dividends received deduction). §163(j) (interest limitation - modified by OBBBA). §174 (R&E expensing - OBBBA retroactive 2022-2024 domestic). §59A (BEAT - rate increased by OBBBA). §861 (income from sources within US). §862 (income from sources without US). §865 (sale of personal property sourcing). §989 (qualified business unit definition). Reg §1.861-8 through §1.861-14 (expense allocation regulations). Reg §1.904-4 (separate categories of income - high-tax kick-out). Reg §1.904-4(c)(4) (passive grouping rules). Reg §1.904-5 (look-through rules). Reg §1.904-6 (allocation of CFC foreign taxes). Reg §1.901-2 (foreign income tax definition). Form 1116 (Foreign Tax Credit - individuals). Form 1118 (Foreign Tax Credit - corporations). Form 8993 (§250 deduction). Form 5471 (Information Return of US Persons With Respect to Certain Foreign Corporations). Schedule J (Form 5471) - earnings and profits / NCTI. Tax Cuts and Jobs Act P.L. 115-97 (December 22, 2017) - added NCTI/GILTI and foreign branch baskets; effective 2018. One Big Beautiful Bill Act P.L. 119-21 (July 4, 2025) §70311(a) - expense allocation to NCTI; §70312 - 90% deemed paid; FDII/FDDEI rate reduction; QBAI elimination; §954(c)(6) permanency; §958(b)(4) reinstatement; new §951B; 50% inventory foreign sourcing.</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §904 (Limitation on credit - foreign tax credit). §904(a) (general limitation formula). §904(b) (taxable income from sources without the United States). §904(b)(4) (dividends eligible for the §245A deduction - disregarded in foreign source and entire taxable income). §904(b)(5) (deductions allocable to NCTI - added by OBBBA). §904(b)(6) (US-produced inventory sold through foreign branches - added by OBBBA). §904(c) (carryback and carryover - 1 year back, 10 forward; except NCTI no carryover). §904(d)(1) (separate application of section). §904(d)(1)(A) (NCTI/§951A category - renamed by OBBBA). §904(d)(1)(B) (foreign branch category). §904(d)(1)(C) (passive category). §904(d)(1)(D) (general category). §901(j) (sanctioned countries - separate limitation per country). §904(d)(2) (definitions and special rules). §904(d)(2)(A) (passive and general category definitions). §904(d)(2)(B) (passive income; high-taxed income exception at (B)(iii)(II)). §904(d)(2)(H)(i) (taxes on amounts that are not income under US principles are general category). §904(d)(2)(J) (foreign branch income). §904(d)(3) (look-through rules - CFC distributions categorized based on underlying CFC income). §904(d)(6) (treaty-resourced income basket). §904(f) (overall foreign loss recapture). §904(g) (overall domestic loss recapture). §901 (taxes of foreign countries - credit allowed). §901(b) (foreign income taxes - direct credit). §901(j) (non-creditable taxes - sanctioned countries). §903 (in lieu of foreign income tax - certain compulsory payments). §905 (timing of crediting foreign taxes). §951A (Net CFC Tested Income - RENAMED by OBBBA from GILTI effective tax years beginning after December 31, 2025). §951B (NEW under OBBBA). §954(c)(6) (CFC look-through - made PERMANENT by OBBBA). §954(b)(4) (high-tax exception election). §958(b)(4) (downward attribution - REINSTATED by OBBBA with anti-abuse rules). §960 (deemed paid credit for taxes of CFC). §960(d) (NCTI deemed paid - 90% post-OBBBA, up from 80%). §250 (foreign-derived intangible income / FDDEI deduction - 40% NCTI, 33.34% FDDEI post-OBBBA). §245A (participation exemption - dividends received deduction). §163(j) (interest limitation - modified by OBBBA). §174A (domestic R&E expensing - OBBBA, tax years beginning after December 31, 2024; small-business retroactive election). §59A (BEAT - rate increased by OBBBA). §861 (income from sources within US). §862 (income from sources without US). §865 (sale of personal property sourcing). §989 (qualified business unit definition). Reg §1.861-8 through §1.861-14 (expense allocation regulations). Reg §1.904-4 (separate categories of income - high-tax kick-out). Reg §1.904-4(c)(4) (passive grouping rules). Reg §1.904-5 (look-through rules). Reg §1.904-6 (allocation of CFC foreign taxes). Reg §1.901-2 (foreign income tax definition). Form 1116 (Foreign Tax Credit - individuals). Form 1118 (Foreign Tax Credit - corporations). Form 8993 (§250 deduction). Form 5471 (Information Return of US Persons With Respect to Certain Foreign Corporations). Schedule J (Form 5471) - earnings and profits / NCTI. Tax Cuts and Jobs Act P.L. 115-97 (December 22, 2017) - added NCTI/GILTI and foreign branch baskets; effective 2018. One Big Beautiful Bill Act P.L. 119-21 (July 4, 2025) §70311(a) - expense allocation to NCTI; §70312 - 90% deemed paid; FDII/FDDEI rate reduction; QBAI elimination; §954(c)(6) permanency; §958(b)(4) reinstatement; new §951B; 50% inventory foreign sourcing.</p>
 
 </div>
 

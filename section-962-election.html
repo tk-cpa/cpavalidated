@@ -121,19 +121,19 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <li><strong>21% corporate rate</strong> applies to the inclusions instead of up to 37% individual rate.</li>
   <li><strong>Section 250 deduction</strong> for NCTI inclusions is available (40% deduction, reducing the effective rate on NCTI to approximately 12.6% before foreign tax credits).</li>
   <li><strong>Deemed-paid foreign tax credit</strong> under IRC §960 is available to offset the US tax on the inclusions, just as it would be for a domestic corporation.</li>
-  <li><strong>Second-layer tax</strong> applies when the CFC later distributes earnings that were previously included under the election - but at a reduced rate. See below.</li>
+  <li><strong>Second-layer tax</strong> applies when the CFC later distributes earnings that were previously included under the election, to the extent the distribution exceeds the US income tax paid on the inclusion (§962(d)). See below.</li>
 </ul>
 
 <div class="compare-grid">
   <div class="cg-head">Without §962 Election (Individual)</div>
   <div class="cg-head">With §962 Election (Individual Electing Corporate Treatment)</div>
-  <div class="cg-cell">Subpart F inclusion taxed at ordinary income rate: up to 37%<br><br>NCTI inclusion taxed at ordinary income rate: up to 37%<br><br>No §250 deduction available<br><br>IRC §960 deemed-paid FTC available for Subpart F; NCTI FTC treatment more complex</div>
+  <div class="cg-cell">Subpart F inclusion taxed at ordinary income rate: up to 37%<br><br>NCTI inclusion taxed at ordinary income rate: up to 37%<br><br>No §250 deduction available<br><br>No IRC §960 deemed-paid FTC (§960 applies to domestic corporations; an individual gets it only through the §962 election)</div>
   <div class="cg-cell">Subpart F inclusion taxed at 21% corporate rate<br><br>NCTI inclusion taxed at 21% after §250 deduction = ~12.6% effective rate<br><br>§250 deduction (40%) available on NCTI<br><br>IRC §960 deemed-paid FTC available on same basis as C corporation</div>
 </div>
 
 <h2>The Second-Layer Tax: The Critical Catch</h2>
 
-<p>The §962 election does not permanently cap the tax on CFC income at the corporate rate. When the CFC later distributes earnings that were previously taxed under the §962 election, the individual shareholder pays a second layer of tax - but only on the spread between the §962 tax already paid and what the full individual rate would have been.</p>
+<p>The §962 election does not permanently cap the tax on CFC income at the corporate rate. When the CFC later distributes earnings that were previously taxed under the §962 election, the individual shareholder pays a second layer of tax - but only to the extent the distribution exceeds the US income tax already paid on the inclusion (§962(d)).</p>
 
 <p>Under IRC §962(d), when a distribution is made out of earnings previously included under the §962 election, those earnings are included in the individual's income again - but reduced by the §962 tax already paid on those earnings. The mechanism effectively collects the difference between the 21% corporate rate paid at inclusion time and what the individual would have paid on a dividend from a US corporation (qualified dividend rate of 20% + 3.8% NIIT = 23.8% for high earners).</p>
 
@@ -143,8 +143,8 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   Foreign taxes attributable to inclusion: $200,000 (20% effective rate)<br><br>
   WITHOUT §962:<br>
   US tax at 37%:                    $370,000<br>
-  Less: IRC §960 FTC:              ($200,000)<br>
-  Net US tax:                        $170,000<br><br>
+  Less: IRC §960 FTC:              ($0) [not available without the election]<br>
+  Net US tax:                        $370,000<br><br>
   WITH §962 ELECTION:<br>
   §250 deduction (40%):            ($400,000)<br>
   Taxable NCTI after §250:          $600,000<br>
@@ -157,10 +157,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   Taxable distribution amount:    $1,000,000<br>
   Individual tax (23.8% QDIV rate):  $238,000<br><br>
   Total tax under §962:             $238,000<br>
-  Total tax without §962:           $170,000
+  Total tax without §962:           $370,000
 </div>
 
-<p>This example shows the counterintuitive result: when foreign tax rates are high enough to offset the US §962 tax entirely through the FTC, the §962 election can actually produce a <em>worse</em> outcome at distribution than no election at all, because it defers but does not eliminate the individual-level tax on distributions. The election benefits are most pronounced when foreign tax rates are low relative to US rates - specifically, when the FTC does not fully offset the US tax.</p>
+<p>This simplified example (it ignores the §78 gross-up and the 10% haircut on the §960(d) credit) shows that the election can eliminate the current US tax through the FTC but defers rather than eliminates the individual-level tax on distributions: the later distribution is taxed at $238,000 here, versus $370,000 of US tax on the inclusion without the election, where no §960 credit is available. The comparison depends on whether and when the CFC distributes, the individual's rate on the dividend, and the foreign tax rate.</p>
 
 <h3>When the §962 Election Wins</h3>
 
@@ -181,12 +181,12 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <li>The name and address of each CFC with respect to which the election applies;</li>
   <li>The amount of Subpart F income and NCTI included for each CFC;</li>
   <li>The earnings and profits of each CFC; and</li>
-  <li>The amount of foreign income taxes deemed paid under IRC §960.</li>
+  <li>The foreign income, war profits, excess profits and similar taxes paid on or with respect to those earnings and profits, and the distributions received from each CFC (Treas. Reg. §1.962-2(b)).</li>
 </ul>
 
-<p>The election can be made on a CFC-by-CFC basis - you can elect §962 treatment for some CFCs and not others in the same tax year. The election is also year-by-year: making the election in one year does not bind you to make it in subsequent years. However, once you have made the election for a given year's inclusions, those inclusions are locked into the §962 regime for purposes of the second-layer tax on future distributions.</p>
+<p>The election applies to all CFCs for which the shareholder has a §951(a) inclusion for the year; it cannot be limited to some CFCs (Treas. Reg. §1.962-2(c)(1)). It is binding for that year and can be revoked only with Commissioner approval (Treas. Reg. §1.962-2(c)(2)). The election is also year-by-year: making the election in one year does not bind you to make it in subsequent years. However, once you have made the election for a given year's inclusions, those inclusions are locked into the §962 regime for purposes of the second-layer tax on future distributions.</p>
 
-<div class="note-box"><strong>Election Can Be Made on Amended Return - With Conditions.</strong> IRS guidance (Rev. Proc. 2020-17, Notice 2020-69 context) has addressed whether the §962 election can be made on an amended return. The general rule under Treas. Reg. §1.962-2(b) requires the election on the original return. However, for tax years subject to TCJA transition rules and certain other circumstances, the IRS has permitted late elections. This is fact-specific - consult qualified counsel before attempting to make or revoke a §962 election on an amended return.</div>
+<div class="note-box"><strong>Election Can Be Made on Amended Return - With Conditions.</strong> Treas. Reg. §1.962-2(b) requires the election statement to be filed with the shareholder's return for the taxable year of the election. Whether an election can be made on an amended or late-filed return is not addressed in the regulation. This is fact-specific - consult qualified counsel before attempting to make or revoke a §962 election on an amended return.</div>
 
 <h2>Post-OBBBA: §962 and the New NCTI Rate Structure</h2>
 
@@ -211,7 +211,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §962 (election by individuals to be subject to tax at corporate rates); IRC §962(d) (distribution of previously taxed amounts - second-layer tax); IRC §951 (Subpart F inclusions); IRC §951A (NCTI - Net CFC Tested Income, renamed from GILTI by OBBBA P.L. 119-21); IRC §250 (§250 deduction for NCTI - 40% after OBBBA); IRC §960 (deemed-paid foreign tax credit); IRC §904 (foreign tax credit limitation); IRC §1248 (gain on sale of CFC stock treated as dividend); Treas. Reg. §1.962-1 (scope of election); Treas. Reg. §1.962-2 (mechanics of making the election); Treas. Reg. §1.962-3 (amount of tax imposed); OBBBA P.L. 119-21 (NCTI regime, §250 deduction modified to 40%, QBAI exemption eliminated).</div>
+<div class="source-row">Authority: IRC §962 (election by individuals to be subject to tax at corporate rates); IRC §962(d) (distribution of previously taxed amounts - second-layer tax); IRC §951 (Subpart F inclusions); IRC §951A (NCTI - Net CFC Tested Income, renamed from GILTI by OBBBA P.L. 119-21); IRC §250 (§250 deduction for NCTI - 40% after OBBBA); IRC §960 (deemed-paid foreign tax credit); IRC §904 (foreign tax credit limitation); IRC §1248 (gain on sale of CFC stock treated as dividend); Treas. Reg. §1.962-1 (limitation of tax for individuals, including §78, §250 and §960 credit rules); Treas. Reg. §1.962-2 (election of limitation of tax for individuals - who may elect, time and manner, effect); Treas. Reg. §1.962-3 (treatment of actual distributions); OBBBA P.L. 119-21 (NCTI regime, §250 deduction modified to 40%, QBAI exemption eliminated).</div>
 
 
 <script>

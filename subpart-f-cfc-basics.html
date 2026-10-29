@@ -127,7 +127,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="callout">
   <div class="callout-label">TCJA Changed the Constructive Ownership Rules - Watch the Downward Attribution Trap</div>
-  <p>Before TCJA (2017), the constructive ownership rules did not attribute stock ownership <em>downward</em> from a foreign parent to a US subsidiary. TCJA eliminated that exception under IRC §958(b), creating the "downward attribution" problem: stock owned by a foreign parent can now be attributed to a US subsidiary, potentially making the US subsidiary a "US shareholder" of its own foreign affiliates and turning those affiliates into CFCs. This was an unintended consequence that created CFC status for thousands of foreign subsidiaries of multinational groups that were never intended to be CFCs. IRS issued relief notices (Notice 2019-1, Notice 2020-69) but the underlying statute was not fixed until OBBBA, which retroactively restored the pre-TCJA rule for certain attribution situations.</p>
+  <p>Before TCJA (2017), the constructive ownership rules did not attribute stock ownership <em>downward</em> from a foreign parent to a US subsidiary. TCJA eliminated that exception under IRC §958(b), creating the "downward attribution" problem: stock owned by a foreign parent can now be attributed to a US subsidiary, potentially making the US subsidiary a "US shareholder" of its own foreign affiliates and turning those affiliates into CFCs. This was an unintended consequence that created CFC status for thousands of foreign subsidiaries of multinational groups that were never intended to be CFCs. The underlying statute was not changed until OBBBA §70353, which restored the §958(b)(4) limitation on downward attribution for taxable years of foreign corporations beginning after December 31, 2025 (not retroactively) and added §951B to reach foreign controlled US shareholders of foreign controlled foreign corporations.</p>
 </div>
 
 <h2>Step 2: Is the Income Subpart F Income?</h2>
@@ -173,11 +173,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <h3>The High-Tax Exclusion</h3>
 
-<p>Income that was subject to an effective rate of foreign income tax greater than 90% of the US maximum corporate rate is excluded from Subpart F income. IRC §954(b)(4). At the current 21% US corporate rate, the threshold is 18.9%. Income taxed at more than 18.9% by the foreign jurisdiction can be excluded. Taxpayers can elect this exclusion item-by-item.</p>
+<p>Income that was subject to an effective rate of foreign income tax greater than 90% of the US maximum corporate rate is excluded from Subpart F income. IRC §954(b)(4). At the current 21% US corporate rate, the threshold is 18.9%. Income taxed at more than 18.9% by the foreign jurisdiction can be excluded. The election is made by the CFC's controlling US shareholders and binds all US shareholders (Reg. §1.954-1(d)(5)); high-taxed passive FPHCI must be excluded in its entirety or remain subject to Subpart F in its entirety (Reg. §1.954-1(d)(4)(i)).</p>
 
 <h2>Step 3: How Much Is Included on the US Return</h2>
 
-<p>A US shareholder includes in gross income their pro-rata share of the CFC's Subpart F income for the CFC's tax year that ends in or with the US shareholder's tax year. IRC §951(a). The inclusion is treated as a dividend for certain purposes (foreign tax credit eligibility) but is actually an income inclusion - not a distribution - so no actual cash changes hands.</p>
+<p>A US shareholder includes in gross income their pro-rata share of the CFC's Subpart F income for the CFC's tax year that ends in or with the US shareholder's tax year. IRC §951(a). For CFC years beginning after December 31, 2025, the inclusion is made in the shareholder's taxable year that includes the last day on which it owns CFC stock during the CFC year (OBBBA §70354; new §951(a)(3)). The inclusion is treated as a dividend for certain purposes (foreign tax credit eligibility) but is actually an income inclusion - not a distribution - so no actual cash changes hands.</p>
 
 <div class="flow">
   <div class="flow-step">
@@ -194,7 +194,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
   <div class="flow-step">
     <div class="flow-num">4</div>
-    <div class="flow-body"><strong>Claim foreign tax credits.</strong> US shareholders can claim a deemed-paid foreign tax credit (IRC §960) for the foreign taxes associated with the Subpart F inclusion. The credit goes through the foreign tax credit limitation on Form 1116 (individuals) or Form 1118 (corporations).</div>
+    <div class="flow-body"><strong>Claim foreign tax credits.</strong> Domestic corporate US shareholders can claim a deemed-paid foreign tax credit (IRC §960) for the foreign taxes associated with the Subpart F inclusion; an individual can do so only by making a §962 election. The credit goes through the foreign tax credit limitation on Form 1118 (including for §962 electors).</div>
   </div>
   <div class="flow-step">
     <div class="flow-num">5</div>
@@ -210,15 +210,15 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <p>OBBBA (P.L. 119-21, July 4, 2025) renamed and rewrote the GILTI regime (IRC §951A) as Net CFC Tested Income (NCTI). Subpart F under IRC §951 was not renamed or eliminated - it remains intact as a separate and cumulative inclusion regime. A CFC shareholder must calculate both Subpart F inclusions (IRC §951) and NCTI inclusions (the successor to GILTI under OBBBA), and both add to the US shareholder's taxable income.</p>
 
-<p>The key relationship: Subpart F income is excluded from the NCTI calculation. IRC §951A(c)(2)(A)(ii) (as modified by OBBBA). Income that is already included under Subpart F is not double-counted as NCTI. Subpart F applies first; NCTI sweeps up residual tested income that is not Subpart F income. See our dedicated <a href="gilti-explained.html">GILTI/NCTI guide</a> for the post-OBBBA mechanics.</p>
+<p>The key relationship: Subpart F income is excluded from the NCTI calculation. IRC §951A(b)(2)(A)(i)(II) (as redesignated by OBBBA). Income that is already included under Subpart F is not double-counted as NCTI. Subpart F applies first; NCTI sweeps up residual tested income that is not Subpart F income. See our dedicated <a href="gilti-explained.html">GILTI/NCTI guide</a> for the post-OBBBA mechanics.</p>
 
-<div class="note-box"><strong>Form 5471 Penalties Are Automatic and Severe.</strong> The IRS assesses $10,000 per CFC per year for failure to file Form 5471, with an additional $10,000 for each 30-day period after IRS notification (up to $50,000 per form). IRC §6038(b). The IRS has the authority to reduce foreign tax credits by 10% for each failure. These penalties are assessed regardless of whether any tax is owed. Statute of limitations for the entire return remains open (no tolling) until the Form 5471 is filed. If you have a foreign corporation that might be a CFC and have not been filing Form 5471, this is a high-priority compliance issue.</div>
+<div class="note-box"><strong>Form 5471 Penalties Are Automatic and Severe.</strong> The IRS assesses $10,000 per CFC per year for failure to file Form 5471, with an additional $10,000 for each 30-day period (or fraction) that the failure continues more than 90 days after IRS mails notice (up to $50,000 of additional penalty per form). IRC §6038(b). Foreign tax credits are also reduced by 10%, plus 5% for each 3-month period (or fraction) the failure continues beyond 90 days after notice. IRC §6038(c). These penalties are assessed regardless of whether any tax is owed. Statute of limitations for the entire return remains open (no tolling) until the Form 5471 is filed. If you have a foreign corporation that might be a CFC and have not been filing Form 5471, this is a high-priority compliance issue.</div>
 
 <h2>Subpart F for Individual US Shareholders</h2>
 
 <p>Most Subpart F guidance focuses on corporate shareholders, but individual US shareholders - entrepreneurs, immigrants with foreign businesses, investors - are equally subject to the rules. Individual shareholders face two additional complications:</p>
 
-<p><strong>No §250 deduction.</strong> US corporations can deduct 40% of their NCTI inclusion under IRC §250, producing an effective rate of approximately 12.6% on NCTI. Individual shareholders get no §250 deduction. Their Subpart F and NCTI inclusions are taxed at ordinary income rates - up to 37% - with a foreign tax credit offset limited to the taxes allocable to each inclusion.</p>
+<p><strong>No §250 deduction.</strong> US corporations can deduct 40% of their NCTI inclusion under IRC §250, producing an effective rate of approximately 12.6% on NCTI. Individual shareholders get no §250 deduction. Their Subpart F and NCTI inclusions are taxed at ordinary income rates - up to 37% - with no deemed-paid foreign tax credit for the CFC's taxes unless a §962 election is made.</p>
 
 <p><strong>The §962 election.</strong> Individual shareholders can elect under IRC §962 to be taxed on Subpart F and NCTI inclusions as if they were a domestic corporation - getting the 21% corporate rate and the §250 deduction on NCTI. The §962 election does not change the character of distributions when they are later paid out, creating a second layer of tax at the individual level. See our dedicated <a href="section-962-election.html">Section 962 Election guide</a> for the full mechanics.</p>
 
@@ -234,7 +234,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §951 (Subpart F inclusions); IRC §951A (NCTI/GILTI as amended by OBBBA); IRC §952 (Subpart F income definition); IRC §953 (insurance income); IRC §954 (foreign base company income - FPHCI §954(c), FBCSI §954(d), FBCSvI §954(e)); IRC §954(b)(3) (de minimis and full-inclusion rules); IRC §954(b)(4) (high-tax exclusion); IRC §957 (CFC definition - more than 50% by vote or value); IRC §951(b) (US shareholder - 10% threshold); IRC §958 (constructive ownership - downward attribution); IRC §959 (previously taxed E&amp;P); IRC §960 (deemed-paid foreign tax credit); IRC §250 (§250 deduction - NCTI, FDDEI); IRC §962 (individual election - corporate tax treatment); IRC §6038 (Form 5471 filing requirement and penalties); IRC §6038(b) (penalty - $10,000 per form); Notice 2019-1; Notice 2020-69 (downward attribution relief); OBBBA P.L. 119-21 (NCTI regime, downward attribution fix, §250 deduction modification).</div>
+<div class="source-row">Authority: IRC §951 (Subpart F inclusions); IRC §951A (NCTI/GILTI as amended by OBBBA); IRC §952 (Subpart F income definition); IRC §953 (insurance income); IRC §954 (foreign base company income - FPHCI §954(c), FBCSI §954(d), FBCSvI §954(e)); IRC §954(b)(3) (de minimis and full-inclusion rules); IRC §954(b)(4) (high-tax exclusion); IRC §957 (CFC definition - more than 50% by vote or value); IRC §951(b) (US shareholder - 10% threshold); IRC §958 (constructive ownership - downward attribution); IRC §959 (previously taxed E&amp;P); IRC §960 (deemed-paid foreign tax credit); IRC §250 (§250 deduction - NCTI, FDDEI); IRC §962 (individual election - corporate tax treatment); IRC §6038 (Form 5471 filing requirement and penalties); IRC §6038(b) (penalty - $10,000 per form); OBBBA P.L. 119-21 (NCTI regime, §70353 restoration of §958(b)(4) and new §951B for taxable years of foreign corporations beginning after December 31, 2025, §250 deduction modification).</div>
 
 
 <script>
