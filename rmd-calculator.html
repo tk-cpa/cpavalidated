@@ -1,116 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Required Minimum Distribution (RMD) Calculator | CPA Validated</title>
-<meta name="description" content="Calculate your 2026 Required Minimum Distribution from IRAs and retirement plans.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Required Minimum Distribution (RMD) Calculator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Calculate your 2026-2030 Required Minimum Distribution from IRAs and retirement plans. Uniform Lifetime and Joint Life tables, applicable age 73/75, 25% excise tax. IRC 401(a)(9), 4974. Verified October 29, 2026.">
+<link rel="canonical" href="https://cpavalidated.com/rmd-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
-.phi{max-width:900px;margin:0 auto;padding:0 24px}
-.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
-.container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
-.ch{background:var(--ink);padding:13px 20px;color:#fff}
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
 .cb{padding:20px}
-.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
-.f1 label{font-size:11px;font-weight:600;color:#5E6166;text-transform:uppercase}
-.fc{width:100%;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
-.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green)}
-@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.hero3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.1);margin-bottom:14px}
+.h3{background:var(--ink);padding:16px;text-align:center}
+.h3l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.h3v{font-family:var(--font-display);font-size:24px;font-weight:500;color:#fff}
+.h3v.coral{color:var(--coral)}.h3v.green{color:#6de88e}.h3v.amber{color:#f5c264}
+.h3s{font-size:10px;color:rgba(255,255,255,.2);margin-top:3px}
+.bracket-bar{margin-bottom:16px}
+.bb-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:12px}
+.bb-label{width:120px;font-weight:600;flex-shrink:0}
+.bb-track{flex:1;height:20px;background:var(--ink-10);position:relative;overflow:hidden}
+.bb-fill{height:100%;transition:width .3s;display:flex;align-items:center;padding-left:6px;font-size:10px;font-weight:700;color:#fff}
+.bb-amount{width:90px;text-align:right;font-family:var(--font-mono);flex-shrink:0}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.hero3{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/rmd-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Required Minimum Distribution (RMD) Calculator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Calculate your 2026-2030 Required Minimum Distribution from IRAs and retirement plans. Uniform Lifetime and Joint Life tables, applicable age 73/75, 25% excise tax. IRC 401(a)(9), 4974. Verified October 29, 2026.">
+  <meta property="og:url" content="https://cpavalidated.com/rmd-calculator.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Required Minimum Distribution (RMD) Calculator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Calculate your 2026-2030 Required Minimum Distribution from IRAs and retirement plans. Uniform Lifetime and Joint Life tables, applicable age 73/75, 25% excise tax. IRC 401(a)(9), 4974. Verified October 29, 2026.">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Article", "headline": "Required Minimum Distribution (RMD) Calculator 2026-2030 | CPA Validated", "description": "Calculate your 2026-2030 Required Minimum Distribution from IRAs and retirement plans. Uniform Lifetime and Joint Life tables, applicable age 73/75, 25% excise tax. IRC 401(a)(9), 4974. Verified October 29, 2026.", "url": "https://cpavalidated.com/rmd-calculator.html", "dateModified": "2026-10-29", "author": {"@type": "Person", "name": "tk.cpa", "jobTitle": "CPA, Enrolled Agent", "url": "https://tk.cpa"}, "publisher": {"@type": "Organization", "name": "CPA Validated", "url": "https://cpavalidated.com"}, "isAccessibleForFree": true, "inLanguage": "en-US"}
+  </script>
+<style id="calc-extra">
+.badge-proj{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 9px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b)}
+.badge-pub{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 9px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
+.verified{font-size:12px;color:var(--ink-60);margin:0 0 14px}
+.assump{border:1px solid var(--ink-20);background:var(--white);margin-bottom:18px}
+.assump summary{cursor:pointer;padding:12px 20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;background:var(--ink-10);color:var(--ink)}
+.assump .abody{padding:14px 20px 18px;overflow-x:auto}
+.atbl{width:100%;border-collapse:collapse;font-size:12px;min-width:560px}
+.atbl th,.atbl td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--ink-10);vertical-align:top;line-height:1.5}
+.atbl th{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)}
+.tg{font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.tg.stat{color:var(--blue-acc)}.tg.pub{color:var(--green)}.tg.proj{color:var(--amber)}
+.stepbox{border:1px solid var(--ink-20);background:var(--paper);padding:14px 16px;margin-bottom:12px}
+.stepbox h3{font-family:var(--font-display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;color:var(--ink)}
+.stepbox p,.stepbox li{font-size:12.5px;line-height:1.6;color:var(--ink)}
+.stepbox ul{margin-left:18px}
+.mono{font-family:var(--font-mono)}
+.tblwrap{overflow-x:auto;margin-bottom:14px}
+.dtbl{width:100%;border-collapse:collapse;font-size:12.5px;min-width:420px}
+.dtbl th,.dtbl td{padding:7px 10px;border-bottom:1px solid var(--ink-10);text-align:right}
+.dtbl th:first-child,.dtbl td:first-child{text-align:left}
+.dtbl th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60)}
+.chk{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.5}
+.chk input{margin-top:3px}
+.hidden{display:none}
+.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin:14px 0}
+.result-box h3{font-family:var(--font-display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green);margin:8px 0;word-break:break-word}
+.notice{font-size:12px;color:var(--ink-60);line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:12px}
+.fg3 .f1 .fc,.fg2 .f1 .fc{min-width:0}
+@media(max-width:640px){.atbl{min-width:480px}}
+</style>
 </head>
 <body>
-
-<div class="ph">
-<div class="phi">
-<h1>Required Minimum Distribution Calculator</h1>
-<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Calculate your 2026 RMD from traditional IRAs and retirement plans.</p>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
 </div>
-</div>
+<div class="ph"><div class="phi">
+  <h1>Required Minimum Distribution Calculator 2026-2030</h1>
+  <div class="sub">Calculate your RMD for 2026, 2027, 2028, 2029 or 2030 from traditional IRAs and employer retirement plans. Step-by-step divisor lookup, deadline, and shortfall excise tax.</div>
+  <div class="badges"><span class="badge">IRC 401(a)(9) - required distributions</span><span class="badge">Treas. Reg. 1.401(a)(9)-9 - tables</span><span class="badge">IRC 4974 - excise tax</span><span class="badge">Form 5329, Part IX</span></div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="wrap">
+<p class="verified">Last verified: October 29, 2026</p>
 
-<div class="container">
 <div class="card">
-<div class="ch"><h2>Account Information</h2></div>
-<div class="cb">
-<div class="fg2">
-<div class="f1">
-<label>Your Age (as of Dec 31, 2026)</label>
-<input type="number" id="age" class="fc" value="73" min="59" max="120" oninput="calculate()">
-</div>
-<div class="f1">
-<label>IRA Balance (Dec 31, 2025)</label>
-<input type="number" id="balance" class="fc" placeholder="0" min="0" oninput="calculate()">
-</div>
-</div>
-</div>
+  <div class="ch"><div class="sb">1</div><h2>Account Information</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label for="yr">Distribution Year</label>
+        <select class="fc" id="yr"><option value="2026" selected>2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option></select>
+        <div class="hint">The calendar year for which the RMD is computed.</div>
+      </div>
+      <div class="f1"><label for="by">Year of Birth</label>
+        <input type="number" class="fc" id="by" value="1953" min="1900" max="2010" step="1">
+        <div class="hint">Sets the applicable age: IRC 401(a)(9)(C)(v); Treas. Reg. 1.401(a)(9)-2(b)(2).</div>
+      </div>
+      <div class="f1"><label for="bal">Account Balance at December 31 of the Prior Year ($)</label>
+        <input type="number" class="fc" id="bal" value="500000" min="0" step="1">
+        <div class="hint">Fair market value on 12/31 of the year before the distribution year. Treas. Reg. 1.408-8(b)(2). For several IRAs, enter the total (the total RMD may be taken from any IRA).</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label for="atype">Account Type</label>
+        <select class="fc" id="atype"><option value="ira" selected>Traditional, SEP or SIMPLE IRA</option><option value="plan">401(k), 403(b) or governmental 457(b) plan</option></select>
+        <div class="hint">Roth IRAs have no lifetime RMD (IRC 408A(c)(4)).</div>
+      </div>
+      <div class="f1"><label for="taken">Already Distributed This Year ($, optional)</label>
+        <input type="number" class="fc" id="taken" value="0" min="0" step="1">
+        <div class="hint">Used to show the remaining amount and the shortfall excise tax.</div>
+      </div>
+      <div class="f1 hidden" id="workWrap"><label>Still Working</label>
+        <label class="chk"><input type="checkbox" id="working"> Still working for the plan sponsor and not a 5-percent owner</label>
+        <div class="hint">Employer plans only: IRC 401(a)(9)(C)(i)(II), (ii).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label>Spouse Beneficiary</label>
+        <label class="chk"><input type="checkbox" id="joint"> My spouse is my sole beneficiary and is more than 10 years younger</label>
+        <div class="hint">Uses the Joint and Last Survivor Table. Treas. Reg. 1.401(a)(9)-5(c)(2).</div>
+      </div>
+      <div class="f1 hidden" id="spWrap"><label for="spby">Spouse Year of Birth</label>
+        <input type="number" class="fc" id="spby" value="1968" min="1900" max="2030" step="1">
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>RMD Calculation</h2></div>
-<div class="cb">
-<div id="calc_result"></div>
+  <div class="ch"><div class="sb">2</div><h2>RMD Calculation</h2></div>
+  <div class="cb">
+    <div id="yrBadge" style="margin-bottom:12px"></div>
+    <div id="calc_result"></div>
+  </div>
 </div>
+
+<details class="assump"><summary>Assumptions &amp; sources</summary><div class="abody" id="assumpBody"></div></details>
+
+<div class="src">IRC 401(a)(9)(A), (C) (required distributions; required beginning date; applicable age 73 and 75, as amended by SECURE 2.0 Act sec. 107); IRC 408(a)(6), (b)(3) (IRAs); IRC 4974 (25% excise tax; 10% if corrected; waiver); Treas. Reg. 1.401(a)(9)-2(b)(2), -5(a)(3), -5(c), -9(c), -9(d); Treas. Reg. 1.408-8(b), (d), (e); Notice 2025-67 (QCD limit); Form 5329 (2025), Part IX lines 52a-55.</div>
+<div class="disc">Educational estimate only; not tax advice. Verify the result with your plan administrator or IRA custodian, who generally reports the RMD amount. See the <a href="/disclaimer.html">full disclaimer</a>.</div>
 </div>
-</div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="roth-conversion.html" class="rl">Roth Conversion Optimizer</a>
+  <a href="roth-conversion-calc.html" class="rl">Roth Conversion Tax Impact</a>
+  <a href="backdoor-roth.html" class="rl">Backdoor Roth + Pro-Rata</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
 
 <script>
-const life_expectancy = {
-  72: 27.4, 73: 26.5, 74: 25.5, 75: 24.6, 76: 23.7, 77: 22.9, 78: 22.0, 79: 21.1, 80: 20.2,
-  81: 19.4, 82: 18.5, 83: 17.7, 84: 16.8, 85: 16.0, 86: 15.2, 87: 14.4, 88: 13.7, 89: 12.9,
-  90: 12.2, 95: 9.6, 100: 7.3, 110: 2.0
-};
-
-function calculate() {
-  const age = parseInt(document.getElementById('age').value) || 73;
-  const balance = parseFloat(document.getElementById('balance').value) || 0;
-  
-  let factor = life_expectancy[age] || 27.4;
-  let rmd = (balance / factor).toFixed(0);
-  
-  let html = `
-    <div style="font-size:13px;line-height:1.8">
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-        <span>IRA Balance (12/31/2025)</span>
-        <strong>$${parseFloat(balance).toLocaleString()}</strong>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-        <span>Life Expectancy Factor (Age ${age})</span>
-        <strong>${factor}</strong>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--green);font-weight:700">
-        <span>RMD Calculation</span>
-        <strong style="font-family:var(--font-mono)">$${parseFloat(balance).toLocaleString()} ÷ ${factor}</strong>
-      </div>
-    </div>
-    <div class="result-box">
-      <h3>Your 2026 RMD</h3>
-      <div class="result-num">$${parseInt(rmd).toLocaleString()}</div>
-      <p style="font-size:12px;margin-top:8px">You must withdraw this amount by December 31, 2026 to avoid a 25% penalty.</p>
-    </div>
-  `;
-  
-  document.getElementById('calc_result').innerHTML = html;
+var YEARS=[2026,2027,2028,2029,2030];
+/* Uniform Lifetime Table - Treas. Reg. 1.401(a)(9)-9(c); Joint and Last Survivor Table - 1.401(a)(9)-9(d) (owner ages 72-120, spouse ages 0 to owner minus 11) */
+var RMD_TABLES={"ult":{"72":27.4,"73":26.5,"74":25.5,"75":24.6,"76":23.7,"77":22.9,"78":22.0,"79":21.1,"80":20.2,"81":19.4,"82":18.5,"83":17.7,"84":16.8,"85":16.0,"86":15.2,"87":14.4,"88":13.7,"89":12.9,"90":12.2,"91":11.5,"92":10.8,"93":10.1,"94":9.5,"95":8.9,"96":8.4,"97":7.8,"98":7.3,"99":6.8,"100":6.4,"101":6.0,"102":5.6,"103":5.2,"104":4.9,"105":4.6,"106":4.3,"107":4.1,"108":3.9,"109":3.7,"110":3.5,"111":3.4,"112":3.3,"113":3.1,"114":3.0,"115":2.9,"116":2.8,"117":2.7,"118":2.5,"119":2.3,"120":2.0},"jl":{"72":[84.7,83.8,82.8,81.8,80.9,79.9,78.9,77.9,76.9,75.9,74.9,73.9,73.0,72.0,71.0,70.0,69.0,68.1,67.1,66.1,65.1,64.2,63.2,62.2,61.3,60.3,59.3,58.4,57.4,56.5,55.5,54.5,53.6,52.6,51.7,50.8,49.8,48.9,47.9,47.0,46.0,45.1,44.2,43.2,42.3,41.4,40.5,39.6,38.7,37.8,36.9,36.0,35.2,34.3,33.5,32.7,31.9,31.1,30.3,29.5,28.8,28.1],"73":[84.6,83.8,82.8,81.8,80.8,79.9,78.9,77.9,76.9,75.9,74.9,73.9,73.0,72.0,71.0,70.0,69.0,68.1,67.1,66.1,65.1,64.2,63.2,62.2,61.2,60.3,59.3,58.4,57.4,56.4,55.5,54.5,53.6,52.6,51.7,50.7,49.8,48.8,47.9,46.9,46.0,45.1,44.1,43.2,42.3,41.4,40.4,39.5,38.6,37.7,36.8,36.0,35.1,34.2,33.4,32.6,31.7,30.9,30.1,29.4,28.6,27.9,27.2],"74":[84.6,83.8,82.8,81.8,80.8,79.9,78.9,77.9,76.9,75.9,74.9,73.9,73.0,72.0,71.0,70.0,69.0,68.0,67.1,66.1,65.1,64.1,63.2,62.2,61.2,60.3,59.3,58.3,57.4,56.4,55.5,54.5,53.6,52.6,51.7,50.7,49.8,48.8,47.9,46.9,46.0,45.0,44.1,43.2,42.2,41.3,40.4,39.5,38.6,37.7,36.8,35.9,35.0,34.1,33.3,32.4,31.6,30.8,30.0,29.2,28.4,27.7,27.0,26.2],"75":[84.6,83.8,82.8,81.8,80.8,79.9,78.9,77.9,76.9,75.9,74.9,73.9,72.9,72.0,71.0,70.0,69.0,68.0,67.1,66.1,65.1,64.1,63.2,62.2,61.2,60.3,59.3,58.3,57.4,56.4,55.5,54.5,53.5,52.6,51.6,50.7,49.7,48.8,47.8,46.9,45.9,45.0,44.1,43.1,42.2,41.3,40.3,39.4,38.5,37.6,36.7,35.8,34.9,34.1,33.2,32.4,31.5,30.7,29.9,29.1,28.3,27.5,26.8,26.1,25.3],"76":[84.6,83.8,82.8,81.8,80.8,79.9,78.9,77.9,76.9,75.9,74.9,73.9,72.9,72.0,71.0,70.0,69.0,68.0,67.1,66.1,65.1,64.1,63.2,62.2,61.2,60.2,59.3,58.3,57.4,56.4,55.4,54.5,53.5,52.6,51.6,50.7,49.7,48.8,47.8,46.9,45.9,45.0,44.0,43.1,42.2,41.2,40.3,39.4,38.5,37.5,36.6,35.7,34.9,34.0,33.1,32.3,31.4,30.6,29.8,29.0,28.2,27.4,26.6,25.9,25.2,24.4],"77":[84.6,83.8,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,72.0,71.0,70.0,69.0,68.0,67.0,66.1,65.1,64.1,63.1,62.2,61.2,60.2,59.3,58.3,57.3,56.4,55.4,54.5,53.5,52.6,51.6,50.7,49.7,48.8,47.8,46.9,45.9,45.0,44.0,43.1,42.1,41.2,40.3,39.3,38.4,37.5,36.6,35.7,34.8,33.9,33.0,32.2,31.3,30.5,29.7,28.8,28.0,27.3,26.5,25.7,25.0,24.3,23.5],"78":[84.6,83.8,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,71.9,71.0,70.0,69.0,68.0,67.0,66.1,65.1,64.1,63.1,62.2,61.2,60.2,59.3,58.3,57.3,56.4,55.4,54.5,53.5,52.6,51.6,50.6,49.7,48.7,47.8,46.8,45.9,44.9,44.0,43.0,42.1,41.2,40.2,39.3,38.4,37.5,36.5,35.6,34.7,33.9,33.0,32.1,31.2,30.4,29.6,28.7,27.9,27.1,26.4,25.6,24.8,24.1,23.4,22.7],"79":[84.6,83.8,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,71.9,71.0,70.0,69.0,68.0,67.0,66.1,65.1,64.1,63.1,62.2,61.2,60.2,59.3,58.3,57.3,56.4,55.4,54.5,53.5,52.5,51.6,50.6,49.7,48.7,47.8,46.8,45.9,44.9,44.0,43.0,42.1,41.1,40.2,39.3,38.3,37.4,36.5,35.6,34.7,33.8,32.9,32.0,31.2,30.3,29.5,28.7,27.8,27.0,26.2,25.5,24.7,23.9,23.2,22.5,21.8],"80":[84.6,83.8,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,71.9,71.0,70.0,69.0,68.0,67.0,66.1,65.1,64.1,63.1,62.1,61.2,60.2,59.2,58.3,57.3,56.4,55.4,54.4,53.5,52.5,51.6,50.6,49.7,48.7,47.8,46.8,45.9,44.9,43.9,43.0,42.1,41.1,40.2,39.2,38.3,37.4,36.5,35.5,34.6,33.7,32.9,32.0,31.1,30.3,29.4,28.6,27.8,26.9,26.1,25.3,24.6,23.8,23.1,22.3,21.6,20.9],"81":[84.6,83.8,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,71.9,71.0,70.0,69.0,68.0,67.0,66.0,65.1,64.1,63.1,62.1,61.2,60.2,59.2,58.3,57.3,56.4,55.4,54.4,53.5,52.5,51.6,50.6,49.7,48.7,47.7,46.8,45.8,44.9,43.9,43.0,42.0,41.1,40.1,39.2,38.3,37.3,36.4,35.5,34.6,33.7,32.8,31.9,31.1,30.2,29.3,28.5,27.7,26.9,26.0,25.2,24.5,23.7,22.9,22.2,21.5,20.7,20.0],"82":[84.6,83.8,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,70.0,69.0,68.0,67.0,66.0,65.1,64.1,63.1,62.1,61.2,60.2,59.2,58.3,57.3,56.3,55.4,54.4,53.5,52.5,51.6,50.6,49.7,48.7,47.7,46.8,45.8,44.9,43.9,43.0,42.0,41.1,40.1,39.2,38.3,37.3,36.4,35.5,34.6,33.7,32.8,31.9,31.0,30.1,29.3,28.4,27.6,26.8,26.0,25.2,24.4,23.6,22.8,22.1,21.3,20.6,19.9,19.2],"83":[84.6,83.7,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,70.0,69.0,68.0,67.0,66.0,65.1,64.1,63.1,62.1,61.2,60.2,59.2,58.3,57.3,56.3,55.4,54.4,53.5,52.5,51.6,50.6,49.6,48.7,47.7,46.8,45.8,44.9,43.9,43.0,42.0,41.1,40.1,39.2,38.2,37.3,36.4,35.4,34.5,33.6,32.7,31.8,31.0,30.1,29.2,28.4,27.5,26.7,25.9,25.1,24.3,23.5,22.7,22.0,21.2,20.5,19.7,19.0,18.3],"84":[84.6,83.7,82.8,81.8,80.8,79.8,78.9,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,70.0,69.0,68.0,67.0,66.0,65.1,64.1,63.1,62.1,61.2,60.2,59.2,58.3,57.3,56.3,55.4,54.4,53.5,52.5,51.5,50.6,49.6,48.7,47.7,46.8,45.8,44.9,43.9,42.9,42.0,41.0,40.1,39.2,38.2,37.3,36.3,35.4,34.5,33.6,32.7,31.8,30.9,30.0,29.2,28.3,27.5,26.7,25.8,25.0,24.2,23.4,22.6,21.9,21.1,20.4,19.6,18.9,18.2,17.5],"85":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,70.0,69.0,68.0,67.0,66.0,65.1,64.1,63.1,62.1,61.2,60.2,59.2,58.3,57.3,56.3,55.4,54.4,53.5,52.5,51.5,50.6,49.6,48.7,47.7,46.8,45.8,44.8,43.9,42.9,42.0,41.0,40.1,39.1,38.2,37.3,36.3,35.4,34.5,33.6,32.7,31.8,30.9,30.0,29.1,28.3,27.4,26.6,25.8,25.0,24.1,23.3,22.6,21.8,21.0,20.3,19.5,18.8,18.1,17.4,16.7],"86":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,70.0,69.0,68.0,67.0,66.0,65.1,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.4,54.4,53.5,52.5,51.5,50.6,49.6,48.7,47.7,46.7,45.8,44.8,43.9,42.9,42.0,41.0,40.1,39.1,38.2,37.2,36.3,35.4,34.5,33.5,32.6,31.7,30.9,30.0,29.1,28.2,27.4,26.6,25.7,24.9,24.1,23.3,22.5,21.7,20.9,20.2,19.4,18.7,17.9,17.2,16.5,15.9],"87":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,70.0,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.4,54.4,53.4,52.5,51.5,50.6,49.6,48.7,47.7,46.7,45.8,44.8,43.9,42.9,42.0,41.0,40.1,39.1,38.2,37.2,36.3,35.4,34.4,33.5,32.6,31.7,30.8,29.9,29.1,28.2,27.4,26.5,25.7,24.9,24.0,23.2,22.4,21.6,20.9,20.1,19.3,18.6,17.8,17.1,16.4,15.7,15.1],"88":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.4,54.4,53.4,52.5,51.5,50.6,49.6,48.7,47.7,46.7,45.8,44.8,43.9,42.9,42.0,41.0,40.0,39.1,38.2,37.2,36.3,35.3,34.4,33.5,32.6,31.7,30.8,29.9,29.0,28.2,27.3,26.5,25.6,24.8,24.0,23.2,22.4,21.6,20.8,20.0,19.2,18.5,17.7,17.0,16.3,15.6,14.9,14.3],"89":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.4,54.4,53.4,52.5,51.5,50.6,49.6,48.7,47.7,46.7,45.8,44.8,43.9,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.3,35.3,34.4,33.5,32.6,31.7,30.8,29.9,29.0,28.2,27.3,26.4,25.6,24.8,24.0,23.1,22.3,21.5,20.7,20.0,19.2,18.4,17.7,16.9,16.2,15.5,14.8,14.2,13.5],"90":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.4,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.9,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.3,35.3,34.4,33.5,32.6,31.7,30.8,29.9,29.0,28.1,27.3,26.4,25.6,24.7,23.9,23.1,22.3,21.5,20.7,19.9,19.1,18.4,17.6,16.9,16.1,15.4,14.7,14.1,13.4,12.8],"91":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.9,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.4,33.5,32.5,31.6,30.7,29.9,29.0,28.1,27.3,26.4,25.6,24.7,23.9,23.1,22.3,21.5,20.7,19.9,19.1,18.3,17.5,16.8,16.1,15.3,14.6,14.0,13.3,12.7,12.1],"92":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.4,33.5,32.5,31.6,30.7,29.8,29.0,28.1,27.2,26.4,25.5,24.7,23.9,23.0,22.2,21.4,20.6,19.8,19.0,18.3,17.5,16.7,16.0,15.3,14.6,13.9,13.2,12.6,11.9,11.4],"93":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.4,33.4,32.5,31.6,30.7,29.8,29.0,28.1,27.2,26.4,25.5,24.7,23.8,23.0,22.2,21.4,20.6,19.8,19.0,18.2,17.4,16.7,15.9,15.2,14.5,13.8,13.1,12.5,11.9,11.3,10.7],"94":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.4,33.4,32.5,31.6,30.7,29.8,28.9,28.1,27.2,26.3,25.5,24.7,23.8,23.0,22.2,21.4,20.6,19.8,19.0,18.2,17.4,16.6,15.9,15.2,14.4,13.7,13.1,12.4,11.8,11.2,10.6,10.0],"95":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.4,33.4,32.5,31.6,30.7,29.8,28.9,28.1,27.2,26.3,25.5,24.6,23.8,23.0,22.2,21.4,20.6,19.7,18.9,18.2,17.4,16.6,15.9,15.1,14.4,13.7,13.0,12.3,11.7,11.1,10.5,9.9,9.4],"96":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.2,26.3,25.5,24.6,23.8,23.0,22.2,21.3,20.5,19.7,18.9,18.1,17.4,16.6,15.8,15.1,14.3,13.6,12.9,12.3,11.6,11.0,10.4,9.9,9.3,8.8],"97":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.2,26.3,25.5,24.6,23.8,23.0,22.1,21.3,20.5,19.7,18.9,18.1,17.3,16.6,15.8,15.0,14.3,13.6,12.9,12.2,11.6,11.0,10.4,9.8,9.2,8.7,8.3],"98":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.2,26.3,25.5,24.6,23.8,22.9,22.1,21.3,20.5,19.7,18.9,18.1,17.3,16.5,15.8,15.0,14.3,13.6,12.9,12.2,11.5,10.9,10.3,9.7,9.2,8.7,8.2,7.7],"99":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.1,38.1,37.2,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.2,26.3,25.4,24.6,23.8,22.9,22.1,21.3,20.5,19.7,18.9,18.1,17.3,16.5,15.7,15.0,14.3,13.5,12.8,12.2,11.5,10.9,10.2,9.7,9.1,8.6,8.1,7.6,7.2],"100":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.8,22.9,22.1,21.3,20.5,19.7,18.9,18.1,17.3,16.5,15.7,15.0,14.2,13.5,12.8,12.1,11.5,10.8,10.2,9.6,9.1,8.5,8.0,7.6,7.2,6.8],"101":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.8,22.9,22.1,21.3,20.5,19.7,18.9,18.1,17.3,16.5,15.7,15.0,14.2,13.5,12.8,12.1,11.4,10.8,10.2,9.6,9.0,8.5,8.0,7.5,7.1,6.7,6.3],"102":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.6,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.5,19.7,18.8,18.0,17.3,16.5,15.7,14.9,14.2,13.5,12.8,12.1,11.4,10.8,10.1,9.6,9.0,8.5,8.0,7.5,7.0,6.6,6.3,5.9],"103":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.5,19.6,18.8,18.0,17.3,16.5,15.7,14.9,14.2,13.5,12.8,12.1,11.4,10.7,10.1,9.5,9.0,8.4,7.9,7.4,7.0,6.6,6.2,5.9,5.5],"104":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.8,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.5,19.6,18.8,18.0,17.2,16.5,15.7,14.9,14.2,13.5,12.7,12.0,11.4,10.7,10.1,9.5,8.9,8.4,7.9,7.4,7.0,6.6,6.2,5.8,5.5,5.2],"105":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.5,19.6,18.8,18.0,17.2,16.5,15.7,14.9,14.2,13.4,12.7,12.0,11.4,10.7,10.1,9.5,8.9,8.4,7.9,7.4,6.9,6.5,6.1,5.8,5.4,5.1,4.9],"106":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.5,19.6,18.8,18.0,17.2,16.5,15.7,14.9,14.2,13.4,12.7,12.0,11.4,10.7,10.1,9.5,8.9,8.4,7.9,7.4,6.9,6.5,6.1,5.8,5.4,5.1,4.8,4.6],"107":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.5,19.6,18.8,18.0,17.2,16.5,15.7,14.9,14.2,13.4,12.7,12.0,11.4,10.7,10.1,9.5,8.9,8.4,7.9,7.4,6.9,6.5,6.1,5.8,5.4,5.1,4.8,4.6,4.3],"108":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.5,19.6,18.8,18.0,17.2,16.5,15.7,14.9,14.2,13.4,12.7,12.0,11.4,10.7,10.1,9.5,8.9,8.4,7.8,7.4,6.9,6.5,6.1,5.7,5.4,5.1,4.8,4.5,4.3,4.1],"109":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.7,14.9,14.2,13.4,12.7,12.0,11.3,10.7,10.1,9.5,8.9,8.4,7.8,7.4,6.9,6.5,6.1,5.7,5.4,5.1,4.8,4.5,4.3,4.1,3.9],"110":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.7,14.9,14.2,13.4,12.7,12.0,11.3,10.7,10.1,9.5,8.9,8.3,7.8,7.4,6.9,6.5,6.1,5.7,5.4,5.1,4.8,4.5,4.3,4.1,3.9,3.7],"111":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.7,14.9,14.2,13.4,12.7,12.0,11.3,10.7,10.1,9.5,8.9,8.3,7.8,7.3,6.9,6.5,6.1,5.7,5.4,5.1,4.8,4.5,4.3,4.1,3.9,3.7,3.5],"112":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.7,14.9,14.2,13.4,12.7,12.0,11.3,10.7,10.1,9.5,8.9,8.3,7.8,7.3,6.9,6.5,6.1,5.7,5.4,5.1,4.8,4.5,4.3,4.0,3.8,3.7,3.5,3.4],"113":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.7,14.9,14.2,13.4,12.7,12.0,11.3,10.7,10.0,9.4,8.9,8.3,7.8,7.3,6.9,6.4,6.1,5.7,5.3,5.0,4.7,4.5,4.2,4.0,3.8,3.6,3.5,3.4,3.2],"114":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.7,14.9,14.1,13.4,12.7,12.0,11.3,10.7,10.0,9.4,8.9,8.3,7.8,7.3,6.9,6.4,6.0,5.7,5.3,5.0,4.7,4.4,4.2,4.0,3.8,3.6,3.5,3.3,3.2,3.1],"115":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.7,14.9,14.1,13.4,12.7,12.0,11.3,10.7,10.0,9.4,8.8,8.3,7.8,7.3,6.8,6.4,6.0,5.6,5.3,5.0,4.7,4.4,4.2,4.0,3.8,3.6,3.4,3.3,3.2,3.1,3.0],"116":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.3,20.4,19.6,18.8,18.0,17.2,16.4,15.6,14.9,14.1,13.4,12.7,12.0,11.3,10.6,10.0,9.4,8.8,8.3,7.7,7.3,6.8,6.4,6.0,5.6,5.2,4.9,4.6,4.4,4.1,3.9,3.7,3.5,3.3,3.2,3.1,3.0,2.9,2.8],"117":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.6,23.7,22.9,22.1,21.2,20.4,19.6,18.8,18.0,17.2,16.4,15.6,14.9,14.1,13.4,12.7,12.0,11.3,10.6,10.0,9.4,8.8,8.2,7.7,7.2,6.8,6.3,5.9,5.5,5.2,4.9,4.6,4.3,4.0,3.8,3.6,3.4,3.3,3.1,3.0,2.9,2.8,2.7,2.7],"118":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.3,25.4,24.5,23.7,22.9,22.1,21.2,20.4,19.6,18.8,18.0,17.2,16.4,15.6,14.9,14.1,13.4,12.6,11.9,11.3,10.6,10.0,9.3,8.8,8.2,7.7,7.2,6.7,6.3,5.8,5.5,5.1,4.8,4.5,4.2,3.9,3.7,3.5,3.3,3.1,3.0,2.8,2.7,2.6,2.6,2.5,2.5],"119":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.7,29.8,28.9,28.0,27.1,26.2,25.4,24.5,23.7,22.9,22.1,21.2,20.4,19.6,18.8,18.0,17.2,16.4,15.6,14.8,14.1,13.4,12.6,11.9,11.2,10.6,9.9,9.3,8.7,8.2,7.6,7.1,6.6,6.2,5.8,5.4,5.0,4.7,4.4,4.1,3.8,3.6,3.3,3.1,2.9,2.8,2.6,2.5,2.4,2.4,2.3,2.3,2.3],"120":[84.6,83.7,82.8,81.8,80.8,79.8,78.8,77.9,76.9,75.9,74.9,73.9,72.9,71.9,70.9,69.9,69.0,68.0,67.0,66.0,65.0,64.1,63.1,62.1,61.1,60.2,59.2,58.2,57.3,56.3,55.3,54.4,53.4,52.5,51.5,50.5,49.6,48.6,47.7,46.7,45.7,44.8,43.8,42.9,41.9,41.0,40.0,39.0,38.1,37.1,36.2,35.3,34.3,33.4,32.5,31.6,30.6,29.8,28.9,28.0,27.1,26.2,25.4,24.5,23.7,22.9,22.0,21.2,20.4,19.6,18.8,18.0,17.2,16.4,15.6,14.8,14.1,13.3,12.6,11.9,11.2,10.5,9.9,9.3,8.7,8.1,7.6,7.1,6.6,6.1,5.7,5.3,4.9,4.6,4.3,4.0,3.7,3.4,3.2,3.0,2.8,2.6,2.5,2.3,2.2,2.1,2.1,2.1,2.0,2.0]}};
+function fmt(n){var a=Math.abs(Math.round(n));return (n<0&&a>0?'-':'')+'$'+a.toLocaleString('en-US');}
+function fmt2(n){return (n<0?'-':'')+'$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function num(v,lo,hi,d){var x=parseFloat(v);if(!isFinite(x))x=d==null?0:d;if(lo!=null&&x<lo)x=lo;if(hi!=null&&x>hi)x=hi;return x;}
+function $(id){return document.getElementById(id);}
+function ult(age){var a=Math.min(120,Math.max(72,age));return RMD_TABLES.ult[a];}
+function jlt(age,sp){var a=Math.min(120,Math.max(72,age));var row=RMD_TABLES.jl[a];var s=Math.max(0,Math.min(sp,row.length-1));return row[s];}
+/* Applicable age by birth year: Treas. Reg. 1.401(a)(9)-2(b)(2); IRC 401(a)(9)(C)(v). Born 1959 is [Reserved] in the final regulation. */
+function applicableAge(by){
+  if(by<=1950)return {age:72,note:'born before 1951 (age 72 or earlier rule applied)',unresolved:false};
+  if(by<=1958)return {age:73,note:'born 1951 through 1958',unresolved:false};
+  if(by===1959)return {age:73,note:'born 1959 - unresolved',unresolved:true};
+  return {age:75,note:'born 1960 or later',unresolved:false};
 }
+function calcRmd(o){
+  var out={};
+  var ap=applicableAge(o.by);
+  out.ap=ap;
+  out.age=o.year-o.by;
+  out.firstYear=o.by+ap.age;
+  out.rbd='April 1, '+(out.firstYear+1);
+  out.statusDue=false;
+  if(o.delayed){out.reason='delayed';return out;}
+  if(out.age<ap.age){out.reason='notyet';return out;}
+  out.statusDue=true;
+  var useJoint=o.joint&&o.spBy>0&&(o.spBy-o.by)>=11;
+  out.useJoint=useJoint;
+  if(useJoint){out.spAge=o.year-o.spBy;out.div=jlt(out.age,out.spAge);}
+  else{out.div=ult(out.age);}
+  out.rmd=Math.round(o.bal/out.div*100)/100;
+  out.isFirst=(o.year===out.firstYear);
+  out.remaining=Math.max(0,Math.round((out.rmd-o.taken)*100)/100);
+  out.pen25=Math.round(out.remaining*0.25*100)/100;
+  out.pen10=Math.round(out.remaining*0.10*100)/100;
+  return out;
+}
+function render(){
+  var year=parseInt($('yr').value)||2026;
+  if(YEARS.indexOf(year)<0)year=2026;
+  var warn=[];
+  var rawBy=parseFloat($('by').value);
+  if(!isFinite(rawBy)||rawBy<1900||rawBy>2010){warn.push('Year of birth must be a four-digit year between 1900 and 2010. Enter a valid year to see a result.');$('calc_result').innerHTML='<div class="flag amber"><div class="fi">!</div><div class="ft">'+warn.join(' ')+'</div></div>';return;}
+  var by=Math.round(rawBy);
+  var rawBal=parseFloat($('bal').value);
+  if(!isFinite(rawBal)||rawBal<0){warn.push('Enter the account balance as a non-negative dollar amount; a blank or negative balance is treated as $0.');}
+  var bal=num($('bal').value,0,null,0);
+  var taken=num($('taken').value,0,null,0);
+  var type=$('atype').value;
+  var joint=$('joint').checked;
+  var spBy=Math.round(num($('spby').value,1900,2030,0));
+  var working=$('working').checked&&type==='plan';
+  $('spWrap').className=joint?'f1':'f1 hidden';
+  $('workWrap').className=(type==='plan')?'f1':'f1 hidden';
+  var r=calcRmd({year:year,by:by,bal:bal,taken:taken,joint:joint,spBy:spBy,delayed:working});
+  var h='';
+  if(warn.length){h+='<div class="flag amber"><div class="fi">!</div><div class="ft">'+warn.join(' ')+'</div></div>';}
+  var priorYear=year-1;
+  h+='<div class="stepbox"><h3>Step 1 - Applicable age and first distribution year</h3><p>Birth year '+by+' ('+r.ap.note+'): applicable age <strong>'+r.ap.age+'</strong> under IRC 401(a)(9)(C)(v) and Treas. Reg. 1.401(a)(9)-2(b)(2). First distribution calendar year: '+r.firstYear+'. Required beginning date: '+r.rbd+'.</p>';
+  if(r.ap.unresolved){h+='<p><strong>Born 1959:</strong> the final regulation reserves this birth year, and the statute can be read to give age 73 or age 75. You first reach age 73 in 2032, outside the 2026-2030 range, so no RMD arises in these years either way. Confirm with current Treasury guidance before 2032.</p>';}
+  h+='</div>';
+  h+='<div class="stepbox"><h3>Step 2 - Age attained in '+year+'</h3><p>'+year+' - '+by+' = <strong data-k="age">'+r.age+'</strong> (age on your birthday in the distribution calendar year, Treas. Reg. 1.401(a)(9)-5(c)(1)).</p></div>';
+  if(r.reason==='delayed'){
+    h+='<div class="result-box"><h3>Your '+year+' RMD</h3><div class="result-num" data-k="rmd">$0.00</div><p style="font-size:12px;margin-top:8px">Employer plan, still working for the sponsor and not a 5-percent owner: the required beginning date is April 1 following the year of retirement under IRC 401(a)(9)(C)(i)(II). This exception does not apply to IRAs (IRC 401(a)(9)(C)(ii)(II)) or to 5-percent owners (IRC 401(a)(9)(C)(ii)(I)).</p></div>';
+  } else if(r.reason==='notyet'){
+    h+='<div class="result-box"><h3>Your '+year+' RMD</h3><div class="result-num" data-k="rmd">$0.00</div><p style="font-size:12px;margin-top:8px">No RMD is due for '+year+'. You attain age '+r.ap.age+' in '+r.firstYear+', your first distribution calendar year.</p></div>';
+  } else {
+    h+='<div class="stepbox"><h3>Step 3 - Divisor</h3>';
+    if(r.useJoint){h+='<p>Sole beneficiary is a spouse more than 10 years younger (born '+spBy+', age '+r.spAge+' in '+year+'): Joint and Last Survivor Table, Treas. Reg. 1.401(a)(9)-9(d), owner age '+r.age+' and spouse age '+r.spAge+' = <strong data-k="div">'+r.div.toFixed(1)+'</strong>. The spouse must be sole beneficiary of the entire interest all year (Treas. Reg. 1.401(a)(9)-5(c)(2)).</p>';}
+    else{
+      h+='<p>Uniform Lifetime Table, Treas. Reg. 1.401(a)(9)-9(c), age '+r.age+' = <strong data-k="div">'+r.div.toFixed(1)+'</strong>.</p>';
+      if(joint){h+='<p>The spouse is not shown to be more than 10 years younger by birth year (a birth-year gap of at least 11 is required here; a gap of exactly 10 depends on the actual birth dates), so the Uniform Lifetime Table is used (Treas. Reg. 1.401(a)(9)-9(c)). If the spouse is in fact more than 10 years younger by date of birth, the Joint and Last Survivor Table gives a larger divisor and a smaller RMD.</p>';}
+    }
+    h+='</div>';
+    h+='<div class="stepbox"><h3>Step 4 - Compute</h3><p class="mono">Balance at 12/31/'+priorYear+': '+fmt2(bal)+'<br>RMD = '+fmt2(bal)+' / '+r.div.toFixed(1)+' = <strong>'+fmt2(r.rmd)+'</strong></p><p>The balance is the account value as of December 31 of the prior year (Treas. Reg. 1.408-8(b)(2)). Adjust for any outstanding rollover and other items per Treas. Reg. 1.408-8(d) and 1.401(a)(9)-5 where they apply; this tool does not.</p></div>';
+    h+='<div class="result-box"><h3>Your '+year+' RMD</h3><div class="result-num" data-k="rmd">'+fmt2(r.rmd)+'</div>';
+    h+='<p style="font-size:12px;margin-top:8px">Deadline: December 31, '+year+'.';
+    if(r.isFirst){h+=' This is your first distribution calendar year, so you may take it as late as April 1, '+(year+1)+' (Treas. Reg. 1.401(a)(9)-5(a)(3)). Delaying means your '+(year+1)+' RMD is also due by December 31, '+(year+1)+', and both amounts are income in '+(year+1)+'.';}
+    h+='</p></div>';
+    if(taken>0){h+='<div class="stepbox"><h3>Already distributed in '+year+'</h3><p>Distributed: '+fmt2(taken)+'. Remaining to withdraw: <strong data-k="remaining">'+fmt2(r.remaining)+'</strong>.</p></div>';}
+    h+='<div class="stepbox"><h3>If the full RMD is not taken by the deadline</h3><p>Excise tax = 25% of the shortfall under IRC 4974(a): 25% x '+fmt2(r.remaining)+' = <strong data-k="pen25">'+fmt2(r.pen25)+'</strong>. The rate drops to 10% (= <strong data-k="pen10">'+fmt2(r.pen10)+'</strong>) if you withdraw the shortfall and file a return reflecting the tax within the correction window (IRC 4974(e)). Reasonable-cause waiver: IRC 4974(d). Report on Form 5329, Part IX, lines 52a through 55.</p></div>';
+  }
+  var notes='<ul>';
+  notes+='<li><strong>Multiple IRAs:</strong> compute the RMD separately for each IRA; the total may be taken from any one or more IRAs (Treas. Reg. 1.408-8(e)(1)). IRA RMDs cannot be satisfied from a 403(b) or a Roth IRA, and the reverse (Treas. Reg. 1.408-8(e)(3)).</li>';
+  notes+='<li><strong>Not rollover-eligible:</strong> the RMD portion of a distribution cannot be rolled over or converted to a Roth IRA (IRC 408(d)(3)(E); Treas. Reg. 1.408-8(b)(3)).</li>';
+  notes+='<li><strong>Roth IRAs:</strong> no RMD during the owner\'s lifetime (IRC 408A(c)(4); Treas. Reg. 1.408-8(b)(1)(ii)).</li>';
+  notes+='<li><strong>Qualified charitable distributions</strong> from an IRA can satisfy the RMD (IRC 408(d)(8)). The annual limit is $111,000 for 2026 (Notice 2025-67) and is inflation-indexed; later-year limits are not published.</li>';
+  notes+='<li><strong>Inherited accounts</strong> follow different rules (10-year rule and eligible designated beneficiaries, IRC 401(a)(9)(B)); this tool covers lifetime RMDs of the owner only.</li>';
+  notes+='</ul>';
+  h+='<div class="stepbox"><h3>Notes</h3>'+notes+'</div>';
+  $('calc_result').innerHTML=h;
+  $('yrBadge').innerHTML=(year>2026)?'<span class="badge-pub">Assumes current law and the current Uniform Lifetime Table remain in effect - no inflation-indexed amounts are used</span>':'<span class="badge-pub">Current law</span>';
+  var rows=[
+   ['Applicable age','73 for birth years 1951-1958; 75 for 1960 and later; 1959 reserved','<span class="tg stat">Statutory</span>','IRC 401(a)(9)(C)(v); Treas. Reg. 1.401(a)(9)-2(b)(2)'],
+   ['Divisor table','Uniform Lifetime Table (age '+(r.age||'-')+(r.div?': '+r.div.toFixed(1):'')+')','<span class="tg pub">IRS-published</span>','Treas. Reg. 1.401(a)(9)-9(c), (f)(1) (applies to distribution calendar years beginning on or after January 1, 2022)'],
+   ['Joint and Last Survivor Table','Used only if the sole beneficiary spouse is more than 10 years younger','<span class="tg pub">IRS-published</span>','Treas. Reg. 1.401(a)(9)-5(c)(2); 1.401(a)(9)-9(d)'],
+   ['Account balance date','December 31, '+priorYear,'<span class="tg stat">Statutory</span>','Treas. Reg. 1.408-8(b)(2) (IRAs)'],
+   ['Excise tax on shortfall','25%; 10% if timely corrected','<span class="tg stat">Statutory</span>','IRC 4974(a), (e)'],
+   ['First-year deadline','April 1 of the following year','<span class="tg stat">Statutory</span>','IRC 401(a)(9)(C)(i); Treas. Reg. 1.401(a)(9)-5(a)(3)'],
+   ['QCD annual limit (2026)','$111,000','<span class="tg pub">IRS-published</span>','Notice 2025-67; IRC 408(d)(8)']
+  ];
+  var t='<table class="atbl"><tr><th>Parameter</th><th>Value for '+year+'</th><th>Status</th><th>Citation</th></tr>';
+  rows.forEach(function(x){t+='<tr><td>'+x[0]+'</td><td>'+x[1]+'</td><td>'+x[2]+'</td><td>'+x[3]+'</td></tr>';});
+  t+='</table><p class="notice" style="margin-top:10px">Nothing in this calculation is inflation-indexed, so no projection is used for 2027-2030. Treasury can revise the tables by regulation; the tool assumes they stay as published.</p>';
+  $('assumpBody').innerHTML=t;
+}
+function init(){
+  var y=$('yr');
+  ['yr','by','bal','taken','atype','joint','spby','working'].forEach(function(id){
+    var el=$(id);
+    if(el){el.addEventListener('input',render);el.addEventListener('change',render);}
+  });
+  render();
+}
+init();
 
-calculate();
 </script>
 
-<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
-<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
-<div style="max-width:800px;margin:0 auto">
-<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7">Educational estimate only. <a href="/disclaimer.html">Full disclaimer</a></div>
-</div>
-</div>
-</div>
+
+
+<script>
+function doPrint(){window.print();}
+function doShare(){var url=location.href;var title=document.title.replace(" | CPA Validated","");if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
+function showShareModal(url,title){if(document.getElementById("sv-ol"))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[["Facebook","#1877F2","https://www.facebook.com/sharer/sharer.php?u="+enc],["Telegram","#29A8E0","https://t.me/share/url?url="+enc+"&text="+et],["X / Twitter","#e0e0e0","https://twitter.com/intent/tweet?url="+enc+"&text="+et],["LinkedIn","#0A66C2","https://www.linkedin.com/sharing/share-offsite/?url="+enc],["WhatsApp","#25D366","https://wa.me/?text="+et+"%0A"+enc]];var ol=document.createElement("div");ol.id="sv-ol";ol.style.cssText="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center";var h="<div style=\"background:#111111;width:100%;max-width:520px\">"+"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A\">"+"<span style=\"font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff\">Share</span>"+"<button id=\"sv-x\" style=\"background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px\">&times;</button></div>"+"<div style=\"padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px\">";links.forEach(function(l){h+="<a href="+JSON.stringify(l[2])+" target=\"_blank\" rel=\"noopener\" style=\"display:block;padding:12px 14px;border-left:3px solid "+l[1]+";background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600\">"+l[0]+"</a>";});h+="<button id=\"sv-cp\" style=\"padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left\">Copy Link</button></div></div>";ol.innerHTML=h;document.body.appendChild(ol);document.getElementById("sv-x").onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById("sv-cp").onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);});}catch(e2){var ta=document.createElement("textarea");ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);}};}
+</script>
+
+
 
 
 <!-- START UNIFIED FOOTER -->

@@ -1,171 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Roth Conversion Tax Impact Calculator | CPA Validated</title>
-<meta name="description" content="Calculate the tax impact of converting traditional IRA funds to Roth. Model conversion amount against marginal tax rate.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Roth Conversion Tax Impact Calculator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Calculate the federal and state tax cost of converting traditional IRA funds to Roth for tax years 2026-2030, with bracket-by-bracket math and the Form 8606 pro-rata rule. IRC 408A. Verified October 29, 2026.">
+<link rel="canonical" href="https://cpavalidated.com/roth-conversion-calc.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:var(--paper);color:var(--ink)}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
-.phi{max-width:900px;margin:0 auto;padding:0 24px}
-.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
-.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
-.container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px}
-.ch{background:var(--ink);padding:13px 20px;color:#fff}
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
 .cb{padding:20px}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
-.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase}
-.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-size:13px}
-.fc:focus{border-color:var(--coral);outline:none}
-.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
-.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green);margin:10px 0}
-.calc-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--ink-10);font-size:13px}
-.calc-row:last-child{border-bottom:none}
-.calc-label{color:var(--ink-80)}
-.calc-value{font-family:var(--font-mono);font-weight:600;color:var(--ink)}
-.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
-@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.hero3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.1);margin-bottom:14px}
+.h3{background:var(--ink);padding:16px;text-align:center}
+.h3l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.h3v{font-family:var(--font-display);font-size:24px;font-weight:500;color:#fff}
+.h3v.coral{color:var(--coral)}.h3v.green{color:#6de88e}.h3v.amber{color:#f5c264}
+.h3s{font-size:10px;color:rgba(255,255,255,.2);margin-top:3px}
+.bracket-bar{margin-bottom:16px}
+.bb-row{display:flex;align-items:center;gap:10px;margin-bottom:6px;font-size:12px}
+.bb-label{width:120px;font-weight:600;flex-shrink:0}
+.bb-track{flex:1;height:20px;background:var(--ink-10);position:relative;overflow:hidden}
+.bb-fill{height:100%;transition:width .3s;display:flex;align-items:center;padding-left:6px;font-size:10px;font-weight:700;color:#fff}
+.bb-amount{width:90px;text-align:right;font-family:var(--font-mono);flex-shrink:0}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.hero3{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/roth-conversion-calc.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Roth Conversion Tax Impact Calculator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Calculate the federal and state tax cost of converting traditional IRA funds to Roth for tax years 2026-2030, with bracket-by-bracket math and the Form 8606 pro-rata rule. IRC 408A. Verified October 29, 2026.">
+  <meta property="og:url" content="https://cpavalidated.com/roth-conversion-calc.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Roth Conversion Tax Impact Calculator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Calculate the federal and state tax cost of converting traditional IRA funds to Roth for tax years 2026-2030, with bracket-by-bracket math and the Form 8606 pro-rata rule. IRC 408A. Verified October 29, 2026.">
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "Article", "headline": "Roth Conversion Tax Impact Calculator 2026-2030 | CPA Validated", "description": "Calculate the federal and state tax cost of converting traditional IRA funds to Roth for tax years 2026-2030, with bracket-by-bracket math and the Form 8606 pro-rata rule. IRC 408A. Verified October 29, 2026.", "url": "https://cpavalidated.com/roth-conversion-calc.html", "dateModified": "2026-10-29", "author": {"@type": "Person", "name": "tk.cpa", "jobTitle": "CPA, Enrolled Agent", "url": "https://tk.cpa"}, "publisher": {"@type": "Organization", "name": "CPA Validated", "url": "https://cpavalidated.com"}, "isAccessibleForFree": true, "inLanguage": "en-US"}
+  </script>
+<style id="calc-extra">
+.badge-proj{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 9px;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b)}
+.badge-pub{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 9px;background:var(--green-bg);color:var(--green);border:1px solid var(--green-b)}
+.verified{font-size:12px;color:var(--ink-60);margin:0 0 14px}
+.assump{border:1px solid var(--ink-20);background:var(--white);margin-bottom:18px}
+.assump summary{cursor:pointer;padding:12px 20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;background:var(--ink-10);color:var(--ink)}
+.assump .abody{padding:14px 20px 18px;overflow-x:auto}
+.atbl{width:100%;border-collapse:collapse;font-size:12px;min-width:560px}
+.atbl th,.atbl td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--ink-10);vertical-align:top;line-height:1.5}
+.atbl th{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)}
+.tg{font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.tg.stat{color:var(--blue-acc)}.tg.pub{color:var(--green)}.tg.proj{color:var(--amber)}
+.stepbox{border:1px solid var(--ink-20);background:var(--paper);padding:14px 16px;margin-bottom:12px}
+.stepbox h3{font-family:var(--font-display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;color:var(--ink)}
+.stepbox p,.stepbox li{font-size:12.5px;line-height:1.6;color:var(--ink)}
+.stepbox ul{margin-left:18px}
+.mono{font-family:var(--font-mono)}
+.tblwrap{overflow-x:auto;margin-bottom:14px}
+.dtbl{width:100%;border-collapse:collapse;font-size:12.5px;min-width:420px}
+.dtbl th,.dtbl td{padding:7px 10px;border-bottom:1px solid var(--ink-10);text-align:right}
+.dtbl th:first-child,.dtbl td:first-child{text-align:left}
+.dtbl th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60)}
+.chk{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.5}
+.chk input{margin-top:3px}
+.hidden{display:none}
+.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin:14px 0}
+.result-box h3{font-family:var(--font-display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green);margin:8px 0;word-break:break-word}
+.notice{font-size:12px;color:var(--ink-60);line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:12px}
+.fg3 .f1 .fc,.fg2 .f1 .fc{min-width:0}
+@media(max-width:640px){.atbl{min-width:480px}}
+</style>
 </head>
 <body>
-
-<div class="ph">
-<div class="phi">
-<h1>Roth Conversion Tax Impact Calculator</h1>
-<p class="sub">Estimate the federal tax cost of converting traditional IRA funds to Roth. Model conversion scenarios against your marginal tax rate.</p>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
 </div>
+<div class="ph"><div class="phi">
+  <h1>Roth Conversion Tax Impact Calculator 2026-2030</h1>
+  <div class="sub">Estimate the federal and state tax cost of converting traditional IRA funds to Roth for 2026 through 2030, using actual brackets and the pro-rata rule.</div>
+  <div class="badges"><span class="badge">IRC 408A(d)(3) - conversion income</span><span class="badge">IRC 408(d)(2) - pro-rata</span><span class="badge">Form 8606</span></div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="wrap">
+<p class="verified">Last verified: October 29, 2026</p>
+<div class="card"><div class="ch"><div class="sb">1</div><h2>Conversion Scenario</h2></div><div class="cb">
+<div class="fg3">
+<div class="f1"><label for="yr">Tax Year</label><select class="fc" id="yr"><option value="2026" selected>2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option></select><div class="hint">2026 is IRS-published; 2027-2030 are projected.</div></div>
+<div class="f1"><label for="fs">Filing Status</label><select class="fc" id="fs"><option value="single" selected>Single</option><option value="mfj">Married Filing Jointly</option><option value="hoh">Head of Household</option><option value="mfs">Married Filing Separately</option></select></div>
+<div class="f1"><label for="infl">Assumed Annual Inflation (%)</label><input type="number" class="fc" id="infl" value="2.5" min="0" max="15" step="0.1"><div class="hint">Used only for 2027-2030 projections.</div></div>
 </div>
-
-<div class="container">
-
-<div class="card">
-<div class="ch"><h2>Conversion Scenario</h2></div>
-<div class="cb">
+<div id="yrBadge" style="margin-bottom:14px"></div>
+<div class="fg3">
+<div class="f1"><label for="agi">AGI Before Conversion ($)</label><input type="number" class="fc" id="agi" value="100000" min="0" step="1"><div class="hint">Form 1040 line 11 without the conversion.</div></div>
+<div class="f1"><label for="ded">Deduction Override ($, optional)</label><input type="number" class="fc" id="ded" value="" min="0" step="1" placeholder="Standard deduction"><div class="hint">Blank uses the standard deduction.</div></div>
+<div class="f1"><label for="n65">Taxpayers Age 65 or Older</label><select class="fc" id="n65"><option value="0" selected>0</option><option value="1">1</option><option value="2">2 (joint)</option></select><div class="hint">IRC 63(f); IRC 151(d)(5)(C).</div></div>
+</div>
+<div class="fg3">
+<div class="f1"><label for="conv_amt">Conversion Amount ($)</label><input type="number" class="fc" id="conv_amt" value="50000" min="0" step="1"><div class="hint">IRC 408A(d)(3).</div></div>
+<div class="f1"><label for="pretax_bal">Total Traditional, SEP and SIMPLE IRA Balance ($)</label><input type="number" class="fc" id="pretax_bal" value="200000" min="0" step="1"><div class="hint">All IRAs before the conversion (IRC 408(d)(2)).</div></div>
+<div class="f1"><label for="basis">After-Tax Basis ($)</label><input type="number" class="fc" id="basis" value="0" min="0" step="1"><div class="hint">Form 8606 nondeductible basis.</div></div>
+</div>
 <div class="fg2">
-<div class="f1">
-<label>Conversion Amount</label>
-<input type="number" id="conv_amt" class="fc" placeholder="0" min="0" oninput="calculate()">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Amount of traditional IRA being converted</div>
-</div>
-<div class="f1">
-<label>Your Federal Tax Bracket (%)</label>
-<input type="number" id="fed_rate" class="fc" value="24" min="10" max="37" step="1" oninput="calculate()">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Marginal federal tax rate for 2026</div>
-</div>
-</div>
-<div class="fg2">
-<div class="f1">
-<label>State Income Tax Rate (%)</label>
-<input type="number" id="state_rate" class="fc" value="0" min="0" max="13" step="0.1" oninput="calculate()">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Optional: add state tax impact</div>
-</div>
-<div class="f1">
-<label>Pre-Tax IRA Balance</label>
-<input type="number" id="pretax_bal" class="fc" placeholder="0" min="0" oninput="calculate()">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">For pro-rata rule calculation</div>
-</div>
-</div>
-</div>
+<div class="f1"><label for="state_rate">State Income Tax Rate (%)</label><input type="number" class="fc" id="state_rate" value="0" min="0" max="20" step="0.1"><div class="hint">Flat rate on the taxable part.</div></div>
+<div class="f1"><label for="age">Age at End of Year</label><input type="number" class="fc" id="age" value="55" min="18" max="110" step="1"></div>
+</div></div></div>
+<div class="card"><div class="ch"><div class="sb">2</div><h2>Tax Impact Analysis</h2></div><div class="cb"><div id="results"></div></div></div>
+<details class="assump"><summary>Assumptions &amp; sources</summary><div class="abody" id="assumpBody"></div></details>
+<div class="notice"><strong>Projected figures are estimates.</strong> Where a tax year shows the "Projected - estimate, not IRS-published" badge, inflation-indexed amounts are projected from the latest IRS-published figures using the inflation rate you select and the rounding rule stated in the statute. They are not IRS-published and will differ from the final revenue procedure. Educational estimate only; verify against current primary authority before relying on any figure.</div>
+<div class="src">IRC 408A(d)(3); IRC 408(d)(2); IRC 1(j)(2); IRC 63(c), (f); IRC 151(d)(5)(C); Rev. Proc. 2025-32 sec. 4.01 and 4.14; Form 8606 (2025) lines 5-18.</div>
+<div class="disc">Educational estimate only; not tax advice. See the <a href="/disclaimer.html">full disclaimer</a>.</div>
 </div>
 
-<div class="card">
-<div class="ch"><h2>Tax Impact Analysis</h2></div>
-<div class="cb">
-<div id="results"></div>
-</div>
-</div>
-
-</div>
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="roth-conversion.html" class="rl">Roth Conversion Optimizer</a>
+  <a href="backdoor-roth.html" class="rl">Backdoor Roth + Pro-Rata</a>
+  <a href="rmd-calculator.html" class="rl">RMD Calculator</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
 
 <script>
-function calculate() {
-  const conv_amt = parseFloat(document.getElementById('conv_amt').value) || 0;
-  const fed_rate = parseFloat(document.getElementById('fed_rate').value) / 100;
-  const state_rate = parseFloat(document.getElementById('state_rate').value) / 100;
-  const pretax_bal = parseFloat(document.getElementById('pretax_bal').value) || 0;
-  
-  if (conv_amt < 1) {
-    document.getElementById('results').innerHTML = '';
-    return;
+/* ===== CPA Validated retirement engine (shared by Roth tools) ===== */
+var BASE_YEAR=2026;
+var YEARS=[2026,2027,2028,2029,2030];
+var RATES=[0.10,0.12,0.22,0.24,0.32,0.35,0.37];
+/* 2026 ordinary-rate bracket tops - Rev. Proc. 2025-32, sec. 4.01, Tables 1-4 (IRC 1(j)(2)) */
+var BR2026={
+  single:[12400,50400,105700,201775,256225,640600],
+  mfj:[24800,100800,211400,403550,512450,768700],
+  hoh:[17700,67450,105700,201750,256200,640600],
+  mfs:[12400,50400,105700,201775,256225,384350]
+};
+/* 2026 standard deduction - Rev. Proc. 2025-32, sec. 4.14(1); 63(f) add-on sec. 4.14(3) */
+var STD2026={single:16100,mfj:32200,hoh:24150,mfs:16100};
+var ADD65_2026={married:1650,unmarried:2050};
+/* Rounding unit for projected bracket tops: IRC 1(f)(7)(A) $50; 1(f)(7)(B) and 1(j)(3)(B)(ii) $25 for single and MFS */
+var BR_UNIT={single:25,mfj:50,hoh:50,mfs:25};
+var FS_LABEL={single:'Single',mfj:'Married Filing Jointly',hoh:'Head of Household',mfs:'Married Filing Separately'};
+
+/* IRMAA - premium-year 2026 published (CMS fact sheet, Nov. 14, 2025). Statute: 42 U.S.C. 1395r(i); Part D: 42 U.S.C. 1395w-113(a)(7) */
+var IRMAA_LOW_SINGLE_2026=[109000,137000,171000,205000];
+var IRMAA_TOP_SINGLE_2026=500000;
+var IRMAA_B_2026=[81.20,202.90,324.60,446.30,487.00];
+var IRMAA_D_2026=[14.50,37.50,60.40,83.30,91.00];
+var IRMAA_PCT=[0.35,0.50,0.65,0.80,0.85];
+var PARTB_STD_2026=202.90;
+
+function fmt(n){var a=Math.abs(Math.round(n));return (n<0&&a>0?'-':'')+'$'+a.toLocaleString('en-US');}
+function fmt2(n){var a=Math.abs(n);return (n<0?'-':'')+'$'+a.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function pct(n,d){return (n*100).toFixed(d==null?1:d)+'%';}
+function num(v,lo,hi,dflt){
+  var x=parseFloat(v);
+  if(!isFinite(x))x=(dflt==null?0:dflt);
+  if(lo!=null&&x<lo)x=lo;
+  if(hi!=null&&x>hi)x=hi;
+  return x;
+}
+function floorTo(v,unit){return Math.floor(v/unit+1e-9)*unit;}
+function roundTo(v,unit){return unit<1?Math.round(v/unit)/Math.round(1/unit):Math.round(v/unit)*unit;}
+function growth(g,n){return Math.pow(1+g,n);}
+
+/* Year parameters. g = assumed annual inflation (decimal). Returns bracket/deduction parameters for the tax year. */
+function yearParams(year,g){
+  var n=year-BASE_YEAR,P={year:year,n:n,projected:n>0,g:g,br:{},std:{},add65:{}};
+  ['single','mfj','hoh','mfs'].forEach(function(fs){
+    P.br[fs]=BR2026[fs].map(function(t){return n>0?floorTo(t*growth(g,n),BR_UNIT[fs]):t;});
+    P.std[fs]=n>0?floorTo(STD2026[fs]*growth(g,n),50):STD2026[fs];
+  });
+  P.add65.married=n>0?floorTo(ADD65_2026.married*growth(g,n),50):ADD65_2026.married;
+  P.add65.unmarried=n>0?floorTo(ADD65_2026.unmarried*growth(g,n),50):ADD65_2026.unmarried;
+  /* IRC 151(d)(5)(C): $6,000 per qualified individual, taxable years beginning before January 1, 2029; not indexed */
+  P.seniorOn=year<2029;
+  return P;
+}
+function brackets(P,fs){
+  var out=[],prev=0;
+  for(var i=0;i<P.br[fs].length;i++){out.push({lo:prev,hi:P.br[fs][i],rate:RATES[i]});prev=P.br[fs][i];}
+  out.push({lo:prev,hi:Infinity,rate:RATES[6]});
+  return out;
+}
+function taxOnTI(ti,fs,P){
+  var b=brackets(P,fs),t=0;
+  for(var i=0;i<b.length;i++){
+    if(ti<=b[i].lo)break;
+    t+=(Math.min(ti,b[i].hi)-b[i].lo)*b[i].rate;
   }
-  
-  // Calculate taxes
-  const fed_tax = conv_amt * fed_rate;
-  const state_tax = conv_amt * state_rate;
-  const total_tax = fed_tax + state_tax;
-  
-  // Pro-rata rule: if you have pre-tax IRA balance, the conversion is partially non-taxable
-  // But this is complex; simplified here for education
-  const total_fed_rate_display = (fed_rate * 100).toFixed(0);
-  const total_state_display = (state_rate * 100).toFixed(1);
-  
-  // Net benefit over 20 years (assuming 7% growth, tax-free after conversion)
-  const years = 20;
-  const growth_rate = 0.07;
-  const growth_value = conv_amt * (Math.pow(1 + growth_rate, years) - 1);
-  const growth_value_tax = growth_value * (fed_rate + state_rate);
-  
-  let html = `
-    <div style="margin-bottom:20px">
-      <div class="calc-row">
-        <span class="calc-label">Conversion Amount</span>
-        <span class="calc-value">$${conv_amt.toLocaleString()}</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">Federal Tax (${total_fed_rate_display}%)</span>
-        <span class="calc-value">$${Math.round(fed_tax).toLocaleString()}</span>
-      </div>
-      <div class="calc-row">
-        <span class="calc-label">State Tax (${total_state_display}%)</span>
-        <span class="calc-value">$${Math.round(state_tax).toLocaleString()}</span>
-      </div>
-      <div class="calc-row" style="color:var(--green);font-weight:700">
-        <span class="calc-label">Total Tax Due in 2026</span>
-        <span class="calc-value">$${Math.round(total_tax).toLocaleString()}</span>
-      </div>
-    </div>
-    
-    <div class="result-box">
-      <h3>20-Year Roth Value</h3>
-      <div class="result-num">$${Math.round(conv_amt + growth_value).toLocaleString()}</div>
-      <p style="font-size:12px;margin-top:8px">Assumes 7% annual growth tax-free. Compare to traditional IRA value of $${Math.round(conv_amt + growth_value - growth_value_tax).toLocaleString()} after taxes.</p>
-    </div>
-    
-    <div class="note-box">
-      <strong>Important Notes:</strong>
-      <ul style="margin-left:16px;margin-top:8px">
-        <li><strong>Pro-Rata Rule:</strong> If you have pre-tax IRAs, conversions are partially taxable. Non-deductible contributions are not taxed on conversion.</li>
-        <li><strong>Medicare/IRMAA:</strong> Conversion may increase modified AGI, affecting Medicare premiums.</li>
-        <li><strong>RMD Planning:</strong> Conversions in low-income years (retirement, sabbatical) can save taxes.</li>
-        <li><strong>State Taxes:</strong> Some states don't tax retirement income; factor in your specific state.</li>
-      </ul>
-    </div>
-  `;
-  
-  document.getElementById('results').innerHTML = html;
+  return t;
+}
+function bracketIndex(ti,fs,P){
+  var b=brackets(P,fs);
+  for(var i=0;i<b.length;i++){if(ti<=b[i].hi)return i;}
+  return b.length-1;
+}
+/* IRC 151(d)(5)(C)(iii): $6,000 reduced by 6% of MAGI over $75,000 ($150,000 joint). MFS married filers not eligible: 151(d)(5)(C)(v). */
+function seniorDeduction(magi,fs,n65,P){
+  if(!P.seniorOn||fs==='mfs'||n65<=0)return 0;
+  var thr=(fs==='mfj')?150000:75000;
+  return Math.max(0,6000*n65-0.06*Math.max(0,magi-thr));
+}
+/* Federal income tax (ordinary rates only) for a given AGI. dedOverride>0 replaces the standard deduction (itemized). */
+function fedTax(agi,fs,P,n65,dedOverride){
+  var std=P.std[fs]+(n65>0?n65*(fs==='single'||fs==='hoh'?P.add65.unmarried:P.add65.married):0);
+  var ded=(dedOverride>0)?dedOverride:std;
+  var sen=seniorDeduction(agi,fs,n65,P);
+  var ti=Math.max(0,agi-ded-sen);
+  return {agi:agi,ded:ded,std:std,sen:sen,ti:ti,tax:taxOnTI(ti,fs,P)};
+}
+/* Largest taxable conversion amount that keeps taxable income at or below targetTop (binary search; handles senior-deduction phase-out). */
+function maxTaxableToTop(agi,fs,P,n65,dedOverride,targetTop){
+  var base=fedTax(agi,fs,P,n65,dedOverride);
+  if(base.ti>=targetTop)return 0;
+  var lo=0,hi=2000000;
+  for(var k=0;k<60;k++){
+    var mid=(lo+hi)/2;
+    if(fedTax(agi+mid,fs,P,n65,dedOverride).ti<=targetTop)lo=mid;else hi=mid;
+  }
+  return Math.floor(lo);
 }
 
-calculate();
+/* Form 8606 pro-rata (2025 Form 8606 lines 1-14, 16-18). All inputs in dollars. */
+function form8606(o){
+  var l1=Math.max(0,o.l1||0),l2=Math.max(0,o.l2||0),l3=l1+l2,l4=Math.min(Math.max(0,o.l4||0),l1);
+  var l5=l3-l4,l6=Math.max(0,o.l6||0),l7=Math.max(0,o.l7||0),l8=Math.max(0,o.l8||0);
+  var l9=l6+l7+l8;
+  var l10=l9>0?Math.min(1,l5/l9):0;
+  var l11=l8*l10,l12=l7*l10,l13=l11+l12,l14=l3-l13;
+  return {l1:l1,l2:l2,l3:l3,l4:l4,l5:l5,l6:l6,l7:l7,l8:l8,l9:l9,l10:l10,l11:l11,l12:l12,l13:l13,l14:l14,l16:l8,l17:l11,l18:l8-l11,l15a:l7-l12};
+}
+
+/* IRMAA. Premium year Z uses MAGI from Z-2: 42 U.S.C. 1395r(i)(4)(B)(i).
+   Thresholds: 2026 published; later years projected (lower four tiers indexed from 2026; $500,000/$750,000 amounts frozen
+   through 2027 and indexed from 2028, 1395r(i)(5)(C)). Rounded to nearest $1,000 per 1395r(i)(5)(B). */
+function irmaaParams(Z,g,gp){
+  var n=Z-2026,m=Math.max(0,Z-2027);
+  var low=IRMAA_LOW_SINGLE_2026.map(function(t){return n>0?roundTo(t*growth(g,n),1000):t;});
+  var top=(Z>=2028)?roundTo(IRMAA_TOP_SINGLE_2026*growth(g,m),1000):IRMAA_TOP_SINGLE_2026;
+  var f=n>0?growth(gp,n):1;
+  var B,D;
+  if(n<=0){B=IRMAA_B_2026.slice();D=IRMAA_D_2026.slice();}
+  else{
+    var std=PARTB_STD_2026*f;
+    B=IRMAA_PCT.map(function(p){return roundTo((p-0.25)*4*std,0.1);});
+    D=IRMAA_D_2026.map(function(d){return roundTo(d*f,0.1);});
+  }
+  return {Z:Z,projected:n>0,low:low,top:top,B:B,D:D,f:f};
+}
+/* Returns {tier(0-5), annualPerEnrollee, ceiling (MAGI at/below which current tier holds, or Infinity), tiers[]} */
+function irmaaLookup(magi,fs,I){
+  var thr,amtB,amtD,tiers;
+  if(fs==='mfs'){
+    thr=[I.low[0],I.top-I.low[0]];                 /* tier edges for MFS lived with spouse */
+    amtB=[0,I.B[3],I.B[4]];amtD=[0,I.D[3],I.D[4]];
+    var t=0;
+    if(magi>thr[0])t=1;
+    if(magi>=thr[1])t=2;
+    return {tier:t,annual:12*(amtB[t]+amtD[t]),ceiling:t===0?thr[0]:(t===1?thr[1]-1:Infinity),edges:thr,nTiers:3,amtB:amtB,amtD:amtD};
+  }
+  var mult=(fs==='mfj')?2:1;
+  thr=I.low.map(function(x){return x*mult;});
+  var topEdge=(fs==='mfj')?I.top*1.5:I.top;
+  amtB=[0].concat(I.B);amtD=[0].concat(I.D);
+  var tier=0;
+  for(var i=0;i<4;i++){if(magi>thr[i])tier=i+1;}
+  if(magi>=topEdge)tier=5;
+  var ceil=Infinity;
+  if(tier<4)ceil=thr[tier];else if(tier===4)ceil=topEdge-1;
+  return {tier:tier,annual:12*(amtB[tier]+amtD[tier]),ceiling:ceil,edges:thr.concat([topEdge]),nTiers:6,amtB:amtB,amtD:amtD};
+}
+
+function $(id){return document.getElementById(id);}
+function flag(t,i,h){return '<div class="flag '+t+'"><div class="fi">'+i+'</div><div class="ft">'+h+'</div></div>';}
+function render(){
+  var yr=parseInt($('yr').value);if(YEARS.indexOf(yr)<0)yr=2026;
+  var g=num($('infl').value,0,15,2.5)/100;
+  var fs=$('fs').value;if(!FS_LABEL[fs])fs='single';
+  var agi=num($('agi').value,0,null,0),ded=num($('ded').value,0,null,0);
+  var n65=parseInt($('n65').value)||0;if(fs!=='mfj'&&n65>1)n65=1;
+  var conv=num($('conv_amt').value,0,null,0),bal=num($('pretax_bal').value,0,null,0),basis=num($('basis').value,0,null,0);
+  var st=num($('state_rate').value,0,20,0)/100;
+  var age=Math.round(num($('age').value,18,110,55));
+  var w='';
+  var rawc=parseFloat($('conv_amt').value);
+  if(!isFinite(rawc)||rawc<0)w+=flag('amber','!','Enter the conversion amount as a non-negative dollar amount; a blank or negative entry is treated as $0.');
+  if(bal>0&&conv>bal){w+=flag('amber','!','The conversion exceeds the IRA balance entered; it is limited to '+fmt(bal)+'.');conv=bal;}
+  if(bal===0&&conv>0)bal=conv;
+  if(basis>bal){basis=bal;}
+  var P=yearParams(yr,g);
+  $('yrBadge').innerHTML=P.projected?'<span class="badge-proj">Projected - estimate, not IRS-published</span> <span style="font-size:12px;color:var(--ink-60)">'+yr+' brackets and deductions use '+pct(g,1)+' annual inflation from the 2026 IRS-published figures.</span>':'<span class="badge-pub">IRS-published - Rev. Proc. 2025-32</span>';
+  if(conv<1){$('results').innerHTML=w+'<div style="text-align:center;color:var(--ink-60);padding:20px">Enter a conversion amount above.</div>';assump(yr,fs,P,g);return;}
+  var f=form8606({l2:basis,l6:Math.max(0,bal-conv),l8:conv});
+  var B=fedTax(agi,fs,P,n65,ded),A=fedTax(agi+f.l18,fs,P,n65,ded);
+  var fed=A.tax-B.tax,stt=f.l18*st,tot=fed+stt;
+  var h=w;
+  h+='<div class="stepbox"><h3>Step 1 - Taxable part (Form 8606)</h3><p class="mono">Basis ratio (line 10) = '+fmt(f.l5)+' / '+fmt(f.l9)+' = '+f.l10.toFixed(4)+'<br>Nontaxable (line 11) = '+fmt(conv)+' x '+f.l10.toFixed(4)+' = '+fmt(f.l11)+'<br>Taxable (line 18) = '+fmt(conv)+' - '+fmt(f.l11)+' = <strong data-k="taxable">'+fmt(f.l18)+'</strong></p><p>IRC 408A(d)(3)(A)(i); IRC 408(d)(2). With no basis, the whole conversion is taxable. Assumes no growth or other IRA distributions in the year.</p></div>';
+  h+='<div class="stepbox"><h3>Step 2 - Federal tax ('+yr+(P.projected?', projected':'')+', '+FS_LABEL[fs]+')</h3><div class="tblwrap"><table class="dtbl"><tr><th></th><th>Without</th><th>With conversion</th></tr><tr><td>AGI</td><td>'+fmt(B.agi)+'</td><td>'+fmt(A.agi)+'</td></tr><tr><td>Deduction</td><td>-'+fmt(B.ded)+'</td><td>-'+fmt(A.ded)+'</td></tr>'+(P.seniorOn&&n65>0&&fs!=='mfs'?'<tr><td>Senior deduction, IRC 151(d)(5)(C)</td><td>-'+fmt(B.sen)+'</td><td>-'+fmt(A.sen)+'</td></tr>':'')+'<tr><td>Taxable income</td><td>'+fmt(B.ti)+'</td><td>'+fmt(A.ti)+'</td></tr><tr><td>Tax (IRC 1(j)(2))</td><td>'+fmt(B.tax)+'</td><td>'+fmt(A.tax)+'</td></tr></table></div>';
+  var rows='';brackets(P,fs).forEach(function(b){var a=Math.max(B.ti,b.lo),z=Math.min(A.ti,b.hi);if(z>a)rows+='<tr><td>'+Math.round(b.rate*100)+'%</td><td>'+fmt(a)+' to '+(b.hi===Infinity?'above':fmt(b.hi))+'</td><td>'+fmt(z-a)+'</td><td>'+fmt((z-a)*b.rate)+'</td></tr>';});
+  if(rows)h+='<div class="tblwrap"><table class="dtbl"><tr><th>Rate</th><th>Range</th><th>Added income</th><th>Tax</th></tr>'+rows+'</table></div>';
+  h+='<p>Federal tax on conversion = '+fmt(A.tax)+' - '+fmt(B.tax)+' = <strong data-k="fed">'+fmt(fed)+'</strong>.</p></div>';
+  h+='<div class="sum-box"><div class="sum-title">Tax Cost</div><div class="srow"><span class="sl">Federal tax</span><span class="sv">'+fmt(fed)+'</span></div><div class="srow"><span class="sl">State tax ('+pct(st,2)+' x '+fmt(f.l18)+')</span><span class="sv">'+fmt(stt)+'</span></div><div class="srow"><span class="sl">Total tax due on conversion</span><span class="sv coral" data-k="total">'+fmt(tot)+'</span></div><div class="srow"><span class="sl">Cost per $1 converted</span><span class="sv">'+pct(tot/conv,1)+'</span></div></div>';
+  h+='<div class="result-box"><h3>Total Tax Cost - '+yr+'</h3><div class="result-num">'+fmt(tot)+'</div><p style="font-size:12px">Ordinary-rate tax only; pay it from outside funds where possible.</p></div>';
+  if(age<=58)h+=flag('red','!','<strong>Under age 59 1/2.</strong> Withholding tax from the converted amount makes that part a distribution subject to the 10% additional tax (IRC 72(t); 408A(d)(3)(F)).');
+  if(age>=73)h+=flag('amber','!','<strong>RMD first.</strong> The RMD for the year cannot be converted (IRC 408(d)(3)(E)).');
+  h+=flag('blue','i','<strong>IRMAA and growth.</strong> Conversion income raises MAGI for Medicare premiums two years later. Use the <a href="roth-conversion.html">Roth Conversion Optimizer</a> for IRMAA, break-even and growth.');
+  h+=flag('blue','i','<strong>No undo.</strong> Conversions cannot be recharacterized (IRC 408A(d)(6)(B)(iii)).');
+  $('results').innerHTML=h;assump(yr,fs,P,g);
+}
+function assump(yr,fs,P,g){
+  var s=P.projected?'<span class="tg proj">Projected</span>':'<span class="tg pub">IRS-published</span>';
+  var b=brackets(P,fs).map(function(x){return Math.round(x.rate*100)+'% to '+(x.hi===Infinity?'no limit':fmt(x.hi));}).join('; ');
+  var rows=[['Brackets ('+FS_LABEL[fs]+')',b,s,'IRC 1(j)(2); Rev. Proc. 2025-32 sec. 4.01'+(P.projected?'; projected, increase rounded down to a multiple of $'+BR_UNIT[fs]+' (IRC 1(f)(7), 1(j)(3)(B)(ii))':'')],['Standard deduction',fmt(P.std[fs]),s,'IRC 63(c); Rev. Proc. 2025-32 sec. 4.14'+(P.projected?'; projected, rounded down to a multiple of $50':'')],['Senior deduction',P.seniorOn?'$6,000 per person age 65+, reduced 6% of MAGI over '+(fs==='mfj'?'$150,000':'$75,000'):'Not available after 2028','<span class="tg stat">Statutory</span>','IRC 151(d)(5)(C)'],['Pro-rata','Form 8606 line 5 / (6 + 7 + 8)','<span class="tg stat">Statutory</span>','IRC 408(d)(2)'],['Inflation assumption',pct(g,1)+' per year','<span class="tg proj">Projected</span>','User-adjustable; not an IRS figure']];
+  var t='<table class="atbl"><tr><th>Parameter</th><th>Value for '+yr+'</th><th>Status</th><th>Citation / method</th></tr>';
+  rows.forEach(function(x){t+='<tr><td>'+x[0]+'</td><td>'+x[1]+'</td><td>'+x[2]+'</td><td>'+x[3]+'</td></tr>';});
+  $('assumpBody').innerHTML=t+'</table>';
+}
+['yr','infl','fs','agi','ded','n65','conv_amt','pretax_bal','basis','state_rate','age'].forEach(function(id){var e=$(id);e.addEventListener('input',render);e.addEventListener('change',render);});
+render();
+
 </script>
 
 
 
-<script src="/shared.js"></script>
+<script>
+function doPrint(){window.print();}
+function doShare(){var url=location.href;var title=document.title.replace(" | CPA Validated","");if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
+function showShareModal(url,title){if(document.getElementById("sv-ol"))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[["Facebook","#1877F2","https://www.facebook.com/sharer/sharer.php?u="+enc],["Telegram","#29A8E0","https://t.me/share/url?url="+enc+"&text="+et],["X / Twitter","#e0e0e0","https://twitter.com/intent/tweet?url="+enc+"&text="+et],["LinkedIn","#0A66C2","https://www.linkedin.com/sharing/share-offsite/?url="+enc],["WhatsApp","#25D366","https://wa.me/?text="+et+"%0A"+enc]];var ol=document.createElement("div");ol.id="sv-ol";ol.style.cssText="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center";var h="<div style=\"background:#111111;width:100%;max-width:520px\">"+"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A\">"+"<span style=\"font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff\">Share</span>"+"<button id=\"sv-x\" style=\"background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px\">&times;</button></div>"+"<div style=\"padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px\">";links.forEach(function(l){h+="<a href="+JSON.stringify(l[2])+" target=\"_blank\" rel=\"noopener\" style=\"display:block;padding:12px 14px;border-left:3px solid "+l[1]+";background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600\">"+l[0]+"</a>";});h+="<button id=\"sv-cp\" style=\"padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left\">Copy Link</button></div></div>";ol.innerHTML=h;document.body.appendChild(ol);document.getElementById("sv-x").onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById("sv-cp").onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);});}catch(e2){var ta=document.createElement("textarea");ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);}};}
+</script>
 
 
 
 
-</div>
-
-<script src="/shared.js"></script>
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
@@ -187,5 +428,6 @@ calculate();
   </div>
 </div>
 <!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
 </body>
 </html>
