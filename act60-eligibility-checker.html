@@ -1,180 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Puerto Rico Act 60 Eligibility Checker | CPA Validated</title>
-<meta name="description" content="Determine if you qualify for Puerto Rico Act 60 Individual Investors Chapter 2 (0% capital gains rate). Check residency and income requirements.">
+<title>Puerto Rico Act 60 Eligibility Checker 2026-2030 | CPA Validated</title>
+<meta name="description" content="Check eligibility for the Puerto Rico Act 60 Individual Resident Investor decree and estimate Puerto Rico tax under the 0% regime (applications filed by December 31, 2026) or the 4% regime (filed from January 1, 2027), per Act 38-2026. Tax years 2026-2030.">
+<link rel="canonical" href="https://cpavalidated.com/act60-eligibility-checker.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-100:#FCE3E2; --green:#4A7459; --green-bg:#E2EDE6;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --red:#9B3D3D; --red-bg:#EDE0DC;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+html{font-size:16px}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+a{color:var(--coral);text-decoration:none}
 .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:900px;margin:0 auto;padding:0 24px}
 .ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px;line-height:1.5}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
 .container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
-.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
 .cb{padding:20px}
-.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
-.q-row:last-child{border-bottom:none}
-.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
-.yn-btn{flex:1;padding:9px 12px;border:none;font-size:13px;cursor:pointer;background:#fff;color:#5E6166;border-right:1px solid #D9DBDE;font-weight:500}
-.yn-btn:last-child{border-right:none}
-.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
-.yn-btn.sel-no{background:#EDE0DC;color:#9B3D3D;font-weight:700}
-.result-box{border-left:3px solid var(--coral);padding:16px;margin-top:20px;background:#FCE3E2}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.08em}
+.f1 .hint{font-size:11px;color:var(--ink-60);line-height:1.5;margin-top:2px}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;background:var(--paper);color:var(--ink);border-radius:0}
+.fc:focus{border-color:var(--coral);outline:none}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;margin-bottom:12px}
+.chk input{margin-top:3px;flex-shrink:0}
+.sec-title{font-family:var(--font-display);font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin:6px 0 12px;color:var(--ink)}
+.result-box{border-left:3px solid var(--coral);padding:16px;margin-top:12px;background:var(--coral-100)}
+.result-box h3{font-family:var(--font-display);font-size:16px;color:var(--ink);margin-bottom:8px}
+.result-box p{font-size:13px;line-height:1.6;color:var(--ink-80);margin-bottom:10px}
+.result-box.ok{background:var(--green-bg);border-left-color:var(--green)}
+.material-participation{background:var(--green-bg);border-left:3px solid var(--green);padding:12px;margin-top:12px;font-size:12px;line-height:1.5}
 .note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
-@media(max-width:640px){.q-row{grid-template-columns:1fr;gap:8px}}
+.warn-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 14px;margin-top:12px;font-size:12px;line-height:1.5;color:var(--red)}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw span{color:var(--ink-80)}
+.rw strong{font-family:var(--font-mono);white-space:nowrap}
+.rw.tot{border-bottom:2px solid var(--ink);font-weight:700}
+.rw.tot span{color:var(--ink)}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+details.assump{margin-top:16px;border:1px solid var(--ink-20);background:var(--white)}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.src{font-size:11px;color:var(--ink-60);line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:16px}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+.hidden{display:none}
+@media(max-width:640px){.fg2,.fg3{grid-template-columns:1fr}.fc{font-size:16px}.container{padding:20px 16px}.phi{padding:0 16px}.back{padding:12px 16px 0}}
+@media print{.back{display:none}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/act60-eligibility-checker.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Puerto Rico Act 60 Eligibility Checker 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Act 60 Individual Resident Investor eligibility and Puerto Rico tax estimate under the 0% and 4% regimes, per Act 38-2026.">
+  <meta property="og:url" content="https://cpavalidated.com/act60-eligibility-checker.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Puerto Rico Act 60 Eligibility Checker 2026-2030","url":"https://cpavalidated.com/act60-eligibility-checker.html","description":"Eligibility and Puerto Rico tax estimate for the Act 60 Individual Resident Investor decree under Act 38-2026.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
 </head>
 <body>
 
 <div class="ph">
 <div class="phi">
-<h1>Puerto Rico Act 60 Eligibility Checker</h1>
-<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine if you qualify for Act 60 Individual Investors Chapter 2 (0% capital gains, dividends, interest). **December 31, 2026 application deadline for 0% rate.**</p>
+<h1>Puerto Rico Act 60 Individual Resident Investor Checker</h1>
+<div class="sub">Tax years 2026-2030. Checks eligibility for the Individual Resident Investor decree (Act 60-2019, Chapter 2, as amended by Act 38-2026) and estimates Puerto Rico tax on interest, dividends and capital gains under the 0% regime (applications filed on or before December 31, 2026) or the 4% regime (applications filed on or after January 1, 2027).</div>
 </div>
 </div>
+
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 
 <div class="container">
 
 <div class="card">
-<div class="ch"><h2>Individual Investors (Chapter 2) Requirements</h2></div>
+<div class="ch"><h2>Step 1 - Eligibility</h2></div>
 <div class="cb">
 
-<div class="q-row">
-<div><div style="font-size:13.5px">Are you a Puerto Rico bona fide resident?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">183+ days in PR during tax year; no significant ties to US</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('pr_resident', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('pr_resident', 'no')">No</button>
+<div class="f1">
+<label for="cohort">When is (or was) the decree application filed with DDEC?</label>
+<select id="cohort" class="fc" onchange="calculate()">
+<option value="a">On or before December 31, 2026</option>
+<option value="b" selected>On or after January 1, 2027</option>
+</select>
+<div class="hint">The filing date, not the residency date or the decree date, fixes the regime: Act 60-2019 §2022.01(a), (b)(3); §2022.02(a)-(d), as amended by Act 38-2026. Today's date is shown in the result so you can see whether the 2026 window is still open.</div>
 </div>
+
+<div class="fg3">
+<div class="f1">
+<label for="presence">Present in Puerto Rico 183 days or more in the tax year?</label>
+<select id="presence" class="fc" onchange="calculate()"><option value="yes" selected>Yes</option><option value="no">No</option></select>
+<div class="hint">IRC §937(a)(1); Treas. Reg. §1.937-1(c).</div>
+</div>
+<div class="f1">
+<label for="taxhome">No tax home outside Puerto Rico?</label>
+<select id="taxhome" class="fc" onchange="calculate()"><option value="yes" selected>Yes, tax home is in Puerto Rico</option><option value="no">No, tax home is elsewhere</option></select>
+<div class="hint">IRC §937(a)(2); Treas. Reg. §1.937-1(d).</div>
+</div>
+<div class="f1">
+<label for="closer">No closer connection to the U.S. or a foreign country?</label>
+<select id="closer" class="fc" onchange="calculate()"><option value="yes" selected>Yes, closer connection is to Puerto Rico</option><option value="no">No, closer connection elsewhere</option></select>
+<div class="hint">IRC §937(a)(2); Treas. Reg. §1.937-1(e).</div>
 </div>
 </div>
 
-<div class="q-row">
-<div><div style="font-size:13.5px">Are you a US citizen or green card holder?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Act 60 requires US person status</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('us_person', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('us_person', 'no')">No</button>
+<div class="fg2">
+<div class="f1">
+<label for="prior06">Were you a Puerto Rico resident at any time from January 17, 2006 through January 17, 2012?</label>
+<select id="prior06" class="fc" onchange="calculate()"><option value="no" selected>No</option><option value="yes">Yes</option></select>
+<div class="hint">Act 60-2019 §1020.02(a)(4) (applies to every applicant).</div>
 </div>
-</div>
-</div>
-
-<div class="q-row">
-<div><div style="font-size:13.5px">Did you apply for Act 60 benefits on or before December 31, 2026?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">2026 is the final deadline for 0% capital gains rate. After 2026, the rate phases up.</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('deadline', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('deadline', 'no')">No</button>
-</div>
+<div class="f1" id="six_wrap">
+<label for="six">Were you NOT a Puerto Rico resident for at least the 6 years before the date you move?</label>
+<select id="six" class="fc" onchange="calculate()"><option value="yes" selected>Yes, not a resident for 6 or more years</option><option value="no">No</option></select>
+<div class="hint">New for applications submitted after December 31, 2026: Act 60-2019 §1020.02(a)(4), as amended by Act 38-2026, Art. 1.</div>
 </div>
 </div>
 
-<div class="q-row">
-<div><div style="font-size:13.5px">Do your capital gains and passive income exceed $25,000 annually?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Annual investment income for Act 60 purposes</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('income_test', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('income_test', 'no')">No</button>
+<div class="fg2">
+<div class="f1">
+<label for="excl">Student studying away from Puerto Rico, or Puerto Rico government personnel working away temporarily?</label>
+<select id="excl" class="fc" onchange="calculate()"><option value="no" selected>No</option><option value="yes">Yes (or similar situation)</option></select>
+<div class="hint">These persons keep their Puerto Rico domicile and do not qualify: §1020.02(a)(4).</div>
+</div>
+<div class="f1">
+<label for="move_year">Tax year you become a Puerto Rico resident</label>
+<input type="number" id="move_year" class="fc" value="2027" min="2012" max="2100" step="1" oninput="calculate()">
+<div class="hint">Must be no later than the tax year ending December 31, 2055: §1020.02(a)(4).</div>
 </div>
 </div>
+
+<div class="f1">
+<label for="commit">Can you meet the decree conditions?</label>
+<select id="commit" class="fc" onchange="calculate()"><option value="yes" selected>Yes - buy a Puerto Rico principal residence within 2 years of the decree, give $10,000 a year to Puerto Rico nonprofits, pay the $5,000 annual report charge</option><option value="no">No / not sure</option></select>
+<div class="hint">Act 60-2019 §6020.10(b)-(d); §2023.01(c). The $10,000 donation starts with the second tax year after the decree. For applications from January 1, 2027, title to the residence must be recorded, or pending recordation, in the Puerto Rico Property Registry (§6020.10(c)).</div>
 </div>
 
 </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>Act 60 Determination</h2></div>
+<div class="ch"><h2>Eligibility result</h2></div>
+<div class="cb"><div id="result_area"></div></div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Step 2 - Puerto Rico tax estimate</h2></div>
 <div class="cb">
-<div id="result_area"></div>
+<div class="fg2">
+<div class="f1">
+<label for="tax_year">Tax year income is recognized</label>
+<select id="tax_year" class="fc" onchange="calculate()">
+<option value="2026">2026</option><option value="2027" selected>2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option>
+</select>
+<div class="hint">Rates are fixed by statute through 2035 (0% regime) or 2055 (4% regime); no projection is involved.</div>
+</div>
+<div class="f1">
+<label for="inc_id">Interest and dividends earned after becoming a resident ($)</label>
+<input type="number" id="inc_id" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">§2022.01(a) or (b)(1).</div>
+</div>
+</div>
+<div class="fg2">
+<div class="f1">
+<label for="cg_post">Capital gain attributable to appreciation after becoming a resident ($)</label>
+<input type="number" id="cg_post" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">Securities and Other Assets (commodities, currencies, blockchain-based digital assets): §2022.02(b) or (d); §1020.02(a)(12).</div>
+</div>
+<div class="f1">
+<label for="cg_pre">Long-term capital gain attributable to appreciation before becoming a resident ($)</label>
+<input type="number" id="cg_pre" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">5% only if recognized after 10 years of residency; otherwise normal Puerto Rico Internal Revenue Code treatment (not computed here): §2022.02(a) or (c).</div>
+</div>
+</div>
+<div id="calc_area"></div>
 </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>Act 60 Benefits (Individual Investors Chapter 2)</h2></div>
+<div class="ch"><h2>Notes, assumptions &amp; sources</h2></div>
 <div class="cb">
-<div style="font-size:12px;line-height:1.8;color:var(--ink-80)">
-<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-<span><strong>Capital Gains Tax Rate</strong></span>
-<span style="font-weight:600;color:var(--coral)">0% (2026 deadline)</span>
-</div>
-<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-<span><strong>Dividend Income Tax</strong></span>
-<span style="font-weight:600;color:var(--coral)">0%</span>
-</div>
-<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-<span><strong>Interest Income Tax</strong></span>
-<span style="font-weight:600;color:var(--coral)">0%</span>
-</div>
-<div style="display:flex;justify-content:space-between;padding:8px 0">
-<span><strong>Filing Requirement</strong></span>
-<span>PR income tax return (Declaración de Ingresos)</span>
-</div>
-<p style="margin-top:12px;font-size:11px;color:var(--ink-60)"><strong>Note:</strong> Act 60 rates are scheduled to change post-2026. Currently: 0% through 2026 (if applied before deadline), then phases to higher rates in 2027+.</p>
-</div>
+<span class="badge-pub">Statutory rates - no projected figures on this page</span>
+<details class="assump" id="assump_box">
+<summary>Assumptions &amp; sources</summary>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Value</th><th>Status</th><th>Citation</th></tr></thead>
+<tbody id="assump_body"></tbody>
+</table></div>
+</details>
+<div class="note-box"><strong>Federal tax is separate.</strong> A Puerto Rico decree does not change U.S. federal tax. For a U.S. citizen or resident alien, IRC §933(1) excludes only income from sources within Puerto Rico, and only for an individual who is a bona fide resident for the entire taxable year. Source is determined under IRC §937(b) and Treas. Reg. §1.937-2, and gain on personal property is also subject to IRC §865(g)(2)-(3) and (i)(3). U.S.-source income, including most dividends from U.S. corporations, stays taxable. This tool does not compute federal tax; verify the federal analysis with a professional. A person who takes the position that they became a bona fide resident must also give the IRS notice (IRC §937(c); Form 8898).</div>
+<div class="note-box"><strong>Verify before relying.</strong> This page follows the Act 60-2019 consolidated text (Rev. July 16, 2026) published by the Puerto Rico Office of Management and Budget, which incorporates Act 38-2026 (certified March 11, 2026). Commentary reported that Act 38-2026 was subject to Financial Oversight and Management Board endorsement when signed; the consolidated text now includes it, but confirm current status, the DDEC application procedure and filing fees with the Puerto Rico Department of Economic Development and Commerce. The decree term, annual report, Puerto Rico Treasury filing and the decree modification option (§6020.03(d)) are not modeled.</div>
+<div class="verified">Last verified: October 29, 2026</div>
+<div class="src">Sources: Act 60-2019, Puerto Rico Incentives Code, consolidated text Rev. July 16, 2026 (bvirtualogp.pr.gov/ogp/Bvirtual/leyesreferencia/PDF/60-2019.pdf), §§1020.02(a)(4), 2021.01, 2022.01, 2022.02, 2022.07, 2023.01, 6020.03(d), 6020.10; Act 38-2026 (bvirtualogp.pr.gov/ogp/Bvirtual/leyesreferencia/PDF/2020/0038-2026.pdf); IRC §§865(g), 933, 937 and Treas. Reg. §1.937-1 (law.cornell.edu). Educational estimate only; consult a Puerto Rico tax professional.</div>
 </div>
 </div>
 
 </div>
 
 <script>
-const state = {pr_resident: '', us_person: '', deadline: '', income_test: ''};
+var ASSUMPTIONS = [
+  ["Application filing deadline for the 0% regime", "December 31, 2026 (date the application is submitted)", "Statutory", "Act 60-2019 §2022.01(a), (b)(3); §2022.02(a)-(d)"],
+  ["Interest and dividends (0% regime)", "0%, earned after becoming a resident and before January 1, 2036", "Statutory", "Act 60-2019 §2022.01(a)"],
+  ["Post-residency appreciation (0% regime)", "0%, recognized before January 1, 2036", "Statutory", "Act 60-2019 §2022.02(b)"],
+  ["Pre-residency appreciation (0% regime)", "5% on long-term gain recognized after 10 years of residency and before January 1, 2036; otherwise normal Puerto Rico Internal Revenue Code rules", "Statutory", "Act 60-2019 §2022.02(a)"],
+  ["Interest and dividends (4% regime)", "4% flat, earned before January 1, 2056; a lower rate under any other law applies instead", "Statutory", "Act 60-2019 §2022.01(b)(1)-(3), as amended by Act 38-2026"],
+  ["Post-residency appreciation (4% regime)", "4% flat, recognized before January 1, 2056; a lower rate under any other law applies instead", "Statutory", "Act 60-2019 §2022.02(d)"],
+  ["Pre-residency appreciation (4% regime)", "5% on long-term gain recognized after 10 years of residency and before January 1, 2056; otherwise normal rules", "Statutory", "Act 60-2019 §2022.02(c)"],
+  ["Latest year to become a resident", "Tax year ending December 31, 2055", "Statutory", "Act 60-2019 §1020.02(a)(4)"],
+  ["Prior non-residency", "Not a resident January 17, 2006 - January 17, 2012; and for applications after December 31, 2026, not a resident for at least 6 years before moving", "Statutory", "Act 60-2019 §1020.02(a)(4), as amended by Act 38-2026"],
+  ["Annual nonprofit contribution", "$10,000 minimum, from the second tax year after the decree", "Statutory", "Act 60-2019 §2023.01(c); §6020.10(b)"],
+  ["Annual report charge", "$5,000", "Statutory", "Act 60-2019 §6020.10(d)"],
+  ["Principal residence", "Buy a Puerto Rico residence from an unrelated seller within 2 years after the decree and keep it for the decree term", "Statutory", "Act 60-2019 §6020.10(c)"],
+  ["Federal bona fide residence", "183 days present, no tax home outside Puerto Rico, no closer connection to the U.S. or a foreign country", "Statutory", "IRC §937(a); Treas. Reg. §1.937-1(c)-(e)"]
+];
+function el(id){ return document.getElementById(id); }
+function fmt(n){ var v = Math.round(n); return (v < 0 ? "-$" : "$") + Math.abs(v).toLocaleString("en-US"); }
+function num(id){ var v = parseFloat(el(id).value); return (isFinite(v) && v > 0) ? v : 0; }
+function row(l, v, cls){ return '<div class="rw' + (cls ? " " + cls : "") + '"><span>' + l + '</span><strong>' + v + '</strong></div>'; }
 
-function setState(key, val) {
-  state[key] = val;
-  document.querySelectorAll(`[onclick*="setState('${key}'"]`).forEach(b => {
-    b.classList.remove('sel-yes', 'sel-no', 'unsel');
-  });
-  document.querySelector(`[onclick="setState('${key}','${val}')"]`).classList.add(`sel-${val}`);
-  calculate();
+function evaluate(p){
+  var fails = [], warns = [];
+  if (p.presence !== "yes") fails.push("Presence test not met (183 days): IRC §937(a)(1).");
+  if (p.taxhome !== "yes") fails.push("Tax home outside Puerto Rico: IRC §937(a)(2).");
+  if (p.closer !== "yes") fails.push("Closer connection to the U.S. or a foreign country: IRC §937(a)(2).");
+  if (p.prior06 === "yes") fails.push("Puerto Rico resident between January 17, 2006 and January 17, 2012: Act 60-2019 §1020.02(a)(4).");
+  if (p.excl === "yes") fails.push("Students away from Puerto Rico and temporarily posted government personnel keep their Puerto Rico domicile and are excluded: §1020.02(a)(4).");
+  if (p.moveYear > 2055) fails.push("Residency must begin no later than the tax year ending December 31, 2055: §1020.02(a)(4).");
+  if (p.cohort === "b" && p.six !== "yes") fails.push("Applications after December 31, 2026 require at least 6 years of non-residency before the move: §1020.02(a)(4) as amended by Act 38-2026.");
+  if (p.commit !== "yes") warns.push("Decree conditions (residence purchase within 2 years, $10,000 annual contribution, $5,000 annual charge) must be met for the decree term: §6020.10; §2023.01(c).");
+  if (p.cohort === "a" && p.today > "2026-12-31") fails.push("The December 31, 2026 filing date has passed; an application filed now falls under the 4% regime (choose the January 1, 2027 option).");
+  return {eligible: fails.length === 0, fails: fails, warns: warns};
 }
 
-function calculate() {
-  if (!state.pr_resident || !state.us_person || !state.deadline || !state.income_test) return;
-  
-  let eligible = false;
-  let summary = '';
-  
-  if (state.deadline === 'no') {
-    eligible = false;
-    summary = 'The December 31, 2026 application deadline for 0% capital gains rate has passed. You may still qualify for Act 60 benefits at higher rates (beginning 2027).';
-  } else if (state.pr_resident === 'yes' && state.us_person === 'yes' && state.deadline === 'yes') {
-    eligible = true;
-    summary = 'You appear to meet the basic requirements for Act 60 Individual Investors Chapter 2. You qualify for 0% taxation on capital gains, dividends, and interest, provided you maintain PR bona fide residence.';
-  } else {
-    eligible = false;
-    summary = 'You do not meet all requirements for Act 60 Individual Investors. Key requirements: PR bona fide residence, US person status, and timely application.';
+function taxEstimate(p){
+  var a = (p.cohort === "a");
+  var rId = a ? 0 : 0.04, rPost = a ? 0 : 0.04;
+  var tenOk = (p.taxYear - p.moveYear) >= 10;
+  var pre = tenOk ? p.cgPre * 0.05 : null;
+  var id = p.incId * rId, post = p.cgPost * rPost;
+  var total = id + post + (pre === null ? 0 : pre);
+  return {a:a, rId:rId, rPost:rPost, id:id, post:post, pre:pre, tenOk:tenOk, total:total};
+}
+
+function todayISO(){
+  var d = new Date();
+  var f = new Intl.DateTimeFormat("en-CA", {timeZone:"America/New_York", year:"numeric", month:"2-digit", day:"2-digit"}).format(d);
+  return f;
+}
+
+function readParams(){
+  var my = parseInt(el("move_year").value, 10);
+  return {cohort: el("cohort").value, presence: el("presence").value, taxhome: el("taxhome").value, closer: el("closer").value,
+    prior06: el("prior06").value, six: el("six").value, excl: el("excl").value, moveYear: isFinite(my) ? my : 2027,
+    commit: el("commit").value, taxYear: parseInt(el("tax_year").value, 10),
+    incId: num("inc_id"), cgPost: num("cg_post"), cgPre: num("cg_pre"), today: todayISO()};
+}
+
+function calculate(){
+  var p = readParams();
+  el("six_wrap").style.display = (p.cohort === "b") ? "" : "none";
+  var e = evaluate(p);
+  var h = '<div class="result-box' + (e.eligible ? ' ok' : '') + '"><h3>' + (e.eligible ? "Appears eligible for the Individual Resident Investor decree" : "Does not appear eligible on these facts") + '</h3>';
+  if (e.eligible){
+    h += '<p>You meet the residency tests and the prior non-residency conditions entered. Eligibility is not automatic: DDEC must grant the decree, and the benefit depends on keeping bona fide residency and the decree conditions.</p>';
   }
-  
-  let html = `
-    <div class="result-box">
-      <h3>Act 60 Eligible: ${eligible ? 'YES' : 'NO'}</h3>
-      <p style="font-size:13px;line-height:1.6;margin-top:8px">${summary}</p>
-      <p style="font-size:12px;margin-top:12px"><strong>Authority:</strong> Puerto Rico Act 60-2022 (formerly Acts 20/22), Chapter 2 (Individual Investors)</p>
-    </div>
-    <div class="note-box">
-      <strong>Critical Deadline:</strong> December 31, 2026 is the final deadline to apply for the 0% capital gains rate. After this date, new applicants face higher rates. Applications require PR residency establishment, filing PR tax returns, and ongoing compliance. Consult a PR tax professional for proper documentation and filing.
-    </div>
-  `;
-  
-  document.getElementById('result_area').innerHTML = html;
+  for (var i = 0; i < e.fails.length; i++) h += '<p>' + e.fails[i] + '</p>';
+  for (var j = 0; j < e.warns.length; j++) h += '<p>' + e.warns[j] + '</p>';
+  h += '<p style="font-size:12px;margin-bottom:0"><strong>Authority:</strong> Act 60-2019 §§1020.02(a)(4), 2021.01, 2023.01, 6020.10 (as amended by Act 38-2026); IRC §937(a). Citizenship is not a requirement under Chapter 2; the decree is available to U.S. and non-U.S. individuals who qualify.</p></div>';
+  if (p.today <= "2026-12-31") h += '<div class="note-box">Today is ' + p.today + '. The 0% filing window closes December 31, 2026; DDEC processing time does not matter because the submission date controls.</div>';
+  el("result_area").innerHTML = h;
+
+  var t = taxEstimate(p);
+  var c = '<div class="sec-title" style="margin-top:8px">Puerto Rico tax - ' + (t.a ? "0% regime (filed on or before December 31, 2026)" : "4% regime (filed on or after January 1, 2027)") + ', tax year ' + p.taxYear + '</div>';
+  c += row("Interest and dividends " + fmt(p.incId) + " x " + (t.rId * 100) + "%", fmt(t.id));
+  c += row("Post-residency capital gain " + fmt(p.cgPost) + " x " + (t.rPost * 100) + "%", fmt(t.post));
+  if (p.cgPre > 0){
+    if (t.tenOk) c += row("Pre-residency long-term gain " + fmt(p.cgPre) + " x 5% (" + p.taxYear + " is 10 or more years after " + p.moveYear + ")", fmt(t.pre));
+    else c += row("Pre-residency gain " + fmt(p.cgPre) + ": recognized within 10 years of residency, so taxed under the Puerto Rico Internal Revenue Code (not computed)", "n/a");
+  }
+  c += row("Estimated Puerto Rico tax on the amounts above", fmt(t.total), "tot");
+  if (!t.a) c += '<div class="note-box">Under the 4% regime a lower rate under any other provision of the Code, the Puerto Rico Internal Revenue Code or other law applies instead (§2022.01(b)(2); §2022.02(d)). Compare with the 0% regime: the same amounts would be ' + fmt(0) + ' on interest, dividends and post-residency gains for applications filed by December 31, 2026.</div>';
+  else c += '<div class="note-box">The 0% rates apply to income earned or gains recognized before January 1, 2036; later amounts fall under the normal Puerto Rico Internal Revenue Code (§2022.01(a); §2022.02(b)). Decree holders may elect to modify the decree to the 4% terms through 2055 (§6020.03(d)).</div>';
+  el("calc_area").innerHTML = c;
+
+  var rows = "";
+  for (var k = 0; k < ASSUMPTIONS.length; k++){ var r = ASSUMPTIONS[k]; rows += "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td><td>" + r[3] + "</td></tr>"; }
+  el("assump_body").innerHTML = rows;
 }
+calculate();
 </script>
 
-<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
-<div style="background:var(--ink);border-top:2px solid var(--coral);padding:20px 24px;margin:20px -24px 0">
-<div style="max-width:800px;margin:0 auto">
-<div style="font-size:10px;color:rgba(255,255,255,.75)">Educational guidance only. Act 60 benefits require proper documentation, PR residency, and ongoing compliance. Consult a Puerto Rico tax professional. <a href="/disclaimer.html">Full disclaimer</a></div>
-</div>
-</div>
-</div>
-
+<script src="/shared.js"></script>
 
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
@@ -197,6 +331,5 @@ function calculate() {
   </div>
 </div>
 <!-- END UNIFIED FOOTER -->
-<script src="/shared.js"></script>
 </body>
 </html>

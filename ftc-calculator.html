@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Foreign Tax Credit Calculator (Form 1116) 2026 | CPA Validated</title>
-<meta name="description" content="Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116. FEIE vs. FTC comparison, per-basket limitation, carryforward. CPA-validated.">
+<title>Foreign Tax Credit Calculator (Form 1116) 2026-2030 | CPA Validated</title>
+<meta name="description" content="Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116 for tax years 2026 through 2030. FEIE vs. FTC comparison with stacking, per-category limitation, carryforward. 2027-2030 are labeled projections. CPA-validated.">
 <link rel="canonical" href="https://cpavalidated.com/ftc-calculator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -55,8 +55,18 @@ select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
 .src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
 .disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
 .callout{background:var(--ink-10);border-left:3px solid var(--coral);padding:12px 16px;margin-bottom:14px;font-size:13px;color:var(--ink-60);line-height:1.6}
-@media(max-width:640px){.fg2,.fg3,.result-grid,.compare-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.result-grid{grid-template-columns:1fr 1fr}.fg2,.fg3,.compare-grid{grid-template-columns:1fr}.fc{font-size:16px}}
 @media(max-width:400px){.result-grid{grid-template-columns:1fr 1fr}}
+.badge-proj{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+details.assump{border:1px solid var(--ink-20);background:var(--white);margin-bottom:12px}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
 /* === category nav bar === */
 .cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .cat-nav::-webkit-scrollbar{display:none}
@@ -91,15 +101,15 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 @media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Foreign Tax Credit Calculator (Form 1116) 2026 | CPA Validated">
-  <meta property="og:description" content="Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116. FEIE vs. FTC comparison, per-basket limitation, carryforward. CPA-validated.">
+  <meta property="og:title" content="Foreign Tax Credit Calculator (Form 1116) 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116 for tax years 2026 through 2030. FEIE vs. FTC comparison with stacking, per-category limitation, carryforward. 2027-2030 are labeled projections. CPA-validated.">
   <meta property="og:url" content="https://cpavalidated.com/ftc-calculator.html">
   <meta property="og:site_name" content="CPA Validated">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Foreign Tax Credit Calculator (Form 1116) 2026 | CPA Validated">
-  <meta name="twitter:description" content="Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116. FEIE vs. FTC comparison, per-basket limitation, carryforward. CPA-validated.">
+  <meta name="twitter:title" content="Foreign Tax Credit Calculator (Form 1116) 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116 for tax years 2026 through 2030. FEIE vs. FTC comparison with stacking, per-category limitation, carryforward. 2027-2030 are labeled projections. CPA-validated.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"Foreign Tax Credit Calculator (Form 1116) 2026 | CPA Validated","url":"https://cpavalidated.com/ftc-calculator.html","description":"Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116. FEIE vs. FTC comparison, per-basket limitation, carryforward. CPA-validated.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Foreign Tax Credit Calculator (Form 1116) 2026-2030 | CPA Validated","url":"https://cpavalidated.com/ftc-calculator.html","description":"Calculate the Foreign Tax Credit limitation under IRC Section 901 and Form 1116 for tax years 2026 through 2030. FEIE vs. FTC comparison with stacking, per-category limitation, carryforward. 2027-2030 are labeled projections. CPA-validated.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
   </script>
 </head>
 <body>
@@ -127,7 +137,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div>
 <div class="ph"><div class="phi">
   <h1>Foreign Tax Credit Calculator</h1>
-  <div class="sub">Form 1116 Limitation &nbsp;&bull;&nbsp; FEIE vs. FTC Comparison &nbsp;&bull;&nbsp; Per-Basket Rules &nbsp;&bull;&nbsp; Carryforward</div>
+  <div class="sub">Form 1116 Limitation &nbsp;&bull;&nbsp; FEIE vs. FTC Comparison &nbsp;&bull;&nbsp; Per-Category Rules &nbsp;&bull;&nbsp; Carryforward &nbsp;&bull;&nbsp; Tax Years 2026-2030</div>
   <div class="badges">
     <span class="badge">IRC §901</span>
     <span class="badge">IRC §904</span>
@@ -139,44 +149,70 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <div class="wrap">
 
 <div class="callout">
-  <strong>Two strategies for US taxpayers abroad:</strong> The Foreign Earned Income Exclusion (FEIE, IRC §911) excludes up to $132,900 of foreign earned income from US tax. The Foreign Tax Credit (FTC, IRC §901) credits foreign taxes paid against US tax dollar-for-dollar. This calculator helps determine which strategy produces a lower US tax bill based on your specific income and foreign tax situation.
+  <strong>Two strategies for US taxpayers abroad:</strong> The Foreign Earned Income Exclusion (FEIE, IRC §911) excludes foreign earned income up to an annual limit ($132,900 for 2026; 2027-2030 are projected). The Foreign Tax Credit (FTC, IRC §901) credits foreign income taxes against US tax, up to the §904 limitation, separately by income category (§904(d)). This calculator compares the two for the same facts, with the math shown step by step. Excluded income is stacked at the top of the brackets (§911(f)), and no credit is allowed for foreign tax on excluded income (§911(d)(6)).
 </div>
 
 <div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Income & Filing Information</h2></div>
+  <div class="ch"><div class="sb">1</div><h2>Year, Filing Status &amp; Income</h2></div>
   <div class="cb">
     <div class="fg3">
-      <div class="f1"><label>Filing Status</label>
-        <select class="fc" id="filingStatus" onchange="calc()">
+      <div class="f1"><label for="taxYear">Tax Year</label>
+        <select class="fc" id="taxYear">
+          <option value="2026" selected>2026 (IRS-published)</option>
+          <option value="2027">2027 (projected)</option>
+          <option value="2028">2028 (projected)</option>
+          <option value="2029">2029 (projected)</option>
+          <option value="2030">2030 (projected)</option>
+        </select>
+        <div class="hint">Brackets, standard deduction, FEIE limit: IRC §1(j), §63(c), §911(b)(2)(D)</div>
+      </div>
+      <div class="f1"><label for="filingStatus">Filing Status</label>
+        <select class="fc" id="filingStatus">
           <option value="single">Single</option>
           <option value="mfj" selected>Married Filing Jointly</option>
           <option value="mfs">Married Filing Separately</option>
           <option value="hoh">Head of Household</option>
         </select>
+        <div class="hint">Rate tables: IRC §1(j)(2)(A)-(D)</div>
       </div>
-      <div class="f1"><label>Total Gross Income ($)</label>
-        <input type="number" class="fc" id="grossIncome" value="200000" oninput="calc()">
-        <div class="hint">All income before any exclusions</div>
+      <div class="f1" id="inflWrap" style="display:none"><label for="infl">Assumed inflation (% per year)</label>
+        <input type="number" class="fc" id="infl" value="2.5" min="0" max="15" step="0.1" inputmode="decimal">
+        <div class="hint">Projected years only. Applied to 2026 published amounts with the statutory round-down.</div>
       </div>
-      <div class="f1"><label>Foreign Earned Income ($)</label>
-        <input type="number" class="fc" id="foreignEarned" value="150000" oninput="calc()">
-        <div class="hint">Wages/salary earned abroad</div>
+    </div>
+    <div id="yearBadge"></div>
+    <div class="fg3" style="margin-top:10px">
+      <div class="f1"><label for="foreignEarned">Foreign Earned Income ($)</label>
+        <input type="number" class="fc" id="foreignEarned" value="150000" min="0" step="any" inputmode="decimal">
+        <div class="hint">Wages or self-employment income earned abroad (general category, §904(d)(2)(A)(ii))</div>
+      </div>
+      <div class="f1"><label for="otherForeign">Other Foreign-Source Income ($)</label>
+        <input type="number" class="fc" id="otherForeign" value="0" min="0" step="any" inputmode="decimal">
+        <div class="hint">Dividends, interest, rent from abroad. Treated as ordinary income.</div>
+      </div>
+      <div class="f1"><label for="otherBasket">Category of Other Foreign Income</label>
+        <select class="fc" id="otherBasket">
+          <option value="passive" selected>Passive category</option>
+          <option value="general">General category</option>
+        </select>
+        <div class="hint">IRC §904(d)(1)(C)-(D): separate limitation for each category</div>
       </div>
     </div>
     <div class="fg3">
-      <div class="f1"><label>Other Foreign Income ($)</label>
-        <input type="number" class="fc" id="otherForeign" value="0" oninput="calc()">
-        <div class="hint">Dividends, interest, rent from abroad</div>
-      </div>
-      <div class="f1"><label>US-Source Income ($)</label>
-        <input type="number" class="fc" id="usIncome" value="0" oninput="calc()">
+      <div class="f1"><label for="usIncome">US-Source Income ($)</label>
+        <input type="number" class="fc" id="usIncome" value="0" min="0" step="any" inputmode="decimal">
         <div class="hint">US wages, US investments, etc.</div>
       </div>
-      <div class="f1"><label>Itemized Deductions ($)</label>
-        <input type="number" class="fc" id="itemized" value="0" oninput="calc()">
-        <div class="hint">Leave 0 to use standard deduction</div>
+      <div class="f1"><label for="itemized">Itemized Deductions ($)</label>
+        <input type="number" class="fc" id="itemized" value="0" min="0" step="any" inputmode="decimal">
+        <div class="hint">The larger of this or the standard deduction is used (IRC §63)</div>
+      </div>
+      <div class="f1"><label for="qualDays">FEIE Qualifying Days in Year</label>
+        <input type="number" class="fc" id="qualDays" value="365" min="1" max="366" step="1" inputmode="numeric">
+        <div class="hint">Prorates the FEIE limit (§911(b)(2)(A)); see the FEIE calculator for housing</div>
       </div>
     </div>
+    <div class="hint" id="grossLine" style="margin-top:4px"></div>
   </div>
 </div>
 
@@ -184,27 +220,33 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="ch"><div class="sb">2</div><h2>Foreign Taxes Paid</h2></div>
   <div class="cb">
     <div class="fg2">
-      <div class="f1"><label>Foreign Taxes on Earned Income ($)</label>
-        <input type="number" class="fc" id="foreignTaxEarned" value="45000" oninput="calc()">
-        <div class="hint">Income tax paid on foreign wages</div>
+      <div class="f1"><label for="foreignTaxEarned">Foreign Income Taxes on Earned Income ($)</label>
+        <input type="number" class="fc" id="foreignTaxEarned" value="45000" min="0" step="any" inputmode="decimal">
+        <div class="hint">Creditable income taxes only (IRC §901). Not VAT, social charges, or penalties.</div>
       </div>
-      <div class="f1"><label>Foreign Taxes on Other Income ($)</label>
-        <input type="number" class="fc" id="foreignTaxOther" value="0" oninput="calc()">
-        <div class="hint">Tax on dividends, interest, etc.</div>
+      <div class="f1"><label for="foreignTaxOther">Foreign Income Taxes on Other Income ($)</label>
+        <input type="number" class="fc" id="foreignTaxOther" value="0" min="0" step="any" inputmode="decimal">
+        <div class="hint">Tax on dividends, interest, rent, etc. (the category chosen above)</div>
       </div>
-
     </div>
     <div class="fg2">
-      <div class="f1"><label>Prior Year FTC Carryforward ($)</label>
-        <input type="number" class="fc" id="carryforward" value="0" oninput="calc()">
-        <div class="hint">Unused FTC from prior years (IRC §904(c))</div>
+      <div class="f1"><label for="cfGen">General Category Carryforward ($)</label>
+        <input type="number" class="fc" id="cfGen" value="0" min="0" step="any" inputmode="decimal">
+        <div class="hint">Unused general category foreign tax from prior years (IRC §904(c); 10 years forward)</div>
       </div>
-      <div class="f1"><label>FEIE Election</label>
-        <select class="fc" id="feieElect" onchange="calc()">
+      <div class="f1"><label for="cfPas">Passive Category Carryforward ($)</label>
+        <input type="number" class="fc" id="cfPas" value="0" min="0" step="any" inputmode="decimal">
+        <div class="hint">Unused passive category foreign tax from prior years (IRC §904(c))</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="feieElect">Strategy to Display</label>
+        <select class="fc" id="feieElect">
           <option value="compare">Show comparison (FEIE vs. FTC)</option>
-          <option value="feie">Elect FEIE</option>
-          <option value="ftc">Elect FTC only (no FEIE)</option>
+          <option value="feie">Elect FEIE (FTC on remaining income)</option>
+          <option value="ftc">FTC only (no FEIE)</option>
         </select>
+        <div class="hint">FEIE election: IRC §911(a), (e); Form 2555</div>
       </div>
     </div>
   </div>
@@ -217,183 +259,247 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 
+<div class="card">
+  <div class="ch"><div class="sb">4</div><h2>Assumptions &amp; Sources</h2></div>
+  <div class="cb">
+    <details class="assump">
+      <summary>Assumptions &amp; sources (parameters for the selected year)</summary>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Parameter</th><th>Value (selected year)</th><th>Status</th><th>Citation</th></tr></thead>
+        <tbody id="assumpBody"></tbody>
+      </table></div>
+    </details>
+    <div class="note-box"><strong>Projected figures are estimates.</strong> Amounts labeled "Projected" are not IRS-published. They apply your assumed inflation rate to the 2026 published amounts and the statutory rounding rules, and will differ from what the IRS later announces. Do not use projected figures on a filed return.</div>
+    <div class="verified">Last verified: October 29, 2026</div>
+  </div>
+</div>
+
 </div>
 
 <script>
-const STD = {single:15000, mfj:30000, mfs:15000, hoh:22500};
-const BRACKETS_SINGLE = [[0,12400,0.10],[12400,50400,0.12],[50400,105700,0.22],[105700,201775,0.24],[201775,256225,0.32],[256225,640600,0.35],[640600,Infinity,0.37]];
-const BRACKETS_MFJ = [[0,24800,0.10],[24800,100800,0.12],[100800,211400,0.22],[211400,403550,0.24],[403550,512450,0.32],[512450,768700,0.35],[768700,Infinity,0.37]];
-const BRACKETS_MFS = [[0,12400,0.10],[12400,50400,0.12],[50400,105700,0.22],[105700,201775,0.24],[201775,256225,0.32],[250525,375800,0.35],[375800,Infinity,0.37]];
-const BRACKETS_HOH = [[0,17700,0.10],[17700,67450,0.12],[67450,105700,0.22],[105700,201775,0.24],[201775,256200,0.32],[256200,640600,0.35],[640600,Infinity,0.37]];
-const FEIE_LIMIT = 132900;
+// ---------- Parameters (all 2026 figures from Rev. Proc. 2025-32; statutory bases from IRC 1(j)(2), 63(c)(7), 911(b)(2)(D)) ----------
+var RATES = [0.10, 0.12, 0.22, 0.24, 0.32, 0.35, 0.37];
+// base = statutory 2018 bracket tops (IRC 1(j)(2)); y26 = Rev. Proc. 2025-32 section 4.01 bracket tops; R = statutory rounding of the increase
+var BRK = {
+  mfj:    {base: [19050, 77400, 165000, 315000, 400000, 600000], y26: [24800, 100800, 211400, 403550, 512450, 768700], R: 50},
+  hoh:    {base: [13600, 51800, 82500, 157500, 200000, 500000],  y26: [17700, 67450, 105700, 201750, 256200, 640600], R: 50},
+  single: {base: [9525, 38700, 82500, 157500, 200000, 500000],   y26: [12400, 50400, 105700, 201775, 256225, 640600], R: 25},
+  mfs:    {base: [9525, 38700, 82500, 157500, 200000, 300000],   y26: [12400, 50400, 105700, 201775, 256225, 384350], R: 25}
+};
+// standard deduction: base amounts under IRC 63(c)(7)(A); 2026 per Rev. Proc. 2025-32 section 4.14; MFJ = 2 x single (IRC 63(c)(2)(A))
+var STDBASE = {single: 15750, hoh: 23625};
+var STD26 = {single: 16100, hoh: 24150};
+var FEIE_BASE = 80000, FEIE_26 = 132900;
 
-function getBrackets(status){
-  if(status==='mfj') return BRACKETS_MFJ;
-  if(status==='mfs') return BRACKETS_MFS;
-  if(status==='hoh') return BRACKETS_HOH;
-  return BRACKETS_SINGLE;
+function floorTo(x, r){ return Math.floor(x / r + 1e-9) * r; }
+function r0(x){ return Math.round(x + 1e-9); }
+// project one indexed amount: base (statute), pub26 (published 2026), R (round-down unit), k years after 2026
+function projectAmt(base, pub26, R, y, inflPct){
+  if (y <= 2026) return pub26;
+  var k = y - 2026;
+  var c26 = (pub26 - base + R / 2) / base;   // 2026 index estimated at the midpoint of its rounding interval
+  var inc = floorTo(base * ((1 + c26) * Math.pow(1 + inflPct / 100, k) - 1), R);
+  return base + inc;
 }
-
-function calcTax(taxable, status){
-  if(taxable<=0) return 0;
-  const brackets = getBrackets(status);
-  let tax=0, rem=taxable;
-  for(const [lo,hi,rate] of brackets){
-    const width = Math.min(rem, hi-lo);
-    if(width<=0) break;
-    tax += width*rate;
-    rem -= width;
-    if(rem<=0) break;
+function bracketTops(status, y, infl){
+  var b = BRK[status];
+  return b.y26.map(function(v, i){ return projectAmt(b.base[i], v, b.R, y, infl); });
+}
+function stdDed(status, y, infl){
+  if (status === "mfj") return 2 * projectAmt(STDBASE.single, STD26.single, 50, y, infl);
+  if (status === "hoh") return projectAmt(STDBASE.hoh, STD26.hoh, 50, y, infl);
+  return projectAmt(STDBASE.single, STD26.single, 50, y, infl);
+}
+function feieLimitFor(y, infl){
+  if (y <= 2026) return FEIE_26;
+  var k = y - 2026, c26 = (FEIE_26 - FEIE_BASE + 50) / FEIE_BASE;
+  return FEIE_BASE + floorTo(FEIE_BASE * ((1 + c26) * Math.pow(1 + infl / 100, k) - 1), 100);
+}
+function daysInYear(y){ return (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 366 : 365; }
+function taxOn(x, tops){
+  if (!(x > 0)) return 0;
+  var tax = 0, lo = 0;
+  for (var i = 0; i < 7; i++) {
+    var hi = (i < 6) ? tops[i] : Infinity;
+    if (x > lo) tax += (Math.min(x, hi) - lo) * RATES[i];
+    if (x <= hi) break;
+    lo = hi;
   }
   return tax;
 }
 
-function pct(n){return (n*100).toFixed(1)+'%';}
-function fmt(n){
-  if(n===0) return '$0';
-  const abs = Math.abs(Math.round(n));
-  return (n<0?'-':'')+'$'+abs.toLocaleString('en-US');
+// ---------- Engine ----------
+function evalScenario(p, withFeie, tops, std, feieMax){
+  var F = p.F, O = p.O, U = p.U, G = F + O + U;
+  var D = Math.max(std, p.itemized);
+  var E = withFeie ? Math.min(F, feieMax) : 0;
+  var TI = Math.max(0, G - E - D);
+  var tax = withFeie ? Math.max(0, taxOn(TI + E, tops) - taxOn(E, tops)) : taxOn(TI, tops);
+  var taxStackedTop = withFeie ? taxOn(TI + E, tops) : taxOn(TI, tops);
+  var taxOnExcl = withFeie ? taxOn(E, tops) : 0;
+  var oGen = p.basket === "general" ? O : 0, oPas = p.basket === "passive" ? O : 0;
+  var gross = {gen: F + oGen, pas: oPas};                 // Form 1116 lines 3d/3e include excluded income
+  var share = {gen: G > 0 ? D * gross.gen / G : 0, pas: G > 0 ? D * gross.pas / G : 0};
+  var fsti = {gen: Math.max(0, gross.gen - E - share.gen), pas: Math.max(0, gross.pas - share.pas)};
+  var sumF = fsti.gen + fsti.pas;
+  if (sumF > TI && sumF > 0) { fsti.gen *= TI / sumF; fsti.pas *= TI / sumF; }
+  var disallowed = (withFeie && F > 0) ? p.taxE * (E / F) : 0;
+  var paid = {gen: (p.taxE - disallowed) + (p.basket === "general" ? p.taxO : 0), pas: (p.basket === "passive" ? p.taxO : 0)};
+  var cf = {gen: p.cfGen, pas: p.cfPas};
+  var out = {G: G, D: D, E: E, TI: TI, tax: tax, taxStackedTop: taxStackedTop, taxOnExcl: taxOnExcl, gross: gross, share: share, fsti: fsti, disallowed: disallowed, cats: {}};
+  var credit = 0, excess = 0;
+  ["gen", "pas"].forEach(function(c){
+    var lim = TI > 0 ? tax * fsti[c] / TI : 0;
+    var pool = paid[c] + cf[c];
+    var cr = Math.min(pool, lim);
+    out.cats[c] = {limit: lim, paid: paid[c], cf: cf[c], pool: pool, credit: cr, excess: pool - cr, fraction: TI > 0 ? fsti[c] / TI : 0};
+    credit += cr; excess += pool - cr;
+  });
+  out.credit = credit; out.excess = excess;
+  out.usTax = Math.max(0, tax - credit);
+  out.foreignTaxTotal = p.taxE + p.taxO;
+  return out;
+}
+function computeFTC(p){
+  var y = p.year, infl = p.infl;
+  var tops = bracketTops(p.status, y, infl), std = stdDed(p.status, y, infl);
+  var dY = daysInYear(y), days = Math.floor(p.days); if (!(days >= 1)) days = dY; if (days > dY) days = dY;
+  var L = feieLimitFor(y, infl);
+  var feieMax = days === dY ? L : r0(L * days / dY);
+  var A = evalScenario(p, true, tops, std, feieMax);
+  var B = evalScenario(p, false, tops, std, feieMax);
+  return {year: y, tops: tops, std: std, feieLimit: L, feieMax: feieMax, days: days, dY: dY, A: A, B: B, projected: y > 2026};
 }
 
-function flag(type, icon, html){
-  return `<div class="flag ${type}"><div class="fi">${icon}</div><div class="ft">${html}</div></div>`;
+// ---------- UI ----------
+function fmt(n){
+  var v = Math.round(n + 1e-9);
+  if (v === 0) return "$0";
+  return (v < 0 ? "-$" : "$") + Math.abs(v).toLocaleString("en-US");
+}
+function pct(n){ return (n * 100).toFixed(1) + "%"; }
+function el(id){ return document.getElementById(id); }
+function num(id){ var v = parseFloat(el(id).value); return (isFinite(v) && v > 0) ? v : 0; }
+function flag(type, icon, html){ return '<div class="flag ' + type + '"><div class="fi">' + icon + '</div><div class="ft">' + html + '</div></div>'; }
+function srow(l, v, cls){ return '<div class="sum-row"><span class="sum-lbl">' + l + '</span><span class="sum-val' + (cls ? " " + cls : "") + '">' + v + '</span></div>'; }
+function badgeHTML(y){ return y <= 2026 ? '<span class="badge-pub">IRS-published: Rev. Proc. 2025-32 (2026)</span>' : '<span class="badge-proj">Projected - estimate, not IRS-published</span>'; }
+var CATNAME = {gen: "General category", pas: "Passive category"};
+
+function detailHTML(r, p, withFeie){
+  var S = withFeie ? r.A : r.B, h = '';
+  h += '<div class="sum-box"><div class="sum-title">' + (withFeie ? "Strategy A - FEIE election, FTC on remaining income" : "Strategy B - FTC only (no FEIE)") + '</div>';
+  h += srow("Gross income (" + fmt(p.F) + " foreign earned + " + fmt(p.O) + " other foreign + " + fmt(p.U) + " US)", fmt(S.G));
+  if (withFeie) h += srow("FEIE exclusion = smaller of earned income or " + fmt(r.feieMax) + " (IRC §911(b)(2))", "- " + fmt(S.E), "green");
+  h += srow((p.itemized > r.std ? "Itemized" : "Standard") + " deduction (" + fmt(S.D) + "; IRC §63)", "- " + fmt(S.D));
+  h += srow("Taxable income", fmt(S.TI));
+  if (withFeie) {
+    h += srow("Tax on taxable income + excluded amount (" + fmt(S.TI + S.E) + ")", fmt(S.taxStackedTop));
+    h += srow("Less tax on the excluded amount alone (" + fmt(S.E) + ") - IRC §911(f)(1)", "- " + fmt(S.taxOnExcl));
+    h += srow("Regular tax before credits", fmt(S.tax));
+  } else {
+    h += srow("Regular tax before credits (" + r.year + " rate table, IRC §1(j))", fmt(S.tax));
+  }
+  ["gen", "pas"].forEach(function(c){
+    var k = S.cats[c];
+    if (k.paid <= 0 && k.cf <= 0 && S.gross[c] <= 0) return;
+    h += srow(CATNAME[c] + ": foreign-source taxable income = " + fmt(S.gross[c]) + (withFeie && c === "gen" ? " - " + fmt(S.E) + " excluded" : "") + " - " + fmt(S.share[c]) + " apportioned deduction", fmt(S.fsti[c]));
+    h += srow(CATNAME[c] + ": limitation = " + fmt(S.tax) + " x " + fmt(S.fsti[c]) + " / " + fmt(S.TI) + " (IRC §904(a))", fmt(k.limit));
+    h += srow(CATNAME[c] + ": foreign tax available" + (k.cf > 0 ? " (incl. " + fmt(k.cf) + " carryforward)" : "") , fmt(k.pool));
+    h += srow(CATNAME[c] + ": credit = smaller of the two", "- " + fmt(k.credit));
+  });
+  if (withFeie && S.disallowed > 0) h += srow("Foreign tax on excluded income, not creditable: " + fmt(p.taxE) + " x " + fmt(S.E) + " / " + fmt(p.F) + " (Treas. Reg. §1.911-6(c))", fmt(S.disallowed), "amber");
+  h += srow("<strong>US tax after FTC</strong>", fmt(S.usTax), S.usTax === 0 ? "green" : "");
+  h += '</div>';
+  return h;
+}
+
+function readP(){
+  var y = parseInt(el("taxYear").value, 10); if (!(y >= 2026 && y <= 2030)) y = 2026;
+  var iRaw = parseFloat(el("infl").value); var infl = isFinite(iRaw) ? Math.min(Math.max(iRaw, 0), 15) : 2.5;
+  var st = el("filingStatus").value; if (!BRK[st]) st = "single";
+  var dRaw = parseInt(el("qualDays").value, 10);
+  return {year: y, infl: infl, status: st, F: num("foreignEarned"), O: num("otherForeign"), U: num("usIncome"), basket: el("otherBasket").value === "general" ? "general" : "passive",
+          itemized: num("itemized"), taxE: num("foreignTaxEarned"), taxO: num("foreignTaxOther"), cfGen: num("cfGen"), cfPas: num("cfPas"),
+          days: isFinite(dRaw) ? dRaw : daysInYear(y), elect: el("feieElect").value, _dRaw: dRaw};
+}
+
+function assumptionsHTML(r, p){
+  var pub = r.year <= 2026, st = pub ? "IRS-published" : "Projected";
+  var rows = [];
+  var names = ["10%", "12%", "22%", "24%", "32%", "35%"];
+  var tops = r.tops.map(function(v, i){ return names[i] + " bracket ends at " + fmt(v); }).join("; ");
+  rows.push(["Rate tables (" + ({single: "Single", mfj: "Married Filing Jointly", mfs: "Married Filing Separately", hoh: "Head of Household"})[p.status] + ")", tops + "; 37% above", pub ? st : st + " (rates are statutory and permanent)", "IRC §1(j)(2) as made permanent by P.L. 119-21 §70101; thresholds: Rev. Proc. 2025-32 §4.01 (2026); indexing and round-down to next lowest " + (BRK[p.status].R === 25 ? "$25 (unmarried and separate filers, IRC §1(f)(7)(B) as applied by §1(j)(3)(B)(ii))" : "$50 (IRC §1(f)(7)(A))")]);
+  rows.push(["Standard deduction", fmt(r.std), st, "IRC §63(c)(2), (c)(7) (P.L. 119-21 §70102); 2026: Rev. Proc. 2025-32 §4.14; later years: base amount indexed from 2024, increase rounded down to next lowest $50"]);
+  rows.push(["FEIE exclusion amount (full year)", fmt(r.feieLimit) + (r.days < r.dY ? "; prorated " + r.days + "/" + r.dY + " = " + fmt(r.feieMax) : ""), st, "IRC §911(b)(2)(D); 2026: Rev. Proc. 2025-32 §4.39; indexed with base year 2004, increase rounded down to next lowest $100"]);
+  rows.push(["Stacking of excluded income", "Tax = T(TI + E) - T(E)", "Statutory", "IRC §911(f)(1)(A)"]);
+  rows.push(["Foreign tax on excluded income", "Pro rata disallowed", "Statutory", "IRC §911(d)(6); Treas. Reg. §1.911-6(c); Form 1116 instructions, line 12"]);
+  rows.push(["Separate categories", "General and passive modeled", "Statutory", "IRC §904(d)(1), (2)"]);
+  rows.push(["Carryback / carryforward", "1 year back, 10 years forward", "Statutory", "IRC §904(c)"]);
+  rows.push(["Assumed inflation", pub ? "Not used" : p.infl + "% per year", pub ? "n/a" : "Projected (your input)", "Default 2.5%; affects 2027-2030 only"]);
+  var h = "";
+  rows.forEach(function(x){ h += "<tr><td>" + x[0] + "</td><td>" + x[1] + "</td><td>" + x[2] + "</td><td>" + x[3] + "</td></tr>"; });
+  return h;
 }
 
 function calc(){
-  const status = document.getElementById('filingStatus').value;
-  const gross = parseFloat(document.getElementById('grossIncome').value)||0;
-  const foreignEarned = Math.min(parseFloat(document.getElementById('foreignEarned').value)||0, gross);
-  const otherForeign = parseFloat(document.getElementById('otherForeign').value)||0;
-  const usIncome = parseFloat(document.getElementById('usIncome').value)||0;
-  const itemized = parseFloat(document.getElementById('itemized').value)||0;
-  const foreignTaxEarned = parseFloat(document.getElementById('foreignTaxEarned').value)||0;
-  const foreignTaxOther = parseFloat(document.getElementById('foreignTaxOther').value)||0;
-  const carryforward = parseFloat(document.getElementById('carryforward').value)||0;
-  const feieElect = document.getElementById('feieElect').value;
-
-  const stdDed = STD[status];
-  const deduction = Math.max(stdDed, itemized);
-  const totalForeignTax = foreignTaxEarned + foreignTaxOther;
-  const totalForeignIncome = foreignEarned + otherForeign;
-  const feieExclusion = Math.min(foreignEarned, FEIE_LIMIT);
-
-  // ── SCENARIO A: FEIE ──
-  const grossA = gross - feieExclusion;
-  const taxableA = Math.max(0, grossA - deduction);
-  // FTC limit with FEIE: only foreign income NOT excluded
-  const foreignIncomeA = Math.max(0, foreignEarned - feieExclusion) + otherForeign;
-  const ftcLimitA = taxableA > 0 ? (foreignIncomeA / grossA) * calcTax(taxableA, status) : 0;
-  const ftcA = Math.min(foreignTaxOther, ftcLimitA) + carryforward;
-  const grossTaxA = calcTax(taxableA, status);
-  const usaTaxA = Math.max(0, grossTaxA - Math.min(ftcA, grossTaxA));
-  const carryA = Math.max(0, totalForeignTax - ftcLimitA - feieExclusion * 0);
-  const effectiveA = gross > 0 ? usaTaxA / gross : 0;
-
-  // ── SCENARIO B: FTC ONLY ──
-  const taxableB = Math.max(0, gross - deduction);
-  const grossTaxB = calcTax(taxableB, status);
-  const ftcLimitB = taxableB > 0 ? (totalForeignIncome / gross) * grossTaxB : 0;
-  const ftcB = Math.min(totalForeignTax + carryforward, ftcLimitB);
-  const usaTaxB = Math.max(0, grossTaxB - ftcB);
-  const carryB = Math.max(0, totalForeignTax - ftcLimitB);
-  const effectiveB = gross > 0 ? usaTaxB / gross : 0;
-
-  const rb = document.getElementById('resultBody');
-  let h = '';
-
-  const showFeie = feieElect !== 'ftc';
-  const showFtc  = feieElect !== 'feie';
-
-  // Hero result grid
-  const activeScenario = feieElect === 'feie' ? usaTaxA : feieElect === 'ftc' ? usaTaxB : Math.min(usaTaxA, usaTaxB);
-  h += `<div class="result-hero"><div class="result-grid">
-    <div class="rg-item"><div class="rg-label">US Tax (Optimal)</div><div class="rg-val coral">${fmt(activeScenario)}</div><div class="rg-sub">Federal income tax</div></div>
-    <div class="rg-item"><div class="rg-label">Foreign Tax Paid</div><div class="rg-val">${fmt(totalForeignTax)}</div><div class="rg-sub">Creditable taxes</div></div>
-    <div class="rg-item"><div class="rg-label">Total Tax Burden</div><div class="rg-val amber">${fmt(activeScenario + totalForeignTax)}</div><div class="rg-sub">US + foreign combined</div></div>
-    <div class="rg-item"><div class="rg-label">Effective US Rate</div><div class="rg-val">${gross>0?(activeScenario/gross*100).toFixed(1)+'%':' - '}</div><div class="rg-sub">On total gross income</div></div>
-  </div></div>`;
-
-  // Comparison
-  if(feieElect === 'compare'){
-    h += `<div class="compare-grid">
-      <div class="cg-box ${usaTaxA <= usaTaxB ? 'winner' : ''}">
-        <div class="cg-label">Strategy A - FEIE Election</div>
-        <div class="cg-tax" style="color:${usaTaxA<=usaTaxB?'var(--coral)':'var(--ink)'}">${fmt(usaTaxA)}</div>
-        <div class="cg-desc">Exclude ${fmt(feieExclusion)} under IRC §911. FTC on remaining foreign income only. ${carryA>0?'FTC carryforward: '+fmt(carryA)+'.':''}</div>
-        ${usaTaxA <= usaTaxB ? '<div class="winner-badge">LOWER TAX</div>' : ''}
-      </div>
-      <div class="cg-box ${usaTaxB < usaTaxA ? 'winner' : ''}">
-        <div class="cg-label">Strategy B - FTC Only (No FEIE)</div>
-        <div class="cg-tax" style="color:${usaTaxB<usaTaxA?'var(--coral)':'var(--ink)'}">${fmt(usaTaxB)}</div>
-        <div class="cg-desc">Credit ${fmt(Math.min(ftcB,grossTaxB))} of ${fmt(totalForeignTax)} foreign tax paid. FTC limitation: ${fmt(ftcLimitB)}. ${carryB>0?'Carryforward: '+fmt(carryB)+'.':''}</div>
-        ${usaTaxB < usaTaxA ? '<div class="winner-badge">LOWER TAX</div>' : ''}
-      </div>
-    </div>`;
+  var p = readP();
+  var r = computeFTC(p);
+  var A = r.A, B = r.B;
+  el("inflWrap").style.display = p.year > 2026 ? "" : "none";
+  el("yearBadge").innerHTML = badgeHTML(p.year);
+  el("qualDays").max = r.dY;
+  el("grossLine").textContent = "Total gross income used: " + fmt(A.G) + " (foreign earned + other foreign + US-source). Deduction used: " + fmt(Math.max(r.std, p.itemized)) + (p.itemized > r.std ? " (itemized)" : " (standard)") + ".";
+  var h = '';
+  if (isFinite(p._dRaw) ? (p._dRaw < 1 || p._dRaw > r.dY) : true) h += flag('amber', '!', 'Qualifying days adjusted to ' + r.days + ' (valid range for ' + p.year + ' is 1 to ' + r.dY + ').');
+  var showA = p.elect !== 'ftc', showB = p.elect !== 'feie';
+  var usedA = p.elect === 'feie' || (p.elect === 'compare' && A.usTax <= B.usTax);
+  var active = p.elect === 'feie' ? A : (p.elect === 'ftc' ? B : (A.usTax <= B.usTax ? A : B));
+  h += '<div class="result-hero"><div class="result-grid">' +
+    '<div class="rg-item"><div class="rg-label">US Tax' + (p.elect === 'compare' ? ' (Lower)' : '') + '</div><div class="rg-val coral">' + fmt(active.usTax) + '</div><div class="rg-sub">Federal income tax after FTC</div></div>' +
+    '<div class="rg-item"><div class="rg-label">Foreign Tax Paid</div><div class="rg-val">' + fmt(active.foreignTaxTotal) + '</div><div class="rg-sub">All foreign income tax</div></div>' +
+    '<div class="rg-item"><div class="rg-label">Total Tax Burden</div><div class="rg-val amber">' + fmt(active.usTax + active.foreignTaxTotal) + '</div><div class="rg-sub">US + foreign combined</div></div>' +
+    '<div class="rg-item"><div class="rg-label">Effective US Rate</div><div class="rg-val">' + (active.G > 0 ? pct(active.usTax / active.G) : ' - ') + '</div><div class="rg-sub">On total gross income</div></div>' +
+    '</div></div>';
+  if (p.year > 2026) h += '<div style="margin-bottom:12px">' + badgeHTML(p.year) + '</div>';
+  if (p.elect === 'compare') {
+    var aWins = A.usTax < B.usTax - 0.5, bWins = B.usTax < A.usTax - 0.5, tie = !aWins && !bWins;
+    h += '<div class="compare-grid">' +
+      '<div class="cg-box ' + (aWins ? 'winner' : '') + '"><div class="cg-label">Strategy A - FEIE Election</div><div class="cg-tax" style="color:' + (aWins ? 'var(--coral)' : 'var(--ink)') + '">' + fmt(A.usTax) + '</div>' +
+      '<div class="cg-desc">Exclude ' + fmt(A.E) + ' under IRC §911, stack it at the top for the rate, credit only foreign tax on the rest. ' + (A.excess > 0 ? 'Unused foreign tax: ' + fmt(A.excess) + '.' : '') + '</div>' + (aWins ? '<div class="winner-badge">LOWER TAX</div>' : '') + '</div>' +
+      '<div class="cg-box ' + (bWins ? 'winner' : '') + '"><div class="cg-label">Strategy B - FTC Only (No FEIE)</div><div class="cg-tax" style="color:' + (bWins ? 'var(--coral)' : 'var(--ink)') + '">' + fmt(B.usTax) + '</div>' +
+      '<div class="cg-desc">Credit ' + fmt(B.credit) + ' of ' + fmt(B.foreignTaxTotal + p.cfGen + p.cfPas) + ' foreign tax available (including carryforwards). ' + (B.excess > 0 ? 'Unused: ' + fmt(B.excess) + '.' : '') + '</div>' + (bWins ? '<div class="winner-badge">LOWER TAX</div>' : '') + '</div>' +
+      '</div>';
+    if (tie) h += flag('blue', 'ℹ', '<strong>The two strategies produce the same US tax</strong> on these facts (' + fmt(A.usTax) + ').');
+    else h += flag('blue', 'ℹ', '<strong>Difference:</strong> ' + fmt(Math.abs(A.usTax - B.usTax)) + ' lower US tax under ' + (aWins ? 'Strategy A (FEIE)' : 'Strategy B (FTC only)') + '. Compare also the unused foreign tax carryover, which has value in later years (IRC §904(c)).');
   }
+  if (showA) h += detailHTML(r, p, true);
+  if (showB) h += detailHTML(r, p, false);
 
-  // Detailed calculation for active scenario
-  const showA = feieElect === 'feie' || (feieElect === 'compare' && usaTaxA <= usaTaxB);
-  h += `<div class="sum-box"><div class="sum-title">${showA ? 'FEIE Strategy Detail' : 'FTC-Only Strategy Detail'}</div>
-    ${showA ? `
-    <div class="sum-row"><span class="sum-lbl">Gross income</span><span class="sum-val">${fmt(gross)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">FEIE exclusion (IRC §911, 2026 limit $132,900)</span><span class="sum-val green">- ${fmt(feieExclusion)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Adjusted gross income</span><span class="sum-val">${fmt(grossA)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">${itemized>stdDed?'Itemized':'Standard'} deduction</span><span class="sum-val">- ${fmt(deduction)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Taxable income</span><span class="sum-val">${fmt(taxableA)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Gross US tax (2026 brackets)</span><span class="sum-val">${fmt(grossTaxA)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">FTC limitation (IRC §904): ${fmt(foreignIncomeA)} / ${fmt(grossA)} x tax</span><span class="sum-val">- ${fmt(Math.min(ftcA, grossTaxA))}</span></div>
-    <div class="sum-row"><span class="sum-lbl"><strong>US tax after FTC</strong></span><span class="sum-val ${usaTaxA===0?'green':''}">${fmt(usaTaxA)}</span></div>
-    ` : `
-    <div class="sum-row"><span class="sum-lbl">Gross income (no FEIE exclusion)</span><span class="sum-val">${fmt(gross)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">${itemized>stdDed?'Itemized':'Standard'} deduction</span><span class="sum-val">- ${fmt(deduction)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Taxable income</span><span class="sum-val">${fmt(taxableB)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Gross US tax (2026 brackets)</span><span class="sum-val">${fmt(grossTaxB)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">FTC limitation (IRC §904): ${fmt(totalForeignIncome)} / ${fmt(gross)} x tax</span><span class="sum-val">- ${fmt(ftcLimitB)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">FTC claimed (lesser of taxes paid or limitation)</span><span class="sum-val">- ${fmt(ftcB)}</span></div>
-    <div class="sum-row"><span class="sum-lbl"><strong>US tax after FTC</strong></span><span class="sum-val ${usaTaxB===0?'green':''}">${fmt(usaTaxB)}</span></div>
-    `}
-  </div>`;
-
-  // Flags
-  const effectiveForeignRate = foreignEarned > 0 ? (foreignTaxEarned / foreignEarned) : 0;
-  if(effectiveForeignRate >= 0.30){
-    h += flag('green','✓','<strong>High effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> At this rate, the FTC-only strategy often eliminates US tax entirely - foreign taxes paid may exceed the US tax liability on that income. Excess FTC carries back 1 year and forward 10 years under IRC §904(c).');
-  } else if(effectiveForeignRate > 0 && effectiveForeignRate < 0.15){
-    h += flag('blue','ℹ','<strong>Low effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> When foreign taxes paid are low, the FEIE typically produces a better result because it directly excludes income rather than crediting taxes that were barely paid. The comparison above shows which is better for your numbers.');
-  } else if(effectiveForeignRate === 0 && foreignEarned > 0){
-    h += flag('blue','ℹ','<strong>No foreign tax paid.</strong> With zero foreign taxes paid, the FTC produces no credit. The FEIE is the only meaningful strategy for reducing US tax on this income - subject to the $132,900 limit and the passive activity rules.');
-  } else if(effectiveForeignRate >= 0.15 && effectiveForeignRate < 0.30){
-    h += flag('blue','ℹ','<strong>Moderate effective foreign tax rate (' + pct(effectiveForeignRate) + ').</strong> In this range, the better strategy depends on your specific income level and US bracket. The comparison above shows which produces a lower US tax bill for your numbers.');
-  }
-  if(totalForeignIncome > FEIE_LIMIT && foreignEarned > FEIE_LIMIT){
-    h += flag('amber','!',`<strong>Income exceeds FEIE limit.</strong> Your foreign earned income of ${fmt(foreignEarned)} exceeds the 2026 FEIE limit of $132,900. The excess ${fmt(foreignEarned - FEIE_LIMIT)} is still subject to US tax under the FEIE strategy. The FTC strategy may be more effective for high earners in high-tax jurisdictions.`);
-  }
-  if(carryB > 0 && (feieElect === 'ftc' || (feieElect === 'compare' && !showA))){
-    h += flag('amber','!',`<strong>FTC carryforward of ${fmt(carryB)} generated.</strong> Your foreign taxes paid exceed the IRC §904 limitation this year. The excess carries forward up to 10 years and can be applied against future US tax on foreign income. IRC §904(c).`);
-  }
-  h += flag('amber','!','<strong>This calculator provides an estimate only.</strong> The actual FTC limitation requires a separate Form 1116 for each income basket (general, passive, HTKO, etc.). The self-employment tax (IRC §1401) is not reduced by the FEIE. This calculator does not address the SE tax impact, which can be significant for self-employed expats. Consult a qualified international tax CPA before making an election.');
-
-  h += `<div class="src">Authority: IRC §901 (foreign tax credit); IRC §904 (FTC limitation); IRC §904(c) (carryback/carryforward); IRC §911 (FEIE); IRC §911(b)(2)(D) (2026 FEIE limit $132,900); IRC §1401 (SE tax not reduced by FEIE); Form 1116 instructions; IRS Rev. Proc. 2025-32 (2026 brackets and standard deductions).</div>`;
-  h += ``;
-  h += ``;
-
-  rb.innerHTML = h;
+  // flags
+  var effF = p.F > 0 ? p.taxE / p.F : 0;
+  if (p.F === 0) h += flag('blue', 'ℹ', '<strong>No foreign earned income entered.</strong> The FEIE has nothing to exclude; only the FTC on other foreign income applies.');
+  else if (p.taxE === 0) h += flag('blue', 'ℹ', '<strong>No foreign tax on earned income.</strong> The FTC produces no credit on that income, so the FEIE is the only strategy that reduces US tax on it.');
+  else h += flag('blue', 'ℹ', '<strong>Effective foreign rate on earned income: ' + pct(effF) + '.</strong> Compare it with the effective US rate on the same income in the results above; the comparison shows which strategy gives the lower US tax for your numbers.');
+  if (p.F > r.feieMax) h += flag('amber', '!', '<strong>Income exceeds the FEIE limit.</strong> Foreign earned income of ' + fmt(p.F) + ' exceeds the ' + p.year + ' limit of ' + fmt(r.feieMax) + (r.days < r.dY ? ' (prorated for ' + r.days + ' qualifying days)' : '') + '. The excess ' + fmt(p.F - r.feieMax) + ' stays taxable under the FEIE strategy, at the stacked (higher) rates.');
+  if (showA && A.disallowed > 0) h += flag('amber', '!', '<strong>Foreign tax on excluded income is not creditable:</strong> ' + fmt(A.disallowed) + ' of the ' + fmt(p.taxE) + ' paid on earned income (IRC §911(d)(6); Treas. Reg. §1.911-6(c)).');
+  if (showB && B.excess > 0) h += flag('amber', '!', '<strong>Unused foreign tax of ' + fmt(B.excess) + ' under FTC only.</strong> It carries back 1 year and forward 10 years, category by category (IRC §904(c)).');
+  if (showA && A.excess > 0 && A.disallowed < A.excess) h += flag('amber', '!', '<strong>Unused foreign tax of ' + fmt(A.excess) + ' under the FEIE strategy</strong> (after the disallowance above) carries back 1 year and forward 10 years (IRC §904(c)).');
+  h += flag('amber', '!', '<strong>Estimate only - not modeled:</strong> self-employment tax (the FEIE does not reduce it, IRC §1402(a)(11)), the housing exclusion or deduction (see the FEIE calculator), net investment income tax, AMT, state tax, qualified dividend and capital gain rates and the §904(b)(2) rate-differential adjustment, deductions definitely related to specific income, and the §904(j) de minimis exemption for small passive foreign taxes. A separate Form 1116 is filed for each category. Revoking an FEIE election bars a new election until the 6th taxable year after the revocation year without IRS consent (IRC §911(e)(2)). Consult a qualified international tax CPA before making an election.');
+  h += '<div class="src">Authority: IRC §901; §904(a), (c), (d); §911(a), (b)(2), (d)(6), (e), (f); §1(j); §63(c); Treas. Reg. §1.911-6; Form 1116 and its instructions (lines 1a, 3a-3f, 12, 18-21, 24); Form 2555; Rev. Proc. 2025-32 (2026 rate tables, standard deductions, FEIE limit). Tax computed from the rate tables; the Form 1040 tax tables for income under $100,000 may differ by a few dollars.</div>';
+  h += '<div class="disc"><strong>Projected figures are estimates.</strong> Figures labeled "Projected" are not IRS-published. Last verified: October 29, 2026.</div>';
+  el("resultBody").innerHTML = h;
+  el("assumpBody").innerHTML = assumptionsHTML(r, p);
 }
-
+["taxYear", "filingStatus", "infl", "foreignEarned", "otherForeign", "otherBasket", "usIncome", "itemized", "qualDays", "foreignTaxEarned", "foreignTaxOther", "cfGen", "cfPas", "feieElect"].forEach(function(id){
+  var e = el(id); e.addEventListener("input", calc); e.addEventListener("change", calc);
+});
 calc();
 </script>
-
-
 
 <script>
 function doPrint(){window.print();}
 function doShare(){var url=location.href;var title=document.title.replace(' | CPA Validated','');if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
 function showShareModal(url,title){if(document.getElementById('sv-ol'))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]];var ol=document.createElement('div');ol.id='sv-ol';ol.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center';var h='<div style="background:#111111;width:100%;max-width:520px"><div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share</span><button id="sv-x" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px">&times;<\/button><\/div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'<\/a>';});h+='<button id="sv-cp" style="padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link<\/button><\/div><\/div>';ol.innerHTML=h;document.body.appendChild(ol);document.getElementById('sv-x').onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById('sv-cp').onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);});}catch(e2){var t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);}};}</script>
-</div>
-</div>
-
-
-
 
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">

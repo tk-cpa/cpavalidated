@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Alternative Minimum Tax (AMT) Calculator 2026 | CPA Validated</title>
-<meta name="description" content="Calculate AMT exposure for 2026. AMTI, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. CPA-validated. IRC Sections 55-58. Form 6251.">
+<title>Alternative Minimum Tax (AMT) Calculator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Calculate AMT exposure for tax years 2026-2030. AMTI, 50% exemption phaseout, MFS rules, ISO and SALT add-backs, 26%/28% rates, Part III capital gain rates, Form 8801 credit. CPA-validated. IRC Sections 53-59. Form 6251.">
 <link rel="canonical" href="https://cpavalidated.com/amt-calculator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -81,16 +81,36 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 @media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Alternative Minimum Tax (AMT) Calculator 2026 | CPA Validated">
-  <meta property="og:description" content="Calculate AMT exposure for 2026. AMTI, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. CPA-validated. IRC Sections 55-58. Form 6251.">
+  <meta property="og:title" content="Alternative Minimum Tax (AMT) Calculator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Calculate AMT exposure for tax years 2026-2030. AMTI, 50% exemption phaseout, MFS rules, ISO and SALT add-backs, 26%/28% rates, Part III capital gain rates, Form 8801 credit. CPA-validated. IRC Sections 53-59. Form 6251.">
   <meta property="og:url" content="https://cpavalidated.com/amt-calculator.html">
   <meta property="og:site_name" content="CPA Validated">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Alternative Minimum Tax (AMT) Calculator 2026 | CPA Validated">
-  <meta name="twitter:description" content="Calculate AMT exposure for 2026. AMTI, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. CPA-validated. IRC Sections 55-58. Form 6251.">
+  <meta name="twitter:title" content="Alternative Minimum Tax (AMT) Calculator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Calculate AMT exposure for tax years 2026-2030. AMTI, 50% exemption phaseout, MFS rules, ISO and SALT add-backs, 26%/28% rates, Part III capital gain rates, Form 8801 credit. CPA-validated. IRC Sections 53-59. Form 6251.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"Alternative Minimum Tax (AMT) Calculator 2026 | CPA Validated","url":"https://cpavalidated.com/amt-calculator.html","description":"Calculate AMT exposure for 2026. AMTI, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. CPA-validated. IRC Sections 55-58. Form 6251.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Alternative Minimum Tax (AMT) Calculator 2026-2030 | CPA Validated","url":"https://cpavalidated.com/amt-calculator.html","description":"Calculate AMT exposure for tax years 2026-2030. AMTI, 50% exemption phaseout, MFS rules, ISO and SALT add-backs, 26%/28% rates, Part III capital gain rates, Form 8801 credit. CPA-validated. IRC Sections 53-59. Form 6251.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
   </script>
+<style id="cpav-calc-extra">
+.proj-badge{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b);font-size:11px;font-weight:700;padding:4px 10px;letter-spacing:.03em;margin:0 8px 8px 0}
+.pub-badge{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green-b);font-size:11px;font-weight:700;padding:4px 10px;letter-spacing:.03em;margin:0 8px 8px 0}
+.lv{font-size:12px;color:var(--ink-60);margin:0 0 14px;line-height:1.6}
+.yrrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.asm{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.asm summary{cursor:pointer;padding:12px 20px;font-size:13px;font-weight:600;color:var(--ink)}
+.asm-body{padding:0 20px 16px}
+.atab-wrap{overflow-x:auto}
+.atab{width:100%;border-collapse:collapse;font-size:12px;line-height:1.5}
+.atab th{text-align:left;padding:7px 10px;background:var(--ink-10);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60)}
+.atab td{text-align:left;padding:7px 10px;border-top:1px solid var(--ink-20);vertical-align:top}
+.st-s{color:var(--green);font-weight:600}
+.st-i{color:var(--blue-acc);font-weight:600}
+.st-p{color:var(--amber);font-weight:600}
+.proj-note{font-size:11.5px;color:var(--ink-60);line-height:1.6;margin-top:10px}
+.inwarn{font-size:12px;color:var(--red);margin:0 0 10px}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px}
+@media(max-width:480px){.fg2,.fg3,.yrrow{grid-template-columns:1fr}.hero4{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
 <nav>
@@ -116,69 +136,112 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 <div class="ph"><div class="phi">
-  <h1>Alternative Minimum Tax (AMT) Calculator 2026</h1>
-  <div class="sub">AMTI computation, exemption phaseout, ISO exercise add-back, SALT add-back, 26%/28% rates. AMT vs. regular tax comparison. Form 6251.</div>
-  <div class="badges"><span class="badge">IRC 55</span><span class="badge">IRC 56 adjustments</span><span class="badge">IRC 57 preferences</span><span class="badge">IRC 58 exemption</span><span class="badge">Form 6251</span></div>
+  <h1>Alternative Minimum Tax (AMT) Calculator 2026-2030</h1>
+  <div class="sub">Tax years 2026-2030. AMTI computation, exemption phaseout at 50 cents per dollar, married-filing-separately rules, ISO and SALT add-backs, 26%/28% rates, Part III capital gain rates, Form 8801 credit. Form 6251.</div>
+  <div class="badges"><span class="badge">IRC 55</span><span class="badge">IRC 56 adjustments</span><span class="badge">IRC 57 preferences</span><span class="badge">IRC 55(d) exemption</span><span class="badge">Form 6251</span></div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="wrap">
 
 <div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Filing Status &amp; Regular Tax</h2></div>
+  <div class="ch"><div class="sb">1</div><h2>Tax Year, Filing Status &amp; Regular Tax</h2></div>
   <div class="cb">
+    <div class="yrrow">
+      <div class="f1"><label for="yr">Tax Year</label>
+        <select class="fc" id="yr" onchange="calc()">
+          <option value="2026" selected>2026 (IRS-published)</option>
+          <option value="2027">2027 (projected)</option>
+          <option value="2028">2028 (projected)</option>
+          <option value="2029">2029 (projected)</option>
+          <option value="2030">2030 (projected)</option>
+        </select>
+        <div class="hint">2026 figures are from Rev. Proc. 2025-32 sections 4.03 and 4.10. 2027-2030 indexed amounts are projections.</div>
+      </div>
+      <div class="f1"><label for="infl">Assumed Annual Inflation for Projected Years (%)</label>
+        <input type="number" class="fc" id="infl" value="2.5" step="0.1" min="0" max="15" oninput="calc()">
+        <div class="hint">Used only for 2027-2030. Applied to the 2026 base as a chained CPI-U growth rate, then rounded under the statute (IRC 55(d)(3)(C), 55(d)(4)(B)(iii), 1(j)(5)(C)).</div>
+      </div>
+    </div>
     <div class="fg3">
-      <div class="f1"><label>Filing Status</label>
+      <div class="f1"><label for="fs">Filing Status</label>
         <select class="fc" id="fs" onchange="calc()">
-          <option value="single">Single / Head of Household</option>
-          <option value="mfj" selected>Married Filing Jointly</option>
+          <option value="single">Single</option>
+          <option value="hoh">Head of Household</option>
+          <option value="mfj" selected>Married Filing Jointly / Surviving Spouse</option>
           <option value="mfs">Married Filing Separately</option>
         </select>
+        <div class="hint">IRC 55(d)(1). Marital status is determined under IRC 7703.</div>
       </div>
-      <div class="f1"><label>Regular Taxable Income ($)</label>
-        <input type="number" class="fc" id="rti" value="400000" oninput="calc()">
-        <div class="hint">Form 1040 Line 15 - after all deductions</div>
+      <div class="f1"><label for="rti">Regular Taxable Income ($)</label>
+        <input type="number" class="fc" id="rti" value="400000" min="0" oninput="calc()">
+        <div class="hint">Form 1040 line 15 (after the standard or itemized deduction and any QBI deduction).</div>
       </div>
-      <div class="f1"><label>Regular Income Tax ($)</label>
-        <input type="number" class="fc" id="regt" value="100000" oninput="calc()">
-        <div class="hint">Form 1040 Line 16 - before credits</div>
+      <div class="f1"><label for="regt">Regular Tax for Form 6251 Line 10 ($)</label>
+        <input type="number" class="fc" id="regt" value="81196" min="0" oninput="calc()">
+        <div class="hint">Form 1040 line 16 plus Schedule 2 line 1z, less Schedule 3 line 1 (foreign tax credit). Default is the 2026 MFJ ordinary-rate tax on $400,000 (Rev. Proc. 2025-32 Table 1). Enter your own figure.</div>
       </div>
     </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="ch"><div class="sb">2</div><h2>AMT Adjustments &amp; Preference Items</h2></div>
+  <div class="ch"><div class="sb">2</div><h2>AMT Adjustments &amp; Preference Items (Form 6251 Part I)</h2></div>
   <div class="cb">
     <div class="fg2">
-      <div class="f1"><label>SALT Deducted on Schedule A ($)</label>
-        <input type="number" class="fc" id="salt" value="10000" oninput="calc()">
-        <div class="hint">Added back for AMT. IRC 56(b)(1)(A)(ii). Capped at $10K under TCJA/OBBBA for regular tax but fully added back for AMT.</div>
+      <div class="f1"><label for="salt">Taxes Added Back - Line 2a ($)</label>
+        <input type="number" class="fc" id="salt" value="40000" min="0" oninput="calc()">
+        <div class="hint">If you itemize: Schedule A line 7 (state and local taxes after the SALT cap, plus other taxes). If you take the standard deduction: enter the standard deduction (Form 1040 line 12e). IRC 56(b)(1)(A)(ii) and 56(b)(1)(D). SALT cap for the selected year is shown under Assumptions (IRC 164(b)(7)).</div>
       </div>
-      <div class="f1"><label>ISO Exercise Spread ($)</label>
+      <div class="f1"><label for="refund">Tax Refund Included in Income - Line 2b ($)</label>
+        <input type="number" class="fc" id="refund" value="0" min="0" oninput="calc()">
+        <div class="hint">State and local income tax refund included on Schedule 1 (entered as a positive number here; subtracted). IRC 56(b)(1)(C).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="iso">ISO Exercise Adjustment - Line 2i ($)</label>
         <input type="number" class="fc" id="iso" value="0" oninput="calc()">
-        <div class="hint">FMV minus exercise price on ISOs exercised but not sold. Largest single AMT trigger. IRC 56(b)(3).</div>
+        <div class="hint">Excess of FMV at exercise over exercise price on incentive stock options exercised and held at year end. Negative if you sold ISO stock and the AMT gain is lower than regular gain. IRC 56(b)(3).</div>
       </div>
-    </div>
-    <div class="fg2">
-      <div class="f1"><label>Depreciation Adjustment ($)</label>
+      <div class="f1"><label for="dep">Depreciation Adjustment - Line 2l ($)</label>
         <input type="number" class="fc" id="dep" value="0" oninput="calc()">
-        <div class="hint">MACRS minus ADS depreciation on real property and personal property. IRC 56(a)(1).</div>
-      </div>
-      <div class="f1"><label>Other Preferences &amp; Adjustments ($)</label>
-        <input type="number" class="fc" id="other" value="0" oninput="calc()">
-        <div class="hint">Private activity bond interest, excess depletion, other IRC 57 items.</div>
+        <div class="hint">Regular tax depreciation minus AMT depreciation (negative if AMT depreciation is larger). IRC 56(a)(1).</div>
       </div>
     </div>
     <div class="fg2">
-      <div class="f1"><label>LTCG / Qualified Dividends in AMTI ($)</label>
-        <input type="number" class="fc" id="ltcg" value="0" oninput="calc()">
-        <div class="hint">These retain preferential rates (0/15/20%) within AMT. Enter to preserve the lower rate calculation.</div>
+      <div class="f1"><label for="other">Other Adjustments &amp; Preferences - Lines 2c-2h, 2j-2k, 2m-2t, 3 ($)</label>
+        <input type="number" class="fc" id="other" value="0" oninput="calc()">
+        <div class="hint">Net total of the remaining Form 6251 adjustments and preferences, for example private activity bond interest (IRC 57(a)(5)), excess percentage depletion (IRC 57(a)(1)), investment interest, NOL, passive activity, and QSBS (line 2h) items. Enter negative amounts as negatives.</div>
       </div>
-      <div class="f1"><label>Prior Year AMT Credit - Form 8801 ($)</label>
-        <input type="number" class="fc" id="cred" value="0" oninput="calc()">
-        <div class="hint">AMT paid in prior years on deferral items generates a credit usable in regular tax years.</div>
+      <div class="f1"><label for="senior">Enhanced Deduction for Seniors, Schedule 1-A ($)</label>
+        <input type="number" class="fc" id="senior" value="0" min="0" oninput="calc()">
+        <div class="hint">Added back to AMTI through Form 6251 lines 1a-1b. Per the 2025 Instructions for Form 6251 (What's New). 2026 instructions are not yet published; the same treatment is assumed.</div>
       </div>
     </div>
+    <div class="fg2">
+      <div class="f1"><label for="anc">Qualified Dividends + Net Capital Gain at 0/15/20% ($)</label>
+        <input type="number" class="fc" id="anc" value="0" min="0" oninput="calc()">
+        <div class="hint">Form 6251 line 13 (adjusted net capital gain including qualified dividends, as refigured for AMT). Leave 0 if none. Triggers the Part III computation under IRC 55(b)(3).</div>
+      </div>
+      <div class="f1"><label for="u1250">Unrecaptured Section 1250 Gain ($)</label>
+        <input type="number" class="fc" id="u1250" value="0" min="0" oninput="calc()">
+        <div class="hint">Schedule D line 19 (Form 6251 line 14). Taxed at up to 25% in Part III. 28% rate gain is taxed at the 26%/28% AMT rates.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label for="ftc">AMT Foreign Tax Credit - Line 8 ($)</label>
+        <input type="number" class="fc" id="ftc" value="0" min="0" oninput="calc()">
+        <div class="hint">Computed separately on Form 1116 for AMT. IRC 59(a).</div>
+      </div>
+      <div class="f1"><label for="cred">Prior-Year Minimum Tax Credit - Form 8801 ($)</label>
+        <input type="number" class="fc" id="cred" value="0" min="0" oninput="calc()">
+        <div class="hint">Available credit carryforward. Allowed only against regular tax in excess of tentative minimum tax. IRC 53(c).</div>
+      </div>
+      <div class="f1"><label for="ocred">Other Credits Reducing Regular Tax ($)</label>
+        <input type="number" class="fc" id="ocred" value="0" min="0" oninput="calc()">
+        <div class="hint">Nonrefundable credits under subparts A, B, D, E and F of Part IV that reduce regular tax in the IRC 53(c)(1) limit. Used only for the Form 8801 limit.</div>
+      </div>
+    </div>
+    <div class="proj-note">Not modeled: Form 2555 foreign earned income, estates and trusts, children subject to the kiddie tax exemption cap (Rev. Proc. 2025-32 section 4.11), and corporate AMT (IRC 55(b)(2)).</div>
   </div>
 </div>
 
@@ -186,6 +249,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="ch"><div class="sb">3</div><h2>Results</h2></div>
   <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
 </div>
+<div class="lv">Last verified: October 29, 2026. Figures checked against IRC 53, 55, 56, 59 and 164 (Cornell LII), Rev. Proc. 2025-32 sections 2.07 and 4.10, the 2025 Instructions for Form 6251 and the 2026 draft Form 6251.</div>
 </div>
 
 <div class="related"><div style="max-width:920px;margin:0 auto">
@@ -199,60 +263,209 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <script>
 function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
 function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
-const P={single:{ex:90100,ps:500000},mfj:{ex:140200,ps:1000000},mfs:{ex:70100,ps:500000}};
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+
+/* ---- Inflation-indexing engine (statutory bases verified against IRC text, Cornell LII, Oct 29, 2026) ----
+   F17 / F16 = implied 2026 cost-of-living factors for base years 2017 / 2016, solved from the figures published
+   in Rev. Proc. 2025-32 (every published 2026 bracket, cap-gain threshold, AMT exemption and QBI threshold is
+   reproduced by these factors). Projected years multiply by (1+g)^(year-2026), then apply the statute's rounding rule. */
+var F17=1.281224, F16=1.302649;
+var TY0=2026;
+function yrN(y){return y-TY0;}
+function growth(y,g){return Math.pow(1+g,yrN(y));}
+function r100(x){return Math.round(x/100)*100;}
+function capGainTh(y,g){
+  var n=yrN(y);
+  if(n===0){return {z:{single:49450,mfj:98900,hoh:66200,mfs:49450},f:{single:545500,mfj:613700,hoh:579600,mfs:306850}};}
+  var F=F17*growth(y,g);
+  function up(b){return b+Math.floor(b*(F-1)/50)*50;}
+  var j0=up(77200), h0=up(51700), j15=up(479000), h15=up(452400), s15=up(425800);
+  return {z:{single:j0/2,mfj:j0,hoh:h0,mfs:j0/2},f:{single:s15,mfj:j15,hoh:h15,mfs:j15/2}};
+}
+function saltCap(y){
+  if(y===2026)return {cap:40400,thr:505000};
+  if(y>=2030)return {cap:10000,thr:null};
+  var c=40400,t=505000;for(var k=2027;k<=y;k++){c*=1.01;t*=1.01;}
+  return {cap:c,thr:t};
+}
+function amtParams(y,g){
+  var n=yrN(y),pj=n>0,f=growth(y,g);
+  var exJ=pj?r100(109400*F17*f):140200;
+  var exS=pj?r100(70300*F17*f):90100;
+  var thJ=pj?r100(1000000*f):1000000;
+  var b28=pj?r100(244500*f):244500;
+  var cg=capGainTh(y,g);
+  return {
+    year:y,proj:pj,g:g,
+    ex:{single:exS,hoh:exS,mfj:exJ,mfs:exJ/2},
+    th:{single:thJ/2,hoh:thJ/2,mfj:thJ,mfs:thJ/2},
+    b28:{single:b28,hoh:b28,mfj:b28,mfs:b28/2},
+    z:cg.z,f15:cg.f
+  };
+}
+function amtCompute(P,fs,x){
+  var ex0=P.ex[fs],th=P.th[fs],b28=P.b28[fs],R={};
+  var zeroPt=th+ex0/0.5;
+  R.amti0=x.rti+x.taxes-x.refund+x.iso+x.dep+x.other+x.senior;
+  R.zeroPt=zeroPt;
+  R.mfsAdd=0;
+  if(fs==='mfs'&&R.amti0>zeroPt){R.mfsAdd=Math.round(Math.min(0.5*(R.amti0-zeroPt),ex0));}
+  R.amti=R.amti0+R.mfsAdd;
+  R.exBase=ex0;R.th=th;
+  R.exRed=R.amti>th?Math.round(0.5*(R.amti-th)):0;
+  R.ex=Math.max(0,ex0-R.exRed);
+  R.l6=Math.max(0,R.amti-R.ex);
+  R.b28=b28;R.sub28=Math.round(0.02*b28);
+  function rate(v){return v<=b28?Math.round(v*0.26):Math.round(v*0.28)-R.sub28;}
+  R.rate=rate;
+  R.partIII=(x.anc>0||x.u1250>0)&&R.l6>0;
+  if(!R.partIII){R.l7=rate(R.l6);}
+  else{
+    var L={};
+    L[12]=R.l6;L[13]=x.anc;L[14]=x.u1250;
+    L[15]=L[14]>0?L[13]+L[14]:L[13];
+    L[16]=Math.min(L[12],L[15]);L[17]=L[12]-L[16];L[18]=rate(L[17]);
+    L[19]=P.z[fs];
+    L[20]=Math.max(0,x.rti-Math.min(x.anc,x.rti));
+    L[21]=Math.max(0,L[19]-L[20]);L[22]=Math.min(L[12],L[13]);L[23]=Math.min(L[21],L[22]);L[24]=L[22]-L[23];
+    L[25]=P.f15[fs];L[26]=L[21];L[27]=L[20];L[28]=L[26]+L[27];L[29]=Math.max(0,L[25]-L[28]);
+    L[30]=Math.min(L[24],L[29]);L[31]=Math.round(L[30]*0.15);L[32]=L[23]+L[30];
+    L[33]=0;L[34]=0;L[35]=null;L[36]=0;L[37]=0;
+    if(L[32]!==L[12]){
+      L[33]=L[22]-L[32];L[34]=Math.round(L[33]*0.20);
+      if(L[14]>0){L[35]=L[17]+L[32]+L[33];L[36]=Math.max(0,L[12]-L[35]);L[37]=Math.round(L[36]*0.25);}
+    }
+    L[38]=L[18]+L[31]+L[34]+L[37];L[39]=rate(L[12]);L[40]=Math.min(L[38],L[39]);
+    R.L=L;R.l7=L[40];
+  }
+  R.ftc=Math.min(x.ftc,R.l7);
+  R.l9=Math.max(0,R.l7-R.ftc);
+  R.l10=x.regt;
+  R.l11=Math.max(0,R.l9-R.l10);
+  R.mtcLimit=Math.max(0,x.regt-x.ocred-R.l9);
+  R.mtcUsed=Math.min(x.cred,R.mtcLimit);
+  R.mtcCarry=x.cred-R.mtcUsed;
+  R.total=x.regt+R.l11-R.mtcUsed;
+  return R;
+}
+var W=[];
+function rd(id,label,lo){
+  var e=document.getElementById(id);var v=parseFloat(e&&e.value);
+  if(!isFinite(v))v=0;
+  if(lo!==undefined&&v<lo){W.push(label);v=lo;}
+  if(v>1e11){W.push(label+' (capped at $100 billion)');v=1e11;}
+  return v;
+}
 function calc(){
-  const fs=document.getElementById('fs').value;
-  const rti=parseFloat(document.getElementById('rti').value)||0;
-  const regt=parseFloat(document.getElementById('regt').value)||0;
-  const salt=parseFloat(document.getElementById('salt').value)||0;
-  const iso=parseFloat(document.getElementById('iso').value)||0;
-  const dep=parseFloat(document.getElementById('dep').value)||0;
-  const other=parseFloat(document.getElementById('other').value)||0;
-  const ltcg=parseFloat(document.getElementById('ltcg').value)||0;
-  const cred=parseFloat(document.getElementById('cred').value)||0;
-  const p=P[fs];
-  const totalAdj=salt+iso+dep+other;
-  const amti=rti+totalAdj;
-  let ex=p.ex;
-  if(amti>p.ps){ex=Math.max(0,ex-(amti-p.ps)*0.50);}
-  const amtiOE=Math.max(0,amti-ex);
-  const ordAMTI=Math.max(0,amtiOE-Math.min(ltcg,amtiOE));
-  let tmt=ordAMTI<=244500?ordAMTI*0.26:244500*0.26+(ordAMTI-244500)*0.28;
-  tmt+=Math.min(ltcg,amtiOE)*0.20;
-  const amtLiab=Math.max(0,tmt-regt);
-  const amtNet=Math.max(0,amtLiab-cred);
-  const total=regt+amtNet;
-  const inAMT=amtLiab>0;
-  const rb=document.getElementById('res');
-  let h='';
+  W=[];
+  var y=parseInt(document.getElementById('yr').value,10);
+  if(!(y>=2026&&y<=2030))y=2026;
+  var gp=parseFloat(document.getElementById('infl').value);
+  if(!isFinite(gp)||gp<0){gp=0;W.push('Inflation assumption');}
+  if(gp>15){gp=15;W.push('Inflation assumption (capped at 15%)');}
+  var g=gp/100;
+  var fs=document.getElementById('fs').value;
+  if(!/^(single|hoh|mfj|mfs)$/.test(fs))fs='mfj';
+  var x={
+    rti:rd('rti','Regular taxable income',0),regt:rd('regt','Regular tax',0),
+    taxes:rd('salt','Taxes added back',0),refund:rd('refund','Tax refund',0),
+    iso:rd('iso','ISO adjustment'),dep:rd('dep','Depreciation adjustment'),other:rd('other','Other adjustments'),
+    senior:rd('senior','Senior deduction',0),anc:rd('anc','Qualified dividends + net capital gain',0),
+    u1250:rd('u1250','Unrecaptured section 1250 gain',0),ftc:rd('ftc','AMT foreign tax credit',0),
+    cred:rd('cred','Prior-year minimum tax credit',0),ocred:rd('ocred','Other credits',0)
+  };
+  var P=amtParams(y,g),R=amtCompute(P,fs,x);
+  var rb=document.getElementById('res');
+  var fsName={single:'Single',hoh:'Head of Household',mfj:'Married Filing Jointly / Surviving Spouse',mfs:'Married Filing Separately'}[fs];
+  var h='';
+  if(W.length)h+=`<div class="inwarn">Input adjusted: negative or invalid values for ${esc(W.join(', '))} were reset.</div>`;
+  h+=P.proj?`<span class="proj-badge">Projected - estimate, not IRS-published</span>`:`<span class="pub-badge">${y} IRS-published figures (Rev. Proc. 2025-32)</span>`;
+  var inAMT=R.l11>0;
+  var effTot=x.rti>0?((R.total/x.rti)*100).toFixed(1)+'% of regular taxable income':'n/a (no taxable income)';
   h+=`<div class="hero4">
-    <div class="h4"><div class="h4l">AMTI</div><div class="h4v coral">${fmt(amti)}</div><div class="h4s">Alt Min Tax Income</div></div>
-    <div class="h4"><div class="h4l">Tentative Min Tax</div><div class="h4v ${inAMT?'amber':'green'}">${fmt(tmt)}</div><div class="h4s">26%/28% rate</div></div>
-    <div class="h4"><div class="h4l">AMT Owed</div><div class="h4v ${amtNet>0?'red':'green'}">${fmt(amtNet)}</div><div class="h4s">${amtNet>0?'Additional tax':'No AMT'}</div></div>
-    <div class="h4"><div class="h4l">Total Tax</div><div class="h4v">${fmt(total)}</div><div class="h4s">Eff. rate ${rti>0?((total/rti)*100).toFixed(1):'0.0'}%</div></div>
+    <div class="h4"><div class="h4l">AMTI</div><div class="h4v coral">${fmt(R.amti)}</div><div class="h4s">Form 6251 line 4</div></div>
+    <div class="h4"><div class="h4l">Tentative Min Tax</div><div class="h4v ${inAMT?'amber':'green'}">${fmt(R.l9)}</div><div class="h4s">Line 9</div></div>
+    <div class="h4"><div class="h4l">AMT Owed</div><div class="h4v ${inAMT?'red':'green'}">${fmt(R.l11)}</div><div class="h4s">${inAMT?'Additional tax (line 11)':'No AMT'}</div></div>
+    <div class="h4"><div class="h4l">Regular Tax + AMT</div><div class="h4v">${fmt(R.total)}</div><div class="h4s">${effTot}</div></div>
   </div>`;
-  h+=`<div class="sum-box"><div class="sum-title">AMT Computation - Form 6251</div>
-    <div class="srow"><span class="sl">Regular taxable income</span><span class="sv">${fmt(rti)}</span></div>
-    <div class="srow"><span class="sl">+ SALT add-back (IRC 56(b)(1)(A)(ii))</span><span class="sv ${salt>0?'amber':''}">${fmt(salt)}</span></div>
-    <div class="srow"><span class="sl">+ ISO exercise spread (IRC 56(b)(3))</span><span class="sv ${iso>0?'amber':''}">${fmt(iso)}</span></div>
-    <div class="srow"><span class="sl">+ Depreciation adj. (IRC 56(a)(1))</span><span class="sv">${fmt(dep)}</span></div>
-    <div class="srow"><span class="sl">+ Other preferences (IRC 57)</span><span class="sv">${fmt(other)}</span></div>
-    <div class="srow"><span class="sl">= AMTI</span><span class="sv coral">${fmt(amti)}</span></div>
-    <div class="srow"><span class="sl">- Exemption ($${p.ex.toLocaleString()} base${amti>p.ps?' - phaseout':''})</span><span class="sv">${fmt(ex)}</span></div>
-    <div class="srow"><span class="sl">= AMTI over exemption</span><span class="sv">${fmt(amtiOE)}</span></div>
-    <div class="srow"><span class="sl">Tentative min. tax (26% / 28%)</span><span class="sv">${fmt(tmt)}</span></div>
-    <div class="srow"><span class="sl">Less: regular tax</span><span class="sv">${fmt(regt)}</span></div>
-    <div class="srow"><span class="sl">AMT before credits</span><span class="sv ${amtLiab>0?'red':'green'}">${fmt(amtLiab)}</span></div>
-    ${cred>0?`<div class="srow"><span class="sl">Less: Form 8801 credit</span><span class="sv green">${fmt(cred)}</span></div>`:''}
-    <div class="srow"><span class="sl"><strong>AMT owed</strong></span><span class="sv ${amtNet>0?'red':'green'}">${fmt(amtNet)}</span></div>
-  </div>`;
-  if(!inAMT)h+=flag('green','v','<strong>No AMT.</strong> Regular tax exceeds tentative minimum tax. No additional AMT owed.');
-  else h+=flag('red','!',`<strong>AMT of ${fmt(amtNet)} applies.</strong> Tentative min. tax ${fmt(tmt)} exceeds regular tax ${fmt(regt)}. AMT paid on deferral items (ISO exercises) generates a Form 8801 credit usable in future years.`);
-  if(iso>0)h+=flag('amber','!','<strong>ISO exercise is the top AMT trigger.</strong> The ISO spread is fully includible in AMTI under IRC 56(b)(3) even though no regular income is recognized. Strategies: exercise ISOs across multiple years, sell in same year to trigger ordinary income instead, or model early exercise under 83(b).');
-  if(amti>p.ps){const reduced=p.ex-ex;h+=flag('amber','!',`<strong>Exemption phaseout applies.</strong> AMTI of ${fmt(amti)} exceeds phaseout threshold $${p.ps.toLocaleString()}. Exemption reduced by ${fmt(reduced)} (25 cents per dollar over threshold). Remaining exemption: ${fmt(ex)}.`);}
-  h+=flag('blue','i','<strong>2026 parameters.</strong> OBBBA (P.L. 119-21) made TCJA AMT provisions permanent. Figures used are based on 2025 IRS parameters (Rev. Proc. 2024-40) - 2026 will be adjusted for inflation. Verify exact 2026 exemption amounts against IRS Rev. Proc. 2025-32 before filing.');
-  h+=`<div class="src">IRC 55 (AMT imposed); IRC 56 (AMT adjustments); IRC 56(b)(1)(A)(ii) (SALT add-back); IRC 56(b)(3) (ISO add-back); IRC 57 (preference items); IRC 58 (exemption amount); IRC 53 (minimum tax credit); OBBBA P.L. 119-21 (TCJA AMT permanent); Form 6251; Rev. Proc. 2024-40 (2025 inflation amounts used as baseline).</div>`;
-  h+=``;
+  var s=(l,v,c)=>`<div class="srow"><span class="sl">${l}</span><span class="sv ${c||''}">${v}</span></div>`;
+  h+=`<div class="sum-box"><div class="sum-title">AMT Computation - Form 6251 (${y}) - ${fsName}</div>`;
+  h+=s('Regular taxable income (Form 1040 line 15)',fmt(x.rti));
+  h+=s('+ Taxes or standard deduction added back (line 2a)',fmt(x.taxes),x.taxes>0?'amber':'');
+  if(x.refund)h+=s('- Tax refund (line 2b)',fmt(-x.refund));
+  if(x.iso)h+=s('+ ISO exercise adjustment (line 2i)',fmt(x.iso),'amber');
+  if(x.dep)h+=s('+ Depreciation adjustment (line 2l)',fmt(x.dep));
+  if(x.other)h+=s('+ Other adjustments and preferences (lines 2c-3)',fmt(x.other));
+  if(x.senior)h+=s('+ Enhanced senior deduction add-back (lines 1a-1b)',fmt(x.senior));
+  h+=s('= AMTI before any MFS add-back',fmt(R.amti0));
+  if(R.mfsAdd>0)h+=s('+ MFS add-back: lesser of 50% x ('+fmt(R.amti0)+' - '+fmt(R.zeroPt)+') or '+fmt(R.exBase),fmt(R.mfsAdd),'amber');
+  h+=s('= Alternative minimum taxable income (line 4)',fmt(R.amti),'coral');
+  h+=s('Exemption base ('+fsName+')',fmt(R.exBase));
+  if(R.amti>R.th)h+=s('- Phaseout: 50% x ('+fmt(R.amti)+' - '+fmt(R.th)+')',fmt(-R.exRed),'amber');
+  h+=s('= Exemption (line 5)',fmt(R.ex));
+  h+=s('= Taxable excess: AMTI - exemption (line 6)',fmt(R.l6));
+  if(!R.partIII){
+    h+=s(R.l6<=R.b28?'Line 7: 26% x '+fmt(R.l6):'Line 7: 28% x '+fmt(R.l6)+' - '+fmt(R.sub28),fmt(R.l7));
+  }else{
+    h+=s('Line 7: Part III result (below)',fmt(R.l7));
+  }
+  if(R.ftc>0)h+=s('- AMT foreign tax credit (line 8)',fmt(-R.ftc));
+  h+=s('= Tentative minimum tax (line 9)',fmt(R.l9),inAMT?'amber':'');
+  h+=s('- Regular tax (line 10)',fmt(R.l10));
+  h+=s('= AMT (line 11) = larger of 0 or line 9 - line 10',fmt(R.l11),inAMT?'red':'green');
+  if(x.cred>0){
+    h+=s('Form 8801 limit: regular tax - other credits - tentative min tax ('+fmt(x.regt)+' - '+fmt(x.ocred)+' - '+fmt(R.l9)+')',fmt(R.mtcLimit));
+    h+=s('- Prior-year minimum tax credit allowed (IRC 53(c))',fmt(-R.mtcUsed),'green');
+    h+=s('Credit carried forward',fmt(R.mtcCarry));
+  }
+  h+=s('<strong>Regular tax + AMT - credit allowed</strong>',fmt(R.total),inAMT?'red':'green');
+  h+=`</div>`;
+  if(R.partIII){
+    var L=R.L,rows='';
+    var ln=(n,l,v)=>{rows+=s('Line '+n+': '+l,fmt(v));};
+    ln(12,'taxable excess (line 6)',L[12]);ln(13,'qualified dividends + net capital gain',L[13]);ln(14,'unrecaptured section 1250 gain',L[14]);
+    ln(15,L[14]>0?'line 13 + line 14':'line 13',L[15]);ln(16,'smaller of lines 12 and 15',L[16]);ln(17,'line 12 - line 16 (taxed at 26%/28%)',L[17]);ln(18,'26%/28% tax on line 17',L[18]);
+    ln(19,'0% rate ceiling for status ('+y+')',L[19]);ln(20,'regular taxable income less qualified dividends and capital gain',L[20]);ln(21,'line 19 - line 20, not below 0',L[21]);ln(22,'smaller of lines 12 and 13',L[22]);
+    ln(23,'taxed at 0%',L[23]);ln(24,'line 22 - line 23',L[24]);ln(25,'15% rate ceiling for status ('+y+')',L[25]);ln(28,'lines 26 + 27',L[28]);ln(29,'line 25 - line 28, not below 0',L[29]);
+    ln(30,'amount taxed at 15%',L[30]);ln(31,'15% tax',L[31]);ln(32,'lines 23 + 30',L[32]);
+    if(L[32]!==L[12]){ln(33,'amount taxed at 20% (line 22 - line 32)',L[33]);ln(34,'20% tax',L[34]);if(L[14]>0){ln(35,'lines 17 + 32 + 33',L[35]);ln(36,'line 12 - line 35 (taxed at 25%)',L[36]);ln(37,'25% tax',L[37]);}}
+    ln(38,'sum of lines 18, 31, 34 and 37',L[38]);ln(39,'26%/28% tax on all of line 12',L[39]);ln(40,'smaller of lines 38 and 39 (to line 7)',L[40]);
+    h+=`<div class="sum-box"><div class="sum-title">Part III - Maximum Capital Gains Rates (IRC 55(b)(3))</div>${rows}</div>`;
+  }
+  if(!inAMT)h+=flag('green','v','<strong>No AMT.</strong> Regular tax is at least the tentative minimum tax (Form 6251 line 10 is not less than line 9).');
+  else h+=flag('red','!',`<strong>AMT of ${fmt(R.l11)} applies.</strong> Tentative minimum tax ${fmt(R.l9)} exceeds regular tax ${fmt(R.l10)}. Tax paid on timing items (for example ISO exercises) can generate a Form 8801 credit for later years under IRC 53; exclusion preferences do not (IRC 53(d)(1)(B)).`);
+  if(x.iso>0)h+=flag('amber','!','<strong>ISO exercise is a common AMT trigger.</strong> The spread is an adjustment under IRC 56(b)(3) even though no regular income is recognized. Selling in the same year as exercise avoids the adjustment (IRC 56(b)(3), 422(c)(2)).');
+  if(R.exRed>0&&R.ex>0)h+=flag('amber','!',`<strong>Exemption phaseout applies.</strong> AMTI of ${fmt(R.amti)} exceeds the ${fmt(R.th)} threshold. For taxable years beginning after 2025 the exemption is reduced by 50 cents per dollar over the threshold (IRC 55(d)(2) as modified by 55(d)(4)(A)(ii)(IV); P.L. 119-21 section 70107), a reduction of ${fmt(R.exRed)}. Remaining exemption: ${fmt(R.ex)}.`);
+  if(R.exRed>0&&R.ex===0)h+=flag('amber','!',`<strong>Exemption fully phased out.</strong> AMTI of ${fmt(R.amti)} is at or above ${fmt(R.th+R.exBase/0.5)}, where the exemption reaches zero (50 cents per dollar over ${fmt(R.th)}).`);
+  if(R.mfsAdd>0)h+=flag('amber','!',`<strong>Married filing separately add-back.</strong> AMTI above ${fmt(R.zeroPt)} is increased by the lesser of 50% of the excess or the exemption base (IRC 55(d)(2), last sentence). The 50% rate is the literal result of the OBBBA substitution in IRC 55(d)(4)(A)(ii)(IV); the 2026 Instructions for Form 6251 (line 4) are not yet published, so verify against them when released.`);
+  if(fs==='mfs'&&R.amti0<=R.zeroPt&&R.amti0>R.th)h+=flag('blue','i',`MFS note: the exemption is zero at AMTI of ${fmt(R.zeroPt)}; no add-back applies below that amount.`);
+  if(x.cred>0&&R.mtcUsed<x.cred)h+=flag('blue','i',`<strong>Form 8801 credit limited.</strong> The prior-year minimum tax credit cannot reduce current-year AMT; it is allowed only to the extent regular tax (net of other credits) exceeds tentative minimum tax (IRC 53(c)). ${fmt(R.mtcCarry)} carries forward.`);
+  if(P.proj)h+=flag('amber','!',`<strong>Projected year.</strong> ${y} indexed amounts (exemption, phaseout threshold, 28% bracket threshold, 0%/15% capital gain ceilings) are estimates using ${gp}% annual inflation, not IRS-published figures. Rates (26%/28%) and the 50% phaseout rate are fixed by statute.`);
+  else h+=flag('blue','i','<strong>2026 figures.</strong> Exemption amounts, phaseout thresholds, the 28% bracket threshold and capital gain ceilings are from Rev. Proc. 2025-32 sections 2.07, 4.03 and 4.10. OBBBA (P.L. 119-21 section 70107) made the TCJA exemption and phaseout threshold increases permanent and changed the phaseout rate to 50%.');
+  /* assumptions */
+  var sc=saltCap(y);
+  var st=(c)=>c==='s'?'<span class="st-s">Statutory</span>':c==='i'?'<span class="st-i">IRS-published</span>':c==='n'?'<span class="st-i">User input</span>':'<span class="st-p">Projected</span>';
+  var idx=P.proj?'p':'i';
+  var rows2=[
+    ['Annual inflation assumption',P.proj?gp+'%':'not used for 2026','n','User input; default 2.5%; applies to 2027-2030 only'],
+    ['Exemption amount ('+fsName+')',fmt(P.ex[fs]),idx,'IRC 55(d)(1), (d)(4)(A)(i), (d)(4)(B); Rev. Proc. 2025-32 sec. 4.10. MFS = 50% of joint amount. Rounded to nearest $100.'],
+    ['Phaseout threshold',fmt(P.th[fs]),P.proj?'p':'s','IRC 55(d)(2), (d)(4)(A)(ii)(I)-(II); fixed at $1,000,000 (joint) for 2026 by IRC 55(d)(4)(B) and P.L. 119-21 sec. 70107; indexed from 2027 (base year 2025), rounded to nearest $100. Unmarried and MFS = 50% of joint.'],
+    ['Phaseout rate','50 cents per dollar','s','IRC 55(d)(4)(A)(ii)(IV)'],
+    ['Exemption reaches zero at AMTI of',fmt(P.th[fs]+P.ex[fs]/0.5),idx,'Threshold + exemption / 0.50 (2026 check: Rev. Proc. 2025-32 sec. 4.10 complete phaseout amounts)'],
+    ['AMT rates','26% / 28%','s','IRC 55(b)(1)(A)'],
+    ['28% rate applies above taxable excess of',fmt(P.b28[fs]),idx,'IRC 55(b)(1)(A), (b)(1)(C), (d)(3) (base year 2011, nearest $100); Rev. Proc. 2025-32 sec. 4.10. MFS = 50%.'],
+    ['Capital gain 0% ceiling (Part III, line 19)',fmt(P.z[fs]),idx,'IRC 1(j)(5)(B)(i), (C); Rev. Proc. 2025-32 sec. 4.03; increase rounded down to a multiple of $50'],
+    ['Capital gain 15% ceiling (Part III, line 25)',fmt(P.f15[fs]),idx,'IRC 1(j)(5)(B)(ii), (C); Rev. Proc. 2025-32 sec. 4.03'],
+    ['MFS add-back','50% of AMTI over '+fmt(P.th.mfs+P.ex.mfs/0.5)+', capped at the exemption','s','IRC 55(d)(2) last sentence with 55(d)(4)(A)(ii)(IV); Form 6251 (2026 draft) line 4 shows the $640,200 start for 2026'],
+    ['SALT deduction cap (Schedule A, before MAGI phase-down)',fmt(sc.cap),'s','IRC 164(b)(7): $40,400 for 2026, 101% of prior year for 2027-2029, $10,000 from 2030'+(sc.thr?'; reduced by 30% of MAGI over '+fmt(sc.thr)+' (not below $10,000)':'; no MAGI phase-down after 2029')],
+    ['Minimum tax credit limit','Regular tax less credits less tentative minimum tax','s','IRC 53(c)']
+  ];
+  var tb='<div class="atab-wrap"><table class="atab"><thead><tr><th>Parameter</th><th>Value for '+y+'</th><th>Status</th><th>Citation</th></tr></thead><tbody>';
+  rows2.forEach(function(r){tb+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+st(r[2])+'</td><td>'+r[3]+'</td></tr>';});
+  tb+='</tbody></table></div>';
+  h+=`<details class="asm"><summary>Assumptions &amp; sources</summary><div class="asm-body">${tb}<div class="proj-note">2026 indexed amounts are IRS-published (Rev. Proc. 2025-32). For 2027-2030 each indexed amount is projected as the 2026 cost-of-living factor times (1 + inflation)^(years after 2026), then rounded under the cited section. Statutory items are fixed by law as shown. Projected figures are estimates and will differ from the IRS-published amounts.</div></div></details>`;
+  h+=`<div class="src">IRC 55 (AMT imposed; tentative minimum tax; exemption); IRC 55(b)(3) (maximum rates on net capital gain); IRC 56(a)(1) (depreciation); IRC 56(b)(1)(A)(ii) (taxes); IRC 56(b)(1)(D) (standard deduction); IRC 56(b)(3) (ISOs); IRC 57 (preferences); IRC 53 (minimum tax credit); IRC 59(a) (AMT foreign tax credit); IRC 164(b)(7) (SALT cap); P.L. 119-21 section 70107; Form 6251 and 2025 Instructions (2026 draft form); Rev. Proc. 2025-32 sections 2.07, 4.03, 4.10. Projected years are estimates, not IRS-published.</div>`;
+  h+=`<div class="disc">Projected figures (2027-2030) are estimates based on the inflation assumption above and are not IRS-published amounts. Results are educational estimates only and do not replace Form 6251 or professional advice.</div>`;
   rb.innerHTML=h;
 }
 calc();

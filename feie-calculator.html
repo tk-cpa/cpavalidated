@@ -1,361 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>FEIE Calculator 2024-2026: Exclusion, Proration &amp; Housing | CPA Validated</title>
-<meta name="description" content="Foreign earned income exclusion calculator for 2024, 2025, and 2026 with daily proration, the foreign housing exclusion and deduction, high-cost locality override, and the Form 2555 ordering rule. CPA-validated.">
+<title>FEIE Calculator 2026-2030: Exclusion, Proration &amp; Housing | CPA Validated</title>
+<meta name="description" content="Foreign earned income exclusion calculator for tax years 2026 through 2030 (plus 2024 and 2025) with daily proration, the foreign housing exclusion and deduction, high-cost locality override, and the Form 2555 line-by-line ordering. 2026 uses IRS-published figures; 2027-2030 are labeled projections. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/feie-calculator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
   --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
-  --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6;
-  --amber:#8B6535; --amber-bg:#EDE8D8;
+  --coral:#F65F5A; --coral-600:#E04A45; --green:#4A7459; --green-bg:#E2EDE6;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --red:#9B3D3D; --red-bg:#EDE0DC;
   --font-display:'Oswald','Arial Narrow',sans-serif;
   --font-sans:'Inter',-apple-system,sans-serif;
   --font-mono:'Courier New',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:var(--paper);color:var(--ink)}
+html{font-size:16px}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+a{color:var(--coral);text-decoration:none}
 .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:900px;margin:0 auto;padding:0 24px}
 .ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
 .ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
 .container{max-width:900px;margin:0 auto;padding:28px 24px}
 .card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
 .ch{background:var(--ink);padding:13px 20px}
 .ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
 .cb{padding:20px}
 .fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.f1{display:flex;flex-direction:column;gap:5px}
+.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
 .f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.08em}
-.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px}
+.f1 .hint{font-size:11px;color:var(--ink-60);line-height:1.5;margin-top:2px}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;background:var(--paper);color:var(--ink);border-radius:0}
 .fc:focus{border-color:var(--coral);outline:none}
 .result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
 .result-box h3{font-family:var(--font-display);font-size:16px;color:var(--green);margin-bottom:8px}
 .result-num{font-family:var(--font-mono);font-size:24px;font-weight:700;color:var(--green);margin:10px 0}
 .note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
-@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+.warn-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 14px;margin-top:12px;font-size:12px;line-height:1.5;color:var(--red)}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw span{color:var(--ink-80)}
+.rw strong{font-family:var(--font-mono);white-space:nowrap}
+.rw.tot{border-bottom:2px solid var(--ink);font-weight:700}
+.rw.tot span{color:var(--ink)}
+.badge-proj{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+details.assump{margin-top:16px;border:1px solid var(--ink-20);background:var(--white)}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.src{font-size:11px;color:var(--ink-60);line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:16px}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+@media(max-width:640px){.fg2{grid-template-columns:1fr}.fc{font-size:16px}.container{padding:20px 16px}.phi{padding:0 16px}.back{padding:12px 16px 0}}
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end canonical nav === */
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/feie-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FEIE Calculator 2026-2030: Exclusion, Proration &amp; Housing | CPA Validated">
+  <meta property="og:description" content="Foreign earned income exclusion calculator for tax years 2026 through 2030 with daily proration, the foreign housing exclusion and deduction, and the Form 2555 ordering. 2027-2030 are labeled projections.">
+  <meta property="og:url" content="https://cpavalidated.com/feie-calculator.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"FEIE Calculator 2026-2030: Exclusion, Proration & Housing | CPA Validated","url":"https://cpavalidated.com/feie-calculator.html","description":"Foreign earned income exclusion calculator for tax years 2026 through 2030 with daily proration, the foreign housing exclusion and deduction, and the Form 2555 ordering. 2027-2030 are labeled projections.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
 </head>
 <body>
-
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
 <div class="ph">
 <div class="phi">
 <h1>Foreign Earned Income Exclusion (FEIE) Calculator</h1>
-<p class="sub">Calculate your 2026 Foreign Earned Income Exclusion under IRC §911. For US citizens and residents living and working abroad.</p>
+<p class="sub">Calculate your Foreign Earned Income Exclusion and housing exclusion or deduction under IRC §911, following Form 2555 line by line. Tax years 2026-2030 (2026 is IRS-published; 2027-2030 are projections). For US citizens and residents living and working abroad.</p>
 </div>
 </div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 
 <div class="container">
 
 <div class="card">
-<div class="ch"><h2>Foreign Earned Income</h2></div>
+<div class="ch"><h2>Inputs</h2></div>
 <div class="cb">
-<div class="f1" style="margin-bottom:14px">
-<label>What is your foreign earned income for 2026?</label>
-<input type="number" id="earned_income" class="fc" placeholder="0" min="0" oninput="calculate()">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
-</div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Tax Year</label>
-<select id="tax_year" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<option value="2026" selected>2026 - $132,900 limit</option>
-<option value="2025">2025 - $130,000 limit</option>
-<option value="2024">2024 - $126,500 limit</option>
-<option value="" disabled>2027 - IRS amount not yet announced (expected fall 2026)</option>
+<div class="fg2">
+<div class="f1">
+<label for="tax_year">Tax Year</label>
+<select id="tax_year" class="fc">
+<option value="2030">2030 - projected</option>
+<option value="2029">2029 - projected</option>
+<option value="2028">2028 - projected (leap year, 366 days)</option>
+<option value="2027">2027 - projected</option>
+<option value="2026" selected>2026 - $132,900 limit (IRS-published)</option>
+<option value="2025">2025 - $130,000 limit (IRS-published)</option>
+<option value="2024">2024 - $126,500 limit (IRS-published, leap year)</option>
 </select>
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
+<div class="hint">IRC §911(b)(2)(D). The 2027 inflation adjustment has not been published by the IRS as of the last-verified date below.</div>
 </div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Qualifying Days in the Year (prorates the limit)</label>
-<input type="number" id="qual_days" min="1" max="366" value="365" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
+<div class="f1" id="infl_wrap" style="display:none">
+<label for="infl">Assumed annual inflation (projected years only)</label>
+<input type="number" id="infl" class="fc" value="2.5" min="0" max="15" step="0.1" inputmode="decimal">
+<div class="hint">Percent per year applied to the 2026 published amount, with the statutory round-down to the next lowest $100 (§911(b)(2)(D)(ii)). Estimate only.</div>
 </div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Qualified Foreign Housing Expenses (optional)</label>
-<input type="number" id="housing_exp" min="0" value="0" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
 </div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Employment Type</label>
-<select id="emp_type" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<option value="employee" selected>Employee (housing exclusion)</option>
-<option value="self">Self-employed (housing deduction)</option>
+<div id="year_badge"></div>
+
+<div class="f1" style="margin-top:10px">
+<label for="earned_income">Foreign earned income for the year (Form 2555, line 27)</label>
+<input type="number" id="earned_income" class="fc" placeholder="0" min="0" step="any" inputmode="decimal">
+<div class="hint">Wages and self-employment income earned in a foreign country, before any exclusion. Excludes pensions, annuities, and US-government pay (§911(b)(1)(B)).</div>
+</div>
+<div class="fg2">
+<div class="f1">
+<label for="qual_days">Qualifying days in the tax year (Form 2555, line 31 or 38)</label>
+<input type="number" id="qual_days" class="fc" min="1" max="366" value="365" step="1" inputmode="numeric">
+<div class="hint">Days in the qualifying period inside the tax year. Prorates the limit (§911(b)(2)(A)). Bona fide residence or 330 full days in 12 months, with a foreign tax home (§911(d)(1)).</div>
+</div>
+<div class="f1">
+<label for="emp_type">Employment type</label>
+<select id="emp_type" class="fc">
+<option value="employee" selected>Employee (housing exclusion for employer-provided amounts)</option>
+<option value="self">Self-employed (housing deduction only)</option>
 </select>
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
+<div class="hint">§911(c)(4): housing not paid by the employer is a deduction, not an exclusion.</div>
 </div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">High-Cost Locality Annual Housing Limit (optional override)</label>
-<input type="number" id="locality_cap" min="0" placeholder="Blank = standard 30% cap" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
+</div>
+<div class="fg2">
+<div class="f1">
+<label for="housing_exp">Qualified foreign housing expenses (Form 2555, line 28)</label>
+<input type="number" id="housing_exp" class="fc" min="0" value="0" step="any" inputmode="decimal">
+<div class="hint">Reasonable housing expenses, excluding deductible interest and taxes (§911(c)(3)). Leave 0 if none.</div>
+</div>
+<div class="f1" id="emp_wrap">
+<label for="emp_prov">Employer-provided amounts (Form 2555, line 34) - optional</label>
+<input type="number" id="emp_prov" class="fc" min="0" step="any" placeholder="Blank = all foreign earned income" inputmode="decimal">
+<div class="hint">Wages and in-kind pay from your employer. Blank treats all foreign earned income as employer-provided (line 35 = 1.000). Self-employed: forced to zero.</div>
+</div>
+</div>
+<div class="fg2">
+<div class="f1">
+<label for="locality_cap">High-cost locality annual housing limit - optional override</label>
+<input type="number" id="locality_cap" class="fc" min="0" step="any" placeholder="Blank = standard 30% limit" inputmode="decimal">
+<div class="hint">Full-year dollar limit for your city from the IRS annual notice (for 2026: Notice 2026-25, section 3 table). Proration by days is applied for you (Form 2555, line 29b worksheet).</div>
+</div>
+<div class="f1" id="carry_wrap">
+<label for="carry_in">Prior-year unallowed housing deduction - optional</label>
+<input type="number" id="carry_in" class="fc" min="0" value="0" step="any" inputmode="decimal">
+<div class="hint">Housing Deduction Carryover Worksheet, line 3 (prior-year Form 2555 line 46 minus line 48). One-year carryover only (§911(c)(4)(C)).</div>
+</div>
 </div>
 </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>FEIE Calculation</h2></div>
+<div class="ch"><h2>FEIE Calculation (Form 2555)</h2></div>
 <div class="cb">
 <div id="calculation_area"></div>
+<details class="assump" id="assump_box">
+<summary>Assumptions &amp; sources</summary>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Value (selected year)</th><th>Status</th><th>Citation</th></tr></thead>
+<tbody id="assump_body"></tbody>
+</table></div>
+</details>
+<div class="note-box"><strong>Projected figures are estimates.</strong> Amounts labeled "Projected" are not IRS-published. They apply your assumed inflation rate to the 2026 published amount and the statutory rounding rule, and will differ from the amount the IRS later announces. Do not use projected figures on a filed return.</div>
+<div class="verified">Last verified: October 29, 2026</div>
 </div>
 </div>
+
+<div class="note-box"><strong>Important:</strong> This calculation assumes you qualify under the <a href="feie-guide.html">Physical Presence Test or Bona Fide Residence Test</a> with a foreign tax home under <a href="section-911-feie-guide.html">IRC &sect;911</a> and that you elect the exclusion on Form 2555. <a href="self-employment-tax-guide.html">Self-employment tax</a> is computed without the &sect;911(a)(1) exclusion (IRC &sect;1402(a)(11)), unless a <a href="totalization-agreements-guide.html">totalization agreement</a> says otherwise. Excluded income is still stacked at the top of the rate brackets for the remaining income (IRC &sect;911(f)), no credit or deduction is allowed to the extent allocable to excluded income (IRC &sect;911(d)(6)), and in higher-tax countries the <a href="form-1116-foreign-tax-credit.html">foreign tax credit</a> can beat the exclusion. Revoking the election bars a new election until the 6th taxable year after the revocation year without IRS consent (IRC &sect;911(e)(2)). See <a href="us-expat-tax-guide.html">the expat filing guide</a>. Consult a tax professional to confirm eligibility.</div>
 
 </div>
 
 <script>
-const FEIE_YEARS = {
-  "2024": {limit: 126500, days: 366, rp: "Rev. Proc. 2023-34"},
-  "2025": {limit: 130000, days: 365, rp: "Rev. Proc. 2024-40"},
-  "2026": {limit: 132900, days: 365, rp: "Rev. Proc. 2025-32"}
+var FEIE_PUB = {
+  2024: {limit: 126500, cite: "Rev. Proc. 2023-34, section 3.39"},
+  2025: {limit: 130000, cite: "Rev. Proc. 2024-40, section 2.39"},
+  2026: {limit: 132900, cite: "Rev. Proc. 2025-32, section 4.39"}
 };
-function fmt(n){ return "$" + Math.round(n).toLocaleString(); }
-function calculate(){
-  const y = FEIE_YEARS[document.getElementById('tax_year').value] || FEIE_YEARS["2026"];
-  let days = parseInt(document.getElementById('qual_days').value) || y.days;
-  days = Math.min(Math.max(days,1), y.days);
-  const income = parseFloat(document.getElementById('earned_income').value) || 0;
-  const housing = parseFloat(document.getElementById('housing_exp').value) || 0;
-  const selfEmp = document.getElementById('emp_type').value === 'self';
-  const overrideRaw = parseFloat(document.getElementById('locality_cap').value);
-  const p = days / y.days;
-  const feieLimit = Math.round(y.limit * p);
-  const base = Math.round(y.limit * 0.16 * p);
-  const cap = Math.round((overrideRaw > 0 ? overrideRaw : y.limit * 0.30) * p);
-  const qual = Math.min(housing, cap);
-  const hca = Math.max(0, qual - base);
-  let feie, hExcl = 0, hDed = 0, taxable;
-  if (!selfEmp) {
-    hExcl = hca;
-    feie = Math.min(Math.max(0, income - hExcl), feieLimit);
-    taxable = income - feie - hExcl;
-  } else {
-    feie = Math.min(income, feieLimit);
-    hDed = Math.min(hca, Math.max(0, income - feie));
-    taxable = income - feie;
-  }
-  function row(l, v, strong){ return '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10)"><span>' + l + '</span><strong style="font-family:var(--font-mono)">' + v + '</strong></div>'; }
-  let h = '<div style="font-size:13px;line-height:1.7">';
-  h += row('Foreign Earned Income:', fmt(income));
-  h += row('FEIE Limit (' + document.getElementById('tax_year').value + ', ' + days + ' of ' + y.days + ' days):', fmt(feieLimit));
-  if (housing > 0) {
-    h += row('Housing Expenses (capped at ' + fmt(cap) + '):', fmt(qual));
-    h += row('Base Housing Amount (16%, prorated):', '&minus; ' + fmt(base));
-    if (!selfEmp) h += row('Foreign Housing Exclusion:', fmt(hExcl));
-    else h += row('Foreign Housing Deduction (limited to income above FEIE):', fmt(hDed));
-  }
-  h += row('Foreign Earned Income Exclusion:', fmt(feie));
-  if (!selfEmp && hExcl > 0) h += row('Total Excluded (housing first, then FEIE):', fmt(feie + hExcl));
-  h += row('Remaining Income Subject to US Tax:', fmt(Math.max(0, taxable)));
-  if (selfEmp) h += '<div style="font-size:11px;opacity:.75;padding-top:8px">Self-employment tax (15.3%) still applies to net earnings; the FEIE does not reduce it. The housing deduction shown is limited to foreign earned income above the FEIE; unused amounts may carry forward one year.</div>';
-  h += '<div style="font-size:11px;opacity:.75;padding-top:6px">' + y.rp + '. Housing computed first; FEIE limited to income minus the housing exclusion, per the Form 2555 ordering.</div>';
-  h += '</div>';
-  document.getElementById('calculation_area').innerHTML = h;
+var FEIE_BASE = 80000;      // IRC 911(b)(2)(D)(i)
+var FEIE_INC_2026 = 52900;  // 132,900 - 80,000 (published 2026 increase, already rounded down to a multiple of $100)
+function daysInYear(y){ return (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 366 : 365; }
+function r0(x){ return Math.round(x + 1e-9); }
+function r2(x){ return Math.round(x * 100 + 1e-9) / 100; }
+function floorTo(x, r){ return Math.floor(x / r + 1e-9) * r; }
+function feieLimit(y, inflPct){
+  if (FEIE_PUB[y]) return FEIE_PUB[y].limit;
+  var k = y - 2026;
+  // 2026 index estimated at the midpoint of its $100 rounding interval, then grown at the assumed rate.
+  var c26 = (FEIE_INC_2026 + 50) / FEIE_BASE;
+  var inc = floorTo(FEIE_BASE * ((1 + c26) * Math.pow(1 + inflPct / 100, k) - 1), 100);
+  return FEIE_BASE + inc;
 }
-['tax_year','qual_days','earned_income','housing_exp','emp_type','locality_cap'].forEach(function(id){
-  document.getElementById(id).addEventListener('input', calculate);
-  document.getElementById(id).addEventListener('change', calculate);
-});
-document.getElementById('tax_year').addEventListener('change', function(){
-  const y = FEIE_YEARS[this.value]; if (y) { const d = document.getElementById('qual_days'); d.max = y.days; if (parseInt(d.value) > y.days) d.value = y.days; }
-  calculate();
+function fmt(n){ var v = Math.round(n + 1e-9); return (v < 0 ? "-$" : "$") + Math.abs(v).toLocaleString("en-US"); }
+function fmtD(n){ return "$" + (Math.round(n * 100) / 100).toFixed(2); }
+function periodAmt(annual, days, dY){ return days === dY ? annual : r2(annual / dY) * days; }
+
+// Form 2555 line-by-line engine (pure function, used by the UI and by the tests)
+function computeFEIE(p){
+  var y = p.year, dY = daysInYear(y);
+  var L = feieLimit(y, p.infl);
+  var days = Math.floor(p.days); if (!(days >= 1)) days = dY; if (days > dY) days = dY;
+  var inc = Math.max(0, p.income || 0), housing = Math.max(0, p.housing || 0);
+  var selfEmp = !!p.selfEmp;
+  var o = {year: y, dY: dY, limit: L, days: days, projected: !FEIE_PUB[y]};
+  o.l27 = r0(inc); o.l28 = r0(housing);
+  var annualCap = (p.cap > 0) ? p.cap : 0.30 * L;
+  o.l29b = r0(periodAmt(annualCap, days, dY));
+  o.l30 = Math.min(o.l28, o.l29b);
+  o.l31 = days;
+  o.l32 = r0(periodAmt(0.16 * L, days, dY));
+  o.dailyBase = r2(0.16 * L / dY); o.dailyCap = r2(annualCap / dY);
+  o.l33 = Math.max(0, o.l30 - o.l32);
+  var l34 = selfEmp ? 0 : ((p.empProv === null || p.empProv === undefined || isNaN(p.empProv)) ? o.l27 : r0(Math.max(0, p.empProv)));
+  o.l34 = Math.min(l34, Math.max(o.l27, 0));
+  o.l35 = (o.l27 > 0) ? Math.min(1, Math.round(o.l34 / o.l27 * 1000) / 1000) : 0;
+  o.l36 = (o.l33 > 0) ? Math.min(r0(o.l33 * o.l35), o.l34) : 0;
+  o.l37 = L; o.l38 = days;
+  o.l39 = days === dY ? 1 : days / dY;
+  o.l40 = r0(L * o.l39);
+  o.l41 = Math.max(0, o.l27 - o.l36);
+  o.l42 = Math.min(o.l40, o.l41);
+  o.l43 = o.l36 + o.l42;
+  o.partIX = (o.l33 > o.l36) && (o.l27 > o.l43);
+  o.l46 = o.partIX ? o.l33 - o.l36 : 0;
+  o.l47 = o.partIX ? o.l27 - o.l43 : 0;
+  o.l48 = o.partIX ? Math.min(o.l46, o.l47) : 0;
+  var carryIn = Math.max(0, p.carryIn || 0);
+  o.l49 = o.partIX ? Math.min(r0(carryIn), Math.max(0, o.l47 - o.l48)) : 0;
+  o.l50 = o.l48 + o.l49;
+  o.unallowedHousingDed = o.partIX ? Math.max(0, o.l46 - o.l48) : 0; // carries to next year only
+  o.remainingBeforeDed = o.l27 - o.l43;
+  o.remainingAfterDed = Math.max(0, o.l27 - o.l43 - o.l50);
+  o.hasHousing = o.l28 > 0;
+  return o;
+}
+
+function statusBadge(y){
+  if (FEIE_PUB[y]) return '<span class="badge-pub">IRS-published figure: ' + FEIE_PUB[y].cite + '</span>';
+  return '<span class="badge-proj">Projected - estimate, not IRS-published</span>';
+}
+function assumptionsHTML(o, inflPct){
+  var pub = !o.projected;
+  var st = pub ? "IRS-published" : "Projected";
+  var rows = [];
+  rows.push(["Maximum exclusion amount (full year)", fmt(o.limit), st, pub ? FEIE_PUB[o.year].cite + "; IRC §911(b)(2)(D)" : "IRC §911(b)(2)(D)(ii): $80,000 indexed by the cost-of-living adjustment with base year 2004, increase rounded down to the next lowest multiple of $100. Projected from the 2026 published amount of $132,900 at " + inflPct + "% per year."]);
+  rows.push(["Days in tax year", String(o.dY), "Statutory", "Calendar year; IRC §911(b)(2)(A) (computed on a daily basis); Form 2555 line 39"]);
+  rows.push(["Base housing amount (16% of the exclusion amount)", fmt(0.16 * o.limit) + " per year (" + fmtD(o.dailyBase) + " per day)", pub ? "Statutory rate, IRS-published base" : "Statutory rate, projected base", "IRC §911(c)(1)(B)(i); Form 2555 line 32" + (o.year === 2026 ? "; Notice 2026-25, section 2" : "")]);
+  rows.push(["Standard housing expense limit (30% of the exclusion amount)", fmt(0.30 * o.limit) + " per year (" + fmtD(r2(0.30 * o.limit / o.dY)) + " per day)", pub ? "Statutory rate, IRS-published base" : "Statutory rate, projected base", "IRC §911(c)(2)(A)(i); Form 2555 line 29b" + (o.year === 2026 ? "; Notice 2026-25, section 2" : "")]);
+  rows.push(["High-cost locality limits", o.year === 2026 ? "Use the override input with the Notice 2026-25 table amount" : "Use the override input with the annual IRS notice for that year", o.year <= 2026 ? "IRS-published (by notice)" : "Not yet published", "IRC §911(c)(2)(B) authorizes the adjustment by notice; 2026 table: Notice 2026-25, section 3. Locality tables for 2027-2030 have not been issued; the standard 30% limit is used unless you override."]);
+  rows.push(["Housing deduction carryover", "1 year only", "Statutory", "IRC §911(c)(4)(C)"]);
+  rows.push(["Assumed annual inflation", pub ? "Not used" : inflPct + "%", pub ? "n/a" : "Projected (your input)", "Default 2.5%; only affects 2027-2030"]);
+  var h = "";
+  for (var i = 0; i < rows.length; i++) h += "<tr><td>" + rows[i][0] + "</td><td>" + rows[i][1] + "</td><td>" + rows[i][2] + "</td><td>" + rows[i][3] + "</td></tr>";
+  return h;
+}
+
+function el(id){ return document.getElementById(id); }
+function readNum(id){ var v = parseFloat(el(id).value); return (isFinite(v) && v > 0) ? v : 0; }
+function readParams(){
+  var y = parseInt(el("tax_year").value, 10); if (!(y >= 2024 && y <= 2030)) y = 2026;
+  var inflRaw = parseFloat(el("infl").value); var infl = isFinite(inflRaw) ? Math.min(Math.max(inflRaw, 0), 15) : 2.5;
+  var dY = daysInYear(y);
+  var dRaw = parseInt(el("qual_days").value, 10);
+  var empRaw = el("emp_prov").value;
+  var empProv = (empRaw === "" || empRaw === null || empRaw === undefined) ? null : readNum("emp_prov");
+  return {year: y, infl: infl, income: readNum("earned_income"), days: isFinite(dRaw) ? dRaw : dY,
+          housing: readNum("housing_exp"), selfEmp: el("emp_type").value === "self", empProv: empProv,
+          cap: readNum("locality_cap"), carryIn: readNum("carry_in"), _dRaw: dRaw, _dY: dY};
+}
+function row(l, v, cls){ return '<div class="rw' + (cls ? " " + cls : "") + '"><span>' + l + '</span><strong>' + v + '</strong></div>'; }
+
+function calculate(){
+  var p = readParams();
+  var o = computeFEIE(p);
+  var pub = !o.projected;
+  el("infl_wrap").style.display = pub ? "none" : "";
+  el("emp_wrap").style.display = p.selfEmp ? "none" : "";
+  el("year_badge").innerHTML = statusBadge(p.year);
+  var dEl = el("qual_days"); dEl.max = o.dY;
+  var h = '<div>';
+  if (isFinite(p._dRaw) && (p._dRaw > o.dY || p._dRaw < 1)) h += '<div class="warn-box">Qualifying days must be between 1 and ' + o.dY + ' for ' + p.year + '. The value was adjusted to ' + o.days + '.</div>';
+  if (!isFinite(p._dRaw)) h += '<div class="warn-box">Qualifying days was blank. ' + o.dY + ' days (full year) is assumed.</div>';
+  if (!pub) h += '<div>' + statusBadge(p.year) + '</div>';
+  h += row("Foreign earned income (line 27):", fmt(o.l27));
+  h += row("Exclusion amount for " + p.year + " (line 37):", fmt(o.limit));
+  h += row("Qualifying days / days in year (lines 38-39): " + o.days + " / " + o.dY + " = " + o.l39.toFixed(4), "");
+  h += row("Maximum exclusion, prorated (line 40) = " + fmt(o.limit) + " x " + o.l39.toFixed(4) + ":", fmt(o.l40));
+  if (o.hasHousing) {
+    h += row("Housing expenses (line 28):", fmt(o.l28));
+    h += row("Limit on housing expenses (line 29b)" + (p.cap > 0 ? " - locality override" : " - standard 30%") + ":", fmt(o.l29b));
+    h += row("Smaller of line 28 or 29b (line 30):", fmt(o.l30));
+    h += row("Base housing amount, " + o.days + " days x " + fmtD(o.dailyBase) + " (line 32):", "&minus; " + fmt(o.l32));
+    h += row("Housing cost amount (line 33):", fmt(o.l33));
+    if (!p.selfEmp) {
+      h += row("Employer-provided amounts (line 34):", fmt(o.l34));
+      h += row("Ratio, line 34 / line 27 (line 35):", o.l35.toFixed(3));
+      h += row("Housing exclusion (line 36) = line 33 x line 35, not more than line 34:", fmt(o.l36));
+    } else {
+      h += row("Housing exclusion (line 36) - self-employed:", fmt(0));
+    }
+    h += row("Income left after housing exclusion (line 41) = line 27 - line 36:", fmt(o.l41));
+  }
+  h += row("Foreign earned income exclusion (line 42) = smaller of line 40 or 41:", fmt(o.l42));
+  h += row("Total excluded, housing first then FEIE (line 43):", fmt(o.l43), "tot");
+  if (o.partIX) {
+    h += row("Housing deduction base (line 46) = line 33 - line 36:", fmt(o.l46));
+    h += row("Income not excluded (line 47) = line 27 - line 43:", fmt(o.l47));
+    h += row("Smaller of line 46 or 47 (line 48):", fmt(o.l48));
+    if (o.l49 > 0) h += row("Prior-year carryover allowed (line 49):", fmt(o.l49));
+    h += row("Foreign housing deduction (line 50), Schedule 1 (Form 1040) line 24j:", fmt(o.l50), "tot");
+    if (o.unallowedHousingDed > 0) h += row("Unallowed this year, carries to " + (p.year + 1) + " only (§911(c)(4)(C)):", fmt(o.unallowedHousingDed));
+  }
+  h += row("Foreign earned income remaining in income after exclusions:", fmt(o.remainingBeforeDed), "tot");
+  if (o.l50 > 0) h += row("Remaining after the housing deduction:", fmt(o.remainingAfterDed));
+  h += '<div class="result-box"><h3>Excluded from US income tax</h3><div class="result-num">' + fmt(o.l43) + '</div><div style="font-size:12px;line-height:1.6">Foreign earned income exclusion ' + fmt(o.l42) + ' plus housing exclusion ' + fmt(o.l36) + (o.l50 > 0 ? '; plus a separate housing deduction of ' + fmt(o.l50) + ' in figuring adjusted gross income' : '') + '.</div></div>';
+  if (p.selfEmp) h += '<div class="note-box">Self-employment tax still applies to net earnings from self-employment; the exclusion does not reduce it (IRC §1402(a)(11)). The housing deduction shown is limited to foreign earned income above the amount excluded (IRC §911(c)(4)(B)); unused amounts carry forward one year only (§911(c)(4)(C)).</div>';
+  h += '<div class="note-box">Excluded income is stacked: tax on the remaining income is computed at the rates that would apply as if the excluded amount were also taxable (IRC §911(f)(1); Foreign Earned Income Tax Worksheet). Deductions definitely related to excluded income are disallowed (IRC §911(d)(6); Treas. Reg. §1.911-6); Form 2555 line 44 is not modeled here, so line 45 equals line 43. Where Form 2555 line 39 is shown, the unrounded daily ratio is used (the form allows at least three decimal places).</div>';
+  h += '</div>';
+  el("calculation_area").innerHTML = h;
+  el("assump_body").innerHTML = assumptionsHTML(o, p.infl);
+}
+["tax_year","qual_days","earned_income","housing_exp","emp_type","emp_prov","locality_cap","carry_in","infl"].forEach(function(id){
+  var e = el(id); e.addEventListener("input", calculate); e.addEventListener("change", calculate);
 });
 calculate();
 </script>
-
-
-<!-- START UNIFIED FOOTER -->
-<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
-  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
-    <button onclick="window.print()" style="background:#F65F5A;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Print / PDF</button>
-    <button onclick="if(navigator.share){navigator.share({title:document.title,url:window.location.href})}else{navigator.clipboard.writeText(window.location.href);alert('Link copied to clipboard')}" style="background:#111111;color:#fff;border:none;padding:11px 26px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em">Share This Page</button>
-  </div>
-  <div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin-top:20px;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);box-sizing:border-box">
-    <div style="max-width:800px;margin:0 auto">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:16px">
-        <span style="font-family:Courier New,monospace;font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.08em">tk.cpa AI Lab</span>
-        <div style="display:flex;gap:20px">
-          <a href="about.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Mission</a>
-          <a href="privacy.html" style="font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;font-weight:500">Privacy</a>
-          <a href="https://tk.cpa" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:#F65F5A;text-decoration:none">tk.cpa</a>
-        </div>
-      </div>
-      <div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7;max-width:680px">Nothing on this page constitutes legal, tax, accounting, or professional advice, and no professional relationship is created by your use of this website. CPA Validated is an educational website for information purposes only. Information should be verified against current primary authority, including the Internal Revenue Code, Treasury regulations, IRS guidance, and applicable state or local law, before being relied upon or acted on. Calculator outputs are estimates only and may be incomplete or inaccurate depending on the facts, assumptions, and inputs used. CPA Inc. and tk.cpa disclaim liability to the fullest extent permitted by law. <a href="/disclaimer.html" style="color:rgba(255,255,255,.6);text-decoration:underline">Full disclaimer: cpavalidated.com/disclaimer.html</a></div>
-    </div>
-  </div>
-</div>
-<!-- END UNIFIED FOOTER -->
-<script src="/shared.js"></script>
-</body>
-</html<div class="note-box"><strong>Important:</strong> This calculation assumes you qualify under the <a href="feie-guide.html">Physical Presence Test or Bona Fide Residence Test</a> with a foreign tax home under <a href="section-911-feie-guide.html">IRC &sect;911</a>. <a href="self-employment-tax-guide.html">Self-employment tax (15.3%)</a> still applies to excluded income unless a <a href="totalization-agreements-guide.html">totalization agreement</a> says otherwise, and in higher-tax countries the <a href="form-1116-foreign-tax-credit.html">foreign tax credit</a> can beat the exclusion. High-cost localities carry larger housing caps; see the annual IRS notice and <a href="us-expat-tax-guide.html">the expat filing guide</a>. Consult a tax professional to confirm eligibility.</div>TYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>FEIE Calculator 2024-2026: Exclusion, Proration &amp; Housing | CPA Validated</title>
-<meta name="description" content="Foreign earned income exclusion calculator for 2024, 2025, and 2026 with daily proration, the foreign housing exclusion and deduction, high-cost locality override, and the Form 2555 ordering rule. CPA-validated.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
-  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
-  --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6;
-  --amber:#8B6535; --amber-bg:#EDE8D8;
-  --font-display:'Oswald','Arial Narrow',sans-serif;
-  --font-sans:'Inter',-apple-system,sans-serif;
-  --font-mono:'Courier New',monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:var(--paper);color:var(--ink)}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
-.phi{max-width:900px;margin:0 auto;padding:0 24px}
-.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
-.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
-.container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
-.ch{background:var(--ink);padding:13px 20px}
-.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
-.cb{padding:20px}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.f1{display:flex;flex-direction:column;gap:5px}
-.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.08em}
-.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px}
-.fc:focus{border-color:var(--coral);outline:none}
-.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
-.result-box h3{font-family:var(--font-display);font-size:16px;color:var(--green);margin-bottom:8px}
-.result-num{font-family:var(--font-mono);font-size:24px;font-weight:700;color:var(--green);margin:10px 0}
-.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
-@media(max-width:640px){.fg2{grid-template-columns:1fr}}
-</style>
-  <link rel="canonical" href="https://cpavalidated.com/feie-calculator.html">
-</head>
-<body>
-
-<div class="ph">
-<div class="phi">
-<h1>Foreign Earned Income Exclusion (FEIE) Calculator</h1>
-<p class="sub">Calculate your 2026 Foreign Earned Income Exclusion under IRC §911. For US citizens and residents living and working abroad.</p>
-</div>
-</div>
-
-<div class="container">
-
-<div class="card">
-<div class="ch"><h2>Foreign Earned Income</h2></div>
-<div class="cb">
-<div class="f1" style="margin-bottom:14px">
-<label>What is your foreign earned income for 2026?</label>
-<input type="number" id="earned_income" class="fc" placeholder="0" min="0" oninput="calculate()">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
-</div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Tax Year</label>
-<select id="tax_year" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<option value="2026" selected>2026 - $132,900 limit</option>
-<option value="2025">2025 - $130,000 limit</option>
-<option value="2024">2024 - $126,500 limit</option>
-<option value="" disabled>2027 - IRS amount not yet announced (expected fall 2026)</option>
-</select>
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
-</div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Qualifying Days in the Year (prorates the limit)</label>
-<input type="number" id="qual_days" min="1" max="366" value="365" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
-</div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Qualified Foreign Housing Expenses (optional)</label>
-<input type="number" id="housing_exp" min="0" value="0" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
-</div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">Employment Type</label>
-<select id="emp_type" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<option value="employee" selected>Employee (housing exclusion)</option>
-<option value="self">Self-employed (housing deduction)</option>
-</select>
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
-</div>
-<div class="f1" style="margin-bottom:14px">
-<label style="display:block;font-size:12px;font-weight:600;margin-bottom:4px">High-Cost Locality Annual Housing Limit (optional override)</label>
-<input type="number" id="locality_cap" min="0" placeholder="Blank = standard 30% cap" style="width:100%;padding:10px;border:1px solid #ccc;font-size:14px">
-<div style="font-size:11px;color:var(--ink-60);margin-top:4px">Wages, self-employment income earned in a foreign country</div>
-</div>
-</div>
-</div>
-
-<div class="card">
-<div class="ch"><h2>FEIE Calculation</h2></div>
-<div class="cb">
-<div id="calculation_area"></div>
-</div>
-</div>
-
-</div>
-
-<script>
-const FEIE_YEARS = {
-  "2024": {limit: 126500, days: 366, rp: "Rev. Proc. 2023-34"},
-  "2025": {limit: 130000, days: 365, rp: "Rev. Proc. 2024-40"},
-  "2026": {limit: 132900, days: 365, rp: "Rev. Proc. 2025-32"}
-};
-function fmt(n){ return "$" + Math.round(n).toLocaleString(); }
-function calculate(){
-  const y = FEIE_YEARS[document.getElementById('tax_year').value] || FEIE_YEARS["2026"];
-  let days = parseInt(document.getElementById('qual_days').value) || y.days;
-  days = Math.min(Math.max(days,1), y.days);
-  const income = parseFloat(document.getElementById('earned_income').value) || 0;
-  const housing = parseFloat(document.getElementById('housing_exp').value) || 0;
-  const selfEmp = document.getElementById('emp_type').value === 'self';
-  const overrideRaw = parseFloat(document.getElementById('locality_cap').value);
-  const p = days / y.days;
-  const feieLimit = Math.round(y.limit * p);
-  const base = Math.round(y.limit * 0.16 * p);
-  const cap = Math.round((overrideRaw > 0 ? overrideRaw : y.limit * 0.30) * p);
-  const qual = Math.min(housing, cap);
-  const hca = Math.max(0, qual - base);
-  let feie, hExcl = 0, hDed = 0, taxable;
-  if (!selfEmp) {
-    hExcl = hca;
-    feie = Math.min(Math.max(0, income - hExcl), feieLimit);
-    taxable = income - feie - hExcl;
-  } else {
-    feie = Math.min(income, feieLimit);
-    hDed = Math.min(hca, Math.max(0, income - feie));
-    taxable = income - feie;
-  }
-  function row(l, v, strong){ return '<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10)"><span>' + l + '</span><strong style="font-family:var(--font-mono)">' + v + '</strong></div>'; }
-  let h = '<div style="font-size:13px;line-height:1.7">';
-  h += row('Foreign Earned Income:', fmt(income));
-  h += row('FEIE Limit (' + document.getElementById('tax_year').value + ', ' + days + ' of ' + y.days + ' days):', fmt(feieLimit));
-  if (housing > 0) {
-    h += row('Housing Expenses (capped at ' + fmt(cap) + '):', fmt(qual));
-    h += row('Base Housing Amount (16%, prorated):', '&minus; ' + fmt(base));
-    if (!selfEmp) h += row('Foreign Housing Exclusion:', fmt(hExcl));
-    else h += row('Foreign Housing Deduction (limited to income above FEIE):', fmt(hDed));
-  }
-  h += row('Foreign Earned Income Exclusion:', fmt(feie));
-  if (!selfEmp && hExcl > 0) h += row('Total Excluded (housing first, then FEIE):', fmt(feie + hExcl));
-  h += row('Remaining Income Subject to US Tax:', fmt(Math.max(0, taxable)));
-  if (selfEmp) h += '<div style="font-size:11px;opacity:.75;padding-top:8px">Self-employment tax (15.3%) still applies to net earnings; the FEIE does not reduce it. The housing deduction shown is limited to foreign earned income above the FEIE; unused amounts may carry forward one year.</div>';
-  h += '<div style="font-size:11px;opacity:.75;padding-top:6px">' + y.rp + '. Housing computed first; FEIE limited to income minus the housing exclusion, per the Form 2555 ordering.</div>';
-  h += '</div>';
-  document.getElementById('calculation_area').innerHTML = h;
-}
-['tax_year','qual_days','earned_income','housing_exp','emp_type','locality_cap'].forEach(function(id){
-  document.getElementById(id).addEventListener('input', calculate);
-  document.getElementById(id).addEventListener('change', calculate);
-});
-document.getElementById('tax_year').addEventListener('change', function(){
-  const y = FEIE_YEARS[this.value]; if (y) { const d = document.getElementById('qual_days'); d.max = y.days; if (parseInt(d.value) > y.days) d.value = y.days; }
-  calculate();
-});
-calculate();
-</script>
-
 
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">

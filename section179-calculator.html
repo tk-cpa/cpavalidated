@@ -1,115 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Section 179 Expensing Calculator | CPA Validated</title>
-<meta name="description" content="Calculate your 2026 Section 179 expensing deduction for business equipment.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Section 179 Expensing Calculator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Section 179 expensing deduction for tax years 2026-2030: dollar limit, phase-out, SUV cap, business income limit and carryover. 2026 figures from Rev. Proc. 2025-32; 2027-2030 projected. IRC Section 179, Form 4562 Part I.">
+<link rel="canonical" href="https://cpavalidated.com/depreciation-calculator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;}
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
+  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
+  --blue-acc:#4A6070; --blue-bg:#DDE4E8; --blue-b:#94AFBC;
+  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+::selection{background:var(--coral);color:#fff}
+a{color:var(--coral);text-decoration:none}
+a:hover{text-decoration:underline}
 .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:900px;margin:0 auto;padding:0 24px}
-.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
-.container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
-.ch{background:var(--ink);padding:13px 20px;color:#fff}
-.cb{padding:20px}
-.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
-.f1 label{font-size:11px;font-weight:600;color:#5E6166;text-transform:uppercase}
-.fc{width:100%;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px}
-.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
-.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green)}
+.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}
+.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.05;letter-spacing:-.01em;margin-bottom:10px}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}
+.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}
+.back a{font-size:12px;color:var(--ink-60);font-weight:500}
+.back a:hover{color:var(--coral)}
+.container{max-width:900px;margin:0 auto;padding:28px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
+.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px 20px 22px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;color:var(--ink);background:var(--paper);outline:none;transition:border-color .15s;appearance:none;border-radius:0}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 11px center;padding-right:30px;cursor:pointer}
+input[type="number"].fc{font-weight:600;color:var(--blue-acc)}
+.result-hero{background:var(--ink);padding:24px;margin-bottom:20px}
+.rh-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.1)}
+.rh-item{padding:14px 16px;background:rgba(255,255,255,.05);text-align:center}
+.rh-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:6px}
+.rh-val{font-family:var(--font-display);font-size:24px;font-weight:500;color:#fff}
+.rh-val.coral{color:var(--coral)}
+.rh-val.green{color:#6de88e}
+.rh-sub{font-size:10px;color:rgba(255,255,255,.35);margin-top:3px}
+.flag{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;margin-bottom:10px;border:1px solid}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}
+.flag.green{background:var(--green-bg);border-color:var(--green-b)}
+.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}
+.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.flag-icon{font-size:13px;flex-shrink:0;margin-top:1px}
+.flag-text{font-size:12.5px;line-height:1.5}
+.flag.amber .flag-text{color:var(--amber)}
+.flag.green .flag-text{color:var(--green)}
+.flag.blue .flag-text{color:var(--blue-acc)}
+.flag.red .flag-text{color:var(--red)}
+.flag-text strong{font-weight:600}
+/* Schedule table */
+.sched-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:16px}
+table.sched{width:100%;border-collapse:collapse;font-size:12.5px;min-width:500px}
+table.sched th{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:8px 10px;background:var(--ink);color:#fff;text-align:right}
+table.sched th:first-child{text-align:left}
+table.sched td{padding:7px 10px;border-bottom:1px solid var(--ink-20);text-align:right;font-family:var(--font-mono);font-size:12px}
+table.sched td:first-child{text-align:left;font-family:var(--font-sans);font-weight:500;color:var(--ink-60)}
+table.sched tr:last-child td{border-bottom:none}
+table.sched tr:nth-child(even) td{background:var(--ink-10)}
+table.sched .current-year td{background:var(--coral-100)!important;font-weight:700;color:var(--ink)}
+table.sched .total-row td{background:var(--ink-10);font-weight:700;border-top:2px solid var(--ink-20);font-family:var(--font-sans)}
+.show-all-btn{background:var(--paper);border:1.5px solid var(--ink-20);color:var(--ink-60);font-family:var(--font-sans);font-size:12px;font-weight:600;padding:8px 16px;cursor:pointer;width:100%;margin-bottom:16px;transition:all .15s}
+.show-all-btn:hover{border-color:var(--coral);color:var(--coral)}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:16px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:10px}
+.sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px}
+.sum-row:last-child{border-bottom:none}
+.sum-lbl{color:rgba(255,255,255,.55)}
+.sum-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px}
+.source-row{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:8px}
+.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:background .15s;margin-top:6px}
+.pbn:hover{background:var(--coral-600)}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:13px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+@media(max-width:640px){.fg2,.fg3,.rh-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:400px){.rh-grid{grid-template-columns:1fr 1fr}}
+@media print{
+  body{background:white}
+  .ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .result-hero,.sum-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .back,.pbn,.show-all-btn{display:none}
+  .input-card{display:none!important}
+  .sched-wrap{overflow:visible}
+}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/section179-calculator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Section 179 Expensing Calculator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Section 179 expensing deduction for tax years 2026-2030: dollar limit, phase-out, SUV cap, business income limit and carryover. 2026 figures from Rev. Proc. 2025-32; 2027-2030 projected. IRC Section 179, Form 4562 Part I.">
+  <meta property="og:url" content="https://cpavalidated.com/depreciation-calculator.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Section 179 Expensing Calculator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Section 179 expensing deduction for tax years 2026-2030: dollar limit, phase-out, SUV cap, business income limit and carryover. 2026 figures from Rev. Proc. 2025-32; 2027-2030 projected. IRC Section 179, Form 4562 Part I.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Section 179 Expensing Calculator 2026-2030 | CPA Validated","url":"https://cpavalidated.com/depreciation-calculator.html","description":"Section 179 expensing deduction for tax years 2026-2030: dollar limit, phase-out, SUV cap, business income limit and carryover. 2026 figures from Rev. Proc. 2025-32; 2027-2030 projected. IRC Section 179, Form 4562 Part I.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
+
+<style>
+.pbadge{display:inline-block;font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;margin-left:8px;border:1px solid var(--amber-b);background:var(--amber-bg);color:var(--amber);vertical-align:middle;line-height:1.4}
+.pbadge.pub{border-color:var(--green-b);background:var(--green-bg);color:var(--green)}
+.hint{font-size:11px;color:var(--ink-60);margin-top:4px;line-height:1.45}
+.assump{border:1px solid var(--ink-20);margin:14px 0;background:var(--white)}
+.assump summary{cursor:pointer;padding:10px 14px;font-size:12.5px;font-weight:600;background:var(--ink-10)}
+.assump .assump-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.assump table{width:100%;border-collapse:collapse;font-size:12px;min-width:520px}
+.assump th,.assump td{padding:7px 10px;border-bottom:1px solid var(--ink-20);text-align:left;vertical-align:top}
+.assump th{font-size:10px;text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:#fff}
+.verified{font-size:11px;color:var(--ink-60);margin:10px 0 0;line-height:1.5}
+.projnote{font-size:12px;line-height:1.5;padding:10px 14px;margin:0 0 14px;border:1px solid var(--amber-b);background:var(--amber-bg);color:var(--amber)}
+.stephead{font-family:var(--font-display);font-size:13px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin:16px 0 10px}
+.sum-note{font-size:11px;color:rgba(255,255,255,.55);padding:4px 0 6px;line-height:1.4}
+@media(max-width:640px){.fg1x{grid-template-columns:1fr}}
+.sum-row{gap:14px}.sum-lbl{flex:1}.sum-val{text-align:right}.sum-val.amber{color:#E8C98A}.sum-val.green{color:#6de88e}
+</style>
 </head>
 <body>
-
-<div class="ph">
-<div class="phi">
-<h1>Section 179 Expensing Calculator</h1>
-<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Calculate 2026 Section 179 equipment expensing. Limit $2,560,000 with $4,090,000 phase-out (Rev. Proc. 2025-32).</p>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
 </div>
-</div>
+<div class="ph"><div class="phi">
+  <h1>Section 179 Expensing Calculator</h1>
+  <div class="sub">Tax years 2026-2030 &nbsp;&bull;&nbsp; Dollar limit &amp; phase-out &nbsp;&bull;&nbsp; SUV cap &nbsp;&bull;&nbsp; Business income limit &amp; carryover</div>
+  <div class="badges">
+    <span class="badge">IRC &sect;179</span>
+    <span class="badge">Form 4562, Part I</span>
+    <span class="badge">Rev. Proc. 2025-32</span>
+    <span class="badge">OBBBA &sect;70306 (P.L. 119-21)</span>
+  </div>
+</div></div>
 
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 <div class="container">
-<div class="card">
-<div class="ch"><h2>2026 Limits</h2></div>
-<div class="cb">
-<div style="font-size:13px;line-height:1.8">
-<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-<span>Section 179 Annual Limit</span>
-<strong style="font-family:var(--font-mono)">$2,560,000</strong>
+
+<div class="card input-card">
+  <div class="ch"><div class="sb">1</div><h2>Tax Year &amp; Assumption</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1">
+        <label for="taxYear">Tax year (taxable years beginning in)</label>
+        <select id="taxYear" class="fc">
+          <option value="2026" selected>2026 (IRS-published)</option>
+          <option value="2027">2027 (projected)</option>
+          <option value="2028">2028 (projected)</option>
+          <option value="2029">2029 (projected)</option>
+          <option value="2030">2030 (projected)</option>
+        </select>
+        <div class="hint">2026 limits are from Rev. Proc. 2025-32, sec. 4.24. The 179 amounts are indexed for taxable years beginning after 2025, 26 U.S.C. 179(b)(6). <span id="yearBadge"></span></div>
+      </div>
+      <div class="f1">
+        <label for="infl">Annual inflation assumption for 2027-2030 (%)</label>
+        <input type="number" id="infl" class="fc" value="2.5" min="0" max="15" step="0.1">
+        <div class="hint">Used only for projected years. Default 2.5%. Not an IRS figure; IRS publishes each year's amounts in a revenue procedure.</div>
+      </div>
+    </div>
+    <div class="projnote" id="projNote" style="display:none"><strong>Projected - estimate, not IRS-published.</strong> The dollar limit, threshold and SUV cap for this year are projections from the 2026 published figures at the inflation rate you entered, rounded as 179(b)(6)(B) requires. Law is assumed unchanged.</div>
+  </div>
 </div>
-<div style="display:flex;justify-content:space-between;padding:8px 0">
-<span>Phase-Out Threshold</span>
-<strong style="font-family:var(--font-mono)">$4,090,000</strong>
-</div>
-</div>
-</div>
+
+<div class="card input-card">
+  <div class="ch"><div class="sb">2</div><h2>Property &amp; Election</h2></div>
+  <div class="cb">
+    <div class="fg2" style="margin-bottom:14px">
+      <div class="f1">
+        <label for="cost">Total cost of all 179 property placed in service in the year ($)</label>
+        <input type="number" id="cost" class="fc" value="1000000" min="0" step="1" placeholder="0">
+        <div class="hint">Include all eligible property placed in service, not only what you elect to expense: it drives the phase-out. 26 U.S.C. 179(b)(2); Form 4562, line 2. Business-use cost only (Treas. Reg. 1.179-1(d)).</div>
+      </div>
+      <div class="f1">
+        <label for="suvCost">Of that, cost of sport utility vehicles ($)</label>
+        <input type="number" id="suvCost" class="fc" value="0" min="0" step="1" placeholder="0">
+        <div class="hint">SUV = 4-wheeled vehicle rated 14,000 lbs GVW or less and not subject to 280F (excludes vehicles seating more than 9 behind the driver, with a 6-foot open cargo bed, or fully enclosed cargo vans). 179(b)(5)(B).</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1">
+        <label for="elect">Amount you elect to expense ($)</label>
+        <input type="number" id="elect" class="fc" value="" min="0" step="1" placeholder="Blank = maximum">
+        <div class="hint">Blank elects the maximum allowed after phase-out and SUV cap. The election is made on Form 4562, lines 6-7. 179(c).</div>
+      </div>
+      <div class="f1">
+        <label for="income">Taxable income from active businesses before 179 ($)</label>
+        <input type="number" id="income" class="fc" value="" step="1" placeholder="Blank = limit not tested">
+        <div class="hint">179(b)(3) limit. Computed without the 179 deduction; Form 4562 line 11 instructions say individuals include wages and joint filers combine spouses.</div>
+      </div>
+      <div class="f1">
+        <label for="carry">Disallowed 179 carryover from prior years ($)</label>
+        <input type="number" id="carry" class="fc" value="0" min="0" step="1" placeholder="0">
+        <div class="hint">Prior-year Form 4562, line 13. 179(b)(3)(B); Treas. Reg. 1.179-3.</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>Equipment Cost</h2></div>
-<div class="cb">
-<div class="f1">
-<label>Total Cost of Qualified Property</label>
-<input type="number" id="cost" class="fc" placeholder="0" min="0" oninput="calculate()">
-<div style="font-size:11px;color:#5E6166;margin-top:4px">Qualifying tangible business property placed in service during 2026</div>
-</div>
-</div>
+  <div class="ch"><div class="sb">3</div><h2>Section 179 Deduction</h2></div>
+  <div class="cb">
+    <div class="result-hero">
+      <div class="rh-grid">
+        <div class="rh-item"><div class="rh-label">Limit After Phase-Out</div><div class="rh-val" id="rLimit">$0</div><div class="rh-sub">Form 4562, line 5</div></div>
+        <div class="rh-item"><div class="rh-label">179 Deduction</div><div class="rh-val coral" id="rDed">$0</div><div class="rh-sub">Form 4562, line 12</div></div>
+        <div class="rh-item"><div class="rh-label">Remaining Cost</div><div class="rh-val green" id="rBasis">$0</div><div class="rh-sub">MACRS / bonus</div></div>
+        <div class="rh-item"><div class="rh-label">Carryover</div><div class="rh-val" id="rCarry">$0</div><div class="rh-sub">Form 4562, line 13</div></div>
+      </div>
+    </div>
+
+    <div id="flags"></div>
+
+    <div class="sum-box">
+      <div class="sum-title">Step-by-Step Calculation</div>
+      <div id="steps"></div>
+    </div>
+
+    <details class="assump">
+      <summary>Assumptions &amp; sources</summary>
+      <div id="assumpBody"></div>
+    </details>
+
+    <div class="source-row">Authority: IRC &sect;179(a), (b)(1)-(3), (b)(5), (b)(6), (c); Treas. Reg. &sect;&sect;1.179-1, 1.179-2, 1.179-3; Rev. Proc. 2025-32, sec. 4.24 (2026 amounts: $2,560,000 limit, $4,090,000 threshold, $32,000 SUV cap); OBBBA (P.L. 119-21) &sect;70306 (limit raised to $2,500,000 and threshold to $4,000,000 for 2025, indexed after 2025); Instructions for Form 4562, Part I, lines 1-13. Not modeled: married filing separately allocation (Form 4562 line 5 instructions), controlled group apportionment, partnership and S corporation entity-plus-owner testing, 179(e) qualified real property election mechanics, and the recapture rule of 179(d)(10).</div>
+    <p class="verified">Last verified: October 29, 2026. Projected figures are estimates, not IRS-published amounts; the IRS publishes each year's indexed 179 amounts in a revenue procedure, usually in the fall before the tax year. Verify against the published figures before relying on any projected year.</p>
+  </div>
 </div>
 
-<div class="card">
-<div class="ch"><h2>Section 179 Deduction</h2></div>
-<div class="cb">
-<div id="calc_result"></div>
-</div>
-</div>
 </div>
 
 <script>
-function calculate() {
-  const cost = parseFloat(document.getElementById('cost').value) || 0;
-  const limit = 2560000;  // 2026 inflation-adjusted per Rev. Proc. 2025-32 (OBBBA §70306)
-  const threshold = 4090000;  // 2026 inflation-adjusted phase-out start per Rev. Proc. 2025-32 (OBBBA §70306)
-  
-  // Phase-out: $1 reduction for every $1 over threshold
-  let phaseout = Math.max(0, cost - threshold);
-  let deduction = Math.max(0, limit - phaseout);
-  deduction = Math.min(deduction, cost); // Can't exceed actual cost
-  
-  let html = `
-    <div style="font-size:13px;line-height:1.8">
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-        <span>Equipment Cost</span>
-        <strong>$${cost.toLocaleString()}</strong>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #EDEEF0">
-        <span>Annual Limit</span>
-        <strong>$${limit.toLocaleString()}</strong>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--green);font-weight:700">
-        <span>Section 179 Deduction</span>
-        <strong style="font-family:var(--font-mono)">$${Math.round(deduction).toLocaleString()}</strong>
-      </div>
-    </div>
-    <div class="result-box">
-      <h3>You Can Deduct</h3>
-      <div class="result-num">$${Math.round(deduction).toLocaleString()}</div>
-      <p style="font-size:12px;margin-top:8px">Balance of ${(cost - deduction).toLocaleString()} must be depreciated using MACRS if not elected as bonus depreciation.</p>
-    </div>
-  `;
-  
-  document.getElementById('calc_result').innerHTML = html;
+// Section 179 calculator engine. Sources: 26 U.S.C. 179(b); Rev. Proc. 2025-32 sec. 4.24 (2026); Form 4562 Part I.
+var BASE179 = { limit: 2500000, thr: 4000000, suv: 25000 };      // statutory base amounts, 26 U.S.C. 179(b)(1), (b)(2), (b)(5)(A)
+var PUB179 = { 2026: { limit: 2560000, thr: 4090000, suv: 32000 } }; // Rev. Proc. 2025-32, sec. 4.24
+var YEARS = [2026, 2027, 2028, 2029, 2030];
+
+function roundTo(x, unit) { return Math.round(x / unit) * unit; }
+function money(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+function params179(year, g) {
+  var p = PUB179[2026];
+  if (year <= 2026) { return { limit: p.limit, thr: p.thr, suv: p.suv, projected: false, factor: 1 }; }
+  var f = Math.pow(1 + g, year - 2026);
+  // 179(b)(6)(B): the increase is rounded to the nearest $10,000 ($100 for the SUV amount). Base amounts are multiples of the unit,
+  // so rounding the projected total to the unit is equivalent.
+  return { limit: roundTo(p.limit * f, 10000), thr: roundTo(p.thr * f, 10000), suv: roundTo(p.suv * f, 100), projected: true, factor: f };
 }
 
-calculate();
+function calc179(year, g, cost, suvCost, electIn, income, carry) {
+  var p = params179(year, g);
+  cost = Math.max(0, cost || 0);
+  suvCost = Math.min(Math.max(0, suvCost || 0), cost);
+  carry = Math.max(0, carry || 0);
+  var excess = Math.max(0, cost - p.thr);
+  var limAfter = Math.max(0, p.limit - excess);
+  var suvCounted = Math.min(suvCost, p.suv);
+  var maxEligible = (cost - suvCost) + suvCounted;
+  var cap = Math.min(maxEligible, limAfter);
+  var elect = (electIn === null || electIn === undefined) ? cap : Math.min(Math.max(0, electIn), cap);
+  var incomeLimit = (income === null || income === undefined) ? Infinity : Math.max(0, income);
+  var allowedCur = Math.min(elect, incomeLimit);
+  var disallowedCur = elect - allowedCur;
+  var unused = Math.max(0, Math.min(limAfter, incomeLimit) - allowedCur);
+  var carryUsed = Math.min(carry, unused);
+  var total = allowedCur + carryUsed;
+  var carryNext = disallowedCur + (carry - carryUsed);
+  return { p: p, cost: cost, suvCost: suvCost, excess: excess, limAfter: limAfter, suvCounted: suvCounted, maxEligible: maxEligible,
+    cap: cap, elect: elect, incomeLimit: incomeLimit, allowedCur: allowedCur, disallowedCur: disallowedCur, unused: unused,
+    carryUsed: carryUsed, total: total, carryNext: carryNext, remaining: cost - elect, electClamped: (electIn !== null && electIn !== undefined && electIn > cap),
+    fullPhaseoutAt: p.limit + p.thr };
+}
+
+function numOrNull(id) {
+  var el = document.getElementById(id);
+  if (!el) return null;
+  var v = String(el.value).trim();
+  if (v === '') return null;
+  var n = parseFloat(v);
+  return isNaN(n) ? null : n;
+}
+
+function statusBadge(year) {
+  return year > 2026
+    ? '<span class="pbadge">Projected - estimate, not IRS-published</span>'
+    : '<span class="pbadge pub">IRS-published (Rev. Proc. 2025-32)</span>';
+}
+
+function assumptionRows(year, g, r) {
+  var p = r.p, proj = p.projected;
+  var st = proj ? 'Projected' : 'IRS-published';
+  var rows = [
+    ['Dollar limit, 179(b)(1)', money(p.limit), st, proj ? 'Base $2,500,000 (2025, statutory) x published 2026 figure ' + money(PUB179[2026].limit) + ' compounded at ' + (g * 100).toFixed(2) + '% per year, rounded to nearest $10,000 per 179(b)(6)(B)' : '26 U.S.C. 179(b)(1), (b)(6); Rev. Proc. 2025-32, sec. 4.24'],
+    ['Phase-out threshold, 179(b)(2)', money(p.thr), st, proj ? 'Base $4,000,000 (2025, statutory); published 2026 figure ' + money(PUB179[2026].thr) + ' compounded at ' + (g * 100).toFixed(2) + '%, rounded to nearest $10,000' : '26 U.S.C. 179(b)(2); Rev. Proc. 2025-32, sec. 4.24'],
+    ['SUV cost cap, 179(b)(5)(A)', money(p.suv), st, proj ? 'Published 2026 figure ' + money(PUB179[2026].suv) + ' compounded at ' + (g * 100).toFixed(2) + '%, rounded to nearest $100 per 179(b)(6)(B)' : '26 U.S.C. 179(b)(5)(A); Rev. Proc. 2025-32, sec. 4.24'],
+    ['Phase-out rate', 'Dollar for dollar', 'Statutory', '26 U.S.C. 179(b)(2): the limit is reduced by the amount by which cost exceeds the threshold'],
+    ['Limit fully phased out at cost of', money(r.fullPhaseoutAt), proj ? 'Projected' : 'Derived', 'Dollar limit + threshold'],
+    ['Business income limit', 'Taxable income from active trades or businesses', 'Statutory', '26 U.S.C. 179(b)(3); Treas. Reg. 1.179-2(c); Form 4562, line 11'],
+    ['Carryover of disallowed amounts', 'Unlimited years', 'Statutory', '26 U.S.C. 179(b)(3)(B); Treas. Reg. 1.179-3'],
+    ['Inflation assumption (2027-2030 only)', (g * 100).toFixed(2) + '% per year', 'Assumption', 'User input. Not an IRS figure. Actual indexing uses the 1(f)(3) cost-of-living adjustment with the base-year substitutions in 179(b)(6)(A)']
+  ];
+  return rows;
+}
+
+function renderAssumptions(rows) {
+  var h = '<div class="assump-wrap"><table><thead><tr><th>Parameter</th><th>Value for selected year</th><th>Type</th><th>Citation / basis</th></tr></thead><tbody>';
+  for (var i = 0; i < rows.length; i++) {
+    h += '<tr><td>' + esc(rows[i][0]) + '</td><td>' + esc(rows[i][1]) + '</td><td>' + esc(rows[i][2]) + '</td><td>' + esc(rows[i][3]) + '</td></tr>';
+  }
+  return h + '</tbody></table></div>';
+}
+
+function row(label, value, cls) {
+  return '<div class="sum-row"><span class="sum-lbl">' + label + '</span><span class="sum-val' + (cls ? ' ' + cls : '') + '">' + value + '</span></div>';
+}
+
+function calculate() {
+  var year = parseInt(document.getElementById('taxYear').value, 10);
+  if (YEARS.indexOf(year) < 0) year = 2026;
+  var gIn = numOrNull('infl');
+  var g = (gIn === null ? 2.5 : Math.min(Math.max(gIn, 0), 15)) / 100;
+  var cost = Math.max(0, numOrNull('cost') || 0);
+  var suvCost = Math.max(0, numOrNull('suvCost') || 0);
+  var electIn = numOrNull('elect');
+  var income = numOrNull('income');
+  var carry = Math.max(0, numOrNull('carry') || 0);
+  var r = calc179(year, g, cost, suvCost, electIn, income, carry);
+  var p = r.p;
+
+  document.getElementById('yearBadge').innerHTML = statusBadge(year);
+  document.getElementById('projNote').style.display = year > 2026 ? '' : 'none';
+
+  document.getElementById('rLimit').textContent = money(r.limAfter);
+  document.getElementById('rDed').textContent = money(r.total);
+  document.getElementById('rBasis').textContent = money(r.remaining);
+  document.getElementById('rCarry').textContent = money(r.carryNext);
+
+  var s = '';
+  s += row('Tax year', year + (p.projected ? ' (projected parameters)' : ' (IRS-published parameters)'));
+  s += row('1. Dollar limit, 179(b)(1) [Form 4562, line 1]', money(p.limit));
+  s += row('2. Total cost of 179 property placed in service [line 2]', money(r.cost));
+  s += row('3. Phase-out threshold, 179(b)(2) [line 3]', money(p.thr));
+  s += row('4. Reduction = ' + money(r.cost) + ' - ' + money(p.thr) + ' (not below $0) [line 4]', money(r.excess));
+  s += row('5. Limit after phase-out = ' + money(p.limit) + ' - ' + money(r.excess) + ' (not below $0) [line 5]', money(r.limAfter), r.excess > 0 ? 'amber' : '');
+  if (r.suvCost > 0) {
+    s += row('6. SUV cost counted = smaller of ' + money(r.suvCost) + ' or cap ' + money(p.suv) + ', 179(b)(5)', money(r.suvCounted));
+  }
+  s += row('7. Maximum electable cost = non-SUV cost ' + money(r.cost - r.suvCost) + ' + SUV cost counted ' + money(r.suvCounted), money(r.maxEligible));
+  s += row('8. Amount elected = smaller of your election, line 5, and line 7 [line 6-9]', money(r.elect));
+  if (r.incomeLimit === Infinity) {
+    s += row('9. Business income limit, 179(b)(3) [line 11]', 'Not applied (no income entered)', 'amber');
+  } else {
+    s += row('9. Business income limit, 179(b)(3) [line 11]', money(r.incomeLimit));
+  }
+  s += row('10. Current-year deduction = smaller of line 8 and line 9', money(r.allowedCur));
+  s += row('11. Prior-year carryover used = smaller of carryover ' + money(carry) + ' or unused allowance ' + money(r.unused) + ' [line 10]', money(r.carryUsed));
+  s += row('12. Total 179 deduction = line 10 + line 11 [line 12]', money(r.total), 'green');
+  s += row('13. Carryover to next year = ' + money(r.disallowedCur) + ' disallowed now + ' + money(carry - r.carryUsed) + ' unused prior [line 13]', money(r.carryNext), r.carryNext > 0 ? 'amber' : '');
+  s += row('14. Basis reduction = full amount elected (Treas. Reg. 1.179-1(f))', money(r.elect));
+  s += row('15. Remaining cost for MACRS / bonus = ' + money(r.cost) + ' - ' + money(r.elect), money(r.remaining));
+  document.getElementById('steps').innerHTML = s;
+
+  var f = '';
+  var flag = function (t, ty) { f += '<div class="flag ' + ty + '"><div class="flag-icon">' + (ty === 'amber' ? '!' : ty === 'red' ? 'x' : ty === 'green' ? '&#10003;' : 'i') + '</div><div class="flag-text">' + t + '</div></div>'; };
+  if (r.cost > 0 && r.limAfter === 0) flag('<strong>The 179 limit is fully phased out.</strong> Cost of 179 property placed in service (' + money(r.cost) + ') is at or above ' + money(r.fullPhaseoutAt) + '. No 179 election is available; use MACRS and bonus depreciation under 168(k).', 'red');
+  else if (r.excess > 0) flag('<strong>Phase-out applies.</strong> Cost exceeds the ' + money(p.thr) + ' threshold by ' + money(r.excess) + ', so the ' + money(p.limit) + ' limit is reduced dollar for dollar to ' + money(r.limAfter) + '. 26 U.S.C. 179(b)(2).', 'amber');
+  if (r.suvCost > p.suv) flag('<strong>SUV cap.</strong> Only ' + money(p.suv) + ' of SUV cost may be taken into account for ' + year + '. The balance of ' + money(r.suvCost - p.suv) + ' remains eligible for depreciation and, if it is qualified property, 168(k) bonus depreciation. 26 U.S.C. 179(b)(5).', 'blue');
+  if (r.electClamped) flag('<strong>Election reduced.</strong> You entered more than can be elected (' + money(r.cap) + '). The election was limited to the smaller of the eligible cost and the post-phase-out dollar limit (Form 4562, line 9).', 'amber');
+  if (r.disallowedCur > 0) flag('<strong>Business income limit applies.</strong> ' + money(r.disallowedCur) + ' is disallowed this year and carries forward without expiration. 26 U.S.C. 179(b)(3)(B); Treas. Reg. 1.179-3.', 'amber');
+  if (r.incomeLimit === Infinity && r.cost > 0) flag('<strong>No business income entered.</strong> The 179(b)(3) limit was not applied. Enter taxable income from all active trades or businesses (computed without the 179 deduction; for individuals, Form 4562 instructions say to include wages, and a joint filer combines spouses) to test it.', 'blue');
+  if (r.remaining > 0 && r.cost > 0) flag('<strong>Remaining cost.</strong> ' + money(r.remaining) + ' is recovered under MACRS, or under 168(k) at 100% if it is qualified property acquired after January 19, 2025 and you do not elect out. A bonus deduction is not limited by taxable income.', 'blue');
+  document.getElementById('flags').innerHTML = f;
+
+  document.getElementById('assumpBody').innerHTML = renderAssumptions(assumptionRows(year, g, r));
+}
+
+function init() {
+  var sel = document.getElementById('taxYear');
+  var ids = ['taxYear', 'infl', 'cost', 'suvCost', 'elect', 'income', 'carry'];
+  for (var i = 0; i < ids.length; i++) {
+    var el = document.getElementById(ids[i]);
+    if (el) { el.oninput = calculate; el.onchange = calculate; }
+  }
+  calculate();
+}
+init();
+
 </script>
 
+<script>
+function doPrint(){window.print();}
+function doShare(){var url=location.href;var title=document.title.replace(' | CPA Validated','');if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
+function showShareModal(url,title){if(document.getElementById('sv-ol'))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]];var ol=document.createElement('div');ol.id='sv-ol';ol.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center';var h='<div style="background:#111111;width:100%;max-width:520px"><div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share</span><button id="sv-x" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px">&times;<\/button><\/div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'<\/a>';});h+='<button id="sv-cp" style="padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link<\/button><\/div><\/div>';ol.innerHTML=h;document.body.appendChild(ol);document.getElementById('sv-x').onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById('sv-cp').onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);});}catch(e2){var t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);}};}</script>
 
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">

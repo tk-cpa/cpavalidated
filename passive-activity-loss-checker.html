@@ -1,182 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Passive Activity Loss Limitation Checker | CPA Validated</title>
-<meta name="description" content="Determine if passive activity loss (PAL) limitations apply to your rental or business activity.">
+<title>Passive Activity Loss Limitation Checker 2026-2030 | CPA Validated</title>
+<meta name="description" content="Determine whether the passive activity loss rules of IRC Section 469 apply to a rental or business activity (tax years 2026-2030): material participation tests, real estate professional test, and the Form 8582 $25,000 special allowance with suspended loss carryforward.">
+<link rel="canonical" href="https://cpavalidated.com/passive-activity-loss-checker.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --red:#9B3D3D; --red-bg:#EDE0DC; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
+:root {
+  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
+  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
+  --coral:#F65F5A; --coral-100:#FCE3E2; --green:#4A7459; --green-bg:#E2EDE6;
+  --amber:#8B6535; --amber-bg:#EDE8D8; --red:#9B3D3D; --red-bg:#EDE0DC;
+  --font-display:'Oswald','Arial Narrow',sans-serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+  --font-mono:'Courier New',monospace;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+html{font-size:16px}
+body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+a{color:var(--coral);text-decoration:none}
 .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:900px;margin:0 auto;padding:0 24px}
 .ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px;line-height:1.5}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
 .container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
-.ch{background:var(--ink);padding:13px 20px;color:#fff}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
+.ch{background:var(--ink);padding:13px 20px}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
 .cb{padding:20px}
-.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
-.q-row:last-child{border-bottom:none}
-.q-text{font-size:13.5px;color:var(--ink);line-height:1.5}
-.q-sub{font-size:11.5px;color:#5E6166;margin-top:4px;line-height:1.4}
-.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
-.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;cursor:pointer;background:#fff;color:#5E6166;border-right:1px solid #D9DBDE;font-weight:500}
-.yn-btn:last-child{border-right:none}
-.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
-.yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
-.result-box{border-left:3px solid var(--coral);padding:16px;margin-top:20px;background:#FCE3E2}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.08em}
+.f1 .hint{font-size:11px;color:var(--ink-60);line-height:1.5;margin-top:2px}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;background:var(--paper);color:var(--ink);border-radius:0}
+.fc:focus{border-color:var(--coral);outline:none}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;margin-bottom:12px}
+.chk input{margin-top:3px;flex-shrink:0}
+.sec-title{font-family:var(--font-display);font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin:6px 0 12px;color:var(--ink)}
+.result-box{border-left:3px solid var(--coral);padding:16px;margin-top:12px;background:var(--coral-100)}
 .result-box h3{font-family:var(--font-display);font-size:16px;color:var(--ink);margin-bottom:8px}
 .result-box p{font-size:13px;line-height:1.6;color:var(--ink-80);margin-bottom:10px}
+.result-box.ok{background:var(--green-bg);border-left-color:var(--green)}
 .material-participation{background:var(--green-bg);border-left:3px solid var(--green);padding:12px;margin-top:12px;font-size:12px;line-height:1.5}
-@media(max-width:640px){.q-row{grid-template-columns:1fr;gap:8px}}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+.warn-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 14px;margin-top:12px;font-size:12px;line-height:1.5;color:var(--red)}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw span{color:var(--ink-80)}
+.rw strong{font-family:var(--font-mono);white-space:nowrap}
+.rw.tot{border-bottom:2px solid var(--ink);font-weight:700}
+.rw.tot span{color:var(--ink)}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+details.assump{margin-top:16px;border:1px solid var(--ink-20);background:var(--white)}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.src{font-size:11px;color:var(--ink-60);line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:16px}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+.hidden{display:none}
+@media(max-width:640px){.fg2,.fg3{grid-template-columns:1fr}.fc{font-size:16px}.container{padding:20px 16px}.phi{padding:0 16px}.back{padding:12px 16px 0}}
+@media print{.back{display:none}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/passive-activity-loss-checker.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Passive Activity Loss Limitation Checker 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Determine whether the passive activity loss rules of IRC Section 469 apply, and compute the Form 8582 special allowance and suspended loss for tax years 2026-2030.">
+  <meta property="og:url" content="https://cpavalidated.com/passive-activity-loss-checker.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Passive Activity Loss Limitation Checker 2026-2030","url":"https://cpavalidated.com/passive-activity-loss-checker.html","description":"Determine whether the passive activity loss rules of IRC Section 469 apply to a rental or business activity and compute the Form 8582 special allowance for tax years 2026-2030.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
 </head>
 <body>
 
 <div class="ph">
 <div class="phi">
 <h1>Passive Activity Loss Limitation Checker</h1>
-<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine if PAL limitations apply to your rental or business activity under IRC Section 469.</p>
+<div class="sub">Tax years 2026-2030. Step 1 classifies the activity under IRC §469(c) and the material participation tests. Step 2 runs the Form 8582 loss limitation and the §469(i) $25,000 special allowance.</div>
 </div>
 </div>
+
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 
 <div class="container">
 
 <div class="card">
-<div class="ch"><h2>Activity Analysis</h2></div>
+<div class="ch"><h2>Step 1 - Classify the activity</h2></div>
 <div class="cb">
-<div class="q-row">
-<div><div class="q-text">What type of activity is this?</div><div class="q-sub">Passive activities are generally rental real estate or business activities where you don't materially participate.</div></div>
-<div class="q-ctrl" style="min-width:140px">
-<select id="activity_type" class="fc" style="width:100%;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px" oninput="calculate()">
-<option value="">Select...</option>
-<option value="rental">Rental Real Estate</option>
-<option value="business">Business Activity</option>
-<option value="other">Other Investment</option>
+
+<div class="f1">
+<label for="act_type">What kind of activity is this?</label>
+<select id="act_type" class="fc" onchange="calculate()">
+<option value="trade">Trade or business (not a rental activity)</option>
+<option value="rental_re" selected>Rental real estate (long-term lease of buildings or land)</option>
+<option value="rental_str">Rental of property where average customer use is 7 days or less (or 30 days or less with significant personal services)</option>
+<option value="rental_other">Rental of other tangible property (equipment, vehicles, etc.)</option>
+<option value="oilgas">Working interest in oil or gas property held directly or through an entity that does not limit your liability</option>
+<option value="portfolio">Portfolio or investment income (interest, dividends, annuities, royalties not in the ordinary course of a business)</option>
 </select>
-</div>
-</div>
-
-<div class="q-row">
-<div><div class="q-text">Do you materially participate in the activity?</div><div class="q-sub">Material participation means significant, regular involvement in managing the activity. See the "7 Tests" below.</div></div>
-<div class="q-ctrl" style="min-width:140px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('material', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('material', 'no')">No</button>
-</div>
-</div>
+<div class="hint">Rental activity and the exceptions that remove an activity from rental status: IRC §469(c)(2), (c)(4); Treas. Reg. §1.469-1T(e)(3)(i)-(ii). Working interests: §469(c)(3). Portfolio income: §469(e)(1).</div>
 </div>
 
-<div class="q-row">
-<div><div class="q-text">Is this a rental activity?</div><div class="q-sub">Rental activities are generally passive regardless of material participation, with limited exceptions.</div></div>
-<div class="q-ctrl" style="min-width:140px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('rental', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('rental', 'no')">No</button>
-</div>
-</div>
+<div class="f1">
+<label for="is_lp">Is the interest held as a limited partner in a limited partnership?</label>
+<select id="is_lp" class="fc" onchange="calculate()">
+<option value="no" selected>No</option>
+<option value="yes">Yes (and not also a general partner at all times)</option>
+</select>
+<div class="hint">A limited partner materially participates only under tests 1, 5 or 6 below: IRC §469(h)(2); Treas. Reg. §1.469-5T(e)(2). Limited partners also cannot actively participate for the §469(i) allowance: §469(i)(6)(C).</div>
 </div>
 
-<div class="q-row">
-<div><div class="q-text">Do you have material participation in rental real estate?</div><div class="q-sub">Special rules for real estate professionals or those meeting the 750-hour test.</div></div>
-<div class="q-ctrl" style="min-width:140px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('re_material', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('re_material', 'no')">No</button>
+<div id="mp_block">
+<div class="sec-title">Material participation (Treas. Reg. §1.469-5T(a))</div>
+<div class="fg3">
+<div class="f1">
+<label for="hrs_me">Your hours in the activity</label>
+<input type="number" id="hrs_me" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">Include your spouse's hours: §469(h)(5); Reg. §1.469-5T(f)(3). Investor-type work (reviewing statements) does not count: Reg. §1.469-5T(f)(2)(ii).</div>
+</div>
+<div class="f1">
+<label for="hrs_other">Most hours by any other individual</label>
+<input type="number" id="hrs_other" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">Include employees and contractors who are not owners. Used for tests 2 and 3.</div>
+</div>
+<div class="f1">
+<label for="hrs_spa">Hours in all significant participation activities</label>
+<input type="number" id="hrs_spa" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">Total for all trade or business activities where you worked more than 100 hours but did not materially participate under tests 1-3 and 5-7, including this one. Test 4 only.</div>
 </div>
 </div>
+<div class="fg3">
+<div class="f1">
+<label for="yrs5">Of the 10 preceding years, years you materially participated</label>
+<input type="number" id="yrs5" class="fc" value="0" min="0" max="10" step="1" oninput="calculate()">
+<div class="hint">Test 5 needs any 5 of the 10 immediately preceding years (not necessarily consecutive).</div>
 </div>
+<div class="f1">
+<label for="ps_act">Is it a personal service activity?</label>
+<select id="ps_act" class="fc" onchange="calculate()">
+<option value="no" selected>No</option>
+<option value="yes">Yes (health, law, engineering, architecture, accounting, actuarial science, performing arts, consulting, or capital is not a material income-producing factor)</option>
+</select>
+<div class="hint">Reg. §1.469-5T(d).</div>
+</div>
+<div class="f1">
+<label for="yrs3">If personal service: preceding years you materially participated</label>
+<input type="number" id="yrs3" class="fc" value="0" min="0" max="50" step="1" oninput="calculate()">
+<div class="hint">Test 6 needs any 3 preceding years (not necessarily consecutive).</div>
+</div>
+</div>
+<div class="chk"><input type="checkbox" id="chk_t2" onchange="calculate()"><label for="chk_t2">Test 2: my participation was substantially all of the participation of all individuals (owners and non-owners) in the activity for the year.</label></div>
+<div class="chk"><input type="checkbox" id="chk_t7" onchange="calculate()"><label for="chk_t7">Test 7: on all the facts and circumstances I participated on a regular, continuous and substantial basis. Does not count if I worked 100 hours or less, and management time does not count if someone else is paid to manage or someone else spent more management hours: Reg. §1.469-5T(b)(2)(ii)-(iii).</label></div>
+</div>
+
+<div id="rep_block">
+<div class="sec-title">Real estate professional (IRC §469(c)(7))</div>
+<div class="fg2">
+<div class="f1">
+<label for="rep_re">Hours in real property trades or businesses in which you materially participate</label>
+<input type="number" id="rep_re" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">Development, redevelopment, construction, reconstruction, acquisition, conversion, rental, operation, management, leasing or brokerage: §469(c)(7)(C). Employee services do not count unless you own more than 5% of the employer: §469(c)(7)(D)(ii). On a joint return, one spouse must meet both requirements alone: §469(c)(7)(B).</div>
+</div>
+<div class="f1">
+<label for="rep_all">Total hours of personal services in all trades or businesses</label>
+<input type="number" id="rep_all" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">Include the real property hours. More than one-half of the total must be in real property trades or businesses in which you materially participate: §469(c)(7)(B)(i).</div>
+</div>
+</div>
+<div class="chk"><input type="checkbox" id="chk_agg" onchange="calculate()"><label for="chk_agg">I made the §469(c)(7)(A) election to treat all my interests in rental real estate as one activity. Without the election each rental property is tested separately for material participation (§469(c)(7)(A)(ii)); enter hours above for the single property being tested.</label></div>
+</div>
+
 </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>Material Participation Tests (IRC §469)</h2></div>
-<div class="cb">
-<div style="font-size:12px;line-height:1.7;color:var(--ink-80)">
-You materially participate if you meet ANY of these 7 tests:
-<ul style="margin-left:20px;margin-top:8px">
-<li>You work 500+ hours in the activity during the tax year</li>
-<li>You do substantially all the work (100+ hours, and no one works more)</li>
-<li>You work 100+ hours and no one works more</li>
-<li>Your activity is rental real estate and you actively participate (25%+ ownership, involved in management)</li>
-<li>Prior 5 years you materially participated AND you're testing current year participation</li>
-<li>You're a real estate professional (750+ hours in real estate activities)</li>
-<li>You have a significant participation (100+ hours) in multiple activities and combined they're significant</li>
-</ul>
-<p style="margin-top:12px;color:var(--ink-60)"><strong>Authority:</strong> IRC §469(c)(7), Treas. Reg. §1.469-5T</p>
-</div>
-</div>
-</div>
-
-<div class="card">
-<div class="ch"><h2>PAL Determination</h2></div>
+<div class="ch"><h2>Step 1 result - Is the activity passive?</h2></div>
 <div class="cb">
 <div id="result_area"></div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Step 2 - Form 8582 limitation and $25,000 special allowance</h2></div>
+<div class="cb">
+<div class="note-box" style="margin-top:0;margin-bottom:16px">Enter the amounts that belong in Form 8582, Part IV (rental real estate with active participation) and Part V (all other passive activities). An interest held as a limited partner, or one in which you own less than 10% by value or do not actively participate, belongs in Part V and does not qualify for the special allowance: IRC §469(i)(1), (i)(6). Enter all amounts as positive numbers.</div>
+<div class="fg2">
+<div class="f1">
+<label for="fs">Filing status</label>
+<select id="fs" class="fc" onchange="calculate()">
+<option value="single" selected>Single, head of household or qualifying surviving spouse</option>
+<option value="mfj">Married filing jointly</option>
+<option value="mfs_apart">Married filing separately - lived apart from spouse at all times during the year</option>
+<option value="mfs_together">Married filing separately - lived with spouse at any time during the year</option>
+</select>
+<div class="hint">IRC §469(i)(5); Form 8582, Part II caution and line 5 and 8 instructions.</div>
+</div>
+<div class="f1">
+<label for="magi">Modified adjusted gross income ($)</label>
+<input type="number" id="magi" class="fc" value="0" min="0" step="1" oninput="calculate()">
+<div class="hint">AGI figured without passive activity losses, taxable Social Security, deductible IRA contributions, the self-employment tax deduction, the student loan interest deduction and the FDII/GILTI deduction: IRC §469(i)(3)(E); Form 8582 instructions, line 6.</div>
+</div>
+</div>
+<div class="sec-title">Part IV - Rental real estate with active participation</div>
+<div class="fg3">
+<div class="f1"><label for="p1a">1a Net income ($)</label><input type="number" id="p1a" class="fc" value="0" min="0" step="1" oninput="calculate()"></div>
+<div class="f1"><label for="p1b">1b Net loss, current year ($)</label><input type="number" id="p1b" class="fc" value="0" min="0" step="1" oninput="calculate()"></div>
+<div class="f1"><label for="p1c">1c Prior years' unallowed losses ($)</label><input type="number" id="p1c" class="fc" value="0" min="0" step="1" oninput="calculate()"></div>
+</div>
+<div class="sec-title">Part V - All other passive activities</div>
+<div class="fg3">
+<div class="f1"><label for="p2a">2a Net income ($)</label><input type="number" id="p2a" class="fc" value="0" min="0" step="1" oninput="calculate()"></div>
+<div class="f1"><label for="p2b">2b Net loss, current year ($)</label><input type="number" id="p2b" class="fc" value="0" min="0" step="1" oninput="calculate()"></div>
+<div class="f1"><label for="p2c">2c Prior years' unallowed losses ($)</label><input type="number" id="p2c" class="fc" value="0" min="0" step="1" oninput="calculate()"></div>
+</div>
+<div id="calc_area"></div>
+</div>
+</div>
+
+<div class="card">
+<div class="ch"><h2>Notes, assumptions &amp; sources</h2></div>
+<div class="cb">
+<span class="badge-pub">Statutory - not indexed for inflation, identical for 2026-2030</span>
+<details class="assump" id="assump_box">
+<summary>Assumptions &amp; sources</summary>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Parameter</th><th>Value (all years 2026-2030)</th><th>Status</th><th>Citation</th></tr></thead>
+<tbody id="assump_body"></tbody>
+</table></div>
+</details>
+<div class="note-box">The dollar amounts in IRC §469(i) are fixed by statute. The text of §469 contains no inflation adjustment, and Rev. Proc. 2025-32 (the 2026 inflation adjustments) contains no §469 item, so no year selector or projection is needed. Projected, inflation-indexed figures do not apply to this tool. OBBBA (P.L. 119-21) did not change §469 for these years; verify any later legislation before relying on a future year.</div>
+<div class="note-box"><strong>Other limitations apply first or after.</strong> Apply the basis limitation (IRC §704(d) or §1366(d)), the at-risk rules (§465) and the §469 limitation in that order, then the excess business loss limit of §461(l). See Form 8582 instructions, "Coordination With Other Limitations."</div>
+<div class="verified">Last verified: October 29, 2026</div>
+<div class="src">Sources: IRC §469(a), (c), (d), (e), (g), (h), (i) (law.cornell.edu/uscode/text/26/469); Treas. Reg. §1.469-1T(e)(3), §1.469-5T(a)-(f) (law.cornell.edu/cfr/text/26/1.469-1T and 1.469-5T); Form 8582 and Instructions for Form 8582 (2025), irs.gov. Educational estimate only; the rules are fact-dependent and subject to IRS challenge.</div>
 </div>
 </div>
 
 </div>
 
 <script>
-const state = {material: '', rental: '', re_material: ''};
+var STATIC_ASSUMPTIONS = [
+  ["Special allowance maximum", "$25,000 ($12,500 if married filing separately and lived apart all year)", "Statutory", "IRC §469(i)(2), (i)(5)(A)(i); Form 8582 line 8"],
+  ["Phase-out range (50% of MAGI above the threshold)", "Begins at $100,000 ($50,000 MFS apart); allowance is zero at $150,000 ($75,000 MFS apart)", "Statutory", "IRC §469(i)(3)(A), (i)(5)(A)(ii); Form 8582 lines 5-8"],
+  ["Married filing separately, lived with spouse at any time", "No special allowance", "Statutory", "IRC §469(i)(5)(B); Form 8582 Part II caution"],
+  ["Active participation: minimum interest", "10% or more by value for the whole period (spouse's interest counts)", "Statutory", "IRC §469(i)(6)(A), (i)(6)(D)"],
+  ["Limited partner interests", "Not treated as actively participating; material participation only by tests 1, 5, 6", "Statutory / regulation", "IRC §469(i)(6)(C), (h)(2); Treas. Reg. §1.469-5T(e)(2)"],
+  ["Real estate professional", "More than one-half of personal services and more than 750 hours in real property trades or businesses in which you materially participate", "Statutory", "IRC §469(c)(7)(B)"],
+  ["Material participation hour tests", "Test 1: more than 500 hours; test 3: more than 100 hours and at least as much as any other individual; test 4: more than 100 hours in the activity and more than 500 hours across significant participation activities; test 7: more than 100 hours", "Regulation", "Treas. Reg. §1.469-5T(a)(1)-(7), (b)(2)(iii), (c)(2)"],
+  ["Prior-year participation tests", "Test 5: any 5 of the 10 preceding years; test 6: any 3 preceding years (personal service activity)", "Regulation", "Treas. Reg. §1.469-5T(a)(5)-(6), (d)"],
+  ["Rental exceptions", "Average customer use 7 days or less; 30 days or less with significant personal services; extraordinary personal services; incidental to a nonrental activity; defined business hours; entity activity", "Regulation", "Treas. Reg. §1.469-1T(e)(3)(ii)(A)-(F)"],
+  ["Suspended losses", "Carried forward indefinitely; fully released on a fully taxable disposition of the entire interest", "Statutory", "IRC §469(b), (g)(1)"],
+  ["Form 8582 lines used", "Lines 1a-1d, 2a-2d, 3, 4, 5, 6, 7, 8, 9, 10, 11", "IRS form (2025 revision)", "Form 8582 (2025), Parts I-III"]
+];
 
-function setState(key, val) {
-  state[key] = val;
-  document.querySelectorAll(`[onclick*="setState('${key}'"]`).forEach(b => {
-    b.classList.remove('sel-yes', 'sel-no', 'unsel');
-  });
-  document.querySelector(`[onclick="setState('${key}','${val}')"]`).classList.add(`sel-${val}`);
-  calculate();
-}
+function el(id){ return document.getElementById(id); }
+function fmt(n){ var v = Math.round(n); return (v < 0 ? "-$" : "$") + Math.abs(v).toLocaleString("en-US"); }
+function num(id){ var v = parseFloat(el(id).value); return (isFinite(v) && v > 0) ? v : 0; }
+function row(l, v, cls){ return '<div class="rw' + (cls ? " " + cls : "") + '"><span>' + l + '</span><strong>' + v + '</strong></div>'; }
 
-function calculate() {
-  if (!state.material || !state.rental || !state.re_material) return;
-  
-  let passive = true;
-  let summary = '';
-  
-  if (state.material === 'yes' && state.rental === 'no') {
-    passive = false;
-    summary = 'You have material participation in a non-rental business activity. This activity is NOT passive. PAL limitations do NOT apply.';
-  } else if (state.rental === 'yes' && state.re_material === 'yes') {
-    passive = false;
-    summary = 'You have material participation in rental real estate (likely as a real estate professional or through the active participation test). This activity is NOT passive for PAL purposes.';
-  } else if (state.rental === 'yes' && state.re_material === 'no' && state.material === 'yes') {
-    passive = false;
-    summary = 'You have material participation but the activity is rental real estate. PAL may still limit losses unless you qualify as a real estate professional.';
-  } else {
-    passive = true;
-    summary = 'This activity appears to be PASSIVE under IRC §469. Losses are suspended and carried forward until the activity is disposed of (IRC §469(f)).';
+function materialParticipation(p){
+  var tests = [];
+  var isTrade = (p.type === "trade" || p.type === "rental_str");
+  var t1 = p.hrsMe > 500;
+  var t2 = p.t2;
+  var t3 = p.hrsMe > 100 && p.hrsMe >= p.hrsOther;
+  var t4 = isTrade && p.hrsMe > 100 && p.hrsSpa > 500;
+  var t5 = p.yrs5 >= 5;
+  var t6 = p.psAct === "yes" && p.yrs3 >= 3;
+  var t7 = p.t7 && p.hrsMe > 100;
+  tests.push({n:1, met:t1, text:"More than 500 hours (you entered " + p.hrsMe + ")"});
+  tests.push({n:2, met:t2, text:"Substantially all of the participation of all individuals (your checkbox)"});
+  tests.push({n:3, met:t3, text:"More than 100 hours and at least as many as any other individual (you " + p.hrsMe + " vs. " + p.hrsOther + ")"});
+  tests.push({n:4, met:t4, text:isTrade ? "Significant participation activity: more than 100 hours here and more than 500 hours across all such activities (" + p.hrsSpa + ")" : "Significant participation activity - applies only to trade or business activities, not rental activities"});
+  tests.push({n:5, met:t5, text:"Materially participated in any 5 of the 10 preceding years (" + p.yrs5 + ")"});
+  tests.push({n:6, met:t6, text:"Personal service activity and any 3 preceding years (" + (p.psAct === "yes" ? p.yrs3 : "not a personal service activity") + ")"});
+  tests.push({n:7, met:t7, text:"Facts and circumstances, regular, continuous and substantial, more than 100 hours (your checkbox and hours)"});
+  var any = false, lpAny = false;
+  for (var i = 0; i < tests.length; i++){
+    if (tests[i].met) any = true;
+    if (tests[i].met && (tests[i].n === 1 || tests[i].n === 5 || tests[i].n === 6)) lpAny = true;
   }
-  
-  let html = `
-    <div class="result-box">
-      <h3>Subject to PAL: ${passive ? 'YES' : 'NO'}</h3>
-      <p>${summary}</p>
-      <p style="font-size:12px;margin-top:12px"><strong>Authority:</strong> IRC §469 (Passive Activity Loss Limitations)</p>
-    </div>
-    <div class="material-participation">
-      <strong>Recommendation:</strong> Document your participation hours for the year. Keep records of time spent, management decisions, and involvement level. PAL determinations are heavily fact-dependent and subject to IRS challenge. Consult a tax professional if losses are material.
-    </div>
-  `;
-  
-  document.getElementById('result_area').innerHTML = html;
+  var mp = p.isLp ? lpAny : any;
+  return {tests:tests, mp:mp, any:any, lpAny:lpAny};
 }
+
+function classify(p){
+  var out = {passive:null, headline:"", reasons:[], auth:"", mp:null, rep:null, allowanceEligibleNote:""};
+  var mp = materialParticipation(p);
+  out.mp = mp;
+  var rep = {applies:false, hoursOk:p.repRe > 750, halfOk:(p.repAll > 0 && p.repRe > p.repAll / 2)};
+  rep.applies = rep.hoursOk && rep.halfOk;
+  out.rep = rep;
+  if (p.type === "portfolio"){
+    out.passive = false;
+    out.headline = "Not a passive activity - portfolio income";
+    out.reasons.push("Interest, dividends, annuities and royalties not derived in the ordinary course of a trade or business, and gain or loss on property held for investment, are not taken into account in determining income or loss from a passive activity.");
+    out.auth = "IRC §469(e)(1)(A)";
+  } else if (p.type === "oilgas"){
+    out.passive = false;
+    out.headline = "Not a passive activity - working interest in oil or gas property";
+    out.reasons.push("A working interest held directly, or through an entity that does not limit your liability, is excluded from the definition of passive activity regardless of participation. Later net income from the property is also nonpassive.");
+    out.auth = "IRC §469(c)(3)(A)-(B); Treas. Reg. §1.469-1(e)(4)(iv)";
+  } else if (p.type === "rental_other"){
+    out.passive = true;
+    out.headline = "Passive - rental activity (not real estate)";
+    out.reasons.push("Any rental activity is passive, whether or not you materially participate. The real estate professional rule applies only to rental real estate, and the $25,000 allowance applies only to rental real estate with active participation.");
+    out.auth = "IRC §469(c)(2), (c)(4); Treas. Reg. §1.469-1T(e)(3)(i)";
+  } else if (p.type === "rental_re"){
+    if (rep.applies && mp.mp){
+      out.passive = false;
+      out.headline = "Not passive - real estate professional who materially participates";
+      out.reasons.push("You meet both real estate professional requirements (" + p.repRe + " hours is more than 750 and more than one-half of " + p.repAll + " total hours) and you materially participate in this rental under one of the seven tests, so the per se passive rule for rentals does not apply to this rental.");
+      if (p.agg) out.reasons.push("You made the §469(c)(7)(A) election, so all rental real estate interests are one activity and the hours entered above should be your hours across all of them.");
+      out.auth = "IRC §469(c)(7)(A)-(B), (h)(1); Treas. Reg. §1.469-5T(a)";
+    } else {
+      out.passive = true;
+      out.headline = "Passive - rental real estate";
+      if (rep.applies && !mp.mp) out.reasons.push("You meet the real estate professional hour requirements, but you do not materially participate in this rental (each interest is tested separately unless you made the §469(c)(7)(A) election to aggregate), so it remains passive.");
+      else if (!rep.applies) out.reasons.push("Rental activity is passive regardless of material participation unless you are a real estate professional. Real estate professional test not met: requires more than 750 hours AND more than one-half of all personal service hours in real property trades or businesses in which you materially participate (" + (rep.hoursOk ? "hours test met" : "hours test not met") + "; " + (rep.halfOk ? "one-half test met" : "one-half test not met") + ").");
+      out.auth = "IRC §469(c)(2), (c)(4), (c)(7)(B)";
+      out.allowanceEligibleNote = "A rental real estate loss may still qualify for the §469(i) special allowance in Step 2 if you actively participated (10% or more owner, bona fide management decisions such as approving tenants and setting rents) and you are not a limited partner.";
+    }
+    if (p.isLp) out.reasons.push("Because the interest is held as a limited partner, the real estate professional and active participation rules are restricted: IRC §469(i)(6)(C); Treas. Reg. §1.469-5T(e).");
+  } else {
+    if (mp.mp){
+      out.passive = false;
+      out.headline = "Not passive - you materially participate";
+      var which = [];
+      for (var i = 0; i < mp.tests.length; i++) if (mp.tests[i].met && (!p.isLp || mp.tests[i].n === 1 || mp.tests[i].n === 5 || mp.tests[i].n === 6)) which.push(mp.tests[i].n);
+      out.reasons.push("You satisfy material participation test" + (which.length > 1 ? "s " : " ") + which.join(", ") + ". A trade or business activity in which you materially participate is not a passive activity.");
+    } else {
+      out.passive = true;
+      out.headline = "Passive - no material participation test met";
+      out.reasons.push(p.isLp && mp.any ? "A limited partner is treated as materially participating only under tests 1, 5 or 6; you satisfy another test only, which does not count for a limited partnership interest." : "None of the seven tests is satisfied on the facts entered, so the activity is a passive activity.");
+    }
+    out.auth = "IRC §469(c)(1), (h)(1)-(2); Treas. Reg. §1.469-5T(a), (e)(2)";
+    if (p.type === "rental_str") out.reasons.push("Because average customer use is within the Treas. Reg. §1.469-1T(e)(3)(ii)(A)-(B) limits, this is not a \"rental activity\" for §469, so it is tested like any trade or business. Confirm the average period of customer use under Reg. §1.469-1(e)(3)(iii).");
+  }
+  return out;
+}
+
+function form8582(p){
+  var o = {};
+  o.l1d = p.p1a - p.p1b - p.p1c;
+  o.l2d = p.p2a - p.p2b - p.p2c;
+  o.l3 = o.l1d + o.l2d;
+  o.totalLosses = p.p1b + p.p1c + p.p2b + p.p2c;
+  o.income = p.p1a + p.p2a;
+  o.allAllowed = (o.l3 >= 0);
+  o.partII = false; o.l4 = 0; o.l5 = 0; o.l6 = 0; o.l7 = 0; o.l8 = 0; o.l9 = 0;
+  o.skipReason = "";
+  if (!o.allAllowed){
+    if (o.l1d < 0){
+      if (p.fs === "mfs_together"){
+        o.skipReason = "Married filing separately and lived with your spouse at any time during the year: no special allowance (IRC §469(i)(5)(B)); Part II is skipped and line 9 is zero.";
+      } else {
+        o.partII = true;
+        var mfsApart = (p.fs === "mfs_apart");
+        o.l4 = Math.min(-o.l1d, -o.l3);
+        o.l5 = mfsApart ? 75000 : 150000;
+        o.l6 = Math.max(0, p.magi);
+        if (o.l6 >= o.l5){ o.l7 = 0; o.l8 = 0; }
+        else { o.l7 = o.l5 - o.l6; o.l8 = Math.min(o.l7 * 0.5, mfsApart ? 12500 : 25000); }
+        o.l9 = Math.min(o.l4, o.l8);
+      }
+    } else {
+      o.skipReason = "Line 1d is zero or more, so Part II is skipped and line 9 is zero (the overall loss is entirely in all other passive activities).";
+    }
+  }
+  o.l10 = o.income;
+  o.l11 = o.allAllowed ? o.totalLosses : (o.l9 + o.l10);
+  o.suspended = Math.max(0, o.totalLosses - o.l11);
+  return o;
+}
+
+function readParams(){
+  var fs = el("fs").value;
+  return {
+    type: el("act_type").value, isLp: el("is_lp").value === "yes",
+    hrsMe: num("hrs_me"), hrsOther: num("hrs_other"), hrsSpa: num("hrs_spa"),
+    yrs5: Math.min(10, Math.floor(num("yrs5"))), psAct: el("ps_act").value, yrs3: Math.floor(num("yrs3")),
+    t2: el("chk_t2").checked, t7: el("chk_t7").checked,
+    repRe: num("rep_re"), repAll: num("rep_all"), agg: el("chk_agg").checked,
+    fs: fs, magi: num("magi"),
+    p1a: num("p1a"), p1b: num("p1b"), p1c: num("p1c"), p2a: num("p2a"), p2b: num("p2b"), p2c: num("p2c")
+  };
+}
+
+function renderStep1(p, c){
+  var h = '<div class="result-box' + (c.passive === false ? ' ok' : '') + '"><h3>' + c.headline + '</h3>';
+  for (var i = 0; i < c.reasons.length; i++) h += '<p>' + c.reasons[i] + '</p>';
+  h += '<p style="font-size:12px;margin-bottom:0"><strong>Authority:</strong> ' + c.auth + '</p></div>';
+  var showMp = (p.type === "trade" || p.type === "rental_str" || p.type === "rental_re");
+  if (showMp){
+    h += '<div class="sec-title" style="margin-top:18px">Material participation tests</div>';
+    for (var k = 0; k < c.mp.tests.length; k++){
+      var t = c.mp.tests[k];
+      var lpNote = (p.isLp && !(t.n === 1 || t.n === 5 || t.n === 6)) ? " (does not count for a limited partner)" : "";
+      h += row("Test " + t.n + ": " + t.text + lpNote, t.met ? "Met" : "Not met");
+    }
+    h += row("Material participation (" + (p.isLp ? "limited partner: tests 1, 5, 6 only" : "any one test") + ")", c.mp.mp ? "Yes" : "No", "tot");
+  }
+  if (p.type === "rental_re"){
+    h += '<div class="sec-title" style="margin-top:18px">Real estate professional test</div>';
+    h += row("Hours in real property trades or businesses (must exceed 750)", p.repRe.toLocaleString("en-US") + (c.rep.hoursOk ? " - met" : " - not met"));
+    h += row("Share of all personal service hours (must exceed 50%)", (p.repAll > 0 ? (Math.round(p.repRe / p.repAll * 1000) / 10) + "%" : "n/a") + (c.rep.halfOk ? " - met" : " - not met"), "tot");
+  }
+  if (c.passive === true){
+    h += '<div class="material-participation"><strong>Next step:</strong> complete Step 2 and Form 8582. ' + (c.allowanceEligibleNote || "") + ' Suspended losses carry forward under IRC §469(b) and are released on a fully taxable disposition of your entire interest under §469(g)(1).</div>';
+  } else if (c.passive === false){
+    h += '<div class="material-participation"><strong>Next step:</strong> §469 does not limit this activity. Other loss limitations (basis, at-risk, excess business loss) may still apply. Keep a contemporaneous log of hours: the IRS may require proof by appointment books, calendars or narrative summaries (Form 8582 instructions, "Proof of participation").</div>';
+  }
+  el("result_area").innerHTML = h;
+}
+
+function renderStep2(p, f){
+  var h = "";
+  if (p.p1a + p.p1b + p.p1c + p.p2a + p.p2b + p.p2c === 0){
+    el("calc_area").innerHTML = '<div class="note-box">Enter your Form 8582 amounts above to compute the allowed and suspended loss.</div>';
+    return;
+  }
+  h += '<div class="sec-title" style="margin-top:8px">Form 8582 computation</div>';
+  h += row("Line 1d: combine lines 1a, 1b, 1c (" + fmt(p.p1a) + " - " + fmt(p.p1b) + " - " + fmt(p.p1c) + ")", fmt(f.l1d));
+  h += row("Line 2d: combine lines 2a, 2b, 2c (" + fmt(p.p2a) + " - " + fmt(p.p2b) + " - " + fmt(p.p2c) + ")", fmt(f.l2d));
+  h += row("Line 3: combine lines 1d and 2d", fmt(f.l3), "tot");
+  if (f.allAllowed){
+    h += '<div class="result-box ok"><h3>All passive losses are allowed this year</h3><p>Line 3 is zero or more: the passive income is at least as large as the passive losses, including prior years\' unallowed losses. All ' + fmt(f.totalLosses) + ' of current-year and prior-year losses are allowed, and nothing is suspended.</p><p style="font-size:12px;margin-bottom:0"><strong>Authority:</strong> IRC §469(a), (d)(1); Form 8582 line 3.</p></div>';
+  } else {
+    if (f.partII){
+      h += row("Line 4: smaller of the loss on line 1d (" + fmt(-f.l1d) + ") or the loss on line 3 (" + fmt(-f.l3) + ")", fmt(f.l4));
+      h += row("Line 5: " + (p.fs === "mfs_apart" ? "$75,000 (married filing separately, lived apart)" : "$150,000"), fmt(f.l5));
+      h += row("Line 6: modified adjusted gross income (not less than zero)", fmt(f.l6));
+      h += row("Line 7: line 5 minus line 6 (zero if line 6 is not below line 5)", fmt(f.l7));
+      h += row("Line 8: 50% of line 7, capped at " + (p.fs === "mfs_apart" ? "$12,500" : "$25,000"), fmt(f.l8));
+      h += row("Line 9: smaller of line 4 or line 8 = special allowance", fmt(f.l9), "tot");
+    } else {
+      h += '<div class="note-box">' + f.skipReason + '</div>';
+      h += row("Line 9: special allowance", fmt(0), "tot");
+    }
+    h += row("Line 10: income on lines 1a and 2a", fmt(f.l10));
+    h += row("Line 11: total losses allowed (line 9 + line 10)", fmt(f.l11), "tot");
+    h += row("Total passive losses before limitation (1b + 1c + 2b + 2c)", fmt(f.totalLosses));
+    h += row("Suspended loss carried forward to next year (total losses minus line 11)", fmt(f.suspended), "tot");
+    h += '<div class="result-box"><h3>' + (f.suspended > 0 ? "Passive loss limitation applies: " + fmt(f.suspended) + " suspended" : "Passive losses are fully allowed through the special allowance") + '</h3><p>Allowed this year: ' + fmt(f.l11) + ' (passive income ' + fmt(f.l10) + ' plus special allowance ' + fmt(f.l9) + '). ' + (f.suspended > 0 ? 'The suspended amount is carried forward and reported on Form 8582 next year as a prior-year unallowed loss (lines 1c / 2c), IRC §469(b).' : '') + '</p>';
+    if (f.partII && p.magi > (p.fs === "mfs_apart" ? 50000 : 100000) && f.l8 < (p.fs === "mfs_apart" ? 12500 : 25000)){
+      h += '<p>The special allowance is phased out: MAGI of ' + fmt(f.l6) + ' exceeds ' + (p.fs === "mfs_apart" ? "$50,000" : "$100,000") + ', so the maximum is reduced by 50% of the excess. Full phase-out at ' + (p.fs === "mfs_apart" ? "$75,000" : "$150,000") + '.</p>';
+    }
+    h += '<p style="font-size:12px;margin-bottom:0"><strong>Authority:</strong> IRC §469(a), (b), (d)(1), (i)(1)-(3), (i)(5); Form 8582 (2025) lines 1-11.</p></div>';
+  }
+  el("calc_area").innerHTML = h;
+}
+
+function renderAssumptions(){
+  var h = "";
+  for (var i = 0; i < STATIC_ASSUMPTIONS.length; i++){
+    var r = STATIC_ASSUMPTIONS[i];
+    h += "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td><td>" + r[3] + "</td></tr>";
+  }
+  el("assump_body").innerHTML = h;
+}
+
+function calculate(){
+  var p = readParams();
+  var showMp = (p.type === "trade" || p.type === "rental_str" || p.type === "rental_re");
+  el("mp_block").style.display = showMp ? "" : "none";
+  el("rep_block").style.display = (p.type === "rental_re") ? "" : "none";
+  var c = classify(p);
+  renderStep1(p, c);
+  var f = form8582(p);
+  renderStep2(p, f);
+}
+
+renderAssumptions();
+calculate();
 </script>
 
-
 <script src="/shared.js"></script>
 
-
-
-
-</div>
-
-<script src="/shared.js"></script>
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">

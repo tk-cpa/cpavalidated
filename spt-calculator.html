@@ -263,23 +263,17 @@ table.bt .tr td{font-weight:700;color:var(--ink);background:var(--ink-10);border
 
   /* ── State table: hide filter controls, show table ── */
   .state-table-wrap { overflow: visible !important; }
-}.pbn{display:none}.ph{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-..@media(max-width:640px){}
-
-
-
-
-
-
-
-
-.
-
-.
-
-@media(max-width:480px){
-.
 }
+.hint{font-size:11px;color:var(--ink-60);line-height:1.5;margin-top:2px}
+.verified{font-size:12px;color:var(--ink-60);margin-top:12px}
+.tbl-wrap{overflow-x:auto}
+details.assump{border:1px solid var(--ink-20);background:var(--white);margin-top:16px}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.acct-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.tt td:first-child{font-size:12px;line-height:1.4}
 /* === canonical nav === */
 nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
 .brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
@@ -294,7 +288,8 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 .cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
 @media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
 /* === end canonical nav === */
-@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}
+</style>
   <meta property="og:type" content="article">
   <meta property="og:title" content="Substantial Presence Test Calculator | CPA Validated">
   <meta property="og:description" content="Calculate U.S. tax residency under the Substantial Presence Test. Two input methods, weighted 3-year calculation, days to trigger SPT, maximum safe days. CPA-validated. IRC Section 7701(b)(3).">
@@ -334,8 +329,8 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="ph"><div class="phi">
   <h1>Substantial Presence Test Calculator</h1>
-  <div class="sub">IRC Section 7701(b)(3) &nbsp;&bull;&nbsp; U.S. Tax Residency Analysis &nbsp;&bull;&nbsp; Updated 2026</div>
-  <div class="badges"><span class="badge">IRC §7701(b)(3)</span><span class="badge">Treas. Reg. 301.7701(b)</span><span class="badge">Form 1040-NR</span><span class="badge">2019 - 2026</span></div>
+  <div class="sub">IRC Section 7701(b)(3) &nbsp;&bull;&nbsp; U.S. Tax Residency Analysis &nbsp;&bull;&nbsp; Test years 2019-2030</div>
+  <div class="badges"><span class="badge">IRC §7701(b)(3)</span><span class="badge">Treas. Reg. 301.7701(b)</span><span class="badge">Form 1040-NR</span><span class="badge">2019 - 2030</span></div>
 </div></div>
 
 <div class="container">
@@ -345,72 +340,74 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <div class="cb">
     <div class="fg2">
       <div class="f1">
-        <label>Test Year</label>
+        <label for="testYear">Test Year (the "current year")</label>
         <select id="testYear" class="fc" onchange="onYearChange()">
           <option>2019</option><option>2020</option><option>2021</option><option>2022</option>
           <option>2023</option><option>2024</option><option>2025</option><option value="2026" selected>2026</option>
+          <option value="2027">2027 (planning)</option><option value="2028">2028 (planning)</option><option value="2029">2029 (planning)</option><option value="2030">2030 (planning)</option>
         </select>
+        <div class="hint">The test uses this year plus the two preceding calendar years (IRC §7701(b)(3)(A)(ii)).</div>
       </div>
       <div class="f1">
-        <label>Input Method</label>
+        <label for="inputMethod">Input Method</label>
         <select id="inputMethod" class="fc" onchange="switchMethod()">
           <option value="A">Method A - Enter Total Days</option>
           <option value="B">Method B - Enter Trip Dates</option>
         </select>
+        <div class="hint">Method B splits trips across calendar years and never double-counts overlapping dates.</div>
       </div>
     </div>
   </div>
-<div class="card">
-  <div class="ch"><div class="sb">2</div><h2 id="s2title">Enter U.S. Days</h2></div>
+</div>
+
+<div class="card input-card">
+  <div class="ch"><div class="sb">2</div><h2 id="s2title">Enter U.S. Days  (Method A)</h2></div>
   <div class="cb">
-    <div class="fd"><span class="fi">f</span><span class="ft">(Current Year &times; 1) + (Prior Year &times; 1/3) + (Two Years Prior &times; 1/6) &ge; 183 weighted days</span></div>
+    <div class="fd"><span class="fi">f</span><span class="ft">(Current Year &times; 1) + (Prior Year &times; 1/3) + (Two Years Prior &times; 1/6) &ge; 183 weighted days, and at least 31 days in the current year</span></div>
     <div id="mA" class="ms vis">
       <table class="dt">
         <thead><tr><th>Year</th><th>Weight</th><th style="width:140px">Days in U.S.</th></tr></thead>
         <tbody id="mAbody"></tbody>
       </table>
-      <div class="inf">Enter the total number of days physically present in the United States for each year, including days of arrival and departure.</div>
+      <div class="inf">Enter the total number of days physically present in the United States for each year. A day counts if you were present in the United States at any time during that day, including days of arrival and departure (IRC §7701(b)(7)(A)). Enter the days before any exclusions; excluded days are entered in step 3.</div>
     </div>
     <div id="mB" class="ms">
       <div class="acct-table-wrap">
       <table class="tt">
         <thead><tr>
           <th style="text-align:left;min-width:90px">Description</th>
-          <th style="width:100px">Arrival</th>
-          <th style="width:100px">Departure</th>
-          <th style="width:44px">Days</th>
-          <th style="width:44px">Year</th>
-          <th style="width:44px">Excl.</th>
+          <th style="width:110px">Arrival</th>
+          <th style="width:110px">Departure</th>
+          <th style="width:54px">Days</th>
+          <th style="width:80px">Year</th>
           <th style="width:30px"></th>
         </tr></thead>
         <tbody id="tripBody"></tbody>
       </table>
       </div>
       <button class="atb" onclick="addTrip()">+ Add Trip</button>
-      <div class="inf">Enter each trip to the U.S. Days counted inclusive of arrival and departure. Split trips spanning year-end into two entries.</div>
+      <div class="inf">Enter each stay in the U.S. Both the arrival and departure dates count. Trips that span a year-end are split by calendar year automatically, and overlapping dates are counted once. Only the test year and the two preceding years are used.</div>
     </div>
+  </div>
+</div>
 
-<div class="card">
-  <div class="ch"><div class="sb">3</div><h2>Exclusion Adjustments (Optional - Current Year Only)</h2></div>
+<div class="card input-card">
+  <div class="ch"><div class="sb">3</div><h2>Days Not Counted (Optional - Any of the Three Years)</h2></div>
   <div class="cb">
-    <div class="eg">
-      <div class="ei">
-        <label>Medical / Illness Days - IRC Sec. 7701(b)(3)(D)(ii)</label>
-        <input type="number" id="xMed" value="0" min="0" oninput="recalc()">
-      </div>
-      <div class="ei">
-        <label>Transit Days (&lt;24 hrs) - IRC Sec. 7701(b)(7)(C)</label>
-        <input type="number" id="xTrans" value="0" min="0" oninput="recalc()">
-      </div>
-      <div class="ei">
-        <label>Canada / Mexico Commuter Days - IRC Sec. 7701(b)(7)(B)</label>
-        <input type="number" id="xComm" value="0" min="0" oninput="recalc()">
-      </div>
-      <div class="ei">
-        <label>Exempt Individual Days - IRC Sec. 7701(b)(5)</label>
-        <input type="number" id="xExempt" value="0" min="0" oninput="recalc()">
-      </div>
+    <div class="acct-table-wrap">
+    <table class="tt">
+      <thead><tr><th style="text-align:left;min-width:220px">Days that are not counted as present</th><th id="xh0">Current</th><th id="xh1">Prior</th><th id="xh2">Two prior</th></tr></thead>
+      <tbody>
+        <tr><td>Exempt individual days (student, teacher or trainee, foreign government-related, charity sports event) - IRC §7701(b)(3)(D)(i), (b)(5)</td><td><input type="number" class="fc" id="x_ex0" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_ex1" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_ex2" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td></tr>
+        <tr><td>Medical condition days (arose while in the U.S.) - IRC §7701(b)(3)(D)(ii)</td><td><input type="number" class="fc" id="x_med0" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_med1" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_med2" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td></tr>
+        <tr><td>Canada / Mexico commuter days - IRC §7701(b)(7)(B)</td><td><input type="number" class="fc" id="x_com0" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_com1" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_com2" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td></tr>
+        <tr><td>Transit days (in the U.S. under 24 hours between two foreign points) - IRC §7701(b)(7)(C)</td><td><input type="number" class="fc" id="x_tra0" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_tra1" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_tra2" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td></tr>
+        <tr><td>Foreign vessel crew member days - IRC §7701(b)(7)(D)</td><td><input type="number" class="fc" id="x_crw0" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_crw1" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_crw2" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td></tr>
+        <tr><td>NATO visa days (member of a force or civilian component) - Form 8840 instructions</td><td><input type="number" class="fc" id="x_nat0" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_nat1" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td><td><input type="number" class="fc" id="x_nat2" value="0" min="0" step="1" inputmode="numeric" oninput="recalc()"></td></tr>
+      </tbody>
+    </table>
     </div>
+    <div class="inf">These days are removed from each year's count before weighting. Exempt-individual and medical-condition days require Form 8843; students may be exempt for 5 calendar years, and teachers and trainees are limited to 2 of the preceding 6 years (IRC §7701(b)(5)(E)). Excluded days cannot exceed the days present that year.</div>
   </div>
 </div>
 
@@ -419,257 +416,266 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <div class="cb">
     <div id="rbn" class="rbn nm">
       <div class="ri" id="ricon">&#9651;</div>
-      <div class="rt"><h3 id="rtitle">SPT Not Met - Nonresident Alien</h3><p id="rsub">Enter your U.S. presence data above to calculate.</p>
-<div style="background:#FFE5E5;border-left:3px solid #C85A54;padding:14px 18px;margin:16px 0;font-size:12px;color:#8B4513;line-height:1.55">
-<strong>Calculator Disclaimer:</strong> This calculator provides estimates only. Results depend on inputs, facts, and assumptions. Always verify against current primary authority and consult a tax professional before filing or acting on results.
-</div>
-</div>
+      <div class="rt"><h3 id="rtitle">SPT Not Met - Nonresident Alien</h3><p id="rsub">Enter your U.S. presence data above to calculate.</p></div>
     </div>
+    <div id="warnArea"></div>
     <div class="sr">
       <div class="stb"><div class="sv" id="sW">0.00</div><div class="sl">Weighted Total</div></div>
-      <div class="stb"><div class="sv" id="sCur">0</div><div class="sl">Current Year Days</div></div>
-      <div class="stb"><div class="sv" id="sThr">183</div><div class="sl">Days to Threshold</div></div>
+      <div class="stb"><div class="sv" id="sCur">0</div><div class="sl">Current Year Days Counted</div></div>
+      <div class="stb"><div class="sv" id="sThr">183</div><div class="sl">Weighted Days Short of 183</div></div>
     </div>
     <div class="pw">
       <div class="ph2"><span>Weighted Day Count</span><span id="plbl">0 / 183 days</span></div>
       <div class="pt"><div class="pb" id="pbar" style="width:0%"></div></div>
     </div>
+    <div class="acct-table-wrap">
     <table class="bt">
-      <thead><tr><th>Year</th><th>Days in U.S.</th><th>Multiplier</th><th>Weighted Days</th></tr></thead>
+      <thead><tr><th>Year</th><th>Days in U.S.</th><th>Not Counted</th><th>Days Counted</th><th>Multiplier</th><th>Weighted Days</th></tr></thead>
       <tbody id="btbody"></tbody>
-      <tfoot><tr class="tr"><td>Total</td><td id="bRaw">-</td><td>-</td><td id="bWt">0.00</td></tr></tfoot>
+      <tfoot><tr class="tr"><td>Total</td><td id="bPres">-</td><td id="bExc">-</td><td id="bRaw">-</td><td>-</td><td id="bWt">0.00</td></tr></tfoot>
     </table>
+    </div>
     <div class="ar">
-      <div class="ab trig"><div class="bl">Days to Trigger SPT</div><div class="bv" id="dTrig">-</div><div class="bn">additional current-year days needed</div></div>
-      <div class="ab safe"><div class="bl">Maximum Safe Days</div><div class="bv" id="dSafe">-</div><div class="bn">max current-year days without triggering</div></div>
+      <div class="ab trig"><div class="bl">Current-Year Days That Trigger the SPT</div><div class="bv" id="dTrig">-</div><div class="bn" id="dTrigNote">counted days needed in the current year</div></div>
+      <div class="ab safe"><div class="bl">Maximum Safe Current-Year Days</div><div class="bv" id="dSafe">-</div><div class="bn" id="dSafeNote">most counted days without meeting the SPT</div></div>
     </div>
-    <div id="adjNote" style="display:none" class="inf">
-      <strong>Adjusted current-year days (after exclusions): <span id="adjDays">0</span></strong> - use this adjusted count if exclusions apply.
-    </div>
-    
+    <div id="nextSteps"></div>
+
+    <details class="assump">
+      <summary>Assumptions &amp; sources</summary>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Rule</th><th>Value</th><th>Status</th><th>Citation</th></tr></thead>
+        <tbody>
+          <tr><td>Minimum days in the current year</td><td>31</td><td>Statutory</td><td>IRC §7701(b)(3)(A)(i)</td></tr>
+          <tr><td>Weighted threshold</td><td>183 days; weights 1, 1/3, 1/6</td><td>Statutory</td><td>IRC §7701(b)(3)(A)(ii)</td></tr>
+          <tr><td>What counts as a day of presence</td><td>Physically present at any time during the day</td><td>Statutory</td><td>IRC §7701(b)(7)(A)</td></tr>
+          <tr><td>Days not counted</td><td>Exempt individual, medical condition, Canada or Mexico commuter, transit under 24 hours, foreign vessel crew, NATO visa</td><td>Statutory / Form instructions</td><td>IRC §7701(b)(3)(D), (b)(5), (b)(7)(B)-(D); Form 8840 instructions</td></tr>
+          <tr><td>Closer connection exception</td><td>Fewer than 183 days in the current year, foreign tax home, closer connection, no green card steps</td><td>Statutory</td><td>IRC §7701(b)(3)(B), (C); Treas. Reg. §301.7701(b)-2; Form 8840</td></tr>
+          <tr><td>Year dependence</td><td>None. The rule is the same for every test year, so no inflation or projection is used.</td><td>Statutory</td><td>IRC §7701(b)(3)</td></tr>
+        </tbody>
+      </table></div>
+    </details>
+    <div class="verified">Last verified: October 29, 2026. No projected figures are used on this page; every rule above is fixed by statute.</div>
 
     <div style="background:var(--white);border:1px solid var(--ink-20);padding:18px;margin-top:20px">
       <div style="font-family:var(--font-display);font-size:12px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--ink);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--ink-20)">Related Tools</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <a href="closer-connection.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">Closer Connection Exception<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">Form 8840 · IRC §7701(b)(3)(B)</span></a>
-        <a href="fbar-checker.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">FBAR & Form 8938<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">31 USC 5314 · IRC §6038D</span></a>
+        <a href="fbar-checker.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">FBAR &amp; Form 8938<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">31 USC 5314 · IRC §6038D</span></a>
         <a href="pre-immigration-planning.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">Pre-Immigration Planning<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">Before your green card · IRC §7701(b)</span></a>
         <a href="tax-estimator.html" style="display:block;padding:10px 12px;border:1px solid var(--ink-20);font-size:13px;font-weight:500;color:var(--ink);text-decoration:none">Tax Estimator 2026<span style="display:block;font-size:11px;font-weight:400;color:var(--ink-60);margin-top:2px;font-family:var(--font-mono)">Federal + all 50 states · IRC §1</span></a>
       </div>
     </div>
 
+    <div style="background:#FFE5E5;border-left:3px solid #C85A54;padding:14px 18px;margin:16px 0 0;font-size:12px;color:#8B4513;line-height:1.55">
+      <strong>Calculator Disclaimer:</strong> This calculator provides estimates only. Results depend on inputs, facts, and assumptions. Always verify against current primary authority and consult a tax professional before filing or acting on results.
     </div>
+  </div>
 </div>
 
 </div>
+
 <script>
-let trips=[], tid=0;
+var trips = [], tid = 0;
+var XTYPES = ["ex", "med", "com", "tra", "crw", "nat"];
+function daysInYear(y){ return (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 366 : 365; }
+function el(id){ return document.getElementById(id); }
+function intVal(id){ var e = el(id); if (!e) return 0; var v = parseInt(e.value, 10); return (isFinite(v) && v > 0) ? v : 0; }
+function esc(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
 
-// Show scroll hint on mobile for trip table
-function checkScrollHint() {
-  const hint = document.getElementById('scrollHint');
-  if (hint && window.innerWidth < 640) {
-    hint.style.display = 'block';
+// ---- Pure engine (also used by tests) ----
+// d[i]  = days present in year (test year - i); x[i] = days not counted that year
+function computeSPT(yr, d, x){
+  var warn = [], pres = [], exc = [], cnt = [];
+  for (var i = 0; i < 3; i++) {
+    var dy = daysInYear(yr - i);
+    var p = Math.max(0, Math.floor(d[i] || 0));
+    if (p > dy) { warn.push((yr - i) + ": days present (" + p + ") exceed the " + dy + " days in that year; limited to " + dy + "."); p = dy; }
+    var xx = Math.max(0, Math.floor(x[i] || 0));
+    if (xx > p) { warn.push((yr - i) + ": days not counted (" + xx + ") exceed days present (" + p + "); limited to " + p + "."); xx = p; }
+    pres.push(p); exc.push(xx); cnt.push(p - xx);
   }
+  // exact integer arithmetic: weighted = c0 + c1/3 + c2/6  =>  6*weighted = 6*c0 + 2*c1 + c2 ; threshold 183 => 1098
+  var six = 6 * cnt[0] + 2 * cnt[1] + cnt[2];
+  var weighted = six / 6;
+  var cond1 = cnt[0] >= 31, cond2 = six >= 1098, met = cond1 && cond2;
+  var prior6 = 2 * cnt[1] + cnt[2];
+  var nStar = Math.max(31, Math.ceil((1098 - prior6) / 6));   // fewest counted current-year days that meets both conditions
+  var maxDays = daysInYear(yr);
+  var reachable = nStar <= maxDays;
+  return {yr: yr, pres: pres, exc: exc, cnt: cnt, weighted: weighted, six: six, cond1: cond1, cond2: cond2, met: met,
+          nStar: nStar, safeMax: nStar - 1, reachable: reachable, shortBy: Math.max(0, (1098 - six) / 6), warn: warn,
+          weights: [cnt[0], cnt[1] / 3, cnt[2] / 6]};
 }
-window.addEventListener('resize', checkScrollHint);
-checkScrollHint();
 
-function onYearChange(){buildA();recalc()}
+// Days per calendar year from a list of {a:'YYYY-MM-DD', d:'YYYY-MM-DD'} (inclusive; overlaps counted once)
+function dayNum(s){
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ""); if (!m) return NaN;
+  var t = Date.UTC(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10));
+  return Math.round(t / 86400000);
+}
+function tripDaysByYear(list, years){
+  var sets = {}; years.forEach(function(y){ sets[y] = {}; });
+  list.forEach(function(t){
+    var a = dayNum(t.a), b = dayNum(t.d);
+    if (!isFinite(a) || !isFinite(b) || b < a) return;
+    years.forEach(function(y){
+      var ys = Math.round(Date.UTC(y, 0, 1) / 86400000), ye = Math.round(Date.UTC(y, 11, 31) / 86400000);
+      var lo = Math.max(a, ys), hi = Math.min(b, ye);
+      for (var k = lo; k <= hi; k++) sets[y][k] = 1;
+    });
+  });
+  var out = {}; years.forEach(function(y){ out[y] = Object.keys(sets[y]).length; });
+  return out;
+}
 
+// ---- UI ----
+function onYearChange(){ buildA(); updateHeads(); recalc(); }
+function updateHeads(){
+  var yr = parseInt(el("testYear").value, 10);
+  el("xh0").textContent = yr + " (current)"; el("xh1").textContent = (yr - 1) + " (prior)"; el("xh2").textContent = (yr - 2) + " (two prior)";
+}
 function switchMethod(){
-  const m=document.getElementById('inputMethod').value;
-  document.getElementById('mA').classList.toggle('vis',m==='A');
-  document.getElementById('mB').classList.toggle('vis',m==='B');
-  document.getElementById('s2title').textContent=m==='A'?'Enter U.S. Days  (Method A)':'Enter U.S. Trips  (Method B)';
+  var m = el("inputMethod").value;
+  el("mA").classList.toggle("vis", m === "A");
+  el("mB").classList.toggle("vis", m === "B");
+  el("s2title").textContent = m === "A" ? "Enter U.S. Days  (Method A)" : "Enter U.S. Trips  (Method B)";
   recalc();
 }
-
 function buildA(){
-  const yr=parseInt(document.getElementById('testYear').value);
-  const tb=document.getElementById('mAbody');
-  const vals=[
-    parseInt(tb.querySelector('#dA0')?.value)||0,
-    parseInt(tb.querySelector('#dA1')?.value)||0,
-    parseInt(tb.querySelector('#dA2')?.value)||0
-  ];
-  tb.innerHTML='';
-  [['Current Year','x 1'],[`Prior Year`,'x 1/3'],['Two Years Prior','x 1/6']].forEach(([lbl,wt],i)=>{
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td><div class="yl">${yr-i}</div><div class="ys">${lbl}</div></td>`+
-      `<td style="text-align:center"><span class="wb">${wt}</span></td>`+
-      `<td><input type="number" id="dA${i}" class="fc" value="${vals[i]}" min="0" oninput="recalc()"></td>`;
+  var yr = parseInt(el("testYear").value, 10);
+  var tb = el("mAbody");
+  var vals = [0, 1, 2].map(function(i){ var e = el("dA" + i); return e ? e.value : ""; });
+  tb.innerHTML = "";
+  [["Current Year", "x 1"], ["Prior Year", "x 1/3"], ["Two Years Prior", "x 1/6"]].forEach(function(r, i){
+    var tr = document.createElement("tr");
+    tr.innerHTML = '<td><div class="yl">' + (yr - i) + '</div><div class="ys">' + r[0] + '</div></td>' +
+      '<td style="text-align:center"><span class="wb">' + r[1] + '</span></td>' +
+      '<td><input type="number" id="dA' + i + '" class="fc" value="' + esc(vals[i] === "" ? 0 : vals[i]) + '" min="0" max="' + daysInYear(yr - i) + '" step="1" inputmode="numeric" oninput="recalc()"></td>';
     tb.appendChild(tr);
   });
 }
-
-function addTrip(){
-  const id=++tid;
-  trips.push({id});
-  renderTrips();
+function addTrip(){ trips.push({id: ++tid, desc: "", a: "", d: ""}); renderTrips(); }
+function removeTrip(id){ trips = trips.filter(function(t){ return t.id !== id; }); renderTrips(); }
+function syncTrips(){
+  trips.forEach(function(t){
+    var a = el("ta-" + t.id), d = el("td2-" + t.id), s = el("td-" + t.id);
+    if (a) t.a = a.value; if (d) t.d = d.value; if (s) t.desc = s.value;
+  });
 }
-
-function removeTrip(id){
-  trips=trips.filter(t=>t.id!==id);
-  renderTrips();recalc();
-}
-
 function renderTrips(){
-  const tb=document.getElementById('tripBody');
-  // Save values before re-render
-  const vals={};
-  trips.forEach(t=>{
-    vals[t.id]={
-      desc:document.getElementById(`td-${t.id}`)?.value||'',
-      arr:document.getElementById(`ta-${t.id}`)?.value||'',
-      dep:document.getElementById(`td2-${t.id}`)?.value||'',
-      excl:document.getElementById(`te-${t.id}`)?.value||''
-    };
-  });
-  tb.innerHTML='';
-  trips.forEach(t=>{
-    const v=vals[t.id]||{};
-    const tr=document.createElement('tr');
-    tr.id=`trip-${t.id}`;
-    tr.innerHTML=
-      `<td><input type="text" class="fc" id="td-${t.id}" placeholder="Description" value="${v.desc||''}" oninput="recalc()"></td>`+
-      `<td><input type="date" class="fc" id="ta-${t.id}" value="${v.arr||''}" oninput="rtCalc(${t.id})"></td>`+
-      `<td><input type="date" class="fc" id="td2-${t.id}" value="${v.dep||''}" oninput="rtCalc(${t.id})"></td>`+
-      `<td class="cc" id="tdays-${t.id}">-</td>`+
-      `<td class="yc" id="tyr-${t.id}">-</td>`+
-      `<td><input type="number" class="fc" id="te-${t.id}" value="${v.excl||''}" min="0" placeholder="0" oninput="recalc()" style="width:50px;padding:6px 4px;font-size:12px;text-align:center;font-weight:500"></td>`+
-      `<td><button class="rb" onclick="removeTrip(${t.id})" title="Remove">&#215;</button></td>`;
+  syncTrips();
+  var tb = el("tripBody"); tb.innerHTML = "";
+  trips.forEach(function(t){
+    var tr = document.createElement("tr"); tr.id = "trip-" + t.id;
+    tr.innerHTML =
+      '<td><input type="text" class="fc" id="td-' + t.id + '" placeholder="Description" value="' + esc(t.desc) + '" oninput="syncTrips()"></td>' +
+      '<td><input type="date" class="fc" id="ta-' + t.id + '" value="' + esc(t.a) + '" oninput="rtCalc(' + t.id + ')"></td>' +
+      '<td><input type="date" class="fc" id="td2-' + t.id + '" value="' + esc(t.d) + '" oninput="rtCalc(' + t.id + ')"></td>' +
+      '<td class="cc" id="tdays-' + t.id + '">-</td><td class="yc" id="tyr-' + t.id + '">-</td>' +
+      '<td><button class="rb" onclick="removeTrip(' + t.id + ')" title="Remove" aria-label="Remove trip">&#215;</button></td>';
     tb.appendChild(tr);
   });
+  trips.forEach(function(t){ rtCalc(t.id, true); });
   recalc();
 }
-
-function rtCalc(id){
-  const a=document.getElementById(`ta-${id}`)?.value;
-  const d=document.getElementById(`td2-${id}`)?.value;
-  const de=document.getElementById(`tdays-${id}`);
-  const ye=document.getElementById(`tyr-${id}`);
-  if(a&&d){
-    const d1=new Date(a+'T00:00:00'),d2=new Date(d+'T00:00:00');
-    const diff=Math.round((d2-d1)/86400000)+1;
-    if(de)de.textContent=diff>0?diff:'-';
-    if(ye)ye.textContent=d1.getFullYear();
-  } else {
-    if(de)de.textContent='-';
-    if(ye)ye.textContent='-';
-  }
-  recalc();
+function rtCalc(id, skip){
+  syncTrips();
+  var t = trips.filter(function(x){ return x.id === id; })[0]; if (!t) return;
+  var a = dayNum(t.a), b = dayNum(t.d), de = el("tdays-" + id), ye = el("tyr-" + id);
+  if (isFinite(a) && isFinite(b) && b >= a) {
+    de.textContent = (b - a + 1);
+    var y1 = new Date(a * 86400000).getUTCFullYear(), y2 = new Date(b * 86400000).getUTCFullYear();
+    ye.textContent = y1 === y2 ? y1 : (y1 + "/" + y2);
+  } else if (isFinite(a) && isFinite(b)) { de.textContent = "check"; ye.textContent = "-"; }
+  else { de.textContent = "-"; ye.textContent = "-"; }
+  if (!skip) recalc();
 }
+function fmt2(n){ return (Math.round(n * 100) / 100).toFixed(2); }
 
 function recalc(){
-  const yr=parseInt(document.getElementById('testYear').value);
-  const method=document.getElementById('inputMethod').value;
-  let d=[0,0,0];
-
-  if(method==='A'){
-    for(let i=0;i<3;i++){
-      const el=document.getElementById(`dA${i}`);
-      d[i]=el?(parseInt(el.value)||0):0;
-    }
+  var yr = parseInt(el("testYear").value, 10); if (!(yr >= 2019 && yr <= 2030)) yr = 2026;
+  var method = el("inputMethod").value;
+  var d = [0, 0, 0], extra = [];
+  if (method === "A") {
+    for (var i = 0; i < 3; i++) d[i] = intVal("dA" + i);
   } else {
-    const td={};
-    trips.forEach(t=>{
-      const a=document.getElementById(`ta-${t.id}`)?.value;
-      const dp=document.getElementById(`td2-${t.id}`)?.value;
-      const ex=parseInt(document.getElementById(`te-${t.id}`)?.value)||0;
-      if(!a||!dp)return;
-      const d1=new Date(a+'T00:00:00'),d2=new Date(dp+'T00:00:00');
-      const total=Math.round((d2-d1)/86400000)+1;
-      if(total<1)return;
-      const net=Math.max(0,total-ex);
-      const ty=d1.getFullYear();
-      td[ty]=(td[ty]||0)+net;
-      const de=document.getElementById(`tdays-${t.id}`);
-      const ye=document.getElementById(`tyr-${t.id}`);
-      if(de)de.textContent=total;
-      if(ye)ye.textContent=ty;
-    });
-    d[0]=td[yr]||0;d[1]=td[yr-1]||0;d[2]=td[yr-2]||0;
+    syncTrips();
+    var by = tripDaysByYear(trips, [yr, yr - 1, yr - 2]);
+    d = [by[yr], by[yr - 1], by[yr - 2]];
+    trips.forEach(function(t){ var a = dayNum(t.a), b = dayNum(t.d); if (isFinite(a) && isFinite(b) && b < a) extra.push("A trip has a departure date before its arrival date and was ignored."); });
   }
-
-  const xTotal=['xMed','xTrans','xComm','xExempt'].reduce((s,id)=>s+(parseInt(document.getElementById(id).value)||0),0);
-
-  const w=[d[0]*1, d[1]/3, d[2]/6];
-  const wT=w[0]+w[1]+w[2];
-  const cond1=d[0]>=31, cond2=wT>=183, met=cond1&&cond2;
-
-  const prW=w[1]+w[2];
-  const minT=Math.max(31,Math.ceil(183-prW));
-  const dTrig=Math.max(0,minT-d[0]);
-  const dSafe=Math.max(0,minT-1-d[0]);
-
-  // Banner
-  const bn=document.getElementById('rbn');
-  const ic=document.getElementById('ricon');
-  const ti=document.getElementById('rtitle');
-  const su=document.getElementById('rsub');
-  if(met){
-    bn.className='rbn m';ic.textContent='✓';
-    ti.textContent='SPT Met - U.S. Resident Alien';
-    su.textContent=`Both conditions satisfied for ${yr}. Condition 1: ${d[0]} days (>= 31). Condition 2: ${wT.toFixed(2)} weighted days (>= 183).`;
+  var x = [0, 1, 2].map(function(i){ return XTYPES.reduce(function(s, k){ return s + intVal("x_" + k + i); }, 0); });
+  var r = computeSPT(yr, d, x);
+  var bn = el("rbn"), ic = el("ricon"), ti = el("rtitle"), su = el("rsub");
+  var c = r.cnt;
+  if (r.met) {
+    bn.className = "rbn m"; ic.textContent = "✓";
+    ti.textContent = "SPT Met - U.S. Resident Alien (unless an exception applies)";
+    su.textContent = "Both conditions are satisfied for " + yr + ". Condition 1: " + c[0] + " counted days (at least 31). Condition 2: " + fmt2(r.weighted) + " weighted days (at least 183).";
   } else {
-    bn.className='rbn nm';ic.textContent='◯';
-    ti.textContent='SPT Not Met - Nonresident Alien';
-    if(!cond1&&!cond2) su.textContent=`Both conditions unmet. Need >= 31 current-year days and >= 183 weighted days. Current: ${d[0]} days, ${wT.toFixed(2)} weighted.`;
-    else if(!cond1) su.textContent=`Condition 1 not met: ${d[0]} current-year days (need >= 31).`;
-    else su.textContent=`Condition 2 not met: ${wT.toFixed(2)} weighted days (need >= 183). ${dTrig} more current-year days would trigger SPT.`;
+    bn.className = "rbn nm"; ic.textContent = "◯";
+    ti.textContent = "SPT Not Met - Nonresident Alien under this test";
+    if (!r.cond1 && !r.cond2) su.textContent = "Both conditions are unmet. Need at least 31 counted days in " + yr + " and at least 183 weighted days. Current: " + c[0] + " days, " + fmt2(r.weighted) + " weighted.";
+    else if (!r.cond1) su.textContent = "Condition 1 is not met: " + c[0] + " counted days in " + yr + " (need at least 31). The weighted total is " + fmt2(r.weighted) + ".";
+    else su.textContent = "Condition 2 is not met: " + fmt2(r.weighted) + " weighted days (need at least 183). " + (r.reachable ? (r.nStar - c[0]) + " more counted day(s) in " + yr + " would meet the test." : "Even a full year would not reach 183 weighted days.");
   }
-
-  document.getElementById('sW').textContent=wT.toFixed(2);
-  document.getElementById('sCur').textContent=d[0];
-  document.getElementById('sThr').textContent=met?'183+':Math.max(0,183-wT).toFixed(2);
-
-  const pct=Math.min(100,(wT/183)*100);
-  const pb=document.getElementById('pbar');
-  pb.style.width=pct+'%';
-  pb.className='pb'+(met?' met':(pct>=85?' dng':''));
-  document.getElementById('plbl').textContent=`${wT.toFixed(2)} / 183 days`;
-
-  // Breakdown
-  const bb=document.getElementById('btbody');
-  bb.innerHTML='';
-  [[yr,d[0],'&times; 1',w[0].toFixed(2)],[yr-1,d[1],'&times; 1/3',w[1].toFixed(2)],[yr-2,d[2],'&times; 1/6',w[2].toFixed(2)]].forEach(([y,r,m,wt])=>{
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td>${y}</td><td>${r}</td><td>${m}</td><td>${wt}</td>`;
+  el("sW").textContent = fmt2(r.weighted);
+  el("sCur").textContent = c[0];
+  el("sThr").textContent = r.six >= 1098 ? "0.00" : fmt2(r.shortBy);
+  var pct = Math.min(100, (r.weighted / 183) * 100), pb = el("pbar");
+  pb.style.width = pct + "%"; pb.className = "pb" + (r.met ? " met" : (pct >= 85 ? " dng" : ""));
+  el("plbl").textContent = fmt2(r.weighted) + " / 183 days";
+  var bb = el("btbody"); bb.innerHTML = "";
+  [[yr, "&times; 1"], [yr - 1, "&times; 1/3"], [yr - 2, "&times; 1/6"]].forEach(function(row, i){
+    var tr = document.createElement("tr");
+    tr.innerHTML = "<td>" + row[0] + "</td><td>" + r.pres[i] + "</td><td>" + r.exc[i] + "</td><td>" + c[i] + "</td><td>" + row[1] + "</td><td>" + fmt2(r.weights[i]) + "</td>";
     bb.appendChild(tr);
   });
-  document.getElementById('bRaw').textContent=d[0]+d[1]+d[2];
-  document.getElementById('bWt').textContent=wT.toFixed(2);
-
-  document.getElementById('dTrig').textContent=met?'Met':dTrig;
-  document.getElementById('dSafe').textContent=met?'0':dSafe;
-
-  const adj=d[0]-xTotal;
-  if(xTotal>0){
-    document.getElementById('adjNote').style.display='block';
-    document.getElementById('adjDays').textContent=adj;
+  el("bPres").textContent = r.pres[0] + r.pres[1] + r.pres[2];
+  el("bExc").textContent = r.exc[0] + r.exc[1] + r.exc[2];
+  el("bRaw").textContent = c[0] + c[1] + c[2];
+  el("bWt").textContent = fmt2(r.weighted);
+  // triggers
+  if (r.met) {
+    el("dTrig").textContent = "Met"; el("dTrigNote").textContent = "already at or above both thresholds";
+    el("dSafe").textContent = "-"; el("dSafeNote").textContent = "not applicable once the test is met";
+  } else if (!r.reachable) {
+    el("dTrig").textContent = "None"; el("dTrigNote").textContent = "not reachable in " + yr + " (" + daysInYear(yr) + " days)";
+    el("dSafe").textContent = daysInYear(yr); el("dSafeNote").textContent = "any number of days up to a full year";
   } else {
-    document.getElementById('adjNote').style.display='none';
+    el("dTrig").textContent = r.nStar; el("dTrigNote").textContent = "counted days in " + yr + " meet the SPT (" + Math.max(0, r.nStar - c[0]) + " more than you have entered)";
+    el("dSafe").textContent = r.safeMax; el("dSafeNote").textContent = "most counted days in " + yr + " without meeting the SPT (" + Math.max(0, r.safeMax - c[0]) + " more than you have entered)";
   }
+  // warnings
+  var wh = "";
+  r.warn.concat(extra).forEach(function(w){ wh += '<div class="inf" style="border-left-color:var(--amber)">' + esc(w) + '</div>'; });
+  el("warnArea").innerHTML = wh;
+  // next steps
+  var ns = "";
+  if (r.met) {
+    ns += '<div class="inf"><strong>Closer connection exception (Form 8840).</strong> ';
+    if (c[0] >= 183) ns += 'Not available: you were present for ' + c[0] + ' counted days, and the exception requires fewer than 183 days in the current year (IRC §7701(b)(3)(B)(i); Form 8840 instructions). A tax treaty tie-breaker (Form 8833; Treas. Reg. §301.7701(b)-7) may still apply.';
+    else ns += 'You were present fewer than 183 days in ' + yr + ', so you may be able to claim it if you also had a foreign tax home for the entire year, a closer connection to that foreign country, and no green card application or other steps toward permanent residence during the year (IRC §7701(b)(3)(B), (C); Treas. Reg. §301.7701(b)-2). It is claimed by timely filing Form 8840 (Treas. Reg. §301.7701(b)-8). See the <a href="closer-connection-validator.html">Closer Connection Validator</a>.';
+    ns += '</div>';
+  } else {
+    ns += '<div class="inf"><strong>This is only the substantial presence test.</strong> A green card holder is a resident regardless of days (IRC §7701(b)(1)(A)(i)), and an individual who meets the test for the following year may be able to make the first-year election (IRC §7701(b)(4)).</div>';
+  }
+  if (r.exc[0] + r.exc[1] + r.exc[2] > 0) ns += '<div class="inf">Days not counted for exempt individuals or a medical condition are reported on Form 8843. Form 8843 is required to rely on them, other than for foreign government-related individuals (Form 8840 instructions; Treas. Reg. §301.7701(b)-8(b)(2)).</div>';
+  el("nextSteps").innerHTML = ns;
 }
 
-document.getElementById('testYear').addEventListener('change',onYearChange);
+updateHeads();
 buildA();
 renderTrips();
 recalc();
-checkScrollHint();
 </script>
-
-
 
 <script>
 function doPrint(){window.print();}
 function doShare(){var url=location.href;var title=document.title.replace(" | CPA Validated","");if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
 function showShareModal(url,title){if(document.getElementById("sv-ol"))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[["Facebook","#1877F2","https://www.facebook.com/sharer/sharer.php?u="+enc],["Telegram","#29A8E0","https://t.me/share/url?url="+enc+"&text="+et],["X / Twitter","#e0e0e0","https://twitter.com/intent/tweet?url="+enc+"&text="+et],["LinkedIn","#0A66C2","https://www.linkedin.com/sharing/share-offsite/?url="+enc],["WhatsApp","#25D366","https://wa.me/?text="+et+"%0A"+enc]];var ol=document.createElement("div");ol.id="sv-ol";ol.style.cssText="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center";var h="<div style=\"background:#111111;width:100%;max-width:520px\">"+"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A\">"+"<span style=\"font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff\">Share</span>"+"<button id=\"sv-x\" style=\"background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px\">&times;</button></div>"+"<div style=\"padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px\">";links.forEach(function(l){h+="<a href="+JSON.stringify(l[2])+" target=\"_blank\" rel=\"noopener\" style=\"display:block;padding:12px 14px;border-left:3px solid "+l[1]+";background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600\">"+l[0]+"</a>";});h+="<button id=\"sv-cp\" style=\"padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left\">Copy Link</button></div></div>";ol.innerHTML=h;document.body.appendChild(ol);document.getElementById("sv-x").onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById("sv-cp").onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);});}catch(e2){var ta=document.createElement("textarea");ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);}};}
 </script>
-</div>
-</div>
-
 
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">

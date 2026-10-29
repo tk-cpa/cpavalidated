@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Mortgage Interest Deduction Limit Calculator 2026 | CPA Validated</title>
-<meta name="description" content="Calculate deductible mortgage interest under the $750,000 TCJA cap and $1,000,000 grandfathered limit. Multiple mortgages, home equity debt rules, Schedule A. CPA-validated. IRC Section 163(h)(3).">
+<title>Mortgage Interest Deduction Limit Calculator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Calculate deductible home mortgage interest for 2026-2030 under the $750,000 and $1,000,000 acquisition debt limits using the Pub. 936 Table 1 method, plus mortgage insurance premiums and SALT cap context. IRC Section 163(h)(3). Last verified October 29, 2026.">
 <link rel="canonical" href="https://cpavalidated.com/mortgage-interest-calculator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -52,22 +52,23 @@ select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.o
 .loan-separator{border-top:1px dashed var(--ink-20);margin:16px 0;padding-top:16px}
 .loan-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:10px;font-family:var(--font-mono)}
 @media(max-width:600px){.fg2,.fg3,.rh-grid{grid-template-columns:1fr 1fr}}
-..@media(max-width:640px){}
+/* === year selector, assumptions, badges (g08) === */
+.yr-badge{display:inline-block;font-family:var(--font-mono);font-size:11px;padding:3px 9px;border:1px solid;margin-top:6px}
+.yr-badge.proj{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-b)}
+.yr-badge.stat{background:var(--green-bg);color:var(--green);border-color:var(--green-b)}
+.asm{margin-top:14px;border:1px solid var(--ink-20);background:var(--white)}
+.asm summary{cursor:pointer;padding:10px 14px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-80)}
+.asm-wrap{overflow-x:auto;padding:0 14px 14px}
+.asm-tbl{width:100%;border-collapse:collapse;font-size:12px;line-height:1.45}
+.asm-tbl th,.asm-tbl td{padding:7px 8px;border-top:1px solid var(--ink-20);text-align:left;vertical-align:top}
+.asm-tbl th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60)}
+.asm-tbl td.st-stat{color:var(--green);font-weight:600}
+.asm-tbl td.st-irs{color:var(--blue-acc);font-weight:600}
+.asm-tbl td.st-proj{color:var(--amber);font-weight:600}
+.lastv{font-size:11px;color:var(--ink-60);margin:10px 0 0}
+.projnote{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;margin-top:6px}
+.warnbox{font-size:12px;color:var(--red);margin-top:6px}
 
-
-
-
-
-
-
-
-.
-
-.
-
-@media(max-width:480px){
-.
-}
 /* === category nav bar === */
 .cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .cat-nav::-webkit-scrollbar{display:none}
@@ -93,15 +94,15 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 /* === end canonical nav === */
 @media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Mortgage Interest Deduction Limit Calculator 2026 | CPA Validated">
-  <meta property="og:description" content="Calculate deductible mortgage interest under the $750,000 TCJA cap and $1,000,000 grandfathered limit. Multiple mortgages, home equity debt rules, Schedule A. CPA-validated. IRC Section 163(h)(3).">
+  <meta property="og:title" content="Mortgage Interest Deduction Limit Calculator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Calculate deductible home mortgage interest for 2026-2030 under the $750,000 and $1,000,000 acquisition debt limits using the Pub. 936 Table 1 method, plus mortgage insurance premiums and SALT cap context. IRC Section 163(h)(3). Last verified October 29, 2026.">
   <meta property="og:url" content="https://cpavalidated.com/mortgage-interest-calculator.html">
   <meta property="og:site_name" content="CPA Validated">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mortgage Interest Deduction Limit Calculator 2026 | CPA Validated">
-  <meta name="twitter:description" content="Calculate deductible mortgage interest under the $750,000 TCJA cap and $1,000,000 grandfathered limit. Multiple mortgages, home equity debt rules, Schedule A. CPA-validated. IRC Section 163(h)(3).">
+  <meta name="twitter:title" content="Mortgage Interest Deduction Limit Calculator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Calculate deductible home mortgage interest for 2026-2030 under the $750,000 and $1,000,000 acquisition debt limits using the Pub. 936 Table 1 method, plus mortgage insurance premiums and SALT cap context. IRC Section 163(h)(3). Last verified October 29, 2026.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Interest Deduction Limit Calculator 2026 | CPA Validated","url":"https://cpavalidated.com/mortgage-interest-calculator.html","description":"Calculate deductible mortgage interest under the $750,000 TCJA cap and $1,000,000 grandfathered limit. Multiple mortgages, home equity debt rules, Schedule A. CPA-validated. IRC Section 163(h)(3).","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Mortgage Interest Deduction Limit Calculator 2026-2030 | CPA Validated","url":"https://cpavalidated.com/mortgage-interest-calculator.html","description":"Calculate deductible home mortgage interest for 2026-2030 under the $750,000 and $1,000,000 acquisition debt limits using the Pub. 936 Table 1 method, plus mortgage insurance premiums and SALT cap context. IRC Section 163(h)(3). Last verified October 29, 2026.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
   </script>
 </head>
 <body>
@@ -129,227 +130,329 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 </div>
 
 <div class="ph"><div class="phi">
-  <h1>Mortgage Interest Deduction Limit Calculator</h1>
-  <div class="sub">$750K TCJA Cap &nbsp;&bull;&nbsp; $1M Grandfathered Loans &nbsp;&bull;&nbsp; Home Equity Rules &nbsp;&bull;&nbsp; Multiple Properties</div>
+  <h1>Mortgage Interest Deduction Limit Calculator 2026-2030</h1>
+  <div class="sub">$750K Acquisition Debt Cap &nbsp;&bull;&nbsp; $1M Pre-2018 Loans &nbsp;&bull;&nbsp; Pub. 936 Table 1 &nbsp;&bull;&nbsp; Mortgage Insurance Premiums (2026+)</div>
   <div class="badges">
     <span class="badge">IRC §163(h)(3)</span>
-    <span class="badge">TCJA §11043 (Dec 15, 2017)</span>
-    <span class="badge">IRS Notice 2018-32</span>
-    <span class="badge">Schedule A, Line 8</span>
+    <span class="badge">OBBBA §70108 (P.L. 119-21)</span>
+    <span class="badge">Pub. 936, Table 1</span>
+    <span class="badge">Schedule A, Line 8a</span>
   </div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="wrap">
 
 <div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Primary Mortgage</h2></div>
+  <div class="ch"><div class="sb">1</div><h2>Tax Year &amp; Filing Status</h2></div>
   <div class="cb">
-    <div class="loan-label">Loan 1 - Primary Residence (or first mortgage)</div>
     <div class="fg3">
-      <div class="f1"><label>Loan Origination Date</label>
-        <select class="fc" id="loan1Date" onchange="calc()">
-          <option value="pre">Before December 16, 2017 (grandfathered - $1M limit)</option>
-          <option value="post" selected>December 16, 2017 or later ($750K limit)</option>
+      <div class="f1"><label for="taxYear">Tax Year</label>
+        <select class="fc" id="taxYear" onchange="calc()">
+          <option value="2026" selected>2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
         </select>
+        <div class="hint">The §163(h)(3) dollar limits are statutory, permanent, and not indexed for inflation. The year changes the SALT cap context and the assumptions table.</div>
       </div>
-      <div class="f1"><label>Average Outstanding Balance ($)</label>
-        <input type="number" class="fc" id="loan1Bal" value="900000" oninput="calc()">
-        <div class="hint">Average of beginning + ending balance for the year. From Form 1098 Box 2.</div>
+      <div class="f1"><label for="filing">Filing Status</label>
+        <select class="fc" id="filing" onchange="calc()">
+          <option value="std" selected>Single, Head of Household, MFJ, or Surviving Spouse</option>
+          <option value="mfs">Married Filing Separately (half limits)</option>
+        </select>
+        <div class="hint">MFS: $375,000 / $500,000 limits. IRC §163(h)(3)(B)(ii) and (F)(i)(II).</div>
       </div>
-      <div class="f1"><label>Interest Paid ($)</label>
-        <input type="number" class="fc" id="loan1Int" value="38000" oninput="calc()">
-        <div class="hint">From Form 1098 Box 1.</div>
+      <div class="f1"><label for="agi">Adjusted Gross Income ($)</label>
+        <input type="number" class="fc" id="agi" value="250000" min="0" step="1" oninput="calc()">
+        <div class="hint">Used only for the mortgage insurance premium phase-out. IRC §163(h)(3)(E)(ii).</div>
       </div>
     </div>
-    <div class="fg2">
-      <div class="f1"><label>Loan Purpose</label>
-        <select class="fc" id="loan1Purpose" onchange="calc()">
-          <option value="acquire">Acquire, build, or substantially improve the home</option>
-          <option value="other">Other (refi cash-out for non-home purpose, debt consolidation)</option>
+    <div id="yearBadge"></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Primary Mortgage</h2></div>
+  <div class="cb">
+    <div class="loan-label">Loan 1 - Main home or first mortgage</div>
+    <div class="fg3">
+      <div class="f1"><label for="l1Date">Loan Origination Date</label>
+        <select class="fc" id="l1Date" onchange="calc()">
+          <option value="gf">On or before October 13, 1987 (grandfathered - any use of proceeds)</option>
+          <option value="pre">October 14, 1987 through December 15, 2017 ($1M tier)</option>
+          <option value="post" selected>After December 15, 2017 ($750K tier)</option>
         </select>
-        <div class="hint">Only acquisition debt qualifies under TCJA. Cash-out for non-home purposes is treated as home equity debt - generally not deductible. IRC §163(h)(3)(B).</div>
+        <div class="hint">Binding-contract exception: a written contract signed before December 15, 2017 to close on a principal residence before January 1, 2018, with the purchase completed before April 1, 2018, uses the December 15, 2017 tier. IRC §163(h)(3)(F)(i)(V).</div>
       </div>
-      <div class="f1"><label>Property Type</label>
-        <select class="fc" id="loan1Type" onchange="calc()">
-          <option value="primary">Primary residence</option>
-          <option value="secondary">Second home (vacation home, etc.)</option>
-        </select>
+      <div class="f1"><label for="l1Bal">Average Outstanding Balance ($)</label>
+        <input type="number" class="fc" id="l1Bal" value="900000" min="0" step="1" oninput="calc()">
+        <div class="hint">Form 1098, Box 2 shows only the January 1 principal. Use the average of first and last balance, monthly averages, or the highest balance. Pub. 936, Average Mortgage Balance.</div>
       </div>
+      <div class="f1"><label for="l1Int">Interest Paid ($)</label>
+        <input type="number" class="fc" id="l1Int" value="38000" min="0" step="1" oninput="calc()">
+        <div class="hint">Form 1098, Box 1. Do not include points or mortgage insurance premiums.</div>
+      </div>
+    </div>
+    <div class="f1" style="max-width:420px"><label for="l1Share">Share of Balance Used to Buy, Build, or Substantially Improve the Home (%)</label>
+      <input type="number" class="fc" id="l1Share" value="100" min="0" max="100" step="1" oninput="calc()">
+      <div class="hint">Home acquisition debt only. Cash-out proceeds used for other purposes are not acquisition debt, and their interest is not qualified residence interest for tax years beginning after 2017. IRC §163(h)(3)(B) and (F)(i)(I). Ignored for loans from October 13, 1987 or earlier.</div>
     </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="ch"><div class="sb">2</div><h2>Second Mortgage / Home Equity (Optional)</h2></div>
+  <div class="ch"><div class="sb">3</div><h2>Additional Mortgages / HELOC (Optional)</h2></div>
   <div class="cb">
-    <div class="loan-label">Loan 2 - Second Mortgage or HELOC</div>
+    <div class="loan-label">Loan 2</div>
     <div class="fg3">
-      <div class="f1"><label>Origination Date</label>
-        <select class="fc" id="loan2Date" onchange="calc()">
-          <option value="none" selected>No second mortgage</option>
-          <option value="pre">Before December 16, 2017</option>
-          <option value="post">December 16, 2017 or later</option>
+      <div class="f1"><label for="l2Date">Origination Date</label>
+        <select class="fc" id="l2Date" onchange="calc()">
+          <option value="none" selected>No second loan</option>
+          <option value="gf">On or before October 13, 1987</option>
+          <option value="pre">October 14, 1987 through December 15, 2017</option>
+          <option value="post">After December 15, 2017</option>
         </select>
       </div>
-      <div class="f1"><label>Average Outstanding Balance ($)</label>
-        <input type="number" class="fc" id="loan2Bal" value="0" oninput="calc()">
+      <div class="f1"><label for="l2Bal">Average Outstanding Balance ($)</label>
+        <input type="number" class="fc" id="l2Bal" value="0" min="0" step="1" oninput="calc()">
       </div>
-      <div class="f1"><label>Interest Paid ($)</label>
-        <input type="number" class="fc" id="loan2Int" value="0" oninput="calc()">
+      <div class="f1"><label for="l2Int">Interest Paid ($)</label>
+        <input type="number" class="fc" id="l2Int" value="0" min="0" step="1" oninput="calc()">
       </div>
     </div>
-    <div class="f1" style="max-width:400px"><label>Loan 2 Purpose</label>
-      <select class="fc" id="loan2Purpose" onchange="calc()">
-        <option value="acquire">Buy, build, or substantially improve the home</option>
-        <option value="other">Other (debt consolidation, personal expenses, etc.)</option>
-      </select>
-      <div class="hint">Under TCJA, home equity debt used for purposes other than buying, building, or improving the home is not deductible, regardless of the loan origination date. IRS Notice 2018-32.</div>
+    <div class="f1" style="max-width:420px"><label for="l2Share">Acquisition-Debt Share of Balance (%)</label>
+      <input type="number" class="fc" id="l2Share" value="100" min="0" max="100" step="1" oninput="calc()">
+      <div class="hint">Enter 0 for a HELOC or second mortgage used for non-home purposes. IRS Notice 2018-32.</div>
+    </div>
+    <div class="loan-separator">
+    <div class="loan-label">Loan 3</div>
+    <div class="fg3">
+      <div class="f1"><label for="l3Date">Origination Date</label>
+        <select class="fc" id="l3Date" onchange="calc()">
+          <option value="none" selected>No third loan</option>
+          <option value="gf">On or before October 13, 1987</option>
+          <option value="pre">October 14, 1987 through December 15, 2017</option>
+          <option value="post">After December 15, 2017</option>
+        </select>
+      </div>
+      <div class="f1"><label for="l3Bal">Average Outstanding Balance ($)</label>
+        <input type="number" class="fc" id="l3Bal" value="0" min="0" step="1" oninput="calc()">
+      </div>
+      <div class="f1"><label for="l3Int">Interest Paid ($)</label>
+        <input type="number" class="fc" id="l3Int" value="0" min="0" step="1" oninput="calc()">
+      </div>
+    </div>
+    <div class="f1" style="max-width:420px"><label for="l3Share">Acquisition-Debt Share of Balance (%)</label>
+      <input type="number" class="fc" id="l3Share" value="100" min="0" max="100" step="1" oninput="calc()">
+    </div>
+    </div>
+    <div class="hint" style="margin-top:12px">Refinancing: debt that refinances older debt is treated as incurred on the original date, but only up to the old principal balance, and only for the remaining term of the original loan (30 years if it was not amortizing). Enter the refinanced balance under the original date and any cash-out as a separate loan. IRC §163(h)(3)(F)(ii). The $1M and $750K limits apply to the combined debt on the main home and one second home.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">4</div><h2>Mortgage Insurance Premiums</h2></div>
+  <div class="cb">
+    <div class="f1" style="max-width:420px"><label for="mip">Qualified Mortgage Insurance Premiums Paid ($)</label>
+      <input type="number" class="fc" id="mip" value="0" min="0" step="1" oninput="calc()">
+      <div class="hint">Form 1098, Box 5. Qualified mortgage insurance is VA, FHA, or RHS insurance and private mortgage insurance under contracts issued after December 31, 2006, in connection with acquisition debt. Treated as qualified residence interest for tax years beginning after December 31, 2025. IRC §163(h)(3)(E), (F)(i)(III); OBBBA §70108.</div>
     </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="ch"><div class="sb">3</div><h2>Deduction Analysis</h2></div>
+  <div class="ch"><div class="sb">5</div><h2>Deduction Analysis</h2></div>
   <div class="cb" id="resultBody">
     <div style="text-align:center;color:var(--ink-60);padding:20px">Enter your mortgage information above.</div>
   </div>
 </div>
 
+<div class="lastv">Last verified: October 29, 2026</div>
+<div class="projnote">Projected figures are estimates and are not IRS-published. Every parameter used by this calculator is either fixed by statute or published by the IRS, so no projected amounts are used. Results are estimates for planning only.</div>
+
 </div>
 
 <script>
+var YEARS=[2026,2027,2028,2029,2030];
 function fmt(n){
-  if(!n||n<=0) return '$0';
+  if(!isFinite(n)||n<=0) return '$0';
   return '$'+Math.round(n).toLocaleString('en-US');
 }
+function fmtc(n){return '$'+(Math.round(n*100)/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function pct(n){return (n*100).toFixed(1)+'%';}
-function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
+function flag(t,i,html){return '<div class="flag '+t+'"><div class="fi">'+i+'</div><div class="ft">'+html+'</div></div>';}
+function numIn(id,def){
+  var el=document.getElementById(id);
+  var v=el?parseFloat(el.value):NaN;
+  if(!isFinite(v)) return def||0;
+  return v<0?0:v;
+}
+function shareIn(id){
+  var el=document.getElementById(id);
+  var v=el?parseFloat(el.value):NaN;
+  if(!isFinite(v)) return 100;
+  return Math.min(100,Math.max(0,v));
+}
+/* OBBBA §70120 / IRC §164(b)(7): statutory SALT cap schedule */
+function saltCap(y){
+  if(y>=2030) return 10000;
+  var c=40400, i;
+  for(i=2027;i<=y;i++) c=c*1.01;
+  return Math.round(c*100)/100;
+}
+function saltThr(y){
+  if(y>=2030) return null;
+  var t=505000, i;
+  for(i=2027;i<=y;i++) t=t*1.01;
+  return Math.round(t*100)/100;
+}
+/* Pub. 936 Table 1 (qualified loan limit and deductible home mortgage interest) */
+function mortgageCalc(p){
+  var L1=0,L2=0,L7=0,L12=0,L13=0,nonAcq=0,i,l;
+  for(i=0;i<p.loans.length;i++){
+    l=p.loans[i];
+    if(l.date==='none') continue;
+    L12+=l.bal; L13+=l.int;
+    if(l.date==='gf'){L1+=l.bal;}
+    else if(l.date==='pre'){L2+=l.bal*l.share/100; nonAcq+=l.bal*(1-l.share/100);}
+    else if(l.date==='post'){L7+=l.bal*l.share/100; nonAcq+=l.bal*(1-l.share/100);}
+  }
+  var L3=p.mfs?500000:1000000;
+  var L4=Math.max(L1,L3), L5=L1+L2, L6=Math.min(L4,L5);
+  var L8=p.mfs?375000:750000;
+  var L9=Math.max(L6,L8), L10=L6+L7, L11=Math.min(L9,L10);
+  var ratio=1, ded=0;
+  if(L12>0){
+    if(L11>=L12){ratio=1; ded=L13;}
+    else {ratio=Math.round(L11/L12*1000)/1000; ded=L13*ratio;}
+  }
+  var nonded=Math.max(0,L13-ded);
+  /* mortgage insurance premiums, tax years beginning after 2025: IRC §163(h)(3)(E)(ii) */
+  var mip=p.mip||0, mipThr=p.mfs?50000:100000, mipStep=p.mfs?500:1000, mipUnit=p.mfs?5000:10000;
+  var mipExcess=Math.max(0,(p.agi||0)-mipThr);
+  var mipSteps=mipExcess>0?Math.ceil(mipExcess/mipStep):0;
+  var mipFrac=Math.min(1,mipSteps*mipStep/mipUnit);
+  var mipDed=mip*(1-mipFrac);
+  return {L1:L1,L2:L2,L3:L3,L4:L4,L5:L5,L6:L6,L7:L7,L8:L8,L9:L9,L10:L10,L11:L11,L12:L12,L13:L13,ratio:ratio,ded:ded,nonded:nonded,nonAcq:nonAcq,
+          mip:mip,mipThr:mipThr,mipExcess:mipExcess,mipSteps:mipSteps,mipFrac:mipFrac,mipDed:mipDed,mipDisallowed:mip-mipDed};
+}
+function asmTable(y,mfs){
+  var cap=saltCap(y), thr=saltThr(y);
+  var rows=[
+    ['Acquisition debt limit, debt incurred after Dec. 15, 2017',mfs?'$375,000 (MFS)':'$750,000','Statutory','IRC §163(h)(3)(F)(i)(II); OBBBA §70108 (permanent)'],
+    ['Acquisition debt limit, debt incurred Oct. 14, 1987 - Dec. 15, 2017',mfs?'$500,000 (MFS)':'$1,000,000','Statutory','IRC §163(h)(3)(B)(ii); Pub. 936, Table 1, line 3'],
+    ['Post-2017 limit reduced by pre-Dec. 16, 2017 acquisition debt','Yes (not below zero)','Statutory','IRC §163(h)(3)(F)(i)(IV); Schedule A instructions, line 8'],
+    ['Pre-Oct. 14, 1987 debt','No dollar limit','Statutory','IRC §163(h)(3)(D)'],
+    ['Home equity debt interest (non-home use)','Not qualified residence interest','Statutory','IRC §163(h)(3)(F)(i)(I); OBBBA §70108 made the post-2017 rule permanent'],
+    ['Mortgage insurance premiums as interest','Allowed, tax years beginning after 2025','Statutory','IRC §163(h)(3)(E), (F)(i)(III); OBBBA §70108(b)'],
+    ['MIP phase-out','10% per $1,000 ($500 MFS) of AGI over '+(mfs?'$50,000':'$100,000'),'Statutory','IRC §163(h)(3)(E)(ii)'],
+    ['SALT cap for '+y,fmt(cap)+(mfs?' (MFS: '+fmt(cap/2)+')':''),'Statutory (formula)','IRC §164(b)(7)(A): $40,400 for 2026, then 101% of prior year through 2029, $10,000 after 2029; OBBBA §70120'],
+    ['SALT phase-down threshold for '+y,thr===null?'Not applicable after 2029':fmt(thr)+(mfs?' (MFS: '+fmt(thr/2)+')':''),'Statutory (formula)','IRC §164(b)(7)(B): $505,000 for 2026, then 101% of prior year; 30% reduction, floor $10,000'],
+    ['Itemized deduction limit (37% bracket)','2/37 reduction','Statutory','IRC §68(a) as amended by OBBBA §70111 (tax years beginning after 2025)'],
+    ['Inflation indexing of the amounts above','None','IRS-published','Rev. Proc. 2025-32 contains no adjustment for IRC §163(h)']
+  ];
+  var h='<details class="asm"><summary>Assumptions &amp; sources for '+y+'</summary><div class="asm-wrap"><table class="asm-tbl"><thead><tr><th>Parameter</th><th>Value for '+y+'</th><th>Status</th><th>Citation</th></tr></thead><tbody>';
+  var i,st;
+  for(i=0;i<rows.length;i++){
+    st=rows[i][2]==='IRS-published'?'st-irs':'st-stat';
+    h+='<tr><td>'+rows[i][0]+'</td><td>'+rows[i][1]+'</td><td class="'+st+'">'+rows[i][2]+'</td><td>'+rows[i][3]+'</td></tr>';
+  }
+  h+='</tbody></table></div></details>';
+  return h;
+}
 
 function calc(){
-  const loan1Date    = document.getElementById('loan1Date').value;
-  const loan1Bal     = parseFloat(document.getElementById('loan1Bal').value)||0;
-  const loan1Int     = parseFloat(document.getElementById('loan1Int').value)||0;
-  const loan1Purpose = document.getElementById('loan1Purpose').value;
-  const loan1Type    = document.getElementById('loan1Type').value;
-  const loan2Date    = document.getElementById('loan2Date').value;
-  const loan2Bal     = loan2Date === 'none' ? 0 : (parseFloat(document.getElementById('loan2Bal').value)||0);
-  const loan2Int     = loan2Date === 'none' ? 0 : (parseFloat(document.getElementById('loan2Int').value)||0);
-  const loan2Purpose = document.getElementById('loan2Purpose').value;
+  var yEl=document.getElementById('taxYear');
+  var y=parseInt(yEl?yEl.value:'2026',10);
+  if(YEARS.indexOf(y)<0) y=2026;
+  var mfs=document.getElementById('filing').value==='mfs';
+  var loans=[],k,warn='';
+  for(k=1;k<=3;k++){
+    var d=document.getElementById('l'+k+'Date').value;
+    var b=d==='none'?0:numIn('l'+k+'Bal');
+    var it=d==='none'?0:numIn('l'+k+'Int');
+    var sh=d==='none'?100:shareIn('l'+k+'Share');
+    if(d!=='none'&&b===0&&it>0) warn+=flag('amber','!','<strong>Loan '+k+':</strong> interest was entered with a zero balance. Enter the average balance so the Table 1 ratio can be computed.');
+    if(d!=='none'&&b>0&&it>b) warn+=flag('amber','!','<strong>Loan '+k+':</strong> interest paid exceeds the balance. Please check the inputs.');
+    loans.push({date:d,bal:b,int:it,share:sh});
+  }
+  var r=mortgageCalc({mfs:mfs,loans:loans,mip:numIn('mip'),agi:numIn('agi'),year:y});
+  var totalInt=r.L13, totalDed=r.ded, totalNon=r.nonded;
+  var dedPct=totalInt>0?totalDed/totalInt:0;
 
-  // Determine applicable limit
-  // Pre-Dec 16, 2017 loans: $1,000,000 limit (grandfathered)
-  // Post-Dec 15, 2017 loans: $750,000 limit
-  // Mixed: complex - IRS Notice 2018-32 provides the average balance method
-  // Simplification: if loan1 is pre-TCJA, use $1M limit for loan1; if post, use $750K
+  var badge=document.getElementById('yearBadge');
+  if(badge) badge.innerHTML='<span class="yr-badge stat">'+y+': all parameters statutory or IRS-published (no projections used)</span>';
 
-  const limit1 = loan1Date === 'pre' ? 1000000 : 750000;
-  const limit2 = loan2Date === 'pre' ? 1000000 : (loan2Date === 'post' ? 750000 : 0);
+  var h=warn;
+  h+='<div class="result-hero"><div class="rh-grid">'
+    +'<div class="rh-item"><div class="rh-label">Total Interest Paid</div><div class="rh-val">'+fmt(totalInt)+'</div><div class="rh-sub">Form 1098, Box 1</div></div>'
+    +'<div class="rh-item"><div class="rh-label">Deductible Interest</div><div class="rh-val coral">'+fmt(totalDed)+'</div><div class="rh-sub">Schedule A, Line 8a</div></div>'
+    +'<div class="rh-item"><div class="rh-label">Non-Deductible</div><div class="rh-val '+(totalNon>0?'red':'green')+'">'+fmt(totalNon)+'</div><div class="rh-sub">'+(totalNon>0?'Exceeds limit or non-qualifying':'Fully deductible')+'</div></div>'
+    +'<div class="rh-item"><div class="rh-label">Deductible %</div><div class="rh-val '+(dedPct<1?'amber':'green')+'">'+pct(dedPct)+'</div><div class="rh-sub">Of total interest paid</div></div>'
+    +'</div></div>';
 
-  // Loan 1 analysis
-  let loan1QualifyingBal = 0;
-  let loan1Deductible = 0;
-  let loan1NonDeductible = 0;
-
-  if(loan1Purpose === 'acquire'){
-    loan1QualifyingBal = Math.min(loan1Bal, limit1);
-    const loan1Ratio = loan1Bal > 0 ? loan1QualifyingBal / loan1Bal : 0;
-    loan1Deductible = loan1Int * loan1Ratio;
-    loan1NonDeductible = loan1Int * (1 - loan1Ratio);
-  } else {
-    // Other purpose = not acquisition debt under TCJA
-    loan1Deductible = 0;
-    loan1NonDeductible = loan1Int;
+  if(totalInt>0){
+    var dw=Math.round(dedPct*100), nw=100-dw;
+    h+='<div class="limit-visual"><div class="lv-deductible" style="width:'+dw+'%">'+(dw>10?fmt(totalDed):'')+'</div>'
+      +(nw>0?'<div class="lv-nondeductible" style="width:'+nw+'%">'+(nw>10?'Not deductible: '+fmt(totalNon):'')+'</div>':'')+'</div>';
   }
 
-  // Loan 2 analysis - also subject to combined limit with loan1
-  let loan2QualifyingBal = 0;
-  let loan2Deductible = 0;
-  let loan2NonDeductible = 0;
+  h+='<div class="sum-box"><div class="sum-title">Calculation Detail - Pub. 936, Table 1 (tax year '+y+')</div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 1: average balance, debt from Oct. 13, 1987 or earlier</span><span class="sum-val">'+fmt(r.L1)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 2: average acquisition debt, Oct. 14, 1987 - Dec. 15, 2017</span><span class="sum-val">'+fmt(r.L2)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 3: pre-2018 limit</span><span class="sum-val">'+fmt(r.L3)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 4: larger of line 1 or line 3</span><span class="sum-val">'+fmt(r.L4)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 5: line 1 + line 2</span><span class="sum-val">'+fmt(r.L5)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 6: smaller of line 4 or line 5</span><span class="sum-val">'+fmt(r.L6)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 7: average acquisition debt after Dec. 15, 2017</span><span class="sum-val">'+fmt(r.L7)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 8: post-2017 limit</span><span class="sum-val">'+fmt(r.L8)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 9: larger of line 6 or line 8</span><span class="sum-val">'+fmt(r.L9)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 10: line 6 + line 7</span><span class="sum-val">'+fmt(r.L10)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 11: qualified loan limit (smaller of line 9 or line 10)</span><span class="sum-val green">'+fmt(r.L11)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 12: average balance of all home mortgages</span><span class="sum-val">'+fmt(r.L12)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 13: interest paid on those loans</span><span class="sum-val">'+fmt(r.L13)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 14: ratio = '+fmt(r.L11)+' / '+fmt(r.L12)+(r.L11>=r.L12?' (limit not exceeded, ratio 1.000)':', rounded to 3 places')+'</span><span class="sum-val">'+r.ratio.toFixed(3)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 15: deductible home mortgage interest = '+fmt(r.L13)+' x '+r.ratio.toFixed(3)+'</span><span class="sum-val green">'+fmt(r.ded)+'</span></div>'
+    +'<div class="sum-row"><span class="sum-lbl">Line 16: not home mortgage interest (personal interest)</span><span class="sum-val '+(r.nonded>0?'red':'')+'">'+fmt(r.nonded)+'</span></div>'
+    +'</div>';
 
-  if(loan2Date !== 'none' && loan2Purpose === 'acquire'){
-    // Combined balance must not exceed the applicable limit
-    // If both loans exist, the combined qualifying balance is capped
-    const combinedLimit = Math.max(limit1, limit2); // simplified - use the higher applicable limit
-    const remainingLimit = Math.max(0, combinedLimit - loan1QualifyingBal);
-    loan2QualifyingBal = Math.min(loan2Bal, remainingLimit);
-    const loan2Ratio = loan2Bal > 0 ? loan2QualifyingBal / loan2Bal : 0;
-    loan2Deductible = loan2Int * loan2Ratio;
-    loan2NonDeductible = loan2Int * (1 - loan2Ratio);
-  } else if(loan2Date !== 'none'){
-    loan2Deductible = 0;
-    loan2NonDeductible = loan2Int;
+  if(r.mip>0){
+    h+='<div class="sum-box"><div class="sum-title">Mortgage Insurance Premiums (tax year '+y+')</div>'
+      +'<div class="sum-row"><span class="sum-lbl">Premiums paid (Form 1098, Box 5)</span><span class="sum-val">'+fmt(r.mip)+'</span></div>'
+      +'<div class="sum-row"><span class="sum-lbl">AGI over '+fmt(r.mipThr)+'</span><span class="sum-val">'+fmt(r.mipExcess)+'</span></div>'
+      +'<div class="sum-row"><span class="sum-lbl">Steps of '+(mfs?'$500':'$1,000')+' (or fraction): '+r.mipSteps+' x 10%, maximum 100%</span><span class="sum-val">'+pct(r.mipFrac)+'</span></div>'
+      +'<div class="sum-row"><span class="sum-lbl">Deductible premiums = '+fmt(r.mip)+' x (1 - '+r.mipFrac.toFixed(2)+')</span><span class="sum-val green">'+fmt(r.mipDed)+'</span></div>'
+      +'</div>';
+    h+=flag('blue','i','<strong>Premiums are added separately.</strong> This calculator does not apply the Table 1 ratio to premiums and does not allocate prepaid premiums over the mortgage term (IRC §163(h)(5)(F)); the 2025 Pub. 936 predates the restoration of this deduction. The Schedule A line for premiums on the '+y+' form has not been verified (the 2025 form shows line 8d as reserved).');
   }
 
-  const totalInt = loan1Int + loan2Int;
-  const totalDeductible = loan1Deductible + loan2Deductible;
-  const totalNonDeductible = loan1NonDeductible + loan2NonDeductible;
-  const deductiblePct = totalInt > 0 ? totalDeductible / totalInt : 0;
-  const totalBal = loan1Bal + loan2Bal;
-  const capUsed = loan1QualifyingBal + loan2QualifyingBal;
-
-  const rb = document.getElementById('resultBody');
-  let h = '';
-
-  // Hero
-  h += `<div class="result-hero"><div class="rh-grid">
-    <div class="rh-item"><div class="rh-label">Total Interest Paid</div><div class="rh-val">${fmt(totalInt)}</div><div class="rh-sub">From Form 1098</div></div>
-    <div class="rh-item"><div class="rh-label">Deductible Interest</div><div class="rh-val coral">${fmt(totalDeductible)}</div><div class="rh-sub">Schedule A, Line 8a</div></div>
-    <div class="rh-item"><div class="rh-label">Non-Deductible</div><div class="rh-val ${totalNonDeductible>0?'red':'green'}">${fmt(totalNonDeductible)}</div><div class="rh-sub">${totalNonDeductible>0?'Exceeds cap or non-qualifying':'Fully deductible'}</div></div>
-    <div class="rh-item"><div class="rh-label">Deductible %</div><div class="rh-val ${deductiblePct<1?'amber':'green'}">${pct(deductiblePct)}</div><div class="rh-sub">Of total interest paid</div></div>
-  </div></div>`;
-
-  // Visual bar
-  if(totalInt > 0){
-    const dedWidth = Math.round(deductiblePct * 100);
-    const nonDedWidth = 100 - dedWidth;
-    h += `<div class="limit-visual">
-      <div class="lv-deductible" style="width:${dedWidth}%">${dedWidth > 10 ? fmt(totalDeductible) : ''}</div>
-      ${nonDedWidth > 0 ? `<div class="lv-nondeductible" style="width:${nonDedWidth}%">${nonDedWidth > 10 ? 'Not deductible: '+fmt(totalNonDeductible) : ''}</div>` : ''}
-    </div>`;
+  if(r.nonAcq>0){
+    h+=flag('red','&#10007;','<strong>Non-acquisition debt included.</strong> About '+fmt(r.nonAcq)+' of the average balance was not used to buy, build, or substantially improve the home. Interest on that debt is not qualified residence interest (IRC §163(h)(3)(F)(i)(I); check the box on Schedule A, line 8). Pub. 936 Table 1 pools all home mortgages in line 12, so it lowers the ratio for every loan. If proceeds were used in a business or for investment, the allocable interest may be deductible elsewhere (Schedule A instructions, line 8; Pub. 936, Table 2).');
   }
-
-  // Calculation detail
-  h += `<div class="sum-box"><div class="sum-title">Calculation Detail</div>
-    <div class="sum-row"><span class="sum-lbl">Loan 1 origination</span><span class="sum-val">${loan1Date === 'pre' ? 'Pre-Dec 16, 2017 (grandfathered $1M limit)' : 'Post-Dec 15, 2017 ($750K TCJA limit)'}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Loan 1 average balance</span><span class="sum-val">${fmt(loan1Bal)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Loan 1 qualifying balance (capped at ${fmt(limit1)})</span><span class="sum-val">${fmt(loan1QualifyingBal)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Loan 1 interest paid</span><span class="sum-val">${fmt(loan1Int)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Loan 1 deductible interest</span><span class="sum-val green">${fmt(loan1Deductible)}</span></div>
-    ${loan2Date !== 'none' ? `
-    <div class="sum-row"><span class="sum-lbl">Loan 2 average balance</span><span class="sum-val">${fmt(loan2Bal)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Loan 2 qualifying balance</span><span class="sum-val">${fmt(loan2QualifyingBal)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Loan 2 deductible interest</span><span class="sum-val green">${fmt(loan2Deductible)}</span></div>
-    ` : ''}
-    <div class="sum-row"><span class="sum-lbl">Total deductible interest (Schedule A, Line 8a)</span><span class="sum-val">${fmt(totalDeductible)}</span></div>
-    ${totalNonDeductible > 0 ? `<div class="sum-row"><span class="sum-lbl">Non-deductible personal interest (IRC §163(h))</span><span class="sum-val red">${fmt(totalNonDeductible)}</span></div>` : ''}
-  </div>`;
-
-  // Flags
-  const excessBal = totalBal - capUsed;
-  if(excessBal > 0){
-    h += flag('amber','!',`<strong>Loan balance exceeds the applicable cap by ${fmt(excessBal)}.</strong> The interest attributable to the ${fmt(excessBal)} in excess balance is treated as personal interest under IRC §163(h) and is not deductible. The non-deductible interest of ${fmt(totalNonDeductible)} represents the interest on this excess amount.`);
+  if(r.L12>r.L11){
+    h+=flag('amber','!','<strong>Debt exceeds the qualified loan limit by '+fmt(r.L12-r.L11)+'.</strong> Interest on the excess is personal interest under IRC §163(h)(1). Table 1 allocates interest pro rata by balance.');
   }
-  if(loan1Purpose === 'other' || loan2Purpose === 'other'){
-    h += flag('red','✗',`<strong>Home equity debt used for non-home purposes is not deductible under TCJA.</strong> Under IRS Notice 2018-32 and IRC §163(h)(3)(C) as amended by TCJA, interest on home equity loans and HELOCs is only deductible if the proceeds are used to buy, build, or substantially improve the taxpayer's home that secures the loan. Using home equity proceeds to pay off credit cards, buy a car, fund investments, or other non-home purposes renders the interest nondeductible personal interest - regardless of when the loan was originated. This rule was made permanent by OBBBA.`);
+  if(r.L1>0){
+    h+=flag('green','&#10003;','<strong>Pre-October 14, 1987 debt is grandfathered.</strong> It has no dollar limit regardless of use, but it reduces the room for later acquisition debt. IRC §163(h)(3)(D); Pub. 936, Part II.');
   }
-  if(loan1Date === 'pre' && loan1Bal <= 1000000 && loan2Date === 'none'){
-    h += flag('green','✓',`<strong>Grandfathered loan - full $1,000,000 limit applies.</strong> This loan was originated before December 16, 2017 and is grandfathered under the pre-TCJA $1,000,000 acquisition debt limit. As long as the balance does not exceed $1,000,000 and the proceeds were used to acquire, build, or substantially improve the home, the interest is fully deductible. Refinancing a grandfathered loan generally preserves the grandfathered status up to the outstanding balance at the time of refinancing. Treas. Reg. §1.163-10T.`);
+  if(r.L2>0&&r.L7>0){
+    h+=flag('blue','i','<strong>Mixed tiers.</strong> The post-2017 limit of '+fmt(r.L8)+' is reduced (not below zero) by your pre-December 16, 2017 acquisition debt of '+fmt(r.L6)+'. Remaining room for post-2017 debt: '+fmt(Math.max(0,r.L11-r.L6))+'. IRC §163(h)(3)(F)(i)(IV).');
   }
-  if(loan1Date === 'post' && totalDeductible < totalInt){
-    h += flag('blue','ℹ',`<strong>Refinancing strategy.</strong> If you refinanced a pre-Dec 15, 2017 mortgage into this post-Dec 15, 2017 loan and took no additional cash out, a portion of the new loan may be treated as grandfathered at the prior loan's outstanding balance at the time of refinance. If this applies to you, consult a tax professional - the deductible interest may be higher than this calculator shows.`);
+  h+=flag('blue','i','<strong>You must itemize.</strong> Home mortgage interest is deductible only on Schedule A (Pub. 936, Part I). Compare total itemized deductions to the standard deduction before relying on this number.');
+  var cap=saltCap(y), thr=saltThr(y);
+  h+=flag('blue','i','<strong>SALT cap context for '+y+'.</strong> The Schedule A state and local tax limit is '+fmt(mfs?cap/2:cap)+(mfs?' (half of '+fmt(cap)+' for MFS)':'')+(thr===null?'. For tax years beginning after 2029 it is $10,000 ($5,000 MFS) with no income phase-down.':', reduced by 30% of the excess of modified AGI over '+fmt(mfs?thr/2:thr)+', but not below $10,000'+(mfs?' ($5,000 MFS)':'')+'. IRC §164(b)(6)-(7); OBBBA §70120.')+' Mortgage interest has no separate dollar cap beyond the acquisition debt limit.');
+  if(y>=2026){
+    h+=flag('blue','i','<strong>Itemized deduction haircut.</strong> For tax years beginning after 2025, itemized deductions are reduced by 2/37 of the lesser of (1) total itemized deductions or (2) taxable income (before this reduction, plus itemized deductions) above the start of the 37% bracket. This affects only 37% bracket taxpayers. IRC §68(a); OBBBA §70111.');
   }
-  h += flag('blue','ℹ','<strong>SALT cap interaction.</strong> The $40,000 SALT cap (2025-2029, phasing down to $10,000 after 2029) applies on Schedule A at the same place as mortgage interest. For married filing jointly with MAGI over $500,000, the cap phases down below $40,000. If your property taxes are already filling the SALT cap, the property tax deduction provides no additional benefit - but mortgage interest has no dollar cap separate from the acquisition debt limit, and remains fully deductible up to the $750K/$1M ceiling. OBBBA §70120.');
+  h+=flag('blue','i','<strong>Refinanced pre-2018 loans.</strong> If you refinanced a pre-December 16, 2017 mortgage and borrowed no more than its remaining principal, enter that balance under the original date tier. IRC §163(h)(3)(F)(ii); Schedule A instructions, line 8.');
 
-  h += `<div class="src">Authority: IRC §163(h)(3)(A)-(B) (acquisition indebtedness definition); IRC §163(h)(3)(D) (TCJA $750,000 limit, loans after Dec 15, 2017); IRC §163(h)(3)(E) (pre-TCJA $1,000,000 grandfathered limit); IRS Notice 2018-32 (home equity debt - only deductible if used to buy/build/improve); Treas. Reg. §1.163-10T (allocation of interest); TCJA §11043 (P.L. 115-97); OBBBA (P.L. 119-21) (TCJA mortgage interest provisions made permanent); IRC §164(b)(6) (SALT cap - $40,000 for 2025-2029 under OBBBA §70120, phasing down to $10,000 for MAGI over $500,000); Schedule A, Line 8a (deductible mortgage interest).</div>`;
-  h += ``;
-  h += ``;
-
-  rb.innerHTML = h;
+  h+='<div class="src">Authority: IRC §163(h)(3)(A)-(B), (D), (E), (F) (qualified residence interest, acquisition debt, grandfathered debt, mortgage insurance premiums, post-2017 rules); IRC §163(h)(5)(A) (qualified residence: main home plus one other residence); OBBBA §70108 (P.L. 119-21, made the post-2017 rules permanent and restored mortgage insurance premiums for tax years beginning after December 31, 2025); IRS Notice 2018-32; IRS Pub. 936 (2025), Part II and Table 1; Instructions for Schedule A (2025), lines 8 and 8a; Instructions for Form 1098, Boxes 1, 2, and 5; IRC §164(b)(6)-(7) and OBBBA §70120 (SALT cap); IRC §68 and OBBBA §70111.</div>';
+  h+=asmTable(y,mfs);
+  document.getElementById('resultBody').innerHTML=h;
 }
 calc();
 </script>
-
-
 
 <script>
 function doPrint(){window.print();}

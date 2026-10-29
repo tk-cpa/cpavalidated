@@ -5,8 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>FBAR Penalty Estimator 2026 | CPA Validated</title>
-<meta name="description" content="Estimate FBAR civil penalties for willful and non-willful violations. Reasonable cause defense, mitigation guidelines, Streamlined vs VDP, Supreme Court Bittner decision. CPA-validated.">
+<title>FBAR Penalty Estimator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Estimate FBAR civil penalties for willful and non-willful violations for assessment years 2026-2030. IRS mitigation guidelines, reasonable cause, Streamlined Procedures, and the Supreme Court Bittner decision. CPA-validated.">
 <link rel="canonical" href="https://cpavalidated.com/fbar-penalty-estimator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -85,16 +85,56 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 .nav-cta:hover{opacity:.88}
 @media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
+<style>
+/* === g05 calculator additions === */
+.yrbadge{display:none}
+.badge-proj{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+.warn-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 14px;margin-top:12px;font-size:12px;line-height:1.5;color:var(--red)}
+.ok-box{background:var(--green-bg);border-left:3px solid var(--green);padding:14px;margin-top:12px;font-size:13px;line-height:1.55}
+.ok-box h3,.warn-box h3,.info-box h3{font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.info-box{background:var(--blue-bg);border-left:3px solid var(--blue-acc);padding:14px;margin-top:12px;font-size:12.5px;line-height:1.55}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw span{color:var(--ink-80,#343A40)}
+.rw strong{font-family:var(--font-mono);text-align:right}
+.rw.tot{border-bottom:2px solid var(--ink);font-weight:700}
+.rw.tot span{color:var(--ink)}
+.stepttl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin:16px 0 4px}
+details.assump{margin-top:16px;border:1px solid var(--ink-20);background:var(--white)}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.dtab{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.dtab th{background:var(--ink-10);text-align:left;padding:7px 9px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60);border:1px solid var(--ink-20)}
+.dtab td{padding:7px 9px;border:1px solid var(--ink-20);vertical-align:top}
+.dtab td.num,.dtab th.num{text-align:right;font-family:var(--font-mono)}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+.hint{font-size:11px;color:var(--ink-60);margin-top:2px;line-height:1.5}
+.f1 input[type=date]{min-height:40px}
+.yn-group{display:flex;border:1.5px solid var(--ink-20);overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;background:var(--white);color:var(--ink-60);border-right:1px solid var(--ink-20)}
+.yn-btn:last-child{border-right:none}
+.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
+.yn-btn.unsel:hover{background:var(--ink-10)}
+.sec-note{font-size:12px;color:var(--ink-60);line-height:1.5;margin:0 0 12px}
+@media(max-width:640px){.fc{font-size:16px}.rw{flex-direction:column;gap:2px}.rw strong{text-align:left}.wrap{padding:20px 16px 0}.phi{padding:0 16px}.back{padding:12px 16px 0}}
+@media print{details.assump{display:block}details.assump>*{display:block}}
+/* === end g05 additions === */
+</style>
   <meta property="og:type" content="article">
-  <meta property="og:title" content="FBAR Penalty Estimator 2026 | CPA Validated">
-  <meta property="og:description" content="Estimate FBAR civil penalties for willful and non-willful violations. Reasonable cause defense, mitigation guidelines, Streamlined vs VDP, Supreme Court Bittner decision. CPA-validated.">
+  <meta property="og:title" content="FBAR Penalty Estimator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Estimate FBAR civil penalties for willful and non-willful violations for assessment years 2026-2030. IRS mitigation guidelines, reasonable cause, Streamlined Procedures, and the Supreme Court Bittner decision. CPA-validated.">
   <meta property="og:url" content="https://cpavalidated.com/fbar-penalty-estimator.html">
   <meta property="og:site_name" content="CPA Validated">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="FBAR Penalty Estimator 2026 | CPA Validated">
-  <meta name="twitter:description" content="Estimate FBAR civil penalties for willful and non-willful violations. Reasonable cause defense, mitigation guidelines, Streamlined vs VDP, Supreme Court Bittner decision. CPA-validated.">
+  <meta name="twitter:title" content="FBAR Penalty Estimator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Estimate FBAR civil penalties for willful and non-willful violations for assessment years 2026-2030. IRS mitigation guidelines, reasonable cause, Streamlined Procedures, and the Supreme Court Bittner decision. CPA-validated.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"FBAR Penalty Estimator 2026 | CPA Validated","url":"https://cpavalidated.com/fbar-penalty-estimator.html","description":"Estimate FBAR civil penalties for willful and non-willful violations. Reasonable cause defense, mitigation guidelines, Streamlined vs VDP, Supreme Court Bittner decision. CPA-validated.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"FBAR Penalty Estimator 2026-2030 | CPA Validated","url":"https://cpavalidated.com/fbar-penalty-estimator.html","description":"Estimate FBAR civil penalties for willful and non-willful violations for assessment years 2026-2030. IRS mitigation guidelines, reasonable cause, Streamlined Procedures, and the Supreme Court Bittner decision. CPA-validated.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
   </script>
 </head>
 <body>
@@ -121,46 +161,80 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 <div class="ph"><div class="phi">
-  <h1>FBAR Penalty Estimator 2026</h1>
-  <div class="sub">Civil willful vs. non-willful FBAR penalties. Bittner v. US (2023) Supreme Court ruling. Reasonable cause defense. Streamlined Procedures vs. Voluntary Disclosure. FinCEN 114. 31 USC 5314.</div>
-  <div class="badges"><span class="badge">31 USC 5314 - FBAR requirement</span><span class="badge">31 USC 5321 - civil penalties</span><span class="badge">Bittner v. US (2023)</span><span class="badge">Streamlined vs. VDP</span></div>
+  <h1>FBAR Penalty Estimator 2026-2030</h1>
+  <div class="sub">Civil willful vs. non-willful FBAR penalties by assessment year, using the inflation-adjusted amounts in 31 CFR 1010.821, the IRS examination guidelines in IRM 4.26.16, and Bittner v. United States (2023). Streamlined Procedures compared. FinCEN Form 114. 31 USC 5314 and 5321.</div>
+  <div class="badges"><span class="badge">31 USC 5314 - FBAR requirement</span><span class="badge">31 USC 5321(a)(5) - civil penalties</span><span class="badge">Bittner v. US (2023)</span><span class="badge">IRM 4.26.16</span></div>
 </div></div>
-<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 <div class="wrap">
 
 <div class="card">
-  <div class="ch"><div class="sb">1</div><h2>FBAR Violation Details</h2></div>
+  <div class="ch"><div class="sb">1</div><h2>Assessment Year and Violation Details</h2></div>
   <div class="cb">
-    <div class="flag red"><div class="fi">!</div><div class="ft"><strong>FBAR penalties are among the harshest in US tax law.</strong> Civil willful penalties can reach $100,000+ per violation per year (adjusted for inflation). Criminal willful violations carry up to 5 years imprisonment. This estimator covers civil penalties only. If criminal exposure is possible, engage counsel immediately before making any disclosures.</div></div>
-    <div class="fg3">
-      <div class="f1"><label>Years of Non-Compliance</label>
-        <input type="number" class="fc" id="years" value="4" min="1" max="15" oninput="calc()">
-        <div class="hint">Number of calendar years for which FBAR was not filed when required. 6-year statute of limitations for civil FBAR penalties (31 USC 5321(b)(1)).</div>
+    <div class="flag red"><div class="fi">!</div><div class="ft"><strong>FBAR penalties are among the harshest in US tax law.</strong> Willful civil penalties can reach the greater of the inflation-adjusted $100,000 or 50% of the account balance, per account, per year. Criminal willful violations carry up to 5 years imprisonment (31 USC 5322(a)). This estimator covers civil penalties only. If criminal exposure is possible, engage counsel before making any disclosure.</div></div>
+    <div class="fg2">
+      <div class="f1"><label for="year">Penalty Assessment Year</label>
+        <select class="fc" id="year" onchange="calc()">
+          <option value="2026" selected>2026 (IRS-published amounts, unchanged)</option>
+          <option value="2027">2027 (projected)</option>
+          <option value="2028">2028 (projected)</option>
+          <option value="2029">2029 (projected)</option>
+          <option value="2030">2030 (projected)</option>
+        </select>
+        <div class="hint">The maximum penalty amounts are those in effect when the penalty is assessed (IRM 4.26.16.5.4 and 4.26.16.5.5). 31 CFR 1010.821.</div>
       </div>
-      <div class="f1"><label>Number of Accounts Per Year</label>
-        <input type="number" class="fc" id="accounts" value="3" min="1" oninput="calc()">
-        <div class="hint">After Bittner v. US (2023), non-willful penalties apply per form (one per year), not per account. Willful penalties still apply per account. This field primarily affects willful penalty estimates.</div>
+      <div class="f1" id="infl_wrap" style="display:none"><label for="infl">Assumed annual inflation (projected years only)</label>
+        <input type="number" class="fc" id="infl" value="2.5" min="0" max="15" step="0.1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Percent per year. Each year's increase is rounded to the nearest $1, as required by the Federal Civil Penalties Inflation Adjustment Act Improvements Act of 2015, sec. 5(a). Estimate only.</div>
       </div>
-      <div class="f1"><label>Highest Single-Year Aggregate Balance ($)</label>
-        <input type="number" class="fc" id="balance" value="500000" oninput="calc()">
-        <div class="hint">Highest aggregate balance across all unreported accounts in any single year. Willful penalty ceiling is 50% of highest balance per violation. 31 USC 5321(a)(5)(C).</div>
+    </div>
+    <div id="year_badge"></div>
+    <div class="fg3" style="margin-top:14px">
+      <div class="f1"><label for="years">Years of Non-Compliance</label>
+        <input type="number" class="fc" id="years" value="4" min="1" max="15" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">Calendar years for which a compliant FBAR was not timely filed. Civil assessment is limited to 6 years from the violation date (31 USC 5321(b)(1)), so no more than 6 years are counted.</div>
+      </div>
+      <div class="f1"><label for="accounts">Unreported Accounts Per Year</label>
+        <input type="number" class="fc" id="accounts" value="3" min="1" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">After Bittner, a non-willful penalty is per report (one per year), not per account. A willful penalty is per account (31 USC 5321(a)(5)(C), (D)(ii); IRM 4.26.16.1.7).</div>
+      </div>
+      <div class="f1"><label for="balance">Highest Aggregate Balance, All Unreported Accounts ($)</label>
+        <input type="number" class="fc" id="balance" value="500000" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">The IRM "highest aggregate balance": the highest year's combined high balance of the accounts (IRM 4.26.16.1.7). This tool assumes the balance is split evenly across the accounts and is the same in every open year.</div>
       </div>
     </div>
     <div class="fg2">
-      <div class="f1"><label>Willfulness Assessment</label>
+      <div class="f1"><label for="willfulness">Willfulness Assessment</label>
         <select class="fc" id="willfulness" onchange="calc()">
-          <option value="nonwillful">Non-Willful - did not know, or knew but negligent (not reckless)</option>
-          <option value="reckless">Reckless Disregard / Constructive Knowledge - heightened non-willful or borderline willful</option>
-          <option value="willful">Willful - knew of the requirement and intentionally failed to report</option>
+          <option value="nonwillful">Non-willful - negligence, inadvertence, mistake, or good-faith misunderstanding</option>
+          <option value="reckless">Reckless disregard or willful blindness - civil willfulness</option>
+          <option value="willful">Willful - knew of the duty and chose not to report</option>
         </select>
+        <div class="hint">The civil willfulness test includes recklessness and willful blindness; the burden is on the IRS (IRM 4.26.16.5.5.1). The reckless and willful options are therefore computed the same way.</div>
       </div>
-      <div class="f1"><label>Reasonable Cause Present?</label>
+      <div class="f1"><label for="reasonableCause">Reasonable Cause (non-willful only)</label>
         <select class="fc" id="reasonableCause" onchange="calc()">
           <option value="no">No - no reasonable cause</option>
           <option value="maybe">Possibly - facts may support reasonable cause</option>
-          <option value="yes">Yes - strong reasonable cause argument</option>
+          <option value="yes">Yes - established, and accurate delinquent FBARs are filed</option>
         </select>
-        <div class="hint">Reasonable cause eliminates non-willful penalty if taxpayer acted in good faith. Does NOT eliminate willful penalty. 31 USC 5321(a)(5)(B)(ii).</div>
+        <div class="hint">No penalty applies if the violation was due to reasonable cause and the account balance was properly reported (31 USC 5321(a)(5)(B)(ii)). Not available for willful violations (5321(a)(5)(C)(ii)).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="resid">Residence (Streamlined eligibility, non-willful only)</label>
+        <select class="fc" id="resid" onchange="calc()">
+          <option value="us">Lived in the US (Streamlined Domestic Offshore Procedures)</option>
+          <option value="abroad">Meets the non-residency requirement (Streamlined Foreign Offshore Procedures)</option>
+        </select>
+        <div class="hint">Non-residency requirement: a US citizen or green card holder with no US abode and 330 full days outside the US in any one of the 3 most recent years; others must have failed the substantial presence test in any one of those years. IRS Streamlined procedures pages.</div>
+      </div>
+      <div class="f1"><label for="mitig">IRS Mitigation Criteria Met (willful only)</label>
+        <select class="fc" id="mitig" onchange="calc()">
+          <option value="yes">Yes - all four criteria met</option>
+          <option value="no">No - one or more criteria not met</option>
+        </select>
+        <div class="hint">No criminal tax or BSA conviction in the prior 10 years and no prior FBAR penalty; no illegal-source funds; cooperation in the examination; no civil fraud penalty for the year (IRM 4.26.16, Exhibit 4.26.16-2).</div>
       </div>
     </div>
   </div>
@@ -168,7 +242,23 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="card">
   <div class="ch"><div class="sb">2</div><h2>Penalty Estimates</h2></div>
-  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter details above.</div></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter details above.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Assumptions, Sources and Status</h2></div>
+  <div class="cb">
+    <details class="assump" id="assump_box">
+      <summary>Assumptions &amp; sources</summary>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Parameter</th><th>Value (selected year)</th><th>Status</th><th>Citation</th></tr></thead>
+        <tbody id="assump_body"></tbody>
+      </table></div>
+    </details>
+    <div class="note-box"><strong>Projected figures are estimates.</strong> Amounts labeled "Projected" are not published by FinCEN or the IRS. They apply your assumed inflation rate to the last published amounts and will differ from the amounts FinCEN later publishes. Do not rely on projected figures in a disclosure, a filed position, or a settlement.</div>
+    <div class="verified">Last verified: October 29, 2026</div>
+  </div>
 </div>
 
 </div>
@@ -183,100 +273,186 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 </div></div>
 
 <script>
-function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
-function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+// ---------------------------------------------------------------
+// Constants. Sources fetched October 29, 2026:
+// 31 CFR 1010.821 (eCFR as of 2026-10-27; table amounts for penalties assessed on or after January 17, 2025; 90 FR 5630).
+// 91 FR 42962 (July 13, 2026) reporting OMB Memorandum M-26-11 (April 17, 2026): no 2026 cost-of-living multiplier; agencies continue using 2025 levels.
+// ---------------------------------------------------------------
+var BASE_YEAR = 2026;
+var NW_BASE = 16536;   // 31 USC 5321(a)(5)(B)(i) as adjusted
+var W_BASE = 165353;   // 31 USC 5321(a)(5)(C)(i)(I) as adjusted
+var SOL_YEARS = 6;     // 31 USC 5321(b)(1)
+var W_PCT = 0.5;       // 31 USC 5321(a)(5)(C)(i)(II)
 
-// 2026 FBAR penalty amounts (inflation-adjusted from base amounts)
-// Non-willful: $10,000 per form per year (pre-Bittner was per account) - $16,536 as of 2026 inflation adj. (31 CFR 1010.821)
-// Willful: greater of $100,000 or 50% of balance - $165,353 base as of 2026 inflation adj. (31 CFR 1010.821)
-const NW_PER_YEAR = 16536;   // non-willful per form (per year after Bittner), 2026 inflation-adjusted
-const W_BASE = 165353;        // willful base per account per year, 2026 inflation-adjusted
+function fmt(n){var a=Math.abs(Math.round(n));return (n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function flag(t,i,h){return '<div class="flag '+t+'"><div class="fi">'+i+'</div><div class="ft">'+h+'</div></div>';}
+function num(id,def,min,max){
+  var el=document.getElementById(id); var v=parseFloat(el&&el.value);
+  if(isNaN(v)) v=def; if(min!==undefined&&v<min) v=min; if(max!==undefined&&v>max) v=max; return v;
+}
+
+// Penalty amount for an assessment year. Each year after the base: prior + round(prior * inflation), rounded to nearest $1.
+function adjusted(base, year, infl){
+  var a = base;
+  for(var y=BASE_YEAR+1; y<=year; y++){ a = a + Math.round(a*infl/100); }
+  return a;
+}
+function paramsFor(year, infl){
+  return {year:year, projected: year>BASE_YEAR, nw: adjusted(NW_BASE,year,infl), w: adjusted(W_BASE,year,infl)};
+}
+
+// IRM 4.26.16 Exhibit 4.26.16-2 mitigation: per-year amount for willful violations.
+function mitigatedYear(B, k, W){
+  var b = B/k;
+  if(B<=50000)   return {level:'I',   perYear: Math.max(1000, 0.05*B), rule:'greater of $1,000 or 5% of the maximum aggregate balance'};
+  if(B<=250000)  return {level:'II',  perYear: k*Math.max(5000, 0.10*b), rule:'per account, greater of $5,000 or 10% of the maximum account balance'};
+  if(B<=1000000) return {level:'III', perYear: k*Math.max(0.10*b, 0.50*b), rule:'per account, greater of 10% of the maximum account balance or 50% of the violation-date balance'};
+  return {level:'IV', perYear: k*Math.max(0.50*b, W), rule:'per account, greater of 50% of the violation-date balance or the statutory maximum for willful violations'};
+}
+
+function compute(inp){
+  var P = paramsFor(inp.year, inp.infl);
+  var yearsEntered = Math.max(1, Math.floor(inp.years));
+  var open = Math.min(yearsEntered, SOL_YEARS);
+  var k = Math.max(1, Math.floor(inp.accounts));
+  var B = Math.max(0, inp.balance);
+  var isW = (inp.will==='willful' || inp.will==='reckless');
+  var R = {P:P, yearsEntered:yearsEntered, open:open, k:k, B:B, isW:isW};
+  // Non-willful
+  R.nwStat = P.nw*open;
+  R.nwCapIRM = W_PCT*B;                     // IRM 4.26.16.5.4.1: total non-willful <= 50% of highest aggregate balance
+  R.nwIRS = Math.min(R.nwStat, R.nwCapIRM);
+  R.nwIRSAfterRC = inp.rc==='yes' ? 0 : R.nwIRS;
+  R.sfop = 0;
+  R.sdop = 0.05*B;
+  // Willful
+  var b = B/k;
+  R.perAcct = b;
+  R.perViol = Math.max(P.w, W_PCT*b);
+  R.wStat = R.perViol*k*open;
+  var m = mitigatedYear(B,k,P.w);
+  R.mit = m;
+  R.mitTotalRaw = m.perYear*open;
+  R.mitCap = W_PCT*B;
+  R.mitTotal = Math.min(R.mitTotalRaw, R.mitCap, R.wStat);
+  R.wNoMitTypical = Math.min(R.wStat, W_PCT*B);
+  R.wCeiling = Math.min(R.wStat, B);        // IRM: never more than 100% of highest aggregate balance
+  R.wIRS = inp.mitig==='yes' ? R.mitTotal : R.wNoMitTypical;
+  return R;
+}
+
+function assumptions(R, infl){
+  var P=R.P, st = P.projected ? 'Projected' : 'IRS-published';
+  var cite = P.projected ? 'Projection from 31 CFR 1010.821 base amounts; Pub. L. 114-74, sec. 5(a) (round to nearest $1)'
+                         : '31 CFR 1010.821, Table 1 (90 FR 5630, Jan. 17, 2025); no 2026 multiplier per OMB M-26-11 (see 91 FR 42962, July 13, 2026)';
+  var rows = [
+    ['Non-willful maximum, per violation (per year)', fmt(P.nw), st, '31 USC 5321(a)(5)(B)(i) ($10,000 statutory); '+cite],
+    ['Willful maximum, dollar floor, per account per year', fmt(P.w), st, '31 USC 5321(a)(5)(C)(i)(I) ($100,000 statutory); '+cite],
+    ['Willful maximum, percentage alternative', '50% of the account balance at the violation date', 'Statutory', '31 USC 5321(a)(5)(C)(i)(II), (D)(ii)'],
+    ['Civil assessment window', SOL_YEARS+' years from the violation date', 'Statutory', '31 USC 5321(b)(1)'],
+    ['Reasonable cause exception (non-willful)', 'No penalty if reasonable cause and balance properly reported', 'Statutory', '31 USC 5321(a)(5)(B)(ii); IRM 4.26.16.5.4'],
+    ['IRS cap, total non-willful penalties (all open years)', '50% of highest aggregate balance', 'IRS-published (guidance)', 'IRM 4.26.16.5.4.1'],
+    ['IRS cap, total willful penalties (all open years)', '50% of highest aggregate balance (typical); never more than 100%', 'IRS-published (guidance)', 'IRM 4.26.16.5.5.3'],
+    ['Willful mitigation levels I-IV', 'See Exhibit; Level '+R.mit.level+' applies at this balance', 'IRS-published (guidance)', 'IRM 4.26.16, Exhibit 4.26.16-2'],
+    ['Streamlined Foreign Offshore (SFOP) penalty', '0% - no FBAR, information return, or Title 26 penalties', 'IRS-published', 'IRS: U.S. taxpayers residing outside the United States'],
+    ['Streamlined Domestic Offshore (SDOP) penalty', '5% of highest aggregate year-end balance/value of foreign financial assets', 'IRS-published', 'IRS: U.S. taxpayers residing in the United States'],
+    ['Assumed annual inflation', P.projected ? infl+'% per year' : 'Not used for 2026', P.projected ? 'Projected (your input)' : 'n/a', 'Default 2.5%; affects 2027-2030 only']
+  ];
+  var h='';
+  rows.forEach(function(r){ h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>'; });
+  return h;
+}
 
 function calc(){
-  const years = parseInt(document.getElementById('years').value)||1;
-  const accounts = parseInt(document.getElementById('accounts').value)||1;
-  const balance = parseFloat(document.getElementById('balance').value)||0;
-  const willfulness = document.getElementById('willfulness').value;
-  const rc = document.getElementById('reasonableCause').value;
+  var year = parseInt(document.getElementById('year').value,10) || 2026;
+  var infl = num('infl',2.5,0,15);
+  var inp = {
+    year:year, infl:infl,
+    years:num('years',1,1,15), accounts:num('accounts',1,1), balance:num('balance',0,0),
+    will:document.getElementById('willfulness').value, rc:document.getElementById('reasonableCause').value,
+    resid:document.getElementById('resid').value, mitig:document.getElementById('mitig').value
+  };
+  var R = compute(inp), P=R.P;
+  document.getElementById('infl_wrap').style.display = P.projected ? '' : 'none';
+  document.getElementById('year_badge').innerHTML = P.projected
+    ? '<span class="badge-proj">Projected - estimate, not IRS-published</span>'
+    : '<span class="badge-pub">IRS-published amounts (31 CFR 1010.821; unchanged for 2026)</span>';
 
-  const rb = document.getElementById('res');
-  let h = '';
-
-  // Non-willful: per form (per year) after Bittner
-  const nwMax = NW_PER_YEAR * years;
-  const nwWithRC = rc === 'yes' ? 0 : (rc === 'maybe' ? nwMax * 0.25 : nwMax);
-  const nwStreamlined = 5000; // SFOP: 5% of highest aggregate balance, max... actually SFOP: 5% of highest balance
-  const sfopPenalty = Math.round(balance * 0.05);
-
-  // Willful: per account per year, greater of $W_BASE or 50% of balance
-  const willfulPerViolation = Math.max(W_BASE, balance * 0.5);
-  const willfulTotal = willfulPerViolation * accounts * years;
-  const willfulMin = W_BASE * accounts * years; // at minimum base
-
-  // Mitigated willful (IRS mitigation guidelines - for strong factors)
-  const mitigatedWillful = Math.max(W_BASE * years, willfulTotal * 0.25);
-
-  // VDP penalty
-  const vdpWillfulPenalty = balance * 0.75; // approximate VDP resolution for willful
-
-  h += `<div class="penalty-compare">
-    <div class="pc-box worst">
-      <div class="pc-label">Maximum Statutory</div>
-      <div class="pc-amount">${willfulness==='willful'?fmt(willfulTotal):fmt(nwMax)}</div>
-      <div class="pc-desc">${willfulness==='willful'?`${accounts} acct x ${years} yr x 50% of balance`:`${years} yr x ${fmt(NW_PER_YEAR)}/yr (per Bittner)`}</div>
-    </div>
-    <div class="pc-box mid">
-      <div class="pc-label">Likely After Mitigation</div>
-      <div class="pc-amount">${willfulness==='willful'?fmt(mitigatedWillful):fmt(nwWithRC)}</div>
-      <div class="pc-desc">${willfulness==='willful'?'Mitigated per IRS guidelines':rc==='yes'?'Reasonable cause applies - $0 penalty possible':rc==='maybe'?'Partial mitigation estimated':'Full non-willful exposure'}</div>
-    </div>
-    <div class="pc-box best">
-      <div class="pc-label">Streamlined / VDP</div>
-      <div class="pc-amount">${willfulness==='willful'?fmt(vdpWillfulPenalty):fmt(sfopPenalty)}</div>
-      <div class="pc-desc">${willfulness==='willful'?'Estimated VDP resolution (willful)':'SFOP: 5% of highest balance'}</div>
-    </div>
-  </div>`;
-
-  h += `<div class="sum-box"><div class="sum-title">Penalty Analysis Detail</div>
-    <div class="srow"><span class="sl">Willfulness level</span><span class="sv">${willfulness==='willful'?'WILLFUL':willfulness==='reckless'?'Reckless / Constructive':'Non-willful'}</span></div>
-    <div class="srow"><span class="sl">Years of non-compliance</span><span class="sv">${years}</span></div>
-    <div class="srow"><span class="sl">Accounts (matters for willful; per-form for non-willful after Bittner)</span><span class="sv">${accounts}</span></div>
-    <div class="srow"><span class="sl">Highest aggregate balance</span><span class="sv">${fmt(balance)}</span></div>
-    ${willfulness!=='willful'?`
-    <div class="srow"><span class="sl">Non-willful penalty per year (post-Bittner, per form)</span><span class="sv">${fmt(NW_PER_YEAR)}</span></div>
-    <div class="srow"><span class="sl">Total statutory non-willful exposure</span><span class="sv red">${fmt(nwMax)}</span></div>
-    <div class="srow"><span class="sl">With reasonable cause (${rc})</span><span class="sv ${nwWithRC===0?'green':'amber'}">${nwWithRC===0?'$0':fmt(nwWithRC)}</span></div>
-    <div class="srow"><span class="sl">Streamlined Foreign Offshore (SFOP) 5% misc. penalty</span><span class="sv green">${fmt(sfopPenalty)}</span></div>
-    `:`
-    <div class="srow"><span class="sl">Willful penalty base (inflation-adj.) per account/year</span><span class="sv">${fmt(W_BASE)}</span></div>
-    <div class="srow"><span class="sl">50% of highest balance</span><span class="sv">${fmt(balance*0.5)}</span></div>
-    <div class="srow"><span class="sl">Per-violation penalty (greater of above)</span><span class="sv">${fmt(willfulPerViolation)}</span></div>
-    <div class="srow"><span class="sl">Total maximum willful exposure (${accounts} x ${years})</span><span class="sv red">${fmt(willfulTotal)}</span></div>
-    <div class="srow"><span class="sl">VDP estimated resolution</span><span class="sv amber">${fmt(vdpWillfulPenalty)}</span></div>
-    `}
-  </div>`;
-
-  h += flag('blue','i','<strong>Bittner v. United States, 598 US 85 (2023).</strong> The Supreme Court held 5-4 that non-willful FBAR penalties apply per report (one per year), not per account. This dramatically reduced exposure for multi-account non-willful filers. Pre-Bittner, a filer with 5 accounts over 4 years faced $200,000 in non-willful penalties. Post-Bittner: $66,144 ($16,536 x 4 years, 2026 rate). Willful penalties were NOT addressed by Bittner and still apply per account per year.');
-
-  if(willfulness === 'nonwillful'){
-    h += flag('green','v','<strong>Streamlined Foreign Offshore Procedure (SFOP) - the optimal path for non-willful filers.</strong> If you are non-willful, outside the US, and have not been previously contacted by IRS: SFOP allows you to file 3 years of amended returns, 6 years of FBARs, and pay a 5% miscellaneous offshore penalty on the highest year-end aggregate balance. Criminal immunity. No examination risk if accepted. The $0 income tax penalty and lower offshore penalty make SFOP dramatically better than bare-bone voluntary disclosure for non-willful filers.');
+  var h='';
+  var box1, box1d, box2, box2d, box3, box3d;
+  if(R.isW){
+    box1 = fmt(R.wStat);
+    box1d = R.k+' acct x '+R.open+' yr x '+fmt(R.perViol)+' (greater of '+fmt(P.w)+' or 50% x '+fmt(R.perAcct)+')';
+    box2 = fmt(R.wIRS);
+    box2d = inp.mitig==='yes' ? 'Mitigation Level '+R.mit.level+', capped at 50% of highest aggregate balance' : 'Typical IRS cap: 50% of highest aggregate balance (IRM 4.26.16.5.5.3)';
+    box3 = 'Not available';
+    box3d = 'Streamlined Procedures require non-willful conduct. Criminal VDP penalty terms are set by the IRS and are not modeled.';
+  } else {
+    box1 = fmt(R.nwStat);
+    box1d = R.open+' yr x '+fmt(P.nw)+' per report (Bittner: one per year, not per account)';
+    if(inp.rc==='yes'){ box2='$0'; box2d='Reasonable cause established and accurate delinquent FBARs filed - no penalty (31 USC 5321(a)(5)(B)(ii))'; }
+    else if(inp.rc==='maybe'){ box2='$0 to '+fmt(R.nwIRS); box2d='Range: reasonable cause accepted vs. not accepted. Examiners have discretion; there is no penalty floor.'; }
+    else { box2=fmt(R.nwIRS); box2d='Lesser of the statutory maximum and 50% of highest aggregate balance (IRM 4.26.16.5.4.1)'; }
+    if(inp.resid==='abroad'){ box3='$0'; box3d='SFOP: no FBAR or Title 26 penalty if eligible (3 years of returns, 6 years of FBARs)'; }
+    else { box3=fmt(R.sdop); box3d='SDOP: 5% x '+fmt(R.B)+' (treats your balance as the highest aggregate year-end value of all foreign financial assets)'; }
   }
-  if(willfulness === 'willful'){
-    h += flag('red','!','<strong>Willful violations - engage criminal tax counsel immediately.</strong> Willful FBAR violations can be charged criminally (up to 5 years, 31 USC 5322). Civil willful penalties can consume 50%+ of account value per year. The IRS Criminal Investigation Voluntary Disclosure Practice (VDP) is the only path that provides criminal immunity - but it requires disclosure before IRS contacts you. If IRS has already made contact, VDP is unavailable. Do not file amended returns or contact IRS without counsel.');
-  }
-  if(rc === 'yes' || rc === 'maybe'){
-    h += flag('amber','!','<strong>Reasonable cause defense analysis.</strong> Reasonable cause requires: (1) good faith reliance on professional advice (the advisor must have known all relevant facts), (2) absence of willfulness, and (3) subjective good faith. Common reasonable cause scenarios: relied on CPA/attorney who did not advise of FBAR; genuinely unaware of foreign account (inherited, opened by family member); medical incapacity. Reasonable cause does NOT apply to willful violations. 31 USC 5321(a)(5)(B)(ii).');
-  }
+  h += '<div class="penalty-compare">'+
+    '<div class="pc-box worst"><div class="pc-label">Maximum Statutory</div><div class="pc-amount">'+box1+'</div><div class="pc-desc">'+box1d+'</div></div>'+
+    '<div class="pc-box mid"><div class="pc-label">IRS Exam Guideline</div><div class="pc-amount">'+box2+'</div><div class="pc-desc">'+box2d+'</div></div>'+
+    '<div class="pc-box best"><div class="pc-label">Compliance Program</div><div class="pc-amount">'+box3+'</div><div class="pc-desc">'+box3d+'</div></div>'+
+  '</div>';
 
-  h += `<div class="src">31 USC 5314 (FBAR filing requirement); 31 USC 5321(a)(5)(A) (non-willful civil penalty); 31 USC 5321(a)(5)(B)(ii) (non-willful penalty waived for reasonable cause and good faith); 31 USC 5321(a)(5)(C) (willful civil penalty - greater of $100,000 or 50% of balance); 31 USC 5321(b)(1) (6-year statute of limitations on civil FBAR penalties); 31 USC 5322 (criminal FBAR penalties - up to 5 years); Bittner v. United States, 598 US 85 (2023) (non-willful penalties per form, not per account); IRS Notice 2014-43 (SFOP procedures); FinCEN 114 (annual FBAR filing via BSA E-Filing System); 31 CFR 1010.350 (FBAR regulations).</div>`;
-  h += ``;
+  h += '<div class="stepttl">Step-by-step math ('+P.year+' amounts)</div><div class="sum-box"><div class="sum-title">Penalty Analysis Detail</div>';
+  function row(l,v,c){ return '<div class="srow"><span class="sl">'+l+'</span><span class="sv'+(c?' '+c:'')+'">'+v+'</span></div>'; }
+  h += row('Willfulness level', R.isW ? (inp.will==='willful'?'WILLFUL':'RECKLESS / WILLFUL BLINDNESS (treated as willful)') : 'Non-willful');
+  h += row('Years entered / years counted (6-year limit, 31 USC 5321(b)(1))', R.yearsEntered+' / '+R.open);
+  h += row('Accounts per year', String(R.k));
+  h += row('Highest aggregate balance', fmt(R.B));
+  if(!R.isW){
+    h += row('(1) Non-willful maximum per report, '+P.year, fmt(P.nw));
+    h += row('(2) Statutory maximum = '+R.open+' x '+fmt(P.nw), fmt(R.nwStat), 'red');
+    h += row('(3) IRS cap = 50% x '+fmt(R.B), fmt(R.nwCapIRM));
+    h += row('(4) IRS guideline = lesser of (2) and (3)', fmt(R.nwIRS), 'amber');
+    h += row('(5) After reasonable cause ('+(inp.rc==='yes'?'yes':inp.rc==='maybe'?'possibly':'no')+')', inp.rc==='yes'?'$0':inp.rc==='maybe'?'$0 to '+fmt(R.nwIRS):fmt(R.nwIRS), inp.rc==='yes'?'green':'amber');
+    h += row('(6) Pre-Bittner per-account view, for comparison = '+R.k+' x '+R.open+' x '+fmt(P.nw), fmt(R.k*R.open*P.nw));
+    h += row('SFOP (outside US): FBAR/Title 26 penalty', '$0', 'green');
+    h += row('SDOP (in US): 5% x '+fmt(R.B), fmt(R.sdop), 'green');
+  } else {
+    h += row('(1) Willful dollar floor per account per year, '+P.year, fmt(P.w));
+    h += row('(2) Balance per account = '+fmt(R.B)+' / '+R.k, fmt(R.perAcct));
+    h += row('(3) 50% of balance per account = 50% x (2)', fmt(W_PCT*R.perAcct));
+    h += row('(4) Per-violation maximum = greater of (1) and (3)', fmt(R.perViol));
+    h += row('(5) Statutory maximum = '+R.k+' x '+R.open+' x (4)', fmt(R.wStat), 'red');
+    h += row('(6) Mitigation Level '+R.mit.level+' per year ('+R.mit.rule+')', fmt(R.mit.perYear));
+    h += row('(7) Mitigated total = '+R.open+' x (6)', fmt(R.mitTotalRaw));
+    h += row('(8) Cap: 50% x '+fmt(R.B)+' (IRM 4.26.16.5.5.3)', fmt(R.mitCap));
+    h += row('(9) Mitigated guideline = least of (5), (7), (8)', fmt(R.mitTotal), inp.mitig==='yes'?'amber':'');
+    h += row('(10) If mitigation unavailable: typical IRS cap = lesser of (5) and 50% x balance', fmt(R.wNoMitTypical), inp.mitig==='yes'?'':'amber');
+    h += row('(11) Absolute IRM ceiling = lesser of (5) and 100% x balance', fmt(R.wCeiling));
+  }
+  h += '</div>';
 
-  rb.innerHTML = h;
+  h += flag('blue','i','<strong>Bittner v. United States, 598 U.S. 85 (2023).</strong> The Supreme Court held 5-4 that the non-willful FBAR penalty accrues per report, not per account. A filer with '+R.k+' accounts over '+R.open+' years faces at most '+fmt(R.nwStat)+' non-willful at '+P.year+' amounts, not '+fmt(R.k*R.open*P.nw)+'. Bittner did not address willful penalties, which the statute measures per account (31 USC 5321(a)(5)(C), (D)(ii)).');
+  if(!R.isW){
+    h += flag('green','v','<strong>Streamlined Procedures (non-willful only).</strong> Both procedures require 6 years of delinquent FBARs and 3 years of returns with the required information returns. SFOP (non-residency requirement met): no failure-to-file, failure-to-pay, accuracy-related, information return, or FBAR penalties. SDOP: a Title 26 miscellaneous offshore penalty of 5% of the highest aggregate year-end balance or value of the foreign financial assets in the covered periods. The IRS can still assert penalties if it finds the conduct was willful or fraudulent.');
+    h += flag('blue','i','<strong>Delinquent FBAR filing.</strong> Under IRM 4.26.16.3.11, no penalty is asserted for an account if the failure was not willful, was due to reasonable cause, and the account was properly reported on the delinquent FBAR.');
+  } else {
+    h += flag('red','!','<strong>Willful or reckless violations - engage criminal tax counsel before any disclosure.</strong> Criminal exposure: 31 USC 5322(a) - fine up to $250,000, up to 5 years, or both; 31 USC 5322(b) - up to $500,000 and 10 years if the violation is also of another US law or part of a pattern of illegal activity over $100,000 in 12 months. Streamlined Procedures are not available. The IRS announced proposed revisions to the Criminal Voluntary Disclosure Practice on December 22, 2025; whether they are final was not verified, so no VDP penalty is modeled here.');
+  }
+  if(!R.isW && (inp.rc==='yes' || inp.rc==='maybe')){
+    h += flag('amber','!','<strong>Reasonable cause.</strong> The statute requires both (I) reasonable cause and (II) that the account balance was properly reported (31 USC 5321(a)(5)(B)(ii)). IRM 4.26.16.5.4 notes that some courts apply the Title 26 standard - ordinary business care and prudence. Reasonable cause does not apply to willful violations.');
+  }
+  if(R.yearsEntered>SOL_YEARS){
+    h += flag('amber','!','<strong>Years capped at '+SOL_YEARS+'.</strong> You entered '+R.yearsEntered+' years. The IRS may assess a civil FBAR penalty only within 6 years of the date of the transaction (31 USC 5321(b)(1)), so only '+SOL_YEARS+' years are counted. Extensions of the assessment period by agreement can change this.');
+  }
+  h += flag('amber','!','<strong>Estimate only.</strong> Actual penalties depend on examiner discretion (IRM 4.26.16.5.2.1), per-account violation-date balances, co-owner allocation, and the facts. The willful statutory maximum here uses your balance split evenly across accounts as a proxy for violation-date balances.');
+  h += '<div class="src">31 USC 5314; 31 USC 5321(a)(5)(A)-(D) (non-willful and willful civil penalty; reasonable cause exception at (B)(ii)); 31 USC 5321(b)(1) (6-year assessment period); 31 USC 5322(a)-(b) (criminal penalties); 31 CFR 1010.821 (inflation-adjusted amounts); Federal Civil Penalties Inflation Adjustment Act Improvements Act of 2015, Pub. L. 114-74, sec. 5 (28 USC 2461 note); 91 FR 42962 (July 13, 2026) (OMB Memorandum M-26-11, no 2026 multiplier); Bittner v. United States, 598 U.S. 85 (2023); IRM 4.26.16.1.7, 4.26.16.3.11, 4.26.16.5.2, 4.26.16.5.4, 4.26.16.5.5 and Exhibit 4.26.16-2 (rev. Aug. 26, 2025); IRS Streamlined Filing Compliance Procedures (U.S. taxpayers residing in and outside the United States).</div>';
+
+  document.getElementById('res').innerHTML = h;
+  document.getElementById('assump_body').innerHTML = assumptions(R, infl);
 }
 calc();
 </script>
-
-
 
 <script>
 function doPrint(){window.print();}
