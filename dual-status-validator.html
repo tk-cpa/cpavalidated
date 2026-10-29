@@ -1,143 +1,696 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Dual-Status Tax Year Validator | CPA Validated</title>
-<meta name="description" content="Determine if you qualify for dual-status tax year treatment for year of arrival or departure.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Dual-Status Tax Year Validator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Work out whether a tax year is a dual-status year, your residency starting and termination dates, resident and nonresident day counts, and the return to file, for tax years 2026-2030. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/dual-status-validator.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
-.phi{max-width:900px;margin:0 auto;padding:0 24px}
-.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
-.container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
-.ch{background:var(--ink);padding:13px 20px;color:#fff}
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:900px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
 .cb{padding:20px}
-.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
-.q-row:last-child{border-bottom:none}
-.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
-.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;cursor:pointer;background:#fff;border-right:1px solid #D9DBDE}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.penalty-compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+.pc-box{border:2px solid var(--ink-20);padding:14px;text-align:center}
+.pc-box.worst{border-color:var(--red-b);background:var(--red-bg)}
+.pc-box.mid{border-color:var(--amber-b);background:var(--amber-bg)}
+.pc-box.best{border-color:var(--green-b);background:var(--green-bg)}
+.pc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;font-family:var(--font-mono)}
+.pc-box.worst .pc-label{color:var(--red)}.pc-box.mid .pc-label{color:var(--amber)}.pc-box.best .pc-label{color:var(--green)}
+.pc-amount{font-family:var(--font-display);font-size:22px;font-weight:500}
+.pc-box.worst .pc-amount{color:var(--red)}.pc-box.mid .pc-amount{color:var(--amber)}.pc-box.best .pc-amount{color:var(--green)}
+.pc-desc{font-size:11px;margin-top:5px;line-height:1.4}
+.pc-box.worst .pc-desc{color:var(--red)}.pc-box.mid .pc-desc{color:var(--amber)}.pc-box.best .pc-desc{color:var(--green)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.penalty-compare{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+<style>
+/* === g05 calculator additions === */
+.yrbadge{display:none}
+.badge-proj{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+.warn-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 14px;margin-top:12px;font-size:12px;line-height:1.5;color:var(--red)}
+.ok-box{background:var(--green-bg);border-left:3px solid var(--green);padding:14px;margin-top:12px;font-size:13px;line-height:1.55}
+.ok-box h3,.warn-box h3,.info-box h3{font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.info-box{background:var(--blue-bg);border-left:3px solid var(--blue-acc);padding:14px;margin-top:12px;font-size:12.5px;line-height:1.55}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw span{color:var(--ink-80,#343A40)}
+.rw strong{font-family:var(--font-mono);text-align:right}
+.rw.tot{border-bottom:2px solid var(--ink);font-weight:700}
+.rw.tot span{color:var(--ink)}
+.stepttl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin:16px 0 4px}
+details.assump{margin-top:16px;border:1px solid var(--ink-20);background:var(--white)}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.dtab{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.dtab th{background:var(--ink-10);text-align:left;padding:7px 9px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60);border:1px solid var(--ink-20)}
+.dtab td{padding:7px 9px;border:1px solid var(--ink-20);vertical-align:top}
+.dtab td.num,.dtab th.num{text-align:right;font-family:var(--font-mono)}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+.hint{font-size:11px;color:var(--ink-60);margin-top:2px;line-height:1.5}
+.f1 input[type=date]{min-height:40px}
+.yn-group{display:flex;border:1.5px solid var(--ink-20);overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;background:var(--white);color:var(--ink-60);border-right:1px solid var(--ink-20)}
 .yn-btn:last-child{border-right:none}
 .yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
-.yn-btn.sel-no{background:#EDE0DC;color:#9B3D3D;font-weight:700}
-.result-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:16px;margin-top:20px}
-.result-box h3{font-size:16px;color:var(--ink);margin-bottom:8px}
+.yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
+.yn-btn.unsel:hover{background:var(--ink-10)}
+.sec-note{font-size:12px;color:var(--ink-60);line-height:1.5;margin:0 0 12px}
+@media(max-width:640px){.fc{font-size:16px}.rw{flex-direction:column;gap:2px}.rw strong{text-align:left}.wrap{padding:20px 16px 0}.phi{padding:0 16px}.back{padding:12px 16px 0}}
+@media print{details.assump{display:block}details.assump>*{display:block}}
+/* === end g05 additions === */
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/dual-status-validator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Dual-Status Tax Year Validator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Work out whether a tax year is a dual-status year, your residency starting and termination dates, resident and nonresident day counts, and the return to file, for tax years 2026-2030. CPA-validated.">
+  <meta property="og:url" content="https://cpavalidated.com/dual-status-validator.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dual-Status Tax Year Validator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Work out whether a tax year is a dual-status year, your residency starting and termination dates, resident and nonresident day counts, and the return to file, for tax years 2026-2030. CPA-validated.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Dual-Status Tax Year Validator 2026-2030 | CPA Validated","url":"https://cpavalidated.com/dual-status-validator.html","description":"Work out whether a tax year is a dual-status year, your residency starting and termination dates, resident and nonresident day counts, and the return to file, for tax years 2026-2030. CPA-validated.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
 </head>
 <body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">Residency Tool</div>
+  <h1>Dual-Status Tax Year Validator 2026-2030</h1>
+  <div class="sub">Work out whether a tax year is a dual-status year, your residency starting and termination dates, the resident and nonresident day counts, and which return to file, for years 2026 through 2030.</div>
+  <div class="badges"><span class="badge">IRC &sect;7701(b)</span><span class="badge">Treas. Reg. &sect;301.7701(b)-4</span><span class="badge">Pub. 519</span></div>
+</div></div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
+<div class="wrap">
 
-<div class="ph">
-<div class="phi">
-<h1>Dual-Status Tax Year Validator</h1>
-<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine eligibility for dual-status treatment in year of US arrival or departure.</p>
-</div>
-</div>
-
-<div class="container">
-<div class="card">
-<div class="ch"><h2>Year Details</h2></div>
-<div class="cb">
-<div class="q-row">
-<div><div style="font-size:13.5px;color:var(--ink)">Is this your first year as a US resident?</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('first_year', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('first_year', 'no')">No</button>
-</div>
-</div>
-</div>
-
-<div class="q-row" id="date_row" style="display:none">
-<div><div style="font-size:13.5px;color:var(--ink)">Date you became a US resident (Green Card issued or Substantial Presence Test met)</div></div>
-<div style="min-width:120px">
-<input type="date" id="arrival_date" class="fc" oninput="calculate()" style="width:150px;padding:9px 12px;border:1.5px solid #D9DBDE;font-size:13px">
-</div>
-</div>
-
-<div class="q-row">
-<div><div style="font-size:13.5px;color:var(--ink)">Did you marry a US citizen or resident during this year?</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('married_us', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setState('married_us', 'no')">No</button>
-</div>
-</div>
-</div>
-</div>
-</div>
+<div class="info-box"><h3>How this validator works</h3>
+You are dual status when you are a resident alien for part of a calendar year and a nonresident alien for the rest, which usually happens in the year of arrival or departure. Enter the facts below; the result updates as you type. All tests here are statutory and are not indexed for inflation, so only the calendar (leap years and weekdays) changes from one year to the next. Dates must fall inside the selected tax year.</div>
 
 <div class="card">
-<div class="ch"><h2>Dual-Status Eligibility</h2></div>
-<div class="cb">
-<div id="result_area"></div>
+  <div class="ch"><div class="sb">1</div><h2>Tax Year and Status in Adjacent Years</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label for="fy">Tax Year (calendar year)</label>
+        <select class="fc" id="fy" onchange="calc()">
+          <option value="2026" selected>2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028 (leap year, 366 days)</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+        </select>
+        <div class="hint">IRC &sect;7701(b)(1)(A) applies to calendar years.</div>
+      </div>
+      <div class="f1"><label for="prev">Resident alien in any part of the preceding year?</label>
+        <select class="fc" id="prev" onchange="calc()">
+          <option value="no" selected>No - nonresident the whole preceding year</option>
+          <option value="yes">Yes - resident alien for any part</option>
+        </select>
+        <div class="hint">If yes and you are a resident for any part of this year, residency starts January 1. Treas. Reg. &sect;301.7701(b)-4(a); IRC &sect;7701(b)(2)(A)(i); Pub. 519, ch. 1.</div>
+      </div>
+      <div class="f1"><label for="next">Status in the following year</label>
+        <select class="fc" id="next" onchange="calc()">
+          <option value="res_spt" selected>Resident by the substantial presence test</option>
+          <option value="res_lpr">Resident by the green card test only</option>
+          <option value="nonres">Not a resident for any part of the following year</option>
+        </select>
+        <div class="hint">If you are a resident in any part of the following year, the residency termination date is December 31. IRC &sect;7701(b)(2)(B)(iii).</div>
+      </div>
+    </div>
+    <div id="year_badge"></div>
+  </div>
 </div>
+
+<div class="card">
+  <div class="ch"><div class="sb">2</div><h2>Green Card Test</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1"><label for="lpr">Lawful permanent resident at any time this year?</label>
+        <select class="fc" id="lpr" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div class="hint">IRC &sect;7701(b)(1)(A)(i). You remain an LPR until the status is taken away or administratively or judicially determined to be abandoned (Pub. 519, ch. 1).</div>
+      </div>
+      <div class="f1"><label for="treaty">Claiming nonresident status under a treaty tie-breaker?</label>
+        <select class="fc" id="treaty" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes (Form 8833 filed)</option>
+        </select>
+        <div class="hint">A treaty tie-breaker nonresident is treated as a nonresident for computing US tax (IRC &sect;7701(b)(6)(B); Pub. 519, ch. 1). This tool does not model that case; see the note in the results.</div>
+      </div>
+    </div>
+    <div id="lpr_wrap" style="display:none">
+      <div class="fg2">
+        <div class="f1"><label for="lprStart">First day present in the US as an LPR (this year)</label>
+          <input type="date" class="fc" id="lprStart" oninput="calc()">
+          <div class="hint">Treas. Reg. &sect;301.7701(b)-4(a); IRC &sect;7701(b)(2)(A)(ii). Leave blank only if you were an LPR on January 1.</div>
+        </div>
+        <div class="f1"><label for="lprEnd">Date LPR status ended (leave blank if still an LPR)</label>
+          <input type="date" class="fc" id="lprEnd" oninput="calc()">
+          <div class="hint">Date of final administrative or judicial order, or the filing of Form I-407 or an abandonment letter with the green card attached (Pub. 519, ch. 1).</div>
+        </div>
+      </div>
+      <div class="fg2">
+        <div class="f1"><label for="ltr">LPR in at least 8 of the 15 taxable years ending this year?</label>
+          <select class="fc" id="ltr" onchange="calc()">
+            <option value="unknown" selected>Not sure</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <div class="hint">Long-term resident test: IRC &sect;877(e)(2). Only matters if LPR status ends this year.</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Substantial Presence Test</h2></div>
+  <div class="cb">
+    <p class="sec-note">Count days physically present in the United States. Exclude days of exempt individuals (for example certain students, teachers and trainees on F, J, M or Q visas), days in transit, regular commuter days from Canada or Mexico, and medical-condition days under IRC &sect;7701(b)(3)(D) and Treas. Reg. &sect;301.7701(b)-3.</p>
+    <div class="fg3">
+      <div class="f1"><label for="d0" id="d0_lab">Days present this year</label>
+        <input type="number" class="fc" id="d0" value="0" min="0" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">Counted in full.</div>
+      </div>
+      <div class="f1"><label for="d1" id="d1_lab">Days present 1 year earlier</label>
+        <input type="number" class="fc" id="d1" value="0" min="0" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">Counted at one-third.</div>
+      </div>
+      <div class="f1"><label for="d2" id="d2_lab">Days present 2 years earlier</label>
+        <input type="number" class="fc" id="d2" value="0" min="0" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">Counted at one-sixth.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="closer">Tax home in a foreign country with a closer connection to it than to the US for the whole year?</label>
+        <select class="fc" id="closer" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes - Form 8840 will be filed</option>
+        </select>
+        <div class="hint">Closer connection exception, available only if present fewer than 183 days this year. IRC &sect;7701(b)(3)(B); Pub. 519, ch. 1.</div>
+      </div>
+      <div class="f1"><label for="adj">Applied, or took steps, to become an LPR (including a pending adjustment of status)?</label>
+        <select class="fc" id="adj" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div class="hint">If yes, the closer connection exception is not available. IRC &sect;7701(b)(3)(C); Pub. 519, ch. 1.</div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="card" id="start_card" style="display:none">
+  <div class="ch"><div class="sb">4</div><h2>Residency Starting Date</h2></div>
+  <div class="cb">
+    <div class="fg2" id="spt_start_wrap">
+      <div class="f1"><label for="firstPresent">First day present in the US this year</label>
+        <input type="date" class="fc" id="firstPresent" oninput="calc()">
+        <div class="hint">Residency under the substantial presence test starts on the first day present. IRC &sect;7701(b)(2)(A)(iii); Treas. Reg. &sect;301.7701(b)-4(a).</div>
+      </div>
+      <div class="f1"><label for="startDays">Days at the start you can disregard (0 to 10)</label>
+        <input type="number" class="fc" id="startDays" value="0" min="0" max="10" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">De minimis presence: up to 10 days in total, only if tax home and closer connection were abroad for those days and you file the required statement. Treas. Reg. &sect;301.7701(b)-4(c)(1); IRC &sect;7701(b)(2)(C).</div>
+      </div>
+      <div class="f1"><label for="startCounted">First day present that counts (after disregarding those days)</label>
+        <input type="date" class="fc" id="startCounted" oninput="calc()">
+        <div class="hint">Used only if you disregard days. You cannot disregard part of a consecutive period of presence. Treas. Reg. &sect;301.7701(b)-4(c)(1).</div>
+      </div>
+    </div>
+    <div id="fyc_wrap" style="display:none">
+      <div class="stepttl">First-year choice (neither test met this year)</div>
+      <div class="fg2">
+        <div class="f1"><label for="fyc">Make the first-year choice?</label>
+          <select class="fc" id="fyc" onchange="calc()">
+            <option value="no" selected>No</option>
+            <option value="yes">Yes - test eligibility</option>
+          </select>
+          <div class="hint">IRC &sect;7701(b)(4); Treas. Reg. &sect;301.7701(b)-4(c)(3). Requires: not a resident this or the preceding year, and a resident by the substantial presence test in the following year.</div>
+        </div>
+        <div class="f1"><label for="fycStart">First day of your 31-day period of presence</label>
+          <input type="date" class="fc" id="fycStart" oninput="calc()">
+          <div class="hint">At least 31 consecutive days present.</div>
+        </div>
+      </div>
+      <div class="fg3">
+        <div class="f1"><label for="fycConsec">Consecutive days present from that day</label>
+          <input type="number" class="fc" id="fycConsec" value="0" min="0" step="1" inputmode="numeric" oninput="calc()">
+        </div>
+        <div class="f1"><label for="fycPresent">Days present from that day through December 31</label>
+          <input type="number" class="fc" id="fycPresent" value="0" min="0" step="1" inputmode="numeric" oninput="calc()">
+          <div class="hint">Actual days present, before the 5-day absence credit.</div>
+        </div>
+        <div class="f1"><label for="fycAbs">Days absent in that period</label>
+          <input type="number" class="fc" id="fycAbs" value="0" min="0" step="1" inputmode="numeric" oninput="calc()">
+          <div class="hint">Up to 5 absence days are treated as present for the 75 percent test only.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="end_card" style="display:none">
+  <div class="ch"><div class="sb">5</div><h2>Residency Termination Date</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1"><label for="after">After leaving, tax home abroad and a closer connection to that foreign country for the rest of the year?</label>
+        <select class="fc" id="after" onchange="calc()">
+          <option value="no" selected>No - residency runs to December 31</option>
+          <option value="yes">Yes - eligible for an earlier termination date</option>
+        </select>
+        <div class="hint">IRC &sect;7701(b)(2)(B)(ii); Treas. Reg. &sect;301.7701(b)-4(b)(2). Not available if you applied for LPR status (Pub. 519, ch. 1).</div>
+      </div>
+      <div class="f1"><label for="lastPresent">Last day present in the US this year</label>
+        <input type="date" class="fc" id="lastPresent" oninput="calc()">
+        <div class="hint">Termination date under the substantial presence test is the last day present. Treas. Reg. &sect;301.7701(b)-4(b)(2).</div>
+      </div>
+      <div class="f1"><label for="endDays">Days at the end you can disregard (0 to 10)</label>
+        <input type="number" class="fc" id="endDays" value="0" min="0" max="10" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">De minimis presence after you left. Treas. Reg. &sect;301.7701(b)-4(c)(1).</div>
+      </div>
+    </div>
+    <div class="fg2" id="end_counted_wrap">
+      <div class="f1"><label for="endCounted">Last day present that counts (before the disregarded days)</label>
+        <input type="date" class="fc" id="endCounted" oninput="calc()">
+        <div class="hint">Used only if you disregard days at the end. Example: Pub. 519, Lola Bovary.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">6</div><h2>Marital Status (for the Election Note)</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1"><label for="married">Married at year-end to a US citizen or resident alien?</label>
+        <select class="fc" id="married" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div class="hint">Marriage does not create dual status. It only matters for the election to be treated as a resident for the entire year. IRC &sect;6013(g), (h).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">7</div><h2>Results</h2></div>
+  <div class="cb">
+    <div id="msgs"></div>
+    <div id="result"></div>
+    <div id="math"></div>
+    <div id="forms"></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">8</div><h2>Assumptions and Sources</h2></div>
+  <div class="cb">
+    <details class="assump" id="assump_box">
+      <summary>Assumptions &amp; sources</summary>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Parameter</th><th>Value (selected year)</th><th>Status</th><th>Citation</th></tr></thead>
+        <tbody id="assump_body"></tbody>
+      </table></div>
+    </details>
+    <div class="note-box"><strong>Projected years.</strong> The residency tests are statutory and are not indexed, so 2027 through 2030 use the same rules as 2026. Only the calendar differs. Filing forms and instructions for those years have not been published, so form names, check boxes and filing-method rules are taken from Publication 519 (2025) and should be rechecked against the year's instructions. Not tax advice.</div>
+    <div class="verified">Last verified: October 29, 2026</div>
+    <div class="src"><strong>Authority:</strong> IRC &sect;7701(b)(1)-(4), (b)(6); IRC &sect;6013(g), (h); IRC &sect;877(e)(2); IRC &sect;7503; Treas. Reg. &sect;301.7701(b)-3; Treas. Reg. &sect;301.7701(b)-4(a), (b), (c)(1), (c)(3); Treas. Reg. &sect;1.871-13; IRS Publication 519 (2025), chapters 1, 6 and 7.</div>
+  </div>
+</div>
+
+</div>
+
+<div class="related"><div style="max-width:900px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="dual-status-returns.html" class="rl">Dual-Status Returns Guide</a>
+  <a href="spt-calculator.html" class="rl">Substantial Presence Test Calculator</a>
+  <a href="expatriation-tax-guide.html" class="rl">Expatriation Tax Guide</a>
+  <a href="form-8854.html" class="rl">Form 8854</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
 
 <script>
-const state = {
-  first_year: '',
-  married_us: ''
-};
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var MS=86400000;
 
-function setState(key, val) {
-  state[key] = val;
-  document.querySelectorAll(`[onclick*="setState('${key}'"]`).forEach(btn => {
-    btn.classList.remove('sel-yes', 'sel-no', 'unsel');
-  });
-  document.querySelector(`[onclick*="setState('${key}','${val}']`).classList.add(`sel-${val}`);
-  
-  if (key === 'first_year') {
-    document.getElementById('date_row').style.display = val === 'yes' ? 'grid' : 'none';
-  }
-  
-  calculate();
+function isLeap(y){return (y%4===0 && y%100!==0) || y%400===0;}
+function daysInYear(y){return isLeap(y)?366:365;}
+function utc(y,m,d){return Date.UTC(y,m-1,d);}
+function parseD(s){
+  if(!s||typeof s!=='string') return null;
+  var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s.trim()); if(!m) return null;
+  var y=+m[1],mo=+m[2],d=+m[3]; var t=utc(y,mo,d); var dt=new Date(t);
+  if(dt.getUTCFullYear()!==y||dt.getUTCMonth()!==mo-1||dt.getUTCDate()!==d) return null;
+  return t;
 }
+function fmt(t){var d=new Date(t);return MONTHS[d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear();}
+function fmtW(t){var d=new Date(t);return fmt(t)+' ('+DAYS[d.getUTCDay()]+')';}
+function yearOf(t){return new Date(t).getUTCFullYear();}
+function diffDays(a,b){return Math.round((b-a)/MS);}
+function nonNeg(v,max){var n=parseFloat(v); if(isNaN(n)||n<0) n=0; n=Math.floor(n); if(max!==undefined&&n>max) n=max; return n;}
+function addDays(t,n){return t+n*MS;}
+// Due date: April 15 or June 15 of the following year, moved to Monday if Saturday or Sunday (IRC 7503). DC legal holidays are not modeled.
+function dueDate(y,m){var t=utc(y,m,15);var w=new Date(t).getUTCDay();if(w===6)t+=2*MS;else if(w===0)t+=1*MS;return t;}
 
-function calculate() {
-  if (!state.first_year || !state.married_us) return;
-  
-  let eligible = false;
-  let reason = '';
-  
-  if (state.first_year === 'yes') {
-    eligible = true;
-    reason = 'You are in your first year as a US resident. You may elect dual-status treatment if you were not a US resident at any time during the two preceding calendar years (IRC §7701(b)(3)).';
-  } else if (state.married_us === 'yes') {
-    eligible = true;
-    reason = 'You married a US citizen or resident during this year. You may qualify for dual-status based on spousal election.';
+// Pure evaluation of the residency rules. Returns {errors:[], warnings:[], ...}
+function evaluate(inp){
+  var R={errors:[],warnings:[],steps:[]};
+  var Y=inp.fy; R.Y=Y; R.diy=daysInYear(Y);
+  var jan1=utc(Y,1,1), dec31=utc(Y,12,31); R.jan1=jan1; R.dec31=dec31;
+  var d0=nonNeg(inp.d0,R.diy), d1=nonNeg(inp.d1,daysInYear(Y-1)), d2=nonNeg(inp.d2,daysInYear(Y-2));
+  R.d0=d0;R.d1=d1;R.d2=d2;
+  // Substantial presence test: 31 days this year and 6*d0 + 2*d1 + d2 >= 1098 (that is, d0 + d1/3 + d2/6 >= 183)
+  R.w6=6*d0+2*d1+d2; R.weighted=R.w6/6;
+  R.sptNum = d0>=31 && R.w6>=1098;
+  R.exceptionAvail = (d0<183 && inp.closer==='yes' && inp.adj==='no');
+  R.sptBlocked = (inp.closer==='yes' && inp.adj==='yes' && R.sptNum && d0<183);
+  R.spt = R.sptNum && !R.exceptionAvail;
+  R.lpr = (inp.lpr==='yes');
+  R.prevRes = (inp.prev==='yes');
+  R.nextRes = (inp.next!=='nonres');
+  // First-year choice eligibility (IRC 7701(b)(4))
+  R.fycEligible=false; R.fycPct=null; R.fycNotes=[];
+  var fyc = (inp.fyc==='yes') && !R.lpr && !R.spt;
+  R.fycWanted=fyc;
+  var fycStart=null;
+  if(fyc){
+    fycStart=parseD(inp.fycStart);
+    if(fycStart===null||yearOf(fycStart)!==Y) R.errors.push('First-year choice: enter the first day of the 31-day period as a date in '+Y+'.');
+    else {
+      var span=diffDays(fycStart,dec31)+1; R.fycSpan=span;
+      var consec=nonNeg(inp.fycConsec,span), pres=nonNeg(inp.fycPresent,span), abs=nonNeg(inp.fycAbs,span);
+      var credit=Math.min(abs,5); R.fycCredit=credit;
+      var counted=Math.min(pres+credit,span); R.fycCounted=counted;
+      R.fycPct=counted/span;
+      var okPrev=!R.prevRes, okNext=(inp.next==='res_spt'), ok31=consec>=31, ok75=(counted*4>=span*3);
+      R.fycChecks={prev:okPrev,next:okNext,d31:ok31,pct:ok75};
+      R.fycEligible=okPrev&&okNext&&ok31&&ok75;
+      if(!R.fycEligible) R.warnings.push('First-year choice not available on these facts: '+(!okPrev?'resident in the preceding year; ':'')+(!okNext?'not a resident by the substantial presence test in the following year; ':'')+(!ok31?'fewer than 31 consecutive days; ':'')+(!ok75?'under 75 percent presence after the 5-day credit; ':'')+'treated as a nonresident alien (IRC 7701(b)(4)).');
+    }
+  }
+  R.fycUsed = fyc && R.fycEligible;
+  R.resident = R.lpr || R.spt || R.fycUsed;
+  if(!R.resident){
+    R.status='nr'; R.S=null; R.T=null; R.resDays=0; R.nrDays=R.diy; R.dual=false; R.form='1040-NR';
+    if(R.sptNum && R.exceptionAvail) R.steps.push('Substantial presence test met on days, but the closer connection exception applies (present fewer than 183 days; tax home and closer connection abroad; no pending LPR steps). IRC 7701(b)(3)(B). Form 8840 required.');
+    return R;
+  }
+  // ---- Residency starting date S ----
+  var S=jan1, sources=[];
+  if(R.prevRes){
+    S=jan1; R.sBasis='Resident in the preceding year, so residency began January 1 (Treas. Reg. 301.7701(b)-4(a); IRC 7701(b)(2)(A)(i)).';
   } else {
-    eligible = false;
-    reason = 'Based on your responses, dual-status treatment does not appear to apply. If you departed the US permanently this year, contact a tax professional to determine if departure-year dual-status applies.';
+    var cands=[];
+    if(R.lpr){
+      var ls=parseD(inp.lprStart);
+      if(inp.lprStart && (ls===null||yearOf(ls)!==Y)) R.errors.push('Green card: the first day present as an LPR must be a date in '+Y+'.');
+      else cands.push({t: ls===null?jan1:ls, why:'green card test: first day present as an LPR'});
+    }
+    if(R.spt){
+      var fp=parseD(inp.firstPresent);
+      if(fp===null||yearOf(fp)!==Y) R.errors.push('Substantial presence: enter the first day present in the US as a date in '+Y+'.');
+      else {
+        var sd=nonNeg(inp.startDays,100), use=fp, why='substantial presence test: first day present';
+        if(sd>10){R.warnings.push('More than 10 days cannot be disregarded; the first day present is used (IRC 7701(b)(2)(C)).');}
+        else if(sd>0){
+          var sc=parseD(inp.startCounted);
+          if(sc===null||yearOf(sc)!==Y||sc<fp) R.errors.push('To disregard '+sd+' day(s) at the start, enter the first day present that counts, on or after the first day present.');
+          else if(diffDays(fp,sc)<sd) R.errors.push('The first day that counts must be at least '+sd+' day(s) after the first day present.');
+          else {use=sc; why='substantial presence test: first day present after disregarding '+sd+' de minimis day(s) (closer connection statement required)';}
+        }
+        cands.push({t:use,why:why});
+      }
+    }
+    if(R.fycUsed && fycStart!==null) cands.push({t:fycStart,why:'first-year choice: first day of the 31-day period (IRC 7701(b)(4)(C))'});
+    if(cands.length){
+      cands.sort(function(a,b){return a.t-b.t;});
+      S=cands[0].t; R.sBasis='Earliest applicable date: '+cands[0].why+'. When both the green card test and the substantial presence test are met, the earlier date applies (Treas. Reg. 301.7701(b)-4(a)).';
+    } else { S=null; }
   }
-  
-  let html = `
-    <div class="result-box">
-      <h3>Dual-Status Eligible: ${eligible ? 'POSSIBLY' : 'UNLIKELY'}</h3>
-      <p style="font-size:13px;line-height:1.6;margin-top:8px">${reason}</p>
-      <p style="font-size:12px;color:var(--ink-80);margin-top:12px"><strong>Important:</strong> Dual-status is complex and requires proper election on Form 1040 or Form 1040-NR. Consult a tax professional before filing. This validator provides guidance only.</p>
-    </div>
-  `;
-  
-  document.getElementById('result_area').innerHTML = html;
+  // ---- Residency termination date T ----
+  var T=dec31;
+  if(!R.nextRes){
+    var aft=(inp.after==='yes' && inp.adj==='no');
+    if(inp.after==='yes' && inp.adj==='yes') R.warnings.push('An earlier termination date is not available if you applied, or took steps, to become an LPR (Pub. 519, ch. 1); residency runs to December 31.');
+    var tcs=[];
+    if(R.spt){
+      if(aft){
+        var lp=parseD(inp.lastPresent);
+        if(lp===null||yearOf(lp)!==Y) R.errors.push('Enter the last day present in the US as a date in '+Y+'.');
+        else {
+          var ed=nonNeg(inp.endDays,100), useT=lp, whyT='last day present in the US';
+          if(ed>10) R.warnings.push('More than 10 days cannot be disregarded; the last day present is used (IRC 7701(b)(2)(C)).');
+          else if(ed>0){
+            var ec=parseD(inp.endCounted);
+            if(ec===null||yearOf(ec)!==Y||ec>lp) R.errors.push('To disregard '+ed+' day(s) at the end, enter the last day present that counts, on or before the last day present.');
+            else if(diffDays(ec,lp)<ed) R.errors.push('The last day that counts must be at least '+ed+' day(s) before the last day present.');
+            else {useT=ec; whyT='last day present after disregarding '+ed+' de minimis day(s)';}
+          }
+          tcs.push({t:useT,why:'substantial presence test: '+whyT});
+        }
+      } else tcs.push({t:dec31,why:'substantial presence test: no earlier date without a foreign tax home and closer connection'});
+    }
+    if(R.lpr){
+      var le=parseD(inp.lprEnd);
+      if(inp.lprEnd && (le===null||yearOf(le)!==Y)) R.errors.push('Green card: the date LPR status ended must be a date in '+Y+'.');
+      else if(le!==null && aft) tcs.push({t:le,why:'green card test: first day no longer an LPR'});
+      else tcs.push({t:dec31,why:'green card test: '+(le===null?'still an LPR at year-end':'no earlier date without a foreign tax home and closer connection')});
+    }
+    if(tcs.length){
+      tcs.sort(function(a,b){return b.t-a.t;});
+      T=tcs[0].t; R.tBasis='Not a resident in the following year. '+tcs[0].why+'. When both tests are met, the later date applies (Treas. Reg. 301.7701(b)-4(b)(2)).';
+    }
+  } else {
+    R.tBasis='Resident in some part of the following year, so residency continues through December 31 (IRC 7701(b)(2)(B)(iii); Pub. 519, ch. 1).';
+  }
+  R.S=S; R.T=T;
+  if(S===null||R.errors.length){return R;}
+  if(T<S){R.errors.push('The residency termination date is earlier than the starting date. Check the dates.');return R;}
+  R.resDays=diffDays(S,T)+1; R.nrDays=R.diy-R.resDays;
+  R.startsLate=(S>jan1); R.endsEarly=(T<dec31);
+  R.dual=(R.startsLate||R.endsEarly);
+  R.status = R.dual ? 'dual' : 'res';
+  R.residentAtEnd = !R.endsEarly;
+  if(R.status==='res') R.form='1040';
+  else R.form = R.residentAtEnd ? '1040' : '1040-NR';
+  // Election note (6013(g)/(h)): married at year-end, NR at start, resident at end
+  R.electionNote = (R.startsLate && R.residentAtEnd && inp.married==='yes');
+  R.ltrNote = (R.lpr && R.endsEarly && inp.lprEnd);
+  return R;
 }
+
+function assumptionsRows(Y,R){
+  var tag='Statutory (not indexed)';
+  var r=[
+   ['Residency tests','Green card test or substantial presence test, plus the first-year choice',tag,'IRC 7701(b)(1)(A)'],
+   ['Substantial presence thresholds','31 days this year and 183 weighted days: current year x 1, 1 year earlier x 1/3, 2 years earlier x 1/6. Years counted: '+Y+', '+(Y-1)+', '+(Y-2),tag,'IRC 7701(b)(3)(A)'],
+   ['Closer connection exception','Present fewer than 183 days, foreign tax home, closer connection, no pending LPR steps; Form 8840',tag,'IRC 7701(b)(3)(B), (C)'],
+   ['Residency starting date','First day present (substantial presence) or first day present as an LPR; earlier of the two if both tests are met',tag,'IRC 7701(b)(2)(A); Treas. Reg. 301.7701(b)-4(a)'],
+   ['Residency termination date','Last day present or first day no longer an LPR, if closer connection and not a resident the following year; later of the two if both tests are met; otherwise December 31',tag,'IRC 7701(b)(2)(B); Treas. Reg. 301.7701(b)-4(b)'],
+   ['De minimis presence','Up to 10 days in total may be disregarded for the starting and termination dates',tag,'IRC 7701(b)(2)(C); Treas. Reg. 301.7701(b)-4(c)(1)'],
+   ['First-year choice','31 consecutive days present, 75 percent of days from the start of that period through December 31, up to 5 absence days credited; resident by substantial presence in the following year',tag,'IRC 7701(b)(4); Treas. Reg. 301.7701(b)-4(c)(3)'],
+   ['Days in tax year '+Y,R.diy+' ('+(isLeap(Y)?'leap year':'not a leap year')+')','Calendar','Gregorian calendar'],
+   ['Dual-status return forms','Resident at year-end: Form 1040 with a Form 1040-NR statement; nonresident at year-end: Form 1040-NR with a Form 1040 statement; "Dual Status Return" and "Dual Status Stmt" entered on the "Other" box','IRS-published (Pub. 519, 2025 edition; recheck for '+Y+')','Pub. 519 (2025), ch. 6, Forms To File'],
+   ['Due date','April 15 of '+(Y+1)+' for a resident at year-end; for a nonresident at year-end, April 15 with wages subject to withholding, otherwise June 15; weekend moves to Monday','Statutory date, calendar computed','Pub. 519 (2025), ch. 6, When and Where To File; IRC 7503'],
+   ['Dual-status restrictions','No standard deduction, no head of household, no joint return (unless choosing resident status)','IRS-published (Pub. 519, 2025 edition)','Pub. 519 (2025), ch. 6, Restrictions for Dual-Status Taxpayers'],
+   ['Long-term resident','LPR in at least 8 of 15 taxable years ending with the year status ends',tag,'IRC 877(e)(2)']
+  ];
+  var h=''; r.forEach(function(x){h+='<tr><td>'+x[0]+'</td><td>'+x[1]+'</td><td>'+x[2]+'</td><td>'+x[3]+'</td></tr>';}); return h;
+}
+
+function row(l,v,c){return '<div class="srow"><span class="sl">'+l+'</span><span class="sv'+(c?' '+c:'')+'">'+v+'</span></div>';}
+
+function calc(){
+  var g=function(id){return document.getElementById(id);};
+  var Y=parseInt(g('fy').value,10)||2026;
+  var inp={fy:Y,prev:g('prev').value,next:g('next').value,lpr:g('lpr').value,lprStart:g('lprStart').value,lprEnd:g('lprEnd').value,ltr:g('ltr').value,
+    treaty:g('treaty').value,d0:g('d0').value,d1:g('d1').value,d2:g('d2').value,closer:g('closer').value,adj:g('adj').value,
+    firstPresent:g('firstPresent').value,startDays:g('startDays').value,startCounted:g('startCounted').value,
+    fyc:g('fyc').value,fycStart:g('fycStart').value,fycConsec:g('fycConsec').value,fycPresent:g('fycPresent').value,fycAbs:g('fycAbs').value,
+    after:g('after').value,lastPresent:g('lastPresent').value,endDays:g('endDays').value,endCounted:g('endCounted').value,married:g('married').value};
+  g('d0_lab').innerHTML='Days present in '+Y; g('d1_lab').innerHTML='Days present in '+(Y-1); g('d2_lab').innerHTML='Days present in '+(Y-2);
+  g('year_badge').innerHTML='<span class="badge-pub">Statutory tests, not inflation indexed - same rules for '+Y+'</span>'+(Y>2026?' <span class="hint">Calendar and filing dates computed for '+Y+'. Forms and instructions for '+Y+' are not yet published; recheck form names against the '+Y+' instructions.</span>':'');
+  var R=evaluate(inp);
+  g('lpr_wrap').style.display=(inp.lpr==='yes')?'':'none';
+  // Which follow-on sections to show
+  g('start_card').style.display=(inp.prev==='no' && (R.resident||(!R.lpr&&!R.spt)))?'':'none';
+  g('spt_start_wrap').style.display=(inp.prev==='no' && R.spt)?'':'none';
+  g('fyc_wrap').style.display=(inp.prev==='no' && !R.lpr && !R.spt)?'':'none';
+  g('end_card').style.display=(R.resident && inp.next==='nonres' && (R.spt||R.lpr))?'':'none';
+  g('end_counted_wrap').style.display=(R.spt && inp.after==='yes')?'':'none';
+
+  var m='';
+  R.errors.forEach(function(e){m+='<div class="warn-box">'+e+'</div>';});
+  R.warnings.forEach(function(e){m+='<div class="note-box">'+e+'</div>';});
+  if(inp.treaty==='yes') m+='<div class="note-box">Treaty tie-breaker: an individual who meets the green card test but claims nonresident status under a treaty tie-breaker is treated as a nonresident for computing US tax (IRC &sect;7701(b)(6)(B); Pub. 519, ch. 1). The result below ignores that claim; Form 8833 and the treaty analysis are outside this tool.</div>';
+  g('msgs').innerHTML=m;
+
+  var res='', math='', forms='';
+  if(R.errors.length){
+    res='<div class="warn-box"><h3>Result pending</h3>Fix the dates flagged above to see the residency starting date, termination date and return type.</div>';
+  } else if(!R.resident){
+    res='<div class="ok-box"><h3>Nonresident alien for all of '+Y+'</h3>No residency test is met for '+Y+', so the year is not a dual-status year. Form 1040-NR is the return if a filing requirement exists (Pub. 519, ch. 7).</div>';
+  } else if(R.status==='res'){
+    res='<div class="ok-box"><h3>Resident alien for all of '+Y+' (not dual status)</h3>Residency starts '+fmt(R.S)+' and runs through '+fmt(R.T)+'. File Form 1040 as a full-year resident.</div>';
+  } else {
+    res='<div class="warn-box"><h3>Dual-status year: YES</h3>Resident alien from '+fmt(R.S)+' through '+fmt(R.T)+' ('+R.resDays+' days); nonresident alien for the other '+R.nrDays+' days of '+Y+'.</div>';
+  }
+  g('result').innerHTML=res;
+
+  // Step-by-step math
+  math='<div class="stepttl">Step-by-step math</div><div class="sum-box"><div class="sum-title">Residency determination for '+Y+'</div>';
+  math+=row('Green card test: LPR at any time in '+Y+'?',R.lpr?'YES':'NO',R.lpr?'red':'green');
+  math+=row(Y+' days x 1 = ',R.d0+' x 1 = '+R.d0);
+  math+=row((Y-1)+' days x 1/3 = ',R.d1+' x 1/3 = '+(R.d1/3).toFixed(2));
+  math+=row((Y-2)+' days x 1/6 = ',R.d2+' x 1/6 = '+(R.d2/6).toFixed(2));
+  math+=row('Weighted days (exact: '+R.w6+' / 6)',R.weighted.toFixed(2));
+  math+=row('Test: at least 31 days in '+Y+' and weighted days of 183 or more',R.sptNum?'MET':'NOT MET',R.sptNum?'red':'green');
+  if(R.sptNum && R.d0<183) math+=row('Closer connection exception available?',R.exceptionAvail?'YES (nonresident)':(R.sptBlocked?'NO (LPR steps taken)':'NO / not claimed'),R.exceptionAvail?'green':'red');
+  math+=row('Substantial presence test result',R.spt?'RESIDENT':'NOT A RESIDENT',R.spt?'red':'green');
+  if(R.fycWanted) math+=row('First-year choice eligible?',R.fycEligible?'YES':'NO',R.fycEligible?'green':'red');
+  if(R.fycWanted && R.fycPct!==null) math+=row('75 percent test: ('+R.fycCounted+' counted days) / ('+R.fycSpan+' days in testing period)',(R.fycPct*100).toFixed(1)+'%');
+  if(R.resident && !R.errors.length && R.S!==null){
+    math+=row('Residency starting date',fmtW(R.S));
+    math+=row('Residency termination date',fmtW(R.T));
+    math+=row('Resident days = ('+fmt(R.T)+' - '+fmt(R.S)+') + 1',String(R.resDays));
+    math+=row('Nonresident days = '+R.diy+' - '+R.resDays,String(R.nrDays));
+    math+=row('Dual-status year?',R.dual?'YES':'NO',R.dual?'red':'green');
+  }
+  math+='</div>';
+  if(R.resident && !R.errors.length && R.S!==null){
+    math+='<div class="hint">Start: '+R.sBasis+'</div>';
+    if(R.tBasis) math+='<div class="hint">End: '+R.tBasis+'</div>';
+    math+='<div class="hint">Convention: the termination date is counted as the last resident day. The regulation fixes the date but does not say whether that day falls in the resident or nonresident period; verify if the single day matters.</div>';
+  } else if(R.steps.length){
+    math+='<div class="hint">'+R.steps.join(' ')+'</div>';
+  }
+  g('math').innerHTML=math;
+
+  // Forms, restrictions and notes
+  if(R.resident && !R.errors.length && R.status==='dual'){
+    var dueRes=dueDate(Y+1,4);
+    forms='<div class="stepttl">Return to file</div>';
+    if(R.residentAtEnd){
+      forms+='<div class="info-box"><h3>Form 1040 (or 1040-SR) with a Form 1040-NR statement</h3>You are a resident on the last day of '+Y+'. Check the "Other" box at the top of Form 1040 and write "Dual Status Return" on the entry line. Attach Form 1040-NR as a statement for the nonresident part of the year, with the "Other" box checked and "Dual Status Stmt" on the entry line. Due '+fmtW(dueRes)+' (Pub. 519, ch. 6).</div>';
+    } else {
+      var dueW=dueDate(Y+1,4), dueN=dueDate(Y+1,6);
+      forms+='<div class="info-box"><h3>Form 1040-NR with a Form 1040 statement</h3>You are a nonresident on the last day of '+Y+'. File Form 1040-NR, check the "Other" box and write "Dual Status Return" on the entry line. Attach Form 1040 (or 1040-SR) as a statement for the resident part of the year, with the "Other" box checked and "Dual Status Stmt" on the entry line. Due '+fmtW(dueW)+' if you receive wages subject to withholding, otherwise '+fmtW(dueN)+' (Pub. 519, ch. 6).</div>';
+    }
+    forms+='<div class="note-box">Due dates move only for weekends here. The legal holiday rule of IRC &sect;7503 (District of Columbia holidays such as Emancipation Day on April 16) can add a day; verify the date in the year\'s instructions. Pub. 519 (2025) states dual-status returns cannot be e-filed for tax year 2025; verify the rule for '+Y+'.</div>';
+    forms+='<div class="stepttl">Dual-status restrictions</div><div class="ok-box">No standard deduction (itemize allowable deductions); no head of household filing status; no joint return, unless you choose to be treated as a resident for the entire year. Pub. 519 (2025), ch. 6, Restrictions for Dual-Status Taxpayers. Income is allocated between the periods under Treas. Reg. &sect;1.871-13.</div>';
+    if(R.electionNote) forms+='<div class="note-box"><strong>Election available:</strong> because you are married at year-end to a US citizen or resident alien, you and your spouse may be able to choose to be treated as US residents for the entire year and file jointly (IRC &sect;6013(h); Pub. 519, ch. 1, Choosing Resident Alien Status). Marriage by itself does not create dual status. With the choice, the dual-status restrictions do not apply, and you are taxed on worldwide income for the whole year.</div>';
+    if(R.ltrNote){
+      var ltrTxt = inp.ltr==='yes' ? 'You indicated you are a long-term resident, so ceasing to be an LPR is treated as expatriation: file Form 8854 with the return (IRC &sect;877(e)(1); Pub. 519, ch. 4).' : (inp.ltr==='no' ? 'You indicated you are not a long-term resident (fewer than 8 of the last 15 taxable years as an LPR), so the expatriation rules of IRC &sect;877(e) should not apply. Confirm the count of taxable years.' : 'If you were an LPR in at least 8 of the last 15 taxable years, you are a long-term resident and ceasing to be an LPR is treated as expatriation (IRC &sect;877(e)); Form 8854 may be required (Pub. 519, ch. 4). Count the years to confirm.');
+      forms+='<div class="note-box"><strong>Long-term resident check:</strong> '+ltrTxt+'</div>';
+    }
+  } else if(R.resident && !R.errors.length && R.status==='res'){
+    forms='<div class="stepttl">Return to file</div><div class="info-box"><h3>Form 1040</h3>Full-year resident: file Form 1040 (or 1040-SR), due '+fmtW(dueDate(Y+1,4))+' (weekend adjustment only; verify any DC legal holiday under IRC &sect;7503).</div>';
+  } else if(!R.resident && !R.errors.length){
+    forms='<div class="stepttl">Return to file</div><div class="info-box"><h3>Form 1040-NR, if required</h3>Due '+fmtW(dueDate(Y+1,4))+' if you receive wages subject to withholding, otherwise '+fmtW(dueDate(Y+1,6))+' (weekend adjustment only). Attach Form 8840 if claiming the closer connection exception and Form 8843 if excluding days as an exempt individual or for a medical condition (Pub. 519, ch. 1).</div>';
+  }
+  g('forms').innerHTML=forms;
+  g('assump_body').innerHTML=assumptionsRows(Y,R);
+}
+calc();
 </script>
 
-
-<script src="/shared.js"></script>
-
-
-
-
+<script>
+function doPrint(){window.print();}
+function doShare(){var url=location.href;var title=document.title.replace(' | CPA Validated','');if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
+function showShareModal(url,title){if(document.getElementById('sv-ol'))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]];var ol=document.createElement('div');ol.id='sv-ol';ol.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center';var h='<div style="background:#111111;width:100%;max-width:520px"><div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share</span><button id="sv-x" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px">&times;<\/button><\/div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'<\/a>';});h+='<button id="sv-cp" style="padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link<\/button><\/div><\/div>';ol.innerHTML=h;document.body.appendChild(ol);document.getElementById('sv-x').onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById('sv-cp').onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);});}catch(e2){var t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);}};}</script>
+</div>
 </div>
 
-<script src="/shared.js"></script>
+
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
@@ -159,5 +712,6 @@ function calculate() {
   </div>
 </div>
 <!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
 </body>
 </html>

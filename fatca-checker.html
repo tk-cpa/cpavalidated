@@ -292,7 +292,7 @@ FATCA (Form 8938) and FBAR (FinCEN Form 114) are separate requirements with diff
     </details>
     <div class="note-box"><strong>Projected figures are estimates.</strong> For tax years after 2026 the Form 8938 and FBAR forms and instructions have not been published. This checker assumes the thresholds and filing dates in the current regulations and IRS guidance continue unchanged. If Treasury or FinCEN changes them, the result for those years will differ. Not tax advice.</div>
     <div class="verified">Last verified: October 29, 2026</div>
-    <div class="src"><strong>Authority:</strong> IRC &sect;6038D(a), (d); Treas. Reg. &sect;1.6038D-1(a)(2); Treas. Reg. &sect;1.6038D-2(a)(1)-(4), (a)(7), (c)(3), (e); IRC &sect;911(d)(1); IRC &sect;7503; 31 USC 5314; 31 CFR 1010.350(b); 31 CFR 1010.306(c); IRS, About Form 8938; IRS, Summary of FATCA Reporting for US Taxpayers; IRS, Comparison of Form 8938 and FBAR Requirements; IRS, Report of Foreign Bank and Financial Accounts (FBAR).</div>
+    <div class="src"><strong>Authority:</strong> IRC &sect;6038D(a), (d); Treas. Reg. &sect;1.6038D-1(a)(2); Treas. Reg. &sect;1.6038D-2(a)(1)-(4), (a)(7), (c)(3), (e); IRC &sect;911(d)(1); IRC &sect;7503; 31 USC 5314; 31 CFR 1010.350(b); 31 CFR 1010.100(hhh); 31 CFR 1010.306(c); IRS, About Form 8938; IRS, Summary of FATCA Reporting for US Taxpayers; IRS, Comparison of Form 8938 and FBAR Requirements; IRC &sect;6013(g)(1); IRC &sect;7503(a).</div>
   </div>
 </div>
 
@@ -330,9 +330,13 @@ function thresholdsFor(abroad, filing){
 // Pure evaluation. inp: {fy,status,dualres,abroad,filing,spouse_spec,joint,needReturn,fbar_max,ye,mx}
 function evaluate(inp){
   var R = {};
-  var fbarPerson = (inp.status==='citizen' || inp.status==='resident' || inp.status==='nra_poss');
+  // 31 CFR 1010.350(b): US person = citizen, or resident alien under IRC 7701(b) (territories count as the United States), or domestic entity.
+  var fbarPerson = (inp.status==='citizen' || inp.status==='resident');
   R.fbarPerson = fbarPerson;
-  R.fbarRequired = fbarPerson && inp.fbar_max > FBAR_THRESHOLD;
+  R.fbarState = fbarPerson ? (inp.fbar_max > FBAR_THRESHOLD ? 'yes' : 'no_amount')
+              : (inp.status==='nra_poss' && inp.fbar_max > FBAR_THRESHOLD ? 'verify'
+              : (inp.fbar_max > FBAR_THRESHOLD ? 'no_status' : 'no_amount'));
+  R.fbarRequired = (R.fbarState==='yes');
   var specified = (inp.status!=='nra');
   R.specified = specified;
   R.dualExempt = (inp.status==='resident' && inp.dualres==='yes');
@@ -361,7 +365,7 @@ function assumptions(fy, R){
   var st = proj ? 'Regulatory (assumed unchanged; Projected year)' : 'Regulatory / IRS-published';
   var rows = [
     ['FBAR aggregate threshold', '$10,000 at any time during the calendar year (strictly more than)', st, '31 CFR 1010.306(c); IRS FBAR page'],
-    ['FBAR due date, calendar year '+fy, dateStr(fy+1,4,15)+'; automatic extension to '+dateStr(fy+1,10,15), proj?'Projected (IRS date rule assumed unchanged)':'IRS-published', 'IRS: Report of Foreign Bank and Financial Accounts (FBAR); 31 CFR 1010.306(c) text still reads June 30'],
+    ['FBAR due date, calendar year '+fy, dateStr(fy+1,4,15)+'; automatic extension to '+dateStr(fy+1,10,15), proj?'Projected (IRS date rule assumed unchanged)':'IRS-published', 'IRS, Comparison of Form 8938 and FBAR Requirements (April 15, automatic 6-month extension to October 15); 31 CFR 1010.306(c) text still reads June 30'],
     ['Form 8938 threshold - living in the US, unmarried or married filing separately', '$50,000 last day / $75,000 any time', st, 'Treas. Reg. 1.6038D-2(a)(1)'],
     ['Form 8938 threshold - living in the US, married filing jointly', '$100,000 last day / $150,000 any time', st, 'Treas. Reg. 1.6038D-2(a)(2)'],
     ['Form 8938 threshold - living abroad, unmarried or married filing separately', '$200,000 last day / $300,000 any time', st, 'Treas. Reg. 1.6038D-2(a)(3)'],
@@ -397,14 +401,16 @@ function calc(){
   // FBAR
   var fh = '<div class="stepttl">FBAR (FinCEN Form 114)</div>';
   var d1 = dateStr(fy+1,4,15), d2 = dateStr(fy+1,10,15);
-  if(!R.fbarPerson){
-    fh += '<div class="ok-box"><h3>FBAR Required: NO (based on status)</h3>A nonresident alien without an election to be treated as a US resident for FBAR purposes is generally not a "United States person" under 31 CFR 1010.350(b). A &sect;6013(g) or (h) election applies for income tax chapters 1 and 24 and is not a &sect;7701(b) residency determination. Confirm status before relying on this.</div>';
+  if(R.fbarState==='no_status'){
+    fh += '<div class="ok-box"><h3>FBAR Required: NO (based on status)</h3>A nonresident alien is not a "United States person" for the FBAR: a resident of the United States means a resident alien under IRC &sect;7701(b) (31 CFR 1010.350(b)(2)). The &sect;6013(g) or (h) election treats the individual as a resident only for chapter 1 income tax and chapter 24 withholding (IRC &sect;6013(g)(1)), not for Title 31. Confirm the &sect;7701(b) status for any part of the year before relying on this.</div>';
+  } else if(R.fbarState==='verify'){
+    fh += '<div class="note-box"><h3>FBAR Required: VERIFY</h3>For the FBAR, "United States" includes the territories (31 CFR 1010.100(hhh); IRS comparison chart), and a resident of the United States is a resident alien under IRC &sect;7701(b) measured that way (31 CFR 1010.350(b)(2)). Whether this nonresident alien who is a bona fide resident of Puerto Rico or a &sect;931 possession is a resident alien on that test turns on the green card and substantial presence tests and is not determined here. If so, the FBAR is required because the aggregate exceeds $10,000. Due '+d1+'; automatic extension to '+d2+'.</div>';
   } else if(R.fbarRequired){
     fh += '<div class="warn-box"><h3>FBAR Required: YES</h3>Aggregate maximum value '+money(inp.fbar_max)+' is more than $10,000. File FinCEN Form 114 electronically through the BSA E-Filing System. Due '+d1+'; automatic extension to '+d2+' (no request needed). Penalties: see the <a href="fbar-penalty-estimator.html">FBAR Penalty Estimator</a>.</div>';
   } else {
     fh += '<div class="ok-box"><h3>FBAR Required: NO</h3>Aggregate maximum value '+money(inp.fbar_max)+' does not exceed $10,000. No FBAR is required for '+fy+' on these facts. Recheck if you also have signature authority over accounts or any account is omitted.</div>';
   }
-  if(inp.status==='nra_poss') fh += '<div class="note-box">For FBAR the "United States" includes the territories, so resident aliens of a US territory are subject to FBAR reporting (IRS, Comparison of Form 8938 and FBAR Requirements; 31 CFR 1010.350(b)(2)).</div>';
+  if(inp.status==='nra_poss') fh += '<div class="note-box">Form 8938: a nonresident alien who is a bona fide resident of Puerto Rico or a &sect;931 possession is a specified individual (Treas. Reg. &sect;1.6038D-1(a)(2)(iv)). Assets of a bona fide resident of a US possession that are excluded from reporting under Treas. Reg. &sect;1.6038D-7(c) are also excluded from the threshold value (Treas. Reg. &sect;1.6038D-2(a)(6)(i)); this checker does not apply that exclusion, so review it against the Form 8938 instructions before relying on the result.</div>';
   if(inp.status==='resident' && inp.dualres==='yes') fh += '<div class="note-box">Treaty tie-breaker filers: this checker does not resolve whether a dual resident treated as a nonresident for income tax is an FBAR "resident." Verify before concluding no FBAR is due.</div>';
   document.getElementById('fbar-result').innerHTML = fh;
 

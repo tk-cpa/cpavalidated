@@ -5,88 +5,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>PFIC / Form 8621 Checker & Tax Regime Analyzer 2026 | CPA Validated</title>
-<meta name="description" content="Determine PFIC status using income and asset tests. Compare excess distribution (IRC §1291), QEF election (IRC §1293), and mark-to-market (IRC §1296) regimes. Form 8621 filing requirements. CPA-validated. Free.">
+<title>PFIC / Form 8621 Checker 2026-2030 | CPA Validated</title>
+<meta name="description" content="Test PFIC status, estimate the Section 1291 excess distribution computation line by line on Form 8621 Part V, estimate QEF and mark-to-market inclusions, and check Form 8621 filing for tax years 2026-2030. CPA-validated.">
 <link rel="canonical" href="https://cpavalidated.com/pfic-8621-checker.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111111;--ink-80:#343A40;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald','Arial Narrow',sans-serif;--font-sans:'Inter',-apple-system,sans-serif;--font-mono:'Courier New',monospace}
-*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:960px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(24px,4vw,44px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);max-width:72ch;line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
-.back{max-width:960px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}.back a:hover{color:var(--coral)}
-.wrap{max-width:960px;margin:0 auto;padding:24px 24px 0}
-.callout{background:var(--amber-bg);border-left:4px solid var(--amber);padding:14px 18px;margin-bottom:20px;font-size:13px;color:var(--amber);line-height:1.6}
-.callout strong{font-weight:700}
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:900px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 24px 0}
 .card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
-.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:26px;height:26px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
 .cb{padding:20px}
 .fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
 .f1{display:flex;flex-direction:column;gap:5px}
 .f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
 .f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
-.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;border-radius:0;appearance:none}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
 .fc:focus{border-color:var(--coral)}
 select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
-.slider-row{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-.slider-val{font-family:var(--font-display);font-weight:500;font-size:22px;color:var(--coral);min-width:52px;text-align:right}
-input[type=range]{flex:1;accent-color:var(--coral);height:4px}
-.test-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
-.test-box{border:2px solid var(--ink-20);padding:16px;position:relative}
-.test-box.pass{border-color:var(--green);background:var(--green-bg)}
-.test-box.fail{border-color:var(--red-b);background:var(--red-bg)}
-.test-box.warn{border-color:var(--amber-b);background:var(--amber-bg)}
-.test-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px;font-family:var(--font-mono)}
-.test-val{font-family:var(--font-display);font-size:36px;font-weight:500;line-height:1}
-.test-box.pass .test-val{color:var(--green)}
-.test-box.fail .test-val{color:var(--red)}
-.test-box.warn .test-val{color:var(--amber)}
-.test-verdict{font-size:11px;font-weight:600;margin-top:6px}
-.test-box.pass .test-verdict{color:var(--green)}
-.test-box.fail .test-verdict{color:var(--red)}
-.test-box.warn .test-verdict{color:var(--amber)}
-.verdict-banner{padding:16px 20px;margin-bottom:16px;border:2px solid;display:flex;align-items:center;gap:14px}
-.verdict-banner.pfic{background:var(--red-bg);border-color:var(--red-b)}
-.verdict-banner.not-pfic{background:var(--green-bg);border-color:var(--green-b)}
-.verdict-banner.maybe{background:var(--amber-bg);border-color:var(--amber-b)}
-.vb-icon{font-size:28px;flex-shrink:0}
-.vb-title{font-family:var(--font-display);font-size:22px;font-weight:500}
-.verdict-banner.pfic .vb-title{color:var(--red)}
-.verdict-banner.not-pfic .vb-title{color:var(--green)}
-.verdict-banner.maybe .vb-title{color:var(--amber)}
-.vb-sub{font-size:12px;color:var(--ink-60);margin-top:3px;line-height:1.5}
-.regime-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
-.regime-box{border:2px solid var(--ink-20);padding:16px}
-.regime-box.best{border-color:var(--coral);background:var(--coral-100)}
-.regime-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin-bottom:6px;font-family:var(--font-mono)}
-.regime-name{font-family:var(--font-display);font-size:17px;font-weight:500;margin-bottom:8px}
-.regime-tax{font-family:var(--font-display);font-size:28px;font-weight:500;color:var(--coral);margin-bottom:4px}
-.regime-desc{font-size:11px;color:var(--ink-60);line-height:1.5}
-.best-tag{font-size:9px;font-weight:700;background:var(--coral);color:#fff;padding:2px 8px;display:inline-block;margin-bottom:6px}
-.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
-.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
-.sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:20px}
-.sum-row:last-child{border-bottom:none;font-weight:700}
-.sum-lbl{color:rgba(255,255,255,.5)}.sum-val{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right}
-.sum-val.green{color:#6de88e}.sum-val.amber{color:#f5c264}.sum-val.red{color:#ff8f8a}.sum-val.coral{color:var(--coral)}
+.penalty-compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+.pc-box{border:2px solid var(--ink-20);padding:14px;text-align:center}
+.pc-box.worst{border-color:var(--red-b);background:var(--red-bg)}
+.pc-box.mid{border-color:var(--amber-b);background:var(--amber-bg)}
+.pc-box.best{border-color:var(--green-b);background:var(--green-bg)}
+.pc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;font-family:var(--font-mono)}
+.pc-box.worst .pc-label{color:var(--red)}.pc-box.mid .pc-label{color:var(--amber)}.pc-box.best .pc-label{color:var(--green)}
+.pc-amount{font-family:var(--font-display);font-size:22px;font-weight:500}
+.pc-box.worst .pc-amount{color:var(--red)}.pc-box.mid .pc-amount{color:var(--amber)}.pc-box.best .pc-amount{color:var(--green)}
+.pc-desc{font-size:11px;margin-top:5px;line-height:1.4}
+.pc-box.worst .pc-desc{color:var(--red)}.pc-box.mid .pc-desc{color:var(--amber)}.pc-box.best .pc-desc{color:var(--green)}
 .flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
 .flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
 .fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
 .flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
-.form-req{background:var(--ink-10);border:1px solid var(--ink-20);padding:14px 18px;margin-bottom:14px}
-.fr-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--coral);margin-bottom:10px;font-family:var(--font-mono)}
-.fr-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:1px solid var(--ink-20);font-size:12.5px}
-.fr-item:last-child{border-bottom:none}
-.fr-check{color:var(--coral);font-weight:700;flex-shrink:0}
-.pbn{background:var(--coral);color:#fff;border:none;padding:12px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;margin-top:6px}.pbn:hover{background:var(--coral-600)}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}
 .src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
-.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:14px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
-.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:20px 24px;margin-top:0}
-.related-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60);margin-bottom:12px}
-.related-links{display:flex;gap:10px;flex-wrap:wrap}
-.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px}
-.rl:hover{background:var(--coral-100)}
-@media(max-width:640px){.fg2,.fg3,.test-grid,.regime-grid{grid-template-columns:1fr}}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.penalty-compare{grid-template-columns:1fr}}
 /* === category nav bar === */
 .cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .cat-nav::-webkit-scrollbar{display:none}
@@ -120,16 +85,56 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 .nav-cta:hover{opacity:.88}
 @media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
+<style>
+/* === g05 calculator additions === */
+.yrbadge{display:none}
+.badge-proj{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+.warn-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 14px;margin-top:12px;font-size:12px;line-height:1.5;color:var(--red)}
+.ok-box{background:var(--green-bg);border-left:3px solid var(--green);padding:14px;margin-top:12px;font-size:13px;line-height:1.55}
+.ok-box h3,.warn-box h3,.info-box h3{font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.info-box{background:var(--blue-bg);border-left:3px solid var(--blue-acc);padding:14px;margin-top:12px;font-size:12.5px;line-height:1.55}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw span{color:var(--ink-80,#343A40)}
+.rw strong{font-family:var(--font-mono);text-align:right}
+.rw.tot{border-bottom:2px solid var(--ink);font-weight:700}
+.rw.tot span{color:var(--ink)}
+.stepttl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin:16px 0 4px}
+details.assump{margin-top:16px;border:1px solid var(--ink-20);background:var(--white)}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.dtab{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.dtab th{background:var(--ink-10);text-align:left;padding:7px 9px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60);border:1px solid var(--ink-20)}
+.dtab td{padding:7px 9px;border:1px solid var(--ink-20);vertical-align:top}
+.dtab td.num,.dtab th.num{text-align:right;font-family:var(--font-mono)}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+.hint{font-size:11px;color:var(--ink-60);margin-top:2px;line-height:1.5}
+.f1 input[type=date]{min-height:40px}
+.yn-group{display:flex;border:1.5px solid var(--ink-20);overflow:hidden}
+.yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;background:var(--white);color:var(--ink-60);border-right:1px solid var(--ink-20)}
+.yn-btn:last-child{border-right:none}
+.yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
+.yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
+.yn-btn.unsel:hover{background:var(--ink-10)}
+.sec-note{font-size:12px;color:var(--ink-60);line-height:1.5;margin:0 0 12px}
+@media(max-width:640px){.fc{font-size:16px}.rw{flex-direction:column;gap:2px}.rw strong{text-align:left}.wrap{padding:20px 16px 0}.phi{padding:0 16px}.back{padding:12px 16px 0}}
+@media print{details.assump{display:block}details.assump>*{display:block}}
+/* === end g05 additions === */
+</style>
   <meta property="og:type" content="article">
-  <meta property="og:title" content="PFIC / Form 8621 Checker & Tax Regime Analyzer 2026 | CPA Validated">
-  <meta property="og:description" content="Determine PFIC status using income and asset tests. Compare excess distribution (IRC §1291), QEF election (IRC §1293), and mark-to-market (IRC §1296) regimes. Form 8621 filing requirements. CPA-valida">
+  <meta property="og:title" content="PFIC / Form 8621 Checker 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Test PFIC status, estimate the Section 1291 excess distribution computation line by line on Form 8621 Part V, estimate QEF and mark-to-market inclusions, and check Form 8621 filing for tax years 2026-2030. CPA-validated.">
   <meta property="og:url" content="https://cpavalidated.com/pfic-8621-checker.html">
   <meta property="og:site_name" content="CPA Validated">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="PFIC / Form 8621 Checker & Tax Regime Analyzer 2026 | CPA Validated">
-  <meta name="twitter:description" content="Determine PFIC status using income and asset tests. Compare excess distribution (IRC §1291), QEF election (IRC §1293), and mark-to-market (IRC §1296) regimes. Form 8621 filing requirements. CPA-valida">
+  <meta name="twitter:title" content="PFIC / Form 8621 Checker 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Test PFIC status, estimate the Section 1291 excess distribution computation line by line on Form 8621 Part V, estimate QEF and mark-to-market inclusions, and check Form 8621 filing for tax years 2026-2030. CPA-validated.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"PFIC / Form 8621 Checker & Tax Regime Analyzer 2026 | CPA Validated","url":"https://cpavalidated.com/pfic-8621-checker.html","description":"Determine PFIC status using income and asset tests. Compare excess distribution (IRC §1291), QEF election (IRC §1293), and mark-to-market (IRC §1296) regimes. Form 8621 filing requirements. CPA-valida","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"PFIC / Form 8621 Checker 2026-2030 | CPA Validated","url":"https://cpavalidated.com/pfic-8621-checker.html","description":"Test PFIC status, estimate the Section 1291 excess distribution computation line by line on Form 8621 Part V, estimate QEF and mark-to-market inclusions, and check Form 8621 filing for tax years 2026-2030. CPA-validated.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
   </script>
 </head>
 <body>
@@ -156,366 +161,670 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 <div class="ph"><div class="phi">
-  <h1>PFIC / Form 8621 Checker & Regime Analyzer</h1>
-  <div class="sub">Determine PFIC status using the income and asset tests. Compare all three tax regimes: Excess Distribution (§1291), QEF Election (§1293), and Mark-to-Market (§1296). Form 8621 filing requirements. 2026.</div>
+  <div class="ph-eyebrow">PFIC Tool</div>
+  <h1>PFIC / Form 8621 Checker 2026-2030</h1>
+  <div class="sub">Test PFIC status, estimate the Section 1291 excess distribution computation line by line (Form 8621 Part V), estimate QEF and mark-to-market current-year inclusions, and determine whether Form 8621 is required, for tax years 2026 through 2030.</div>
   <div class="badges">
-    <span class="badge">IRC §1291 (Excess Distribution)</span>
-    <span class="badge">IRC §1293-1295 (QEF)</span>
-    <span class="badge">IRC §1296 (Mark-to-Market)</span>
-    <span class="badge">IRC §1297-1298 (PFIC Definition)</span>
+    <span class="badge">IRC &sect;1291</span>
+    <span class="badge">IRC &sect;1293-1295 (QEF)</span>
+    <span class="badge">IRC &sect;1296 (Mark-to-Market)</span>
+    <span class="badge">IRC &sect;1297-1298</span>
     <span class="badge">Form 8621</span>
   </div>
 </div></div>
-<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 
 <div class="wrap">
 
-<div class="callout"><strong>What is a PFIC?</strong> A Passive Foreign Investment Company is any foreign corporation that meets either: (1) the Income Test - 75%+ of gross income is passive income (dividends, interest, rents, royalties, gains), or (2) the Asset Test - 50%+ of assets by value produce or are held to produce passive income. IRC §1297(a). Common examples: foreign mutual funds, foreign ETFs, foreign holding companies with passive investments. Canadian TFSAs and certain Israeli Keren Hishtalmut accounts may also trigger PFIC rules. The tax consequences of PFIC ownership without proper elections are severe.</div>
+<div class="info-box"><h3>How to use this checker</h3>
+A passive foreign investment company (PFIC) is a foreign corporation that meets the income test (75 percent or more of gross income is passive) or the asset test (average passive assets of at least 50 percent) in IRC &sect;1297(a). Complete Sections 1 and 2 for status and filing, then the section for the regime that applies to you. The tool estimates; it does not choose a regime for you, because the three regimes tax different amounts in different years and the right choice depends on facts outside this tool. Individuals only (the highest rate table is IRC &sect;1 rates).</div>
 
-<!-- Step 1: Entity -->
 <div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Foreign Entity Information</h2></div>
+  <div class="ch"><div class="sb">1</div><h2>Tax Year and Shareholder</h2></div>
   <div class="cb">
     <div class="fg3">
-      <div class="f1"><label>Entity Type</label>
-        <select class="fc" id="entityType" onchange="calc()">
-          <option value="fund">Foreign mutual fund / investment fund</option>
-          <option value="etf">Foreign ETF (exchange-listed)</option>
-          <option value="holdco">Foreign holding company</option>
-          <option value="bank">Foreign bank or insurance company</option>
-          <option value="operating">Foreign operating company</option>
-          <option value="other">Other foreign corporation</option>
+      <div class="f1"><label for="fy">Tax Year (current year)</label>
+        <select class="fc" id="fy" onchange="calc()">
+          <option value="2026" selected>2026 (return due 2027)</option>
+          <option value="2027">2027 (return due 2028)</option>
+          <option value="2028">2028 (return due 2029)</option>
+          <option value="2029">2029 (return due 2030)</option>
+          <option value="2030">2030 (return due 2031)</option>
         </select>
-        <div class="hint">Foreign mutual funds and ETFs are almost always PFICs. Foreign operating companies depend on the income and asset tests.</div>
+        <div class="hint">The year of the distribution, disposition or inclusion.</div>
       </div>
-      <div class="f1"><label>Country of Incorporation</label>
-        <select class="fc" id="country" onchange="calc()">
-          <option value="canada">Canada</option>
-          <option value="ireland">Ireland / Luxembourg (EU fund domicile)</option>
-          <option value="israel">Israel</option>
-          <option value="uk">United Kingdom</option>
-          <option value="germany">Germany</option>
-          <option value="cayman">Cayman Islands / BVI</option>
-          <option value="cyprus">Cyprus</option>
-          <option value="switzerland">Switzerland</option>
-          <option value="russia">Russia</option>
-          <option value="other">Other</option>
+      <div class="f1"><label for="shType">Shareholder</label>
+        <select class="fc" id="shType" onchange="calc()">
+          <option value="indiv" selected>Individual (or trust taxed like an individual)</option>
+          <option value="exempt">IRA, 401(a)/403(b)/457(b) plan, 529, ABLE, Coverdell, or other listed tax-exempt holder</option>
+          <option value="corp">Corporation (rates under IRC &sect;11 not modeled)</option>
         </select>
+        <div class="hint">Treas. Reg. &sect;1.1298-1(c)(1) exception for listed tax-exempt holders.</div>
       </div>
-      <div class="f1"><label>Is this also a CFC?</label>
-        <select class="fc" id="isCFC" onchange="calc()">
-          <option value="no">No - not a Controlled Foreign Corporation</option>
-          <option value="yes">Yes - US persons own >50% (vote or value)</option>
-          <option value="unsure">Unsure</option>
+      <div class="f1"><label for="joint">Filing a joint return?</label>
+        <select class="fc" id="joint" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
         </select>
-        <div class="hint">If CFC, the PFIC overlap rule under IRC §1297(d) may prevent the §1291 excess distribution regime from applying to US shareholders subject to Subpart F.</div>
+        <div class="hint">Raises the $25,000 Form 8621 value exception to $50,000. Treas. Reg. &sect;1.1298-1(c)(2)(iii).</div>
       </div>
     </div>
-    <div class="fg2">
-      <div class="f1"><label>Is Stock Traded on a Recognized Exchange?</label>
-        <select class="fc" id="marketable" onchange="calc()">
-          <option value="yes">Yes - listed on NYSE, NASDAQ, LSE, TSX, or recognized exchange</option>
-          <option value="no">No - private fund, private company, or OTC only</option>
+    <div class="fg3">
+      <div class="f1"><label for="own">How the PFIC stock is held</label>
+        <select class="fc" id="own" onchange="calc()">
+          <option value="direct" selected>Directly</option>
+          <option value="indirect_foreign">Indirectly through one or more foreign entities</option>
+          <option value="indirect_us">Indirectly through a US person or US pass-through</option>
         </select>
-        <div class="hint">Marketability is required for the Mark-to-Market (MTM) election under IRC §1296. Non-marketable PFICs cannot elect MTM.</div>
+        <div class="hint">Treas. Reg. &sect;1.1298-1(b)(1), (2).</div>
       </div>
-      <div class="f1"><label>Is a PFIC Annual Statement Available?</label>
-        <select class="fc" id="annualStatement" onchange="calc()">
-          <option value="yes">Yes - fund provides annual PFIC statement (ordinary income + net capital gain per share)</option>
-          <option value="no">No - fund does not provide a PFIC statement</option>
+      <div class="f1"><label for="pfValue">Total value of all PFIC stock you own on the last day of the year ($)</label>
+        <input type="number" class="fc" id="pfValue" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">All PFICs: QEFs, section 1291 funds and mark-to-market stock, excluding stock held through another US person or another PFIC. Treas. Reg. &sect;1.1298-1(c)(2)(ii).</div>
+      </div>
+      <div class="f1"><label for="regime">Regime that applies to this PFIC</label>
+        <select class="fc" id="regime" onchange="calc()">
+          <option value="1291" selected>Section 1291 (default, no election)</option>
+          <option value="qef">Qualified electing fund (QEF), IRC &sect;1295</option>
+          <option value="mtm">Mark-to-market, IRC &sect;1296</option>
         </select>
-        <div class="hint">QEF election under IRC §1295 requires the fund to furnish an annual PFIC statement. Most foreign funds do not provide this.</div>
+        <div class="hint">Section 1291 applies unless a QEF or mark-to-market election is in effect. IRC &sect;1291(d)(1).</div>
       </div>
     </div>
+    <div id="year_badge"></div>
   </div>
 </div>
 
-<!-- Step 2: PFIC Tests -->
 <div class="card">
-  <div class="ch"><div class="sb">2</div><h2>PFIC Status Tests &nbsp;&bull;&nbsp; IRC §1297(a)</h2></div>
+  <div class="ch"><div class="sb">2</div><h2>PFIC Status Tests &nbsp;&bull;&nbsp; IRC &sect;1297</h2></div>
   <div class="cb">
+    <div class="stepttl">Income test</div>
     <div class="fg2">
-      <div class="f1">
-        <label>Income Test: % of Gross Income That Is Passive</label>
-        <div class="slider-row">
-          <input type="range" id="incomeTest" min="0" max="100" value="80" oninput="document.getElementById('incomeTestVal').textContent=this.value+'%';calc()">
-          <span class="slider-val" id="incomeTestVal">80%</span>
-        </div>
-        <div class="hint">Passive income = dividends, interest, rents, royalties, annuities, net gain from passive property. IRC §1297(b). PFIC threshold: 75%+.</div>
+      <div class="f1"><label for="passInc">Passive gross income for the year ($)</label>
+        <input type="number" class="fc" id="passInc" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Income of a kind that is foreign personal holding company income under IRC &sect;954(c), subject to the exceptions in &sect;1297(b)(2) (active bank, qualifying insurance corporation, certain related-person payments, export trade income).</div>
       </div>
-      <div class="f1">
-        <label>Asset Test: % of Assets That Are Passive (by FMV)</label>
-        <div class="slider-row">
-          <input type="range" id="assetTest" min="0" max="100" value="70" oninput="document.getElementById('assetTestVal').textContent=this.value+'%';calc()">
-          <span class="slider-val" id="assetTestVal">70%</span>
-        </div>
-        <div class="hint">Passive assets = assets that produce or are held to produce passive income. PFIC threshold: 50%+. IRC §1297(a)(2).</div>
+      <div class="f1"><label for="totInc">Total gross income for the year ($)</label>
+        <input type="number" class="fc" id="totInc" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">PFIC if passive income is 75 percent or more of gross income. IRC &sect;1297(a)(1).</div>
+      </div>
+    </div>
+    <div class="stepttl">Asset test</div>
+    <div class="fg3">
+      <div class="f1"><label for="pubTraded">Stock regularly traded on a qualifying exchange?</label>
+        <select class="fc" id="pubTraded" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div class="hint">Publicly traded corporations measure assets by value. IRC &sect;1297(e)(1)(A), (e)(3).</div>
+      </div>
+      <div class="f1"><label for="isCFC">Is the entity a controlled foreign corporation (CFC)?</label>
+        <select class="fc" id="isCFC" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div class="hint">A CFC that is not publicly traded measures assets by adjusted basis. IRC &sect;1297(e)(2)(A).</div>
+      </div>
+      <div class="f1"><label for="basisElect">Has the entity elected the adjusted-basis method?</label>
+        <select class="fc" id="basisElect" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div class="hint">Available only if not publicly traded. IRC &sect;1297(e)(2)(B).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="passAssets" id="passAssets_lab">Average passive assets for the year ($)</label>
+        <input type="number" class="fc" id="passAssets" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Assets that produce, or are held to produce, passive income. Use the average over the taxable year. IRC &sect;1297(a)(2).</div>
+      </div>
+      <div class="f1"><label for="totAssets">Average total assets for the year ($)</label>
+        <input type="number" class="fc" id="totAssets" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">PFIC if the average percentage of passive assets is at least 50 percent.</div>
+      </div>
+    </div>
+    <div class="stepttl">Overlap and look-back rules</div>
+    <div class="fg2">
+      <div class="f1"><label for="cfcSh">Are you a US shareholder of the entity while it is a CFC?</label>
+        <select class="fc" id="cfcSh" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes - 10 percent or more by vote or value (IRC &sect;951(b))</option>
+        </select>
+        <div class="hint">CFC overlap rule: not a PFIC as to you during the qualified portion of your holding period. IRC &sect;1297(d).</div>
+      </div>
+      <div class="f1"><label for="tainted">Was the entity a PFIC (and not a QEF) at an earlier time in your holding period?</label>
+        <select class="fc" id="tainted" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
+        </select>
+        <div class="hint">Once-a-PFIC rule: the stock stays PFIC stock unless a purging election is made. IRC &sect;1298(b)(1).</div>
       </div>
     </div>
     <div id="testResults"></div>
   </div>
 </div>
 
-<!-- Step 3: Investment Details -->
-<div class="card">
-  <div class="ch"><div class="sb">3</div><h2>Investment Details</h2></div>
+<div class="card" id="c1291">
+  <div class="ch"><div class="sb">3</div><h2>Section 1291: Distributions and Dispositions</h2></div>
   <div class="cb">
+    <p class="sec-note">Complete for the default regime. Holding period runs from the acquisition date to the date of the distribution or disposition. Losses on disposition are not taken into account (Form 8621 instructions, line 15f). Enter whole dollars in US dollars; convert foreign currency first.</p>
     <div class="fg3">
-      <div class="f1"><label>Cost Basis (Total Investment) ($)</label>
-        <input type="number" class="fc" id="basis" value="50000" oninput="calc()">
-        <div class="hint">Total amount paid for the PFIC shares (USD)</div>
+      <div class="f1"><label for="acq">Date you acquired the stock</label>
+        <input type="date" class="fc" id="acq" oninput="calc()">
+        <div class="hint">Holding period under IRC &sect;1223. IRC &sect;1291(a)(3)(A).</div>
       </div>
-      <div class="f1"><label>Current Fair Market Value ($)</label>
-        <input type="number" class="fc" id="fmv" value="75000" oninput="calc()">
-        <div class="hint">Current FMV of your PFIC holding (USD)</div>
+      <div class="f1"><label for="firstPfic">First year the entity was a PFIC</label>
+        <input type="number" class="fc" id="firstPfic" value="1987" min="1987" max="2030" step="1" inputmode="numeric" oninput="calc()">
+        <div class="hint">Days before January 1 of this year are pre-PFIC days. Assumes a calendar-year entity. IRC &sect;1291(a)(1)(B)(ii).</div>
       </div>
-      <div class="f1"><label>Years Held</label>
-        <input type="number" class="fc" id="years" value="5" min="1" max="40" oninput="calc()">
-        <div class="hint">Number of tax years held (including current year)</div>
+      <div class="f1"><label for="intRate">Interest rate (percent per year, compounded daily)</label>
+        <input type="number" class="fc" id="intRate" value="7" min="0" max="25" step="0.01" inputmode="decimal" oninput="calc()">
+        <div class="hint">Section 6621 underpayment rate for individuals; 7 percent for the fourth quarter of 2026. Actual interest uses each quarter's rate; see the assumptions table.</div>
       </div>
     </div>
     <div class="fg3">
-      <div class="f1"><label>Distributions Received This Year ($)</label>
-        <input type="number" class="fc" id="distributions" value="3000" oninput="calc()">
-        <div class="hint">Total distributions (dividends, returns of capital) received in the current tax year</div>
+      <div class="f1"><label for="marg">Your marginal ordinary rate (percent)</label>
+        <input type="number" class="fc" id="marg" value="37" min="0" max="100" step="0.1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Applied to amounts included as ordinary income in the current year (lines 15e nonexcess and 16b).</div>
       </div>
-      <div class="f1"><label>Prior 3-Year Average Annual Distribution ($)</label>
-        <input type="number" class="fc" id="priorAvgDist" value="2000" oninput="calc()">
-        <div class="hint">Average of distributions received in the 3 prior tax years. Used to calculate excess distributions. IRC §1291(b)(2).</div>
+    </div>
+    <div class="stepttl">Distributions this year</div>
+    <div class="fg3">
+      <div class="f1"><label for="dist">Total distributions this year (line 15a) ($)</label>
+        <input type="number" class="fc" id="dist" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
       </div>
-      <div class="f1"><label>Current Tax Year (for interest calculation)</label>
-        <select class="fc" id="taxYear" onchange="calc()">
-          <option value="2026">2026</option>
-          <option value="2025">2025</option>
-          <option value="2024">2024</option>
+      <div class="f1"><label for="distDate">Date of the distribution</label>
+        <input type="date" class="fc" id="distDate" oninput="calc()">
+        <div class="hint">If several, use the weighted date or run each separately. Excess is apportioned among distributions (Form 8621 instructions).</div>
+      </div>
+      <div class="f1"><label for="ftcDist">Creditable foreign tax on the excess distribution ($)</label>
+        <input type="number" class="fc" id="ftcDist" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Reduces each PFIC year's increase in tax, not below zero. Line 16d.</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label for="p1" id="p1_lab">Distributions 1 year earlier ($)</label>
+        <input type="number" class="fc" id="p1" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Reduce by prior excess distributions not included in income under IRC &sect;1291(a)(1)(B). Line 15b.</div>
+      </div>
+      <div class="f1"><label for="p2" id="p2_lab">Distributions 2 years earlier ($)</label>
+        <input type="number" class="fc" id="p2" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="p3" id="p3_lab">Distributions 3 years earlier ($)</label>
+        <input type="number" class="fc" id="p3" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+    </div>
+    <div class="stepttl">Disposition this year (gain is treated as an excess distribution)</div>
+    <div class="fg3">
+      <div class="f1"><label for="gain">Gain recognized on disposition (line 15f) ($)</label>
+        <input type="number" class="fc" id="gain" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Enter gain only. Stock is disposed of if sold, transferred or pledged. IRC &sect;1291(a)(2).</div>
+      </div>
+      <div class="f1"><label for="dispDate">Date of the disposition</label>
+        <input type="date" class="fc" id="dispDate" oninput="calc()">
+      </div>
+      <div class="f1"><label for="ftcGain">Creditable foreign tax on the gain ($)</label>
+        <input type="number" class="fc" id="ftcGain" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="cqef" style="display:none">
+  <div class="ch"><div class="sb">3</div><h2>QEF: Current-Year Inclusion &nbsp;&bull;&nbsp; IRC &sect;1293</h2></div>
+  <div class="cb">
+    <p class="sec-note">Enter the amounts from the PFIC annual information statement. A QEF shareholder includes a pro rata share of ordinary earnings and net capital gain whether or not distributed. IRC &sect;1293(a).</p>
+    <div class="fg2">
+      <div class="f1"><label for="q6a">Pro rata share of ordinary earnings (line 6a) ($)</label>
+        <input type="number" class="fc" id="q6a" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="q6b">Portion included under &sect;951 or excludable under &sect;1293(g) (line 6b) ($)</label>
+        <input type="number" class="fc" id="q6b" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="q7a">Pro rata share of net capital gain (line 7a) ($)</label>
+        <input type="number" class="fc" id="q7a" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="q7b">Portion included under &sect;951 or excludable under &sect;1293(g) (line 7b) ($)</label>
+        <input type="number" class="fc" id="q7b" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="qMarg">Your marginal ordinary rate (percent)</label>
+        <input type="number" class="fc" id="qMarg" value="37" min="0" max="100" step="0.1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Applied to line 6c.</div>
+      </div>
+      <div class="f1"><label for="qLt">Your long-term capital gain rate (percent)</label>
+        <input type="number" class="fc" id="qLt" value="20" min="0" max="100" step="0.1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Your own rate; not verified by this tool. Net capital gain is reported as a long-term gain on Schedule D (Form 8621 instructions, line 7c).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="cmtm" style="display:none">
+  <div class="ch"><div class="sb">3</div><h2>Mark-to-Market: Current-Year Inclusion &nbsp;&bull;&nbsp; IRC &sect;1296</h2></div>
+  <div class="cb">
+    <p class="sec-note">The election requires marketable stock. IRC &sect;1296(e). Gain is ordinary income; loss is an ordinary loss only to the extent of unreversed inclusions. IRC &sect;1296(a), (c).</p>
+    <div class="fg3">
+      <div class="f1"><label for="m10a">Fair market value at year-end (line 10a) ($)</label>
+        <input type="number" class="fc" id="m10a" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="m10b">Adjusted basis at year-end (line 10b) ($)</label>
+        <input type="number" class="fc" id="m10b" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="m11">Unreversed inclusions (line 11) ($)</label>
+        <input type="number" class="fc" id="m11" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Prior inclusions less prior deductions. IRC &sect;1296(d).</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="mFirst">First mark-to-market year, with the stock held before the election and not a QEF for every PFIC year?</label>
+        <select class="fc" id="mFirst" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes</option>
         </select>
+        <div class="hint">Then section 1291 applies to the first-year mark-to-market gain as if it were gain on disposition. IRC &sect;1296(j)(1). Uses the acquisition date, first PFIC year and interest rate entered below, with December 31 of the tax year as the event date.</div>
+      </div>
+      <div class="f1"><label for="mAcq">Date you acquired the stock (first-year case only)</label>
+        <input type="date" class="fc" id="mAcq" oninput="calc()">
+      </div>
+      <div class="f1"><label for="mFirstPfic">First year the entity was a PFIC (first-year case only)</label>
+        <input type="number" class="fc" id="mFirstPfic" value="1987" min="1987" max="2030" step="1" inputmode="numeric" oninput="calc()">
+      </div>
+      <div class="f1"><label for="mMarg">Your marginal ordinary rate (percent)</label>
+        <input type="number" class="fc" id="mMarg" value="37" min="0" max="100" step="0.1" inputmode="decimal" oninput="calc()">
+      </div>
+      <div class="f1"><label for="mInt">Interest rate (first-year case only, percent)</label>
+        <input type="number" class="fc" id="mInt" value="7" min="0" max="25" step="0.01" inputmode="decimal" oninput="calc()">
       </div>
     </div>
   </div>
 </div>
 
-<!-- Step 4: Results -->
 <div class="card">
-  <div class="ch"><div class="sb">4</div><h2>Results & Regime Comparison</h2></div>
-  <div class="cb" id="results">
-    <div style="text-align:center;color:var(--ink-60);padding:20px">Complete the fields above to see your analysis.</div>
+  <div class="ch"><div class="sb">4</div><h2>Results</h2></div>
+  <div class="cb">
+    <div id="msgs"></div>
+    <div id="statusResult"></div>
+    <div id="filingResult"></div>
+    <div id="regimeResult"></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">5</div><h2>Purging and Related Elections</h2></div>
+  <div class="cb">
+    <div class="info-box">If the entity is a PFIC that is not a QEF, the stock stays PFIC stock for the rest of your holding period even in years when the tests are not met (IRC &sect;1298(b)(1)). Elections on Form 8621 Part II can address this: a deemed sale election (IRC &sect;1291(d)(2)(A); Treas. Reg. &sect;1.1291-10), a deemed dividend election for a CFC (IRC &sect;1291(d)(2)(B)), and the elections for former PFICs and section 1297(e) PFICs (Form 8621, Part II, Elections F, G and H). A QEF election is made on or before the due date, with extensions, of the return for the first year it is to apply (IRC &sect;1295(b)(2)); a retroactive election is available only to the extent the regulations allow where the shareholder reasonably believed the company was not a PFIC. Each of these has conditions and consequences that this tool does not model.</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="ch"><div class="sb">6</div><h2>Assumptions and Sources</h2></div>
+  <div class="cb">
+    <details class="assump" id="assump_box">
+      <summary>Assumptions &amp; sources</summary>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Parameter</th><th>Value (selected year)</th><th>Status</th><th>Citation</th></tr></thead>
+        <tbody id="assump_body"></tbody>
+      </table></div>
+    </details>
+    <div class="note-box"><strong>Projected years and simplifications.</strong> The PFIC thresholds, the 125 percent rule and the highest-rate table for 2027 through 2030 are statutory and unchanged. The IRS has not published the Form 8621 or its instructions for those years, so line references follow the 12/2025 revision, and the interest rate is a user input because future quarterly rates are not known. Interest is estimated with one flat rate compounded daily; actual interest applies each quarter's rate under IRC &sect;6621 (see Rev. Rul. 2024-18 and successor rulings for history). Net investment income tax, state tax, foreign currency translation, partial-year annualization of distributions (Prop. Treas. Reg. &sect;1.1291-2) and multiple distributions on different dates are not modeled. Not tax advice.</div>
+    <div class="verified">Last verified: October 29, 2026</div>
+    <div class="src"><strong>Authority:</strong> IRC &sect;1(j) (as amended by Pub. L. 119-21, &sect;70101); IRC &sect;&sect;1291, 1293, 1295, 1296, 1297, 1298; Treas. Reg. &sect;1.1298-1; Treas. Reg. &sect;1.1291-10; IRS Form 8621 (Rev. 12-2025) and Instructions for Form 8621 (12/2025); IRS news release IR-2026-98 (fourth quarter 2026 interest rates).</div>
   </div>
 </div>
 
 </div>
 
-<!-- Related tools -->
-<div class="related">
-  <div style="max-width:960px;margin:0 auto">
-    <div class="related-label">Related Tools & Guides on CPA Validated</div>
-    <div class="related-links">
-      <a href="form-5471-checker.html" class="rl">CFC / Form 5471 Checker</a>
-      <a href="fbar-checker.html" class="rl">FBAR & Form 8938 Checker</a>
-      <a href="form-5472.html" class="rl">Form 5472 Analyzer</a>
-      <a href="ftc-calculator.html" class="rl">Foreign Tax Credit Calculator</a>
-      <a href="pre-immigration-planning.html" class="rl">Pre-Immigration Planning Guide</a>
-      <a href="gilti-explained.html" class="rl">GILTI Explained</a>
-      <a href="streamlined-checker.html" class="rl">Streamlined Procedures Checker</a>
-      <a href="foreign-pension-reporting.html" class="rl">Foreign Pension Reporting</a>
-      <a href="vetted-resources.html" class="rl">Vetted Resources</a>
-    </div>
-  </div>
-</div>
+<div class="related"><div style="max-width:900px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools &amp; Guides</div>
+  <a href="pfic-guide.html" class="rl">PFIC Guide</a>
+  <a href="form-5471-checker.html" class="rl">CFC / Form 5471 Checker</a>
+  <a href="fbar-checker.html" class="rl">FBAR &amp; Form 8938 Checker</a>
+  <a href="ftc-calculator.html" class="rl">Foreign Tax Credit Calculator</a>
+  <a href="gilti-explained.html" class="rl">GILTI Explained</a>
+  <a href="streamlined-checker.html" class="rl">Streamlined Procedures Checker</a>
+  <a href="foreign-pension-reporting.html" class="rl">Foreign Pension Reporting</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
 
 <script>
-function fmt(n){if(n===undefined||n===null) return '$0'; const abs=Math.abs(Math.round(n)); return (n<0?'-':'')+'$'+abs.toLocaleString('en-US');}
-function pct(n){return (n*100).toFixed(1)+'%';}
-function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var MS=86400000;
+// Highest rate of tax in effect under IRC section 1 by calendar year: Form 8621 instructions (12/2025) for 1987-2025; IRC 1(j), made permanent by Pub. L. 119-21, for 2026 and later.
+var HIGH={1987:38.5,1988:28,1989:28,1990:28,1991:31,1992:31,1993:39.6,1994:39.6,1995:39.6,1996:39.6,1997:39.6,1998:39.6,1999:39.6,2000:39.6,2001:39.1,2002:38.6,
+  2003:35,2004:35,2005:35,2006:35,2007:35,2008:35,2009:35,2010:35,2011:35,2012:35,2013:39.6,2014:39.6,2015:39.6,2016:39.6,2017:39.6,
+  2018:37,2019:37,2020:37,2021:37,2022:37,2023:37,2024:37,2025:37,2026:37,2027:37,2028:37,2029:37,2030:37};
+var INCOME_PCT=75, ASSET_PCT=50, EXCESS_MULT=1.25;
 
-function calc(){
-  const entityType = document.getElementById('entityType').value;
-  const country    = document.getElementById('country').value;
-  const isCFC      = document.getElementById('isCFC').value;
-  const marketable = document.getElementById('marketable').value;
-  const annualStmt = document.getElementById('annualStatement').value;
-  const incomeTest = parseInt(document.getElementById('incomeTest').value);
-  const assetTest  = parseInt(document.getElementById('assetTest').value);
-  const basis      = parseFloat(document.getElementById('basis').value)||0;
-  const fmv        = parseFloat(document.getElementById('fmv').value)||0;
-  const years      = parseInt(document.getElementById('years').value)||1;
-  const distributions = parseFloat(document.getElementById('distributions').value)||0;
-  const priorAvgDist  = parseFloat(document.getElementById('priorAvgDist').value)||0;
+function money(n){var r=Math.round(n); return (r<0?'-':'')+'$'+Math.abs(r).toLocaleString('en-US');}
+function nn(v){var n=parseFloat(v); return (isNaN(n)||n<0)?0:n;}
+function parseD(s){
+  if(!s||typeof s!=='string') return null;
+  var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s.trim()); if(!m) return null;
+  var y=+m[1],mo=+m[2],d=+m[3]; var t=Date.UTC(y,mo-1,d); var dt=new Date(t);
+  if(dt.getUTCFullYear()!==y||dt.getUTCMonth()!==mo-1||dt.getUTCDate()!==d) return null;
+  return t;
+}
+function yr(t){return new Date(t).getUTCFullYear();}
+function fmtD(t){var d=new Date(t);return MONTHS[d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear();}
+function dd(a,b){return Math.round((b-a)/MS);}
 
-  const gain = Math.max(0, fmv - basis);
-  const incomePass = incomeTest >= 75;
-  const assetPass  = assetTest >= 50;
-  const isPFIC     = incomePass || assetPass;
-
-  // Test result boxes
-  const testHTML = `<div class="test-grid">
-    <div class="test-box ${incomeTest>=75?'fail':'pass'}">
-      <div class="test-label">Income Test &nbsp;·&nbsp; IRC §1297(a)(1)</div>
-      <div class="test-val">${incomeTest}%</div>
-      <div class="test-verdict">${incomeTest>=75?'PFIC - Threshold Exceeded (75%+)':'Below PFIC Threshold (under 75%)'}</div>
-      <div style="font-size:11px;color:var(--ink-60);margin-top:6px">Threshold: 75% of gross income must be passive</div>
-    </div>
-    <div class="test-box ${assetTest>=50?'fail':'pass'}">
-      <div class="test-label">Asset Test &nbsp;·&nbsp; IRC §1297(a)(2)</div>
-      <div class="test-val">${assetTest}%</div>
-      <div class="test-verdict">${assetTest>=50?'PFIC - Threshold Exceeded (50%+)':'Below PFIC Threshold (under 50%)'}</div>
-      <div style="font-size:11px;color:var(--ink-60);margin-top:6px">Threshold: 50% of assets must be passive by FMV</div>
-    </div>
-  </div>`;
-  document.getElementById('testResults').innerHTML = testHTML;
-
-  if(!isPFIC){
-    document.getElementById('results').innerHTML = `
-      <div class="verdict-banner not-pfic"><div class="vb-icon">✓</div><div><div class="vb-title">Not a PFIC - Under Both Thresholds</div><div class="vb-sub">Neither the income test (${incomeTest}% vs. 75% threshold) nor the asset test (${assetTest}% vs. 50% threshold) is met. No PFIC regime applies. However, verify annually - PFIC status is re-tested each tax year and can change if the entity's income or asset composition changes. IRC §1297(a).</div></div></div>
-      ${flag('blue','ℹ','<strong>Monitor annually.</strong> PFIC status is re-determined each tax year. A corporation that was not a PFIC in year 1 can become a PFIC in year 2. If an entity becomes a PFIC after a US person has already held stock, the shareholder is subject to the look-back rules of IRC §1291 on any gain attributable to years when it was a PFIC. IRC §1298(b)(1).')}
-      ${flag('blue','ℹ','<strong>Form 8621 may still be required.</strong> Even if the entity is not currently a PFIC, Form 8621 may be required if the shareholder received distributions, sold shares, or held stock in a prior-year PFIC. Confirm with the full Form 8621 instructions.')}
-      <div class="src">IRC §1297(a) (PFIC income and asset tests); IRC §1298(b)(1) (once-a-PFIC-always-a-PFIC rule); Form 8621 Instructions (2025).</div>`;
-    return;
+// Section 1291 allocation of one amount (excess distribution or gain) over the holding period.
+// Returns rows by tax year with allocation, classification, increase in tax, FTC reduction, net increase, interest.
+function allocate(E, acq, evt, firstPfic, ratePct, ftc){
+  var res={rows:[],total:0,line16b:0,line16c:0,line16d:0,line16e:0,line16f:0,ok:true};
+  var evY=yr(evt), acY=yr(acq);
+  var total=dd(acq,evt)+1; res.total=total;
+  var dueEvt=Date.UTC(evY+1,3,15);
+  for(var y=acY;y<=evY;y++){
+    var s=Math.max(acq,Date.UTC(y,0,1)), e=Math.min(evt,Date.UTC(y,11,31));
+    var days=dd(s,e)+1; if(days<=0) continue;
+    var share=E*days/total;
+    var row={year:y,days:days,share:share,kind:'',tax:0,ftc:0,net:0,intDays:0,interest:0};
+    if(y===evY){row.kind='current'; res.line16b+=share;}
+    else if(y<firstPfic){row.kind='pre-PFIC'; res.line16b+=share;}
+    else {
+      var hr=HIGH[y]; if(hr===undefined){res.ok=false; hr=37;}
+      row.kind='PFIC year'; row.rate=hr;
+      row.tax=share*hr/100;
+      row.ftc=Math.min(ftc*days/total,row.tax);
+      row.net=row.tax-row.ftc;
+      row.intDays=dd(Date.UTC(y+1,3,15),dueEvt);
+      row.interest=row.net*(Math.pow(1+ratePct/100/365,row.intDays)-1);
+      res.line16c+=row.tax; res.line16d+=row.ftc; res.line16f+=row.interest;
+    }
+    res.rows.push(row);
   }
-
-  // PFIC - calculate all three regimes
-  // ─── §1291 Excess Distribution ───
-  const excessDist = Math.max(0, distributions - (1.25 * priorAvgDist));
-  const regularDist = distributions - excessDist;
-  const excessDistTaxRate = 0.37; // highest ordinary rate
-  const interestRateApprox = 0.08; // approximate §6621 rate
-  // Spread excess over holding period, apply tax + interest
-  const excessPerYear = excessDist / years;
-  let sect1291TaxTotal = 0;
-  for(let y = years; y >= 1; y--){
-    const yearTax = excessPerYear * excessDistTaxRate;
-    const yearsAgo = years - y;
-    const interest = yearTax * interestRateApprox * yearsAgo;
-    sect1291TaxTotal += yearTax + interest;
-  }
-  // Also handle gain on disposition using same method
-  const gainPerYear = gain / years;
-  let sect1291GainTax = 0;
-  for(let y = years; y >= 1; y--){
-    const yearGainTax = gainPerYear * excessDistTaxRate;
-    const yearsAgo = years - y;
-    const interest = yearGainTax * interestRateApprox * yearsAgo;
-    sect1291GainTax += yearGainTax + interest;
-  }
-  const regularDistTax = regularDist * 0.20; // qualified rate (simplified)
-  const sect1291Total = sect1291TaxTotal + sect1291GainTax + regularDistTax;
-  const sect1291Available = true;
-
-  // ─── QEF Election §1293-1295 ───
-  const qefAvailable = annualStmt === 'yes';
-  // QEF: include ordinary income + net cap gain annually, taxed at regular rates
-  // Simplified: if gain exists, assume proportional ordinary/cap gain split
-  const qefOrdinaryRate = 0.37;
-  const qefCapGainRate = 0.20;
-  // Without knowing actual QEF statements, estimate total inclusion similar to current gain + distributions
-  const qefEstIncome = distributions + (gain / years); // rough annual inclusion
-  const qefTax = qefAvailable ? (qefEstIncome * 0.28) : null; // blended estimate
-  const qefTotalEst = qefAvailable ? (qefEstIncome * 0.28 * years * 0.6) : null; // rough total
-
-  // ─── Mark-to-Market §1296 ───
-  const mtmAvailable = marketable === 'yes';
-  // MTM: annual mark to FMV, gain = ordinary income, loss = ordinary to extent of prior gains
-  const annualAppreciation = gain / years; // simplified linear appreciation
-  const mtmRate = 0.37; // ordinary income rate
-  const mtmAnnualTax = annualAppreciation * mtmRate;
-  const mtmTotalEst = mtmAvailable ? (mtmAnnualTax * years) : null;
-
-  // Determine best regime (lowest estimated tax)
-  const regimeData = [
-    { id:'1291', name:'Excess Distribution', irc:'IRC §1291', available:true, tax:sect1291Total, desc:'Default regime. Punitive interest charge. Gain on sale treated as excess distribution spread over holding period.', caveat:'No election required - automatic if no other election made.' },
-    { id:'qef',  name:'QEF Election', irc:'IRC §1293-1295', available:qefAvailable, tax:qefTotalEst, desc:'Include pro-rata share of PFIC ordinary income and capital gain annually. Clean exit - no §1291 on later disposition if QEF from start.', caveat:qefAvailable?'Requires annual PFIC statement from fund.':'Not available - fund does not provide annual PFIC statement.' },
-    { id:'mtm',  name:'Mark-to-Market', irc:'IRC §1296', available:mtmAvailable, tax:mtmTotalEst, desc:'Annual mark to FMV. All gain treated as ordinary income. No §1291 interest charge. Only for marketable stock.', caveat:mtmAvailable?'Only available for marketable PFIC stock (listed on recognized exchange).':'Not available - stock is not traded on a recognized exchange.' },
-  ];
-
-  const availableRegimes = regimeData.filter(r => r.available && r.tax !== null);
-  const bestRegime = availableRegimes.length > 0 ? availableRegimes.reduce((a,b) => a.tax < b.tax ? a : b) : null;
-
-  let h = '';
-
-  // Verdict
-  h += `<div class="verdict-banner pfic"><div class="vb-icon">!</div><div><div class="vb-title">PFIC Status Confirmed</div><div class="vb-sub">${incomePass?`Income test: ${incomeTest}% - exceeds 75% threshold. `:''}${assetPass?`Asset test: ${assetTest}% - exceeds 50% threshold.`:''} IRC §1297(a). Form 8621 filing required. Tax regime election may be available and can significantly reduce tax liability.</div></div></div>`;
-
-  // Regime comparison
-  h += `<div style="margin-bottom:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-60)">Tax Regime Comparison (Estimated)</div>`;
-  h += `<div class="regime-grid">`;
-  for(const r of regimeData){
-    const isBest = bestRegime && r.id === bestRegime.id;
-    h += `<div class="regime-box ${isBest?'best':''}">
-      ${isBest?'<div class="best-tag">LOWEST ESTIMATED TAX</div>':''}
-      <div class="regime-label">${r.irc}</div>
-      <div class="regime-name">${r.name}</div>
-      ${r.available && r.tax!==null ? `<div class="regime-tax">${fmt(r.tax)}</div>` : `<div style="font-size:14px;font-weight:600;color:var(--ink-40);margin-bottom:4px">Not Available</div>`}
-      <div class="regime-desc">${r.desc}</div>
-      <div style="font-size:10px;color:var(--ink-60);margin-top:8px;font-style:italic">${r.caveat}</div>
-    </div>`;
-  }
-  h += `</div>`;
-
-  // §1291 detail
-  h += `<div class="sum-box"><div class="sum-title">Section 1291 Excess Distribution Detail</div>
-    <div class="sum-row"><span class="sum-lbl">Total distributions this year</span><span class="sum-val">${fmt(distributions)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">125% of prior 3-year average (${fmt(priorAvgDist)} × 1.25)</span><span class="sum-val">${fmt(priorAvgDist*1.25)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Excess distribution (taxed at 37% + interest)</span><span class="sum-val red">${fmt(excessDist)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Regular distribution (taxed at preferential rates)</span><span class="sum-val">${fmt(regularDist)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Unrealized gain (if disposed this year)</span><span class="sum-val">${fmt(gain)}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Holding period</span><span class="sum-val">${years} year${years>1?'s':''}</span></div>
-    <div class="sum-row"><span class="sum-lbl">Approx. §6621 interest rate used</span><span class="sum-val">8.0% (estimated)</span></div>
-    <div class="sum-row"><span class="sum-lbl"><strong>Estimated total §1291 tax + interest charge</strong></span><span class="sum-val red">${fmt(sect1291Total)}</span></div>
-  </div>`;
-
-  // Form 8621 filing requirements
-  h += `<div class="form-req"><div class="fr-title">Form 8621 Filing Requirements</div>`;
-  const triggers = [
-    'Receives a distribution from a PFIC',
-    'Recognizes gain on a direct or indirect disposition of PFIC stock',
-    'Makes an election applicable to a PFIC (QEF, MTM, §1294 election)',
-    'Receives an excess distribution',
-    'Is a shareholder of a PFIC that is a CFC (overlap rule)',
-    distributions > 0 ? 'You received distributions this year - Form 8621 required' : null,
-    gain > 0 ? 'Unrealized gain exists - Form 8621 required on disposition' : null,
-  ].filter(Boolean);
-  triggers.forEach(t => { h += `<div class="fr-item"><span class="fr-check">&#9679;</span><span>${t}</span></div>`; });
-  h += `</div>`;
-
-  // Flags
-  if(isCFC === 'yes'){
-    h += flag('amber','!','<strong>CFC / PFIC overlap rule applies (IRC §1297(d)).</strong> If a foreign corporation is both a PFIC and a CFC, US shareholders subject to Subpart F generally cannot use the §1291 excess distribution regime for the years the corporation qualifies as a CFC. The QEF or MTM election may still be made. The interaction of Subpart F and PFIC rules is complex and fact-specific. Verify with qualified counsel.');
-  }
-  if(country === 'canada'){
-    h += flag('amber','!','<strong>Canadian TFSAs and some Canadian funds.</strong> Canadian Tax-Free Savings Accounts (TFSAs) holding foreign securities, and many Canadian mutual funds, are PFICs under US law. The TFSA wrapper provides no US tax benefit - the US-Canada treaty does not protect TFSAs. This is one of the most common PFIC traps for US persons living in or connected to Canada.');
-  }
-  if(country === 'israel'){
-    h += flag('blue','ℹ','<strong>Israeli Keren Hishtalmut.</strong> Some Israeli training funds (Keren Hishtalmut) may be PFICs depending on how they are invested. The US-Israel tax treaty does not resolve PFIC treatment. Analyze the underlying investments in the fund using the income and asset tests.');
-  }
-  if(!qefAvailable){
-    h += flag('blue','ℹ','<strong>No PFIC annual statement available - QEF election not available.</strong> Most foreign funds do not provide annual PFIC statements as required by Treas. Reg. §1.1295-1(g). Without the statement, the QEF election cannot be made and the taxpayer is generally stuck with the §1291 excess distribution regime (or MTM if the fund is marketable). When selecting foreign funds, availability of a PFIC annual statement is a key due diligence item.');
-  }
-  if(years > 5){
-    h += flag('red','!',`<strong>Long holding period magnifies §1291 interest charges.</strong> With ${years} years of holding, the §6621 interest charge on back-year taxes significantly increases the total tax cost under §1291. The longer the holding period, the more punitive the default regime becomes relative to QEF or MTM. If a QEF or MTM election is still available (including a retroactive "purging election"), the total cost comparison may justify the election even with associated recognition events.`);
-  }
-
-  h += flag('amber','!','<strong>Purging election (§1298(b)(1)).</strong> A shareholder who held PFIC stock before making a QEF or MTM election may make a "purging election" - recognizing gain on the deemed sale of all PFIC stock, paying tax and interest on that gain under §1291, and starting fresh with a clean QEF or MTM basis. This is often worth analyzing when transitioning from the default §1291 regime.');
-
-  h += `<div class="src">Authority: IRC §1291 (excess distribution tax and interest charge); IRC §1291(b)(2) (excess distribution definition: amount exceeding 125% of prior 3-year average); IRC §1293 (QEF inclusion of ordinary income and net capital gain); IRC §1295 (QEF election and annual PFIC statement requirement); Treas. Reg. §1.1295-1(g) (annual statement requirements for QEF); IRC §1296 (mark-to-market election for marketable PFIC stock); IRC §1297(a) (PFIC income and asset tests - 75% and 50% thresholds); IRC §1297(b) (passive income definition); IRC §1297(d) (CFC/PFIC overlap rule); IRC §1298(b)(1) (once-a-PFIC-always-a-PFIC rule); IRC §1298(b)(2) (start-up exception); Form 8621 Instructions (2025 edition); Treas. Reg. §1.1291-1 through §1.1298-4.</div>`;
-  h += ``;
-  h += ``;
-
-  document.getElementById('results').innerHTML = h;
+  res.line16e=res.line16c-res.line16d;
+  return res;
 }
 
+// Pure evaluation. inp holds raw strings/numbers.
+function evaluate(inp){
+  var R={errors:[],warnings:[]};
+  var Y=inp.fy; R.Y=Y;
+  // ---- Status ----
+  var pi=nn(inp.passInc), ti=nn(inp.totInc), pa=nn(inp.passAssets), ta=nn(inp.totAssets);
+  R.incomePct = ti>0 ? Math.min(pi,ti)/ti*100 : null;
+  R.assetPct  = ta>0 ? Math.min(pa,ta)/ta*100 : null;
+  // exact integer comparisons: 4*passive >= 3*total ; 2*passive >= total
+  R.incomeHit = ti>0 && Math.min(pi,ti)*100 >= INCOME_PCT*ti;
+  R.assetHit  = ta>0 && Math.min(pa,ta)*100 >= ASSET_PCT*ta;
+  R.testsPfic = R.incomeHit || R.assetHit;
+  R.testsKnown = (R.incomePct!==null) || (R.assetPct!==null);
+  R.method = (inp.pubTraded==='yes' || (inp.isCFC==='no' && inp.basisElect==='no')) ? 'value' : 'basis';
+  R.overlap = (inp.cfcSh==='yes');
+  R.tainted = (inp.tainted==='yes');
+  R.pfic = (R.testsPfic || R.tainted) && !R.overlap;
+  // ---- Form 8621 filing ----
+  var reasons=[], excepts=[];
+  R.exceptTaxExempt = (inp.shType==='exempt');
+  R.threshold = (inp.joint==='yes') ? 50000 : 25000;
+  var pv=nn(inp.pfValue);
+  // events (computed below) feed excess/gain flags
+  // ---- Section 1291 ----
+  var acq=parseD(inp.acq), distD=parseD(inp.distDate), dispD=parseD(inp.dispDate);
+  var dist=nn(inp.dist), gain=nn(inp.gain), p=[nn(inp.p1),nn(inp.p2),nn(inp.p3)];
+  var ratePct=nn(inp.intRate), marg=nn(inp.marg);
+  var fp=Math.floor(nn(inp.firstPfic)); if(fp<1987) fp=1987;
+  R.s1291=null;
+  if(inp.regime==='1291'){
+    var S={dist:null,disp:null,nonexcess:0,excess:0,ord16b:0,inc16c:0,ftc16d:0,add16e:0,int16f:0,nonexTax:0,ordTax:0,total:0,n:0};
+    var needAcq = (dist>0 || gain>0);
+    if(needAcq && (acq===null)) R.errors.push('Enter the date you acquired the stock.');
+    if(acq!==null && yr(acq)>Y) R.errors.push('The acquisition date is after the tax year.');
+    if(dist>0 && acq!==null){
+      if(distD===null||yr(distD)!==Y) R.errors.push('Enter the distribution date as a date in '+Y+'.');
+      else if(distD<acq) R.errors.push('The distribution date is before the acquisition date.');
+      else {
+        var acY=yr(acq);
+        var n=Math.min(3, Y-acY); S.n=n;
+        var l15b=0; for(var i=0;i<n;i++) l15b+=p[i];
+        var l15c = n>0 ? l15b/n : 0, l15d = EXCESS_MULT*l15c;
+        var ex = n>0 ? Math.max(0,dist-l15d) : 0;
+        S.dist={l15a:dist,l15b:l15b,l15c:l15c,l15d:l15d,l15e1:ex,nonexcess:dist-ex,n:n,firstYear:(n===0)};
+        S.excess=ex; S.nonexcess=dist-ex;
+        if(ex>0){ S.dist.alloc=allocate(ex,acq,distD,fp,ratePct,nn(inp.ftcDist)); }
+      }
+    }
+    if(gain>0 && acq!==null){
+      if(dispD===null||yr(dispD)!==Y) R.errors.push('Enter the disposition date as a date in '+Y+'.');
+      else if(dispD<acq) R.errors.push('The disposition date is before the acquisition date.');
+      else S.disp={l15f:gain,alloc:allocate(gain,acq,dispD,fp,ratePct,nn(inp.ftcGain))};
+    }
+    if(!R.errors.length){
+      var parts=[]; if(S.dist&&S.dist.alloc) parts.push(S.dist.alloc); if(S.disp) parts.push(S.disp.alloc);
+      parts.forEach(function(a){S.ord16b+=a.line16b;S.inc16c+=a.line16c;S.ftc16d+=a.line16d;S.add16e+=a.line16e;S.int16f+=a.line16f;});
+      S.nonexTax=S.nonexcess*marg/100;
+      S.ordTax=S.ord16b*marg/100;
+      S.total=S.nonexTax+S.ordTax+S.add16e+S.int16f;
+    }
+    R.s1291=S;
+    R.hadExcess = (S.excess>0) || (S.disp!==null);
+  } else R.hadExcess=false;
+  // ---- QEF ----
+  R.qef=null;
+  if(inp.regime==='qef'){
+    var a6=nn(inp.q6a), b6=Math.min(nn(inp.q6b),a6), a7=nn(inp.q7a), b7=Math.min(nn(inp.q7b),a7);
+    var c6=a6-b6, c7=a7-b7, lt=nn(inp.qLt);
+    R.qef={l6a:a6,l6b:b6,l6c:c6,l7a:a7,l7b:b7,l7c:c7,ordTax:c6*nn(inp.qMarg)/100,ltTax:c7*lt/100,ltRate:lt};
+    R.qef.total=R.qef.ordTax+R.qef.ltTax;
+    if(nn(inp.q6b)>a6||nn(inp.q7b)>a7) R.warnings.push('Lines 6b and 7b cannot exceed lines 6a and 7a; they were limited.');
+  }
+  // ---- MTM ----
+  R.mtm=null;
+  if(inp.regime==='mtm'){
+    var fv=nn(inp.m10a), ab=nn(inp.m10b), ur=nn(inp.m11);
+    var l10c=fv-ab, M={l10a:fv,l10b:ab,l10c:l10c,l11:ur,gain:0,l12:0,disallowed:0};
+    if(l10c>0) M.gain=l10c; else { M.l12=Math.min(-l10c,ur); M.disallowed=-l10c-M.l12; }
+    var mm=nn(inp.mMarg);
+    M.ordTax=M.gain*mm/100; M.lossBenefit=M.l12*mm/100;
+    M.first=null;
+    if(inp.mFirst==='yes' && M.gain>0){
+      var mAcq=parseD(inp.mAcq);
+      if(mAcq===null||yr(mAcq)>Y) R.errors.push('First-year mark-to-market: enter the acquisition date (on or before December 31, '+Y+').');
+      else {
+        var evt=Date.UTC(Y,11,31);
+        var mf=Math.max(1987,Math.floor(nn(inp.mFirstPfic)));
+        var al=allocate(M.gain,mAcq,evt,mf,nn(inp.mInt),0);
+        M.first=al;
+        M.firstExtra = al.line16c+al.line16f;
+        // ordinary part is taxed at the rate entered; the deferred part is taxed at the PFIC-year rates, with interest
+        M.firstOrdTax = al.line16b*mm/100;
+        M.firstTotal = M.firstOrdTax + al.line16c + al.line16f;
+      }
+    }
+    R.mtm=M;
+  }
+  // ---- Filing determination ----
+  R.file=false; R.fileReasons=[]; R.fileExcept=[];
+  if(!R.pfic){
+    R.fileStatus='nopfic';
+  } else if(R.exceptTaxExempt){
+    R.fileStatus='exempt';
+  } else {
+    var big = pv > R.threshold;
+    var triggers=[];
+    if(inp.regime==='qef') triggers.push('QEF election in effect: report the inclusion (Part III) and Part I');
+    if(inp.regime==='mtm') triggers.push('mark-to-market election in effect: report the inclusion or deduction (Part IV) and Part I');
+    if(R.hadExcess) triggers.push('excess distribution or gain on disposition (Part V)');
+    if(inp.own==='indirect_us') triggers.push('indirect holder through a US person: files only if it has an excess distribution, a disposition gain, a QEF or MTM inclusion, or the intermediary does not file (Treas. Reg. 1.1298-1(b)(2))');
+    if(big) triggers.push('PFIC stock value of '+money(pv)+' is above the '+money(R.threshold)+' exception');
+    if(inp.regime==='1291' && !R.hadExcess && !big && inp.own!=='indirect_us'){
+      R.fileStatus='exception';
+    } else if(inp.own==='indirect_us' && !(inp.regime!=='1291' || R.hadExcess)){
+      R.fileStatus='indirect_us';
+    } else R.fileStatus='file';
+    R.fileReasons=triggers;
+  }
+  return R;
+}
+
+function assumptionsRows(Y){
+  var proj = Y>2026;
+  var fst = proj ? 'Statutory (unchanged; forms for '+Y+' unpublished)' : 'Statutory';
+  var rows=[
+   ['Income test','75 percent or more of gross income is passive',fst,'IRC 1297(a)(1), (b)'],
+   ['Asset test','Average percentage of passive assets at least 50 percent',fst,'IRC 1297(a)(2)'],
+   ['Asset measurement','Value if publicly traded or if neither a CFC nor an electing corporation; adjusted basis (E&P basis) if a CFC or if elected',fst,'IRC 1297(e)'],
+   ['Look-thru','25 percent or more owned subsidiaries treated as held proportionately',fst,'IRC 1297(c)'],
+   ['CFC overlap rule','Not a PFIC as to a US shareholder during the qualified portion of the holding period',fst,'IRC 1297(d)'],
+   ['Once a PFIC','Stock remains PFIC stock unless a purging election is made',fst,'IRC 1298(b)(1)'],
+   ['Excess distribution','Distributions above 125 percent of the average of the 3 preceding years (or fewer years if held for less time); none in the first year of the holding period',fst,'IRC 1291(b)(2); Form 8621 lines 15b-15e'],
+   ['Allocation','Ratably to each day of the holding period, which ends on the date of the distribution or disposition',fst,'IRC 1291(a)(1)(A), (a)(3)(A)(i)'],
+   ['Current and pre-PFIC amounts','Included as ordinary income in the current year',fst,'IRC 1291(a)(1)(B); Form 8621 line 16b'],
+   ['Rate on other years','Highest section 1 rate in effect for that tax year: 37 percent for 2018 and later; earlier years per the table','Statutory (2018 and later); IRS-published table (1987-2017)','IRC 1(j); IRC 1291(c)(2); Form 8621 instructions (12/2025), line 16c'],
+   ['Highest rate for '+Y,String(HIGH[Y])+' percent',fst,'IRC 1(j), made permanent by Pub. L. 119-21 sec. 70101'],
+   ['Interest period','From the unextended due date of the return for each PFIC year to the unextended due date of the return for the year of the distribution (April 15 assumed for a calendar-year individual)',fst,'IRC 1291(c)(3); Form 8621 line 16f'],
+   ['Interest rate','7 percent per year compounded daily (individuals, fourth quarter of 2026); user-adjustable',proj?'Projected (rates after 2026 not published)':'IRS-published for the quarter; other quarters differ','IRS news release IR-2026-98; IRC 6621; Rev. Rul. 2024-18 (history, not fetched)'],
+   ['Foreign tax credit','Reduces the increase in tax for the PFIC year it is allocated to, not below zero; no carryover',fst,'Form 8621 instructions (12/2025), line 16d'],
+   ['QEF inclusion','Pro rata share of ordinary earnings (ordinary income) and net capital gain (long-term capital gain)',fst,'IRC 1293(a); Form 8621 lines 6a-7c'],
+   ['Mark-to-market','Gain included as ordinary income; loss deductible only to unreversed inclusions; marketable stock required',fst,'IRC 1296(a), (c), (d), (e); Form 8621 lines 10a-12'],
+   ['First-year mark-to-market','Section 1291 applies to first-year gain if stock held before the election and not a QEF for every PFIC year',fst,'IRC 1296(j)(1)'],
+   ['Form 8621 value exception','$25,000 ($50,000 joint) on the last day of the year, only for a section 1291 fund with no excess distribution, no gain and no QEF election',fst,'Treas. Reg. 1.1298-1(c)(2); Instructions for Form 8621, Part I'],
+   ['Form 8621 revision','Rev. 12-2025 line references used',proj?'Projected for '+Y+' (revision not yet published)':'IRS-published','IRS Form 8621 (Rev. 12-2025)']
+  ];
+  var h=''; rows.forEach(function(x){h+='<tr><td>'+x[0]+'</td><td>'+x[1]+'</td><td>'+x[2]+'</td><td>'+x[3]+'</td></tr>';}); return h;
+}
+
+function row(l,v,c){return '<div class="srow"><span class="sl">'+l+'</span><span class="sv'+(c?' '+c:'')+'">'+v+'</span></div>';}
+
+function allocTable(A,label){
+  var h='<div class="stepttl">'+label+' - line 16a allocation by tax year ('+A.total+' days in holding period)</div><div class="tbl-wrap"><table class="dtab"><tr><th>Tax year</th><th class="num">Days</th><th class="num">Allocated (16a)</th><th>Treatment</th><th class="num">Rate</th><th class="num">Increase in tax</th><th class="num">Credit</th><th class="num">Interest days</th><th class="num">Interest</th></tr>';
+  A.rows.forEach(function(r){
+    h+='<tr><td>'+r.year+'</td><td class="num">'+r.days+'</td><td class="num">'+money(r.share)+'</td><td>'+r.kind+'</td><td class="num">'+(r.kind==='PFIC year'?r.rate+'%':'n/a')+'</td><td class="num">'+(r.kind==='PFIC year'?money(r.tax):'-')+'</td><td class="num">'+(r.kind==='PFIC year'?money(r.ftc):'-')+'</td><td class="num">'+(r.kind==='PFIC year'?r.intDays:'-')+'</td><td class="num">'+(r.kind==='PFIC year'?money(r.interest):'-')+'</td></tr>';
+  });
+  h+='</table></div>';
+  h+='<div class="sum-box"><div class="sum-title">Form 8621 Part V, line 16</div>'+
+     row('Line 16b: current-year and pre-PFIC amounts (ordinary income)',money(A.line16b))+
+     row('Line 16c: aggregate increases in tax',money(A.line16c))+
+     row('Line 16d: foreign tax credit',money(A.line16d))+
+     row('Line 16e: additional tax (16c less 16d)',money(A.line16e))+
+     row('Line 16f: interest',money(A.line16f))+'</div>';
+  return h;
+}
+
+function calc(){
+  var g=function(id){return document.getElementById(id);};
+  var Y=parseInt(g('fy').value,10)||2026;
+  var inp={fy:Y,shType:g('shType').value,joint:g('joint').value,own:g('own').value,pfValue:g('pfValue').value,regime:g('regime').value,
+    passInc:g('passInc').value,totInc:g('totInc').value,pubTraded:g('pubTraded').value,isCFC:g('isCFC').value,basisElect:g('basisElect').value,
+    passAssets:g('passAssets').value,totAssets:g('totAssets').value,cfcSh:g('cfcSh').value,tainted:g('tainted').value,
+    acq:g('acq').value,firstPfic:g('firstPfic').value,intRate:g('intRate').value,marg:g('marg').value,
+    dist:g('dist').value,distDate:g('distDate').value,ftcDist:g('ftcDist').value,p1:g('p1').value,p2:g('p2').value,p3:g('p3').value,
+    gain:g('gain').value,dispDate:g('dispDate').value,ftcGain:g('ftcGain').value,
+    q6a:g('q6a').value,q6b:g('q6b').value,q7a:g('q7a').value,q7b:g('q7b').value,qLt:g('qLt').value,qMarg:g('qMarg').value,
+    m10a:g('m10a').value,m10b:g('m10b').value,m11:g('m11').value,mFirst:g('mFirst').value,mAcq:g('mAcq').value,mFirstPfic:g('mFirstPfic').value,mMarg:g('mMarg').value,mInt:g('mInt').value};
+  g('p1_lab').innerHTML='Distributions in '+(Y-1)+' ($)'; g('p2_lab').innerHTML='Distributions in '+(Y-2)+' ($)'; g('p3_lab').innerHTML='Distributions in '+(Y-3)+' ($)';
+  g('c1291').style.display=(inp.regime==='1291')?'':'none';
+  g('cqef').style.display=(inp.regime==='qef')?'':'none';
+  g('cmtm').style.display=(inp.regime==='mtm')?'':'none';
+  g('year_badge').innerHTML = Y>2026
+    ? '<span class="badge-proj">Projected - estimate, not IRS-published</span> <span class="hint">Statutory rules and the 37 percent highest rate are unchanged for '+Y+'; the Form 8621 revision and interest rates for '+Y+' are not published.</span>'
+    : '<span class="badge-pub">Rules and Form 8621 (Rev. 12-2025) in effect for 2026</span>';
+  var R=evaluate(inp);
+
+  var m='';
+  R.errors.forEach(function(e){m+='<div class="warn-box">'+e+'</div>';});
+  R.warnings.forEach(function(e){m+='<div class="note-box">'+e+'</div>';});
+  if(inp.shType==='corp') m+='<div class="note-box">Corporate shareholders use the highest rate under IRC &sect;11 for each year (IRC &sect;1291(c)(2)), which this tool does not model. The individual rate table below would be wrong for a corporation.</div>';
+  g('msgs').innerHTML=m;
+
+  // Status boxes
+  var t='<div class="test-grid"><div class="test-box '+(R.incomeHit?'fail':'pass')+'"><div class="test-label">Income test - IRC &sect;1297(a)(1)</div><div class="test-val">'+(R.incomePct===null?'n/a':R.incomePct.toFixed(1)+'%')+'</div><div class="test-verdict">'+(R.incomePct===null?'Enter gross income amounts':(R.incomeHit?'Met: 75 percent or more is passive':'Not met: under 75 percent'))+'</div></div>'+
+    '<div class="test-box '+(R.assetHit?'fail':'pass')+'"><div class="test-label">Asset test - IRC &sect;1297(a)(2) ('+(R.method==='value'?'by value':'by adjusted basis')+')</div><div class="test-val">'+(R.assetPct===null?'n/a':R.assetPct.toFixed(1)+'%')+'</div><div class="test-verdict">'+(R.assetPct===null?'Enter asset amounts':(R.assetHit?'Met: at least 50 percent is passive':'Not met: under 50 percent'))+'</div></div></div>';
+  g('testResults').innerHTML=t;
+  var st='';
+  if(R.overlap){
+    st='<div class="ok-box"><h3>CFC overlap: not treated as a PFIC as to you for the qualified portion</h3>As a US shareholder of the entity while it is a CFC, the entity is not a PFIC with respect to you during the qualified portion of your holding period, which is the part after December 31, 1997 during which you are a US shareholder and it is a CFC (IRC &sect;1297(d)(1), (2)). If the qualified portion ends, your holding period is treated as beginning the next day, subject to the exception in &sect;1297(d)(3)(B). Subpart F and global intangible low-taxed income rules apply instead; see Form 5471.</div>';
+  } else if(R.pfic){
+    st='<div class="warn-box"><h3>PFIC status: YES'+(R.testsPfic?'':' (look-back rule)')+'</h3>'+(R.testsPfic?'The entity meets '+(R.incomeHit&&R.assetHit?'both tests':(R.incomeHit?'the income test':'the asset test'))+' for '+Y+' (IRC &sect;1297(a)). ':'')+(R.tainted?'The stock is also PFIC stock for the whole holding period because the entity was a non-QEF PFIC at an earlier time (IRC &sect;1298(b)(1)). ':'')+'The entity must also not be within an exception to passive income (for example a US-licensed bank, a qualifying insurance corporation, or the start-up year rule of &sect;1298(b)(2)); confirm those separately.</div>';
+  } else if(R.testsKnown){
+    st='<div class="ok-box"><h3>PFIC status: NO on these facts</h3>Neither test is met for '+Y+' and the once-a-PFIC rule does not apply. Status is re-tested every year. Confirm that no look-through or exception adjusts the figures (IRC &sect;1297(b), (c)).</div>';
+  } else {
+    st='<div class="note-box"><h3>Enter amounts</h3>Enter income and asset amounts to test PFIC status.</div>';
+  }
+  g('statusResult').innerHTML=st;
+
+  // Filing
+  var f='<div class="stepttl">Form 8621 filing determination</div>';
+  if(R.fileStatus==='nopfic'){
+    f+='<div class="ok-box"><h3>Form 8621: not required on these facts</h3>No PFIC status for '+Y+'. File a separate Form 8621 for each PFIC if the entity is a PFIC or if you still hold stock tainted under &sect;1298(b)(1).</div>';
+  } else if(R.fileStatus==='exempt'){
+    f+='<div class="ok-box"><h3>Form 8621: not required (listed tax-exempt holder)</h3>A listed tax-exempt organization, IRA, qualified plan, 529, ABLE or Coverdell holder is not required to file unless the PFIC income would be taxable to it (Treas. Reg. &sect;1.1298-1(c)(1)).</div>';
+  } else if(R.fileStatus==='exception'){
+    f+='<div class="ok-box"><h3>Form 8621: value exception appears to apply</h3>Total PFIC stock of '+money(nn(inp.pfValue))+' on the last day of the year is not above '+money(R.threshold)+', there is no excess distribution or gain on disposition, and no QEF election is in effect (Treas. Reg. &sect;1.1298-1(c)(2)(i)). Part I is not required for a section 1291 fund. Also check the other exceptions in &sect;1.1298-1(c) (stock marked to market under another provision, certain foreign pension funds under a treaty, certain dual resident taxpayers).</div>';
+  } else if(R.fileStatus==='indirect_us'){
+    f+='<div class="note-box"><h3>Form 8621: verify</h3>An indirect shareholder through a US person files if it has an excess distribution, a disposition gain, a QEF or MTM inclusion, or the owner through which it holds does not timely file (Treas. Reg. &sect;1.1298-1(b)(2)). Review the specific chain.</div>';
+  } else {
+    f+='<div class="warn-box"><h3>Form 8621: REQUIRED</h3>File a separate Form 8621 for this PFIC with your return for '+Y+'. Reason(s): '+R.fileReasons.join('; ')+'. (Treas. Reg. &sect;1.1298-1(b), (c); Instructions for Form 8621, Who Must File.)</div>';
+  }
+  g('filingResult').innerHTML=f;
+
+  // Regime results
+  var h='';
+  if(!R.errors.length){
+    if(R.s1291){
+      var S=R.s1291;
+      h+='<div class="stepttl">Section 1291 computation (Form 8621 Part V)</div>';
+      if(!S.dist && !S.disp && nn(inp.dist)===0 && nn(inp.gain)===0) h+='<div class="note-box">No distribution or gain entered, so there is no section 1291 computation for '+Y+'.</div>';
+      if(S.dist){
+        var D=S.dist;
+        h+='<div class="sum-box"><div class="sum-title">Distribution - lines 15a to 15e</div>'+
+          row('Line 15a: distributions in '+Y,money(D.l15a))+
+          (D.firstYear? row('Holding period began in '+Y+': no excess distribution (IRC 1291(b)(2)(B))','$0') :
+          row('Line 15b: distributions for the '+D.n+' preceding year(s)',money(D.l15b))+
+          row('Line 15c: line 15b / '+D.n,money(D.l15c))+
+          row('Line 15d: line 15c x 125%',money(D.l15d)))+
+          row('Line 15e(1)/(2): excess distribution (15a less 15d, not below zero)',money(D.l15e1),D.l15e1>0?'red':'green')+
+          row('Nonexcess distribution (taxed under IRC 301 as a dividend if from E&P)',money(D.nonexcess))+'</div>';
+        if(D.alloc) h+=allocTable(D.alloc,'Excess distribution');
+      }
+      if(S.disp){
+        h+='<div class="sum-box"><div class="sum-title">Disposition - line 15f</div>'+row('Line 15f: gain treated as an excess distribution',money(S.disp.l15f))+'</div>';
+        h+=allocTable(S.disp.alloc,'Gain on disposition');
+      }
+      if(S.dist||S.disp){
+        h+='<div class="stepttl">Estimated incremental tax for '+Y+' (before the net investment income tax and state tax)</div><div class="sum-box"><div class="sum-title">Summary at your inputs</div>'+
+          row('Ordinary income, lines 16b: '+money(S.ord16b)+' x '+nn(inp.marg)+'%',money(S.ordTax))+
+          row('Nonexcess distribution: '+money(S.nonexcess)+' x '+nn(inp.marg)+'%',money(S.nonexTax))+
+          row('Additional tax, line 16e',money(S.add16e))+
+          row('Interest, line 16f',money(S.int16f))+
+          row('Estimated total',money(S.total))+'</div>';
+      }
+    }
+    if(R.qef){
+      var Q=R.qef;
+      h+='<div class="stepttl">QEF inclusion (Form 8621 Part III)</div><div class="sum-box"><div class="sum-title">Lines 6a to 7c</div>'+
+        row('Line 6a: ordinary earnings',money(Q.l6a))+row('Line 6b: excluded or included elsewhere','-'+money(Q.l6b))+row('Line 6c: ordinary income',money(Q.l6c))+
+        row('Line 7a: net capital gain',money(Q.l7a))+row('Line 7b: excluded or included elsewhere','-'+money(Q.l7b))+row('Line 7c: net long-term capital gain',money(Q.l7c))+
+        row('Ordinary income tax at '+nn(inp.qMarg)+'%',money(Q.ordTax))+row('Capital gain tax at '+Q.ltRate+'%',money(Q.ltTax))+row('Estimated current-year tax on inclusions',money(Q.total))+'</div>'+
+        '<div class="note-box">The inclusion is taxed whether or not cash is distributed. Distributions from a QEF out of previously included earnings are generally not taxed again (IRC &sect;1293(c)); the election to defer payment of tax (Election B, IRC &sect;1294) is not modeled.</div>';
+    }
+    if(R.mtm){
+      var M=R.mtm;
+      h+='<div class="stepttl">Mark-to-market (Form 8621 Part IV)</div><div class="sum-box"><div class="sum-title">Lines 10a to 12</div>'+
+        row('Line 10a: fair market value',money(M.l10a))+row('Line 10b: adjusted basis',money(M.l10b))+row('Line 10c: gain or (loss)',money(M.l10c),M.l10c>0?'red':'green')+
+        (M.l10c>0? row('Included as ordinary income',money(M.gain))+row('Tax at '+nn(inp.mMarg)+'%',money(M.ordTax)) :
+         row('Line 11: unreversed inclusions',money(M.l11))+row('Line 12: ordinary loss allowed (lesser of loss and line 11)',money(M.l12))+row('Loss not allowed this year (not carried forward under IRC 1296)',money(M.disallowed))+row('Tax benefit at '+nn(inp.mMarg)+'%',money(M.lossBenefit)))+'</div>';
+      if(M.first){
+        h+='<div class="warn-box"><h3>First-year coordination with section 1291 (IRC &sect;1296(j)(1))</h3>The first-year gain is treated as if it were gain on a disposition on December 31, '+Y+'.</div>'+allocTable(M.first,'First-year mark-to-market gain')+
+          '<div class="sum-box"><div class="sum-title">First-year estimate</div>'+row('Ordinary (current and pre-PFIC) at '+nn(inp.mMarg)+'%',money(M.firstOrdTax))+row('Additional tax, line 16e',money(M.first.line16e))+row('Interest, line 16f',money(M.first.line16f))+row('Estimated total on the first-year gain',money(M.firstTotal))+'</div>';
+      }
+      h+='<div class="note-box">Loss on a later sale is ordinary only to the extent of unreversed inclusions (IRC &sect;1296(c)(1)(B)); lines 13 and 14 for dispositions are not modeled. Marketable stock means stock regularly traded on a qualifying exchange or market (IRC &sect;1296(e)).</div>';
+    }
+  }
+  g('regimeResult').innerHTML=h;
+  g('assump_body').innerHTML=assumptionsRows(Y);
+}
 calc();
 </script>
 
-
-
 <script>
 function doPrint(){window.print();}
-function doShare(){var url=location.href;var title=document.title.replace(" | CPA Validated","");if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
-function showShareModal(url,title){if(document.getElementById("sv-ol"))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[["Facebook","#1877F2","https://www.facebook.com/sharer/sharer.php?u="+enc],["Telegram","#29A8E0","https://t.me/share/url?url="+enc+"&text="+et],["X / Twitter","#e0e0e0","https://twitter.com/intent/tweet?url="+enc+"&text="+et],["LinkedIn","#0A66C2","https://www.linkedin.com/sharing/share-offsite/?url="+enc],["WhatsApp","#25D366","https://wa.me/?text="+et+"%0A"+enc]];var ol=document.createElement("div");ol.id="sv-ol";ol.style.cssText="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center";var h="<div style=\"background:#111111;width:100%;max-width:520px\">"+"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A\">"+"<span style=\"font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff\">Share</span>"+"<button id=\"sv-x\" style=\"background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px\">&times;</button></div>"+"<div style=\"padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px\">";links.forEach(function(l){h+="<a href="+JSON.stringify(l[2])+" target=\"_blank\" rel=\"noopener\" style=\"display:block;padding:12px 14px;border-left:3px solid "+l[1]+";background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600\">"+l[0]+"</a>";});h+="<button id=\"sv-cp\" style=\"padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left\">Copy Link</button></div></div>";ol.innerHTML=h;document.body.appendChild(ol);document.getElementById("sv-x").onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById("sv-cp").onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);});}catch(e2){var ta=document.createElement("textarea");ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);}};}
-</script>
+function doShare(){var url=location.href;var title=document.title.replace(' | CPA Validated','');if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
+function showShareModal(url,title){if(document.getElementById('sv-ol'))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]];var ol=document.createElement('div');ol.id='sv-ol';ol.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center';var h='<div style="background:#111111;width:100%;max-width:520px"><div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share</span><button id="sv-x" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px">&times;<\/button><\/div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'<\/a>';});h+='<button id="sv-cp" style="padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link<\/button><\/div><\/div>';ol.innerHTML=h;document.body.appendChild(ol);document.getElementById('sv-x').onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById('sv-cp').onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);});}catch(e2){var t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);}};}</script>
 </div>
 </div>
-
-
 
 
 <!-- START UNIFIED FOOTER -->
