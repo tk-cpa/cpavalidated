@@ -117,7 +117,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><th>Income/Loss Source</th><th>Counts as Business?</th></tr>
   <tr><td>Schedule C self-employment</td><td>Yes</td></tr>
   <tr><td>Schedule E rental real estate (with active management)</td><td>Yes - generally trade or business under §162 if rises to T/B level</td></tr>
-  <tr><td>Schedule E rental real estate (passive investment)</td><td>Yes (rental income/loss is considered trade or business for §461(l))</td></tr>
+  <tr><td>Schedule E rental real estate (passive investment)</td><td>Only if the rental activity is itself a trade or business (primary purpose of income or profit, with continuity and regularity); a purely passive investment rental is not</td></tr>
   <tr><td>Schedule F farming</td><td>Yes</td></tr>
   <tr><td>Schedule K-1 partnership ordinary income/loss</td><td>Yes</td></tr>
   <tr><td>Schedule K-1 S-corp ordinary income/loss</td><td>Yes</td></tr>
@@ -127,7 +127,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Pension distributions</td><td>NO - nonbusiness</td></tr>
   <tr><td>Royalties from intangibles not used in a T/B</td><td>NO - nonbusiness</td></tr>
   <tr><td>Capital gains on stock investments</td><td>NO - nonbusiness (unless dealer)</td></tr>
-  <tr><td>Performing services as an employee</td><td>Excluded from T/B under §461(l)(6) - cannot count W-2 employee deductions</td></tr>
+  <tr><td>Performing services as an employee</td><td>Excluded from T/B under the flush language of §461(l)(3)(A) - cannot count W-2 employee deductions</td></tr>
 </table>
 
 <div class="red-box"><strong>The W-2 wage trap.</strong> A common practitioner error is assuming W-2 wages can absorb business losses up to the threshold. They cannot. Business losses can offset business income plus the $256K/$512K threshold - NOT W-2 wages or investment income above that. A surgeon with $800,000 W-2 wages and a $700,000 real estate business loss in 2026 can only deduct $512,000 of the loss against MFJ income; the remaining $188,000 becomes NOL carryforward.</div>
@@ -150,16 +150,16 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <table class="key-table">
   <tr><th>Line</th><th>Content</th></tr>
-  <tr><td>Lines 1-3</td><td>Enter income, gains, deductions, losses from trades or businesses (Schedule 1 reconciliation)</td></tr>
-  <tr><td>Line 4</td><td>Combine lines 1-3 to determine total business income or loss</td></tr>
-  <tr><td>Lines 5-8</td><td>Adjustments: capital gains/losses, §1231 gains, deductions not from a trade or business (these get removed from the calculation)</td></tr>
-  <tr><td>Line 9</td><td>Combined adjusted income or loss from trades or businesses</td></tr>
-  <tr><td>Line 10</td><td>Total income or loss from non-trade or business sources (informational)</td></tr>
-  <tr><td>Line 11</td><td>The threshold amount: $256,000 (single, HOH, MFS) or $512,000 (MFJ, QSS) for 2026</td></tr>
-  <tr><td>Line 12</td><td>Excess business loss (if line 9 loss exceeds line 11 threshold)</td></tr>
+  <tr><td>Lines 1-8</td><td>Part I: total income/loss items from the return - line 2 = Schedule 1 line 3 (business), line 3 = Form 1040 line 7a (capital gain/loss), line 4 = Schedule 1 line 4 (other gains/losses), line 5 = Schedule 1 line 5 (Schedule E), line 6 = Schedule 1 line 6 (farm), line 8 = other trade or business items; lines 1 and 7 are reserved</td></tr>
+  <tr><td>Line 9</td><td>Combine lines 1 through 8</td></tr>
+  <tr><td>Lines 10-12</td><td>Part II: remove amounts not attributable to a trade or business - line 10 income or gain, line 11 losses or deductions (entered as a positive number), line 12 = line 10 minus line 11</td></tr>
+  <tr><td>Line 13</td><td>Reverse the sign of line 12</td></tr>
+  <tr><td>Line 14</td><td>Add lines 9 and 13</td></tr>
+  <tr><td>Line 15</td><td>The threshold amount: $313,000 (single) / $626,000 (joint) on the 2025 form; $256,000 / $512,000 for 2026</td></tr>
+  <tr><td>Line 16</td><td>Add lines 14 and 15; if less than zero, this is the excess business loss</td></tr>
 </table>
 
-<p>If line 12 is positive (i.e., there is an excess business loss), the amount is reported on Schedule 1 line 8p as additional income for the current year (effectively disallowing the deduction) and is treated as an NOL carryforward for the next year under §172(b).</p>
+<p>If line 16 is less than zero (an excess business loss), it is entered as a positive number on Schedule 1 line 8p (with "ELA" on the dotted line), effectively disallowing the deduction, and is treated as an NOL carryover for subsequent years under §461(l)(2) and §172(b).</p>
 
 <h2>Worked Examples</h2>
 
@@ -259,7 +259,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Treating W-2 Wages as Business Income</h3>
 
-<p>W-2 wages are excluded from business income under §461(l)(6). A surgeon with $800,000 wages and a $700,000 separate business loss cannot use the wages to absorb the loss above threshold. The threshold is the only offset to nonbusiness income. This is the single most common practitioner error.</p>
+<p>W-2 wages are excluded from business income under the flush language of §461(l)(3)(A). A surgeon with $800,000 wages and a $700,000 separate business loss cannot use the wages to absorb the loss above threshold. The threshold is the only offset to nonbusiness income. This is the single most common practitioner error.</p>
 
 <h3>Failing to Aggregate Across All Businesses</h3>
 
@@ -279,7 +279,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Skipping Form 461 When Not Required</h3>
 
-<p>Form 461 must be filed when there is a potential excess business loss - even if it ends up being zero. Failure to file when required can trigger penalty under §6038 information reporting rules and complicate IRS examination of the loss limitation calculation. When in doubt, file with zero excess shown.</p>
+<p>Form 461 must be filed if net losses from all trades or businesses exceed the threshold ($313,000 single / $626,000 joint for 2025), or if you would report a loss of more than $156,500 (2025) on any one of lines 1 through 8 (Instructions for Form 461, Who Must File). Failure to file when required can complicate IRS examination of the loss limitation calculation.</p>
 
 <h3>Confusing §461(l) With §469</h3>
 
@@ -297,7 +297,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §461(l) (excess business loss limitation - permanent under OBBBA §70601), §461(l)(2) (NOL carryforward treatment), §461(l)(3) (threshold amount and inflation adjustment), §461(l)(3)(C) (base year for inflation - amended by OBBBA to 2025 / reference year 2024), §461(l)(6) (W-2 wages excluded from T/B). §172 (NOL deduction), §172(a)(2) (80% of taxable income limit), §172(b) (carryback - generally eliminated for post-2020 losses). §469 (passive activity loss), §469(c)(7) (real estate professional). §465 (at-risk rules). §1366(d) (S-corp basis limitation). §704(d) (partnership basis limitation). §1231 (gains on business property - count as business income for §461(l)). §1411 (NIIT). §199A (QBI deduction - added back for §461(l) calculation). §162 (trade or business definition). One Big Beautiful Bill Act, P.L. 119-21, §70601 (permanent extension and threshold reset). Rev. Proc. 2024-40 (2025 inflation adjustments showing $313,000/$626,000 thresholds). IRS Form 461 (2025 revision) and Instructions, Schedule 1 (Form 1040) line 8p (excess business loss addback). Publication 925 (Passive Activity and At-Risk Rules), Publication 334 (Tax Guide for Small Business).</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §461(l) (excess business loss limitation - permanent under OBBBA §70601), §461(l)(2) (NOL carryforward treatment), §461(l)(3) (threshold amount and inflation adjustment), §461(l)(3)(C) (base year for inflation - amended by OBBBA to 2025 / reference year 2024), §461(l)(3)(A) flush language (employee services excluded from T/B); §461(l)(6) (applied after §469). §172 (NOL deduction), §172(a)(2) (80% of taxable income limit), §172(b) (carryback - generally eliminated for post-2020 losses). §469 (passive activity loss), §469(c)(7) (real estate professional). §465 (at-risk rules). §1366(d) (S-corp basis limitation). §704(d) (partnership basis limitation). §1231 (gains on business property - count as business income for §461(l)). §1411 (NIIT). §199A (QBI deduction - added back for §461(l) calculation). §162 (trade or business definition). One Big Beautiful Bill Act, P.L. 119-21, §70601 (permanent extension and threshold reset). Rev. Proc. 2024-40 (2025 inflation adjustments showing $313,000/$626,000 thresholds). IRS Form 461 (2025 revision) and Instructions, Schedule 1 (Form 1040) line 8p (excess business loss addback). Publication 925 (Passive Activity and At-Risk Rules), Publication 334 (Tax Guide for Small Business).</p>
 
 
 <!-- START UNIFIED FOOTER -->

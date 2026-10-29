@@ -104,12 +104,12 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>Account</th><th>Created By</th><th>Reduced By</th><th>Increased By</th></tr>
   <tr><td>Stock Basis</td><td>Capital contributions; cost of purchased stock; carryover from §351 transfer</td><td>Non-dividend distributions; losses; non-deductible expenses</td><td>Income; capital contributions</td></tr>
-  <tr><td>Debt Basis</td><td>Direct loans from shareholder to S-corp</td><td>Loss allocations after stock basis exhausted; loan repayments</td><td>Loan repayments above prior basis reductions (restoration)</td></tr>
+  <tr><td>Debt Basis</td><td>Direct loans from shareholder to S-corp</td><td>Loss allocations after stock basis exhausted; loan repayments</td><td>Net increase from S-corp income, restoring prior basis reductions (§1367(b)(2)(B))</td></tr>
 </table>
 
 <h2>Stock Basis Ordering Rule - §1367 and Reg §1.1367-1</h2>
 
-<p>The order in which adjustments hit stock basis matters because it determines how much of a year's loss can be deducted, whether a distribution is tax-free, and whether basis can go below zero. The default order under Reg §1.1367-1(f) for tax years beginning after January 26, 2024:</p>
+<p>The order in which adjustments hit stock basis matters because it determines how much of a year's loss can be deducted, whether a distribution is tax-free, and whether basis can go below zero. The default order under Reg §1.1367-1(f) for tax years beginning on or after August 18, 1998:</p>
 
 <table class="key-table">
   <tr><th>Step</th><th>Adjustment</th><th>Authority</th></tr>
@@ -123,7 +123,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="callout">
   <div class="callout-label">Elective Reordering - Reg §1.1367-1(g)</div>
-  <p><strong>The shareholder may elect under Reg §1.1367-1(g) to take loss/deduction items BEFORE non-deductible expenses.</strong> This is a multi-year election. Once made, it applies until revoked with IRS consent. Useful when the shareholder wants to preserve basis for future loss deductions and is willing to permanently lose the non-deductible expense reduction. Most shareholders do not elect.</p>
+  <p><strong>The shareholder may elect under Reg §1.1367-1(g) to take loss/deduction items BEFORE non-deductible expenses.</strong> This is a multi-year election. Once made, it applies until revoked with IRS consent. Useful when the shareholder wants losses to reduce basis before non-deductible expenses; any non-deductible expense amount in excess of stock and debt basis is treated as incurred in the succeeding year. Most shareholders do not elect.</p>
 </div>
 
 <h2>Debt Basis - Bona Fide Indebtedness Under Reg §1.1366-2</h2>
@@ -133,8 +133,8 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>Requirement for Debt Basis</th></tr>
   <tr><td>Bona fide indebtedness running directly from shareholder to S-corporation</td></tr>
-  <tr><td>Shareholder is the lender of record on a written instrument</td></tr>
-  <tr><td>Loan must be at arm's length (interest rate, maturity, repayment terms documented)</td></tr>
+  <tr><td>A written instrument naming the shareholder as lender is strong evidence of bona fide debt (facts and circumstances)</td></tr>
+  <tr><td>Arm's-length terms (interest rate, maturity, repayment terms documented) support bona fide debt status</td></tr>
   <tr><td>Mere guarantee or co-signing of S-corp debt to bank does NOT create basis</td></tr>
   <tr><td>"Incorporated pocketbook" - shareholder lends to a sister company that lends to S-corp - does NOT create basis</td></tr>
   <tr><td>Shareholder gets basis from guarantee ONLY when actually making payment on the guarantee</td></tr>
@@ -149,8 +149,8 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <div class="callout">
   <div class="callout-label">Worked Example - Restoration Mechanics</div>
   <p><strong>Year 1:</strong> Shareholder lends $100,000 to S-corp. Stock basis $20,000. S-corp loses $80,000. Loss deducts $20,000 stock + $60,000 debt = $80,000 deductible. Year-end: Stock basis $0, Debt basis $40,000.</p>
-  <p><strong>Year 2:</strong> S-corp earns $50,000. Income restores debt basis first under §1367(b)(2)(B), bringing it back to $90,000. Remaining $10,000 increases stock basis to $10,000.</p>
-  <p><strong>Year 3:</strong> S-corp repays $50,000 to shareholder. Because debt basis was previously reduced, $10,000 of repayment ($50,000 minus the remaining $40,000 of restored basis attributable to original principal) is treated as taxable income from the loan - typically capital gain if held more than one year.</p>
+  <p><strong>Year 2:</strong> S-corp earns $50,000. Income restores debt basis first under §1367(b)(2)(B), bringing it back to $90,000. Because the prior reduction was $60,000, all $50,000 is used for restoration and stock basis remains $0.</p>
+  <p><strong>Year 3:</strong> S-corp repays $50,000 of the $100,000 loan. Debt basis of $90,000 is 90% of the loan balance, so $45,000 of the repayment is nontaxable and $5,000 is reportable gain (Form 7203 lines 25, 26 and 34) - capital gain if the debt is evidenced by a formal note, ordinary income if it is open account debt. Remaining debt basis is $45,000 on a $50,000 balance.</p>
 </div>
 
 <h2>Loss Limitation Stacking - The Four Hurdles</h2>
@@ -171,15 +171,15 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Part I: Shareholder Stock Basis</h3>
 
-<p>Lines 1-15 reconstruct stock basis for the year. Begin with prior-year ending stock basis (line 1, must match line 15 of prior year), add increases (lines 2-6: capital contributions, income items, tax-exempt income, §1366(a)(1)(A) items), subtract decreases (lines 7-13: distributions, losses, non-deductible expenses), and end with ending basis (line 15). Stock basis cannot go below zero.</p>
+<p>Lines 1-15 reconstruct stock basis for the year. Begin with stock basis at the beginning of the year (line 1, which should match line 15 of the prior year), add capital contributions and additional stock acquired (line 2) and income items (lines 3a-3m, totaled on line 4), subtract distributions (line 6), nondeductible expenses (lines 8a-8c), and allowable loss and deduction items, debt basis restoration and other decreases (lines 11-13), and end with ending basis (line 15). Stock basis cannot go below zero.</p>
 
 <h3>Part II: Shareholder Debt Basis</h3>
 
-<p>Lines 16-29 track debt basis for each loan separately. Multiple loans require separate columns. Each loan tracks: face amount (line 16), loan basis at start of year (line 17), additions to loan basis from current-year debt restoration (line 19), reductions for losses (line 21), reductions for loan repayments (line 24), and ending loan basis (line 29).</p>
+<p>Lines 16-34 track debt basis for each loan separately in columns (up to three loans per page). Section A (lines 16-20) tracks the loan balance: beginning balance, additional loans, principal repaid, and ending balance. Section B (lines 21-31) tracks debt basis: beginning basis (line 21), additional loans (line 22), restoration (line 23), the nontaxable portion of any repayment (lines 25-26), nondeductible expenses in excess of stock basis (line 28), allowable losses in excess of stock basis (line 30), and ending debt basis (line 31). Section C (lines 32-34) computes the reportable gain on a loan repayment.</p>
 
 <h3>Part III: Shareholder Allowable Loss and Deduction Items</h3>
 
-<p>Lines 30-47 allocate current-year losses and deductions against available basis. The allocation respects character preservation - ordinary loss stays ordinary, §1231 loss stays §1231, charitable contributions stay charitable. When stock basis is insufficient to absorb all loss and deduction items pro rata, the form calculates the partial deduction and computes the carryforward of unallowed items by category. Suspended items appear on next year's Form 7203 line 31 column (b).</p>
+<p>Lines 35-47 allocate current-year losses and deductions against available basis. The allocation respects character preservation - ordinary loss stays ordinary, §1231 loss stays §1231, charitable contributions stay charitable. When stock basis is insufficient to absorb all loss and deduction items pro rata, the form calculates the partial deduction and computes the carryforward of unallowed items by category. Unallowed items carry over in column (e) and appear in column (b) of the corresponding line (lines 35-46) on next year's Form 7203.</p>
 
 <h2>AAA vs. Basis - Not the Same Thing</h2>
 
@@ -211,7 +211,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Failing to Track Basis Across Multiple Stock Blocks</h3>
 
-<p>Shareholder acquired 100 shares in 2018 for $100,000 (basis $1,000/share), then acquired 100 more shares in 2023 for $300,000 (basis $3,000/share). Sells 100 shares in 2026. Without lot-specific identification at sale time, the IRS treats the sale as pro rata across all 200 shares - 50 from each lot - producing a different gain than if the high-basis lot were identified. Document the sold-lot identification at the time of sale per Reg §1.1012-1(c).</p>
+<p>Shareholder acquired 100 shares in 2018 for $100,000 (basis $1,000/share), then acquired 100 more shares in 2023 for $300,000 (basis $3,000/share). Sells 100 shares in 2026. Without adequate identification at sale time, the shares sold are charged against the earliest lot (here the 2018 lot, $100,000 basis) - producing $200,000 more gain than if the 2023 lot ($300,000 basis) were identified. Document the sold-lot identification at the time of sale per Reg §1.1012-1(c).</p>
 
 <h3>Ignoring Open Tax Year Basis Adjustments</h3>
 
@@ -243,7 +243,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
     <a href="business-entity.html" class="related-link">Business &amp; Entity Hub<span>All entity-related topics</span></a>
     <a href="form-1099-guide.html" class="related-link">Form 1099 Reporting Guide<span>1099-NEC, MISC, K thresholds</span></a>
     <a href="qbi-deduction-guide.html" class="related-link">§199A QBI Deduction<span>QBI on S-corp K-1 income</span></a>
-    <a href="section-1244-guide.html" class="related-link">§1244 Small Business Stock<span>$100K ordinary loss vs $3K capital loss</span></a>
+    <a href="section-1244-guide.html" class="related-link">§1244 Small Business Stock<span>Up to $50K ($100K joint) ordinary loss vs $3K capital loss</span></a>
   </div>
 </div>
 
