@@ -172,7 +172,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <div class="summary-strip" style="margin-top:12px">
   <div class="ss-item"><div class="ss-num" id="cnt-auto">11</div><div class="ss-label">Automatic</div></div>
-  <div class="ss-item"><div class="ss-num" id="cnt-fed">23</div><div class="ss-label">Accepts Federal</div></div>
+  <div class="ss-item"><div class="ss-num" id="cnt-fed">22</div><div class="ss-label">Accepts Federal</div></div>
   <div class="ss-item"><div class="ss-num" id="cnt-sep">17</div><div class="ss-label">Separate Form</div></div>
   <div class="ss-item"><div class="ss-num" id="cnt-cond">5</div><div class="ss-label">Conditional</div></div>
   <div class="ss-item"><div class="ss-num" id="cnt-noc">4</div><div class="ss-label">No CIT</div></div>
@@ -244,7 +244,7 @@ const DATA = [
   {j:'South Carolina',t:'State',c:'ACCEPTS FEDERAL',f:'Form SC 1120-T (if no federal)',l:'6 months',p:'Tax due by original date',cite:'S.C. Code Ann. 12-6-4980',n:'Federal ext accepted.'},
   {j:'South Dakota',t:'State',c:'NO CIT',f:'N/A',l:'N/A',p:'N/A',cite:'S.D. Const. Art. XI, §5',n:'No corporate income tax.'},
   {j:'Tennessee',t:'State',c:'CONDITIONAL',f:'Form FAE173 (if tax due or no federal ext)',l:'Same as federal',p:'Tax due by original date',cite:'Tenn. Code Ann. 67-4-2017',n:'If no tax due AND federal ext filed, federal ext accepted. If tax is due OR no federal ext, must file Form FAE173 (Franchise & Excise Tax).'},
-  {j:'Texas',t:'State',c:'SEPARATE FORM',f:'Form 05-164 or Webfile',l:'First to Aug 15; second to Nov 15',p:'90% of tax by May 15 (original date)',cite:'Tex. Tax Code 171.202',n:'Franchise/margin tax. Due date is May 15, not April 15. Second ext to Nov 15 via TEXNET for EFT payors.'},
+  {j:'Texas',t:'State',c:'SEPARATE FORM',f:'Form 05-164 or Webfile',l:'Non-EFT payers: to Nov 15. EFT payers: first to Aug 15; second to Nov 15',p:'90% of current-year tax or 100% of prior-year tax by May 15 (original date)',cite:'Tex. Tax Code 171.202',n:'Franchise/margin tax. Due date is May 15, not April 15. Entities not required to pay by EFT file Webfile or Form 05-164 for one extension to Nov 15. EFT payers (paid $10,000 or more in the prior state fiscal year) get a first extension to Aug 15 and request a second to Nov 15 via TEXNET or Webfile.'},
   {j:'Utah',t:'State',c:'AUTOMATIC',f:'None (TC-559 for payment only)',l:'6 months',p:'Tax due by original date',cite:'Utah Code Ann. 59-7-507',n:'Automatic 6-month ext. No form required. Use TC-559 only to make payment.'},
   {j:'Vermont',t:'State',c:'ACCEPTS FEDERAL',f:'Form BA-403 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Vt. Stat. Ann. tit. 32, §5868',n:'Federal ext accepted.'},
   {j:'Virginia',t:'State',c:'AUTOMATIC',f:'None required',l:'7 months',p:'Must pay 90% of tax by original date',cite:'Va. Code Ann. 58.1-910',n:'Automatic 7-month ext. Must pay 90% by original due date to avoid penalty.'},
