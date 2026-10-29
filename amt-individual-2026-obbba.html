@@ -116,12 +116,12 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Single / Head of Household</td><td>$88,100</td><td>$90,100</td></tr>
   <tr><td>Married Filing Jointly / Qualifying Surviving Spouse</td><td>$137,000</td><td>$140,200</td></tr>
   <tr><td>Married Filing Separately</td><td>$68,500</td><td>$70,100</td></tr>
-  <tr><td>Estates and Trusts</td><td>$29,900</td><td>$28,400</td></tr>
+  <tr><td>Estates and Trusts</td><td>$30,700</td><td>$31,400</td></tr>
 </table>
 
 <h2>The 2026 Phaseout Reset - Applies to All Filing Statuses</h2>
 
-<p>OBBBA §70107 amended §55(d)(4) to reset the phaseout threshold and double the phaseout rate for every individual filing status beginning in 2026 - not joint filers alone. The reset returns the threshold to its pre-2018 base level ($500,000 single / $1,000,000 joint), which then resumes indexing for inflation from that lower base rather than continuing up from the higher TCJA-era inflation-adjusted level filers had reached by 2025.</p>
+<p>OBBBA §70107 amended §55(d)(4) to reset the phaseout threshold and double the phaseout rate for every individual filing status beginning in 2026 - not joint filers alone. The reset returns the threshold to the $500,000 single / $1,000,000 joint amounts in section 55(d)(4)(A)(ii) (not inflation-adjusted for 2026; indexing resumes after 2026 from a calendar year 2025 base) rather than continuing up from the higher TCJA-era inflation-adjusted level filers had reached by 2025.</p>
 
 <table class="key-table">
   <tr><th>Filing Status</th><th>2025 Phaseout Threshold (AMTI)</th><th>2025 Phaseout Rate</th><th>2026 Phaseout Threshold (AMTI)</th><th>2026 Phaseout Rate</th></tr>
@@ -150,7 +150,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Accelerated depreciation difference</td><td>§56(a)(1)</td><td>Difference between regular MACRS and AMT depreciation (longer life or straight-line)</td></tr>
   <tr><td>Tax-exempt interest on certain private activity bonds</td><td>§57(a)(5)</td><td>Tax-exempt for regular tax but AMT preference (bonds issued before 1/1/2009 or after 12/31/2010 generally subject; some COVID-era bonds excluded)</td></tr>
   <tr><td>Net operating loss difference</td><td>§56(a)(4)</td><td>AMT NOL based on AMT adjustments to regular NOL</td></tr>
-  <tr><td>Mining exploration / development</td><td>§57(a)(2)</td><td>Preference item</td></tr>
+  <tr><td>Mining exploration / development</td><td>§56(a)(2)</td><td>AMT adjustment - costs capitalized and amortized over 10 years</td></tr>
   <tr><td>Percentage depletion (mining)</td><td>§57(a)(1)</td><td>Preference item - excess over basis</td></tr>
   <tr><td>Intangible drilling costs</td><td>§57(a)(2)</td><td>Preference for excess IDC</td></tr>
   <tr><td>Charitable contribution of appreciated property</td><td>NOT a preference</td><td>Preserved at FMV (was preference pre-1993)</td></tr>
@@ -164,13 +164,13 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="callout">
   <div class="callout-label">Worked Example - High-SALT Taxpayer 2026</div>
-  <p><strong>Facts:</strong> California couple, MFJ, AGI $800,000. SALT (state income + property tax) total $50,000 (capped at $40,000 deductible for regular tax). Other itemized: $35,000 (mortgage, charitable, etc.). MAGI $800,000 (below $1M joint AMT phaseout threshold).</p>
+  <p><strong>Facts:</strong> California couple, MFJ, AGI $800,000. SALT (state income + property tax) total $50,000 (capped at $10,000 deductible for regular tax: the 2026 cap of $40,400 is reduced by 30% of the $295,000 of MAGI over $505,000, but not below $10,000 - IRC §164(b)(7)). Other itemized: $35,000 (mortgage, charitable, etc.). MAGI $800,000 (below $1M joint AMT phaseout threshold).</p>
   <p><strong>Regular Tax Computation:</strong></p>
-  <p>Itemized deductions: $40,000 (SALT, capped) + $35,000 = $75,000<br>Regular taxable income: $800,000 - $75,000 = $725,000<br>Regular federal tax (2026 MFJ): approximately $192,000</p>
+  <p>Itemized deductions: $10,000 (SALT, capped) + $35,000 = $45,000<br>Regular taxable income: $800,000 - $45,000 = $755,000<br>Regular federal tax (2026 MFJ): $116,896 + 35% x ($755,000 - $512,450) = $201,788.50</p>
   <p><strong>AMT Computation:</strong></p>
-  <p>Start with regular taxable income: $725,000<br>Add back SALT (§56(b)(1)(A)(ii)): +$40,000<br>AMTI: $765,000<br>AMT exemption (MFJ 2026: $140,200): -$140,200<br>(AMTI $765,000 below $1,000,000 reset threshold, no phaseout)<br>AMT base: $624,800<br>AMT (26% × $244,500 + 28% × $380,300): $63,570 + $106,484 = $170,054<br></p>
-  <p><strong>Compare:</strong> AMT $170,054 vs Regular $192,000. Regular is higher, no AMT owed.</p>
-  <p><strong>However - if AGI were $1,200,000:</strong> Reset phaseout kicks in. Exemption reduced by 50% × ($1,200,000 - $1,000,000) = $100,000 reduction. Exemption falls from $140,200 to $40,200. AMT base widens significantly. AMT may exceed regular tax.</p>
+  <p>Start with regular taxable income: $755,000<br>Add back SALT (§56(b)(1)(A)(ii)): +$10,000<br>AMTI: $765,000<br>AMT exemption (MFJ 2026: $140,200): -$140,200<br>(AMTI $765,000 below $1,000,000 reset threshold, no phaseout)<br>AMT base: $624,800<br>AMT (26% × $244,500 + 28% × $380,300): $63,570 + $106,484 = $170,054<br></p>
+  <p><strong>Compare:</strong> AMT $170,054 vs Regular $201,788.50. Regular is higher, no AMT owed.</p>
+  <p><strong>However - if AMTI were $1,200,000:</strong> Reset phaseout kicks in. Exemption reduced by 50% × ($1,200,000 - $1,000,000) = $100,000 reduction. Exemption falls from $140,200 to $40,200. AMT base widens significantly. AMT may exceed regular tax.</p>
 </div>
 
 <h2>ISO Bargain Element - The Tech Employee Trap</h2>
@@ -240,7 +240,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>State</th><th>AMT Position</th></tr>
   <tr><td>California</td><td>Has its own AMT - 7% rate; SALT not added back (different structure); preserved post-federal-OBBBA</td></tr>
-  <tr><td>Iowa</td><td>State AMT exists</td></tr>
+  <tr><td>Iowa</td><td>Repealed (individual AMT repealed beginning with tax year 2023)</td></tr>
   <tr><td>Minnesota</td><td>State AMT exists</td></tr>
   <tr><td>Most other states</td><td>No state AMT or conform to federal</td></tr>
 </table>
@@ -249,17 +249,17 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <table class="key-table">
   <tr><th>Form 6251 Line</th><th>Key Issue</th></tr>
-  <tr><td>Line 2a - Taxes from Schedule A</td><td>SALT add-back - largest item for many high-income taxpayers; OBBBA's $40K cap means up to $40K add-back</td></tr>
+  <tr><td>Line 2a - Taxes from Schedule A</td><td>SALT add-back - largest item for many high-income taxpayers; OBBBA's cap ($40,400 for 2026, phased down to as low as $10,000 for MAGI over $505,000) means up to a $40,400 add-back</td></tr>
   <tr><td>Line 2i - Exercise of incentive stock options</td><td>Bargain element from ISO exercise; report from Form 3921</td></tr>
   <tr><td>Line 2j - Estates and trusts (income from K-1)</td><td>AMT items flowing from trusts/estates</td></tr>
-  <tr><td>Line 2k - Partnership and S-corp K-1 items</td><td>AMT items from passthrough entities</td></tr>
+  <tr><td>Line 2k - Disposition of property</td><td>Difference between AMT and regular tax gain or loss</td></tr>
   <tr><td>Line 2l - Depreciation difference</td><td>Difference between regular MACRS and AMT</td></tr>
   <tr><td>Line 2m - Passive activities</td><td>AMT-adjusted passive activity income/loss</td></tr>
   <tr><td>Line 4 - Alternative Minimum Taxable Income</td><td>Sum of regular taxable income plus all adjustments and preferences</td></tr>
   <tr><td>Line 5 - Exemption</td><td>Phased exemption per filing status and AMTI; 2026 joint $1M reset</td></tr>
   <tr><td>Line 7 - Tentative Minimum Tax before AMT FTC</td><td>26%/28% rates applied</td></tr>
-  <tr><td>Line 11 - Regular tax</td><td>From Form 1040 (less certain credits)</td></tr>
-  <tr><td>Line 12 - Net AMT</td><td>Line 9 minus Line 11; entered on Form 1040 Schedule 2</td></tr>
+  <tr><td>Line 10 - Regular tax</td><td>Form 1040 line 16 (minus any tax from Form 4972) plus Schedule 2 line 1z (less certain credits)</td></tr>
+  <tr><td>Line 11 - AMT</td><td>Line 9 minus Line 10; entered on Schedule 2 (Form 1040), line 2</td></tr>
 </table>
 
 <h2>Common Practitioner Errors</h2>
@@ -290,7 +290,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Missing State AMT</h3>
 
-<p>California, Iowa, Minnesota have own state AMTs with different structures. Federal AMT calculation alone misses state-level minimum tax.</p>
+<p>California and Minnesota have own state AMTs with different structures (Iowa repealed its individual AMT beginning with tax year 2023). Federal AMT calculation alone misses state-level minimum tax.</p>
 
 <h3>Failing to Model AMT Pre-Exercise</h3>
 
@@ -298,7 +298,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Treating §168(k) Bonus Depreciation as AMT Preference</h3>
 
-<p>§168(k) bonus depreciation IS allowed for AMT (§168(k)(2)(F)). Not a preference item - regular and AMT depreciation match. OBBBA restored 100% bonus depreciation; same for both regimes.</p>
+<p>§168(k) bonus depreciation IS allowed for AMT (§168(k)(2)(G)). Not a preference item - regular and AMT depreciation match. OBBBA restored 100% bonus depreciation; same for both regimes.</p>
 
 <h3>Missing AMT Foreign Tax Credit</h3>
 
@@ -328,7 +328,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §55 (imposition of alternative minimum tax). §55(a) (general rule - AMT is excess of TMT over regular tax). §55(b)(1)(A) (AMT rates - 26% on first $244,500 of AMT base for 2026, $122,250 for MFS; 28% on excess - inflation indexed). §55(b)(3) (capital gains rate preservation - LTCG and qualified dividends at same preferential rates for AMT as regular tax). §55(d) (exemption amounts). §55(d)(1) (exemption amounts by filing status). §55(d)(2) (phaseout of exemption). §55(d)(4) (special rule for 2018-2025 under TCJA - OBBBA preserves higher exemptions permanently). §56 (adjustments in computing AMT income). §56(a) (depreciation adjustment). §56(b) (adjustments for individuals). §56(b)(1)(A)(i) (miscellaneous itemized deductions - suspended under TCJA; OBBBA preserved suspension). §56(b)(1)(A)(ii) (state and local taxes - NOT allowed for AMT; full add-back). §56(b)(1)(E) (standard deduction not allowed). §56(b)(3) (incentive stock option bargain element treated as AMT preference). §57 (preference items). §57(a)(1) (depletion). §57(a)(2) (intangible drilling costs). §57(a)(5) (tax-exempt interest on certain private activity bonds). §53 (Credit for prior year minimum tax liability - "Minimum Tax Credit"). §53(a) (general rule). §53(b) (amount of credit - based on adjusted net minimum tax from timing items). §53(d) (carryover indefinite). §59 (other definitions and special rules). §59(a) (AMT FTC - separate computation). §168(k)(2)(F) (bonus depreciation allowed for AMT). §199A (QBI deduction allowed for AMT). §422 (Incentive Stock Options). §421 (general rules for ISOs). §83(b) (election to include compensation in income at grant). §170 (charitable contribution - appreciated property preserved for AMT). §164(b)(6) (SALT cap - $40,000 under OBBBA; not deductible for AMT). One Big Beautiful Bill Act, P.L. 119-21, signed July 4, 2025. OBBBA §70107 (amends §55(d)(4); makes TCJA-era higher AMT exemption amounts permanent; resets 2026 phaseout threshold to $500,000 single/HoH/MFS and $1,000,000 MFJ for ALL filing statuses; doubles phaseout rate from 25% to 50% for all filing statuses); IRS Rev. Proc. 2025-32 §4.10 (2026 AMT exemption amounts and phaseout thresholds, confirming universal application across filing statuses). OBBBA §70106 (estate tax exemption permanent $15M). OBBBA §70120 (SALT cap $40K with phaseout). Form 6251 (Alternative Minimum Tax - Individuals). Form 8801 (Credit for Prior Year Minimum Tax). Form 3921 (ISO Exercise reporting). Form 3922 (ESPP transfer reporting). Form 1040 Schedule 2 (Additional Taxes including AMT).</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §55 (imposition of alternative minimum tax). §55(a) (general rule - AMT is excess of TMT over regular tax). §55(b)(1)(A) (AMT rates - 26% on first $244,500 of AMT base for 2026, $122,250 for MFS; 28% on excess - inflation indexed). §55(b)(3) (capital gains rate preservation - LTCG and qualified dividends at same preferential rates for AMT as regular tax). §55(d) (exemption amounts). §55(d)(1) (exemption amounts by filing status). §55(d)(2) (phaseout of exemption). §55(d)(4) (special rule for 2018-2025 under TCJA - OBBBA preserves higher exemptions permanently). §56 (adjustments in computing AMT income). §56(a) (depreciation adjustment). §56(b) (adjustments for individuals). §56(b)(1)(A)(i) (miscellaneous itemized deductions - suspended under TCJA; OBBBA preserved suspension). §56(b)(1)(A)(ii) (state and local taxes - NOT allowed for AMT; full add-back). §56(b)(1)(E) (standard deduction not allowed). §56(b)(3) (incentive stock option bargain element treated as AMT preference). §57 (preference items). §57(a)(1) (depletion). §57(a)(2) (intangible drilling costs). §57(a)(5) (tax-exempt interest on certain private activity bonds). §53 (Credit for prior year minimum tax liability - "Minimum Tax Credit"). §53(a) (general rule). §53(b) (amount of credit - based on adjusted net minimum tax from timing items). §53(d) (carryover indefinite). §59 (other definitions and special rules). §59(a) (AMT FTC - separate computation). §168(k)(2)(G) (bonus depreciation allowed for AMT). §199A (QBI deduction allowed for AMT). §422 (Incentive Stock Options). §421 (general rules for ISOs). §83(b) (election to include compensation in income at grant). §170 (charitable contribution - appreciated property preserved for AMT). §164(b)(6) (SALT cap - $40,000 under OBBBA; not deductible for AMT). One Big Beautiful Bill Act, P.L. 119-21, signed July 4, 2025. OBBBA §70107 (amends §55(d)(4); makes TCJA-era higher AMT exemption amounts permanent; resets 2026 phaseout threshold to $500,000 single/HoH/MFS and $1,000,000 MFJ for ALL filing statuses; doubles phaseout rate from 25% to 50% for all filing statuses); IRS Rev. Proc. 2025-32 §4.10 (2026 AMT exemption amounts and phaseout thresholds, confirming universal application across filing statuses). OBBBA §70106 (estate tax exemption permanent $15M). OBBBA §70120 (SALT cap $40K with phaseout). Form 6251 (Alternative Minimum Tax - Individuals). Form 8801 (Credit for Prior Year Minimum Tax). Form 3921 (ISO Exercise reporting). Form 3922 (ESPP transfer reporting). Form 1040 Schedule 2 (Additional Taxes including AMT).</p>
 
 
 <!-- START UNIFIED FOOTER -->
