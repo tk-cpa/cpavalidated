@@ -85,7 +85,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <div class="back"><a href="investments-capital.html">&#8592; Investments &amp; Capital</a></div>
 <div class="article">
 
-<p class="lead">The Net Investment Income Tax under IRC §1411 imposes a 3.8% surtax on the lesser of net investment income (NII) or the amount by which modified adjusted gross income (MAGI) exceeds threshold amounts. Enacted as part of the Affordable Care Act and effective from tax year 2013, the rate has never changed. Critically, the thresholds have never been indexed for inflation: $200,000 single / HOH, $250,000 MFJ / qualifying surviving spouse, $125,000 MFS - identical to the 2013 starting figures. Trusts and estates face a much lower threshold ($16,000 for 2026, the top §1(e) bracket) which sweeps most non-grantor trusts into NIIT. Form 8960 computes the tax. Material participation under §469 and real estate professional status under §469(c)(7) remain the dominant planning tools. The <em>Bruyea</em> decision in 2024 split federal authority on whether tax treaty FTCs can offset NIIT.</p>
+<p class="lead">The Net Investment Income Tax under IRC §1411 imposes a 3.8% surtax on the lesser of net investment income (NII) or the amount by which modified adjusted gross income (MAGI) exceeds threshold amounts. Enacted as part of the Affordable Care Act and effective from tax year 2013, the rate has never changed. Critically, the thresholds have never been indexed for inflation: $200,000 single / HOH, $250,000 MFJ / qualifying surviving spouse, $125,000 MFS - identical to the 2013 starting figures. Trusts and estates face a much lower threshold ($16,000 for 2026, the top §1(e) bracket) which sweeps most non-grantor trusts into NIIT. Form 8960 computes the tax. Material participation under §469 and real estate professional status under §469(c)(7) remain the dominant planning tools. On August 31, 2026, the Federal Circuit held in <em>Bruyea</em> and <em>Christensen</em> that tax treaty FTCs cannot offset NIIT.</p>
 
 <div class="callout">
   <div class="callout-label">NIIT 2026 At a Glance</div>
@@ -123,15 +123,15 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Rental income (real estate professional under §469(c)(7), materially participating)</td><td>NO if it rises to a §162 T/B level and material participation exists</td></tr>
   <tr><td>Income from passive T/B (Schedule K-1)</td><td>YES (§1411(c)(2))</td></tr>
   <tr><td>Income from nonpassive T/B (materially participating)</td><td>NO</td></tr>
-  <tr><td>Gain on sale of materially-participating S-corp stock</td><td>NO to extent of T/B operations; specific §1411-7 allocation rules apply</td></tr>
+  <tr><td>Gain on sale of materially-participating S-corp stock</td><td>NO to extent of T/B operations; specific §1411(c)(4) rules apply (proposed Reg §1.1411-7)</td></tr>
   <tr><td>Gain on sale of rental property held in passive T/B</td><td>YES</td></tr>
   <tr><td>Gain on sale of principal residence</td><td>Excluded if §121 applies; only excess over §121 exclusion ($250K single / $500K MFJ) is NII</td></tr>
   <tr><td>Wages and self-employment income</td><td>NO (§1411(c)(6) - earned income excluded because already subject to Medicare under §1401(b))</td></tr>
   <tr><td>Distributions from IRAs, 401(k), pensions</td><td>NO - retirement plan distributions excluded under §1411(c)(5)</td></tr>
   <tr><td>Social Security benefits</td><td>NO - excluded; taxable portion counts in MAGI but not in NII</td></tr>
   <tr><td>Unemployment compensation, alimony</td><td>NO - not investment income</td></tr>
-  <tr><td>CFC Subpart F or NCTI inclusions</td><td>YES by default; can elect §1.1411-10(g) to treat as NII at time of inclusion (vs. eventual distribution)</td></tr>
-  <tr><td>PFIC inclusions</td><td>YES (similar §1.1411-10(g) election available)</td></tr>
+  <tr><td>CFC Subpart F or NCTI inclusions</td><td>NO at inclusion by default (later PTEP distributions are NII dividends); YES at inclusion if a §1.1411-10(g) election is made</td></tr>
+  <tr><td>PFIC inclusions</td><td>QEF inclusions: same default and §1.1411-10(g) election as CFCs. Section 1296 mark-to-market inclusions: YES, as net gain when included (Reg §1.1411-10(c)(2)(ii))</td></tr>
   <tr><td>K-1 from trading partnership</td><td>YES - trading in financial instruments / commodities is §1411 T/B under §1411(c)(2)(B)</td></tr>
 </table>
 
@@ -152,7 +152,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><th>NIIT MAGI Adjustment</th><th>Effect</th></tr>
   <tr><td>Regular AGI (Form 1040 Line 11)</td><td>Starting point</td></tr>
   <tr><td>Add: foreign earned income excluded under §911(a)(1)</td><td>FEIE-excluded amounts ARE counted in NIIT MAGI even though excluded from regular AGI</td></tr>
-  <tr><td>Add: foreign housing exclusion or deduction under §911</td><td>Both housing exclusion AND deduction added back</td></tr>
+  <tr><td>Less: deductions or exclusions disallowed under §911(d)(6) on the excluded amount</td><td>Housing cost exclusion under §911(a)(2) is NOT added back; only the §911(a)(1) exclusion (Form 2555 line 42), net of the related disallowed deductions (Form 2555 line 44), is added</td></tr>
   <tr><td>Add: net excluded gain from certain CFCs / QEF PFICs (if §1.1411-10(g) NOT elected)</td><td>Adjusts MAGI for income deferred under default treatment</td></tr>
   <tr><td>Less: adjustments related to §1.1411-10(g) election (if elected)</td><td>Avoids double-inclusion when election in effect</td></tr>
   <tr><td>Tax-exempt municipal bond interest</td><td>NOT added back - excluded from MAGI</td></tr>
@@ -251,13 +251,13 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h2>The §1.1411-10(g) Election for CFCs and PFICs</h2>
 
-<p>By default, NCTI / Subpart F / PFIC mark-to-market or QEF inclusions are NOT included in NII when recognized for regular tax purposes. Instead, they become NII at the point of actual cash distribution from the foreign corporation. This creates timing mismatches: a US shareholder of a CFC pays regular income tax on $1,000,000 NCTI in 2026, but no NIIT until eventual distribution, at which point the §959 PTEP recovery interacts with NIIT in complicated ways.</p>
+<p>By default, NCTI / Subpart F or QEF inclusions are NOT included in NII when recognized for regular tax purposes. Instead, they become NII at the point of actual cash distribution from the foreign corporation. This creates timing mismatches: a US shareholder of a CFC pays regular income tax on $1,000,000 NCTI in 2026, but no NIIT until eventual distribution, at which point the §959 PTEP recovery interacts with NIIT in complicated ways.</p>
 
 <p>Reg §1.1411-10(g) allows an irrevocable election to "synchronize" NII recognition with regular tax recognition - treating CFC and QEF inclusions as NII at the time of inclusion, with corresponding tax-free PTEP recovery later.</p>
 
 <table class="key-table">
   <tr><th>Election Mechanic</th><th>Detail</th></tr>
-  <tr><td>Who can elect</td><td>US person who is a US shareholder of a CFC or US person owning stock of a PFIC for which a QEF election is in effect, OR §1296 PFIC mark-to-market election</td></tr>
+  <tr><td>Who can elect</td><td>US person who is a US shareholder of a CFC or US person owning stock of a PFIC for which a QEF election is in effect (the election does not apply to §1296 mark-to-market PFICs)</td></tr>
   <tr><td>When to elect</td><td>First year the individual would be subject to NIIT if elections made. Generally first year MAGI exceeds threshold and CFC/QEF inclusions occur</td></tr>
   <tr><td>Where to elect</td><td>Form 8960 - check the election box; attach statement identifying the CFC/QEF and election</td></tr>
   <tr><td>Effect</td><td>CFC/QEF inclusions included in NII when recognized for regular tax; later distributions of PTEP excluded from NII</td></tr>
@@ -267,17 +267,17 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h2>Bruyea v. United States - Treaty FTC Against NIIT</h2>
 
-<p>The unresolved high-stakes issue: whether a US-foreign country tax treaty foreign tax credit can offset NIIT. The IRS historically takes the position that NIIT is NOT a covered tax under treaties because §1411 is in Chapter 2A (rather than Chapter 1), and the FTC under §27 / §901 is available only against Chapter 1 taxes.</p>
+<p>The issue: whether a US-foreign country tax treaty foreign tax credit can offset NIIT. On August 31, 2026, the Federal Circuit held in <em>Estate of Bruyea v. United States</em> (US-Canada) and <em>Christensen v. United States</em> (US-France) that it cannot, reversing the Court of Federal Claims: the treaty credit provisions are subject to the Code limits, and §§26(b), 27 and 901 confine foreign tax credits to taxes imposed under Chapter 1, while NIIT under §1411 is in Chapter 2A.</p>
 
 <table class="key-table">
   <tr><th>Case</th><th>Holding</th><th>Citation</th></tr>
-  <tr><td><em>Bruyea v. United States</em></td><td>US-Canada treaty allows FTC against NIIT for dual citizen. Court of Federal Claims granted partial summary judgment to taxpayer.</td><td>174 Fed. Cl. 238 (2024)</td></tr>
-  <tr><td><em>Christensen v. United States</em></td><td>Earlier Court of Federal Claims case - allowed treaty FTC against NIIT under US-France treaty</td><td>168 Fed. Cl. 263 (2023)</td></tr>
-  <tr><td><em>Toulouse v. Commissioner</em></td><td>Tax Court - allowed treaty FTC against NIIT under US-France treaty</td><td>157 T.C. 49 (2021)</td></tr>
-  <tr><td>IRS position</td><td>Continues to deny treaty FTC against NIIT in general; refund claims now should be filed protectively</td><td>IRS Chief Counsel Advice Memo 202118011</td></tr>
+  <tr><td><em>Bruyea v. United States</em></td><td>Court of Federal Claims (2024) allowed treaty FTC against NIIT for a US-Canada dual citizen; reversed by the Federal Circuit on August 31, 2026, which held the US-Canada treaty provides no FTC against NIIT.</td><td>174 Fed. Cl. 238 (2024), rev'd, No. 2025-1563 (Fed. Cir. Aug. 31, 2026)</td></tr>
+  <tr><td><em>Christensen v. United States</em></td><td>Court of Federal Claims (2023) allowed treaty FTC against NIIT under US-France treaty; reversed by the Federal Circuit on August 31, 2026</td><td>168 Fed. Cl. 263 (2023), rev'd, No. 2024-1284 (Fed. Cir. Aug. 31, 2026)</td></tr>
+  <tr><td><em>Toulouse v. Commissioner</em></td><td>Tax Court - rejected the argument that the US-France treaty allows FTC to offset NIIT</td><td>157 T.C. 49 (2021)</td></tr>
+  <tr><td>IRS position</td><td>Denies treaty FTC against NIIT; position upheld by the Federal Circuit on August 31, 2026</td><td>IRS Chief Counsel Advice Memo 202118011</td></tr>
 </table>
 
-<div class="green-box"><strong>Protective claim recommended for treaty FTC.</strong> Dual citizens of US and treaty countries (Canada, France, UK in particular) who paid foreign tax and incurred NIIT should file protective Form 1040-X amended return claims for refund. The SOL clock under §6511 runs from filing of original return. If <em>Bruyea</em> and similar cases are upheld on appeal, refunds become claimable. If reversed, no harm beyond filing.</div>
+<div class="green-box"><strong>Treaty FTC against NIIT: the Federal Circuit ruled against taxpayers.</strong> On August 31, 2026, the Federal Circuit reversed <em>Bruyea</em> (US-Canada) and <em>Christensen</em> (US-France), so a protective Form 1040-X claim relying on those cases is no longer supported. A Client relying on different treaty text should have the treaty reviewed before claiming the credit. The §6511 refund window runs from the original return, so track it.</div>
 
 <h2>Trusts and Estates - The $16,000 Trap</h2>
 
@@ -291,7 +291,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Charitable remainder trust (CRT)</td><td>Special tier rules under Reg §1.1411-3(d); accumulated NII (ANII) tracked separately</td></tr>
   <tr><td>Electing Small Business Trust (ESBT)</td><td>S-corp portion and non-S portion handled separately; complex Reg §1.1411-3(c) mechanics</td></tr>
   <tr><td>Grantor trust</td><td>Income flows to grantor; NIIT computed on grantor's return (no trust-level NIIT)</td></tr>
-  <tr><td>Bankruptcy estate of individual</td><td>Treated as individual for §1411 purposes</td></tr>
+  <tr><td>Bankruptcy estate of individual</td><td>Treated as a married taxpayer filing a separate return for §1411 purposes (Reg §1.1411-3(b)(2)(ii)), so the $125,000 threshold applies</td></tr>
   <tr><td>Foreign trust</td><td>Generally not subject to NIIT (no Chapter 2A application to foreign persons); separate accumulation distribution rules apply via Form 3520</td></tr>
 </table>
 
@@ -307,7 +307,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Tax-Loss Harvesting</h3>
 
-<p>Realize capital losses to offset capital gains. Net loss reduces NII directly. The $3,000 annual loss against ordinary income limit under §1211(b) does NOT apply to NIIT - all capital losses fully offset capital gains within NII regardless of overall loss limit. Excess capital loss carries forward.</p>
+<p>Realize capital losses to offset capital gains. Capital losses fully offset capital gains within NII. Net gain attributable to dispositions cannot be less than zero, and a net capital loss reduces other NII only to the extent allowed under §1211(b) ($3,000, or $1,500 MFS) (Reg §1.1411-4(d)(2)). Excess capital loss carries forward.</p>
 
 <h3>Municipal Bond Substitution</h3>
 
@@ -323,7 +323,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>QCD for IRA Owners 70-1/2+</h3>
 
-<p>Qualified Charitable Distributions from IRAs (up to $108,000 for 2025; verify 2026 indexed amount) count toward Required Minimum Distribution but are NOT included in AGI. This keeps MAGI lower, reducing both NIIT exposure and Medicare IRMAA surcharges.</p>
+<p>Qualified Charitable Distributions from IRAs (up to $111,000 for 2026 ($108,000 for 2025)) count toward Required Minimum Distribution but are NOT included in AGI. This keeps MAGI lower, reducing both NIIT exposure and Medicare IRMAA surcharges.</p>
 
 <h3>Retirement Plan Contributions to Reduce MAGI</h3>
 
@@ -355,13 +355,13 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <p>Capital loss carryforwards offset capital gains for NIIT purposes (subject to the §1411 framework which mirrors §1211(b)). However, the carryforward amount must be tracked separately on Form 8960 - the regular-tax carryforward may differ from the NIIT carryforward if §1411 trade or business exclusions changed the character of prior-year losses.</p>
 
-<h3>Not Filing Protective Claim for Treaty FTC</h3>
+<h3>Relying on Treaty FTC Against NIIT</h3>
 
-<p>Dual citizens of US and treaty countries who paid foreign tax and owe NIIT should file protective Form 1040-X claims preserving the treaty FTC argument. <em>Bruyea</em>, <em>Christensen</em>, and <em>Toulouse</em> are split authority; the IRS continues to deny but courts increasingly side with taxpayers. SOL under §6511 closes the window - file protectively.</p>
+<p>Dual citizens of US and treaty countries who paid foreign tax and owe NIIT can no longer rely on a treaty FTC to offset NIIT. The Federal Circuit rejected the argument in <em>Bruyea</em> and <em>Christensen</em> on August 31, 2026, reversing the Court of Federal Claims, and the Tax Court rejected it in <em>Toulouse</em>. Review the specific treaty text before claiming the credit.</p>
 
 <h3>Underestimating Trust Exposure</h3>
 
-<p>Non-grantor trusts with even modest investment income face NIIT. A trust with $50,000 of dividend and capital gain income and only $20,000 distributed to beneficiaries has $30,000 of undistributed NII. With trust AGI at $50,000 and threshold $16,000, the lesser of undistributed NII ($30,000) or AGI excess ($34,000) is $30,000 - producing $1,140 NIIT at the trust level. Distribution planning is critical.</p>
+<p>Non-grantor trusts with even modest investment income face NIIT. A trust with $50,000 of dividend and capital gain income and only $20,000 distributed to beneficiaries has $30,000 of undistributed NII. With trust AGI at $30,000 ($50,000 less the $20,000 distribution deduction allowed in computing AGI under §67(e)(2)) and threshold $16,000, the lesser of undistributed NII ($30,000) or AGI excess ($14,000) is $14,000 - producing $532 NIIT at the trust level. Distribution planning is critical.</p>
 
 <div class="related">
   <div class="related-title">Related Guides &amp; Calculators</div>
@@ -375,7 +375,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §1411 (imposition of tax), §1411(a)(1) (tax imposed on individuals), §1411(a)(2) (tax imposed on estates and trusts), §1411(b) (threshold amount - $200K single, $250K MFJ, $125K MFS, NOT indexed), §1411(c)(1) (definition of net investment income), §1411(c)(1)(A)(i) (investment-type gross income), §1411(c)(1)(A)(ii) (income from §1411 trade or business), §1411(c)(1)(A)(iii) (net gain from disposition of property), §1411(c)(1)(B) (allowable deductions allocable to NII), §1411(c)(2) (§1411 trade or business - passive activity or trading), §1411(c)(5) (retirement plan distribution exclusion), §1411(c)(6) (SE income exclusion - already subject to §1401(b) Medicare), §1411(d) (MAGI definition - FEIE addback), §1411(e) (special rule for NRA). §469 (passive activity loss), §469(c)(7) (real estate professional - 50% and 750 hour two-prong test), §469(c)(7)(C) (real property trade or business categories). §121 (home sale exclusion - applies to NII as well). §1(e) (estate/trust top bracket - $16,000 for 2026). §1401(b) (Medicare SE tax). §3101(b)(2) (Additional Medicare Tax). §27 / §901 (foreign tax credit - chapter 1 only per IRS position). §165(g) / §166 (worthless security / bad debt - special §6511 SOL). Treasury Regulations §1.1411-1 through §1.1411-10. Reg §1.1411-3(c) (ESBT). Reg §1.1411-3(d) (CRT accumulated NII). Reg §1.1411-4 (net investment income computation). Reg §1.1411-5 (§1411 trade or business). Reg §1.1411-7 (gain from disposition of partnership or S-corp interest). Reg §1.1411-9 (SE income exception). Reg §1.1411-10(g) (CFC/QEF inclusion election). Reg §1.469-5T(a) (seven material participation tests). Reg §1.469-9(g) (rental aggregation election). Form 8960 and Instructions. <em>Bruyea v. United States</em>, 174 Fed. Cl. 238 (2024). <em>Christensen v. United States</em>, 168 Fed. Cl. 263 (2023). <em>Toulouse v. Commissioner</em>, 157 T.C. 49 (2021). <em>Hakkak v. Commissioner</em>, T.C. Memo 2020-46 (material participation documentation).</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §1411 (imposition of tax), §1411(a)(1) (tax imposed on individuals), §1411(a)(2) (tax imposed on estates and trusts), §1411(b) (threshold amount - $200K single, $250K MFJ, $125K MFS, NOT indexed), §1411(c)(1) (definition of net investment income), §1411(c)(1)(A)(i) (investment-type gross income), §1411(c)(1)(A)(ii) (income from §1411 trade or business), §1411(c)(1)(A)(iii) (net gain from disposition of property), §1411(c)(1)(B) (allowable deductions allocable to NII), §1411(c)(2) (§1411 trade or business - passive activity or trading), §1411(c)(5) (retirement plan distribution exclusion), §1411(c)(6) (SE income exclusion - already subject to §1401(b) Medicare), §1411(d) (MAGI definition - FEIE addback), §1411(e) (special rule for NRA). §469 (passive activity loss), §469(c)(7) (real estate professional - 50% and 750 hour two-prong test), §469(c)(7)(C) (real property trade or business categories). §121 (home sale exclusion - applies to NII as well). §1(e) (estate/trust top bracket - $16,000 for 2026). §1401(b) (Medicare SE tax). §3101(b)(2) (Additional Medicare Tax). §27 / §901 (foreign tax credit - chapter 1 only, per the IRS and the Federal Circuit in Bruyea and Christensen). §165(g) / §166 (worthless security / bad debt - special §6511 SOL). Treasury Regulations §1.1411-1 through §1.1411-10. Reg §1.1411-3(c) (ESBT). Reg §1.1411-3(d) (CRT accumulated NII). Reg §1.1411-4 (net investment income computation). Reg §1.1411-5 (§1411 trade or business). §1411(c)(4) and proposed Reg §1.1411-7 (gain from disposition of partnership or S-corp interest; final §1.1411-7 is reserved). Reg §1.1411-9 (SE income exception). Reg §1.1411-10(g) (CFC/QEF inclusion election). Reg §1.469-5T(a) (seven material participation tests). Reg §1.469-9(g) (rental aggregation election). Form 8960 and Instructions. <em>Bruyea v. United States</em>, 174 Fed. Cl. 238 (2024), rev'd, No. 2025-1563 (Fed. Cir. Aug. 31, 2026). <em>Christensen v. United States</em>, 168 Fed. Cl. 263 (2023), rev'd, No. 2024-1284 (Fed. Cir. Aug. 31, 2026). <em>Toulouse v. Commissioner</em>, 157 T.C. 49 (2021). <em>Hakkak v. Commissioner</em>, T.C. Memo 2020-46 (material participation documentation).</p>
 
 
 <!-- START UNIFIED FOOTER -->
