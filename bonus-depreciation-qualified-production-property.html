@@ -92,7 +92,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <p><strong>Construction begin date window:</strong> AFTER January 19, 2025 AND BEFORE January 1, 2029.</p>
   <p><strong>Placed-in-service window:</strong> AFTER July 4, 2025 (OBBBA enactment) AND BEFORE January 1, 2031.</p>
   <p><strong>Why two windows:</strong> Construction must begin during the 4-year window (1/20/2025 - 12/31/2028); but placed-in-service has a separate 5.5-year window allowing longer projects to complete and qualify even when construction extends. A project beginning Jan 2026 and completing Dec 2030 qualifies.</p>
-  <p><strong>"Begin construction" definition:</strong> Pending §168(n)-specific regulations, taxpayers may rely on existing §168(k) bonus depreciation "begin construction" rules under Reg §1.168(k)-2(b)(5)(iv)(B) - physical work of significant nature OR 5% safe harbor of total cost.</p>
+  <p><strong>"Begin construction" definition:</strong> Pending §168(n)-specific regulations, taxpayers may rely on existing §168(k) bonus depreciation "begin construction" rules under Reg §1.168(k)-2(b)(5)(iv)(B) - physical work of significant nature OR the safe harbor of incurring (accrual) or paying (cash) more than 10% of the total cost of the property (excluding land and preliminary activities).</p>
   <p><strong>Election:</strong> Affirmative; made on timely-filed federal income tax return for the year property placed in service; effectively irrevocable once made.</p>
 </div>
 
@@ -185,13 +185,9 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="callout">
   <div class="callout-label">Worked Example - Integrated Facility (per Notice 2026-16)</div>
-  <p><strong>Facts:</strong> Company A operates an integrated facility with three buildings on contiguous land:</p>
-  <p>• Building A (raw materials storage): 30,000 sq ft</p>
-  <p>• Factory B (primary production): 100,000 sq ft</p>
-  <p>• Factory C (assembly and finishing): 60,000 sq ft</p>
-  <p>Each building is a separate unit of property. But because they operate as an integrated facility on contiguous land, Company A treats all three as a single unit of property for the integral part requirement.</p>
-  <p><strong>Analysis:</strong> Building A's storage activity is essential to Factory B's QPA (raw materials consumed during QPA). When combined, all three buildings constitute QPP. The entire unadjusted basis of all three buildings ($190 million combined) is eligible for §168(n) 100% deduction.</p>
-  <p><strong>Without integrated facility rule:</strong> Building A alone would not qualify (storage isn't directly QPA), losing $50M of deduction.</p>
+  <p><strong>Facts (Notice 2026-16, Example 5):</strong> Company A placed Factory B and Factory C in service in 2023 on a single piece of land and uses them for manufacturing that is a qualified production activity (QPA). In 2026, Company A begins construction of Building A on contiguous land to store raw materials and other manufacturing inputs used or consumed in Factory B and Factory C. Construction begins in May 2026, Building A is placed in service in April 2027, and its unadjusted depreciable basis is $20,000,000.</p>
+  <p><strong>Analysis:</strong> The three buildings are each a separate unit of property, but because they operate as an integrated facility on contiguous land, Company A may treat them as a single unit of property for the integral part requirement (section 4.03(2)). Building A is therefore used as an integral part of a QPA, and its entire $20,000,000 unadjusted depreciable basis may be designated as QPP (original use, construction beginning after January 19, 2025 and before January 1, 2029, placed in service before January 1, 2031, not ADS property). Factory B and Factory C were placed in service in 2023 and are not eligible.</p>
+  <p><strong>Without the integrated facility rule:</strong> Building A's raw materials storage would not satisfy the integral part requirement on its own, because storage is treated as part of a QPA only within the same property or an integrated facility.</p>
 </div>
 
 <h2>The Lessor Exclusion - Significant Limitation</h2>
@@ -201,12 +197,12 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>Leasing Scenario</th><th>§168(n) Treatment</th></tr>
   <tr><td>Lessor owns factory; leases to unrelated manufacturer who uses it in QPA</td><td>LESSOR does NOT qualify for §168(n) (lessee's QPA does not count as lessor's use)</td></tr>
-  <tr><td>Lessee in same consolidated group as lessor (intercompany lease)</td><td>Awaiting regulatory clarification - common consolidated group leases appear excluded under statute, though policy concern is that this creates structuring penalty for vertical integration</td></tr>
+  <tr><td>Lessee in same consolidated group as lessor (intercompany lease)</td><td>Not treated as a lessor: the consolidated group is treated as a single taxpayer and the integral part requirement is tested by the lessee member's activities in the leased property (Notice 2026-16 section 4.02(3)(b)). A QPP change in use occurs if the lessee member ceases its QPA or either member leaves the group (section 8.01(1)(b))</td></tr>
   <tr><td>Lessor uses property in own QPA</td><td>QUALIFIES</td></tr>
   <tr><td>Sale-leaseback structures</td><td>Generally lessor cannot get §168(n) post-sale-leaseback if lessee uses for QPA</td></tr>
 </table>
 
-<div class="note-box"><strong>The intercompany lease question is critical for corporate planning.</strong> Many large manufacturers historically structure real estate ownership in a separate entity (often a REIT or non-operating subsidiary) leasing to the operating subsidiary. The literal statute appears to exclude such intercompany leases from §168(n). Pending Treasury guidance, taxpayers should model both structures and may need to consolidate ownership and operations in the same entity to capture §168(n) benefit.</p>
+<div class="note-box"><strong>Intercompany and commonly controlled leases are addressed by Notice 2026-16.</strong> Many large manufacturers hold real estate in a separate entity that leases to the operating subsidiary. Under section 4.02(3)(b) of the Notice, a consolidated group member that leases to another member is not treated as a lessor. Under section 4.02(3)(c), a partnership, S corporation, or individual that leases property to a commonly controlled person (50 percent or more common ownership, directly or by attribution under §267(b) or §707(b)) is likewise not treated as a lessor, and the integral part requirement is tested by the lessee's activities in the property. A lessor outside these exceptions (for example, a C corporation outside the consolidated group, or an unrelated lessor) remains subject to the lessor exclusion.</p>
 
 <h2>10-Year Recapture Period</h2>
 
@@ -216,7 +212,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><th>Disposition Event</th><th>Recapture</th></tr>
   <tr><td>Sale of QPP within 10 years</td><td>§1245 recapture - depreciation taken (potentially the entire 100% deduction) recaptured as ORDINARY income; gain in excess of original cost taxed as capital gain</td></tr>
   <tr><td>Conversion to non-QPA use within 10 years (e.g., factory converted to warehouse for finished products)</td><td>Recapture under §168(n) special rule - portion of deduction recaptured as ordinary income</td></tr>
-  <tr><td>Discontinuation of business within 10 years</td><td>Potential recapture; facts and circumstances</td></tr>
+  <tr><td>Discontinuation of business within 10 years</td><td>No recapture unless the property also ceases to satisfy the integral part requirement and is used in another productive use (QPP change in use, §168(n)(5); Notice 2026-16 section 8.01(1)(a)); temporarily idle property is not a change in use (section 8.01(1)(d))</td></tr>
   <tr><td>Lease to another party for QPA after taxpayer ceased own QPA</td><td>Likely recapture (taxpayer no longer using; lessor exclusion applies)</td></tr>
   <tr><td>Disposition after 10-year period</td><td>§1245 recapture still applies on sale (QPP is §1245 property regardless of holding period) but no additional §168(n) recapture</td></tr>
 </table>
@@ -228,7 +224,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>§1245 Consequence</th><th>Detail</th></tr>
   <tr><td>Ordinary income recapture on sale</td><td>Gain on sale recaptured as ordinary income up to depreciation taken (likely entire $100M+ in some deals); only excess over original cost is capital gain</td></tr>
-  <tr><td>No like-kind exchange treatment</td><td>QPP is NOT eligible for §1031 like-kind exchange (which is limited to real property NOT classified as §1245)</td></tr>
+  <tr><td>Like-kind exchange</td><td>QPP is a building and therefore real property for §1031 purposes (Reg §1.1031(a)-3); Notice 2026-16 section 6.03 provides rules for replacement QPP acquired in a like-kind exchange or involuntary conversion, applying rules consistent with Reg §1.168(k)-2(g)(5)</td></tr>
   <tr><td>Installment sale impact</td><td>§453(i) - recapture income reported in year of sale; only post-recapture gain may be reported on installment basis</td></tr>
   <tr><td>Estate basis step-up</td><td>Heirs receive stepped-up basis under §1014; future depreciation begins fresh; §1245 recapture characterization wiped at death</td></tr>
 </table>
@@ -240,7 +236,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Form</td><td>Election statement attached to timely-filed federal income tax return for the year property placed in service</td></tr>
   <tr><td>Content</td><td>Identify the QPP, designate the portion treated as QPP, certify eligibility</td></tr>
   <tr><td>Allocation methods (mixed-use property)</td><td>Any reasonable method - square footage allocation, cost allocation, function-based allocation. Multiple methods may be used for different components.</td></tr>
-  <tr><td>Coordination with §168(k) bonus</td><td>Taxpayer may elect under §168(k)(7) to not take §168(k) bonus depreciation on portions designated as QPP under §168(n) to avoid duplication</td></tr>
+  <tr><td>Coordination with §168(k) bonus</td><td>Under §168(n)(4)(A), QPP is treated as a separate class of property and the taxpayer is treated as having made the §168(k)(7) election (out of §168(k) bonus depreciation) for that class, so no separate election is needed to avoid duplication</td></tr>
   <tr><td>Revocability</td><td>Effectively irrevocable absent IRS consent</td></tr>
   <tr><td>Late election</td><td>Future Treasury guidance expected; pending guidance, late election relief uncertain</td></tr>
 </table>
@@ -250,7 +246,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>Provision</th><th>Eligible Property</th><th>2026 Treatment</th></tr>
   <tr><td>§168(n) QPP</td><td>Nonresidential real property used in QPA - factories, refineries, agricultural production</td><td>100% deduction; election required; 10-year recapture</td></tr>
-  <tr><td>§168(k) Bonus Depreciation</td><td>Property with class life ≤ 20 years (most personal property), computer software, qualified improvement property</td><td>100% permanent under OBBBA for property acquired AND placed in service after 1/19/2025; default election (auto-applies)</td></tr>
+  <tr><td>§168(k) Bonus Depreciation</td><td>Property with a recovery period of 20 years or less (most personal property), computer software, qualified improvement property</td><td>100% permanent under OBBBA for property acquired AND placed in service after 1/19/2025; default election (auto-applies)</td></tr>
   <tr><td>§179 Expensing</td><td>Tangible personal property, off-the-shelf software, QIP, roofs/HVAC/security on nonresidential real property</td><td>2026: $2,560,000 cap / $4,090,000 phaseout per OBBBA-doubled baseline; per-asset election</td></tr>
   <tr><td>Standard MACRS 39-year</td><td>Nonresidential real property NOT QPP and not §168(k)-eligible improvements</td><td>Default - 39-year recovery</td></tr>
 </table>
@@ -316,7 +312,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Ignoring the Lessor Exclusion</h3>
 
-<p>Corporate Clients with separate real estate ownership entities cannot benefit from §168(n) on facilities leased to operating subsidiaries (under literal reading of the statute). Restructuring to consolidate ownership and operations may be necessary - but triggers other tax considerations including §351 contribution rules and state tax implications.</p>
+<p>Corporate Clients with separate real estate ownership entities should first confirm whether the lessor fits an exception in Notice 2026-16 section 4.02(3): a member of the same consolidated group as the lessee, or a partnership, S corporation, or individual lessor leasing to a commonly controlled person (50 percent or more common ownership). A lessor outside those exceptions, such as a C corporation outside the consolidated group or an unrelated lessor, cannot claim §168(n) on property used by its lessee. Restructuring in that case may trigger other tax considerations including §351 contribution rules and state tax implications.</p>
 
 <h3>Missing the 1/1/2021 - 5/12/2025 Existing-Property Lookback</h3>
 
@@ -330,13 +326,13 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <p>QPP is §1245 property permanently. A factory expensed at $100M under §168(n) and later sold for $150M generates $100M of ordinary income (recapture) plus $50M of capital gain. The full §168(n) deduction effectively becomes ordinary income at sale. This is fundamentally different from traditional 39-year MACRS treatment where most gain on real property is capital gain (with only §1250 recapture for accelerated depreciation in excess of straight-line).</p>
 
-<h3>No §1031 Like-Kind Exchange Option</h3>
+<h3>§1031 Like-Kind Exchanges Remain Available</h3>
 
-<p>Because QPP is §1245 property, it does NOT qualify for §1031 like-kind exchange. Owners who would otherwise structure a 1031 exchange to defer gain on facility disposition lose that option after §168(n) election.</p>
+<p>A building is real property under Reg §1.1031(a)-3, and Notice 2026-16 section 6.03 provides rules for replacement QPP acquired in a like-kind exchange or involuntary conversion. Owners should model how the §168(n) allowance interacts with an exchange rather than assuming it is unavailable.</p>
 
 <h3>Underestimating 10-Year Commitment</h3>
 
-<p>The 10-year recapture window is meaningful. Business pivots, technology obsolescence, M&amp;A transactions, or plant closures within 10 years can trigger recapture. Long-term business stability assessment should accompany §168(n) election decisions.</p>
+<p>The 10-year recapture window is meaningful. Recapture applies only on a QPP change in use within 10 years of the placed-in-service date (the property stops being used as an integral part of a QPA and is put to another productive use); temporarily idle property and a switch from one QPA to another do not trigger it (Notice 2026-16 section 8.01(1)). Long-term business stability assessment should accompany §168(n) election decisions.</p>
 
 <h3>Allocating Office Space Carelessly</h3>
 
@@ -358,7 +354,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §168(n) (new - Special depreciation allowance for qualified production property), added by One Big Beautiful Bill Act §70307, P.L. 119-21, signed July 4, 2025. §168(n)(1)(A) (100% special depreciation allowance for unadjusted depreciable basis of QPP). §168(n)(1)(B) (adjusted basis reduced before computing otherwise-allowable depreciation). §168(n)(2)(A) (lessor exclusion - lessee's QPA does not constitute lessor's use). §168(n)(2)(B) (placed-in-service window). §168(n)(2)(B)(ii) (written binding contract rule for acquisition date). §168(n)(3) (qualified production activity definition). §168(n)(4) (qualified product definition; food/beverage same-building exclusion). §168(n)(5) (10-year recapture period; §1245 treatment). §168(n)(6) (election requirement). §168(k) (100% bonus depreciation permanently restored under OBBBA for property acquired AND placed in service after January 19, 2025; §168(k)(7) election out). §168(e)(6) (qualified improvement property). §168(g) (alternative depreciation system - §168(n) excludes ADS property). §163(j) (business interest limitation - EBITDA ATI permanent under OBBBA; §168(n) treated as depreciation for ATI). §172 (NOL - 80% annual limitation; indefinite carryforward under post-TCJA rules). §179 (alternative for state non-conformity; OBBBA-doubled to $2.5M baseline). §1245 (ordinary income recapture - QPP permanently §1245 property). §1031 (like-kind exchange - NOT available for §1245 property). §453(i) (installment sale recapture). §954(d) (Subpart F manufacturing - referenced for "substantial transformation" guidance). §1014 (estate basis step-up). Treasury Regulation §1.168(k)-2(b)(5) (acquisition date / binding contract rules for §168(k); referenced for §168(n) pending §168(n)-specific regulations). Reg §1.954-3 (Subpart F substantial transformation examples). IRS Notice 2026-16 (February 20, 2026 - interim guidance on §168(n) including QPA definition, integrated facility rule, 95% de minimis rule, election mechanics, basis allocation methods; taxpayers may rely on Notice until proposed regulations issued). Form 4562 (Depreciation and Amortization).</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §168(n) (new - Special depreciation allowance for qualified production property), added by One Big Beautiful Bill Act §70307, P.L. 119-21, signed July 4, 2025. §168(n)(1)(A) (100% special depreciation allowance for unadjusted depreciable basis of QPP). §168(n)(1)(B) (adjusted basis reduced before computing otherwise-allowable depreciation). §168(n)(2)(A) (lessor exclusion - lessee's QPA does not constitute lessor's use). §168(n)(2)(A)(vii) (placed-in-service window). §168(n)(2)(B)(ii) (written binding contract rule for acquisition date). §168(n)(2)(D) (qualified production activity definition). §168(n)(2)(F) (qualified product definition; food/beverage same-building exclusion). §168(n)(5) (10-year recapture period; §1245 treatment). §168(n)(6) (election requirement). §168(k) (100% bonus depreciation permanently restored under OBBBA for property acquired AND placed in service after January 19, 2025; §168(k)(7) election out). §168(e)(6) (qualified improvement property). §168(g) (alternative depreciation system - §168(n) excludes ADS property). §163(j) (business interest limitation - EBITDA ATI permanent under OBBBA; §168(n) treated as depreciation for ATI). §172 (NOL - 80% annual limitation; indefinite carryforward under post-TCJA rules). §179 (alternative for state non-conformity; OBBBA-doubled to $2.5M baseline). §1245 (ordinary income recapture - QPP permanently §1245 property). §1031 (like-kind exchange - NOT available for §1245 property). §453(i) (installment sale recapture). §954(d) (Subpart F manufacturing - referenced for "substantial transformation" guidance). §1014 (estate basis step-up). Treasury Regulation §1.168(k)-2(b)(5) (acquisition date / binding contract rules for §168(k); referenced for §168(n) pending §168(n)-specific regulations). Reg §1.954-3 (Subpart F substantial transformation examples). IRS Notice 2026-16 (February 20, 2026 - interim guidance on §168(n) including QPA definition, integrated facility rule, 95% de minimis rule, election mechanics, basis allocation methods; taxpayers may rely on Notice until proposed regulations issued). Form 4562 (Depreciation and Amortization).</p>
 
 
 <!-- START UNIFIED FOOTER -->
