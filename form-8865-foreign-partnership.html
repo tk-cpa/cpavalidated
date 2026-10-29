@@ -85,7 +85,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <div class="back"><a href="international-tax.html">&#8592; International Tax</a></div>
 <div class="article">
 
-<p class="lead">Form 8865 is the foreign partnership counterpart to Form 5471 (foreign corporations). A US person who controls or has significant interest in a foreign partnership, contributes property to one, or experiences a 10%+ ownership change must file Form 8865 with their tax return. Filing is statutory under IRC §6038 (controlled partnerships), §6038B (property transfers), and §6046A (acquisitions, dispositions, and changes). Penalties are statutory and severe: $10,000 base, $10,000 per 30-day continuation period after IRS notice, with a $50,000 continuation cap producing a $60,000 maximum per partnership per year. Category 3 property contribution failures trigger a separate 10% of fair market value penalty capped at $100,000. The §6501(c)(8) statute of limitations on the entire tax return does not begin to run until Form 8865 is filed - never-filed returns remain open indefinitely.</p>
+<p class="lead">Form 8865 is the foreign partnership counterpart to Form 5471 (foreign corporations). A US person who controls or has significant interest in a foreign partnership, contributes property to one, or experiences a 10%+ ownership change must file Form 8865 with their tax return. Filing is statutory under IRC §6038 (controlled partnerships), §6038B (property transfers), and §6046A (acquisitions, dispositions, and changes). Penalties are statutory and severe: $10,000 base, $10,000 per 30-day continuation period after IRS notice, with a $50,000 continuation cap producing a $60,000 maximum per partnership per year. Category 3 property contribution failures trigger a separate 10% of fair market value penalty capped at $100,000. The §6501(c)(8) assessment period for the related tax return does not expire until 3 years after the information is furnished on Form 8865 (limited to the related items if the failure is due to reasonable cause and not willful neglect) - never-filed returns remain open.</p>
 
 <div class="callout">
   <div class="callout-label">The Four Filer Categories - Highest Determines Schedule Burden</div>
@@ -116,11 +116,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <table class="key-table">
   <tr><th>Attribution Rule</th><th>§267(c) (Form 8865)</th><th>§318 (most other Subchapter contexts)</th></tr>
-  <tr><td>Family - spouse, ancestors, lineal descendants</td><td>YES - attributes</td><td>YES - attributes</td></tr>
+  <tr><td>Family - spouse, ancestors, lineal descendants</td><td>YES - attributes</td><td>YES - but only spouse, children, grandchildren, and parents</td></tr>
   <tr><td>Family - siblings</td><td>YES - attributes (broader than §318)</td><td>NO - does not attribute</td></tr>
   <tr><td>Entity to owner</td><td>Pro rata up-attribution</td><td>Pro rata up-attribution</td></tr>
-  <tr><td>Owner to entity</td><td>Full down-attribution to 50%+ owners</td><td>Full down-attribution to 50%+ owners</td></tr>
-  <tr><td>Re-attribution from already-attributed shares</td><td>Permitted for family-then-entity</td><td>Generally restricted</td></tr>
+  <tr><td>Owner to entity</td><td>None - §267(c) has no owner-to-entity attribution</td><td>Down-attribution (§318(a)(3))</td></tr>
+  <tr><td>Re-attribution from already-attributed shares</td><td>Entity-attributed interests are treated as actually owned; family-attributed interests are not re-attributed to make another person a constructive owner (§267(c)(5))</td><td>Generally treated as actually owned, except family-then-family and partnership/estate/trust/corporation-then-family re-attribution (§318(a)(5)(A)-(C))</td></tr>
 </table>
 
 <div class="red-box"><strong>Sibling attribution is the trap.</strong> A US person with a 5% direct interest in a foreign partnership may unknowingly cross the 10% threshold via §267(c)(4) sibling attribution. If the sibling owns 8% directly, the §267(c) tests apply both ways - each is attributed the other's 8%, putting both at 13% combined ownership and triggering Form 8865 filing for both.</div>
@@ -131,11 +131,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <table class="key-table">
   <tr><th>§721(c) Element</th><th>Mechanics</th></tr>
-  <tr><td>Trigger</td><td>US person contributes property with built-in gain to foreign partnership; foreign related person owns 80%+ partnership interest</td></tr>
+  <tr><td>Trigger</td><td>US transferor contributes property with built-in gain to a partnership in which a related foreign person is a direct or indirect partner, and the US transferor and related persons own 80% or more of the interests in partnership capital, profits, deductions, or losses</td></tr>
   <tr><td>Default treatment</td><td>Built-in gain recognized at contribution (no §721 nonrecognition)</td></tr>
-  <tr><td>Gain Deferral Method election</td><td>Available to defer recognition; requires §704(b) and §704(c) traditional method (no curative or remedial); section 704(c) gain restoration on dispositions; consent to extend SOL via Form 8838-P</td></tr>
+  <tr><td>Gain Deferral Method election</td><td>Available to defer recognition; requires the partnership to adopt the remedial allocation method (§1.704-3(d)) and the consistent allocation method (or, alternatively, ECI treatment of related foreign partners' shares); gain recognition on acceleration events; consent to extend SOL via Form 8838-P</td></tr>
   <tr><td>Schedule G (Form 8865)</td><td>Required reporting of GDM compliance each year</td></tr>
-  <tr><td>De minimis exception</td><td>Aggregate built-in gain &le; $1 million may qualify for exception</td></tr>
+  <tr><td>De minimis exception</td><td>Aggregate built-in gain on all section 721(c) property contributed in the partnership's taxable year &le; $1 million may qualify for exception</td></tr>
   <tr><td>Acceleration events</td><td>Partnership disposition of property, significant amount of liabilities decrease, change in allocation methods - any of these accelerates deferred gain</td></tr>
 </table>
 
@@ -143,7 +143,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <div class="callout-label">Worked Example - §721(c) Contribution</div>
   <p><strong>Facts:</strong> US Client contributes appreciated software IP (basis $200,000, FMV $5,000,000) to a Cayman Islands LP. Foreign related entity owns 90% of the LP. US Client owns 10%.</p>
   <p><strong>Default treatment under §721(c):</strong> US Client recognizes $4,800,000 built-in gain immediately on contribution. Form 8865 Schedule O reports the contribution.</p>
-  <p><strong>With Gain Deferral Method election:</strong> Recognition deferred. Schedule G filed annually. Form 8838-P signed extending SOL. Traditional §704(c) method tracks the deferred gain. Acceleration triggers (partnership sale of IP, capital reduction below threshold, etc.) immediately recognize all remaining deferred gain.</p>
+  <p><strong>With Gain Deferral Method election:</strong> Recognition deferred. Schedule G filed annually. Form 8838-P signed extending SOL. The remedial allocation method (§1.704-3(d)) and consistent allocation method apply. Acceleration triggers (partnership sale of IP, capital reduction below threshold, etc.) immediately recognize all remaining deferred gain.</p>
   <p><strong>Penalty for failure to file Cat 3 Form 8865:</strong> 10% × $5,000,000 FMV = $500,000, but capped at $100,000 absent intentional disregard.</p>
 </div>
 
@@ -152,16 +152,16 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>Schedule</th><th>Purpose</th><th>Categories</th></tr>
   <tr><td>Schedule A</td><td>Constructive Ownership of Partnership Interest</td><td>1, 2, 3, 4</td></tr>
-  <tr><td>Schedule A-1</td><td>Certain Partners of Foreign Partnership</td><td>1</td></tr>
+  <tr><td>Schedule A-1</td><td>Certain Partners of Foreign Partnership</td><td>1, 3 (certain Category 3 filers)</td></tr>
   <tr><td>Schedule A-2</td><td>Foreign Partners of §721(c) Partnership</td><td>1, 3</td></tr>
-  <tr><td>Schedule A-3</td><td>Affiliation Schedule</td><td>1</td></tr>
+  <tr><td>Schedule A-3</td><td>Affiliation Schedule</td><td>1, 2, 3, 4</td></tr>
   <tr><td>Schedule B</td><td>Income Statement (Partnership operating results)</td><td>1</td></tr>
   <tr><td>Schedule D</td><td>Capital Gains and Losses</td><td>1</td></tr>
   <tr><td>Schedule G</td><td>Statement of Application of Gain Deferral Method under §721(c)</td><td>1, 3 (if GDM elected)</td></tr>
   <tr><td>Schedule H</td><td>Acceleration Events for §721(c) Partnerships</td><td>1 (annual)</td></tr>
   <tr><td>Schedule K</td><td>Partners' Distributive Share Items</td><td>1</td></tr>
   <tr><td>Schedule K-1</td><td>Partner's Share of Income, Deductions, Credits</td><td>1, 2</td></tr>
-  <tr><td>Schedule K-2 / K-3</td><td>International tax items - mandatory if any partner claims FTC, has Subpart F, NCTI, FDDEI, etc.</td><td>1, 2</td></tr>
+  <tr><td>Schedule K-2 / K-3</td><td>International tax items - mandatory if any partner claims FTC, has Subpart F, NCTI, FDDEI, etc. (K-2: Category 1 only; K-3: Categories 1 and 2)</td><td>1, 2</td></tr>
   <tr><td>Schedule L</td><td>Balance Sheets per Books</td><td>1</td></tr>
   <tr><td>Schedule M-1</td><td>Reconciliation of Income per Books with Income per Return</td><td>1</td></tr>
   <tr><td>Schedule M-2</td><td>Analysis of Partners' Capital Accounts</td><td>1</td></tr>
@@ -179,38 +179,33 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Part I</td><td>Partnership's other relevant information for partners</td></tr>
   <tr><td>Part II</td><td>Foreign tax credit limitation</td></tr>
   <tr><td>Part III</td><td>Other information for preparation of Form 1116 or 1118</td></tr>
-  <tr><td>Part IV</td><td>FDDEI and former FDII (now FDDEI) deduction information</td></tr>
+  <tr><td>Part IV</td><td>Partners' section 250 deduction information (FDII on the 2025 form; FDDEI for tax years beginning after 2025)</td></tr>
   <tr><td>Part V</td><td>Distributions from foreign corporations</td></tr>
-  <tr><td>Part VI</td><td>Information on partners' §951A category</td></tr>
+  <tr><td>Part VI</td><td>Information on partners' §951(a)(1) and §951A inclusions</td></tr>
   <tr><td>Part VII</td><td>Information to complete Form 8621 (PFIC)</td></tr>
-  <tr><td>Part VIII</td><td>Partnership's interest in foreign corporation income</td></tr>
-  <tr><td>Part IX</td><td>Foreign partner's character and source of income</td></tr>
-  <tr><td>Part X</td><td>Foreign partner's distributive share of deemed sale items on transfer of partnership interest under §864(c)(8)</td></tr>
-  <tr><td>Part XI</td><td>Section 871(m) covered partnerships</td></tr>
-  <tr><td>Part XII</td><td>BBA partnership push-out adjustments</td></tr>
-  <tr><td>Part XIII</td><td>Foreign partner's character and source of income (alternative)</td></tr>
+  <tr><td>Part VIII</td><td>Partners' information for Base Erosion and Anti-Abuse Tax (§59A)</td></tr>
 </table>
 
 <h2>Penalties - $60,000 Per Partnership Per Year</h2>
 
 <table class="key-table">
   <tr><th>Failure</th><th>Penalty</th><th>Authority</th></tr>
-  <tr><td>Initial failure to file Form 8865 (Categories 1, 2, 4)</td><td>$10,000 per partnership per year</td><td>§6038(b)(1)</td></tr>
+  <tr><td>Initial failure to file Form 8865 (Categories 1 and 2; Category 4 failures are penalized under §6679)</td><td>$10,000 per partnership per year</td><td>§6038(b)(1)</td></tr>
   <tr><td>Continuation after 90-day IRS notice</td><td>$10,000 per 30-day period, capped at $50,000</td><td>§6038(b)(2)</td></tr>
   <tr><td>Maximum total per partnership per year</td><td>$60,000</td><td></td></tr>
   <tr><td>Category 3 property contribution failure</td><td>10% of FMV of property contributed, capped at $100,000 (no cap if intentional disregard)</td><td>§6038B(c)(1)</td></tr>
-  <tr><td>FTC reduction for delinquent filing</td><td>10% reduction of FTCs from the partnership, plus 5% per 90-day period after notice</td><td>§6038(c)</td></tr>
-  <tr><td>Statute of limitations</td><td>SOL on the entire tax return does not begin to run until Form 8865 is filed - return remains open indefinitely</td><td>§6501(c)(8)</td></tr>
+  <tr><td>FTC reduction for delinquent filing</td><td>10% reduction of FTCs from the partnership, plus 5% for each 3-month period after the 90-day notice period</td><td>§6038(c)</td></tr>
+  <tr><td>Statute of limitations</td><td>Assessment period for the related return does not expire until 3 years after Form 8865 is furnished (limited to the related items if the failure is due to reasonable cause and not willful neglect)</td><td>§6501(c)(8)</td></tr>
   <tr><td>Criminal penalties</td><td>Available for willful failure</td><td>§7203</td></tr>
 </table>
 
-<div class="red-box"><strong>The SOL trap.</strong> §6501(c)(8) is the most dangerous aspect of Form 8865 non-compliance. A return filed without required Form 8865 remains open to IRS examination INDEFINITELY - not just three years, not six years for substantial omissions, but forever. Practitioners discovering long-missed foreign partnership reporting (e.g., a client mentions their decade-old Cayman LP investment) should advise immediate compliance even if the return year appears closed - it isn't.</div>
+<div class="red-box"><strong>The SOL trap.</strong> §6501(c)(8) is the most dangerous aspect of Form 8865 non-compliance. A return filed without required Form 8865 remains open to IRS assessment until 3 years after the information is furnished - not just three years from filing and not six years for substantial omissions, but potentially forever if the form is never filed (for the entire return unless the failure is due to reasonable cause and not willful neglect, in which case only the related items). Practitioners discovering long-missed foreign partnership reporting (e.g., a client mentions their decade-old Cayman LP investment) should advise immediate compliance even if the return year appears closed - it isn't.</div>
 
 <h2>Compliance Pathways - DIIRSP and Streamlined</h2>
 
 <table class="key-table">
   <tr><th>Procedure</th><th>Eligibility</th><th>Penalty Treatment</th></tr>
-  <tr><td>Delinquent International Information Return Submission Procedures (DIIRSP)</td><td>No exam underway; tax was correctly reported on original return; reasonable cause statement</td><td>Penalties waived if reasonable cause established</td></tr>
+  <tr><td>Delinquent International Information Return Submission Procedures (DIIRSP)</td><td>No exam underway; tax was correctly reported on original return; reasonable cause statement</td><td>Reasonable cause statement may be attached; penalties may still be assessed without considering it (except Forms 3520 and 3520-A)</td></tr>
   <tr><td>Streamlined Filing Compliance Procedures (Foreign Offshore)</td><td>Foreign-resident US taxpayer; non-willful conduct certified under penalty of perjury</td><td>No FBAR or 8938 penalty; no Form 8865 penalty</td></tr>
   <tr><td>Streamlined Filing Compliance Procedures (Domestic Offshore)</td><td>US-resident taxpayer; non-willful certified</td><td>5% miscellaneous offshore penalty on highest aggregate balance</td></tr>
   <tr><td>Voluntary Disclosure Practice (VDP)</td><td>Willful conduct - avoid criminal prosecution path</td><td>Civil penalties at preset percentages of tax/asset values</td></tr>
@@ -219,12 +214,12 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h2>Multiple US Persons - Joint Filing Exception</h2>
 
-<p>When multiple US persons would be Category 1 filers for the same foreign partnership, the regulations permit one to file Form 8865 on behalf of all qualifying Category 1 filers. The others attach a statement to their tax return identifying the filer and the partnership, plus a copy of any Schedule K-1 / K-3 they received. This avoids duplicate full filings but each non-filer remains potentially liable for penalty if the designated filer fails to file properly.</p>
+<p>When multiple US persons would be Category 1 filers for the same foreign partnership, the regulations permit one to file Form 8865 on behalf of all qualifying Category 1 filers. The others attach a statement to their tax return identifying the filer and the partnership, titled "Controlled Foreign Partnership Reporting", while the single Form 8865 includes separate Schedules N, K-1, and K-3 for each Category 1 filer. This avoids duplicate full filings but each non-filer remains potentially liable for penalty if the designated filer fails to file properly.</p>
 
 <table class="key-table">
   <tr><th>Joint Filing Exception Requirements</th></tr>
   <tr><td>Designated filer must be a Category 1 filer</td></tr>
-  <tr><td>All other Category 1 filers must consent to representation</td></tr>
+  <tr><td>A US person with a controlling interest only in losses or deductions cannot be the filer if another US person has a controlling interest in capital or profits</td></tr>
   <tr><td>Non-filing partners attach statement to their own tax return identifying the filer, the partnership name and EIN, and acknowledging the filer's filing</td></tr>
   <tr><td>If designated filer fails to file complete and accurate Form 8865, all qualifying Category 1 filers (including those relying on joint filing) face penalty</td></tr>
   <tr><td>Constructive owners exception (similar concept) may apply to direct owners through tiered structures</td></tr>
@@ -247,17 +242,17 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <p>For 2021+ returns, K-2 and K-3 are required when ANY partner has international items. A US partner of a foreign partnership virtually always has international items (foreign source income, foreign tax credit eligibility, NCTI/Subpart F potential). Practitioners who file Form 8865 without K-2/K-3 incomplete-file and face penalty. The IRS issued the "domestic filing exception" only for domestic partnerships meeting four narrow tests; it does not apply to foreign partnerships under Form 8865.</p>
 
-<h3>Forgetting §721(c) When Foreign Partner Owns 80%+</h3>
+<h3>Forgetting §721(c) When Related Persons Own 80%+</h3>
 
-<p>The §721(c) gain recognition trap applies whenever a foreign related person owns 80%+ of the partnership immediately after the contribution. Family attribution under §267(c) can push a "merely 60% related" structure over the 80% threshold. Compute related ownership carefully before relying on §721 nonrecognition.</p>
+<p>The §721(c) gain recognition trap applies when a related foreign person is a direct or indirect partner and the U.S. transferor and related persons together own 80% or more of the partnership immediately after the contribution. Family attribution under §267(c) can push a "merely 60% related" structure over the 80% threshold. Compute related ownership carefully before relying on §721 nonrecognition.</p>
 
 <h3>Failing to File Schedule O for Contributions</h3>
 
-<p>Even a small property contribution can trigger Category 3 status if the contributor reaches 10% ownership post-contribution or if the property's FMV exceeds $100,000 in a 12-month period. Schedule O documents the contribution. Failure to file Schedule O triggers the 10% FMV penalty (up to $100,000) - separate and additional to the base $10,000 penalty.</p>
+<p>Even a small property contribution can trigger Category 3 status if the contributor reaches 10% ownership post-contribution or if the property's FMV exceeds $100,000 in a 12-month period. Schedule O documents the contribution. Failure to file Schedule O triggers the 10% FMV penalty (up to $100,000) - the $10,000 base penalty applies to Category 1 and 2 failures, while Category 3 failures carry the §6038B(c) penalty.</p>
 
 <h3>Ignoring the §6501(c)(8) SOL Tolling</h3>
 
-<p>A return filed without required Form 8865 keeps the SOL open indefinitely. Cleanup compliance years later still preserves the SOL exposure for the missed year. Practitioners discovering historical non-compliance should immediately file via DIIRSP or Streamlined - the SOL does not "ripen" through passage of time.</p>
+<p>A return filed without required Form 8865 keeps the SOL open until 3 years after the form is furnished. Cleanup compliance years later still preserves the SOL exposure for the missed year. Practitioners discovering historical non-compliance should immediately file via DIIRSP or Streamlined - the SOL does not "ripen" through passage of time.</p>
 
 <h3>Confusing Foreign LLC with Foreign Partnership</h3>
 
@@ -273,7 +268,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Not Coordinating With Partnership-Level BBA Audit Rules</h3>
 
-<p>If the foreign partnership is subject to BBA audit rules (post-2017 with more than 100 partners or non-eligible partner types), partner-level Form 8865 reporting interacts with partnership-level adjustments. Push-out elections under §6226 cascade through Forms 8865 and may require multi-year amendment.</p>
+<p>If the foreign partnership is subject to BBA audit rules (post-2017, unless it validly elects out under §6221(b), which requires 100 or fewer statements under §6031(b) and only eligible partners), partner-level Form 8865 reporting interacts with partnership-level adjustments. Push-out elections under §6226 cascade through Forms 8865 and may require multi-year amendment.</p>
 
 <div class="related">
   <div class="related-title">Related Guides &amp; Calculators</div>
@@ -287,7 +282,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §6038 (information reporting with respect to certain foreign partnerships), §6038(b) (penalties for failure to file - $10K base, $50K continuation cap), §6038(c) (FTC reduction for failure to file - 10% plus 5% per 90 days), §6038B (notice of certain transfers to foreign partnerships), §6038B(c)(1) (10% of FMV penalty up to $100K), §6046A (returns as to acquisitions, dispositions, and changes in foreign partnership interests), §721 (general partnership contribution nonrecognition), §721(c) (gain recognition for contributions to foreign related partnerships), §704(b) (substantial economic effect), §704(c) (traditional / curative / remedial methods), §267(c) (constructive ownership including sibling attribution), §6501(c)(8) (statute of limitations remains open on entire return until information return filed), §6226 (BBA push-out election), §864(c)(8) (foreign partner gain on partnership interest disposition), §871(m) (covered partnerships dividend equivalents), §951A (NCTI partner reporting). Treasury Regulations §301.7701-2 / §301.7701-3 (entity classification - check the box), §1.721(c)-1 through §1.721(c)-6 (Gain Deferral Method). IRS Form 8865 (2025 revision) and Instructions, Schedules A, A-1, A-2, A-3, B, D, G, H, K, K-1, K-2, K-3, L, M-1, M-2, N, O, P. Form 8838-P (Consent to Extend Time to Assess Tax under Gain Deferral Method). Delinquent International Information Return Submission Procedures (DIIRSP). Streamlined Filing Compliance Procedures (Foreign and Domestic Offshore).</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §6038 (information reporting with respect to certain foreign partnerships), §6038(b) (penalties for failure to file - $10K base, $50K continuation cap), §6038(c) (FTC reduction for failure to file - 10% plus 5% for each 3-month period after the 90-day notice period), §6038B (notice of certain transfers to foreign partnerships), §6038B(c)(1) (10% of FMV penalty up to $100K), §6046A (returns as to acquisitions, dispositions, and changes in foreign partnership interests), §721 (general partnership contribution nonrecognition), §721(c) (gain recognition for contributions to foreign related partnerships), §704(b) (substantial economic effect), §704(c) (traditional / curative / remedial methods), §267(c) (constructive ownership including sibling attribution), §6501(c)(8) (statute of limitations remains open on entire return until information return filed), §6226 (BBA push-out election), §864(c)(8) (foreign partner gain on partnership interest disposition), §871(m) (covered partnerships dividend equivalents), §951A (NCTI partner reporting). Treasury Regulations §301.7701-2 / §301.7701-3 (entity classification - check the box), §1.721(c)-1 through §1.721(c)-6 (Gain Deferral Method). IRS Form 8865 (2025 revision) and Instructions, Schedules A, A-1, A-2, A-3, B, D, G, H, K, K-1, K-2, K-3, L, M-1, M-2, N, O, P. Form 8838-P (Consent to Extend Time to Assess Tax under Gain Deferral Method). Delinquent International Information Return Submission Procedures (DIIRSP). Streamlined Filing Compliance Procedures (Foreign and Domestic Offshore).</p>
 
 
 <!-- START UNIFIED FOOTER -->

@@ -379,7 +379,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="cb">
     <div class="tx-grid" id="txGrid"></div>
     <div class="inf" style="margin-top:14px">
-      <strong>Related party</strong> means any 25% foreign shareholder, any person related to a 25% foreign shareholder under IRC §267(b) or §707(b)(1), or any person related to the reporting corporation under those same sections. - IRC §6038A(d)(2); Treas. Reg. 1.6038A-1(f).
+      <strong>Related party</strong> means any 25% foreign shareholder, any person related to a 25% foreign shareholder under IRC §267(b) or §707(b)(1), or any person related to the reporting corporation under those same sections or under IRC §482. - IRC §6038A(c)(2); Treas. Reg. 1.6038A-1(f).
     </div>
   </div>
 </div>
@@ -389,7 +389,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="ch"><div class="step-num">3B</div><h2>Foreign-Owned Disregarded Entity - Additional Questions</h2></div>
   <div class="cb">
     <div class="note">
-      <strong>Post-2016 Rule (TD 9796):</strong> A foreign-owned domestic disregarded entity is treated as a domestic corporation separate from its owner for purposes of IRC §6038A. It must file Form 5472 even if no reportable transactions occurred - the formation, dissolution, and existence of the entity itself constitute reportable transactions. Effective for tax years beginning after December 31, 2016.
+      <strong>Post-2016 Rule (TD 9796):</strong> A foreign-owned domestic disregarded entity is treated as a domestic corporation separate from its owner for purposes of IRC §6038A. It must file Form 5472 if it had any reportable transaction during the year - for a DE, this includes amounts paid or received in connection with its formation, dissolution, acquisition or disposition, and contributions to and distributions from the entity (Treas. Reg. 1.6038A-2(b)(3)(xi)). Effective for tax years beginning after December 31, 2016 and ending on or after December 13, 2017.
     </div>
 
     <div class="f1" style="margin-bottom:16px">
@@ -406,7 +406,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
         <button class="yn-btn" id="deTxYes" onclick="setYN('deTx','yes')">Yes</button>
         <button class="yn-btn" id="deTxNo" onclick="setYN('deTx','no')">No</button>
       </div>
-      <div style="font-size:11px;color:var(--ink-60);margin-top:5px">For foreign-owned DEs, ALL transactions with the foreign owner - including capital contributions and distributions - are reportable transactions. Treas. Reg. 1.6038A-2(b)(3)(ix)-(x).</div>
+      <div style="font-size:11px;color:var(--ink-60);margin-top:5px">For foreign-owned DEs, transactions with the foreign owner in each category of Treas. Reg. 1.6038A-2(b)(3), including formation, dissolution, contributions and distributions, are reportable. Treas. Reg. 1.6038A-2(b)(3)(xi).</div>
     </div>
   </div>
 </div>
@@ -438,13 +438,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
         <div class="fi-row"><strong>Authority:</strong> IRC §6038A (domestic corps); IRC §6038C (foreign corps); Treas. Reg. 1.6038A; TD 9796 (DEs)</div>
         <div class="fi-row"><strong>Filed With:</strong> Corporate income tax return (Form 1120 or 1120-F); DEs file a pro-forma Form 1120 with Form 5472 attached</div>
         <div class="fi-row"><strong>Due Date:</strong> Same as Form 1120 - April 15 for calendar-year filers; extendable to October 15</div>
-        <div class="fi-row"><strong>Penalty:</strong> $25,000 per Form 5472 per year for failure to file or maintain records; additional $25,000 per 90-day period after IRS notice - IRC §6038A(d)</div>
+        <div class="fi-row"><strong>Penalty:</strong> $25,000 per Form 5472 per year for failure to file or maintain records; additional $25,000 for each 30-day period (or fraction) that the failure continues after the 90-day period following IRS notice - IRC §6038A(d)(2)</div>
         <div class="fi-row"><strong>Multiple Forms:</strong> A separate Form 5472 is required for each related party with whom reportable transactions occurred</div>
       </div>
       <div class="fi-card">
         <div class="fi-title">Foreign-Owned DE - Special Rules</div>
-        <div class="fi-row"><strong>Effective:</strong> Tax years beginning after December 31, 2016 (TD 9796)</div>
-        <div class="fi-row"><strong>Filing:</strong> Foreign-owned domestic DEs file a pro-forma Form 1120 (with EIN) plus Form 5472 - even if the LLC had no income or no transactions</div>
+        <div class="fi-row"><strong>Effective:</strong> Tax years beginning after December 31, 2016 and ending on or after December 13, 2017 (TD 9796)</div>
+        <div class="fi-row"><strong>Filing:</strong> Foreign-owned domestic DEs file a pro-forma Form 1120 (with EIN) plus Form 5472 when the LLC had any reportable transaction (a DE with no reportable transactions is not required to file Form 5472)</div>
         <div class="fi-row"><strong>EIN Required:</strong> The DE must obtain its own EIN - it cannot use the owner's tax ID</div>
         <div class="fi-row"><strong>Transactions:</strong> Formation, capitalization, distributions, loans, and all payments between the DE and its foreign owner are reportable - Treas. Reg. 1.6038A-2(b)(3)</div>
         <div class="fi-row"><strong>Penalty:</strong> Same $25,000 per-form penalty applies - no exception for DEs with no activity</div>
@@ -462,17 +462,17 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <script>
 // ── Reportable transaction categories ────────────────────────────────────────
 const TX_CATEGORIES = [
-  { id:'t1',  name:'Sales of inventory or other property',          desc:'Sales or purchases of tangible property between the reporting corporation and a related party',                          auth:'Treas. Reg. 1.6038A-2(b)(3)(i)' },
+  { id:'t1',  name:'Sales of inventory or other property',          desc:'Sales or purchases of tangible property between the reporting corporation and a related party',                          auth:'Treas. Reg. 1.6038A-2(b)(3)(i)-(ii)' },
   { id:'t2',  name:'Rents and royalties',                           desc:'Payments or receipts of rent, royalties, or licensing fees for use of intangible or tangible property',                  auth:'Treas. Reg. 1.6038A-2(b)(3)(ii)' },
-  { id:'t3',  name:'Services',                                      desc:'Performance of services - management, administrative, technical, financial, or any other services',                       auth:'Treas. Reg. 1.6038A-2(b)(3)(iii)' },
-  { id:'t4',  name:'Commissions',                                   desc:'Payments or receipts of commissions in connection with the purchase or sale of property',                                 auth:'Treas. Reg. 1.6038A-2(b)(3)(iv)' },
-  { id:'t5',  name:'Amounts borrowed or loaned',                    desc:'Any loan, advance, line of credit, or debt obligation between related parties - including intercompany loans',            auth:'Treas. Reg. 1.6038A-2(b)(3)(v)' },
-  { id:'t6',  name:'Amounts paid/received as consideration for use of intangibles', desc:'IP licensing, technology transfers, trademarks, patents, trade secrets, know-how', auth:'Treas. Reg. 1.6038A-2(b)(3)(vi)' },
-  { id:'t7',  name:'Insurance or reinsurance premiums',             desc:'Premiums paid to or received from a related party that is an insurance or reinsurance company',                          auth:'Treas. Reg. 1.6038A-2(b)(3)(vii)' },
-  { id:'t8',  name:'Amounts paid/received in settlement of claims', desc:'Payments arising from legal claims, contractual disputes, or indemnification arrangements with related parties',         auth:'Treas. Reg. 1.6038A-2(b)(3)(viii)' },
-  { id:'t9',  name:'Capital contributions received',               desc:'Contributions of cash or property by a foreign related party to the reporting corporation',                               auth:'Treas. Reg. 1.6038A-2(b)(3)(ix)' },
-  { id:'t10', name:'Distributions paid',                            desc:'Dividends, distributions, or return-of-capital payments to a foreign related party',                                     auth:'Treas. Reg. 1.6038A-2(b)(3)(x)' },
-  { id:'t11', name:'Other transactions',                            desc:'Any other transaction with a foreign related party not otherwise categorized above',                                     auth:'Treas. Reg. 1.6038A-2(b)(3)(xi)' },
+  { id:'t3',  name:'Services',                                      desc:'Performance of services - management, administrative, technical, financial, or any other services',                       auth:'Treas. Reg. 1.6038A-2(b)(3)(v)' },
+  { id:'t4',  name:'Commissions',                                   desc:'Payments or receipts of commissions in connection with the purchase or sale of property',                                 auth:'Treas. Reg. 1.6038A-2(b)(3)(vi)' },
+  { id:'t5',  name:'Amounts borrowed or loaned',                    desc:'Any loan, advance, line of credit, or debt obligation between related parties - including intercompany loans - and interest paid or received on them',            auth:'Treas. Reg. 1.6038A-2(b)(3)(vii)-(viii)' },
+  { id:'t6',  name:'Amounts paid/received as consideration for use of intangibles', desc:'IP licensing, technology transfers, trademarks, patents, trade secrets, know-how', auth:'Treas. Reg. 1.6038A-2(b)(3)(iv)' },
+  { id:'t7',  name:'Insurance or reinsurance premiums',             desc:'Premiums paid to or received from a related party that is an insurance or reinsurance company',                          auth:'Treas. Reg. 1.6038A-2(b)(3)(ix)' },
+  { id:'t8',  name:'Amounts paid/received in settlement of claims', desc:'Payments arising from legal claims, contractual disputes, or indemnification arrangements with related parties',         auth:'Treas. Reg. 1.6038A-2(b)(3)(x)' },
+  { id:'t9',  name:'Capital contributions received',               desc:'Contributions of cash or property by a foreign related party to the reporting corporation',                               auth:'Treas. Reg. 1.6038A-2(b)(3)(x)-(xi)' },
+  { id:'t10', name:'Distributions paid',                            desc:'Dividends, distributions, or return-of-capital payments to a foreign related party',                                     auth:'Treas. Reg. 1.6038A-2(b)(3)(x)-(xi)' },
+  { id:'t11', name:'Other transactions',                            desc:'Any other transaction with a foreign related party not otherwise categorized above',                                     auth:'Treas. Reg. 1.6038A-2(b)(3)(x)' },
 ];
 
 const txVals = {};
@@ -627,9 +627,9 @@ function recalc() {
   if (obligation === 'required' || obligation === 'required_de') {
     rm.className = 'result-main req';
     ri.textContent = '!';
-    rs.textContent = 'Form 5472 Required';
+    rs.textContent = obligation === 'required_de' ? 'Form 5472 Required if Any Reportable Transaction' : 'Form 5472 Required';
     if (obligation === 'required_de') {
-      rd.textContent = `As a foreign-owned domestic disregarded entity, this LLC is treated as a corporation for Form 5472 purposes and must file Form 5472 (with a pro-forma Form 1120) for ${yr}. This requirement applies regardless of whether the entity had income or business activity during the year. TD 9796; Treas. Reg. 1.6038A-1(c).`;
+      rd.textContent = `As a foreign-owned domestic disregarded entity, this LLC is treated as a corporation for Form 5472 purposes and must file Form 5472 (with a pro-forma Form 1120) for ${yr} if it had any reportable transaction during the year, including formation, contributions or distributions with its foreign owner. If it had none, Form 5472 is not required. TD 9796; Treas. Reg. 1.6038A-1(c); Instructions for Form 5472, Exceptions to filing.`;
     } else {
       rd.textContent = `Form 5472 is required for ${yr}. ${txYes.length} reportable transaction${txYes.length > 1 ? 's were' : ' was'} identified with foreign related parties. A separate Form 5472 must be filed for each related party with whom reportable transactions occurred. Penalty for failure to file: $25,000 per form. IRC §6038A(d).`;
     }
@@ -695,7 +695,7 @@ function recalc() {
     conds.push({
       status: 'pass',
       title: 'Condition: Foreign-Owned Domestic Disregarded Entity',
-      text: 'Effective for tax years after December 31, 2016, foreign-owned DEs are treated as corporations for Form 5472 purposes. TD 9796; Treas. Reg. 1.6038A-1(c). No 25% threshold needed - 100% foreign ownership is the trigger.',
+      text: 'Effective for tax years beginning after December 31, 2016 and ending on or after December 13, 2017, foreign-owned DEs are treated as corporations for Form 5472 purposes. TD 9796; Treas. Reg. 1.6038A-1(c). No 25% threshold needed - 100% foreign ownership is the trigger.',
     });
     conds.push({
       status: 'warn',
@@ -706,7 +706,7 @@ function recalc() {
       conds.push({
         status: 'pass',
         title: 'Reportable Events Confirmed',
-        text: 'Formation, dissolution, ownership changes, and all monetary transactions between the DE and its foreign owner are reportable transactions. Treas. Reg. 1.6038A-2(b)(3)(ix)-(x).',
+        text: 'Amounts paid or received in connection with formation, dissolution, acquisition and disposition of the DE, contributions to and distributions from the DE, and the other transaction types in Treas. Reg. 1.6038A-2(b)(3) with its foreign owner are reportable transactions. Treas. Reg. 1.6038A-2(b)(3)(xi).',
       });
     }
     conds.push({

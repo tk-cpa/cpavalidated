@@ -164,7 +164,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="cb">
     <div class="q-label">Question 3 of 7</div>
     <div class="q-text">What is your ownership percentage in the foreign corporation, directly, indirectly, AND constructively (including attribution)?</div>
-    <div class="q-note"><strong>Include constructive ownership under IRC &sect;318 as modified by &sect;958(b).</strong> You must attribute stock owned by: (1) your spouse, children, grandchildren, and parents; (2) partnerships, estates, trusts, or corporations in which you own 50%+; (3) if you own 50%+ of a partnership, the partnership&rsquo;s stock in the corporation. TCJA expanded downward attribution - if a foreign person owns stock, that stock may now be attributed down to you through a domestic entity. IRC &sect;951(b).</div>
+    <div class="q-note"><strong>Include constructive ownership under IRC &sect;318 as modified by &sect;958(b).</strong> You must attribute stock owned by: (1) your spouse, children, grandchildren, and parents; (2) stock owned by partnerships and estates (proportionately by their partners or beneficiaries), trusts (by actuarial interest or grantor ownership), and corporations in which you own 10% or more (proportionately; 10% substituted for 50% by &sect;958(b)(3)); (3) stock you own is attributed to partnerships, estates, trusts, and to a corporation in which you own 50%+. For foreign corporation taxable years beginning before 2026, TCJA repealed &sect;958(b)(4), so stock owned by a foreign person could be attributed to a U.S. person through a domestic entity; P.L. 119-21 &sect;70353 restored &sect;958(b)(4) for foreign corporation taxable years beginning after December 31, 2025. IRC &sect;&sect;318(a), 958(b), 951(b).</div>
     <div class="radio-group">
       <label class="radio-opt" onclick="sel(this,'q3','under10')"><input type="radio" name="q3" value="under10"> Under 10% by both vote and value (including all attribution)</label>
       <label class="radio-opt" onclick="sel(this,'q3','10plus')"><input type="radio" name="q3" value="10plus"> 10% or more by vote OR value (I am a US shareholder)</label>
@@ -192,7 +192,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="cb">
     <div class="q-label">Question 5 of 7</div>
     <div class="q-text">During the tax year, did you newly acquire stock bringing your ownership to 10% or more for the first time?</div>
-    <div class="q-note">Category 3 applies to US persons who acquire (directly or constructively) 10%+ stock in a foreign corporation for the first time, or who acquire additional stock. IRC &sect;6046. A Category 3 filing is required in the year of acquisition even if no CFC status exists.</div>
+    <div class="q-note">Category 3 applies to US persons who acquire stock that, together with stock already owned, meets the 10% stock ownership requirement (or that alone meets it), who become US persons while meeting it, or who dispose of enough stock to fall below it. IRC &sect;6046(a); Treas. Reg. &sect;1.6046-1. A Category 3 filing is required in the year of acquisition even if no CFC status exists.</div>
     <div class="radio-group">
       <label class="radio-opt" onclick="sel(this,'q5','yes')"><input type="radio" name="q5" value="yes"> Yes - I newly crossed the 10% threshold this year</label>
       <label class="radio-opt" onclick="sel(this,'q5','no')"><input type="radio" name="q5" value="no"> No - my ownership was already at 10%+ or did not change</label>
@@ -205,7 +205,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="cb">
     <div class="q-label">Question 6 of 7</div>
     <div class="q-text">Are you a US person who is an officer or director of this foreign corporation?</div>
-    <div class="q-note">Category 2 applies to US persons who are officers or directors when any US person acquires 10%+ stock during the year. This filing obligation applies even if you own no stock. IRC &sect;6038(a)(3).</div>
+    <div class="q-note">Category 2 applies to US citizens or residents who are officers or directors of a foreign corporation in which a US person acquires 10%+ of the stock (or an additional 10%+) during the year. This filing obligation applies even if you own no stock. IRC &sect;6046(a)(1)(A).</div>
     <div class="radio-group">
       <label class="radio-opt" onclick="sel(this,'q6','yes')"><input type="radio" name="q6" value="yes"> Yes - I am an officer or director</label>
       <label class="radio-opt" onclick="sel(this,'q6','no')"><input type="radio" name="q6" value="no"> No</label>
@@ -217,11 +217,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="ch"><div class="sb">7</div><h2>25% Threshold (SFC)</h2></div>
   <div class="cb">
     <div class="q-label">Question 7 of 7</div>
-    <div class="q-text">Do US shareholders collectively own 25% or more of the vote or value? (Specified Foreign Corporation test)</div>
-    <div class="q-note">A Specified Foreign Corporation (SFC) is any foreign corporation owned 25%+ by US shareholders in aggregate. US shareholders of SFCs must file Form 5471 as Category 1 filers, even if the corporation is not a CFC. IRC &sect;965(e)(1).</div>
+    <div class="q-text">Is the foreign corporation a CFC, or is at least one domestic corporation a US shareholder (10% or more by vote or value) of it? (Section 965 Specified Foreign Corporation test)</div>
+    <div class="q-note">For Category 1, a section 965 specified foreign corporation (SFC) is a CFC or any foreign corporation with respect to which one or more domestic corporations are U.S. shareholders (a PFIC that is not a CFC as to the shareholder is excluded). Category 1 filers are U.S. shareholders of a section 965 SFC at any time during its tax year, even if it is not a CFC. IRC &sect;965(e)(1); Instructions for Form 5471.</div>
     <div class="radio-group">
-      <label class="radio-opt" onclick="sel(this,'q7','yes')"><input type="radio" name="q7" value="yes"> Yes - US shareholders collectively own 25%+ (it is an SFC)</label>
-      <label class="radio-opt" onclick="sel(this,'q7','no')"><input type="radio" name="q7" value="no"> No - US shareholders collectively own less than 25%</label>
+      <label class="radio-opt" onclick="sel(this,'q7','yes')"><input type="radio" name="q7" value="yes"> Yes - it is a CFC or a domestic corporation is a US shareholder (it is a section 965 SFC)</label>
+      <label class="radio-opt" onclick="sel(this,'q7','no')"><input type="radio" name="q7" value="no"> No - it is not a CFC and no domestic corporation is a US shareholder</label>
     </div>
   </div>
 </div>
@@ -265,7 +265,7 @@ function result(type){
     h=hdr('no','&#10003; No Form 5471 Obligation')+'<p style="font-size:14px;color:var(--ink-60);line-height:1.7">Nonresident alien individuals are generally not subject to Form 5471 reporting. If you become a US person in a future year, all ownership positions must be reviewed.</p>';
   } else if(type==='none'){
     h=hdr('no','&#10003; No Filing Obligation Based on Your Answers');
-    h+=flag('amber','!','<strong>Verify constructive ownership.</strong> Attribution rules under IRC &sect;318 (modified by &sect;958(b)) can attribute stock held by family members and related entities to you. TCJA expanded downward attribution, creating unexpected filing obligations. Confirm your combined constructive ownership is below 10% before relying on this result.');
+    h+=flag('amber','!','<strong>Verify constructive ownership.</strong> Attribution rules under IRC &sect;318 (modified by &sect;958(b)) can attribute stock held by family members and related entities to you. For foreign corporation years beginning before 2026, TCJA&rsquo;s repeal of &sect;958(b)(4) could create unexpected filing obligations. Confirm your combined constructive ownership is below 10% before relying on this result.');
   } else {
     const isCFC=A.q4==='yes';
     const isSFC=A.q7==='yes'||isCFC;
@@ -275,10 +275,10 @@ function result(type){
     const isOff=A.q6==='yes';
     const unsure=A.q4==='unsure';
     const cats=[];
-    if(isSFC&&!isCFC&&!u10) cats.push({cat:'Category 1a',title:'US Shareholder of SFC (non-CFC)',desc:'The foreign corporation is a Specified Foreign Corporation (25%+ US-owned) but not a CFC. File Form 5471 with applicable schedules.',auth:'IRC &sect;965(e)(1); Treas. Reg. &sect;1.6038-2'});
-    if(isOff) cats.push({cat:'Category 2',title:'Officer or Director',desc:'US person serving as officer or director when any US person acquires 10%+ stock during the year. Required even if you own no stock.',auth:'IRC &sect;6038(a)(3)'});
+    if(isSFC&&!isCFC&&!u10) cats.push({cat:'Category 1a',title:'US Shareholder of SFC (non-CFC)',desc:'The foreign corporation is a section 965 Specified Foreign Corporation (a domestic corporation is a US shareholder) but not a CFC. File Form 5471 with applicable schedules.',auth:'IRC &sect;965(e)(1); Treas. Reg. &sect;1.6038-2'});
+    if(isOff) cats.push({cat:'Category 2',title:'Officer or Director',desc:'US citizen or resident serving as officer or director of a foreign corporation in which a US person acquires 10%+ stock (or an additional 10%+) during the year. Required even if you own no stock.',auth:'IRC &sect;6046(a)(1)(A)'});
     if(newAcq&&!u10) cats.push({cat:'Category 3',title:'New Acquisition of 10%+',desc:'US person who newly acquires 10%+ stock (directly or constructively) during the tax year. Required in the year of acquisition.',auth:'IRC &sect;6046; Treas. Reg. &sect;1.6046-1'});
-    if(owns50) cats.push({cat:'Category 4',title:'Control (>50%)',desc:'US person who controls the foreign corporation for 30+ consecutive days and owns stock at year-end. Most comprehensive filing requirement.',auth:'IRC &sect;6038(a)(1); Treas. Reg. &sect;1.6038-2(a)'});
+    if(owns50) cats.push({cat:'Category 4',title:'Control (>50%)',desc:'US person who had control (more than 50% of vote or value) of the foreign corporation during the foreign corporation&rsquo;s annual accounting period. Most comprehensive filing requirement.',auth:'IRC &sect;6038(a)(1); Treas. Reg. &sect;1.6038-2(a)'});
     if(isCFC&&!u10) cats.push({cat:'Category 5a',title:'US Shareholder of CFC',desc:'US shareholder who directly or indirectly owns stock in a CFC. Requires most comprehensive set of schedules including Schedules C, E, F, G, H, I-1, J, M, P, Q, R as applicable.',auth:'IRC &sect;6038; IRC &sect;951(b); IRC &sect;957'});
     if(isCFC&&u10) cats.push({cat:'Category 5b',title:'Constructive Ownership Only',desc:'US shareholder who owns CFC stock only constructively (by attribution) but not directly. Added post-TCJA due to expanded downward attribution rules. Filing still likely required.',auth:'IRC &sect;958(b); TCJA &sect;14214; Notice 2019-46'});
     if(unsure){
@@ -294,8 +294,8 @@ function result(type){
     }
     if(isCFC) h+=flag('blue','i','<strong>Subpart F and NCTI (formerly GILTI).</strong> As a US shareholder of a CFC, Subpart F income (IRC &sect;951) and NCTI (IRC &sect;951A, renamed from GILTI by OBBBA P.L. 119-21 effective for tax years beginning after 12/31/2025) are included in your gross income in the year the CFC earns them, regardless of whether the CFC makes distributions. The &sect;962 election may be available to individual shareholders. Form 8992 reports NCTI (formerly GILTI; renamed by OBBBA effective tax years beginning after 12/31/2025).');
     h+=flag('amber','!','<strong>Penalty for failure to file: $10,000 per year per corporation.</strong> IRC &sect;6038(b). Additional penalties of up to $50,000 for continued non-compliance after IRS notification. Failure to file Form 5471 may keep the statute of limitations open on the entire return. IRC &sect;6501(c)(8).');
-    h+=flag('amber','!','<strong>TCJA downward attribution (post-2017).</strong> The TCJA eliminated the exception that previously prevented attribution from foreign persons to US persons through domestic entities. This caused widespread unexpected CFC status in many structures that were previously non-CFC. Review all structures involving both US and foreign common ownership.');
-    h+='<div class="src">Authority: IRC &sect;957 (CFC definition); IRC &sect;951(b) (US shareholder, 10% threshold); IRC &sect;6038 (Form 5471 requirement); IRC &sect;6046 (Category 3); IRC &sect;6038(b) (penalties); IRC &sect;318 / &sect;958(b) (attribution); TCJA &sect;14214 (downward attribution); IRC &sect;951A (GILTI); IRC &sect;965(e)(1) (SFC); IRC &sect;6501(c)(8) (statute of limitations); Notice 2019-46 (downward attribution relief).</div>';
+    h+=flag('amber','!','<strong>Downward attribution.</strong> For foreign corporation taxable years beginning before 2026, TCJA had repealed the &sect;958(b)(4) exception that blocked attribution from foreign persons to US persons through domestic entities, which created CFC status in many structures. P.L. 119-21 &sect;70353 restored &sect;958(b)(4) for foreign corporation taxable years beginning after December 31, 2025. Review structures involving both US and foreign common ownership for the year at issue.');
+    h+='<div class="src">Authority: IRC &sect;957 (CFC definition); IRC &sect;951(b) (US shareholder, 10% threshold); IRC &sect;6038 (Form 5471 requirement); IRC &sect;6046 (Category 3); IRC &sect;6038(b) (penalties); IRC &sect;318 / &sect;958(b) (attribution); TCJA &sect;14213 (repeal of &sect;958(b)(4)); P.L. 119-21 &sect;70353 (restored for foreign corporation years beginning after 2025); IRC &sect;951A (NCTI, formerly GILTI); IRC &sect;965(e)(1) (SFC); IRC &sect;6501(c)(8) (statute of limitations); Rev. Proc. 2019-40 (Category 5b/5c relief).</div>';
   }
   h+='';
   h+='<button class="rbtn" onclick="resetAll()">Start Over</button>';
