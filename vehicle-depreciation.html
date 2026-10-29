@@ -247,6 +247,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
         <div class="hint">The election out applies to the whole 5-year class placed in service that year. 168(k)(7).</div>
       </div>
     </div>
+    <div class="fg2" style="margin-bottom:14px">
+      <div class="f1">
+        <label for="safeHarbor">Rev. Proc. 2019-13 Safe Harbor (passenger autos)</label>
+        <select id="safeHarbor" class="fc">
+          <option value="yes" selected>Use when eligible (default)</option>
+          <option value="no">Do not use (strict statutory computation)</option>
+        </select>
+        <div class="hint">For a passenger automobile with 100% bonus allowable, basis above the year-1 cap and no 179 election, years 2-6 are not left at zero. Rev. Proc. 2019-13, sec. 4.03.</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -306,7 +316,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
       <div id="assumpBody"></div>
     </details>
 
-    <div class="source-row">Authority: IRC &sect;168(k)(1), (k)(2)(F)(i), (k)(7) (bonus depreciation, 100% for property acquired and placed in service after January 19, 2025, P.L. 119-21 &sect;70301); IRC &sect;179(b)(5) and Rev. Proc. 2025-32 sec. 4.24 (SUV cap, $32,000 for 2026); IRC &sect;280F(a), (b), (d)(5), (d)(7) and Rev. Proc. 2026-15 Tables 1 and 2 (2026 caps: $20,300 / $19,800 / $11,900 / $7,160 with bonus; $12,300 in year 1 without); Treas. Reg. &sect;1.280F-2T(c) (unrecovered basis after the recovery period); Treas. Reg. &sect;1.179-1(d), (f); Pub. 946 Tables A-1 to A-5 and A-8 to A-12; Form 4562, Parts II, III and V. Not modeled: leased vehicles, short tax years, employee use under 280F(d)(3), trade-ins, qualified nonpersonal use vehicles, and the 40% mid-quarter test across all property.</div>
+    <div class="source-row">Authority: IRC &sect;168(k)(1), (k)(2)(F)(i), (k)(7) (bonus depreciation, 100% for property acquired and placed in service after January 19, 2025, P.L. 119-21 &sect;70301); IRC &sect;179(b)(5) and Rev. Proc. 2025-32 sec. 4.24 (SUV cap, $32,000 for 2026); IRC &sect;280F(a), (b), (d)(5), (d)(7) and Rev. Proc. 2026-15 Tables 1 and 2 (2026 caps: $20,300 / $19,800 / $11,900 / $7,160 with bonus; $12,300 in year 1 without); IRC &sect;280F(a)(1)(B) and Rev. Proc. 2019-13 (unrecovered basis after the recovery period and the safe harbor); Treas. Reg. &sect;1.179-1(d), (f); Pub. 946 Tables A-1 to A-5 and A-8 to A-12; Form 4562, Parts II, III and V. Not modeled: leased vehicles, short tax years, employee use under 280F(d)(3), trade-ins, qualified nonpersonal use vehicles, and the 40% mid-quarter test across all property.</div>
     <p class="verified">Last verified: October 29, 2026. Projected figures are estimates, not IRS-published amounts; the IRS publishes each year's 280F caps in a revenue procedure early in that year. Verify against the published tables before relying on any projected year.</p>
 
   </div>
@@ -378,11 +388,20 @@ function vehicle(o) {
   for (var i = 0; i < 6; i++) {
     tent.push((i === 0 ? s179 + bonus : 0) + base * rates[i]);
   }
+  // Rev. Proc. 2019-13 safe harbor (sec. 3.01, 4.03): passenger automobile, 100% bonus allowable, basis above the year-1 cap, no 179 election.
+  var safeEligible = isAuto && !ads && o.doBonus && rate === 1 && !o.do179 && basis > caps[0];
+  var safeUsed = safeEligible && o.safe;
   var allowed = [], capUsed = [];
+  var remAdj = basis - caps[0];
   for (i = 0; i < 6; i++) {
     var c = isAuto ? caps[Math.min(i, 3)] : Infinity;
     capUsed.push(c);
-    allowed.push(Math.min(tent[i], c));
+    if (safeUsed) {
+      if (i === 0) { allowed.push(Math.min(tent[0], c)); }
+      else { tent[i] = remAdj * rates[i]; allowed.push(Math.min(tent[i], c)); }
+    } else {
+      allowed.push(Math.min(tent[i], c));
+    }
   }
   var recovered = allowed.reduce(function (a, b) { return a + b; }, 0);
   var post = [];
@@ -396,7 +415,7 @@ function vehicle(o) {
     }
   }
   var k = isAuto ? biz : 1;                    // scale 100%-equivalent figures back to business-use portion
-  return { biz: biz, cost: cost, ads: ads, isAuto: isAuto, conv: conv, rates: rates, rate: rate, qualified: qualified, caps: caps, scap: scap,
+  return { safeEligible: safeEligible, safeUsed: safeUsed, biz: biz, cost: cost, ads: ads, isAuto: isAuto, conv: conv, rates: rates, rate: rate, qualified: qualified, caps: caps, scap: scap,
     basis: basis, s179: s179 * k, bonus: bonus * k, base: base * k, tent: tent.map(function (x) { return x * k; }),
     allowed: allowed.map(function (x) { return x * k; }), capUsed: capUsed.map(function (x) { return x * k; }), post: post.map(function (x) { return x * k; }),
     unrec: unrec * k, recovered: recovered * k, bizBasis: cost * biz, k: k };
@@ -453,7 +472,8 @@ function calc() {
     biz: Math.min(Math.max(numVal('bizPct', 100), 1), 100) / 100,
     do179: document.getElementById('sec179').value === 'max',
     doBonus: document.getElementById('bonusElect').value === 'yes',
-    acq: document.getElementById('acq').value, conv: document.getElementById('convention').value
+    acq: document.getElementById('acq').value, conv: document.getElementById('convention').value,
+    safe: document.getElementById('safeHarbor').value === 'yes'
   };
   if (['auto', 'suv', 'heavy'].indexOf(o.type) < 0) o.type = 'auto';
   var r = vehicle(o);
@@ -498,9 +518,13 @@ function calc() {
   }
   if (r.isAuto) {
     flag('<strong>280F luxury auto caps apply</strong> to the combined 179, bonus and MACRS deduction: ' + fmt(r.caps[0]) + ' / ' + fmt(r.caps[1]) + ' / ' + fmt(r.caps[2]) + ' / ' + fmt(r.caps[3]) + ' (years 1, 2, 3, later) for ' + year + ' placed-in-service' + (year > 2026 ? ' (projected)' : ' (Rev. Proc. 2026-15)') + ', each multiplied by your business-use percentage.', 'amber');
-    if ((r.s179 > 0 || r.bonus > 0) && r.unrec > 0) {
-      flag('<strong>Bonus or 179 above the cap reduces later-year MACRS.</strong> Basis is reduced by the full 179 and bonus amounts (26 U.S.C. 168(k)(1)(B); Treas. Reg. 1.179-1(f)), so years 2-6 may produce little or nothing, and the unrecovered basis of ' + fmt(r.unrec) + ' is deducted only after the recovery period, up to ' + fmt(r.caps[3] * r.biz) + ' a year. 26 U.S.C. 280F(a)(1)(B); Treas. Reg. 1.280F-2T(c). Compare electing out of bonus (168(k)(7)) and skipping 179 below.', 'amber');
-      var alt = vehicle({ year: o.year, g: o.g, type: o.type, cost: o.cost, biz: o.biz, do179: false, doBonus: false, acq: o.acq, conv: o.conv });
+    if (r.safeUsed) {
+      flag('<strong>Rev. Proc. 2019-13 safe harbor applied.</strong> Year 1 is the cap; the remaining basis (' + fmt(r.basis * r.k - r.caps[0] * r.k) + ') is then depreciated each year at the Table A-1 / A-2 to A-5 rate, limited by that year\'s cap, and any balance is deducted after the recovery period at the later-year cap. It requires a passenger automobile with 100% bonus allowable, basis above the year-1 cap, and no 179 election; it is adopted on the return for the first year after the placed-in-service year. Rev. Proc. 2019-13, secs. 3.01, 4.02, 4.03.', 'green');
+    } else if ((r.s179 > 0 || r.bonus > 0) && r.unrec > 0) {
+      flag('<strong>Bonus or 179 above the cap leaves no MACRS basis for years 2-6.</strong> Basis is reduced by the full 179 and bonus amounts (26 U.S.C. 168(k)(1)(B); Treas. Reg. 1.179-1(f)), so the excess over the cap, ' + fmt(r.unrec) + ', is unrecovered basis deducted only after the recovery period, up to ' + fmt(r.caps[3] * r.biz) + ' a year. 26 U.S.C. 280F(a)(1)(B); Rev. Proc. 2019-13, sec. 4.01.' + (r.safeEligible ? '' : ' The Rev. Proc. 2019-13 safe harbor is not available here (it needs 100% bonus, no 179 election and basis above the year-1 cap).') + ' Compare electing out of bonus (168(k)(7)) and not electing 179.', 'amber');
+    }
+    if ((r.s179 > 0 || r.bonus > 0) && r.unrec > 0 || r.safeUsed) {
+      var alt = vehicle({ year: o.year, g: o.g, type: o.type, cost: o.cost, biz: o.biz, do179: false, doBonus: false, acq: o.acq, conv: o.conv, safe: false });
       var cum = function (x, n) { var t = 0; for (var q = 0; q < n; q++) t += x.allowed[q]; return t; };
       flag('<strong>Comparison - MACRS only (no 179, no bonus):</strong> year 1 ' + fmt(alt.allowed[0]) + ', cumulative through year 3 ' + fmt(cum(alt, 3)) + ', through year 6 ' + fmt(cum(alt, 6)) + '. Your selection: year 1 ' + fmt(r.allowed[0]) + ', through year 3 ' + fmt(cum(r, 3)) + ', through year 6 ' + fmt(cum(r, 6)) + '.', 'blue');
     }
@@ -546,7 +570,7 @@ function calc() {
 }
 
 function init() {
-  var ids = ['vehType', 'placedYear', 'infl', 'acq', 'vehCost', 'bizPct', 'sec179', 'bonusElect', 'convention'];
+  var ids = ['vehType', 'placedYear', 'infl', 'acq', 'vehCost', 'bizPct', 'sec179', 'bonusElect', 'convention', 'safeHarbor'];
   for (var i = 0; i < ids.length; i++) {
     var el = document.getElementById(ids[i]);
     if (el) { el.oninput = calc; el.onchange = calc; }

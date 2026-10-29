@@ -1,79 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>Closer Connection Test Validator | CPA Validated</title>
-<meta name="description" content="Determine if you qualify for the closer connection exception to US tax residency under IRC Section 7701(b)(3)(B).">
+<meta name="description" content="Determine if you qualify for the closer connection exception to US tax residency under IRC Section 7701(b)(3)(B), with the Form 8840 filing deadline for tax years 2026 through 2030.">
+<link rel="canonical" href="https://cpavalidated.com/closer-connection-validator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--ink:#111111; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif;}
+:root {--ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-20:#D9DBDE; --ink-10:#EDEEF0; --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6; --amber:#8B6535; --amber-bg:#EDE8D8; --red:#9B3D3D; --red-bg:#EDE0DC; --font-display:'Oswald','Arial Narrow',sans-serif; --font-sans:'Inter',-apple-system,sans-serif; --font-mono:'Courier New',monospace;}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
+html{font-size:16px}
+body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:60px}
+a{color:var(--coral);text-decoration:none}
 .ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
 .phi{max-width:900px;margin:0 auto;padding:0 24px}
 .ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
+.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60);font-weight:500}.back a:hover{color:var(--coral)}
 .container{max-width:900px;margin:0 auto;padding:28px 24px}
 .card{background:#fff;border:1px solid #D9DBDE;margin-bottom:20px}
 .ch{background:var(--ink);padding:13px 20px;color:#fff}
+.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
 .cb{padding:20px}
+.f1{display:flex;flex-direction:column;gap:5px;max-width:320px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase;letter-spacing:.08em}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;background:#FAFAF7;color:var(--ink);border-radius:0}
+.fc:focus{border-color:var(--coral);outline:none}
+.hint{font-size:11px;color:var(--ink-60);line-height:1.5;margin-top:2px}
 .q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid #EDEEF0}
 .q-row:last-child{border-bottom:none}
-.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden}
+.q-text{font-size:13.5px;line-height:1.5}
+.q-help{font-size:11.5px;color:#5E6166;margin-top:4px;line-height:1.5}
+.yn-group{display:flex;border:1.5px solid #D9DBDE;overflow:hidden;min-width:120px}
 .yn-btn{flex:1;padding:9px 12px;border:none;font-size:13px;cursor:pointer;background:#fff;color:#5E6166;border-right:1px solid #D9DBDE;font-weight:500}
 .yn-btn:last-child{border-right:none}
 .yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
 .yn-btn.sel-no{background:#EDE0DC;color:#9B3D3D;font-weight:700}
 .result-box{border-left:3px solid var(--coral);padding:16px;margin-top:20px;background:#FCE3E2}
+.result-box.ok{border-left-color:var(--green);background:var(--green-bg)}
+.result-box.na{border-left-color:var(--amber);background:var(--amber-bg)}
+.result-box h3{font-family:var(--font-display);font-size:18px;font-weight:500;margin-bottom:6px}
 .note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
-@media(max-width:640px){.q-row{grid-template-columns:1fr;gap:8px}}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw strong{white-space:nowrap;font-family:var(--font-mono);font-size:12px}
+.rw .pass{color:var(--green)}
+.rw .failx{color:var(--red)}
+.rw .pend{color:var(--ink-60)}
+.factors{margin-left:20px;margin-top:8px;font-size:12px;line-height:1.7;color:var(--ink-80)}
+.tbl-wrap{overflow-x:auto}
+details.assump{border:1px solid var(--ink-20);background:#fff;margin-top:16px}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+@media(max-width:640px){.q-row{grid-template-columns:1fr;gap:8px}.container{padding:20px 16px}.phi{padding:0 16px}.back{padding:12px 16px 0}.fc{font-size:16px}}
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end canonical nav === */
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/closer-connection-validator.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Closer Connection Test Validator | CPA Validated">
+  <meta property="og:description" content="Determine if you qualify for the closer connection exception to US tax residency under IRC Section 7701(b)(3)(B), with the Form 8840 filing deadline for tax years 2026 through 2030.">
+  <meta property="og:url" content="https://cpavalidated.com/closer-connection-validator.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Closer Connection Test Validator | CPA Validated","url":"https://cpavalidated.com/closer-connection-validator.html","description":"Determine if you qualify for the closer connection exception to US tax residency under IRC Section 7701(b)(3)(B), with the Form 8840 filing deadline for tax years 2026 through 2030.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
 </head>
 <body>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
+</div>
 
 <div class="ph">
 <div class="phi">
 <h1>Closer Connection Test Validator</h1>
-<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Determine if you meet the closer connection exception to US tax residency under IRC §7701(b)(3)(B). Requires Form 8840 filing.</p>
+<p class="sub">Determine if you meet the closer connection exception to US tax residency under IRC §7701(b)(3)(B). Requires a timely Form 8840. Tax years 2026-2030.</p>
 </div>
 </div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
 
 <div class="container">
+
+<div class="card">
+<div class="ch"><h2>Tax Year</h2></div>
+<div class="cb">
+<div class="f1">
+<label for="cc_year">Tax year of the claim</label>
+<select id="cc_year" class="fc" onchange="calculate()">
+<option value="2025">2025</option>
+<option value="2026" selected>2026</option>
+<option value="2027">2027</option>
+<option value="2028">2028</option>
+<option value="2029">2029</option>
+<option value="2030">2030</option>
+</select>
+<div class="hint">The eligibility rules are the same every year. The year only changes the Form 8840 filing date shown in the result.</div>
+</div>
+</div>
+</div>
 
 <div class="card">
 <div class="ch"><h2>Residency Facts</h2></div>
 <div class="cb">
 
 <div class="q-row">
-<div><div style="font-size:13.5px">Did you meet the Substantial Presence Test in this year?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">183+ days in the US during the year (using weighted formula)</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
+<div><div class="q-text">Are you a U.S. citizen, or were you a green card holder (lawful permanent resident) at any time during the year?</div><div class="q-help">The exception is only for alien individuals who are not lawful permanent residents (IRC §7701(b)(1)(A)(i), (b)(3)(B); Form 8840 instructions).</div></div>
+<div><div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('alien', 'yes', this)">Yes</button>
+<button class="yn-btn unsel" onclick="setState('alien', 'no', this)">No</button>
+</div></div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">Did you meet the Substantial Presence Test for the year?</div><div class="q-help">At least 31 days in the year and at least 183 weighted days over three years (IRC §7701(b)(3)(A)). Use the <a href="spt-calculator.html">SPT calculator</a>.</div></div>
+<div><div class="yn-group">
 <button class="yn-btn unsel" onclick="setState('spt', 'yes', this)">Yes</button>
 <button class="yn-btn unsel" onclick="setState('spt', 'no', this)">No</button>
-</div>
-</div>
-</div>
-
-<div class="q-row">
-<div><div style="font-size:13.5px">Do you have a closer connection to another country?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Home, family, employment, and business ties outside the US</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setState('closer_conn', 'yes', this)">Yes</button>
-<button class="yn-btn unsel" onclick="setState('closer_conn', 'no', this)">No</button>
-</div>
-</div>
+</div></div>
 </div>
 
 <div class="q-row">
-<div><div style="font-size:13.5px">Did you file Form 8840 with the IRS by June 15?</div><div style="font-size:11.5px;color:#5E6166;margin-top:4px">Required to claim closer connection exception</div></div>
-<div style="min-width:120px">
-<div class="yn-group">
+<div><div class="q-text">Were you present in the United States on fewer than 183 days during the year?</div><div class="q-help">Current year only, not the weighted total (IRC §7701(b)(3)(B)(i); Treas. Reg. §301.7701(b)-2(a)(1)). Days that the statute treats as not present are not counted.</div></div>
+<div><div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('under183', 'yes', this)">Yes</button>
+<button class="yn-btn unsel" onclick="setState('under183', 'no', this)">No</button>
+</div></div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">Did you have a tax home in a foreign country for the entire year?</div><div class="q-help">The tax home must exist all year and be in the same country to which you claim the closer connection (Treas. Reg. §301.7701(b)-2(c)). Tax home is generally your regular or principal place of business.</div></div>
+<div><div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('taxhome', 'yes', this)">Yes</button>
+<button class="yn-btn unsel" onclick="setState('taxhome', 'no', this)">No</button>
+</div></div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">Do you have a closer connection to that foreign country than to the United States?</div><div class="q-help">More significant contacts with the foreign country; see the factors below (Treas. Reg. §301.7701(b)-2(d)). Two countries are allowed only under the special rule in §301.7701(b)-2(e).</div></div>
+<div><div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('closer', 'yes', this)">Yes</button>
+<button class="yn-btn unsel" onclick="setState('closer', 'no', this)">No</button>
+</div></div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">During the year, did you apply for or take other steps toward a green card, or have an adjustment of status pending?</div><div class="q-help">Examples: Form I-485 filed by you, Form I-130 or I-140 filed on your behalf (IRC §7701(b)(3)(C); Treas. Reg. §301.7701(b)-2(f)).</div></div>
+<div><div class="yn-group">
+<button class="yn-btn unsel" onclick="setState('lprsteps', 'yes', this)">Yes</button>
+<button class="yn-btn unsel" onclick="setState('lprsteps', 'no', this)">No</button>
+</div></div>
+</div>
+
+<div class="q-row">
+<div><div class="q-text">Have you filed, or will you timely file, Form 8840 for the year?</div><div class="q-help">Attach it to Form 1040-NR, or mail it to the IRS if no return is required, by the Form 1040-NR due date including extensions (Treas. Reg. §301.7701(b)-8(c); Form 8840 instructions).</div></div>
+<div><div class="yn-group">
 <button class="yn-btn unsel" onclick="setState('form8840', 'yes', this)">Yes</button>
 <button class="yn-btn unsel" onclick="setState('form8840', 'no', this)">No</button>
-</div>
-</div>
+</div></div>
 </div>
 
 </div>
@@ -83,17 +203,20 @@ body{font-family:var(--font-sans);background:#FAFAF7;color:var(--ink)}
 <div class="ch"><h2>Closer Connection Factors</h2></div>
 <div class="cb">
 <div style="font-size:12px;line-height:1.7;color:var(--ink-80)">
-The IRS considers these factors (no single factor is determinative):
-<ul style="margin-left:20px;margin-top:8px">
-<li><strong>Permanent home:</strong> Do you have housing available in a foreign country?</li>
-<li><strong>Family:</strong> Are your spouse and children in a foreign country?</li>
-<li><strong>Employment:</strong> Your job location and business activities</li>
-<li><strong>Social ties:</strong> Clubs, cultural organizations, religious affiliations</li>
-<li><strong>Professional ties:</strong> Licenses, professional organizations</li>
-<li><strong>Financial:</strong> Bank accounts, investments, business interests outside US</li>
-<li><strong>Time:</strong> More days outside the US than in it</li>
+The facts and circumstances considered include, but are not limited to (Treas. Reg. §301.7701(b)-2(d)(1)); no single factor is determinative:
+<ul class="factors">
+<li><strong>Permanent home:</strong> a dwelling available at all times, continuously, and not solely for short stays; owned or rented does not matter</li>
+<li><strong>Family:</strong> where your family is located</li>
+<li><strong>Personal belongings:</strong> automobiles, furniture, clothing, and jewelry</li>
+<li><strong>Organizations:</strong> social, political, cultural, or religious organizations with which you have a current relationship</li>
+<li><strong>Banking:</strong> where you conduct routine personal banking</li>
+<li><strong>Business activities:</strong> other than those that constitute your tax home</li>
+<li><strong>Driver's license:</strong> the jurisdiction that issued it</li>
+<li><strong>Voting:</strong> the jurisdiction in which you vote</li>
+<li><strong>Country of residence designated</strong> on forms and documents</li>
+<li><strong>Official forms filed</strong> such as Form W-8 or Form W-9</li>
 </ul>
-<p style="margin-top:12px;color:var(--ink-60)"><strong>Authority:</strong> IRC §7701(b)(3)(B), Form 8840 Instructions, Treasury Regulation §301.7701(b)-7</p>
+<p style="margin-top:12px;color:var(--ink-60)"><strong>Authority:</strong> IRC §7701(b)(3)(B), (C); Treas. Reg. §301.7701(b)-2 and §301.7701(b)-8; Form 8840 and its instructions</p>
 </div>
 </div>
 </div>
@@ -101,68 +224,119 @@ The IRS considers these factors (no single factor is determinative):
 <div class="card">
 <div class="ch"><h2>Closer Connection Determination</h2></div>
 <div class="cb">
-<div id="result_area"></div>
+<div id="result_area"><div style="font-size:13px;color:var(--ink-60)">Answer the questions above to see the determination.</div></div>
+<details class="assump">
+<summary>Assumptions &amp; sources</summary>
+<div class="tbl-wrap"><table>
+<thead><tr><th>Rule</th><th>Value</th><th>Status</th><th>Citation</th></tr></thead>
+<tbody>
+<tr><td>Days present in the current year</td><td>Fewer than 183</td><td>Statutory</td><td>IRC §7701(b)(3)(B)(i)</td></tr>
+<tr><td>Foreign tax home</td><td>Entire year, same country as the closer connection</td><td>Statutory / Regulation</td><td>IRC §7701(b)(3)(B)(ii); Treas. Reg. §301.7701(b)-2(c)</td></tr>
+<tr><td>Closer connection</td><td>More significant contacts with one foreign country (two only under the special rule)</td><td>Regulation</td><td>Treas. Reg. §301.7701(b)-2(d), (e)</td></tr>
+<tr><td>Green card steps</td><td>Application pending or other steps during the year bar the exception</td><td>Statutory</td><td>IRC §7701(b)(3)(C); Treas. Reg. §301.7701(b)-2(f)</td></tr>
+<tr><td>Filing requirement</td><td>Form 8840 by the Form 1040-NR due date, including extensions</td><td>Regulation</td><td>Treas. Reg. §301.7701(b)-8(a)-(c); Form 8840 instructions</td></tr>
+<tr><td>Form 1040-NR due date</td><td>April 15 (wages subject to withholding); June 15 otherwise; next business day if a weekend or legal holiday</td><td>Statutory</td><td>IRC §6072(a), (c); §7503</td></tr>
+<tr><td>Late filing</td><td>Not eligible unless clear and convincing evidence of reasonable actions, or IRS discretion</td><td>Regulation</td><td>Treas. Reg. §301.7701(b)-8(d)(2), (e)</td></tr>
+<tr><td>Year dependence</td><td>None for eligibility. Filing dates depend on the calendar. No projected dollar figures are used.</td><td>Statutory</td><td>IRC §7701(b)(3)</td></tr>
+</tbody>
+</table></div>
+</details>
+<div class="verified">Last verified: October 29, 2026. This page uses no inflation-indexed or projected figures. Dates for later years are calendar computations; confirm against IRS announcements before relying on them.</div>
 </div>
 </div>
 
 </div>
 
 <script>
-const state = {spt: '', closer_conn: '', form8840: ''};
+var state = {alien: "", spt: "", under183: "", taxhome: "", closer: "", lprsteps: "", form8840: ""};
+var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 function setState(key, val, btn) {
   state[key] = val;
-  btn.parentElement.querySelectorAll('.yn-btn').forEach(b => {
-    b.classList.remove('sel-yes', 'sel-no', 'unsel');
-  });
-  btn.classList.add(`sel-${val}`);
+  var sibs = btn.parentElement.querySelectorAll(".yn-btn");
+  for (var i = 0; i < sibs.length; i++) { sibs[i].classList.remove("sel-yes", "sel-no", "unsel"); }
+  btn.classList.add("sel-" + val);
   calculate();
 }
 
-function calculate() {
-  if (!state.spt || !state.closer_conn || !state.form8840) return;
-  
-  let eligible = false;
-  let summary = '';
-  
-  if (state.spt === 'no') {
-    eligible = false;
-    summary = 'You did not meet the Substantial Presence Test. You are not a resident alien for this tax year. Closer connection test is not applicable.';
-  } else if (state.spt === 'yes' && state.closer_conn === 'yes' && state.form8840 === 'yes') {
-    eligible = true;
-    summary = 'You meet all three requirements for the closer connection exception. You may be treated as a nonresident alien for this tax year despite meeting the SPT, provided the IRS accepts your Form 8840.';
-  } else if (state.spt === 'yes' && state.closer_conn === 'yes' && state.form8840 === 'no') {
-    eligible = false;
-    summary = 'You have a closer connection to another country but did NOT file Form 8840 by June 15. This form is REQUIRED to claim the exception. You are a resident alien for this tax year.';
-  } else {
-    eligible = false;
-    summary = 'You do not meet all requirements for the closer connection exception. You are a resident alien for this tax year.';
+// Form 1040-NR due date for a tax year: April 15 or June 15 of the next year (IRC 6072(a), (c)); weekday computed
+function dueDates(year) {
+  function one(m, d) {
+    var dt = new Date(Date.UTC(year + 1, m, d));
+    var wd = dt.getUTCDay();
+    return {label: MONTHS[m] + " " + d + ", " + (year + 1), weekday: DAYS[wd], weekend: wd === 0 || wd === 6};
   }
-  
-  let html = `
-    <div class="result-box">
-      <h3>Closer Connection Exception: ${eligible ? 'POSSIBLY AVAILABLE' : 'NOT AVAILABLE'}</h3>
-      <p style="font-size:13px;line-height:1.6;margin-top:8px">${summary}</p>
-      <p style="font-size:12px;margin-top:12px"><strong>Authority:</strong> IRC §7701(b)(3)(B), Form 8840 (Statement of Closer Connection to a Foreign Country)</p>
-    </div>
-    <div class="note-box">
-      <strong>Critical Reminder:</strong> Form 8840 must be filed by June 15 of the year following the tax year in question. Filing deadline has already passed for most prior-year claims. If you just realized you're eligible, consult a tax professional immediately about amended returns.
-    </div>
-  `;
-  
-  document.getElementById('result_area').innerHTML = html;
+  return {apr: one(3, 15), jun: one(5, 15)};
+}
+function dueLine(x) {
+  return x.label + " (" + x.weekday + ")" + (x.weekend ? " - falls on a weekend, so the deadline moves to the next day that is not a weekend or legal holiday (IRC §7503); confirm the exact date" : "");
+}
+
+// Pure evaluation (also used by tests)
+function evaluateCC(s) {
+  var checks = [
+    {k: "alien", label: "Not a U.S. citizen or green card holder", need: "no", cite: "IRC §7701(b)(1)(A)(i); Form 8840 instructions"},
+    {k: "spt", label: "Meets the Substantial Presence Test (the exception only matters if it does)", need: "yes", cite: "IRC §7701(b)(3)(A)"},
+    {k: "under183", label: "Present fewer than 183 days in the current year", need: "yes", cite: "IRC §7701(b)(3)(B)(i)"},
+    {k: "taxhome", label: "Foreign tax home for the entire year", need: "yes", cite: "IRC §7701(b)(3)(B)(ii); Reg. §301.7701(b)-2(c)"},
+    {k: "closer", label: "Closer connection to that foreign country", need: "yes", cite: "Reg. §301.7701(b)-2(d)"},
+    {k: "lprsteps", label: "No green card application or other steps during the year", need: "no", cite: "IRC §7701(b)(3)(C); Reg. §301.7701(b)-2(f)"},
+    {k: "form8840", label: "Form 8840 filed or timely filed", need: "yes", cite: "Reg. §301.7701(b)-8(a)-(d); Form 8840 instructions"}
+  ];
+  var out = {checks: [], failed: [], pending: [], status: "", notNeeded: false};
+  checks.forEach(function(c) {
+    var v = s[c.k], st = v === "" ? "pending" : (v === c.need ? "pass" : "fail");
+    out.checks.push({label: c.label, cite: c.cite, st: st, key: c.k});
+    if (st === "fail") out.failed.push(c.k);
+    if (st === "pending") out.pending.push(c.k);
+  });
+  if (s.alien === "yes") out.status = "not_available_lpr";
+  else if (s.spt === "no") { out.status = "not_needed"; out.notNeeded = true; }
+  else if (out.failed.length > 0) out.status = out.failed.indexOf("form8840") >= 0 && out.failed.length === 1 ? "not_available_filing" : "not_available";
+  else if (out.pending.length > 0) out.status = "incomplete";
+  else out.status = "possible";
+  return out;
+}
+
+function calculate() {
+  var year = parseInt(document.getElementById("cc_year").value, 10);
+  if (!(year >= 2025 && year <= 2030)) year = 2026;
+  var r = evaluateCC(state);
+  var dd = dueDates(year);
+  var anyAnswer = Object.keys(state).some(function(k) { return state[k] !== ""; });
+  if (!anyAnswer) return;
+  var cls = "result-box", title = "", body = "";
+  if (r.status === "not_available_lpr") {
+    title = "Closer Connection Exception: NOT AVAILABLE";
+    body = "A green card holder is a resident alien for the year regardless of days present, and the exception applies only to an alien individual who is not a lawful permanent resident (IRC §7701(b)(1)(A)(i); Form 8840 instructions). A U.S. citizen is not an alien individual. A tax treaty may still apply to a green card holder who claims treaty residence (IRC §7701(b)(6); Form 8833).";
+  } else if (r.status === "not_needed") {
+    cls += " na"; title = "Closer Connection Exception: NOT NEEDED";
+    body = "You did not meet the Substantial Presence Test, so you are not a resident alien under that test for " + year + ". Form 8840 is not required for this purpose. (You could still be a resident under the green card test or the first-year election; IRC §7701(b)(1)(A), (b)(4).)";
+  } else if (r.status === "not_available" || r.status === "not_available_filing") {
+    title = "Closer Connection Exception: NOT AVAILABLE";
+    var failedLabels = r.checks.filter(function(c) { return c.st === "fail"; }).map(function(c) { return c.label; });
+    body = "Requirement(s) not met: " + failedLabels.join("; ") + ". Without the exception you are a resident alien for " + year + " if you met the Substantial Presence Test.";
+    if (r.failed.indexOf("form8840") >= 0) body += " If Form 8840 was not timely filed, relief is limited: you may still qualify if you show by clear and convincing evidence that you took reasonable actions to learn of the filing requirement and significant affirmative steps to comply, or if the IRS exercises its discretion to disregard the late filing (Treas. Reg. §301.7701(b)-8(d)(2), (e)). A treaty tie-breaker may also help (Form 8833; Treas. Reg. §301.7701(b)-7).";
+  } else if (r.status === "incomplete") {
+    cls += " na"; title = "Closer Connection Exception: INCOMPLETE";
+    body = "Answer the remaining question(s) to complete the determination. So far no requirement has failed.";
+  } else {
+    cls += " ok"; title = "Closer Connection Exception: POSSIBLY AVAILABLE";
+    body = "Based on your answers, each requirement is met. The closer connection test is a facts-and-circumstances determination, and you bear the burden of establishing it on Form 8840, Part IV (Treas. Reg. §301.7701(b)-2(d)). You may be treated as a nonresident alien for " + year + " despite meeting the Substantial Presence Test if the IRS accepts the timely Form 8840.";
+  }
+  var list = "";
+  r.checks.forEach(function(c) {
+    var mark = c.st === "pass" ? '<span class="pass">Met</span>' : (c.st === "fail" ? '<span class="failx">Not met</span>' : '<span class="pend">Open</span>');
+    list += '<div class="rw"><span>' + c.label + ' <span class="pend">(' + c.cite + ')</span></span><strong>' + mark + '</strong></div>';
+  });
+  var html = '<div class="' + cls + '"><h3>' + title + '</h3><p style="font-size:13px;line-height:1.6;margin-top:8px">' + body + '</p></div>' +
+    '<div style="margin-top:16px">' + list + '</div>' +
+    '<div class="note-box"><strong>Form 8840 filing date for tax year ' + year + ':</strong> attach Form 8840 to Form 1040-NR, or mail it to the IRS if you do not have to file a return, by the Form 1040-NR due date including extensions (Treas. Reg. §301.7701(b)-8(c); Form 8840 instructions). That due date is April 15 if you received wages subject to U.S. withholding, and June 15 otherwise (IRC §6072(a), (c)).<br>April 15 date: ' + dueLine(dd.apr) + '.<br>June 15 date: ' + dueLine(dd.jun) + '.<br>Late-filing relief is limited as described above. If a prior-year Form 8840 was missed, consult a tax professional promptly.</div>';
+  document.getElementById("result_area").innerHTML = html;
 }
 </script>
 
-
-<script src="/shared.js"></script>
-
-
-
-
-</div>
-
-<script src="/shared.js"></script>
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
   <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px">
@@ -184,5 +358,6 @@ function calculate() {
   </div>
 </div>
 <!-- END UNIFIED FOOTER -->
+<script src="/shared.js"></script>
 </body>
 </html>

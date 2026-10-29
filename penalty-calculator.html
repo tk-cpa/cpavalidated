@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>IRS Penalty & Interest Calculator 2026 | CPA Validated</title>
+<title>IRS Penalty & Interest Calculator 2026-2030 | CPA Validated</title>
 <meta name="description" content="Calculate IRS failure-to-file penalty, failure-to-pay penalty, accuracy-related penalty, and underpayment interest. CPA-validated. IRC Sections 6651, 6654, 6601.">
 <link rel="canonical" href="https://cpavalidated.com/penalty-calculator.html">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -95,17 +95,19 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 .cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
 @media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
 /* === end canonical nav === */
+.atbl{width:100%;border-collapse:collapse;font-size:12px}.atbl th,.atbl td{border:1px solid var(--ink-20);padding:6px 8px;text-align:left;vertical-align:top;line-height:1.5}.atbl th{background:var(--ink-10);font-weight:600}details summary{list-style:none}details summary::-webkit-details-marker{display:none}details summary:before{content:"+ ";color:var(--coral)}details[open] summary:before{content:"- "}
+.rh-sub{color:rgba(255,255,255,.75)!important}.pb-detail{color:rgba(255,255,255,.75)!important}
 @media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
   <meta property="og:type" content="article">
-  <meta property="og:title" content="IRS Penalty & Interest Calculator 2026 | CPA Validated">
+  <meta property="og:title" content="IRS Penalty & Interest Calculator 2026-2030 | CPA Validated">
   <meta property="og:description" content="Calculate IRS failure-to-file penalty, failure-to-pay penalty, accuracy-related penalty, and underpayment interest. CPA-validated. IRC Sections 6651, 6654, 6601.">
   <meta property="og:url" content="https://cpavalidated.com/penalty-calculator.html">
   <meta property="og:site_name" content="CPA Validated">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="IRS Penalty & Interest Calculator 2026 | CPA Validated">
+  <meta name="twitter:title" content="IRS Penalty & Interest Calculator 2026-2030 | CPA Validated">
   <meta name="twitter:description" content="Calculate IRS failure-to-file penalty, failure-to-pay penalty, accuracy-related penalty, and underpayment interest. CPA-validated. IRC Sections 6651, 6654, 6601.">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"IRS Penalty & Interest Calculator 2026 | CPA Validated","url":"https://cpavalidated.com/penalty-calculator.html","description":"Calculate IRS failure-to-file penalty, failure-to-pay penalty, accuracy-related penalty, and underpayment interest. CPA-validated. IRC Sections 6651, 6654, 6601.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  {"@context":"https://schema.org","@type":"WebApplication","name":"IRS Penalty & Interest Calculator 2026-2030 | CPA Validated","url":"https://cpavalidated.com/penalty-calculator.html","description":"Calculate IRS failure-to-file penalty, failure-to-pay penalty, accuracy-related penalty, and underpayment interest. CPA-validated. IRC Sections 6651, 6654, 6601.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
   </script>
 </head>
 <body>
@@ -133,267 +135,522 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 </div>
 
 <div class="ph"><div class="phi">
-  <h1>IRS Penalty & Interest Calculator</h1>
-  <div class="sub">Failure-to-File &nbsp;&bull;&nbsp; Failure-to-Pay &nbsp;&bull;&nbsp; Accuracy Penalty &nbsp;&bull;&nbsp; Underpayment Interest &nbsp;&bull;&nbsp; 2026</div>
+  <h1>IRS Penalty &amp; Interest Calculator 2026-2030</h1>
+  <div class="sub">Failure-to-File &nbsp;&bull;&nbsp; Failure-to-Pay &nbsp;&bull;&nbsp; Accuracy Penalty &nbsp;&bull;&nbsp; Underpayment Interest &nbsp;&bull;&nbsp; Tax Years 2023 - 2030</div>
   <div class="badges">
     <span class="badge">IRC §6651 (FTF/FTP)</span>
-    <span class="badge">IRC §6654 (Underpayment)</span>
-    <span class="badge">IRC §6601 (Interest)</span>
+    <span class="badge">IRC §6698 / §6699 (Pass-through FTF)</span>
+    <span class="badge">IRC §6601 / §6621 / §6622 (Interest)</span>
     <span class="badge">IRC §6662 (Accuracy)</span>
   </div>
 </div></div>
 <div class="back"><a href="index.html">← cpavalidated.com</a></div>
 <div class="wrap">
-
 <div class="card">
-  <div class="ch"><div class="sb">1</div><h2>Tax & Payment Information</h2></div>
+  <div class="ch"><div class="sb">1</div><h2>Return &amp; Dates</h2></div>
   <div class="cb">
     <div class="fg3">
-      <div class="f1"><label>Tax Year</label>
-        <select class="fc" id="taxYear" onchange="calc()">
-          <option value="2025" selected>2025 (filed 2026)</option>
-          <option value="2024">2024 (filed 2025)</option>
-          <option value="2023">2023 (filed 2024)</option>
+      <div class="f1"><label for="taxYear">Tax Year</label>
+        <select class="fc" id="taxYear" onchange="onYearType()">
+          <option value="2023">2023 (due 2024)</option>
+          <option value="2024">2024 (due 2025)</option>
+          <option value="2025">2025 (due 2026)</option>
+          <option value="2026" selected>2026 (due 2027)</option>
+          <option value="2027">2027 (due 2028)</option>
+          <option value="2028">2028 (due 2029)</option>
+          <option value="2029">2029 (due 2030)</option>
+          <option value="2030">2030 (due 2031)</option>
         </select>
+        <div class="hint">Calendar-year taxpayers. The tax year sets the return due date and the inflation-adjusted minimum penalty amounts.</div>
       </div>
-      <div class="f1"><label>Return Type</label>
-        <select class="fc" id="returnType" onchange="calc()">
+      <div class="f1"><label for="returnType">Return Type</label>
+        <select class="fc" id="returnType" onchange="onYearType()">
           <option value="1040">Form 1040 (Individual)</option>
-          <option value="1120s">Form 1120-S / 1065 (Pass-through)</option>
           <option value="1120">Form 1120 (C-Corp)</option>
+          <option value="1065">Form 1065 (Partnership)</option>
+          <option value="1120s">Form 1120-S (S-Corp)</option>
         </select>
+        <div class="hint">1065 and 1120-S use the per-partner / per-shareholder penalty of IRC §6698 / §6699, not IRC §6651.</div>
       </div>
-      <div class="f1"><label>Total Tax Owed ($)</label>
-        <input type="number" class="fc" id="taxOwed" value="25000" min="0" oninput="calc()">
-        <div class="hint">Tax on return before withholding/payments</div>
+      <div class="f1"><label for="extension">Timely Extension Filed?</label>
+        <select class="fc" id="extension" onchange="onYearType()">
+          <option value="no">No extension filed</option>
+          <option value="yes">Yes - timely Form 4868 / 7004</option>
+        </select>
+        <div class="hint">An extension of time to file moves the failure-to-file start date. It does not extend time to pay. Treas. Reg. §1.6081-4(c), §1.6081-3(b).</div>
       </div>
     </div>
     <div class="fg3">
-      <div class="f1"><label>Withholding & Estimated Payments ($)</label>
-        <input type="number" class="fc" id="payments" value="10000" min="0" oninput="calc()">
-        <div class="hint">Total pre-payments made before filing</div>
+      <div class="f1"><label for="dueDate">Original Due Date</label>
+        <input type="date" class="fc" id="dueDate" oninput="calc()">
+        <div class="hint">Filled in from the tax year and return type (IRC §6072, shifted for weekends and D.C. legal holidays under IRC §7503). You may overwrite it.</div>
       </div>
-      <div class="f1"><label>Original Due Date</label>
-        <input type="date" class="fc" id="dueDate" value="2026-04-15" oninput="calc()">
+      <div class="f1"><label for="extDueDate">Extended Due Date</label>
+        <input type="date" class="fc" id="extDueDate" oninput="calc()">
+        <div class="hint">Six months after the original due date, then shifted under IRC §7503. Used only if an extension was filed.</div>
       </div>
-      <div class="f1"><label>Date Return Filed (or Today)</label>
+      <div class="f1"><label for="filedDate">Date Return Filed</label>
         <input type="date" class="fc" id="filedDate" oninput="calc()">
+        <div class="hint" id="filedHint">Defaults to today when the due date has passed, or to 90 days after the due date for a future year (illustrative).</div>
+      </div>
+    </div>
+    <div class="fg3" id="grpTax">
+      <div class="f1"><label for="taxOwed">Total Tax Shown on Return ($)</label>
+        <input type="number" class="fc" id="taxOwed" value="25000" min="0" step="any" oninput="calc()">
+        <div class="hint">Total tax on the return before withholding and payments (Form 1040 line 24 for 2025; total tax on Form 1120).</div>
+      </div>
+      <div class="f1"><label for="payments">Withholding, Estimates &amp; Credits by Original Due Date ($)</label>
+        <input type="number" class="fc" id="payments" value="10000" min="0" step="any" oninput="calc()">
+        <div class="hint">Payments and refundable credits made on or before the original due date. IRC §6651(b)(1). Amounts paid later belong in the payment date below.</div>
+      </div>
+      <div class="f1"><label for="paidDate">Date Balance Is Paid</label>
+        <input type="date" class="fc" id="paidDate" oninput="calc()">
+        <div class="hint">Leave blank to assume the balance is paid on the filing date.</div>
+      </div>
+    </div>
+    <div class="fg3" id="grpEntity" style="display:none">
+      <div class="f1"><label for="partners">Number of Partners / Shareholders</label>
+        <input type="number" class="fc" id="partners" value="2" min="1" step="1" oninput="calc()">
+        <div class="hint">Persons who were partners (IRC §6698(b)(2)) or shareholders (IRC §6699(b)(2)) during any part of the tax year.</div>
+      </div>
+      <div class="f1"></div><div class="f1"></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" id="grpAudit">
+  <div class="ch"><div class="sb">2</div><h2>Audit Adjustment &amp; Accuracy Penalty (optional)</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label for="auditTax">Additional Tax After Audit / CP2000 ($)</label>
+        <input type="number" class="fc" id="auditTax" value="0" min="0" step="any" oninput="calc()">
+        <div class="hint">Deficiency attributable to the penalty basis you select. Leave at 0 if none.</div>
+      </div>
+      <div class="f1"><label for="accBasis">Accuracy Penalty Basis</label>
+        <select class="fc" id="accBasis" onchange="calc()">
+          <option value="sub" selected>Substantial understatement of income tax - 20%</option>
+          <option value="neg">Negligence or disregard of rules - 20%</option>
+          <option value="val">Substantial valuation misstatement - 20%</option>
+          <option value="gross">Gross valuation misstatement - 40%</option>
+          <option value="nonecon">Nondisclosed noneconomic substance transaction - 40%</option>
+        </select>
+        <div class="hint">IRC §6662(a), (b), (h), (i). The calculator applies the dollar test only for substantial understatement.</div>
+      </div>
+      <div class="f1"><label for="auditPaid">Date Additional Tax Is Paid</label>
+        <input type="date" class="fc" id="auditPaid" oninput="calc()">
+        <div class="hint">Leave blank to use the balance payment date above.</div>
       </div>
     </div>
     <div class="fg2">
-      <div class="f1"><label>Was an Extension Filed?</label>
-        <select class="fc" id="extension" onchange="calc()">
-          <option value="no">No extension filed</option>
-          <option value="yes">Yes - timely extension filed</option>
+      <div class="f1"><label for="is199A">Claimed an IRC §199A Deduction?</label>
+        <select class="fc" id="is199A" onchange="calc()">
+          <option value="no" selected>No</option>
+          <option value="yes">Yes - 5% test applies instead of 10%</option>
         </select>
-        <div class="hint">Timely extension eliminates failure-to-file penalty</div>
+        <div class="hint">IRC §6662(d)(1)(C) substitutes 5 percent for 10 percent in the substantial understatement test.</div>
       </div>
-      <div class="f1"><label>Additional Tax After Audit / CP2000 ($)</label>
-        <input type="number" class="fc" id="auditTax" value="0" min="0" oninput="calc()">
-        <div class="hint">Accuracy-related penalty applies to any additional tax</div>
-      </div>
+      <div class="f1"></div>
     </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="ch"><div class="sb">2</div><h2>Current IRS Rates (2026)</h2></div>
+  <div class="ch"><div class="sb">3</div><h2>Interest Rate &amp; Presumption Settings</h2></div>
   <div class="cb">
     <div class="rate-strip">
       <div class="rs-box"><div class="rs-label">FTF Penalty Rate</div><div class="rs-val">5%</div><div class="rs-sub">Per month, max 25% - IRC §6651(a)(1)</div></div>
       <div class="rs-box"><div class="rs-label">FTP Penalty Rate</div><div class="rs-val">0.5%</div><div class="rs-sub">Per month, max 25% - IRC §6651(a)(2)</div></div>
-      <div class="rs-box"><div class="rs-label">Underpayment Interest</div><div class="rs-val">6%</div><div class="rs-sub">Federal short-term rate + 3% - IRC §6601</div></div>
-      <div class="rs-box"><div class="rs-label">Accuracy Penalty</div><div class="rs-val">20%</div><div class="rs-sub">Of underpayment - IRC §6662(a)</div></div>
+      <div class="rs-box"><div class="rs-label">Underpayment Interest</div><div class="rs-val">7%</div><div class="rs-sub">Q4 2026, short-term rate + 3 - IRC §6621(a)(2), Rev. Rul. 2026-15</div></div>
+      <div class="rs-box"><div class="rs-label">Accuracy Penalty</div><div class="rs-val">20% / 40%</div><div class="rs-sub">Of underpayment - IRC §6662(a), (h), (i)</div></div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="assumedRate">Assumed Underpayment Rate After Q4 2026 (% per year)</label>
+        <input type="number" class="fc" id="assumedRate" value="7" min="0" max="25" step="0.5" oninput="calc()">
+        <div class="hint">The IRS publishes each quarter's rate only about a month before the quarter starts (IRC §6621). Days after December 31, 2026 use this assumption and are labeled projected. Default is the latest published rate.</div>
+      </div>
+      <div class="f1"><label for="rcPresume">Apply Extension Reasonable-Cause Presumption?</label>
+        <select class="fc" id="rcPresume" onchange="calc()">
+          <option value="yes" selected>Yes - if the regulation's conditions are met</option>
+          <option value="no">No - ignore the presumption</option>
+        </select>
+        <div class="hint">Treas. Reg. §301.6651-1(c)(3) (individuals) and (c)(4) (corporations): no failure-to-pay penalty for the extension period if at least 90% of the tax was paid by the original due date and the balance is paid with the return.</div>
+      </div>
     </div>
     <div style="font-size:12px;color:var(--ink-60);padding:10px;background:var(--ink-10);border-left:2px solid var(--ink-20);line-height:1.6">
-      IRS underpayment interest rate = Federal short-term rate + 3 percentage points. Set quarterly by IRS Notice. Current rate used: <strong>6% (Q2 2026, per Rev. Rul. 2026-5)</strong>. Verify current quarter rate at <a href="https://www.irs.gov/payments/quarterly-interest-rates" target="_blank">IRS.gov</a> as rates change quarterly.
+      Quarterly rates for 2018 through Q4 2026 are the IRS-published underpayment rates. Interest is compounded daily (IRC §6622). Verify the current quarter at <a href="https://www.irs.gov/payments/quarterly-interest-rates" target="_blank" rel="noopener">IRS.gov quarterly interest rates</a>.
     </div>
   </div>
 </div>
 
 <div class="card">
-  <div class="ch"><div class="sb">3</div><h2>Penalty & Interest Analysis</h2></div>
+  <div class="ch"><div class="sb">4</div><h2>Penalty &amp; Interest Analysis</h2></div>
   <div class="cb" id="resultBody">
     <div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above to calculate.</div>
   </div>
 </div>
 
+<div class="card">
+  <div class="ch"><div class="sb">5</div><h2>Assumptions &amp; Sources</h2></div>
+  <div class="cb">
+    <div id="assump"></div>
+    <div class="disc">Figures for periods after the IRS-published data (interest after December 31, 2026 and minimum penalty amounts for returns filed after 2027) are projected estimates, not IRS-published figures. Last verified: October 29, 2026.</div>
+  </div>
+</div>
 </div>
 
 <script>
-// Set today's date as default
-document.getElementById('filedDate').value = new Date().toISOString().split('T')[0];
-
-function fmt(n){
-  if(n<=0) return '$0';
-  return '$'+Math.round(n).toLocaleString('en-US');
+var DAY = 86400000;
+var MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+function pad2(n){ return (n<10?'0':'')+n; }
+function parseD(s){
+  if(!s || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return null;
+  var p = s.split('-'), t = Date.UTC(+p[0], +p[1]-1, +p[2]);
+  return isNaN(t) ? null : t;
 }
-function flag(t,i,html){return `<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${html}</div></div>`;}
+function fmtD(t){ var d = new Date(t); return d.getUTCFullYear()+'-'+pad2(d.getUTCMonth()+1)+'-'+pad2(d.getUTCDate()); }
+function longD(t){ var d = new Date(t); return MONTH_NAMES[d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear(); }
+function money(n){ n = Math.round(n); return (n<0?'-':'')+'$'+Math.abs(n).toLocaleString('en-US'); }
+function pctTxt(x){ return (Math.round(x*10000)/100)+'%'; }
+function flag(t,i,html){ return '<div class="flag '+t+'"><div class="fi">'+i+'</div><div class="ft">'+html+'</div></div>'; }
 
-function daysBetween(d1, d2){
-  return Math.max(0, Math.round((new Date(d2)-new Date(d1))/(1000*60*60*24)));
+/* ---------- Due dates: IRC 6072, 6081 regs, IRC 7503 / Reg. 301.7503-1(b), D.C. Code 28-2701 ---------- */
+function nthWeekday(y,m,wd,n){ var first = new Date(Date.UTC(y,m,1)).getUTCDay(); return Date.UTC(y,m,1+((wd-first+7)%7)+(n-1)*7); }
+function lastWeekday(y,m,wd){ var last = new Date(Date.UTC(y,m+1,0)); var dow = last.getUTCDay(); return Date.UTC(y,m,last.getUTCDate()-((dow-wd+7)%7)); }
+var HOL_CACHE = {};
+function legalHolidays(y){
+  if(HOL_CACHE[y]) return HOL_CACHE[y];
+  var s = {};
+  [[0,1],[3,16],[5,19],[6,4],[10,11],[11,25]].forEach(function(md){
+    var t = Date.UTC(y,md[0],md[1]), dow = new Date(t).getUTCDay();
+    if(dow===6) s[t-DAY] = 1; else if(dow===0) s[t+DAY] = 1; else s[t] = 1;
+  });
+  s[nthWeekday(y,0,1,3)] = 1;   // Martin Luther King Jr. Day
+  s[nthWeekday(y,1,1,3)] = 1;   // Washington's Birthday
+  s[lastWeekday(y,4,1)] = 1;    // Memorial Day
+  s[nthWeekday(y,8,1,1)] = 1;   // Labor Day
+  s[nthWeekday(y,9,1,2)] = 1;   // Indigenous Peoples' Day
+  s[nthWeekday(y,10,4,4)] = 1;  // Thanksgiving
+  if(((y-2025)%4)===0) s[Date.UTC(y,0,20)] = 1; // Inauguration Day
+  HOL_CACHE[y] = s; return s;
 }
-function monthsBetween(d1, d2){
-  // IRS counts each month or fraction thereof
-  const days = daysBetween(d1, d2);
-  return Math.ceil(days / 30);
+function isLegalHoliday(t){ var y = new Date(t).getUTCFullYear(); return !!(legalHolidays(y-1)[t] || legalHolidays(y)[t] || legalHolidays(y+1)[t]); }
+function nextBusinessDay(t){ for(var i=0;i<10;i++){ var dow = new Date(t).getUTCDay(); if(dow===0 || dow===6 || isLegalHoliday(t)) t += DAY; else break; } return t; }
+function defaultDates(ty, type){
+  var pass = (type==='1065' || type==='1120s');
+  var dueRaw = pass ? Date.UTC(ty+1,2,15) : Date.UTC(ty+1,3,15);
+  var extRaw = pass ? Date.UTC(ty+1,8,15) : Date.UTC(ty+1,9,15);
+  return { due: nextBusinessDay(dueRaw), ext: nextBusinessDay(extRaw) };
+}
+
+/* ---------- Statutory month counting: Treas. Reg. 301.6651-1(b) ---------- */
+function monthEnd(start, k){
+  var d = new Date(start), y = d.getUTCFullYear(), m = d.getUTCMonth()+k, day = d.getUTCDate();
+  var startLast = new Date(Date.UTC(y, d.getUTCMonth()+1, 0)).getUTCDate();
+  var last = new Date(Date.UTC(y, m+1, 0)).getUTCDate();
+  if(day === startLast) return Date.UTC(y, m, last);          // Reg. 301.6651-1(b)(1)
+  return Date.UTC(y, m, Math.min(day, last));                 // Reg. 301.6651-1(b)(2)
+}
+function countMonths(start, end){ if(end <= start) return 0; var k = 1; while(monthEnd(start,k) < end && k < 2000) k++; return k; }
+
+/* ---------- Interest: IRC 6601 / 6621 / 6622. Underpayment rates published by IRS (Rev. Rul. series, IRB). ---------- */
+var UNDERPAY = {2018:[4,5,5,5],2019:[6,6,5,5],2020:[5,5,3,3],2021:[3,3,3,3],2022:[3,4,5,6],2023:[7,7,7,8],2024:[8,8,8,8],2025:[7,7,7,7],2026:[7,6,7,7]};
+var LAST_PUB = Date.UTC(2026,11,31);
+function rateOn(t, assumed){
+  var d = new Date(t), y = d.getUTCFullYear(), q = Math.floor(d.getUTCMonth()/3);
+  if(t <= LAST_PUB){
+    if(UNDERPAY[y]) return { r: UNDERPAY[y][q]/100, proj: false };
+    return { r: UNDERPAY[2018][0]/100, proj: false, early: true };
+  }
+  return { r: assumed/100, proj: true };
+}
+function accrue(principal, start, end, assumed){
+  var res = { amount: 0, days: 0, segs: [], proj: false, early: false };
+  if(!(principal > 0) || end <= start) return res;
+  var days = Math.round((end - start)/DAY), bal = principal, cur = null;
+  for(var i=1; i<=days; i++){
+    var t = start + i*DAY, rr = rateOn(t, assumed);
+    bal *= (1 + rr.r/365);
+    if(rr.proj) res.proj = true;
+    if(rr.early) res.early = true;
+    if(cur && cur.r === rr.r && cur.proj === rr.proj){ cur.to = t; cur.days++; }
+    else { cur = { r: rr.r, proj: rr.proj, from: t, to: t, days: 1 }; res.segs.push(cur); }
+  }
+  res.amount = bal - principal; res.days = days;
+  return res;
+}
+function segText(a){
+  if(!a.segs.length) return '';
+  return a.segs.map(function(s){ return longD(s.from)+' to '+longD(s.to)+': '+s.days+' day(s) at '+pctTxt(s.r)+(s.proj?' (projected)':''); }).join('; ');
+}
+
+/* ---------- Dollar amounts keyed by the year the return is required to be filed ---------- */
+// IRC 6651(a) minimum penalty. Published: Rev. Proc. 2022-38 (2024 filings), 2023-34 (2025 filings), 2024-40 (2026), 2025-32 (2027).
+var MIN_FTF = { 2024:485, 2025:510, 2026:525, 2027:535 };
+// IRC 6698(b)(1) / 6699(b)(1) per-person monthly amount: same Rev. Procs.
+var ENTITY_AMT = { 2024:235, 2025:245, 2026:255, 2027:260 };
+var CPI_FIRST = { ftf: 535/435 - 1, ent: 260/195 - 1 };       // implied cumulative factors at the 2027 filing year lower bound
+var CPI_NEXT = { ftf: 540/435 - 1, ent: 265/195 - 1 };        // upper bound (next $5 step)
+function floor5(x){ return Math.floor(x/5)*5; }
+function projectedAmount(kind, baseAmt, fileYear, infl){
+  // Midpoint of the cumulative-inflation interval implied by the 2027 published amount, then compounded at the assumed rate.
+  var lo = CPI_FIRST[kind], hi = CPI_NEXT[kind], mid = (lo+hi)/2;
+  var n = fileYear - 2027;
+  return floor5(baseAmt * (1 + mid) * Math.pow(1 + infl, n));
+}
+function dollarFor(kind, fileYear, infl){
+  var tbl = kind==='ftf' ? MIN_FTF : ENTITY_AMT;
+  if(tbl[fileYear] !== undefined) return { v: tbl[fileYear], proj: false };
+  var base = kind==='ftf' ? 435 : 195;
+  return { v: projectedAmount(kind, base, fileYear, infl), proj: true };
+}
+
+/* ---------- Core computation ---------- */
+function compute(o){
+  var r = { err: null, notes: [], proj: [] };
+  var pass = (o.type==='1065' || o.type==='1120s');
+  var fileYear = o.ty + 1;
+  var infl = (o.infl===undefined ? 0.025 : o.infl);
+  if(o.due===null || o.filed===null){ r.err = 'Enter the original due date and the date the return is filed.'; return r; }
+  var due = o.due, extDue = (o.extDue===null || o.extDue===undefined) ? due : o.extDue;
+  if(o.ext && extDue < due){ r.err = 'The extended due date must not be earlier than the original due date.'; return r; }
+  var filed = o.filed;
+  var ftfStart = o.ext ? extDue : due;
+  var paid = (o.paid===null || o.paid===undefined) ? filed : o.paid;
+  var out = { pass: pass, due: due, extDue: extDue, ftfStart: ftfStart, filed: filed, paid: paid, ext: o.ext, fileYear: fileYear };
+
+  if(pass){
+    var amt = dollarFor('ent', fileYear, infl);
+    var partners = Math.max(1, Math.floor(o.partners || 1));
+    var m = Math.min(countMonths(ftfStart, filed), 12);
+    out.entity = { amt: amt.v, proj: amt.proj, partners: partners, months: m, penalty: amt.v*partners*m, section: o.type==='1065' ? '6698' : '6699' };
+    if(amt.proj) r.proj.push('Per-person monthly amount for returns filed in '+fileYear);
+    out.total = out.entity.penalty; out.penalties = out.total; out.interestTotal = 0; out.unpaid = 0;
+    r.out = out; return r;
+  }
+
+  var tax = Math.max(0, o.tax || 0), pay = Math.max(0, o.pay || 0);
+  var unpaid = Math.max(0, tax - pay);
+  out.tax = tax; out.pay = pay; out.unpaid = unpaid;
+
+  // Failure to file: IRC 6651(a)(1), (c)(1); Reg. 301.6651-1(b)
+  var mF = countMonths(ftfStart, filed), mFc = Math.min(mF, 5);
+  var overlap = 0;
+  for(var i=1; i<=mFc; i++){
+    var startI = (i===1) ? ftfStart : monthEnd(ftfStart, i-1);
+    if(unpaid > 0 && paid > startI) overlap++;
+  }
+  var netRate = 0.05*mFc - 0.005*overlap;
+  var ftfRaw = unpaid * netRate;
+  var minAmt = dollarFor('ftf', fileYear, infl);
+  var late60 = (filed - ftfStart) > 60*DAY;
+  var floorAmt = (late60 && unpaid > 0) ? Math.min(minAmt.v, unpaid) : 0;
+  var ftf = Math.max(ftfRaw, floorAmt);
+  if(minAmt.proj && late60 && unpaid > 0) r.proj.push('Minimum failure-to-file penalty for returns filed in '+fileYear);
+  out.ftf = { mF: mF, mFc: mFc, overlap: overlap, netRate: netRate, raw: ftfRaw, floor: floorAmt, minAmt: minAmt.v, minProj: minAmt.proj, late60: late60, amount: ftf, usedFloor: floorAmt > ftfRaw };
+
+  // Failure to pay: IRC 6651(a)(2)
+  var mP = countMonths(due, paid), mPc = Math.min(mP, 50);
+  var ftpRaw = unpaid * 0.005 * mPc;
+  var presume = false;
+  if(o.ext && o.rc && unpaid > 0 && tax > 0 && pay >= 0.9*tax && filed <= extDue){
+    presume = (o.type==='1040') ? (paid <= filed) : (paid <= extDue);
+  }
+  var ftp = presume ? 0 : ftpRaw;
+  out.ftp = { mP: mP, mPc: mPc, raw: ftpRaw, presume: presume, amount: ftp };
+
+  // Interest on unpaid tax: IRC 6601(a), from original due date (no regard to extensions)
+  var iTax = accrue(unpaid, due, paid, o.assumedRate);
+  // Interest on FTF addition: IRC 6601(e)(2)(B), from return due date incl. extensions to payment
+  var endPen = Math.max(paid, filed);
+  var iFtf = accrue(ftf, ftfStart, endPen, o.assumedRate);
+  out.iTax = iTax; out.iFtf = iFtf; out.endPen = endPen;
+
+  // Audit adjustment and accuracy-related penalty: IRC 6662
+  var A = Math.max(0, o.audit || 0);
+  out.audit = null;
+  if(A > 0){
+    var auditPaid = (o.auditPaid===null || o.auditPaid===undefined) ? paid : o.auditPaid;
+    if(auditPaid < due) auditPaid = due;
+    var rate = (o.basis==='gross' || o.basis==='nonecon') ? 0.40 : 0.20;
+    var correct = tax + A, corp = (o.type==='1120'), thr = 0, applies = true, thrTxt = '';
+    if(o.basis==='sub'){
+      if(corp){ thr = Math.min(Math.max(0.10*correct, 10000), 10000000); thrTxt = 'lesser of (10% x '+money(correct)+' = '+money(0.10*correct)+', or $10,000 if greater) and $10,000,000 = '+money(thr)+' (IRC 6662(d)(1)(B))'; }
+      else { var pc = (o.is199A ? 0.05 : 0.10); thr = Math.max(pc*correct, 5000); thrTxt = 'greater of ('+(o.is199A?'5%':'10%')+' x '+money(correct)+' = '+money(pc*correct)+') and $5,000 = '+money(thr)+' (IRC 6662(d)(1)'+(o.is199A?'(A) and (C)':'(A)')+')'; }
+      applies = A > thr;
+    }
+    var pen = applies ? A*rate : 0;
+    var iAud = accrue(A, due, auditPaid, o.assumedRate);
+    var iPen = accrue(pen, ftfStart, Math.max(auditPaid, ftfStart), o.assumedRate);
+    out.audit = { A: A, rate: rate, correct: correct, thr: thr, thrTxt: thrTxt, applies: applies, penalty: pen, auditPaid: auditPaid, iAud: iAud, iPen: iPen, basis: o.basis };
+  }
+  var anyProj = iTax.proj || iFtf.proj || (out.audit && (out.audit.iAud.proj || out.audit.iPen.proj));
+  if(anyProj) r.proj.push('Underpayment interest for days after December 31, 2026 (assumed '+(o.assumedRate)+'% per year)');
+  out.penalties = ftf + ftp + (out.audit ? out.audit.penalty : 0);
+  out.interestTotal = iTax.amount + iFtf.amount + (out.audit ? out.audit.iAud.amount + out.audit.iPen.amount : 0);
+  out.auditTax = out.audit ? out.audit.A : 0;
+  out.total = unpaid + out.auditTax + out.penalties + out.interestTotal;
+  r.out = out;
+  return r;
+}
+
+/* ---------- UI ---------- */
+function todayStr(){ var d = new Date(); return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate()); }
+function onYearType(){
+  var ty = parseInt(document.getElementById('taxYear').value,10) || 2026;
+  var type = document.getElementById('returnType').value;
+  var pass = (type==='1065' || type==='1120s');
+  var dd = defaultDates(ty, type);
+  document.getElementById('dueDate').value = fmtD(dd.due);
+  document.getElementById('extDueDate').value = fmtD(dd.ext);
+  var today = parseD(todayStr());
+  var ftfStart = (document.getElementById('extension').value==='yes') ? dd.ext : dd.due;
+  document.getElementById('filedDate').value = fmtD(today > ftfStart ? today : ftfStart + 90*DAY);
+  document.getElementById('paidDate').value = '';
+  document.getElementById('auditPaid').value = '';
+  document.getElementById('grpTax').style.display = pass ? 'none' : '';
+  document.getElementById('grpEntity').style.display = pass ? '' : 'none';
+  document.getElementById('grpAudit').style.display = pass ? 'none' : '';
+  calc();
+}
+var FIELD_NAMES = { taxOwed:'Total Tax Shown on Return', payments:'Withholding, Estimates & Credits', auditTax:'Additional Tax After Audit' };
+function numVal(id, notes){
+  var v = parseFloat(document.getElementById(id).value);
+  if(!isFinite(v)) return 0;
+  if(v < 0){ notes.push('Negative entry in "'+(FIELD_NAMES[id]||id)+'" was treated as zero.'); return 0; }
+  return v;
+}
+function badge(){ return ' <span style="font-size:10px;font-weight:700;color:var(--amber);background:var(--amber-bg);border:1px solid var(--amber-b);padding:1px 6px;margin-left:4px">Projected - estimate, not IRS-published</span>'; }
+function pbItem(name, detail, amt, cls){
+  return '<div class="pb-item"><div class="pb-left"><div class="pb-name">'+name+'</div><div class="pb-detail">'+detail+'</div></div><div class="pb-amount '+cls+'">'+money(amt)+'</div></div>';
+}
+
+function renderAssump(ty, type, o, c){
+  var fy = ty + 1, pass = (type==='1065' || type==='1120s');
+  var minAmt = dollarFor('ftf', fy, 0.025), ent = dollarFor('ent', fy, 0.025);
+  var rows = [];
+  rows.push(['Failure-to-file rate / cap','5% per month or fraction, max 25%; reduced by 0.5% for each month failure-to-pay also applies (4.5% net, 22.5% max)','Statutory','IRC 6651(a)(1), (c)(1)']);
+  rows.push(['Failure-to-pay rate / cap','0.5% per month or fraction, max 25% (0.25% during an installment agreement for timely filers)','Statutory','IRC 6651(a)(2), (h); Reg. 301.6651-1(a)(4)']);
+  rows.push(['Minimum failure-to-file penalty (return filed more than 60 days late)','Lesser of '+money(minAmt.v)+' or 100% of tax required to be shown, for returns required to be filed in '+fy+(minAmt.proj?'':''),minAmt.proj?'Projected':'IRS-published','IRC 6651(a) flush language, (j); '+(fy===2027?'Rev. Proc. 2025-32 sec. 4.52':fy===2026?'Rev. Proc. 2024-40 sec. 2.53':fy===2025?'Rev. Proc. 2023-34 sec. 3.53':fy===2024?'Rev. Proc. 2022-38 sec. 3.52':'projected from the 2027 published amount')]);
+  rows.push(['Partnership / S corporation penalty per person per month','Lesser of '+money(ent.v)+' x persons x months (max 12 months), for returns filed in '+fy,ent.proj?'Projected':'IRS-published','IRC 6698(b), (e); 6699(b), (e); '+(fy===2027?'Rev. Proc. 2025-32 secs. 4.55-4.56':fy===2026?'Rev. Proc. 2024-40 secs. 2.56-2.57':fy===2025?'Rev. Proc. 2023-34 secs. 3.56-3.57':fy===2024?'Rev. Proc. 2022-38 secs. 3.55-3.56':'projected from the 2027 published amount')]);
+  rows.push(['Underpayment interest','Quarterly IRS rates 2018 through Q4 2026 (federal short-term rate + 3 points), compounded daily. Q4 2026 = 7%. After December 31, 2026: '+o.assumedRate+'% assumed','IRS-published through Q4 2026; Projected after','IRC 6601(a), 6621(a)(2), 6622; Rev. Rul. 2026-15 (Q4 2026); IRS quarterly interest rates page']);
+  rows.push(['Interest on failure-to-file and accuracy penalties','Runs from the return due date including extensions to payment. Interest on the failure-to-pay penalty runs only from notice and demand and is not included.','Statutory','IRC 6601(e)(2)(A), (B)']);
+  rows.push(['Accuracy-related penalty','20% of the underpayment; 40% for gross valuation misstatement or nondisclosed noneconomic substance transaction','Statutory','IRC 6662(a), (h), (i)']);
+  rows.push(['Substantial understatement test','Individuals: greater of 10% (5% with a section 199A deduction) of correct tax or $5,000. Corporations (not S corp or PHC): lesser of greater of 10% or $10,000, and $10,000,000','Statutory','IRC 6662(d)(1)(A)-(C)']);
+  rows.push(['Return due dates','Individuals and C corporations: April 15 following year-end. Partnerships and S corporations: March 15. Shifted to the next day that is not a Saturday, Sunday or D.C. legal holiday (including April 16 Emancipation Day)','Statutory','IRC 6072(a), (b); IRC 7503; Reg. 301.7503-1(b); D.C. Code 28-2701']);
+  rows.push(['Automatic extension to file','Six months from the original due date (October 15 or September 15), then shifted. No extension of time to pay.','Statutory / regulation','Reg. 1.6081-4(a), (c); 1.6081-3(a), (b); 1.6081-2(a)']);
+  rows.push(['Month counting','Each month or fraction runs to the numerically corresponding date of the next month','Regulation','Reg. 301.6651-1(b)']);
+  rows.push(['Inflation assumption for projected dollar amounts','2.5% per year compounded from the 2027 published amount, rounded down to the next $5','Projected','IRC 6651(j)(2), 6698(e)(2), 6699(e)(2) rounding']);
+  var h = '<details><summary style="cursor:pointer;font-weight:600;font-size:13px">Assumptions &amp; sources for tax year '+ty+'</summary><div style="overflow-x:auto;margin-top:10px"><table class="atbl"><thead><tr><th>Parameter</th><th>Value used</th><th>Type</th><th>Citation</th></tr></thead><tbody>';
+  rows.forEach(function(r){ h += '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>'; });
+  h += '</tbody></table></div><div class="hint" style="margin-top:8px;font-size:11px;color:var(--ink-60);line-height:1.6">Sources fetched October 29, 2026: IRS quarterly interest rates page (irs.gov/payments/quarterly-interest-rates), IR-2026-98, Rev. Procs. 2022-38, 2023-34, 2024-40 and 2025-32, 26 U.S.C. 6072, 6601, 6621, 6622, 6651, 6662, 6664, 6698, 6699, Treas. Reg. 301.6651-1, 301.7503-1, 1.6081-2, 1.6081-3, 1.6081-4, D.C. Code 28-2701. Rev. Proc. 2023-34 sec. 3.53 prints "2024" for the $510 minimum penalty while secs. 3.56-3.57 of the same Rev. Proc. print 2025; this page treats $510 as the amount for returns filed in 2025 - confirm before relying on it for tax year 2024.</div></details>';
+  document.getElementById('assump').innerHTML = h;
 }
 
 function calc(){
-  const taxOwed = parseFloat(document.getElementById('taxOwed').value)||0;
-  const payments = parseFloat(document.getElementById('payments').value)||0;
-  const dueDate = document.getElementById('dueDate').value;
-  const filedDate = document.getElementById('filedDate').value;
-  const extFiled = document.getElementById('extension').value === 'yes';
-  const auditTax = parseFloat(document.getElementById('auditTax').value)||0;
-  const returnType = document.getElementById('returnType').value;
+  var notes = [];
+  var ty = parseInt(document.getElementById('taxYear').value,10) || 2026;
+  var type = document.getElementById('returnType').value;
+  var o = {
+    ty: ty, type: type,
+    ext: document.getElementById('extension').value === 'yes',
+    due: parseD(document.getElementById('dueDate').value),
+    extDue: parseD(document.getElementById('extDueDate').value),
+    filed: parseD(document.getElementById('filedDate').value),
+    paid: parseD(document.getElementById('paidDate').value),
+    tax: numVal('taxOwed', notes), pay: numVal('payments', notes),
+    audit: numVal('auditTax', notes), basis: document.getElementById('accBasis').value,
+    is199A: document.getElementById('is199A').value === 'yes',
+    auditPaid: parseD(document.getElementById('auditPaid').value),
+    partners: parseInt(document.getElementById('partners').value,10) || 1,
+    rc: document.getElementById('rcPresume').value === 'yes',
+    assumedRate: Math.min(25, Math.max(0, parseFloat(document.getElementById('assumedRate').value) || 0)),
+    infl: 0.025
+  };
+  var rb = document.getElementById('resultBody');
+  var res = compute(o);
+  renderAssump(ty, type, o, res);
+  if(res.err){ rb.innerHTML = '<div style="text-align:center;color:var(--ink-60);padding:20px">'+res.err+'</div>'; return; }
+  var x = res.out, h = '';
+  if(notes.length) h += flag('amber','!','<strong>Input note.</strong> '+notes.join(' '));
+  if(res.proj.length) h += flag('amber','!','<strong>Projected - estimate, not IRS-published.</strong> This result relies on: '+res.proj.join('; ')+'. Treat those amounts as estimates.');
 
-  if(!dueDate || !filedDate){
-    document.getElementById('resultBody').innerHTML = '<div style="text-align:center;color:var(--ink-60);padding:20px">Enter all dates to calculate.</div>';
-    return;
+  if(x.pass){
+    var e = x.entity;
+    h += '<div class="result-hero"><div class="rh-grid">'+
+      '<div class="rh-item"><div class="rh-label">Months Late</div><div class="rh-val">'+e.months+'</div><div class="rh-sub">Max 12 - IRC §'+e.section+'(a)</div></div>'+
+      '<div class="rh-item"><div class="rh-label">Persons</div><div class="rh-val">'+e.partners+'</div><div class="rh-sub">Any part of year</div></div>'+
+      '<div class="rh-item"><div class="rh-label">Per Person / Month</div><div class="rh-val amber">'+money(e.amt)+'</div><div class="rh-sub">Returns filed in '+x.fileYear+'</div></div>'+
+      '<div class="rh-item"><div class="rh-label">Penalty</div><div class="rh-val coral">'+money(e.penalty)+'</div><div class="rh-sub">Entity-level</div></div>'+
+    '</div></div>';
+    h += '<div class="pen-breakdown"><div class="pb-title">Penalty Breakdown</div>'+
+      pbItem('Failure-to-File Penalty (IRC §'+e.section+')', (e.months===0 ? 'Filed on or before the '+(x.ext?'extended ':'')+'due date ('+longD(x.ftfStart)+') - no penalty.' : 'Late period starts after '+longD(x.ftfStart)+'; filed '+longD(x.filed)+' = '+e.months+' month(s) or fraction (max 12). '+money(e.amt)+' x '+e.partners+' person(s) x '+e.months+' month(s) = '+money(e.penalty))+(e.proj?badge():''), e.penalty, e.penalty===0?'zero':'red')+
+      '<div class="pb-item" style="border-top:1px solid rgba(255,255,255,.15);margin-top:4px"><div class="pb-left"><div class="pb-name" style="font-size:15px">TOTAL PENALTY</div><div class="pb-detail">Assessed against the entity. Not added to any partner\'s or shareholder\'s own return.</div></div><div class="pb-amount total">'+money(e.penalty)+'</div></div></div>';
+    h += flag('blue','i','<strong>Reasonable cause and relief.</strong> The penalty does not apply if the failure is due to reasonable cause (IRC §'+e.section+'(a)). The IRS also provides First Time Abate and, for eligible returns starting with tax year 2025, Automatic Exemption from Penalty for entities with three prior years of timely compliance.');
+    h += '<div class="src">Authority: IRC §6698(a), (b), (e) (partnership: monthly penalty per partner, up to 12 months); IRC §6699(a), (b), (e) (S corporation: monthly penalty per shareholder, up to 12 months); IRC §6072(b) (March 15 due date); Treas. Reg. §1.6081-2 (automatic six-month extension); inflation-adjusted amounts per Rev. Proc. 2022-38, 2023-34, 2024-40 and 2025-32.</div>';
+    h += '<div class="disc">Estimate only. Entity-level penalties under IRC §6698 and §6699 apply to missing or incomplete returns; interest and other penalties (for example under IRC §6722 or §6038) are not computed. Last verified: October 29, 2026.</div>';
+    rb.innerHTML = h; return;
   }
 
-  // Determine extension date
-  let extensionDate = dueDate;
-  if(extFiled){
-    const due = new Date(dueDate);
-    if(returnType === '1120s'){
-      due.setMonth(due.getMonth() + 6);
-    } else {
-      due.setMonth(due.getMonth() + 6);
-    }
-    extensionDate = due.toISOString().split('T')[0];
+  var f = x.ftf, p = x.ftp, A = x.audit;
+  var endLbl = longD(x.endPen);
+  h += '<div class="result-hero"><div class="rh-grid">'+
+    '<div class="rh-item"><div class="rh-label">Unpaid Tax</div><div class="rh-val">'+money(x.unpaid + x.auditTax)+'</div><div class="rh-sub">Before penalties</div></div>'+
+    '<div class="rh-item"><div class="rh-label">Total Penalties</div><div class="rh-val red">'+money(x.penalties)+'</div><div class="rh-sub">All penalties combined</div></div>'+
+    '<div class="rh-item"><div class="rh-label">Interest</div><div class="rh-val amber">'+money(x.interestTotal)+'</div><div class="rh-sub">Through '+endLbl+'</div></div>'+
+    '<div class="rh-item"><div class="rh-label">Total Due IRS</div><div class="rh-val coral">'+money(x.total)+'</div><div class="rh-sub">Tax + penalties + interest</div></div>'+
+  '</div></div>';
+
+  var ftfDetail;
+  if(x.unpaid === 0) ftfDetail = 'No tax is unpaid at the original due date, so the percentage-based penalty is $0.';
+  else if(f.mF === 0) ftfDetail = 'Filed '+longD(x.filed)+', on or before the '+(x.ext?'extended ':'')+'due date of '+longD(x.ftfStart)+' - no failure-to-file penalty.';
+  else {
+    ftfDetail = 'Starts after '+longD(x.ftfStart)+(x.ext?' (extended due date)':'')+'; filed '+longD(x.filed)+' = '+f.mF+' month(s) or fraction (counted up to 5). 5% x '+f.mFc+' = '+pctTxt(0.05*f.mFc)+'; less 0.5% x '+f.overlap+' month(s) also charged failure-to-pay = '+pctTxt(f.netRate)+' x '+money(x.unpaid)+' = '+money(f.raw)+'.';
+    if(f.late60) ftfDetail += ' Filed more than 60 days late, so the minimum is the lesser of '+money(f.minAmt)+' or 100% of the tax ('+money(x.unpaid)+') = '+money(f.floor)+(f.usedFloor?' - the minimum applies.':' - the percentage amount is larger.')+(f.minProj?badge():'');
   }
+  var ftpDetail;
+  if(x.unpaid === 0) ftpDetail = 'No unpaid tax - no failure-to-pay penalty.';
+  else if(p.presume) ftpDetail = 'Waived for the extension period: extension filed, at least 90% of the tax ('+money(0.9*x.tax)+') was paid by the original due date, and the balance is paid with the return. Treas. Reg. §301.6651-1(c)('+(o.type==='1040'?'3':'4')+'). Percentage amount without the presumption: '+money(p.raw)+'.';
+  else if(p.mP === 0) ftpDetail = 'Balance paid on or before the original due date - no failure-to-pay penalty.';
+  else ftpDetail = '0.5% x '+p.mPc+' month(s) or fraction (original due date '+longD(x.due)+' to payment on '+longD(x.paid)+'; capped at 50 months) = '+pctTxt(0.005*p.mPc)+' x '+money(x.unpaid)+' = '+money(p.raw)+'.';
 
-  const unpaidTax = Math.max(0, taxOwed - payments);
-  const filed = filedDate > extensionDate ? filedDate : (filedDate > dueDate ? filedDate : dueDate);
-
-  // ── FAILURE TO FILE PENALTY (IRC §6651(a)(1)) ──
-  // 5% per month or fraction, max 25%
-  // Applies to UNPAID TAX, runs from original due date to filing date
-  // Eliminated if timely extension filed AND filing occurs before extended due date
-  let ftfMonths = 0;
-  let ftfPenalty = 0;
-  const effectiveFTFStart = dueDate;
-  const effectiveFTFEnd = filedDate > dueDate ? filedDate : dueDate;
-
-  if(!extFiled || filedDate > extensionDate){
-    const startDate = extFiled ? extensionDate : dueDate;
-    ftfMonths = Math.min(Math.ceil(daysBetween(startDate, filedDate > startDate ? filedDate : startDate) / 30), 5);
-    ftfPenalty = Math.min(unpaidTax * 0.05 * ftfMonths, unpaidTax * 0.25);
+  h += '<div class="pen-breakdown"><div class="pb-title">Penalty &amp; Interest Breakdown</div>'+
+    pbItem('Failure-to-File Penalty (IRC §6651(a)(1), (c)(1))', ftfDetail, f.amount, f.amount===0?'zero':'red')+
+    pbItem('Failure-to-Pay Penalty (IRC §6651(a)(2))', ftpDetail, p.amount, p.amount===0?'zero':'amber');
+  if(A){
+    h += pbItem('Accuracy-Related Penalty (IRC §6662)', A.basis==='sub' ? ('Correct tax '+money(A.correct)+' = '+money(x.tax)+' shown + '+money(A.A)+' additional. Understatement '+money(A.A)+' must exceed '+A.thrTxt+'. '+(A.applies ? 'It does, so '+pctTxt(A.rate)+' x '+money(A.A)+' = '+money(A.penalty)+'.' : 'It does not, so no substantial-understatement penalty applies (negligence or another basis could still apply).')) : (pctTxt(A.rate)+' x '+money(A.A)+' additional tax = '+money(A.penalty)+'. Eligibility for this basis is not tested by the calculator.'), A.penalty, A.penalty===0?'zero':'red');
   }
-
-  // ── FAILURE TO PAY PENALTY (IRC §6651(a)(2)) ──
-  // 0.5% per month, max 25%
-  // Starts on original due date, runs until tax is paid (we assume paid on filing date)
-  // Reduced to 0.25% per month during installment agreement
-  const ftpMonths = Math.min(Math.ceil(daysBetween(dueDate, filedDate > dueDate ? filedDate : dueDate) / 30), 50);
-  const ftpPenalty = Math.min(unpaidTax * 0.005 * ftpMonths, unpaidTax * 0.25);
-
-  // ── CONCURRENT FTF/FTP OFFSET ──
-  // When both apply, FTF is reduced by FTP amount for same month (IRC §6651(c)(1))
-  const ftfAdjusted = Math.max(0, ftfPenalty - ftpPenalty);
-  const totalFTF = ftfAdjusted;
-
-  // ── UNDERPAYMENT INTEREST (IRC §6601) ──
-  // 6% annual (Q2 2026 rate per Rev. Rul. 2026-5) on unpaid balance
-  // Compounds daily from original due date to payment date
-  const days = daysBetween(dueDate, filedDate > dueDate ? filedDate : dueDate);
-  const dailyRate = 0.06 / 365;
-  const interest = unpaidTax * (Math.pow(1 + dailyRate, days) - 1);
-
-  // ── ACCURACY PENALTY (IRC §6662(a)) ──
-  // 20% of underpayment attributable to substantial understatement or negligence
-  // Substantial understatement: understated tax > greater of 10% of correct tax or $5,000
-  const accuracyPenalty = auditTax > 0 ? auditTax * 0.20 : 0;
-  const grossValuationMisstatement = auditTax > 0 && auditTax > taxOwed * 0.25 ? auditTax * 0.20 : 0; // 40% for gross misstatement
-
-  const totalPenalties = totalFTF + ftpPenalty + accuracyPenalty;
-  const totalDue = unpaidTax + totalPenalties + interest;
-
-  const rb = document.getElementById('resultBody');
-  let h = '';
-
-  // Hero
-  h += `<div class="result-hero"><div class="rh-grid">
-    <div class="rh-item"><div class="rh-label">Unpaid Tax</div><div class="rh-val">${fmt(unpaidTax)}</div><div class="rh-sub">Before penalties</div></div>
-    <div class="rh-item"><div class="rh-label">Total Penalties</div><div class="rh-val red">${fmt(totalPenalties)}</div><div class="rh-sub">All penalties combined</div></div>
-    <div class="rh-item"><div class="rh-label">Interest</div><div class="rh-val amber">${fmt(interest)}</div><div class="rh-sub">${days} days @ 6%</div></div>
-    <div class="rh-item"><div class="rh-label">Total Due IRS</div><div class="rh-val coral">${fmt(totalDue)}</div><div class="rh-sub">Tax + penalties + interest</div></div>
-  </div></div>`;
-
-  // Breakdown
-  h += `<div class="pen-breakdown"><div class="pb-title">Penalty Breakdown</div>
-    <div class="pb-item">
-      <div class="pb-left">
-        <div class="pb-name">Failure-to-File Penalty (IRC §6651(a)(1))</div>
-        <div class="pb-detail">${extFiled && filedDate <= extensionDate ? 'Eliminated - timely extension filed and return filed by extended due date' : `5% × ${fmt(unpaidTax)} × ${ftfMonths} month(s) = ${fmt(ftfPenalty)}${ftfPenalty !== totalFTF?' - offset by FTP penalty = '+fmt(totalFTF):''}`}</div>
-      </div>
-      <div class="pb-amount ${totalFTF===0?'zero':'red'}">${fmt(totalFTF)}</div>
-    </div>
-    <div class="pb-item">
-      <div class="pb-left">
-        <div class="pb-name">Failure-to-Pay Penalty (IRC §6651(a)(2))</div>
-        <div class="pb-detail">${unpaidTax===0?'No unpaid tax - no FTP penalty':`0.5% × ${fmt(unpaidTax)} × ${ftpMonths} month(s). Runs from ${dueDate} until tax paid.`}</div>
-      </div>
-      <div class="pb-amount ${ftpPenalty===0?'zero':'amber'}">${fmt(ftpPenalty)}</div>
-    </div>
-    ${auditTax>0?`<div class="pb-item">
-      <div class="pb-left">
-        <div class="pb-name">Accuracy-Related Penalty (IRC §6662(a))</div>
-        <div class="pb-detail">20% × ${fmt(auditTax)} additional tax. Applies to substantial understatement (&gt;10% of correct tax or $5,000) or negligence/disregard of rules.</div>
-      </div>
-      <div class="pb-amount red">${fmt(accuracyPenalty)}</div>
-    </div>`:''}
-    <div class="pb-item">
-      <div class="pb-left">
-        <div class="pb-name">Underpayment Interest (IRC §6601)</div>
-        <div class="pb-detail">6% annual rate (Q2 2026, Rev. Rul. 2026-5), compounded daily. ${days} days on ${fmt(unpaidTax)}. Verify current rate - changes quarterly.</div>
-      </div>
-      <div class="pb-amount amber">${fmt(interest)}</div>
-    </div>
-    <div class="pb-item" style="border-top:1px solid rgba(255,255,255,.15);margin-top:4px">
-      <div class="pb-left"><div class="pb-name" style="font-size:15px">TOTAL DUE</div><div class="pb-detail">Unpaid tax ${fmt(unpaidTax)} + penalties ${fmt(totalPenalties)} + interest ${fmt(interest)}</div></div>
-      <div class="pb-amount total">${fmt(totalDue)}</div>
-    </div>
-  </div>`;
-
-  // Key flags
-  if(unpaidTax === 0){
-    h += flag('green','✓','<strong>No unpaid tax.</strong> Failure-to-pay penalties and interest accrue only on unpaid tax. If tax is fully paid through withholding and estimated payments, the only remaining issue is the failure-to-file penalty if the return was late without an extension.');
+  var iTx = x.iTax;
+  h += pbItem('Interest on Unpaid Tax (IRC §6601(a), §6622)', iTx.days===0 ? 'No interest - tax paid on or before the original due date.' : money(x.unpaid)+' from '+longD(x.due)+' (original due date, extensions disregarded) to '+longD(x.paid)+' = '+iTx.days+' day(s), compounded daily at annual rate / 365. '+segText(iTx)+'.'+(iTx.proj?badge():''), iTx.amount, iTx.amount===0?'zero':'amber');
+  var iF = x.iFtf;
+  h += pbItem('Interest on Failure-to-File Penalty (IRC §6601(e)(2)(B))', iF.days===0 ? 'No interest on the failure-to-file penalty.' : money(f.amount)+' from '+longD(x.ftfStart)+' (return due date including extensions) to '+longD(x.endPen)+' = '+iF.days+' day(s). '+segText(iF)+'.'+(iF.proj?badge():''), iF.amount, iF.amount===0?'zero':'amber');
+  if(A){
+    h += pbItem('Additional Audit Tax and Interest', money(A.A)+' additional tax; interest from '+longD(x.due)+' to '+longD(A.auditPaid)+' = '+A.iAud.days+' day(s). '+segText(A.iAud)+'.'+(A.iAud.proj?badge():''), A.iAud.amount, A.iAud.amount===0?'zero':'amber');
+    if(A.penalty > 0) h += pbItem('Interest on Accuracy Penalty (IRC §6601(e)(2)(B))', money(A.penalty)+' from '+longD(x.ftfStart)+' to '+longD(Math.max(A.auditPaid,x.ftfStart))+' = '+A.iPen.days+' day(s).'+(A.iPen.proj?badge():''), A.iPen.amount, A.iPen.amount===0?'zero':'amber');
   }
-  if(!extFiled && filedDate > dueDate){
-    h += flag('red','✗',`<strong>No extension filed.</strong> Filing a timely Form 4868 by April 15 would have eliminated the failure-to-file penalty entirely. The FTF penalty (5%/month, max 25%) is much larger than the FTP penalty (0.5%/month). Even with unpaid tax, always file or extend on time. IRC §6651(a)(1).`);
-  }
-  if(ftfPenalty > 0 || ftpPenalty > 0){
-    h += flag('blue','ℹ','<strong>Reasonable cause exception.</strong> Penalties may be abated if the taxpayer can demonstrate reasonable cause and the absence of willful neglect. IRC §6651(a). First-time penalty abatement (FTA) is also available administratively if the taxpayer has a clean compliance history for the prior 3 years. Request abatement in writing to the IRS Service Center. This calculator does not determine eligibility for abatement.');
-  }
-  if(auditTax > taxOwed * 0.25){
-    h += flag('red','✗','<strong>Potential 40% gross valuation misstatement penalty.</strong> If the additional tax after audit exceeds 25% of correct tax, the accuracy-related penalty may be increased to 40% (gross valuation misstatement) under IRC §6662(h). Consult a tax professional immediately.');
-  }
+  h += '<div class="pb-item" style="border-top:1px solid rgba(255,255,255,.15);margin-top:4px"><div class="pb-left"><div class="pb-name" style="font-size:15px">TOTAL DUE</div><div class="pb-detail">Unpaid tax '+money(x.unpaid)+(A?' + audit tax '+money(A.A):'')+' + penalties '+money(x.penalties)+' + interest '+money(x.interestTotal)+', assuming payment on '+endLbl+'.</div></div><div class="pb-amount total">'+money(x.total)+'</div></div></div>';
 
-  h += `<div class="src">Authority: IRC §6651(a)(1) (failure-to-file, 5%/month max 25%); IRC §6651(a)(2) (failure-to-pay, 0.5%/month max 25%); IRC §6651(c)(1) (FTF reduced by FTP when both apply); IRC §6601 (underpayment interest, fed short-term rate +3); IRC §6662(a) (accuracy-related penalty, 20%); IRC §6662(h) (40% gross valuation misstatement); Rev. Rul. 2026-5 (Q2 2026 individual underpayment rate 6% - verify current quarter). Interest rate changes quarterly per IRC §6621.</div>`;
-  h += ``;
-  h += ``;
+  // Flags
+  if(x.unpaid === 0 && f.amount === 0) h += flag('green','✓','<strong>No unpaid tax at the original due date.</strong> Failure-to-pay penalties and interest accrue only on tax unpaid. With nothing unpaid, the percentage-based failure-to-file penalty is also $0.');
+  if(!x.ext && x.filed > x.due && x.unpaid > 0) h += flag('red','✗','<strong>No extension filed.</strong> A timely Form '+(o.type==='1040'?'4868':'7004')+' would have moved the failure-to-file start date six months. The failure-to-file rate (5% per month) is ten times the failure-to-pay rate (0.5%), so file or extend on time even if you cannot pay. IRC §6651(a)(1).');
+  if(x.ext && x.filed > x.extDue && x.unpaid > 0) h += flag('amber','!','<strong>Filed after the extended due date.</strong> The failure-to-file penalty runs from '+longD(x.extDue)+'. Failure-to-pay still runs from '+longD(x.due)+', because an extension to file does not extend time to pay.');
+  if(x.ext && !p.presume && x.unpaid > 0 && o.rc) h += flag('blue','i','<strong>Extension presumption not met.</strong> Treas. Reg. §301.6651-1(c)(3) and (c)(4) presume reasonable cause for the extension period only if at least 90% of the tax was paid by the original due date, the return is filed by the extended due date, and the balance is paid with the return.');
+  if(f.amount > 0 || p.amount > 0) h += flag('blue','i','<strong>Penalty relief.</strong> The failure-to-file and failure-to-pay penalties can be abated for reasonable cause and not willful neglect (IRC §6651(a)). The IRS also grants First Time Abate for taxpayers with three prior years of timely compliance and, for eligible returns beginning with tax year 2025, Automatic Exemption from Penalty. The IRS removes interest related to an abated penalty. This calculator does not determine eligibility.');
+  if(x.unpaid > 0) h += flag('blue','i','<strong>Installment agreement.</strong> For individuals who filed on time, the failure-to-pay rate drops to 0.25% per month while an installment agreement is in effect (IRC §6651(h)). It is not modeled here.');
+  if(A && A.basis==='sub' && !A.applies) h += flag('blue','i','<strong>Below the substantial understatement threshold.</strong> The understatement of '+money(A.A)+' does not exceed '+money(A.thr)+'. The 20% penalty may still apply on another basis (for example negligence under IRC §6662(c)).');
+  h += flag('amber','!','<strong>Not included.</strong> The estimated tax underpayment penalty (IRC §6654, Form 2210), the failure-to-pay penalty on audit deficiencies (IRC §6651(a)(3)), interest on the failure-to-pay penalty (accrues only after notice and demand, IRC §6601(e)(2)(A)), and fraud penalties (IRC §6651(f), §6663).');
 
+  h += '<div class="src">Authority: IRC §6651(a)(1) (failure-to-file, 5% per month, max 25%); IRC §6651(a)(2) (failure-to-pay, 0.5% per month, max 25%); IRC §6651(a) flush language and (j) (minimum penalty, inflation adjusted); IRC §6651(b) and (c)(1) (net amount; FTF reduced by FTP); Treas. Reg. §301.6651-1(b) (months), (c)(3)-(4) (extension presumption); IRC §6601(a), (e)(2) (interest); IRC §6621(a)(2) (underpayment rate); IRC §6622 (daily compounding); IRC §6662(a), (c), (d), (h), (i) (accuracy-related penalty); IRC §6664(c) (reasonable cause); IRC §7503 (weekend and holiday due dates).</div>';
+  h += '<div class="disc">Estimate only. IRS interest factors and assessment dates can differ by small amounts from this daily-compounding approximation. Penalties assume the whole unpaid balance is paid on a single date. Last verified: October 29, 2026.</div>';
   rb.innerHTML = h;
 }
+onYearType();
 
-calc();
 </script>
-
-
-
 <script>
 function doPrint(){window.print();}
 function doShare(){var url=location.href;var title=document.title.replace(" | CPA Validated","");if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
 function showShareModal(url,title){if(document.getElementById("sv-ol"))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[["Facebook","#1877F2","https://www.facebook.com/sharer/sharer.php?u="+enc],["Telegram","#29A8E0","https://t.me/share/url?url="+enc+"&text="+et],["X / Twitter","#e0e0e0","https://twitter.com/intent/tweet?url="+enc+"&text="+et],["LinkedIn","#0A66C2","https://www.linkedin.com/sharing/share-offsite/?url="+enc],["WhatsApp","#25D366","https://wa.me/?text="+et+"%0A"+enc]];var ol=document.createElement("div");ol.id="sv-ol";ol.style.cssText="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center";var h="<div style=\"background:#111111;width:100%;max-width:520px\">"+"<div style=\"display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A\">"+"<span style=\"font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff\">Share</span>"+"<button id=\"sv-x\" style=\"background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px\">&times;</button></div>"+"<div style=\"padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px\">";links.forEach(function(l){h+="<a href="+JSON.stringify(l[2])+" target=\"_blank\" rel=\"noopener\" style=\"display:block;padding:12px 14px;border-left:3px solid "+l[1]+";background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600\">"+l[0]+"</a>";});h+="<button id=\"sv-cp\" style=\"padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left\">Copy Link</button></div></div>";ol.innerHTML=h;document.body.appendChild(ol);document.getElementById("sv-x").onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById("sv-cp").onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);});}catch(e2){var ta=document.createElement("textarea");ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);b.textContent="Copied!";setTimeout(function(){b.textContent="Copy Link";},2200);}};}
 </script>
-</div>
-</div>
-
-
-
 
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">

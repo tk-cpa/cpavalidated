@@ -324,7 +324,7 @@ function calculate(){
   if (!pub) h += '<div>' + statusBadge(p.year) + '</div>';
   h += row("Foreign earned income (line 27):", fmt(o.l27));
   h += row("Exclusion amount for " + p.year + " (line 37):", fmt(o.limit));
-  h += row("Qualifying days / days in year (lines 38-39): " + o.days + " / " + o.dY + " = " + o.l39.toFixed(4), "");
+  h += row("Qualifying days " + o.days + " / days in year " + o.dY + " (lines 38-39):", o.l39.toFixed(4));
   h += row("Maximum exclusion, prorated (line 40) = " + fmt(o.limit) + " x " + o.l39.toFixed(4) + ":", fmt(o.l40));
   if (o.hasHousing) {
     h += row("Housing expenses (line 28):", fmt(o.l28));
