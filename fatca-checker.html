@@ -1,270 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>FATCA & FBAR Filing Requirement Checker | CPA Validated</title>
-<meta name="description" content="Determine whether you must file FATCA (Form 8938) and FBAR (FinCEN 114). Interactive checker for foreign account and asset reporting requirements.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>FATCA & FBAR Filing Requirement Checker 2026-2030 | CPA Validated</title>
+<meta name="description" content="Determine whether you must file Form 8938 (FATCA) and FinCEN Form 114 (FBAR) for tax years 2026-2030. Thresholds by status, residence abroad and filing status, with step-by-step math. CPA-validated.">
+<link rel="canonical" href="https://cpavalidated.com/fatca-checker.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
-  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
-  --coral:#F65F5A; --coral-600:#E04A45; --coral-100:#FCE3E2;
-  --navy:#071563; --navy-100:#E2E4F0;
-  --green:#4A7459; --green-bg:#E2EDE6; --green-b:#9BBDAA;
-  --amber:#8B6535; --amber-bg:#EDE8D8; --amber-b:#C8A878;
-  --blue-bg:#DDE4E8; --blue-acc:#4A6070; --blue-b:#94AFBC;
-  --red:#9B3D3D; --red-bg:#EDE0DC; --red-b:#C8A8A4;
-  --font-display:'Oswald','Arial Narrow',sans-serif;
-  --font-sans:'Inter',-apple-system,sans-serif;
-  --font-mono:'Courier New',monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{font-size:16px;scroll-behavior:smooth}
-body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}
-::selection{background:var(--coral);color:#fff}
-a{color:var(--coral);text-decoration:none}
-a:hover{text-decoration:underline}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
-.phi{max-width:900px;margin:0 auto;padding:0 24px}
-.ph-eyebrow{font-family:var(--font-sans);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);margin-bottom:8px}
-.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff;line-height:1.1}
-.ph .sub{font-size:13px;color:rgba(255,255,255,.5);margin-top:10px}
-.container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px;overflow:hidden}
-.ch{background:var(--ink);padding:13px 20px;display:flex;align-items:center;gap:10px}
-.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em}
-.cb{padding:20px 20px 22px}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:900px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:900px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:900px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.cb{padding:20px}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
 .f1{display:flex;flex-direction:column;gap:5px}
-.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.08em;text-transform:uppercase}
-.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:13px}
-.fc:focus{border-color:var(--coral);outline:none}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.penalty-compare{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+.pc-box{border:2px solid var(--ink-20);padding:14px;text-align:center}
+.pc-box.worst{border-color:var(--red-b);background:var(--red-bg)}
+.pc-box.mid{border-color:var(--amber-b);background:var(--amber-bg)}
+.pc-box.best{border-color:var(--green-b);background:var(--green-bg)}
+.pc-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;font-family:var(--font-mono)}
+.pc-box.worst .pc-label{color:var(--red)}.pc-box.mid .pc-label{color:var(--amber)}.pc-box.best .pc-label{color:var(--green)}
+.pc-amount{font-family:var(--font-display);font-size:22px;font-weight:500}
+.pc-box.worst .pc-amount{color:var(--red)}.pc-box.mid .pc-amount{color:var(--amber)}.pc-box.best .pc-amount{color:var(--green)}
+.pc-desc{font-size:11px;margin-top:5px;line-height:1.4}
+.pc-box.worst .pc-desc{color:var(--red)}.pc-box.mid .pc-desc{color:var(--amber)}.pc-box.best .pc-desc{color:var(--green)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:12px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.penalty-compare{grid-template-columns:1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
+</style>
+<style>
+/* === g05 calculator additions === */
+.yrbadge{display:none}
+.badge-proj{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.badge-pub{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green);font-size:11px;font-weight:600;padding:3px 9px;margin:6px 0 2px}
+.note-box{background:var(--amber-bg);border-left:3px solid var(--amber);padding:14px;margin-top:12px;font-size:12px;line-height:1.5}
+.warn-box{background:var(--red-bg);border-left:3px solid var(--red);padding:12px 14px;margin-top:12px;font-size:12px;line-height:1.5;color:var(--red)}
+.ok-box{background:var(--green-bg);border-left:3px solid var(--green);padding:14px;margin-top:12px;font-size:13px;line-height:1.55}
+.ok-box h3,.warn-box h3,.info-box h3{font-family:var(--font-display);font-size:16px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.info-box{background:var(--blue-bg);border-left:3px solid var(--blue-acc);padding:14px;margin-top:12px;font-size:12.5px;line-height:1.55}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--ink-10);font-size:13px;line-height:1.5}
+.rw span{color:var(--ink-80,#343A40)}
+.rw strong{font-family:var(--font-mono);text-align:right}
+.rw.tot{border-bottom:2px solid var(--ink);font-weight:700}
+.rw.tot span{color:var(--ink)}
+.stepttl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-60);margin:16px 0 4px}
+details.assump{margin-top:16px;border:1px solid var(--ink-20);background:var(--white)}
+details.assump summary{cursor:pointer;padding:12px 16px;font-size:13px;font-weight:600;color:var(--ink)}
+details.assump table{width:100%;border-collapse:collapse;font-size:12px}
+details.assump th{background:var(--ink-10);text-align:left;padding:8px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60)}
+details.assump td{padding:8px 10px;border-top:1px solid var(--ink-20);vertical-align:top;line-height:1.5}
+.tbl-wrap{overflow-x:auto}
+.dtab{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.dtab th{background:var(--ink-10);text-align:left;padding:7px 9px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-60);border:1px solid var(--ink-20)}
+.dtab td{padding:7px 9px;border:1px solid var(--ink-20);vertical-align:top}
+.dtab td.num,.dtab th.num{text-align:right;font-family:var(--font-mono)}
+.verified{font-size:12px;color:var(--ink-60);margin-top:10px}
+.hint{font-size:11px;color:var(--ink-60);margin-top:2px;line-height:1.5}
+.f1 input[type=date]{min-height:40px}
 .yn-group{display:flex;border:1.5px solid var(--ink-20);overflow:hidden}
 .yn-btn{flex:1;padding:9px 12px;border:none;font-family:var(--font-sans);font-size:13px;font-weight:500;cursor:pointer;background:var(--white);color:var(--ink-60);border-right:1px solid var(--ink-20)}
 .yn-btn:last-child{border-right:none}
 .yn-btn.sel-yes{background:var(--green-bg);color:var(--green);font-weight:700}
 .yn-btn.sel-no{background:var(--red-bg);color:var(--red);font-weight:700}
 .yn-btn.unsel:hover{background:var(--ink-10)}
-.q-row{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;padding:14px 0;border-bottom:1px solid var(--ink-10)}
-.q-row:last-child{border-bottom:none}
-.q-text{font-size:13.5px;color:var(--ink);line-height:1.5}
-.q-sub{font-size:11.5px;color:var(--ink-60);margin-top:4px;line-height:1.4}
-.q-authority{display:inline-block;font-size:10.5px;font-weight:600;background:var(--ink);color:rgba(255,255,255,.5);padding:2px 6px;border-radius:2px;margin-left:4px}
-.q-ctrl{min-width:120px;flex-shrink:0}
-.result{margin-top:24px;padding:16px;border-left:3px solid var(--coral);background:var(--coral-100)}
-.result h3{font-family:var(--font-display);font-size:16px;color:var(--ink);margin-bottom:8px}
-.result p{font-size:13px;line-height:1.6;color:var(--ink-80)}
-.threshold-table{width:100%;border-collapse:collapse;margin-top:12px}
-.threshold-table th{text-align:left;font-weight:600;font-size:12px;color:var(--ink-60);background:var(--ink-10);padding:8px 10px;border:1px solid var(--ink-20)}
-.threshold-table td{padding:8px 10px;border:1px solid var(--ink-20);font-size:12px}
-.threshold-table td:first-child{font-weight:500;color:var(--ink-80)}
-.threshold-table td:last-child{text-align:right;font-family:var(--font-mono);color:var(--coral);font-weight:600}
-.summary-box{background:var(--navy-100);border:1px solid var(--navy);padding:14px;margin:14px 0;border-radius:4px}
-.summary-box h4{font-size:12px;font-weight:600;color:var(--navy);letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
-.summary-box p{font-size:12px;line-height:1.5;color:var(--ink-80)}
-@media(max-width:640px){.fg2{grid-template-columns:1fr}.q-row{grid-template-columns:1fr;gap:8px}.q-ctrl{min-width:auto}}
+.sec-note{font-size:12px;color:var(--ink-60);line-height:1.5;margin:0 0 12px}
+@media(max-width:640px){.fc{font-size:16px}.rw{flex-direction:column;gap:2px}.rw strong{text-align:left}.wrap{padding:20px 16px 0}.phi{padding:0 16px}.back{padding:12px 16px 0}}
+@media print{details.assump{display:block}details.assump>*{display:block}}
+/* === end g05 additions === */
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/fatca-checker.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FATCA & FBAR Filing Requirement Checker 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Determine whether you must file Form 8938 (FATCA) and FinCEN Form 114 (FBAR) for tax years 2026-2030. Thresholds by status, residence abroad and filing status, with step-by-step math. CPA-validated.">
+  <meta property="og:url" content="https://cpavalidated.com/fatca-checker.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FATCA & FBAR Filing Requirement Checker 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Determine whether you must file Form 8938 (FATCA) and FinCEN Form 114 (FBAR) for tax years 2026-2030. Thresholds by status, residence abroad and filing status, with step-by-step math. CPA-validated.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"FATCA & FBAR Filing Requirement Checker 2026-2030 | CPA Validated","url":"https://cpavalidated.com/fatca-checker.html","description":"Determine whether you must file Form 8938 (FATCA) and FinCEN Form 114 (FBAR) for tax years 2026-2030. Thresholds by status, residence abroad and filing status, with step-by-step math. CPA-validated.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
 </head>
 <body>
-
-<div class="ph">
-<div class="phi">
-<div class="ph-eyebrow">Compliance Checker</div>
-<h1>FATCA & FBAR Filing Requirements</h1>
-<p class="sub">Determine whether you must file Form 8938 (FATCA) and FinCEN 114 (FBAR) based on your residency status and foreign account balances.</p>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
 </div>
-</div>
+<div class="ph"><div class="phi">
+  <div class="ph-eyebrow">Compliance Checker</div>
+  <h1>FATCA &amp; FBAR Filing Requirements 2026-2030</h1>
+  <div class="sub">Determine whether you must file Form 8938 (FATCA) and FinCEN Form 114 (FBAR) for tax years 2026 through 2030, based on your status, return type, residence abroad, and foreign asset values.</div>
+  <div class="badges"><span class="badge">IRC &sect;6038D</span><span class="badge">Treas. Reg. &sect;1.6038D-2</span><span class="badge">31 USC 5314</span><span class="badge">31 CFR 1010.350</span></div>
+</div></div>
+<div class="back"><a href="index.html">&larr; cpavalidated.com</a></div>
+<div class="wrap">
 
-<div class="container">
+<div class="info-box"><h3>How this checker works</h3>
+FATCA (Form 8938) and FBAR (FinCEN Form 114) are separate requirements with different thresholds, different value measures, and different filing channels. Form 8938 is attached to your income tax return; the FBAR is filed electronically with FinCEN and is never attached to a return. This checker is for individuals. Enter your facts below; the result updates as you type.</div>
 
-<div class="summary-box">
-<h4>How This Checker Works</h4>
-<p>FATCA (Form 8938) and FBAR (FinCEN 114) are separate reporting requirements with different thresholds and rules. Answer the questions below to determine filing obligations. This is educational guidance only - consult a tax professional for your specific situation.</p>
+<div class="card">
+  <div class="ch"><div class="sb">1</div><h2>Tax Year and Filer Profile</h2></div>
+  <div class="cb">
+    <div class="fg2">
+      <div class="f1"><label for="fy">Tax Year (calendar year of the accounts)</label>
+        <select class="fc" id="fy" onchange="calc()">
+          <option value="2026" selected>2026 (return due 2027)</option>
+          <option value="2027">2027 (return due 2028)</option>
+          <option value="2028">2028 (return due 2029)</option>
+          <option value="2029">2029 (return due 2030)</option>
+          <option value="2030">2030 (return due 2031)</option>
+        </select>
+        <div class="hint">The Form 8938 and FBAR dollar thresholds are fixed amounts in the regulations and are not indexed for inflation, so the thresholds are the same each year.</div>
+      </div>
+      <div class="f1"><label for="status">US Tax Status</label>
+        <select class="fc" id="status" onchange="calc()">
+          <option value="citizen">US citizen</option>
+          <option value="resident">Resident alien (green card test or substantial presence test, IRC &sect;7701(b))</option>
+          <option value="nra_elect">Nonresident alien treated as a resident (IRC &sect;6013(g) or (h) election)</option>
+          <option value="nra_poss">Nonresident alien, bona fide resident of Puerto Rico or a &sect;931 possession</option>
+          <option value="nra">Nonresident alien (no election)</option>
+        </select>
+        <div class="hint">Specified individual: Treas. Reg. &sect;1.6038D-1(a)(2). Resident alien status follows IRC &sect;7701(b).</div>
+      </div>
+    </div>
+    <div class="fg2" id="dual_wrap" style="display:none">
+      <div class="f1"><label for="dualres">Dual resident claiming treaty nonresident status?</label>
+        <select class="fc" id="dualres" onchange="calc()">
+          <option value="no">No</option>
+          <option value="yes">Yes - treated as a nonresident under a treaty tie-breaker; Form 8833 filed</option>
+        </select>
+        <div class="hint">Treas. Reg. &sect;1.6038D-2(e) relieves Form 8938 reporting for a dual resident taxpayer who meets the filing conditions of Treas. Reg. &sect;301.7701(b)-7.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="abroad">Do you live abroad? (qualified individual, IRC &sect;911(d)(1))</label>
+        <select class="fc" id="abroad" onchange="calc()">
+          <option value="no">No - lived in the United States</option>
+          <option value="yes">Yes - foreign tax home and 330 full days abroad in a 12-month period (or bona fide resident of a foreign country for the entire year)</option>
+        </select>
+        <div class="hint">Treas. Reg. &sect;1.6038D-2(a)(3)-(4). On a joint return the IRS applies the abroad thresholds even if only one spouse lives abroad.</div>
+      </div>
+      <div class="f1"><label for="filing">Income Tax Return Filing Status</label>
+        <select class="fc" id="filing" onchange="calc()">
+          <option value="single">Unmarried (single, head of household, surviving spouse)</option>
+          <option value="mfj">Married filing jointly</option>
+          <option value="mfs">Married filing separately</option>
+        </select>
+        <div class="hint">Treas. Reg. &sect;1.6038D-2(a)(1)-(4).</div>
+      </div>
+    </div>
+    <div class="fg2" id="mfs_wrap" style="display:none">
+      <div class="f1"><label for="spouse_spec">Is your spouse also a specified individual?</label>
+        <select class="fc" id="spouse_spec" onchange="calc()">
+          <option value="yes">Yes - citizen, resident alien, or electing nonresident alien</option>
+          <option value="no">No - spouse is a nonresident alien without an election</option>
+        </select>
+        <div class="hint">If both spouses are specified individuals and file separately, count only one-half of jointly owned assets for the threshold test; otherwise count the full value. Treas. Reg. &sect;1.6038D-2(c)(3).</div>
+      </div>
+      <div class="f1"><label for="joint">Value of assets jointly owned with spouse ($, already included below)</label>
+        <input type="number" class="fc" id="joint" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Used only for the half-value rule. If Form 8938 is required you still report the full value.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="needReturn">Required to file a US income tax return for the year?</label>
+        <select class="fc" id="needReturn" onchange="calc()">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        <div class="hint">No Form 8938 is required if you have no income tax return filing requirement for the year. Treas. Reg. &sect;1.6038D-2(a)(7)(i). The FBAR does not depend on this.</div>
+      </div>
+    </div>
+    <div id="year_badge"></div>
+  </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>Step 1: Residency Status</h2></div>
-<div class="cb">
-<div class="q-row">
-<div><div class="q-text">What is your US tax residency status?</div><div class="q-sub">FATCA thresholds depend on whether you are a US citizen, resident alien, or nonresident alien.</div></div>
-<div class="q-ctrl">
-<select id="residency" class="fc">
-<option value="">Select...</option>
-<option value="citizen">US Citizen</option>
-<option value="resident">US Resident Alien</option>
-<option value="nonresident">Nonresident Alien</option>
-<option value="us-person">US Person (Green Card/Other)</option>
-</select>
-</div>
-</div>
-</div>
-</div>
-
-<div class="card">
-<div class="ch"><h2>Step 2: Foreign Account Balances</h2></div>
-<div class="cb">
-<div class="q-row">
-<div><div class="q-text">What is your highest aggregate foreign account balance during the tax year?</div><div class="q-sub">Include checking, savings, investment, and retirement accounts held at foreign banks or brokers.</div></div>
-<div class="q-ctrl"><input type="number" id="foreign_balance" class="fc" placeholder="0" min="0"></div>
-</div>
-</div>
+  <div class="ch"><div class="sb">2</div><h2>Foreign Account and Asset Values (USD)</h2></div>
+  <div class="cb">
+    <p class="sec-note">Convert each foreign-currency amount to US dollars first. Round to whole dollars.</p>
+    <div class="fg3">
+      <div class="f1"><label for="fbar_max">FBAR: sum of maximum account values ($)</label>
+        <input type="number" class="fc" id="fbar_max" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Financial accounts at foreign institutions in which you have a financial interest or signature authority. Add the maximum value reached during the calendar year in each account; report is required if the aggregate exceeds $10,000 at any time. FBAR counts accounts only.</div>
+      </div>
+      <div class="f1"><label for="f8938_ye">Form 8938: total value on the last day of the year ($)</label>
+        <input type="number" class="fc" id="f8938_ye" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">Specified foreign financial assets: foreign financial accounts plus foreign non-account assets held for investment (foreign stock and securities, interests in foreign entities, certain contracts with non-US counterparties). IRC &sect;6038D(b).</div>
+      </div>
+      <div class="f1"><label for="f8938_max">Form 8938: highest total value at any time in the year ($)</label>
+        <input type="number" class="fc" id="f8938_max" value="0" min="0" step="1" inputmode="decimal" oninput="calc()">
+        <div class="hint">The highest aggregate value of those assets at any time during the tax year. It cannot be lower than the year-end value.</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>Step 3: Filing Status</h2></div>
-<div class="cb">
-<div class="q-row">
-<div><div class="q-text">Are you filing a joint return?</div><div class="q-sub">FATCA thresholds increase for married filing jointly.</div></div>
-<div class="q-ctrl">
-<div class="yn-group">
-<button class="yn-btn unsel" onclick="setYN('filing_joint', 'yes')">Yes</button>
-<button class="yn-btn unsel" onclick="setYN('filing_joint', 'no')">No</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div id="results" style="display:none">
-
-<div class="card">
-<div class="ch"><h2>FBAR (FinCEN 114) Filing Requirement</h2></div>
-<div class="cb">
-<div id="fbar-result"></div>
-<table class="threshold-table">
-<tr><th>Filing Status</th><th>FBAR Threshold</th></tr>
-<tr><td>All Filers</td><td>$10,000</td></tr>
-</table>
-<div class="q-sub" style="margin-top:12px"><strong>Authority:</strong> 31 USC §5314, FinCEN 114 Instructions. The FBAR threshold is $10,000 in aggregate foreign account balances at any point during the calendar year. Threshold applies equally to all filers regardless of residency or filing status.</div>
-</div>
+  <div class="ch"><div class="sb">3</div><h2>Results</h2></div>
+  <div class="cb">
+    <div id="fbar-result"></div>
+    <div id="fatca-result"></div>
+    <div id="summary-result"></div>
+  </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>Form 8938 (FATCA) Filing Requirement</h2></div>
-<div class="cb">
-<div id="fatca-result"></div>
-<table class="threshold-table" id="fatca-thresholds"></table>
-<div class="q-sub" style="margin-top:12px"><strong>Authority:</strong> IRC §6038D, Form 8938 Instructions. FATCA thresholds vary based on residency status and filing status. Resident aliens and US citizens use higher thresholds than nonresident aliens.</div>
-</div>
+  <div class="ch"><div class="sb">4</div><h2>Thresholds, Assumptions and Sources</h2></div>
+  <div class="cb">
+    <div class="tbl-wrap"><table class="dtab" id="fatca-thresholds"></table></div>
+    <details class="assump" id="assump_box">
+      <summary>Assumptions &amp; sources</summary>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>Parameter</th><th>Value (selected year)</th><th>Status</th><th>Citation</th></tr></thead>
+        <tbody id="assump_body"></tbody>
+      </table></div>
+    </details>
+    <div class="note-box"><strong>Projected figures are estimates.</strong> For tax years after 2026 the Form 8938 and FBAR forms and instructions have not been published. This checker assumes the thresholds and filing dates in the current regulations and IRS guidance continue unchanged. If Treasury or FinCEN changes them, the result for those years will differ. Not tax advice.</div>
+    <div class="verified">Last verified: October 29, 2026</div>
+    <div class="src"><strong>Authority:</strong> IRC &sect;6038D(a), (d); Treas. Reg. &sect;1.6038D-1(a)(2); Treas. Reg. &sect;1.6038D-2(a)(1)-(4), (a)(7), (c)(3), (e); IRC &sect;911(d)(1); IRC &sect;7503; 31 USC 5314; 31 CFR 1010.350(b); 31 CFR 1010.306(c); IRS, About Form 8938; IRS, Summary of FATCA Reporting for US Taxpayers; IRS, Comparison of Form 8938 and FBAR Requirements; IRS, Report of Foreign Bank and Financial Accounts (FBAR).</div>
+  </div>
 </div>
 
-<div class="card">
-<div class="ch"><h2>Summary & Next Steps</h2></div>
-<div class="cb">
-<div id="summary-result"></div>
-</div>
 </div>
 
-</div>
-
-</div>
+<div class="related"><div style="max-width:900px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="fbar-checker.html" class="rl">FBAR Filing Checker</a>
+  <a href="fbar-penalty-estimator.html" class="rl">FBAR Penalty Estimator</a>
+  <a href="form-8938-guide.html" class="rl">Form 8938 Guide</a>
+  <a href="streamlined-checker.html" class="rl">Streamlined Procedures Checker</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
 
 <script>
-const state = {
-  residency: '',
-  foreign_balance: 0,
-  filing_joint: ''
+var FBAR_THRESHOLD = 10000;   // 31 CFR 1010.306(c): accounts "exceeding $10,000"; IRS FBAR page
+var T8938 = {                 // Treas. Reg. 1.6038D-2(a)(1)-(4): [last day of year, any time during year]
+  us_single: [50000, 75000],
+  us_mfj:    [100000, 150000],
+  abroad_single: [200000, 300000],
+  abroad_mfj:    [400000, 600000]
 };
+var BASE_YEAR = 2026;
 
-function setYN(key, val) {
-  state[key] = val;
-  document.querySelectorAll(`[data-yn="${key}"]`).forEach(el => el.classList.remove('sel-yes', 'sel-no', 'unsel'));
-  document.querySelector(`[data-yn="${key}"][data-val="${val}"]`).classList.add(`sel-${val}`);
-  calculate();
+function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
+function numv(id){var el=document.getElementById(id);var v=parseFloat(el&&el.value);return (isNaN(v)||v<0)?0:v;}
+function weekday(y,m,d){return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][new Date(Date.UTC(y,m-1,d)).getUTCDay()];}
+function dateStr(y,m,d){return ['January','February','March','April','May','June','July','August','September','October','November','December'][m-1]+' '+d+', '+y+' ('+weekday(y,m,d)+')';}
+
+function thresholdsFor(abroad, filing){
+  var key = (abroad==='yes' ? 'abroad_' : 'us_') + (filing==='mfj' ? 'mfj' : 'single');
+  return {key:key, ye:T8938[key][0], mx:T8938[key][1]};
 }
 
-document.getElementById('residency').addEventListener('change', (e) => {
-  state.residency = e.target.value;
-  calculate();
-});
+// Pure evaluation. inp: {fy,status,dualres,abroad,filing,spouse_spec,joint,needReturn,fbar_max,ye,mx}
+function evaluate(inp){
+  var R = {};
+  var fbarPerson = (inp.status==='citizen' || inp.status==='resident' || inp.status==='nra_poss');
+  R.fbarPerson = fbarPerson;
+  R.fbarRequired = fbarPerson && inp.fbar_max > FBAR_THRESHOLD;
+  var specified = (inp.status!=='nra');
+  R.specified = specified;
+  R.dualExempt = (inp.status==='resident' && inp.dualres==='yes');
+  var th = thresholdsFor(inp.abroad, inp.filing);
+  R.th = th;
+  // Half-value rule for separate filers whose spouse is also a specified individual (Reg. 1.6038D-2(c)(3)(i))
+  var half = (inp.filing==='mfs' && inp.spouse_spec==='yes') ? 0.5*Math.min(inp.joint, inp.ye) : 0;
+  var halfMx = (inp.filing==='mfs' && inp.spouse_spec==='yes') ? 0.5*Math.min(inp.joint, inp.mx) : 0;
+  R.half = half; R.halfMx = halfMx;
+  var mx = Math.max(inp.mx, inp.ye);          // the highest value cannot be lower than year-end value
+  R.mxUsed = mx;
+  R.yeTest = inp.ye - half;
+  R.mxTest = mx - halfMx;
+  R.yeOver = R.yeTest > th.ye;
+  R.mxOver = R.mxTest > th.mx;
+  R.thresholdMet = R.yeOver || R.mxOver;
+  if(!specified) R.f8938 = 'no_nra';
+  else if(inp.needReturn==='no') R.f8938 = 'no_return';
+  else if(R.dualExempt) R.f8938 = 'dual';
+  else R.f8938 = R.thresholdMet ? 'yes' : 'no';
+  return R;
+}
 
-document.getElementById('foreign_balance').addEventListener('input', (e) => {
-  state.foreign_balance = parseFloat(e.target.value) || 0;
-  calculate();
-});
-
-document.querySelectorAll('.yn-btn').forEach(btn => {
-  const key = btn.parentElement.parentElement.querySelector('.q-text')?.textContent.includes('joint') ? 'filing_joint' : '';
-  if (key) {
-    btn.setAttribute('data-yn', key);
-    btn.setAttribute('data-val', btn.textContent.toLowerCase());
-  }
-});
-
-function calculate() {
-  if (!state.residency || state.foreign_balance < 1 || state.filing_joint === '') return;
-  
-  const fbar_threshold = 10000;
-  const fbar_required = state.foreign_balance > fbar_threshold;
-  
-  let fatca_threshold;
-  if (state.residency === 'nonresident') {
-    fatca_threshold = 600000; // NRA nonUS spouse separate filing
-  } else {
-    fatca_threshold = state.filing_joint === 'yes' ? 600000 : 300000; // US person
-    if (state.residency === 'citizen' && state.filing_joint === 'yes') {
-      fatca_threshold = 600000;
-    }
-  }
-  
-  const fatca_required = state.foreign_balance > fatca_threshold;
-  
-  // FBAR Result
-  document.getElementById('fbar-result').innerHTML = `
-    <div class="result">
-      <h3>FBAR Required: ${fbar_required ? 'YES' : 'NO'}</h3>
-      <p>Your foreign account balance is ${fbar_required ? 'ABOVE' : 'BELOW'} the $10,000 threshold. You ${fbar_required ? 'MUST' : 'DO NOT'} file FinCEN 114 (FBAR).</p>
-      <p style="margin-top:8px"><strong>Deadline:</strong> April 15 (with extension to October 15) | <strong>Filed with:</strong> FinCEN electronically via BSA E-Filing System</p>
-    </div>
-  `;
-  
-  // FATCA Result
-  const fatca_label = state.residency === 'nonresident' ? 'Nonresident Alien (NRA)' : 'US Citizen / Resident Alien';
-  document.getElementById('fatca-result').innerHTML = `
-    <div class="result">
-      <h3>Form 8938 Required: ${fatca_required ? 'YES' : 'NO'}</h3>
-      <p>Your foreign account balance is ${fatca_required ? 'ABOVE' : 'BELOW'} the Form 8938 threshold of ${fatca_threshold.toLocaleString()} for a ${state.filing_joint === 'yes' ? 'joint' : 'single'} filer (${fatca_label}). You ${fatca_required ? 'MUST' : 'DO NOT'} file Form 8938.</p>
-      <p style="margin-top:8px"><strong>Deadline:</strong> Same as income tax return (April 15 with extension) | <strong>Filed with:</strong> Form 1040 (US citizens/residents) or Form 1040-NR (nonresidents)</p>
-    </div>
-  `;
-  
-  // Thresholds table
-  const thresholds = [
-    { status: 'US Citizen (Single)', threshold: 300000 },
-    { status: 'US Citizen (MFJ)', threshold: 600000 },
-    { status: 'Resident Alien (Single)', threshold: 300000 },
-    { status: 'Resident Alien (MFJ)', threshold: 600000 },
-    { status: 'Nonresident Alien', threshold: 600000 },
+function assumptions(fy, R){
+  var proj = fy>BASE_YEAR;
+  var st = proj ? 'Regulatory (assumed unchanged; Projected year)' : 'Regulatory / IRS-published';
+  var rows = [
+    ['FBAR aggregate threshold', '$10,000 at any time during the calendar year (strictly more than)', st, '31 CFR 1010.306(c); IRS FBAR page'],
+    ['FBAR due date, calendar year '+fy, dateStr(fy+1,4,15)+'; automatic extension to '+dateStr(fy+1,10,15), proj?'Projected (IRS date rule assumed unchanged)':'IRS-published', 'IRS: Report of Foreign Bank and Financial Accounts (FBAR); 31 CFR 1010.306(c) text still reads June 30'],
+    ['Form 8938 threshold - living in the US, unmarried or married filing separately', '$50,000 last day / $75,000 any time', st, 'Treas. Reg. 1.6038D-2(a)(1)'],
+    ['Form 8938 threshold - living in the US, married filing jointly', '$100,000 last day / $150,000 any time', st, 'Treas. Reg. 1.6038D-2(a)(2)'],
+    ['Form 8938 threshold - living abroad, unmarried or married filing separately', '$200,000 last day / $300,000 any time', st, 'Treas. Reg. 1.6038D-2(a)(3)'],
+    ['Form 8938 threshold - living abroad, married filing jointly', '$400,000 last day / $600,000 any time', st, 'Treas. Reg. 1.6038D-2(a)(4)'],
+    ['Living abroad test', 'Qualified individual under IRC 911(d)(1): foreign tax home and bona fide residence or 330 full days abroad', 'Statutory', 'Treas. Reg. 1.6038D-2(a)(3); IRC 911(d)(1)'],
+    ['Joint ownership, separate filers (both specified individuals)', 'Count one-half of jointly owned assets for the threshold test', 'Regulatory', 'Treas. Reg. 1.6038D-2(c)(3)(i)'],
+    ['Form 8938 due date, tax year '+fy, 'With the return: '+dateStr(fy+1,4,15)+', moved to the next business day if a weekend or DC legal holiday; extended due date applies', proj?'Projected':'IRS-published', 'Treas. Reg. 1.6038D-2(a)(1); IRC 7503'],
+    ['Form 8938 failure-to-file penalty', '$10,000, plus $10,000 per 30 days after 90 days from IRS notice, up to $50,000 additional', 'Statutory', 'IRC 6038D(d)'],
+    ['Inflation indexing of thresholds', 'None - fixed dollar amounts', 'Regulatory', 'Treas. Reg. 1.6038D-2(a)']
   ];
-  
-  let table_html = '<tr><th>Filer Type</th><th>Form 8938 Threshold</th></tr>';
-  thresholds.forEach(t => {
-    table_html += `<tr><td>${t.status}</td><td>$${t.threshold.toLocaleString()}</td></tr>`;
-  });
-  document.getElementById('fatca-thresholds').innerHTML = table_html;
-  
-  // Summary
-  let summary = '<div class="summary-box">';
-  if (fbar_required && fatca_required) {
-    summary += '<h4>You Must File Both FBAR AND Form 8938</h4><p>Your foreign accounts exceed both thresholds. File FinCEN 114 with FinCEN and Form 8938 with your tax return. Penalties for failure to file are substantial.</p>';
-  } else if (fbar_required) {
-    summary += '<h4>You Must File FBAR Only</h4><p>Your accounts exceed the FBAR threshold but not Form 8938. File FinCEN 114 electronically with FinCEN.</p>';
-  } else if (fatca_required) {
-    summary += '<h4>You Must File Form 8938 Only</h4><p>Your accounts exceed the Form 8938 threshold but not FBAR. File Form 8938 with your income tax return.</p>';
-  } else {
-    summary += '<h4>No Filing Required</h4><p>Your foreign account balances do not exceed either threshold. You are not required to file FBAR or Form 8938.</p>';
-  }
-  summary += '</div>';
-  document.getElementById('summary-result').innerHTML = summary;
-  
-  document.getElementById('results').style.display = 'block';
-  window.scrollTo({top: document.getElementById('results').offsetTop - 100, behavior: 'smooth'});
+  var h=''; rows.forEach(function(r){h+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td></tr>';});
+  return h;
 }
+
+function calc(){
+  var fy = parseInt(document.getElementById('fy').value,10) || 2026;
+  var status = document.getElementById('status').value;
+  var filing = document.getElementById('filing').value;
+  document.getElementById('dual_wrap').style.display = (status==='resident') ? '' : 'none';
+  document.getElementById('mfs_wrap').style.display = (filing==='mfs') ? '' : 'none';
+  var inp = {
+    fy:fy, status:status, dualres:document.getElementById('dualres').value, abroad:document.getElementById('abroad').value,
+    filing:filing, spouse_spec:document.getElementById('spouse_spec').value, joint:numv('joint'),
+    needReturn:document.getElementById('needReturn').value,
+    fbar_max:numv('fbar_max'), ye:numv('f8938_ye'), mx:numv('f8938_max')
+  };
+  var R = evaluate(inp);
+  var proj = fy>BASE_YEAR;
+  document.getElementById('year_badge').innerHTML = proj
+    ? '<span class="badge-proj">Projected - estimate, not IRS-published</span> <span class="hint">Thresholds assumed unchanged for '+fy+'.</span>'
+    : '<span class="badge-pub">Regulatory thresholds in effect for 2026</span>';
+
+  // FBAR
+  var fh = '<div class="stepttl">FBAR (FinCEN Form 114)</div>';
+  var d1 = dateStr(fy+1,4,15), d2 = dateStr(fy+1,10,15);
+  if(!R.fbarPerson){
+    fh += '<div class="ok-box"><h3>FBAR Required: NO (based on status)</h3>A nonresident alien without an election to be treated as a US resident for FBAR purposes is generally not a "United States person" under 31 CFR 1010.350(b). A &sect;6013(g) or (h) election applies for income tax chapters 1 and 24 and is not a &sect;7701(b) residency determination. Confirm status before relying on this.</div>';
+  } else if(R.fbarRequired){
+    fh += '<div class="warn-box"><h3>FBAR Required: YES</h3>Aggregate maximum value '+money(inp.fbar_max)+' is more than $10,000. File FinCEN Form 114 electronically through the BSA E-Filing System. Due '+d1+'; automatic extension to '+d2+' (no request needed). Penalties: see the <a href="fbar-penalty-estimator.html">FBAR Penalty Estimator</a>.</div>';
+  } else {
+    fh += '<div class="ok-box"><h3>FBAR Required: NO</h3>Aggregate maximum value '+money(inp.fbar_max)+' does not exceed $10,000. No FBAR is required for '+fy+' on these facts. Recheck if you also have signature authority over accounts or any account is omitted.</div>';
+  }
+  if(inp.status==='nra_poss') fh += '<div class="note-box">For FBAR the "United States" includes the territories, so resident aliens of a US territory are subject to FBAR reporting (IRS, Comparison of Form 8938 and FBAR Requirements; 31 CFR 1010.350(b)(2)).</div>';
+  if(inp.status==='resident' && inp.dualres==='yes') fh += '<div class="note-box">Treaty tie-breaker filers: this checker does not resolve whether a dual resident treated as a nonresident for income tax is an FBAR "resident." Verify before concluding no FBAR is due.</div>';
+  document.getElementById('fbar-result').innerHTML = fh;
+
+  // Form 8938
+  var gh = '<div class="stepttl">Form 8938 (FATCA)</div>';
+  var tl = (inp.abroad==='yes' ? 'Living abroad' : 'Living in the US') + ', ' + (inp.filing==='mfj' ? 'married filing jointly' : inp.filing==='mfs' ? 'married filing separately' : 'unmarried');
+  if(R.f8938==='no_nra'){
+    gh += '<div class="ok-box"><h3>Form 8938 Required: NO</h3>A nonresident alien with no &sect;6013(g)/(h) election and who is not a bona fide resident of Puerto Rico or a &sect;931 possession is not a specified individual (Treas. Reg. &sect;1.6038D-1(a)(2)).</div>';
+  } else if(R.f8938==='no_return'){
+    gh += '<div class="ok-box"><h3>Form 8938 Required: NO</h3>You indicated you are not required to file a US income tax return for '+fy+'. Form 8938 is attached to the annual return and is not required if no return is required (Treas. Reg. &sect;1.6038D-2(a)(7)(i)).</div>';
+  } else if(R.f8938==='dual'){
+    gh += '<div class="ok-box"><h3>Form 8938 Required: NO (dual resident exception)</h3>A dual resident taxpayer treated as a nonresident alien under a treaty is not required to report on Form 8938 for the covered portion of the year if the filing conditions of Treas. Reg. &sect;301.7701(b)-7 are met, including Form 8833 (Treas. Reg. &sect;1.6038D-2(e)).</div>';
+  } else {
+    gh += '<div class="'+(R.f8938==='yes'?'warn-box':'ok-box')+'"><h3>Form 8938 Required: '+(R.f8938==='yes'?'YES':'NO')+'</h3>Threshold applied: '+tl+' - '+money(R.th.ye)+' on the last day of the year or '+money(R.th.mx)+' at any time. Attach Form 8938 to your '+(inp.status==='citizen'||inp.status==='resident'||inp.status==='nra_elect'?'Form 1040':'return')+' for '+fy+', due with the return ('+d1+', or the extended due date).</div>';
+    gh += '<div class="sum-box"><div class="sum-title">Step-by-step math</div>';
+    gh += '<div class="srow"><span class="sl">Year-end value entered</span><span class="sv">'+money(inp.ye)+'</span></div>';
+    if(R.half>0) gh += '<div class="srow"><span class="sl">Less one-half of jointly owned assets (50% x '+money(Math.min(inp.joint,inp.ye))+')</span><span class="sv">-'+money(R.half)+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Year-end value for the test</span><span class="sv">'+money(R.yeTest)+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Year-end threshold ('+tl+')</span><span class="sv">'+money(R.th.ye)+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Year-end value exceeds threshold?</span><span class="sv '+(R.yeOver?'red':'green')+'">'+(R.yeOver?'YES':'NO')+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Highest value entered (not less than year-end: '+money(R.mxUsed)+')</span><span class="sv">'+money(R.mxUsed)+'</span></div>';
+    if(R.halfMx>0) gh += '<div class="srow"><span class="sl">Less one-half of jointly owned assets (50% x '+money(Math.min(inp.joint,R.mxUsed))+')</span><span class="sv">-'+money(R.halfMx)+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Highest value for the test</span><span class="sv">'+money(R.mxTest)+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Any-time threshold</span><span class="sv">'+money(R.th.mx)+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Highest value exceeds threshold?</span><span class="sv '+(R.mxOver?'red':'green')+'">'+(R.mxOver?'YES':'NO')+'</span></div>';
+    gh += '<div class="srow"><span class="sl">Filing required if either test is exceeded</span><span class="sv '+(R.f8938==='yes'?'red':'green')+'">'+(R.f8938==='yes'?'YES':'NO')+'</span></div></div>';
+    if(inp.filing==='mfj') gh += '<div class="note-box">Joint filers file one Form 8938 covering assets in which either spouse has an interest; a jointly owned asset is counted once (Treas. Reg. &sect;1.6038D-2(c)(2), (d)(1)).</div>';
+    if(R.f8938==='yes') gh += '<div class="note-box">Failure to file: $10,000, plus $10,000 for each 30-day period after 90 days from IRS notice, up to $50,000 additional (IRC &sect;6038D(d)). Assets already reported on certain other forms (for example Forms 3520, 5471, 8621, 8865) may be listed by reference but still count toward the threshold (Treas. Reg. &sect;1.6038D-2(a)(6)).</div>';
+  }
+  document.getElementById('fatca-result').innerHTML = gh;
+
+  // Summary
+  var fatcaYes = (R.f8938==='yes');
+  var sm = '<div class="stepttl">Summary &amp; Next Steps</div><div class="info-box">';
+  if(R.fbarRequired && fatcaYes) sm += '<h3>File both FBAR and Form 8938</h3>Your values exceed both thresholds. File FinCEN Form 114 with FinCEN and Form 8938 with your return. Filing one does not satisfy the other.';
+  else if(R.fbarRequired) sm += '<h3>File the FBAR only</h3>The FBAR threshold is met and Form 8938 is not required on these facts. File FinCEN Form 114 with FinCEN.';
+  else if(fatcaYes) sm += '<h3>File Form 8938 only</h3>Form 8938 is required and the FBAR is not. Attach Form 8938 to your return.';
+  else sm += '<h3>No filing required on these facts</h3>Neither threshold is met. Values and status are re-tested every year.';
+  sm += '</div>';
+  document.getElementById('summary-result').innerHTML = sm;
+
+  // Threshold table with the applied row marked
+  var rows = [['Living in the US - unmarried or married filing separately','us_single'],['Living in the US - married filing jointly','us_mfj'],['Living abroad - unmarried or married filing separately','abroad_single'],['Living abroad - married filing jointly','abroad_mfj']];
+  var t = '<tr><th>Form 8938 filer type</th><th class="num">Last day of year (more than)</th><th class="num">Any time in year (more than)</th></tr>';
+  rows.forEach(function(r){ var a=T8938[r[1]]; t+='<tr><td>'+r[0]+(R.th.key===r[1]?' <strong>(applied)</strong>':'')+'</td><td class="num">'+money(a[0])+'</td><td class="num">'+money(a[1])+'</td></tr>'; });
+  t += '<tr><td>FBAR (all US persons)</td><td class="num">n/a</td><td class="num">'+money(FBAR_THRESHOLD)+' aggregate (more than)</td></tr>';
+  document.getElementById('fatca-thresholds').innerHTML = t;
+  document.getElementById('assump_body').innerHTML = assumptions(fy, R);
+}
+calc();
 </script>
+
+<script>
+function doPrint(){window.print();}
+function doShare(){var url=location.href;var title=document.title.replace(' | CPA Validated','');if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
+function showShareModal(url,title){if(document.getElementById('sv-ol'))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]];var ol=document.createElement('div');ol.id='sv-ol';ol.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center';var h='<div style="background:#111111;width:100%;max-width:520px"><div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share</span><button id="sv-x" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px">&times;<\/button><\/div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'<\/a>';});h+='<button id="sv-cp" style="padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link<\/button><\/div><\/div>';ol.innerHTML=h;document.body.appendChild(ol);document.getElementById('sv-x').onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById('sv-cp').onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);});}catch(e2){var t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);}};}</script>
+</div>
+</div>
 
 
 <!-- START UNIFIED FOOTER -->

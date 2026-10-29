@@ -380,7 +380,7 @@ function calc(){
     ${R.at28>0?`<div class="sv-row" style="background:var(--red-bg);border:1px solid var(--red-b)"><div class="sv-label">28% rate gain at 28%</div><div class="sv-rate" style="color:var(--red)">28%</div><div class="sv-amount">${fmt(R.at28)}</div></div>`:''}
   </div>`;
   var s=(l,v,c)=>`<div class="srow"><span class="sl">${l}</span><span class="sv2 ${c||''}">${v}</span></div>`;
-  h+=`<div class="sum-box"><div class="sum-title">Schedule D Tax Worksheet - ${y} - ${fsName}</div>`;
+  h+=`<div class="sum-box"><div class="sum-title">Schedule D Tax Worksheet - ${y} - ${fsName} (line numbers per the 2025 instructions)</div>`;
   h+=s('Line 1: taxable income = ordinary '+fmt(x.ordinary)+' + gains and dividends '+fmt(R.A+R.U+R.C),fmt(R.TI));
   h+=s('Line 10: qualified dividends + net capital gain',fmt(n[10]));
   h+=s('Line 13: adjusted net capital gain incl. qualified dividends (0/15/20% pool)',fmt(n[13]));

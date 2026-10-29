@@ -331,7 +331,7 @@ function calc(){
     <div style="font-size:12px;color:rgba(255,255,255,.55);margin-top:3px">${rate} &nbsp;&bull;&nbsp; Est. tax value about ${fmt(R.ded*mr)} at ${Math.round(mr*100)}%</div></div>
   </div>`;
   var s=(l,v,c)=>`<div class="srow"><span class="sl">${l}</span><span class="sv ${c||''}">${v}</span></div>`;
-  h+=`<div class="sum-box"><div class="sum-title">IRC 199A Computation - Form 8995-A (${y}) - ${fsName}</div>`;
+  h+=`<div class="sum-box"><div class="sum-title">IRC 199A Computation - ${y} - ${fsName} (line numbers per the 2025 Form 8995-A)</div>`;
   h+=s('Taxable income before QBI deduction',fmt(R.ti));
   h+=s('Threshold amount / top of phase-in range ('+(R.range/1000)+'k range)',fmt(R.thr)+' / '+fmt(R.upper));
   h+=s('Position: '+(R.below?'at or below threshold (no W-2/UBIA limit, no SSTB reduction)':R.above?'at or above top of range (full W-2/UBIA limit; SSTB excluded)':'in the phase-in range ('+(R.ratio*100).toFixed(1)+'% through)'),'');
