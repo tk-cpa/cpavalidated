@@ -148,7 +148,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <div class="container">
 
 <div class="callout">
-  <p><strong>Universal rule:</strong> An extension of time to FILE never extends the time to PAY. Tax owed is due by the original due date (April 15) in all jurisdictions. Federal Form 4868: April 15 → October 15. <strong>Critical for international clients:</strong> The federal expat 2-month automatic extension to June 15 does NOT automatically extend state returns. File state extensions by April 15 regardless.</p>
+  <p><strong>Universal rule:</strong> An extension of time to FILE generally does not extend the time to PAY. Federal tax owed is due by the original due date (April 15), and interest runs from that date even when a payment extension applies (for example, the automatic 2-month extension for taxpayers abroad under Treas. Reg. §1.6081-5). Most states also require payment by the original due date, but not every state uses April 15 (for example, Virginia May 1 and Iowa April 30). Federal Form 4868: April 15 → October 15. <strong>Critical for international clients:</strong> The federal expat 2-month automatic extension to June 15 does NOT automatically extend state returns. File state extensions by April 15 regardless.</p>
 </div>
 
 <div class="section-head">Special Extensions &amp; Nuances</div>
@@ -166,7 +166,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <div class="spec-box">
     <div class="spec-label">Form 2350 → Beyond Oct 15</div>
     <div class="spec-title">FEIE Qualification Extension</div>
-    <div class="spec-body">For taxpayers needing to meet 330-day physical presence test or bona fide residence test for FEIE. Extends federal deadline beyond Oct 15. No state recognizes Form 2350. IRC §6081(a); Treas. Reg. §1.6081-5(b).</div>
+    <div class="spec-body">For taxpayers needing to meet 330-day physical presence test or bona fide residence test for FEIE. Extends federal deadline beyond Oct 15. No state recognizes Form 2350. IRC §6081(a); Treas. Reg. §1.6081-1(a)-(b).</div>
   </div>
   <div class="spec-box">
     <div class="spec-label">FBAR Auto Extension</div>
@@ -235,7 +235,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <script>
 const DATA = [
-  {j:'Alabama',t:'State',c:'AUTOMATIC',f:'None required',l:'Federal ext + 1 month',p:'Tax due by original date',cite:'Ala. Code 40-18-4',n:'Automatic extension. AL grants extension consistent with federal ext plus one month.'},
+  {j:'Alabama',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months (to Oct 15)',p:'Tax due by original date',cite:'Ala. Code 40-18-4',n:'Automatic 6-month extension to October 15; no form required. No extension of time to pay (Form 40V payment by April 15).'},
   {j:'Alaska',t:'State',c:'NO PIT',f:'N/A',l:'N/A',p:'N/A',cite:'Alaska Const. Art. IX',n:'No individual income tax.'},
   {j:'Arizona',t:'State',c:'ACCEPTS FEDERAL',f:'Form 204 (if no federal)',l:'6 months',p:'Tax due; 90% safe harbor',cite:'A.R.S. 43-243',n:'Federal Form 4868 accepted. Penalty if less than 90% paid by original date.'},
   {j:'Arkansas',t:'State',c:'ACCEPTS FEDERAL',f:'Form AR1055-IT (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Ark. Code Ann. 26-51-807',n:'Federal ext accepted. If no federal ext, file Form AR1055-IT.'},
@@ -249,7 +249,7 @@ const DATA = [
   {j:'Hawaii',t:'State',c:'AUTOMATIC',f:'None (Form N-200V for payment only)',l:'6 months',p:'Tax due by original date',cite:'Haw. Rev. Stat. §235-98',n:'Automatic 6-month ext for individuals (different from corporate conditional rule). Use Form N-200V only to submit payment.'},
   {j:'Idaho',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months',p:'Tax due; penalty if <80% paid',cite:'Idaho Code §63-3033',n:'Automatic ext. 80% safe harbor - penalty if less than 80% paid by original date.'},
   {j:'Illinois',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months',p:'Tax due by original date',cite:'35 ILCS 5/602',n:'Automatic 6-month ext. No form required.'},
-  {j:'Indiana',t:'State',c:'ACCEPTS FEDERAL',f:'Form IT-9 (if no federal)',l:'60 days beyond federal ext',p:'Tax due by original date',cite:'Ind. Code §6-3-4-5',n:'Federal ext accepted. IN extension is 60 days BEYOND the federal extended due date.'},
+  {j:'Indiana',t:'State',c:'ACCEPTS FEDERAL',f:'Form IT-9 (if no federal)',l:'Nov 15',p:'Tax due by original date',cite:'Ind. Code §6-3-4-5',n:'Federal ext accepted automatically (Form IT-9 if no federal extension). Extended due date is November 15.'},
   {j:'Iowa',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months',p:'Tax due by original date',cite:'Iowa Code §422.21',n:'Automatic 6-month ext. Iowa due date is April 30.'},
   {j:'Kansas',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months',p:'Tax due by original date',cite:'Kan. Stat. Ann. §79-3221(c)',n:'Automatic 6-month ext granted to all individual filers.'},
   {j:'Kentucky',t:'State',c:'ACCEPTS FEDERAL',f:'Form 740EXT (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Ky. Rev. Stat. §141.170',n:'Federal Form 4868 accepted.'},
@@ -282,7 +282,7 @@ const DATA = [
   {j:'Utah',t:'State',c:'AUTOMATIC',f:'None (TC-546 for payment only)',l:'6 months',p:'Tax due by original date',cite:'Utah Code Ann. §59-10-516',n:'Automatic 6-month ext. Use TC-546 only to submit payment.'},
   {j:'Vermont',t:'State',c:'ACCEPTS FEDERAL',f:'Form IN-151 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'Vt. Stat. Ann. tit. 32, §5868',n:'Federal ext accepted.'},
   {j:'Virginia',t:'State',c:'AUTOMATIC',f:'None required',l:'6 months',p:'Must pay 90% by original date',cite:'Va. Code Ann. §58.1-344',n:'Automatic 6-month ext. Must pay 90% by original due date to avoid penalty.'},
-  {j:'Washington',t:'State',c:'NO PIT',f:'N/A',l:'N/A',p:'N/A',cite:'Wash. Const. Art. VII',n:'No broad individual income tax. WA capital gains tax (7% on gains >$270K) is an excise tax with separate rules.'},
+  {j:'Washington',t:'State',c:'NO PIT',f:'N/A',l:'N/A',p:'N/A',cite:'Wash. Const. Art. VII',n:'No broad individual income tax. WA capital gains tax (7% on gains above the standard deduction - $278,000 for 2025 - with new tiered rates on larger gains) is an excise tax with separate rules.'},
   {j:'West Virginia',t:'State',c:'ACCEPTS FEDERAL',f:'Form WV4868 (if no federal)',l:'6 months',p:'Tax due by original date',cite:'W. Va. Code §11-21-18',n:'Federal ext accepted.'},
   {j:'Wisconsin',t:'State',c:'ACCEPTS FEDERAL',f:'None (federal accepted)',l:'6 months',p:'Tax due by original date',cite:'Wis. Stat. §71.03(8)(c)',n:'Federal ext automatically extends WI.'},
   {j:'Wyoming',t:'State',c:'NO PIT',f:'N/A',l:'N/A',p:'N/A',cite:'Wyo. Const. Art. 15, §18',n:'No individual income tax.'},
