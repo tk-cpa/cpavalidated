@@ -658,7 +658,7 @@
       "url": "fbar-penalties.html",
       "title": "FBAR Penalties Explained (2026)",
       "heading": "FBAR Penalties Explained (2026)",
-      "desc": "FBAR penalties for willful and non-willful violations. Willful: up to $100,000 or 50% of account balance per year. Non-willful: up to $10,000 per violation. Streamlined procedures, OVDP, and mitigation explained. CPA-validated. 31 USC 5321.",
+      "desc": "FBAR penalties for willful and non-willful violations. Willful: up to the greater of $165,353 (inflation-adjusted from $100,000) or 50% of account balance per year. Non-willful: up to $16,536 per violation (inflation-adjusted from $10,000). Streamlined procedures, OVDP, and mitigation explained. CPA-validated. 31 USC 5321.",
       "category": "International Tax",
       "type": "GUIDE",
       "authority": "FBAR FBAR 31 USC 5321"
@@ -890,9 +890,9 @@
     },
     {
       "url": "georgia-income-tax-guide.html",
-      "title": "Georgia Income Tax: 5.49% Flat Rate Transition & Retirement Exclusion (2026)",
-      "heading": "Georgia Income Tax: 5.49% Flat Rate & Retirement Exclusion (2026)",
-      "desc": "Georgia income tax guide: Georgia is transitioning from graduated rates to a flat income tax, currently at 5.49% for 2026 moving toward 4.99% by 2029, retirement income exclusion up to $35,000 per person ($70,000 MFJ) for taxpayers 62 and older, no Georgia estate tax, Social Security exempt from Georgia income tax, and the Georgia PTET election for pass-through entities. CPA-validated.",
+      "title": "Georgia Income Tax: 4.99% Flat Rate Transition & Retirement Exclusion (2026)",
+      "heading": "Georgia Income Tax: 4.99% Flat Rate & Retirement Exclusion (2026)",
+      "desc": "Georgia income tax guide: Georgia is transitioning from graduated rates to a flat income tax, currently at 4.99% for 2026 with further 0.125% annual reductions scheduled from 2027 to a 3.99% floor, retirement income exclusion for taxpayers 62 and older, no Georgia estate tax, Social Security exempt from Georgia income tax, and the Georgia PTET election for pass-through entities. CPA-validated.",
       "category": "State Tax & Compliance",
       "type": "GUIDE",
       "authority": ""
@@ -1234,7 +1234,7 @@
       "url": "marital-deduction-guide.html",
       "title": "Marital Deduction Guide: §2056 Estate Tax, §2523 Gift Tax & QDOT for Non-Citizens (2026)",
       "heading": "Marital Deduction: §2056 Estate Tax, §2523 Gift Tax & QDOT for Non-Citizens",
-      "desc": "Marital deduction guide: IRC §2056 unlimited estate marital deduction, §2523 unlimited gift marital deduction, QTIP trusts, QDOT trusts for non-citizen surviving spouses, the $190,000 annual gift limit for non-citizens, portability, and common planning mistakes. CPA-validated.",
+      "desc": "Marital deduction guide: IRC §2056 unlimited estate marital deduction, §2523 unlimited gift marital deduction, QTIP trusts, QDOT trusts for non-citizen surviving spouses, the $194,000 (2026) annual gift limit for non-citizens, portability, and common planning mistakes. CPA-validated.",
       "category": "Estate & Gifts",
       "type": "GUIDE",
       "authority": "IRC §2056"
@@ -1593,8 +1593,8 @@
     {
       "url": "qcd-charitable-guide.html",
       "title": "Qualified Charitable Distribution (QCD): Tax-Free IRA Giving at Age 70.5+ (2026)",
-      "heading": "Qualified Charitable Distribution: $105,000 Tax-Free IRA Gift (2026)",
-      "desc": "Qualified charitable distribution guide: QCD allows IRA owners age 70.5 or older to transfer up to $105,000 directly to charity tax-free, the amount counts toward RMD but is excluded from gross income, QCD vs. deduct-and-include comparison showing QCD is better even for itemizers, QCD cannot go to donor-advised funds or private foundations, one-time QCD to split-interest trusts, and the $105,000 limit for 2026. CPA-validated.",
+      "heading": "Qualified Charitable Distribution: $111,000 Tax-Free IRA Gift (2026)",
+      "desc": "Qualified charitable distribution guide: QCD allows IRA owners age 70.5 or older to transfer up to $111,000 directly to charity tax-free, the amount counts toward RMD but is excluded from gross income, QCD vs. deduct-and-include comparison showing QCD is better even for itemizers, QCD cannot go to donor-advised funds or private foundations, one-time QCD to split-interest trusts, and the $111,000 limit for 2026. CPA-validated.",
       "category": "Investments & Capital",
       "type": "GUIDE",
       "authority": "RMD"
@@ -1621,7 +1621,7 @@
       "url": "qualified-401k-guide.html",
       "title": "401(k) Tax Guide: Contribution Limits, Roth vs. Traditional, Employer Match (2026)",
       "heading": "401(k) Tax Guide: Limits, Roth vs. Traditional & Employer Match",
-      "desc": "Complete 401(k) guide: 2026 contribution limits $23,500 employee / $70,000 total, catch-up contributions at 50 and 60-63, Roth vs traditional 401(k) decision, employer match mechanics, early withdrawal penalty, and rollover rules. CPA-validated.",
+      "desc": "Complete 401(k) guide: 2026 contribution limits $24,500 employee / $72,000 total, catch-up contributions at 50 and 60-63, Roth vs traditional 401(k) decision, employer match mechanics, early withdrawal penalty, and rollover rules. CPA-validated.",
       "category": "Retirement & Savings",
       "type": "GUIDE",
       "authority": ""
@@ -2053,7 +2053,7 @@
       "url": "sep-simple-ira-guide.html",
       "title": "SEP-IRA & SIMPLE IRA: 2026 Limits, Setup & Self-Employed Deduction",
       "heading": "SEP-IRA & SIMPLE IRA: 2026 Contribution Limits & Rules",
-      "desc": "SEP-IRA and SIMPLE IRA guide: 2026 SEP limit $70,000 (25% of comp), SIMPLE deferral $16,500, self-employed contribution calculation, employer matching rules, 2-year SIMPLE rule, and comparison to solo 401(k). CPA-validated.",
+      "desc": "SEP-IRA and SIMPLE IRA guide: 2026 SEP limit $72,000 (25% of comp), SIMPLE deferral $17,000, self-employed contribution calculation, employer matching rules, 2-year SIMPLE rule, and comparison to solo 401(k). CPA-validated.",
       "category": "Retirement & Savings",
       "type": "GUIDE",
       "authority": ""
@@ -2098,7 +2098,7 @@
       "url": "solo-401k-sep-guide.html",
       "title": "Solo 401(k) vs. SEP-IRA: Self-Employed Retirement Plan Comparison (2026)",
       "heading": "Solo 401(k) vs. SEP-IRA: Self-Employed Retirement Plans (2026)",
-      "desc": "Solo 401(k) and SEP-IRA comparison guide: solo 401(k) allows employee deferrals up to $23,500 plus employer profit-sharing contributions up to $70,000 total, SEP-IRA allows up to 25% of net self-employment income to a maximum $70,000, Roth solo 401(k) option, solo 401(k) loan provision, solo 401(k) requires no employees, and defined benefit plan option for high-income self-employed taxpayers seeking larger deductions. CPA-validated.",
+      "desc": "Solo 401(k) and SEP-IRA comparison guide: solo 401(k) allows employee deferrals up to $24,500 plus employer profit-sharing contributions up to $72,000 total, SEP-IRA allows up to 25% of net self-employment income to a maximum $72,000, Roth solo 401(k) option, solo 401(k) loan provision, solo 401(k) requires no employees, and defined benefit plan option for high-income self-employed taxpayers seeking larger deductions. CPA-validated.",
       "category": "Retirement & Savings",
       "type": "GUIDE",
       "authority": ""
