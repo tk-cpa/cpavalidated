@@ -250,7 +250,7 @@ function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><di
 function pct(n){return (n*100).toFixed(1)+'%';}
 
 // ===== Parameters =====
-// 2026: IRS-published (Rev. Proc. 2025-32 sections 3.14 and 4.42; IRC 2010(c)(3)(A) as amended by P.L. 119-21 sec. 70106).
+// 2026: IRS-published (Rev. Proc. 2025-32 sections 2.14 and 4.42; IRC 2010(c)(3)(A) as amended by P.L. 119-21 sec. 70106).
 // 2027-2030: projected. IRC 2010(c)(3)(B): $15,000,000 x COLA (chained CPI, base calendar year 2025), rounded to nearest $10,000.
 // IRC 2503(b)(2): $10,000 x COLA (base 1997), rounded DOWN to next lowest $1,000. Projection starts from the published 2026 figure.
 // New York basic exclusion amount: NYS DTF published $7,350,000 for 2026; later years projected with the same inflation input, rounded to nearest $10,000 (rounding method not verified).
@@ -387,7 +387,7 @@ function assumptionsHtml(r,inp){
   const p=r.p;
   const st=p.projected?'Projected':'IRS-published';
   const rows=[
-    ['Basic exclusion amount (BEA)',fmt(p.bea),p.projected?'Projected':'IRS-published (Rev. Proc. 2025-32 sec. 3.14); statutory $15,000,000 in IRC 2010(c)(3)(A)',p.projected?'IRC 2010(c)(3)(B): $15,000,000 x chained-CPI COLA (base 2025), rounded to the nearest $10,000. Tool applies '+(p.infl*100).toFixed(1)+'% per year.':'IRC 2010(c)(3)(A); Rev. Proc. 2025-32 sec. 3.14'],
+    ['Basic exclusion amount (BEA)',fmt(p.bea),p.projected?'Projected':'IRS-published (Rev. Proc. 2025-32 sec. 2.14); statutory $15,000,000 in IRC 2010(c)(3)(A)',p.projected?'IRC 2010(c)(3)(B): $15,000,000 x chained-CPI COLA (base 2025), rounded to the nearest $10,000. Tool applies '+(p.infl*100).toFixed(1)+'% per year.':'IRC 2010(c)(3)(A); Rev. Proc. 2025-32 sec. 2.14'],
     ['Annual gift exclusion per donee',fmt(p.annual),p.projected?'Projected':'IRS-published (Rev. Proc. 2025-32 sec. 4.42)',p.projected?'IRC 2503(b)(2): $10,000 x COLA (base 1997), rounded down to the next lowest $1,000. Tool compounds the published 2026 amount at '+(p.infl*100).toFixed(1)+'%.':'IRC 2503(b); Rev. Proc. 2025-32 sec. 4.42(1)'],
     ['Top federal estate tax rate','40% over $1,000,000','Statutory','IRC 2001(c) rate schedule (not indexed)'],
     ['DSUE (portability)',fmt(r.dsueUsed),'Statutory (user input)','IRC 2010(c)(4), (5)(A); not inflation-indexed; capped at the BEA'],
@@ -518,7 +518,7 @@ function calc(){
   h+=assumptionsHtml(r,inp);
   h+=`<div class="disc"><strong>Projected figures are estimates.</strong> Amounts marked Projected apply an inflation assumption you can change; they are not IRS-published and will differ from the final indexed amounts. Federal and state law may also change. The tool does not model generation-skipping transfer tax, special use valuation (IRC 2032A), deferral of payment (IRC 6166), credit for tax on prior transfers (IRC 2013) or foreign tax credits, and it applies to citizens and residents of the United States only. Last verified: October 29, 2026.</div>`;
 
-  h+=`<div class="src">IRC 2001(b), (c) (tentative tax and rate schedule - 40% top rate over $1,000,000); IRC 2010(a), (c) (unified credit, basic exclusion amount, DSUE, portability election); IRC 2051 (taxable estate); IRC 2053 (debts and expenses); IRC 2055 (charitable deduction); IRC 2056(a), (d) and 2056A (marital deduction, non-citizen spouse, QDOT); IRC 2058 (state death taxes); IRC 2503(b) (annual exclusion); IRC 6018(a) and 6075(a) (return requirement and due date); Rev. Proc. 2025-32 sec. 3.14 and 4.42 (2026 inflation adjustments); Rev. Proc. 2022-32 (late portability election); Treas. Reg. 20.2010-1(c) (difference in basic exclusion amount); P.L. 119-21 sec. 70106 (OBBBA); NYS Department of Taxation and Finance estate tax page, Form ET-706 and ET-706-I (New York).</div>`;
+  h+=`<div class="src">IRC 2001(b), (c) (tentative tax and rate schedule - 40% top rate over $1,000,000); IRC 2010(a), (c) (unified credit, basic exclusion amount, DSUE, portability election); IRC 2051 (taxable estate); IRC 2053 (debts and expenses); IRC 2055 (charitable deduction); IRC 2056(a), (d) and 2056A (marital deduction, non-citizen spouse, QDOT); IRC 2058 (state death taxes); IRC 2503(b) (annual exclusion); IRC 6018(a) and 6075(a) (return requirement and due date); Rev. Proc. 2025-32 sec. 2.14 and 4.42 (2026 inflation adjustments); Rev. Proc. 2022-32 (late portability election); Treas. Reg. 20.2010-1(c) (difference in basic exclusion amount); P.L. 119-21 sec. 70106 (OBBBA); NYS Department of Taxation and Finance estate tax page, Form ET-706 and ET-706-I (New York).</div>`;
   document.getElementById('res').innerHTML=h;
 }
 calc();
