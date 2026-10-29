@@ -1,134 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style id="cpav-scrollbar-fix">html{overflow-y:scroll;scrollbar-gutter:stable}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<title>Child Tax Credit Calculator | CPA Validated</title>
-<meta name="description" content="Calculate your 2026 Child Tax Credit (CTC) and Additional CTC. Interactive calculator.">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Child Tax Credit Calculator 2026-2030 | CPA Validated</title>
+<meta name="description" content="Calculate the Child Tax Credit, credit for other dependents and refundable Additional Child Tax Credit for tax years 2026-2030. Phase-out, SSN rule, Schedule 8812. CPA-validated. IRC 24.">
+<link rel="canonical" href="https://cpavalidated.com/child-tax-credit-calc.html">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink:#111111; --ink-80:#343A40; --ink-60:#5E6166; --ink-40:#9BA0A6;
-  --ink-20:#D9DBDE; --ink-10:#EDEEF0; --paper:#FAFAF7; --white:#FFFFFF;
-  --coral:#F65F5A; --green:#4A7459; --green-bg:#E2EDE6;
-  --font-display:'Oswald','Arial Narrow',sans-serif;
-  --font-sans:'Inter',-apple-system,sans-serif;
-  --font-mono:'Courier New',monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-sans);background:var(--paper);color:var(--ink)}
-.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}
-.phi{max-width:900px;margin:0 auto;padding:0 24px}
-.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(26px,5vw,46px);color:#fff}
-.container{max-width:900px;margin:0 auto;padding:28px 24px}
-.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:20px}
-.ch{background:var(--ink);padding:13px 20px;color:#fff}
+:root{--ink:#111111;--ink-60:#5E6166;--ink-40:#9BA0A6;--ink-20:#D9DBDE;--ink-10:#EDEEF0;--paper:#FAFAF7;--white:#FFFFFF;--coral:#F65F5A;--coral-600:#E04A45;--coral-100:#FCE3E2;--green:#4A7459;--green-bg:#E2EDE6;--green-b:#9BBDAA;--amber:#8B6535;--amber-bg:#EDE8D8;--amber-b:#C8A878;--blue-acc:#4A6070;--blue-bg:#DDE4E8;--blue-b:#94AFBC;--red:#9B3D3D;--red-bg:#EDE0DC;--red-b:#C8A8A4;--font-display:'Oswald',sans-serif;--font-sans:'Inter',sans-serif;--font-mono:'Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;padding-bottom:80px}a{color:var(--coral);text-decoration:none}
+.ph{background:var(--ink);padding:36px 0 28px;border-bottom:3px solid var(--coral)}.phi{max-width:920px;margin:0 auto;padding:0 24px}.ph-eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.12em;color:var(--coral);margin-bottom:12px}.ph h1{font-family:var(--font-display);font-weight:500;font-size:clamp(22px,4vw,40px);color:#fff;line-height:1.05;margin-bottom:10px}.ph .sub{font-size:13px;color:rgba(255,255,255,.5)}.ph .badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}.badge{font-family:var(--font-mono);font-size:10.5px;padding:3px 9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12)}
+.back{max-width:920px;margin:0 auto;padding:16px 24px 0}.back a{font-size:12px;color:var(--ink-60)}
+.wrap{max-width:920px;margin:0 auto;padding:24px 24px 0}
+.card{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.ch{background:var(--ink);padding:12px 20px;display:flex;align-items:center;gap:10px}.sb{width:24px;height:24px;border-radius:50%;background:var(--coral);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}.ch h2{font-family:var(--font-display);font-size:14px;font-weight:400;color:#fff;letter-spacing:.06em;text-transform:uppercase}
 .cb{padding:20px}
-.f1{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
-.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);text-transform:uppercase}
-.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-size:13px}
-.result-box{background:var(--green-bg);border-left:3px solid var(--green);padding:16px;margin-top:20px}
-.result-num{font-family:var(--font-mono);font-size:28px;font-weight:700;color:var(--green)}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(max-width:640px){.fg2{grid-template-columns:1fr}}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+.f1{display:flex;flex-direction:column;gap:5px}
+.f1 label{font-size:11px;font-weight:600;color:var(--ink-60);letter-spacing:.07em;text-transform:uppercase}
+.f1 .hint{font-size:11px;color:var(--ink-40);margin-top:2px;line-height:1.5}
+.fc{width:100%;padding:9px 12px;border:1.5px solid var(--ink-20);font-family:var(--font-sans);font-size:14px;font-weight:600;color:var(--blue-acc);background:var(--paper);outline:none;appearance:none}
+.fc:focus{border-color:var(--coral)}
+select.fc{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23111' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;cursor:pointer}
+.hero4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,.1);margin-bottom:14px}
+.h4{background:var(--ink);padding:14px;text-align:center}
+.h4l{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.35);margin-bottom:6px}
+.h4v{font-family:var(--font-display);font-size:20px;font-weight:500;color:#fff}
+.h4v.coral{color:var(--coral)}.h4v.red{color:#ff8f8a}.h4v.green{color:#6de88e}.h4v.amber{color:#f5c264}
+.h4s{font-size:10px;color:rgba(255,255,255,.25);margin-top:3px}
+.sum-box{background:var(--ink);padding:16px 20px;margin-bottom:14px}
+.sum-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--coral);margin-bottom:10px}
+.srow{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px;gap:16px}
+.srow:last-child{border-bottom:none;font-weight:700;font-size:14px;padding-top:8px}
+.sl{color:rgba(255,255,255,.5)}.sv{font-weight:600;color:#fff;font-family:var(--font-mono);font-size:12px;text-align:right;flex-shrink:0}
+.sv.green{color:#6de88e}.sv.amber{color:#f5c264}.sv.red{color:#ff8f8a}.sv.coral{color:var(--coral)}
+.flag{display:flex;gap:10px;padding:10px 14px;margin-bottom:10px;border:1px solid;align-items:flex-start}
+.flag.amber{background:var(--amber-bg);border-color:var(--amber-b)}.flag.blue{background:var(--blue-bg);border-color:var(--blue-b)}.flag.green{background:var(--green-bg);border-color:var(--green-b)}.flag.red{background:var(--red-bg);border-color:var(--red-b)}
+.fi{font-size:13px;flex-shrink:0}.ft{font-size:12.5px;line-height:1.55}.ft strong{font-weight:600}
+.flag.amber .ft{color:var(--amber)}.flag.blue .ft{color:var(--blue-acc)}.flag.green .ft{color:var(--green)}.flag.red .ft{color:var(--red)}
+.src{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.6;border-top:1px solid var(--ink-20);padding-top:10px;margin-top:14px}
+.disc{font-size:11px;color:var(--ink-60);font-style:italic;line-height:1.5;padding:12px 0 0;border-top:1px solid var(--ink-20);margin-top:8px}
+.related{background:var(--ink-10);border-top:2px solid var(--ink-20);padding:18px 24px}
+.rl{font-size:12px;font-weight:600;color:var(--coral);border:1px solid var(--coral-100);background:var(--white);padding:6px 12px;display:inline-block;margin:4px 4px 0 0}
+@media(max-width:640px){.fg2,.fg3,.hero4{grid-template-columns:1fr 1fr}}
+/* === category nav bar === */
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;align-items:center;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){.cat-nav-inner{padding:0 8px}.cat-nav a{padding:9px 10px;font-size:11px}}
+/* === end category nav bar === */
+
+/* === canonical nav === */
+nav{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:14px 28px!important;border-bottom:1px solid var(--ink-20,#D9DBDE)!important;background:var(--paper,#FAFAF7)!important;position:sticky!important;top:0!important;z-index:100!important}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none!important}
+.nav-cta{display:inline-block!important;background:var(--coral,#F65F5A)!important;color:#fff!important;padding:9px 20px!important;font-family:var(--font-sans,'Inter',sans-serif)!important;font-weight:600!important;font-size:13px!important;text-decoration:none!important;letter-spacing:.03em!important;white-space:nowrap!important;flex-shrink:0!important}
+.nav-cta:hover{opacity:.88!important}
+.cat-nav{background:var(--ink,#111111);border-bottom:1px solid rgba(255,255,255,.08);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-nav-inner{display:flex;min-width:max-content;padding:0 16px}
+.cat-nav a{display:inline-block;padding:10px 14px;font-family:var(--font-sans,'Inter',sans-serif);font-size:11.5px;font-weight:500;color:rgba(255,255,255,.55);text-decoration:none;letter-spacing:.04em;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cat-nav a:hover,.cat-nav a.active{color:#fff!important;border-bottom-color:var(--coral,#F65F5A);text-decoration:none}
+@media(max-width:480px){nav{padding:12px 16px!important}.nav-cta{padding:8px 14px!important;font-size:12px!important}}
+/* === end canonical nav === */
+@media print { button { display: none !important; } [style*="border-top:2px solid #F65F5A"] { display: none !important; } .cat-nav { display: none !important; } nav { display: none !important; } } @media (max-width: 640px) { [style*="display:flex;gap:10px"] button { width: 100%; } }@media print{button{display:none!important}[style*="border-top:2px solid #F65F5A"]{display:none!important}.cat-nav{display:none!important}nav{display:none!important}}@media(max-width:640px){[style*="display:flex;gap:10px"]button{width:100%}}</style>
+<style>
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;border-bottom:1px solid var(--ink-20,#D9DBDE);background:var(--paper,#FAFAF7);position:sticky;top:0;z-index:100}
+.brand{display:flex;align-items:center;text-decoration:none;color:var(--ink,#111111)}
+.wm{font-family:var(--font-display,'Oswald',sans-serif);font-weight:500;font-size:17px;letter-spacing:.05em;text-transform:uppercase;line-height:1.1;color:var(--ink,#111111)}
+.wm small{display:block;font-family:var(--font-sans,'Inter',sans-serif);font-weight:400;font-size:10px;color:var(--coral,#F65F5A);letter-spacing:.1em;margin-top:3px;text-transform:none}
+.nav-cta{background:var(--coral,#F65F5A);color:#fff!important;padding:9px 20px;font-family:var(--font-sans,'Inter',sans-serif);font-weight:600;font-size:13px;text-decoration:none!important;letter-spacing:.03em;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{opacity:.88}
+@media(max-width:480px){nav{padding:12px 16px}.nav-cta{padding:8px 14px;font-size:12px}}
 </style>
-  <link rel="canonical" href="https://cpavalidated.com/child-tax-credit-calc.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Child Tax Credit Calculator 2026-2030 | CPA Validated">
+  <meta property="og:description" content="Calculate the Child Tax Credit, credit for other dependents and refundable Additional Child Tax Credit for tax years 2026-2030. Phase-out, SSN rule, Schedule 8812. CPA-validated. IRC 24.">
+  <meta property="og:url" content="https://cpavalidated.com/child-tax-credit-calc.html">
+  <meta property="og:site_name" content="CPA Validated">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Child Tax Credit Calculator 2026-2030 | CPA Validated">
+  <meta name="twitter:description" content="Calculate the Child Tax Credit, credit for other dependents and refundable Additional Child Tax Credit for tax years 2026-2030. Phase-out, SSN rule, Schedule 8812. CPA-validated. IRC 24.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Child Tax Credit Calculator 2026-2030 | CPA Validated","url":"https://cpavalidated.com/child-tax-credit-calc.html","description":"Calculate the Child Tax Credit, credit for other dependents and refundable Additional Child Tax Credit for tax years 2026-2030. Phase-out, SSN rule, Schedule 8812. CPA-validated. IRC 24.","applicationCategory":"FinanceApplication","isAccessibleForFree":true,"author":{"@type":"Person","name":"tk.cpa","url":"https://tk.cpa"},"provider":{"@type":"Organization","name":"CPA Validated","url":"https://cpavalidated.com"}}
+  </script>
+<style id="cpav-calc-extra">
+.proj-badge{display:inline-block;background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber-b);font-size:11px;font-weight:700;padding:4px 10px;letter-spacing:.03em;margin:0 8px 8px 0}
+.pub-badge{display:inline-block;background:var(--green-bg);color:var(--green);border:1px solid var(--green-b);font-size:11px;font-weight:700;padding:4px 10px;letter-spacing:.03em;margin:0 8px 8px 0}
+.lv{font-size:12px;color:var(--ink-60);margin:0 0 14px;line-height:1.6}
+.yrrow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.asm{background:var(--white);border:1px solid var(--ink-20);margin-bottom:18px}
+.asm summary{cursor:pointer;padding:12px 20px;font-size:13px;font-weight:600;color:var(--ink)}
+.asm-body{padding:0 20px 16px}
+.atab-wrap{overflow-x:auto}
+.atab{width:100%;border-collapse:collapse;font-size:12px;line-height:1.5}
+.atab th{text-align:left;padding:7px 10px;background:var(--ink-10);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-60)}
+.atab td{text-align:left;padding:7px 10px;border-top:1px solid var(--ink-20);vertical-align:top}
+.st-s{color:var(--green);font-weight:600}
+.st-i{color:var(--blue-acc);font-weight:600}
+.st-p{color:var(--amber);font-weight:600}
+.proj-note{font-size:11.5px;color:var(--ink-60);line-height:1.6;margin-top:10px}
+.inwarn{font-size:12px;color:var(--red);margin:0 0 10px}
+.chk{display:flex;align-items:center;gap:8px;font-size:13px}
+@media(max-width:480px){.fg2,.fg3,.yrrow{grid-template-columns:1fr}.hero4{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
-
-<div class="ph">
-<div class="phi">
-<h1>Child Tax Credit Calculator</h1>
-<p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:10px">Calculate your 2026 Child Tax Credit (CTC) and Additional CTC refund.</p>
+<nav>
+  <a href="index.html" class="brand">
+    <div class="wm">CPA Validated<small style="text-transform:none!important">a tk.cpa resource</small></div>
+  </a>
+  <div style="display:flex;align-items:center;gap:20px">
+    <a href="search.html" aria-label="Search" title="Search" style="display:flex;align-items:center;color:#5E6166;text-decoration:none;padding:4px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></a>
+    <a href="about.html" style="font-family:Inter,-apple-system,sans-serif;font-size:13px;font-weight:500;color:#5E6166;text-decoration:none;white-space:nowrap">Mission</a>
+    <a href="https://tk.cpa" target="_blank" rel="noopener" class="nav-cta">tk.cpa</a>
+  </div>
+</nav>
+<div class="cat-nav" role="navigation" aria-label="Topics">
+  <div class="cat-nav-inner">
+    <a href="individual-tax.html">Individual Tax</a>
+    <a href="business-entity.html">Business &amp; Entity</a>
+    <a href="real-estate-tax.html">Real Estate</a>
+    <a href="international-tax.html">International Tax</a>
+    <a href="retirement-savings.html">Retirement &amp; Savings</a>
+    <a href="investments-capital.html">Investments &amp; Capital</a>
+    <a href="estate-gifts.html">Estate &amp; Gifts</a>
+    <a href="state-compliance.html">State &amp; Compliance</a>
+  </div>
 </div>
-</div>
+<div class="ph"><div class="phi">
+  <h1>Child Tax Credit Calculator 2026-2030</h1>
+  <div class="sub">Tax years 2026-2030. Child Tax Credit, credit for other dependents and the refundable Additional Child Tax Credit. Phase-out, tax limitation, SSN rule. Schedule 8812.</div>
+  <div class="badges"><span class="badge">IRC 24</span><span class="badge">IRC 24(d) - ACTC</span><span class="badge">IRC 24(h) - post-2017 rules</span><span class="badge">Schedule 8812</span></div>
+</div></div>
+<div class="back"><a href="index.html">← cpavalidated.com</a></div>
+<div class="wrap">
 
-<div class="container">
 <div class="card">
-<div class="ch"><h2>Children & Income</h2></div>
-<div class="cb">
-<div class="fg2">
-<div class="f1">
-<label>Number of Qualifying Children (under 17)</label>
-<input type="number" id="num_children" class="fc" value="1" min="0" max="20" oninput="calculate()">
-</div>
-<div class="f1">
-<label>Modified AGI for 2026</label>
-<input type="number" id="magi" class="fc" placeholder="0" min="0" oninput="calculate()">
-</div>
-</div>
-</div>
+  <div class="ch"><div class="sb">1</div><h2>Tax Year, Filing Status &amp; Children</h2></div>
+  <div class="cb">
+    <div class="yrrow">
+      <div class="f1"><label for="yr">Tax Year</label>
+        <select class="fc" id="yr" onchange="calc()">
+          <option value="2026" selected>2026 (IRS-published)</option>
+          <option value="2027">2027 (projected)</option>
+          <option value="2028">2028 (projected)</option>
+          <option value="2029">2029 (projected)</option>
+          <option value="2030">2030 (projected)</option>
+        </select>
+        <div class="hint">2026 credit amount and refundable limit are from Rev. Proc. 2025-32 section 4.05. 2027-2030 indexed amounts are projections.</div>
+      </div>
+      <div class="f1"><label for="infl">Assumed Annual Inflation for Projected Years (%)</label>
+        <input type="number" class="fc" id="infl" value="2.5" step="0.1" min="0" max="15" oninput="calc()">
+        <div class="hint">Used only for 2027-2030. Credit amount indexed under IRC 24(i)(2) (base year 2024); refundable limit under IRC 24(i)(1) (base year 2017); both rounded down to a multiple of $100 (IRC 24(i)(3)).</div>
+      </div>
+    </div>
+    <div class="fg3">
+      <div class="f1"><label for="fs">Filing Status</label>
+        <select class="fc" id="fs" onchange="calc()">
+          <option value="single">Single</option>
+          <option value="hoh">Head of Household</option>
+          <option value="mfj" selected>Married Filing Jointly / Surviving Spouse</option>
+          <option value="mfs">Married Filing Separately</option>
+        </select>
+        <div class="hint">Phase-out threshold: $400,000 joint, $200,000 all other (IRC 24(h)(3)). Not indexed for inflation.</div>
+      </div>
+      <div class="f1"><label for="kids">Qualifying Children Under 17 With the Required SSN</label>
+        <input type="number" class="fc" id="kids" value="2" min="0" max="30" step="1" oninput="calc()">
+        <div class="hint">Schedule 8812 line 4. Age under 17 at year end (IRC 24(c)(1)); the child and at least one taxpayer must have an SSN issued before the return due date (IRC 24(h)(7)).</div>
+      </div>
+      <div class="f1"><label for="odc">Other Dependents (Credit for Other Dependents)</label>
+        <input type="number" class="fc" id="odc" value="0" min="0" max="30" step="1" oninput="calc()">
+        <div class="hint">Schedule 8812 line 6: dependents age 17 or older, and qualifying children who lack the required SSN but have an ITIN or ATIN. $500 each, not indexed (IRC 24(h)(4)).</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
-<div class="ch"><h2>CTC Calculation</h2></div>
-<div class="cb">
-<div id="calc_result"></div>
+  <div class="ch"><div class="sb">2</div><h2>Income &amp; Tax</h2></div>
+  <div class="cb">
+    <div class="fg3">
+      <div class="f1"><label for="magi">Modified AGI ($)</label>
+        <input type="number" class="fc" id="magi" value="150000" min="0" oninput="calc()">
+        <div class="hint">Schedule 8812 line 3: Form 1040 line 11b plus excluded Puerto Rico income, Form 2555 exclusions and Form 4563 exclusions. IRC 24(b)(1).</div>
+      </div>
+      <div class="f1"><label for="earned">Earned Income ($)</label>
+        <input type="number" class="fc" id="earned" value="150000" min="0" oninput="calc()">
+        <div class="hint">Schedule 8812 line 18a (wages, net self-employment earnings and other earned income, plus nontaxable combat pay on line 18b). IRC 24(d)(1)(B)(i).</div>
+      </div>
+      <div class="f1"><label for="taxlim">Tax Available to Offset the Credit ($)</label>
+        <input type="number" class="fc" id="taxlim" value="15000" min="0" oninput="calc()">
+        <div class="hint">Credit Limit Worksheet A, line 3 (Schedule 8812 line 13): Form 1040 line 18 less Schedule 3 lines 1-4, 5b, 6d, 6f, 6l and 6m. Default is an example; enter your own figure.</div>
+      </div>
+    </div>
+    <div class="fg2">
+      <div class="f1"><label for="payroll">Part II-B Line 23: Payroll Taxes ($)</label>
+        <input type="number" class="fc" id="payroll" value="0" min="0" oninput="calc()">
+        <div class="hint">Only used with 3 or more qualifying children. Social security and Medicare tax withheld (W-2 boxes 4 and 6, both spouses) plus Schedule 1 line 15, Schedule 2 lines 5, 6 and 13. IRC 24(d)(1)(B)(ii), (d)(2).</div>
+      </div>
+      <div class="f1"><label for="eic">Part II-B Line 24: EIC and Excess Social Security Credit ($)</label>
+        <input type="number" class="fc" id="eic" value="0" min="0" oninput="calc()">
+        <div class="hint">Form 1040 line 27a plus Schedule 3 line 11. Used only with 3 or more qualifying children.</div>
+      </div>
+    </div>
+    <div class="proj-note">Not modeled: Form 2555 filers (no ACTC), Puerto Rico bona fide residents, claims disallowed under IRC 24(g), and advance payments under IRC 7527A (none in effect).</div>
+  </div>
 </div>
+
+<div class="card">
+  <div class="ch"><div class="sb">3</div><h2>Credit Results</h2></div>
+  <div class="cb" id="res"><div style="text-align:center;color:var(--ink-60);padding:20px">Enter your information above.</div></div>
 </div>
+<div class="lv">Last verified: October 29, 2026. Figures checked against IRC 24 (Cornell LII), Rev. Proc. 2025-32 sections 2.03 and 4.05, and the 2025 Schedule 8812 and Instructions.</div>
 </div>
+
+<div class="related"><div style="max-width:920px;margin:0 auto">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-60)">Related Tools</div>
+  <a href="child-tax-credit-guide.html" class="rl">Child Tax Credit Guide</a>
+  <a href="eitc-guide.html" class="rl">EITC Guide</a>
+  <a href="tax-estimator.html" class="rl">Federal Tax Estimator</a>
+  <a href="index.html" class="rl">All Tools</a>
+</div></div>
 
 <script>
-function calculate() {
-  const children = parseInt(document.getElementById('num_children').value) || 0;
-  const magi = parseFloat(document.getElementById('magi').value) || 0;
-  
-  // 2026: $2,200 per child (OBBBA made permanent and increased from $2,000), phases out at $400k MFJ / $200k single
-  const ctc_per_child = 2200;
-  const phaseout_start = 400000; // Assume MFJ
-  const phaseout_rate = 50;
-  
-  let base_ctc = children * ctc_per_child;
-  let phaseout = Math.max(0, (magi - phaseout_start) / 1000) * phaseout_rate;
-  let ctc = Math.max(0, base_ctc - phaseout);
-  
-  // Additional CTC (refundable portion): 15% of earned income over $2,500
-  const earned_income = magi; // Assume all income is earned
-  let additional_ctc = Math.max(0, (earned_income - 2500) * 0.15);
-  additional_ctc = Math.min(additional_ctc, 1700 * children); // Capped
-  
-  const total_credit = ctc + additional_ctc;
-  
-  let html = `
-    <div style="font-size:13px;line-height:1.8">
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10)">
-        <span>${children} Child(ren) × $2,200</span>
-        <strong>$${base_ctc.toLocaleString()}</strong>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10);color:var(--ink-80)">
-        <span>Phase-out reduction (if applicable)</span>
-        <strong>-$${Math.round(phaseout).toLocaleString()}</strong>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--ink-10);color:var(--green);font-weight:700">
-        <span>Child Tax Credit</span>
-        <strong>$${Math.round(ctc).toLocaleString()}</strong>
-      </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;color:var(--green);font-weight:700">
-        <span>Additional CTC (Refundable)</span>
-        <strong>$${Math.round(additional_ctc).toLocaleString()}</strong>
-      </div>
-    </div>
-    <div class="result-box">
-      <h3>Total Child Tax Credit</h3>
-      <div class="result-num">$${Math.round(total_credit).toLocaleString()}</div>
-    </div>
-  `;
-  
-  document.getElementById('calc_result').innerHTML = html;
-}
+function fmt(n){const a=Math.abs(Math.round(n));return(n<0?'-':'')+'$'+a.toLocaleString('en-US');}
+function flag(t,i,h){return`<div class="flag ${t}"><div class="fi">${i}</div><div class="ft">${h}</div></div>`;}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
 
-calculate();
+/* Indexed amounts: IRC 24(i). Credit amount: $2,200 x COLA with base year 2024 (applies after 2025), refundable limit: $1,400 x COLA with base
+   year 2017 (applies after 2024); the INCREASE is rounded down to a multiple of $100 (IRC 24(i)(3)).
+   2026 values are published (Rev. Proc. 2025-32 sec. 4.05). F17 is the implied 2026 factor for a 2017 base, solved from published 2026 amounts
+   (it reproduces $1,700). For the 2024 base, 2027+ uses (1+g)^(year-2025). */
+var F17=1.281224, TY0=2026;
+function ctcParams(y,g){
+  if(y===TY0)return {year:y,proj:false,g:g,amt:2200,ref:1700};
+  var amt=2200+Math.floor(2200*(Math.pow(1+g,y-2025)-1)/100)*100;
+  var ref=1400+Math.floor(1400*(F17*Math.pow(1+g,y-TY0)-1)/100)*100;
+  return {year:y,proj:true,g:g,amt:amt,ref:ref};
+}
+function ctcCompute(P,fs,x){
+  var R={};
+  R.l3=x.magi;R.l5=x.kids*P.amt;R.l7=x.odc*500;R.l8=R.l5+R.l7;
+  R.l9=fs==='mfj'?400000:200000;
+  var d=R.l3-R.l9;
+  R.l10=d<=0?0:Math.ceil(d/1000)*1000;
+  R.l11=R.l10*0.05;
+  R.l12=R.l8>R.l11?R.l8-R.l11:0;
+  R.stop=!(R.l8>R.l11);
+  R.l13=x.taxlim;R.l14=Math.min(R.l12,R.l13);
+  R.l16a=R.l12-R.l14;R.l16b=x.kids*P.ref;R.l17=Math.min(R.l16a,R.l16b);
+  R.l19=Math.max(0,x.earned-2500);R.l20=R.l19*0.15;
+  R.three=x.kids>=3;
+  R.partIIB=false;R.l23=0;R.l24=0;R.l25=0;R.l26=0;
+  if(R.l17<=0){R.actc=0;}
+  else if(!R.three){R.actc=Math.min(R.l17,R.l20);}
+  else if(R.l20>=R.l17){R.actc=R.l17;}
+  else{R.partIIB=true;R.l23=x.payroll;R.l24=x.eic;R.l25=Math.max(0,R.l23-R.l24);R.l26=Math.max(R.l20,R.l25);R.actc=Math.min(R.l17,R.l26);}
+  R.ctc=R.l14;R.total=R.l14+R.actc;
+  R.maxCredit=R.l8;
+  return R;
+}
+var W=[];
+function rd(id,label,int,mx){
+  var e=document.getElementById(id);var v=parseFloat(e&&e.value);
+  if(!isFinite(v))v=0;
+  if(v<0){W.push(label);v=0;}
+  if(int)v=Math.floor(v);
+  if(mx!==undefined&&v>mx){W.push(label+' (capped at '+mx+')');v=mx;}
+  if(v>1e11){W.push(label+' (capped at $100 billion)');v=1e11;}
+  return v;
+}
+function calc(){
+  W=[];
+  var y=parseInt(document.getElementById('yr').value,10);
+  if(!(y>=2026&&y<=2030))y=2026;
+  var gp=parseFloat(document.getElementById('infl').value);
+  if(!isFinite(gp)||gp<0){gp=0;W.push('Inflation assumption');}
+  if(gp>15){gp=15;W.push('Inflation assumption (capped at 15%)');}
+  var g=gp/100;
+  var fs=document.getElementById('fs').value;
+  if(!/^(single|hoh|mfj|mfs)$/.test(fs))fs='mfj';
+  var x={kids:rd('kids','Qualifying children',true,30),odc:rd('odc','Other dependents',true,30),magi:rd('magi','Modified AGI'),earned:rd('earned','Earned income'),
+    taxlim:rd('taxlim','Tax available'),payroll:rd('payroll','Payroll taxes'),eic:rd('eic','EIC and excess social security credit')};
+  var P=ctcParams(y,g),R=ctcCompute(P,fs,x);
+  var fsName={single:'Single',hoh:'Head of Household',mfj:'Married Filing Jointly / Surviving Spouse',mfs:'Married Filing Separately'}[fs];
+  var h='';
+  if(W.length)h+=`<div class="inwarn">Input adjusted: negative or invalid values for ${esc(W.join(', '))} were reset.</div>`;
+  h+=P.proj?`<span class="proj-badge">Projected - estimate, not IRS-published</span>`:`<span class="pub-badge">${y} IRS-published figures (Rev. Proc. 2025-32)</span>`;
+  h+=`<div class="hero4">
+    <div class="h4"><div class="h4l">Before Phase-Out</div><div class="h4v coral">${fmt(R.l8)}</div><div class="h4s">Line 8</div></div>
+    <div class="h4"><div class="h4l">Nonrefundable Credit</div><div class="h4v ${R.l14>0?'green':''}">${fmt(R.l14)}</div><div class="h4s">CTC + ODC (line 14)</div></div>
+    <div class="h4"><div class="h4l">Refundable ACTC</div><div class="h4v ${R.actc>0?'green':''}">${fmt(R.actc)}</div><div class="h4s">Line 27</div></div>
+    <div class="h4"><div class="h4l">Total Credits</div><div class="h4v">${fmt(R.total)}</div><div class="h4s">Line 14 + line 27</div></div>
+  </div>`;
+  var s=(l,v,c)=>`<div class="srow"><span class="sl">${l}</span><span class="sv ${c||''}">${v}</span></div>`;
+  h+=`<div class="sum-box"><div class="sum-title">Schedule 8812 - ${y} - ${fsName} (line numbers per the 2025 form)</div>`;
+  h+=s('Line 3: modified AGI',fmt(R.l3));
+  h+=s('Line 5: '+x.kids+' qualifying child(ren) x '+fmt(P.amt),fmt(R.l5));
+  h+=s('Line 7: '+x.odc+' other dependent(s) x $500',fmt(R.l7));
+  h+=s('Line 8: lines 5 + 7',fmt(R.l8));
+  h+=s('Line 9: phase-out threshold ('+(fs==='mfj'?'joint':'all other statuses')+')',fmt(R.l9));
+  h+=s('Line 10: line 3 - line 9, rounded up to the next $1,000'+(R.l3-R.l9>0?' ('+fmt(R.l3-R.l9)+')':''),fmt(R.l10),R.l10>0?'amber':'');
+  h+=s('Line 11: 5% x line 10 ($50 per $1,000)',fmt(R.l11),R.l11>0?'amber':'');
+  if(R.stop){
+    h+=s('Line 12: line 8 does not exceed line 11 - no credit',fmt(0),'red');
+  }else{
+    h+=s('Line 12: line 8 - line 11',fmt(R.l12));
+    h+=s('Line 13: tax available (Credit Limit Worksheet A)',fmt(R.l13));
+    h+=s('Line 14: smaller of lines 12 and 13 = CTC + ODC',fmt(R.l14),'green');
+    h+=s('Line 16a: line 12 - line 14',fmt(R.l16a));
+    h+=s('Line 16b: '+x.kids+' x '+fmt(P.ref)+' refundable limit per child',fmt(R.l16b));
+    h+=s('Line 17: smaller of lines 16a and 16b',fmt(R.l17));
+    h+=s('Line 19: earned income - $2,500',fmt(R.l19));
+    h+=s('Line 20: 15% x line 19',fmt(R.l20));
+    if(R.partIIB){
+      h+=s('Line 23: payroll taxes',fmt(R.l23));
+      h+=s('Line 24: EIC and excess social security credit',fmt(R.l24));
+      h+=s('Line 25: line 23 - line 24 (not below 0)',fmt(R.l25));
+      h+=s('Line 26: larger of lines 20 and 25',fmt(R.l26));
+    }
+    h+=s('Line 27: ACTC = '+(R.partIIB?'smaller of lines 17 and 26':R.three?'line 17 (line 20 is at least line 17)':'smaller of lines 17 and 20'),fmt(R.actc),'green');
+  }
+  h+=s('<strong>Total CTC + ODC + ACTC</strong>',fmt(R.total),'coral');
+  h+=`</div>`;
+  if(R.l11>0&&!R.stop)h+=flag('amber','!',`<strong>Phase-out applies.</strong> Modified AGI of ${fmt(R.l3)} exceeds ${fmt(R.l9)}. The credit is reduced by $50 for each $1,000 (or fraction) of excess: ${fmt(R.l10)} x 5% = ${fmt(R.l11)} (IRC 24(b)(1), 24(h)(3)). The threshold is not indexed.`);
+  if(R.stop)h+=flag('red','!',`<strong>Credit fully phased out.</strong> The phase-out reduction of ${fmt(R.l11)} is at least the maximum credit of ${fmt(R.l8)}.`);
+  if(!R.stop&&R.l12>R.l14)h+=flag('blue','i',`<strong>Tax limitation.</strong> The nonrefundable credit is limited to the tax available (${fmt(R.l13)}). The unused ${fmt(R.l16a)} can produce the refundable ACTC, up to ${fmt(P.ref)} per qualifying child and 15% of earned income over $2,500 (IRC 24(d)).`);
+  if(x.kids===0&&x.odc===0)h+=flag('blue','i','Enter at least one qualifying child or other dependent to compute a credit.');
+  h+=flag('blue','i','<strong>SSN rule.</strong> A qualifying child must have a valid SSN, and at least one taxpayer on the return must have a valid SSN, issued before the return due date (IRC 24(h)(7)). A child without the required SSN can qualify only for the $500 credit for other dependents if a TIN is held (enter that child under Other Dependents).');
+  if(P.proj)h+=flag('amber','!',`<strong>Projected year.</strong> The ${y} credit amount (${fmt(P.amt)}) and refundable limit (${fmt(P.ref)}) are estimates using ${gp}% annual inflation, not IRS-published figures. The $500 other-dependent credit, the $400,000/$200,000 thresholds, the $50 per $1,000 reduction and the $2,500 / 15% earned income rule are fixed by statute and not indexed.`);
+  else h+=flag('blue','i','<strong>2026 figures.</strong> Maximum credit $2,200 per qualifying child and refundable limit $1,700 per child (Rev. Proc. 2025-32 section 4.05). P.L. 119-21 section 70104 made the $2,200 credit and the related expanded rules permanent (Rev. Proc. 2025-32 section 2.03).');
+  var st=(c)=>c==='s'?'<span class="st-s">Statutory</span>':c==='i'?'<span class="st-i">IRS-published</span>':c==='n'?'<span class="st-i">User input</span>':'<span class="st-p">Projected</span>';
+  var idx=P.proj?'p':'i';
+  var rows2=[
+    ['Annual inflation assumption',P.proj?gp+'%':'not used for 2026','n','User input; default 2.5%; applies to 2027-2030 only'],
+    ['Credit per qualifying child',fmt(P.amt),idx,'IRC 24(h)(2), 24(i)(2) (base year 2024), 24(i)(3); Rev. Proc. 2025-32 sec. 4.05(1). Increase rounded down to a multiple of $100.'],
+    ['Refundable limit per child (ACTC)',fmt(P.ref),idx,'IRC 24(h)(5), 24(i)(1) (base year 2017), 24(i)(3); Rev. Proc. 2025-32 sec. 4.05(2)'],
+    ['Credit for other dependents','$500','s','IRC 24(h)(4)(A); not indexed'],
+    ['Phase-out threshold ('+fsName+')',fmt(R.l9),'s','IRC 24(h)(3): $400,000 joint, $200,000 other; not indexed'],
+    ['Phase-out reduction','$50 per $1,000 or fraction','s','IRC 24(b)(1)'],
+    ['Earned income floor / ACTC rate','$2,500 / 15%','s','IRC 24(d)(1)(B)(i), 24(h)(6)'],
+    ['Alternative ACTC test','3 or more qualifying children: payroll tax method','s','IRC 24(d)(1)(B)(ii), 24(d)(2)']
+  ];
+  var tb='<div class="atab-wrap"><table class="atab"><thead><tr><th>Parameter</th><th>Value for '+y+'</th><th>Status</th><th>Citation</th></tr></thead><tbody>';
+  rows2.forEach(function(r){tb+='<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+st(r[2])+'</td><td>'+r[3]+'</td></tr>';});
+  tb+='</tbody></table></div>';
+  h+=`<details class="asm"><summary>Assumptions &amp; sources</summary><div class="asm-body">${tb}<div class="proj-note">2026 indexed amounts are IRS-published (Rev. Proc. 2025-32). For 2027-2030 the credit amount is projected as $2,200 x (1 + inflation)^(year - 2025) and the refundable limit as $1,400 x the 2026 factor x (1 + inflation)^(years after 2026); each increase is rounded down to a multiple of $100. Projected figures are estimates and will differ from the IRS-published amounts.</div></div></details>`;
+  h+=`<div class="src">IRC 24(a), (b), (c) (credit, phase-out, qualifying child); 24(d) (refundable portion); 24(h) (increased credit after 2017, made permanent by P.L. 119-21 section 70104); 24(h)(4) (other dependents); 24(h)(7) (SSN requirement); 24(i) (inflation adjustments); Schedule 8812 (Form 1040) and Instructions (2025); Rev. Proc. 2025-32 sections 2.03, 4.05. Projected years are estimates, not IRS-published.</div>`;
+  h+=`<div class="disc">Projected figures (2027-2030) are estimates based on the inflation assumption above and are not IRS-published amounts. Results are educational estimates only and do not replace Schedule 8812 or professional advice.</div>`;
+  document.getElementById('res').innerHTML=h;
+}
+calc();
 </script>
 
-<div style="margin-top:48px;border-top:1px solid #D9DBDE;padding:24px 0 0">
-<div style="background:#111111;border-top:2px solid #F65F5A;padding:20px 24px;margin:20px -24px 0">
-<div style="max-width:800px;margin:0 auto">
-<div style="font-size:10px;color:rgba(255,255,255,.75);line-height:1.7">Educational estimate only. Consult a tax professional for exact calculation. <a href="/disclaimer.html">Full disclaimer</a></div>
-</div>
-</div>
-</div>
 
+
+<script>
+function doPrint(){window.print();}
+function doShare(){var url=location.href;var title=document.title.replace(' | CPA Validated','');if(navigator.share){navigator.share({title:title,url:url}).catch(function(){});return;}showShareModal(url,title);}
+function showShareModal(url,title){if(document.getElementById('sv-ol'))return;var enc=encodeURIComponent(url);var et=encodeURIComponent(title);var links=[['Facebook','#1877F2','https://www.facebook.com/sharer/sharer.php?u='+enc],['Telegram','#29A8E0','https://t.me/share/url?url='+enc+'&text='+et],['X / Twitter','#e0e0e0','https://twitter.com/intent/tweet?url='+enc+'&text='+et],['LinkedIn','#0A66C2','https://www.linkedin.com/sharing/share-offsite/?url='+enc],['WhatsApp','#25D366','https://wa.me/?text='+et+'%0A'+enc]];var ol=document.createElement('div');ol.id='sv-ol';ol.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.78);z-index:9999;display:flex;align-items:flex-end;justify-content:center';var h='<div style="background:#111111;width:100%;max-width:520px"><div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px 12px;border-bottom:2px solid #F65F5A"><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#fff">Share</span><button id="sv-x" style="background:none;border:none;color:rgba(255,255,255,.5);font-size:28px;cursor:pointer;line-height:1;padding:0 4px">&times;<\/button><\/div><div style="padding:14px 20px 20px;display:grid;grid-template-columns:1fr 1fr;gap:10px">';links.forEach(function(l){h+='<a href="'+l[2]+'" target="_blank" rel="noopener" style="display:block;padding:12px 14px;border-left:3px solid '+l[1]+';background:rgba(255,255,255,.07);color:#fff;text-decoration:none;font-size:13px;font-weight:600">'+l[0]+'<\/a>';});h+='<button id="sv-cp" style="padding:12px 14px;border:none;border-left:3px solid #F65F5A;background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:left">Copy Link<\/button><\/div><\/div>';ol.innerHTML=h;document.body.appendChild(ol);document.getElementById('sv-x').onclick=function(){ol.remove();};ol.onclick=function(e){if(e.target===ol)ol.remove();};document.getElementById('sv-cp').onclick=function(){var b=this;try{navigator.clipboard.writeText(url).then(function(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);});}catch(e2){var t=document.createElement('textarea');t.value=url;document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Link';},2200);}};}</script>
 
 <!-- START UNIFIED FOOTER -->
 <div style="margin-top:48px;border-top:1px solid #D9DBDE;padding-top:24px">
