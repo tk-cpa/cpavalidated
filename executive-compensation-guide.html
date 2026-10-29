@@ -142,12 +142,12 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 <table class="key-table">
   <tr><th>Event</th><th>Regular Tax</th><th>AMT</th></tr>
   <tr><td><strong>Grant</strong></td><td>No tax</td><td>No AMT adjustment</td></tr>
-  <tr><td><strong>Exercise</strong></td><td>No regular income if ISO requirements met</td><td>Spread (FMV - exercise price) is an AMT preference item under IRC §56(b)(3)</td></tr>
+  <tr><td><strong>Exercise</strong></td><td>No regular income if ISO requirements met</td><td>Spread (FMV - exercise price) is an AMT adjustment under IRC §56(b)(3)</td></tr>
   <tr><td><strong>Sale - qualifying disposition</strong><br>(held 2+ years from grant, 1+ year from exercise)</td><td>Entire gain (sale price - exercise price) is long-term capital gain</td><td>Gain is capital gain for AMT purposes; AMT credit may be available</td></tr>
-  <tr><td><strong>Sale - disqualifying disposition</strong><br>(sold before holding period met)</td><td>Ordinary income on spread at exercise (FMV at exercise - exercise price); capital gain on additional appreciation</td><td>No additional AMT adjustment since ordinary income already recognized</td></tr>
+  <tr><td><strong>Sale - disqualifying disposition</strong><br>(sold before holding period met)</td><td>Ordinary income on spread at exercise (FMV at exercise - exercise price), limited to the gain realized if the sale would otherwise recognize a loss (IRC §422(c)(2)); capital gain on additional appreciation</td><td>No additional AMT adjustment since ordinary income already recognized</td></tr>
 </table>
 
-<div class="red-box"><strong>The ISO AMT trap.</strong> Exercising ISOs triggers AMT preference income equal to the spread (FMV minus exercise price) even though no regular income is recognized. In a high-appreciation stock, exercising a large ISO grant can trigger AMT in the hundreds of thousands of dollars - tax owed without cash proceeds unless the stock is sold. This has bankrupted employees who exercised at peak values, held for the qualifying disposition period, and then saw the stock collapse before the AMT bill came due. Model the AMT exposure before exercising large ISO grants, especially in concentrated positions.</div>
+<div class="red-box"><strong>The ISO AMT trap.</strong> Exercising ISOs triggers an AMT adjustment equal to the spread (FMV minus exercise price) even though no regular income is recognized. In a high-appreciation stock, exercising a large ISO grant can trigger AMT in the hundreds of thousands of dollars - tax owed without cash proceeds unless the stock is sold. This has bankrupted employees who exercised at peak values, held for the qualifying disposition period, and then saw the stock collapse before the AMT bill came due. Model the AMT exposure before exercising large ISO grants, especially in concentrated positions.</div>
 
 <h2>Non-Qualified Stock Options (NSOs): IRC §83</h2>
 
@@ -204,14 +204,14 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="callout">
   <div class="callout-label">The §83(b) Math - Why Early-Stage Employees Make This Election</div>
-  <p>Startup employee receives 100,000 shares of restricted stock with 4-year vesting. At grant, shares are worth $0.01 each ($1,000 total). Without §83(b): income is recognized as shares vest - when 25,000 shares vest in year 1 and the company is worth $5/share, the employee has $125,000 of ordinary income. With §83(b): employee elects to be taxed on $1,000 at grant. <strong>All future appreciation is long-term capital gain</strong> if held more than 1 year from grant. If the company IPOs at $20/share, the difference between ordinary income and capital gains treatment on $2M of appreciation is potentially $340,000+ in tax savings at the 37% vs. 23.8% rate differential.</p>
+  <p>Startup employee receives 100,000 shares of restricted stock with 4-year vesting. At grant, shares are worth $0.01 each ($1,000 total). Without §83(b): income is recognized as shares vest - when 25,000 shares vest in year 1 and the company is worth $5/share, the employee has $125,000 of ordinary income. With §83(b): employee elects to be taxed on $1,000 at grant. <strong>All future appreciation is long-term capital gain</strong> if held more than 1 year from grant. If the company IPOs at $20/share, the difference between ordinary income and capital gains treatment on $2M of appreciation is roughly $264,000 in tax savings at the 37% vs. 23.8% rate differential.</p>
 </div>
 
 <h3>§83(b) Election Requirements</h3>
 <ul style="padding-left:20px;margin-bottom:18px;font-size:15px;line-height:1.85;color:var(--ink-80)">
   <li>Must be filed within 30 days of the transfer of property - this deadline is absolute, no extensions</li>
   <li>Filed with the IRS Service Center where the taxpayer files their return</li>
-  <li>A copy must be attached to the taxpayer's income tax return for the year of transfer</li>
+  <li>No copy needs to be attached to the income tax return (one copy is filed with the IRS office under Treas. Reg. §1.83-2(c))</li>
   <li>A copy must be provided to the employer</li>
   <li>If the company fails (forfeiture): no loss deduction is available for the tax paid on the §83(b) income - the election cannot be revoked</li>
 </ul>
