@@ -211,10 +211,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <div class="flow-step">
   <div class="fs-num">Accumulation Distributions</div>
   <div class="fs-title">Throwback + Interest Charge</div>
-  <div class="fs-desc">Distributions in excess of current-year DNI are "accumulation distributions" - treated as if distributed in the prior years when the income was earned. The beneficiary pays tax at the highest ordinary income rate (37% for individuals) for each prior year the income was accumulated, plus an interest charge under IRC §668 compounding at the underpayment rate for each year. The interest charge is not deductible. Effective rates on old accumulated income can far exceed 37%.</div>
+  <div class="fs-desc">Distributions in excess of current-year DNI are "accumulation distributions" - treated as if distributed in the prior years when the income was earned. The beneficiary pays a partial tax under IRC §667(b), computed by adding the allocated amount to the beneficiary's own taxable income for the 3 of the 5 preceding years that remain after the highest and lowest years are dropped, plus an interest charge under IRC §668 compounding at the underpayment rate for each year. The interest charge is not deductible. Effective rates on old accumulated income can be well above the beneficiary's ordinary rates once the interest charge is added.</div>
 </div>
 
-<div class="note-box"><strong>No step-down for lower-income years.</strong> The throwback rules compute the additional tax by treating the accumulation distribution as if it had been distributed in each prior accumulation year. The tax is computed at the highest marginal rate in effect for that year - not at the beneficiary's actual rate. If the beneficiary had low income in those years, that doesn't reduce the throwback tax. The system is deliberately punitive to discourage offshore income accumulation.</div>
+<div class="note-box"><strong>The throwback tax is not computed at the top rate.</strong> The throwback rules compute a partial tax by adding the accumulation distribution (spread over the number of preceding trust years to which it is allocated) to the beneficiary's own taxable income for the 3 of the 5 preceding years that remain after the highest and lowest are dropped, and averaging the resulting increase in tax. A low-income beneficiary therefore has a lower partial tax, but the IRC §668 interest charge still applies and the system remains deliberately punitive to discourage offshore income accumulation.</div>
 
 <h3>UNI: Undistributed Net Income</h3>
 
@@ -222,7 +222,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <h2>Loans from Foreign Trusts: A Deemed Distribution</h2>
 
-<p>If a foreign trust makes a loan to a US grantor or US beneficiary, and the loan does not carry adequate interest (at least the applicable federal rate under IRC §1274(d)) and is not repaid within the year, the loan is treated as a distribution from the trust for income tax purposes. IRC §643(i). This creates an immediate income inclusion - potentially as an accumulation distribution if the trust has accumulated UNI - without the US person having actually received an economic distribution they can use to pay the tax.</p>
+<p>If a foreign trust makes a loan of cash or marketable securities to a US grantor or US beneficiary (or to a US person related to either), the loan is treated as a distribution from the trust for income tax purposes unless an exception provided by regulations or other IRS guidance (such as a qualified obligation) applies, and later repayment is disregarded. IRC §643(i)(1), (3). This creates an immediate income inclusion - potentially as an accumulation distribution if the trust has accumulated UNI - without the US person having actually received an economic distribution they can use to pay the tax.</p>
 
 <p>The same treatment applies if a US person uses trust assets as collateral for a personal loan. The collateral pledge is treated as a deemed distribution of the value of the collateral.</p>
 
@@ -234,18 +234,18 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <div class="pg-cell">
     <strong>Transfer to foreign trust:</strong> 35% of gross value of property transferred (IRC §6677(a))
     <br><br>
-    <strong>Distribution received:</strong> 35% of gross distribution amount (IRC §6677(b))
+    <strong>Distribution received:</strong> 35% of gross distribution amount (IRC §6677(a), (c)(3))
     <br><br>
     <strong>Minimum penalty:</strong> $10,000 per failure
     <br><br>
-    <strong>Continuation:</strong> $10,000 per 30-day period after IRS notice, up to the gross value of the trust property
+    <strong>Continuation:</strong> $10,000 per 30-day period (or fraction) during which the failure continues more than 90 days after IRS notice, up to the gross value of the trust property
   </div>
   <div class="pg-cell">
     <strong>Failure to file:</strong> 5% of gross value of trust assets treated as owned by US person (IRC §6677(b))
     <br><br>
     <strong>Minimum penalty:</strong> $10,000 per failure
     <br><br>
-    <strong>Continuation:</strong> $10,000 per 30-day period after IRS notice
+    <strong>Continuation:</strong> $10,000 per 30-day period (or fraction) during which the failure continues more than 90 days after IRS notice
     <br><br>
     <strong>Responsibility:</strong> If the trust does not file, the US grantor must file a substitute Form 3520-A and faces the penalties directly
   </div>
@@ -253,7 +253,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <h3>Reasonable Cause Exception</h3>
 
-<p>Penalties under IRC §6677 can be abated if the taxpayer demonstrates "reasonable cause" for the failure to file and that the failure was not due to willful neglect. Treas. Reg. §301.6677-1. The IRS has historically granted reasonable cause abatement in cases where the taxpayer was genuinely unaware of the reporting obligation (common for recent immigrants with pre-existing foreign trusts) and promptly came into compliance once informed. The IRS is less forgiving where the taxpayer was represented by counsel or where offshore structures appear to have been designed to minimize tax.</p>
+<p>Penalties under IRC §6677 can be abated if the taxpayer demonstrates "reasonable cause" for the failure to file and that the failure was not due to willful neglect. IRC §6677(d). The IRS has historically granted reasonable cause abatement in cases where the taxpayer was genuinely unaware of the reporting obligation (common for recent immigrants with pre-existing foreign trusts) and promptly came into compliance once informed. The IRS is less forgiving where the taxpayer was represented by counsel or where offshore structures appear to have been designed to minimize tax.</p>
 
 <h2>Streamlined Procedures for Prior Non-Compliance</h2>
 
@@ -273,7 +273,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §671-679 (grantor trust rules); IRC §679 (US person as grantor of foreign trust - US beneficiary test); IRC §643(i) (loans from trusts treated as distributions); IRC §661-662 (DNI and distribution deduction/inclusion rules); IRC §665-668 (throwback rules - accumulation distributions, UNI, interest charge); IRC §6048(a) (reporting of transfers to foreign trusts); IRC §6048(b) (Form 3520-A - annual report of foreign grantor trust); IRC §6048(c) (reporting of distributions from foreign trusts); IRC §6677 (penalties - 35% of transfer, 5% of trust assets, $10K minimum); IRC §6677(d) (reasonable cause exception); Treas. Reg. §1.679-1 through §1.679-5 (§679 regulations); Treas. Reg. §301.6677-1 (reasonable cause abatement); IRS Form 3520 and Instructions; IRS Form 3520-A and Instructions; Rev. Proc. 2014-55 (RRSP - for comparison, treaty-based deferral); IRS Streamlined Filing Compliance Procedures (irs.gov).</div>
+<div class="source-row">Authority: IRC §671-679 (grantor trust rules); IRC §679 (US person as grantor of foreign trust - US beneficiary test); IRC §643(i) (loans from trusts treated as distributions); IRC §661-662 (DNI and distribution deduction/inclusion rules); IRC §665-668 (throwback rules - accumulation distributions, UNI, interest charge); IRC §6048(a) (reporting of transfers to foreign trusts); IRC §6048(b) (Form 3520-A - annual report of foreign grantor trust); IRC §6048(c) (reporting of distributions from foreign trusts); IRC §6677 (penalties - 35% of transfer, 5% of trust assets, $10K minimum); IRC §6677(d) (reasonable cause exception); Treas. Reg. §1.679-1 through §1.679-5 (§679 regulations); IRS Form 3520 and Instructions; IRS Form 3520-A and Instructions; Rev. Proc. 2014-55 (RRSP - for comparison, treaty-based deferral); IRS Streamlined Filing Compliance Procedures (irs.gov).</div>
 
 
 <script>

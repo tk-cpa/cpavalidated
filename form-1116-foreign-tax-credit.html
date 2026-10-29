@@ -127,12 +127,12 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <div class="red-box"><strong>NCTI/GILTI basket has no carryover.</strong> Under §904(c), excess credits in the §951A NCTI basket expire at year-end. Cannot be carried back, cannot be carried forward, cannot be used in any other basket. Plan to use them in the year paid or lose them permanently. This is the single most important basket-specific rule and a frequent source of practitioner error.</div>
 
-<h2>The $300 / $600 De Minimis Election - §904(k)</h2>
+<h2>The $300 / $600 De Minimis Election - §904(j)</h2>
 
 <p>For passive-category foreign taxes only, taxpayers may elect to claim the credit directly on Form 1040 without filing Form 1116 if all the following apply:</p>
 
 <table class="key-table">
-  <tr><th>De Minimis Election Requirements (§904(k))</th></tr>
+  <tr><th>De Minimis Election Requirements (§904(j))</th></tr>
   <tr><td>Total creditable foreign taxes do not exceed $300 ($600 if MFJ)</td></tr>
   <tr><td>All foreign taxes are passive category (typically dividends/interest from foreign mutual funds or ETFs reported on Form 1099-DIV)</td></tr>
   <tr><td>All foreign taxes are reported on a qualified payee statement (1099-DIV, 1099-INT, or Schedule K-1)</td></tr>
@@ -144,7 +144,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h2>FTC vs. FEIE Decision Framework</h2>
 
-<p>US persons working abroad face a fundamental election: Foreign Earned Income Exclusion under §911 (Form 2555) or Foreign Tax Credit under §901 (Form 1116). The choice is not entirely free - they can be combined on different income (FEIE on wages, FTC on investment income) but not on the same income, and the FEIE election is "sticky" under §911(e) (revocation requires IRS consent and a five-year cooldown).</p>
+<p>US persons working abroad face a fundamental election: Foreign Earned Income Exclusion under §911 (Form 2555) or Foreign Tax Credit under §901 (Form 1116). The choice is not entirely free - they can be combined on different income (FEIE on wages, FTC on investment income) but not on the same income, and the FEIE election is "sticky" under §911(e) (a revocation does not need IRS consent, but a new election within the next five taxable years does).</p>
 
 <table class="key-table">
   <tr><th>Factor</th><th>FEIE Better</th><th>FTC Better</th></tr>
@@ -172,21 +172,21 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Part II: Foreign Taxes Paid or Accrued</h3>
 
-<p>Reports the actual foreign taxes paid (cash basis) or accrued (accrual basis). The election is on the first Form 1116 ever filed and is binding for all future years (except for a one-time revocation under §905(a)). Foreign currency is translated at the spot rate on the date of payment under §986(a) for cash-basis taxpayers, or the average rate for the year for accrual taxpayers.</p>
+<p>Reports the actual foreign taxes paid (cash basis) or accrued (accrual basis). A cash-basis taxpayer may elect under §905(a) to claim the credit in the year the foreign taxes accrue; once made, the election applies to all subsequent taxable years. Foreign currency is translated at the spot rate on the date of payment under §986(a) for cash-basis taxpayers, or the average rate for the year for accrual taxpayers.</p>
 
 <h3>Part III: Figuring the Credit</h3>
 
-<p>The §904 limitation math. Line 15 is gross foreign-source income. Line 18 is taxable income from all sources (worldwide). Line 19 divides line 15 by line 18 to produce the ratio. Line 20 multiplies the ratio by pre-credit US tax liability to produce the limitation. Line 21 takes the lesser of foreign tax paid or the limit - that's the credit for the basket. Excess goes to carryforward.</p>
+<p>The §904 limitation math. Line 15 carries the net foreign-source taxable income from Part I (line 7), and line 17 is that amount after the line 16 adjustments. Line 18 is taxable income from all sources (worldwide). Line 19 divides line 17 by line 18 to produce the ratio. Line 20 is the pre-credit US tax liability, and line 21 multiplies line 20 by the ratio to produce the limitation. Line 24 takes the smaller of the foreign taxes (line 14) or the limitation (line 23, which adds the section 960(c) increase on line 22) - that's the credit for the basket. Excess goes to carryover.</p>
 
 <h3>Part IV: Summary of Credits From Separate Parts III</h3>
 
-<p>Only completed on one Form 1116 when the taxpayer has multiple baskets. The form with the largest line 24 amount is used to combine. Line 33 totals the credits across all baskets; line 35 is the final FTC that flows to Schedule 3 (Form 1040) line 1.</p>
+<p>Only completed on one Form 1116 when the taxpayer has multiple baskets. The form with the largest line 24 amount is used to combine. Line 32 totals the credits across all baskets, line 33 is the smaller of line 20 or line 32, and line 35 is the final FTC that flows to Schedule 3 (Form 1040) line 1.</p>
 
 <h2>The High-Tax Election - §954(b)(4) for Subpart F and §951A for NCTI</h2>
 
 <p>For US shareholders of CFCs, the high-tax exception can exclude income from Subpart F treatment or NCTI treatment if the foreign effective tax rate on the income exceeds 90% of the US corporate rate. For 2026 with a 21% US corporate rate, the threshold is 18.9% effective foreign rate.</p>
 
-<p>Most Western European countries comfortably exceed this threshold (Germany ~30%, France ~25%, UK ~25%). The election can dramatically reduce the US tax burden for US shareholders of European CFCs. The election is annual under Reg §1.951A-2(c)(7)(iv). For tax years beginning after December 31, 2025, OBBBA modified the high-tax exception calculation - test on a CFC-by-CFC basis rather than the prior tested unit basis.</p>
+<p>Most Western European countries comfortably exceed this threshold (Germany ~30%, France ~25%, UK ~25%). The election can dramatically reduce the US tax burden for US shareholders of European CFCs. The election is made under Reg §1.951A-2(c)(7)(viii). For tax years beginning after December 31, 2025, OBBBA modified the high-tax exception calculation - test on a CFC-by-CFC basis rather than the prior tested unit basis.</p>
 
 <div class="note-box"><strong>FDII renamed FDDEI.</strong> Foreign-Derived Intangible Income (FDII) was renamed to Foreign-Derived Deduction Eligible Income (FDDEI) under OBBBA for tax years beginning after December 31, 2025. The §250 deduction for FDDEI is reduced from 37.5% to 33.34%, increasing the effective rate from 13.125% to 14%. This is a corporate-level provision but matters when modeling cross-border C-corp structures.</div>
 
@@ -194,7 +194,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <p>US tax treaties typically include a "savings clause" preserving US ability to tax its citizens regardless of treaty residency. But many treaties also include a "resourcing rule" that re-characterizes income as foreign-source when the treaty grants the foreign country primary taxing rights. The treaty-resourced income goes into a separate FTC basket under §904(d)(6).</p>
 
-<p>Common scenarios: US citizen working in a treaty country whose treaty-based residence is foreign; the salary is US-source under §861(a)(3) (services performed there - actually that's foreign source), but treaty resourcing may apply to pension distributions, dividends from US source paid to treaty resident citizen, etc. Each resourcing basket requires its own Form 1116, often with a specific basket label.</p>
+<p>Common scenarios: US citizen working in a treaty country whose treaty-based residence is foreign; treaty resourcing may apply to pension distributions, dividends from US source paid to treaty resident citizen, etc. Each resourcing basket requires its own Form 1116, often with a specific basket label.</p>
 
 <h2>Carryover Mechanics - §904(c)</h2>
 
@@ -205,10 +205,10 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Order of use</td><td>Oldest credits used first (FIFO)</td></tr>
   <tr><td>Basket integrity</td><td>Carryovers remain in the same basket; cannot cross baskets</td></tr>
   <tr><td>NCTI/GILTI basket</td><td>NO carryover - permanent loss if not used in year paid</td></tr>
-  <tr><td>Mandatory carryback?</td><td>Carryback is mandatory unless taxpayer elects under §904(c) flush language to forgo</td></tr>
+  <tr><td>Mandatory carryback?</td><td>Carryback applies first (1 year), then forward 10 years; §904(c) has no election to forgo it</td></tr>
 </table>
 
-<p>The mandatory carryback rule under §904(c) is unintuitive. Excess credits from 2026 must be carried back to 2025 first, then forward. A taxpayer who wants to preserve the carryforward (perhaps because 2025 had no foreign-source income and the carryback would be wasted) must explicitly elect to forgo the carryback by filing Form 1116 with the election. The election is made on a year-by-year basis.</p>
+<p>The mandatory carryback rule under §904(c) is unintuitive. Excess credits from 2026 must be carried back to 2025 first, then forward. The Form 1116 instructions direct that the excess be carried back first, then forward, applying it to the earliest year first.</p>
 
 <h2>Sourcing Common Income Types</h2>
 
@@ -234,11 +234,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Mixing General-Basket and Passive-Basket Items on One Form 1116</h3>
 
-<p>Each basket needs its own Form 1116. A US citizen earning German salary AND collecting German dividends needs at least two Forms 1116 - general basket for the salary, passive basket for the dividends. The de minimis election under §904(k) can avoid this for the passive portion if the dividends are below $300/$600 threshold and other conditions met.</p>
+<p>Each basket needs its own Form 1116. A US citizen earning German salary AND collecting German dividends needs at least two Forms 1116 - general basket for the salary, passive basket for the dividends. The de minimis election under §904(j) can avoid this for the passive portion if the dividends are below $300/$600 threshold and other conditions met.</p>
 
 <h3>Forgetting Treaty Resourcing</h3>
 
-<p>A US-citizen Client living in Russia (no current US-Russia treaty active since 2024) versus living in Germany (active US-Germany treaty) have very different FTC profiles. Treaty-resourced income requires its own basket. Always check whether a treaty is in force and whether resourcing provisions apply.</p>
+<p>A US-citizen Client living in Russia (most of the 1992 US-Russia income tax convention, including Articles 5 through 21 and 23, has been suspended since August 16, 2024) versus living in Germany (active US-Germany treaty) have very different FTC profiles. Treaty-resourced income requires its own basket. Always check whether a treaty is in force and whether resourcing provisions apply.</p>
 
 <h3>Sourcing US-Paid Wages for US-Citizen Working Abroad as Foreign-Source</h3>
 
@@ -264,7 +264,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §901 (foreign tax credit), §904 (limitation), §904(d) (separate categories), §904(b)(5) (interest and R&amp;D allocation - new under OBBBA), §904(b)(6) (inventory sourcing - new under OBBBA), §904(c) (carryback/carryforward), §904(d)(2)(H)(i) (base differences - amended by OBBBA), §904(k) (de minimis $300/$600 election), §905 (foreign tax accrual), §905(c) (redetermination), §911 (FEIE), §951A (NCTI/former GILTI), §954(b)(4) (high-tax exception), §960 (deemed-paid credit), §250 (FDDEI and NCTI deductions). §§861-865 (sourcing rules). Treasury Regulations §1.901-2 (qualifying foreign tax), §1.904-4 / §1.904-5 (basket rules), §1.951A-2(c)(7)(iv) (high-tax election). One Big Beautiful Bill Act, P.L. 119-21 (international tax reform). IRS Form 1116 Instructions (2025), Publication 514 (Foreign Tax Credit for Individuals), Publication 519 (US Tax Guide for Aliens).</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §901 (foreign tax credit), §904 (limitation), §904(d) (separate categories), §904(b)(5) (interest and R&amp;D allocation - new under OBBBA), §904(b)(6) (inventory sourcing - new under OBBBA), §904(c) (carryback/carryforward), §904(d)(2)(H)(i) (base differences - amended by OBBBA), §904(j) (de minimis $300/$600 election), §905 (foreign tax accrual), §905(c) (redetermination), §911 (FEIE), §951A (NCTI/former GILTI), §954(b)(4) (high-tax exception), §960 (deemed-paid credit), §250 (FDDEI and NCTI deductions). §§861-865 (sourcing rules). Treasury Regulations §1.901-2 (qualifying foreign tax), §1.904-4 / §1.904-5 (basket rules), §1.951A-2(c)(7)(viii) (high-tax election). One Big Beautiful Bill Act, P.L. 119-21 (international tax reform). IRS Form 1116 Instructions (2025), Publication 514 (Foreign Tax Credit for Individuals), Publication 519 (US Tax Guide for Aliens).</p>
 
 
 <!-- START UNIFIED FOOTER -->
