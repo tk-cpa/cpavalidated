@@ -179,11 +179,11 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>You compute your "excess distribution" amount.</strong> Excess distribution = current year distribution minus 125% of average distributions over the prior 3 years. Plus the entire gain on any sale of the PFIC stock.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>The excess distribution is allocated ratably over your entire holding period.</strong> Each year of the holding period gets a slice.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>The current-year slice is taxed at ordinary rates.</strong> The prior-year slices are taxed at the highest ordinary rate that applied in those prior years (37% for any year since 2018).</li>
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>An interest charge is added on the deemed deferred tax</strong>, computed at the §6601 underpayment rate, compounding from each prior year forward. The interest typically runs at 7-8% and compounds annually.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>An interest charge is added on the deemed deferred tax</strong>, computed at the §6621 underpayment rate (§1291(c)(3)), compounding from each prior year forward. The interest typically runs at 7-8% and compounds annually.</li>
 </ol>
 
 <div class="example">
-  <strong>How brutal §1291 actually is.</strong> A US person holds a Canadian mutual fund (PFIC) for 10 years. Bought it for $50,000, sold for $200,000 - a $150,000 gain. Under default §1291: the $150,000 is allocated $15,000 per year over the 10-year holding period. Each year's slice is taxed at 37% (the highest ordinary rate). That's $55,500 of base tax. Add interest at compounded underpayment rates back to year 1 - roughly $25,000 more. Total tax: $80,500 on a $150,000 gain - a 53% effective rate. Compare to long-term capital gain rates with no PFIC: $150,000 &times; 23.8% (LTCG + NIIT) = $35,700. The default PFIC regime more than doubled the tax.
+  <strong>How brutal §1291 actually is.</strong> A US person holds a Canadian mutual fund (PFIC) for 10 years. Bought it for $50,000, sold for $200,000 - a $150,000 gain. Under default §1291: the $150,000 is allocated $15,000 per year over the 10-year holding period. Each year's slice is taxed at 37% (the highest ordinary rate). That's $55,500 of base tax. Add interest at compounded underpayment rates back to year 1 - roughly $25,000 more. Total tax: $80,500 on a $150,000 gain - about a 54% effective rate ($80,500 / $150,000 = 53.7%). Compare to long-term capital gain rates with no PFIC: $150,000 &times; 23.8% (LTCG + NIIT) = $35,700. The default PFIC regime more than doubled the tax.
 </div>
 
 <h3>The QEF Election (§1295)</h3>
@@ -199,7 +199,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <p>The catch: you need an "Annual Information Statement" from the PFIC showing the breakdown of E&amp;P and capital gain. Most foreign mutual funds do not provide this voluntarily because they're not built for US shareholders. Some specialty PFICs (a few large foreign hedge funds with US-investor desks) provide them. Most consumer-grade foreign mutual funds do not.</p>
 
-<p>The election is made the first year you own the PFIC, on a timely-filed Form 8621. Late elections require IRS consent under §1295(b)(2)(B) and Treas. Reg. §1.1295-3 (the "purging" procedure).</p>
+<p>The election is best made for the first year you own the PFIC, on a timely-filed Form 8621; it may be made for any taxable year on or before the due date (with extensions) of that year's return (§1295(b)(2)). A later retroactive election is available only under Treas. Reg. §1.1295-3, and a purging election (deemed sale or deemed dividend) is made under §1291(d)(2) and Treas. Reg. §§1.1291-9 and 1.1298-3.</p>
 
 <h3>The Mark-to-Market Election (§1296)</h3>
 
@@ -230,7 +230,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <p>The Code does not impose a specific dollar penalty for late or missing Form 8621 filings - but the consequences are real:</p>
 
 <ul style="margin:6px 0 22px 24px">
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Statute of limitations does not start running</strong> on the entire return until Form 8621 is filed (under IRC §6501(c)(8) and similar). The IRS can audit indefinitely.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Statute of limitations stays open</strong> until 3 years after the required information is furnished (IRC §6501(c)(8)(A), which covers information required under §1298(f)); if the failure is due to reasonable cause and not willful neglect, only the items related to the failure remain open (IRC §6501(c)(8)(B)).</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>Elections that should have been made are lost</strong> if not made on time. The taxpayer ends up stuck in the §1291 default regime.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Coordination with FBAR and Form 8938</strong> reporting - foreign financial accounts holding PFICs trigger those reporting requirements too, with their own penalty regimes.</li>
 </ul>
@@ -251,7 +251,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Russian, European, Canadian, or Latin American wealth-management portfolios</strong> typically include 5-25 foreign mutual funds. Each is a separate PFIC requiring a separate Form 8621.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Australian and UK pension structures</strong> may or may not be PFICs depending on local-law characterization. Treaty analysis often required.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:8px"><strong>Tax-free local accounts</strong> - UK ISAs, Canadian TFSAs - are typically still PFICs to a US person, even though they're tax-free locally.</li>
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Non-grantor foreign trusts holding foreign funds</strong> create both PFIC and Form 3520-A filing obligations stacked on top of each other.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>Non-grantor foreign trusts holding foreign funds</strong> create both PFIC and Form 3520 filing obligations (Form 3520-A applies only where a US person is treated as the owner of the trust) stacked on top of each other.</li>
 </ul>
 
 <div class="red-box"><strong>Pre-immigration restructuring is critical.</strong> The single most useful thing a soon-to-be US resident can do is sell their foreign mutual funds <em>before</em> becoming a US tax resident. Pre-residency, the foreign individual is taxed only by their home country - no PFIC issues. Sell, pay any home-country tax, then reinvest in US-domiciled equivalents (US ETFs, US mutual funds) <em>after</em> arrival. The foreign-mutual-fund gains accumulated pre-residency are forever escaped from PFIC treatment.</div>
@@ -264,9 +264,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <p><strong>If you have unreported PFICs from prior years:</strong> Coordinate with FBAR and Form 8938 history. The Streamlined Filing Compliance Procedures often work as a path to come into compliance, with reduced or no penalties for non-willful failures. Don't try to fix this with ad-hoc amended returns - it's a coordinated procedure.</p>
 
-<p><strong>If your foreign retirement structure is involved:</strong> Treaty analysis. Some foreign retirement plans are exempt from PFIC under specific provisions (the Canadian RRSP under Rev. Proc. 2014-55 has its own exception, for example). Others are not. Don't assume.</p>
+<p><strong>If your foreign retirement structure is involved:</strong> Treaty analysis. Some foreign retirement plans are exempt from PFIC under specific provisions (Rev. Proc. 2014-55 provides the Canada treaty Article XVIII(7) election and Form 3520/3520-A reporting relief for RRSPs and RRIFs; it does not address Form 8621). Others are not. Don't assume.</p>
 
-<p><strong>If you are advising a US person on foreign investments:</strong> Avoid foreign mutual funds entirely. Direct foreign stocks (not funds) are not PFICs. Foreign ETFs are PFICs. US-domiciled funds investing internationally (Vanguard FTSE All-World ex-US, for instance) are not PFICs and provide the same global diversification.</p>
+<p><strong>If you are advising a US person on foreign investments:</strong> Avoid foreign mutual funds entirely. Direct foreign stocks (not funds) are generally not PFICs unless the foreign issuer meets the §1297 income or asset test. Foreign ETFs are PFICs. US-domiciled funds investing internationally (Vanguard FTSE All-World ex-US, for instance) are not PFICs and provide the same global diversification.</p>
 
 <div class="related">
   <div class="related-title">Related Articles</div>
@@ -278,7 +278,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §1291 (excess distribution regime); IRC §1293 (QEF inclusion mechanics); IRC §1295 (QEF election); IRC §1296 (mark-to-market election); IRC §1297 (PFIC definition - income and asset tests); IRC §1297(b)(2) (passive income definition); IRC §1297(c) (look-through rule for 25%-owned foreign subsidiaries); IRC §1298 (special rules); IRC §1298(b)(1) (once-a-PFIC always-a-PFIC); IRC §1298(f) (Form 8621 reporting requirement); Treas. Reg. §§1.1295-1, 1.1295-3 (QEF election and purging); Treas. Reg. §1.1296-1 (MTM election); Form 8621 (Information Return by a Shareholder of a PFIC or QEF); IRC §6501(c)(8) (extended statute of limitations for unreported foreign assets); Rev. Proc. 2014-55 (RRSP/RRIF exception); IRS Streamlined Filing Compliance Procedures.</div>
+<div class="source-row">Authority: IRC §1291 (excess distribution regime); IRC §1293 (QEF inclusion mechanics); IRC §1295 (QEF election); IRC §1296 (mark-to-market election); IRC §1297 (PFIC definition - income and asset tests); IRC §1297(b)(2) (passive income definition); IRC §1297(c) (look-through rule for 25%-owned foreign subsidiaries); IRC §1298 (special rules); IRC §1298(b)(1) (once-a-PFIC always-a-PFIC); IRC §1298(f) (Form 8621 reporting requirement); Treas. Reg. §§1.1295-1, 1.1295-3 (QEF election and retroactive QEF elections); Treas. Reg. §§1.1291-9, 1.1298-3 (purging elections); Treas. Reg. §1.1296-1 (MTM election); Form 8621 (Information Return by a Shareholder of a PFIC or QEF); IRC §6501(c)(8) (extended statute of limitations for unreported foreign assets); Rev. Proc. 2014-55 (Canadian retirement plan election and Form 3520/3520-A reporting); IRS Streamlined Filing Compliance Procedures.</div>
 
 <script>
 function doPrint(){

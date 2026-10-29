@@ -136,7 +136,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 <ul style="margin:6px 0 22px 24px">
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>You are filing a US tax return.</strong> Form 1040-NR for a non-resident, dual-status return for someone with a residency change, or Form 1040 if you're a US tax resident without an SSN.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>You are being claimed as a spouse or dependent</strong> on a US tax return.</li>
-  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>You are a foreign partner in a US partnership</strong>, including a single-member LLC owned by a foreign person that elects to be treated as a partnership or corporation.</li>
+  <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>You are a foreign partner in a US partnership</strong>, including a foreign member of a multi-member LLC taxed as a partnership.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>You are a non-resident selling US real property</strong> subject to FIRPTA withholding (need ITIN to file Form 8288-B for a withholding certificate, and to file the eventual 1040-NR).</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80);margin-bottom:6px"><strong>You are receiving US-source income</strong> requiring third-party reporting (1042-S, 1099, etc.) and need a TIN for the Form W-8BEN you give to the payor.</li>
   <li style="font-size:15px;line-height:1.7;color:var(--ink-80)"><strong>You are claiming a treaty benefit</strong> that requires a TIN for the treaty position to be respected.</li>
@@ -170,7 +170,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
     <tr><td class="label">Exception 2</td><td>Wages, scholarship, or treaty-based exemption requiring TIN on Form 8233 or W-8BEN</td><td>Letter from employer/institution; treaty article reference</td></tr>
     <tr><td class="label">Exception 3</td><td>Third-party reporting of mortgage interest (Form 1098)</td><td>Mortgage documents from US lender</td></tr>
     <tr><td class="label">Exception 4</td><td>Disposition by foreign person of US real property interest (FIRPTA)</td><td>Form 8288, 8288-A, or 8288-B; sale documents</td></tr>
-    <tr><td class="label">Exception 5</td><td>Treasury regulations require TIN reporting (e.g., obligations to file Form 8939 or similar)</td><td>Specific regulatory citation and supporting documents</td></tr>
+    <tr><td class="label">Exception 5</td><td>Treasury Decision 9363: non-US representative of a foreign corporation who needs an ITIN to meet an e-filing requirement</td><td>Form W-7 marked "Exception 5, T.D. 9363" and the supporting documents listed in the W-7 Exceptions Tables</td></tr>
   </tbody>
 </table>
 
@@ -214,9 +214,9 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <h2>Processing Time and Tracking</h2>
 
-<p>Standard processing: 7-11 weeks for mailed applications, slightly faster for in-person submissions. Peak filing season (January-April) is slower. Renewal applications are faster than initial applications.</p>
+<p>Standard processing: allow 7 weeks, or 9 to 11 weeks if submitted during peak processing periods (January 15 through April 30) or from overseas.</p>
 
-<p>The IRS does not provide online tracking for ITIN applications. You can call the ITIN telephone help line (1-800-908-9982 from the US, +1-267-941-1000 internationally) about 7 weeks after submission to check status.</p>
+<p>The IRS does not provide online tracking for ITIN applications. You can call the IRS (800-829-1040 from the US, 267-941-1000 from outside the US, not toll-free) after the processing period (7 weeks, or 9 to 11 weeks during peak periods or when filing from overseas) to check status.</p>
 
 <p>If approved, you receive a CP 565 notice with your assigned ITIN. If rejected, you receive a CP 567 explaining what to fix. Common rejection reasons:</p>
 
@@ -231,15 +231,15 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <p>ITINs expire if not used on a federal tax return for 3 consecutive tax years. The IRS publishes annual lists of ITINs scheduled to expire, organized by middle-digits.</p>
 
-<p>To renew, file Form W-7 marked "Renewal" with current identity documents. Tax return is not required for renewal applications. The renewal can be filed with the next tax return that uses the ITIN, or in advance.</p>
+<p>To renew, file Form W-7 (Application type: renewal) with current identity documents and the US federal tax return on which the ITIN will be listed, unless you meet one of the Exceptions 1-5. An ITIN needs to be renewed only if it has expired and will be included on a federal tax return; an ITIN used only on third-party information returns does not need to be renewed yet.</p>
 
-<p>If an ITIN has expired and is used on a tax return, the IRS holds the return and notifies the filer. The eventual return processing is delayed by the renewal cycle - which can affect refunds. Best practice: renew an expired ITIN before filing the return.</p>
+<p>If an expired ITIN is used on a tax return without renewal, processing of the return may be delayed. Submit the renewal Form W-7 together with the return rather than filing the return first.</p>
 
 <h2>Special Cases</h2>
 
 <h3>Spouse and Dependents on a Joint or Family Return</h3>
 
-<p>The 2017 TCJA changes affected the value of dependent ITINs. Through 2017, a $4,000 personal exemption per dependent was available - so an ITIN for a non-citizen dependent saved real tax dollars. From 2018-2025, exemptions are zero. Some refundable credits (Other Dependent Credit, $500) still require an ITIN for the dependent.</p>
+<p>The 2017 TCJA changes affected the value of dependent ITINs. Through 2017, a $4,050 personal exemption per dependent was available - so an ITIN for a non-citizen dependent saved real tax dollars. For tax years beginning after 2017, the exemption amount is zero (made permanent by P.L. 119-21). The nonrefundable Credit for Other Dependents ($500) can still require an ITIN for the dependent.</p>
 
 <p>For a non-resident alien spouse of a US person electing under §6013(g) or §6013(h) to be treated as a US resident, the spouse needs an ITIN to be on the joint return. The §6013 election statement and the W-7 are filed together with the joint 1040.</p>
 
@@ -259,13 +259,13 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <p><strong>Notarized photocopies of passports.</strong> A notary's certification is not what the IRS wants. The certification must come from the issuing agency (the passport-issuing government) or from a CAA verifying the original.</p>
 
-<p><strong>Wrong reason code on Form W-7.</strong> The W-7 has a series of "Reason for application" boxes. Box (a) for nonresident filing a US tax return, (b) for a US resident, (c) through (h) for various dependent and exception scenarios. Wrong box selection can trigger rejection.</p>
+<p><strong>Wrong reason code on Form W-7.</strong> The W-7 has a series of "Reason for application" boxes. Box (a) for a nonresident alien claiming a tax treaty benefit, (b) for a nonresident alien filing a US tax return, (c) for a resident alien (by days present) filing a return, (d) through (g) for dependents, spouses, and students, professors, and researchers, and (h) for other reasons, including the Exception 1-5 situations. Wrong box selection can trigger rejection.</p>
 
 <p><strong>Missing the supporting tax return or exception documentation.</strong> A standalone W-7 with no return and no exception documentation is rejected.</p>
 
 <p><strong>Treating the ITIN as a work authorization or government ID.</strong> An ITIN is for tax purposes only. It does not authorize work in the US, does not entitle the holder to Social Security, and is not a substitute for any immigration document.</p>
 
-<p><strong>Using an expired ITIN on a return.</strong> The IRS will hold the return until renewal is processed. Better to renew first.</p>
+<p><strong>Using an expired ITIN on a return.</strong> Processing of the return may be delayed. Submit the renewal Form W-7 with the return.</p>
 
 <h2>Practical Recommendations</h2>
 
@@ -277,7 +277,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
 
 <p><strong>If you're a US person with a foreign spouse:</strong> Apply for the spousal ITIN concurrently with your first joint return after the §6013 election. The W-7 plus tax return package goes to Austin together.</p>
 
-<p><strong>For renewals:</strong> Watch the IRS annual expiration notices. Renew before filing season if possible. The renewal application is faster than initial.</p>
+<p><strong>For renewals:</strong> Check whether your ITIN has expired (not included on a federal return for 3 consecutive tax years, or assigned before 2013 and never renewed) and attach the renewal Form W-7 to the return on which it will be used.</p>
 
 <div class="related">
   <div class="related-title">Related Articles</div>
@@ -289,7 +289,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:14px 2
   </div>
 </div>
 
-<div class="source-row">Authority: IRC §6109 (taxpayer identification number requirements); Treas. Reg. §301.6109-1; IRC §6109(d) (use of SSN); IRS Form W-7 (Application for IRS Individual Taxpayer Identification Number); IRS Form W-7 Instructions (Rev. November 2024); IRS Pub. 1915 (Understanding Your IRS Individual Taxpayer Identification Number); Acceptance Agent Program under IRS Memorandum of Understanding; Form W-7 Exception 1 (passive income with treaty benefits); Exception 2 (wages, scholarships, fellowships subject to treaty exemption); Exception 3 (third-party mortgage interest reporting); Exception 4 (FIRPTA dispositions); Exception 5 (Treasury Department regulations); IRS Notice 2016-48 (ITIN renewal program); CP 565 (ITIN issued); CP 567 (ITIN application denied).</div>
+<div class="source-row">Authority: IRC §6109 (taxpayer identification number requirements); Treas. Reg. §301.6109-1; IRC §6109(d) (use of SSN); IRS Form W-7 (Application for IRS Individual Taxpayer Identification Number); IRS Form W-7 Instructions (Rev. December 2024); IRS Pub. 1915 (Understanding Your IRS Individual Taxpayer Identification Number); Acceptance Agent Program under IRS Memorandum of Understanding; Form W-7 Exception 1 (passive income with treaty benefits); Exception 2 (wages, scholarships, fellowships subject to treaty exemption); Exception 3 (third-party mortgage interest reporting); Exception 4 (FIRPTA dispositions); Exception 5 (Treasury Department regulations); IRS Notice 2016-48 (ITIN renewal program); CP 565 (ITIN issued); CP 567 (ITIN application denied).</div>
 
 <script>
 function doPrint(){

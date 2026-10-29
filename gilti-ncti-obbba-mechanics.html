@@ -78,7 +78,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <div class="sub">§250 Deduction 50% → 40% &nbsp;&bull;&nbsp; QBAI / 10% DTIR Repealed &nbsp;&bull;&nbsp; FTC Haircut 20% → 10% (90% Creditable) &nbsp;&bull;&nbsp; Corporate Effective Rate 12.6% &nbsp;&bull;&nbsp; 14% Cross-Over Foreign Rate &nbsp;&bull;&nbsp; New §951B FCUS Rules &nbsp;&bull;&nbsp; §954(c)(6) Look-Through Permanent</div>
   <div class="meta">
     <span class="ph-meta-item">IRC §951A / §250 / §960(d) / §951B</span>
-    <span class="ph-meta-item">OBBBA P.L. 119-21 §70322 / §70323</span>
+    <span class="ph-meta-item">OBBBA P.L. 119-21 §70321 / §70323</span>
     <span class="ph-meta-item">Updated 2026</span>
   </div>
 </div></div>
@@ -104,9 +104,9 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Controlled Foreign Corporation (CFC)</td><td>Foreign corporation where US shareholders collectively own more than 50% of voting power OR value</td></tr>
   <tr><td>US Shareholder definition</td><td>US person owning at least 10% of voting power OR value</td></tr>
   <tr><td>Form 5471 filing requirement</td><td>Same 10% threshold triggers Form 5471 - NCTI computation interlinks with Form 5471 Schedule I-1</td></tr>
-  <tr><td>Pro rata share rule (modified by OBBBA)</td><td>Now: US shareholder includes pro rata share if owned CFC stock at ANY TIME during taxable year (prior: only if owned on last day of CFC tax year)</td></tr>
+  <tr><td>Pro rata share rule (modified by OBBBA)</td><td>Now: pro rata share is limited to the portion of the CFC year during which the shareholder owned the stock, was a US shareholder, and the corporation was a CFC (prior: only if owned on last day of CFC tax year)</td></tr>
   <tr><td>Downward attribution under §958(b)(4)</td><td>OBBBA REINSTATED §958(b)(4) - foreign corp stock NOT attributed downward to US subsidiary. Reverses TCJA repeal that had expanded CFC scope.</td></tr>
-  <tr><td>New §951B - Foreign Controlled US Shareholder (FCUS)</td><td>Added by OBBBA to capture certain foreign-controlled US persons with attributed CFC stock. Threshold: more than 50% ownership attribution (raised from prior 10%).</td></tr>
+  <tr><td>New §951B - Foreign Controlled US Shareholder (FCUS)</td><td>Added by OBBBA to capture certain foreign-controlled US persons with attributed CFC stock. Threshold: a US person who would be a US shareholder if section 951(b) used "more than 50 percent" instead of "10 percent or more" and section 958(b) applied without paragraph (4) (downward attribution).</td></tr>
 </table>
 
 <h2>The Mechanical Formula - Pre and Post OBBBA</h2>
@@ -169,7 +169,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>§250 deduction</td><td>40% - available with §962 election</td></tr>
   <tr><td>Indirect FTC under §960(d)</td><td>90% creditable - available with §962 election</td></tr>
   <tr><td>State tax</td><td>State conformity to §962 varies; some states do not respect election</td></tr>
-  <tr><td>Distribution timing</td><td>When earnings later distributed as dividends, second layer of US tax at qualified dividend rates (15%/20%)</td></tr>
+  <tr><td>Distribution timing</td><td>When earnings are later distributed, §962(d) includes the distribution in gross income only to the extent it exceeds the US tax paid on the §962 inclusion; the included amount is a second layer of US tax (qualified dividend rates apply only if the dividend is a qualified dividend)</td></tr>
   <tr><td>QBI deduction interaction</td><td>NCTI is not qualified business income for §199A</td></tr>
 </table>
 
@@ -178,8 +178,8 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <p><strong>Facts:</strong> US individual owns 100% of German GmbH. GmbH earns €1,000,000 in 2026, pays €260,000 German corporate tax (26% rate), has €100,000 of tangible assets.</p>
   <p><strong>Step 1 - Net CFC Tested Income:</strong> €740,000 net (after foreign tax). Converted at avg rate: roughly $800,000 USD.</p>
   <p><strong>Step 2 - DTIR adjustment:</strong> $0 (repealed under OBBBA for 2026). Full $800,000 is NCTI.</p>
-  <p><strong>Step 3 - With §962 election:</strong> $800,000 × (1 - 40%) = $480,000 taxable income. Tentative tax = $480,000 × 21% = $100,800.</p>
-  <p><strong>Step 4 - Deemed-paid FTC:</strong> $260,000 × 90% = $234,000 available FTC (after 10% haircut). FTC limited to tentative tax. FTC = $100,800. Net US tax = $0.</p>
+  <p><strong>Step 3 - With §962 election:</strong> Foreign tax converted at the same rate: €260,000 × ($800,000 / €740,000) = $281,081. §78 gross-up (100% of the tested foreign income taxes, no 90% haircut) = $281,081, so $800,000 + $281,081 = $1,081,081. §250 deduction = 40% × $1,081,081 = $432,432. Taxable income = $648,649. Tentative tax = $648,649 × 21% = $136,216.</p>
+  <p><strong>Step 4 - Deemed-paid FTC:</strong> $281,081 × 90% = $252,973 available FTC (after 10% haircut). FTC limited to tentative tax (before any §904 allocation adjustments), so FTC = $136,216. Net US tax = $0; the excess credit cannot be carried over.</p>
   <p><strong>Outcome:</strong> 26% German rate exceeds the 14% cross-over. Full FTC shelters US NCTI tax. Without §962 (taxed at individual rates without §250 deduction), $800,000 at 37% = $296,000 federal tax with no §250 deduction and FTC mechanics that differ.</p>
 </div>
 
@@ -193,7 +193,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   <tr><td>Effective corporate rate on FDDEI</td><td>21% × (1 - 33.34%) ≈ 14% (was 13.125% under TCJA full deduction)</td></tr>
   <tr><td>QBAI elimination</td><td>Applies to FDDEI too - eliminates 10% deemed return on tangible assets</td></tr>
   <tr><td>Eligible income</td><td>US corporation export income from goods/services to foreign customers</td></tr>
-  <tr><td>Substantial activity requirement</td><td>Preserved - requires US-based activities producing the export</td></tr>
+  <tr><td>Foreign-use requirement</td><td>Property must be sold to a non-US person for foreign use, or services provided to a person or with respect to property located outside the US (§250(b)(1)-(2))</td></tr>
 </table>
 
 <h2>BEAT Permanently at 10.5%</h2>
@@ -219,11 +219,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h2>§951B - New Foreign Controlled US Shareholder Rules</h2>
 
-<p>OBBBA reinstates §958(b)(4) downward attribution limitation (foreign parent's stock NOT attributed to US subsidiary). This narrows the scope of CFCs. To prevent abuse, OBBBA adds new §951B creating "Foreign Controlled US Shareholder" (FCUS) status with a 50% threshold (rather than 10%).</p>
+<p>OBBBA reinstates §958(b)(4) downward attribution limitation (foreign parent's stock NOT attributed to US subsidiary). This narrows the scope of CFCs. To prevent abuse, OBBBA adds new §951B creating "Foreign Controlled US Shareholder" (FCUS) status for a US person who would be a US shareholder using a "more than 50 percent" test and with section 958(b)(4) disregarded.</p>
 
 <table class="key-table">
   <tr><th>§951B FCUS Rule</th><th>Detail</th></tr>
-  <tr><td>Trigger</td><td>US person attributed more than 50% ownership of foreign corporation (vs prior 10% under TCJA-repealed §958(b)(4))</td></tr>
+  <tr><td>Trigger</td><td>US person who would be a US shareholder if the 10%-or-more test were a more-than-50% test and downward attribution under §958(b)(4) were disregarded (§951B(b))</td></tr>
   <tr><td>Effect</td><td>Foreign corporation treated as CFC for the FCUS; Subpart F and NCTI apply</td></tr>
   <tr><td>Effective</td><td>Same as OBBBA NCTI changes - tax years beginning after 12/31/2025</td></tr>
   <tr><td>Practitioner concern</td><td>M&amp;A due diligence must analyze whether target's foreign operations create §951B FCUS exposure</td></tr>
@@ -244,7 +244,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h2>Sourcing Rule - 50% Foreign-Source from US Inventory</h2>
 
-<p>OBBBA added a new sourcing rule allowing up to 50% of income from US-produced inventory sold abroad to be treated as foreign-source - potentially relieving FTC limitation pressure on multinational exporters.</p>
+<p>OBBBA added §904(b)(6), a rule that applies for purposes of the foreign tax credit limitation: where a US person maintains an office or other fixed place of business in a foreign country, income from the sale outside the US of US-produced inventory for use outside the US that is attributable to that office is treated as foreign-source, up to 50% of the income from the sale (tax years beginning after December 31, 2025).</p>
 
 <h2>The 1% Excise Tax on Outbound Remittances - New</h2>
 
@@ -276,11 +276,11 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <h3>Using 80% FTC Cap</h3>
 
-<p>§960(d) deemed-paid FTC is now 90% (was 80%). Practitioners using legacy GILTI workpapers must update FTC haircut to 10%. The change applies to NCTI inclusions in 2026+ AND to previously-taxed earnings distributed after June 28, 2025.</p>
+<p>§960(d) deemed-paid FTC is now 90% (was 80%). Practitioners using legacy GILTI workpapers must update FTC haircut to 10%. The 90% rate applies to tax years beginning after December 31, 2025. Separately, new §960(d)(4) disallows a credit for 10% of foreign income taxes paid or accrued after June 28, 2025 with respect to distributions of previously taxed earnings attributable to a §951A inclusion.</p>
 
 <h3>Missing the Mid-Year Ownership Rule Change</h3>
 
-<p>OBBBA modified §951 pro rata share rules to require inclusion if US shareholder owned stock at ANY TIME during the CFC's tax year (vs prior law requiring last-day ownership). M&amp;A transactions, stock transfers, and partial dispositions all create new inclusion timing issues.</p>
+<p>OBBBA modified §951 pro rata share rules so that inclusion is limited to the portion of the CFC's tax year during which the shareholder owned the stock, was a US shareholder, and the corporation was a CFC (vs prior law requiring last-day ownership). M&amp;A transactions, stock transfers, and partial dispositions all create new inclusion timing issues.</p>
 
 <h3>Forgetting §951B FCUS Possibility</h3>
 
@@ -298,9 +298,9 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
 
 <p>States vary on §250 deduction conformity. California historically did not conform; effective California rate on GILTI/NCTI may approach 8.84% on full inclusion without the 40% federal-style deduction. State tax position dramatically affects total effective rate.</p>
 
-<h3>Missing FDDEI Substantial Activity Requirement</h3>
+<h3>Missing FDDEI Foreign-Use Substantiation</h3>
 
-<p>FDDEI requires US-based substantial activities producing the export income. Mere paper routing through US entity does not qualify. Practitioners should document substance.</p>
+<p>FDDEI requires the taxpayer to establish to the satisfaction of the Secretary that property is sold to a non-US person for foreign use, or that services are provided to a person or with respect to property located outside the US. Practitioners should document foreign use. IRC §250(b)(1)-(2).</p>
 
 <h3>Failing to Coordinate with Subpart F</h3>
 
@@ -322,7 +322,7 @@ nav{display:flex!important;align-items:center!important;justify-content:space-be
   </div>
 </div>
 
-<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §951A (Net CFC Tested Income, formerly Global Intangible Low-Taxed Income; renamed by OBBBA effective tax years beginning after 12/31/2025). §951A(b) (NCTI definition - aggregate net CFC tested income; OBBBA repealed the deemed tangible income return / QBAI 10% subtraction). §951A(c) (tested income/loss definition). §951A(d) (qualified business asset investment - definition retained but no longer subtracted). §250 (deduction for foreign-derived deduction eligible income and net CFC tested income). §250(a)(1)(A) (FDDEI deduction - 33.34% under OBBBA for tax years beginning after 12/31/2025; was 37.5%). §250(a)(1)(B) (NCTI deduction - 40% under OBBBA; was 50%). §250(a)(2) (taxable income limitation on combined §250 deductions). §960 (deemed-paid foreign tax credit). §960(d) (deemed-paid FTC for NCTI - 10% haircut / 90% creditable under OBBBA; was 20% haircut / 80%). §962 (election by individual shareholders of CFCs to be taxed at corporate rates with §250 deduction). §951 (Subpart F inclusions). §951(a) (Subpart F pro rata share rules - modified by OBBBA to include if ownership at any time during CFC tax year vs prior law requiring last-day ownership). §951B (NEW - Foreign Controlled US Shareholder rules; more-than-50% attribution threshold). §958 (constructive ownership). §958(b)(4) (REINSTATED by OBBBA - foreign corporation stock not attributed downward to US subsidiary; reverses TCJA repeal). §954(c)(6) (CFC look-through rule for related-party passive payments - made PERMANENT by OBBBA). §954(b)(4) (Subpart F high-tax exception). §59A (Base Erosion and Anti-Abuse Tax - BEAT; rate set at 10.5% permanent under OBBBA). §163(j) (business interest limitation - EBITDA ATI permanent under OBBBA). §199A (QBI deduction - NCTI is NOT qualified business income). §904 (FTC limitation). §863 (sourcing - OBBBA new rule: up to 50% of income from US-produced inventory sold abroad treated as foreign-source). One Big Beautiful Bill Act, P.L. 119-21, signed July 4, 2025. OBBBA §70322 (NCTI mechanics changes; §250 deduction reduction). OBBBA §70323 (FDDEI rebrand and §250 deduction reduction). OBBBA international provisions §70321-§70328 (CFC look-through permanence, §958(b)(4) reinstatement, §951B FCUS, BEAT rate, FTC haircut, sourcing rule, 1% outbound remittance excise tax). Effective tax years beginning after December 31, 2025 generally. IRS Notice and proposed regulations expected throughout 2026.</p>
+<p class="lead" style="font-size:13px;color:var(--ink-60);margin-top:36px;border-left-color:var(--ink-40);font-style:italic">Primary authority: IRC §951A (Net CFC Tested Income, formerly Global Intangible Low-Taxed Income; renamed by OBBBA effective tax years beginning after 12/31/2025). §951A(b) (NCTI definition - aggregate net CFC tested income; OBBBA repealed the deemed tangible income return / QBAI 10% subtraction). §951A(b)(2) (tested income and tested loss definitions). §951A(c) (determination of pro rata share). §951A(d) (treatment of NCTI as subpart F income for certain purposes). The QBAI definition was repealed. §250 (deduction for foreign-derived deduction eligible income and net CFC tested income). §250(a)(1)(A) (FDDEI deduction - 33.34% under OBBBA for tax years beginning after 12/31/2025; was 37.5%). §250(a)(1)(B) (NCTI deduction - 40% under OBBBA; was 50%). §250(a)(2) (taxable income limitation on combined §250 deductions). §960 (deemed-paid foreign tax credit). §960(d) (deemed-paid FTC for NCTI - 10% haircut / 90% creditable under OBBBA; was 20% haircut / 80%). §962 (election by individual shareholders of CFCs to be taxed at corporate rates with §250 deduction). §951 (Subpart F inclusions). §951(a) (Subpart F pro rata share rules - modified by OBBBA to limit the pro rata share to the portion of the CFC year during which the shareholder owned the stock, was a US shareholder, and the corporation was a CFC, vs prior law requiring last-day ownership). §951B (NEW - Foreign Controlled US Shareholder rules; more-than-50% attribution threshold). §958 (constructive ownership). §958(b)(4) (REINSTATED by OBBBA - foreign corporation stock not attributed downward to US subsidiary; reverses TCJA repeal). §954(c)(6) (CFC look-through rule for related-party passive payments - made PERMANENT by OBBBA). §954(b)(4) (Subpart F high-tax exception). §59A (Base Erosion and Anti-Abuse Tax - BEAT; rate set at 10.5% permanent under OBBBA). §163(j) (business interest limitation - EBITDA ATI permanent under OBBBA). §199A (QBI deduction - NCTI is NOT qualified business income). §904 (FTC limitation). §904(b)(6) (OBBBA new FTC-limitation sourcing rule: up to 50% of income from US-produced inventory sold through a foreign office or fixed place of business treated as foreign-source). One Big Beautiful Bill Act, P.L. 119-21, signed July 4, 2025. OBBBA §70321 (§250 deduction percentages: 40% NCTI, 33.34% FDDEI). OBBBA §70322 (FDDEI computation changes). OBBBA §70323 (NCTI and FDDEI renames; QBAI repeal). OBBBA §70312 (§960(d) 90% credit, §78, and the §960(d)(4) disallowance). OBBBA §70313 (§904(b)(6) sourcing). OBBBA §70331 (BEAT rate). OBBBA §70351 (§954(c)(6) look-through). OBBBA §70353 (§958(b)(4) reinstatement and §951B). OBBBA §70354 (pro rata share). OBBBA §70604 (§4475 remittance transfer tax). Effective tax years beginning after December 31, 2025 generally. IRS Notice and proposed regulations expected throughout 2026.</p>
 
 
 <!-- START UNIFIED FOOTER -->
